@@ -47,12 +47,18 @@ do not copy the file list into Markdown. The paired changelog is the source for
 site release notes and future platform descriptions of changes. There is no
 separate editable platform changelog.
 
-The Pages workflow is manual and its publication input defaults to false. Builds
-and previews do not publish anything. A future authorized publication requires
-GitHub Pages configuration, release/third-party permission acceptance and a
-deliberate workflow run with publication enabled. Until then the site carries
-`noindex, nofollow`; it is a draft website, not private hosting or a public pack
-release. No remote settings are changed by these tools.
+Successful main-push CI can deploy the site through `Reconcile publications`
+when repository variable `PAGES_ENABLED=true`. The switch defaults to off;
+GitHub Pages must use GitHub Actions as its source. Follow the
+[publication setup](../pack/README.md#one-time-setup) before enabling it.
+Local builds and previews do not publish anything or change remote settings.
+
+Deployment renders installation links, release availability and changelog status
+from verified immutable GitHub releases in an ephemeral checkout. Source pages
+retain their unpublished-state markers; the deployed site changes those markers
+only after publication is confirmed. Main is checked again immediately before
+deployment. The site carries `noindex, nofollow`; publishing it does not provide
+private hosting.
 
 Framework references: [Astro collections](https://docs.astro.build/en/guides/content-collections/),
 [Starlight locales](https://starlight.astro.build/guides/i18n/),

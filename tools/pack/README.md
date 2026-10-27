@@ -80,10 +80,13 @@ settings for you.
    selected icon without network access; it also runs in `make verify`.
 6. Leave `CURSEFORGE_ENABLED` unset or `false`. Its separate workflow and exporter
    are retained, but its outstanding requirements below prevent publication.
-7. Push the new prerelease version to main. Changing repository variables alone
-   does not start CI; the next scheduled reconciliation or a manual dispatch can
-   also discover completed work. Settings changes are not a substitute for a
-   successful source CI run.
+7. Push the intended release version to main after initializing the baseline.
+   The baseline commit itself is not published, including after a manual dispatch.
+   If it already contains the intended first version, a subsequent checked push
+   can publish that still-unpublished version without another version bump.
+   Changing repository variables alone does not start CI; scheduled reconciliation
+   or a manual dispatch can discover later completed pushes. Settings changes are
+   not a substitute for a successful source CI run.
 
 A prerelease becomes a GitHub prerelease and Modrinth beta; stable versions must
 be strictly newer than previous published versions. Reusing a published version
