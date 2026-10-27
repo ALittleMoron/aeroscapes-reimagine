@@ -1,0 +1,12 @@
+name = "Item Descriptions"
+filename = "item-descriptions-neoforge-1.13+1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/UaizcMKP/versions/XtrHH6bO/item-descriptions-neoforge-1.13%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "8032d2643b6039e5ea519c8e22621b0a106f26ccf4e35fc9af6adbb20c9cce92a651566bc2d23bee54c42f837a7003983b8e2cacbfc54a7df2a8b929150e8547"
+
+[update.modrinth]
+mod-id = "UaizcMKP"
+version = "XtrHH6bO"

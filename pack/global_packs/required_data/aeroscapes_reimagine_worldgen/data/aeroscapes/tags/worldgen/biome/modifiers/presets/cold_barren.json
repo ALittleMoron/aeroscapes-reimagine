@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:alpine_clearings",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:alpine_highlands",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:sleeted_slopes",
+      "required": false
+    },
+    "terralith:alpine_highlands",
+    "terralith:emerald_peaks",
+    "terralith:frozen_cliffs",
+    "terralith:glacial_chasm",
+    "terralith:ice_marsh",
+    "terralith:rocky_mountains",
+    "terralith:snowy_badlands",
+    "terralith:windswept_spires"
+  ]
+}

@@ -1,0 +1,49 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "GPL-3.0-or-later"
+
+[[mods]]
+modId = "aeroscapes_reimagine"
+version = "0.1.0"
+displayName = "Aeroscapes Reimagine"
+description = "Owned island generation, natural spawning and adapted native structures."
+
+[[mixins]]
+config = "aeroscapes_reimagine.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.opencl.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.sable_diagnostics.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.scalablelux.mixins.json"
+
+[[dependencies.aeroscapes_reimagine]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.230]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.aeroscapes_reimagine]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.aeroscapes_reimagine]]
+modId = "lithostitched"
+type = "required"
+versionRange = "[1.7.13]"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.aeroscapes_reimagine]]
+modId = "terrablender"
+type = "required"
+versionRange = "[4.1.0.8]"
+ordering = "AFTER"
+side = "BOTH"

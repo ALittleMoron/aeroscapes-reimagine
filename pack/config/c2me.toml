@@ -1,0 +1,41 @@
+version = 3
+globalExecutorParallelism = 4
+
+[vanillaWorldGenOptimizations]
+useDensityFunctionCompiler = true
+
+[vanillaWorldGenOptimizations.nativeAcceleration]
+enabled = false
+allowAVX512 = false
+
+[ioSystem]
+replaceImpl = false
+
+[chunkSystem]
+useLegacyScheduling = false
+delayFullChunkEvents = true
+syncPlayerTickets = true
+asyncSerialization = false
+recoverFromErrors = false
+fluidPostProcessingToScheduledTick = false
+filterFluidPostProcessing = false
+
+[fixes]
+enforceSafeWorldRandomAccess = true
+
+[noTickViewDistance]
+chunkSendingSpeedMultiplierPercentage = 100
+
+[clientSideConfig.modifyMaxVDConfig]
+enabled = false
+
+[openclAccel]
+enabled = true
+maxConcurrentTasksPerDevice = 2
+useSmallerBatches = true
+lowPriorityQueues = true
+allowCPUDevices = false
+allowAcceleratorDevices = false
+allowIncompatibilityFallback = true
+enableBiomesAcceleration = false
+disableBuiltinDeviceBlocklist = false

@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:has_structure/ocean_monument",
+    "minecraft:beach"
+  ]
+}

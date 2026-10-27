@@ -1,0 +1,29 @@
+{
+  "name": "aeroscapes-docs",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "26.8.2",
+    "npm": "11.19.1"
+  },
+  "packageManager": "npm@11.19.1",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && node scripts/check-build.ts",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1",
+    "format": "prettier --write . ../../docs/en ../../docs/ru",
+    "check": "prettier --check . ../../docs/en ../../docs/ru && ASTRO_TELEMETRY_DISABLED=1 astro check && tsc --noEmit && node --test tests/*.test.ts && npm run build"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.42.7",
+    "astro": "7.4.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.12",
+    "@types/node": "26.6.5",
+    "parse5": "8.0.1",
+    "prettier": "3.9.10",
+    "prettier-plugin-astro": "1.1.2",
+    "typescript": "6.0.3"
+  }
+}

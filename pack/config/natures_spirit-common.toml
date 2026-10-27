@@ -1,0 +1,3 @@
+# Nature's Spirit 2.2.5: these pillars fill empty island columns to min build height.
+[misc]
+sugi_and_stratified_pillars = false

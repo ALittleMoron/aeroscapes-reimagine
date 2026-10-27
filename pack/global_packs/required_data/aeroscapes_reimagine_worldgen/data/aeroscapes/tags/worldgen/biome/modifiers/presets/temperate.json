@@ -1,0 +1,60 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:aspen_forest",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cedar_thicket",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:coniferous_covert",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:fir_forest",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:golden_wilds",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:maple_woodlands",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:redwood_forest",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:wisteria_forest",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:wooded_drylands",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:woody_highlands",
+      "required": false
+    },
+    "terralith:amethyst_canyon",
+    "terralith:forested_highlands",
+    "terralith:lavender_forest",
+    "terralith:moonlight_grove",
+    "terralith:moonlight_valley",
+    "terralith:sakura_grove",
+    "terralith:sakura_valley",
+    "terralith:shield",
+    "terralith:shield_clearing",
+    "terralith:siberian_taiga",
+    "terralith:temperate_highlands",
+    "terralith:white_cliffs",
+    "terralith:yellowstone",
+    "terralith:yosemite_cliffs",
+    "terralith:yosemite_lowlands"
+  ]
+}

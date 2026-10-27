@@ -1,0 +1,12 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/savanna",
+  "features": [
+	"aeroscapes:ceiling_vegetation_sparse",
+	"aeroscapes:overhang/overhang_features_plains",
+	"aeroscapes:patch_sugar_cane",
+	"aeroscapes:seagrass",
+	"aeroscapes:kelp"
+  ],
+  "step": "vegetal_decoration"
+}

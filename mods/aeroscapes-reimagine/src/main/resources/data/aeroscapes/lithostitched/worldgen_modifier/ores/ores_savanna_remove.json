@@ -1,0 +1,13 @@
+{
+  "type": "lithostitched:remove_features",
+  "biomes": "#aeroscapes:modifiers/presets/savanna",
+  "features": [
+	"minecraft:ore_iron_upper",
+	"minecraft:ore_iron_middle",
+	"minecraft:ore_iron_small",
+	"minecraft:ore_diamond_medium",
+	"minecraft:ore_diamond_large",
+	"minecraft:ore_diamond_buried"
+  ],
+  "step": "underground_ores"
+}

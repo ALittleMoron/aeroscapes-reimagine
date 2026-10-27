@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/special",
+  "features": [
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_gold_extra"
+  ],
+  "step": "underground_decoration"
+}

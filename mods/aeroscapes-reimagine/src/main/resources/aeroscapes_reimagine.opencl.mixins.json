@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.opencl",
+  "plugin": "dev.aeroscapes.worldgen.opencl.OpenClMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "OpenClGraphMixin",
+    "OpenClFlatCacheMixin",
+    "OpenClBeardifierMixin",
+    "OpenClProgramMixin",
+    "OpenClDataMixin",
+    "OpenClShutdownMixin",
+    "OpenClPlatformMixin",
+    "OpenClReadinessMixin",
+    "OpenClChunkMapMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

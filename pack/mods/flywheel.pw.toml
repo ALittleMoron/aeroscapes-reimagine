@@ -1,0 +1,13 @@
+name = "Flywheel"
+filename = "flywheel-neoforge-1.21.1-1.0.6.jar"
+side = "client"
+
+[download]
+url = "https://maven.createmod.net/dev/engine-room/flywheel/flywheel-neoforge-1.21.1/1.0.6/flywheel-neoforge-1.21.1-1.0.6.jar"
+hash-format = "sha512"
+hash = "475f7a6d3dfd0cf6279188425c3f04f95b76ebfb8628b38be45480d977c8b7ec543512cee370cafa70631e964b511140a5760e245f482751dc8edc3eeb2a9d34"
+
+[source.maven]
+group = "dev.engine-room.flywheel"
+artifact = "flywheel-neoforge-1.21.1"
+version = "1.0.6"

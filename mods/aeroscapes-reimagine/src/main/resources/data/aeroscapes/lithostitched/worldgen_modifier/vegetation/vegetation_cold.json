@@ -1,0 +1,10 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/cold",
+  "features": [
+	"aeroscapes:ceiling_vegetation_sparse",
+	"aeroscapes:overhang/overhang_features_taiga",
+	"aeroscapes:seagrass"
+  ],
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,2310 @@
+{
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.230",
+  "patch_resource": "mods/aeroscapes-reimagine/src/main/resources/aeroscapes_reimagine/data-patches.json",
+  "providers": [
+    {
+      "project_id": "fgmhI8kH",
+      "version_id": "ztzRUnQ7",
+      "filename": "[Neoforge]ctov-3.6.3.jar",
+      "sha512": "174125e619f935ca016efaf7d6794edc57fae39ca02295ce63618ae2b286535e4da2084fd7f0ff9506c32c0ea35ceb68659bd646f65e6fbadfdb8fda299dc832"
+    },
+    {
+      "project_id": "tpehi7ww",
+      "version_id": "BYUUUeZA",
+      "filename": "dungeons-and-taverns-v4.4.4.jar",
+      "sha512": "83069dc336bcc212059f753923373d9522aa5953bf4b4fe2a8cfa666b4e28d2d017daa66c4b35e315c3be8d1ad60c2872879dd47cc1f47665ebbfd102da76976"
+    },
+    {
+      "project_id": "Kn7xyQ1v",
+      "version_id": "Y3deS8Po",
+      "filename": "Galosphere-1.21.1-1.5.3-NeoForge.jar",
+      "sha512": "9227cb6c26f5062112c31dacf0dda3c53caca1f00af0121fc109be62d96a8fbd44e71fb5f353bc6626dc84cfbade3b748922c4b08b63f1b5f8868b75531b27ef"
+    },
+    {
+      "project_id": "KdJhOYVV",
+      "version_id": "EQHGxQAv",
+      "filename": "Philips-Ruins1.21.1-2.0-NeoForge.jar",
+      "sha512": "e18119706fe065ccf571abc5d3f0e2badc95e26cee0ba5641aa88a67c2238ce2fd589459969a7691ae246658c601d7d35cc87562cc7b40b345965cbdd23fe2c6"
+    }
+  ],
+  "resources": [
+    {
+      "id": "ctov:worldgen/structure/large/village_beach.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_beach.json",
+      "source_sha256": "52626af91b9af1f876ed795ac466ec038a295995cced3abe6fae2f650e58deba",
+      "result_json_sha256": "2b014bffca1cfb2584049ccb89653138f8d8dcf00c7751fe410069469812b72b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/large/village_beach.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_christmas.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_christmas.json",
+      "source_sha256": "2f5827f7e322a923bf09466e48d2a9e6f579d17e16046f7ae2190b3252dbd44a",
+      "result_json_sha256": "2087e4b734256bbf83c999041228bf5a160c928a6ad4e6416e1bcc099f35f2bb",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/large/village_christmas.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_dark_forest.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_dark_forest.json",
+      "source_sha256": "0cc973fde84e44c245afe42cb4979934e8a425a76d005a2dfad96f3495ef5d07",
+      "result_json_sha256": "91ae5b9317f537ff030c0c12b061e87d2a8def800fa25baad0760f56ec6ee2e7",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_dark_forest.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_desert.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_desert.json",
+      "source_sha256": "13a85aea32756ee0b2e30f85b2b9ac9aec92c093fcee5df2a2988625524c8175",
+      "result_json_sha256": "ffc94f85a5354cc956f3c40ae0c27cd210e906d49ae82b155f5eacf37a358fce",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_desert.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_desert_oasis.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_desert_oasis.json",
+      "source_sha256": "b5d5fd821f845b8e4492c7b285c4970dcfe8e4b01fa887ccbdb70bbe411f5057",
+      "result_json_sha256": "e049ad2e1b6757b8d85ccede9bdd5639f4c921de21bd1fcc777ce60f5f77f747",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_desert_oasis.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_jungle.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_jungle.json",
+      "source_sha256": "d71b248b7a9988c7030a41f83b749fa99b673246ca26cae1564feec38ecaff47",
+      "result_json_sha256": "faf87317c1c2c2f146011d2ce366c9becf439f701fc9a05af8f6031a90e68d2c",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_jungle.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_jungle_tree.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_jungle_tree.json",
+      "source_sha256": "2809e222e141c1ba949742b75f075ada41adc26b12d2b744b0f794c598cbb3a8",
+      "result_json_sha256": "a9fcf037309f5f7842352eba44c8cfe6d0f3186660a2c4311d2510f8fd978c55",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_jungle_tree.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_mesa.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_mesa.json",
+      "source_sha256": "d78f0abd04b32637371839b919c6aae1099fc8bc741e9b4a4d15e20918b835d1",
+      "result_json_sha256": "a63e516f2dfdbd4cf8d3adbea80441c6169da69095fcb25f248a717536a68fc5",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_mesa.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_mesa_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_mesa_fortified.json",
+      "source_sha256": "67dee2252e73dad0bb31c4064b0e825b6089f9332a46f3d96950807aa134e2be",
+      "result_json_sha256": "6a35445c0aadc2bbedb30d0c9b2ead3231571d153732a8c2fca3749bec13c86b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_mesa_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_mountain.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_mountain.json",
+      "source_sha256": "2184afaa9c471534ecb1aa3b877d39a2887449e60e7979e51bc9c26f19f33f3f",
+      "result_json_sha256": "fa19425a1cea0cc6cc0cf09503fd2d574e90fc3946d7084b42c53a7754da2523",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_mountain.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_mountain_alpine.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_mountain_alpine.json",
+      "source_sha256": "9278eb90daba48e9f473736d7ffea31d3f32de890a105d3ab174ae39c079762d",
+      "result_json_sha256": "c0e52c01641978d886b8ed032a1b5982672f97ff40bbe2b15acbc1a9e70fa5dc",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_mountain_alpine.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_mushroom.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_mushroom.json",
+      "source_sha256": "cddeb9030578dad33dfb7d03b586ee8a7eaa9872c1f9a03028995cdeefdb7307",
+      "result_json_sha256": "7c3903a97ff74f52e3438e93fd3c46a5aa5736b1eaef2c4cc3a8cb97562c129d",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_mushroom.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_plains.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_plains.json",
+      "source_sha256": "63ee5f9f9552d6b9ac991a814e32bf608ce0b75c50bf82dfb5ceca1eae4ea58b",
+      "result_json_sha256": "4d22dda4f70cada7d48bb183723c7cadb168e9587892f5d482c1f6d19e2cfde9",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_plains.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_plains_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_plains_fortified.json",
+      "source_sha256": "00aabf9a009d14fdb7170af2e7a8fadd3df25b832fade41f6dd35fa24e6ce5c5",
+      "result_json_sha256": "560ed6eb476b7eb142c5af48be6ff9702ffd6d9b8347f5c8ade4bef3fd741cb4",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_plains_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_savanna.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_savanna.json",
+      "source_sha256": "12fe9842ca6a9469740970c16167bfbe5b3c04ab5f396df3beda8c794aed68ac",
+      "result_json_sha256": "ac5d77ddcb7695974b9e73fefce46bde0d493dc23073827ed80a49b466856d4e",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_savanna.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_savanna_na.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_savanna_na.json",
+      "source_sha256": "b0c9f0eafb9aa91bcf011d5fb0c80b29891b3a58fa9d1202ebe411c0648ab335",
+      "result_json_sha256": "6a85da707363346ce1ac8ee66736b0a7a33628fb6ea623a591b3a95e289345dc",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_savanna_na.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_snowy_igloo.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_snowy_igloo.json",
+      "source_sha256": "8e07405b135f040e08e2b05f5af2660077583840a470376e961845350951492e",
+      "result_json_sha256": "69144be3646617ee1d74c0bcd3ef2d3b6ee1c00f957aa6dd189019c589493601",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_snowy_igloo.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_swamp.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_swamp.json",
+      "source_sha256": "a99d3206191898dc55b0eaa86d1693930ac644fba892dd5d7e7e07a82eff82ec",
+      "result_json_sha256": "c98224b7bc568bd078ce0009905518da360d46ec830add45d168effba61823c1",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_swamp.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_swamp_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_swamp_fortified.json",
+      "source_sha256": "7d822ebe0b7f8e2c6a202439f42879fcb16211ade2854f2edd2591cd31b410e9",
+      "result_json_sha256": "446609a2ad1d91f3feac89b8d1c3f86b535da613d748212c8aa209ad6797f677",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_swamp_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_taiga.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_taiga.json",
+      "source_sha256": "41eba732c9d2b62d37cbd3da412917ac29f7106ff84c5b1681c7fcc00c9f5762",
+      "result_json_sha256": "609d5656193fc33b19e282d7014fd341ec9fa5a1d1bd84469b21bf28b2b692de",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_taiga.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_taiga_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_taiga_fortified.json",
+      "source_sha256": "06982286fb76a8afba05d1ffa576b5f0f44018df114761d39f41799fc3ca63eb",
+      "result_json_sha256": "2c79bc92a9399bc6956758fe78de5b86e68a7315b0dffeaf034c6c77eb79c378",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/large/village_taiga_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/large/village_underground.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/large/village_underground.json",
+      "source_sha256": "75ed708eb346598582c6193b01f3cc3fb98c6402fb5101c54c1ea071fc8dc13d",
+      "result_json_sha256": "50408263520a59803d16fd2889bbe12a335a1a1d96ebdcff78c0c94d22452c61",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/large/village_underground.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_beach.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_beach.json",
+      "source_sha256": "647d1ff9c11462a9ec62be49987f7b588fad17b3adfb1367a2896d1e2e2f180c",
+      "result_json_sha256": "9e8e634d4057b75617db053b0a08f709e0bdae796499cd166d8833f249cf4cb1",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/medium/village_beach.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_christmas.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_christmas.json",
+      "source_sha256": "f88920b43f648dcbd67a19e89daf92a4254d858712fba9612b73c93d7c400fa0",
+      "result_json_sha256": "0f730d99a65cd83a323d14c822a7985751332224cd2a29ab1c41a3b9f51eec2f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/medium/village_christmas.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_dark_forest.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_dark_forest.json",
+      "source_sha256": "bae222dde5c299f8294ea1a00d5fadffb857f33e4cd3edb04f3025a8970d913b",
+      "result_json_sha256": "415b28eeb865c924346736939e24d8dee5ea0bcb7a58f0adf714b340db2ffeeb",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_dark_forest.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_desert.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_desert.json",
+      "source_sha256": "17f34914dbd5faed345790fa84122b950640483fcf069f9614fca760000c73c1",
+      "result_json_sha256": "5fbf5ccb8ee1995d696fe480825620d226fb5dc98a9040dd5b840c9b4229745c",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_desert.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_desert_oasis.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_desert_oasis.json",
+      "source_sha256": "5658ecb5df5679eb774595a40b714037b3a45c3f47bd05299e213a554b5b0484",
+      "result_json_sha256": "43f0c0ac395c1c7a9b1ca211995561fae88ef24c54924e7a7123ac6287123482",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_desert_oasis.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_jungle.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_jungle.json",
+      "source_sha256": "acd9ace8a6db16f51baaa8140945b48e1537ed309578bf4bcfb6835f3bd12a21",
+      "result_json_sha256": "d85cb51ad57820c21d698d320c659ff49cb7f7a8f13e09de2cd17b4ef2b416cb",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_jungle.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_jungle_tree.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_jungle_tree.json",
+      "source_sha256": "3b0fde8b889a2fb160afbcfc1d32a631e6f976d9911e6c955544612df21e4d9b",
+      "result_json_sha256": "2d37efbbf99cb04f4bccca86f7c33ba975fdb6b8f871abf85a292229b7a1dde2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_jungle_tree.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_mesa.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_mesa.json",
+      "source_sha256": "8ae9432cfb1ff6389774a7f8601b11963ce86f8ef70e03a3c4cd2c5614900dac",
+      "result_json_sha256": "86495ffde0fc429886e6967069d3b7d03859effde2198d4d059f21171474c371",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_mesa.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_mesa_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_mesa_fortified.json",
+      "source_sha256": "8a0ac4b0900d4fce4ec6ef6cd9187715ad8a82ae7d41b0cd086b32d04aa1f35f",
+      "result_json_sha256": "7de1e0aad66855b9960c107767aa362b9a67611ed60f4409e8d500051c262134",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_mesa_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_mountain.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_mountain.json",
+      "source_sha256": "27fc585c01488b99c1e80def080faca14761437cbd6b13cb5a60d3aca6d29413",
+      "result_json_sha256": "aa5303a082631a64a900b2db9c41cb24bbbc701e8586e2385af447e65a397a89",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_mountain.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_mountain_alpine.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_mountain_alpine.json",
+      "source_sha256": "e5591f8b2318fdd80def410951eaf26ed568029158a4d859b40c701e59ed5cbe",
+      "result_json_sha256": "284ae2f738b8b0437a73f39418e95ee382adba98817d8df8887beff4a408e4fc",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_mountain_alpine.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_mushroom.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_mushroom.json",
+      "source_sha256": "ad5fc7632514cc45d0fec827d1acd72370ce8e35bafbddc35ed33cf66b988f6f",
+      "result_json_sha256": "7d08c51c074a623dd5bc1527a55c69855f0f04edf2051ca575717bc368aaa545",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_mushroom.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_plains.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_plains.json",
+      "source_sha256": "5b0443ee335dcf3a8f0209af434a560325189a743630cff4ee730a2c000e126d",
+      "result_json_sha256": "167de895b1679daf9045b117df6fac165271a4037688afb48c6ef389d8f8ce87",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_plains.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_plains_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_plains_fortified.json",
+      "source_sha256": "4b1630e39a7e0ff083b551893644311480c18aeb604a4e294f65ecbfedd2380c",
+      "result_json_sha256": "e3f335a99eb4fda9e373d1396377a06c68dff5a552fdb9664bebc98edee04ffe",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_plains_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_savanna.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_savanna.json",
+      "source_sha256": "e7b97517d1e6ab9f0e6ef95497bb39c021dba614c80a0a80023a595549e79149",
+      "result_json_sha256": "39019a5000ad91e0cd985ac9df885b2ecbe615db1364e8dce4fe0245d7954f59",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_savanna.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_savanna_na.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_savanna_na.json",
+      "source_sha256": "4e8d8f3aec07d45ada9ecf26d6ca6fa6de82b74120f31ea391144e24a5edb6d3",
+      "result_json_sha256": "1e2af08762db4990d771f6dc060578b1a9b6b5569c7ae2aa020c929c487cd507",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_savanna_na.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_snowy_igloo.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_snowy_igloo.json",
+      "source_sha256": "5bd00ca314c19b0aa84e987896ea09e8863e7562f4a6c927d15006dd20550ab4",
+      "result_json_sha256": "92c1014907b7f4a58ce8be1b344841f309a90ef454f3ada638deb5d8203c3814",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_snowy_igloo.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_swamp.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_swamp.json",
+      "source_sha256": "bca606925e0c8858422db12d78f8dfec3a709ae55736e016f1cf4686575ba513",
+      "result_json_sha256": "e4ea43e3385211f2f5bafaf9cf65595426b3192ef54664cd8123278d281f0377",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_swamp.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_swamp_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_swamp_fortified.json",
+      "source_sha256": "4dd4073655b9933d3cc808a589c5f0704b51564ee3d4333199a47c6240e44140",
+      "result_json_sha256": "bcea75a762cb3b287651c2c1852f21f82bd6faf681f0d8c73d7f9fffd548b547",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_swamp_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_taiga.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_taiga.json",
+      "source_sha256": "83273f2ffa12102d2f8821c6121004fd1d369b0f3ac14cb301c44cf028a4d2b6",
+      "result_json_sha256": "c68a1d4f5f9815e03840a393aec73d6f9f6196ced3e2c7539c7c6d7f3aa2a2db",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_taiga.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_taiga_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_taiga_fortified.json",
+      "source_sha256": "7190f21318c3555e07160bad71318c6f3b938c33c078d9ecde4c0f73714d5366",
+      "result_json_sha256": "f21d32a7d52bc4b06ec91494e0fa0ca2b97c3e88202e45d5fa626c8ae6522085",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/medium/village_taiga_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/medium/village_underground.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/medium/village_underground.json",
+      "source_sha256": "66b91dece4a0a33de57f301950adb6370d10260cb47fb7861e37c9b92c5f88a7",
+      "result_json_sha256": "6a999a09444b93e83bafa6f14fb47255c120faf26eb3fe8a241eea055a5c9e85",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/medium/village_underground.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_badlands.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_badlands.json",
+      "source_sha256": "51d139f790de96d6ba9bea2ab20b7bfff7be4c73d5f7380264eace782f248aad",
+      "result_json_sha256": "b8b41bf06e29eedc8e223386353589461cab2cf585e374e77713aeda0a8461e6",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_badlands.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_beach.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_beach.json",
+      "source_sha256": "141797de23fc7c126883412abe0b17dce03eac8f2f75b4f551b1d9746bb80043",
+      "result_json_sha256": "5aa898a9105cb68ede4804c57e3729855e20a1084d7be23577c4ea77b2be9f19",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_beach.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_dark_forest.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_dark_forest.json",
+      "source_sha256": "634bd34758647afc26304409ba67a231e2fc562ee0d0ea0bb3900da35ec55c85",
+      "result_json_sha256": "f2188af1dcaf2f53d2ca0192daef8d6faa2e5dbd3f2bc409a356eb71038ad05e",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_dark_forest.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_desert.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_desert.json",
+      "source_sha256": "512de78d0be66f87962dfe0d2d0d017a04365db47c7554096ae642c37f894b90",
+      "result_json_sha256": "f33ec65bdf662c4d5e1b070a9cf1bd98edad934cbfbca31f8bd02d5596ac1702",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_desert.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_jungle.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_jungle.json",
+      "source_sha256": "c3440e79385ea070a57989521284e0a9435439764b27018974020e680ca29d3d",
+      "result_json_sha256": "ba765146b542115229696e9a2531812945d5d6e96daf7256939f13ce1982182e",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_jungle.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_mesa.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_mesa.json",
+      "source_sha256": "51d139f790de96d6ba9bea2ab20b7bfff7be4c73d5f7380264eace782f248aad",
+      "result_json_sha256": "b8b41bf06e29eedc8e223386353589461cab2cf585e374e77713aeda0a8461e6",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_mesa.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_mountain.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_mountain.json",
+      "source_sha256": "1658942996b4c03ed103557d626c73425b8fa33ac02c4c9325fd63ee3714549a",
+      "result_json_sha256": "bfc663a6471680880d1b1d4d8ce3a89e0b6c545009a9505d79a2dfd4ec58404f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_mountain.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_plains.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_plains.json",
+      "source_sha256": "e5c3771243cc78671b87f28f625db3587af5015e67b4e59b83a9f95acde20db3",
+      "result_json_sha256": "12de5f604543fdda5fb8e8f694e879a963ecb8cee160ae3d0f3609e16313339e",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_plains.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_savanna.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_savanna.json",
+      "source_sha256": "50040950b02698d8a0bbbec5a8f18101c77086d30df6bea237b7ea88be126a97",
+      "result_json_sha256": "d6403d85fc1d835b89a94e932c1144da0cc6514009772e62c50b879d6b55a042",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_savanna.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_snowy.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_snowy.json",
+      "source_sha256": "be71892f0c0590342ff29389daab2cf2276f8ada46df8ee0c8fbd6ea2aa0f8e1",
+      "result_json_sha256": "f53508b45b56c67fe12905a5d36ca16c7239dc8bfab0184a73910a51c984a272",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_snowy.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_swamp.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_swamp.json",
+      "source_sha256": "19386859eb1384b60d649ab83b2b3a33035c87144f18f4e4e6745876e5ed5fa8",
+      "result_json_sha256": "7d947926f2af608278da8c29658de90932cffd4b5bbef08ccc4b9cef623421c2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_swamp.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/pillager_outpost_taiga.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/pillager_outpost_taiga.json",
+      "source_sha256": "3188a9b1387235dbe651631b1dbf88eea4d82c2687c1fbfff40600616f43246e",
+      "result_json_sha256": "5d63a9c8829ddd9c04a4aeb292fc91970ef254ecb7029d09cac238c473d44596",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/pillager_outpost_taiga.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_beach.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_beach.json",
+      "source_sha256": "36b63fbe58dc9d08afac3bc44ac3c023148bcdbf2827a1608d2b1bb3f2168d64",
+      "result_json_sha256": "d7ac4af9c326e755adbde1e3d61029791e8ab75c16355eb0c305815081ea4396",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/small/village_beach.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_christmas.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_christmas.json",
+      "source_sha256": "9bdcf68b9da343fb096349799d3ac688508a409030bbf3b0b428b6fe7bf1fe16",
+      "result_json_sha256": "776da671c470c96f95447c15a02e5039d08d4eb6a6f74e2f066f063011938966",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/small/village_christmas.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_dark_forest.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_dark_forest.json",
+      "source_sha256": "d4480aa1acb0068687fca400f1ebda993b137479cd07bd57f137325fc1fed904",
+      "result_json_sha256": "4cee80210a05d4443bd486f095514e6700ad6605bb10f274164660c93d9694b0",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_dark_forest.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_desert.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_desert.json",
+      "source_sha256": "bb40279558214ab9e085859b7b351bd269b245c2a93382f6e3b51d0b8b468d25",
+      "result_json_sha256": "607a9f0eb8a5a0c63e0a03f560b6e45cb5036e6c8b673503bd3923cf8c5548d6",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_desert.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_desert_oasis.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_desert_oasis.json",
+      "source_sha256": "b5182012f0f2d722b7b0a9c284f6653796e24aeb7c0c26eb3a07ae373f7d0858",
+      "result_json_sha256": "26471d7b7b49f5113d0c484e351f5bf3037959aa9abb4df64945ad632c1c54e0",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_desert_oasis.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_jungle.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_jungle.json",
+      "source_sha256": "74a98b94d4d178a6e6358016ceac179b44f7e3c8aea294a854b8918e9561fb6e",
+      "result_json_sha256": "c75fea4d62fde75bd03f4a0c32c958273828d555d72719a219391f16df76653d",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_jungle.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_jungle_tree.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_jungle_tree.json",
+      "source_sha256": "5c9cd072fef4a295aca802cd91cbd63d4512edc0425c525cc69cec5bfe57ace3",
+      "result_json_sha256": "b68d52aba5237d60aa0c83316d9ec72da215043d75f4510ee484305ec2d91e3a",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_jungle_tree.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_mesa.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_mesa.json",
+      "source_sha256": "57acf3ea3336e1cca1cb51ffacc86af7c6df1439534e7ff2fe104a6e14ab6467",
+      "result_json_sha256": "b3946b1cf3e1535172a18121f9e60bcd4874e0b4c59b61234f76c11418446f5e",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_mesa.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_mesa_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_mesa_fortified.json",
+      "source_sha256": "164352b950eae2a3282f6645d86304ef4a94181d1b0adc9969e7892d56db4587",
+      "result_json_sha256": "7cb225b8a20be762ab67a704cb7e096c7ec96fe8e0ccbf013a4280ae12206a58",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_mesa_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_mountain.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_mountain.json",
+      "source_sha256": "71aa562b2b28b1ce80c2c5fc70d109c992d0efb797d80a063e185f3df0063231",
+      "result_json_sha256": "d3800daa2635c368d711d9335e816f6ee46e206f62afb437279c658d3d84c418",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_mountain.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_mountain_alpine.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_mountain_alpine.json",
+      "source_sha256": "06b9791176eb64869035340004641a08cec1ca9f5326d391734f272a4ba330e4",
+      "result_json_sha256": "24c324d005ccc74530c30a30af093bf8bbb36ae3ccd609dab16b8296d730fdcc",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_mountain_alpine.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_mushroom.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_mushroom.json",
+      "source_sha256": "5f9a4eac67c75bdb7b257a13268822084df5a069ae77387c82207fd665e2ca2a",
+      "result_json_sha256": "5f7207718b2cf8ac07ea1bc2b27bf771efa5d776453327b3eabb545d151d3f04",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_mushroom.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_plains.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_plains.json",
+      "source_sha256": "d6ac2669cbadcf461ba6dd5de73bcb0ada371cc918ea5832d41c0253d478e168",
+      "result_json_sha256": "785c9735088fd5dfc038de3fcbb4ac75cd074d5017d319f3ed2d9b27c0238c79",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_plains.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_plains_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_plains_fortified.json",
+      "source_sha256": "7b0d0017916bc7176cffcecafa47244aa46446c60bc4f461d0822728bc3a018d",
+      "result_json_sha256": "575ef9080f24d941a39c3c8f2de8ee9279e799fa89a6237ecbe7b11d6403bc3d",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_plains_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_savanna.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_savanna.json",
+      "source_sha256": "44cf5c27bf7adf0bae5a5dba35189e189665bfc337fdced3cff2e9d02734577b",
+      "result_json_sha256": "cba0cd6e568fecde38d1345482c7085b71adf8a88fcdce4d0cc23dea8c2efeeb",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_savanna.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_savanna_na.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_savanna_na.json",
+      "source_sha256": "a763258e16be076570be6dcb2744f623732ec42c41492a713543d10bde297a7e",
+      "result_json_sha256": "560417ecb8fa3ae5e31e3d8cdddf99d87e367fa629fb759e8b0ab16a75fc546a",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_savanna_na.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_snowy_igloo.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_snowy_igloo.json",
+      "source_sha256": "c07d3e1b276770a978185e43d925d4da6991a8e6e86f4a214bf5bb7bad767d39",
+      "result_json_sha256": "96b2e3077d9e6042e3004d47bbbd6becf3759f2ff910f20d734b87311973f741",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_snowy_igloo.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_swamp.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_swamp.json",
+      "source_sha256": "37bc57b922cc6169ee43e6e38ff8d07fa870a77836e72b8fc2a6bdf54fd381bd",
+      "result_json_sha256": "8f29b19a4bd8f2462dce9cc3d04acdf358bce26a7bfd9dae6e2600c02acc433e",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_swamp.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_swamp_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_swamp_fortified.json",
+      "source_sha256": "72ebd973ea245b984d2bc466d91ec3dd7368b2855dc4955914142bbdbf96a66a",
+      "result_json_sha256": "443cabd39c9ab1966589ed2923355db9165208cfc108ab9706d656a45e8aa76c",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_swamp_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_taiga.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_taiga.json",
+      "source_sha256": "7ae48a419cc9cab3952c7297064da3775b8f62a6286b48db27c7e977a21a9906",
+      "result_json_sha256": "75000b91733b8cae94d40e7625260b670781f8b6188f664933131836c9be1dc4",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_taiga.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_taiga_fortified.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_taiga_fortified.json",
+      "source_sha256": "696662a63e35fb9e25f5b0277085074a77c247d55dfde129ab4b4b7ecb125a42",
+      "result_json_sha256": "de718a5a355cf22157da08fc12c5647982d1883a256a85a59e390e6aa5c8e5db",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/ctov/worldgen/structure/small/village_taiga_fortified.json"
+    },
+    {
+      "id": "ctov:worldgen/structure/small/village_underground.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/structure/small/village_underground.json",
+      "source_sha256": "66b91dece4a0a33de57f301950adb6370d10260cb47fb7861e37c9b92c5f88a7",
+      "result_json_sha256": "6a999a09444b93e83bafa6f14fb47255c120faf26eb3fe8a241eea055a5c9e85",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/structure/small/village_underground.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/badlands/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/badlands/features.json",
+      "source_sha256": "febe87407171afce8835b1d1b5a06daa928ad3b98321713a7c8665a50e7e016a",
+      "result_json_sha256": "1e4f0cbaee16faa9c86d6f07664135f6f1a85a02aa2838cb19d4d4efcb8431cf",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/badlands/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/beach/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/beach/features.json",
+      "source_sha256": "847d158f386afcc4987f1f77646959edc304a832ae409de3ac1ed53684b3cbfc",
+      "result_json_sha256": "340ddf1a6d2c9f680894fe79d8ac68598bd732a9cf51500d57303bd7757686bf",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/beach/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/dark_forest/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/dark_forest/features.json",
+      "source_sha256": "d32316a5cb7cace71e0b2cd180f3c33d69becb48171f93c71e1de7449c54fd28",
+      "result_json_sha256": "fb617befab9011209947d5d533954df02c3c4fcf2e3c1cf9cd96c4ae0f0404a1",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/dark_forest/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/desert/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/desert/features.json",
+      "source_sha256": "04502f8deadf6b6568886ec2439c0562fdae36d5e60b23768d0889f4b8516fbb",
+      "result_json_sha256": "e39f59529df0ec0a276306cafba9cd1b9c13c8ef0f431500d79b55e947456b90",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/desert/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/jungle/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/jungle/features.json",
+      "source_sha256": "b28a12c928714fe2c58c07ff9a19b55916a0b86c6e6d0502226e160df14ba01d",
+      "result_json_sha256": "a465602cd55c4a70a3d92e50bb023373555655669ab7c63bfc01e233db6b7cf5",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/jungle/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/mountain/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/mountain/features.json",
+      "source_sha256": "96deee64b187d7459d089fadbae65bc397874076fe76896664a12361990bf544",
+      "result_json_sha256": "841df02a0a2cd743a6118ce9dda359231efad61e6be1917e52709d892c99bc1b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/mountain/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/mountain/towers.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/mountain/tower.json",
+      "source_sha256": "b459b1b6f1dd1f9913d4c7796521f1652c6b5146c0b7a7171678d1d55173ce88",
+      "result_json_sha256": "a76dd43e395693bfd09194a1cb68c143cfe5a1219d1741bd4943648b624e72e0",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/mountain/towers.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/plains/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/plains/features.json",
+      "source_sha256": "fdc9aecef800a608ad4b2d34f7187953e790841ac331e18e34863fc2b1848997",
+      "result_json_sha256": "efd39895160dfa83b5f113fb43d3be620c8067f28fb35edd8f5d49410415e148",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/plains/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/savanna/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/savanna/features.json",
+      "source_sha256": "eae21c583109cb3127323822edffd467428a230e053976452a9ff938f0daab8c",
+      "result_json_sha256": "22e6b1887ca80491c4918de68dfd606db5e48cacf33c424d38dc46e88de4b672",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/savanna/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/snowy/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/snowy/features.json",
+      "source_sha256": "67cecb4f0aeb5178a5c692743ad6ddcb3741fa7517349141f37dda1dde1600f8",
+      "result_json_sha256": "ac7ce3c9284ef90f915527b7568c4a4b3c49f072572fc1f86d7bc826f64c8d85",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/snowy/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/swamp/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/swamp/features.json",
+      "source_sha256": "5528c583b4e404ed44d85b0ebcaaa2b18a21967fe894ac4f2488e9608f7365c1",
+      "result_json_sha256": "ba06daeb2475d802debded906a7daf46d9d2c946e1540bcb008bacd9484e36c6",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/swamp/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/pillager_outpost/taiga/features.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/pillager_outpost/taiga/features.json",
+      "source_sha256": "598cdbdd073b96b6a682e8da9f1672f93f53c8906de1d5e7b70e8221f54efa7f",
+      "result_json_sha256": "f6fa2ce7accedb2248189cec9d90f49ebd9efd74f8f4b4d2422854ed68495262",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/pillager_outpost/taiga/features.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/village/common/bounty_board.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/village/common/bounty_board.json",
+      "source_sha256": "0c5e172bcd6300647154a5a38d031ef95feef67ecdc2286ed3237ff56c42e8c6",
+      "result_json_sha256": "d40e3e73536eeb3f2da1585b4e7355d3277efd69587d5f22c76722515b29f44f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/village/common/bounty_board.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/village/common/waystone/normal.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/village/common/waystone/normal.json",
+      "source_sha256": "2e5413863067f08fcee35669b3cb2c2da865bc6f2ed68790447506c4846d6a56",
+      "result_json_sha256": "ca260e72a236c787472d05367dc394d96462100d536f70a5dd04f8f56d6e987f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/village/common/waystone/normal.json"
+    },
+    {
+      "id": "ctov:worldgen/template_pool/village/halloween/terminator.json",
+      "provider": "fgmhI8kH",
+      "version": "ztzRUnQ7",
+      "source": "data/ctov/worldgen/template_pool/village/halloween/terminator.json",
+      "source_sha256": "698ef042ea3f67afce6785e280d684430e4b340e9a30a96411430f28763af853",
+      "result_json_sha256": "18fcacb8b856c7f5a95a82abbaaf70822e3f24fe34e2c979e2f3ae8b978211cd",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/village/halloween/terminator.json"
+    },
+    {
+      "id": "galosphere:worldgen/placed_feature/ore_silver_small.json",
+      "provider": "Kn7xyQ1v",
+      "version": "Y3deS8Po",
+      "source": "data/galosphere/worldgen/placed_feature/ore_silver_small.json",
+      "source_sha256": "bf0643127da36542a503371ce2f58a6f3c6f6ad921cc32d918901c953c6a4273",
+      "result_json_sha256": "68af136dc9419de23b3db06021c9d63d0f179c25613504d90286f6f63fe04446",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/galosphere/worldgen/placed_feature/ore_silver_small.json"
+    },
+    {
+      "id": "galosphere:worldgen/structure/forgotten_ruins.json",
+      "provider": "Kn7xyQ1v",
+      "version": "Y3deS8Po",
+      "source": "data/galosphere/worldgen/structure/forgotten_ruins.json",
+      "source_sha256": "257b71a9f90e6dee6acffd8cfed1ee52a81a9cbe60bfeb89b68e3facc12efbfe",
+      "result_json_sha256": "a10614eee5a4f6ba41f6f8ae086e0acdf8cd4f7a2053158d02a7bbb7e5db7716",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/galosphere/worldgen/structure/forgotten_ruins.json"
+    },
+    {
+      "id": "galosphere:worldgen/structure/pink_salt_shrine.json",
+      "provider": "Kn7xyQ1v",
+      "version": "Y3deS8Po",
+      "source": "data/galosphere/worldgen/structure/pink_salt_shrine.json",
+      "source_sha256": "853236350f2a26de2debd7ed949247602e990cbcd03167f676a807ac895b0dd7",
+      "result_json_sha256": "0e2b6919c59205d5ef52d2c30e1808d6389d51e28522c478964caf09adf63fd5",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/galosphere/worldgen/structure/pink_salt_shrine.json"
+    },
+    {
+      "id": "galosphere:worldgen/template_pool/pink_salt_shrine/coffin_decorations.json",
+      "provider": "Kn7xyQ1v",
+      "version": "Y3deS8Po",
+      "source": "data/galosphere/worldgen/template_pool/pink_salt_shrine/coffin_decorations.json",
+      "source_sha256": "5a2fb4d369a6f06a6ecd7bdbdb2f54b8a69b110f92e6b8fd081f4f00c79d4bbe",
+      "result_json_sha256": "354e2131e71e4e27526c55f761a7b0a476f4ae9b222f7363fb419d2baaf225de",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/galosphere/worldgen/template_pool/pink_salt_shrine/coffin_decorations.json"
+    },
+    {
+      "id": "minecraft:advancement/give_quest_trader_trade.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/advancement/give_quest_trader_trade.json",
+      "source_sha256": "5c973783da7f4a49584e40dfc2a13e0a89066cae7dc135f80d064f78dbeee003",
+      "result_json_sha256": "9e7d4e27bf69f237a92cd211d7348b3ab02139925a7456f114490ad9904de67f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/advancement/give_quest_trader_trade.json"
+    },
+    {
+      "id": "minecraft:advancement/wander_add_map.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/advancement/wander_add_map.json",
+      "source_sha256": "6d1cd27691d389381b3b108639729c7549741034eb1523f163e119d3eeeb1e4a",
+      "result_json_sha256": "2bb5a923868fe73a5a1220a408f99292c84f79b2154fdb3f0922e229f93a9ba1",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/advancement/wander_add_map.json"
+    },
+    {
+      "id": "minecraft:worldgen/structure/village_taiga.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/structure/village_taiga.json",
+      "source_sha256": "40fd3a9bb63784e724399411f6de1e71b88a2e779b7c3f031e2cdb8a1201574e",
+      "result_json_sha256": "9599fb4420f98e0e181fc9524a4bbb5a76f21614912813673746a31fafdeaebc",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/village_taiga.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/illager_mansion/illager_mansion_house_part.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_house_part.json",
+      "source_sha256": "cb9c829d7998602fda8397324c526c026286f082d66b6d71407e7da89ea29e61",
+      "result_json_sha256": "dbe5f58e21ef9df8fe6260e763bf40784eceea3705b736f07f98f864c6845d47",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_house_part.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/illager_mansion/illager_mansion_house_part_straight.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_house_part_straight.json",
+      "source_sha256": "ff8105a62fb157d1e3e138e58185bd3fc81ad157a23f35b2435c8732f4fed04b",
+      "result_json_sha256": "df435f877424b5f3384763831d56e3e1d3fa7e7f343afaad5901165d6acaaf22",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_house_part_straight.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/illager_mansion/illager_mansion_room.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_room.json",
+      "source_sha256": "a8120a3019903a1608c38f6c4fae1e0be74a985d191a90ebc4695d082e09246b",
+      "result_json_sha256": "ef51ba59416f9651ead8ae5ca8474212d179f439fc23d161d2d2be128fb7385f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_room.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/illager_mansion/illager_mansion_room_basement.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_room_basement.json",
+      "source_sha256": "0778dac34a11a4fbe1309590ba1448c959fb47042effb8b3ce4ab35444567929",
+      "result_json_sha256": "5d6e917889ecfb5a9332b92473b50cf45a60754bdff98e1468bd82652a533b35",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_room_basement.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/jungle_village/jungle_path.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/jungle_village/jungle_path.json",
+      "source_sha256": "177300968d6c986325e820f9e14a263c6108def6419646c86ac3e2366e90ac0c",
+      "result_json_sha256": "423b57cebabc7b1394a3f251cf9227f82805125265b9863521dcd5f1f9453be9",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/jungle_village/jungle_path.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/nether_fortress/nether_fortress_bridge.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/nether_fortress/nether_fortress_bridge.json",
+      "source_sha256": "22e1ed5a41a7e6a1164c9b3a0143828bd39f9e7e1aaa2fcdc41c743470b52a0b",
+      "result_json_sha256": "1610e0b3bd20125ac81b03adf35bf55d1db884749e82846dd3d1a4b3e2a6a4d0",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/nether_fortress/nether_fortress_bridge.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/nether_fortress/nether_fortress_inside.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/nether_fortress/nether_fortress_inside.json",
+      "source_sha256": "abc09e097bde26656497d75a8dd9fa9dd1ae2f4e3d62a19a03dc827074449a1b",
+      "result_json_sha256": "47b6b8679bd1bb71d7b64b660f0166a4a873dc109eef8f27275c0fee0ea2044a",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/nether_fortress/nether_fortress_inside.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/swamp_village/swamp_house.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/swamp_village/swamp_house.json",
+      "source_sha256": "17b990e344f379b6d4e9cd217f59202643d17e1c9f4b715f41395e63e276e171",
+      "result_json_sha256": "2f269a39d4d35e1ca6164a258f5a04c2e658b4d5cb0678beafd1adb44592e097",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/swamp_village/swamp_house.json"
+    },
+    {
+      "id": "minecraft:worldgen/template_pool/swamp_village/swamp_path.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/minecraft/worldgen/template_pool/swamp_village/swamp_path.json",
+      "source_sha256": "56de90ff3151ae121476d4a777b2dcf709fe0226063c02c98fb6392086ff7365",
+      "result_json_sha256": "94662c816bbe3f4618b4d368418edc5bb7fae0c3f269f6683f5a0f50d6133d69",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/swamp_village/swamp_path.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/badlands_miner_outpost.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/badlands_miner_outpost.json",
+      "source_sha256": "7b5a3efb844f470189b2a20bbe9c36751f6af1e1f8a6ea430851f7b533aa5a0c",
+      "result_json_sha256": "36e021a5cee505711612d2f71c0b63486add86c147c59c7fadeb6d21b6774b80",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/badlands_miner_outpost.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/bunker.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/bunker.json",
+      "source_sha256": "bf67b87f8cbe64f80fbe8e4840ccd57324a76462433ca06c49e3fcafdbde8d5f",
+      "result_json_sha256": "b462a7661d879d157b098ca37ec3c0afd494a8abe5bcd770cd7dc807c17f4dd3",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/bunker.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/conduit_ruin.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/conduit_ruin.json",
+      "source_sha256": "e45511e5a189e04d481c670aa88d58ac5313a0b36e39adf49b066e99dd03da7b",
+      "result_json_sha256": "644432938a88959197fbb8d8369d4f9b3bb4d3f8cf0ad5af0e469aa83e59d324",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/conduit_ruin.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/creeping_crypt.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/creeping_crypt.json",
+      "source_sha256": "76518d150db72091734bcf5ed225cf089fd47417813353a20e95c696551bc3d6",
+      "result_json_sha256": "2bc6efd38f37151ee20d9bb00b5d36e1a0c72ce50f7a21cedc906e0bc8e3a1ab",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/creeping_crypt.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/deepslate_camp.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/deepslate_camp.json",
+      "source_sha256": "410ff77ac5d50d4bccbffeab7b75ef0027b1c5abdce6bd7e5211f440d63f3214",
+      "result_json_sha256": "add49617e4464db1564290ca5d453298cedea93110ea7419f91ab4648e004b8f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/deepslate_camp.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/desert_ruins.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/desert_ruins.json",
+      "source_sha256": "5a49fbd55d9a9e238a1daca6511a5984909080af7b5a9ad2519114afc330c7c3",
+      "result_json_sha256": "5c518ad8772d0666cf8f9cbc79ea134741c19ff8e9f37ba09efad857f2a1cc62",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/desert_ruins.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_birch.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_birch.json",
+      "source_sha256": "2913e388a01e7640e62a2178784a042d45f1d3653dc38fb4da700fed3449d912",
+      "result_json_sha256": "6df02d2654ed15b423acfccb9b451ba88b146d856b211f0cf75ea34a614ca9d7",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_birch.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_cherry.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_cherry.json",
+      "source_sha256": "40d53bb8a325ad798378462f78c5fccaaf2be281498e2818799ec0391a56f0c4",
+      "result_json_sha256": "00018955fcc9ceb3122ce5dcb164fb4c213222441da3c4e9c6afda61556e11a2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_cherry.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_dark_oak.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_dark_oak.json",
+      "source_sha256": "64adf45f5ca88aa4a819e93d3eb1c910b364e7623e75b79da8a91a07280202b7",
+      "result_json_sha256": "074c1df33d6fef0ace03c8cc40f3420dff1e4ce0b11e3bd817675a89f2b02847",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_dark_oak.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_forest.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_forest.json",
+      "source_sha256": "d227b1b8836fc2c79151213a3a78e970cfdbe56081ec960fd8f27e14b1f56454",
+      "result_json_sha256": "8d531373193a9d839b5abcaa29170445473135f4180e82d1865c341fc8ef41bc",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_forest.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_jungle.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_jungle.json",
+      "source_sha256": "13ec52ac927e27e9d9bfd796d21bb7c8c7073d263e392ad1e1c9a921ce2d427b",
+      "result_json_sha256": "ceb8f432df4f9be6f55e4675d460903a3ec7e2e7c4a60273385a5d1734df7fc9",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_jungle.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_mangrove.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_mangrove.json",
+      "source_sha256": "75ea860e9f703491859df7240c289c3aaaf50b41f9211da1b78d0bd4a81670a0",
+      "result_json_sha256": "178961a5014805a0842bbbffa019fabfa1a02229b0a9e150aa547b8c790981fd",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_mangrove.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_savanna.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_savanna.json",
+      "source_sha256": "4b53828ad1aec87863eba8e754a5654cf314173aaa1538d35a66d8d338a49148",
+      "result_json_sha256": "3e850f333a51428bdfad023600037e8dd1a4b05814040aef9939ec22ddab6f4a",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_savanna.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_swamp.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_swamp.json",
+      "source_sha256": "0b39d383c67f0803482c3cec782d6eb0f7e3bf4a281a8675a66b613369f2df66",
+      "result_json_sha256": "262805f1ee993ee46773ffb11c57ec694545ca5d44409259e78f8070a75a5ce9",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_swamp.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/firewatch_tower_taiga.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/firewatch_tower_taiga.json",
+      "source_sha256": "b7efdc1b063e1e550c774723997b029f93b4ecf35087c9774c3d7b784912bce5",
+      "result_json_sha256": "394bc7e818a1ebc2d7716779e20807607bf56bdcea8f4ac4dd6f784f6dde103d",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/firewatch_tower_taiga.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/illager_camp.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/illager_camp.json",
+      "source_sha256": "d3faba5ed2fef72973a80e3066c502bd8ed5a16c8d860fed7b3ddc27ab9b419d",
+      "result_json_sha256": "ce0bc282a8142414fb7457ec61e97067203b41f317e48b3bae8a2ddf7e387234",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/illager_camp.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/illager_hideout.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/illager_hideout.json",
+      "source_sha256": "2da70bd408c2a8bfa5cc89889a9ef96fb7a89e5cba1a2106a7b5271b1d54da17",
+      "result_json_sha256": "adc7a3afc56bf45d3f37c9d89a0fdf479fed59b991e36ad0f2f7d6329b4b6364",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/illager_hideout.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/illager_manor.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/illager_manor.json",
+      "source_sha256": "efd769614a2c73bdee48d979e50c4bcd782c06795f782160b58a4a5ab0320132",
+      "result_json_sha256": "3e1b3bce37556a1954783b45fe0d37037cd25dfecc6e80405921fb2efb05041e",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/illager_manor.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/jungle_ruins.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/jungle_ruins.json",
+      "source_sha256": "280d5890a41a61f776c11d37327bc9dc0b7dce069edc867a5c135efad689e567",
+      "result_json_sha256": "f64fce30dc2ffa6f3d3039f805bbb74bc93d6e85edc2cad021528f885c3e7c67",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/jungle_ruins.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/lone_citadel.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/lone_citadel.json",
+      "source_sha256": "e82b040f997aec4093fd6d6a0dd4faf9cba240aded1966ef3f407fc141613981",
+      "result_json_sha256": "7f5c1262a902a54957250c51054bf606e6dcb2ff73935006c0cff3334c381ea5",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/lone_citadel.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/mangrove_witch_hut.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/mangrove_witch_hut.json",
+      "source_sha256": "b56cdd8a2f9c168fa4043026d5b326dd2979c54259b6edde521a4e93c7a39962",
+      "result_json_sha256": "94d3e38fabd619b44ce8c10c0b8ad90973d69019300181a00a6c8241ec4643ac",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/mangrove_witch_hut.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_bee_keeper.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_bee_keeper.json",
+      "source_sha256": "6c31fe9791c24ae285da80a8d54ef87836661877ae9eb11a8e58bf348d29fb9d",
+      "result_json_sha256": "ee1f7977c06742ea00c9551e2e173d7e4798ec718412b9dc54c4c4775369292a",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_bee_keeper.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_big_remnant.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_big_remnant.json",
+      "source_sha256": "b565a36e324f4b76c29d178d5958114eaa3d501f06fee62ff429b756447825e0",
+      "result_json_sha256": "e7f851fc7e3a20a04b686a76fa05cffdefe61ff931ec6a6f9d2f6f807d94efa5",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_big_remnant.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_big_remnant_2.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_big_remnant_2.json",
+      "source_sha256": "6027f1052cea2984e2126825f44f4ccd138294bcaa270cd36a9e480ea0034613",
+      "result_json_sha256": "968a9f40b8e450b4c7367f7df907522be5056cb09a97d0133abd426380476bd0",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_big_remnant_2.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_big_remnant_3.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_big_remnant_3.json",
+      "source_sha256": "0372862a1ba7ea38a6e9351b1a5eef66d7b1883a2d3dabc65addc29c4e044a8f",
+      "result_json_sha256": "45a45a15f9d5209ba119ab807b4f45060abc4501d8676ec4dcc121a37e4de8e3",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_big_remnant_3.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_birch_graveyard.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_birch_graveyard.json",
+      "source_sha256": "52a953a1f4c7376da04c79f3211f10ef25bb2176281fa5015258ed47d8782c36",
+      "result_json_sha256": "a27c0c8dccb0965b8ce8b24c2f3dda1bc9436e3a041f9554d215db06b7883328",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/remnant_birch_graveyard.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_bridge_remnant.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_bridge_remnant.json",
+      "source_sha256": "691a0024194bebe93cd9f2448f8d9f2fadae351eba03d11ca67d10aa2af427e3",
+      "result_json_sha256": "3920e93136787e8964cd37625ad522836acf457ca2310ed6ec5002d115dc4ce7",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/remnant_bridge_remnant.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_bunny_base.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_bunny_base.json",
+      "source_sha256": "132a5bc356165e6aec4775fb9d78168c2e1606d8907dd6df5e86e2f170709be4",
+      "result_json_sha256": "53641dc414d74c0bc3438522bd4627b4e2ed3c64f26e448443488b9e5c62a2b2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/remnant_bunny_base.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_classic_village.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_classic_village.json",
+      "source_sha256": "1eabe67abf0cb2e74af9c0df55ede74c587416a232fa87bc3cb13017a2102b43",
+      "result_json_sha256": "65e9d8cc3ffe8a98d2fc182fb17d24985ff55e34b0605bca04712b63788bc898",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/remnant_classic_village.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_desert_remnant.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_desert_remnant.json",
+      "source_sha256": "19e059ea9713f4cc24910569ed6bc407abc46c5c2ccb2f7d19c472f3161a3279",
+      "result_json_sha256": "875d593aedcea7849106f8d21c0a52d990f94ec22bb6f883db0b4af7dee653e8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_desert_remnant.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_forest_smith.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_forest_smith.json",
+      "source_sha256": "66011bd84d207fff33083ae08c30e2c4fdcfd8fa321498bf66cc763c2a1ed6dd",
+      "result_json_sha256": "a7bb7d5903c015449427e36bc4ec234e7457a8192e25610a2dd1a3ad6311a4c0",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_forest_smith.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_frog_ranch.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_frog_ranch.json",
+      "source_sha256": "8b8f63aa29cf0f0604953b3a08f42acb46b418d829bba74ed8b48fd62bc2c34c",
+      "result_json_sha256": "7848d1e4bf3f54528d2d1e3bff8c7724179feb8202b879fdb37064948a83b537",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_frog_ranch.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_graveyard.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_graveyard.json",
+      "source_sha256": "c5a7137954788e8ec0de0706382d46c9f33c76a4f532421661bedde623af2bdd",
+      "result_json_sha256": "c52cbc08f47e3dda9f06d724c01a32b11c38ad479aa0d0aa80566cf94d4e48a5",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/remnant_graveyard.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_medium_remnant.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_medium_remnant.json",
+      "source_sha256": "4a6b9e58bbe40535cd38611f2a6df2785ecd9940c457e8dd7133e46b368534a5",
+      "result_json_sha256": "d8409c8c5cb31b8e602a5aea53f3b9556c8208abc4e11742c29f479e6b956531",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_medium_remnant.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_medium_remnant_2.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_medium_remnant_2.json",
+      "source_sha256": "6de1b20d969990334915de602f107f1f961dd3a51ef99e08c1d58ac670443d92",
+      "result_json_sha256": "4232c2f8119d78d857aafa4bab9146e10f65e5e508b4cc1a956d3a814e9d231f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_medium_remnant_2.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_miner_hut.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_miner_hut.json",
+      "source_sha256": "57de1dba5b07047d883b9c34803b4cd0a9500251a4d64df6e7e976b49313a829",
+      "result_json_sha256": "ca2bf2c1a5d737fbf3946ab4460249fddb2af61a0a6df69bb1f13acf44a11368",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_miner_hut.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_mud_brick_constructor.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_mud_brick_constructor.json",
+      "source_sha256": "f3d1f2c7925b5037c38317a1cef2da2f23e46d5500bdce3dc59bb9122ba0104a",
+      "result_json_sha256": "cff8c667dc21bba9ce4f86a3f9bf9bb49505a55dd8e7bf857fa40feaedc760af",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_mud_brick_constructor.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_ominous_shop.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_ominous_shop.json",
+      "source_sha256": "add8b76f941a2f7f3c26df4d0c3c86fac445d675601331a82541eea36608715d",
+      "result_json_sha256": "ae1775317e231b63f42e91c503201e3c97f114971a9bb67d88e89d9a955bf9f4",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/remnant_ominous_shop.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_ruin_farmer.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_ruin_farmer.json",
+      "source_sha256": "f82d279831692ff2bdf77d822d5d294653d0db82f483e6b3491569f58ad6dc67",
+      "result_json_sha256": "68f337cd8004e22c63d11aa67b3e9fac48994965d1bfcf52ebff20320bf8cbb8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_ruin_farmer.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_ruin_smith.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_ruin_smith.json",
+      "source_sha256": "6b1b4b1db25de3d1d8d51930977601c00055edd4421513e9d5ffc290b0a6a7b5",
+      "result_json_sha256": "7efbde3eb46911e7a547293dcc7ae534387511c4cf8112300b14eb03509adca9",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_ruin_smith.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_sawmill.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_sawmill.json",
+      "source_sha256": "ad251ab861c8fda3943471675fec06f3dc3e5b1301a5c75e605c6432b4df87a8",
+      "result_json_sha256": "0d86362c45b970c2f60d3356a9b991aba9f6f66ae1a363cab23f8ec4fdaf1eb2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_sawmill.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_school_remnant.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_school_remnant.json",
+      "source_sha256": "eba0a558609f8b6bbca80338f2eba9c78bd94f8dc1c58dd12185ce9cd4240f57",
+      "result_json_sha256": "f113854f0f99424e70f6c7d55a9c48e58ae4dd1b1309beb6e2df9ebeb8a22cce",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_school_remnant.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_taiga_castle.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_taiga_castle.json",
+      "source_sha256": "208282476e0b8aadea8d277e239c2bbadca73b672e8059748dd37a63bbbe2734",
+      "result_json_sha256": "1ba77304480b66332301f9cfb0b89aa6acee3c36895d3032d20c645d995f5f31",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_taiga_castle.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_woodland_hud.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_woodland_hud.json",
+      "source_sha256": "b529b2975726139516702a4cd6a55e2d82267fc7a444d23c7e8aa92e05d9c1ee",
+      "result_json_sha256": "09b45fc65ad74e561a713386ab45beb2c6f66a02f4ff4184f369cec00b1da26f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_woodland_hud.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/remnant_zombie_horse_ranch.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/remnant_zombie_horse_ranch.json",
+      "source_sha256": "4218fa53c6a6e6d47d11dfffebe92d39e7b6b7139a3a60d57e84f714a8de383a",
+      "result_json_sha256": "dd76ee84ee33d2559742ed35797740a6567d1c05d94dce58d83f6fe713c2225e",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/remnant_zombie_horse_ranch.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/ruin_town.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/ruin_town.json",
+      "source_sha256": "1dbc5a8682b34406f40c122b67da001f675cedd91a6197aef2a5eff804ed4203",
+      "result_json_sha256": "85bfc39e8097dfd80e449d5822f2e09cd1aa38a4a6580d8b06d9d522ef43c512",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/ruin_town.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/shrine_combat_tier_1.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_1.json",
+      "source_sha256": "417f55a79590c136370822a7c1ccdd4db7ef0e07d1940cb6c973467691418164",
+      "result_json_sha256": "a8ee8551ecc0081e5cd4ea367150d878d4af08b4a838aa34ff011663907c3da8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/shrine_combat_tier_1.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/shrine_combat_tier_2.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_2.json",
+      "source_sha256": "7350c3eab5ca02133024c089edc3aa5c31ac73d432c98e8c8cdb0fd2a4348396",
+      "result_json_sha256": "60cb2ab8dca5cbaaab7b19cf1c0ba828831897c562593325c4a304dc99515e22",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/shrine_combat_tier_2.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/shrine_combat_tier_3.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_3.json",
+      "source_sha256": "ea429df9c7ae8765917343638b9579017af7697e328f98fe59495a7a04a7797c",
+      "result_json_sha256": "564afe67950388c22a6204383b2e227a1fa37f96c5edb40ed2e74eed29a3de7f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/shrine_combat_tier_3.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/shrine_combat_tier_4.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_4.json",
+      "source_sha256": "0a3d40f80388404897416b34e8a9c693ff6a17453246ea5a4d1922f18a4ec149",
+      "result_json_sha256": "37fd8715909c66fb0bb654108bbac50a8a010bc3e0b9ed06c79f4e88f071c765",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/shrine_combat_tier_4.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/shrine_combat_tier_5.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_5.json",
+      "source_sha256": "e8b24c764fe869b060b4add75dfef6a588347a7727fd229426426969fa8182a9",
+      "result_json_sha256": "7f467fdb88990a742435f3e09353308fd9559ddb784b8360d513720619c393cb",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/shrine_combat_tier_5.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/shrine_tower.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/shrine_tower.json",
+      "source_sha256": "4cae5c0e54c819c77ba1de66f5a66490ed069608772351dccdc610f2d88bb68e",
+      "result_json_sha256": "590fccf5ed825c2f0fd848bc113f453d33f86d41cd31060b11d05ef1a04831c3",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/shrine_tower.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/stray_fort.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/stray_fort.json",
+      "source_sha256": "63ce323eff33abfa9bd91d8af772e4e92b93b222126444231069e55f29f6f06b",
+      "result_json_sha256": "e7fa14d4a3d4b0535f0b693f963a28cb0920331611c94c51c5436588d07e8bd1",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/stray_fort.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_acacia.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_acacia.json",
+      "source_sha256": "c52c4980b1ccebcd2a668865f6b66b7d91d069858ffaba63696fc330b6e15a64",
+      "result_json_sha256": "3acd15bdc162eb0d39b9bc955fc9f8c5f56e89e2503d2f464f382c0d86d674cb",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_acacia.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_birch.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_birch.json",
+      "source_sha256": "7ea0d1ba1c153ccde18b5bd866281c2798d5d55426e8127aa1d05102ae749f04",
+      "result_json_sha256": "60cebdaa0786bcf74377291401a0957f90e56b442357eef1407f9cb75768324f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_birch.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_cherry.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_cherry.json",
+      "source_sha256": "5d12d0d3f91cfae54cc4b85b4b5c801255dd34a5b74b87ca3134c6b8728fb08a",
+      "result_json_sha256": "a26a78c7a6016aa5f82353bdb91c510108d963bb901933df3b773bcc3d9b65ea",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_cherry.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_dark_oak.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_dark_oak.json",
+      "source_sha256": "4b787263fc6c97d0687bfc8d8f28ec059ce67db30b44df1eee12274f783f9e91",
+      "result_json_sha256": "c4ff653f1ad50f2037c61a7d64dd5afc5764083b388c00c74c1b710fd17d627c",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_dark_oak.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_desert.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_desert.json",
+      "source_sha256": "14048a966430d6f0bb864470c25eae097dc2ab0004c8b53b64ca8703fd655208",
+      "result_json_sha256": "86a790341c4072d7e22761cd7b40818d9ccb91fe2d17835a23789a29ced621d4",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_desert.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_jungle.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_jungle.json",
+      "source_sha256": "9c722515c972dbe2be11d6ea9185affe0fed47922d8fd20fd3671c5f9d930084",
+      "result_json_sha256": "04ed76c3f42305ac1bc980e7548df38cbb50783d281ba112d3cc880c1b9695fc",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_jungle.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_mangrove.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_mangrove.json",
+      "source_sha256": "74fad8c7172b72b1885cbd51f224e75a1ba1eb85b5bbef5b3537e8bd86980863",
+      "result_json_sha256": "78d5bb9043592118cf3f0e645416af69e09bcad673d8acc041f09fc89e343ab8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_mangrove.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_oak.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_oak.json",
+      "source_sha256": "e075f60f80d535f05d247f9760a7505d2d9c0d061fa655d5dfc212b00026f23e",
+      "result_json_sha256": "84ba3ae4a61aee207a935b1c7fd4290db2e239fbf1efbfcdbb325d8af86c29ee",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_oak.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_snowy.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_snowy.json",
+      "source_sha256": "6b9fc8870c40ee1b2b4fa101aed25d2524436a7221d384364e4578b38517dcd1",
+      "result_json_sha256": "5c808a6394169273e8aa57461d4679498d3c553461e2b738fba261fd2bfde5a4",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_snowy.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_spruce.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_spruce.json",
+      "source_sha256": "7c03a99318a6c7937818e1e66b03410e2cfc3466ad9412a48077651e26e85f45",
+      "result_json_sha256": "bb9a8d2a1e9019f83a1f65713341a0e05791d28bad2629f3f87fecdbd9707d1b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_spruce.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/tavern_swamp.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/tavern_swamp.json",
+      "source_sha256": "4585864eb3304a76e1d919bd85da7f7f1929f150430b6c4abb9d1717cb77fb2b",
+      "result_json_sha256": "7ba2312201fe54251d12c0eba7ef0941c600abfdcebf4c444e664e6252ffc668",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/nova_structures/worldgen/structure/tavern_swamp.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/toxic_lair.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/toxic_lair.json",
+      "source_sha256": "00692375315dd93eb3842d9e564c4843ac285467728dc93d1bc4409ffbdf850a",
+      "result_json_sha256": "7b7da7e099cd833cb4d7ecb3a5ac60c351d0e4177f6cdb15951c6dff64a9366f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/toxic_lair.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/trident_trial_monument.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/trident_trial_monument.json",
+      "source_sha256": "f6c08b90e2e08a6f089cfc703e410d0b4a2ae4ec523ced947210cbb32bb69c34",
+      "result_json_sha256": "e14af8e3219558031df7d92ab9c699680cd4dec1426de5cb2509a8ae02b4e48d",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/trident_trial_monument.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/undead_crypt.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/undead_crypt.json",
+      "source_sha256": "3f143235bd8db64e34c35d2cdfc56efac34fe9aa8073feefa168f2336982a5dd",
+      "result_json_sha256": "4369156ad8f68a46b6ad86d375086a2265dc3cb1ce74d251676d3023702ce5f1",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/undead_crypt.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/underground_house.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/underground_house.json",
+      "source_sha256": "963ae438fed1945e4d5f497be3a789f638fa4bbc352b518772b49b46e1c80552",
+      "result_json_sha256": "040e30d1b43aa45f3deaab4e9e9263ba13d87ce803594b5a42151ccca4f22d48",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/underground_house.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/village_birch.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/village_birch.json",
+      "source_sha256": "0543575ac61ef093a24f19635440fed812b0246b2e1c4d77e8e9a7716d385187",
+      "result_json_sha256": "136bcb4220b580a02891a29e01a2f4f57983a16affc891680db183df8e9a7e3d",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/village_birch.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/village_jungle.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/village_jungle.json",
+      "source_sha256": "5f852ae6096b957047d29471c5eaf38ea5dcb1378ce6a18624fd3a83136f2c76",
+      "result_json_sha256": "c5ea4f0d0cb60d498aed657331341bea29a1cf8f5b377cf7e5399a5f3c505715",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/village_jungle.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/village_swamp.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/village_swamp.json",
+      "source_sha256": "65ebeefc9320e71f12d2654df81034f02f3523f4ebe9101593a525d94f8b528b",
+      "result_json_sha256": "a240f6065f24e0657fd6a51533a8a61788742191e5839cbc2f354617d7ed2661",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/village_swamp.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/well_birch.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/well_birch.json",
+      "source_sha256": "b6b5ef3451b59c24bd5e6e7ff3cc868f6bf54460e89186c6fa8e48417a0f2362",
+      "result_json_sha256": "e0d55ecc89ce8451c5ca931a7dd049f89ef463856d41fa1d115920faffd96ca0",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/well_birch.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/well_dark_oak.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/well_dark_oak.json",
+      "source_sha256": "49a5dc8a3972466d863bec3d47713cce1b4f1b4e32bb92ac5a15e3141f638cfd",
+      "result_json_sha256": "3695fec1a3009567a59c35e990863686d7c242aee463143fcb97fe303291dbc5",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/well_dark_oak.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/well_jungle.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/well_jungle.json",
+      "source_sha256": "7ad999289611cb4edcca4e28e1138382ec9655da5c028241ca93f4f934a82f68",
+      "result_json_sha256": "e09afd4e39b6039b03e501f991c5abf4a648ef99419216a12f70adc02ea01f6c",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/well_jungle.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/well_oak.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/well_oak.json",
+      "source_sha256": "61317513719299b1306bd87a0440cbf7c34cf05f0596849810c25f89c7842714",
+      "result_json_sha256": "952e7f1075653eb470068463571b2a476b55a526c957484d6a06ccc1694b1b55",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/well_oak.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/well_savana.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/well_savana.json",
+      "source_sha256": "058c536fa6db16826d78181662a01b8b6ffab4113fed7f03cf2d4f29055e4618",
+      "result_json_sha256": "f4170bb740edda18ff60bc09401bd607204e1a6c5a4dce2eb8cbec010a470b10",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/well_savana.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/well_spruce.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/well_spruce.json",
+      "source_sha256": "91a9f03842e86df56c0f2ec034ba6b9d6099e6dcb211574a1acdb78011803e3c",
+      "result_json_sha256": "437f2a09612b37b1e2c092aa9c9503d4479dd96e3f1ba3440161be29a3452be2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/well_spruce.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/wild_ruin.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/wild_ruin.json",
+      "source_sha256": "726b39d8e56d5fd0aa8ea011dbd012c734ec875c774fbffe0d87331315a98654",
+      "result_json_sha256": "cb2ab6a1592ff85577f6e7097bd20764b82cbcc1dc9c4b4a8aa248bc4ede57bd",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/wild_ruin.json"
+    },
+    {
+      "id": "nova_structures:worldgen/structure/witch_villa.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/structure/witch_villa.json",
+      "source_sha256": "dda1c1a705355823a7d8f81a02e19f0e42659fb4e634e48d8b4cd9fc2c4ba292",
+      "result_json_sha256": "c9d437442e6dba49027ce60de5049bb741b1dded4321fc9ddb946034cf7e8eb4",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/witch_villa.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/badlands_miner_outpost_path.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/badlands_miner_outpost_path.json",
+      "source_sha256": "2b33d9496aa5ea5d7efc6cff2c7db6b5d28c1eb9eba5a426ac539c92585ecac9",
+      "result_json_sha256": "f2cc99d2526a0acb5da64ea5b0dd39c50746bb754b324cca456a0be047cc564a",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/badlands_miner_outpost_path.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/birch_village/birch_house.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/birch_village/birch_house.json",
+      "source_sha256": "ca9d4f7153d089da25c9ae36bd678bc754817e264effcb28320e8674909cf8ba",
+      "result_json_sha256": "9af71d4ab39ff508a801c4a1fb06d21d30ded35552343781cea4e5570a387afc",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/birch_village/birch_house.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/bunker_room.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/bunker_room.json",
+      "source_sha256": "9d3979da52ed0bde1533f6e596a99700a9e9812a36e61b62c47ca07dac17c4a9",
+      "result_json_sha256": "8df65fcfd29753fa22928df6ac4ca0bfb1feeea2540328d1ee7e37fce45bcd09",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/bunker_room.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/bunker_room_hallway.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/bunker_room_hallway.json",
+      "source_sha256": "d1e6723f91ce49443f6e88bd29966154aee845c7ddcfd9e5e5919fd44e52e06a",
+      "result_json_sha256": "bd274a0897d58c077573016f4ffdcb47f6b73fcbbf33a592ae0bafafeeabaeba",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/bunker_room_hallway.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/bunker_room_hallway_no_door.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/bunker_room_hallway_no_door.json",
+      "source_sha256": "4e2891aeb0614593e28730420275c13cf295f522d8483b97b6a7b2bf69044c2f",
+      "result_json_sha256": "a8360828b668b044638a53d892d5a07a1976b0e13f178e8d2efb60f20509959f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/bunker_room_hallway_no_door.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/bunker_room_hallway_not_stairs.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/bunker_room_hallway_not_stairs.json",
+      "source_sha256": "0552b2287a8be97e35a0a3bb54c8143e834fc5b1aa71f483bb72faa12e0b6f39",
+      "result_json_sha256": "6d645d245771e9966e3a38d827266113166f7cc30e634feb696c8cd88d62de97",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/bunker_room_hallway_not_stairs.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/conduit_ruin/road.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/conduit_ruin/road.json",
+      "source_sha256": "e0f37831048a9bf33f553845dc5ff54b06348d691c1300d6d538b3d533db3ae9",
+      "result_json_sha256": "d7d5c4cebfd235c0da919957f6ed2771d1ca3c31f92d383a69e6e50667fa0434",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/conduit_ruin/road.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/desert_ruins/temple.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/desert_ruins/temple.json",
+      "source_sha256": "7ca98c5a8e037960d2b6d4a295f2742cf31d58d78d47845510542015265e8b9f",
+      "result_json_sha256": "a1a48b3c464ee929824e7c9829043f9e253b2e68503da7b712eaa6b972eaf1a8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/desert_ruins/temple.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/donjon/donjon_coloseum.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/donjon/donjon_coloseum.json",
+      "source_sha256": "5ed22b48f33ae4dc4c5d1edf755b9b2d020028101e4b3e46449a33177ef73d6e",
+      "result_json_sha256": "4d5d237fa2ecdead54a701250e459667025e9ecebe79334be55b38b17e7a3205",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/donjon/donjon_coloseum.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/donjon/donjon_room.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/donjon/donjon_room.json",
+      "source_sha256": "9b63a04ba2e42b087cc9516e7ef92d3aa80468c6815d98f042fb1e56fdfeea27",
+      "result_json_sha256": "bd6bc3e442c7e08b539a66374986a7023e10b2d693abd2cf426099d6ae0ad3ed",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/donjon/donjon_room.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/end_castle/citty.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/end_castle/citty.json",
+      "source_sha256": "7cf36a63585eef1fd26063e29323afec64dc982fe70950d3e692b7da72e3070f",
+      "result_json_sha256": "ca037b5ab21a23fb992bf9b36c19e2526e6bc2354b423ba82561cbad3af99f82",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/end_castle/citty.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/end_castle/citty_bridge_only.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/end_castle/citty_bridge_only.json",
+      "source_sha256": "e76e3caef0889f70b1e0c134bb9d88862955f627ff37f80008715d486cef9921",
+      "result_json_sha256": "3cb2ea157feeb8416f94cf0e64c77ace577adeba0f5f7af9e5e90f0a27256c2f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/end_castle/citty_bridge_only.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/end_castle/tower.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/end_castle/tower.json",
+      "source_sha256": "ba40f42dc364a132c481821c776fdeb595b14ac21ad829d9c9c6e11c067caecf",
+      "result_json_sha256": "2bc173cca1accee41a34d00ba92ee50dce823943c9a3523eec463596545d36aa",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/end_castle/tower.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/illager_hideout_hall.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/illager_hideout_hall.json",
+      "source_sha256": "2c77f3f96518937c3ae663329ffaedc0acc3cefa19a081291b08f33b9d1aa996",
+      "result_json_sha256": "cef45c43b569571a9d129e3afd1bad8de4488c85e8100af7797142d2f60a72d6",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/illager_hideout_hall.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/pillar_cobblestone.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillar_cobblestone.json",
+      "source_sha256": "344befe9408556398e6e478e4682bd3b0aec22db9c5f511944e67d06e086e158",
+      "result_json_sha256": "e6f87d99c8bd96641edb18e513cdf4697698e0f7d746a408bd9e1d3b3f9114e2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/pillar_cobblestone.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/pillar_polished_andesite.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillar_polished_andesite.json",
+      "source_sha256": "ee0ab2fb383e2c32cdd476f7892a4cefb063787ffcb786c113f12f523d04d37a",
+      "result_json_sha256": "a6aac5104c7690c1f715126925fc0fb04c0030ca2cd2052e8e2d5bc0a14051e3",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/pillar_polished_andesite.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/pillar_polished_tuff.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillar_polished_tuff.json",
+      "source_sha256": "12ae580b34d4183ced86e6a30070bff38670900989faa29bdb98e6359b14f2aa",
+      "result_json_sha256": "e72ceb0fcf6bebe3a6a1f4b1e7617d9eac97a177260ef4ada50e2b5a3406185b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/pillar_polished_tuff.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/pillar_stone_bricks.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillar_stone_bricks.json",
+      "source_sha256": "eb8aab6dbb8ea6c9be97ef3e12b92ca8e2c40f75a348e29c154335be5a0536f8",
+      "result_json_sha256": "c404def14bbabd1b87b3531e2414e49888c076fd5d7ba37d23262ad7fe2070d2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/pillar_stone_bricks.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/pillarpolished_andesite.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillarpolished_andesite.json",
+      "source_sha256": "ee0ab2fb383e2c32cdd476f7892a4cefb063787ffcb786c113f12f523d04d37a",
+      "result_json_sha256": "a6aac5104c7690c1f715126925fc0fb04c0030ca2cd2052e8e2d5bc0a14051e3",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/pillarpolished_andesite.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/big_tower_room.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/big_tower_room.json",
+      "source_sha256": "7d77090f88bf7f2cc51c621552554958aca38d3f9d6ac750409b698f37c141fd",
+      "result_json_sha256": "5753af7617bcc0f4dd555f3ef698adb1e9d588c050004d48b0f1e1bda65d4121",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/room_content/big_tower_room.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room1.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room1.json",
+      "source_sha256": "ee0786860c6b8c5333236875ec74589724bb559028bb97cf7bd8485d7528ba80",
+      "result_json_sha256": "49b3ae5f4daa2c69787db5687cbb4dd2040e1489b99d97a2ea1d0f4127938433",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room1.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room2.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room2.json",
+      "source_sha256": "c3fe34f4b38a6c20b8e917e71ffb9136c75836bde773fc9dad3e0581f65df875",
+      "result_json_sha256": "027bed1dfbd5ae224587483d405eecd6e8e37f2f205b81132e21fb0cf518675b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room2.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room3.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room3.json",
+      "source_sha256": "fb0c817a5610bd5c9430a539addda793c771f038b1cf48a5f368965cb78bf804",
+      "result_json_sha256": "db78681ee1075d1e307df4649ef06bcb6c21b363817815cc0a0ff23464351513",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room3.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room4.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room4.json",
+      "source_sha256": "237743ced4786b6ad83942a6c0aa92a3132f64144f9e9b13c60eb1425621f4f3",
+      "result_json_sha256": "ee31ca3cbbecfaa2b444372c2eafc1540c9c3c04aa825556ca1a4ef44c53de30",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room4.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room5.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room5.json",
+      "source_sha256": "c2b6c0277b1859911e789bed1cc3a3f94ba78226995e34a7e3f72431f45366dd",
+      "result_json_sha256": "a0bef22b545eb8453e87cf83c8ab836cd13a1fc50c64d2d196882c8a2c2db8d4",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room5.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room6.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room6.json",
+      "source_sha256": "c6048a33bd6f6ebac0b1fb3c319e48b530da359af3675f7cb163098892b886fe",
+      "result_json_sha256": "0645e69ab3e2fbd67e197ee51d4cb42d2af1384cab1519ca77f28f069e017bcd",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room6.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/remnant/village_road.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/remnant/village_road.json",
+      "source_sha256": "993ec66ca60489edd8c93044bd5e979f3749e2b9997cd7ce3378573eaa121cd9",
+      "result_json_sha256": "ef6672a6608358938881957aecb699b52a0b25e047c843d6b9f96cce3cfc4dd7",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/remnant/village_road.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/ruin_town.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/ruin_town.json",
+      "source_sha256": "579d86e85f32594701bef42b87c6af2b5368fc1b6a182417ef12225493ba60ee",
+      "result_json_sha256": "c1f15f67f0f45c9fc3b04ff1f1d486517cc2845fe777bee5366f138fbb38fb47",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/ruin_town.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/ruin_town_not_center.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/ruin_town_not_center.json",
+      "source_sha256": "10a66e80f9562e76ac60b7e65938efe1a0594de589b5027b8cc3a593260c7ac3",
+      "result_json_sha256": "fbec0e642f48a899a0d3788828e5e4b6c8fc1041d27cebde0525deecbf862f8b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/ruin_town_not_center.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/shrine/waystone/waystone.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/shrine/waystone/waystone.json",
+      "source_sha256": "b103d4054cde7d17c49cc65bdf2b328997368f9323f7d4dac2a366e2f2186df1",
+      "result_json_sha256": "55e0a0b3cddc5823a7422ed6e4e4572ce24a9eadb7bbecc086235d3c18e833b9",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/shrine/waystone/waystone.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/skeleton_camp/event.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/skeleton_camp/event.json",
+      "source_sha256": "6b0dd19912541fd9d004a6e0e065684ea6cb296d2d792589e9c5de4af8b6d48f",
+      "result_json_sha256": "21d12987ffcc93868d5781237101b065541d0d0fe4e9007a62da4c09c1cf6291",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/skeleton_camp/event.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/stray_fort_event.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/stray_fort_event.json",
+      "source_sha256": "d35bf039316046cd35ce77c8d3d9b199ce86dffa286d0bbf6fddae62f2dbe05d",
+      "result_json_sha256": "f69250ad94bbe17203f103bedbc06760df4aa173a32de0e43855b39822347f6b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/stray_fort_event.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/tavern.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/tavern.json",
+      "source_sha256": "5f77ff3826ded423deb13a246b5eab1878b186c5b0cf45dd5190dbbc94a78c9e",
+      "result_json_sha256": "524bb3f56773f1cd77afe7471a077e76ec92d3e2bc0f504217211914be7df761",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/tavern.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/tavern_trader_car.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/tavern_trader_car.json",
+      "source_sha256": "5f7ce1f28090a6d53924c39dec3758f30ba789edf9155e9dcfe2f31e4bb15c5a",
+      "result_json_sha256": "fba2876cd6a05a81c5de25c9a19146e17c1ee5bfa0a6641ae170632c504369fb",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/tavern_trader_car.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/toxic_lair/foundation_cobblestone.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/toxic_lair/foundation_cobblestone.json",
+      "source_sha256": "4b4a40b34fc124c98104c2beff9dde8e20b6ef706af429096ff1ed7fd7dcb70b",
+      "result_json_sha256": "362c5ed4d0bc91d660d777accf7d0f787c1e6f2de49b3aef23e0358354d489c2",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/toxic_lair/foundation_cobblestone.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/toxic_lair/foundation_log.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/toxic_lair/foundation_log.json",
+      "source_sha256": "160e851c468f6b68f51162dba601d4506dec1b7fa3d81b579af71d5f0e4310c9",
+      "result_json_sha256": "016c024378fb1af8a60620fb02f2f7dd84bacafdc5c66658ac8c008ff5ed960f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/toxic_lair/foundation_log.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/toxic_lair/foundation_stone_bricks.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/toxic_lair/foundation_stone_bricks.json",
+      "source_sha256": "8f77d261c582d8e237adc076817a338f7061146b07aed222aa6c7e27ebb3de53",
+      "result_json_sha256": "242d64391617d41532a2e81d9ab2d7c506289aeaaa4dec956ccfd3933b77bf78",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/toxic_lair/foundation_stone_bricks.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/toxic_lair/main.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/toxic_lair/main.json",
+      "source_sha256": "b38fc567d7bbe028054d9b8e791ed713785f2ff32b00df90ef4d35bb6ee87c64",
+      "result_json_sha256": "f08cc673f65f9175d40e24f192d33dc4b3830ea28ed461c16b419389d0454122",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/toxic_lair/main.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/toxic_lair/underground_room.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/toxic_lair/underground_room.json",
+      "source_sha256": "5b38d0d6f57381d867359adeb676dce11b7afaa5e3c42244cfb7966939e5b5e8",
+      "result_json_sha256": "5dce35a8a414719f2069c8d489261a3080142f179f9d8f6ee27ac299dcd26fb8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/toxic_lair/underground_room.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/toxic_lair/underground_room_no_door.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/toxic_lair/underground_room_no_door.json",
+      "source_sha256": "f6a08eab5b74d74ce716e97322ea7ce235db3ee1c99fdde87b08fca94c00044c",
+      "result_json_sha256": "6354241ea0a350eb9e24d0dfe79f94f07dd7af0af03064e41e085c9b0538023b",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/toxic_lair/underground_room_no_door.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/trident_monument/pillar.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/trident_monument/pillar.json",
+      "source_sha256": "a349f55d8d2a02eaef5e3d75e5ebd6fdac16a4a0ca72ed3e410113bce9e27613",
+      "result_json_sha256": "5f9efea129ff669159677b227bfa352abab650412f2562df0d5941d56bc87816",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/trident_monument/pillar.json"
+    },
+    {
+      "id": "nova_structures:worldgen/template_pool/trident_monument/small/room_parts.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/worldgen/template_pool/trident_monument/small/room_parts.json",
+      "source_sha256": "8b465932f72b00c52114160729a4585cba6a102f629bdbd52d2b94bd45539c73",
+      "result_json_sha256": "efacb8dae9b153197ca7b5cece66d454f869ea942da95250eee8a7fb610739f1",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/template_pool/trident_monument/small/room_parts.json"
+    },
+    {
+      "id": "philipsruins:tags/worldgen/biome/has_structure/ocean_ruins_biomes.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/tags/worldgen/biome/has_structure/ocean_ruins_biomes.json",
+      "source_sha256": "f8e91eeb7ff83b349a645353ed24bda19b722e9d12d13d4fc179afcb5c61e1c5",
+      "result_json_sha256": "b5c32ccb4aa84c6d4e964e9f387af7c6bef0fce1df1b56ef90d3b888cb07e4c8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/tags/worldgen/biome/has_structure/ocean_ruins_biomes.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/ancient_crypt.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/ancient_crypt.json",
+      "source_sha256": "d47c03aabfd915e4b8750ff8a67bd0541d9ab5251748214458bf3c0a41ee95a7",
+      "result_json_sha256": "1a891aa60f6883b448afe35d5bf4fcd79aaff92658dff35ae008ffb801fdf7e8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/ancient_crypt.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/ancient_dungeon.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/ancient_dungeon.json",
+      "source_sha256": "1500ccef3b6beed96a4dc08a64470b641d421696f53a49c834d7ffb484c723bc",
+      "result_json_sha256": "d7970bdc5f68af3668bb8a3d9b97a58de91f202180353825ba74e3551e911b78",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/structure/ancient_dungeon.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/ancient_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/ancient_ruins.json",
+      "source_sha256": "a93b50e4c8fdcba4f970354bd42d5d39a6179361bef790523b6064d73e20719a",
+      "result_json_sha256": "a524aae41e6dbe2eb8dac52285940b9e58f9087892df7d6dd13f5c6795a36a14",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/ancient_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/ancient_towers.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/ancient_towers.json",
+      "source_sha256": "34058936baab391430a4170c281240bc58ef55558c0f39fc802ded21e654cafa",
+      "result_json_sha256": "49ee665672499e55695c5615834247675a91b44efb25ded5049d48f414aa6302",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/ancient_towers.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/field_stone_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/field_stone_ruins.json",
+      "source_sha256": "43dc91510012b58daa280eb1a0eede932e9b50d000509ec4a6c67ca62f4fcad1",
+      "result_json_sha256": "3fc3d2d409833ac5797d2b264f7cc6c251326c093da1a7803309ecbbfb2f15d3",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/field_stone_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/field_stone_ruins_rocks.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/field_stone_ruins_rocks.json",
+      "source_sha256": "7d5b839afd4355c8d653638efe7b39e079e11147bee73e20326d65406d8f9fe4",
+      "result_json_sha256": "5fcf2c192f124232333b26109822227825ab1f851eb271e0db504a3b11e6fa43",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/field_stone_ruins_rocks.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/level_one_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/level_one_ruins.json",
+      "source_sha256": "40c2949d56aec67c21a1497f64f891aa11daa436bd5734d1e7925aeb4f455bc8",
+      "result_json_sha256": "e66a0e9c2f52d42735a8e3b9be43a7048194395987ba9c48aaf6fc8e66a48f1f",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/level_one_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/level_three_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/level_three_ruins.json",
+      "source_sha256": "dea12d9a65339891f1f2ad2016c255eae4752a86a83d8c70cbf6e79c40db255c",
+      "result_json_sha256": "c20a53f9a212f4146892a7dfd99e3c9e6a23d57eb75ff5ec93ed2677885bdeb8",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/level_three_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/level_two_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/level_two_ruins.json",
+      "source_sha256": "9b4cef90d60f49ada798247b2f6268b12f8df7a840d33a9e5ba1d29898ba359d",
+      "result_json_sha256": "f885e2867e6a24126d13aa49dbdf74e11ebeb1e8f93fe0f7370c71081a70129d",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/level_two_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/level_two_ruins_pool.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/level_two_ruins_pool.json",
+      "source_sha256": "c756da99d3e32d03ad14e753a93982bc1884af8ceae98dda9b75601f4e593bf4",
+      "result_json_sha256": "6f64677a391c58d86e4a92c84520af9f904c8ce6ea8f70b14b46f92f0e66cad6",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/level_two_ruins_pool.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/lost_soul_city.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/lost_soul_city.json",
+      "source_sha256": "49de93250ed85d5261b37342488642eba78ce80424d0222c256a61cfcfa3fe93",
+      "result_json_sha256": "8fe4083f73eb02a4fe9d8541d09e45b411738c47f931e9b7cc38fcf5cbf4cd90",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/structure/lost_soul_city.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/lost_soul_dungeon.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/lost_soul_dungeon.json",
+      "source_sha256": "92305824c9669f283bf24b0dcfb9696a0d5848759f7ace36d4618a8c6306f178",
+      "result_json_sha256": "55b56b6775450ac38835a4e1fdef08411a54190b5ef31c6a290feeccfefe0771",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/structure/lost_soul_dungeon.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/ocean_fortress.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/ocean_fortress.json",
+      "source_sha256": "6b3bfe5a3d58dd1e756696048d8fe05a08d98f4df03fcd82dc8975e9c7325a87",
+      "result_json_sha256": "e23640117329d75f19493f2380ee193dd27653477cbb0027736d3f34fc102cb7",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/structure/ocean_fortress.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/ocean_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/ocean_ruins.json",
+      "source_sha256": "e1979946fbbb18e14e80e7e3635ebb0fda060c951dbc151b0a31811695431b04",
+      "result_json_sha256": "c61fd4e8f51d2cc09a2c183daeae5917e43bf6c375852eb7b8b08fe6181f1841",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/structure/ocean_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/pumpkin_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/pumpkin_ruins.json",
+      "source_sha256": "e22bcf2b855baf129845d41c1c60f732f53bd4624453c069771953190fc949cd",
+      "result_json_sha256": "0a0b11a7cc178be35ebd4969605f4207587a15af83895f7a70f87de5880168cb",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/structure/pumpkin_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/rare_ruin.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/rare_ruin.json",
+      "source_sha256": "d473f08656779c4e7b58708c018ccf940f35c5292c416b3e40d79eeb00b0d9e9",
+      "result_json_sha256": "557850f7402be845f80cc80c218319c1104ff97ec1cd5b7110075b4f2b290b93",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_structures/data/philipsruins/worldgen/structure/rare_ruin.json"
+    },
+    {
+      "id": "philipsruins:worldgen/structure/underground_structures.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/structure/underground_structures.json",
+      "source_sha256": "35d0b4f0740b2859f11a90198e8c53591bce930c4096fb4784341696ff04f41a",
+      "result_json_sha256": "627a9aecaab94eb6504f16cc4d7f248de383e22f80f8345f3de5f967f8ad94bd",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/structure/underground_structures.json"
+    },
+    {
+      "id": "philipsruins:worldgen/template_pool/ancient_dungeon.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/template_pool/ancient_dungeon.json",
+      "source_sha256": "ad73c44266c271d8d1d1dfb9f90aca37d623d9ad82b51abd605a0c95d3d786b3",
+      "result_json_sha256": "6ce79eff5622fd7579ffa8827ece7f3f6f6dc49b6086d09b89634c95a3fb2d44",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/template_pool/ancient_dungeon.json"
+    },
+    {
+      "id": "philipsruins:worldgen/template_pool/ancient_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/template_pool/ancient_ruins.json",
+      "source_sha256": "e8aab1a9af93f36111c96de9b70edbeaca727d859502584adae24f38892ee638",
+      "result_json_sha256": "853ebf2517db1d1905aa2b29d97e3993d7b8938057639eb7111113c8dd8dc32d",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/template_pool/ancient_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/template_pool/level_two_ruins.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/template_pool/level_two_ruins.json",
+      "source_sha256": "bb9f9a1766eea1d20499a3e17b619224435a0639c3b8a4678205d1d039e66dd3",
+      "result_json_sha256": "cb642183ac0bef7fa46e2c5f88a3bc80f52ef26437749beb7c9bb12abd2fd177",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/template_pool/level_two_ruins.json"
+    },
+    {
+      "id": "philipsruins:worldgen/template_pool/level_two_ruins_pool.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/template_pool/level_two_ruins_pool.json",
+      "source_sha256": "f7ccae138f732cf4857e52e2da8a95bf8d30aef511440503552021542bca193a",
+      "result_json_sha256": "29afc961a29327cb2921eca82a9eb4256e2bb0444bf85fb56f37a6c46c8b1c10",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/template_pool/level_two_ruins_pool.json"
+    },
+    {
+      "id": "philipsruins:worldgen/template_pool/underground_structures.json",
+      "provider": "KdJhOYVV",
+      "version": "EQHGxQAv",
+      "source": "data/philipsruins/worldgen/template_pool/underground_structures.json",
+      "source_sha256": "e5ee50651bd71a9f9fb22274be285fea1fb6fd592cf5dad35061670541e0922a",
+      "result_json_sha256": "695489fcd981159bb70abed552ba44200569addc66101c8044dc8508153483ab",
+      "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/template_pool/underground_structures.json"
+    }
+  ]
+}

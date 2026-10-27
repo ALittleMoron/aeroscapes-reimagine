@@ -1,0 +1,78 @@
+---
+name: Reconcile publications
+'on':
+  workflow_run:
+    workflows: [Verify pack]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+# Wakeups may coalesce: the coordinator discovers every actual CI push itself.
+# Hold the lock through publication and Pages to prevent deployment reversal.
+concurrency:
+  group: release-reconciliation
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    if: >-
+      ${{ github.ref == 'refs/heads/main'
+          && (github.event_name != 'workflow_run'
+              || (github.event.workflow_run.event == 'push'
+                  && github.event.workflow_run.head_repository.full_name
+                     == github.repository))
+          && (vars.RELEASE_ENABLED == 'true' || vars.PAGES_ENABLED == 'true'
+              || vars.MODRINTH_ENABLED == 'true'
+              || vars.CURSEFORGE_ENABLED == 'true') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      docs_commit: ${{ steps.queue.outputs.docs_commit }}
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: false
+      # setup-uv v10.3.2
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+        with:
+          version: '0.13.1'
+          enable-cache: false
+      - run: make pack-sync
+      - name: Reconcile checked main pushes
+        id: queue
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          RELEASE_ENABLED: ${{ vars.RELEASE_ENABLED }}
+          RELEASE_BASELINE_SHA: ${{ vars.RELEASE_BASELINE_SHA }}
+        run: make release-reconcile
+  modrinth:
+    if: >-
+      ${{ !cancelled() && needs.reconcile.result != 'skipped'
+          && vars.MODRINTH_ENABLED == 'true' }}
+    needs: reconcile
+    uses: ./.github/workflows/modrinth.yml
+    secrets:
+      RELEASE_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+      MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+  deploy:
+    if: >-
+      ${{ !cancelled() && needs.reconcile.outputs.docs_commit != ''
+          && vars.PAGES_ENABLED == 'true' }}
+    needs: reconcile
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
+    with:
+      commit: ${{ needs.reconcile.outputs.docs_commit }}
+  curseforge:
+    if: >-
+      ${{ !cancelled() && needs.reconcile.result != 'skipped'
+          && vars.CURSEFORGE_ENABLED == 'true' }}
+    needs: reconcile
+    uses: ./.github/workflows/curseforge.yml

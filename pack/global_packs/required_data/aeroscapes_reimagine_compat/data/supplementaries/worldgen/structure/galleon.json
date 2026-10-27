@@ -1,0 +1,62 @@
+{
+  "type": "aeroscapes_reimagine:supported",
+  "delegate": {
+    "liquid_settings": "ignore_waterlogging",
+    "spawn_boxes": [
+      {
+        "category": "monster",
+        "name": "galleon_enemies",
+        "spawns": [
+          {
+            "type": "minecraft:pillager",
+            "weight": 5,
+            "minCount": 1,
+            "maxCount": 1
+          },
+          {
+            "type": "supplementaries:plunderer",
+            "weight": 7,
+            "minCount": 1,
+            "maxCount": 1
+          }
+        ]
+      }
+    ],
+    "biome_point": {
+      "erosion": [
+        -2.0,
+        2.0
+      ],
+      "depth": [
+        -2.0,
+        2.0
+      ],
+      "weirdness": [
+        -2.0,
+        2.0
+      ],
+      "offset": 0.0,
+      "temperature": [
+        -2.0,
+        2.0
+      ],
+      "humidity": [
+        -2.0,
+        2.0
+      ],
+      "continentalness": [
+        -0.92,
+        -0.11
+      ]
+    },
+    "biomes": "#supplementaries:has_galleons",
+    "spawn_overrides": {},
+    "step": "surface_structures",
+    "start_pool": "supplementaries:galleon/start_pool",
+    "y_offset": -3,
+    "type": "supplementaries:galleon",
+    "terrain_adaptation": "none",
+    "require_sea_level": false
+  },
+  "terrain_check": "marine_surface"
+}

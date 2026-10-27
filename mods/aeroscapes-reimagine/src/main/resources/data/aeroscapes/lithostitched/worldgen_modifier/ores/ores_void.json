@@ -1,0 +1,10 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/void",
+  "features": [
+	"aeroscapes:ores/ore_aerolite_voidsea",
+	"aeroscapes:ores/ore_andesite_voidsea",
+	"aeroscapes:ores/ore_tuff_voidsea"
+  ],
+  "step": "underground_ores"
+}

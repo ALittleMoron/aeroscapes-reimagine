@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:arid_savanna",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:oak_savanna",
+      "required": false
+    },
+    "terralith:ashen_savanna",
+    "terralith:fractured_savanna",
+    "terralith:hot_shrubland",
+    "terralith:savanna_badlands",
+    "terralith:savanna_slopes"
+  ]
+}

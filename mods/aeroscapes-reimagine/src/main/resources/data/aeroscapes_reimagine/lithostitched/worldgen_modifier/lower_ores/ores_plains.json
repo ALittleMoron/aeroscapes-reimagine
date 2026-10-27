@@ -1,0 +1,10 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/plains",
+  "features": [
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_copper_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_lapis_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_redstone_half"
+  ],
+  "step": "underground_decoration"
+}

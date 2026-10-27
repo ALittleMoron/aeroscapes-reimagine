@@ -1,0 +1,11 @@
+{
+  "feature": "minecraft:witch_hut_base",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "aeroscapes_reimagine:grounded_column"
+      }
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "aeroscapes": {
+    "project_id": "x308hQIU",
+    "version_id": "q4P5coPI",
+    "release": "1.0.8",
+    "archive_sha512": "d9f28c4d95cf249ca910fcf067acbb4d8fd434c0650d35b87f75648eda9f239304673f59e7636673064c7bbcde459ee97b8d9e12d9d20d35401c40ff3c942686",
+    "project_license_observed": "CC-BY-SA-4.0"
+  },
+  "aero_islands_source_comparison": {
+    "commit": "963e18b8257a93df3e52373cb4a36811b67589da",
+    "matching_json_resources": 216,
+    "different_json_resources": [
+      "data/aeroscapes/recipe/aerolite_charm.json",
+      "data/aeroscapes/tags/block/base_stone_voidsea.json",
+      "data/aeroscapes/tags/worldgen/biome/modifiers/dripstone.json",
+      "data/aeroscapes/tags/worldgen/biome/modifiers/presets/lush.json",
+      "data/aeroscapes/tags/worldgen/biome/modifiers/presets/swamp.json",
+      "data/aeroscapes/worldgen/density_function/final_density.json",
+      "data/aeroscapes/worldgen/density_function/fluid_level_floodedness.json",
+      "data/aeroscapes/worldgen/noise/aquifer_fluid_level_floodedness.json",
+      "data/minecraft/worldgen/noise_settings/overworld.json",
+      "data/minecraft/worldgen/structure/ancient_city.json",
+      "data/minecraft/worldgen/structure/village_desert.json",
+      "data/minecraft/worldgen/structure/village_plains.json",
+      "data/minecraft/worldgen/structure/village_savanna.json",
+      "data/minecraft/worldgen/structure/village_snowy.json",
+      "data/minecraft/worldgen/structure/village_taiga.json",
+      "data/minecraft/worldgen/structure_set/ancient_cities.json"
+    ]
+  }
+}

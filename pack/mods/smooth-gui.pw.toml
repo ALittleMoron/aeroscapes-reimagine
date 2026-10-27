@@ -1,0 +1,12 @@
+name = "Smooth Gui"
+filename = "smoothgui-neoforge-1.21.1-1.1.0.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/j6yrZogB/versions/WVSpzVhZ/smoothgui-neoforge-1.21.1-1.1.0.jar"
+hash-format = "sha512"
+hash = "ac09d55accd784279fa317850bab0322c12b188f407e1b9a1b8174c59e8aa2cebdf1f7761dc4196b6567d6bc879b0d8b479c1c80c7928f79596be8883d3ffcee"
+
+[update.modrinth]
+mod-id = "j6yrZogB"
+version = "WVSpzVhZ"

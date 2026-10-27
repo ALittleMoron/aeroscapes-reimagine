@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/savanna",
+  "features": [
+	"aeroscapes:ores/ore_zinc_extra"
+  ],
+  "step": "underground_ores"
+}

@@ -1,0 +1,10 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/swamp",
+  "features": [
+	"aeroscapes:ceiling_vegetation",
+	"aeroscapes:overhang/overhang_features_swamp",
+	"aeroscapes:kelp"
+  ],
+  "step": "vegetal_decoration"
+}

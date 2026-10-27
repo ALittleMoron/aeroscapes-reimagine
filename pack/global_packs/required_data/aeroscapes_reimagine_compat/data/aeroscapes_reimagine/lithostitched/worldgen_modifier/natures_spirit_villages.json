@@ -1,0 +1,22 @@
+{
+  "type": "lithostitched:add_structure_set_entries",
+  "structure_sets": "minecraft:villages",
+  "entries": [
+    {
+      "structure": "natures_spirit:village_cypress",
+      "weight": 1
+    },
+    {
+      "structure": "natures_spirit:village_wisteria",
+      "weight": 1
+    },
+    {
+      "structure": "natures_spirit:village_adobe",
+      "weight": 1
+    },
+    {
+      "structure": "natures_spirit:village_coconut",
+      "weight": 1
+    }
+  ]
+}

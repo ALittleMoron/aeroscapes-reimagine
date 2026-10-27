@@ -1,0 +1,13 @@
+{
+  "type": "lithostitched:remove_features",
+  "biomes": "#aeroscapes:modifiers/presets/swamp",
+  "features": [
+	"minecraft:ore_gold",
+	"minecraft:ore_gold_lower",
+	"minecraft:ore_redstone",
+	"minecraft:ore_redstone_lower",
+	"minecraft:ore_lapis",
+	"minecraft:ore_lapis_buried"
+  ],
+  "step": "underground_ores"
+}

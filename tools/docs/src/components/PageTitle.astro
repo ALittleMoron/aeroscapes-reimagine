@@ -1,0 +1,22 @@
+---
+import DefaultPageTitle from "@astrojs/starlight/components/PageTitle.astro";
+const { status } = Astro.locals.starlightRoute.entry.data;
+const russian = Astro.locals.starlightRoute.lang === "ru";
+const notices = {
+  partial: russian ? "В разработке" : "Work in progress",
+  planned: russian ? "Планируется" : "Planned",
+};
+---
+
+<DefaultPageTitle />
+{(status === "partial" || status === "planned") && (
+  <p class="status">{notices[status]}</p>
+)}
+
+<style>
+  .status {
+    border-inline-start: 0.2rem solid var(--sl-color-accent);
+    padding-inline-start: 0.9rem;
+    color: var(--sl-color-gray-2);
+  }
+</style>

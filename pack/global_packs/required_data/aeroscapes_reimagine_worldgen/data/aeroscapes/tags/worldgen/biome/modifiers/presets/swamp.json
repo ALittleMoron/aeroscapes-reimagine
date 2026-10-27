@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:bamboo_wetlands",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:marsh",
+      "required": false
+    },
+    "terralith:orchid_swamp"
+  ]
+}

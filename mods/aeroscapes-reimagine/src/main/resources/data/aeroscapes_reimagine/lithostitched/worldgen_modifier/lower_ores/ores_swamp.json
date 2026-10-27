@@ -1,0 +1,10 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/swamp",
+  "features": [
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_diamond_extra",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_iron_extra",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_redstone_half"
+  ],
+  "step": "underground_decoration"
+}

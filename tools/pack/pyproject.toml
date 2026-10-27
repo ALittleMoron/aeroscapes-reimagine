@@ -1,0 +1,63 @@
+[project]
+name = "aeroscapes-pack"
+version = "0.1.0"
+description = "Reproducible build and validation tools for Aeroscapes Reimagine"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = []
+classifiers = ["Private :: Do Not Upload"]
+
+[project.scripts]
+aeroscapes-pack = "aeroscapes_pack.cli:main"
+aeroscapes-smoke = "aeroscapes_pack.smoke:main"
+
+[build-system]
+requires = ["uv_build==0.13.5"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "bandit==1.9.4",
+    "pytest==9.1.1",
+    "ruff==0.17.2",
+    "ty==0.0.91",
+    "vulture==2.16",
+    "yamllint==1.38.0",
+]
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+cache-dir = ".cache/ruff"
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "I", "UP", "B", "SIM", "RET", "C4", "PIE", "ANN",
+    "RUF100", "PTH", "BLE", "PT", "ARG",
+]
+
+[tool.ty.environment]
+python-version = "3.14"
+
+[tool.ty.src]
+include = ["src", "tests"]
+
+[tool.ty.rules]
+all = "error"
+
+[tool.ty.analysis]
+respect-type-ignore-comments = false
+
+[tool.bandit]
+targets = ["src"]
+
+[tool.vulture]
+paths = ["src", "tests"]
+min_confidence = 60
+sort_by_size = true
+
+[tool.pytest]
+minversion = "9.1"
+addopts = ["-ra", "--strict-config", "--strict-markers", "--import-mode=importlib"]
+testpaths = ["tests"]
+cache_dir = ".cache/pytest"

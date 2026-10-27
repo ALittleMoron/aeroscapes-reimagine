@@ -1,0 +1,73 @@
+---
+title: Aeroscapes Reimagine
+description: A Minecraft sandbox with floating islands, Create engineering and air travel.
+status: available
+tableOfContents: false
+hero:
+  tagline: Floating islands, player-built ships and everyday life in Minecraft.
+  image:
+    file: ../../tools/docs/src/assets/islands.svg
+    alt: A decorative illustration of floating islands connected by travel routes.
+  actions:
+    - text: World and exploration
+      link: experience/world/
+      icon: right-arrow
+    - text: Project vision
+      link: vision/
+      variant: secondary
+---
+
+import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+
+Aeroscapes Reimagine combines island survival, Create machinery, Aeronautics aircraft, building and cooking. You can settle on a large island, build a factory, equip a ship for expeditions or travel without a permanent home.
+
+## Gameplay
+
+<CardGrid>
+  <LinkCard
+    title="World and exploration"
+    description="Islands at different heights, biomes, caves, villages and dungeons."
+    href="experience/world/"
+  />
+  <LinkCard
+    title="Engineering and flight"
+    description="Machinery, automation and ships designed by the player."
+    href="experience/engineering/"
+  />
+  <LinkCard
+    title="Building and daily life"
+    description="Materials for a home, furnishings, farms and varied food."
+    href="experience/building-and-daily-life/"
+  />
+  <LinkCard
+    title="Convenience"
+    description="Recipes, storage, maps, controls, graphics and sound."
+    href="experience/quality-of-life/"
+  />
+  <LinkCard
+    title="Character and combat"
+    description="Enchantments and character animations; plans for races, classes and combat."
+    href="experience/character-and-combat/"
+  />
+  <LinkCard
+    title="Settlements and neighbors"
+    description="Villages in the island world; plans for colonies and NPC quests."
+    href="experience/settlements/"
+  />
+</CardGrid>
+
+## Future development
+
+Planned additions include [races, classes and character progression](experience/character-and-combat/), dedicated [magic systems](experience/magic/), [colonies and NPC quests](experience/settlements/). They will add activities and ways to travel within the sandbox. Each section distinguishes what is already included from what remains to be added.
+
+## Technical requirements
+
+| Component               | Version           |
+| ----------------------- | ----------------- |
+| Minecraft: Java Edition | 1.21.1            |
+| Loader                  | NeoForge 21.1.230 |
+| Java                    | 25                |
+
+Minimum memory and graphics requirements have not been established: no gameplay measurements have been published yet.
+
+[Installation](install/) explains how to import a supplied test file. [Pack contents](reference/mods/) lists exact mod, data pack and shader versions; the [changelog](changelog/) records changes by version. Release and support information is in [Releases and limitations](known-issues/).

@@ -1,0 +1,11 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "minecraft:deep_ocean",
+  "features": [
+    "aeroscapes:large_basalt_column",
+    "aeroscapes:small_basalt_column",
+    "aeroscapes:basalt_delta",
+    "aeroscapes:basalt_pillar"
+  ],
+  "step": "raw_generation"
+}

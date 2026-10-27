@@ -1,0 +1,14 @@
+version = 1
+useOnModdedBlocksByDefault = false
+leavesCullingMode = "DEFAULT"
+useBlockStateCulling = true
+signTextCulling = false
+beaconBeamCulling = false
+useCustomItemFrameRenderer = false
+itemFrameMapCulling = false
+useItemFrameLOD = false
+useItemFrame3FaceCulling = false
+paintingCulling = false
+
+[modCompatibility]
+"minecraft" = true

@@ -1,0 +1,5473 @@
+[
+  {
+    "id": "ctov:worldgen/structure/large/village_beach.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_beach.json",
+    "sha256": "52626af91b9af1f876ed795ac466ec038a295995cced3abe6fae2f650e58deba",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_christmas.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_christmas.json",
+    "sha256": "2f5827f7e322a923bf09466e48d2a9e6f579d17e16046f7ae2190b3252dbd44a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_dark_forest.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_dark_forest.json",
+    "sha256": "0cc973fde84e44c245afe42cb4979934e8a425a76d005a2dfad96f3495ef5d07",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_desert.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_desert.json",
+    "sha256": "13a85aea32756ee0b2e30f85b2b9ac9aec92c093fcee5df2a2988625524c8175",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_desert_oasis.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_desert_oasis.json",
+    "sha256": "b5d5fd821f845b8e4492c7b285c4970dcfe8e4b01fa887ccbdb70bbe411f5057",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_jungle.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_jungle.json",
+    "sha256": "d71b248b7a9988c7030a41f83b749fa99b673246ca26cae1564feec38ecaff47",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_jungle_tree.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_jungle_tree.json",
+    "sha256": "2809e222e141c1ba949742b75f075ada41adc26b12d2b744b0f794c598cbb3a8",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_mesa.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_mesa.json",
+    "sha256": "d78f0abd04b32637371839b919c6aae1099fc8bc741e9b4a4d15e20918b835d1",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_mesa_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_mesa_fortified.json",
+    "sha256": "67dee2252e73dad0bb31c4064b0e825b6089f9332a46f3d96950807aa134e2be",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_mountain.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_mountain.json",
+    "sha256": "2184afaa9c471534ecb1aa3b877d39a2887449e60e7979e51bc9c26f19f33f3f",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_mountain_alpine.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_mountain_alpine.json",
+    "sha256": "9278eb90daba48e9f473736d7ffea31d3f32de890a105d3ab174ae39c079762d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_mushroom.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_mushroom.json",
+    "sha256": "cddeb9030578dad33dfb7d03b586ee8a7eaa9872c1f9a03028995cdeefdb7307",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_plains.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_plains.json",
+    "sha256": "63ee5f9f9552d6b9ac991a814e32bf608ce0b75c50bf82dfb5ceca1eae4ea58b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_plains_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_plains_fortified.json",
+    "sha256": "00aabf9a009d14fdb7170af2e7a8fadd3df25b832fade41f6dd35fa24e6ce5c5",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_savanna.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_savanna.json",
+    "sha256": "12fe9842ca6a9469740970c16167bfbe5b3c04ab5f396df3beda8c794aed68ac",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_savanna_na.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_savanna_na.json",
+    "sha256": "b0c9f0eafb9aa91bcf011d5fb0c80b29891b3a58fa9d1202ebe411c0648ab335",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_snowy_igloo.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_snowy_igloo.json",
+    "sha256": "8e07405b135f040e08e2b05f5af2660077583840a470376e961845350951492e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_swamp.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_swamp.json",
+    "sha256": "a99d3206191898dc55b0eaa86d1693930ac644fba892dd5d7e7e07a82eff82ec",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_swamp_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_swamp_fortified.json",
+    "sha256": "7d822ebe0b7f8e2c6a202439f42879fcb16211ade2854f2edd2591cd31b410e9",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_taiga.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_taiga.json",
+    "sha256": "41eba732c9d2b62d37cbd3da412917ac29f7106ff84c5b1681c7fcc00c9f5762",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_taiga_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_taiga_fortified.json",
+    "sha256": "06982286fb76a8afba05d1ffa576b5f0f44018df114761d39f41799fc3ca63eb",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/large/village_underground.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/large/village_underground.json",
+    "sha256": "75ed708eb346598582c6193b01f3cc3fb98c6402fb5101c54c1ea071fc8dc13d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_beach.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_beach.json",
+    "sha256": "647d1ff9c11462a9ec62be49987f7b588fad17b3adfb1367a2896d1e2e2f180c",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_christmas.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_christmas.json",
+    "sha256": "f88920b43f648dcbd67a19e89daf92a4254d858712fba9612b73c93d7c400fa0",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_dark_forest.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_dark_forest.json",
+    "sha256": "bae222dde5c299f8294ea1a00d5fadffb857f33e4cd3edb04f3025a8970d913b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_desert.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_desert.json",
+    "sha256": "17f34914dbd5faed345790fa84122b950640483fcf069f9614fca760000c73c1",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_desert_oasis.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_desert_oasis.json",
+    "sha256": "5658ecb5df5679eb774595a40b714037b3a45c3f47bd05299e213a554b5b0484",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_jungle.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_jungle.json",
+    "sha256": "acd9ace8a6db16f51baaa8140945b48e1537ed309578bf4bcfb6835f3bd12a21",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_jungle_tree.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_jungle_tree.json",
+    "sha256": "3b0fde8b889a2fb160afbcfc1d32a631e6f976d9911e6c955544612df21e4d9b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_mesa.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_mesa.json",
+    "sha256": "8ae9432cfb1ff6389774a7f8601b11963ce86f8ef70e03a3c4cd2c5614900dac",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_mesa_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_mesa_fortified.json",
+    "sha256": "8a0ac4b0900d4fce4ec6ef6cd9187715ad8a82ae7d41b0cd086b32d04aa1f35f",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_mountain.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_mountain.json",
+    "sha256": "27fc585c01488b99c1e80def080faca14761437cbd6b13cb5a60d3aca6d29413",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_mountain_alpine.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_mountain_alpine.json",
+    "sha256": "e5591f8b2318fdd80def410951eaf26ed568029158a4d859b40c701e59ed5cbe",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_mushroom.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_mushroom.json",
+    "sha256": "ad5fc7632514cc45d0fec827d1acd72370ce8e35bafbddc35ed33cf66b988f6f",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_plains.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_plains.json",
+    "sha256": "5b0443ee335dcf3a8f0209af434a560325189a743630cff4ee730a2c000e126d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_plains_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_plains_fortified.json",
+    "sha256": "4b1630e39a7e0ff083b551893644311480c18aeb604a4e294f65ecbfedd2380c",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_savanna.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_savanna.json",
+    "sha256": "e7b97517d1e6ab9f0e6ef95497bb39c021dba614c80a0a80023a595549e79149",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_savanna_na.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_savanna_na.json",
+    "sha256": "4e8d8f3aec07d45ada9ecf26d6ca6fa6de82b74120f31ea391144e24a5edb6d3",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_snowy_igloo.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_snowy_igloo.json",
+    "sha256": "5bd00ca314c19b0aa84e987896ea09e8863e7562f4a6c927d15006dd20550ab4",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_swamp.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_swamp.json",
+    "sha256": "bca606925e0c8858422db12d78f8dfec3a709ae55736e016f1cf4686575ba513",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_swamp_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_swamp_fortified.json",
+    "sha256": "4dd4073655b9933d3cc808a589c5f0704b51564ee3d4333199a47c6240e44140",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_taiga.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_taiga.json",
+    "sha256": "83273f2ffa12102d2f8821c6121004fd1d369b0f3ac14cb301c44cf028a4d2b6",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_taiga_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_taiga_fortified.json",
+    "sha256": "7190f21318c3555e07160bad71318c6f3b938c33c078d9ecde4c0f73714d5366",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/medium/village_underground.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/medium/village_underground.json",
+    "sha256": "66b91dece4a0a33de57f301950adb6370d10260cb47fb7861e37c9b92c5f88a7",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_badlands.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_badlands.json",
+    "sha256": "51d139f790de96d6ba9bea2ab20b7bfff7be4c73d5f7380264eace782f248aad",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_beach.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_beach.json",
+    "sha256": "141797de23fc7c126883412abe0b17dce03eac8f2f75b4f551b1d9746bb80043",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_dark_forest.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_dark_forest.json",
+    "sha256": "634bd34758647afc26304409ba67a231e2fc562ee0d0ea0bb3900da35ec55c85",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_desert.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_desert.json",
+    "sha256": "512de78d0be66f87962dfe0d2d0d017a04365db47c7554096ae642c37f894b90",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_jungle.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_jungle.json",
+    "sha256": "c3440e79385ea070a57989521284e0a9435439764b27018974020e680ca29d3d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_mesa.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_mesa.json",
+    "sha256": "51d139f790de96d6ba9bea2ab20b7bfff7be4c73d5f7380264eace782f248aad",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_mountain.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_mountain.json",
+    "sha256": "1658942996b4c03ed103557d626c73425b8fa33ac02c4c9325fd63ee3714549a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_plains.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_plains.json",
+    "sha256": "e5c3771243cc78671b87f28f625db3587af5015e67b4e59b83a9f95acde20db3",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_savanna.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_savanna.json",
+    "sha256": "50040950b02698d8a0bbbec5a8f18101c77086d30df6bea237b7ea88be126a97",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_snowy.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_snowy.json",
+    "sha256": "be71892f0c0590342ff29389daab2cf2276f8ada46df8ee0c8fbd6ea2aa0f8e1",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_swamp.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_swamp.json",
+    "sha256": "19386859eb1384b60d649ab83b2b3a33035c87144f18f4e4e6745876e5ed5fa8",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/pillager_outpost_taiga.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/pillager_outpost_taiga.json",
+    "sha256": "3188a9b1387235dbe651631b1dbf88eea4d82c2687c1fbfff40600616f43246e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_beach.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_beach.json",
+    "sha256": "36b63fbe58dc9d08afac3bc44ac3c023148bcdbf2827a1608d2b1bb3f2168d64",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_christmas.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_christmas.json",
+    "sha256": "9bdcf68b9da343fb096349799d3ac688508a409030bbf3b0b428b6fe7bf1fe16",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_dark_forest.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_dark_forest.json",
+    "sha256": "d4480aa1acb0068687fca400f1ebda993b137479cd07bd57f137325fc1fed904",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_desert.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_desert.json",
+    "sha256": "bb40279558214ab9e085859b7b351bd269b245c2a93382f6e3b51d0b8b468d25",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_desert_oasis.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_desert_oasis.json",
+    "sha256": "b5182012f0f2d722b7b0a9c284f6653796e24aeb7c0c26eb3a07ae373f7d0858",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_jungle.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_jungle.json",
+    "sha256": "74a98b94d4d178a6e6358016ceac179b44f7e3c8aea294a854b8918e9561fb6e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_jungle_tree.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_jungle_tree.json",
+    "sha256": "5c9cd072fef4a295aca802cd91cbd63d4512edc0425c525cc69cec5bfe57ace3",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_mesa.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_mesa.json",
+    "sha256": "57acf3ea3336e1cca1cb51ffacc86af7c6df1439534e7ff2fe104a6e14ab6467",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_mesa_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_mesa_fortified.json",
+    "sha256": "164352b950eae2a3282f6645d86304ef4a94181d1b0adc9969e7892d56db4587",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_mountain.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_mountain.json",
+    "sha256": "71aa562b2b28b1ce80c2c5fc70d109c992d0efb797d80a063e185f3df0063231",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_mountain_alpine.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_mountain_alpine.json",
+    "sha256": "06b9791176eb64869035340004641a08cec1ca9f5326d391734f272a4ba330e4",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_mushroom.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_mushroom.json",
+    "sha256": "5f9a4eac67c75bdb7b257a13268822084df5a069ae77387c82207fd665e2ca2a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_plains.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_plains.json",
+    "sha256": "d6ac2669cbadcf461ba6dd5de73bcb0ada371cc918ea5832d41c0253d478e168",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_plains_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_plains_fortified.json",
+    "sha256": "7b0d0017916bc7176cffcecafa47244aa46446c60bc4f461d0822728bc3a018d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_savanna.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_savanna.json",
+    "sha256": "44cf5c27bf7adf0bae5a5dba35189e189665bfc337fdced3cff2e9d02734577b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_savanna_na.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_savanna_na.json",
+    "sha256": "a763258e16be076570be6dcb2744f623732ec42c41492a713543d10bde297a7e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_snowy_igloo.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_snowy_igloo.json",
+    "sha256": "c07d3e1b276770a978185e43d925d4da6991a8e6e86f4a214bf5bb7bad767d39",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_swamp.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_swamp.json",
+    "sha256": "37bc57b922cc6169ee43e6e38ff8d07fa870a77836e72b8fc2a6bdf54fd381bd",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_swamp_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_swamp_fortified.json",
+    "sha256": "72ebd973ea245b984d2bc466d91ec3dd7368b2855dc4955914142bbdbf96a66a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_taiga.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_taiga.json",
+    "sha256": "7ae48a419cc9cab3952c7297064da3775b8f62a6286b48db27c7e977a21a9906",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_taiga_fortified.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_taiga_fortified.json",
+    "sha256": "696662a63e35fb9e25f5b0277085074a77c247d55dfde129ab4b4b7ecb125a42",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/structure/small/village_underground.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/structure/small/village_underground.json",
+    "sha256": "66b91dece4a0a33de57f301950adb6370d10260cb47fb7861e37c9b92c5f88a7",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/badlands/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/badlands/features.json",
+    "sha256": "febe87407171afce8835b1d1b5a06daa928ad3b98321713a7c8665a50e7e016a",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/beach/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/beach/features.json",
+    "sha256": "847d158f386afcc4987f1f77646959edc304a832ae409de3ac1ed53684b3cbfc",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/dark_forest/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/dark_forest/features.json",
+    "sha256": "d32316a5cb7cace71e0b2cd180f3c33d69becb48171f93c71e1de7449c54fd28",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "ctov:pillager_outpost/dark_forest/allay_cage"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "7"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "7"
+        ]
+      },
+      {
+        "op": "insert",
+        "path": [
+          "elements",
+          "7"
+        ],
+        "value": {
+          "weight": 1,
+          "element": {
+            "element_type": "minecraft:legacy_single_pool_element",
+            "projection": "rigid",
+            "location": "ctov:pillager_outpost/dark_forest/target",
+            "processors": "minecraft:empty"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/desert/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/desert/features.json",
+    "sha256": "04502f8deadf6b6568886ec2439c0562fdae36d5e60b23768d0889f4b8516fbb",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/jungle/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/jungle/features.json",
+    "sha256": "b28a12c928714fe2c58c07ff9a19b55916a0b86c6e6d0502226e160df14ba01d",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "ctov:pillager_outpost/jungle/allay_cage"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/mountain/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/mountain/features.json",
+    "sha256": "96deee64b187d7459d089fadbae65bc397874076fe76896664a12361990bf544",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "ctov:pillager_outpost/mountain/allay_cage"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/mountain/towers.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/mountain/tower.json",
+    "sha256": "b459b1b6f1dd1f9913d4c7796521f1652c6b5146c0b7a7171678d1d55173ce88",
+    "edits": []
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/plains/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/plains/features.json",
+    "sha256": "fdc9aecef800a608ad4b2d34f7187953e790841ac331e18e34863fc2b1848997",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "ctov:pillager_outpost/plains/allay_cage"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/savanna/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/savanna/features.json",
+    "sha256": "eae21c583109cb3127323822edffd467428a230e053976452a9ff938f0daab8c",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "ctov:pillager_outpost/savanna/allay_cage"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/snowy/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/snowy/features.json",
+    "sha256": "67cecb4f0aeb5178a5c692743ad6ddcb3741fa7517349141f37dda1dde1600f8",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "ctov:pillager_outpost/snowy/allay_cage"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/swamp/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/swamp/features.json",
+    "sha256": "5528c583b4e404ed44d85b0ebcaaa2b18a21967fe894ac4f2488e9608f7365c1",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "ctov:pillager_outpost/swamp/allay_cage"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/pillager_outpost/taiga/features.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/pillager_outpost/taiga/features.json",
+    "sha256": "598cdbdd073b96b6a682e8da9f1672f93f53c8906de1d5e7b70e8221f54efa7f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "ctov:pillager_outpost/taiga/allay_cage"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/village/common/bounty_board.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/village/common/bounty_board.json",
+    "sha256": "0c5e172bcd6300647154a5a38d031ef95feef67ecdc2286ed3237ff56c42e8c6",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "location"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "projection"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "processors"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "element_type"
+        ],
+        "value": "minecraft:empty_pool_element"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/village/common/waystone/normal.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/village/common/waystone/normal.json",
+    "sha256": "2e5413863067f08fcee35669b3cb2c2da865bc6f2ed68790447506c4846d6a56",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "location"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "projection"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "processors"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "element_type"
+        ],
+        "value": "minecraft:empty_pool_element"
+      }
+    ]
+  },
+  {
+    "id": "ctov:worldgen/template_pool/village/halloween/terminator.json",
+    "mod": "ctov",
+    "source": "data/ctov/worldgen/template_pool/village/halloween/terminator.json",
+    "sha256": "698ef042ea3f67afce6785e280d684430e4b340e9a30a96411430f28763af853",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "location"
+        ],
+        "value": "ctov:village/halloween/roads/terminator"
+      }
+    ]
+  },
+  {
+    "id": "galosphere:worldgen/placed_feature/ore_silver_small.json",
+    "mod": "galosphere",
+    "source": "data/galosphere/worldgen/placed_feature/ore_silver_small.json",
+    "sha256": "bf0643127da36542a503371ce2f58a6f3c6f6ad921cc32d918901c953c6a4273",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "placement",
+          "2",
+          "height",
+          "min_inclusive",
+          "above_bottom"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "placement",
+          "2",
+          "height",
+          "min_inclusive",
+          "absolute"
+        ],
+        "value": -64
+      }
+    ]
+  },
+  {
+    "id": "galosphere:worldgen/structure/forgotten_ruins.json",
+    "mod": "galosphere",
+    "source": "data/galosphere/worldgen/structure/forgotten_ruins.json",
+    "sha256": "257b71a9f90e6dee6acffd8cfed1ee52a81a9cbe60bfeb89b68e3facc12efbfe",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "core_enclosed"
+      }
+    ]
+  },
+  {
+    "id": "galosphere:worldgen/structure/pink_salt_shrine.json",
+    "mod": "galosphere",
+    "source": "data/galosphere/worldgen/structure/pink_salt_shrine.json",
+    "sha256": "853236350f2a26de2debd7ed949247602e990cbcd03167f676a807ac895b0dd7",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "core_enclosed"
+      }
+    ]
+  },
+  {
+    "id": "galosphere:worldgen/template_pool/pink_salt_shrine/coffin_decorations.json",
+    "mod": "galosphere",
+    "source": "data/galosphere/worldgen/template_pool/pink_salt_shrine/coffin_decorations.json",
+    "sha256": "5a2fb4d369a6f06a6ecd7bdbdb2f54b8a69b110f92e6b8fd081f4f00c79d4bbe",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:advancement/give_quest_trader_trade.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/advancement/give_quest_trader_trade.json",
+    "sha256": "5c973783da7f4a49584e40dfc2a13e0a89066cae7dc135f80d064f78dbeee003",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "parent"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:advancement/wander_add_map.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/advancement/wander_add_map.json",
+    "sha256": "6d1cd27691d389381b3b108639729c7549741034eb1523f163e119d3eeeb1e4a",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "parent"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/structure/village_taiga.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/structure/village_taiga.json",
+    "sha256": "40fd3a9bb63784e724399411f6de1e71b88a2e779b7c3f031e2cdb8a1201574e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/illager_mansion/illager_mansion_house_part.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_house_part.json",
+    "sha256": "cb9c829d7998602fda8397324c526c026286f082d66b6d71407e7da89ea29e61",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "8"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "17"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/illager_mansion/illager_mansion_house_part_straight.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_house_part_straight.json",
+    "sha256": "ff8105a62fb157d1e3e138e58185bd3fc81ad157a23f35b2435c8732f4fed04b",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "5"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/illager_mansion/illager_mansion_room.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_room.json",
+    "sha256": "a8120a3019903a1608c38f6c4fae1e0be74a985d191a90ebc4695d082e09246b",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "location"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "projection"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "processors"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "element_type"
+        ],
+        "value": "minecraft:empty_pool_element"
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/illager_mansion/illager_mansion_room_basement.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/illager_mansion/illager_mansion_room_basement.json",
+    "sha256": "0778dac34a11a4fbe1309590ba1448c959fb47042effb8b3ce4ab35444567929",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "location"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "projection"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "processors"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "element_type"
+        ],
+        "value": "minecraft:empty_pool_element"
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/jungle_village/jungle_path.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/jungle_village/jungle_path.json",
+    "sha256": "177300968d6c986325e820f9e14a263c6108def6419646c86ac3e2366e90ac0c",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/nether_fortress/nether_fortress_bridge.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/nether_fortress/nether_fortress_bridge.json",
+    "sha256": "22e1ed5a41a7e6a1164c9b3a0143828bd39f9e7e1aaa2fcdc41c743470b52a0b",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "21"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/nether_fortress/nether_fortress_inside.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/nether_fortress/nether_fortress_inside.json",
+    "sha256": "abc09e097bde26656497d75a8dd9fa9dd1ae2f4e3d62a19a03dc827074449a1b",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "9"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/swamp_village/swamp_house.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/swamp_village/swamp_house.json",
+    "sha256": "17b990e344f379b6d4e9cd217f59202643d17e1c9f4b715f41395e63e276e171",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "3"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "3"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "3"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:worldgen/template_pool/swamp_village/swamp_path.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/minecraft/worldgen/template_pool/swamp_village/swamp_path.json",
+    "sha256": "56de90ff3151ae121476d4a777b2dcf709fe0226063c02c98fb6392086ff7365",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "4"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/badlands_miner_outpost.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/badlands_miner_outpost.json",
+    "sha256": "7b5a3efb844f470189b2a20bbe9c36751f6af1e1f8a6ea430851f7b533aa5a0c",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/bunker.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/bunker.json",
+    "sha256": "bf67b87f8cbe64f80fbe8e4840ccd57324a76462433ca06c49e3fcafdbde8d5f",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/conduit_ruin.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/conduit_ruin.json",
+    "sha256": "e45511e5a189e04d481c670aa88d58ac5313a0b36e39adf49b066e99dd03da7b",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#aeroscapes_reimagine:has_structure/coastal_conduit_ruin"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "wet_ruin"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/creeping_crypt.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/creeping_crypt.json",
+    "sha256": "76518d150db72091734bcf5ed225cf089fd47417813353a20e95c696551bc3d6",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/deepslate_camp.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/deepslate_camp.json",
+    "sha256": "410ff77ac5d50d4bccbffeab7b75ef0027b1c5abdce6bd7e5211f440d63f3214",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "dimension_padding",
+          "top"
+        ],
+        "value": 0
+      },
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "OCEAN_FLOOR_WG"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "start_height",
+          "min_inclusive"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "start_height",
+          "max_inclusive"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "start_height",
+          "type"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height",
+          "absolute"
+        ],
+        "value": -8
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/desert_ruins.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/desert_ruins.json",
+    "sha256": "5a49fbd55d9a9e238a1daca6511a5984909080af7b5a9ad2519114afc330c7c3",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_birch.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_birch.json",
+    "sha256": "2913e388a01e7640e62a2178784a042d45f1d3653dc38fb4da700fed3449d912",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_cherry.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_cherry.json",
+    "sha256": "40d53bb8a325ad798378462f78c5fccaaf2be281498e2818799ec0391a56f0c4",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_dark_oak.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_dark_oak.json",
+    "sha256": "64adf45f5ca88aa4a819e93d3eb1c910b364e7623e75b79da8a91a07280202b7",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_forest.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_forest.json",
+    "sha256": "d227b1b8836fc2c79151213a3a78e970cfdbe56081ec960fd8f27e14b1f56454",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_jungle.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_jungle.json",
+    "sha256": "13ec52ac927e27e9d9bfd796d21bb7c8c7073d263e392ad1e1c9a921ce2d427b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_mangrove.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_mangrove.json",
+    "sha256": "75ea860e9f703491859df7240c289c3aaaf50b41f9211da1b78d0bd4a81670a0",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_savanna.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_savanna.json",
+    "sha256": "4b53828ad1aec87863eba8e754a5654cf314173aaa1538d35a66d8d338a49148",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_swamp.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_swamp.json",
+    "sha256": "0b39d383c67f0803482c3cec782d6eb0f7e3bf4a281a8675a66b613369f2df66",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/firewatch_tower_taiga.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/firewatch_tower_taiga.json",
+    "sha256": "b7efdc1b063e1e550c774723997b029f93b4ecf35087c9774c3d7b784912bce5",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/illager_camp.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/illager_camp.json",
+    "sha256": "d3faba5ed2fef72973a80e3066c502bd8ed5a16c8d860fed7b3ddc27ab9b419d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/illager_hideout.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/illager_hideout.json",
+    "sha256": "2da70bd408c2a8bfa5cc89889a9ef96fb7a89e5cba1a2106a7b5271b1d54da17",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "core_enclosed"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/illager_manor.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/illager_manor.json",
+    "sha256": "efd769614a2c73bdee48d979e50c4bcd782c06795f782160b58a4a5ab0320132",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/jungle_ruins.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/jungle_ruins.json",
+    "sha256": "280d5890a41a61f776c11d37327bc9dc0b7dce069edc867a5c135efad689e567",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/lone_citadel.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/lone_citadel.json",
+    "sha256": "e82b040f997aec4093fd6d6a0dd4faf9cba240aded1966ef3f407fc141613981",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "WORLD_SURFACE_WG"
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height",
+          "absolute"
+        ],
+        "value": 0
+      },
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:root_supported",
+        "root_height": 41
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/mangrove_witch_hut.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/mangrove_witch_hut.json",
+    "sha256": "b56cdd8a2f9c168fa4043026d5b326dd2979c54259b6edde521a4e93c7a39962",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_bee_keeper.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_bee_keeper.json",
+    "sha256": "6c31fe9791c24ae285da80a8d54ef87836661877ae9eb11a8e58bf348d29fb9d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_big_remnant.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_big_remnant.json",
+    "sha256": "b565a36e324f4b76c29d178d5958114eaa3d501f06fee62ff429b756447825e0",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_big_remnant_2.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_big_remnant_2.json",
+    "sha256": "6027f1052cea2984e2126825f44f4ccd138294bcaa270cd36a9e480ea0034613",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_big_remnant_3.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_big_remnant_3.json",
+    "sha256": "0372862a1ba7ea38a6e9351b1a5eef66d7b1883a2d3dabc65addc29c4e044a8f",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_birch_graveyard.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_birch_graveyard.json",
+    "sha256": "52a953a1f4c7376da04c79f3211f10ef25bb2176281fa5015258ed47d8782c36",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_bridge_remnant.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_bridge_remnant.json",
+    "sha256": "691a0024194bebe93cd9f2448f8d9f2fadae351eba03d11ca67d10aa2af427e3",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_bunny_base.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_bunny_base.json",
+    "sha256": "132a5bc356165e6aec4775fb9d78168c2e1606d8907dd6df5e86e2f170709be4",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_classic_village.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_classic_village.json",
+    "sha256": "1eabe67abf0cb2e74af9c0df55ede74c587416a232fa87bc3cb13017a2102b43",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_desert_remnant.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_desert_remnant.json",
+    "sha256": "19e059ea9713f4cc24910569ed6bc407abc46c5c2ccb2f7d19c472f3161a3279",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_forest_smith.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_forest_smith.json",
+    "sha256": "66011bd84d207fff33083ae08c30e2c4fdcfd8fa321498bf66cc763c2a1ed6dd",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_frog_ranch.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_frog_ranch.json",
+    "sha256": "8b8f63aa29cf0f0604953b3a08f42acb46b418d829bba74ed8b48fd62bc2c34c",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_graveyard.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_graveyard.json",
+    "sha256": "c5a7137954788e8ec0de0706382d46c9f33c76a4f532421661bedde623af2bdd",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_medium_remnant.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_medium_remnant.json",
+    "sha256": "4a6b9e58bbe40535cd38611f2a6df2785ecd9940c457e8dd7133e46b368534a5",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_medium_remnant_2.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_medium_remnant_2.json",
+    "sha256": "6de1b20d969990334915de602f107f1f961dd3a51ef99e08c1d58ac670443d92",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_miner_hut.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_miner_hut.json",
+    "sha256": "57de1dba5b07047d883b9c34803b4cd0a9500251a4d64df6e7e976b49313a829",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_mud_brick_constructor.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_mud_brick_constructor.json",
+    "sha256": "f3d1f2c7925b5037c38317a1cef2da2f23e46d5500bdce3dc59bb9122ba0104a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_ominous_shop.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_ominous_shop.json",
+    "sha256": "add8b76f941a2f7f3c26df4d0c3c86fac445d675601331a82541eea36608715d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_ruin_farmer.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_ruin_farmer.json",
+    "sha256": "f82d279831692ff2bdf77d822d5d294653d0db82f483e6b3491569f58ad6dc67",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_ruin_smith.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_ruin_smith.json",
+    "sha256": "6b1b4b1db25de3d1d8d51930977601c00055edd4421513e9d5ffc290b0a6a7b5",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_sawmill.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_sawmill.json",
+    "sha256": "ad251ab861c8fda3943471675fec06f3dc3e5b1301a5c75e605c6432b4df87a8",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_school_remnant.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_school_remnant.json",
+    "sha256": "eba0a558609f8b6bbca80338f2eba9c78bd94f8dc1c58dd12185ce9cd4240f57",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_taiga_castle.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_taiga_castle.json",
+    "sha256": "208282476e0b8aadea8d277e239c2bbadca73b672e8059748dd37a63bbbe2734",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_woodland_hud.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_woodland_hud.json",
+    "sha256": "b529b2975726139516702a4cd6a55e2d82267fc7a444d23c7e8aa92e05d9c1ee",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/remnant_zombie_horse_ranch.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/remnant_zombie_horse_ranch.json",
+    "sha256": "4218fa53c6a6e6d47d11dfffebe92d39e7b6b7139a3a60d57e84f714a8de383a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/ruin_town.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/ruin_town.json",
+    "sha256": "1dbc5a8682b34406f40c122b67da001f675cedd91a6197aef2a5eff804ed4203",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/shrine_combat_tier_1.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_1.json",
+    "sha256": "417f55a79590c136370822a7c1ccdd4db7ef0e07d1940cb6c973467691418164",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 192,
+            "max_inclusive": 384
+          }
+        }
+      },
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_complex"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/shrine_combat_tier_2.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_2.json",
+    "sha256": "7350c3eab5ca02133024c089edc3aa5c31ac73d432c98e8c8cdb0fd2a4348396",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 192,
+            "max_inclusive": 384
+          }
+        }
+      },
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_complex"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/shrine_combat_tier_3.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_3.json",
+    "sha256": "ea429df9c7ae8765917343638b9579017af7697e328f98fe59495a7a04a7797c",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 192,
+            "max_inclusive": 384
+          }
+        }
+      },
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_complex"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/shrine_combat_tier_4.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_4.json",
+    "sha256": "0a3d40f80388404897416b34e8a9c693ff6a17453246ea5a4d1922f18a4ec149",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 192,
+            "max_inclusive": 384
+          }
+        }
+      },
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_complex"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/shrine_combat_tier_5.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/shrine_combat_tier_5.json",
+    "sha256": "e8b24c764fe869b060b4add75dfef6a588347a7727fd229426426969fa8182a9",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      },
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_complex"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/shrine_tower.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/shrine_tower.json",
+    "sha256": "4cae5c0e54c819c77ba1de66f5a66490ed069608772351dccdc610f2d88bb68e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/stray_fort.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/stray_fort.json",
+    "sha256": "63ce323eff33abfa9bd91d8af772e4e92b93b222126444231069e55f29f6f06b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_acacia.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_acacia.json",
+    "sha256": "c52c4980b1ccebcd2a668865f6b66b7d91d069858ffaba63696fc330b6e15a64",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_birch.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_birch.json",
+    "sha256": "7ea0d1ba1c153ccde18b5bd866281c2798d5d55426e8127aa1d05102ae749f04",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_cherry.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_cherry.json",
+    "sha256": "5d12d0d3f91cfae54cc4b85b4b5c801255dd34a5b74b87ca3134c6b8728fb08a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_dark_oak.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_dark_oak.json",
+    "sha256": "4b787263fc6c97d0687bfc8d8f28ec059ce67db30b44df1eee12274f783f9e91",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_desert.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_desert.json",
+    "sha256": "14048a966430d6f0bb864470c25eae097dc2ab0004c8b53b64ca8703fd655208",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_jungle.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_jungle.json",
+    "sha256": "9c722515c972dbe2be11d6ea9185affe0fed47922d8fd20fd3671c5f9d930084",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_mangrove.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_mangrove.json",
+    "sha256": "74fad8c7172b72b1885cbd51f224e75a1ba1eb85b5bbef5b3537e8bd86980863",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_oak.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_oak.json",
+    "sha256": "e075f60f80d535f05d247f9760a7505d2d9c0d061fa655d5dfc212b00026f23e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_snowy.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_snowy.json",
+    "sha256": "6b9fc8870c40ee1b2b4fa101aed25d2524436a7221d384364e4578b38517dcd1",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_spruce.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_spruce.json",
+    "sha256": "7c03a99318a6c7937818e1e66b03410e2cfc3466ad9412a48077651e26e85f45",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/tavern_swamp.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/tavern_swamp.json",
+    "sha256": "4585864eb3304a76e1d919bd85da7f7f1929f150430b6c4abb9d1717cb77fb2b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/toxic_lair.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/toxic_lair.json",
+    "sha256": "00692375315dd93eb3842d9e564c4843ac285467728dc93d1bc4409ffbdf850a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "WORLD_SURFACE_WG"
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height",
+          "absolute"
+        ],
+        "value": 0
+      },
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:root_supported",
+        "root_height": 36
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/trident_trial_monument.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/trident_trial_monument.json",
+    "sha256": "f6c08b90e2e08a6f089cfc703e410d0b4a2ae4ec523ced947210cbb32bb69c34",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#aeroscapes_reimagine:has_structure/coastal_trident_trial_monument"
+      },
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "WORLD_SURFACE_WG"
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height",
+          "absolute"
+        ],
+        "value": 0
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:root_supported",
+        "root_height": 22
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/undead_crypt.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/undead_crypt.json",
+    "sha256": "3f143235bd8db64e34c35d2cdfc56efac34fe9aa8073feefa168f2336982a5dd",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "core_enclosed"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/underground_house.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/underground_house.json",
+    "sha256": "963ae438fed1945e4d5f497be3a789f638fa4bbc352b518772b49b46e1c80552",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "dimension_padding",
+          "top"
+        ],
+        "value": 0
+      },
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "OCEAN_FLOOR_WG"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "start_height",
+          "min_inclusive"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "start_height",
+          "max_inclusive"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "start_height",
+          "type"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height",
+          "absolute"
+        ],
+        "value": -12
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/village_birch.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/village_birch.json",
+    "sha256": "0543575ac61ef093a24f19635440fed812b0246b2e1c4d77e8e9a7716d385187",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/village_jungle.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/village_jungle.json",
+    "sha256": "5f852ae6096b957047d29471c5eaf38ea5dcb1378ce6a18624fd3a83136f2c76",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/village_swamp.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/village_swamp.json",
+    "sha256": "65ebeefc9320e71f12d2654df81034f02f3523f4ebe9101593a525d94f8b528b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/well_birch.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/well_birch.json",
+    "sha256": "b6b5ef3451b59c24bd5e6e7ff3cc868f6bf54460e89186c6fa8e48417a0f2362",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/well_dark_oak.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/well_dark_oak.json",
+    "sha256": "49a5dc8a3972466d863bec3d47713cce1b4f1b4e32bb92ac5a15e3141f638cfd",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/well_jungle.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/well_jungle.json",
+    "sha256": "7ad999289611cb4edcca4e28e1138382ec9655da5c028241ca93f4f934a82f68",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/well_oak.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/well_oak.json",
+    "sha256": "61317513719299b1306bd87a0440cbf7c34cf05f0596849810c25f89c7842714",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/well_savana.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/well_savana.json",
+    "sha256": "058c536fa6db16826d78181662a01b8b6ffab4113fed7f03cf2d4f29055e4618",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/well_spruce.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/well_spruce.json",
+    "sha256": "91a9f03842e86df56c0f2ec034ba6b9d6099e6dcb211574a1acdb78011803e3c",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/wild_ruin.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/wild_ruin.json",
+    "sha256": "726b39d8e56d5fd0aa8ea011dbd012c734ec875c774fbffe0d87331315a98654",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/structure/witch_villa.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/structure/witch_villa.json",
+    "sha256": "dda1c1a705355823a7d8f81a02e19f0e42659fb4e634e48d8b4cd9fc2c4ba292",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#aeroscapes_reimagine:has_structure/witch_villa"
+      },
+      {
+        "op": "set",
+        "path": [
+          "pool_aliases"
+        ],
+        "value": [
+          {
+            "type": "minecraft:direct",
+            "alias": "minecraft:witch_hut/foundation",
+            "target": "aeroscapes_reimagine:grounded/witch_villa/foundation"
+          }
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "WORLD_SURFACE_WG"
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height",
+          "absolute"
+        ],
+        "value": 0
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "grounded_surface"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/badlands_miner_outpost_path.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/badlands_miner_outpost_path.json",
+    "sha256": "2b33d9496aa5ea5d7efc6cff2c7db6b5d28c1eb9eba5a426ac539c92585ecac9",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "5"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/birch_village/birch_house.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/birch_village/birch_house.json",
+    "sha256": "ca9d4f7153d089da25c9ae36bd678bc754817e264effcb28320e8674909cf8ba",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "3"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "21",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:village/birch/birch_village_shepherd"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/bunker_room.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/bunker_room.json",
+    "sha256": "9d3979da52ed0bde1533f6e596a99700a9e9812a36e61b62c47ca07dac17c4a9",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "31",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:bunker/bunker_underground_library"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "32",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:bunker/bunker_underground_library_big"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/bunker_room_hallway.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/bunker_room_hallway.json",
+    "sha256": "d1e6723f91ce49443f6e88bd29966154aee845c7ddcfd9e5e5919fd44e52e06a",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "28"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/bunker_room_hallway_no_door.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/bunker_room_hallway_no_door.json",
+    "sha256": "4e2891aeb0614593e28730420275c13cf295f522d8483b97b6a7b2bf69044c2f",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "28"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/bunker_room_hallway_not_stairs.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/bunker_room_hallway_not_stairs.json",
+    "sha256": "0552b2287a8be97e35a0a3bb54c8143e834fc5b1aa71f483bb72faa12e0b6f39",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "28"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/conduit_ruin/road.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/conduit_ruin/road.json",
+    "sha256": "e0f37831048a9bf33f553845dc5ff54b06348d691c1300d6d538b3d533db3ae9",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "1",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:conduit_ruin/road/conduit_ruin_road_curve_1"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "2",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:conduit_ruin/road/conduit_ruin_road_curve_2"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/desert_ruins/temple.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/desert_ruins/temple.json",
+    "sha256": "7ca98c5a8e037960d2b6d4a295f2742cf31d58d78d47845510542015265e8b9f",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/donjon/donjon_coloseum.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/donjon/donjon_coloseum.json",
+    "sha256": "5ed22b48f33ae4dc4c5d1edf755b9b2d020028101e4b3e46449a33177ef73d6e",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "18"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "18"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/donjon/donjon_room.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/donjon/donjon_room.json",
+    "sha256": "9b63a04ba2e42b087cc9516e7ef92d3aa80468c6815d98f042fb1e56fdfeea27",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "45"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/end_castle/citty.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/end_castle/citty.json",
+    "sha256": "7cf36a63585eef1fd26063e29323afec64dc982fe70950d3e692b7da72e3070f",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "18"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "37"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "81"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/end_castle/citty_bridge_only.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/end_castle/citty_bridge_only.json",
+    "sha256": "e76e3caef0889f70b1e0c134bb9d88862955f627ff37f80008715d486cef9921",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "3"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/end_castle/tower.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/end_castle/tower.json",
+    "sha256": "ba40f42dc364a132c481821c776fdeb595b14ac21ad829d9c9c6e11c067caecf",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "34"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/illager_hideout_hall.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/illager_hideout_hall.json",
+    "sha256": "2c77f3f96518937c3ae663329ffaedc0acc3cefa19a081291b08f33b9d1aa996",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "16"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/pillar_cobblestone.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillar_cobblestone.json",
+    "sha256": "344befe9408556398e6e478e4682bd3b0aec22db9c5f511944e67d06e086e158",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/cobblestone_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/pillar_polished_andesite.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillar_polished_andesite.json",
+    "sha256": "ee0ab2fb383e2c32cdd476f7892a4cefb063787ffcb786c113f12f523d04d37a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/polished_andesite_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/pillar_polished_tuff.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillar_polished_tuff.json",
+    "sha256": "12ae580b34d4183ced86e6a30070bff38670900989faa29bdb98e6359b14f2aa",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/polished_tuff_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/pillar_stone_bricks.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillar_stone_bricks.json",
+    "sha256": "eb8aab6dbb8ea6c9be97ef3e12b92ca8e2c40f75a348e29c154335be5a0536f8",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/stone_bricks_citadel_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/pillarpolished_andesite.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/pillarpolished_andesite.json",
+    "sha256": "ee0ab2fb383e2c32cdd476f7892a4cefb063787ffcb786c113f12f523d04d37a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/polished_andesite_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/big_tower_room.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/big_tower_room.json",
+    "sha256": "7d77090f88bf7f2cc51c621552554958aca38d3f9d6ac750409b698f37c141fd",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "5",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:lone_citadel/room_content/deko_barrels"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "10",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:lone_citadel/room_content/deko_center_books"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "18",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:lone_citadel/room_content/deko_office"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room1.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room1.json",
+    "sha256": "ee0786860c6b8c5333236875ec74589724bb559028bb97cf7bd8485d7528ba80",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room2.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room2.json",
+    "sha256": "c3fe34f4b38a6c20b8e917e71ffb9136c75836bde773fc9dad3e0581f65df875",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "34"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "34"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "34"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "34"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "34"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room3.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room3.json",
+    "sha256": "fb0c817a5610bd5c9430a539addda793c771f038b1cf48a5f368965cb78bf804",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "38"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "38"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "38"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "38"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "38"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room4.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room4.json",
+    "sha256": "237743ced4786b6ad83942a6c0aa92a3132f64144f9e9b13c60eb1425621f4f3",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room5.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room5.json",
+    "sha256": "c2b6c0277b1859911e789bed1cc3a3f94ba78226995e34a7e3f72431f45366dd",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "28"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "28"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "28"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/lone_citadel/room_content/room6.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/lone_citadel/room_content/room6.json",
+    "sha256": "c6048a33bd6f6ebac0b1fb3c319e48b530da359af3675f7cb163098892b886fe",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "15"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "32"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "34"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/remnant/village_road.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/remnant/village_road.json",
+    "sha256": "993ec66ca60489edd8c93044bd5e979f3749e2b9997cd7ce3378573eaa121cd9",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/ruin_town.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/ruin_town.json",
+    "sha256": "579d86e85f32594701bef42b87c6af2b5368fc1b6a182417ef12225493ba60ee",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "38"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "91"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/ruin_town_not_center.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/ruin_town_not_center.json",
+    "sha256": "10a66e80f9562e76ac60b7e65938efe1a0594de589b5027b8cc3a593260c7ac3",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "33"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "86"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/shrine/waystone/waystone.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/shrine/waystone/waystone.json",
+    "sha256": "b103d4054cde7d17c49cc65bdf2b328997368f9323f7d4dac2a366e2f2186df1",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "location"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "projection"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "processors"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "element_type"
+        ],
+        "value": "minecraft:empty_pool_element"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/skeleton_camp/event.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/skeleton_camp/event.json",
+    "sha256": "6b0dd19912541fd9d004a6e0e065684ea6cb296d2d792589e9c5de4af8b6d48f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "26",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:skeleton_camp/skeleton_camp_waroed_event_6"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/stray_fort_event.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/stray_fort_event.json",
+    "sha256": "d35bf039316046cd35ce77c8d3d9b199ce86dffa286d0bbf6fddae62f2dbe05d",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "27"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/tavern.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/tavern.json",
+    "sha256": "5f77ff3826ded423deb13a246b5eab1878b186c5b0cf45dd5190dbbc94a78c9e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "5",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_spruce"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "16",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_acacia"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "27",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_birch"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "38",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_desert"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "49",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_mangrove"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "60",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_dark_oak"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "71",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_oak"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "82",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_cherry"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "93",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_swamp"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "104",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_jungle"
+      },
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "115",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:tavern/tavern_event_bench_table_snowy"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/tavern_trader_car.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/tavern_trader_car.json",
+    "sha256": "5f7ce1f28090a6d53924c39dec3758f30ba789edf9155e9dcfe2f31e4bb15c5a",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "11"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "11"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "22"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "22"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "33"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "33"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "44"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "44"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "55"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "55"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "66"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "66"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "77"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "77"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "88"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "88"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "99"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "99"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/toxic_lair/foundation_cobblestone.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/toxic_lair/foundation_cobblestone.json",
+    "sha256": "4b4a40b34fc124c98104c2beff9dde8e20b6ef706af429096ff1ed7fd7dcb70b",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/cobblestone_toxic_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/toxic_lair/foundation_log.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/toxic_lair/foundation_log.json",
+    "sha256": "160e851c468f6b68f51162dba601d4506dec1b7fa3d81b579af71d5f0e4310c9",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/oak_log_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/toxic_lair/foundation_stone_bricks.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/toxic_lair/foundation_stone_bricks.json",
+    "sha256": "8f77d261c582d8e237adc076817a338f7061146b07aed222aa6c7e27ebb3de53",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/stone_bricks_toxic_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/toxic_lair/main.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/toxic_lair/main.json",
+    "sha256": "b38fc567d7bbe028054d9b8e791ed713785f2ff32b00df90ef4d35bb6ee87c64",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "9"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "9"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/toxic_lair/underground_room.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/toxic_lair/underground_room.json",
+    "sha256": "5b38d0d6f57381d867359adeb676dce11b7afaa5e3c42244cfb7966939e5b5e8",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "15"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/toxic_lair/underground_room_no_door.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/toxic_lair/underground_room_no_door.json",
+    "sha256": "f6a08eab5b74d74ce716e97322ea7ce235db3ee1c99fdde87b08fca94c00044c",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "15"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/trident_monument/pillar.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/trident_monument/pillar.json",
+    "sha256": "a349f55d8d2a02eaef5e3d75e5ebd6fdac16a4a0ca72ed3e410113bce9e27613",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "0",
+          "element",
+          "feature"
+        ],
+        "value": "aeroscapes_reimagine:grounded/nova/monument_base"
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:worldgen/template_pool/trident_monument/small/room_parts.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/worldgen/template_pool/trident_monument/small/room_parts.json",
+    "sha256": "8b465932f72b00c52114160729a4585cba6a102f629bdbd52d2b94bd45539c73",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "10",
+          "element",
+          "location"
+        ],
+        "value": "nova_structures:trident_trials_monument/small_monument/room_parts/small_monument_roof_wall4"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:tags/worldgen/biome/has_structure/ocean_ruins_biomes.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/tags/worldgen/biome/has_structure/ocean_ruins_biomes.json",
+    "sha256": "f8e91eeb7ff83b349a645353ed24bda19b722e9d12d13d4fc179afcb5c61e1c5",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "_comment"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "values",
+          "0"
+        ]
+      },
+      {
+        "op": "insert",
+        "path": [
+          "values",
+          "0"
+        ],
+        "value": "minecraft:beach"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/ancient_crypt.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/ancient_crypt.json",
+    "sha256": "d47c03aabfd915e4b8750ff8a67bd0541d9ab5251748214458bf3c0a41ee95a7",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/ancient_dungeon.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/ancient_dungeon.json",
+    "sha256": "1500ccef3b6beed96a4dc08a64470b641d421696f53a49c834d7ffb484c723bc",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "OCEAN_FLOOR_WG"
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height",
+          "absolute"
+        ],
+        "value": -12
+      },
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/ancient_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/ancient_ruins.json",
+    "sha256": "a93b50e4c8fdcba4f970354bd42d5d39a6179361bef790523b6064d73e20719a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/ancient_towers.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/ancient_towers.json",
+    "sha256": "34058936baab391430a4170c281240bc58ef55558c0f39fc802ded21e654cafa",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 128,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/field_stone_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/field_stone_ruins.json",
+    "sha256": "43dc91510012b58daa280eb1a0eede932e9b50d000509ec4a6c67ca62f4fcad1",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/field_stone_ruins_rocks.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/field_stone_ruins_rocks.json",
+    "sha256": "7d5b839afd4355c8d653638efe7b39e079e11147bee73e20326d65406d8f9fe4",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/level_one_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/level_one_ruins.json",
+    "sha256": "40c2949d56aec67c21a1497f64f891aa11daa436bd5734d1e7925aeb4f455bc8",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/level_three_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/level_three_ruins.json",
+    "sha256": "dea12d9a65339891f1f2ad2016c255eae4752a86a83d8c70cbf6e79c40db255c",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/level_two_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/level_two_ruins.json",
+    "sha256": "9b4cef90d60f49ada798247b2f6268b12f8df7a840d33a9e5ba1d29898ba359d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/level_two_ruins_pool.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/level_two_ruins_pool.json",
+    "sha256": "c756da99d3e32d03ad14e753a93982bc1884af8ceae98dda9b75601f4e593bf4",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/lost_soul_city.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/lost_soul_city.json",
+    "sha256": "49de93250ed85d5261b37342488642eba78ce80424d0222c256a61cfcfa3fe93",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "OCEAN_FLOOR_WG"
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height",
+          "absolute"
+        ],
+        "value": -36
+      },
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "core_enclosed"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/lost_soul_dungeon.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/lost_soul_dungeon.json",
+    "sha256": "92305824c9669f283bf24b0dcfb9696a0d5848759f7ace36d4618a8c6306f178",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "core_enclosed"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/ocean_fortress.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/ocean_fortress.json",
+    "sha256": "6b3bfe5a3d58dd1e756696048d8fe05a08d98f4df03fcd82dc8975e9c7325a87",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/ocean_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/ocean_ruins.json",
+    "sha256": "e1979946fbbb18e14e80e7e3635ebb0fda060c951dbc151b0a31811695431b04",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/pumpkin_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/pumpkin_ruins.json",
+    "sha256": "e22bcf2b855baf129845d41c1c60f732f53bd4624453c069771953190fc949cd",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/rare_ruin.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/rare_ruin.json",
+    "sha256": "d473f08656779c4e7b58708c018ccf940f35c5292c416b3e40d79eeb00b0d9e9",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "lithostitched:delegating",
+        "spawn_condition": {
+          "type": "lithostitched:height_filter",
+          "range_type": "absolute",
+          "permitted_range": {
+            "min_inclusive": 64,
+            "max_inclusive": 384
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/structure/underground_structures.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/structure/underground_structures.json",
+    "sha256": "35d0b4f0740b2859f11a90198e8c53591bce930c4096fb4784341696ff04f41a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "core_enclosed"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/template_pool/ancient_dungeon.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/template_pool/ancient_dungeon.json",
+    "sha256": "ad73c44266c271d8d1d1dfb9f90aca37d623d9ad82b51abd605a0c95d3d786b3",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "6"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/template_pool/ancient_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/template_pool/ancient_ruins.json",
+    "sha256": "e8aab1a9af93f36111c96de9b70edbeaca727d859502584adae24f38892ee638",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "16",
+          "element",
+          "location"
+        ],
+        "value": "philipsruins:ancient_ruin17"
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/template_pool/level_two_ruins.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/template_pool/level_two_ruins.json",
+    "sha256": "bb9f9a1766eea1d20499a3e17b619224435a0639c3b8a4678205d1d039e66dd3",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements",
+          "11",
+          "element",
+          "location"
+        ],
+        "value": "philipsruins:ruin_grave1"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "17"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/template_pool/level_two_ruins_pool.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/template_pool/level_two_ruins_pool.json",
+    "sha256": "f7ccae138f732cf4857e52e2da8a95bf8d30aef511440503552021542bca193a",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "21"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "philipsruins:worldgen/template_pool/underground_structures.json",
+    "mod": "philipsruins",
+    "source": "data/philipsruins/worldgen/template_pool/underground_structures.json",
+    "sha256": "e5ee50651bd71a9f9fb22274be285fea1fb6fd592cf5dad35061670541e0922a",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "10"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "10"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "elements",
+          "10"
+        ]
+      }
+    ]
+  }
+]

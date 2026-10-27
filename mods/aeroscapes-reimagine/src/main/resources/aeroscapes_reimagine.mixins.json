@@ -1,0 +1,39 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "RandomStateMixin",
+    "FeatureIndexAccess",
+    "BasinAquiferMixin",
+    "IslandBiomeGenerationMixin",
+    "BiomeFillOrderMixin",
+    "LocalChunkPacingMixin",
+    "BasinAnimalSpawnMixin",
+    "StrongholdShellMixin",
+    "MonumentBuildingWaterMixin",
+    "MonumentRoomWaterMixin",
+    "MonumentReloadMixin",
+    "TerraBlenderEndIslandMixin",
+    "RegionScanMixin",
+    "IslandMineshaftMixin",
+    "BasinDrownedSpawnMixin",
+    "BasinTurtleSpawnMixin",
+    "BasinOceanRuinWaterMixin",
+    "BasinGlowSquidSpawnMixin",
+    "BasinIcebergMixin",
+    "BasinBlueIceMixin",
+    "BasinIcebergPlacementMixin",
+    "BasinBlueIcePlacementMixin",
+    "BasinFrozenOceanSurfaceMixin",
+    "BadlandsSurfaceMixin",
+    "BasinDrownedSwimUpMixin",
+    "BasinDrownedBeachMixin",
+    "IslandCavernMixin",
+    "RuntimeTemplateRepairsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,16 @@
+version:3955
+lang:en_us
+renderDistance:10
+simulationDistance:6
+maxFps:120
+bobView:false
+soundCategory_master:0.15
+soundCategory_music:0.15
+soundCategory_record:0.15
+soundCategory_weather:0.15
+soundCategory_block:0.15
+soundCategory_hostile:0.15
+soundCategory_neutral:0.15
+soundCategory_player:0.15
+soundCategory_ambient:0.15
+soundCategory_voice:0.15

@@ -1,0 +1,12 @@
+__pycache__/
+/.cache/
+/dist/
+/.runtime/
+/tools/pack/.cache/
+/tools/pack/.venv/
+/tools/pack/dist/
+/mods/aeroscapes-reimagine/.gradle/
+/mods/aeroscapes-reimagine/build/
+/tools/docs/node_modules/
+/tools/docs/.astro/
+/tools/docs/dist/

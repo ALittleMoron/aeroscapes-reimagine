@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "terralith:cave/frostfire_caves",
+    "minecraft:dripstone_caves"
+  ]
+}

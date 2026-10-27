@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#nova_structures:collections/oceans",
+    "minecraft:beach"
+  ]
+}

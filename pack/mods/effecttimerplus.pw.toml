@@ -1,0 +1,12 @@
+name = "Effect Timer Plus"
+filename = "effecttimerplus-neoforge-2.2.7+1.21.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/JIUF2Wb5/versions/Z9pHQX3r/effecttimerplus-neoforge-2.2.7%2B1.21.jar"
+hash-format = "sha512"
+hash = "a79fb95fee52599c6cf65303442e3e9d707e8b70aa5e4bf6f3d1298320229920a8f7ff115b6dc5da2ea2a558658d6806ccb7923f731236c95ea3ff6d6fb1d1cb"
+
+[update.modrinth]
+mod-id = "JIUF2Wb5"
+version = "Z9pHQX3r"

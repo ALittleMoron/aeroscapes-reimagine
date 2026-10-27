@@ -1,0 +1,6 @@
+{
+  "message.aeroscapes_reimagine.monitor.toggle": "Запрошено переключение панели мониторинга.",
+  "message.aeroscapes_reimagine.monitor.record": "Запрошена запись длительностью %s с.",
+  "message.aeroscapes_reimagine.monitor.stopped": "Запрошена остановка записи.",
+  "message.aeroscapes_reimagine.monitor.unavailable": "Мониторинг недоступен. Запусти этот профиль с локальной тестовой обёрткой MangoHud."
+}

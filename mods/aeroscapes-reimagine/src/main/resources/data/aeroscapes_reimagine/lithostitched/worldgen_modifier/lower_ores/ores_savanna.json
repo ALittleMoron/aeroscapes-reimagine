@@ -1,0 +1,10 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/savanna",
+  "features": [
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_diamond_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_iron_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_redstone_extra"
+  ],
+  "step": "underground_decoration"
+}

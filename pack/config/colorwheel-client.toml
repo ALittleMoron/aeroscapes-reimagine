@@ -1,0 +1,3 @@
+alertIncompatiblePack = true
+alertBrokenPack = true
+enableFallbackMode = true

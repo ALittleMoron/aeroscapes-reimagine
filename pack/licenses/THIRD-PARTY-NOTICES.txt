@@ -1,0 +1,53 @@
+Aeroscapes Reimagine 0.1.0 — third-party notices
+
+This independent pack is not endorsed by the original projects.
+Aeroscapes 1.0.8: Isabel / nuclearobelisk; CC BY-SA 4.0 for that author's
+contributions. Selected data are reorganized and adapted for this pack.
+Underlying dependencies retain their own terms.
+https://modrinth.com/modpack/aeroscapes/version/q4P5coPI
+https://creativecommons.org/licenses/by-sa/4.0/
+
+Aero Islands 1.1.1: Isabel / nuclearobelisk; exact artifact GNU GPL v3.0+.
+The owned mod retains GPL-3.0-or-later in 0.1.0. Incorporated data origins,
+modifications and Java behavior comparisons are recorded in its NOTICE and
+matching licenses/aeroscapes-reimagine-source.zip. The ZIP contains full source,
+Gradle build scripts and license text; SOURCE-MANIFEST.json binds its binary hash.
+https://modrinth.com/project/tGVwBATM/version/bzJ2edxy
+
+CTOV 3.6.3: ChoiceTheorem; CC BY-NC-ND 4.0.
+https://modrinth.com/mod/ct-overhaul-village/version/ztzRUnQ7
+Dungeons and Taverns 4.4.4: NovaWostra, Konci, Walls; All Rights Reserved.
+https://modrinth.com/datapack/dungeons-and-taverns/version/BYUUUeZA
+Philips Ruins 1.21.1-2.0: Philip, Josiah; All Rights Reserved.
+https://modrinth.com/mod/philips-ruins/version/EQHGxQAv
+Galosphere 1.5.3: Orcinus; All Rights Reserved.
+https://modrinth.com/mod/galosphere/version/Y3deS8Po
+Original JARs remain unchanged; local field repairs and island-placement wrappers
+run from original resources. Provider content retains its original authorship and terms; local transformations
+do not relicense the original resources.
+
+Terralith 2.5.8: Stardust Labs / Starmute; bundled Stardust Labs license.
+https://modrinth.com/mod/terralith/version/2.5.8
+Nature's Spirit 2.2.5: Team Hibiscus; original JAR descriptor All Rights Reserved.
+The 18 adapted data/natures_spirit JSON files use MIT; the complete copyright,
+permission and warranty notice is at licenses/Natures-Spirit-data-MIT.txt.
+Assets and model packages retain their separate terms.
+https://modrinth.com/mod/natures-spirit/version/MGjl80vc
+
+Minecraft 1.21.1: Mojang / Microsoft. Ancient-city templates are read locally
+and modified in memory; copied ancient-city NBT is not supplied by this pack.
+https://www.minecraft.net/en-us/eula
+
+C2ME base: MIT. Separate OpenCL extension 7rX3dlFf retains its embedded
+All Rights Reserved/no-redistribution notice. Its unchanged official download is
+referenced under Modrinth's specific-file modpack permission; extracted kernels,
+classes and nested JARs are not bundled separately.
+https://modrinth.com/mod/c2me-ocl/version/7rX3dlFf
+https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions
+
+Flywheel 1.0.6: Copyright (c) 2021-2024 Jozufozu; MIT. The unchanged client-only
+JAR includes its complete notice at META-INF/LICENSE.md.
+https://github.com/Engine-Room/Flywheel
+
+Original license files remain in original JARs; third-party content retains its
+own terms.

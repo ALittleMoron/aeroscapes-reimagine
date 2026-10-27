@@ -1,0 +1,11 @@
+{
+  "values": [
+    "minecraft:bedrock",
+    "minecraft:water",
+    "minecraft:ice",
+    "minecraft:lava",
+    "minecraft:air",
+    "#minecraft:logs",
+    "#minecraft:leaves"
+  ]
+}

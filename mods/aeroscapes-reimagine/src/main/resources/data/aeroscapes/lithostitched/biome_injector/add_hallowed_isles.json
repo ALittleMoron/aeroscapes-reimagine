@@ -1,0 +1,11 @@
+{
+  "type": "lithostitched:replace_partially",
+  "dimension": "minecraft:overworld",
+  "targets": "minecraft:mushroom_fields",
+  "replacement": "minecraft:deep_dark",
+  "parameters": {
+    "temperature": {
+      "max_inclusive": 0
+    }
+  }
+}

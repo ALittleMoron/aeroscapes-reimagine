@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.scalablelux",
+  "plugin": "dev.aeroscapes.lighting.ScalableLuxMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "LevelLightEngineAccess",
+    "LightEngineStorageAccess",
+    "LightStorageAccess",
+    "ChunkSkyAccess",
+    "PlotLightingMixin",
+    "PlotChunkSkyMixin",
+    "PlotAuxLightMixin",
+    "PlotAuxSaveMixin",
+    "PlotAuxLoadMixin",
+    "PlotCopycatMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

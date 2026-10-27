@@ -1,0 +1,7 @@
+{
+  "processors": [
+    {
+      "processor_type": "aeroscapes_reimagine:hanging_entity_anchor"
+    }
+  ]
+}

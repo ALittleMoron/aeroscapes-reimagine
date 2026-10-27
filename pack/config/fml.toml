@@ -1,0 +1,3 @@
+# The owned Sable lighting adapter handles this exact ScalableLux incompatibility.
+[dependencyOverrides]
+sable = ["-scalablelux"]

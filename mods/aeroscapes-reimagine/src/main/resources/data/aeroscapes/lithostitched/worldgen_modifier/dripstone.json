@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/dripstone",
+  "features": [
+	"aeroscapes:dripstone_cluster"
+  ],
+  "step": "underground_decoration"
+}

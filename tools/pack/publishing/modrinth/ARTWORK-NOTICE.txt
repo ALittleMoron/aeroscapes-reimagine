@@ -1,0 +1,27 @@
+Production icon candidate
+=========================
+Title: Floating platforms
+Author: Delapouite
+Source page: https://game-icons.net/1x1/delapouite/floating-platforms.html
+Original PNG: https://game-icons.net/icons/ffffff/000000/1x1/delapouite/floating-platforms.png
+License: Creative Commons Attribution 3.0 Unported (CC BY 3.0)
+License URL: https://creativecommons.org/licenses/by/3.0/
+Legal code: https://creativecommons.org/licenses/by/3.0/legalcode.en
+SHA-256: dc35f4c1c0564b925c87f77f63271fef0fb2418cc0ba5608b7f9151577055b8e
+
+icon.png is the unchanged supplied PNG. It has not been generated, recolored,
+retouched or composited. Selection by an AI assistant does not make this a new
+illustration; the original artwork remains credited to its author. Suitability
+under Modrinth's policy is an interpretation of its restriction on generative
+output, not an assurance from Modrinth's moderation team.
+
+Procedural design study
+=======================
+concepts/aeroscapes-mark.svg is AI-assisted vector source created for local
+review and rendered by librsvg. No image-generation model was used. This fact
+alone does not establish that Modrinth permits it. It is not the upload icon,
+is not included in the profile payload, and must not be presented as approved
+or human-authored artwork. The project owner must resolve its platform
+eligibility before using it on Modrinth.
+
+No reference modpack logos, banners, screenshots or other artwork were copied.

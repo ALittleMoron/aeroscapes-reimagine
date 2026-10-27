@@ -1,0 +1,12 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/plains",
+  "features": [
+	"aeroscapes:ceiling_vegetation",
+	"aeroscapes:overhang/overhang_features_plains",
+	"aeroscapes:patch_sugar_cane",
+	"aeroscapes:seagrass",
+	"aeroscapes:kelp"
+  ],
+  "step": "vegetal_decoration"
+}

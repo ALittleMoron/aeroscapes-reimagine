@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/void",
+  "features": [
+	"aeroscapes:overhang/overhang_features_void"
+  ],
+  "step": "vegetal_decoration"
+}

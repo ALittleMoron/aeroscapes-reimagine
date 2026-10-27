@@ -1,0 +1,32 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:blooming_highlands",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:boreal_taiga",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:snowy_redwood_forest",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:tundra",
+      "required": false
+    },
+    "terralith:alpine_grove",
+    "terralith:birch_taiga",
+    "terralith:cold_shrubland",
+    "terralith:haze_mountain",
+    "terralith:rocky_shrubland",
+    "terralith:siberian_grove",
+    "terralith:snowy_cherry_grove",
+    "terralith:snowy_maple_forest",
+    "terralith:snowy_shield",
+    "terralith:wintry_forest",
+    "terralith:wintry_lowlands"
+  ]
+}

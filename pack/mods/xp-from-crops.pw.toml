@@ -1,0 +1,12 @@
+name = "Xp from Crops"
+filename = "xp_from_crops-1.0.0-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/RvkVY4dn/versions/I6Qky0d2/xp_from_crops-1.0.0-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "d88971064bc269aea9b9575d8cfac6e2930d94cfbeb03ab46bc916a4de0cd7acef725847da975bf36f8ddf674400545a2a73a0fd310b02bef860a3470e11df0e"
+
+[update.modrinth]
+mod-id = "RvkVY4dn"
+version = "I6Qky0d2"

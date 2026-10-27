@@ -1,0 +1,7 @@
+{
+  "processors": [
+    {
+      "processor_type": "aeroscapes_reimagine:non_void_projection"
+    }
+  ]
+}

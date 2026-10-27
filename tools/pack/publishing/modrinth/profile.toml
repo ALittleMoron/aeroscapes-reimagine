@@ -1,0 +1,35 @@
+schema_version = 1
+title = "Aeroscapes Reimagine"
+wiki_url = "https://alittlemoron.github.io/aeroscapes-reimagine/"
+
+icon_file = "icon.png"
+icon_sha256 = "dc35f4c1c0564b925c87f77f63271fef0fb2418cc0ba5608b7f9151577055b8e"
+icon_origin = "human-authored-unmodified"
+icon_title = "Floating platforms"
+icon_author = "Delapouite"
+icon_source_url = "https://game-icons.net/1x1/delapouite/floating-platforms.html"
+icon_license_url = "https://creativecommons.org/licenses/by/3.0/"
+
+[en]
+summary = "Floating-island survival with Create machinery, player-built aircraft, exploration and everyday life."
+body = """
+Make your home among floating islands. Build a Create workshop, design an Aeronautics aircraft, and set out for new landscapes, villages and ruins. Bring back materials for your next project, or keep exploring.
+
+## What you can do
+
+- **Explore an island Overworld:** forests, deserts, rocky heights, caves and island ocean basins.
+- **Build machines and aircraft:** Create automation and Aeronautics vehicles designed by you.
+- **Find places worth a journey:** villages, ruins and dungeons adapted to the island terrain.
+- **Grow, cook and automate:** Farmer’s Delight kitchens and Create food production.
+- **Make a place your own:** building materials, furnishings and decorative details for homes and workshops.
+
+## Before you play
+
+Designed primarily for singleplayer on Minecraft {minecraft} / NeoForge {neoforge}. **Java {java} is required.** Start a new world with the **Default** world type. Check the current limitations before choosing a version.
+
+[Documentation]({docs}) is available in **English** and **Russian**.
+
+An independent project inspired by [Isabel’s Aeroscapes](https://modrinth.com/modpack/aeroscapes). Adopted data and third-party contributions are acknowledged in the [credits]({docs}en/credits/).
+
+AI tools support exploring ideas, researching Minecraft modding, and reviewing code and pack integration. See the project’s content disclosures for material-specific authorship information.
+"""

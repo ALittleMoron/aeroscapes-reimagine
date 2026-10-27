@@ -1,0 +1,8 @@
+{
+  "type": "aeroscapes_reimagine:island_terrain",
+  "original": "aeroscapes:final_density",
+  "lower": "aeroscapes_reimagine:lower_density",
+  "continents": "minecraft:overworld/continents",
+  "form": "aeroscapes_reimagine:form",
+  "caves": "aeroscapes_reimagine:caves"
+}

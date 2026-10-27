@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/void",
+  "features": [
+    "aeroscapes:pointed_basalt_cluster"
+  ],
+  "step": "underground_decoration"
+}

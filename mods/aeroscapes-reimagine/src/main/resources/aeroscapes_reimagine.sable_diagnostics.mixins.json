@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.sable",
+  "plugin": "dev.aeroscapes.diagnostics.SableDiagnosticMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "SableStartDiagnosticMixin",
+    "SableSnapshotDiagnosticMixin",
+    "SableStopTrackingDiagnosticMixin",
+    "SableStopMovingDiagnosticMixin",
+    "SableFinalizeDiagnosticMixin"
+  ],
+  "injectors": {"defaultRequire": 1}
+}

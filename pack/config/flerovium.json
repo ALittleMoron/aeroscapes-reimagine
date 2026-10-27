@@ -1,0 +1,7 @@
+{
+  "entityBackFaceCulling": false,
+  "itemBackFaceCulling": false,
+  "reduceTerrainParticles": false,
+  "skipEntityTangentCompute": false,
+  "fastBreakingTexture": false
+}

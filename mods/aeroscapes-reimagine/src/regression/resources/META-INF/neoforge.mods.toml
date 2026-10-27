@@ -1,0 +1,16 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="aeroscapes_regression"
+version="0.1.0"
+displayName="Aeroscapes server-only worldgen regression fixture"
+
+[[mixins]]
+config="aeroscapes_regression.opencl.mixins.json"
+
+[[mixins]]
+config="aeroscapes_regression.biome.mixins.json"
+
+[[mixins]]
+config="aeroscapes_regression.noise.mixins.json"

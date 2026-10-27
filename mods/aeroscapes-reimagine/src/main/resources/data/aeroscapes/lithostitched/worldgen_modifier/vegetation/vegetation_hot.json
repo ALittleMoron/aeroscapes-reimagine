@@ -1,0 +1,11 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/hot",
+  "features": [
+	"aeroscapes:overhang/overhang_features_badlands",
+    "minecraft:warm_ocean_vegetation",
+    "minecraft:seagrass_warm",
+    "minecraft:sea_pickle"
+  ],
+  "step": "vegetal_decoration"
+}

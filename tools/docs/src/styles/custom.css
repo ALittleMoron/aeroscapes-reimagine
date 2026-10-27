@@ -1,0 +1,156 @@
+:root {
+  --sl-font:
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  --sl-content-width: 46rem;
+  --sl-sidebar-width: 18rem;
+  --sl-line-height: 1.75;
+  --sl-color-accent-low: #213e37;
+  --sl-color-accent: #78ad95;
+  --sl-color-accent-high: #c0e1ce;
+  --sl-color-white: #f1f3ec;
+  --sl-color-gray-1: #dbe3dd;
+  --sl-color-gray-2: #bdccc5;
+  --sl-color-gray-3: #8daba1;
+  --sl-color-gray-4: #536e66;
+  --sl-color-gray-5: #314743;
+  --sl-color-gray-6: #1c302d;
+  --sl-color-black: #112321;
+  --sl-color-bg-nav: #10201f;
+  --sl-color-bg-sidebar: #142724;
+}
+
+:root[data-theme="light"] {
+  --sl-color-accent-low: #e1eee2;
+  --sl-color-accent: #376c51;
+  --sl-color-accent-high: #234d3e;
+  --sl-color-white: #19382d;
+  --sl-color-gray-1: #294c3c;
+  --sl-color-gray-2: #456151;
+  --sl-color-gray-3: #506b59;
+  --sl-color-gray-4: #a3b6a5;
+  --sl-color-gray-5: #d3dfd0;
+  --sl-color-gray-6: #edf1e6;
+  --sl-color-gray-7: #f7f7ef;
+  --sl-color-black: #fbfbf4;
+  --sl-color-bg-nav: #f7f8f0;
+  --sl-color-bg-sidebar: #f1f4e9;
+}
+
+.site-title {
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+starlight-theme-select select {
+  min-width: 8.5rem;
+}
+
+main h1,
+main h2,
+main h3 {
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+
+main h1 {
+  font-size: clamp(2rem, 3.3vw, 2.8rem);
+  line-height: 1.15;
+}
+
+.sl-markdown-content h2 {
+  font-size: 1.6rem;
+  margin-top: 2.3em;
+}
+
+.sl-markdown-content h3 {
+  font-size: 1.22rem;
+}
+
+.sl-markdown-content a:not(.sl-link-card a) {
+  text-underline-offset: 0.18em;
+}
+
+.hero {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.4rem;
+  padding-block: 1.5rem 2rem;
+}
+
+.hero > img {
+  order: 2;
+  width: 100%;
+  max-width: 46rem;
+  height: clamp(10rem, 24vw, 18rem);
+  object-fit: contain;
+}
+
+.hero .stack {
+  gap: 1.6rem;
+  text-align: start;
+}
+
+.hero .copy {
+  align-items: flex-start;
+}
+
+.hero .copy > * {
+  max-width: 100%;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 4.8vw, 4rem);
+  line-height: 1.05;
+  max-width: 12ch;
+}
+
+.hero .tagline {
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.hero .actions {
+  justify-content: flex-start;
+  gap: 0.8rem;
+}
+
+.sl-link-card {
+  border-radius: 0.65rem;
+  background: var(--sl-color-bg-sidebar);
+  box-shadow: none;
+}
+
+.sl-link-card .title {
+  font-size: 1.1rem;
+  letter-spacing: -0.015em;
+}
+
+.sl-link-card:hover {
+  border-color: var(--sl-color-accent);
+  box-shadow: none;
+}
+
+.sl-markdown-content table {
+  font-size: 0.92rem;
+}
+
+.sl-markdown-content th {
+  color: var(--sl-color-gray-2);
+  font-weight: 600;
+}
+
+@media (max-width: 30rem) {
+  .hero h1 {
+    font-size: 2.65rem;
+  }
+
+  .hero .actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero > img {
+    height: 10rem;
+  }
+}

@@ -1,0 +1,9 @@
+Derived from selected contributions in Isabel's Aeroscapes 1.0.8.
+Author: Isabel / nuclearobelisk. Original contributions: CC BY-SA 4.0.
+https://modrinth.com/modpack/aeroscapes/version/q4P5coPI
+https://creativecommons.org/licenses/by-sa/4.0/
+Reimagine reorganizes data and adapts worldgen and compatibility behavior.
+Underlying provider resources retain their authorship and separate terms.
+See licenses/THIRD-PARTY-NOTICES.txt in the installed instance.
+Nature's Spirit data JSON: Copyright (c) 2022 Team Hibiscus, MIT;
+complete notice: licenses/Natures-Spirit-data-MIT.txt.

@@ -1,0 +1,1669 @@
+{
+  "jar": "mods/aeroscapes-reimagine-0.1.0.jar",
+  "mod_id": "aeroscapes_reimagine",
+  "mod_version": "0.1.0",
+  "source": {
+    "project_id": "tGVwBATM",
+    "version_id": "bzJ2edxy",
+    "sha512": "6ced9b88562a3f14f3fc2cbc8b496557a7b1e5908b27f5813bc5784a9246bd7560f83b6045f85455aa8b93b54ac2613d3cf0032a53229a1a336732f9b03eb5a5"
+  },
+  "resources": [
+    {
+      "source": "data/aeroscapes/lithostitched/biome_injector/add_hallowed_isles.json",
+      "source_sha256": "f6b6a9eae54d702d5eaf605e66c266f6bec3a95d355c10610f8e1265c498d51d",
+      "output": "data/aeroscapes/lithostitched/biome_injector/add_hallowed_isles.json",
+      "sha256": "5234da8c9eb92746db9c17d213325657d0355233e11af3cf09f3eddfe60467af",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/dripstone.json",
+      "source_sha256": "07ebcae47d1fccaf979947ce85479637e0d79b10f6e49dae0abc62a8936e3f18",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/dripstone.json",
+      "sha256": "07ebcae47d1fccaf979947ce85479637e0d79b10f6e49dae0abc62a8936e3f18",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/large_dripstone.json",
+      "source_sha256": "6a092a99a0d7baac74c73518277dc5a9e9d9f5c99cb1228768f112fe92c28adf",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/large_dripstone.json",
+      "sha256": "6a092a99a0d7baac74c73518277dc5a9e9d9f5c99cb1228768f112fe92c28adf",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_cold.json",
+      "source_sha256": "415fd3030ecddf22f32f7bcd6929dac9ccf511ef1c38088918c30a0194bbb1e7",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_cold.json",
+      "sha256": "415fd3030ecddf22f32f7bcd6929dac9ccf511ef1c38088918c30a0194bbb1e7",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_cold_remove.json",
+      "source_sha256": "07dd03968fbd4850194bbb2ebbca5e5d1ca53fb011753e6b408127ecaa55c049",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_cold_remove.json",
+      "sha256": "07dd03968fbd4850194bbb2ebbca5e5d1ca53fb011753e6b408127ecaa55c049",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_hot.json",
+      "source_sha256": "e3d1882b2b525f40759abba2f338dc17545d3d35c564dfc23fc93168ee2cebe8",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_hot.json",
+      "sha256": "e3d1882b2b525f40759abba2f338dc17545d3d35c564dfc23fc93168ee2cebe8",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_hot_remove.json",
+      "source_sha256": "ba81eeed7f41932c354c27359e3ac586bd0ed09a57716c4f1519a924150b0044",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_hot_remove.json",
+      "sha256": "ba81eeed7f41932c354c27359e3ac586bd0ed09a57716c4f1519a924150b0044",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_lush.json",
+      "source_sha256": "4faa9d677e30dc341e93ccfd4abec2c0b6f887c5807f9b446369c8a39da05076",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_lush.json",
+      "sha256": "4faa9d677e30dc341e93ccfd4abec2c0b6f887c5807f9b446369c8a39da05076",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_lush_remove.json",
+      "source_sha256": "b08d92e098e65651f15fd6475d4ec295198fe77bd0f071e996b19b01e444685a",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_lush_remove.json",
+      "sha256": "b08d92e098e65651f15fd6475d4ec295198fe77bd0f071e996b19b01e444685a",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_plains.json",
+      "source_sha256": "956cf5fa13896177ca49174df0f8077bf598df4f54da8388a90ddc682bfa9a7f",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_plains.json",
+      "sha256": "956cf5fa13896177ca49174df0f8077bf598df4f54da8388a90ddc682bfa9a7f",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_plains_remove.json",
+      "source_sha256": "da4a7278aa701d0dbef714a50efd367aef8b0aa716d1a427ba5128ca0b01d5ed",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_plains_remove.json",
+      "sha256": "da4a7278aa701d0dbef714a50efd367aef8b0aa716d1a427ba5128ca0b01d5ed",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_savanna.json",
+      "source_sha256": "5c399494762b65c353fbf7efe2ce2fc56cdf076725e55b8510add23a9b457446",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_savanna.json",
+      "sha256": "5c399494762b65c353fbf7efe2ce2fc56cdf076725e55b8510add23a9b457446",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_savanna_remove.json",
+      "source_sha256": "301866c99c308c280a243eef43dc27e21622e55fb803d13d48d5d4dcba1248fc",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_savanna_remove.json",
+      "sha256": "301866c99c308c280a243eef43dc27e21622e55fb803d13d48d5d4dcba1248fc",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_special.json",
+      "source_sha256": "480fb3ee9da352dafdf8d4a274fa35b02ca6f9b9d9f9ff31d69bf5889af79d3d",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_special.json",
+      "sha256": "480fb3ee9da352dafdf8d4a274fa35b02ca6f9b9d9f9ff31d69bf5889af79d3d",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_special_remove.json",
+      "source_sha256": "870e81af8e8a0ab20a8ffea1623a543aa0ddd512c86be7180780c6e737d15790",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_special_remove.json",
+      "sha256": "870e81af8e8a0ab20a8ffea1623a543aa0ddd512c86be7180780c6e737d15790",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_swamp.json",
+      "source_sha256": "f2cd243b29bdaba7ba75fb361d943850b661db6f87d6650c884ac1d8a24cf7e8",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_swamp.json",
+      "sha256": "f2cd243b29bdaba7ba75fb361d943850b661db6f87d6650c884ac1d8a24cf7e8",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_swamp_remove.json",
+      "source_sha256": "7e3384dcdbed78194e334e0948969e8e9c5a94b366563afabc3016e2ec2e0500",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_swamp_remove.json",
+      "sha256": "7e3384dcdbed78194e334e0948969e8e9c5a94b366563afabc3016e2ec2e0500",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_temperate.json",
+      "source_sha256": "04cff19a4a33594d5570ecdf470a85fb7548392a197aa8924c34240eb43cd110",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_temperate.json",
+      "sha256": "04cff19a4a33594d5570ecdf470a85fb7548392a197aa8924c34240eb43cd110",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_temperate_remove.json",
+      "source_sha256": "7497af761d1c8d3f4e0ea34f2a63be66af94ba3c44a7a3494468fe9be17c4303",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_temperate_remove.json",
+      "sha256": "7497af761d1c8d3f4e0ea34f2a63be66af94ba3c44a7a3494468fe9be17c4303",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_void.json",
+      "source_sha256": "03191a6909c25b8f0aacac3c73102922978d625e7fbbc04910b603e309578d7c",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/ores/ores_void.json",
+      "sha256": "03191a6909c25b8f0aacac3c73102922978d625e7fbbc04910b603e309578d7c",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/pointed_basalt.json",
+      "source_sha256": "21be8aa7274fd65514f8697096809db801e06833ecf07b7c8a71514b5abc4147",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/pointed_basalt.json",
+      "sha256": "21be8aa7274fd65514f8697096809db801e06833ecf07b7c8a71514b5abc4147",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/selenite_geode.json",
+      "source_sha256": "fb30541674f7b89054f1136ffbdfcbbe2b6f5199c20fbd2f1514d07a1b39fd08",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/selenite_geode.json",
+      "sha256": "fb30541674f7b89054f1136ffbdfcbbe2b6f5199c20fbd2f1514d07a1b39fd08",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/stone_height.json",
+      "source_sha256": "6380d5d5000864a3eeb9a05607c79292726ced08199581e51920c92f3b06a1b2",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/stone_height.json",
+      "sha256": "6380d5d5000864a3eeb9a05607c79292726ced08199581e51920c92f3b06a1b2",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_cold.json",
+      "source_sha256": "ecdf44073dcca0b331a391454298906089556bcc44b22408ff19e41f646b9586",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_cold.json",
+      "sha256": "ecdf44073dcca0b331a391454298906089556bcc44b22408ff19e41f646b9586",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_cold_barren.json",
+      "source_sha256": "8647b3c4642cb2ac1a475b7ee9b0bd98d6e878ed34d5bc9b2b9ecc08e5b3d23e",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_cold_barren.json",
+      "sha256": "8647b3c4642cb2ac1a475b7ee9b0bd98d6e878ed34d5bc9b2b9ecc08e5b3d23e",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_hot.json",
+      "source_sha256": "736cec62e33fa07675a933a18756458a9083ae5e9100c23a97d6af2f89390641",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_hot.json",
+      "sha256": "736cec62e33fa07675a933a18756458a9083ae5e9100c23a97d6af2f89390641",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_lush.json",
+      "source_sha256": "15318868d6d2e1ff6eb75ac87d24b38c0a9cf5779ce10077301efc5ac18d5d0e",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_lush.json",
+      "sha256": "15318868d6d2e1ff6eb75ac87d24b38c0a9cf5779ce10077301efc5ac18d5d0e",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_plains.json",
+      "source_sha256": "fea30ead0b0cc78edef0ca2337bf376c2685b2a98eb50ab3bcf5b65318a91415",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_plains.json",
+      "sha256": "fea30ead0b0cc78edef0ca2337bf376c2685b2a98eb50ab3bcf5b65318a91415",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_savanna.json",
+      "source_sha256": "78e7c204f0fbc7f044bf5092d05207681424f1e1eaf6e30b30cb911f5e20cc36",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_savanna.json",
+      "sha256": "78e7c204f0fbc7f044bf5092d05207681424f1e1eaf6e30b30cb911f5e20cc36",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_swamp.json",
+      "source_sha256": "5805eb802f96661e81773ec181863ca2e941d6b755bb861539f6855f292aee92",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_swamp.json",
+      "sha256": "5805eb802f96661e81773ec181863ca2e941d6b755bb861539f6855f292aee92",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_temperate.json",
+      "source_sha256": "52ffeebf7a11802251d1430dcdf85caf6c9680d2b8b66233adc02fa0c6df68de",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_temperate.json",
+      "sha256": "52ffeebf7a11802251d1430dcdf85caf6c9680d2b8b66233adc02fa0c6df68de",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_void.json",
+      "source_sha256": "5dea9feb19360bab45e37fc872c900bb85beb8380d2101f2afd3295959dc7605",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/vegetation/vegetation_void.json",
+      "sha256": "5dea9feb19360bab45e37fc872c900bb85beb8380d2101f2afd3295959dc7605",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/lithostitched/worldgen_modifier/voidsea_surface_rules.json",
+      "source_sha256": "29960dd18ef07b97c703341378b5f86ed570b8cd3e98691321de5cb999ba3b19",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/voidsea_surface_rules.json",
+      "sha256": "e9164792487fd5af4e3ca2f445ff8ba2f8f7faea1a4c2221cdf3f3a3a702f864",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/aeroscapes/tags/block/selenite_geode_invalid_blocks.json",
+      "source_sha256": "f87a3dc778c2f766fe2f6af6ad3bb4e611428d977f8f60867b2619990486c15f",
+      "output": "data/aeroscapes/tags/block/selenite_geode_invalid_blocks.json",
+      "sha256": "f87a3dc778c2f766fe2f6af6ad3bb4e611428d977f8f60867b2619990486c15f",
+      "mode": "exact",
+      "reason": "Retain original geode invalid-block exclusions"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/dripstone.json",
+      "source_sha256": "8f5eaf3c2fd6ee908076f1e93cd2ebcafc5f5fb5a95ac7fc9338988712d8ce54",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/dripstone.json",
+      "sha256": "8f5eaf3c2fd6ee908076f1e93cd2ebcafc5f5fb5a95ac7fc9338988712d8ce54",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/cold.json",
+      "source_sha256": "a958987479483ed946df8c553f94d9752aae678c7427f5a7ce1aa7b85f86a7c1",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/cold.json",
+      "sha256": "a958987479483ed946df8c553f94d9752aae678c7427f5a7ce1aa7b85f86a7c1",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/cold_barren.json",
+      "source_sha256": "ace11b5677fb6dcd47e9cdda658b51d4a153babe4438571029db2c124bcf7f10",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/cold_barren.json",
+      "sha256": "ace11b5677fb6dcd47e9cdda658b51d4a153babe4438571029db2c124bcf7f10",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/hot.json",
+      "source_sha256": "e792dcbbd267bbc90fea7bbe2de854c6df56d0419065dcbd535ecc1b0caf0a1e",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/hot.json",
+      "sha256": "e792dcbbd267bbc90fea7bbe2de854c6df56d0419065dcbd535ecc1b0caf0a1e",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/lush.json",
+      "source_sha256": "979387630236c9e3e13f1bf94f62464ae560b1d40dfaaa45f57bc12d267c96d4",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/lush.json",
+      "sha256": "979387630236c9e3e13f1bf94f62464ae560b1d40dfaaa45f57bc12d267c96d4",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/lush_ores.json",
+      "source_sha256": "30346bbe9118a17a2ac6912e6bd7df271f510f17cbd3102daac86671bb2f86c7",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/lush_ores.json",
+      "sha256": "30346bbe9118a17a2ac6912e6bd7df271f510f17cbd3102daac86671bb2f86c7",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/plains.json",
+      "source_sha256": "0d5185b5289dc71f9ce934bcd7d48d3560591102ae2e3ea3a91e9cbe670d9121",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/plains.json",
+      "sha256": "0d5185b5289dc71f9ce934bcd7d48d3560591102ae2e3ea3a91e9cbe670d9121",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/savanna.json",
+      "source_sha256": "6e42aeabcb91acb59be256bb112c15e69a74722ff69fc5779ddd54aeda6a1003",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/savanna.json",
+      "sha256": "6e42aeabcb91acb59be256bb112c15e69a74722ff69fc5779ddd54aeda6a1003",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/special.json",
+      "source_sha256": "695e1d0aac721f9722971a3dae3daff513d9c002744cea7598c8de3c6dcdc26d",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/special.json",
+      "sha256": "9639e8ed2ba3ba322f502d1a2c6725684d8ef63bffeef8e39a261ac32a231800",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/swamp.json",
+      "source_sha256": "aecec303580479a08c3f1419aaec7ee38983d2d49fd1f71c657c634fd25775e6",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/swamp.json",
+      "sha256": "aecec303580479a08c3f1419aaec7ee38983d2d49fd1f71c657c634fd25775e6",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/temperate.json",
+      "source_sha256": "093775fdaeb7f4d12926c967107cf061caf4190939976bff876112485e5c3a87",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/temperate.json",
+      "sha256": "093775fdaeb7f4d12926c967107cf061caf4190939976bff876112485e5c3a87",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/void.json",
+      "source_sha256": "6b08534786d762c3e9a9343b8d4abfae10d43939bd54da175a3d5df976f8f23d",
+      "output": "data/aeroscapes/tags/worldgen/biome/modifiers/presets/void.json",
+      "sha256": "0a19db82caad831669f10828a999b71eba8f6f447165b3d4e375aeefdbfc1a90",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/basalt_pillar.json",
+      "source_sha256": "381308058e6905313779e3798a097c4daefaedc056ed2722bca18a7d1b2f3819",
+      "output": "data/aeroscapes/worldgen/configured_feature/basalt_pillar.json",
+      "sha256": "cf4431875cfc64bf542a5aa0ff0ab48aefcadcd4cf92e951a333c9f47d725f17",
+      "mode": "adapted",
+      "reason": "Set only basalt max_ground_drop to 16; preserve original placement frequency, radius, height, materials and noise providers."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/delta.json",
+      "source_sha256": "c470a340e29c9afe44f3875ba8ed04c4c3e644994a570a7bf77fd01f56354d50",
+      "output": "data/aeroscapes/worldgen/configured_feature/delta.json",
+      "sha256": "c470a340e29c9afe44f3875ba8ed04c4c3e644994a570a7bf77fd01f56354d50",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/large_basalt_column.json",
+      "source_sha256": "74209e4f28bb656f08801fb30e8cec9cb560cd37121bf8c48db67c0bd6ad8d64",
+      "output": "data/aeroscapes/worldgen/configured_feature/large_basalt_column.json",
+      "sha256": "74209e4f28bb656f08801fb30e8cec9cb560cd37121bf8c48db67c0bd6ad8d64",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/moss_patch_ceiling.json",
+      "source_sha256": "5e67e39a4247161af03715096471cedae540cdb2992da33963ac0f261dad5ec2",
+      "output": "data/aeroscapes/worldgen/configured_feature/moss_patch_ceiling.json",
+      "sha256": "5e67e39a4247161af03715096471cedae540cdb2992da33963ac0f261dad5ec2",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/ores/ore_aerolite.json",
+      "source_sha256": "86b60c9cce9c15da347488df1d23884f253a41aeebeca0ee9cf8955c5179c44a",
+      "output": "data/aeroscapes/worldgen/configured_feature/ores/ore_aerolite.json",
+      "sha256": "ea7264356b67359e9f9951341e916a724554c903a6f36b06e7da9ce7b44bbebe",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/ores/ore_aerolite_voidsea.json",
+      "source_sha256": "753a2090d50f21d1545990bb9a6db64f3628d919d81a47f6c15f9f57338bb185",
+      "output": "data/aeroscapes/worldgen/configured_feature/ores/ore_aerolite_voidsea.json",
+      "sha256": "ea7264356b67359e9f9951341e916a724554c903a6f36b06e7da9ce7b44bbebe",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/ores/ore_andesite_voidsea.json",
+      "source_sha256": "3d2024f14044aeca3a18cb329e4d3cee139b087c709ba81e4f7b4221ba6518da",
+      "output": "data/aeroscapes/worldgen/configured_feature/ores/ore_andesite_voidsea.json",
+      "sha256": "3d2024f14044aeca3a18cb329e4d3cee139b087c709ba81e4f7b4221ba6518da",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/ores/ore_gold_aerolite.json",
+      "source_sha256": "491e02a4f7cf091bbb22865b57dd513967823ff3a081383c0d09ada668ba1a5e",
+      "output": "data/aeroscapes/worldgen/configured_feature/ores/ore_gold_aerolite.json",
+      "sha256": "ea7264356b67359e9f9951341e916a724554c903a6f36b06e7da9ce7b44bbebe",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/ores/ore_tuff_voidsea.json",
+      "source_sha256": "440e7cfe745dd3ee0c62f666f965e510e836d3c04ebd65d68aa72f84fc7d1d28",
+      "output": "data/aeroscapes/worldgen/configured_feature/ores/ore_tuff_voidsea.json",
+      "sha256": "440e7cfe745dd3ee0c62f666f965e510e836d3c04ebd65d68aa72f84fc7d1d28",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_badlands.json",
+      "source_sha256": "121150cd8945baf7e424f56840a9518cba333d47af4f6827c491a4235c38c7e0",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_badlands.json",
+      "sha256": "121150cd8945baf7e424f56840a9518cba333d47af4f6827c491a4235c38c7e0",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_forest.json",
+      "source_sha256": "61100dcfc4d888dc323e7d8626ba5d4bf2b94156dcee831a1ba29108c858ca42",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_forest.json",
+      "sha256": "61100dcfc4d888dc323e7d8626ba5d4bf2b94156dcee831a1ba29108c858ca42",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_jungle.json",
+      "source_sha256": "cb38af1c9632201095fbb24a3e921a60c05129dc207bf8da859f0482f75b9315",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_jungle.json",
+      "sha256": "cb38af1c9632201095fbb24a3e921a60c05129dc207bf8da859f0482f75b9315",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_plains.json",
+      "source_sha256": "2b5dd24a191e3c5aea14a13b303e007398b23ce1d8b5ea90329d94940b0bf808",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_plains.json",
+      "sha256": "2b5dd24a191e3c5aea14a13b303e007398b23ce1d8b5ea90329d94940b0bf808",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_sparse_forest.json",
+      "source_sha256": "f192342659e3e356db672a6018affa1b1ff4a4b38eb6825e76127e886f418167",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_sparse_forest.json",
+      "sha256": "f192342659e3e356db672a6018affa1b1ff4a4b38eb6825e76127e886f418167",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_swamp.json",
+      "source_sha256": "d6ebbcb603b609eb57d1af27bb2400dbbdc51226154591698dcbcca8105b3f0a",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_swamp.json",
+      "sha256": "d6ebbcb603b609eb57d1af27bb2400dbbdc51226154591698dcbcca8105b3f0a",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_taiga.json",
+      "source_sha256": "7d57239105072e78a21d3133d105d1a37e4d3fc6587fad3dd2734b50c3643001",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/overhang_features_taiga.json",
+      "sha256": "7d57239105072e78a21d3133d105d1a37e4d3fc6587fad3dd2734b50c3643001",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_badlands.json",
+      "source_sha256": "e57e053d3f9a35c0ceb13a6dc59ff563c4b05efd6af9330252c7b2cd09c1a2cf",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_badlands.json",
+      "sha256": "e57e053d3f9a35c0ceb13a6dc59ff563c4b05efd6af9330252c7b2cd09c1a2cf",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_desert.json",
+      "source_sha256": "b8dc7a40e597d04b4163af087bbc37be75a9eb4ecdcdbdc4d42f397fa357b1e3",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_desert.json",
+      "sha256": "b8dc7a40e597d04b4163af087bbc37be75a9eb4ecdcdbdc4d42f397fa357b1e3",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_forest.json",
+      "source_sha256": "afeee98f7dc37df88d02d2f379b5b59b2d5f213a1ffd6e58e96bb604846e8426",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_forest.json",
+      "sha256": "afeee98f7dc37df88d02d2f379b5b59b2d5f213a1ffd6e58e96bb604846e8426",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_jungle.json",
+      "source_sha256": "f0a30e1a96508163d3b55ccc8b349781645c5a819383a01e67dd798b4cbab999",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_jungle.json",
+      "sha256": "f0a30e1a96508163d3b55ccc8b349781645c5a819383a01e67dd798b4cbab999",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_old_growth_taiga.json",
+      "source_sha256": "7dfdb1d466b38e2e343a12b01b9b244664bb1626e63e416d102a874f4734eb71",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_old_growth_taiga.json",
+      "sha256": "7dfdb1d466b38e2e343a12b01b9b244664bb1626e63e416d102a874f4734eb71",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_plains.json",
+      "source_sha256": "a9007d3143f8600ba193579c1725b0ced730e271f7cc2a8b395b7ccb4554e8f7",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_plains.json",
+      "sha256": "a9007d3143f8600ba193579c1725b0ced730e271f7cc2a8b395b7ccb4554e8f7",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_sparse_forest.json",
+      "source_sha256": "0535f2cb46f3a15217f319b4b1f24b71929c6b63c0759072fdeb0c6b78731048",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_sparse_forest.json",
+      "sha256": "0535f2cb46f3a15217f319b4b1f24b71929c6b63c0759072fdeb0c6b78731048",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_swamp.json",
+      "source_sha256": "625d02619a21cfa15fad36504c964fe1f76b61b0f38df27bd8359ded5a652e5e",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_swamp.json",
+      "sha256": "625d02619a21cfa15fad36504c964fe1f76b61b0f38df27bd8359ded5a652e5e",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_taiga.json",
+      "source_sha256": "f6baf801dafc80691d0b679b1d06d221e67f5765d80bf9440df1025519352d58",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_taiga.json",
+      "sha256": "f6baf801dafc80691d0b679b1d06d221e67f5765d80bf9440df1025519352d58",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_void.json",
+      "source_sha256": "3e5d6d853f65b21e70554c851eaf1df8923ff3c79406890869f6389e59231666",
+      "output": "data/aeroscapes/worldgen/configured_feature/overhang/patch_overhang_features_void.json",
+      "sha256": "3e5d6d853f65b21e70554c851eaf1df8923ff3c79406890869f6389e59231666",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/pointed_basalt_cluster.json",
+      "source_sha256": "d22808a17c63dccdd957a5c5e2d80542d1f6e9b74f5430639569a77c5206c96a",
+      "output": "data/aeroscapes/worldgen/configured_feature/pointed_basalt_cluster.json",
+      "sha256": "d22808a17c63dccdd957a5c5e2d80542d1f6e9b74f5430639569a77c5206c96a",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/selenite_geode.json",
+      "source_sha256": "8bc0e936eb3e0c8c9d49f2742a7b3831ab45315f4be2eb8339cb21b6253580fe",
+      "output": "data/aeroscapes/worldgen/configured_feature/selenite_geode.json",
+      "sha256": "b2024e05bc26df91d40c8eeb08f004cadf3ded6046cc9d3c7b92c18fbc93dede",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/configured_feature/small_basalt_column.json",
+      "source_sha256": "e40e7e209448b0056d58eb9cbc34f1ebe53e4b0f43f7a78d2418a13783ad3c8c",
+      "output": "data/aeroscapes/worldgen/configured_feature/small_basalt_column.json",
+      "sha256": "e40e7e209448b0056d58eb9cbc34f1ebe53e4b0f43f7a78d2418a13783ad3c8c",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/density_function/base_3d_noise.json",
+      "source_sha256": "577c8a754828e3487612cf7e1a26ee6d82d2f0fcff8349392cb138c687ee5092",
+      "output": "data/aeroscapes/worldgen/density_function/base_3d_noise.json",
+      "sha256": "577c8a754828e3487612cf7e1a26ee6d82d2f0fcff8349392cb138c687ee5092",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/density_function/final_density.json",
+      "source_sha256": "d6a9efb3e3b3f15ff9e69c3eb13f621d07cac5aed672c7cac677d22a5d285470",
+      "output": "data/aeroscapes/worldgen/density_function/final_density.json",
+      "sha256": "d6a9efb3e3b3f15ff9e69c3eb13f621d07cac5aed672c7cac677d22a5d285470",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/density_function/fluid_level_floodedness.json",
+      "source_sha256": "2e7a3492b54cfd9902a83af77bef7b21519800579731aaff2f10ee362ebe1390",
+      "output": "data/aeroscapes/worldgen/density_function/fluid_level_floodedness.json",
+      "sha256": "2e7a3492b54cfd9902a83af77bef7b21519800579731aaff2f10ee362ebe1390",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/density_function/fluid_level_spread.json",
+      "source_sha256": "d74f757986031b8647f0cae13e0d74e5a5172b23b6e1df77c842fe2c43773bf3",
+      "output": "data/aeroscapes/worldgen/density_function/fluid_level_spread.json",
+      "sha256": "d74f757986031b8647f0cae13e0d74e5a5172b23b6e1df77c842fe2c43773bf3",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/density_function/initial_density_without_jaggedness.json",
+      "source_sha256": "011b3a5316229ac2580bde5b4fb67dfb8dc3102cb97d609d47bee4c9f3bf1a48",
+      "output": "data/aeroscapes/worldgen/density_function/initial_density_without_jaggedness.json",
+      "sha256": "011b3a5316229ac2580bde5b4fb67dfb8dc3102cb97d609d47bee4c9f3bf1a48",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/noise/aquifer_fluid_level_floodedness.json",
+      "source_sha256": "5ebe0d5b254621b302dc45f57b0ca53f31f4e5fd09de628be43094e46c270c94",
+      "output": "data/aeroscapes/worldgen/noise/aquifer_fluid_level_floodedness.json",
+      "sha256": "5ebe0d5b254621b302dc45f57b0ca53f31f4e5fd09de628be43094e46c270c94",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/noise/erosion.json",
+      "source_sha256": "5dd8d06d005728c67b81786c1fe0561e3c4ae908a4899d00baeeaea8313ce118",
+      "output": "data/aeroscapes/worldgen/noise/erosion.json",
+      "sha256": "5dd8d06d005728c67b81786c1fe0561e3c4ae908a4899d00baeeaea8313ce118",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/basalt_delta.json",
+      "source_sha256": "09ef42dd62560b1002a103a68a9e3b199c48626e17eafae016c62fea7519a92b",
+      "output": "data/aeroscapes/worldgen/placed_feature/basalt_delta.json",
+      "sha256": "09ef42dd62560b1002a103a68a9e3b199c48626e17eafae016c62fea7519a92b",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/basalt_pillar.json",
+      "source_sha256": "562fafb803a0d2fae4d4fee9d3db3f7ed8c0b07e1aa5120b7cca4bedce1af3d3",
+      "output": "data/aeroscapes/worldgen/placed_feature/basalt_pillar.json",
+      "sha256": "562fafb803a0d2fae4d4fee9d3db3f7ed8c0b07e1aa5120b7cca4bedce1af3d3",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ceiling_vegetation.json",
+      "source_sha256": "627fd21a735b4d4b88713d267afcd8ef2c2441c64cf7b0d313eaaadef596f48c",
+      "output": "data/aeroscapes/worldgen/placed_feature/ceiling_vegetation.json",
+      "sha256": "627fd21a735b4d4b88713d267afcd8ef2c2441c64cf7b0d313eaaadef596f48c",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ceiling_vegetation_light.json",
+      "source_sha256": "b2d1edfec5071746cf40ce09891edd58c71405ea4766beb7373c385dbf44606a",
+      "output": "data/aeroscapes/worldgen/placed_feature/ceiling_vegetation_light.json",
+      "sha256": "b2d1edfec5071746cf40ce09891edd58c71405ea4766beb7373c385dbf44606a",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ceiling_vegetation_sparse.json",
+      "source_sha256": "743e56ab2ce50f74ecfe86c2e6798f3be679c9b8097460c047cac7a85027fca9",
+      "output": "data/aeroscapes/worldgen/placed_feature/ceiling_vegetation_sparse.json",
+      "sha256": "743e56ab2ce50f74ecfe86c2e6798f3be679c9b8097460c047cac7a85027fca9",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/desert_monster_room.json",
+      "source_sha256": "277e84cd8f44c1e2ac7d7ea2749992925048a2c1ab8c972dfa7e2ef87de424b7",
+      "output": "data/aeroscapes/worldgen/placed_feature/desert_monster_room.json",
+      "sha256": "277e84cd8f44c1e2ac7d7ea2749992925048a2c1ab8c972dfa7e2ef87de424b7",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/dripstone_cluster.json",
+      "source_sha256": "922f12a9e1affc1c323fbb5bf8bfa92ca5906124cc8a8a94941dc4624dabbbd4",
+      "output": "data/aeroscapes/worldgen/placed_feature/dripstone_cluster.json",
+      "sha256": "922f12a9e1affc1c323fbb5bf8bfa92ca5906124cc8a8a94941dc4624dabbbd4",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/kelp.json",
+      "source_sha256": "439913d2e393dfc4bca61bfc01caf2a73bdf303f970515a077476817bd466127",
+      "output": "data/aeroscapes/worldgen/placed_feature/kelp.json",
+      "sha256": "439913d2e393dfc4bca61bfc01caf2a73bdf303f970515a077476817bd466127",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/large_basalt_column.json",
+      "source_sha256": "4c97f8e59383785b59357c57583bf9a83938a28cdc365357351d76baf4eebe7d",
+      "output": "data/aeroscapes/worldgen/placed_feature/large_basalt_column.json",
+      "sha256": "4c97f8e59383785b59357c57583bf9a83938a28cdc365357351d76baf4eebe7d",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/large_dripstone.json",
+      "source_sha256": "2cfc48ecdd0aa1dfab6b7ae89864fcfd6b38569c56cb8db23b9f7ae165205880",
+      "output": "data/aeroscapes/worldgen/placed_feature/large_dripstone.json",
+      "sha256": "2cfc48ecdd0aa1dfab6b7ae89864fcfd6b38569c56cb8db23b9f7ae165205880",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_aerolite.json",
+      "source_sha256": "6c015baaf749012171167de8a9e9f5e514c8e6c954de8b0d769c842dd0aef7c6",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_aerolite.json",
+      "sha256": "6c015baaf749012171167de8a9e9f5e514c8e6c954de8b0d769c842dd0aef7c6",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_aerolite_extra.json",
+      "source_sha256": "fb59a4561b9c3b5a6fe0e93214fdfc26407e708818dcd58c2dd568b8838d79d6",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_aerolite_extra.json",
+      "sha256": "fb59a4561b9c3b5a6fe0e93214fdfc26407e708818dcd58c2dd568b8838d79d6",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_aerolite_voidsea.json",
+      "source_sha256": "ab8c48ea6014a56402869c73d75c0abc60250010b54781a3d87a7c232c902ac8",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_aerolite_voidsea.json",
+      "sha256": "ab8c48ea6014a56402869c73d75c0abc60250010b54781a3d87a7c232c902ac8",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_andesite_voidsea.json",
+      "source_sha256": "59865aa5fb62a053966afae82fd4d6f3592f8e70a59204c3bdbd82d8b6cd537e",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_andesite_voidsea.json",
+      "sha256": "59865aa5fb62a053966afae82fd4d6f3592f8e70a59204c3bdbd82d8b6cd537e",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_coal_extra.json",
+      "source_sha256": "46c1b2b92c4764071f695fbefa6a03a543ebeb6455d50e20398d5a38dad5994f",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_coal_extra.json",
+      "sha256": "7a580769cc36e1bb2288ca490643aba83437f002fb59191e81ec23c35466f728",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_coal_half.json",
+      "source_sha256": "fddf741758b6de0a255cb58a30a5b00a691a014b640c233305e828b621d65283",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_coal_half.json",
+      "sha256": "fb443283ee60e408f78a58771a75772213ec6e2e5dc2e6b4a99b9d58da935e64",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_copper_extra.json",
+      "source_sha256": "86ad151e6de47fffe571f246874713d116b60f78ea6c602dbb38f9b26b3d973c",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_copper_extra.json",
+      "sha256": "86ad151e6de47fffe571f246874713d116b60f78ea6c602dbb38f9b26b3d973c",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_copper_half.json",
+      "source_sha256": "20c7c0455fa116c4b9747893f8f58ca92fbfd182c5186148a23be1264106058f",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_copper_half.json",
+      "sha256": "20c7c0455fa116c4b9747893f8f58ca92fbfd182c5186148a23be1264106058f",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_diamond_extra.json",
+      "source_sha256": "7d1ee8a506bfbf6f1a71fce7ad4f9f272def4cfe93885a14dc1ac3bbaddcf136",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_diamond_extra.json",
+      "sha256": "96b7d06f3b09515eee18febb9b4de95c03e5bc00b0635061582f097f7117ec3b",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_diamond_half.json",
+      "source_sha256": "604c3adc6f971db1feee4e4763d38e3d1d8d80d97c26898e2b9cc439b1dbadda",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_diamond_half.json",
+      "sha256": "33b632d24614f116c1440945961aae8075a10d3c1755d8f2bf0a08c43bcb4ec2",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_emerald_extra.json",
+      "source_sha256": "e493cc0e45fb0fcd4c887da6d7a512576037a4266fa6c239a84a003022863aeb",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_emerald_extra.json",
+      "sha256": "e493cc0e45fb0fcd4c887da6d7a512576037a4266fa6c239a84a003022863aeb",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_gold_aerolite.json",
+      "source_sha256": "41e6d246980d1f6816daf33a2eb5c70dde92c99cecef83956add3a40689b853d",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_gold_aerolite.json",
+      "sha256": "41e6d246980d1f6816daf33a2eb5c70dde92c99cecef83956add3a40689b853d",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_gold_extra.json",
+      "source_sha256": "5c085ab973775f1a077bc500fa686d71ef156ad8cee82a89c922883560f31545",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_gold_extra.json",
+      "sha256": "5c085ab973775f1a077bc500fa686d71ef156ad8cee82a89c922883560f31545",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_gold_half.json",
+      "source_sha256": "79bce509a27eb44fb2f0df9cc310df1129230f3a34dbff710e50e8c71e602674",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_gold_half.json",
+      "sha256": "79bce509a27eb44fb2f0df9cc310df1129230f3a34dbff710e50e8c71e602674",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_iron_extra.json",
+      "source_sha256": "e1b58cbfa263be07fe75bfd55a5b46990cc2799d8a5bd820e312fe765b4a3596",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_iron_extra.json",
+      "sha256": "e1b58cbfa263be07fe75bfd55a5b46990cc2799d8a5bd820e312fe765b4a3596",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_iron_half.json",
+      "source_sha256": "f47b400d2e8a99ecec5e0c4b8828f169c7def0e7a3ffa3b63d9496d704fb628e",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_iron_half.json",
+      "sha256": "f47b400d2e8a99ecec5e0c4b8828f169c7def0e7a3ffa3b63d9496d704fb628e",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_lapis_extra.json",
+      "source_sha256": "33a1803cffa2bd0de6c009df503744bd64a4a4bf40ac82a974177e2053a9a470",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_lapis_extra.json",
+      "sha256": "e105350a548afb3d71cb585af88cb7ba383339c3357236c0fc8b8b2d1880c704",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_lapis_half.json",
+      "source_sha256": "88322d9994c2b98a49f89cda3f82229f345567bb48d93f2032bc802b3110c610",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_lapis_half.json",
+      "sha256": "521ee15768ccb3f71b638f9ae35fff2635031a83b2df0ae017b9eefb2ff10636",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_redstone_extra.json",
+      "source_sha256": "b6b2482a0fc3eb0219a28c7dab5170cde1abba590eb00e2052d8d536c623f3e2",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_redstone_extra.json",
+      "sha256": "e0c539aa75b61af2afd619807e3b7380c3dc09a2f8637c9525110a44ea36941e",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_redstone_half.json",
+      "source_sha256": "4eed22ad714d8b71af475e01c13a7d69fb6080db448de1be519a6177c098ed5f",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_redstone_half.json",
+      "sha256": "fe4695a93722df93766a62d8fe66bcb3d09ce5ac6b2f7dfc420c0b69e6baad6d",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/ores/ore_tuff_voidsea.json",
+      "source_sha256": "1129674d4894bc17cda7400837c3e4cc6e579b73cb4d595db8c058638b601a59",
+      "output": "data/aeroscapes/worldgen/placed_feature/ores/ore_tuff_voidsea.json",
+      "sha256": "1129674d4894bc17cda7400837c3e4cc6e579b73cb4d595db8c058638b601a59",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_badlands.json",
+      "source_sha256": "6d06b84cd464ec2cf98499817edb41ae3ad45b3550447f7373014478bf272efb",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_badlands.json",
+      "sha256": "6d06b84cd464ec2cf98499817edb41ae3ad45b3550447f7373014478bf272efb",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_desert.json",
+      "source_sha256": "6d06b84cd464ec2cf98499817edb41ae3ad45b3550447f7373014478bf272efb",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_desert.json",
+      "sha256": "6d06b84cd464ec2cf98499817edb41ae3ad45b3550447f7373014478bf272efb",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_forest.json",
+      "source_sha256": "67cebbbf9883b63a50b6bc79b16b59f984068628f541ed8807f94ec990612fbd",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_forest.json",
+      "sha256": "67cebbbf9883b63a50b6bc79b16b59f984068628f541ed8807f94ec990612fbd",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_jungle.json",
+      "source_sha256": "699c0f898b52264ecf3c21cb72e9746b1c20539be9c4569a9cbd9dad06c31cde",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_jungle.json",
+      "sha256": "699c0f898b52264ecf3c21cb72e9746b1c20539be9c4569a9cbd9dad06c31cde",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_old_growth_taiga.json",
+      "source_sha256": "29bc723b385527f8796b23cb983b22ee4eaf7f744174717a52e81acd393a8468",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_old_growth_taiga.json",
+      "sha256": "29bc723b385527f8796b23cb983b22ee4eaf7f744174717a52e81acd393a8468",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_plains.json",
+      "source_sha256": "168054ea3f39df605f7b3b051639980c2c2e617dc330bcc58717bb0728621bf3",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_plains.json",
+      "sha256": "168054ea3f39df605f7b3b051639980c2c2e617dc330bcc58717bb0728621bf3",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_sparse_forest.json",
+      "source_sha256": "491786cea5c6aab2f76a9d9991dbb1a27a221028572c425bdbec4a8f033c1497",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_sparse_forest.json",
+      "sha256": "491786cea5c6aab2f76a9d9991dbb1a27a221028572c425bdbec4a8f033c1497",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_swamp.json",
+      "source_sha256": "ca0fcf5e66c36901fb7e85f152148bf6fca9c4672c377740f4b5e7890c438a5d",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_swamp.json",
+      "sha256": "ca0fcf5e66c36901fb7e85f152148bf6fca9c4672c377740f4b5e7890c438a5d",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_taiga.json",
+      "source_sha256": "d29edd7105e5597970995e421c5b99a645ad03f8d849e718d2f30d6b781a33ca",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_taiga.json",
+      "sha256": "d29edd7105e5597970995e421c5b99a645ad03f8d849e718d2f30d6b781a33ca",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_void.json",
+      "source_sha256": "38ba7cfefd92832df3f2c2aa67939dda55e89457e4a1f36a26cb6d2921c3388b",
+      "output": "data/aeroscapes/worldgen/placed_feature/overhang/overhang_features_void.json",
+      "sha256": "38ba7cfefd92832df3f2c2aa67939dda55e89457e4a1f36a26cb6d2921c3388b",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/patch_sugar_cane.json",
+      "source_sha256": "9344bd0bed984a0a8be6ff38a054e9d2ead51187047961d17049a341f7f195c6",
+      "output": "data/aeroscapes/worldgen/placed_feature/patch_sugar_cane.json",
+      "sha256": "9344bd0bed984a0a8be6ff38a054e9d2ead51187047961d17049a341f7f195c6",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/pointed_basalt_cluster.json",
+      "source_sha256": "957cace25ea64f989b9229734ac3f59d210c838d1a755a3841f33a05bb938b6a",
+      "output": "data/aeroscapes/worldgen/placed_feature/pointed_basalt_cluster.json",
+      "sha256": "957cace25ea64f989b9229734ac3f59d210c838d1a755a3841f33a05bb938b6a",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/seagrass.json",
+      "source_sha256": "b4cfb670696d7368d25198cda6d8e71e8fed21f09c170e84b9ff83d375993b10",
+      "output": "data/aeroscapes/worldgen/placed_feature/seagrass.json",
+      "sha256": "b4cfb670696d7368d25198cda6d8e71e8fed21f09c170e84b9ff83d375993b10",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/selenite_geode.json",
+      "source_sha256": "30765dd105def04e89f234aca591ef5fc151ff0f865e52ce06e3afdcdfa7f886",
+      "output": "data/aeroscapes/worldgen/placed_feature/selenite_geode.json",
+      "sha256": "30765dd105def04e89f234aca591ef5fc151ff0f865e52ce06e3afdcdfa7f886",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/placed_feature/small_basalt_column.json",
+      "source_sha256": "3c2e686d38e435667c77718b4e2c868350aaee36ef716b1180b25b3f520a8404",
+      "output": "data/aeroscapes/worldgen/placed_feature/small_basalt_column.json",
+      "sha256": "3c2e686d38e435667c77718b4e2c868350aaee36ef716b1180b25b3f520a8404",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/tags/worldgen/overhang_grass_replaceable.json",
+      "source_sha256": "0cf321c9997624e3785b1d26a73bc6d645380d46436fcf459451c8aa956b6828",
+      "output": "data/aeroscapes/worldgen/tags/worldgen/overhang_grass_replaceable.json",
+      "sha256": "0cf321c9997624e3785b1d26a73bc6d645380d46436fcf459451c8aa956b6828",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/dimension/overworld.json",
+      "source_sha256": "473ff6b889dcae3d478c963ba766ec47a1cc1ab39521525b62bb588762f0cc18",
+      "output": "data/minecraft/dimension/overworld.json",
+      "sha256": "e8dc79d8b8cb06bc472a5d034313f53417087d15c6104fbd3f2f8473213816cf",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/minecraft/tags/block/dripstone_replaceable_blocks.json",
+      "source_sha256": "4197439217c60527ab2e4c10b8b5b540742a3700e398d31f4146e2ae7bfa1c42",
+      "output": "data/minecraft/tags/block/dripstone_replaceable_blocks.json",
+      "sha256": "ff1ba200d37701d5d8b5e6b1be4c083dc50d81b5b0fadf484df3a4b863c3f5c3",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/minecraft/tags/block/mineable/pickaxe.json",
+      "source_sha256": "7420a90bff16f51478fdf10852e03b6c11220b2dd16f142bd8e1c54965d987e8",
+      "output": "data/minecraft/tags/block/mineable/pickaxe.json",
+      "sha256": "0c615d27d6e7932dab70603593b0d4b2098f06e605c17c7e8549a677ec84ef94",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/minecraft/tags/block/moss_replaceable.json",
+      "source_sha256": "325268049b53841f8c2bb14782677336b5c40c5f0607fed4a3aece5780f51d64",
+      "output": "data/minecraft/tags/block/moss_replaceable.json",
+      "sha256": "f0915763c3d190dc7f316374628bc8dd2208620ceaecff7fd76dc7b321ef584f",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/minecraft/tags/worldgen/biome/has_structure/ancient_city.json",
+      "source_sha256": "26b4ccedfa7746dd0eb7fce743c62272e1bde25d3848c8e121a8b60771f199aa",
+      "output": "data/minecraft/tags/worldgen/biome/has_structure/ancient_city.json",
+      "sha256": "b911142fce778eb82f72889ef0bee4d953a2452cc83715610d57b9ff704d1981",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/minecraft/worldgen/configured_carver/canyon.json",
+      "source_sha256": "5046b67673f019860f9c1f53a412894c60b0994933ce19bf0a590291158bbc5b",
+      "output": "data/minecraft/worldgen/configured_carver/canyon.json",
+      "sha256": "5046b67673f019860f9c1f53a412894c60b0994933ce19bf0a590291158bbc5b",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/configured_carver/cave.json",
+      "source_sha256": "5b7d650f766dcdb1c9e941c669d739daeacb33dd5c7eec258cff46297e4674a8",
+      "output": "data/minecraft/worldgen/configured_carver/cave.json",
+      "sha256": "5b7d650f766dcdb1c9e941c669d739daeacb33dd5c7eec258cff46297e4674a8",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/configured_carver/cave_extra_underground.json",
+      "source_sha256": "a91ec135a3c910ad5d6196b99222eb5ee2ab64432afda7df3a95c61fa7a0749b",
+      "output": "data/minecraft/worldgen/configured_carver/cave_extra_underground.json",
+      "sha256": "a91ec135a3c910ad5d6196b99222eb5ee2ab64432afda7df3a95c61fa7a0749b",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/configured_feature/ore_diamond_large.json",
+      "source_sha256": "a846c91fdf8863da0138d3b9730d447b1ea1f6f530b12e96a163a78ddda5ec50",
+      "output": "data/minecraft/worldgen/configured_feature/ore_diamond_large.json",
+      "sha256": "a846c91fdf8863da0138d3b9730d447b1ea1f6f530b12e96a163a78ddda5ec50",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/configured_feature/ore_diamond_small.json",
+      "source_sha256": "5062249c99972f7e2d774067f1d2576a5184eccd1f20428858d55ee797211d8f",
+      "output": "data/minecraft/worldgen/configured_feature/ore_diamond_small.json",
+      "sha256": "5062249c99972f7e2d774067f1d2576a5184eccd1f20428858d55ee797211d8f",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/noise/aquifer_fluid_level_spread.json",
+      "source_sha256": "dde1152bbe3df6d74b1949aa652f52c80d42cb589aba0754b7d749e3f4ef9d60",
+      "output": "data/minecraft/worldgen/noise/aquifer_fluid_level_spread.json",
+      "sha256": "dde1152bbe3df6d74b1949aa652f52c80d42cb589aba0754b7d749e3f4ef9d60",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/noise/continentalness.json",
+      "source_sha256": "d39b05ccee603b1ff7713363c2442c7940668e4cdc1fa2d4a472fcccf304c860",
+      "output": "data/minecraft/worldgen/noise/continentalness.json",
+      "sha256": "d39b05ccee603b1ff7713363c2442c7940668e4cdc1fa2d4a472fcccf304c860",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/noise/erosion.json",
+      "source_sha256": "13168486a097cc04c8afdd90cf58b249539c7dc988c9aac4bbe735ed2b867d02",
+      "output": "data/minecraft/worldgen/noise/erosion.json",
+      "sha256": "13168486a097cc04c8afdd90cf58b249539c7dc988c9aac4bbe735ed2b867d02",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/noise/temperature.json",
+      "source_sha256": "1059ef7cb62c3808acbda6f38cff4214fa68399e3b69b8289012a0219bc0f8f9",
+      "output": "data/minecraft/worldgen/noise/temperature.json",
+      "sha256": "1059ef7cb62c3808acbda6f38cff4214fa68399e3b69b8289012a0219bc0f8f9",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/noise/vegetation.json",
+      "source_sha256": "5262f904d096973954aadec547522dfbad185ac4288e65079c041950572c7e2c",
+      "output": "data/minecraft/worldgen/noise/vegetation.json",
+      "sha256": "5262f904d096973954aadec547522dfbad185ac4288e65079c041950572c7e2c",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/noise_settings/overworld.json",
+      "source_sha256": "78b051bf96f9a12c072d4aba417791dd3343aaf4eaaaea61fe6c52c3f2e31128",
+      "output": "data/minecraft/worldgen/noise_settings/overworld.json",
+      "sha256": "5028bd01853090ad0a3d2f2325a2e03994eff966a82f84437ace3db5d9605d5d",
+      "mode": "adapted",
+      "reason": "Retain original Aero upper noise and surfaces; extend noise to Y=-128..383 with global fluid below minY, irregular added island habitats, local basin water and interpolated form/cave fields."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/monster_room.json",
+      "source_sha256": "dec0994eb1e15e5033a033b03f3b0a9e0706a9dee453a9ac4284e2bace4c3184",
+      "output": "data/minecraft/worldgen/placed_feature/monster_room.json",
+      "sha256": "dec0994eb1e15e5033a033b03f3b0a9e0706a9dee453a9ac4284e2bace4c3184",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_andesite_lower.json",
+      "source_sha256": "a190738ca33521e1344939c0c828171fc325e2ab68d2b09c2029f7fa54dc9155",
+      "output": "data/minecraft/worldgen/placed_feature/ore_andesite_lower.json",
+      "sha256": "a190738ca33521e1344939c0c828171fc325e2ab68d2b09c2029f7fa54dc9155",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_andesite_upper.json",
+      "source_sha256": "5f319ef28415d8c13374b509b7b62f2ac7916e7f0ade4e3eb5d4b9f4e09fc843",
+      "output": "data/minecraft/worldgen/placed_feature/ore_andesite_upper.json",
+      "sha256": "5f319ef28415d8c13374b509b7b62f2ac7916e7f0ade4e3eb5d4b9f4e09fc843",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_copper.json",
+      "source_sha256": "c30413065db729f487fa559f3bc739d22179b638bd6ab52d7320ef8be21cd007",
+      "output": "data/minecraft/worldgen/placed_feature/ore_copper.json",
+      "sha256": "c30413065db729f487fa559f3bc739d22179b638bd6ab52d7320ef8be21cd007",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_copper_large.json",
+      "source_sha256": "8f582edca2601314eb3862f109cddeb16851d2a74df5fccbfc8d62a6e5602b63",
+      "output": "data/minecraft/worldgen/placed_feature/ore_copper_large.json",
+      "sha256": "8f582edca2601314eb3862f109cddeb16851d2a74df5fccbfc8d62a6e5602b63",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_diamond.json",
+      "source_sha256": "7d1ee8a506bfbf6f1a71fce7ad4f9f272def4cfe93885a14dc1ac3bbaddcf136",
+      "output": "data/minecraft/worldgen/placed_feature/ore_diamond.json",
+      "sha256": "96b7d06f3b09515eee18febb9b4de95c03e5bc00b0635061582f097f7117ec3b",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_diamond_buried.json",
+      "source_sha256": "74467469b29d09faf2a60ee211daed30b76ddb4c8dad45de0a178bf91519cae4",
+      "output": "data/minecraft/worldgen/placed_feature/ore_diamond_buried.json",
+      "sha256": "9283beeee651983d77eeb0b3a55939670349c80508e51ecdda1a3097d767c69f",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_diamond_large.json",
+      "source_sha256": "41ac6a59b15f093e86681ada567b2587b6e179ec636e331797c7cad54b287986",
+      "output": "data/minecraft/worldgen/placed_feature/ore_diamond_large.json",
+      "sha256": "8ac9e24127105a00ab178e1ddc4e3336b52e22cadfcd43a1575187f4646e0588",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_diorite_upper.json",
+      "source_sha256": "34fecf938c1c49bc4a7410f4d294c76e70ea90701f92db85c25fb1a5077f0bd0",
+      "output": "data/minecraft/worldgen/placed_feature/ore_diorite_upper.json",
+      "sha256": "34fecf938c1c49bc4a7410f4d294c76e70ea90701f92db85c25fb1a5077f0bd0",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_emerald.json",
+      "source_sha256": "927e259cfc88e07f5ff63a7631cd2251fd17ee6752a4ae81a92d8be09f661ffb",
+      "output": "data/minecraft/worldgen/placed_feature/ore_emerald.json",
+      "sha256": "927e259cfc88e07f5ff63a7631cd2251fd17ee6752a4ae81a92d8be09f661ffb",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_gold.json",
+      "source_sha256": "f3c0345696afd95b020bd531c307087909d713352581fdfc05dceee8fe4336c2",
+      "output": "data/minecraft/worldgen/placed_feature/ore_gold.json",
+      "sha256": "e4017e832c4f7b3f77c01749db6e0470ae270a65c44eb476fa3aacd78b76ef20",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_gold_extra.json",
+      "source_sha256": "f616df96b28bf04aaade93276ee350f0648a9829dbbb3d4d4d2e10afc06a37d7",
+      "output": "data/minecraft/worldgen/placed_feature/ore_gold_extra.json",
+      "sha256": "f616df96b28bf04aaade93276ee350f0648a9829dbbb3d4d4d2e10afc06a37d7",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_granite_upper.json",
+      "source_sha256": "014cc2c3c2c0fe7020d3507ddc7793b68f5c9e8010b08e362af7dfed5ec57a2a",
+      "output": "data/minecraft/worldgen/placed_feature/ore_granite_upper.json",
+      "sha256": "014cc2c3c2c0fe7020d3507ddc7793b68f5c9e8010b08e362af7dfed5ec57a2a",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_iron_middle.json",
+      "source_sha256": "3f97815167866a3e6527a2e24c66bc5fd455ae695deebc545170875c13c085b1",
+      "output": "data/minecraft/worldgen/placed_feature/ore_iron_middle.json",
+      "sha256": "3f97815167866a3e6527a2e24c66bc5fd455ae695deebc545170875c13c085b1",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_iron_small.json",
+      "source_sha256": "a7ba83b31f15033cd9fed7e340b23226937e7dfc4e5c8e74f80f828552466eed",
+      "output": "data/minecraft/worldgen/placed_feature/ore_iron_small.json",
+      "sha256": "f3c589255acc133e21918d0f612d4fa4100248536f751640a7151de9c95deec6",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_iron_upper.json",
+      "source_sha256": "fe1983626f728739e7de89de21d226bbcc95e681383a8bcdc0cb83087ff68396",
+      "output": "data/minecraft/worldgen/placed_feature/ore_iron_upper.json",
+      "sha256": "fe1983626f728739e7de89de21d226bbcc95e681383a8bcdc0cb83087ff68396",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_lapis.json",
+      "source_sha256": "d184ae9f1c69f8fbade8a6b718c7b913b85c32e77570e78816a1b8b25da416b6",
+      "output": "data/minecraft/worldgen/placed_feature/ore_lapis.json",
+      "sha256": "31040d1bb7a775ef128b4eb80bf6aa255b59cbdfe68dbc979ff6ee0c6ed44be5",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_lapis_buried.json",
+      "source_sha256": "df08733d3d27cb703fe221f31a7e130a608ee0752449ff3c6edd7ecd2014fd18",
+      "output": "data/minecraft/worldgen/placed_feature/ore_lapis_buried.json",
+      "sha256": "1dc860d85cc3ec8c03b66ae68e4a2f9c701f260a2965b19b4a0bd193fdf14dd3",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_redstone.json",
+      "source_sha256": "6bdbf7c2c067164ae178a04fa80589bd23f0c7f55f069eb148435075b0c1a6c5",
+      "output": "data/minecraft/worldgen/placed_feature/ore_redstone.json",
+      "sha256": "8d6f0300855f235e8e1a991f2665ddfacef0ac213115b82805ef8a1eeb162b59",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/ore_redstone_lower.json",
+      "source_sha256": "1abdf20eebe3cb6319d0e818ca4ff125121cf17104b42489b8956945da2c7d9b",
+      "output": "data/minecraft/worldgen/placed_feature/ore_redstone_lower.json",
+      "sha256": "7d222d3e53fb06708bca93d279a920b17c5da82cfa63b6af0c28c4f3874893c0",
+      "mode": "adapted",
+      "reason": "Preserve the original effective ore heights using absolute anchors when extending the Overworld; lower ore variants are separate owned resources."
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/spring_lava.json",
+      "source_sha256": "fe3065617bf0f8d86c3af0603619890f365862a94b8d2c6f76d9c060a751cc52",
+      "output": "data/minecraft/worldgen/placed_feature/spring_lava.json",
+      "sha256": "fe3065617bf0f8d86c3af0603619890f365862a94b8d2c6f76d9c060a751cc52",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/placed_feature/spring_water.json",
+      "source_sha256": "e107fa8c5fc6c01073005a125f19c8c671779b1367882e36c52043f2a02fc57c",
+      "output": "data/minecraft/worldgen/placed_feature/spring_water.json",
+      "sha256": "e107fa8c5fc6c01073005a125f19c8c671779b1367882e36c52043f2a02fc57c",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/ancient_city.json",
+      "source_sha256": "d7fa91cfb843fa1180e3ff4e04f86ab5b0dbc10095578606c0a1377ff027bcaa",
+      "output": "data/minecraft/worldgen/structure/ancient_city.json",
+      "sha256": "d7fa91cfb843fa1180e3ff4e04f86ab5b0dbc10095578606c0a1377ff027bcaa",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/desert_pyramid.json",
+      "source_sha256": "cc526978d82b2107e714800c206b943219ef202faec7ae29211bfea9f5a81adf",
+      "output": "data/minecraft/worldgen/structure/desert_pyramid.json",
+      "sha256": "cc526978d82b2107e714800c206b943219ef202faec7ae29211bfea9f5a81adf",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/igloo.json",
+      "source_sha256": "646701cc6fa28fac2b51ce77e99117b3bb59b43a3382713efd55205ecabebcc1",
+      "output": "data/minecraft/worldgen/structure/igloo.json",
+      "sha256": "646701cc6fa28fac2b51ce77e99117b3bb59b43a3382713efd55205ecabebcc1",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/jungle_pyramid.json",
+      "source_sha256": "af8287e10f4047831014499d7f42eb7bdebb33bff3440abfdf200de29df7f819",
+      "output": "data/minecraft/worldgen/structure/jungle_pyramid.json",
+      "sha256": "af8287e10f4047831014499d7f42eb7bdebb33bff3440abfdf200de29df7f819",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/mansion.json",
+      "source_sha256": "96111e3c43655f37d46d4d79f5b012eba60679f9662ef5b759fc6c68f2e5ffa3",
+      "output": "data/minecraft/worldgen/structure/mansion.json",
+      "sha256": "96111e3c43655f37d46d4d79f5b012eba60679f9662ef5b759fc6c68f2e5ffa3",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/mineshaft.json",
+      "source_sha256": "4bbc9247edec6ce51f7875107ae39a2c0e5f610c9af826bfdf3a6e161ab5462e",
+      "output": "data/minecraft/worldgen/structure/mineshaft.json",
+      "sha256": "4bbc9247edec6ce51f7875107ae39a2c0e5f610c9af826bfdf3a6e161ab5462e",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/mineshaft_mesa.json",
+      "source_sha256": "efe0e2909b2d2c0df749d2642194bf58353f1737eae331dfe52735e378d98aac",
+      "output": "data/minecraft/worldgen/structure/mineshaft_mesa.json",
+      "sha256": "efe0e2909b2d2c0df749d2642194bf58353f1737eae331dfe52735e378d98aac",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/pillager_outpost.json",
+      "source_sha256": "f39d1622b5d32569a4bb2984505192360f72e3b1b65aab9900476c72ab2c0ebc",
+      "output": "data/minecraft/worldgen/structure/pillager_outpost.json",
+      "sha256": "f39d1622b5d32569a4bb2984505192360f72e3b1b65aab9900476c72ab2c0ebc",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/ruined_portal.json",
+      "source_sha256": "5a0e88d74d973e61e8af6dcf69796ca6cf83bbc2167321197ac7c3298f41423b",
+      "output": "data/minecraft/worldgen/structure/ruined_portal.json",
+      "sha256": "5a0e88d74d973e61e8af6dcf69796ca6cf83bbc2167321197ac7c3298f41423b",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/ruined_portal_desert.json",
+      "source_sha256": "d53afc224b4f78087f89bed1854a7a2956a25f695abfb4e90a514d05447f4832",
+      "output": "data/minecraft/worldgen/structure/ruined_portal_desert.json",
+      "sha256": "d53afc224b4f78087f89bed1854a7a2956a25f695abfb4e90a514d05447f4832",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/ruined_portal_jungle.json",
+      "source_sha256": "31aa202b583a4e7b9c4a608af8707aae5e25ea0fd0641703442ecb1230b0964a",
+      "output": "data/minecraft/worldgen/structure/ruined_portal_jungle.json",
+      "sha256": "31aa202b583a4e7b9c4a608af8707aae5e25ea0fd0641703442ecb1230b0964a",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/ruined_portal_mountain.json",
+      "source_sha256": "cd1a947c17814862e76ea9e64cb9833d48852d5b968d80f73dd792cc17c52ccf",
+      "output": "data/minecraft/worldgen/structure/ruined_portal_mountain.json",
+      "sha256": "cd1a947c17814862e76ea9e64cb9833d48852d5b968d80f73dd792cc17c52ccf",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/ruined_portal_ocean.json",
+      "source_sha256": "99df98abd0e1854a84c176d6d61a20ebb1d866216574b5a11ac3534a682ec7ef",
+      "output": "data/minecraft/worldgen/structure/ruined_portal_ocean.json",
+      "sha256": "99df98abd0e1854a84c176d6d61a20ebb1d866216574b5a11ac3534a682ec7ef",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/ruined_portal_swamp.json",
+      "source_sha256": "5a77750f8306fab1f2b6f94a1dfda617a5f5a5bb9487d4da0f2a2220272f19d5",
+      "output": "data/minecraft/worldgen/structure/ruined_portal_swamp.json",
+      "sha256": "5a77750f8306fab1f2b6f94a1dfda617a5f5a5bb9487d4da0f2a2220272f19d5",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/stronghold.json",
+      "source_sha256": "bd2edfbc17c0c5ebe69c75a3904f3749b34ccdd6faf1279858f4059addbcdee2",
+      "output": "data/minecraft/worldgen/structure/stronghold.json",
+      "sha256": "aacea987c0a64e038a73149ef39f9aa362a40b3846e5904632973b33ba8edef4",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/swamp_hut.json",
+      "source_sha256": "815d30e545b3b86436b09ce6af976ad2d0c070c171dfb302aecf49e798f27dee",
+      "output": "data/minecraft/worldgen/structure/swamp_hut.json",
+      "sha256": "815d30e545b3b86436b09ce6af976ad2d0c070c171dfb302aecf49e798f27dee",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/trial_chambers.json",
+      "source_sha256": "025855892f1564b1c2d42b2cb6792958439b87ca4ede810d0e1ef642253101b9",
+      "output": "data/minecraft/worldgen/structure/trial_chambers.json",
+      "sha256": "aa7a0b4b6dfcf7021ea56b272978b6c8fe32db636f3055c278997c8a2f13d9ca",
+      "mode": "adapted",
+      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/village_desert.json",
+      "source_sha256": "65b2fcac1ecd36e068fd668e839753e46ee9d4601961a2c1d41e9d8b032dd7c0",
+      "output": "data/minecraft/worldgen/structure/village_desert.json",
+      "sha256": "65b2fcac1ecd36e068fd668e839753e46ee9d4601961a2c1d41e9d8b032dd7c0",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/village_plains.json",
+      "source_sha256": "7732fef0fcc0d79286144cd2c3b2036520a5a7a8b2237378ee5d0680975fa732",
+      "output": "data/minecraft/worldgen/structure/village_plains.json",
+      "sha256": "7732fef0fcc0d79286144cd2c3b2036520a5a7a8b2237378ee5d0680975fa732",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/village_savanna.json",
+      "source_sha256": "b1fb466d50347f5e72510acbc4e0c289c4c9a0c54ec4abee7ae127367b154823",
+      "output": "data/minecraft/worldgen/structure/village_savanna.json",
+      "sha256": "b1fb466d50347f5e72510acbc4e0c289c4c9a0c54ec4abee7ae127367b154823",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/village_snowy.json",
+      "source_sha256": "84c13619962dbb057c5819ee5b29f3172427fa820c22c337dbcb5e9517520995",
+      "output": "data/minecraft/worldgen/structure/village_snowy.json",
+      "sha256": "84c13619962dbb057c5819ee5b29f3172427fa820c22c337dbcb5e9517520995",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure/village_taiga.json",
+      "source_sha256": "7eb0e8edfa0dd65cccf5a475f1706acf443c44a6c191ccdfbb83f885b97ca3d9",
+      "output": "data/minecraft/worldgen/structure/village_taiga.json",
+      "sha256": "7eb0e8edfa0dd65cccf5a475f1706acf443c44a6c191ccdfbb83f885b97ca3d9",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure_set/ancient_cities.json",
+      "source_sha256": "1998d7d4ad239c3093d5639899d4a4d3b6e4de7137cde3ebd4de9b46e002c5ad",
+      "output": "data/minecraft/worldgen/structure_set/ancient_cities.json",
+      "sha256": "1998d7d4ad239c3093d5639899d4a4d3b6e4de7137cde3ebd4de9b46e002c5ad",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure_set/ruined_portals.json",
+      "source_sha256": "5d22ed23c8ea1d6c55f12a00b2ddaa4cba99e1cac8fe0ad9ccce7a067bef4de3",
+      "output": "data/minecraft/worldgen/structure_set/ruined_portals.json",
+      "sha256": "5d22ed23c8ea1d6c55f12a00b2ddaa4cba99e1cac8fe0ad9ccce7a067bef4de3",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure_set/swamp_huts.json",
+      "source_sha256": "6483d2089cb1568db509d87027e992ca33244a6d5fb0f2f976473d1bfe7a0c01",
+      "output": "data/minecraft/worldgen/structure_set/swamp_huts.json",
+      "sha256": "6483d2089cb1568db509d87027e992ca33244a6d5fb0f2f976473d1bfe7a0c01",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure_set/trial_chambers.json",
+      "source_sha256": "16f48ffb8c174d7cc70eafa07b9ebba7b67dcb26c80790dce9c52644aba4de1f",
+      "output": "data/minecraft/worldgen/structure_set/trial_chambers.json",
+      "sha256": "16f48ffb8c174d7cc70eafa07b9ebba7b67dcb26c80790dce9c52644aba4de1f",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/minecraft/worldgen/structure_set/villages.json",
+      "source_sha256": "c652450160788132d9adf5734178b8757a55228a9f11f4fdf4d5e04349eeb49e",
+      "output": "data/minecraft/worldgen/structure_set/villages.json",
+      "sha256": "c652450160788132d9adf5734178b8757a55228a9f11f4fdf4d5e04349eeb49e",
+      "mode": "exact",
+      "reason": "Retain published worldgen behavior"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/biome/void_shores.json",
+      "source_sha256": "047449fa47b29efb48cda282ec2a908e51311ef39d7062397ac67850c81e2c54",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/retained_beach_formations.json",
+      "sha256": "2b3a58396e1562a6b0f9786c9d2f7709de338eccb9d908254006ee9d5b9f778a",
+      "mode": "adapted",
+      "reason": "Retain ordered raw basalt formations on vanilla biome replacements without copying Aero biomes"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/biome/voidsea.json",
+      "source_sha256": "16dd06548a53407e800518b64ec4323f75ad485a2f694224050c6768d2af5940",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/retained_ocean_formations.json",
+      "sha256": "d18d73c53283ee31c244d019823cce40219179f74527e0e4c96477933120ad9a",
+      "mode": "adapted",
+      "reason": "Retain ordered raw basalt formations on vanilla biome replacements without copying Aero biomes"
+    },
+    {
+      "source": "data/aeroscapes/worldgen/biome/deep_voidsea.json",
+      "source_sha256": "aff0fcad6479a83b67d1d87de498fce5bb4ed18a5dba8b29da03d2e05d9fdaa2",
+      "output": "data/aeroscapes/lithostitched/worldgen_modifier/retained_deep_ocean_formations.json",
+      "sha256": "4aa92b934cb5359531c97249926023a0635cc7db398c1a52ee4df92fc494b5d0",
+      "mode": "adapted",
+      "reason": "Retain ordered raw basalt formations on vanilla biome replacements without copying Aero biomes"
+    },
+    {
+      "source": "data/minecraft/dimension_type/overworld.json",
+      "source_provider": "Minecraft 1.21.1 (not Aero Islands)",
+      "source_sha256": "54424484db2b3c2da350e41233aa5bff0fd11b2ad72cf2325c49e78f2085abfe",
+      "output": "data/minecraft/dimension_type/overworld.json",
+      "sha256": "9a1ad84efb0ded965c1649cdeba4fab70f7213b082ba2fa70e069657b3cee25c",
+      "mode": "adapted",
+      "reason": "Native Minecraft 1.21.1 dimension-type defaults with min_y=-128, height=512 and logical_height=512 for the owner-selected range."
+    }
+  ],
+  "java": [
+    {
+      "source": "net/isabel/aeroscapes/world/level/levelgen/pillar/PillarFeature.class",
+      "source_sha256": "881d61c9c00eb68fa317ba2d352f7f514ff5f01c7221284a00c1e309b0b32a00",
+      "output": "mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/worldgen/feature/PillarFeature.java",
+      "sha256": "7f2383791bf0c7306b8ef5d91e870bd63ca14875c83723bff10478b04269f7c7",
+      "mode": "reference",
+      "reason": "Behavior comparison with the pinned original class; the current Java was reimplemented using Aero Islands as reference. Hashes do not establish copying. Owned shape/material/vine stages retain the reference taper and default callers; optional footprint ground-drop validation prevents basalt bridges across island gaps. Modified basalt position sets intentionally change later per-position RNG draws."
+    },
+    {
+      "source": "net/isabel/aeroscapes/world/level/levelgen/pillar/PillarFeatureConfig.class",
+      "source_sha256": "829f5d7b734d50f248539e2a4ee53ece562a690575ce7af78da733d6ea54e134",
+      "output": "mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/worldgen/feature/PillarFeatureConfig.java",
+      "sha256": "cdd2405e1373876777beaa30e8c6f02e3f14cf7c15a0af3f34e7187406e2d629",
+      "mode": "reference",
+      "reason": "Behavior comparison with the pinned original class; the current Java was reimplemented using Aero Islands as reference. Hashes do not establish copying. Retain original codec keys with an optional nonnegative max_ground_drop; absent values preserve generic and jungle behavior."
+    },
+    {
+      "source": "net/isabel/aeroscapes/world/level/levelgen/util/CheckedBlockPlacement.class",
+      "source_sha256": "301095d5fb097eabe1783a005637c82e9b5e22d02d1110f02b538914d6f37308",
+      "output": "mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/worldgen/feature/CheckedBlockPlacement.java",
+      "sha256": "55b39a5914b4cf9ab810aa1822736d4c6032e048b47be337b0dccbbe5f4642f9",
+      "mode": "reference",
+      "reason": "Behavior comparison with the pinned original class; the current Java was reimplemented using Aero Islands as reference. Hashes do not establish copying. Owned packages and descriptive names; preserve codec keys, algorithm and RNG ordering"
+    },
+    {
+      "source": "net/isabel/aeroscapes/world/level/levelgen/util/DistanceTestType.class",
+      "source_sha256": "ff879cfdefa7ca017164762fd82315a0bdad87929efa1d71835910649570c2cd",
+      "output": "mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/worldgen/feature/DistanceTestType.java",
+      "sha256": "8464bf615df8622b8c05321d81cf04fbf3e05e38c755830c42281f3eb7b61794",
+      "mode": "reference",
+      "reason": "Behavior comparison with the pinned original class; the current Java was reimplemented using Aero Islands as reference. Hashes do not establish copying. Owned packages and descriptive names; preserve codec keys, algorithm and RNG ordering"
+    },
+    {
+      "source": "net/isabel/aeroscapes/world/level/levelgen/util/DistanceTester.class",
+      "source_sha256": "8945ff2cd1b8799f11a5efee0dd93a09ab040c75fde0596872cf56044cacfe8f",
+      "output": "mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/worldgen/feature/DistanceTester.java",
+      "sha256": "c68ec8745b5ca20f51e26b4f65ee73e8c99dcda2a9f635633aeb70cada206985",
+      "mode": "reference",
+      "reason": "Behavior comparison with the pinned original class; the current Java was reimplemented using Aero Islands as reference. Hashes do not establish copying. Owned packages and descriptive names; preserve codec keys, algorithm and RNG ordering"
+    },
+    {
+      "source": "net/isabel/aeroscapes/world/level/levelgen/cluster/BasaltClusterFeature.class",
+      "source_sha256": "05a354c56e005eb0129a094cc1ba39b884b734c99b14d9b0a85b87a9cb7363e4",
+      "output": "mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/worldgen/feature/BasaltClusterFeature.java",
+      "sha256": "ebfef1c8c4e1ea16f0f6478b85cec562fadaadfebd5e0019a8715215a9e75b7b",
+      "mode": "reference",
+      "reason": "Behavior comparison with the pinned original class; the current Java was reimplemented using Aero Islands as reference. Hashes do not establish copying. Owned private basalt/dripstone operations and scan guards; retain provider draws, writes, pool rules and vanilla pointed-dripstone output"
+    },
+    {
+      "source": "net/isabel/aeroscapes/mixin/AeroscapesMineshaftStructureMixin.class",
+      "source_sha256": "0c5779a034c26d542356951a0651097afead8170db8398c0bedaeec511fe825b",
+      "output": "mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/mixin/IslandMineshaftMixin.java",
+      "sha256": "ebd2b0969072ab846cd704398b5db9a664ad7cdd5564d1f0650f38a4952bf383",
+      "mode": "reference",
+      "reason": "Behavior comparison with the pinned original class; the current Java was reimplemented using Aero Islands as reference. Hashes do not establish copying. Named owned Mixin hooks; retain first-assembly surface height, original two assemblies, state lifetime and RNG ordering"
+    },
+    {
+      "source": "net/isabel/aeroscapes/world/level/levelgen/cluster/BasaltClusterFeature$Helper.class",
+      "source_sha256": "a88b2456d5190309c1ce43f69a4a42a4b443938daea1e0429f9aadec73660eea",
+      "output": "mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/worldgen/feature/BasaltClusterFeature.java",
+      "sha256": "ebfef1c8c4e1ea16f0f6478b85cec562fadaadfebd5e0019a8715215a9e75b7b",
+      "mode": "reference",
+      "reason": "Behavior comparison with the pinned original class; the current Java was reimplemented using Aero Islands as reference. Hashes do not establish copying. Owned private basalt/dripstone operations and scan guards; retain provider draws, writes, pool rules and vanilla pointed-dripstone output"
+    }
+  ],
+  "java_authorship": {
+    "owner_statement": "The Java implementation was rewritten with Aero Islands as inspiration/reference. Similarity and historical attribution comments do not alone prove copied expression or legal derivation.",
+    "history_introduction": "977b4d6b9f9597da90d0dd6a2212427f58b3f3b0",
+    "comparison_scope": "Eight original class fingerprints map to seven current files; algorithmic correspondences include pillar taper, selected draw order and mineshaft assembly. This is a behavior/source comparison, not an authorship determination for the complete generator.",
+    "license_decision": "Retain GPL-3.0-or-later for the complete owned mod in 0.1.0; 160 exact and 37 changed Aero JSON remain incorporated, plus one separately attributed Minecraft resource."
+  }
+}

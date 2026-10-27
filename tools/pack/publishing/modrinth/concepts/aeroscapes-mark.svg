@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <title>Aeroscapes Reimagine — procedural island emblem study</title>
+  <desc>AI-assisted vector source rendered with ordinary SVG tools. A private design study, not approved Modrinth media.</desc>
+  <defs>
+    <linearGradient id="sky" x1="72" y1="22" x2="416" y2="512" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#173D4A"/>
+      <stop offset="1" stop-color="#0C202D"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="163" y1="255" x2="262" y2="428" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#418A88"/>
+      <stop offset="1" stop-color="#193F53"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h512v512H0z"/>
+  <rect x="21" y="21" width="470" height="470" rx="91" stroke="#79B6B0" stroke-opacity=".13" stroke-width="2"/>
+  <circle cx="376" cy="116" r="31" fill="#E6B573"/>
+  <path d="M75 183c53-91 159-119 265-86M429 215c18 78-20 161-89 201" stroke="#83C3BF" stroke-opacity=".22" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 13"/>
+  <path d="m353 358 30-11 38 13-31 14Z" fill="#7BAE9B"/>
+  <path d="m353 358 37 16 31-14-13 29-20 24-18-24Z" fill="#32676D"/>
+  <path d="m388 413 2-39 31-14-13 29Z" fill="#1D4859"/>
+  <path d="m91 273 149-62 175 62-155 72Z" fill="#83C5AE"/>
+  <path d="m91 273 169 72-14 105-75-77-40-18Z" fill="url(#stone)"/>
+  <path d="m260 345 155-72-54 85-34 20-81 72Z" fill="#255867"/>
+  <path d="m91 273 149-62 175 62-23 11-152-53-126 53Z" fill="#BEDBB8"/>
+  <path d="m172 308 29 71 45 71-14-117M260 345l27 37-41 68" stroke="#88C4B3" stroke-opacity=".28" stroke-width="3" stroke-linejoin="round"/>
+  <path d="m318 263 37-15 29 11-37 17Z" fill="#D5E6C3"/>
+  <path d="m318 263 29 13v15l-29-12Z" fill="#548D80"/>
+  <path d="m347 276 37-17v15l-37 17Z" fill="#3E756F"/>
+  <path d="M195 269v-74" stroke="#D9B280" stroke-width="13"/>
+  <path d="m154 235 41-66 43 66Z" fill="#3C8478"/>
+  <path d="m163 207 32-58 34 58Z" fill="#6EB299"/>
+  <path d="m174 180 21-41 23 41Z" fill="#C2DEBA"/>
+  <path d="m273 178 82-27 66 24-80 30Z" fill="#E2B476"/>
+  <path d="m273 178 68 27 80-30-23 31-57 20-47-19Z" fill="#AF744F"/>
+  <path d="M341 205v-81" stroke="#D9BB91" stroke-width="6"/>
+  <path d="m347 126 42 35-42 14Z" fill="#E0E5C7"/>
+  <path d="m335 133-33 38 33 10Z" fill="#8FC6B7"/>
+  <path d="m300 221 25 8m26-1 31-11" stroke="#F2D3A3" stroke-width="4" stroke-linecap="round"/>
+  <path d="M102 106v18m-9-9h18M427 298v12m-6-6h12" stroke="#B6D4C5" stroke-width="3" stroke-linecap="round"/>
+</svg>

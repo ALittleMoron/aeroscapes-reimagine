@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:interpolated",
+  "argument": {
+    "type": "minecraft:mul",
+    "argument1": 0.65,
+    "argument2": {
+      "type": "minecraft:noise",
+      "noise": "aeroscapes_reimagine:island_form",
+      "xz_scale": 1,
+      "y_scale": 1
+    }
+  }
+}

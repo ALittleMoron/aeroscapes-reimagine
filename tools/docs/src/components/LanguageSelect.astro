@@ -1,0 +1,44 @@
+---
+import Select from "@astrojs/starlight/components/Select.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const locale = Astro.locals.starlightRoute.locale;
+const pagePath = Astro.url.pathname.slice(`${base}/${locale}`.length);
+const languages = [
+  { code: "en", label: "English" },
+  { code: "ru", label: "Русский" },
+];
+---
+
+<pack-language-select>
+  <Select
+    icon="translate"
+    label={Astro.locals.t("languageSelect.accessibleLabel")}
+    options={languages.map(({ code, label }) => ({
+      value: `${base}/${code}${pagePath}`,
+      selected: code === locale,
+      label,
+    }))}
+    width="8.25em"
+  />
+</pack-language-select>
+
+<script>
+  class PackLanguageSelect extends HTMLElement {
+    constructor() {
+      super();
+      const select = this.querySelector("select");
+      if (!select) return;
+      select.addEventListener("change", () => {
+        // Heading fragments differ between translations; open the paired page at its top.
+        window.location.assign(select.value);
+      });
+      window.addEventListener("pageshow", () => {
+        select.selectedIndex =
+          select.querySelector<HTMLOptionElement>("option[selected]")?.index ??
+          0;
+      });
+    }
+  }
+  customElements.define("pack-language-select", PackLanguageSelect);
+</script>

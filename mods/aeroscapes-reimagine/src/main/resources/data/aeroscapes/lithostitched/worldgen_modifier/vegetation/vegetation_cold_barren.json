@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/cold_barren",
+  "features": [
+	
+  ],
+  "step": "vegetal_decoration"
+}

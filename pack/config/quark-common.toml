@@ -1,0 +1,5 @@
+[management]
+# Inventory Profiles Next owns sorting and tool refill in this pack.
+"Inventory Sorting" = false
+"Automatic Tool Restock" = false
+"Hotbar Changer" = false

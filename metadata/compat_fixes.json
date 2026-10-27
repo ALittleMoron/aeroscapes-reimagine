@@ -1,0 +1,427 @@
+[
+  {
+    "targets": {
+      "4HnO3el1": "OViKhK8K"
+    },
+    "files": [
+      "data/createfood/recipe/minecraft/campfire_cooking/ginger_cookie_from_campfire_cooking.json",
+      "data/createfood/recipe/minecraft/campfire_cooking/ube_cookie_from_campfire_cooking.json",
+      "data/createfood/recipe/minecraft/smelting/ginger_cookie_from_smelting.json",
+      "data/createfood/recipe/minecraft/smelting/ube_cookie_from_smelting.json",
+      "data/createfood/recipe/minecraft/smoking/ginger_cookie_from_smoking.json",
+      "data/createfood/recipe/minecraft/smoking/ube_cookie_from_smoking.json"
+    ],
+    "reason": "Guard missing optional Ube cookies in Create Food 2.3.0"
+  },
+  {
+    "targets": {
+      "LNytGWDc": "UjX6dr61",
+      "Kn7xyQ1v": "Y3deS8Po"
+    },
+    "files": [
+      "data/create/recipe/blasting/silver_ingot_compat_galosphere.json",
+      "data/create/recipe/smelting/silver_ingot_compat_galosphere.json"
+    ],
+    "reason": "Create silver recipes target items absent from Galosphere 1.5.3"
+  },
+  {
+    "targets": {
+      "jmJ87gsb": "yibngMI7"
+    },
+    "files": [
+      "data/delightfulcreators/recipe/crafting/pumpkin_pie_from_cutting.json"
+    ],
+    "reason": "Correct 1.21.1 recipe output field"
+  },
+  {
+    "targets": {
+      "fHzhaX3z": "oQ0fb2cX"
+    },
+    "files": [
+      "data/autumnity/tags/item/snail_snacks.json"
+    ],
+    "reason": "Use registered c: mushroom tags"
+  },
+  {
+    "targets": {
+      "VsM5EDoI": "YSWV62mG",
+      "JcEFpckH": "9P9dNVUn",
+      "T9PomCSv": "fg9dTRz9"
+    },
+    "files": [
+      "pack.mcmeta"
+    ],
+    "reason": "Filter Blueprint's invalid example data map and Gyro 1.2.2's obsolete physics_block_properties/joystick.json. Gyro's selector names the unregistered gyro:removed_block_placeholder; no registered block uses it, and Sable 2.0.6 correctly rejects it. Re-evaluate on target updates or before adding Blueprint biome-slice contributors."
+  },
+  {
+    "targets": {
+      "8oi3bsk5": "MuJMtPGQ",
+      "WBvnqHfV": "MGjl80vc",
+      "tpehi7ww": "BYUUUeZA",
+      "KdJhOYVV": "EQHGxQAv",
+      "fgmhI8kH": "ztzRUnQ7",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/worldgen/structure/trail_ruins.json",
+      "data/natures_spirit/worldgen/structure/village_adobe.json",
+      "data/natures_spirit/worldgen/structure/village_coconut.json",
+      "data/natures_spirit/worldgen/structure/village_cypress.json",
+      "data/natures_spirit/worldgen/structure/village_wisteria.json",
+      "data/terralith/worldgen/structure/fortified_desert_village.json",
+      "data/terralith/worldgen/structure/fortified_village.json",
+      "data/terralith/worldgen/structure/glacial_hut.json",
+      "data/terralith/worldgen/structure/mage_complex.json",
+      "data/terralith/worldgen/structure/mage_tower.json",
+      "data/terralith/worldgen/structure/underground/frosted_dungeon.json",
+      "data/terralith/worldgen/structure/underground/giant_bee_hive.json",
+      "data/terralith/worldgen/structure/underground/mining_outpost.json",
+      "data/terralith/worldgen/structure/underground/oak_cabin.json",
+      "data/terralith/worldgen/structure/underground/old_refinery.json",
+      "data/terralith/worldgen/structure/underground/sunken_tower.json",
+      "data/terralith/worldgen/structure/valley_lodge.json",
+      "data/terralith/worldgen/structure/witch_hut.json"
+    ],
+    "reason": "Guard remaining ground-projected jigsaws against empty columns and out-of-build-height pieces; enclose all six enabled Terralith underground structures in natural islands, with bounded natural-volume height search and no artificial terrain fill. Minecraft trail ruins uses the pinned Minecraft 1.21.1 definition.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes/worldgen/density_function/fluid_level_floodedness.json"
+    ],
+    "reason": "Aero Islands 1.1.1 aquifers can create water-filled stone shells in otherwise empty sky. Keep original floodedness only at aquifer centers inside positive final_density; suppress void-center fluids and pressure shells. In Minecraft 1.21.1 the SinglePointContext used here has Blender.empty(), and the pinned density references contain no beardifier or blend_alpha/offset. Terrain density, biomes and aquifers_enabled remain unchanged; spring and water-feature definitions are retained. Validate island boundaries and retained water when updating.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "WBvnqHfV": "MGjl80vc",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/lithostitched/worldgen_modifier/natures_spirit_villages.json"
+    ],
+    "reason": "Restore the four Nature's Spirit village entries lost when Aero Islands overrides minecraft:villages; preserve native weights and the shared placement.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "8oi3bsk5": "MuJMtPGQ",
+      "Kn7xyQ1v": "Y3deS8Po"
+    },
+    "files": [
+      "data/terralith/tags/worldgen/biome/has_structure/frosted_dungeon.json",
+      "data/terralith/tags/worldgen/biome/has_structure/mining_outpost.json",
+      "data/terralith/tags/worldgen/biome/has_structure/old_refinery.json"
+    ],
+    "reason": "Preserve the three Terralith underground structures in their reference-mapped cave habitats after Biome Replacer migration; add only the exact mapped cave biomes."
+  },
+  {
+    "targets": {
+      "8oi3bsk5": "MuJMtPGQ",
+      "XaDC71GB": "qPASucBM",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/dimension/overworld.json",
+      "data/aeroscapes_reimagine/lithostitched/worldgen_modifier/terralith_surface.json"
+    ],
+    "reason": "Retain the selected Terralith climate table and original source as the delegate. The owned island habitat source assigns existing ocean/deep-ocean/shore biomes to the same deterministic physical basins and existing mountain/meadow biomes to added mountain relief; other positions preserve delegate selection and TerraBlender/Lithostitched participation. The paired biome-gated Terralith surface-rule restoration remains active.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "tpehi7ww": "BYUUUeZA",
+      "KdJhOYVV": "EQHGxQAv"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/worldgen/processor_list/hanging_entity_anchor.json",
+      "data/aeroscapes_reimagine/lithostitched/worldgen_modifier/template_hanging_anchors.json"
+    ],
+    "reason": "Transform author-world TileXYZ anchors only in 33 reachable templates found by the active jigsaw-pool/NBT graph. Preserve every painting/item frame, contained item, facing, existing processor and other NBT field; never mutate shared template data. Nine illager-hideout frames reproduced invalid-anchor ERRORs before this repair. The two previous underground-house painting-removal overrides are removed; their exact native paintings now use the same anchor-only processor."
+  },
+  {
+    "targets": {
+      "WBvnqHfV": "MGjl80vc"
+    },
+    "files": [
+      "data/natures_spirit/worldgen/template_pool/village/cypress/houses.json",
+      "data/natures_spirit/worldgen/template_pool/village/adobe/adobe_houses_layer_1_top.json",
+      "data/natures_spirit/worldgen/template_pool/village/adobe/adobe_houses_layer_1_back.json",
+      "data/natures_spirit/worldgen/template_pool/village/adobe/adobe_houses_layer_1_back_2.json"
+    ],
+    "reason": "Remove only reachable village pool entries whose named NBT templates are absent from the exact distributed JAR; keep all resolvable house templates, processors, weights and pool fallbacks."
+  },
+  {
+    "targets": {
+      "8oi3bsk5": "MuJMtPGQ"
+    },
+    "files": [
+      "data/terralith/worldgen/template_pool/village/desert/houses.json",
+      "data/terralith/worldgen/template_pool/village/desert/houses_extra.json"
+    ],
+    "reason": "Remove only reachable village pool entries whose named NBT templates are absent from the exact distributed JAR; keep all resolvable house templates, processors, weights and pool fallbacks."
+  },
+  {
+    "targets": {
+      "8oi3bsk5": "MuJMtPGQ"
+    },
+    "files": [
+      "data/terralith/worldgen/structure/mage_tower_summer.json",
+      "data/terralith/worldgen/structure/mage_tower_autumn.json",
+      "data/terralith/worldgen/structure/mage_tower_winter.json",
+      "data/terralith/worldgen/structure/mage_tower_spring.json"
+    ],
+    "reason": "Restore the four seasonal mage towers without re-enabling reference-excluded skylands: summer in blooming_valley, autumn in temperate_highlands, winter in snowy_cherry_grove and spring in sakura_grove. Project onto the real island surface instead of the former skylands-specific fixed Y=194/243/264/224, and require natural root support; retain native pools, pieces, weights and shared placement."
+  },
+  {
+    "targets": {
+      "WBvnqHfV": "MGjl80vc"
+    },
+    "files": [
+      "data/natures_spirit/worldgen/template_pool/village/adobe/optional_temple.json"
+    ],
+    "reason": "The live 1.21.1 StructureTemplateManager confirms these reachable child entries resolve to no template. Remove only unresolvable child entries, preserving remaining weights, processors and fallbacks. Convert explicit empty placeholders and sole absent optional integrations/terminators to native EmptyPoolElement; no active structure root is replaced by an empty pool."
+  },
+  {
+    "targets": {
+      "fgmhI8kH": "ztzRUnQ7"
+    },
+    "files": [
+      "data/ctov/worldgen/template_pool/village/vampirism/totem.json",
+      "data/ctov/worldgen/template_pool/village/waystone/normal.json",
+      "data/ctov/worldgen/template_pool/village/bounty/swamp.json",
+      "data/ctov/worldgen/template_pool/village/waystone/sand.json"
+    ],
+    "reason": "CTOV templates retain connectors for optional Vampirism, Waystones and Bountiful integrations absent from this pinned pack. Resolve only these four dead connectors to native EmptyPoolElement termination, avoiding missing-pool warnings without inventing optional content."
+  },
+  {
+    "targets": {
+      "tpehi7ww": "BYUUUeZA"
+    },
+    "files": [
+      "data/minecraft/worldgen/template_pool/minecraft_empty.json"
+    ],
+    "reason": "The conduit-ruin child template references misspelled minecraft:minecraft_empty as its termination pool. Resolve this explicit empty placeholder to native EmptyPoolElement; no structure root or real content is replaced."
+  },
+  {
+    "targets": {
+      "WBvnqHfV": "MGjl80vc"
+    },
+    "files": [
+      "data/minecraft/worldgen/template_pool/village/common/sheep_1.json"
+    ],
+    "reason": "The Wisteria shepherd house asks for an absent sheep_1 pool. Restore the exact Minecraft 1.21.1 sheep_1 animal element from its native animals pool, preserving weight/processors/projection. The house connector is up_east, target bottom, rollable; the native sheep connector is down_south, name bottom, rollable, satisfying the actual jigsaw contract."
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/worldgen/structure/stronghold.json",
+      "data/minecraft/worldgen/structure/ancient_city.json",
+      "data/minecraft/worldgen/structure/trial_chambers.json"
+    ],
+    "reason": "Keep native cave-biome selection and complete native assembly, choose a naturally supported position with bounded horizontal/vertical relocation, and permit partial slope exposure. No per-piece ENCAPSULATE terrain is generated. Ancient cities receive a connected noisy cavern before authored templates; support checks retain their natural bed. Native rooms, connections, loot and structure-set frequency remain; actual incidence and FULL clearance need regression checks. Stronghold pieces retain their saved complete-wall flag; city depth 4 and the 57 version-bound AIR-mask templates remain. Trial chambers separately require natural cover above the external top envelope, independent of stacked-room floors and decorative pieces. City offsets must preserve separation from basin water, rims and floor liners.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "8oi3bsk5": "MuJMtPGQ",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/worldgen/placed_feature/amethyst_geode.json"
+    ],
+    "reason": "Extend only the native Terralith amethyst-geode placement upper height from 120 to 384 to include Aero island bulk (commonly Y=150–220). Preserve the original lower height, rarity 18, random offsets, Terralith mega-geode selector, surface burial filter, biome guard and configured geodes. Natural traces previously showed 18 attempted vanilla geodes all starting in raw air; this finite evidence is not a claim of global impossibility.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "tpehi7ww": "BYUUUeZA",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_conduit_ruin.json"
+    ],
+    "reason": "Keep native conduit-ruin templates, pools, loot and spawn content. Require a local ocean basin and actual water across the native assembly, with limited shoreline exposure; reject aerial assemblies on unrelated upper islands. Preserve native placement frequency and existing marine/coast eligibility.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "fFEIiSDQ": "Agn1kmUY",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/supplementaries/worldgen/structure/galleon.json",
+      "data/supplementaries/tags/worldgen/biome/has_galleons.json"
+    ],
+    "reason": "Restore native marine structures on actual Aero void-shore islands: add only the existing physical coast biome, require natural root surface support/all-piece world-height bounds, and disable artificial terrain adaptation. Preserve native templates, pools, layout, loot, spawn content and placement frequency. Galleon require_sea_level=true was impossible because Aero sea=-255 is below world min=-64. Set it false and extend only the upper continentalness bound from -0.48 to -0.11, retaining the full original [-0.92,-0.48] interval and the other five native climate ranges. Twelve measured solid void-shore columns have C=-0.1588..-0.1111, within those other five ranges. Dedicated seed 1 actual selected FULL start at chunk [-3255,-5823] retains 20 pieces at Y=190..226, natural stone below its root, native key/chest/safe/cannon loot, and all-piece height bounds. The has_galleons tag resource is a new project append-only resource (replace=false), not copied native JSON: the pinned native Supplementaries galleon definition explicitly consumes #supplementaries:has_galleons. Preserve registered native marine tag members; no singular/plural path substitution is needed.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "tpehi7ww": "BYUUUeZA"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/worldgen/template_pool/grounded/witch_villa/foundation.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/witch_hut_base.json",
+      "data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/witch_villa.json"
+    ],
+    "reason": "Keep native layouts and loot. Underground hideout/crypt use whole-assembly natural support and partial exposure without per-piece terrain filling. Witch Villa uses natural ground, bounded foundations and its existing footprint guard; its private eligibility tag combines native swamps with installed c:is_swamp biomes without changing shared tags or placement spacing."
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/worldgen/structure/monument.json"
+    ],
+    "reason": "Place new native wet monuments on natural ocean-basin floors with at least30blocks of water and at most18blocks of floor variation. Try bounded nearby footprints within64blocks rather than flattening the seabed; keep native sets, room RNG and saved layout. Wet foundation columns reach only actual supporting beds within20blocks, including through kelp; dry legacy supports retain their four-block limit. Existing saved elevated monuments retain their native room graph, elevation and scoped hole sealing.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "iWMeHtdv": "T0kgpBJv",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/worldgen/structure/shipwreck.json",
+      "data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_shipwreck.json",
+      "data/minecraft/worldgen/structure/ocean_ruin_cold.json",
+      "data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_ocean_ruin_cold.json",
+      "data/minecraft/worldgen/structure/ocean_ruin_warm.json",
+      "data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_ocean_ruin_warm.json"
+    ],
+    "reason": "The original ocean-only native biome gate selected these starts over Aero raw void (native stubs at Y=-65). Add the existing physical void_shores habitat through per-structure biome-tag unions, preserving all original ocean options, native settings, probabilities, height guards, loot and placement. Cold/warm ocean ruins additionally use a native OceanRuinStructure subclass to predict each actual rotated template footprint with the pinned late getHeight scan and reject only world-bottom fallback or out-of-build-height placement. Preserve uneven native terrain, piece identity, RNG, postProcess, drowned, archaeology and loot seeds. Dedicated seed 1 naturally selected FULL Cold [5186,-1720] retains three overlay pieces at Y=57..63, a native small-ruin chest and 10 suspicious_gravel; Warm [3080,-6892] retains one piece at Y=217..223, a native chest and 5 suspicious_sand. Both complete four-chunk piece unions. The previous warm cluster with children at Y==-62/-64 is rejected; global ocean tags and shipwreck_beached remain unchanged.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/worldgen/structure/ruined_portal_ocean.json",
+      "data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_ruined_portal_ocean.json"
+    ],
+    "reason": "The original ocean-only native biome gate selected these starts over Aero raw void (native stubs at Y=-65). Add the existing physical void_shores habitat through a per-structure biome-tag union, preserving all original ocean options, exact native class/configuration/height guard, loot, placement and late postProcess positioning. Do not change global ocean tags or shipwreck_beached.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "tpehi7ww": "BYUUUeZA",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_trident_trial_monument.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/cobblestone_base.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/monument_base.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/polished_andesite_base.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/polished_tuff_base.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/stone_bricks_citadel_base.json"
+    ],
+    "reason": "Place native Lone Citadel and Trident Trial Monument intact on naturally supported islands, preserving native jigsaw assembly, rooms, loot/water and child-height clamps. Check only the exact rigid root height (41/22) and solid fluid-free support at native floor-1/-4 before returning the original lazy stub. Six private native pools reachable only from these two roots redirect five native 100-block base features through one bounded grounded-column placement predicate. It checks at most101 actual WorldGenLevel states, preserves a full last-block bed at depth100, skips only unsupported bases, and changes no configured feature or state provider. Dedicated strict natural FULL positives and scoped void-negative101AIR samples verify both structures; native giant assembly cost remains separate from locate/check cost.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "tpehi7ww": "BYUUUeZA",
+      "KdJhOYVV": "EQHGxQAv"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/worldgen/processor_list/non_void_projection.json",
+      "data/aeroscapes_reimagine/lithostitched/worldgen_modifier/non_void_ruin_projection.json"
+    ],
+    "reason": "Scope a stateless filter to39 native terrain_matching templates in7 private Nova remnant/Philips field-stone and pumpkin pools. Immediately before native projection Gravity, reject only actual WG-heightmap empty columns and projected blocks outside actual build bounds; retain positive-column native projection, original processors/order, rigid elements, NBT, entities and RNG. This prevents confirmed decorative blocks at world-bottom over entirely raw-empty columns without rejecting whole native layouts or claiming natural-density support for every column. The scoped raw templates contain no beds/double chests/entities and one vertical door pair. Runtime acceptance is recorded separately."
+  },
+  {
+    "targets": {
+      "tpehi7ww": "BYUUUeZA"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/cobblestone_toxic_base.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/oak_log_base.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/stone_bricks_toxic_base.json"
+    ],
+    "reason": "The native swamp Toxic Lair fixed Y=67 placed an exposed temple entrance above raw void. Its rigid 41x36x41 root has groundLevelDelta=1, named-anchor Y=0, downward foundations, a tapered roof and no soil covering; underground_decoration is not a burial contract. Preserve the exposed root and native child rooms with lazy root_supported/root_height=36, start_height=0, WORLD_SURFACE_WG and terrain none. Preserve native other fields, biome tag, spawn overrides, graph, weights, loot tables and native assembly RNG. The predicate itself draws no random values; rejected feature bodies do not run. Three exclusive foundation pools change only their placed-feature tokens to project clones retaining the native configured-feature holders and one existing bounded grounded_column filter. Dedicated seed 1 natural selected FULL chunk [916,1059] has supported natural stone at floor Y=227 minus 1/minus 4, 4199 in-bounds pieces,69 native loot containers in 327 sampled pieces/22 FULL chunks, and a complete native chest/barrel/pot loot room. Seven raw-void feature columns retain sparse authored rooms with 62..69 AIR below, longest nonair runs 3/9/3/16/5/4/4, not 100-down unsupported tails. Only the root requires natural support; actual feature first-stop may be another authored solid room. This is bounded content/column acceptance, not full generation of every piece."
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/worldgen/structure/desert_pyramid.json",
+      "data/minecraft/worldgen/structure/igloo.json",
+      "data/minecraft/worldgen/structure/swamp_hut.json"
+    ],
+    "reason": "Replace only the native delegate type in the exact Aero Islands1.1.1 vanilla Pyramid/Igloo/Swamp Hut wrappers; preserve height range[64,256], biome tags, spawn overrides, RNG, pieces and native postProcess. The native late minimum/rotated-template/first-callback-average scans could fall to world bottom even after a high stub. Guards reject missing beds/empty columns/native negative height-position and retain each accepted native placement. Pyramid checks floor-14 plus native burial0..2/build bounds and441 fill-column paths; Igloo checks all actual transformed template bottoms; Swamp Hut checks every possible first-chunk height average and all four native legs. Dedicated strict seed1 positives: Pyramid[-3213,-5592] with four loot chests,9TNT/pressure plate,7archaeology sand and complete floor/shaft; Igloo[-713,1025] with eight pieces,22ladders, trapdoor/potion/native loot and promoted live villager+zombie-villager; Swamp Hut[-642,-766] with four raw+actual beds and native cauldron. Original invalid starts are rejected. These original-raw guards do not predict every later carver or feature; Mansion was not adopted under this fix. Pyramid batches the same full-height 21x21 native raw-column scan with original settings/aquifer/ore/global-fluid semantics; exact noise-range exterior is native AIR. Five production regions compared 846720 states with zero mismatches (three alternating timing pairs); the separate sea63 control compared 169344 states including 4410 fluids. This measures raw-column sampling cost, not FPS/MSPT. Existing clipped-volume behavior is unchanged.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/minecraft/worldgen/structure/mansion.json"
+    ],
+    "reason": "Replace only delegate.type in the exact Aero Islands 1.1.1 Mansion wrapper. Native raw average/rotation/layout remain guarded; preserve native rooms, floor, entities, loot and stop semantics. Original actual late fill-column callbacks could replace raw stone beds removed by prior native/Aquifer work with unsupported cobblestone to world bottom. Scoped actual-bed preflight skips only unsupported cobblestone support bases, without restoring original raw terrain. Seed 1 natural chunk [7812,37472] preserves 577 pieces, 30 FULL chunks, four native loot containers, 110 ladders, twelve floor identities and promoted five evokers/eighteen vindicators; no unsupported/bottom cobblestone in tested columns. Old invalid chunk [13310,18360] is rejected. Exact raw replay twelve columns/native dense comparison has zero mismatches; native supported beds retain writes. Strict game/save/JVM0 proof accepted separately from a diagnostic wrapper SameFileError exit1; final standard fixture driver0 remains pending.",
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    }
+  },
+  {
+    "targets": {
+      "WBvnqHfV": "MGjl80vc"
+    },
+    "files": [
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_stone_transition.json"
+    ],
+    "reason": "Order Nature's Spirit 2.2.5's existing absolute transition endpoints as [-8,25] instead of the invalid [25,-8]. The intended interval is inferred from the authored endpoints, not confirmed by upstream; preserve counts, filters and the chert-to-stone configured feature. Valid UniformHeight consumes a height RNG draw where the invalid provider did not; native per-feature reseeding isolates subsequent feature RNG."
+  },
+  {
+    "targets": {
+      "WBvnqHfV": "MGjl80vc",
+      "Kn7xyQ1v": "Y3deS8Po",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_coal_upper.json",
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_diamond.json",
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_diamond_buried.json",
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_diamond_large.json",
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_iron_small.json",
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_lapis_buried.json",
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_redstone.json",
+      "data/natures_spirit/worldgen/placed_feature/ores/ore_redstone_lower.json"
+    ],
+    "reason": "Keep the previous effective absolute ore-height ranges for Nature’s Spirit2.2.5 and Galosphere1.5.3 when extending the Overworld; relative anchors use the old generation floor-64 and noise ceiling303. Separate lower ore placements supply added terrain."
+  }
+]

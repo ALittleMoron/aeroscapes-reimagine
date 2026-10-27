@@ -1,0 +1,14 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/lush_ores",
+  "features": [
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_coal_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_diamond_extra",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_emerald_extra",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_gold_extra",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_iron_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_lapis_extra",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_redstone_half"
+  ],
+  "step": "underground_decoration"
+}

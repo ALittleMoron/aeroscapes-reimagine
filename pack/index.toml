@@ -1,0 +1,1210 @@
+hash-format = "sha256"
+
+[[files]]
+file = "config/badoptimizations.txt"
+hash = "5b4bde22c84906bb95767aa7085997499e2f7c22062ec9c954e9f1a7b0b09a37"
+
+[[files]]
+file = "config/c2me.toml"
+hash = "ca818009f21a2d990561c20ceafc73b704e4c79f62ce8326ab1c944b93dd1088"
+
+[[files]]
+file = "config/colorwheel-client.toml"
+hash = "10bae919cad5e462007da61deb8b45bc86470daf404664f87885fd57b83d1835"
+
+[[files]]
+file = "config/flerovium.json"
+hash = "5caa0c197f0c412a2c460cb6bdc9a0b0bdd03607c2bd29865253d1d54c1b3e21"
+
+[[files]]
+file = "config/fml.toml"
+hash = "aafd8082ab1520568b10fbcaab44a09cd696690d37dab6a6a04e93c88aece12c"
+
+[[files]]
+file = "config/global_packs.toml"
+hash = "8046b960f488fdb986184bd3622a0eedb05e020befa086184bf00dc2c344b44e"
+
+[[files]]
+file = "config/immediatelyfast.json"
+hash = "395c825d4473fc6fc7c983cd99b880bf911c005ede578dc3f5ae3b758ce5976e"
+
+[[files]]
+file = "config/inventoryprofilesnext/inventoryprofiles.json"
+hash = "7a73409c015dd8cb781ed01b3ea791ff10b3e6356b2ff732e31e180cf5fef656"
+
+[[files]]
+file = "config/iris.properties"
+hash = "eb4c72f6737a9c80e57445045729a969bb0bed4f4261c14ac07eebfd473a25f7"
+
+[[files]]
+file = "config/modernfix-mixins.properties"
+hash = "8683b1a02d760ca7bcef7ac3a6a1954ec3287dba5eb76e2a41d1fdb72831e027"
+
+[[files]]
+file = "config/moreculling.toml"
+hash = "ac7ce4bcd5f590d07f4a11dd912bd0dd0c92979b3839b50eb50c4b8a6038c604"
+
+[[files]]
+file = "config/natures_spirit-common.toml"
+hash = "4202bb8d0d24f6960ec162e9819dbe15733a9e01d0e93c5d1f57f43622c6d9a3"
+
+[[files]]
+file = "config/quark-common.toml"
+hash = "607aa6836728c767b59a13e976786d199b5e684ccc747dc0c0b58378e5b71e1e"
+
+[[files]]
+file = "config/structure_layout_optimizer.json"
+hash = "f4aa472048a9707e4d565a0d0d5f4fedf83fb0fc87bf320a2914fd86a35f92ad"
+
+[[files]]
+file = "config/terrablender.toml"
+hash = "1eca390ee239e9d4be0f913be120323b4a87cb0f863169e3e7a0bfc72b8bd20c"
+
+[[files]]
+file = "config/vanillin-client.toml"
+hash = "50afa67b41e1a206785abe1431425b33707da051cd2cc15ecaddf57703614e70"
+
+[[files]]
+file = "config/xaero/minimap/common.cfg"
+hash = "b5e9291e7b85cf407db9451a59a1b9005e8ce828e0ae78eedf5be078a56606a7"
+
+[[files]]
+file = "config/xaero/minimap/server_profiles/default.cfg"
+hash = "4e8fa74a9089fc78f18e8068b9f00f791cb073ef201d31b9022e619032394168"
+
+[[files]]
+file = "config/xaerominimap.txt"
+hash = "8e8e267d50f65eaea7287d170546fa4a2f2a58c73a957bba99d6dc7ad3935f78"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/NOTICE.txt"
+hash = "689a3c0f6190ed08069e6d556cb11d316a89309a6bca1a0c5aa277ce319904c5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes/worldgen/density_function/fluid_level_floodedness.json"
+hash = "0d9f23e1576baf95ef03d1bb4784ffe00a03b0967beaf1c5ed991fe88fdeef1f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/lithostitched/worldgen_modifier/natures_spirit_villages.json"
+hash = "8db52260a959632b9dc8fe9395158beb0f4553543c74d255f09c7c0729091f16"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/lithostitched/worldgen_modifier/non_void_ruin_projection.json"
+hash = "09a4b526e6f7e0dc7eab14855ca6435df4677570ca353e3406dbcca97c5312d7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/lithostitched/worldgen_modifier/template_hanging_anchors.json"
+hash = "bbc38731b2b238eb48456ba24f5f8908c206c0aee5141d6d223b855d91b8d607"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/lithostitched/worldgen_modifier/terralith_surface.json"
+hash = "10a05264d18b01d176c898329507702a2deb164c4be4e05eb292b93f538db5cc"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_conduit_ruin.json"
+hash = "618064bb87f39ccfb9b0219d95b7de51bf78bf4cd1ee24011a4b5a5e4fb489e2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_ocean_ruin_cold.json"
+hash = "2bc47f5105aa77251783e4ca886c3aae9c1c132de9789273614d29ff1b148c1f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_ocean_ruin_warm.json"
+hash = "671219b9b8025095e529b8496d5828feda8978752b29520115888e5af83d6e9d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_ruined_portal_ocean.json"
+hash = "43ee5f1b8791ed0cd2ed745472822328860587e0765c6a90bc9f3d20095e9802"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_shipwreck.json"
+hash = "51297077662e91abdafadc975be9a80427d3770e71953bd7b34ef8fe41939770"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_trident_trial_monument.json"
+hash = "a44de57943ba7d74dab7c70ddd706bdde5025c45c909c4eef7f6f81ed20e9742"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/witch_villa.json"
+hash = "1a96db195b6b96bbd6c70efb5861ef5110c4662fb968f83e42f296beeef9f574"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/cobblestone_base.json"
+hash = "47648e526ae3022a4f966cc1d2aa686097563514cb9a48f92817d4cb37f772de"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/cobblestone_toxic_base.json"
+hash = "329f16dd65b4cb3dcbbb0a93373d6e6aa88dadb12b15413f6f6d4e8fbd106c32"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/monument_base.json"
+hash = "40a3ab8323e3930006779efcb2b56fcf57ac6924147ded81950a22719b83d1c9"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/oak_log_base.json"
+hash = "4be9e534280c9b821714c379aeac92f2b77d07ddd1da2788744f7b895d4331eb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/polished_andesite_base.json"
+hash = "76c246daa06bee97c98485cf8bcb82ff5f8bbfab5f0d79cf28c24ee462da21c2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/polished_tuff_base.json"
+hash = "2a3309d4f962e28a17cc0eec033b814a7c557c772febf900ba4611276a0408f3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/stone_bricks_citadel_base.json"
+hash = "e917cd7a5420df604524a1fbb6dd0cde3ea120c96d9aafd4872ddb5e530280df"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/stone_bricks_toxic_base.json"
+hash = "348b82c34d4fc07d4a32aaf9565c84a6002df757706b48cda6596c968147fe51"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/witch_hut_base.json"
+hash = "8b8e1afa6c3398a3fbefea0a80486582b0be71018a5e26044a2a8a5a7c19586b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/processor_list/hanging_entity_anchor.json"
+hash = "143cf340697972d33b32344f93cc444cb973f6f99ecee705fcef807d971cf1af"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/processor_list/non_void_projection.json"
+hash = "5fe42b6cdaea1d7bd91fa532f8a4aa30f717c08d2792ba22cca43616531e151e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/template_pool/grounded/witch_villa/foundation.json"
+hash = "0c41080bea4f7909d1a235e4072923eb050dae5287aa57efe9009bd8f75b9f7b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/autumnity/tags/item/snail_snacks.json"
+hash = "b833f58a85eb494e31962e4f7ef6890db6e87285499a341ef3ee09661ef0abe8"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/create/recipe/blasting/silver_ingot_compat_galosphere.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/create/recipe/smelting/silver_ingot_compat_galosphere.json"
+hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/createfood/recipe/minecraft/campfire_cooking/ginger_cookie_from_campfire_cooking.json"
+hash = "f105a54d9f7cedf0d805b768d83819a5eef531f81a8c3a21fd0ed75ffab734cb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/createfood/recipe/minecraft/campfire_cooking/ube_cookie_from_campfire_cooking.json"
+hash = "a1e3abb714e10cd88c4e48250062680adf524f32eaf5cfda830fa56e03e480c2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/createfood/recipe/minecraft/smelting/ginger_cookie_from_smelting.json"
+hash = "fe73bfcfcbf665766c5b0ca25b708adbd182a3fc5130b93f6b8e191a5224f75f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/createfood/recipe/minecraft/smelting/ube_cookie_from_smelting.json"
+hash = "ab245dff1464c19d5147c68ae14666a216cea63fd3f42347aa35f2bcf2290cec"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/createfood/recipe/minecraft/smoking/ginger_cookie_from_smoking.json"
+hash = "7359d5f4fb30efc11d55c6fd4d02746be5a67e431b8f7e19d07f676ab1cc54fd"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/createfood/recipe/minecraft/smoking/ube_cookie_from_smoking.json"
+hash = "9a9d03fe3467c0f4bf41054ac899f352a1cc1c12029025b3d281388acbda8433"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/village/bounty/swamp.json"
+hash = "1844ad6c29ae59afbea9955b21640b6808a48c1aad756f8a7e59c00ea935108e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/village/vampirism/totem.json"
+hash = "1844ad6c29ae59afbea9955b21640b6808a48c1aad756f8a7e59c00ea935108e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/village/waystone/normal.json"
+hash = "1844ad6c29ae59afbea9955b21640b6808a48c1aad756f8a7e59c00ea935108e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/village/waystone/sand.json"
+hash = "1844ad6c29ae59afbea9955b21640b6808a48c1aad756f8a7e59c00ea935108e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/delightfulcreators/recipe/crafting/pumpkin_pie_from_cutting.json"
+hash = "8a2b1457d821fd292f18adec2932a6701c6d10186aa55b1d605b2e261dc305ac"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/dimension/overworld.json"
+hash = "f29662e2b4efe20ff2ddf9bba81538dc239151edac4d53b9909a8bce024a0aa8"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/placed_feature/amethyst_geode.json"
+hash = "da67ae7a2839c4808741edb036d9b49cacc917ce31ca620f7046dae5035c1195"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/ancient_city.json"
+hash = "9d9bb91669a7f16d3343bb16b1de493257db271659c985a7463b459f0d4ca57f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/desert_pyramid.json"
+hash = "cec1f3d7690bebdf2984f1f9469665d4f0590185a31bf3d05de2bbc494edfbc8"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/igloo.json"
+hash = "abc858b364f4ba935eef6cbd319dac127e72d237c035133dc2f4448db2c96bcc"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/mansion.json"
+hash = "a337b51b63827b6acbabb56f0708e1da246021f84512e37a1e991608d9146685"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/monument.json"
+hash = "94f4a54bab8e90d24c36813277167f7ce689fb4ecede03ac81bbb95223cce9e7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/ocean_ruin_cold.json"
+hash = "82040f8b7a3930f7c157ddaba92440a9d2b26ec544d575d417d77dd4e6280645"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/ocean_ruin_warm.json"
+hash = "9f7b5c83fc0c72b780f7f664b4cc082d3ff2b4b1d327a5ac7e2d61c0d16439c0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/ruined_portal_ocean.json"
+hash = "60377734fe58421084b900a5faae563da72ffca7ecc3190dba930a7667606ebb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/shipwreck.json"
+hash = "3d9f29dce017d382c300c5e549e9ee06e757fe9b49b2db85c0a25c1e4921b87d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/stronghold.json"
+hash = "baa045b690e7c12fbc3c5524ee195226562321611a231ef0bd7155d19db5abd2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/swamp_hut.json"
+hash = "f5b3f134b4b3af8326c50397b890009dd3a6d327fb76ca7dca46a92c7393e58c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/trail_ruins.json"
+hash = "ad8b350f520bcc9449f64584b0670a4f27762b3fa5797e0f71f17d531b6f2139"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/trial_chambers.json"
+hash = "f85f03841c5763c7ee32bb693db3b6fd56df04a275d974d9dda7990c7cbd2e90"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/minecraft_empty.json"
+hash = "1844ad6c29ae59afbea9955b21640b6808a48c1aad756f8a7e59c00ea935108e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/template_pool/village/common/sheep_1.json"
+hash = "4a20e953c2346e7a925d6a1661e95d2955facc8ca821551c576cd82dff218c5c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_coal_upper.json"
+hash = "d02b0c832b490e0bd881f1db5c1b9879b7624eb66a04f43472a48a2a999c2017"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_diamond.json"
+hash = "96e65b7578ed03082f89447728763d3ccdf3e4b9b2742f0e81af2411a33f6acd"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_diamond_buried.json"
+hash = "603d8c990f2e2f0fa52c2b1f558e6cbf297c302db05665a39bcb31d3a187b276"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_diamond_large.json"
+hash = "f4089de60f2d0f857652c308fc47ea419138d2ca44f3c81a35495d7eb2ee435b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_iron_small.json"
+hash = "ec87738348e267180ec42ebdbc3b51d7e0a66409e16173d214d0136b4f1871d2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_lapis_buried.json"
+hash = "0e44123284e34e1ebfd79517b2857e52faf480c5f9e94ddbf1e99229c3d68347"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_redstone.json"
+hash = "588f6ed10eca2b18e90cc5ecccf667bcff83230a936e41e13a39fc8ab8919ee3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_redstone_lower.json"
+hash = "e5cfdd1a83590a67d0b43a577b194b33e8d0426553bd37076690cb1621d2703f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/placed_feature/ores/ore_stone_transition.json"
+hash = "cdcab08e6ecfa03e179d6498475271fbef72e3ff8a53604fa7726f6df462ce96"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/structure/village_adobe.json"
+hash = "3bc896fdddaf6b2db0636a2bc2c729d9dca45959d9c98f9d00f760324f29a27f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/structure/village_coconut.json"
+hash = "da955fb53107297db18c7febd0ff65d757508e861749ecfd624e2c9fb400f33c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/structure/village_cypress.json"
+hash = "c4eca2af7a38c8ac6fee4f519ca46283cec8e2cee3014dfd875f54c6e0fcc8ef"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/structure/village_wisteria.json"
+hash = "e7073a664b947fda1ee82080e5b684ed83d0a814871c53e34ffcd52b863fb39b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/template_pool/village/adobe/adobe_houses_layer_1_back.json"
+hash = "8bd19cfeb8faeaaa4ca03ffe381514ae4a1293cfb56e5b9ba0e8eff5e734d993"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/template_pool/village/adobe/adobe_houses_layer_1_back_2.json"
+hash = "4f52082b08edb020147b65f023047738ea6e44548daefcf8babadc9c30dd548d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/template_pool/village/adobe/adobe_houses_layer_1_top.json"
+hash = "60dadf5559f62d6576c538d5fe57ead8cbb34f194578c12a8d0ec7e31f03f6cb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/template_pool/village/adobe/optional_temple.json"
+hash = "16ff077e6f9c5c2e88eee5853d1dbed34c95b2459b8231fb6de5c31387c8135b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spirit/worldgen/template_pool/village/cypress/houses.json"
+hash = "b12fce28c0585d452fdcb520cb379efc5f47cede1d32a438276aa1914c92bac5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/supplementaries/tags/worldgen/biome/has_galleons.json"
+hash = "2af9ace04c06b8ec8371ce279427f6331f86c3174c499691d979876905074bf9"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/supplementaries/worldgen/structure/galleon.json"
+hash = "5fcebcc8a59b2aa4a416e9abbcde0e13c075e34d34c5dc7f062f11fbfc399a31"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/tags/worldgen/biome/has_structure/frosted_dungeon.json"
+hash = "8440406aa2f2b7b168d4049a148d3af58bedf17c20cd10478b9c3d622fc8adff"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/tags/worldgen/biome/has_structure/mining_outpost.json"
+hash = "3f83f1758572990b5a7e35098da93b154c9c5121a399779630baf5ee818bb727"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/tags/worldgen/biome/has_structure/old_refinery.json"
+hash = "437555cc7a5c422ee15c23f6ce828b40647cf1fda34f205f56841a4c7e7ee737"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/fortified_desert_village.json"
+hash = "99f5679fe4f7104524d12e92ef85f5079895cc8435f941e70ff63ea39790cf1c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/fortified_village.json"
+hash = "56596f0281df1725f69f658c2e26099980411b85e5241a7efcab39a0140763ff"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/glacial_hut.json"
+hash = "9ae37aae7570390bf00435a6d3f97653e977341ea7133b13de3c25cfe71a591d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/mage_complex.json"
+hash = "e8bfb9010cd5eac8a3f5f891c1654c83f08c121a93dd646f5169b895042e3d3e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/mage_tower.json"
+hash = "c4d0a8fecc2d97772b32175bce510d8d20ed20b9f80b35a40e37efa5f32e22cb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/mage_tower_autumn.json"
+hash = "6220b714090b0e142b81eeb380141a24cc69a40fcb16dccb7a4b9ff8915cff23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/mage_tower_spring.json"
+hash = "b13d1402134a47eee5c7f1f5dd2c4cacc908562b4866b79a30e484e943b1657c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/mage_tower_summer.json"
+hash = "6ef56dc23aa2052c06bfbefc33194957855e5f8922f59a354b15850a89708989"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/mage_tower_winter.json"
+hash = "08747a2f991c4b7e839d73eb1360124d74db466ca3e1fe1b75cbb9ea0f8ee914"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/underground/frosted_dungeon.json"
+hash = "b8a3e909cff416666864f8d0fc2d1ff0d2ab31e42664aef011b33f10d1aab645"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/underground/giant_bee_hive.json"
+hash = "6744911bcb86719e89529aa87e56ebd00d228c01a155274b7ab99e4e905fe636"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/underground/mining_outpost.json"
+hash = "785cec95d501eec73fc4d50f3bd8d6b0234d43a870b2c7ce3355a324d164d155"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/underground/oak_cabin.json"
+hash = "8bfba315a3e7a5ade68b4e03aa0e83e71aa8e0326200033362f73863dfc9d4b3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/underground/old_refinery.json"
+hash = "ba9f4208fa658df37dc79c963b27c26ba4b5abe17f302d7fbe9d310f1f46c936"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/underground/sunken_tower.json"
+hash = "46bbaf0bafc5313799c6ac5ae0c30aec0c534d08d3db6bb3e0c3653ee64d645a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/valley_lodge.json"
+hash = "aeb3caa04d666f35385a2b41c7003428417953b755a2296850420a5828ebb154"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/structure/witch_hut.json"
+hash = "8feba9eb7b48076c14c81551ac0601894459da8b7af08e8d16bc9ada87ba4b59"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/template_pool/village/desert/houses.json"
+hash = "674a90dde7c4e7a7a93b1160a81c10dfe3e8d1a44c33e62cd65d07f26921a780"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/terralith/worldgen/template_pool/village/desert/houses_extra.json"
+hash = "e1004013da9f23ca0b161d6d1eccbbd34f81e79e9b992f108f1562872b0fac03"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/pack.mcmeta"
+hash = "98a2ed7fd3d2ba25a7e302baa1d0a9a188be502488d976fff6dc2fbdad285142"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/carryon/tags/block/block_blacklist.json"
+hash = "37fa80b5768a6f765bb686ac6873d8f304ee073f6842607169e307250c2cf722"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/toms_storage/recipe/adv_wireless_terminal.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/toms_storage/recipe/wireless_terminal.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/pack.mcmeta"
+hash = "64b5d464dd28304c8838d17aa4d4c7daec642d9df93c158f9ad0b589457adb09"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/ATTRIBUTION.txt"
+hash = "cb88bc23351292715f4eeeab730e8f11ebd468109b95ad5688d62c3dcc9da995"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/NOTICE.txt"
+hash = "689a3c0f6190ed08069e6d556cb11d316a89309a6bca1a0c5aa277ce319904c5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/data/terralith/worldgen/structure/desert_outpost.json"
+hash = "4fb9551708ad00a68e693d920826c1b37d3e90ec01f10adf2f44c66862468c15"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/data/terralith/worldgen/structure/igloo.json"
+hash = "48fc0d603d8bfa6a77569844bf4d4a6a9177026987fa72578dbecc6f61ed6043"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/data/terralith/worldgen/structure/rubble_desert.json"
+hash = "411d3135dba76d057178359e052c5b7a20bdcc156350120895124a12bdb0ded3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/data/terralith/worldgen/structure/rubble_forest.json"
+hash = "b6364a355d6cd027978b6ca24545a58807006ccf8aab72282c35075b9955d054"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/data/terralith/worldgen/structure/rubble_jungle.json"
+hash = "1c6d87df1c5ce45455b2693c13c0b4c31042b6bbddd93e6a074042a5425a45b2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/data/terralith/worldgen/structure/rubble_mesa.json"
+hash = "43d6713003de5f8a245539ebaa4c998e6d2515362f73232464915954f387bffb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/data/terralith/worldgen/structure/rubble_mountain.json"
+hash = "ac2b45e494bba5c03cf7fae39de441cca359714736c189a610157d4d01028edf"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/data/terralith/worldgen/structure/rubble_taiga.json"
+hash = "7a0b5264ae1b582f34fe6375ffd88ab9a93f6eda6d8da27d896378deb6603cc0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_structures/pack.mcmeta"
+hash = "085c0208eb7e3211f3c5024eab34f98ea4656838f4d2080c3d032f9023123469"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/ATTRIBUTION.txt"
+hash = "cb88bc23351292715f4eeeab730e8f11ebd468109b95ad5688d62c3dcc9da995"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/NOTICE.txt"
+hash = "689a3c0f6190ed08069e6d556cb11d316a89309a6bca1a0c5aa277ce319904c5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/lithostitched/worldgen_modifier/cave_surface.json"
+hash = "55835f3d86f54f6365614a75d6c700efd56beff6a90bf23f804cabf9154880a1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/lithostitched/worldgen_modifier/ores/zinc_veins.json"
+hash = "b68972c56b692256aac32500a5fbe384b68971b3e19198eb324fe9e95c036b60"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/cave.json"
+hash = "2de1e0fc39af3644c6a974ed2e5d2cf31560fe3f2950f22181810c310bb1fb45"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/cold.json"
+hash = "0a675b5875dbe5a03e105773d93433c238d5e0d720fb03672bca2c7ae390f164"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/cold_barren.json"
+hash = "b3be26f716ffa5b4be2fe3efcbd5daddf2c46a936bed378c963e79952e43640e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/cold_vegetation.json"
+hash = "23821ce1f4807b55d63cec9588803563df2bcf01deb13bb224dcbd7aa657af82"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/hot.json"
+hash = "c6751414fde62438bb604c64fe2da1553ca374bcf8ff0a8b208b2290d30d664e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/lush.json"
+hash = "0a102f7ccebdd6eb2fb8fb2580e80e011ce6070ba83fca673c855375a3d09b89"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/plains.json"
+hash = "919044c18f40da92a38233a7b48e35b720dc87a7af9e10f3bb9a848c24f968ca"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/savanna.json"
+hash = "94b9658faa16a960adefd3ead56b9d5ec82f63873d8361191177d6a21c0d50ad"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/swamp.json"
+hash = "ae14a0fdd07649b36a9ba547e22ebd9ff53e39dd3a0d0bcd7868f10a11e535ec"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/tags/worldgen/biome/modifiers/presets/temperate.json"
+hash = "9a8772f151e0fba83075894cec6a1eae607edd6572b700dcb590abf1ea26175a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/worldgen/biome/fractured_jungle.json"
+hash = "3d3b8bafb59af15d652fbd91a840deaa070b43c1d2ce951c6811dce5440f4757"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/worldgen/configured_feature/jungle_pillar.json"
+hash = "621caf9d1cfc208e64be79fb1ded72ac900cea91426b40e76f2fa9873577262f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/worldgen/placed_feature/jungle_pillar.json"
+hash = "631ef4c4315d118c01bad2f36d5a2e29013bb3a4c6969cadacd0f7d988ca7b93"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes/worldgen/placed_feature/ores/ore_zinc_extra.json"
+hash = "122c081b1cf7594484f07eabc6dfbde05f4e4e1a8f162a7bba6477c250f67dfb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes_reimagine/recipe/string_from_fibers.json"
+hash = "552cd381d4545c45fd57dfafddbbf13871a03b7d5a53e3c53353629cb4fa2348"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/aeroscapes_reimagine/tags/item/fibers.json"
+hash = "67bbeceaa2ee1d9516a8c42c051fa99575a3fb19385124c282701c73a7ad9638"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/create/worldgen/placed_feature/striated_ores_overworld.json"
+hash = "5c714e504bbe215516cf3b37a9aff27ebb1bf18a833c03586f8eea0ca2de96e1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/create/worldgen/placed_feature/zinc_ore.json"
+hash = "484621dc865563fd2028ce60d553d5c767792022fc64f8a1b65a1f1603f931df"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/minecraft/worldgen/structure/buried_treasure.json"
+hash = "13c05304157b98769c12ebdacd715b08e8201ae640c713deb754b7a9262cb64d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/minecraft/worldgen/template_pool/ancient_city/walls/no_corners.json"
+hash = "a518bfd8d5fa0f4af908f013b8c90504a99528bdd3bbd3a8c0f0682a3e375843"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/data/simulated/end_sea/overworld.json"
+hash = "1022a765f4f44d549edf5c7843094f037ab2cea942d620208cfed865ca88a0e5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_worldgen/pack.mcmeta"
+hash = "43b4cc738c4db65763d8aff3f8c898a27ba14a15514a480020452e6c34ed6d2f"
+
+[[files]]
+file = "global_packs/required_data/terralith-biome-saplings.pw.toml"
+hash = "557e31cbed9a4ed87a526edb270724404f378c6d2a32eb54955d81bead862620"
+metafile = true
+
+[[files]]
+file = "licenses/Natures-Spirit-data-MIT.txt"
+hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
+
+[[files]]
+file = "licenses/THIRD-PARTY-NOTICES.txt"
+hash = "9c3b50cdff1f45c4a885d0621cb5bae847a9a8b904dae380275060956889b04b"
+
+[[files]]
+file = "licenses/aeroscapes-reimagine-source.zip"
+hash = "c98a96bb92ba6cb46e6bae0da50c3705674d0679e31c5c16fdc455c578d790a8"
+
+[[files]]
+file = "mods/3dskinlayers.pw.toml"
+hash = "9cc036f9ca77c8e51f36338a4e2ed9f60a5f1d3443bb2017da18e808a8e90510"
+metafile = true
+
+[[files]]
+file = "mods/aeroscapes-reimagine-0.1.0.jar"
+hash = "8835c19df7426e98d2e6677b737c32d383a186db78e4132b00d38c0798894a87"
+
+[[files]]
+file = "mods/allurement.pw.toml"
+hash = "5993996b5c4e23df2135f9fdde3674a461d538de6d5c69e1f686efaf38efe666"
+metafile = true
+
+[[files]]
+file = "mods/ambientsounds.pw.toml"
+hash = "47f3d65dac68154fc10c1b00c7526a86f4738b0a2eec27d3b3a627fe07053c45"
+metafile = true
+
+[[files]]
+file = "mods/appleskin.pw.toml"
+hash = "43e2d4365fb5e804dbed3488005273e814a32e990f04d31d871d3d2ddf6d9d8d"
+metafile = true
+
+[[files]]
+file = "mods/badoptimizations.pw.toml"
+hash = "cb7e2166aa909cbd176e57fb12ebd303943b941bc10a5b35b85aa86f50cacd15"
+metafile = true
+
+[[files]]
+file = "mods/blueprint.pw.toml"
+hash = "baa996b917b28a70e6c6e216ef1a9333552a5b0462f8d6dc448664f59fabec5b"
+metafile = true
+
+[[files]]
+file = "mods/brewin-and-chewin.pw.toml"
+hash = "39871d3e50150fa7bd0b4cf8eb91708847387fe494754f1dcc320bf1090fb8a7"
+metafile = true
+
+[[files]]
+file = "mods/c2me-neoforge.pw.toml"
+hash = "1dab7340d281aa41922c90a54cb131f9d0c217dc4e721473525b8d42d13b62bd"
+metafile = true
+
+[[files]]
+file = "mods/c2me-ocl.pw.toml"
+hash = "bc5f68ba19064f4ead0576652aa4dd90a686bea2b191d0912f6a13ab8e2e5c83"
+metafile = true
+
+[[files]]
+file = "mods/carry-on.pw.toml"
+hash = "84d2444d71680240a2ec6f79c7fdfd95451116b01d8cb3a1e55f8114985d5999"
+metafile = true
+
+[[files]]
+file = "mods/chat-heads.pw.toml"
+hash = "f414b0c6cfdc3db55a55d87f9c2c07625313b981c1741d1b3b7022ad27940378"
+metafile = true
+
+[[files]]
+file = "mods/chatanimation.pw.toml"
+hash = "786dbe15362fc3fe9ba5790a3b10e8990f64c383972891c7f4fbf0a7af8d1f12"
+metafile = true
+
+[[files]]
+file = "mods/chunky.pw.toml"
+hash = "a8f576f5bdc4947751eca5934346347ecb3f6d17e82bd5ee95568b8ae534bf2c"
+metafile = true
+
+[[files]]
+file = "mods/clear-void.pw.toml"
+hash = "b5e89e38f8b4e86d41c04d45b500bca985fcbdcf9ce99d60fae98c27e6e427d3"
+metafile = true
+
+[[files]]
+file = "mods/cloth-config.pw.toml"
+hash = "4517ac2439ff207e0eff4ada7b0093af14a8fd693f09846316b98a99a834ef4f"
+metafile = true
+
+[[files]]
+file = "mods/colorwheel.pw.toml"
+hash = "b6273da449e050af82941f63b8191476ebbf0d2baf2af6a83f6318b028f8d29d"
+metafile = true
+
+[[files]]
+file = "mods/comfortable-campfires.pw.toml"
+hash = "3bb486ad5a84ead6c939361d18771be953f4bfc75bd18c0b8f1ddc8120ba8ae2"
+metafile = true
+
+[[files]]
+file = "mods/comforts.pw.toml"
+hash = "89199c111f8c500fd0aa215ee13582420befe1979b3330df60513b54064e0f92"
+metafile = true
+
+[[files]]
+file = "mods/controlling.pw.toml"
+hash = "835cd54467fde0a7fd34fc275beda8c7f1b9fe5663bbf51590f42ec783353d01"
+metafile = true
+
+[[files]]
+file = "mods/corpse.pw.toml"
+hash = "8a48b9aef277dae61c31d6846fa92d85da9dd0ff07b8b51acbc8dbc27bbf9211"
+metafile = true
+
+[[files]]
+file = "mods/crate-delight.pw.toml"
+hash = "dbc90f84862d109acb4bf7f4b14346dda11c3f0fa0cc118ba4f0827b23d6e5e8"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics-compatability.pw.toml"
+hash = "04b0bab59012cb24d23e083ffd28f481f0b8aa680ef461efa3854b6d2af6301a"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics-gyroscope-stabilizers.pw.toml"
+hash = "e0947ec5636e99163259885b16a078adc35e47b37e0c51600d682c97c5a087b2"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics-throwable-rope-connector.pw.toml"
+hash = "db521101e6a9b57ef891fd0c91ed2bf729d7c8fe025dde5b7edc2f9088d8a659"
+metafile = true
+
+[[files]]
+file = "mods/create-aeronautics.pw.toml"
+hash = "769cbabc23a4ceb4e135b7316f09f437b7536845c64480d8e0bc5a7175e8530c"
+metafile = true
+
+[[files]]
+file = "mods/create-bits-n-bobs.pw.toml"
+hash = "a5a530aedf073eb67ac0db3ce6062229c9a4d959e0a060f440afd099d016b7b0"
+metafile = true
+
+[[files]]
+file = "mods/create-food.pw.toml"
+hash = "a6fdd8e13a903e8e70caa629109e0468049f684bfb559eb2a9d635021910dfb4"
+metafile = true
+
+[[files]]
+file = "mods/create-ratatouille.pw.toml"
+hash = "bcf7a380919f0e7e3cda21f4347d195c6807c9d4c1377ddfef1ae57770345543"
+metafile = true
+
+[[files]]
+file = "mods/create.pw.toml"
+hash = "067a87c37ba756516d5461b9c356130bbfa91a69b835f8e3738e218f9a5ed707"
+metafile = true
+
+[[files]]
+file = "mods/creativecore.pw.toml"
+hash = "beb9f693bb3cc301ca2eda7f9f151474f0a2e13f0218a0c271d749a0d07752f1"
+metafile = true
+
+[[files]]
+file = "mods/crops-love-rain.pw.toml"
+hash = "eb2fb08ed6fb4339502aa7255b937ada21d329524590e55dc536e1f1c02304a1"
+metafile = true
+
+[[files]]
+file = "mods/ct-overhaul-village.pw.toml"
+hash = "3882b0c275dae08b4eb1039910dd2f30815ec90a08be947df3d712d9db4f77a4"
+metafile = true
+
+[[files]]
+file = "mods/delightful-creators.pw.toml"
+hash = "f1af5948cee8162649989692dddb8401c0504dd9363c7f1b72fc9cd4a12aaa75"
+metafile = true
+
+[[files]]
+file = "mods/diagonal-fences.pw.toml"
+hash = "b7f972c67c360f1080dc61882108607d5ec28a19e0817433c7ac2c109f8d85bc"
+metafile = true
+
+[[files]]
+file = "mods/diagonal-walls.pw.toml"
+hash = "b56902276a8c4dc89e18d4876d03cf3221d6c3945b321439e328d4a09bda3453"
+metafile = true
+
+[[files]]
+file = "mods/diagonal-windows.pw.toml"
+hash = "4b624cf4638055ec621d39ef587154edb7cca1fee9a5c9748b7b583c57ce7958"
+metafile = true
+
+[[files]]
+file = "mods/dramatic-doors.pw.toml"
+hash = "ebdabdd9cf11e9dc5c1ddafc492c7e1e3fe1ffe5360697c05db121bb22b7d6b0"
+metafile = true
+
+[[files]]
+file = "mods/dripsounds.pw.toml"
+hash = "21b2114527de7efe389159f8853b7ee26c539bee4388d95c63e46b2c936d848a"
+metafile = true
+
+[[files]]
+file = "mods/dungeons-and-taverns.pw.toml"
+hash = "61222fc4c02f5f803cdf11eb316ab4faabfcead3696987edf2306705f0fa14ae"
+metafile = true
+
+[[files]]
+file = "mods/dynamic-fps.pw.toml"
+hash = "67241a713fbf873928f39f4f7bc7661cb4f2fdcc70a8fe41cdaee8df1faee024"
+metafile = true
+
+[[files]]
+file = "mods/effecttimerplus.pw.toml"
+hash = "5680dd7aec6ca3ea1c1e86fe28b3a652cc790286a10224fe46ba0f2758457777"
+metafile = true
+
+[[files]]
+file = "mods/emi.pw.toml"
+hash = "ad8b8a9b149af6798e65c01a334bca7a6a65b1ddf9aff3f612df033c69f745f1"
+metafile = true
+
+[[files]]
+file = "mods/entityculling.pw.toml"
+hash = "0644127dc865748132321c9c253e6cb352d8e36aa6619a53f62de4afa501cd44"
+metafile = true
+
+[[files]]
+file = "mods/farmers-delight.pw.toml"
+hash = "5cb09ce71e06b4034e966cf0bc5939be6968ca4d6f5d43976eccb7ddf38aa42e"
+metafile = true
+
+[[files]]
+file = "mods/ferrite-core.pw.toml"
+hash = "9eb90b689acf910b85ed636870deef8589aa00c002d29919918ffe2918c2443c"
+metafile = true
+
+[[files]]
+file = "mods/first-person-model.pw.toml"
+hash = "16299236b20825b7cef49884d0c40de4a63d1422bc1b545342faa77148fcd45d"
+metafile = true
+
+[[files]]
+file = "mods/flerovium.pw.toml"
+hash = "04763dbae46e329a2d6c1a2396fc97d2ab033d1237a40d75fe23a0b59d67f83c"
+metafile = true
+
+[[files]]
+file = "mods/flw-vanillin.pw.toml"
+hash = "b64d53a62a1b7898fccf32c93ab123c9a2afe97129678a0cd7d43310a553efd4"
+metafile = true
+
+[[files]]
+file = "mods/flywheel.pw.toml"
+hash = "23f2f6bc02d2350b0f5ff933f2c83a5f215d0059482accab1eebfdb0b44338cf"
+metafile = true
+
+[[files]]
+file = "mods/fungi-delight.pw.toml"
+hash = "83d36997040fd7cc6abc5155cc758345e919a2e842ad978c2203382284cec356"
+metafile = true
+
+[[files]]
+file = "mods/fzzy-config.pw.toml"
+hash = "3677160b8726e293da2c602edff0956e4a26f0a17bea1d51986bd6aab4cd3403"
+metafile = true
+
+[[files]]
+file = "mods/galosphere.pw.toml"
+hash = "799c341e3840812dbe477bcf74bcc79b97eb8a68f6c4aeb72fbfdf4279979985"
+metafile = true
+
+[[files]]
+file = "mods/globalpacks.pw.toml"
+hash = "de418c840ec0e040286039a262aeeef44a052c4feca5279ee227da17377ae4a8"
+metafile = true
+
+[[files]]
+file = "mods/immediatelyfast.pw.toml"
+hash = "e0b6dcd277c36c1b24917f69d6c8bdc12029cc14451c279ff623d78ce38ef284"
+metafile = true
+
+[[files]]
+file = "mods/inventory-profiles-next.pw.toml"
+hash = "b631186f87c45a08f213d356820a3756f388f1a5e2238a5a76cef7ffe38ee13b"
+metafile = true
+
+[[files]]
+file = "mods/iris.pw.toml"
+hash = "7a8146b9e25966b5172fb584f6d6fdf2fde99588021020735abe461e6392522e"
+metafile = true
+
+[[files]]
+file = "mods/item-descriptions.pw.toml"
+hash = "6efcfcc1acf823af4e381f9bdca555f7ab7ac8cb116f45684046428ce3d33a67"
+metafile = true
+
+[[files]]
+file = "mods/jade.pw.toml"
+hash = "9a838bc3ebe8e413ae6494a77b9a79b731bf5a20273941585d81f795f77a27d0"
+metafile = true
+
+[[files]]
+file = "mods/kotlin-for-forge.pw.toml"
+hash = "1e577da31d348a11a2693de892a81b3030076d4f35f27d67812f7b17e3a37cb8"
+metafile = true
+
+[[files]]
+file = "mods/libipn.pw.toml"
+hash = "c6255f8dd869f1ac0d01f8015f46a8116f8654a11a5bce02a99f7696d27c8da6"
+metafile = true
+
+[[files]]
+file = "mods/lithium.pw.toml"
+hash = "e7c9483821dda4813a830a2c05b36730dfc7bfaf0d6fe0df78e33621b117b47b"
+metafile = true
+
+[[files]]
+file = "mods/lithostitched.pw.toml"
+hash = "99dba8d824b608ca4dc8e8ae2fa94599d6691def2388447c71fdb8be72e8145c"
+metafile = true
+
+[[files]]
+file = "mods/mod-menu-neoforge-edition.pw.toml"
+hash = "b16c14d086de27ed2108e74203665b6196be94cbdd2961f92da6ad2ef0a30f14"
+metafile = true
+
+[[files]]
+file = "mods/modelfix.pw.toml"
+hash = "997243288706e761dc69b77e4da6a6f88733c0d8f1913a529650279fb5291495"
+metafile = true
+
+[[files]]
+file = "mods/modernfix.pw.toml"
+hash = "ff57b9cfb113ba06dc0ef22e382abd69816e76ccd6e5f78d5107fc569b2afb1d"
+metafile = true
+
+[[files]]
+file = "mods/moonlight.pw.toml"
+hash = "904d37e220401e36820f9d20645d2e1ec160871b1b50138c1a1c26a30446ccd4"
+metafile = true
+
+[[files]]
+file = "mods/moreculling.pw.toml"
+hash = "645f65a38df814b986843fe522ea422d160fccb40c23e139f030365c262c4b1f"
+metafile = true
+
+[[files]]
+file = "mods/mouse-tweaks.pw.toml"
+hash = "4e6b7fdd2fed48727870a04d70370968b9c6a578d302d1e11b2b641ccb48648b"
+metafile = true
+
+[[files]]
+file = "mods/mru.pw.toml"
+hash = "01529c94dce623104e15277223d882ec69190f9663a3a919761a8c7cb63490c7"
+metafile = true
+
+[[files]]
+file = "mods/natures-delight.pw.toml"
+hash = "e72ada230bec8fa0938a84d9292f006bd52bcd48cc710b52e989c2af43ec784e"
+metafile = true
+
+[[files]]
+file = "mods/natures-spirit.pw.toml"
+hash = "9c85028682c2714215ed3464eee7467ba1f3a4f3689ed6654150bb6072945eec"
+metafile = true
+
+[[files]]
+file = "mods/neo-language-reload.pw.toml"
+hash = "19a92c856c5de430f2ffe00a15f82731b0f928c629f41a1411cc504206ef92a5"
+metafile = true
+
+[[files]]
+file = "mods/no-void-structures.pw.toml"
+hash = "efc6da33d6e38439a0558c9e592466d1f1b43b080aa2d613f7feeb5668cb48ea"
+metafile = true
+
+[[files]]
+file = "mods/not-enough-animations.pw.toml"
+hash = "fd3b6f3a4ccb918e804d68ccb4df5a11f84152d73f0b22c2368aeb15dd15b2b7"
+metafile = true
+
+[[files]]
+file = "mods/nyfs-spiders.pw.toml"
+hash = "a63cf2386e21958fc5d593c48d6493954928486a563e6b43ab983d61c107cf70"
+metafile = true
+
+[[files]]
+file = "mods/philips-ruins.pw.toml"
+hash = "6a93ba098014bd60b0b708ab259b27f51003fa29dbdb9a700b39e6e07954e240"
+metafile = true
+
+[[files]]
+file = "mods/puzzles-lib.pw.toml"
+hash = "156a78c6e692135de3647d4a01a0b3e68286e3988b2a7e565abc718030b3a06d"
+metafile = true
+
+[[files]]
+file = "mods/quark.pw.toml"
+hash = "cf52d9c4542c08a103e78eee3fa10719571ac5803b34697bf5258638d2c41ddc"
+metafile = true
+
+[[files]]
+file = "mods/reconnectible-chains.pw.toml"
+hash = "df3527e24630aab60df9df3292a09e9e5b234e9991bff4e52cd8b7673f426b96"
+metafile = true
+
+[[files]]
+file = "mods/resourceful-config.pw.toml"
+hash = "777a0487c2b458701bc6689ce665df23990d2d9cf16213346d53c9cade35c2cf"
+metafile = true
+
+[[files]]
+file = "mods/sable.pw.toml"
+hash = "bc4dc367b41e578d1f8d12498227396e44590a601a348614f714eb56e26e2f89"
+metafile = true
+
+[[files]]
+file = "mods/saplanting.pw.toml"
+hash = "178f24fe0ceaf630ef8bf3f7988004f89a4d6384173780d579f97eceada31cf3"
+metafile = true
+
+[[files]]
+file = "mods/scalablelux.pw.toml"
+hash = "88c08e127f2f2a63e33f204b86189ece83c72781de7f03cc65a61aea8a38d28d"
+metafile = true
+
+[[files]]
+file = "mods/searchables.pw.toml"
+hash = "3e4f10e6a4af780cc628cfec8a59c3aeaf28a986761ab7973168e8571a22b4bc"
+metafile = true
+
+[[files]]
+file = "mods/shulkerboxtooltip.pw.toml"
+hash = "37e523bae980017bb16c0df0212bf3f70627db460e0ce530d73d8909ebbf4250"
+metafile = true
+
+[[files]]
+file = "mods/smarter-farmers-farmers-replant.pw.toml"
+hash = "69ab6739a5af63ceca2c0805043554591bebac0e8e8a305e76eb56b277b1de5b"
+metafile = true
+
+[[files]]
+file = "mods/smooth-gui.pw.toml"
+hash = "39cf5c2961e3c20e8a42ec15e1376af609ecfd50b9de0c4ac5a37543c60ca876"
+metafile = true
+
+[[files]]
+file = "mods/smooth-skies.pw.toml"
+hash = "c72b91025f181cfc270c16b6d039ecf35e0c38721b0be2213d9af29a2a78880b"
+metafile = true
+
+[[files]]
+file = "mods/snow-under-trees.pw.toml"
+hash = "faac56aa93c06b535997ed60da4f6ff9371d73a2c1f3a664bb1f7dbdbe5f485a"
+metafile = true
+
+[[files]]
+file = "mods/sodium.pw.toml"
+hash = "a8c458ebb9a371759c12bb2117414e21cf8c6aeeca84d2a59670476c50c4347a"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-backpacks.pw.toml"
+hash = "be2f6f99e33cf4426565ae3c16034adfea25e7f5c4ea406fac5eb8a5ff90ea04"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-core.pw.toml"
+hash = "b41c4821f5605652f7829145058d3c400810108e4f093cb67179c0715280be13"
+metafile = true
+
+[[files]]
+file = "mods/sophisticated-storage.pw.toml"
+hash = "1b3230c8095f289a739fa6dada02d1f2066e1de40df8aaf5785cf4317408558e"
+metafile = true
+
+[[files]]
+file = "mods/sound.pw.toml"
+hash = "5298077320fd9554f97e30b71a14f0acb4fe0c6bfa62dabece1fd370a4dcc02c"
+metafile = true
+
+[[files]]
+file = "mods/spyglass-improvements.pw.toml"
+hash = "bdcc346e883d2a782581bc577be5ea6805139eeba3230dd67a6dfd68c0466a23"
+metafile = true
+
+[[files]]
+file = "mods/structure-layout-optimizer.pw.toml"
+hash = "8480e2b68f28f93766096c7d418754e20481a9c97b68519c95287c1cef9bbc36"
+metafile = true
+
+[[files]]
+file = "mods/subtle-effects.pw.toml"
+hash = "9b7b03b7c091674f75ed6f5f9b621f1437122a1d7b5c5a3ccb208b2542559e05"
+metafile = true
+
+[[files]]
+file = "mods/supplementaries.pw.toml"
+hash = "9fb0ad6235096587fd9df08dbe1030311e9a7a2df93fe2c8c29ed3bbdc0de0a8"
+metafile = true
+
+[[files]]
+file = "mods/terrablender.pw.toml"
+hash = "ad981b8558a7882655d20ed2e8d5daa4b97489368045426f581bfe3762c547c2"
+metafile = true
+
+[[files]]
+file = "mods/terralith.pw.toml"
+hash = "0de40afcea63987a8c01a23ed0acaea781c1579abbe73b5181c81e54ffce905a"
+metafile = true
+
+[[files]]
+file = "mods/toms-storage.pw.toml"
+hash = "6af2d566831cbfd4aa0e516800843c5918aed4920f0ca661da05cd7b9de582be"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-minimap.pw.toml"
+hash = "5f0914a3e34b1158a48719963ea7c10dabf85fc6768266d36a833ec9477fa862"
+metafile = true
+
+[[files]]
+file = "mods/xaeros-world-map.pw.toml"
+hash = "db41d394d67bf9f22777ae488833220b481e8f924c76c5a6e92065a7b0762d9a"
+metafile = true
+
+[[files]]
+file = "mods/xp-from-crops.pw.toml"
+hash = "9f7c552305c07f63b3966c860c171567bc1ec055a4e92cc62ad57d63209aa0b2"
+metafile = true
+
+[[files]]
+file = "mods/yacl.pw.toml"
+hash = "8a92e0e3599a585b05f258c4f5c3edec72998a852d4ab5dc704c4ee6b47da972"
+metafile = true
+
+[[files]]
+file = "mods/zeta.pw.toml"
+hash = "a544cdd001d5197d4414e6c38735b540a69e00da4376576521dffa25b435d32a"
+metafile = true
+
+[[files]]
+file = "options.txt"
+hash = "06c4695a242d65820efc986fc9e2f3617cec8ccc43ce34de0547104a228da71f"
+
+[[files]]
+file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
+hash = "4486bc04e0bb68e2c8d769d695ddcf794d817a82bf9f092dcc38622655c789f2"
+
+[[files]]
+file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"
+hash = "1dae9938c0d78ab74230ad943db0ed5014262b67d8b0c80e983c11440027b4bc"
+
+[[files]]
+file = "shaderpacks/complementary-reimagined.pw.toml"
+hash = "c780215edaba86893a2c436148e19da269e2a855069b91452424402733a93a31"
+metafile = true
+
+[[files]]
+file = "shaderpacks/makeup-ultra-fast-shaders.pw.toml"
+hash = "d37e665ff56cdb33719276146cb7d1b9478ea343af4e6c7ae72154445580f4c9"
+metafile = true

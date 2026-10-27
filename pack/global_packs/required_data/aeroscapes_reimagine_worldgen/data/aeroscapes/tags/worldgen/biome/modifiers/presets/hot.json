@@ -1,0 +1,47 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:blooming_dunes",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:chaparral",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:drylands",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:dusty_slopes",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:lively_dunes",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:scorched_dunes",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:xeric_plains",
+      "required": false
+    },
+    "terralith:ancient_sands",
+    "terralith:arid_highlands",
+    "terralith:basalt_cliffs",
+    "terralith:brushland",
+    "terralith:caldera",
+    "terralith:desert_canyon",
+    "terralith:desert_oasis",
+    "terralith:desert_spires",
+    "terralith:lush_desert",
+    "terralith:painted_mountains",
+    "terralith:red_oasis",
+    "terralith:sandstone_valley",
+    "terralith:volcanic_crater",
+    "terralith:white_mesa"
+  ]
+}

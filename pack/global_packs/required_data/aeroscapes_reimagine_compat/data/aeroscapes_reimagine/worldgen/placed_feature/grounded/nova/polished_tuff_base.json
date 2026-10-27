@@ -1,0 +1,11 @@
+{
+  "feature": "nova_structures:polished_tuff_base",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "aeroscapes_reimagine:grounded_column"
+      }
+    }
+  ]
+}

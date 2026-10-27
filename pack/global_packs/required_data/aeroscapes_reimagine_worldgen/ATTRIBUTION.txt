@@ -1,0 +1,4 @@
+Derived from Isabel's Aeroscapes 1.0.8 by Isabel / nuclearobelisk.
+https://modrinth.com/modpack/aeroscapes/version/q4P5coPI
+Aeroscapes contributions are CC BY-SA 4.0; underlying mod data retain their own terms (see NOTICE.txt): https://creativecommons.org/licenses/by-sa/4.0/
+Changes: project organization, namespaced recipe/tag IDs and native predicate compatibility; old full terrain-noise override omitted. No endorsement implied.

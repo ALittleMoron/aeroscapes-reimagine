@@ -1,0 +1,13 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes_reimagine:lower_caves",
+  "features": [
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_coal_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_diamond_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_gold_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_iron_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_lapis_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_redstone_half"
+  ],
+  "step": "underground_decoration"
+}

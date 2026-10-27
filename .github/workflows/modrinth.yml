@@ -1,0 +1,39 @@
+---
+name: Publish Modrinth
+'on':
+  workflow_call:
+    secrets:
+      RELEASE_TOKEN:
+        required: false
+      MODRINTH_TOKEN:
+        required: false
+permissions:
+  contents: read
+jobs:
+  modrinth:
+    if: ${{ vars.MODRINTH_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      # setup-uv v10.3.2
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+        with:
+          version: '0.13.1'
+          enable-cache: true
+          cache-local-path: .cache/uv
+          cache-dependency-glob: tools/pack/uv.lock
+      - name: Publish verified GitHub asset to Modrinth
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          MODRINTH_PROJECT_ID: ${{ vars.MODRINTH_PROJECT_ID }}
+          MODRINTH_DISCLOSURES_CONFIRMED: >-
+            ${{ vars.MODRINTH_DISCLOSURES_CONFIRMED }}
+          MODRINTH_PROFILE_ENABLED: ${{ vars.MODRINTH_PROFILE_ENABLED }}
+        run: make pack-sync release-modrinth

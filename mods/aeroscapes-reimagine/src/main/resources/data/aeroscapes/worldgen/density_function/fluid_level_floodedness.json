@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:mul",
+  "argument1": {
+    "type": "minecraft:range_choice",
+    "input": "minecraft:y",
+    "min_inclusive": 0,
+    "max_exclusive": 128,
+    "when_in_range": {
+      "type": "minecraft:clamp",
+      "input": {
+        "type": "minecraft:range_choice",
+        "input": "minecraft:y",
+        "min_inclusive": 0,
+        "max_exclusive": 64,
+        "when_in_range": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": 0,
+          "to_y": 64,
+          "from_value": -1,
+          "to_value": 2
+        },
+        "when_out_of_range": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": 65,
+          "to_y": 128,
+          "from_value": 1,
+          "to_value": -3.125
+        }
+      },
+      "min": 0,
+      "max": 0.6
+    },
+    "when_out_of_range": 0
+  },
+  "argument2": {
+    "type": "minecraft:noise",
+    "noise": "aeroscapes:aquifer_fluid_level_floodedness",
+    "xz_scale": 0.675,
+    "y_scale": 0.1
+  }
+}

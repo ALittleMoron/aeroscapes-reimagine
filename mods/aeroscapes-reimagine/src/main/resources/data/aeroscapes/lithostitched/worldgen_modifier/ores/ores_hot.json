@@ -1,0 +1,12 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/hot",
+  "features": [
+	"aeroscapes:ores/ore_coal_extra",
+	"aeroscapes:ores/ore_gold_extra",
+	"aeroscapes:ores/ore_redstone_extra",
+	"aeroscapes:ores/ore_aerolite",
+	"aeroscapes:ores/ore_gold_aerolite"
+  ],
+  "step": "underground_ores"
+}

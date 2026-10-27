@@ -1,0 +1,12 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#aeroscapes:modifiers/presets/cold",
+  "features": [
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_coal_extra",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_emerald_extra",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_gold_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_iron_half",
+    "aeroscapes_reimagine:lower/aeroscapes/ores/ore_lapis_extra"
+  ],
+  "step": "underground_decoration"
+}

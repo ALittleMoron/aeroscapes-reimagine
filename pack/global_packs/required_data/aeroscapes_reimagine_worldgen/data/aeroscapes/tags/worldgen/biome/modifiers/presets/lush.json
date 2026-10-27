@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:sparse_tropical_woods",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:tropical_basin",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:tropical_shores",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:tropical_woods",
+      "required": false
+    },
+    "terralith:amethyst_rainforest",
+    "terralith:jungle_mountains",
+    "terralith:lush_valley",
+    "terralith:mirage_isles",
+    "terralith:rocky_jungle",
+    "terralith:tropical_jungle",
+    "aeroscapes:fractured_jungle"
+  ]
+}

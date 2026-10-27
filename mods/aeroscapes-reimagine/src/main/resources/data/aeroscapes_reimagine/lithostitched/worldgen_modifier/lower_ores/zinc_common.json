@@ -1,0 +1,8 @@
+{
+  "type": "lithostitched:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "aeroscapes_reimagine:lower/create/zinc_ore"
+  ],
+  "step": "underground_decoration"
+}

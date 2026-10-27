@@ -1,0 +1,18 @@
+{
+  "type": "lithostitched:delegating",
+  "delegate": {
+    "type": "minecraft:stronghold",
+    "biomes": "minecraft:deep_ocean",
+    "spawn_overrides": {},
+    "step": "surface_structures",
+    "terrain_adaptation": "bury"
+  },
+  "spawn_condition": {
+    "type": "lithostitched:height_filter",
+    "range_type": "absolute",
+    "permitted_range": {
+      "min_inclusive": -32,
+      "max_inclusive": 128
+    }
+  }
+}

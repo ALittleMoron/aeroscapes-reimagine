@@ -1,0 +1,36 @@
+---
+name: CI checks
+'on':
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38  # v6
+        with:
+          node-version-file: tools/docs/.node-version
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961  # v5
+        with:
+          distribution: 'zulu'
+          java-version: '21.0.13'
+      - name: Install pinned Corretto JDK 25
+        run: make ci-java
+      # setup-go v6.1.0
+      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c
+        with:
+          go-version: '1.27.3'
+          cache: false
+      # setup-uv v10.3.2
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+        with:
+          version: '0.13.1'
+          enable-cache: true
+          cache-local-path: .cache/uv
+          cache-dependency-glob: tools/pack/uv.lock
+      - run: make sync verify

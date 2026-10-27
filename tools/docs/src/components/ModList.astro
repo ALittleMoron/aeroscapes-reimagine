@@ -1,0 +1,91 @@
+---
+import { z } from "astro/zod";
+import artifactRecords from "../../../../metadata/artifacts.json";
+
+interface Props {
+  locale: "en" | "ru";
+}
+const { locale } = Astro.props;
+const raw: unknown = artifactRecords;
+const records = z.array(z.looseObject({ status: z.string() })).parse(raw);
+const commonArtifact = z.object({
+  name: z.string().min(1),
+  version: z.string().min(1),
+  kind: z.enum(["mod", "datapack", "shader"]),
+  side: z.enum(["client", "server", "both"]),
+});
+const artifact = z.union([
+  commonArtifact
+    .extend({
+      project_id: z.string().regex(/^[A-Za-z0-9]+$/),
+      version_id: z.string().regex(/^[A-Za-z0-9]+$/),
+    })
+    .transform((entry) => ({
+      ...entry,
+      url: `https://modrinth.com/project/${entry.project_id}/version/${entry.version_id}`,
+    })),
+  commonArtifact
+    .extend({
+      project_id: z.string().regex(/^maven:[A-Za-z0-9_.-]+:[A-Za-z0-9_.-]+$/),
+      version_id: z.string().min(1),
+      source: z.object({
+        type: z.literal("maven"),
+        url: z.string().url().startsWith("https://"),
+      }),
+    })
+    .transform((entry) => ({ ...entry, url: entry.source.url })),
+]);
+const included = records
+  .filter((record) => record.status === "included")
+  .map((record) => artifact.parse(record))
+  .sort((left, right) => left.name.localeCompare(right.name, "en"));
+const labels =
+  locale === "ru"
+    ? {
+        name: "Название",
+        version: "Версия",
+        kind: "Тип",
+        side: "Установка",
+        mod: "Мод",
+        datapack: "Датапак",
+        shader: "Шейдер",
+        client: "Клиент",
+        server: "Сервер",
+        both: "Клиент и сервер",
+      }
+    : {
+        name: "Name",
+        version: "Version",
+        kind: "Type",
+        side: "Installation",
+        mod: "Mod",
+        datapack: "Data pack",
+        shader: "Shader",
+        client: "Client",
+        server: "Server",
+        both: "Client and server",
+      };
+---
+
+<table>
+  <thead>
+    <tr>
+      <th>{labels.name}</th>
+      <th>{labels.version}</th>
+      <th>{labels.kind}</th>
+      <th>{labels.side}</th>
+    </tr>
+  </thead>
+  <tbody>
+    {included.map((entry) => (
+      <tr>
+        <td>
+          <a href={entry.url}>{entry.name}</a>
+        </td>
+        <td>{entry.version}</td>
+        <td>{labels[entry.kind]}</td>
+        <td>{labels[entry.side]}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>

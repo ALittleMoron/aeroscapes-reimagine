@@ -1,0 +1,12 @@
+{
+  "commands.aeroscapes_reimagine.locate.searching": "Searching for %s. You can keep playing; a new structure search replaces this one.",
+  "commands.aeroscapes_reimagine.locate.cancelled": "Structure search cancelled (%s).",
+  "commands.aeroscapes_reimagine.locate.replaced": "replaced by your new search",
+  "commands.aeroscapes_reimagine.locate.world_changed": "you respawned, changed worlds, or disconnected",
+  "commands.aeroscapes_reimagine.locate.stopped": "the server is stopping",
+  "commands.aeroscapes_reimagine.locate.failed": "Structure search failed. Check the server log.",
+  "message.aeroscapes_reimagine.monitor.toggle": "Monitor visibility toggle requested.",
+  "message.aeroscapes_reimagine.monitor.record": "Recording requested for %s s.",
+  "message.aeroscapes_reimagine.monitor.stopped": "Recording stop requested.",
+  "message.aeroscapes_reimagine.monitor.unavailable": "Monitor unavailable. Start this profile with the local MangoHud test wrapper."
+}

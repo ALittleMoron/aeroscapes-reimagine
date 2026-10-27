@@ -1,0 +1,75 @@
+{
+  "type": "aeroscapes:pillar",
+  "config": {
+    "block_placement": [
+      {
+        "blockStateProvider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:basalt"
+          }
+        },
+        "check": {
+          "type": "minecraft:true"
+        }
+      },
+      {
+        "blockStateProvider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:smooth_basalt"
+          }
+        },
+        "check": {
+          "type": "minecraft:matching_blocks",
+          "blocks": [
+            "minecraft:air",
+            "minecraft:cave_air"
+          ],
+          "offset": [
+            0,
+            1,
+            0
+          ]
+        }
+      }
+    ],
+    "distance_test_type": [
+      {
+        "data": "EUCLIDEAN",
+        "weight": 20
+      },
+      {
+        "data": "MANHATTAN",
+        "weight": 2
+      },
+      {
+        "data": "CHEBYSHEV",
+        "weight": 1
+      }
+    ],
+    "height": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 32,
+      "min_inclusive": 16
+    },
+	"height_offset": 0,
+    "max_ground_drop": 16,
+    "min_radius_scale": {
+      "type": "minecraft:uniform",
+      "max_exclusive": 0.2,
+      "min_inclusive": 0.05
+    },
+    "noise_frequency": {
+      "type": "minecraft:uniform",
+      "max_exclusive": 0.075,
+      "min_inclusive": 0.05
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "max_inclusive": 8,
+      "min_inclusive": 3
+    },
+    "vine_length": 0
+  }
+}

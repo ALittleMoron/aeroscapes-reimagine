@@ -1,0 +1,34 @@
+{
+  "feature": "terralith:cave/generic/amethyst_geode",
+  "placement": [
+    {
+      "chance": 18,
+      "type": "minecraft:rarity_filter"
+    },
+    {
+      "xz_spread": 8,
+      "y_spread": 0,
+      "type": "minecraft:random_offset"
+    },
+    {
+      "height": {
+        "min_inclusive": {
+          "absolute": -50
+        },
+        "max_inclusive": {
+          "absolute": 384
+        },
+        "type": "minecraft:uniform"
+      },
+      "type": "minecraft:height_range"
+    },
+    {
+      "heightmap": "OCEAN_FLOOR_WG",
+      "max_inclusive": -24,
+      "type": "minecraft:surface_relative_threshold_filter"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

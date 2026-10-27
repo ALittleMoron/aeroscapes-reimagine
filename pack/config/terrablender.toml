@@ -1,0 +1,4 @@
+# Keep the native defaults distinct so the pinned compatibility fix identifies the island call.
+[end]
+edge_biome_size = 3
+island_biome_size = 2

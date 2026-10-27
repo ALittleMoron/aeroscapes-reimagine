@@ -1,0 +1,18 @@
+{
+  "pack": {
+    "pack_format": 48,
+    "description": "Aeroscapes Reimagine: exact-version data compatibility fixes"
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "blueprint",
+        "path": "data_maps/dimension/modded_biome_slice_sizes\\.json"
+      },
+      {
+        "namespace": "gyro",
+        "path": "physics_block_properties/joystick\\.json"
+      }
+    ]
+  }
+}

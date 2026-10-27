@@ -1,0 +1,60 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:arid_highlands",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:carnation_fields",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cypress_fields",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:floral_ridges",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:flowering_shrubland",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:heather_fields",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:lavender_fields",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:marigold_meadows",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:prairie",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:shrubby_highlands",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:shrubland",
+      "required": false
+    },
+    "terralith:blooming_plateau",
+    "terralith:blooming_valley",
+    "terralith:granite_cliffs",
+    "terralith:gravel_beach",
+    "terralith:gravel_desert",
+    "terralith:highlands",
+    "terralith:lavender_valley",
+    "terralith:shrubland",
+    "terralith:steppe",
+    "terralith:stony_spires",
+    "terralith:valley_clearing"
+  ]
+}

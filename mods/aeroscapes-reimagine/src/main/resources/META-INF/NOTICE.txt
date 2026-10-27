@@ -1,0 +1,33 @@
+Aeroscapes Reimagine 0.1.0 — GPL-3.0-or-later (see LICENSE.txt).
+
+Aero Islands 1.1.1 by Isabel / nuclearobelisk is the generator's inspiration and
+behavior reference. The owner reports rewriting the Java implementation.
+Historical comparison fingerprints document selected algorithm correspondences;
+they do not establish the authorship of the entire present Java generator.
+
+The mod incorporates 160 byte-identical and 37 changed worldgen JSON resources
+from the exact Aero Islands artifact Modrinth tGVwBATM / bzJ2edxy, whose embedded
+descriptor declares GNU GPL v3.0+. Retained identifiers preserve seeded noise and
+integrations; the external Aero mod and its custom items/blocks are not bundled.
+One separately identified Minecraft resource is recorded in the same inventory.
+Origins, changed-resource hashes and Java comparisons: metadata/worldgen_adoption.json
+in the corresponding-source archive. No author endorsement is implied.
+
+Local compatibility transformations were changed on 2026-10-27. Original code
+reads CTOV, Dungeons and Taverns, Philips Ruins, Galosphere and Minecraft resources
+from the user's installed originals. No repaired NBT templates or complete JSON
+copies for these repairs are bundled. Their authors retain all rights in original
+content; GPL licensing of this mod does not relicense the original resources.
+data-patches.json contains addressable edits and wrappers;
+metadata/runtime_data_patches.json and native_template_upgrades.json preserve pins.
+
+The stateless TerraBlender End-area correction uses the CC0-1.0 approach published
+by Partonetrain in TerrablEndFix (commit 8c29736c54a677742d4bb309713b82f229642be6).
+https://github.com/Partonetrain/terrablendfix
+The external fix JAR is not bundled. Compile-only API dependencies remain external.
+
+Complete corresponding source, build scripts and these notices accompany the pack
+at licenses/aeroscapes-reimagine-source.zip; extract it and read
+mods/aeroscapes-reimagine/README.md. SOURCE-MANIFEST.json identifies the associated
+binary by SHA-256. No private-repository access or future written offer is needed.
+GPL text is in META-INF/LICENSE.txt in this JAR and LICENSE in the source project.
