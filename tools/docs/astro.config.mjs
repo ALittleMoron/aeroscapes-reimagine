@@ -35,7 +35,7 @@ export default defineConfig({
         {
           label: "About the pack",
           translations: { ru: "О сборке" },
-          items: [{ slug: "" }, { slug: "vision" }],
+          items: [{ slug: "" }, { slug: "vision" }, { slug: "gallery" }],
         },
         {
           label: "Releases",
@@ -77,9 +77,42 @@ export default defineConfig({
                 { slug: "experience/engineering/mods" },
               ],
             },
-            { slug: "experience/character-and-combat" },
-            { slug: "experience/magic" },
-            { slug: "experience/settlements" },
+            {
+              label: "Character and combat",
+              translations: { ru: "Персонаж и бой" },
+              collapsed: true,
+              items: [
+                {
+                  slug: "experience/character-and-combat",
+                  label: "Overview",
+                  translations: { ru: "Обзор" },
+                },
+              ],
+            },
+            {
+              label: "Magic",
+              translations: { ru: "Магия" },
+              collapsed: true,
+              items: [
+                {
+                  slug: "experience/magic",
+                  label: "Overview",
+                  translations: { ru: "Обзор" },
+                },
+              ],
+            },
+            {
+              label: "Settlements",
+              translations: { ru: "Поселения" },
+              collapsed: true,
+              items: [
+                {
+                  slug: "experience/settlements",
+                  label: "Overview",
+                  translations: { ru: "Обзор" },
+                },
+              ],
+            },
             {
               label: "Building and daily life",
               translations: { ru: "Строительство и быт" },

@@ -1,0 +1,77 @@
+---
+import { screenshots, type ScreenshotId } from "../screenshots.ts";
+
+interface Props {
+  id: ScreenshotId;
+  layout?: "full" | "gallery" | "strip";
+  eager?: boolean;
+}
+
+const { id, layout = "full", eager = false } = Astro.props;
+const sizes = {
+  full: "(min-width: 72rem) 46rem, (min-width: 50rem) calc(100vw - 22rem), calc(100vw - 3rem)",
+  gallery:
+    "(min-width: 72rem) 22rem, (min-width: 50rem) 35vw, (min-width: 40rem) 45vw, 90vw",
+  strip:
+    "(min-width: 72rem) 14rem, (min-width: 50rem) 23vw, (min-width: 40rem) 30vw, 90vw",
+}[layout];
+const screenshot = screenshots[id];
+const locale = Astro.locals.starlightRoute.lang === "ru" ? "ru" : "en";
+const { alt, caption } = screenshot[locale];
+---
+
+<figure class:list={["screenshot", { "in-grid": layout !== "full" }]}>
+  <a href={screenshot.image.src}>
+    <img
+      src={screenshot.thumbnail.src}
+      srcset={`${screenshot.thumbnail.src} 640w, ${screenshot.image.src} 1920w`}
+      sizes={sizes}
+      width={screenshot.image.width}
+      height={screenshot.image.height}
+      alt={alt}
+      loading={eager ? "eager" : "lazy"}
+      fetchpriority={eager ? "high" : undefined}
+      decoding="async"
+    />
+    <span class="sr-only">
+      {locale === "ru" ? "Открыть крупнее" : "View larger"}
+    </span>
+  </a>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .screenshot {
+    margin: 1.5rem 0;
+  }
+
+  .screenshot.in-grid {
+    min-width: 0;
+    margin: 0;
+  }
+
+  .screenshot a {
+    display: block;
+    border-radius: 0.65rem;
+  }
+
+  .screenshot a:focus-visible {
+    outline: 3px solid var(--sl-color-accent);
+    outline-offset: 4px;
+  }
+
+  .screenshot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 0.65rem;
+    border: 1px solid var(--sl-color-gray-5);
+  }
+
+  .screenshot figcaption {
+    margin-top: 0.6rem;
+    color: var(--sl-color-gray-2);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+</style>

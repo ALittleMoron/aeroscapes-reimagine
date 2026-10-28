@@ -4,6 +4,8 @@ description: Floating terrain, ocean basins and how structures were adapted to i
 status: available
 ---
 
+import Screenshot from "../../../../tools/docs/src/components/Screenshot.astro";
+
 The floating Overworld is based on Aero Islands generation. Reimagine’s own mod develops that terrain alongside other mods’ biomes and structures: moving them to islands exposed assumptions about continuous land. The Default world preset is currently supported.
 
 C2ME distributes chunk generation across workers and compiles terrain calculations. OpenCL can move noise calculations to a compatible GPU with native double-precision support; generation falls back to the CPU when that path is unavailable. The pack’s own adapter preserves its island shapes, basin water and city caverns. Structure Layout Optimizer reduces work when assembling and placing structures.
@@ -15,6 +17,8 @@ Feature placement is prepared when the world opens. In singleplayer, ordinary te
 Most islands used to be concentrated high above a largely empty lower world. Lower islands and additional ore placements were added so exploration could extend downward. The Overworld now spans Y−128…383; the original upper islands retain their heights and density.
 
 The added large islands initially looked too smooth, and their mountains resembled symmetrical cones. Their terrain was reworked into connected areas at different heights, with hills, ridges, chasms and caves. One such island can contain several biomes, with plains alongside high peaks. These large formations are rare, with smaller islands scattered between them.
+
+<Screenshot id="arch" />
 
 Badlands spires that erroneously extended through the void to the bottom of the world were corrected; those growing on the islands remain. Long accidental basalt bridges between islands separated by large height gaps were also removed.
 

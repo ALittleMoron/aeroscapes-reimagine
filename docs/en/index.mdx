@@ -5,9 +5,6 @@ status: available
 tableOfContents: false
 hero:
   tagline: Floating islands, player-built ships and everyday life in Minecraft.
-  image:
-    file: ../../tools/docs/src/assets/islands.svg
-    alt: A decorative illustration of floating islands connected by travel routes.
   actions:
     - text: World and exploration
       link: experience/world/
@@ -18,8 +15,22 @@ hero:
 ---
 
 import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+import Screenshot from "../../tools/docs/src/components/Screenshot.astro";
+import PackCover from "../../tools/docs/src/components/PackCover.astro";
+
+<PackCover locale="en" />
 
 Aeroscapes Reimagine combines island survival, Create machinery, Aeronautics aircraft, building and cooking. You can settle on a large island, build a factory, equip a ship for expeditions or travel without a permanent home.
+
+## Views from the island world
+
+<div class="screenshot-strip">
+  <Screenshot id="village" layout="strip" />
+  <Screenshot id="arch" layout="strip" />
+  <Screenshot id="cherry" layout="strip" />
+</div>
+
+[View the gallery](gallery/)
 
 ## Gameplay
 

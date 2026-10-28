@@ -5,9 +5,6 @@ status: available
 tableOfContents: false
 hero:
   tagline: Парящие острова, собственные корабли и жизнь в мире Minecraft.
-  image:
-    file: ../../tools/docs/src/assets/islands.svg
-    alt: Декоративная иллюстрация парящих островов, соединённых маршрутами путешествий.
   actions:
     - text: Мир и исследование
       link: experience/world/
@@ -18,8 +15,22 @@ hero:
 ---
 
 import { CardGrid, LinkCard } from "@astrojs/starlight/components";
+import Screenshot from "../../tools/docs/src/components/Screenshot.astro";
+import PackCover from "../../tools/docs/src/components/PackCover.astro";
+
+<PackCover locale="ru" />
 
 Aeroscapes Reimagine объединяет островное выживание, механизмы Create, летательные аппараты Aeronautics, строительство и кулинарию. Можно обосноваться на большом острове, построить фабрику, оборудовать корабль для экспедиций или путешествовать без постоянного дома.
+
+## Виды островного мира
+
+<div class="screenshot-strip">
+  <Screenshot id="village" layout="strip" />
+  <Screenshot id="arch" layout="strip" />
+  <Screenshot id="cherry" layout="strip" />
+</div>
+
+[Посмотреть галерею](gallery/)
 
 ## Игровые направления
 

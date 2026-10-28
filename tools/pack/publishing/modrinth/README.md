@@ -42,10 +42,13 @@ ban AI-created or generatively edited page images, including icons and branding.
 Selecting unchanged human artwork is a practical interpretation of that scope,
 not a moderation guarantee. The origin is documented rather than hidden.
 
-No fabricated screenshots or image placeholders are published. The owner can
-later capture three distinct scenes: island landscape; actual aircraft and dock;
-home, garden or kitchen. Keep captions descriptive and preserve the screenshot's
-meaning. The current uploader leaves the Modrinth gallery unchanged.
+No fabricated screenshots or image placeholders are published. The owner has
+supplied real island landscapes and village scenes; the documentation site's
+[screenshot provenance](../../../docs/src/assets/screenshots/README.md) records
+their sources and non-generative web conversion. Actual aircraft and dock,
+workshop, home and kitchen scenes would show other parts of play. Keep captions
+descriptive and preserve each screenshot's meaning. These website assets do not
+select a new project icon. The current uploader leaves the Modrinth gallery unchanged.
 
 ## API and first enablement
 

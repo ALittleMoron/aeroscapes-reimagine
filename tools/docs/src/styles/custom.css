@@ -5,36 +5,37 @@
   --sl-content-width: 46rem;
   --sl-sidebar-width: 18rem;
   --sl-line-height: 1.75;
-  --sl-color-accent-low: #213e37;
-  --sl-color-accent: #78ad95;
-  --sl-color-accent-high: #c0e1ce;
-  --sl-color-white: #f1f3ec;
-  --sl-color-gray-1: #dbe3dd;
-  --sl-color-gray-2: #bdccc5;
-  --sl-color-gray-3: #8daba1;
-  --sl-color-gray-4: #536e66;
-  --sl-color-gray-5: #314743;
-  --sl-color-gray-6: #1c302d;
-  --sl-color-black: #112321;
-  --sl-color-bg-nav: #10201f;
-  --sl-color-bg-sidebar: #142724;
+  --sl-color-accent-low: #3b2d1c;
+  --sl-color-accent: #e3ae61;
+  --sl-color-accent-high: #f2d19b;
+  --sl-color-white: #ebeef5;
+  --sl-color-gray-1: #dde3ed;
+  --sl-color-gray-2: #b7c2d3;
+  --sl-color-gray-3: #8c9cb2;
+  --sl-color-gray-4: #526078;
+  --sl-color-gray-5: #303d52;
+  --sl-color-gray-6: #1b2433;
+  --sl-color-gray-7: #141d2a;
+  --sl-color-black: #101722;
+  --sl-color-bg-nav: #0c121c;
+  --sl-color-bg-sidebar: #141d2a;
 }
 
 :root[data-theme="light"] {
-  --sl-color-accent-low: #e1eee2;
-  --sl-color-accent: #376c51;
-  --sl-color-accent-high: #234d3e;
-  --sl-color-white: #19382d;
-  --sl-color-gray-1: #294c3c;
-  --sl-color-gray-2: #456151;
-  --sl-color-gray-3: #506b59;
-  --sl-color-gray-4: #a3b6a5;
-  --sl-color-gray-5: #d3dfd0;
-  --sl-color-gray-6: #edf1e6;
-  --sl-color-gray-7: #f7f7ef;
-  --sl-color-black: #fbfbf4;
-  --sl-color-bg-nav: #f7f8f0;
-  --sl-color-bg-sidebar: #f1f4e9;
+  --sl-color-accent-low: #f7e9d4;
+  --sl-color-accent: #925719;
+  --sl-color-accent-high: #6d3c0c;
+  --sl-color-white: #202837;
+  --sl-color-gray-1: #2d384b;
+  --sl-color-gray-2: #48566d;
+  --sl-color-gray-3: #5d6c83;
+  --sl-color-gray-4: #a8b5c8;
+  --sl-color-gray-5: #d4dbe5;
+  --sl-color-gray-6: #eff2f7;
+  --sl-color-gray-7: #f7f9fc;
+  --sl-color-black: #fcfcfe;
+  --sl-color-bg-nav: #f5f7fb;
+  --sl-color-bg-sidebar: #f1f4f9;
 }
 
 .site-title {
@@ -76,14 +77,6 @@ main h1 {
   grid-template-columns: minmax(0, 1fr);
   gap: 1.4rem;
   padding-block: 1.5rem 2rem;
-}
-
-.hero > img {
-  order: 2;
-  width: 100%;
-  max-width: 46rem;
-  height: clamp(10rem, 24vw, 18rem);
-  object-fit: contain;
 }
 
 .hero .stack {
@@ -140,6 +133,29 @@ main h1 {
   font-weight: 600;
 }
 
+.screenshot-grid,
+.screenshot-strip {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+  margin-block: 1.5rem;
+}
+
+.screenshot-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.screenshot-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 40rem) {
+  .screenshot-grid,
+  .screenshot-strip {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 30rem) {
   .hero h1 {
     font-size: 2.65rem;
@@ -148,9 +164,5 @@ main h1 {
   .hero .actions {
     align-items: stretch;
     flex-direction: column;
-  }
-
-  .hero > img {
-    height: 10rem;
   }
 }

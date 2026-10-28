@@ -1,0 +1,43 @@
+---
+import cover from "../assets/branding/mysterious-islands.webp";
+import smallCover from "../assets/branding/mysterious-islands-small.webp";
+
+interface Props {
+  locale: "en" | "ru";
+  sizes?: string;
+}
+
+const {
+  locale,
+  sizes = "(min-width: 72rem) 46rem, (min-width: 50rem) calc(100vw - 22rem), calc(100vw - 3rem)",
+} = Astro.props;
+const descriptions = {
+  en: "Aeroscapes Reimagine in gold lettering over a sunlit floating rock arch.",
+  ru: "Название Aeroscapes Reimagine золотистыми буквами на фоне парящей скальной арки с солнечным светом.",
+};
+---
+
+<img
+  class="pack-cover"
+  src={cover.src}
+  srcset={`${smallCover.src} 640w, ${cover.src} 1920w`}
+  sizes={sizes}
+  width={cover.width}
+  height={cover.height}
+  alt={descriptions[locale]}
+  loading="eager"
+  fetchpriority="high"
+  decoding="async"
+/>
+
+<style>
+  .pack-cover {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    margin-block: 1.5rem;
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.8rem;
+  }
+</style>

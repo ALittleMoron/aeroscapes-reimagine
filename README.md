@@ -1,5 +1,7 @@
 # Aeroscapes Reimagine
 
+![Парящие острова Aeroscapes Reimagine / Floating islands in Aeroscapes Reimagine](tools/docs/src/assets/screenshots/island-panorama.webp)
+
 Minecraft-песочница с парящими островами, инженерией Create, воздушными кораблями
 Aeronautics и развивающимися фэнтезийными системами. Вдохновлена Isabel’s Aeroscapes
 и Otherworld D&D. Основной режим — одиночная игра.
@@ -15,5 +17,6 @@ The owner directs the project and accepts changes. AI tools support exploring
 ideas, researching Minecraft modding, and reviewing code and pack integration.
 
 - [Документация на русском](docs/ru/index.mdx) · [English documentation](docs/en/index.mdx)
+- [Галерея](docs/ru/gallery.mdx) · [Gallery](docs/en/gallery.mdx)
 - [История изменений](docs/ru/changelog.md) · [Changelog](docs/en/changelog.md)
 - [Development guide](CONTRIBUTING.md) · [Site tooling](tools/docs/README.md)

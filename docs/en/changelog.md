@@ -6,6 +6,10 @@ status: available
 
 ## 0.1.1
 
+- Group Character and combat, Magic and Settlements in the sidebar, each with an Overview page.
+- Apply the Night Sky and Gold website palette in light and dark modes.
+- Use the selected Mysterious Islands title cover on the documentation homepages.
+- Add real pack screenshots to the README, homepage, gallery and world guides, with lightweight web images and English/Russian captions.
 - Fix the Inventory Profiles Next settings section so refill indicators are hidden without disabling sorting or refill.
 - Add Fresh Animations with EMF/ETF, Cubic Leaves and Create Touch-Ups, enabled for new client profiles.
 - Validate selected resourcepack files against the pack inputs and show resourcepacks in the dependency table.

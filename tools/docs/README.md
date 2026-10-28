@@ -30,18 +30,31 @@ meaning: review both versions together. Use relative trailing-slash site routes
 for internal links. The default project prefix is `/aeroscapes-reimagine/`.
 `DOCS_SITE` and `DOCS_BASE` set the deployment origin and prefix.
 
-The sidebar groups each gameplay overview with its child pages. World generation
+Every gameplay direction is a collapsible sidebar group with an Overview entry,
+including directions that currently have only that page. World generation
 lives under `experience/world/`; the Releases group contains the release guide,
 changelog and installation. Compatibility, inventory and credits remain separate
 references. Keep paired pages consistent in facts,
 implementation status and practical instructions; use natural wording in each language.
 
 `src/styles/custom.css` owns the site palette, typography and page styling.
-The homepage uses Starlight's existing hero and link-card components. The original
-`src/assets/islands.svg` is decorative illustration, not gameplay evidence.
-Add real pack screenshots beside the subject they explain when they are available;
-establish reuse permission, retain required attribution, and provide alternative
-text and captions in both languages. Label illustrations separately from pack screenshots.
+The selected Night Sky and Gold palette uses slate-blue surfaces and warm gold
+accents, with a matching light variant. Both use Starlight's existing theme
+selectors, preserving the automatic mode and the reader's manual theme choice.
+The homepages use Starlight's existing text hero and link-card components with the
+selected Mysterious Islands title cover from `src/components/PackCover.astro`.
+Its editable source, font provenance and manual rendering commands live in
+[`src/assets/branding/README.md`](src/assets/branding/README.md). Prebuilt WebP files
+are served directly, so the website build needs no fonts or image-rendering CLI.
+The gallery and subject pages share `src/components/Screenshot.astro`;
+`src/screenshots.ts` owns their paired alternative text and captions. The component
+serves 640/1920-pixel asset URLs with `srcset` and ordinary links to larger images,
+without runtime JavaScript or another image transformation. Source hashes, owner
+authorization and CLI conversion settings live in
+[`src/assets/screenshots/README.md`](src/assets/screenshots/README.md).
+Add screenshots beside the subject they explain; establish reuse permission,
+retain required attribution, and provide alternative text and captions in both
+languages. Label illustrations separately from pack screenshots.
 
 `reference/mods.mdx` uses one component to read included pinned artifact metadata;
 do not copy the file list into Markdown. The paired changelog is the source for
