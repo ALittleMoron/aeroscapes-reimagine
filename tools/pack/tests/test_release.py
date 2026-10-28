@@ -54,9 +54,7 @@ def test_version_order_and_invalid_version() -> None:
 def test_changelog_extracts_version_for_both_stable_and_prerelease() -> None:
     from aeroscapes_pack.release import changelog_section
 
-    source = (
-        "---\ntitle: Test\n---\n\n## 0.2.0 — unreleased\n\n- New thing\n\n## 0.1.0\n\n- Old thing\n"
-    )
+    source = "---\ntitle: Test\n---\n\n## 0.2.0\n\n- New thing\n\n## 0.1.0\n\n- Old thing\n"
     assert changelog_section(source, "0.2.0-test.2") == "- New thing"
     assert changelog_section(source, "0.2.0") == "- New thing"
     with pytest.raises(PackError, match="changelog"):
@@ -166,8 +164,9 @@ def test_docs_status_lists_only_published_releases() -> None:
     assert "0.2.0" not in english
 
 
+@pytest.mark.parametrize("has_release", [False, True])
 def test_documentation_uses_published_assets_and_ignores_stale_commit(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, has_release: bool
 ) -> None:
     import shutil
 
@@ -189,7 +188,7 @@ def test_documentation_uses_published_assets_and_ignores_stale_commit(
             {"private": False} if path == "" else {"object": {"sha": "abc"}}
         ),
     )
-    monkeypatch.setattr(github, "releases", lambda: (release,))
+    monkeypatch.setattr(github, "releases", lambda: (release,) if has_release else ())
     monkeypatch.setattr(
         github,
         "asset",
@@ -201,21 +200,61 @@ def test_documentation_uses_published_assets_and_ignores_stale_commit(
     for language in ("en", "ru"):
         installation = (tmp_path / "docs" / language / "install.md").read_text()
         changes = (tmp_path / "docs" / language / "changelog.md").read_text()
-        assert "https://github.com/owner/repo/releases/tag/v0.1.0" in installation
-        assert "status: available" in installation
-        assert "## 0.1.0 —" not in changes
+        original = root / "docs" / language
+        assert changes == (original / "changelog.md").read_text()
+        assert (tmp_path / "docs" / language / "known-issues.md").read_text() == (
+            original / "known-issues.md"
+        ).read_text()
+        if has_release:
+            assert "https://github.com/owner/repo/releases/tag/v0.1.0" in installation
+            assert "status: available" in installation
+        else:
+            assert "https://github.com/owner/repo/releases/tag/" not in installation
+            assert "status: partial" in installation
 
 
-def test_release_notes_include_changelog_sections_since_previous_release() -> None:
-    from aeroscapes_pack.release import changelog_between
+def test_release_notes_use_only_target_section_from_checked_snapshot(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from aeroscapes_pack import release_cli
+    from aeroscapes_pack.github_api import GitHub
+    from aeroscapes_pack.github_release import Release
+    from aeroscapes_pack.models import Project
 
-    source = "## 0.3.0 — unreleased\n\n- Three\n\n## 0.2.0\n\n- Two\n\n## 0.1.0\n\n- One\n"
-    result = changelog_between(source, "0.3.0", "0.1.0")
-    assert "- Three" in result
-    assert "- Two" in result
-    assert "- One" not in result
-    assert "- One" in changelog_between(source, "0.3.0", None)
-    assert "- Three" in changelog_between(source, "0.3.0", "0.3.0-test.1")
+    for locale in ("en", "ru"):
+        directory = tmp_path / "docs" / locale
+        directory.mkdir(parents=True)
+        (directory / "changelog.md").write_text(
+            f"## 0.2.0\n\n- Current {locale}\n\n## 0.1.1\n\n- Previous {locale}\n"
+        )
+    github = GitHub("owner/repo", "test-token")
+    monkeypatch.setattr(
+        github,
+        "releases",
+        lambda: (
+            Release(
+                id=1,
+                tag="v0.1.0",
+                draft=False,
+                prerelease=False,
+                target="a" * 40,
+                immutable=True,
+            ),
+        ),
+    )
+    monkeypatch.setattr(github, "tag_commit", lambda _tag: "a" * 40)
+    monkeypatch.setattr(github, "generated_notes", lambda *_args: "PR references")
+    monkeypatch.setattr(
+        release_cli,
+        "git",
+        lambda _root, *args: "b" * 40 + "\tfeat: [0.2.0] atmosphere" if args[0] == "log" else "",
+    )
+    body = release_cli.release_body(Project(tmp_path), github, "0.2.0", "b" * 40, tmp_path)
+    assert "- Current en" in body
+    assert "- Current ru" in body
+    assert "Previous" not in body
+    assert "aeroscapes-ci-commit:" + "b" * 40 in body
+    assert "https://github.com/owner/repo/commit/" + "b" * 40 in body
 
 
 def test_docs_rejects_prerelease_marked_stable() -> None:

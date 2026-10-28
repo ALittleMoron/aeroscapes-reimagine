@@ -28,6 +28,6 @@ Building and daily activities have value in their own right. A pleasant kitchen,
 
 The tone is cozy fantasy close to Minecraft, with engineering and dangerous places woven into it. Forested islands, ruins, small everyday scenes and occasional large dungeons should leave room for quiet, unbuilt landscapes. More places and activities are planned for the Nether and End while preserving their familiar terrain.
 
-Animation, a visible first-person body, sound and shader profiles should support that atmosphere. Players should be comfortable in either first or third person and able to adjust effects to their preferences. Smooth frame times matter as much as visual richness. Current support limits are listed in [Releases and limitations](../known-issues/).
+Animation, a visible first-person body, sound and shader profiles should support that atmosphere. Players should be comfortable in either first or third person and able to adjust effects to their preferences. Smooth frame times matter as much as visual richness. Current support limits are listed in [Compatibility and support](../known-issues/).
 
 The pack is primarily designed for singleplayer.

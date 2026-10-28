@@ -1,12 +1,8 @@
 ---
-title: Releases and limitations
-description: Release status, supported modes and working with saved worlds.
+title: Compatibility and support
+description: Supported modes, saved worlds and reporting problems.
 status: available
 ---
-
-## Releases
-
-No stable release has been published yet. Installation availability is described on the [installation page](../install/).
 
 ## Game mode and world type
 

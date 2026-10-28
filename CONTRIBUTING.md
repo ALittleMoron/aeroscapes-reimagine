@@ -44,6 +44,7 @@ make verify
 | `make bootstrap`       | Obtain/check the pinned packwiz tool                                                                 |
 | `make refresh`         | Refresh the packwiz index after an intentional pack edit                                             |
 | `make build`           | Export and verify a local `.mrpack`                                                                  |
+| `make release-check`   | CI integration gate after export; uses the GitHub event and read-only release metadata              |
 
 For a direct uv call in a restricted work directory, preserve the same project/cache selection:
 
@@ -80,10 +81,69 @@ For generation JFR, preserve the original recording and select relevant event ty
 
 Keep `docs/en/` and `docs/ru/` paired by meaning, facts and implementation status.
 Describe the current player experience; mark planned systems explicitly. Record
-pack and tooling changes under the existing unreleased version in both changelogs,
+pack and tooling changes under the current target version in both changelogs,
 using adjacent factual bullets without blank lines. See the [site guide](tools/docs/README.md)
 for routes, page status, formatting and media attribution.
 
 Dependency origins and distribution constraints are documented in
 [metadata](metadata/README.md) and the owning license notices. Exact pins and hashes
 remain in the manifests and metadata rather than a second manual inventory.
+
+## Pack versioning
+
+The [release guide](docs/en/releases.md) owns the meaning of the three version
+parts and the project's milestones. Use plain `major.minor.patch` numbers.
+Accumulate additions and fixes under the current target until publication;
+preparatory commits and local exports retain that number. The next substantive
+change after publication starts the next patch. Do not automatically create an
+empty successor version: main pushes feed automatic publication.
+
+Before choosing a number, inspect the actual non-draft GitHub releases and any
+pending publication in the existing release queue. A local export, changelog
+heading or tag alone does not establish publication. A main push awaiting
+publication already reserves its version; resolve that run's outcome before
+choosing a target. Published contents are immutable and cannot be overwritten.
+
+One final PR or push to main carries one pack version. A push may contain several
+preparatory commits; the checked head is the source snapshot for its release.
+Include the exact pack version in the PR title and the final main commit's first
+line, for example `feat: [0.1.1] animations and foliage`. A `v` prefix is accepted.
+Before merging, preserve that number in the final squash or merge commit title;
+a generic default merge title is insufficient. Intermediate commit titles do not
+all need the number.
+
+After building, CI runs `make release-check` using the event JSON and its
+`contents: read` GitHub token. For a new version it checks the integration title
+and exactly one non-empty section in each changelog before artifact retention.
+An export identical to the same published version is exempt from a new version
+and title requirement. This is based on exported content, not changed paths:
+public site documentation and infrastructure are outside the pack, while files
+distributed in the pack affect its identity. A push containing accumulated pack
+changes is a pack integration even if its final commit only edits documentation.
+
+Correct a PR title to rerun its checks. If a main-push title fails, use a normal
+follow-up commit with the correct title and the same target version. Failed CI
+retains no publication artifact; the queue consumes that failed push before
+publishing the corrected successful successor. Never amend a published release
+or force-push to repair its title. Read-only API failures also stop this gate.
+
+The owner's instruction to prepare the accumulated changes for a new stable
+release selects the next stage milestone: `0.1.1` becomes `0.2.0`, then a later
+stage becomes `0.3.0`. A milestone can record completion of content already
+delivered in patch releases; it does not require adding more content.
+A selected minor milestone target stays unchanged until publication, including
+additional content and repeated preparation. The major milestones `1.0.0` and
+`2.0.0` need the owner's corresponding scope decision. Preparing a release does
+not itself authorize a commit or push.
+
+Set the target in `pack/pack.toml` before exporting. Use one matching section in
+each changelog, headed only by the number, such as `## 0.1.1`, without a release
+status suffix. When the current changes are promoted to a stage milestone before
+publication, move them into that milestone's section; preserve published sections.
+Release descriptions use only the target section from the checked source
+snapshot. Keep checks and remaining owner acceptance in the handoff, outside release notes.
+The owned mod and build tools retain their independent versions.
+
+A version increment does not guarantee saved-world compatibility. Describe any
+affected content or migration separately and follow the
+[saved-world guidance](docs/en/known-issues.md#saved-worlds).

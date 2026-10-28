@@ -22,6 +22,7 @@ from aeroscapes_pack.pack import (
     check_compat,
     read_source,
     validate_release,
+    validate_resourcepacks,
     verify_mrpack,
 )
 from aeroscapes_pack.smoke import (
@@ -168,6 +169,57 @@ def project(tmp_path: Path, artifact: Artifact) -> Project:
 @pytest.fixture
 def source(project: Project) -> SourcePack:
     return read_source(project.pack)
+
+
+@pytest.mark.parametrize("side", ["client", "both"])
+def test_selected_resourcepack_resolves_to_a_client_download(source: SourcePack, side: str) -> None:
+    dependency = replace(next(iter(source.dependencies.values())), filename="Leaves.zip", side=side)
+    selected = replace(
+        source,
+        dependencies={"resourcepacks/Leaves.zip": dependency},
+        overrides={"options.txt": b'resourcePacks:["vanilla","mod_resources","file/Leaves.zip"]\n'},
+    )
+    validate_resourcepacks(selected)
+
+
+def test_selected_directory_resourcepack_resolves_to_its_pack_metadata(source: SourcePack) -> None:
+    selected = replace(
+        source,
+        overrides={
+            "options.txt": b'resourcePacks:["vanilla","file/Local"]\n',
+            "resourcepacks/Local/pack.mcmeta": b'{"pack":{"pack_format":34}}',
+        },
+    )
+    validate_resourcepacks(selected)
+
+
+def test_missing_selected_resourcepack_fails_source_validation(project: Project) -> None:
+    (project.pack / "options.txt").write_text(
+        'resourcePacks:["vanilla","file/Old filename.zip"]\n', encoding="utf-8"
+    )
+    write_lock(project.pack)
+    with pytest.raises(PackError, match="Selected resource pack is not installed on the client"):
+        read_source(project.pack)
+
+
+def test_selected_resourcepack_cannot_be_a_server_only_download(source: SourcePack) -> None:
+    dependency = replace(
+        next(iter(source.dependencies.values())), filename="Leaves.zip", side="server"
+    )
+    selected = replace(
+        source,
+        dependencies={"resourcepacks/Leaves.zip": dependency},
+        overrides={"options.txt": b'resourcePacks:["file/Leaves.zip"]\n'},
+    )
+    with pytest.raises(PackError, match="Selected resource pack is not installed on the client"):
+        validate_resourcepacks(selected)
+
+
+@pytest.mark.parametrize("value", ['"file/Leaves.zip"', '["vanilla", 34]'])
+def test_selected_resourcepack_list_validates_json_types(source: SourcePack, value: str) -> None:
+    selected = replace(source, overrides={"options.txt": f"resourcePacks:{value}\n".encode()})
+    with pytest.raises(PackError, match="expected"):
+        validate_resourcepacks(selected)
 
 
 @dataclass(frozen=True)

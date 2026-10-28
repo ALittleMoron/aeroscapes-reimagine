@@ -12,7 +12,7 @@ from aeroscapes_pack.github_api import GitHub
 from aeroscapes_pack.github_release import checksum, publish_release
 from aeroscapes_pack.models import Project, load_artifacts
 from aeroscapes_pack.pack import check_project, verify_mrpack
-from aeroscapes_pack.release import changelog_between, version_key
+from aeroscapes_pack.release import changelog_section, version_key
 from aeroscapes_pack.runtime import executable, run_command
 
 
@@ -35,15 +35,13 @@ def release_body(
     if previous_commit is not None:
         git(git_root, "merge-base", "--is-ancestor", previous_commit, commit)
     generated = github.generated_notes(f"v{version}", commit, previous)
-    english = changelog_between(
+    english = changelog_section(
         (project.root / "docs/en/changelog.md").read_text(),
         version,
-        previous[1:] if previous is not None else None,
     )
-    russian = changelog_between(
+    russian = changelog_section(
         (project.root / "docs/ru/changelog.md").read_text(),
         version,
-        previous[1:] if previous is not None else None,
     )
     revision = f"{previous_commit}..{commit}" if previous_commit is not None else commit
     log = git(git_root, "log", "--format=%H%x09%s", revision)

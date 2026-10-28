@@ -11,7 +11,7 @@ const records = z.array(z.looseObject({ status: z.string() })).parse(raw);
 const commonArtifact = z.object({
   name: z.string().min(1),
   version: z.string().min(1),
-  kind: z.enum(["mod", "datapack", "shader"]),
+  kind: z.enum(["mod", "datapack", "shader", "resourcepack"]),
   side: z.enum(["client", "server", "both"]),
 });
 const artifact = z.union([
@@ -49,6 +49,7 @@ const labels =
         mod: "Мод",
         datapack: "Датапак",
         shader: "Шейдер",
+        resourcepack: "Ресурспак",
         client: "Клиент",
         server: "Сервер",
         both: "Клиент и сервер",
@@ -61,6 +62,7 @@ const labels =
         mod: "Mod",
         datapack: "Data pack",
         shader: "Shader",
+        resourcepack: "Resource pack",
         client: "Client",
         server: "Server",
         both: "Client and server",

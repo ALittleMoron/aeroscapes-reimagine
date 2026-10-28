@@ -12,6 +12,14 @@ A visible first-person body, more detailed animations, environmental sound and s
 
 These mods change how the existing character is shown. Races, abilities, expanded action combat and a side-offset third-person camera are described in [character and combat](../../character-and-combat/).
 
+## Creatures, foliage and machinery
+
+[Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) gives existing creatures more expressive movement and poses. Entity Model Features and Entity Texture Features provide its client rendering support. The player animation setup remains a separate layer.
+
+[Cubic Leaves](https://modrinth.com/resourcepack/cubic-leaves) adds depth to tree canopies while retaining a cubic shape. The included Performance edition covers vanilla and Quark foliage and most Nature's Spirit leaves; coconut and Joshua leaves retain their original models. It changes their appearance rather than tree generation.
+
+[Create Touch-Ups](https://modrinth.com/resourcepack/create-touch-ups) adjusts Create's machinery, tools and copper textures toward a simpler vanilla style. These three resourcepacks are selected in new installations. Each can be disabled in **Options → Resource Packs**; Fresh Animations needs both of its rendering mods while enabled.
+
 ## Sound and visual details
 
 AmbientSounds adds environmental sound, while Sounds expands the sounds of everyday interactions. Drip Sounds adds sounds for dripping particles. Subtle Effects adds small particle details and some sounds around the world.

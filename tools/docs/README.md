@@ -31,8 +31,9 @@ for internal links. The default project prefix is `/aeroscapes-reimagine/`.
 `DOCS_SITE` and `DOCS_BASE` set the deployment origin and prefix.
 
 The sidebar groups each gameplay overview with its child pages. World generation
-lives under `experience/world/`; the shared inventory, changelog, support and
-credits remain cross-project references. Keep paired pages consistent in facts,
+lives under `experience/world/`; the Releases group contains the release guide,
+changelog and installation. Compatibility, inventory and credits remain separate
+references. Keep paired pages consistent in facts,
 implementation status and practical instructions; use natural wording in each language.
 
 `src/styles/custom.css` owns the site palette, typography and page styling.
@@ -53,10 +54,9 @@ GitHub Pages must use GitHub Actions as its source. Follow the
 [publication setup](../pack/README.md#one-time-setup) before enabling it.
 Local builds and previews do not publish anything or change remote settings.
 
-Deployment renders installation links, release availability and changelog status
-from verified immutable GitHub releases in an ephemeral checkout. Source pages
-retain their unpublished-state markers; the deployed site changes those markers
-only after publication is confirmed. Main is checked again immediately before
+Deployment inserts download links from verified immutable GitHub releases into
+the neutral installation instructions in an ephemeral checkout. Numbered
+changelog headings and compatibility pages remain unchanged. Main is checked again immediately before
 deployment. The site carries `noindex, nofollow`; publishing it does not provide
 private hosting.
 

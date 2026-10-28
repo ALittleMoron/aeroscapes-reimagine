@@ -5,6 +5,7 @@ run-name: ${{ github.event_name }} ${{ github.event.before }}..${{ github.sha }}
   push:
     branches: ['**']
   pull_request:
+    types: [opened, synchronize, reopened, edited]
 permissions:
   contents: read
 jobs:

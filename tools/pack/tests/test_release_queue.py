@@ -180,6 +180,47 @@ def test_checkpoint_confirms_successful_attempt_before_publication(
         load_checkpoint(github, "c" * 40)
 
 
+def test_failed_title_check_can_be_corrected_by_next_push_without_rewriting_history(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    from aeroscapes_pack import release_queue
+
+    github = GitHub("owner/repo", "test-token")
+    state = [release_queue.Checkpoint(sha="a" * 40)]
+    monkeypatch.setattr(release_queue, "load_checkpoint", lambda *_args: state[0])
+    monkeypatch.setattr(release_queue, "ensure_fast_forward", lambda *_args: None)
+    monkeypatch.setattr(release_queue, "main_head", lambda _github: "c" * 40)
+    monkeypatch.setattr(release_queue, "git", lambda *_args: "b" * 40 + "\n" + "c" * 40)
+    monkeypatch.setattr(
+        release_queue,
+        "pushes",
+        lambda _github: (
+            push("a" * 40, "b" * 40, result="failure"),
+            push("b" * 40, "c" * 40),
+        ),
+    )
+
+    def save(
+        _github: GitHub,
+        _baseline: str,
+        head: str,
+        pending: release_queue.Push | None = None,
+    ) -> None:
+        state[0] = release_queue.Checkpoint(sha=head, pending=pending)
+
+    publications: list[str] = []
+
+    def publish(_project: Project, _github: GitHub, candidate: release_queue.Push) -> None:
+        assert state[0].pending == candidate
+        publications.append(candidate.head)
+
+    monkeypatch.setattr(release_queue, "save_checkpoint", save)
+    monkeypatch.setattr(release_queue, "publish_push", publish)
+    assert release_queue.reconcile(Project(tmp_path), github, "a" * 40, publish=True) == "c" * 40
+    assert publications == ["c" * 40]
+    assert state[0] == release_queue.Checkpoint(sha="c" * 40)
+
+
 @pytest.mark.parametrize("defect", ["none", "expired", "checksum", "extra", "missing"])
 def test_ci_artifact_is_bound_to_exact_attempt_and_checked_bytes(
     monkeypatch: pytest.MonkeyPatch,

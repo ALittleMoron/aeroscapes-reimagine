@@ -1686,6 +1686,41 @@
       "parity": "exact",
       "review": {},
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
+    },
+    {
+      "slug": "entity-model-features",
+      "primary_project_id": "4I1XuqiY",
+      "primary_sha512": "b18bde755c6719c62579d65c96e6e768c99b25fba9f987dc843b2a64ce4d713ba2f8151da4a98efe76d854550f40356ac4fdfa952568cf1fb11771353dfc70e8",
+      "status": "blocked",
+      "reason": "New atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
+    },
+    {
+      "slug": "entitytexturefeatures",
+      "primary_project_id": "BVzZfTc1",
+      "primary_sha512": "0e349c235b509de605ef4175a60e87ee78eab208b554ebc1dfa756b18ab2b531ce4641bfdc1c4542cb3c24d45b81698ca1413fcd001d589d82cbad6cea346f46",
+      "status": "blocked",
+      "reason": "New atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
+    },
+    {
+      "slug": "fresh-animations",
+      "primary_project_id": "50dA9Sha",
+      "primary_sha512": "641a03d55c36920cc9a70d891bcca3347b196968bcb5637781f21b417b1ff893ce60652abcf02be872872fc1130ccc6785155ea3b19a0ed484de714b6229c922",
+      "status": "blocked",
+      "reason": "New atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
+    },
+    {
+      "slug": "cubic-leaves",
+      "primary_project_id": "6nx7bid1",
+      "primary_sha512": "38d3e7fbc3a34d97f498c054bd9746c9be1cea06b553b81a32092f4b12fc17e5f18017451a9bb004021764c2133379a002e241d241931458eddbcd0211050ae6",
+      "status": "blocked",
+      "reason": "New atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
+    },
+    {
+      "slug": "create-touch-ups",
+      "primary_project_id": "BmapKTHd",
+      "primary_sha512": "64f44f78f580428454f071f3af4662fd54ba8dcce5ad1d4c57b6408807214cc7c5aeb98d519a3f91f02df39b92c2f14badda4e994a5b0caacda1f67c7d40516a",
+      "status": "blocked",
+      "reason": "New atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

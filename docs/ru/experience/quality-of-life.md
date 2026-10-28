@@ -14,7 +14,7 @@ Shulker Box Tooltip показывает содержимое шалкерово
 
 ## Инвентарь и хранилища
 
-[Inventory Profiles Next](https://modrinth.com/project/O7RBXm3n) даёт сортировку и автоматическое пополнение, а Mouse Tweaks расширяет управление инвентарём мышью.
+[Inventory Profiles Next](https://modrinth.com/project/O7RBXm3n) даёт сортировку и автоматическое пополнение, а Mouse Tweaks расширяет управление инвентарём мышью. Стрелки пополнения поверх слотов инвентаря и панели быстрого доступа по умолчанию скрыты.
 
 Sophisticated Backpacks и Sophisticated Storage дают переносные и стационарные контейнеры. [Tom’s Simple Storage](https://modrinth.com/project/XZNI4Cpy) добавляет общий терминал подключённых физических контейнеров. Рецепты обоих беспроводных терминалов отключены, поэтому удалённого беспроводного доступа эта система не даёт.
 

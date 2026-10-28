@@ -120,7 +120,32 @@ def read_source(directory: Path) -> SourcePack:
     }
     if indexed != actual:
         raise PackError(f"Unindexed or missing files: {sorted(indexed ^ actual)}")
-    return SourcePack(manifest, MappingProxyType(dependencies), MappingProxyType(overrides))
+    source = SourcePack(manifest, MappingProxyType(dependencies), MappingProxyType(overrides))
+    validate_resourcepacks(source)
+    return source
+
+
+def validate_resourcepacks(source: SourcePack) -> None:
+    """Reject stale default resourcepack selections before exporting a new profile."""
+    try:
+        lines = source.overrides.get("options.txt", b"").decode("utf-8").splitlines()
+    except UnicodeError as error:
+        raise PackError(f"options.txt: invalid UTF-8: {error}") from error
+    for line in lines:
+        key, _, value = line.partition(":")
+        if key != "resourcePacks":
+            continue
+        context = "options.txt resourcePacks"
+        for identifier in strings(json_value(value, context), context):
+            if not identifier.startswith("file/"):
+                continue
+            destination = "resourcepacks/" + identifier.removeprefix("file/")
+            dependency = source.dependencies.get(destination)
+            if dependency is not None and dependency.side in {"client", "both"}:
+                continue
+            if destination in source.overrides or destination + "/pack.mcmeta" in source.overrides:
+                continue
+            raise PackError(f"Selected resource pack is not installed on the client: {identifier}")
 
 
 def validate_data_file(path: Path) -> None:

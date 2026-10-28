@@ -30,7 +30,7 @@ hash = "395c825d4473fc6fc7c983cd99b880bf911c005ede578dc3f5ae3b758ce5976e"
 
 [[files]]
 file = "config/inventoryprofilesnext/inventoryprofiles.json"
-hash = "7a73409c015dd8cb781ed01b3ea791ff10b3e6356b2ff732e31e180cf5fef656"
+hash = "20fac53472eedb689fee861ca234d8363f0a435422ca57b25f8e9aa05af2309e"
 
 [[files]]
 file = "config/iris.properties"
@@ -647,7 +647,7 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "9c3b50cdff1f45c4a885d0621cb5bae847a9a8b904dae380275060956889b04b"
+hash = "9e0656039a1bd8c06563b7bcf8acd338d5601c3bcf24a91a11792f090bd6c112"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
@@ -868,8 +868,18 @@ hash = "ad8b8a9b149af6798e65c01a334bca7a6a65b1ddf9aff3f612df033c69f745f1"
 metafile = true
 
 [[files]]
+file = "mods/entity-model-features.pw.toml"
+hash = "6ba1f287c0e8fc596e33156c7fa20b9e56373f3bd7212813072757d8f071eca1"
+metafile = true
+
+[[files]]
 file = "mods/entityculling.pw.toml"
 hash = "0644127dc865748132321c9c253e6cb352d8e36aa6619a53f62de4afa501cd44"
+metafile = true
+
+[[files]]
+file = "mods/entitytexturefeatures.pw.toml"
+hash = "aaa215489fb8199f1764163c5a85ca60b29c136b3665ace431eb63db2d283d77"
 metafile = true
 
 [[files]]
@@ -1189,7 +1199,22 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "06c4695a242d65820efc986fc9e2f3617cec8ccc43ce34de0547104a228da71f"
+hash = "cd4971249fb62fdffaba8eb58e243e9a3bfe094edb7e07af827c37225254b00c"
+
+[[files]]
+file = "resourcepacks/create-touch-ups.pw.toml"
+hash = "bc001aefc2d87920da760062aa0fc5eda117e4a9684ad1d0922dbc3be5e426ae"
+metafile = true
+
+[[files]]
+file = "resourcepacks/cubic-leaves.pw.toml"
+hash = "e8e01d9dfd4f72bc559fb353c007ad205d14949d274566fd963a30ca58b76718"
+metafile = true
+
+[[files]]
+file = "resourcepacks/fresh-animations.pw.toml"
+hash = "3763920ceab65324c0fa5179f62a14eba09922a64cd03e68caeb28e24e706e2d"
+metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"

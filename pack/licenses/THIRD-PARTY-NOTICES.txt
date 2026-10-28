@@ -1,4 +1,4 @@
-Aeroscapes Reimagine 0.1.0 — third-party notices
+Aeroscapes Reimagine 0.1.1 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 Aeroscapes 1.0.8: Isabel / nuclearobelisk; CC BY-SA 4.0 for that author's
@@ -49,5 +49,22 @@ Flywheel 1.0.6: Copyright (c) 2021-2024 Jozufozu; MIT. The unchanged client-only
 JAR includes its complete notice at META-INF/LICENSE.md.
 https://github.com/Engine-Room/Flywheel
 
-Original license files remain in original JARs; third-party content retains its
+Fresh Animations 1.11.1: FreshLX; original terms expressly permit modpack use.
+The unchanged resourcepack is downloaded from its official file; its included
+FAterms&conditions.txt and the author's project-page terms remain applicable.
+https://modrinth.com/resourcepack/fresh-animations/version/aQjwvDfY
+Entity Model Features 3.3.12 and Entity Texture Features 7.2.6: Traben;
+LGPL-3.0-only. Official unchanged client artifacts provide the rendering engines.
+https://modrinth.com/mod/entity-model-features/version/197m3VoU
+https://modrinth.com/mod/entitytexturefeatures/version/lwNx1nD1
+
+Cubic Leaves 2.4 (performance): zanderest; CC BY-NC-SA 4.0.
+The resourcepack is unchanged; retain its original license and attribution.
+https://modrinth.com/resourcepack/cubic-leaves/version/qcHDQhNX
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+Create Touch-Ups 1.0: Spydnel; MIT. Supplied unchanged through the author's file.
+https://modrinth.com/resourcepack/create-touch-ups/version/aoJf3Iu6
+
+Original license files remain in original archives; third-party content retains its
 own terms.

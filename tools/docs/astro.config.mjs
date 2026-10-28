@@ -35,7 +35,16 @@ export default defineConfig({
         {
           label: "About the pack",
           translations: { ru: "О сборке" },
-          items: [{ slug: "" }, { slug: "vision" }, { slug: "install" }],
+          items: [{ slug: "" }, { slug: "vision" }],
+        },
+        {
+          label: "Releases",
+          translations: { ru: "Релизы" },
+          items: [
+            { slug: "releases" },
+            { slug: "changelog" },
+            { slug: "install" },
+          ],
         },
         {
           label: "The experience",
@@ -105,7 +114,6 @@ export default defineConfig({
           items: [
             { slug: "reference/mods" },
             { slug: "known-issues" },
-            { slug: "changelog" },
             { slug: "credits" },
           ],
         },

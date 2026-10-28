@@ -77,20 +77,7 @@ def prepare(project: Project, github: GitHub, commit: str) -> bool:
     for locale in ("en", "ru"):
         install = project.root / "docs" / locale / "install.md"
         content = install.read_text(encoding="utf-8")
-        old = (
-            (
-                "There is no public release to download yet. "
-                "If you have received a test `.mrpack`, "
-                "you can import it into a new instance in Modrinth App."
-            )
-            if locale == "en"
-            else (
-                "Публичного релиза для скачивания пока нет. "
-                "Если у вас есть тестовый файл `.mrpack`, "
-                "его можно импортировать в Modrinth App как новый экземпляр игры."
-            )
-        )
-        replacement = (
+        introduction = (
             "Import a downloaded or supplied `.mrpack` as a new instance in Modrinth App."
             if locale == "en"
             else (
@@ -98,8 +85,8 @@ def prepare(project: Project, github: GitHub, commit: str) -> bool:
                 "как новый экземпляр в Modrinth App."
             )
         )
-        if old not in content:
-            raise PackError(f"Installation status marker changed in {install}")
+        if introduction not in content:
+            raise PackError(f"Installation instruction marker changed in {install}")
         listing = release_listing(releases, github.repository, locale)
         if private and releases:
             notice = (
@@ -108,48 +95,10 @@ def prepare(project: Project, github: GitHub, commit: str) -> bool:
                 else "Для скачивания нужен доступ к репозиторию: он закрытый."
             )
             listing = notice + "\n\n" + listing
-        content = content.replace(old, replacement + "\n\n" + listing, 1)
+        content = content.replace(introduction, introduction + "\n\n" + listing, 1)
         if releases and not private:
             content = content.replace("status: partial", "status: available", 1)
         install.write_text(content, encoding="utf-8")
-        if any(not release.prerelease for release in releases):
-            issues = project.root / "docs" / locale / "known-issues.md"
-            content = issues.read_text(encoding="utf-8")
-            old = (
-                (
-                    "No stable release has been published yet. "
-                    "Installation availability is described "
-                    "on the [installation page](../install/)."
-                )
-                if locale == "en"
-                else (
-                    "Стабильная релизная версия пока не опубликована. "
-                    "Информация о доступности установки находится "
-                    "на странице [установки](../install/)."
-                )
-            )
-            replacement = (
-                "See available releases on the [installation page](../install/)."
-                if locale == "en"
-                else "Доступные версии указаны на [странице установки](../install/)."
-            )
-            if old not in content:
-                raise PackError(f"Stable release marker changed in {issues}")
-            issues.write_text(content.replace(old, replacement, 1), encoding="utf-8")
-        changelog = project.root / "docs" / locale / "changelog.md"
-        content = changelog.read_text(encoding="utf-8")
-        for release in releases:
-            if not release.prerelease:
-                content = content.replace(
-                    "Changes in the unreleased 0.1.0 development version.", "Version history."
-                ).replace(
-                    "Изменения в невыпущенной разрабатываемой версии 0.1.0.", "История версий."
-                )
-                suffix = "unreleased" if locale == "en" else "не выпущена"
-                content = content.replace(
-                    f"## {release.tag[1:]} — {suffix}", f"## {release.tag[1:]}"
-                )
-        changelog.write_text(content, encoding="utf-8")
     return True
 
 

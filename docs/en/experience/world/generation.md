@@ -36,6 +36,6 @@ The stricter checks have made some structures rarer. A matching biome alone does
 
 New worlds use a separately selected natural starting island; its biome, resources and nearby dangers remain random. An existing world’s starting point is not moved.
 
-Create a new world to see the complete terrain changes. Explored chunks are not rebuilt, and their boundaries with new terrain can be abrupt. Saves containing removed Aero content have no supported conversion. Back up the world before updating; rollback requires that backup and the previous pack. See [Releases and limitations](../../../known-issues/#saved-worlds) for details.
+Create a new world to see the complete terrain changes. Explored chunks are not rebuilt, and their boundaries with new terrain can be abrupt. Saves containing removed Aero content have no supported conversion. Back up the world before updating; rollback requires that backup and the previous pack. See [Compatibility and support](../../../known-issues/#saved-worlds) for details.
 
 Return to [World and exploration](../).

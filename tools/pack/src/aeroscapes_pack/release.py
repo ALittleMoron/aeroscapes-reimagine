@@ -102,26 +102,15 @@ def release_decision(version: str, published: tuple[str, ...], matches: bool | N
     return "create"
 
 
-def changelog_between(source: str, version: str, previous: str | None) -> str:
-    """Include each version section since the preceding release, including the target."""
+def require_release_title(*, version: str, title: str) -> None:
+    """Require an exact plain pack version token in the integration's title."""
     import re
 
-    target = version_key(version.split("-", 1)[0])
-    lower = version_key(previous.split("-", 1)[0]) if previous is not None else None
-    same_base = lower == target
-    headings = re.findall(r"(?m)^## ([^\n]+)", source)
-    versions: list[str] = []
-    for heading in headings:
-        candidate = heading.split()[0]
-        try:
-            key = version_key(candidate)
-        except PackError:
-            continue
-        if key <= target and (lower is None or key > lower or (same_base and key == lower)):
-            versions.append(candidate)
-    base = version.split("-", 1)[0]
-    if base not in versions:
-        raise PackError(f"Missing changelog section for {base}")
-    return "\n\n".join(
-        f"### {candidate}\n\n{changelog_section(source, candidate)}" for candidate in versions
-    )
+    version_key(version)
+    if "-" in version:
+        raise PackError("Pack releases require a plain major.minor.patch version")
+    if not re.search(rf"(?<![\w.+-])v?{re.escape(version)}(?![\w.+-])", title):
+        raise PackError(
+            f"Integration title must contain the exact pack version {version}; "
+            f"use a title such as 'feat: [{version}] atmosphere'"
+        )

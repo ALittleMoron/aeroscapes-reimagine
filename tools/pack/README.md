@@ -34,6 +34,16 @@ builds and verifies a `.mrpack`. Branch pushes and pull requests run these check
 PRs receive no publication credentials. Only successful **main push** exports are
 retained as immutable Actions artifacts. Tags do not trigger duplicate pack CI.
 
+The build runs `make release-check` before retaining an artifact. It reads the
+original Actions event through `GITHUB_EVENT_PATH`, checks new pack versions
+against the final PR title or main-push commit subject, and validates both target
+changelog sections. It uses only `contents: read`; no release token is exposed to
+PR code. Editing a PR title reruns CI. An export identical to an already published
+version permits documentation/infrastructure updates without a new number or
+numbered title. The gate fails closed on unavailable release metadata.
+Read-only callers may not see drafts; pending-version reservations and interrupted
+publication recovery remain the responsibility of the queue and publisher.
+
 A separate publication workflow wakes after main CI, every 30 minutes, or through
 `workflow_dispatch`. It follows actual push `before..head` receipts in CI run
 names; intermediate commits inside one push are not separate releases. A
@@ -43,12 +53,22 @@ so waiting successors cannot occupy all runners. One workflow lock covers GitHub
 channel reconciliation and the entire Pages deployment. Wakeups may coalesce
 because each run discovers the pending work again.
 
+Release notes come from the current version's EN/RU sections in that exact head
+snapshot. A failed integration-title check never supplies a publication artifact.
+A corrective push can keep the same target and accumulated notes: the queue skips
+the failed predecessor and processes the successful correction. Preserve the
+number in the final merge/squash title as well as the PR title.
+
 ### One-time setup
 
-All switches default to off. Set the intended version in `pack/pack.toml` and add
-its changes under the base-version section in both changelogs. For an end-to-end
-publication trial, use a fresh prerelease such as `0.1.1-test.1`; use a stable
-version for the accepted release. Published versions cannot be overwritten.
+All switches default to off. Follow the project's
+[pack versioning](../../CONTRIBUTING.md#pack-versioning): set the next intended
+version in `pack/pack.toml` and accumulate its changes in both changelogs until
+publication. Local exports and further changes retain that target. Changelog
+headings contain only the number, such as `## 0.1.1`. The next substantive change
+after publication starts the next patch; the owner's stage-release preparation
+instruction selects the next minor milestone. Use plain numbers throughout.
+Published versions cannot be overwritten.
 The workflow does not set secrets, repository variables, permissions or project
 settings for you.
 
@@ -88,10 +108,9 @@ settings for you.
    or a manual dispatch can discover later completed pushes. Settings changes are
    not a substitute for a successful source CI run.
 
-A prerelease becomes a GitHub prerelease and Modrinth beta; stable versions must
-be strictly newer than previous published versions. Reusing a published version
-with different pack contents fails. ZIP timestamps and manifest formatting do not
-constitute a content change. Successful published assets are never replaced;
+Release versions must be strictly newer than previous published versions.
+Reusing a published version with different pack contents fails. ZIP timestamps
+and manifest formatting do not constitute a content change. Successful published assets are never replaced;
 partially uploaded drafts resume from the same successful CI attempt and exact
 retained artifact, including after a later failed CI rerun. Empty failed GitHub
 upload placeholders may be removed only inside a draft.

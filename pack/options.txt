@@ -14,3 +14,4 @@ soundCategory_neutral:0.15
 soundCategory_player:0.15
 soundCategory_ambient:0.15
 soundCategory_voice:0.15
+resourcePacks:["vanilla","mod_resources","file/FreshAnimations_v1.11.1_1.20+.zip","file/Cubic Leaves 2.4 (performance).zip","file/Create Touch-Ups v1.0.zip"]

@@ -14,7 +14,7 @@ Shulker Box Tooltip previews shulker-box contents. Effect Timer Plus adds a coun
 
 ## Inventory and storage
 
-[Inventory Profiles Next](https://modrinth.com/project/O7RBXm3n) provides sorting and automatic refill, while Mouse Tweaks expands mouse-based inventory handling.
+[Inventory Profiles Next](https://modrinth.com/project/O7RBXm3n) provides sorting and automatic refill, while Mouse Tweaks expands mouse-based inventory handling. Refill arrow overlays on inventory and hotbar slots are hidden by default.
 
 Sophisticated Backpacks and Sophisticated Storage provide portable and stationary containers. [Tom’s Simple Storage](https://modrinth.com/project/XZNI4Cpy) adds a common terminal for connected physical containers. Recipes for both wireless terminals are disabled, so this does not provide distant wireless access.
 

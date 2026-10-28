@@ -1,10 +1,21 @@
 ---
 title: Changelog
-description: Changes in the unreleased 0.1.0 development version.
+description: Version history.
 status: available
 ---
 
-## 0.1.0 — unreleased
+## 0.1.1
+
+- Fix the Inventory Profiles Next settings section so refill indicators are hidden without disabling sorting or refill.
+- Add Fresh Animations with EMF/ETF, Cubic Leaves and Create Touch-Ups, enabled for new client profiles.
+- Validate selected resourcepack files against the pack inputs and show resourcepacks in the dependency table.
+- Keep accumulated changes under one version until publication and define numbered stage, core-content and integration milestones.
+- Render download links from neutral installation instructions without rewriting changelog headings.
+- Check pack versions in integration titles and both changelogs before retaining release exports; exempt updates with unchanged pack content.
+- Build release notes from the current version's section in the checked source snapshot.
+- Add a dedicated release guide and group release navigation separately from compatibility and support.
+
+## 0.1.0
 
 ### Build and publication
 

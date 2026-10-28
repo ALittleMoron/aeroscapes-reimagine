@@ -2127,10 +2127,10 @@
     "slug": "entity-model-features",
     "name": "[EMF] Entity Model Features",
     "project_id": "4I1XuqiY",
-    "version_id": "WD6HMbpv",
-    "version": "3.2.2-neoforge-1.21",
-    "filename": "entity_model_features_1.21-neoforge-3.2.2.jar",
-    "sha512": "89b58e79ab7ff58310dcdfa8883b20c1649d55e6554c0deecccb28bc07957703745d3f412a55514c86b82904050a2c747e56b8207a9993560676e72923335562",
+    "version_id": "197m3VoU",
+    "version": "3.3.12-neoforge-1.21",
+    "filename": "entity_model_features-3.3.12-1.21-neoforge.jar",
+    "sha512": "b18bde755c6719c62579d65c96e6e768c99b25fba9f987dc843b2a64ce4d713ba2f8151da4a98efe76d854550f40356ac4fdfa952568cf1fb11771353dfc70e8",
     "release_type": "release",
     "side": "client",
     "kind": "mod",
@@ -2151,9 +2151,15 @@
         "dependency_type": "required"
       }
     ],
-    "status": "deferred",
-    "origin": "Aeroscapes 1.0.8",
-    "reason": "No external entity resource pack is shipped; avoid unused model/texture engines. Subtle Effects supplies the selected particle layer without a second overlapping system."
+    "status": "included",
+    "origin": "Owner-approved atmosphere first wave, 2026-10-28; unchanged official Modrinth file",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "e9a163b77243cdfcb0ad3d698dc48a60cb8710e9",
+    "file_size": 656382,
+    "dependency_note": "The selected NeoForge descriptor requires Entity Texture Features >=7.2.0; pinned ETF 7.2.6 satisfies it."
   },
   {
     "slug": "entityculling",
@@ -2188,10 +2194,10 @@
     "slug": "entitytexturefeatures",
     "name": "[ETF] Entity Texture Features",
     "project_id": "BVzZfTc1",
-    "version_id": "YEMROAHv",
-    "version": "7.1-neoforge-1.21",
-    "filename": "entity_texture_features_1.21-neoforge-7.1.jar",
-    "sha512": "fc4b6a75ad57defb944d188fac78e45a33342a2c2a2b0e673c81ac370df09335d4371c8e10bea8f593da4b1f1c2fcc361c124b274ee4b3c2ae75571f00742059",
+    "version_id": "lwNx1nD1",
+    "version": "7.2.6-neoforge-1.21",
+    "filename": "entity_texture_features-7.2.6-1.21-neoforge.jar",
+    "sha512": "0e349c235b509de605ef4175a60e87ee78eab208b554ebc1dfa756b18ab2b531ce4641bfdc1c4542cb3c24d45b81698ca1413fcd001d589d82cbad6cea346f46",
     "release_type": "release",
     "side": "client",
     "kind": "mod",
@@ -2205,9 +2211,14 @@
     },
     "source_url": "https://github.com/Traben-0/Entity_Texture_Features",
     "dependencies": [],
-    "status": "deferred",
-    "origin": "Aeroscapes 1.0.8",
-    "reason": "No external entity resource pack is shipped; avoid unused model/texture engines. Subtle Effects supplies the selected particle layer without a second overlapping system."
+    "status": "included",
+    "origin": "Owner-approved atmosphere first wave, 2026-10-28; unchanged official Modrinth file",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "1a77ddb156daa4125c205424f05f0fa861517d9c",
+    "file_size": 807089
   },
   {
     "slug": "epherolib",
@@ -5161,5 +5172,175 @@
     "status": "included",
     "origin": "Official Modrinth release selected for Sable lighting integration",
     "artifact_license": "LGPL-3.0-only; unmodified official artifact."
+  },
+  {
+    "slug": "fresh-animations",
+    "name": "Fresh Animations",
+    "project_id": "50dA9Sha",
+    "version_id": "aQjwvDfY",
+    "version": "1.11.1",
+    "filename": "FreshAnimations_v1.11.1_1.20+.zip",
+    "sha512": "641a03d55c36920cc9a70d891bcca3347b196968bcb5637781f21b417b1ff893ce60652abcf02be872872fc1130ccc6785155ea3b19a0ed484de714b6229c922",
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "license": {
+      "id": "LicenseRef-See-Terms-of-Use-in-Description",
+      "name": "",
+      "url": "https://modrinth.com/resourcepack/fresh-animations"
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere first wave, 2026-10-28; unchanged official Modrinth file",
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11"
+    ],
+    "sha1": "eaf28f57dee43c469534953517501a021d28cf21",
+    "file_size": 743793,
+    "dependency_note": "FreshLX recommends EMF and ETF; both native client engines are selected for this resourcepack. No player animation extension is included."
+  },
+  {
+    "slug": "cubic-leaves",
+    "name": "Cubic Leaves",
+    "project_id": "6nx7bid1",
+    "version_id": "qcHDQhNX",
+    "version": "2.4-perf",
+    "filename": "Cubic Leaves 2.4 (performance).zip",
+    "sha512": "38d3e7fbc3a34d97f498c054bd9746c9be1cea06b553b81a32092f4b12fc17e5f18017451a9bb004021764c2133379a002e241d241931458eddbcd0211050ae6",
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "license": {
+      "id": "CC-BY-NC-SA-4.0",
+      "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "51shyZVL",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "AANobbMI",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere first wave, 2026-10-28; unchanged official Modrinth file",
+    "game_versions": [
+      "1.13",
+      "1.13.1",
+      "1.13.2",
+      "1.14",
+      "1.14.1",
+      "1.14.2",
+      "1.14.3",
+      "1.14.4",
+      "1.15",
+      "1.15.1",
+      "1.15.2",
+      "1.16",
+      "1.16.1",
+      "1.16.2",
+      "1.16.3",
+      "1.16.4",
+      "1.16.5",
+      "1.17",
+      "1.17.1",
+      "1.18",
+      "1.18.1",
+      "1.18.2",
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.3",
+      "1.19.4",
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2",
+      "26.3"
+    ],
+    "sha1": "041218e2c3d958cfd0aff9732685e832f3698ee8",
+    "file_size": 832436
+  },
+  {
+    "slug": "create-touch-ups",
+    "name": "Create Touch-Ups",
+    "project_id": "BmapKTHd",
+    "version_id": "aoJf3Iu6",
+    "version": "1.0",
+    "filename": "Create Touch-Ups v1.0.zip",
+    "sha512": "64f44f78f580428454f071f3af4662fd54ba8dcce5ad1d4c57b6408807214cc7c5aeb98d519a3f91f02df39b92c2f14badda4e994a5b0caacda1f67c7d40516a",
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere first wave, 2026-10-28; unchanged official Modrinth file",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "8d6e637d9f9dcad4a693c9c3c460b8aef8ed5de0",
+    "file_size": 150044
   }
 ]
