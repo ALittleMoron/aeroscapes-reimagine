@@ -35,7 +35,12 @@ export default defineConfig({
         {
           label: "About the pack",
           translations: { ru: "О сборке" },
-          items: [{ slug: "" }, { slug: "vision" }, { slug: "gallery" }],
+          items: [
+            { slug: "" },
+            { slug: "vision" },
+            { slug: "ai-manifesto" },
+            { slug: "gallery" },
+          ],
         },
         {
           label: "Releases",

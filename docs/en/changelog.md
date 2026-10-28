@@ -6,6 +6,7 @@ status: available
 
 ## 0.1.1
 
+- Add the author's manifesto on AI and authorship, discussing Modrinth's rules in English and Russian.
 - Group Character and combat, Magic and Settlements in the sidebar, each with an Overview page.
 - Apply the Night Sky and Gold website palette in light and dark modes.
 - Use the selected Mysterious Islands title cover on the documentation homepages.

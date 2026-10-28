@@ -18,5 +18,6 @@ ideas, researching Minecraft modding, and reviewing code and pack integration.
 
 - [Документация на русском](docs/ru/index.mdx) · [English documentation](docs/en/index.mdx)
 - [Галерея](docs/ru/gallery.mdx) · [Gallery](docs/en/gallery.mdx)
+- [Манифест об ИИ и авторстве](docs/ru/ai-manifesto.md) · [A manifesto on AI and authorship](docs/en/ai-manifesto.md)
 - [История изменений](docs/ru/changelog.md) · [Changelog](docs/en/changelog.md)
 - [Development guide](CONTRIBUTING.md) · [Site tooling](tools/docs/README.md)
