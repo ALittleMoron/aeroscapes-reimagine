@@ -4,6 +4,20 @@ description: Version history.
 status: available
 ---
 
+## 0.1.3
+
+- Add material-dependent rain sounds and craftable wind chimes with native Sable support.
+- Add an Otherworld-style shoulder camera and guard redundant zero-sway rotation on Sable ships.
+- Add restrained vanilla sky colors and smaller stars through Polytone and the atmosphere resourcepack.
+- Add Fusion Connected Blocks, Fusion Block Transitions and Create Style Sophisticated Backpacks as initial resourcepack selections.
+- Add Beautiful Enchanted Books for distinct enchanted-book appearances.
+- Add Better Clouds and route the prepared shader profiles through vanilla clouds.
+- Add Sound Physics Remastered for reverberation and sound occlusion.
+- Add Exposure photography and Immersive Melodies instruments.
+- Add Visual Workbench with persistent crafting-table contents and update Puzzles Lib for it.
+- Allow the exact owner-approved Sound Physics Remastered beta file while retaining checks against unapproved prereleases.
+- Guard Dramatic Doors conversions that reference door variants absent from Chipped.
+
 ## 0.1.2
 
 - Add Handcrafted furniture and Chipped building variants with Resourceful Lib and Athena.

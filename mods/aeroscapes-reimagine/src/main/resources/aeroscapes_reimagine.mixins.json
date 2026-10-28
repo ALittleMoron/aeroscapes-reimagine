@@ -31,7 +31,8 @@
     "BasinDrownedSwimUpMixin",
     "BasinDrownedBeachMixin",
     "IslandCavernMixin",
-    "RuntimeTemplateRepairsMixin"
+    "RuntimeTemplateRepairsMixin",
+    "DramaticDoorsChippedRecipesMixin"
   ],
   "injectors": {
     "defaultRequire": 1

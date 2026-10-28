@@ -423,5 +423,23 @@
       "data/natures_spirit/worldgen/placed_feature/ores/ore_redstone_lower.json"
     ],
     "reason": "Keep the previous effective absolute ore-height ranges for Nature’s Spirit2.2.5 and Galosphere1.5.3 when extending the Overworld; relative anchors use the old generation floor-64 and noise ceiling303. Separate lower ore placements supply added terrain."
+  },
+  {
+    "targets": {
+      "aQ7h7gal": "X5oMCwaA",
+      "BAscRYKm": "eqVowbGc",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Owned DramaticDoorsChippedRecipesMixin adds a native NeoForge item_exists condition to dynamically generated Chipped tall-door recipes. Dramatic Doors3.3.2 otherwise emits12 recipes for variants absent from Chipped4.0.2; valid165 conversions and output registrations remain. Resource overrides are overwritten by its RecipeManager injection. Re-evaluate the exact helper descriptor, registration timing and recipe load boundary on provider updates."
+  },
+  {
+    "targets": {
+      "kepjj2sy": "hIHjK7MW",
+      "T9PomCSv": "fg9dTRz9",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Owned client-only ShoulderCameraMixinPlugin/ShoulderCameraTransformer guards the merged Shoulder Surfing 4.22.12 setupPosition handler after its native mixin. It forwards actual sway components and skips the final Camera.setRotation call when both are zero, preserving the already oriented Sable 2.0.6 camera quaternion instead of applying ship rotation twice. Original initial rotation, nonzero native sway and input/reach remain. Strict origin/descriptor/call-count and runtime-version guards require review on updates. Graphical ship acceptance remains pending."
   }
 ]

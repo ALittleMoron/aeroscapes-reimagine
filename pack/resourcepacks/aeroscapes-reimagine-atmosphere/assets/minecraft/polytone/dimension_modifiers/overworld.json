@@ -1,0 +1,4 @@
+{
+  "sky_colormap": "hsb(hue(v), min(1, saturation(v) * 1.08), brightness(v))",
+  "sunset_colormap": "lerpColor(0xFFF3B18D, 0xFFE9956E, (1 - cos(g.dayTime * TAU / 24000)) * 0.5)"
+}

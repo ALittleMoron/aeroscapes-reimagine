@@ -131,6 +131,9 @@ The owner's instruction to prepare the accumulated changes for a new stable
 release selects the next stage milestone: `0.1.1` becomes `0.2.0`, then a later
 stage becomes `0.3.0`. A milestone can record completion of content already
 delivered in patch releases; it does not require adding more content.
+A mention of a future milestone or its theme, a candidate discussion, or approval
+to add content does not request this promotion. Continue ordinary patch development
+until the owner explicitly asks to prepare the stage release or set the current target.
 A selected minor milestone target stays unchanged until publication, including
 additional content and repeated preparation. The major milestones `1.0.0` and
 `2.0.0` need the owner's corresponding scope decision. Preparing a release does

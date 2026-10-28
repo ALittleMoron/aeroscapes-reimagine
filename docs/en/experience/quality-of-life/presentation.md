@@ -12,7 +12,9 @@ More detailed animations, environmental sound and small visual effects add to Mi
 
 [Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) adds more expressive movement, poses and hand animations to the player. It uses the same Entity Model Features and Entity Texture Features engines as Fresh Animations for creatures.
 
-These mods change how the existing character is shown. Races, abilities, expanded action combat and a side-offset third-person camera are described in [character and combat](../../character-and-combat/).
+[Shoulder Surfing](https://modrinth.com/mod/shoulder-surfing-reloaded) places the third-person camera slightly to the side, using the framing of Otherworld D&D. The ordinary perspective key (**F5** by default) still switches views. Movement follows the normal player direction, the camera inherits the player's field of view, and first person remains available. Shoulder switching can be assigned in **Options → Controls**.
+
+Races, abilities and expanded action combat remain planned in [character and combat](../../character-and-combat/).
 
 ## Creatures, foliage and machinery
 
@@ -24,6 +26,8 @@ These mods change how the existing character is shown. Races, abilities, expande
 
 [Create Touch-Ups](https://modrinth.com/resourcepack/create-touch-ups) adjusts Create's machinery, tools and copper textures toward a simpler vanilla style.
 
+[Fusion Connected Blocks](https://modrinth.com/resourcepack/fusion-connected-blocks) connects textures on supported building materials, including bookshelves and polished andesite. [Fusion Block Transitions](https://modrinth.com/resourcepack/fusion-block-transitions) blends supported neighboring natural surfaces. Both use the existing Fusion engine and change block appearance rather than terrain generation.
+
 ## Glass and portable light
 
 [Fusion Connected Glass](https://modrinth.com/resourcepack/fusion-connected-glass), supported by Fusion, joins the textures of adjacent vanilla glass blocks and panes. It includes stained and tinted glass; it does not automatically change glass added by other mods.
@@ -34,9 +38,19 @@ These resourcepacks and the small atmosphere integration pack are selected in ne
 
 ## Sound and visual details
 
-AmbientSounds adds environmental sound, while Sounds expands the sounds of everyday interactions. Drip Sounds adds sounds for dripping particles. Subtle Effects adds small particle details and some sounds around the world.
+AmbientSounds adds environmental sound, while Sounds expands the sounds of everyday interactions. Drip Sounds adds sounds for dripping particles. Subtle Effects supplies waterfall mist, water splashes and ripples, fireflies, sparks and other small details.
 
-Smooth Skies smooths distant sky colors, and Clear Void removes the black lower part of the skybox. In the interface, Chat Animation animates chat, while Smooth Gui animates menu opening.
+[Cool Rain Reforged](https://modrinth.com/mod/cool-rain-reforged) changes the sound of rainfall according to the surface it hits, including glass, metal, foliage, wool and water. Its sounds use Minecraft's **Weather** volume control.
+
+In the interface, Chat Animation animates chat, while Smooth Gui animates menu opening.
+
+[Sound Physics Remastered](https://modrinth.com/mod/sound-physics-remastered) adds reverberation and changes how obstacles muffle sounds. It processes acoustics alongside the existing environmental and interaction sounds. Sound-category volume controls remain available in Minecraft's sound settings.
+
+## Sky
+
+The atmosphere resourcepack uses [Polytone](https://modrinth.com/mod/polytone) to slightly deepen each biome's daytime sky colors and give dawn and dusk soft peach and amber tones. The vanilla night sky has more, smaller stars. It retains Minecraft's square sun and moon without photographic panoramas or a Milky Way backdrop; weather and night darkening remain active.
+
+Smooth Skies smooths the distant color gradient, and Clear Void removes the black lower part of the skybox. Complementary supplies its own procedural sky and stars when enabled; MakeUp retains the vanilla star geometry. The prepared profiles keep their existing cloud route.
 
 ## Rendering
 
@@ -47,5 +61,7 @@ Vanillin uses Flywheel to render vanilla chests, shulker boxes and bells.
 ## Shaders
 
 The pack includes [Complementary Reimagined](https://modrinth.com/project/HVnmMxH1) and [MakeUp Ultra Fast](https://modrinth.com/project/izsIPI7a), with prepared starting profiles. Shaders are disabled by default and remain optional for play.
+
+[Better Clouds](https://modrinth.com/mod/better-clouds) supplies the clouds. The prepared shader profiles select their **Vanilla** cloud mode so Better Clouds can use that rendering path. Keep Minecraft clouds enabled; an existing profile with clouds turned off retains that preference. Other shader profiles may need their own cloud setting.
 
 Colorwheel connects Iris shaders to the Flywheel rendering used by Create and Vanillin.

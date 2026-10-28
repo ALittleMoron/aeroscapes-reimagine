@@ -1,0 +1,28 @@
+[camera]
+decoupled_camera = false
+fov_override_enabled = false
+view_bobbing_mode = "INHERIT"
+
+[camera.camera_sway]
+max_angle_axis_x = 0.0
+max_angle_axis_z = 0.0
+
+[camera.offset]
+offset_x = -0.725
+offset_y = 0.025
+offset_z = 3.3
+
+[perspective]
+default_perspective = "FIRST_PERSON"
+remember_last_perspective = true
+replace_default_perspective = true
+first_person_enabled = true
+third_person_front_enabled = true
+third_person_back_enabled = true
+
+[crosshair]
+crosshair_type = "STATIC"
+
+[object_picker.pick_origin]
+entity_pick_origin = "PLAYER"
+block_pick_origin = "PLAYER"

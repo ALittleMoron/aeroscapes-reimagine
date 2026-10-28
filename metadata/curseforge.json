@@ -1182,21 +1182,6 @@
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
     },
     {
-      "slug": "puzzles-lib",
-      "primary_project_id": "QAGBst4M",
-      "primary_sha512": "84bac5cddae511234eea4387d34a96cc961a0e7d23b8c1ab17523b9762bee96a6aa132f57a417e5bc679565439784c268b92ee8d353e4b26f86d3ef5e1c5453b",
-      "status": "hosted",
-      "project_id": 495476,
-      "file_id": 7140307,
-      "filename": "PuzzlesLib-v21.1.39-1.21.1-NeoForge.jar",
-      "sha512": "84bac5cddae511234eea4387d34a96cc961a0e7d23b8c1ab17523b9762bee96a6aa132f57a417e5bc679565439784c268b92ee8d353e4b26f86d3ef5e1c5453b",
-      "sha1": "bcc0900fbbf6d6fc5ca05039cd5725e6145225f2",
-      "file_size": 1080389,
-      "parity": "exact",
-      "review": {},
-      "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
-    },
-    {
       "slug": "quark",
       "primary_project_id": "qnQsVE2z",
       "primary_sha512": "ded71aa7f564290d3e115c1e9670c9ffe0870dc5b03b20d72323046d8f026337248281ab4845a6d0a2f78cd6a3666fb28fadac7b214dac3fcbd0b824f73c1f01",
@@ -1781,6 +1766,104 @@
       "slug": "athena-ctm",
       "primary_project_id": "b1ZV3DIJ",
       "primary_sha512": "ab40a306a26ce834daae921a1e87768cd2538a4bfe27a4480f97af854084cc334e7416b1bd0b7583834a32a86951283f29fd4b1df7b98a967a6b26a3ec05e2cf",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "exposure",
+      "primary_project_id": "hB899VmG",
+      "primary_sha512": "b6b18638d61196c3b579dcb5cd977b125586c848822ffa3bb247b3d34dc019e3ca53629303cbb57c0875f7e29be30ae036e81d90dd8feb5dd87090b2b81c08b7",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "immersive-melodies",
+      "primary_project_id": "TaSmHw8V",
+      "primary_sha512": "79bf2f8dccb5b0db017f77956d73721d54e093416ebe4785f378515fc791ca9a2098d1039d6045c96e2f2c1eac7806de775b7ae84ab9b1b15e68adebebaeaff1",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "visual-workbench",
+      "primary_project_id": "kfqD1JRw",
+      "primary_sha512": "3737a436143acc1c6f80d0633371dafb4e24026d585bf5afa80421e1d1d6bbd2243d040c43a70d6796377227c0762d058c27c2b16a3fb20d0c2602bd04ae2038",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "puzzles-lib",
+      "primary_project_id": "QAGBst4M",
+      "primary_sha512": "d265016586d39d7e0ac63b064fcad6fd64df79ce885ae81aa1d7a51ba32b4c6849c4b3021b563667eb392599512fe193adfa52b40d99a101ab411dd0b5c5d484",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "better-clouds",
+      "primary_project_id": "5srFLIaK",
+      "primary_sha512": "b8d6946e99965a4037fd5c83a8aa8dc53b6b3360aa73be0e9a579088a8dd923d06ffadcda61e737ca63d6db5afe64a5b5ca7f2bbe399216da65ac46ae2e8cf7b",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "sound-physics-remastered",
+      "primary_project_id": "qyVF9oeo",
+      "primary_sha512": "958747dc1914536e357512dd2f0b926f2ee936dace3f9a43a0e8eb51ae6f35b9c7359529ee48d2ac50d190b02b617d94d22eced202ecd3056494c71a4958b14b",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "fusion-connected-blocks",
+      "primary_project_id": "2w5wDdfQ",
+      "primary_sha512": "874bfa2868c7f8be99ad0239f74f4b6df2bb94be175adde3e4c605833828995c20bf90b1b7bea07f4951534f33917cb8d014fdcf6ee8087f6d6fed95500f102b",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "fusion-block-transitions",
+      "primary_project_id": "ajcwQmG4",
+      "primary_sha512": "f6901eb70ac14868dc2a151c5df6ed673e43fe2fee1b4929314fe17a1ec4ff864bc39d2b303923b701a3eb1a4bc2bdb311f2f3f6ec44e98f1285ad072d62773a",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "create-sophisticated-backpacks",
+      "primary_project_id": "srJbhHkf",
+      "primary_sha512": "766e3c68aff4bec310daa52f0b0800923c8171b7960f509c7f3fe8dbf8de0375e73bd4a4e5ea2b4ba9cdc77279f4d5ccbc6d3163218aa329052d42e92f0a025c",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "beautiful-enchanted-books-mod-edition",
+      "primary_project_id": "pcqEicMM",
+      "primary_sha512": "7cc5dc954d19c9f483254ddad0ac31d263c173d9c179931b5fc024c00badf6838ee131ccde5b15a7d10c9cabd1a9f70e894a5d39720fcaa30fd96efca33fc46a",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "cool-rain-reforged",
+      "primary_project_id": "IgftU6Mn",
+      "primary_sha512": "bd463f60ac2ab9f22bc7b7c35656e3e174b2db5bde95f3c7d404b07f085bdbd550774e9bf7ff81310a0f4eea5348398d2a8f617a1d1644db6e38c8eb83245328",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "windchime",
+      "primary_project_id": "I6BSgJNV",
+      "primary_sha512": "24479973b3489a9803f0e74749d5aeaec84115adc513a66f674742b41f697a741468bfbdc5d4b5992b2700c9d5a2b14d70a1e4f145f135edbeeffb59e07aa579",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "shoulder-surfing-reloaded",
+      "primary_project_id": "kepjj2sy",
+      "primary_sha512": "a38dd972b32c1feef8c432b5c2f3434dcff1661cab425d303ae2943d1142d456f99b4db87a02342ac46477e3b7626205088ebe077381e97bf7c57b873f48e70d",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "polytone",
+      "primary_project_id": "3qAYkBMB",
+      "primary_sha512": "e11fe74a53264ba07b4ea9548332f56b5e22ed5778c912a5b62a4418a03b6ba6b7d8bb2a7d116d0019ad4d45733d429462f6fb5a8f6cd94aafac12ece7ff03b8",
       "status": "blocked",
       "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
     }

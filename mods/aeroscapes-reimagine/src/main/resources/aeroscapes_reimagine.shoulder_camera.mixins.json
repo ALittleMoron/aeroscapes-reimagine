@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.camera",
+  "plugin": "dev.aeroscapes.camera.ShoulderCameraMixinPlugin",
+  "priority": 900,
+  "compatibilityLevel": "JAVA_21",
+  "client": ["CameraRotationAccess"],
+  "injectors": {"defaultRequire": 1}
+}

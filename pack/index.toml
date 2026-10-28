@@ -53,6 +53,10 @@ file = "config/quark-common.toml"
 hash = "607aa6836728c767b59a13e976786d199b5e684ccc747dc0c0b58378e5b71e1e"
 
 [[files]]
+file = "config/shouldersurfing-client.toml"
+hash = "fb44c9f0beada8941053e4d31329966d927ade163acb80c20c24308ef3465278"
+
+[[files]]
 file = "config/structure_layout_optimizer.json"
 hash = "f4aa472048a9707e4d565a0d0d5f4fedf83fb0fc87bf320a2914fd86a35f92ad"
 
@@ -647,11 +651,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "f6fe14ddb2942fafbf8bbc2409abd6fcab2a9999115e9c250a255fc53970e120"
+hash = "314970d71e1807de848f3fbb0d5472b137f8a2d067b346a521f8a242f93b56f7"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "c98a96bb92ba6cb46e6bae0da50c3705674d0679e31c5c16fdc455c578d790a8"
+hash = "62fd3f60dbdaa07445a4a2e19041c5b4895b344a672f80f982a0fab58bdebb3a"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -660,7 +664,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "8835c19df7426e98d2e6677b737c32d383a186db78e4132b00d38c0798894a87"
+hash = "29941f97f1f7a94c87f448f9f63caf36e4bf2bf6fb5edbffef438eb104c55885"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -685,6 +689,16 @@ metafile = true
 [[files]]
 file = "mods/badoptimizations.pw.toml"
 hash = "cb7e2166aa909cbd176e57fb12ebd303943b941bc10a5b35b85aa86f50cacd15"
+metafile = true
+
+[[files]]
+file = "mods/beautiful-enchanted-books-mod-edition.pw.toml"
+hash = "fe1592310dc150cd1fac23d0e1f9d3c749456e150961d57ea180fa4f26b49313"
+metafile = true
+
+[[files]]
+file = "mods/better-clouds.pw.toml"
+hash = "66f71388dd6e63b6d8965c92819cb1b93be9a4840b5aec6a029b48f1ab28b9fc"
 metafile = true
 
 [[files]]
@@ -760,6 +774,11 @@ metafile = true
 [[files]]
 file = "mods/controlling.pw.toml"
 hash = "835cd54467fde0a7fd34fc275beda8c7f1b9fe5663bbf51590f42ec783353d01"
+metafile = true
+
+[[files]]
+file = "mods/cool-rain-reforged.pw.toml"
+hash = "1d83af685a971f62c99d85657c9b8c7f51daae0453a82d2c3cef355507953147"
 metafile = true
 
 [[files]]
@@ -893,6 +912,11 @@ hash = "aaa215489fb8199f1764163c5a85ca60b29c136b3665ace431eb63db2d283d77"
 metafile = true
 
 [[files]]
+file = "mods/exposure.pw.toml"
+hash = "b112e38749c8ec3c2312db862abc8cbfae41048a65057c464d8db3e02e10f243"
+metafile = true
+
+[[files]]
 file = "mods/fallingleavesforge.pw.toml"
 hash = "61c964d14abc68d3cb625647599c8ea15427305b5b53b7fbbe43613f4a88ab30"
 metafile = true
@@ -955,6 +979,11 @@ metafile = true
 [[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "e0b6dcd277c36c1b24917f69d6c8bdc12029cc14451c279ff623d78ce38ef284"
+metafile = true
+
+[[files]]
+file = "mods/immersive-melodies.pw.toml"
+hash = "5104c83a7fa7ffffad8ff6508f78d9817a4aa77205adc6e808034056030bc92e"
 metafile = true
 
 [[files]]
@@ -1078,8 +1107,13 @@ hash = "965ce7894aa8651410e9b8d51fcb22d77cf0c6749471f08bfe9685613d4f3188"
 metafile = true
 
 [[files]]
+file = "mods/polytone.pw.toml"
+hash = "5a05cbd17d52f1c739681dbe54cc9cb676ae7a809c7256d3da118b8a73da18f0"
+metafile = true
+
+[[files]]
 file = "mods/puzzles-lib.pw.toml"
-hash = "156a78c6e692135de3647d4a01a0b3e68286e3988b2a7e565abc718030b3a06d"
+hash = "342d99ff66bf69ee936ecf06fcf95f2f1e930b5225169774e3d9ca6b2e6c1b1d"
 metafile = true
 
 [[files]]
@@ -1120,6 +1154,11 @@ metafile = true
 [[files]]
 file = "mods/searchables.pw.toml"
 hash = "3e4f10e6a4af780cc628cfec8a59c3aeaf28a986761ab7973168e8571a22b4bc"
+metafile = true
+
+[[files]]
+file = "mods/shoulder-surfing-reloaded.pw.toml"
+hash = "8f082c7119fa5a4309832d5b5fa714f2c22d13bf05d44a9ebf0401d966fd52fd"
 metafile = true
 
 [[files]]
@@ -1168,6 +1207,11 @@ hash = "1b3230c8095f289a739fa6dada02d1f2066e1de40df8aaf5785cf4317408558e"
 metafile = true
 
 [[files]]
+file = "mods/sound-physics-remastered.pw.toml"
+hash = "32176f7ea943991bacda320b12f10eb9116ec3640531a461d1ffc10b1bc610e3"
+metafile = true
+
+[[files]]
 file = "mods/sound.pw.toml"
 hash = "5298077320fd9554f97e30b71a14f0acb4fe0c6bfa62dabece1fd370a4dcc02c"
 metafile = true
@@ -1208,6 +1252,16 @@ hash = "6af2d566831cbfd4aa0e516800843c5918aed4920f0ca661da05cd7b9de582be"
 metafile = true
 
 [[files]]
+file = "mods/visual-workbench.pw.toml"
+hash = "0abaf4ca962cf3b75f69588ecb101327712be61750f1878685576c39d2ed5336"
+metafile = true
+
+[[files]]
+file = "mods/windchime.pw.toml"
+hash = "dc27f6f089fb923961b8b8bb30521f6ee65084eaddf373d93140a5359a65f662"
+metafile = true
+
+[[files]]
 file = "mods/xaeros-minimap.pw.toml"
 hash = "5f0914a3e34b1158a48719963ea7c10dabf85fc6768266d36a833ec9477fa862"
 metafile = true
@@ -1234,11 +1288,23 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "a5aad409ff3f9bf5bf734511cedd70dd7d189b13e9065bffc2589f364fd868af"
+hash = "f2e93a3a3a9a7a490cda94216389d39f648be1a3bf27e6f1e53cc3e764d13631"
+
+[[files]]
+file = "polytone_options.json"
+hash = "1cdaff66c4ad5dbc984bbe5d6f036f3fe29f4e7e4ea028e120669d294cbce1fa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/polytone/colors.json"
+hash = "06110d82dd2a95de10e3b09b05d29120f5f0e16e4a066a612a42f0bf5c7bda06"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/fallingleaves/settings/flowering_azalea_leaves.json"
 hash = "31c6a28688bfb9d951f4d0b86d8e66c20b80b48b029f51764b7f9df0464af29d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/polytone/dimension_modifiers/overworld.json"
+hash = "7cada3221f0ad22653a398b7fa24d262cf8f190344628b829204f7f9f32feaba"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/pack.mcmeta"
@@ -1247,6 +1313,11 @@ hash = "cdea174265b490f6b7988f67257716a028927501e1663505af016a672a4fe885"
 [[files]]
 file = "resourcepacks/better-leaves.pw.toml"
 hash = "08c000809fa315f44e8254b40be90e345d696c5ec6658939184f1824f4ff96ce"
+metafile = true
+
+[[files]]
+file = "resourcepacks/create-sophisticated-backpacks.pw.toml"
+hash = "1966df751c7a4cc19d7449f6516dbdef1eb2264812626cc9329752a2225a57b1"
 metafile = true
 
 [[files]]
@@ -1270,13 +1341,23 @@ hash = "3763920ceab65324c0fa5179f62a14eba09922a64cd03e68caeb28e24e706e2d"
 metafile = true
 
 [[files]]
+file = "resourcepacks/fusion-block-transitions.pw.toml"
+hash = "01d15224faae5040b30b2ba81f69993a630bf586daca4078637835cd887cc40e"
+metafile = true
+
+[[files]]
+file = "resourcepacks/fusion-connected-blocks.pw.toml"
+hash = "9502e2e017433b740b7565f7ad363c16bf35235783e144c546ed716c6fc93ecd"
+metafile = true
+
+[[files]]
 file = "resourcepacks/fusion-connected-glass.pw.toml"
 hash = "b0fea23d3341f00124c72a759304ff1ecfbc9b91d5e59cf9e120e1b3a0d5b746"
 metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
-hash = "4486bc04e0bb68e2c8d769d695ddcf794d817a82bf9f092dcc38622655c789f2"
+hash = "d385fe2881c7ec6d8000010ce635585be7a964749938b3ee1ce4bb85eda65712"
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"

@@ -576,23 +576,28 @@ def test_exception_text_cannot_authorize_an_unrelated_beta(
 
 
 @pytest.mark.parametrize(
-    ("project_id", "version_id"),
-    [("COlSi5iR", "avwWYPbG"), ("qtPMklut", "7rX3dlFf")],
+    ("project_id", "version_id", "release_type"),
+    [
+        ("COlSi5iR", "avwWYPbG", "alpha"),
+        ("qtPMklut", "7rX3dlFf", "alpha"),
+        ("qyVF9oeo", "85fA7L1W", "beta"),
+    ],
 )
-def test_selected_alpha_exception_is_exact(
-    artifact: Artifact, project_id: str, version_id: str
+def test_selected_prerelease_exception_is_exact(
+    artifact: Artifact, project_id: str, version_id: str, release_type: str
 ) -> None:
     approved = replace(
         artifact,
         project_id=project_id,
         version_id=version_id,
-        release_type="alpha",
-        exception="Owner selected the C2ME/OpenCL experiment.",
+        release_type=release_type,
+        exception="Owner selected this exact experimental file.",
     )
     validate_release(approved)
     for changed in (
+        replace(approved, project_id="other-project"),
         replace(approved, version_id="other"),
-        replace(approved, release_type="beta"),
+        replace(approved, release_type="alpha" if release_type == "beta" else "beta"),
         replace(approved, exception=None),
     ):
         with pytest.raises(PackError, match="Unapproved experimental dependency"):

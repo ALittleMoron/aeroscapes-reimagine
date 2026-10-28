@@ -77,6 +77,109 @@ offsets and FA Player's animated whole-body transforms, with no verified native
 setting that reconciles them. This is a static explanation, not a reproduced
 render diagnosis. FA Player, Not Enough Animations and 3D Skin Layers remain.
 
+### Atmosphere additions 0.1.3
+
+The remaining selected content uses unchanged official Modrinth files: Fusion
+Connected Blocks 1.1.0, Fusion Block Transitions 1.0.3, Create Style Sophisticated
+Backpacks 1.2, Beautiful Enchanted Books MOD EDITION 6.0.0, Better Clouds 1.13.11,
+Sound Physics Remastered 1.5.2, Exposure 1.9.19, Immersive Melodies 0.8.0 and
+Visual Workbench 21.1.2. Puzzles Lib is updated from 21.1.39 to 21.1.66 for the
+workbench's >=21.1.48 requirement; installed Diagonal Fences/Walls/Windows each
+declare >=21.1.15 without an upper bound. Exact-file metadata owns every pin.
+
+Exposure, Immersive Melodies, Visual Workbench and Puzzles Lib are installed on
+both sides. Better Clouds, Sound Physics, the three resourcepacks and Beautiful
+Enchanted Books are client-only. BEB's provider labels both sides required, but
+its native entry point is empty and its renderer subscriber/mixin are client
+scoped. Preserve the raw provider environment alongside the native-route note.
+Sound Physics' optional dedicated-server range-broadcasting role is not required
+for the selected singleplayer acoustics.
+
+The owner explicitly approved the exact Sound Physics beta file `85fA7L1W`.
+The validator exception binds project, version and release type; other beta files
+remain unapproved. Native Sound Physics settings and existing volume levels are
+retained. Listener-relative ambient beds are not evidence of spatial occlusion;
+moving ship geometry is not covered by the static audit. No custom sound/ship
+adapter or unsafe level access is enabled.
+
+Better Clouds' native YACL range [3.5.0,4.0.0) includes installed 3.8.2.
+Complementary r5.9.3 uses `CLOUD_STYLE_DEFINE=50` and MakeUp 9.6 retains
+`V_CLOUDS=0`, both their supported Vanilla cloud routes. Setting shader clouds
+to Off would disable the path used here. Minecraft's own Clouds Off preference
+is still respected; no installed profile is changed.
+
+Fusion Blocks requires Fusion >=1.2.12 and Transitions >=1.2.11; installed 1.3.16
+fits. Their supported resource formats include 34, as does the backpack pack.
+No effective asset-path collision was found with the current selected packs.
+The backpack pack covers existing models and most upgrade icons; native fluid,
+battery, straps and item-display geometry remains and needs visual acceptance.
+These original resourcepacks and the BEB project retain ARR artwork terms.
+BEB's native descriptor/source declares Apache-2.0 for code; that is not a blanket
+artwork grant. The owner confirmed GitHub Releases as an accepted export channel.
+Exports reference the original Modrinth downloads and do not rehost these JARs
+or extract provider artwork. Retain both source and project-page terms.
+
+Exposure retains MIT, Immersive Melodies GPL-3.0-only, Visual Workbench MPL-2.0,
+Better Clouds MPL-2.0 and Sound Physics GPL-3.0-only. Their original archives
+retain their notices. New photo/instrument/workbench data makes rollback a
+matching-pack-and-save-backup operation, not a resourcepack toggle.
+
+### Rain, wind chimes, camera and sky
+
+Cool Rain Reforged is client-only here: its native client rain-sound injections
+replace vanilla surface sounds and use the Weather category. It adds no rain
+particles, recipes or network protocol. Version 1.0.2's original JAR contains the
+Sable surface adapter; the older published source branch does not establish that
+adapter's behavior. Its ARR provider label and MIT native descriptor are both
+recorded. Distribution references the unchanged official Modrinth file.
+
+The khazoda/hibi wind chimes project is separate from WindChime Unofficial
+Continued. It adds three saved blocks on both sides under Unlicense. Its bundled
+Sable companion 1.6.0 is byte-identical to Sable 2.0.6's copy. Recipes use ordinary
+vanilla resources; future rollback retains a matching save backup.
+
+Sable 2.0.6 targets Shoulder Surfing's 4.x internal classes, which 5.2.0 removes.
+The selected 4.22.12 otherwise recalculates camera rotation even with zero sway,
+reapplying Sable's ship orientation. The owned client plugin runs after the native
+camera mixin and redirects only its final position-handler rotation through a
+zero-sway guard. It preserves the existing quaternion and initial rotation under
+the selected defaults, which explicitly disable sway; nonzero sway retains native behavior. Exact versions,
+merged-mixin origin, method descriptor and call count fail explicitly on changes.
+The offline transformer check does not establish graphical ship acceptance.
+Otherworld's numeric framing is retained without its forced FOV or decoupled
+movement. The new shoulder-swap binding starts unassigned to avoid Iris's O key.
+
+Polytone supplies two independent atmosphere-resourcepack settings: modest
+biome-preserving sky saturation and time-varying sunrise colors, plus 1800
+attempted vanilla star points with smaller sizes. No provider artwork is copied.
+Cloud, fog, horizon and dimension-effect replacements are not selected. Vanilla
+weather/night dimming stays active. Complementary uses its own procedural stars
+with nebulae disabled; MakeUp retains the vanilla star geometry. Polytone's actual
+Supplementaries Team License 1.5 differs from the provider GPL label; section 5's
+unchanged official-download route is used, without direct binary bundling.
+The native root-level `polytone_options.json` disables its unrelated entity-light
+interpolation and colored-light backend. Its shaderless leash renderer retains
+the provider's vanilla-brown strip texture; no separate replacement is added.
+The dimension/color keys and expressions were checked against the exact JAR and
+the author's [dimension modifier](https://github.com/MehVahdJukaar/polytone/wiki/Dimension-Effects-Modifiers)
+and [custom color](https://github.com/MehVahdJukaar/polytone/wiki/Custom-Colors) schemas.
+
+### Generated Dramatic Doors recipes
+
+Dramatic Doors 3.3.2 / `X5oMCwaA` generates its Chipped conversions in code.
+Twelve inputs are absent from Chipped 4.0.2 / `eqVowbGc`; there are no verified
+renamed equivalents. Its recipe-manager injection overwrites same-ID resource
+overrides, so replacing JSON files cannot repair this boundary.
+
+The owned `DramaticDoorsChippedRecipesMixin` adds NeoForge's `item_exists`
+condition to each generated Chipped tall-door recipe before it enters the native
+list. NeoForge evaluates it during recipe loading, after registries are ready.
+This skips the twelve invalid conversions and retains the other 165, without
+removing the provider's output IDs or artwork. A registry check while recipes
+are generated would run too early in Dramatic Doors' registration event.
+`compat_fixes.json` binds the adapter to both exact providers; no provider
+recipe definition is copied into the pack.
+
 ### Existing world resources
 
 The complete modified NBT and JSON payloads listed below have been removed from editable pack inputs. The owned mod reads unchanged installed originals and applies independent, minimal field operations in memory. It does not write generated provider data into the distributed pack. Hash-bound recipes guard original JSON identity before applying edits; native resource/registry loading consumes the results. Minimal empty pools, project predicates/tags and grounded-feature references remain project integrations rather than copied full definitions.

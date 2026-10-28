@@ -39,13 +39,14 @@ MODRINTH_DOWNLOAD_HOSTS = frozenset(
     {"cdn.modrinth.com", "github.com", "raw.githubusercontent.com", "gitlab.com"}
 )
 
-# Owner selected exact TerraBlender/Iris files and the C2ME/OpenCL experiment.
+# Owner selected these exact experimental files; approval does not extend to updates.
 RELEASE_EXCEPTIONS = frozenset(
     {
         ("kkmrDlKT", "6e8GCrLb", "beta"),
         ("YL57xq9U", "KduFYu4t", "beta"),
         ("COlSi5iR", "avwWYPbG", "alpha"),
         ("qtPMklut", "7rX3dlFf", "alpha"),
+        ("qyVF9oeo", "85fA7L1W", "beta"),
     }
 )
 COMPAT_DIRECTORY = "global_packs/required_data/aeroscapes_reimagine_compat"

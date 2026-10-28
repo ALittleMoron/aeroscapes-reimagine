@@ -31,3 +31,13 @@ at licenses/aeroscapes-reimagine-source.zip; extract it and read
 mods/aeroscapes-reimagine/README.md. SOURCE-MANIFEST.json identifies the associated
 binary by SHA-256. No private-repository access or future written offer is needed.
 GPL text is in META-INF/LICENSE.txt in this JAR and LICENSE in the source project.
+
+The original Dramatic Doors/Chipped compatibility guard adds a native NeoForge
+item-existence condition to generated recipes. It copies no provider recipe
+definitions, models or textures; unchanged provider artifacts retain their terms.
+
+The independent Shoulder Surfing/Sable adapter guards the legacy camera's
+redundant zero-sway rotation after the provider mixin has been applied. The
+original provider archives are unchanged; no provider classes are distributed
+inside this mod. The upstream issue and later zero-sway fix informed the repair.
+https://github.com/Exopandora/ShoulderSurfing/issues/448

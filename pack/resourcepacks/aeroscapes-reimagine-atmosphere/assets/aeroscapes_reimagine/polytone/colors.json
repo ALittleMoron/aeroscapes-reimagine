@@ -1,0 +1,6 @@
+{
+  "environment": {
+    "star_count": 1800,
+    "star_size": "0.12 + r.rand() * 0.08"
+  }
+}

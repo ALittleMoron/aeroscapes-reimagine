@@ -87,9 +87,12 @@ dependencies {
 }
 
 val policy by sourceSets.creating {
-  compileClasspath = sourceSets.main.get().output
+  compileClasspath =
+    sourceSets.main.get().output + configurations[compileClasspathConfigurationName]
   runtimeClasspath = output + compileClasspath
 }
+
+dependencies { add(policy.implementationConfigurationName, "org.ow2.asm:asm-tree:9.8") }
 
 val regression by sourceSets.creating {
   compileClasspath = sourceSets.main.get().compileClasspath + sourceSets.main.get().output
@@ -176,6 +179,14 @@ val monitorControllerTest by
     mainClass = "dev.aeroscapes.monitor.MonitorControllerTest"
   }
 
+val shoulderCameraTransformerTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.camera.ShoulderCameraTransformerTest"
+  }
+
 tasks.check {
   dependsOn(
     tasks.spotlessCheck,
@@ -183,6 +194,7 @@ tasks.check {
     islandLayoutTest,
     sableTraceBufferTest,
     monitorControllerTest,
+    shoulderCameraTransformerTest,
     worldgenRegressionJar,
   )
 }

@@ -24,6 +24,6 @@ Character choices should last. A rare, expensive change may become possible, but
 
 Otherworld D&D is the reference for expressive animation, meaningful weapon differences and readable hits. Melee, ranged weapons and magic should remain viable styles. The intended equipment can include firearms suited to the setting, ship cannons and explosives alongside swords, bows and crossbows.
 
-Both first and third person should support the main activities. A side-offset third-person camera is planned alongside combat; it is not supplied by the current animation mods.
+Both first and third person should support the main activities. The side-offset third-person camera is already supplied by Shoulder Surfing, independently of the planned combat changes; [graphics and animation](../quality-of-life/presentation/#character-and-camera) describes its controls.
 
 Danger should depend mainly on the place: its creatures, biome, dungeon, height and dimension. Moderate growth of threats over time is also desired; the rules remain to be chosen.

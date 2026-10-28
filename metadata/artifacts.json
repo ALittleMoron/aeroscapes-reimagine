@@ -1154,8 +1154,37 @@
     "slug": "cool-rain-reforged",
     "name": "Cool Rain Reforged",
     "project_id": "IgftU6Mn",
-    "status": "deferred",
-    "reason": "Ambient weather is covered without another visual system."
+    "version_id": "SwSSfJQQ",
+    "version": "1.0.2",
+    "filename": "coolrain-1.21.1-NeoForge-1.0.2.jar",
+    "sha512": "bd463f60ac2ab9f22bc7b7c35656e3e174b2db5bde95f3c7d404b07f085bdbd550774e9bf7ff81310a0f4eea5348398d2a8f617a1d1644db6e38c8eb83245328",
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/Leclowndu93150/Cool-Rain",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected atmosphere additions 0.1.3",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "2f41f15cb7b6c46aeeae95c29c1f3a9c1d53f327",
+    "file_size": 4151295,
+    "role": "Material-specific rainfall audio; native Sable surface lookup, without additional rain particles.",
+    "artifact_license": "MIT",
+    "provider_environment": {
+      "client": "unknown",
+      "server": "unknown"
+    },
+    "native_route_note": "Client-only sound injections replace the vanilla rain sound branch; no world content or networking requires server installation. Uses the Weather sound category. Exact 1.0.2 JAR has optional Sable >=2.0.0 support, absent from the older published 1.21.1 source branch. API terms are ARR while the original descriptor declares MIT; retain both and reference the original unchanged Modrinth file under its specific-file modpack policy."
   },
   {
     "slug": "corpse",
@@ -3870,15 +3899,20 @@
     "slug": "puzzles-lib",
     "name": "Puzzles Lib",
     "project_id": "QAGBst4M",
-    "version_id": "EgWWSAhJ",
-    "version": "v21.1.39-1.21.1-NeoForge",
-    "filename": "PuzzlesLib-v21.1.39-1.21.1-NeoForge.jar",
-    "sha512": "84bac5cddae511234eea4387d34a96cc961a0e7d23b8c1ab17523b9762bee96a6aa132f57a417e5bc679565439784c268b92ee8d353e4b26f86d3ef5e1c5453b",
+    "version_id": "kmN5PWk9",
+    "version": "21.1.66",
+    "filename": "puzzleslib-v21.1.66-mc1.21.1+neoforge.jar",
+    "sha512": "d265016586d39d7e0ac63b064fcad6fd64df79ce885ae81aa1d7a51ba32b4c6849c4b3021b563667eb392599512fe193adfa52b40d99a101ab411dd0b5c5d484",
+    "sha1": "fd584167f1277aef5411a98a22390c65cabe6e07",
+    "file_size": 1451120,
     "release_type": "release",
     "side": "both",
     "kind": "mod",
     "loaders": [
       "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
     ],
     "license": {
       "id": "MPL-2.0",
@@ -3888,12 +3922,13 @@
     "source_url": "https://github.com/Fuzss/puzzleslib",
     "dependencies": [],
     "status": "included",
-    "origin": "Aeroscapes 1.0.8",
-    "game_versions": [
-      "1.21.1"
-    ],
-    "sha1": "bcc0900fbbf6d6fc5ca05039cd5725e6145225f2",
-    "file_size": 1080389
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "dependency_note": "Bounded update from 21.1.39 for Visual Workbench>=21.1.48. Native MC[1.21.1,1.21.2), NeoForge>=21.1.21; installed Diagonal Fences/Walls/Windows each require Puzzles>=21.1.15 without an upper bound."
   },
   {
     "slug": "quark",
@@ -4580,8 +4615,51 @@
     "slug": "sound-physics-remastered",
     "name": "Sound Physics Remastered",
     "project_id": "qyVF9oeo",
-    "status": "deferred",
-    "reason": "No release file for this exact game version; AmbientSounds/Sounds remain."
+    "version_id": "85fA7L1W",
+    "version": "neoforge-1.21.1-1.5.2",
+    "filename": "sound-physics-remastered-neoforge-1.21.1-1.5.2.jar",
+    "sha512": "958747dc1914536e357512dd2f0b926f2ee936dace3f9a43a0e8eb51ae6f35b9c7359529ee48d2ac50d190b02b617d94d22eced202ecd3056494c71a4958b14b",
+    "sha1": "f1903e867a71cbdc3078caf957372b9959482cfb",
+    "file_size": 204230,
+    "release_type": "beta",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/henkelmax/sound-physics-remastered",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9eGKb6K1",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "exception": "Owner explicitly approved Sound Physics Remastered 1.5.2 beta for NeoForge 1.21.1 on 2026-10-28; approval is limited to this exact file.",
+    "dependency_note": "Installed client-only for acoustics in singleplayer. Dedicated-server installation is optional for range broadcasting, not required for this route. Native audio/attenuation defaults retained."
   },
   {
     "slug": "spyglass-improvements",
@@ -5868,5 +5946,527 @@
       "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
       "integration_decision": "metadata/README.md"
     }
+  },
+  {
+    "slug": "exposure",
+    "name": "Exposure",
+    "project_id": "hB899VmG",
+    "version_id": "iBvaR6AK",
+    "version": "1.9.19",
+    "filename": "exposure-neoforge-1.21.1-1.9.19.jar",
+    "sha512": "b6b18638d61196c3b579dcb5cd977b125586c848822ffa3bb247b3d34dc019e3ca53629303cbb57c0875f7e29be30ae036e81d90dd8feb5dd87090b2b81c08b7",
+    "sha1": "181d328a0328523fa99dd310937c40d917e91029",
+    "file_size": 2206392,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/mortuusars/Exposure",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "immersive-melodies",
+    "name": "Immersive Melodies",
+    "project_id": "TaSmHw8V",
+    "version_id": "RLpigSXC",
+    "version": "0.8.0+1.21.1",
+    "filename": "immersive_melodies-neoforge-0.8.0+1.21.1.jar",
+    "sha512": "79bf2f8dccb5b0db017f77956d73721d54e093416ebe4785f378515fc791ca9a2098d1039d6045c96e2f2c1eac7806de775b7ae84ab9b1b15e68adebebaeaff1",
+    "sha1": "5f3cd9eb07465a88a22abc6230862e798f45ef82",
+    "file_size": 5565133,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/Luke100000/ImmersiveMelodies",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "visual-workbench",
+    "name": "Visual Workbench",
+    "project_id": "kfqD1JRw",
+    "version_id": "3646RfLS",
+    "version": "21.1.2",
+    "filename": "VisualWorkbench-v21.1.2-1.21.1-NeoForge.jar",
+    "sha512": "3737a436143acc1c6f80d0633371dafb4e24026d585bf5afa80421e1d1d6bbd2243d040c43a70d6796377227c0762d058c27c2b16a3fb20d0c2602bd04ae2038",
+    "sha1": "dd5b71bff42ce3f845afc9c3640d4f4f63ccdb1b",
+    "file_size": 76670,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "source_url": "https://github.com/Fuzss/visualworkbench",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "5WeWGLoJ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "QAGBst4M",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "better-clouds",
+    "name": "Better Clouds",
+    "project_id": "5srFLIaK",
+    "version_id": "UvRCtZxT",
+    "version": "1.13.11+1.21.1-neoforge-release",
+    "filename": "better-clouds-1.13.11+1.21.1-neoforge.jar",
+    "sha512": "b8d6946e99965a4037fd5c83a8aa8dc53b6b3360aa73be0e9a579088a8dd923d06ffadcda61e737ca63d6db5afe64a5b5ca7f2bbe399216da65ac46ae2e8cf7b",
+    "sha1": "949fa76046ac2303c05f9fdcda782eb22e4d3683",
+    "file_size": 817079,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "source_url": "https://github.com/Qendolin/better-clouds",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "YL57xq9U",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "AANobbMI",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "1eAoo2KR",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "dependency_note": "Native YACL range [3.5.0,4.0.0) includes installed 3.8.2. Prepared shader profiles use the vanilla-cloud route for Better Clouds; no broad renderer or platform update."
+  },
+  {
+    "slug": "fusion-connected-blocks",
+    "name": "Fusion Connected Blocks",
+    "project_id": "2w5wDdfQ",
+    "version_id": "qiGWgBad",
+    "version": "1.1.0-mc1.20-26.3",
+    "filename": "Fusion Connected Blocks v1.1.0 for Minecraft 1.20-26.2.zip",
+    "sha512": "874bfa2868c7f8be99ad0239f74f4b6df2bb94be175adde3e4c605833828995c20bf90b1b7bea07f4951534f33917cb8d014fdcf6ee8087f6d6fed95500f102b",
+    "sha1": "e5dda814f0e371e18d97cdd222cbebd7a7278c5e",
+    "file_size": 271587,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2",
+      "26.3"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/SuperMartijn642/FusionResourcePacks",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "p19vrgc2",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "fusion-block-transitions",
+    "name": "Fusion Block Transitions",
+    "project_id": "ajcwQmG4",
+    "version_id": "Mtnn67U3",
+    "version": "1.0.3-mc1.20-26.3",
+    "filename": "Fusion Block Transitions v1.0.3 for Minecraft 1.20-1.21.8.zip",
+    "sha512": "f6901eb70ac14868dc2a151c5df6ed673e43fe2fee1b4929314fe17a1ec4ff864bc39d2b303923b701a3eb1a4bc2bdb311f2f3f6ec44e98f1285ad072d62773a",
+    "sha1": "e2dc1252f80b2ff5897621008ddbb10c2c8765ee",
+    "file_size": 36152,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2",
+      "26.3"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/SuperMartijn642/FusionResourcePacks",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "p19vrgc2",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "create-sophisticated-backpacks",
+    "name": "Create Style Sophisticated Backpacks",
+    "project_id": "srJbhHkf",
+    "version_id": "3WMwR0Mh",
+    "version": "1.2",
+    "filename": "CreateSophBackpacks.zip",
+    "sha512": "766e3c68aff4bec310daa52f0b0800923c8171b7960f509c7f3fe8dbf8de0375e73bd4a4e5ea2b4ba9cdc77279f4d5ccbc6d3163218aa329052d42e92f0a025c",
+    "sha1": "0c834a3a13d3d597b6d1273375d2bd049fc3d728",
+    "file_size": 557473,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.20.1",
+      "1.21.1",
+      "1.21.3",
+      "1.21.4",
+      "1.21.8",
+      "1.21.10",
+      "1.21.11"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "beautiful-enchanted-books-mod-edition",
+    "name": "Beautiful Enchanted Books [MOD EDITION]",
+    "project_id": "pcqEicMM",
+    "version_id": "XeLhIDWZ",
+    "version": "6.0.0",
+    "filename": "BEB-NeoForge-1.21-6.0.0.jar",
+    "sha512": "7cc5dc954d19c9f483254ddad0ac31d263c173d9c179931b5fc024c00badf6838ee131ccde5b15a7d10c9cabd1a9f70e894a5d39720fcaa30fd96efca33fc46a",
+    "sha1": "4a1828c61a420b3ef1b759b9cbe595de5c85a48e",
+    "file_size": 1772579,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/CERBON-s-Comissions/Beautiful-Enchanted-Books",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere additions, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no provider artwork is extracted, modified or separately rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md",
+      "owner_channel_decision": "Owner confirmed GitHub Releases is acceptable as the pack export channel on 2026-10-28. This export references the original Modrinth-hosted JAR rather than rehosting its binary."
+    },
+    "provider_environment": {
+      "client_side": "required",
+      "server_side": "required"
+    },
+    "dependency_note": "Provider labels both sides required; actual NeoForge entry point is empty, rendering subscribers are Dist.CLIENT and the only active ItemRenderer mixin is client-scoped. Client-only installation supplies book appearance without a dedicated-server dependency or new gameplay registry.",
+    "artifact_license": "Native JAR declares Apache-2.0; provider project retains ARR and artwork/platform terms. Do not infer a blanket Apache artwork grant."
+  },
+  {
+    "slug": "windchime",
+    "name": "wind chimes",
+    "project_id": "I6BSgJNV",
+    "version_id": "T3ESeOzH",
+    "version": "1.2.0+1.21.1",
+    "filename": "windchimes-neoforge-1.2.0+1.21.1.jar",
+    "sha512": "24479973b3489a9803f0e74749d5aeaec84115adc513a66f674742b41f697a741468bfbdc5d4b5992b2700c9d5a2b14d70a1e4f145f135edbeeffb59e07aa579",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "Unlicense",
+      "name": "The Unlicense",
+      "url": null
+    },
+    "source_url": "https://github.com/rosebudmods/windchimes",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "oWaK0Q19",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "T9PomCSv",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected atmosphere additions 0.1.3",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "75b4c317dc5b715f14f11f26659073329aef7383",
+    "file_size": 1277381,
+    "role": "Three craftable wind chimes with native Sable motion response and interaction sounds.",
+    "artifact_license": "Unlicense",
+    "native_route_note": "Original archive embeds sable-companion-common-1.21.1 1.6.0, byte-identical to the library embedded by Sable 2.0.6. Three ordinary vanilla-resource crafting recipes. Both physical sides retain windchimes saved block IDs; graphical and ship behavior acceptance pending."
+  },
+  {
+    "slug": "shoulder-surfing-reloaded",
+    "name": "Shoulder Surfing Reloaded",
+    "project_id": "kepjj2sy",
+    "version_id": "hIHjK7MW",
+    "version": "1.21.1-4.22.12+neoforge",
+    "filename": "ShoulderSurfing-NeoForge-1.21.1-4.22.12.jar",
+    "sha512": "a38dd972b32c1feef8c432b5c2f3434dcff1661cab425d303ae2943d1142d456f99b4db87a02342ac46477e3b7626205088ebe077381e97bf7c57b873f48e70d",
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/Exopandora/ShoulderSurfing",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "G1s2WpNo",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "Q5UvqqQd",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "GaaqfxoS",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "V5ujR2yw",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected camera and sky additions 0.1.3",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "fea605988303ad4bdb395769001aab1a0b9b1b2f",
+    "file_size": 271011,
+    "role": "Side-offset third-person camera with the retained Otherworld framing; ordinary first person and player-origin interaction reach retained.",
+    "native_route_note": "Sable 2.0.6 targets the 4.x internal API, absent in 5.2.0. Owned exact-version adapter skips the redundant zero-sway rotation to avoid applying ship orientation twice. Retained Otherworld framing is -0.725/0.025/3.3; movement stays coupled and player FOV is inherited. Graphical/ship acceptance pending. Native runtime metadata version is 1.21.1-4.22.12. Both native sway amplitudes are explicitly pinned to zero in fresh-profile defaults; enabling sway retains upstream behavior and needs separate ship review.",
+    "artifact_license": "MIT"
+  },
+  {
+    "slug": "polytone",
+    "name": "Polytone",
+    "project_id": "3qAYkBMB",
+    "version_id": "6mPQONys",
+    "version": "1.21-5.3.4",
+    "filename": "polytone-1.21-5.3.4-neoforge.jar",
+    "sha512": "e11fe74a53264ba07b4ea9548332f56b5e22ed5778c912a5b62a4418a03b6ba6b7d8bb2a7d116d0019ad4d45733d429462f6fb5a8f6cd94aafac12ece7ff03b8",
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "GPL-3.0-or-later",
+      "name": "GNU General Public License v3.0 or later",
+      "url": null
+    },
+    "source_url": "https://github.com/MehVahdJukaar/polytone",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected camera and sky additions 0.1.3",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "13380f8b62c982790ed3c431d068e9edc65cbd28",
+    "file_size": 1780168,
+    "role": "Resource-driven vanilla sky palette and restrained star mesh; existing cloud, horizon and shader renderers retained.",
+    "artifact_license": "Supplementaries Team License 1.5",
+    "native_route_note": "Actual native descriptor and LICENSE_Polytone.md declare Supplementaries Team License 1.5, differing from the GPL provider label. Section 5 allows unmodified official-download modpack references; no direct binary bundling. No extra mandatory native libraries. Two owned JSONs adjust biome-preserving sky/sunrise colors and vanilla star count/size without replacing clouds, dimension effects or horizon. Critical current NeoForge/Sodium/Iris APIs inspected; client acceptance pending. Native root polytone_options.json disables unrelated player-light interpolation and the colored-light backend. Shaderless lead rendering retains the provider vanilla-brown texture. Exact dimension/color codecs and v/g.dayTime/r.rand()/TAU expression functions were inspected."
   }
 ]

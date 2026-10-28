@@ -14,4 +14,5 @@ soundCategory_neutral:0.15
 soundCategory_player:0.15
 soundCategory_ambient:0.15
 soundCategory_voice:0.15
-resourcePacks:["vanilla","mod_resources","file/FreshAnimations_v1.11.1_1.20+.zip","file/Better-Leaves-9.6.zip","file/Create Touch-Ups v1.0.zip","file/Fusion Connected Glass v1.0.1 for Minecraft 1.20-1.21.8.zip","file/FA+Player-v1.1.zip","file/§eExtended_Illumina_NEA_1.21x.zip","file/aeroscapes-reimagine-atmosphere"]
+resourcePacks:["vanilla","mod_resources","file/FreshAnimations_v1.11.1_1.20+.zip","file/Better-Leaves-9.6.zip","file/Create Touch-Ups v1.0.zip","file/Fusion Connected Glass v1.0.1 for Minecraft 1.20-1.21.8.zip","file/Fusion Connected Blocks v1.1.0 for Minecraft 1.20-26.2.zip","file/Fusion Block Transitions v1.0.3 for Minecraft 1.20-1.21.8.zip","file/CreateSophBackpacks.zip","file/FA+Player-v1.1.zip","file/§eExtended_Illumina_NEA_1.21x.zip","file/aeroscapes-reimagine-atmosphere"]
+key_key.shouldersurfing.swap_shoulder:key.keyboard.unknown

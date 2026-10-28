@@ -22,6 +22,12 @@ A kitchen can remain a small place for manual cooking or become part of an autom
 
 ## Planned nutrition and thirst
 
-The intended nutrition system will encourage food variety through food groups. A mild temporary weakness is the preferred consequence of a low group, ending when nutrition recovers. Groups, thresholds and exact effects have not yet been selected. This will accompany ordinary hunger.
+The intended nutrition system will show food-group levels and encourage a varied diet. Mixed dishes should replenish several groups, giving diverse farms and the existing kitchen equipment a practical role. A mild temporary weakness is the preferred consequence of a low group, ending when nutrition recovers. Groups, thresholds and exact effects have not yet been selected. This will accompany ordinary hunger.
 
 Planned thirst includes water quality. Untreated water may be drunk with a negative effect; boiling or another supported purification method should prepare normal drinking water. Consumption should be moderate. Prolonged dehydration may have stronger consequences, potentially including periodic damage, with timing and severity still to be decided.
+
+### Seasons and household planning
+
+Nutrition, drinking water and possible seasonal crop rules need to work together. Early preparation should lead to dependable routines: varied ingredient sources, cooking in batches and sufficient food and clean-water supplies. Later machinery should reduce repeated household work, leaving time for building and journeys. The intended challenge is planning ahead rather than constantly watching several meters.
+
+Seasons remain optional. Before seasonal crop limits are chosen, every required food group and drinking water need a practical supply route throughout the year, including for a new character starting in winter. Stored harvests, alternative crops and protected growing areas are possible ways to provide that access. Food or water shortages combined with penalties must not create a cycle that makes obtaining food or water progressively harder. Exact seasonal rules, integration and balance remain unselected.
