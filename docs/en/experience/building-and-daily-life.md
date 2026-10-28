@@ -10,6 +10,10 @@ Building blocks, furniture, decorative details and kitchen equipment help furnis
 
 [Quark](https://modrinth.com/project/qnQsVE2z) and [Supplementaries](https://modrinth.com/project/fFEIiSDQ) add building and decorative blocks alongside practical household objects. Nature’s Spirit connects some of the material variety with the biomes players explore.
 
+[Handcrafted](https://modrinth.com/mod/handcrafted) supplies a coordinated set of beds, nightstands, kitchen counters, cupboards and smaller household decorations. [Chipped](https://modrinth.com/mod/chipped) expands the surface patterns of familiar building materials. Its workbenches and handheld tools open a conversion menu for choosing a supported block variant; they serve a different purpose from furniture.
+
+Some ordinary furniture recipes share ingredients with existing blocks. [Polymorph’s result selector](../quality-of-life/#recipes-and-information) lets players choose between matching recipes in supported crafting menus. Create mechanical crafters use their own recipe lookup.
+
 Diagonal Fences, Diagonal Walls and Diagonal Windows extend the ways fences, walls and windows connect. Dramatic Doors adds tall and short doors; Reconnectible Chains connects fences with decorative chains. Together, these additions offer ways to shape an island house, workshop, town or ship interior.
 
 Create’s schematics and building tools support larger projects. [Engineering](../engineering/) describes how construction connects with moving machinery, while [convenience](../quality-of-life/) covers rearranging supported blocks and organizing supplies.

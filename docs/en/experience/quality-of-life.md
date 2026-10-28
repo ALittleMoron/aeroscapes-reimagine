@@ -10,6 +10,8 @@ The convenience tools help players find information, organize belongings and rem
 
 [EMI](https://modrinth.com/project/fRiHVvU7) lets players browse recipes and item uses across the pack. Jade shows information about the block or entity being looked at, while Item Descriptions adds descriptions of items, blocks and creatures. AppleSkin displays food information for hunger and saturation.
 
+[Polymorph](https://modrinth.com/mod/polymorph) adds a result-selection button when the same crafting ingredients match several recipes. Choose the intended item beside the output slot; its EMI integration also supports selecting a recipe while transferring ingredients. For example, beetroot can produce red dye or Create Food's shredded beetroot. This crafting-screen choice does not set the output of Create's mechanical crafters.
+
 Shulker Box Tooltip previews shulker-box contents. Effect Timer Plus adds a countdown and potency indicator to status-effect icons.
 
 ## Inventory and storage

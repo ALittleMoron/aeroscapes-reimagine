@@ -1,4 +1,4 @@
-Aeroscapes Reimagine 0.1.1 — third-party notices
+Aeroscapes Reimagine 0.1.2 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 Aeroscapes 1.0.8: Isabel / nuclearobelisk; CC BY-SA 4.0 for that author's
@@ -58,13 +58,51 @@ LGPL-3.0-only. Official unchanged client artifacts provide the rendering engines
 https://modrinth.com/mod/entity-model-features/version/197m3VoU
 https://modrinth.com/mod/entitytexturefeatures/version/lwNx1nD1
 
-Cubic Leaves 2.4 (performance): zanderest; CC BY-NC-SA 4.0.
-The resourcepack is unchanged; retain its original license and attribution.
-https://modrinth.com/resourcepack/cubic-leaves/version/qcHDQhNX
-https://creativecommons.org/licenses/by-nc-sa/4.0/
+Motschen's Better Leaves 9.6: Motschen; MIT.
+Unchanged original resourcepack retains its embedded copyright and license.
+https://modrinth.com/resourcepack/better-leaves/version/w4ReEpuG
 
 Create Touch-Ups 1.0: Spydnel; MIT. Supplied unchanged through the author's file.
 https://modrinth.com/resourcepack/create-touch-ups/version/aoJf3Iu6
 
 Original license files remain in original archives; third-party content retains its
 own terms.
+
+Atmosphere second wave (original client files; official download references):
+Fusion 1.3.16 and Fusion Connected Glass 1.0.1: SuperMartijn642; All Rights Reserved.
+https://modrinth.com/mod/fusion-connected-textures/version/AYDaLPK8
+https://modrinth.com/resourcepack/fusion-connected-glass/version/oYKivjVk
+Falling Leaves 1.21.1-2.6.0: Cheaterpaul, Fourmisain, BrekiTomasson,
+RandomMcSomethin; embedded LGPL-3.0 declaration, API LGPL-3.0-only.
+https://modrinth.com/mod/fallingleavesforge/version/ZTfOTZtM
+Fresh Animations: Player Extension 1.1.0: FreshLX; original file under the
+creator's published terms, which explicitly allow modpack inclusion.
+https://modrinth.com/resourcepack/fa-player-extension/version/Wj7NeGjP
+LambDynamicLights 4.8.11+1.21.1: LambdAurora; credits Akarys; Lambda License.
+Native runtime and its libraries remain bundled in the unchanged official JAR.
+No separate binary rehosting, modifications or permission from the author is claimed.
+https://modrinth.com/mod/lambdynamiclights/version/ksaGCvSu
+https://github.com/LambdAurora/LambDynamicLights
+Extended Illumina NEA: Ilyastik; All Rights Reserved.
+https://modrinth.com/resourcepack/extended-illumina-not-enough-animations/version/3hkMp9g6
+The small Aeroscapes atmosphere resourcepack supplies only an independently
+written falling-leaf setting for flowering azalea; no provider artwork is copied.
+
+Polymorph 1.1.0+1.21.1: Illusive Soulworks; LGPL-3.0-or-later.
+Unchanged official NeoForge artifact, retaining its embedded license and source link.
+https://modrinth.com/mod/polymorph/version/VEburL70
+https://github.com/illusivesoulworks/polymorph
+
+Handcrafted 4.0.3 and Chipped 4.0.2: Terrarium team and contributors.
+Original official files retain their declarations. Exact-version source uses
+Terrarium License v1: MIT for code/data; non-code artwork remains All Rights Reserved.
+The complete downloaded JARs are not relicensed MIT, modified or separately rehosted.
+https://modrinth.com/mod/handcrafted/version/JfqnpP2Z
+https://modrinth.com/mod/chipped/version/eqVowbGc
+https://github.com/terrarium-earth/Handcrafted/blob/8d21d1665916850c3fa3bdaf1370c50ec2ca7035/LICENSE
+https://github.com/terrarium-earth/Chipped/blob/8bd6428b0a961f1f139d738764604cc69b68d4d9/LICENSE
+Resourceful Lib 3.0.12: Team Resourceful; MIT. Its YABN and ByteCodecs
+libraries remain inside the unchanged official artifact.
+https://modrinth.com/mod/resourceful-lib/version/x99nCLTm
+Athena 4.0.6: Terrarium team and contributors; MIT.
+https://modrinth.com/mod/athena-ctm/version/dJgL278E

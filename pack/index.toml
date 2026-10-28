@@ -647,7 +647,7 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "9e0656039a1bd8c06563b7bcf8acd338d5601c3bcf24a91a11792f090bd6c112"
+hash = "f6fe14ddb2942fafbf8bbc2409abd6fcab2a9999115e9c250a255fc53970e120"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
@@ -675,6 +675,11 @@ metafile = true
 [[files]]
 file = "mods/appleskin.pw.toml"
 hash = "43e2d4365fb5e804dbed3488005273e814a32e990f04d31d871d3d2ddf6d9d8d"
+metafile = true
+
+[[files]]
+file = "mods/athena-ctm.pw.toml"
+hash = "0a0102812c02bc6ab4479a3e7166d28d986945665162f33eed2dc3080c96bf51"
 metafile = true
 
 [[files]]
@@ -715,6 +720,11 @@ metafile = true
 [[files]]
 file = "mods/chatanimation.pw.toml"
 hash = "786dbe15362fc3fe9ba5790a3b10e8990f64c383972891c7f4fbf0a7af8d1f12"
+metafile = true
+
+[[files]]
+file = "mods/chipped.pw.toml"
+hash = "db745ace59fa64d787e321e973fc16dfc7d3f20a00f302f6e13d17caa9b996ea"
 metafile = true
 
 [[files]]
@@ -883,6 +893,11 @@ hash = "aaa215489fb8199f1764163c5a85ca60b29c136b3665ace431eb63db2d283d77"
 metafile = true
 
 [[files]]
+file = "mods/fallingleavesforge.pw.toml"
+hash = "61c964d14abc68d3cb625647599c8ea15427305b5b53b7fbbe43613f4a88ab30"
+metafile = true
+
+[[files]]
 file = "mods/farmers-delight.pw.toml"
 hash = "5cb09ce71e06b4034e966cf0bc5939be6968ca4d6f5d43976eccb7ddf38aa42e"
 metafile = true
@@ -890,11 +905,6 @@ metafile = true
 [[files]]
 file = "mods/ferrite-core.pw.toml"
 hash = "9eb90b689acf910b85ed636870deef8589aa00c002d29919918ffe2918c2443c"
-metafile = true
-
-[[files]]
-file = "mods/first-person-model.pw.toml"
-hash = "16299236b20825b7cef49884d0c40de4a63d1422bc1b545342faa77148fcd45d"
 metafile = true
 
 [[files]]
@@ -918,6 +928,11 @@ hash = "83d36997040fd7cc6abc5155cc758345e919a2e842ad978c2203382284cec356"
 metafile = true
 
 [[files]]
+file = "mods/fusion-connected-textures.pw.toml"
+hash = "4bd3b229970b30d15b6233bbfe19af8a6894d6954f6fb0f13c0fbcac16e8d052"
+metafile = true
+
+[[files]]
 file = "mods/fzzy-config.pw.toml"
 hash = "3677160b8726e293da2c602edff0956e4a26f0a17bea1d51986bd6aab4cd3403"
 metafile = true
@@ -930,6 +945,11 @@ metafile = true
 [[files]]
 file = "mods/globalpacks.pw.toml"
 hash = "de418c840ec0e040286039a262aeeef44a052c4feca5279ee227da17377ae4a8"
+metafile = true
+
+[[files]]
+file = "mods/handcrafted.pw.toml"
+hash = "2827236cdf28e1d20904bbfca49d4e276d24a2562fac81ba87fd23eb7b9ab477"
 metafile = true
 
 [[files]]
@@ -960,6 +980,11 @@ metafile = true
 [[files]]
 file = "mods/kotlin-for-forge.pw.toml"
 hash = "1e577da31d348a11a2693de892a81b3030076d4f35f27d67812f7b17e3a37cb8"
+metafile = true
+
+[[files]]
+file = "mods/lambdynamiclights.pw.toml"
+hash = "88ce67a644ff425064dc24478ed35e1f603975d4699d6d48946fd7a3ecde45d0"
 metafile = true
 
 [[files]]
@@ -1048,6 +1073,11 @@ hash = "6a93ba098014bd60b0b708ab259b27f51003fa29dbdb9a700b39e6e07954e240"
 metafile = true
 
 [[files]]
+file = "mods/polymorph.pw.toml"
+hash = "965ce7894aa8651410e9b8d51fcb22d77cf0c6749471f08bfe9685613d4f3188"
+metafile = true
+
+[[files]]
 file = "mods/puzzles-lib.pw.toml"
 hash = "156a78c6e692135de3647d4a01a0b3e68286e3988b2a7e565abc718030b3a06d"
 metafile = true
@@ -1065,6 +1095,11 @@ metafile = true
 [[files]]
 file = "mods/resourceful-config.pw.toml"
 hash = "777a0487c2b458701bc6689ce665df23990d2d9cf16213346d53c9cade35c2cf"
+metafile = true
+
+[[files]]
+file = "mods/resourceful-lib.pw.toml"
+hash = "36c7e1d360de3bafd5c4b8c7cd2aa1bf9ccae8be5ed94379d95f69fd48aa5ca2"
 metafile = true
 
 [[files]]
@@ -1199,7 +1234,20 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "cd4971249fb62fdffaba8eb58e243e9a3bfe094edb7e07af827c37225254b00c"
+hash = "a5aad409ff3f9bf5bf734511cedd70dd7d189b13e9065bffc2589f364fd868af"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/fallingleaves/settings/flowering_azalea_leaves.json"
+hash = "31c6a28688bfb9d951f4d0b86d8e66c20b80b48b029f51764b7f9df0464af29d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/pack.mcmeta"
+hash = "cdea174265b490f6b7988f67257716a028927501e1663505af016a672a4fe885"
+
+[[files]]
+file = "resourcepacks/better-leaves.pw.toml"
+hash = "08c000809fa315f44e8254b40be90e345d696c5ec6658939184f1824f4ff96ce"
+metafile = true
 
 [[files]]
 file = "resourcepacks/create-touch-ups.pw.toml"
@@ -1207,13 +1255,23 @@ hash = "bc001aefc2d87920da760062aa0fc5eda117e4a9684ad1d0922dbc3be5e426ae"
 metafile = true
 
 [[files]]
-file = "resourcepacks/cubic-leaves.pw.toml"
-hash = "e8e01d9dfd4f72bc559fb353c007ad205d14949d274566fd963a30ca58b76718"
+file = "resourcepacks/extended-illumina-not-enough-animations.pw.toml"
+hash = "ef6b6c56cfb83ad2fc636576e6a9f09b52a63ae0af2950abd56ab054c62e66aa"
+metafile = true
+
+[[files]]
+file = "resourcepacks/fa-player-extension.pw.toml"
+hash = "953ace5562e5c6bfb3a6edc0b5c3021031ec0f7b65efe94819d6e66fd79b118a"
 metafile = true
 
 [[files]]
 file = "resourcepacks/fresh-animations.pw.toml"
 hash = "3763920ceab65324c0fa5179f62a14eba09922a64cd03e68caeb28e24e706e2d"
+metafile = true
+
+[[files]]
+file = "resourcepacks/fusion-connected-glass.pw.toml"
+hash = "b0fea23d3341f00124c72a759304ff1ecfbc9b91d5e59cf9e120e1b3a0d5b746"
 metafile = true
 
 [[files]]

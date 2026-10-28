@@ -2333,13 +2333,14 @@
         "dependency_type": "required"
       }
     ],
-    "status": "included",
+    "status": "excluded",
     "origin": "project selection",
     "game_versions": [
       "1.21.1"
     ],
     "sha1": "6e0be1de6a5aab6cda8496984376a0114cf5a840",
-    "file_size": 1537453
+    "file_size": 1537453,
+    "reason": "Owner-authorized removal after reported first-person obstruction/clipping with FA Player flight/body transforms. Exact 2.7.3 has no verified per-flight/body hide setting; keep FA Player, NEA and 3D Skin Layers."
   },
   {
     "slug": "flerovium",
@@ -2944,8 +2945,73 @@
     "slug": "lambdynamiclights",
     "name": "LambDynamicLights - Dynamic Lights",
     "project_id": "yBW8D80W",
-    "status": "deferred",
-    "reason": "Dynamic light is deferred until the baseline frame-time measurement."
+    "version_id": "ksaGCvSu",
+    "version": "4.8.11+1.21.1",
+    "filename": "lambdynamiclights-4.8.11+1.21.1.jar",
+    "sha512": "0286076e8b2922dfbe90cd4544a0d16e6d07d7249c732a37479ea4281e9cf96c86dd2e1ce5261489bd5553ceba33044bc550a04b9eb582645eb97f15c9c6a64c",
+    "sha1": "7b5afc75a094b4e8a7118f9856eec959b10f2422",
+    "file_size": 2023375,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "fabric",
+      "neoforge",
+      "quilt"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-Lambda-License",
+      "name": "",
+      "url": "https://github.com/LambdAurora/LambDynamicLights/blob/1.21.5/LICENSE"
+    },
+    "source_url": "https://github.com/LambdAurora/LambDynamicLights",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere second wave, 2026-10-28; unchanged official Modrinth file",
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "reCfnRvJ",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "PxQSWIcD",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      }
+    ],
+    "dependency_note": "The universal Modrinth release lists Fabric API for its Fabric route. The exact native NeoForge wrapper bundles its required runtime, API, SpruceUI and Yumi libraries; no Fabric API or Connector is required. Native ranges and shader/ship acceptance are recorded in metadata/README.md.",
+    "artifact_license": "Embedded LICENSE_lambdynamiclights is the Lambda License. Original JAR is downloaded from its official Modrinth URL; no binary is bundled, modified or rehosted.",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy. This does not grant separate binary redistribution or modification permission.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
   },
   {
     "slug": "libipn",
@@ -5219,7 +5285,7 @@
     ],
     "sha1": "eaf28f57dee43c469534953517501a021d28cf21",
     "file_size": 743793,
-    "dependency_note": "FreshLX recommends EMF and ETF; both native client engines are selected for this resourcepack. No player animation extension is included."
+    "dependency_note": "FreshLX recommends EMF and ETF; both native client engines are selected. The separately selected official Player Extension supplies player animation."
   },
   {
     "slug": "cubic-leaves",
@@ -5255,7 +5321,7 @@
         "dependency_type": "optional"
       }
     ],
-    "status": "included",
+    "status": "excluded",
     "origin": "Owner-approved atmosphere first wave, 2026-10-28; unchanged official Modrinth file",
     "game_versions": [
       "1.13",
@@ -5311,7 +5377,8 @@
       "26.3"
     ],
     "sha1": "041218e2c3d958cfd0aff9732685e832f3698ee8",
-    "file_size": 832436
+    "file_size": 832436,
+    "reason": "Owner selected Motschen Better Leaves instead on 2026-10-28 for its appearance; no Cubic bug was reported."
   },
   {
     "slug": "create-touch-ups",
@@ -5342,5 +5409,464 @@
     ],
     "sha1": "8d6e637d9f9dcad4a693c9c3c460b8aef8ed5de0",
     "file_size": 150044
+  },
+  {
+    "slug": "fusion-connected-textures",
+    "name": "Fusion (Connected Textures)",
+    "project_id": "p19vrgc2",
+    "version_id": "AYDaLPK8",
+    "version": "1.3.16-neoforge-mc1.21.1",
+    "filename": "fusion-1.3.16-neoforge-mc1.21.1.jar",
+    "sha512": "0b65c3a78db5785c76a222639a56da0cd09fc8445e02cdfb84e4bb7c88dc2c5622ccb468291a12df30440205a881db2023d9857fdb7252e7d21238876fcc8608",
+    "sha1": "c3cd7c2718583aa5a12e8502c6b92e050bad0c19",
+    "file_size": 947335,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/SuperMartijn642/Fusion",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere second wave, 2026-10-28; unchanged official Modrinth file"
+  },
+  {
+    "slug": "fusion-connected-glass",
+    "name": "Fusion Connected Glass",
+    "project_id": "xuN3KzPl",
+    "version_id": "oYKivjVk",
+    "version": "1.0.1-mc1.20-26.3",
+    "filename": "Fusion Connected Glass v1.0.1 for Minecraft 1.20-1.21.8.zip",
+    "sha512": "52eb4da683dffa4cf25d26b79e420d5488509128567ca6ec447859ae9e6bd855ad0cc722b45731f151b0a919283514d2f449e655e273ac86e9ab937e048e889b",
+    "sha1": "48210e165b4df035509c2cdaba654afdb0ad27b3",
+    "file_size": 191578,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2",
+      "26.3"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/SuperMartijn642/FusionResourcePacks",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "p19vrgc2",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved atmosphere second wave, 2026-10-28; unchanged official Modrinth file"
+  },
+  {
+    "slug": "fa-player-extension",
+    "name": "Fresh Animations: Player Extension",
+    "project_id": "TAIMVZCL",
+    "version_id": "Wj7NeGjP",
+    "version": "1.1.0",
+    "filename": "FA+Player-v1.1.zip",
+    "sha512": "d2a5c46ae53e4bb6355604a1ade253ab49f1deb205f5ee69085014965241d3c9623204951ab174a5dbdaf24d9b25ecae9a1638cc6a13d780b398a6d70d157a4e",
+    "sha1": "122e397af111e3dc5fb6b60004aad9464980f13a",
+    "file_size": 110203,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2",
+      "26.3"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere second wave, 2026-10-28; unchanged official Modrinth file",
+    "dependency_note": "Requires the already included Entity Model Features 3.3.12 and Entity Texture Features 7.2.6. FreshLX terms explicitly allow modpack inclusion; use the unmodified official file. Player/body/NEA/equipment compatibility remains client acceptance."
+  },
+  {
+    "slug": "extended-illumina-not-enough-animations",
+    "name": "Extended illumina (NOT ENOUGH ANIMATIONS support)",
+    "project_id": "UHU8yZyL",
+    "version_id": "3hkMp9g6",
+    "version": "1",
+    "filename": "§eExtended_Illumina_NEA_1.21x.zip",
+    "sha512": "f14ad0d6e248e3cb2d9722719c31f91a0adc354f58995dc262efa9b50e568d49bc582bf5cefcc088dd66ca932484bcc665dab3a49682b160a6846c6c55a112fa",
+    "sha1": "36915007608f62a363ccf97d64a4fe2dae9ff377",
+    "file_size": 5185,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere second wave, 2026-10-28; unchanged official Modrinth file"
+  },
+  {
+    "slug": "fallingleavesforge",
+    "name": "Falling Leaves (NeoForge/Forge)",
+    "project_id": "2JAUNCL4",
+    "version_id": "ZTfOTZtM",
+    "version": "1.21.1-2.6.0",
+    "filename": "fallingleaves-1.21.1-2.6.0.jar",
+    "sha512": "96c300ebc2110b95c8315467ee7a5d123b9143461ebe0608e6201fe7fb18279e38b87d9fa5321640a394a8f37477c375fd98cac907b6fa9b02c4d6611c02c45c",
+    "sha1": "c1ae4a2ca27be388d4c2fc75eff208059eaf4cc9",
+    "file_size": 153794,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/Cheaterpaul/fallingleaves",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved atmosphere second wave, 2026-10-28; unchanged official Modrinth file",
+    "dependency_note": "Exact NeoForge descriptor requires NeoForge >=21.1.80 and Minecraft [1.21.1,1.21.2); no additional library. Native cherry spawnrate is zero. The owned atmosphere resourcepack also sets flowering azalea spawnrate to zero so Subtle Effects retains that particle role."
+  },
+  {
+    "slug": "polymorph",
+    "name": "Polymorph",
+    "project_id": "tagwiZkJ",
+    "version_id": "VEburL70",
+    "version": "1.1.0+1.21.1",
+    "filename": "polymorph-neoforge-1.1.0+1.21.1.jar",
+    "sha512": "37358e19d8f251b7d435ea5198eded7b1361e90d5728e11fcb15aeb55786f4ee10fd8fecd14b11f34a99bd92aea01a9977c0dbc46ab6bb07af61a6c89455b6ff",
+    "sha1": "84f8c539fa326dc723ae62b7a6916d6b01982d07",
+    "file_size": 174972,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-or-later",
+      "name": "GNU Lesser General Public License v3.0 or later",
+      "url": null
+    },
+    "source_url": "https://github.com/illusivesoulworks/polymorph",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved recipe-result selection, 2026-10-28; unchanged official stable NeoForge file",
+    "dependency_note": "Native descriptor requires Minecraft[1.21,1.22) and NeoForge>=21.0.67; no external libraries. Stable 1.1.0 selected instead of newer beta. Original source/binary EMI hooks match installed EMI1.1.22 descriptors. Ordinary player crafting selection does not control Create mechanical crafting or restore overwritten recipe IDs."
+  },
+  {
+    "slug": "handcrafted",
+    "name": "Handcrafted",
+    "project_id": "pJmCFF0p",
+    "version_id": "JfqnpP2Z",
+    "version": "4.0.3",
+    "filename": "handcrafted-neoforge-1.21.1-4.0.3.jar",
+    "sha512": "4ff5fb2aa9582b886d03f647fe9b8c12a828d29a1787e9c9b463be18192ea798e6a4ac83479623042791bce0bacbf6e3e2c2e9ef086640aeeb6970d3404e7ee4",
+    "sha1": "8ecd27f1d66f9b742cfae3c8ffa773765f574b52",
+    "file_size": 7132842,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-Terrarium-Licence",
+      "name": "",
+      "url": "https://github.com/terrarium-earth/Handcrafted/blob/1.19.2/LICENSE"
+    },
+    "source_url": "https://github.com/terrarium-earth/Handcrafted",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "G1hIVOrD",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved Handcrafted/Chipped and Better Leaves integration, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no separate binary rehosting or modification permission is claimed.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "artifact_license": "Native JAR declaration is Terrarium License. Version-matched upstream source uses Terrarium v1: MIT code/data, non-code artwork ARR; no blanket MIT license for the complete archive."
+  },
+  {
+    "slug": "chipped",
+    "name": "Chipped",
+    "project_id": "BAscRYKm",
+    "version_id": "eqVowbGc",
+    "version": "4.0.2",
+    "filename": "chipped-neoforge-1.21.1-4.0.2.jar",
+    "sha512": "f3083b01267e7c674c4b42f45a317c93ee7723443cba2051fe5bc593638b533b0fe90699e2101661c934dff458eab693cce4e188533bfe977778c249563a2fa5",
+    "sha1": "6f5395f58139802edfde7cb9170279f92f291971",
+    "file_size": 15020578,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/terrarium-earth/Chipped",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "b1ZV3DIJ",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "G1hIVOrD",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved Handcrafted/Chipped and Better Leaves integration, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no separate binary rehosting or modification permission is claimed.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "artifact_license": "Native JAR declaration is Terrarium License; Modrinth API label is ARR. Version-matched upstream source uses Terrarium v1: MIT code/data, non-code artwork ARR; no blanket MIT license for the complete archive.",
+    "dependency_note": "Native descriptor requires Resourceful Lib>=3.0.0 on BOTH sides and Athena>=4.0.0 on CLIENT only. Athena is pinned client-only. Optional JEI is not selected; EMI remains the recipe viewer."
+  },
+  {
+    "slug": "better-leaves",
+    "name": "Motschen's Better Leaves",
+    "project_id": "uvpymuxq",
+    "version_id": "w4ReEpuG",
+    "version": "9.6",
+    "filename": "Better-Leaves-9.6.zip",
+    "sha512": "793dacaca4c200656e8875195e42975ecb628af114e13aad2059368b51cf45f00280f86075368e9adf492e847718a9d593bdf481664e10cf1aa9628d2a51a8d6",
+    "sha1": "fa3a961b82a9f15a4e80b1f7f021bc121649f073",
+    "file_size": 1977146,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/TeamMidnightDust/BetterLeavesLite/",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "GNxdLCoP",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved Handcrafted/Chipped and Better Leaves integration, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no separate binary rehosting or modification permission is claimed.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "resourceful-lib",
+    "name": "Resourceful Lib",
+    "project_id": "G1hIVOrD",
+    "version_id": "x99nCLTm",
+    "version": "3.0.12",
+    "filename": "resourcefullib-neoforge-1.21-3.0.12.jar",
+    "sha512": "a9d20e345faa9bcb297bd95ac9524205834804d1bb13518397dd4f7f62b352b08c3339ee7f7870d3669078ceeb33d5c31ea527aecce4b31d62ec1ff7d8b562c8",
+    "sha1": "24389c8e48ff0e8594e4686b750c494c66a5f8df",
+    "file_size": 484332,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/Team-Resourceful/ResourcefulLib",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved Handcrafted/Chipped and Better Leaves integration, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no separate binary rehosting or modification permission is claimed.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "dependency_note": "Exact native 1.21 artifact bundles YABN1.0.3 and ByteCodecs1.1.2. Source audit uses 1.21.1 branch commit95968b13173937e9166b4224ff7528508bdb144c, not similarly named later-platform tag."
+  },
+  {
+    "slug": "athena-ctm",
+    "name": "Athena",
+    "project_id": "b1ZV3DIJ",
+    "version_id": "dJgL278E",
+    "version": "4.0.6",
+    "filename": "athena-neoforge-1.21.1-4.0.6.jar",
+    "sha512": "ab40a306a26ce834daae921a1e87768cd2538a4bfe27a4480f97af854084cc334e7416b1bd0b7583834a32a86951283f29fd4b1df7b98a967a6b26a3ec05e2cf",
+    "sha1": "4bcbdf388bd5e387beca7c627224aac33584b55b",
+    "file_size": 99944,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/terrarium-earth/Athena",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved Handcrafted/Chipped and Better Leaves integration, 2026-10-28; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Reference the unchanged official Modrinth-hosted file under the specific-file modpack policy; no separate binary rehosting or modification permission is claimed.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
   }
 ]

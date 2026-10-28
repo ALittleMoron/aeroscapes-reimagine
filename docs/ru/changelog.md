@@ -4,6 +4,15 @@ description: История версий.
 status: available
 ---
 
+## 0.1.2
+
+- Добавлены мебель Handcrafted и строительные варианты Chipped с Resourceful Lib и Athena.
+- Cubic Leaves заменён на Motschen’s Better Leaves.
+- Удалён First-person Model из-за пересечений тела с камерой и перекрытия обзора вниз в полёте; наборы анимаций персонажа сохранены.
+- Добавлен Polymorph для выбора между совпадающими рецептами, включая перенос ингредиентов через EMI.
+- Добавлены Fusion Connected Glass с Fusion, Falling Leaves, Fresh Animations: Player Extension и переносной свет через LambDynamicLights с Extended Illumina NEA.
+- Новые ресурспаки выбраны в свежих клиентских профилях; частицы цветущей азалии оставлены за Subtle Effects без дублирования фоновыми падающими листьями.
+
 ## 0.1.1
 
 - Добавлен авторский манифест об ИИ и авторстве с разбором правил Modrinth на русском и английском языках.

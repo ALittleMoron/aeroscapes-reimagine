@@ -1,0 +1,12 @@
+name = "Extended illumina (NOT ENOUGH ANIMATIONS support)"
+filename = "§eExtended_Illumina_NEA_1.21x.zip"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/UHU8yZyL/versions/3hkMp9g6/%C2%A7eExtended_Illumina_NEA_1.21x.zip"
+hash-format = "sha512"
+hash = "f14ad0d6e248e3cb2d9722719c31f91a0adc354f58995dc262efa9b50e568d49bc582bf5cefcc088dd66ca932484bcc665dab3a49682b160a6846c6c55a112fa"
+
+[update.modrinth]
+mod-id = "UHU8yZyL"
+version = "3hkMp9g6"

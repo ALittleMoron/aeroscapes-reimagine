@@ -705,21 +705,6 @@
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
     },
     {
-      "slug": "first-person-model",
-      "primary_project_id": "H5XMjpHi",
-      "primary_sha512": "979a3c50048042e1bcb623d89c04c7fe7048e173d7f77305edc7adc5b5580040439a7c5e001a55eab2d7cc6e2e0d13e75d8be165da13dea61ee126a794101763",
-      "status": "hosted",
-      "project_id": 333287,
-      "file_id": 8990482,
-      "filename": "firstperson-neoforge-2.7.3-mc1.21.1.jar",
-      "sha512": "979a3c50048042e1bcb623d89c04c7fe7048e173d7f77305edc7adc5b5580040439a7c5e001a55eab2d7cc6e2e0d13e75d8be165da13dea61ee126a794101763",
-      "sha1": "6e0be1de6a5aab6cda8496984376a0114cf5a840",
-      "file_size": 1537453,
-      "parity": "exact",
-      "review": {},
-      "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
-    },
-    {
       "slug": "flerovium",
       "primary_project_id": "4Rh1Mobu",
       "primary_sha512": "6301ea6991768832fa983f61e1b0574336aea4920e027632a3df93c8a10f5d87041876fad516d16827d9cd13a84b5a8c334c1a0076ca04121e321939d5d6ea52",
@@ -1709,18 +1694,95 @@
       "reason": "New atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
     },
     {
-      "slug": "cubic-leaves",
-      "primary_project_id": "6nx7bid1",
-      "primary_sha512": "38d3e7fbc3a34d97f498c054bd9746c9be1cea06b553b81a32092f4b12fc17e5f18017451a9bb004021764c2133379a002e241d241931458eddbcd0211050ae6",
-      "status": "blocked",
-      "reason": "New atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
-    },
-    {
       "slug": "create-touch-ups",
       "primary_project_id": "BmapKTHd",
       "primary_sha512": "64f44f78f580428454f071f3af4662fd54ba8dcce5ad1d4c57b6408807214cc7c5aeb98d519a3f91f02df39b92c2f14badda4e994a5b0caacda1f67c7d40516a",
       "status": "blocked",
       "reason": "New atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
+    },
+    {
+      "slug": "fusion-connected-textures",
+      "status": "blocked",
+      "reason": "Second-wave atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it.",
+      "primary_project_id": "p19vrgc2",
+      "primary_sha512": "0b65c3a78db5785c76a222639a56da0cd09fc8445e02cdfb84e4bb7c88dc2c5622ccb468291a12df30440205a881db2023d9857fdb7252e7d21238876fcc8608"
+    },
+    {
+      "slug": "fusion-connected-glass",
+      "status": "blocked",
+      "reason": "Second-wave atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it.",
+      "primary_project_id": "xuN3KzPl",
+      "primary_sha512": "52eb4da683dffa4cf25d26b79e420d5488509128567ca6ec447859ae9e6bd855ad0cc722b45731f151b0a919283514d2f449e655e273ac86e9ab937e048e889b"
+    },
+    {
+      "slug": "fa-player-extension",
+      "status": "blocked",
+      "reason": "Second-wave atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it.",
+      "primary_project_id": "TAIMVZCL",
+      "primary_sha512": "d2a5c46ae53e4bb6355604a1ade253ab49f1deb205f5ee69085014965241d3c9623204951ab174a5dbdaf24d9b25ecae9a1638cc6a13d780b398a6d70d157a4e"
+    },
+    {
+      "slug": "lambdynamiclights",
+      "status": "blocked",
+      "reason": "Second-wave atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it.",
+      "primary_project_id": "yBW8D80W",
+      "primary_sha512": "0286076e8b2922dfbe90cd4544a0d16e6d07d7249c732a37479ea4281e9cf96c86dd2e1ce5261489bd5553ceba33044bc550a04b9eb582645eb97f15c9c6a64c"
+    },
+    {
+      "slug": "extended-illumina-not-enough-animations",
+      "status": "blocked",
+      "reason": "Second-wave atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it.",
+      "primary_project_id": "UHU8yZyL",
+      "primary_sha512": "f14ad0d6e248e3cb2d9722719c31f91a0adc354f58995dc262efa9b50e568d49bc582bf5cefcc088dd66ca932484bcc665dab3a49682b160a6846c6c55a112fa"
+    },
+    {
+      "slug": "fallingleavesforge",
+      "status": "blocked",
+      "reason": "Second-wave atmosphere file has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it.",
+      "primary_project_id": "2JAUNCL4",
+      "primary_sha512": "96c300ebc2110b95c8315467ee7a5d123b9143461ebe0608e6201fe7fb18279e38b87d9fa5321640a394a8f37477c375fd98cac907b6fa9b02c4d6611c02c45c"
+    },
+    {
+      "slug": "polymorph",
+      "primary_project_id": "tagwiZkJ",
+      "primary_sha512": "37358e19d8f251b7d435ea5198eded7b1361e90d5728e11fcb15aeb55786f4ee10fd8fecd14b11f34a99bd92aea01a9977c0dbc46ab6bb07af61a6c89455b6ff",
+      "status": "blocked",
+      "reason": "Selected stable Polymorph has no reviewed byte-identical CurseForge mapping; the disabled channel must not substitute or omit it."
+    },
+    {
+      "slug": "handcrafted",
+      "primary_project_id": "pJmCFF0p",
+      "primary_sha512": "4ff5fb2aa9582b886d03f647fe9b8c12a828d29a1787e9c9b463be18192ea798e6a4ac83479623042791bce0bacbf6e3e2c2e9ef086640aeeb6970d3404e7ee4",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "chipped",
+      "primary_project_id": "BAscRYKm",
+      "primary_sha512": "f3083b01267e7c674c4b42f45a317c93ee7723443cba2051fe5bc593638b533b0fe90699e2101661c934dff458eab693cce4e188533bfe977778c249563a2fa5",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "better-leaves",
+      "primary_project_id": "uvpymuxq",
+      "primary_sha512": "793dacaca4c200656e8875195e42975ecb628af114e13aad2059368b51cf45f00280f86075368e9adf492e847718a9d593bdf481664e10cf1aa9628d2a51a8d6",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "resourceful-lib",
+      "primary_project_id": "G1hIVOrD",
+      "primary_sha512": "a9d20e345faa9bcb297bd95ac9524205834804d1bb13518397dd4f7f62b352b08c3339ee7f7870d3669078ceeb33d5c31ea527aecce4b31d62ec1ff7d8b562c8",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "athena-ctm",
+      "primary_project_id": "b1ZV3DIJ",
+      "primary_sha512": "ab40a306a26ce834daae921a1e87768cd2538a4bfe27a4480f97af854084cc334e7416b1bd0b7583834a32a86951283f29fd4b1df7b98a967a6b26a3ec05e2cf",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

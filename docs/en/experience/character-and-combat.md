@@ -4,13 +4,13 @@ description: Current character presentation and enchantments, with plans for rac
 status: partial
 ---
 
-The pack already includes a visible first-person body, additional third-person animations and equipment enchantments. Races, classes, character progression and the intended action-combat system are planned additions.
+The pack already includes additional character animations, detailed skin layers and equipment enchantments. Races, classes, character progression and the intended action-combat system are planned additions.
 
 ## Enchantments and character rendering
 
 [Allurement](https://modrinth.com/project/eIO12l2t) adds enchantments and changes parts of enchanting, including the ability to enchant horse armor.
 
-First-person Model, Not Enough Animations and 3D Skin Layers change how the character is shown. Their roles are described under [graphics, sound and animation](../quality-of-life/presentation/). [Convenience](../quality-of-life/) covers inventory recovery through Corpse.
+Fresh Animations: Player Extension, Not Enough Animations and 3D Skin Layers change how the character is shown. Their roles are described under [graphics, sound and animation](../quality-of-life/presentation/). [Convenience](../quality-of-life/) covers inventory recovery through Corpse.
 
 ## Races and classes
 

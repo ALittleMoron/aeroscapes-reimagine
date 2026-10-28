@@ -4,6 +4,15 @@ description: Version history.
 status: available
 ---
 
+## 0.1.2
+
+- Add Handcrafted furniture and Chipped building variants with Resourceful Lib and Athena.
+- Replace Cubic Leaves with Motschen’s Better Leaves.
+- Remove First-person Model after body clipping and downward-view obstruction during flight; retain the player animation packs.
+- Add Polymorph for choosing between matching crafting results, including EMI recipe transfer.
+- Add Fusion Connected Glass with Fusion, Falling Leaves, Fresh Animations: Player Extension, and portable light through LambDynamicLights and Extended Illumina NEA.
+- Select the new resourcepacks in fresh client profiles and keep flowering azalea particles with Subtle Effects to avoid duplicate ambient falling leaves.
+
 ## 0.1.1
 
 - Add the author's manifesto on AI and authorship, discussing Modrinth's rules in English and Russian.

@@ -10,6 +10,75 @@ Unchanged files hosted on Modrinth are referenced through their official downloa
 
 ## Local resource integration
 
+### Atmosphere resources
+
+The second atmosphere wave uses unchanged official client downloads: Fusion
+1.3.16, Fusion Connected Glass 1.0.1, Falling Leaves 1.21.1-2.6.0,
+Fresh Animations: Player Extension 1.1.0, LambDynamicLights 4.8.11+1.21.1 and
+Extended Illumina NEA. Their exact identities and terms are in `artifacts.json`.
+FreshLX explicitly allows modpack inclusion. Fusion and its glass pack retain
+ARR; Lamb retains its embedded Lambda License. Official Modrinth download
+references do not grant separate binary rehosting or modified redistribution.
+
+The universal Lamb file's provider dependency list includes Fabric API, but its
+native NeoForge descriptor loads a bundled runtime/API, SpruceUI and Yumi
+libraries. No Fabric API or Connector is selected. The raw provider list remains
+in `provider_dependencies`; `dependencies` reflects this pack's native route.
+Its bundled native requirements are checked by the artifact audit. Lamb's
+native settings remain unchanged; shader handlight coordination and ship-local
+light are not established by that audit.
+
+The owned `pack/resourcepacks/aeroscapes-reimagine-atmosphere/` contains an
+independent Falling Leaves setting for `minecraft:flowering_azalea_leaves`:
+`spawnrate=0.0` leaves ambient petals to Subtle Effects. Leaf bursts from
+attacks or decay are separate native behavior. Falling Leaves
+already supplies that setting for cherry leaves. Its exact `LeafSettingsEntry`
+codec and resource loader accept per-block settings at
+`assets/<namespace>/fallingleaves/settings/<block>.json`. The small pack contains
+no copied provider models or textures. It and the new third-party resourcepacks
+are switchable initial selections for fresh profiles, not enforced resources.
+
+### Furniture, building materials and leaves
+
+Handcrafted 4.0.3 and Chipped 4.0.2 are unchanged official NeoForge files on
+both sides. They require Resourceful Lib >=3.0.0; the selected native 3.0.12
+file bundles YABN and ByteCodecs. Chipped also requires Athena >=4.0.0 on the
+client; Athena 4.0.6 is client-only here. Fusion does not replace Athena.
+No external dependency beyond these libraries is required by their native
+descriptors. The two content mods add saved block IDs: keep the matching pack
+and a backup when rolling back worlds that use them.
+
+The content mods' JAR declarations and Modrinth API labels remain in the exact
+records. Their version-matched source license is Terrarium v1: code/data MIT,
+non-code artwork ARR. This does not license the complete archives as MIT.
+Resourceful Lib and Athena use MIT. Resourceful Lib's matching 1.21 source is
+commit `95968b13173937e9166b4224ff7528508bdb144c`; the similarly named v3.0.12
+tag belongs to its later 1.21.3 lineage and is not this file's source audit.
+All new files use official Modrinth download references under the specific-file
+policy, with no extracted artwork or modified provider archive.
+
+Motschen's Better Leaves 9.6 replaces Cubic Leaves, selected by the owner for
+its appearance. Its original ZIP includes MIT and supported formats 15..255,
+including this pack's format 34; Cull Leaves is optional and is not added.
+Better covers vanilla, Quark, most Nature's Spirit and Chipped leaf blockstates.
+Coconut retains its own Nature's Spirit model; Galosphere opal indirectly
+inherits the changed vanilla leaf parent. Cubic is excluded rather than stacked.
+
+Ordinary Handcrafted crafts can compete with Quark vertical planks and
+Supplementaries item shelves. Polymorph selects matching ordinary crafting
+results, including EMI transfer. Chipped variants use their own conversion menu;
+its seven stations and six handheld tools share the catalog lookup. Neither
+selector controls Create mechanical crafting or recovers overwritten recipe IDs.
+Static recipe scans do not prove all expanded tag/condition matches at runtime.
+
+First-person Model 2.7.3 is excluded after the owner's report of body clipping
+and blocked downward flight view. Exact-file inspection found fixed camera/body
+offsets and FA Player's animated whole-body transforms, with no verified native
+setting that reconciles them. This is a static explanation, not a reproduced
+render diagnosis. FA Player, Not Enough Animations and 3D Skin Layers remain.
+
+### Existing world resources
+
 The complete modified NBT and JSON payloads listed below have been removed from editable pack inputs. The owned mod reads unchanged installed originals and applies independent, minimal field operations in memory. It does not write generated provider data into the distributed pack. Hash-bound recipes guard original JSON identity before applying edits; native resource/registry loading consumes the results. Minimal empty pools, project predicates/tags and grounded-feature references remain project integrations rather than copied full definitions.
 
 | Provider                                | Current local processing, including previously inherited structure wrappers                                                                                                                                                                                   |

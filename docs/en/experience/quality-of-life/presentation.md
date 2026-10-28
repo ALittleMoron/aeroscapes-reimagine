@@ -4,11 +4,13 @@ description: Character rendering, ambient sound, visual details and shader choic
 status: available
 ---
 
-A visible first-person body, more detailed animations, environmental sound and small visual effects add to Minecraft’s standard presentation.
+More detailed animations, environmental sound and small visual effects add to Minecraft’s standard presentation.
 
 ## Character and camera
 
-[First-person Model](https://modrinth.com/project/H5XMjpHi) renders the character’s body in first person, including when looking down. [Not Enough Animations](https://modrinth.com/project/MPCX6s5C) adds and improves third-person animations. 3D Skin Layers renders the outer skin layer with depth.
+[Not Enough Animations](https://modrinth.com/project/MPCX6s5C) adds and improves third-person animations. 3D Skin Layers renders the outer skin layer with depth. First person uses the normal hand view: rendering the whole animated body could obstruct the view during flight.
+
+[Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) adds more expressive movement, poses and hand animations to the player. It uses the same Entity Model Features and Entity Texture Features engines as Fresh Animations for creatures.
 
 These mods change how the existing character is shown. Races, abilities, expanded action combat and a side-offset third-person camera are described in [character and combat](../../character-and-combat/).
 
@@ -16,9 +18,19 @@ These mods change how the existing character is shown. Races, abilities, expande
 
 [Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) gives existing creatures more expressive movement and poses. Entity Model Features and Entity Texture Features provide its client rendering support. The player animation setup remains a separate layer.
 
-[Cubic Leaves](https://modrinth.com/resourcepack/cubic-leaves) adds depth to tree canopies while retaining a cubic shape. The included Performance edition covers vanilla and Quark foliage and most Nature's Spirit leaves; coconut and Joshua leaves retain their original models. It changes their appearance rather than tree generation.
+[Motschen’s Better Leaves](https://modrinth.com/resourcepack/better-leaves) gives tree canopies a fuller silhouette. It covers vanilla and Quark foliage, most Nature’s Spirit leaves and Chipped’s leaf variants. Nature’s Spirit coconut leaves retain their original model. The pack changes leaf appearance rather than tree generation.
 
-[Create Touch-Ups](https://modrinth.com/resourcepack/create-touch-ups) adjusts Create's machinery, tools and copper textures toward a simpler vanilla style. These three resourcepacks are selected in new installations. Each can be disabled in **Options → Resource Packs**; Fresh Animations needs both of its rendering mods while enabled.
+[Falling Leaves](https://modrinth.com/mod/fallingleavesforge) adds drifting leaf particles. Cherry blossoms retain their existing particles, and the pack leaves flowering azalea petals to Subtle Effects to avoid a second ambient leaf effect on those blocks.
+
+[Create Touch-Ups](https://modrinth.com/resourcepack/create-touch-ups) adjusts Create's machinery, tools and copper textures toward a simpler vanilla style.
+
+## Glass and portable light
+
+[Fusion Connected Glass](https://modrinth.com/resourcepack/fusion-connected-glass), supported by Fusion, joins the textures of adjacent vanilla glass blocks and panes. It includes stained and tinted glass; it does not automatically change glass added by other mods.
+
+[LambDynamicLights](https://modrinth.com/mod/lambdynamiclights) provides client-side light from held light sources. [Extended Illumina NEA](https://modrinth.com/resourcepack/extended-illumina-not-enough-animations) gives held torches and lanterns three-dimensional models and adjusted poses. These models and the emitted light are separate features; disabling the resourcepack does not disable LambDynamicLights.
+
+These resourcepacks and the small atmosphere integration pack are selected in new installations. Each can be disabled in **Options → Resource Packs**. Fresh Animations and its Player Extension need both EMF and ETF while enabled. Existing profiles keep their selected packs and settings.
 
 ## Sound and visual details
 
