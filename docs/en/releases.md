@@ -29,9 +29,18 @@ As the project develops, new large goals will receive subsequent major milestone
 
 ### Minor: a completed content area
 
-A minor milestone concludes work on a particular direction. `0.1.0` established the initial foundation: the island world, Create and Aeronautics, basic optimization and convenience. `0.2.0` is the chosen atmosphere milestone: an agreed set of visual, animation and sound improvements checked together with the rest of the pack.
+A minor milestone concludes work on a particular direction. `0.1.0` established the initial foundation: the island world, Create and Aeronautics, basic optimization and convenience.
 
-Patch releases can gradually build toward that result. One might introduce creature animations and resourcepacks; another might refine lighting. Once the selected scope is ready and accepted by the author, the next minor number records it, with the last part reset to zero. Other areas can also change between these milestones.
+The next planned milestones are:
+
+| Milestone | Planned scope                                                                                                                          |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `0.2.0`   | Audiovisual atmosphere: animation, item and object appearance, sound, particles, visual effects, shaders and sky/weather presentation. |
+| `0.3.0`   | Quality of Life: more convenient everyday play, including improved tree felling inspired by Otherworld DnD.                            |
+
+Ordinary `0.1.x` patches gradually build toward the atmosphere milestone, for example through animation/resourcepack additions and lighting refinements. Once the selected scope is ready and accepted by the author, the minor milestone records it with the last part reset to zero. Discussing that future milestone does not start its release preparation or change the current target.
+
+Later stages will address combat, biome and world appearance, magic and technical mod improvements. Their order and version numbers have not been assigned. Research and interest in a mod do not automatically place it in the audiovisual stage.
 
 A minor release can conclude work already delivered through preceding patches. It does not require adding another mod solely to justify the number.
 
