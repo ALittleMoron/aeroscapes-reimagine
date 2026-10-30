@@ -1,0 +1,21 @@
+{
+  "title": "Basic Aeronautics Airship",
+  "author": "Tommobean",
+  "source": "https://createmod.com/schematics/basic-aeronautics-airship",
+  "download_page": "https://createmod.com/get/basic-aeronautics-airship",
+  "file": "pack/config/aeroscapes_reimagine/test_airship.nbt",
+  "original_filename": "basic_airship.nbt",
+  "sha256": "2ec7d3a941cf644b4aa8abda8357db20243cbfd92b4c3994296323d7e2e67ac2",
+  "bytes": 2726,
+  "minecraft_data_version": 3955,
+  "template_size": [
+    5,
+    10,
+    11
+  ],
+  "blocks": 166,
+  "entities": "6 native simulated:honey_glue; no saved sub_levels",
+  "usage": "Unmodified author download used for owner-local testing. Public redistribution permission is not established by the author page or the site terms; do not publish the copied file without resolving that permission.",
+  "terms": "https://createmod.com/terms-of-service",
+  "integration": "Whole template printed through native Create APIs; per-vessel radio pairs, ordinary fuel and initial hot-air fill. Native swivel assembly creates explicitly tracked children; only bodies allocated in that tagged bearing call receive ownership, including later rebuilds and added bearings. Complete loaded membership and occupants are checked before reverse-order removal. Detached components follow native Sable splitting. No geometry is reconstructed."
+}

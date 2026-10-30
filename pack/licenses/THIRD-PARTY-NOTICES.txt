@@ -85,8 +85,8 @@ https://modrinth.com/mod/lambdynamiclights/version/ksaGCvSu
 https://github.com/LambdAurora/LambDynamicLights
 Extended Illumina NEA: Ilyastik; All Rights Reserved.
 https://modrinth.com/resourcepack/extended-illumina-not-enough-animations/version/3hkMp9g6
-The small Aeroscapes atmosphere resourcepack supplies only an independently
-written falling-leaf setting for flowering azalea; no provider artwork is copied.
+The small Aeroscapes atmosphere resourcepack supplies independently written
+settings and model-parent shims; no provider artwork is copied.
 
 Polymorph 1.1.0+1.21.1: Illusive Soulworks; LGPL-3.0-or-later.
 Unchanged official NeoForge artifact, retaining its embedded license and source link.
@@ -149,3 +149,33 @@ Unmodified official-download modpack references are used; no direct binary bundl
 The two sky JSON files are independent settings, not copied sky artwork.
 https://modrinth.com/mod/polytone/version/6mPQONys
 https://github.com/MehVahdJukaar/polytone/blob/1.21.1/LICENSE.md
+
+Hands, tools and precipitation additions (unchanged official downloads):
+Punchy 3.0: Punchy and contributors; All Rights Reserved / LICENSE_Punchy.
+Author permits Modrinth and CurseForge modpack inclusion, not separate JAR rehosting.
+Original bundled icon credits/notices remain in the JAR.
+https://modrinth.com/mod/punchy-fpa/version/83nCNSX4
+Refined Tools 3.0: patovskiz; All Rights Reserved.
+https://modrinth.com/resourcepack/refined-tools/version/ndAFoNmO
+Modefite 1.0.1: TimmyChips and contributors; GPL-3.0.
+https://modrinth.com/mod/modefite-item-definition-backport/version/cy8BkRZc
+https://github.com/TimmyChips/Modefite-Item-Defintion-Backport
+Puzzle 2.3.0: PuzzleMC, Motschen and contributors; MIT.
+Bundled MidnightLib 1.9.2: TeamMidnightDust, Motschen and contributors; MIT.
+https://modrinth.com/mod/puzzle/version/bZNDTLHq
+https://github.com/PuzzleMC/Puzzle
+Particle Rain 4.0.2: PigCart and contributors; MIT.
+https://modrinth.com/mod/particle-rain/version/RxfaR4ud
+https://github.com/PigCart/particle-rain
+Owned client integrations use compile-only provider APIs and independent field-level
+compatibility; no provider classes, animation clips, models or textures are copied.
+
+Owner-local test-airship schematic (unchanged author download):
+Basic Aeronautics Airship by Tommobean.
+https://createmod.com/schematics/basic-aeronautics-airship
+Original basic_airship.nbt SHA-256:
+2ec7d3a941cf644b4aa8abda8357db20243cbfd92b4c3994296323d7e2e67ac2
+Stored separately at config/aeroscapes_reimagine/test_airship.nbt.
+The public download supports local use; no public redistribution grant is claimed.
+Resolve that permission before publishing the copied structure. Site terms:
+https://createmod.com/terms-of-service

@@ -1,0 +1,10 @@
+{
+  "configVersion": 7,
+  "wind": {
+    "yLevelAdjustment": false
+  },
+  "compat": {
+    "renderDefaultWeather": false,
+    "doDefaultSplashing": true
+  }
+}

@@ -96,6 +96,11 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String testShip = System.getProperty("aeroscapes.regression.testShip");
+    if (testShip != null) {
+      TestShipRegression.start(level, testShip);
+      return;
+    }
     String resourceSnapshot = System.getProperty("aeroscapes.regression.resourceSnapshot");
     if (resourceSnapshot != null) {
       ResourceSnapshotRegression.verify(level, resourceSnapshot);

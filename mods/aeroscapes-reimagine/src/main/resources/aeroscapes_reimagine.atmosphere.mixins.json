@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.atmosphere",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "priority": 900,
+  "client": [
+    "PrecipitationParticleMixin",
+    "RainHeightMixin",
+    "RainWindMixin",
+    "PunchyEmfMixin",
+    "PuzzleLoadingOverlayMixin",
+    "RodCaptureTraceMixin",
+    "RodLineTraceMixin",
+    "FastRodCaptureMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1866,6 +1866,41 @@
       "primary_sha512": "e11fe74a53264ba07b4ea9548332f56b5e22ed5778c912a5b62a4418a03b6ba6b7d8bb2a7d116d0019ad4d45733d429462f6fb5a8f6cd94aafac12ece7ff03b8",
       "status": "blocked",
       "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "refined-tools",
+      "primary_project_id": "6l1WUegn",
+      "primary_sha512": "0b874e634c89a2ebbf24f2658890b6d20d83974d5c0779ea3e9f655d58cb01922ff91bf374db1f872a77a3e359e3eb9184ce5107b6f3949947176715e0fe3d9b",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "modefite-item-definition-backport",
+      "primary_project_id": "qjlkcVfy",
+      "primary_sha512": "2661fcf6bec97acabd6f513b41c41667d2ccc317002b8131ecb568db0c1bf0ffd6595d02790f4f82d1572c27f3e54e3d902fb87f4edf9cc70229b79c92e569b8",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "puzzle",
+      "primary_project_id": "3IuO68q1",
+      "primary_sha512": "b2c90cc1a3d6157934ce5d50e47ace4a1bc5d47c2afebec16db6a34d5b453fb7a15f6595ab775bac612023e7ea0c67a6232491d2d4c0842f4c78bfd68e236282",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "punchy-fpa",
+      "primary_project_id": "8aoMKplv",
+      "primary_sha512": "524eedc82561e50fd0e48a36e97e274b200f7843be5f41e0e3351522ed0ad8e8176b2872afd0a9a5ce11349725304d71e6efde2793e5786957a6de5fb5d968f0",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "particle-rain",
+      "primary_project_id": "nrikgvxm",
+      "primary_sha512": "dc5fd6224dbd58079d9c82ef318ba2b945e5aa58f3476daea371ca86bb9ce976db5f4893a7093a990c0c1a8ddb7716089b24cced176f30cb253c2696b0cfd5b2",
+      "status": "blocked",
+      "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

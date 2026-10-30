@@ -1,0 +1,12 @@
+name = "Punchy"
+filename = "punchy-3.0-neoforge-1.21.1-birthday.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/8aoMKplv/versions/83nCNSX4/punchy-3.0-neoforge-1.21.1-birthday.jar"
+hash-format = "sha512"
+hash = "524eedc82561e50fd0e48a36e97e274b200f7843be5f41e0e3351522ed0ad8e8176b2872afd0a9a5ce11349725304d71e6efde2793e5786957a6de5fb5d968f0"
+
+[update.modrinth]
+mod-id = "8aoMKplv"
+version = "83nCNSX4"

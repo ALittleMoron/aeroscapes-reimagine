@@ -1,0 +1,20 @@
+{
+  "enableMod": true,
+  "bettercombatCompat": false,
+  "enableCameraAnimations": false,
+  "enableCustomWalk": false,
+  "enableSprintArmSwing": false,
+  "enableFallArmAnimation": false,
+  "disableNewKeyframeMoves": true,
+  "enableFreezeShake": false,
+  "enableFreezeArmOverlay": false,
+  "enableMud": false,
+  "enableSweat": false,
+  "enableBurn": false,
+  "enableParticles": false,
+  "itemBlacklist": [
+    "minecraft:cake",
+    "minecraft:white_candle",
+    "minecraft:light_gray_candle"
+  ]
+}

@@ -164,6 +164,80 @@ The dimension/color keys and expressions were checked against the exact JAR and
 the author's [dimension modifier](https://github.com/MehVahdJukaar/polytone/wiki/Dimension-Effects-Modifiers)
 and [custom color](https://github.com/MehVahdJukaar/polytone/wiki/Custom-Colors) schemas.
 
+### Hands, tools and precipitation
+
+Punchy 3.0, Refined Tools 3.0, Modefite 1.0.1, Puzzle 2.3.0 and Particle Rain
+4.0.2 use unchanged official Modrinth downloads, client-only. Puzzle bundles
+MidnightLib 1.9.2; no separate library or cross-loader bridge is added. Punchy and
+Refined retain ARR terms; Modefite retains GPL-3.0, Puzzle/MidnightLib and Particle
+Rain retain MIT. Punchy's author permits Modrinth/CurseForge modpack inclusion
+while prohibiting independent JAR rehosting. Exact provider/embedded declarations
+and the native dependency closure remain in `artifacts.json`.
+
+Refined's format-34 overlay needs Modefite's item-definition backport and Puzzle's
+rotations. It also replaces two entity cutout fragment shaders. Four independently
+written empty model parents in the separate owned Refined compatibility resourcepack resolve absent
+Refined parent references without copying artwork or replacing the children's
+cuboids/transforms. A generated-item parent would flatten those models. Refined
+follows Illumina in the initial selection; its owned compatibility pack stays last.
+Disable the Refined and compatibility packs together. Its composite trident branch
+lets the vanilla entity renderer supply the held 3D trident instead of applying
+Refined's incompatible flat-item guard. No upstream model or artwork is copied.
+
+Punchy supplies its own automatically enabled animation pack. Initial defaults
+retain tool actions while disabling camera tracks, extra walking/sprinting/falling
+motion, overlays and particles. Inspect bindings start unassigned; cake and the two
+birthday candle presentations use ordinary hands. Mob FA, FA Player and NEA remain.
+Punchy's built-in EMF bridge references a retired API. The owned client wrapper
+mounts EMF's current first-person state around its arm draw and unmounts in
+`finally`, so `preventFirstPersonHandAnimating` applies without disabling other
+FA rendering. This does not restore first-person torso/feet.
+
+Flerovium 1.1.2 draws ordinary and shader item meshes before substituting an
+empty model for the vanilla path where Punchy captures rod geometry. The owned
+fast-render entry adapter forwards the original rod mesh and unchanged pose to
+Punchy's public capture. It keeps both providers' drawing and line projection.
+The third-person layer scopes the actual PlayerModel. During a recognized action
+it suppresses only that player's native visual attack setup and the matching
+FA root's swing query, preserving locomotion. It bypasses stale LOD/shadow replay
+only while computing that neutral FA pose; all gates end in `finally`. The actual
+attack clock and gameplay are untouched. The authored arm interpolation uses the
+neutral torso frame and then composes the full resulting body transform. A
+local matrix decomposition avoids the pinned JOML1.10.5 quaternion ZYX getter's
+pitch-sign error, including singular orientations. Composed PlayerModel checks
+cover both hands, contact, hip and clothing; exact provider contracts bind the
+hooks. Owned fields restore before repeat animation and after all player layers.
+Bounded draw samples compare a transformed arm reference with its neutral
+baseline; they do not establish visual acceptance.
+
+The administrative command imports Tommobean's complete Basic Aeronautics Airship
+through Create's normal print helpers, including honey glue and its native swivel
+child. The unchanged downloaded NBT remains separate from the GPL mod source in
+`pack/config/aeroscapes_reimagine/test_airship.nbt`; `test_airship.json` pins its
+provenance and owner-local reuse scope. No public redistribution grant is claimed.
+Native source/network state is reset when printing. Radio identities are isolated
+before network join, fuel is supplied through the real inventory, and gas is seeded
+only on creation. Native controls, forces and saving continue afterward. Explicit
+root/child ownership governs removal. Boarding waits until the client confirms
+that every owned Sable sublevel has finished loading; a timeout leaves the player
+at the starting position. Existing schema-1 platforms keep only their
+old safety hold until explicit removal, preventing an upgrade from dropping them
+onto terrain.
+
+Particle Rain keeps its native gusts and strength; the owned adapter corrects
+the disabled altitude-adjustment multiplier from zero to one. The initial profile
+disables altitude scaling so lower islands retain wind. Its height scan uses each
+dimension's actual bounds. Only CUSTOM/SKY rain, heavy rain, snow and heavy snow
+opt out of Sable's extra movement solver; initial projection and PR's own clip
+remain. Default precipitation does not use ship-local hit coordinates or normals
+for placement. Other particles retain Sable behavior. Cool Rain keeps material
+rain audio; PR's rain volume must remain nonzero to reach that path. Default splash
+spawning stays enabled for Subtle Effects, while PR ripple/splatter are disabled.
+
+Exact native versions gate these client mixins; offline bytecode checks validate
+the provider boundary, not rendering or ship behavior. Shader, hand and moving-ship
+acceptance remains an owner-client check. No new saved blocks/items are introduced.
+
 ### Generated Dramatic Doors recipes
 
 Dramatic Doors 3.3.2 / `X5oMCwaA` generates its Chipped conversions in code.

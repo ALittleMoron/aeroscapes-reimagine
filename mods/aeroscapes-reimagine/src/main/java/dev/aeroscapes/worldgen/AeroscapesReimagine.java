@@ -49,6 +49,7 @@ public final class AeroscapesReimagine {
       if (ModList.get().isLoaded("c2me_opts_accel_opencl")) IslandOpenCl.register();
     }
     modBus.addListener(RuntimeDataPack::register);
+    modBus.addListener(dev.aeroscapes.testship.TestShipNetwork::register);
     IslandFeatures.register(modBus);
     IslandTerrain.register(modBus);
     IslandBiomeSource.register(modBus);

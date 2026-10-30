@@ -10,7 +10,11 @@ More detailed animations, environmental sound and small visual effects add to Mi
 
 [Not Enough Animations](https://modrinth.com/project/MPCX6s5C) adds and improves third-person animations. 3D Skin Layers renders the outer skin layer with depth. First person uses the normal hand view: rendering the whole animated body could obstruct the view during flight.
 
-[Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) adds more expressive movement, poses and hand animations to the player. It uses the same Entity Model Features and Entity Texture Features engines as Fresh Animations for creatures.
+[Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) adds more expressive player movement and poses through Entity Model Features and Entity Texture Features. It remains alongside Not Enough Animations for third-person presentation. Tool and weapon swings use these providers’ existing animations.
+
+[Punchy](https://modrinth.com/mod/punchy-fpa) handles first-person hands, with different movements for mining, chopping, digging and using items. The initial profile disables authored camera motion, extra walking/sprinting/falling movements and decorative overlays/particles. Inspection starts unbound and can be assigned in **Options → Controls**; Punchy's settings are available through **F8**. Combat rules remain unchanged.
+
+[Refined Tools](https://modrinth.com/resourcepack/refined-tools) gives supported vanilla tools and other held items more detailed three-dimensional models, while tools keep flat inventory icons. Modefite and Puzzle provide its model support on this Minecraft version. Tools added by other mods are not automatically remodeled. Keep the **Aeroscapes Reimagine — Refined Tools compatibility** resourcepack enabled with Refined Tools; disable both together. It supplies the missing model parents and the held-trident rendering route.
 
 [Shoulder Surfing](https://modrinth.com/mod/shoulder-surfing-reloaded) places the third-person camera slightly to the side, using the framing of Otherworld D&D. The ordinary perspective key (**F5** by default) still switches views. Movement follows the normal player direction, the camera inherits the player's field of view, and first person remains available. Shoulder switching can be assigned in **Options → Controls**.
 
@@ -41,6 +45,8 @@ These resourcepacks and the small atmosphere integration pack are selected in ne
 AmbientSounds adds environmental sound, while Sounds expands the sounds of everyday interactions. Drip Sounds adds sounds for dripping particles. Subtle Effects supplies waterfall mist, water splashes and ripples, fireflies, sparks and other small details.
 
 [Cool Rain Reforged](https://modrinth.com/mod/cool-rain-reforged) changes the sound of rainfall according to the surface it hits, including glass, metal, foliage, wool and water. Its sounds use Minecraft's **Weather** volume control.
+
+[Particle Rain](https://modrinth.com/mod/particle-rain) replaces rain and snow with wind-driven particles and adds weather fog and surface streaks. The initial profile keeps wind at lower island heights. Subtle Effects retains rain impacts and water ripples; Particle Rain's duplicate ripple/splatter effects are disabled. Cool Rain still supplies material rain sounds: keep Particle Rain's rain volume above zero, because zero suppresses that sound path too.
 
 In the interface, Chat Animation animates chat, while Smooth Gui animates menu opening.
 

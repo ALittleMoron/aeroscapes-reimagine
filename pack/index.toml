@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/aeroscapes_reimagine/test_airship.nbt"
+hash = "2ec7d3a941cf644b4aa8abda8357db20243cbfd92b4c3994296323d7e2e67ac2"
+
+[[files]]
 file = "config/badoptimizations.txt"
 hash = "5b4bde22c84906bb95767aa7085997499e2f7c22062ec9c954e9f1a7b0b09a37"
 
@@ -11,6 +15,10 @@ hash = "ca818009f21a2d990561c20ceafc73b704e4c79f62ce8326ab1c944b93dd1088"
 [[files]]
 file = "config/colorwheel-client.toml"
 hash = "10bae919cad5e462007da61deb8b45bc86470daf404664f87885fd57b83d1835"
+
+[[files]]
+file = "config/entity_model_features.json"
+hash = "67005e1a77cf4b111ebd17137bb0e3e3bc73d9ea62154be41ea542e2ee2432a8"
 
 [[files]]
 file = "config/flerovium.json"
@@ -47,6 +55,22 @@ hash = "ac7ce4bcd5f590d07f4a11dd912bd0dd0c92979b3839b50eb50c4b8a6038c604"
 [[files]]
 file = "config/natures_spirit-common.toml"
 hash = "4202bb8d0d24f6960ec162e9819dbe15733a9e01d0e93c5d1f57f43622c6d9a3"
+
+[[files]]
+file = "config/particlerain/config.json"
+hash = "37e1fec6dec64bf22d238d68deef6ebeec7fd93f9b91176c9966af8a529f4e97"
+
+[[files]]
+file = "config/particlerain/particles.json"
+hash = "b1b0ce817959e926f3a6664e86ce933df6f54cbecfeaca8146963303efc3036b"
+
+[[files]]
+file = "config/punchy/punchy_config.json"
+hash = "f37189c4f181369cded8409b4d9b711858152d1e84bd6e2a54de77d7f5f29ccc"
+
+[[files]]
+file = "config/punchy/triggerable-keybindings.json"
+hash = "a3fb30afa95651bb131202472613df69d00da302d370c231cfa7845f05f7b5d2"
 
 [[files]]
 file = "config/quark-common.toml"
@@ -651,11 +675,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "314970d71e1807de848f3fbb0d5472b137f8a2d067b346a521f8a242f93b56f7"
+hash = "dc697baeee876ac872879df8cdbe3da7e63e43aca717381f9c206347ab42b6e3"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "62fd3f60dbdaa07445a4a2e19041c5b4895b344a672f80f982a0fab58bdebb3a"
+hash = "467980de5a546fc71fa3c4351e93a448ee248021116556c26996b5f33498a15e"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -664,7 +688,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "29941f97f1f7a94c87f448f9f63caf36e4bf2bf6fb5edbffef438eb104c55885"
+hash = "427f972515ac80392eaf7d62496ac7f4120bb3f56b0fe8393b11e8da076006cb"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1037,6 +1061,11 @@ hash = "b16c14d086de27ed2108e74203665b6196be94cbdd2961f92da6ad2ef0a30f14"
 metafile = true
 
 [[files]]
+file = "mods/modefite-item-definition-backport.pw.toml"
+hash = "d84fa974b5325ea554938370ecc8993a7d20902fd113e27e54dc1734915a8dab"
+metafile = true
+
+[[files]]
 file = "mods/modelfix.pw.toml"
 hash = "997243288706e761dc69b77e4da6a6f88733c0d8f1913a529650279fb5291495"
 metafile = true
@@ -1097,6 +1126,11 @@ hash = "a63cf2386e21958fc5d593c48d6493954928486a563e6b43ab983d61c107cf70"
 metafile = true
 
 [[files]]
+file = "mods/particle-rain.pw.toml"
+hash = "c37528a79a47cf95437bd182e79aca78ff36206556d8a50356879243ddf7c81b"
+metafile = true
+
+[[files]]
 file = "mods/philips-ruins.pw.toml"
 hash = "6a93ba098014bd60b0b708ab259b27f51003fa29dbdb9a700b39e6e07954e240"
 metafile = true
@@ -1109,6 +1143,16 @@ metafile = true
 [[files]]
 file = "mods/polytone.pw.toml"
 hash = "5a05cbd17d52f1c739681dbe54cc9cb676ae7a809c7256d3da118b8a73da18f0"
+metafile = true
+
+[[files]]
+file = "mods/punchy-fpa.pw.toml"
+hash = "08da749024a956f9b694ff03d23fac77ad798d5e0a26fda6eb8267ce73ffe49e"
+metafile = true
+
+[[files]]
+file = "mods/puzzle.pw.toml"
+hash = "6d34bdf3a888620b8076946f697b66676ac8cfa7a1a8de6361cf756ef735d856"
 metafile = true
 
 [[files]]
@@ -1288,7 +1332,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "f2e93a3a3a9a7a490cda94216389d39f648be1a3bf27e6f1e53cc3e764d13631"
+hash = "469f6a6073f0a13e5f82adc5bc5e607138de71d709093d678217edfcd0722f6e"
 
 [[files]]
 file = "polytone_options.json"
@@ -1309,6 +1353,30 @@ hash = "7cada3221f0ad22653a398b7fa24d262cf8f190344628b829204f7f9f32feaba"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/pack.mcmeta"
 hash = "cdea174265b490f6b7988f67257716a028927501e1663505af016a672a4fe885"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/modefite_items_override/trident.json"
+hash = "400531f2bc007c55a20d62d5b7deebedb2cb045eae96096c0d55f916c61fae7b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/item.json"
+hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/position_pickaxe.json"
+hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/tool.json"
+hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/tool_shovel.json"
+hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/pack.mcmeta"
+hash = "6ff231448d71eaadd92ac14320e5277e3a4e96928e234c9569e1101210321aa4"
 
 [[files]]
 file = "resourcepacks/better-leaves.pw.toml"
@@ -1353,6 +1421,11 @@ metafile = true
 [[files]]
 file = "resourcepacks/fusion-connected-glass.pw.toml"
 hash = "b0fea23d3341f00124c72a759304ff1ecfbc9b91d5e59cf9e120e1b3a0d5b746"
+metafile = true
+
+[[files]]
+file = "resourcepacks/refined-tools.pw.toml"
+hash = "18a2da582cdf6b74d3340abda0c366194edd56a190d2eadd45bbe859ef83f95e"
 metafile = true
 
 [[files]]

@@ -441,5 +441,58 @@
     },
     "files": [],
     "reason": "Owned client-only ShoulderCameraMixinPlugin/ShoulderCameraTransformer guards the merged Shoulder Surfing 4.22.12 setupPosition handler after its native mixin. It forwards actual sway components and skips the final Camera.setRotation call when both are zero, preserving the already oriented Sable 2.0.6 camera quaternion instead of applying ship rotation twice. Original initial rotation, nonzero native sway and input/reach remain. Strict origin/descriptor/call-count and runtime-version guards require review on updates. Graphical ship acceptance remains pending."
+  },
+  {
+    "targets": {
+      "8aoMKplv": "83nCNSX4",
+      "4I1XuqiY": "197m3VoU",
+      "BVzZfTc1": "lwNx1nD1",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Owned client-only PunchyEmfMixin mounts a fresh EMF first-person hand state around the sole Punchy renderFirstPersonInternal invocation and unmounts in finally. Punchy3.0 references a retired EMF context class absent from3.3.12, bypasses PlayerRenderer.renderHand, but still bakes EMF model parts. The marker lets preventFirstPersonHandAnimating isolate hand choreography while retaining FA mobs and third-person player. Exact native versions and offline provider bytecode contracts guard updates; graphical acceptance remains separate."
+  },
+  {
+    "targets": {
+      "nrikgvxm": "RxfaR4ud",
+      "T9PomCSv": "fg9dTRz9",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Owned client PrecipitationParticleMixin implements Sable ParticleSubLevelKickable on PR CustomParticle only for CUSTOM SKY rain/heavy_rain/snow/heavy_snow. Skip the secondary Sable movement/collision/attachment solver; preserve initial plot projection, PR world-space collision raycasts and all other particle defaults. RainHeightMixin uses actual dimension minimum/inclusive maximum instead of fixed -64/255 in PR ignored-block height scan/fallback. RainWindMixin changes only the disabled-altitude-adjustment multiplier0 to1, preserving gusts/strength and re-enabled native scaling. Exact versions/bytecode contracts checked offline; owner ship, height and shader acceptance pending."
+  },
+  {
+    "targets": {
+      "6l1WUegn": "ndAFoNmO",
+      "qjlkcVfy": "cy8BkRZc",
+      "3IuO68q1": "bZNDTLHq"
+    },
+    "files": [],
+    "reason": "Owned switchable Refined compatibility resourcepack supplies four independent empty model parents and a one-child Modefite composite for held/using tridents. Refined3.0 lacks the four parents; native1.21.1 ItemRenderer otherwise forces the entity trident renderer after Modefite selected a block mesh. Composite rendering uses the selected cuboids directly; GUI/ground/fixed retain the flat native icon. Enable this pack with Refined Tools3.0 and disable both together. Provider archives are unchanged."
+  },
+  {
+    "targets": {
+      "3IuO68q1": "bZNDTLHq",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Owned priority900 PuzzleLoadingOverlayMixin/Transformer removes only the exact merged Puzzle2.3.0 constructor-tail LoadingOverlay.registerTextures call after native NeoForge21.1.230 early-display logo registration. TextureManager replacement would release the logo ID already retained by DisplayWindow. Preserve the original logo, all ordinary reloads and provider resources; strict origin/descriptor/single-call/runtime-version checks guard updates."
+  },
+  {
+    "targets": {
+      "T9PomCSv": "fg9dTRz9",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Cheat-only player command prints the complete pinned Tommobean Basic Aeronautics Airship through native Create6.0.10 SchematicLevel/BlockHelper, including honey glue; marking outer and nested ExtraKinetics movement prevents importing absolute old Source/Network. Radio frequencies are replaced in safe NBT before joining networks. Native Simulated1.3.2 swivel assembly creates an explicitly owned steering child. A narrow native assemble wrapper tags only newly allocated children of an already tagged body, retaining ownership through rebuilds and added swivel bearings. Boarding waits for the client to confirm finalized Sable sublevels for every owned member, with a bounded wait and no transfer on timeout. Every loaded member and its occupants are checked before reverse-order removal; unload never becomes a deletion receipt. Native Aeronautics1.3.2 heating, ordinary fuel, controls and forces provide all flight; initial gas fill is one-time only. Strict root reference and schema1 legacy hold preserve existing platform upgrade/removal. The downloaded structure provenance and owner-local scope live in metadata/test_airship.json."
+  },
+  {
+    "targets": {
+      "4Rh1Mobu": "oU1q3eIj",
+      "8aoMKplv": "83nCNSX4",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Flerovium1.1.2 optimized ItemRenderer draws the real SimpleBakedModel then substitutes DummyModel for vanilla renderModelLists; Punchy3.0 capture there cannot see rod geometry. Owned FastRodCaptureMixin invokes the existing public capture at both public static Flerovium fast renderer entry points for Items.FISHING_ROD inside the active Punchy item capture. Original model/stack/PoseStack.last.pose are forwarded; exact bytecode verifies the draw uses that unchanged pose. Shader and ordinary paths retain their native drawing; no copied projection, offset or provider modification."
   }
 ]

@@ -1,0 +1,8 @@
+{
+  "ripple": {
+    "enabled": false
+  },
+  "splatter": {
+    "enabled": false
+  }
+}

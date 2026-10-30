@@ -1,3 +1,5 @@
+import java.io.File
+
 plugins {
   java
   pmd
@@ -28,6 +30,14 @@ repositories {
       includeModule("maven.modrinth", "c2me-neoforge")
       includeModule("maven.modrinth", "c2me-ocl")
       includeModule("maven.modrinth", "sable")
+      includeModule("maven.modrinth", "particle-rain")
+      includeModule("maven.modrinth", "punchy-fpa")
+      includeModule("maven.modrinth", "entity-model-features")
+      includeModule("maven.modrinth", "entitytexturefeatures")
+      includeModule("maven.modrinth", "puzzle")
+      includeModule("maven.modrinth", "flerovium")
+      includeModule("maven.modrinth", "create-aeronautics")
+      includeModule("maven.modrinth", "create")
     }
   }
 }
@@ -58,6 +68,28 @@ val sableApi by configurations.creating {
   isCanBeConsumed = false
   isTransitive = false
 }
+val shipApi by configurations.creating {
+  isCanBeConsumed = false
+  isTransitive = false
+}
+val shipNestedApiDirectory = layout.buildDirectory.dir("ship-api")
+val extractShipApi by
+  tasks.registering(Sync::class) {
+    from(shipApi.map { zipTree(it) })
+    include(
+      "META-INF/jarjar/dev.eriksonn.aeronautics.aeronautics-neoforge-1.21.1-1.3.2.jar",
+      "META-INF/jarjar/dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.3.2.jar",
+      "META-INF/jarjar/Registrate-MC1.21-1.3.0+67.jar",
+      "META-INF/jarjar/ponder-neoforge-1.0.82+mc1.21.1.jar",
+    )
+    eachFile { path = name }
+    includeEmptyDirs = false
+    into(shipNestedApiDirectory)
+  }
+val atmosphereApi by configurations.creating {
+  isCanBeConsumed = false
+  isTransitive = false
+}
 val sableNestedApiDirectory = layout.buildDirectory.dir("sable-api")
 val extractSableApi by
   tasks.registering(Sync::class) {
@@ -76,8 +108,19 @@ dependencies {
   compileOnly("com.github.glitchfiend:TerraBlender-neoforge:1.21.1-4.1.0.8") {
     isTransitive = false
   }
+  shipApi("maven.modrinth:create-aeronautics:44pLdPGg")
+  shipApi("maven.modrinth:create:UjX6dr61")
+  compileOnly(files(shipApi))
+  compileOnly(files(fileTree(shipNestedApiDirectory) { include("*.jar") }).builtBy(extractShipApi))
   sableApi("maven.modrinth:sable:fg9dTRz9")
   compileOnly(files(sableApi))
+  atmosphereApi("maven.modrinth:particle-rain:RxfaR4ud")
+  atmosphereApi("maven.modrinth:punchy-fpa:83nCNSX4")
+  atmosphereApi("maven.modrinth:entity-model-features:197m3VoU")
+  atmosphereApi("maven.modrinth:entitytexturefeatures:lwNx1nD1")
+  atmosphereApi("maven.modrinth:puzzle:bZNDTLHq")
+  atmosphereApi("maven.modrinth:flerovium:oU1q3eIj")
+  compileOnly(files(atmosphereApi))
   compileOnly(
     files(fileTree(sableNestedApiDirectory) { include("*.jar") }).builtBy(extractSableApi)
   )
@@ -88,7 +131,9 @@ dependencies {
 
 val policy by sourceSets.creating {
   compileClasspath =
-    sourceSets.main.get().output + configurations[compileClasspathConfigurationName]
+    sourceSets.main.get().output +
+      sourceSets.main.get().compileClasspath +
+      configurations[compileClasspathConfigurationName]
   runtimeClasspath = output + compileClasspath
 }
 
@@ -187,6 +232,20 @@ val shoulderCameraTransformerTest by
     mainClass = "dev.aeroscapes.camera.ShoulderCameraTransformerTest"
   }
 
+val atmosphereContractTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.atmosphere.AtmosphereContractTest"
+    doFirst {
+      systemProperty(
+        "aeroscapes.atmosphere.apis",
+        (atmosphereApi.files + sableApi.files).joinToString(File.pathSeparator),
+      )
+    }
+  }
+
 tasks.check {
   dependsOn(
     tasks.spotlessCheck,
@@ -195,6 +254,7 @@ tasks.check {
     sableTraceBufferTest,
     monitorControllerTest,
     shoulderCameraTransformerTest,
+    atmosphereContractTest,
     worldgenRegressionJar,
   )
 }

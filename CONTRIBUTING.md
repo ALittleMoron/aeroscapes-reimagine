@@ -150,3 +150,23 @@ The owned mod and build tools retain their independent versions.
 A version increment does not guarantee saved-world compatibility. Describe any
 affected content or migration separately and follow the
 [saved-world guidance](docs/en/known-issues.md#saved-worlds).
+
+## Weather and ship fixture
+
+With cheats enabled in the Overworld, stand on solid ground and run `/aeroscapes_test_ship`. The permission-2 player-only command imports Tommobean's [Basic Aeronautics Airship](https://createmod.com/schematics/basic-aeronautics-airship) into a new Sable plot in loaded clear air and seats its owner after the client confirms the ship has loaded. If loading fails, the player stays in place and can retry `board` near the ship. Existing terrain is not replaced. Each new world can create its vessel with the same command, without carrying a saved world between versions.
+
+Use the ordinary right-click interaction on the levers and steering wheel. Facing the wheel, the right lever sets lift (8 starts near neutral), the left sets propulsion (0 slow, 13 fast, 15 stopped), and the wheel turns the front control surfaces. Do not increase the drive beyond 13: the author's transmission reaches the native rotation limit. No global keybindings change. The portable engine starts with ordinary coal-block fuel and can be refueled. The command preheats the native envelope once; later lift responds normally and gradually to heating, altitude, trim and added mass. At altitudes where the downloaded envelope cannot support its native mass, creation fails safely; start lower.
+
+The whole downloaded construction, including its native steering-bearing child and honey glue, is retained. Players may add blocks, containers and machinery. Connect additions to the hull; Sable treats detached components as separate vessels. More payload can require lift adjustment or additional envelopes. The engine, native radio channels, control settings, balloon gas, steering joint and added blocks save normally. Each created ship receives private native radio-frequency pairs before joining a network.
+
+- `/aeroscapes_test_ship board` returns to the original pilot seat. Restore a Create seat at its original location if it was removed.
+- `/aeroscapes_test_ship leave` stops propulsion and returns to the saved safe starting point.
+- `/aeroscapes_test_ship remove` returns the owner and deletes their tagged vessel and its tracked swivel-bearing parts, including additions and inventories. Other players on any tracked part block deletion. Load the complete vessel at its last location before removing it.
+
+Old schema-1 platforms keep their safety hold until explicitly removed; remove one before creating the new vessel in that world. New vessels have no artificial hold. Before downgrading, remove newly created test vessels or restore the matching older world copy.
+
+The downloaded file is pinned at `pack/config/aeroscapes_reimagine/test_airship.nbt`; its attribution, hash and current reuse scope are in `metadata/test_airship.json` and the third-party notice. It is an owner-local test fixture; a public redistribution grant has not been established. Keep this separate from permission to use the unchanged public download locally.
+
+For a fishing-line problem, cast first and run `/aeroscapes_rod_trace`. It records at most 120 local rows/120 client ticks in `logs/latest.log`, including selected geometry and hand/line projection; it is off by default. Both Flerovium fast item-render paths forward the real rod mesh to Punchy's existing capture. Third-person tool actions log one scope summary and at most one reached arm-transform sample per category (`Aeroscapes tool pose`); those observations do not establish visual acceptance.
+
+Build the dedicated fixture with `worldgenRegressionJar`. Select `-Daeroscapes.regression.testShip=prepare`, then `reload` on the same disposable server save. It uses an ordinary registered ServerPlayer, in-memory server transport, normal levers and the native steering-wheel packet handler. Player NBT and the ship are saved and restored. No client or socket peer is started; normal mouse grip, camera, shader and appearance remain owner checks. Never export the regression JAR or run it in an owner world.

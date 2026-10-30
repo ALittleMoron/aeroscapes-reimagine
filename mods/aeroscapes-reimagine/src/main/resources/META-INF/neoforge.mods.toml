@@ -23,6 +23,12 @@ config = "aeroscapes_reimagine.scalablelux.mixins.json"
 [[mixins]]
 config = "aeroscapes_reimagine.shoulder_camera.mixins.json"
 
+[[mixins]]
+config = "aeroscapes_reimagine.atmosphere.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.test_ship.mixins.json"
+
 [[dependencies.aeroscapes_reimagine]]
 modId = "neoforge"
 type = "required"

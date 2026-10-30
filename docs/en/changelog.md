@@ -4,6 +4,18 @@ description: Version history.
 status: available
 ---
 
+## 0.1.4
+
+- Add standalone Punchy with restrained initial hand/camera settings and an adapter for the current EMF hand-render state; retain Fresh Animations, FA Player and Not Enough Animations.
+- Add Refined Tools with native Modefite and Puzzle, bundled MidnightLib and independent missing-parent model shims.
+- Add Particle Rain with a precipitation-only Sable movement opt-out, dimension-aware height bounds and corrected altitude-independent wind.
+- Keep material rain audio with Cool Rain and rain impacts with Subtle Effects, disabling duplicate Particle Rain ripples and splatter.
+- Prevent Puzzle from replacing the logo texture already retained by the NeoForge loading screen.
+- Render held Refined tridents through their block model and separate the Refined compatibility resourcepack.
+- Restore Punchy rod-tip capture in both Flerovium fast item renderers, including its shader path.
+- Replace the weather platform with a ready-made Aeronautics airship by Tommobean, created by one cheat command with a fueled engine, native levers and steering wheel; preserve editing, save/reload, return and removal.
+- Wait for the client to load the test airship before placing its pilot in the seat.
+
 ## 0.1.3
 
 - Add material-dependent rain sounds and craftable wind chimes with native Sable support.

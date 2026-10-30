@@ -3813,8 +3813,37 @@
     "slug": "particle-rain",
     "name": "Particle Rain",
     "project_id": "nrikgvxm",
-    "status": "deferred",
-    "reason": "Beta cosmetic weather, deferred."
+    "version_id": "RxfaR4ud",
+    "version": "v4.0.2+1.21.1-neoforge",
+    "filename": "particlerain-4.0.2+1.21.1-neoforge.jar",
+    "sha512": "dc5fd6224dbd58079d9c82ef318ba2b945e5aa58f3476daea371ca86bb9ce976db5f4893a7093a990c0c1a8ddb7716089b24cced176f30cb253c2696b0cfd5b2",
+    "sha1": "444c6f221e57cca8e433702b18c4643faa82545a",
+    "file_size": 623257,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/PigCart/particle-rain",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected Priority 1 audiovisual additions for 0.1.4; unchanged official Modrinth file",
+    "provider_environment": "client_and_server",
+    "native_route_note": "Client-only weather renderer and audio here; native descriptor dependencies and entry point are client scoped. No libraries or bridge. Owned exact-version client mixins isolate four sky precipitation effects from Sable movement, use actual dimension scan bounds, and repair the disabled altitude multiplier. Cool Rain owns material rain sound; Subtle Effects owns rain impacts.",
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth download reference; no provider archive is modified, bundled or rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
   },
   {
     "slug": "particular-reforged",
@@ -6468,5 +6497,181 @@
     "role": "Resource-driven vanilla sky palette and restrained star mesh; existing cloud, horizon and shader renderers retained.",
     "artifact_license": "Supplementaries Team License 1.5",
     "native_route_note": "Actual native descriptor and LICENSE_Polytone.md declare Supplementaries Team License 1.5, differing from the GPL provider label. Section 5 allows unmodified official-download modpack references; no direct binary bundling. No extra mandatory native libraries. Two owned JSONs adjust biome-preserving sky/sunrise colors and vanilla star count/size without replacing clouds, dimension effects or horizon. Critical current NeoForge/Sodium/Iris APIs inspected; client acceptance pending. Native root polytone_options.json disables unrelated player-light interpolation and the colored-light backend. Shaderless lead rendering retains the provider vanilla-brown texture. Exact dimension/color codecs and v/g.dayTime/r.rand()/TAU expression functions were inspected."
+  },
+  {
+    "slug": "modefite-item-definition-backport",
+    "name": "Modefite - Item Definition Backport",
+    "project_id": "qjlkcVfy",
+    "version_id": "cy8BkRZc",
+    "version": "1.0.1+1.21.1",
+    "filename": "modefite-neoforge-1.0.1+1.21.1.jar",
+    "sha512": "2661fcf6bec97acabd6f513b41c41667d2ccc317002b8131ecb568db0c1bf0ffd6595d02790f4f82d1572c27f3e54e3d902fb87f4edf9cc70229b79c92e569b8",
+    "sha1": "05deff142c1c9798c53a3339b6e47a66593479d5",
+    "file_size": 131591,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/TimmyChips/Modefite-Item-Defintion-Backport",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved Priority1 audiovisual integration for 0.1.4; unchanged official Modrinth file",
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth download reference; no provider archive is modified, bundled or rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "punchy-fpa",
+    "name": "Punchy",
+    "project_id": "8aoMKplv",
+    "version_id": "83nCNSX4",
+    "version": "3.0",
+    "filename": "punchy-3.0-neoforge-1.21.1-birthday.jar",
+    "sha512": "524eedc82561e50fd0e48a36e97e274b200f7843be5f41e0e3351522ed0ad8e8176b2872afd0a9a5ce11349725304d71e6efde2793e5786957a6de5fb5d968f0",
+    "sha1": "f0beccecce3d7e882648ccbb7dfc98cf6aa50758",
+    "file_size": 3067299,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected Priority 1 audiovisual additions for 0.1.4; unchanged official Modrinth file",
+    "artifact_license": "All Rights Reserved / embedded LICENSE_Punchy. Author permits Modrinth and CurseForge modpack inclusion and prohibits independent JAR redistribution; use the unchanged official download reference.",
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth download reference; no provider archive is modified, bundled or rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "puzzle",
+    "name": "Puzzle",
+    "project_id": "3IuO68q1",
+    "version_id": "bZNDTLHq",
+    "version": "2.3.0+1.21.1-neoforge",
+    "filename": "puzzle-neoforge-2.3.0+1.21.1.jar",
+    "sha512": "b2c90cc1a3d6157934ce5d50e47ace4a1bc5d47c2afebec16db6a34d5b453fb7a15f6595ab775bac612023e7ea0c67a6232491d2d4c0842f4c78bfd68e236282",
+    "sha1": "2f34e967a990cdefcdf704b69de2c46942349546",
+    "file_size": 146163,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/PuzzleMC/Puzzle",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-approved Priority1 audiovisual integration for 0.1.4; unchanged official Modrinth file",
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "codAaoxh",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "dependency_note": "Native Puzzle bundles required MidnightLib 1.9.2; no standalone MidnightLib or Connector is needed.",
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth download reference; no provider archive is modified, bundled or rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "refined-tools",
+    "name": "Refined Tools",
+    "project_id": "6l1WUegn",
+    "version_id": "ndAFoNmO",
+    "version": "3.0",
+    "filename": "Refined Tools 3.0.zip",
+    "sha512": "0b874e634c89a2ebbf24f2658890b6d20d83974d5c0779ea3e9f655d58cb01922ff91bf374db1f872a77a3e359e3eb9184ce5107b6f3949947176715e0fe3d9b",
+    "sha1": "87c5d441c5f71cb231f008e49834f3578a56fe8e",
+    "file_size": 952724,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.20.1",
+      "1.21.1",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [
+      {
+        "project_id": "qjlkcVfy",
+        "version_id": "cy8BkRZc",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "3IuO68q1",
+        "version_id": "bZNDTLHq",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-approved Priority1 audiovisual integration for 0.1.4; unchanged official Modrinth file",
+    "provider_dependencies": [],
+    "dependency_note": "Author-linked native Modefite and Puzzle supply 1.21.1 item definitions and multi-axis rotations. The provider dependency array is empty; this curated dependency closure follows the actual active models.",
+    "artifact_license": "All Rights Reserved; original unchanged provider ZIP, with no extracted artwork. Four independent empty parent shims live in the owned atmosphere resourcepack.",
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth download reference; no provider archive is modified, bundled or rehosted.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    }
   }
 ]
