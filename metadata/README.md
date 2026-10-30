@@ -10,6 +10,21 @@ Unchanged files hosted on Modrinth are referenced through their official downloa
 
 ## Local resource integration
 
+### Fresh Animations: Quivers
+
+Quivers 2.2.0 is an unchanged official client download, selected directly above
+Fresh Animations 1.11.1. FreshLX's published terms explicitly permit modpack use;
+the export references the original file without bundling its artwork.
+
+FA 1.11 merged the skeleton-family animation files. Quivers still names the old
+stray and bogged files and lacks the new family flags. The owned
+`QuiverEmfMixin` composes the original base JEM's parts with the original Quivers
+body attachment in memory before EMF prepares the model. This retains the base
+flags, transforms and bogged mushroom model/animation. It only applies when the
+exact Quivers file directly overrides the exact base FA file at the same native
+resource location; a different higher-priority JEM remains untouched. No models,
+textures or animation expressions from either provider are redistributed.
+
 ### Atmosphere resources
 
 The second atmosphere wave uses unchanged official client downloads: Fusion

@@ -10,6 +10,7 @@
     "RainHeightMixin",
     "RainWindMixin",
     "PunchyEmfMixin",
+    "QuiverEmfMixin",
     "PuzzleLoadingOverlayMixin",
     "RodCaptureTraceMixin",
     "RodLineTraceMixin",

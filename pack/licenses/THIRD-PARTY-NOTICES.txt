@@ -1,4 +1,4 @@
-Aeroscapes Reimagine 0.1.3 — third-party notices
+Aeroscapes Reimagine 0.1.5 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 Aeroscapes 1.0.8: Isabel / nuclearobelisk; CC BY-SA 4.0 for that author's
@@ -53,6 +53,10 @@ Fresh Animations 1.11.1: FreshLX; original terms expressly permit modpack use.
 The unchanged resourcepack is downloaded from its official file; its included
 FAterms&conditions.txt and the author's project-page terms remain applicable.
 https://modrinth.com/resourcepack/fresh-animations/version/aQjwvDfY
+Fresh Animations: Quivers 2.2.0: FreshLX; published terms explicitly permit
+modpack inclusion. The original ZIP is referenced through its official download.
+The client adapter composes original models in memory; no provider artwork is copied.
+https://modrinth.com/resourcepack/fresh-animations-quivers/version/RLEhLx95
 Entity Model Features 3.3.12 and Entity Texture Features 7.2.6: Traben;
 LGPL-3.0-only. Official unchanged client artifacts provide the rendering engines.
 https://modrinth.com/mod/entity-model-features/version/197m3VoU

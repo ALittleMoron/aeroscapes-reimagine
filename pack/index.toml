@@ -675,11 +675,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "dc697baeee876ac872879df8cdbe3da7e63e43aca717381f9c206347ab42b6e3"
+hash = "5a2807bb0794ba3610ed3d75cffeccb8c29d87a4e70df94d5fa892692dd90fae"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "467980de5a546fc71fa3c4351e93a448ee248021116556c26996b5f33498a15e"
+hash = "99c873f9717af355d2ba179bebfa9efb6f32ad86fbb16a4941740a134bf7dee2"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -688,7 +688,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "427f972515ac80392eaf7d62496ac7f4120bb3f56b0fe8393b11e8da076006cb"
+hash = "efb370c0fe2f1819edcd2fe8d6a354db87cd2a2ceeeebb883633b5235a44d83a"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1332,7 +1332,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "469f6a6073f0a13e5f82adc5bc5e607138de71d709093d678217edfcd0722f6e"
+hash = "6e1518efec05d4b2832b3811e67ec5108aa223a7b150830453d5d242dcfaa249"
 
 [[files]]
 file = "polytone_options.json"
@@ -1401,6 +1401,11 @@ metafile = true
 [[files]]
 file = "resourcepacks/fa-player-extension.pw.toml"
 hash = "953ace5562e5c6bfb3a6edc0b5c3021031ec0f7b65efe94819d6e66fd79b118a"
+metafile = true
+
+[[files]]
+file = "resourcepacks/fresh-animations-quivers.pw.toml"
+hash = "2b97303cee7bec8fd67500f93800ef447020c01f333fb75239c332b60e866712"
 metafile = true
 
 [[files]]

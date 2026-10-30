@@ -6673,5 +6673,58 @@
       "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
       "integration_decision": "metadata/README.md"
     }
+  },
+  {
+    "slug": "fresh-animations-quivers",
+    "name": "Fresh Animations: Quivers",
+    "project_id": "T4pK4GiQ",
+    "version_id": "RLEhLx95",
+    "version": "2.2.0",
+    "filename": "FA+Quivers-v2.2.zip",
+    "sha512": "7414d6207279ee34cabc30d847e550c158d361131e401bc7b4d70fe4aceec226aeff07bc9f2e27afc9daa9945d651e9dacdb0d84df1d4b4d94964b10c62dccd5",
+    "sha1": "b6307c2c7c0196298ccf53afff844d068e9805ac",
+    "file_size": 89828,
+    "release_type": "release",
+    "side": "client",
+    "kind": "resourcepack",
+    "loaders": [
+      "minecraft"
+    ],
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.20.2",
+      "1.20.3",
+      "1.20.4",
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "1.21.10",
+      "1.21.11",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2",
+      "26.3"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected Priority 2 item 3 for 0.1.5; unchanged official Modrinth file",
+    "dependency_note": "Uses the included Fresh Animations 1.11.1, EMF 3.3.12 and ETF 7.2.6. Load directly above base FA. The owned client adapter composes the three original base skeleton-family models with Quivers body attachments in memory, retaining FA 1.11 family flags and bogged mushrooms; original archives are unchanged. FreshLX explicitly permits modpack inclusion."
   }
 ]

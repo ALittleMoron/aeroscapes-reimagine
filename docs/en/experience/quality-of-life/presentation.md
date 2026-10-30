@@ -24,6 +24,8 @@ Races, abilities and expanded action combat remain planned in [character and com
 
 [Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) gives existing creatures more expressive movement and poses. Entity Model Features and Entity Texture Features provide its client rendering support. The player animation setup remains a separate layer.
 
+[Fresh Animations: Quivers](https://modrinth.com/resourcepack/fresh-animations-quivers) adds a matching quiver to the backs of skeletons, strays and bogged. The pack's client adapter retains their current Fresh Animations models and movement, including the bogged's mushrooms. These are visual details, with no new equipment or ammunition rules. Keep Quivers directly above Fresh Animations in **Options → Resource Packs**; new installations select this order automatically.
+
 [Motschen’s Better Leaves](https://modrinth.com/resourcepack/better-leaves) gives tree canopies a fuller silhouette. It covers vanilla and Quark foliage, most Nature’s Spirit leaves and Chipped’s leaf variants. Nature’s Spirit coconut leaves retain their original model. The pack changes leaf appearance rather than tree generation.
 
 [Falling Leaves](https://modrinth.com/mod/fallingleavesforge) adds drifting leaf particles. Cherry blossoms retain their existing particles, and the pack leaves flowering azalea petals to Subtle Effects to avoid a second ambient leaf effect on those blocks.

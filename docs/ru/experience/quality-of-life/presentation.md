@@ -24,6 +24,8 @@ status: available
 
 [Fresh Animations](https://modrinth.com/resourcepack/fresh-animations) делает движения и позы существ выразительнее. Entity Model Features и Entity Texture Features обеспечивают его работу на клиенте. Анимации самого персонажа остаются отдельным слоем.
 
+[Fresh Animations: Quivers](https://modrinth.com/resourcepack/fresh-animations-quivers) добавляет подходящие по виду колчаны на спины скелетов, зимогоров и болотников. Клиентский адаптер сборки сохраняет их текущие модели и движения Fresh Animations, включая грибы болотника. Это визуальная деталь без новых предметов экипировки и правил расходования стрел. В **Options → Resource Packs** держи Quivers непосредственно над Fresh Animations; в новых установках этот порядок выбран автоматически.
+
 [Motschen’s Better Leaves](https://modrinth.com/resourcepack/better-leaves) придаёт кронам более пышный силуэт. Он охватывает ванильную листву, листву Quark, большинство видов Nature’s Spirit и варианты листвы Chipped. Кокосовая листва Nature’s Spirit сохраняет исходную модель. Меняется вид листьев, а не генерация деревьев.
 
 [Falling Leaves](https://modrinth.com/mod/fallingleavesforge) добавляет частицы падающих листьев. У вишни сохраняются существующие частицы, а лепестки цветущей азалии остаются за Subtle Effects, чтобы на этих блоках не появлялся второй фоновый эффект листвы.

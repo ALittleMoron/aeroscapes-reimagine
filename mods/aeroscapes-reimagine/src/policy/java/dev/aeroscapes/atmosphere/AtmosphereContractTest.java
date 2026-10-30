@@ -15,12 +15,15 @@ import org.objectweb.asm.tree.FieldInsnNode;
 import org.objectweb.asm.tree.JumpInsnNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
+import traben.entity_model_features.models.jem_objects.EMFJemData;
+import traben.entity_model_features.models.jem_objects.EMFPartData;
 
 /** Checks the provider boundaries used by client adapters without starting Minecraft. */
 public final class AtmosphereContractTest {
   private AtmosphereContractTest() {}
 
   public static void main(String[] arguments) throws IOException {
+    quiverComposition();
     fastRodRenderers();
     ClassNode attachment = provider("punchy/client/render/FishingLineAttachment");
     method(
@@ -120,9 +123,49 @@ public final class AtmosphereContractTest {
     ClassNode etf = provider("traben/entity_texture_features/features/state/ETFState");
     method(etf, "mount", "(Ltraben/entity_texture_features/features/state/ETFEntityRenderState;)V");
     method(etf, "unMount", "()V");
+    method(
+        provider("traben/entity_model_features/models/jem_objects/EMFJemData"),
+        "prepare",
+        "(Ltraben/entity_model_features/utils/EMFDirectoryHandler;Ltraben/entity_model_features/models/EMFModel_ID;)V");
     loadingOverlay();
     System.out.println(
-        "Atmosphere: precipitation scope and exact native rain/hand API contracts passed");
+        "Atmosphere: quiver composition, precipitation scope and native API contracts passed");
+  }
+
+  private static void quiverComposition() {
+    for (String mob : List.of("skeleton", "stray", "bogged")) {
+      EMFJemData base = new EMFJemData();
+      EMFPartData animation = new EMFPartData();
+      animation.model = "skeleton_animations.jpm";
+      base.models.add(animation);
+      EMFPartData head = new EMFPartData();
+      head.id = "head";
+      base.models.add(head);
+      EMFPartData mushrooms = new EMFPartData();
+      mushrooms.model = "bogged_mushroom_animations.jpm";
+      if (mob.equals("bogged")) base.models.add(mushrooms);
+      EMFJemData selected = new EMFJemData();
+      EMFPartData quiver = new EMFPartData();
+      quiver.part = "body";
+      quiver.id = "quiver";
+      quiver.model = mob + "_quiver.jpm";
+      quiver.attach = true;
+      selected.models.add(quiver);
+      require(QuiverCompatibility.compose(selected, base, mob), "quiver composition applies");
+      require(selected.models.getFirst() == animation, "native animation reference retained");
+      require(selected.models.contains(head), "native head and family flags retained");
+      require(selected.models.getLast() == quiver, "original body attachment retained");
+      require(base.models.size() == (mob.equals("bogged") ? 3 : 2), "base list unchanged");
+      require(
+          selected.models.contains(mushrooms) == mob.equals("bogged"),
+          "bogged mushroom animation retained");
+      selected.models.clear();
+      require(!QuiverCompatibility.compose(selected, base, mob), "disabled quiver stays absent");
+      selected.models.add(quiver);
+      quiver.model = "other_pack.jpm";
+      require(!QuiverCompatibility.compose(selected, base, mob), "other models stay unchanged");
+      require(selected.models.size() == 1, "unrelated model list unchanged");
+    }
   }
 
   private static void loadingOverlay() throws IOException {

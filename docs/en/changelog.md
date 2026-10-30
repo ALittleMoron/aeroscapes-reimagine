@@ -4,6 +4,10 @@ description: Version history.
 status: available
 ---
 
+## 0.1.5
+
+- Add Fresh Animations: Quivers for skeletons, strays and bogged, retaining their current Fresh Animations models and movement through a client compatibility adapter.
+
 ## 0.1.4
 
 - Add standalone Punchy with restrained initial hand/camera settings and an adapter for the current EMF hand-render state; retain Fresh Animations, FA Player and Not Enough Animations.

@@ -494,5 +494,15 @@
     },
     "files": [],
     "reason": "Flerovium1.1.2 optimized ItemRenderer draws the real SimpleBakedModel then substitutes DummyModel for vanilla renderModelLists; Punchy3.0 capture there cannot see rod geometry. Owned FastRodCaptureMixin invokes the existing public capture at both public static Flerovium fast renderer entry points for Items.FISHING_ROD inside the active Punchy item capture. Original model/stack/PoseStack.last.pose are forwarded; exact bytecode verifies the draw uses that unchanged pose. Shader and ordinary paths retain their native drawing; no copied projection, offset or provider modification."
+  },
+  {
+    "targets": {
+      "T4pK4GiQ": "RLEhLx95",
+      "50dA9Sha": "aQjwvDfY",
+      "4I1XuqiY": "197m3VoU",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Quivers 2.2 still references stray_animations.jpm and bogged_animations.jpm removed by FA 1.11, and its JEMs omit the new family flags. Client-only QuiverEmfMixin composes the locally loaded FA 1.11.1 models with the single original Quivers body attachment before EMF 3.3.12 prepares them; retain all base flags, transforms and bogged mushroom parts/animation. Require adjacent exact provider file IDs in the same native resource stack. Other custom JEMs and disabled packs remain untouched; no third-party artwork is copied or distributed."
   }
 ]
