@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from dataclasses import field as dataclass_field
 from pathlib import Path
 
-from aeroscapes_pack.data import PackError, array, field, json_value, table, toml_table
+from aeroscapes_pack.data import PackError, array, field, json_value, strings, table, toml_table
 from aeroscapes_pack.files import digest, download, safe_path
 from aeroscapes_pack.models import Artifact, Manifest, PinnedFile, Project
 from aeroscapes_pack.pack import SourcePack
@@ -112,7 +112,9 @@ def read_entry(archive: zipfile.ZipFile, name: str) -> bytes:
         raise PackError(f"Invalid or missing JAR entry {name}: {error}") from error
 
 
-def jar_mods(content: bytes, depth: int = 0) -> tuple[set[str], list[JarRequirement]]:
+def jar_mods(
+    content: bytes, depth: int = 0, *, fabric: bool = False
+) -> tuple[set[str], list[JarRequirement]]:
     if depth > MAX_NESTED_DEPTH:
         raise PackError("Excessive nested JAR depth")
     identifiers: set[str] = set()
@@ -122,6 +124,30 @@ def jar_mods(content: bytes, depth: int = 0) -> tuple[set[str], list[JarRequirem
         if manifest in archive.namelist():
             data = toml_table(read_entry(archive, manifest).decode("utf-8"), manifest)
             identifiers, requirements = declared_mods(data)
+        fabric_manifest = "fabric.mod.json"
+        if fabric:
+            data = table(
+                json_value(read_entry(archive, fabric_manifest), fabric_manifest), fabric_manifest
+            )
+            identifier = field(data, "id", fabric_manifest)
+            if field(data, "environment", fabric_manifest) != "client":
+                raise PackError(f"Fabric mod is not client-only: {identifier}")
+            identifiers.add(identifier)
+            dependencies = table(data.get("depends", {}), f"{identifier}.depends")
+            for dependency, expression in dependencies.items():
+                if isinstance(expression, str):
+                    if not expression:
+                        raise PackError(
+                            f"Empty Fabric dependency constraint: {identifier}/{dependency}"
+                        )
+                elif not strings(expression, f"{identifier}.depends.{dependency}"):
+                    raise PackError(
+                        f"Empty Fabric dependency constraint: {identifier}/{dependency}"
+                    )
+                if dependency not in {"minecraft", "java"}:
+                    requirements.append(
+                        JarRequirement(owner=identifier, dependency=dependency, side="CLIENT")
+                    )
         nested_metadata = "META-INF/jarjar/metadata.json"
         if nested_metadata in archive.namelist():
             nested = table(
@@ -140,6 +166,9 @@ def declared_mods(data: dict[str, object]) -> tuple[set[str], list[JarRequiremen
         field(table(item, "mods[]"), "modId", "mods[]")
         for item in array(data.get("mods", []), "mods")
     }
+    for item in array(data.get("mods", []), "mods"):
+        mod = table(item, "mods[]")
+        identifiers.update(strings(mod.get("provides", []), "mods[].provides"))
     dependencies = table(data.get("dependencies", {}), "dependencies")
     requirements: list[JarRequirement] = []
     for owner in identifiers:
@@ -173,10 +202,15 @@ class InstallationSide:
 
 
 def add_jar(
-    content: bytes, name: str, side: str, installations: Mapping[str, InstallationSide]
+    content: bytes,
+    name: str,
+    side: str,
+    installations: Mapping[str, InstallationSide],
+    *,
+    fabric: bool = False,
 ) -> None:
     try:
-        identifiers, requirements = jar_mods(content)
+        identifiers, requirements = jar_mods(content, fabric=fabric)
     except (PackError, zipfile.BadZipFile, UnicodeError) as error:
         raise PackError(f"Invalid JAR {name}: {error}") from error
     for installed_side, installed in installations.items():
@@ -201,12 +235,20 @@ def audit_jars(
             raise PackError(f"Artifact SHA-512 mismatch: {path}")
         if artifact.kind != "mod":
             continue
-        add_jar(path.read_bytes(), str(path), artifact.side, installations)
+        add_jar(
+            path.read_bytes(),
+            str(path),
+            artifact.side,
+            installations,
+            fabric="neoforge" not in artifact.loaders and "fabric" in artifact.loaders,
+        )
     # Owned mods ship as packwiz overrides; their bytes are pinned by the pack index.
     for name, content in overrides.items():
         if name.startswith("mods/") and name.endswith(".jar"):
             add_jar(content, name, "both", installations)
     for side, installed in installations.items():
+        if "connector" in installed.identifiers:
+            installed.identifiers.add("fabricloader")
         missing = [
             (requirement.owner, requirement.dependency)
             for requirement in installed.requirements

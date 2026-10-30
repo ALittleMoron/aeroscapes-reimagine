@@ -627,6 +627,8 @@ def test_exception_text_cannot_authorize_an_unrelated_beta(
         ("COlSi5iR", "avwWYPbG", "alpha"),
         ("qtPMklut", "7rX3dlFf", "alpha"),
         ("qyVF9oeo", "85fA7L1W", "beta"),
+        ("xFCYuAs8", "Js4y2r4d", "beta"),
+        ("u58R1TMW", "IITF0PRC", "beta"),
     ],
 )
 def test_selected_prerelease_exception_is_exact(
@@ -670,6 +672,47 @@ def test_actual_jar_dependencies_are_checked_on_the_installed_side(
 
     with pytest.raises(PackError, match="client.*kotlinforforge"):
         audit_jars(tmp_path, (actual,), {}, manifest=source.manifest)
+
+
+def test_fabric_mod_requires_bridge_and_api_on_client(
+    tmp_path: Path, artifact: Artifact, source: SourcePack
+) -> None:
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, "w") as archive:
+        archive.writestr(
+            "fabric.mod.json",
+            json.dumps(
+                {
+                    "id": "smoke",
+                    "environment": "client",
+                    "depends": {
+                        "fabricloader": ">=0.18.4",
+                        "fabric-api": "*",
+                        "minecraft": ">=1.21",
+                    },
+                }
+            ),
+        )
+    path = tmp_path / artifact.filename
+    path.write_bytes(buffer.getvalue())
+    fabric = replace(artifact, sha512=digest(path, "sha512"), loaders=("fabric",))
+    with pytest.raises(PackError, match="client.*fabricloader"):
+        audit_jars(tmp_path, (fabric,), {}, manifest=source.manifest)
+    bridge = make_jar('[[mods]]\nmodId = "connector"\n')
+    api = make_jar('[[mods]]\nmodId = "fabric_api"\nprovides = ["fabric-api"]\n')
+    audit_jars(
+        tmp_path,
+        (fabric,),
+        {"mods/bridge.jar": bridge, "mods/api.jar": api},
+        manifest=source.manifest,
+    )
+
+
+def test_fabric_metadata_cannot_bypass_client_bridge(
+    source: SourcePack, artifact: Artifact
+) -> None:
+    with pytest.raises(PackError, match="without its client bridge"):
+        audit_metadata(source, (replace(artifact, loaders=("fabric",)),))
 
 
 def test_bundled_library_satisfies_dependency(

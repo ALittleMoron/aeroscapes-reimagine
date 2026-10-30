@@ -46,6 +46,10 @@ status: available
 
 [AmbientSounds](https://modrinth.com/mod/ambientsounds) добавляет звуки окружения, а [Sounds](https://modrinth.com/mod/sound) отвечает за шаги по разным материалам и расширяет звуки повседневных действий. [Drip Sounds](https://modrinth.com/mod/dripsounds) озвучивает капающие частицы. [Subtle Effects](https://modrinth.com/mod/subtle-effects) добавляет туман у водопадов, всплески и круги на воде, светлячков, искры и другие небольшие детали.
 
+[Ambient Environment](https://modrinth.com/mod/ambient-environment) меняет оттенки растительности внутри биомов. [Better Smoke](https://modrinth.com/mod/better-smoke) меняет дым костров: ветер отклоняет его, а дым от соседних костров объединяется. [Eating Animations](https://modrinth.com/mod/eating-animations) постепенно меняет вид поддерживаемой еды и напитков при употреблении. [Visuality: Reforged](https://modrinth.com/mod/visuality-forge) добавляет частицы попаданий и небольшой блеск руды, а [Particle Interactions](https://modrinth.com/mod/particle-interactions) — эффекты установки блоков и работы инструментами. Круги на воде, частицы при снятии коры и искры огня остаются за Subtle Effects.
+
+[Atmospheric Fauna](https://modrinth.com/mod/atmospheric-fauna) добавляет декоративных птиц, в том числе над пустотой и на нижних островах. Это визуальные частицы: ловить и разводить таких птиц нельзя.
+
 [Cool Rain Reforged](https://modrinth.com/mod/cool-rain-reforged) меняет звучание дождя в зависимости от поверхности: стекла, металла, листвы, шерсти или воды. Его громкость регулируется ползунком **Weather** в настройках звука Minecraft.
 
 [ImmersiveThunder](https://www.curseforge.com/minecraft/mc-mods/immersivethunder) меняет звук отдельных ударов молнии в зависимости от расстояния: близкий треск, гром на средней дистанции и далёкие раскаты. AmbientSounds сохраняет фоновое звучание грозы. Громкость грома регулируется ползунком **Weather**.

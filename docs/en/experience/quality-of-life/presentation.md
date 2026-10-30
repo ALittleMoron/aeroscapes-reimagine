@@ -46,6 +46,10 @@ These resourcepacks and the small atmosphere integration pack are selected in ne
 
 [AmbientSounds](https://modrinth.com/mod/ambientsounds) adds environmental sound, while [Sounds](https://modrinth.com/mod/sound) supplies material footsteps and expands everyday interaction sounds. [Drip Sounds](https://modrinth.com/mod/dripsounds) adds sounds for dripping particles. [Subtle Effects](https://modrinth.com/mod/subtle-effects) supplies waterfall mist, water splashes and ripples, fireflies, sparks and other small details.
 
+[Ambient Environment](https://modrinth.com/mod/ambient-environment) varies vegetation colors within biomes. [Better Smoke](https://modrinth.com/mod/better-smoke) gives campfires wind-blown plumes that combine when campfires are close together. [Eating Animations](https://modrinth.com/mod/eating-animations) changes supported food and drink sprites as they are consumed. [Visuality: Reforged](https://modrinth.com/mod/visuality-forge) adds hit particles and subtle ore sparkles, while [Particle Interactions](https://modrinth.com/mod/particle-interactions) adds feedback for placing blocks and using tools. Water ripples, axe stripping and fire sparks remain with Subtle Effects.
+
+[Atmospheric Fauna](https://modrinth.com/mod/atmospheric-fauna) adds decorative birds, including above the void and on lower islands. These birds are visual particles; they cannot be caught or bred.
+
 [Cool Rain Reforged](https://modrinth.com/mod/cool-rain-reforged) changes the sound of rainfall according to the surface it hits, including glass, metal, foliage, wool and water. Its sounds use Minecraft's **Weather** volume control.
 
 [ImmersiveThunder](https://www.curseforge.com/minecraft/mc-mods/immersivethunder) changes individual lightning strikes according to their distance: close cracks, medium-distance thunder and distant rumbles. AmbientSounds continues to supply the storm background. Thunder uses the **Weather** volume control.

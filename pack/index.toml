@@ -5,6 +5,10 @@ file = "config/aeroscapes_reimagine/test_airship.nbt"
 hash = "2ec7d3a941cf644b4aa8abda8357db20243cbfd92b4c3994296323d7e2e67ac2"
 
 [[files]]
+file = "config/atmospheric-fauna.json"
+hash = "9589b6ecc1c32845d9cb6aa81fd585ddab9664a39f23f7afa8b04958e2e2fe83"
+
+[[files]]
 file = "config/badoptimizations.txt"
 hash = "5b4bde22c84906bb95767aa7085997499e2f7c22062ec9c954e9f1a7b0b09a37"
 
@@ -15,6 +19,10 @@ hash = "ca818009f21a2d990561c20ceafc73b704e4c79f62ce8326ab1c944b93dd1088"
 [[files]]
 file = "config/colorwheel-client.toml"
 hash = "10bae919cad5e462007da61deb8b45bc86470daf404664f87885fd57b83d1835"
+
+[[files]]
+file = "config/eg_particle_interactions_config.json"
+hash = "e12e4092b822f330fe1cc58364d1bb7e723e29576efd1f347339518ed8e51564"
 
 [[files]]
 file = "config/entity_model_features.json"
@@ -99,6 +107,14 @@ hash = "1eca390ee239e9d4be0f913be120323b4a87cb0f863169e3e7a0bfc72b8bd20c"
 [[files]]
 file = "config/vanillin-client.toml"
 hash = "50afa67b41e1a206785abe1431425b33707da051cd2cc15ecaddf57703614e70"
+
+[[files]]
+file = "config/visuality/config.toml"
+hash = "6264ff4fecf2eacc100d2c2c0b8ece0d0dd857511eccb2a662befbbabe6f626b"
+
+[[files]]
+file = "config/visuality/particle_emitters/block_ambient.json"
+hash = "b06102e86e0f9e46e99762a36a3af271cb56f492d68694326c61c82c7414f293"
 
 [[files]]
 file = "config/xaero/minimap/common.cfg"
@@ -683,7 +699,7 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "2489661fad6e3ad916d5c5888b0a8ff84a471911eb35f81d46982f88d1edc29e"
+hash = "1bbde94d784598060f30ee163310e3957058703dd6f0b3ddf5c346728ef4d262"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
@@ -704,6 +720,11 @@ hash = "5993996b5c4e23df2135f9fdde3674a461d538de6d5c69e1f686efaf38efe666"
 metafile = true
 
 [[files]]
+file = "mods/ambient-environment.pw.toml"
+hash = "8b7b09016fc877f86dceabecf8437840a7c32a1c29142a9b1028eca18b08260b"
+metafile = true
+
+[[files]]
 file = "mods/ambientsounds.pw.toml"
 hash = "47f3d65dac68154fc10c1b00c7526a86f4738b0a2eec27d3b3a627fe07053c45"
 metafile = true
@@ -719,6 +740,11 @@ hash = "0a0102812c02bc6ab4479a3e7166d28d986945665162f33eed2dc3080c96bf51"
 metafile = true
 
 [[files]]
+file = "mods/atmospheric-fauna.pw.toml"
+hash = "43548d51df6ce315c21d34311b82160503a1b2c11c44466c63c8198b554fee46"
+metafile = true
+
+[[files]]
 file = "mods/badoptimizations.pw.toml"
 hash = "cb7e2166aa909cbd176e57fb12ebd303943b941bc10a5b35b85aa86f50cacd15"
 metafile = true
@@ -731,6 +757,11 @@ metafile = true
 [[files]]
 file = "mods/better-clouds.pw.toml"
 hash = "66f71388dd6e63b6d8965c92819cb1b93be9a4840b5aec6a029b48f1ab28b9fc"
+metafile = true
+
+[[files]]
+file = "mods/better-smoke.pw.toml"
+hash = "b8ce4a231e9107645d0abbaae4fe08e4fd7388d47e155fb2c08ff52cefb6ace9"
 metafile = true
 
 [[files]]
@@ -801,6 +832,16 @@ metafile = true
 [[files]]
 file = "mods/comforts.pw.toml"
 hash = "89199c111f8c500fd0aa215ee13582420befe1979b3330df60513b54064e0f92"
+metafile = true
+
+[[files]]
+file = "mods/connector-extras.pw.toml"
+hash = "519e8baba4e236bf00140d862a6c33008d99ce31e62713eebc2f24033ba646c0"
+metafile = true
+
+[[files]]
+file = "mods/connector.pw.toml"
+hash = "f7d25a79f373eb49f102beacf3fc6c5a30cccd0d2dc30c1cbcfaefeca57d4959"
 metafile = true
 
 [[files]]
@@ -919,6 +960,11 @@ hash = "67241a713fbf873928f39f4f7bc7661cb4f2fdcc70a8fe41cdaee8df1faee024"
 metafile = true
 
 [[files]]
+file = "mods/eating-animations.pw.toml"
+hash = "be50c78b4085f6c8feba0d2d53627a9d46e3291cea308fd120334d32ab260f7e"
+metafile = true
+
+[[files]]
 file = "mods/effecttimerplus.pw.toml"
 hash = "5680dd7aec6ca3ea1c1e86fe28b3a652cc790286a10224fe46ba0f2758457777"
 metafile = true
@@ -1006,6 +1052,11 @@ metafile = true
 [[files]]
 file = "mods/globalpacks.pw.toml"
 hash = "de418c840ec0e040286039a262aeeef44a052c4feca5279ee227da17377ae4a8"
+metafile = true
+
+[[files]]
+file = "mods/gml.pw.toml"
+hash = "a230592b04205822c989016e80e6af48e4ba86dab6807bf2e7b775711146698b"
 metafile = true
 
 [[files]]
@@ -1141,6 +1192,11 @@ metafile = true
 [[files]]
 file = "mods/nyfs-spiders.pw.toml"
 hash = "a63cf2386e21958fc5d593c48d6493954928486a563e6b43ab983d61c107cf70"
+metafile = true
+
+[[files]]
+file = "mods/particle-interactions.pw.toml"
+hash = "304a59fde27cd6af47cb5dadcda5c2db3149e358ef595a7ff54ef3ea2aed0b40"
 metafile = true
 
 [[files]]
@@ -1321,6 +1377,11 @@ metafile = true
 [[files]]
 file = "mods/visual-workbench.pw.toml"
 hash = "0abaf4ca962cf3b75f69588ecb101327712be61750f1878685576c39d2ed5336"
+metafile = true
+
+[[files]]
+file = "mods/visuality-forge.pw.toml"
+hash = "68f9fa4a3299e7bff3dc4ef962d568d819ba8f14a5bfaeb2d1487e42fb16de8d"
 metafile = true
 
 [[files]]

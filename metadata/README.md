@@ -8,6 +8,36 @@ Keep original upstream JARs byte-identical, retain notices, and prefer independe
 
 Unchanged files hosted on Modrinth are referenced through their official downloads under its [specific-file modpack policy](https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions). Redistribution of a separate unchanged MIT artifact retains its embedded license; Flywheel's packaging is described below. Do not substitute the C2ME base's MIT license for the separate OpenCL module's terms.
 
+## Local visual effects
+
+[Ambient Environment](https://modrinth.com/mod/ambient-environment),
+[Eating Animations](https://modrinth.com/mod/eating-animations),
+[Visuality: Reforged](https://modrinth.com/mod/visuality-forge) and
+[Particle Interactions](https://modrinth.com/mod/particle-interactions) use unchanged
+official client files. The owner approved the exact Particle Interactions beta.
+Eating Animations requires [GroovyModLoader](https://modrinth.com/mod/gml), which
+bundles CommonGroovyLibrary and its loader core. The eating and loader providers
+label their files for 1.21; their descriptors allow Minecraft 1.21.1. Their actual
+client loading and food-model interaction remain to be checked.
+
+[Better Smoke](https://modrinth.com/mod/better-smoke) uses the owner-approved
+[Connector 2.0.0-beta.17](https://modrinth.com/mod/connector/version/IITF0PRC)
+and the existing client-only Forgified Fabric API. Its descriptor requires Fabric
+Loader 0.18.4 or newer; the pinned Connector embeds 0.19.3. This bridge and its
+rendering interactions require client acceptance.
+
+[Atmospheric Fauna](https://modrinth.com/mod/atmospheric-fauna) uses the same
+bridge plus [Connector Extras](https://modrinth.com/mod/connector-extras) and the
+existing [Cloth Config](https://modrinth.com/mod/cloth-config). Its particle birds
+can spawn below sea level and in the air. The pack uses the mod's own rendering
+and distance behavior. Camera, zoom, shaders and ship behavior await client acceptance.
+
+Visuality's selected ore emitters exclude amethyst so Subtle Effects keeps its
+crystal sparkle; its water circles are disabled. Particle Interactions leaves axe
+stripping, fire and campfire sparks to Subtle Effects and leaf-break particles to
+Falling Leaves. Its extra particle physics are disabled for the existing particle
+physics stack. These settings are initial defaults, subject to client acceptance.
+
 ## Rain puddles and direct thunder
 
 [Puddles & Floods 1.1.6](https://modrinth.com/mod/puddles-floods/version/ba9E4XOp)

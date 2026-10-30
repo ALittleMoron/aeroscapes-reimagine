@@ -1,0 +1,9 @@
+{
+  "enabled": true,
+  "interval": 20,
+  "entries": [
+    {"block": "#c:ores/gold", "particle": {"type": "visuality:sparkle", "color": [0.996, 1.0, 0.741]}},
+    {"block": "#c:ores/diamond", "particle": {"type": "visuality:sparkle", "color": [0.706, 0.992, 0.933]}},
+    {"block": "#c:ores/emerald", "particle": {"type": "visuality:sparkle", "color": [0.851, 1.0, 0.922]}}
+  ]
+}

@@ -182,6 +182,36 @@
     "file_size": 642317
   },
   {
+    "slug": "ambient-environment",
+    "name": "Ambient Environment",
+    "project_id": "DyTvM1dv",
+    "version_id": "N7jam3SN",
+    "version": "18.0.0.2",
+    "filename": "AmbientEnvironment-neoforge-1.21.1-18.0.0.2.jar",
+    "sha512": "aad91081e677097847ad847463717fdb77abf32a1a27176b019fa919ba505a3ab01b6d06c30d63da800a0b5b490be3cf5a7cf80f2193b6a8394a4249ba2cfeaa",
+    "sha1": "3a00ec1170b38e75a502dcc46038397f8fd9b305",
+    "file_size": 50812,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/jaredlll08/Ambiance",
+    "dependencies": [],
+    "provider_dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file"
+  },
+  {
     "slug": "ambientsounds",
     "name": "AmbientSounds",
     "project_id": "fM515JnW",
@@ -306,6 +336,77 @@
     "reason": "No required consumer remains after the native migration/reference filtering; omit unused libraries."
   },
   {
+    "slug": "atmospheric-fauna",
+    "name": "Atmospheric Fauna",
+    "project_id": "yd14I2wN",
+    "version_id": "m4E3YdvX",
+    "version": "v0.5.1",
+    "filename": "atmospheric-fauna-0.5.1+1.21.jar",
+    "sha512": "0c051830c095803e9547e86c8907fec3354fcb7970793a83e051042d2773a8e05835b12ab139d58549f20955d1d7878ec027c24559b7ffe0097287818f3dcae5",
+    "sha1": "9ee4140875b53c853e92fa25c2d4ba174c861061",
+    "file_size": 146920,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "fabric"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/RealNmS/Atmospheric-Fauna",
+    "dependencies": [
+      {
+        "project_id": "u58R1TMW",
+        "version_id": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "Aqlf1Shp",
+        "version_id": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "FYpiwiBR",
+        "version_id": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "9s6osm5g",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file",
+    "dependency_note": "Fabric client mod requires Fabric Loader >=0.18.2 and Fabric API. Author recommends Connector Extras and native Cloth Config for configuration."
+  },
+  {
     "slug": "badoptimizations",
     "name": "BadOptimizations",
     "project_id": "g96Z4WVZ",
@@ -359,6 +460,48 @@
     "status": "deferred",
     "origin": "Aeroscapes 1.0.8",
     "reason": "No required consumer remains after the native migration/reference filtering; omit unused libraries."
+  },
+  {
+    "slug": "better-smoke",
+    "name": "Better Smoke",
+    "project_id": "Effrh3ze",
+    "version_id": "9It7IoUE",
+    "version": "0.1.2+1.21-1.21.8",
+    "filename": "bettersmoke-0.1.2+1.21-1.21.8.jar",
+    "sha512": "58cce421dae03b82d4505dd1cef04ae1fc6fb62a448c32648e4b822ca8949784d71837216ccc2fe17f5ae406fe8ee3d0b9437267755c474e2b078cc809757946",
+    "sha1": "283b2645d0ec423a527f8f5cdcdd44de8fbf2240",
+    "file_size": 237395,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "fabric"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [
+      {
+        "project_id": "u58R1TMW",
+        "version_id": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "Aqlf1Shp",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "provider_dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file",
+    "dependency_note": "Fabric client mod: descriptor requires Fabric Loader >=0.18.4 and Fabric API; use pinned Connector and Forgified Fabric API."
   },
   {
     "slug": "bettergrassify",
@@ -1104,8 +1247,143 @@
     "slug": "connector",
     "name": "Sinytra Connector",
     "project_id": "u58R1TMW",
-    "status": "deferred",
-    "reason": "Native Aero Islands replaces the old cross-loader stack."
+    "version_id": "IITF0PRC",
+    "version": "2.0.0-beta.17+1.21.1",
+    "filename": "connector-2.0.0-beta.17+1.21.1-full.jar",
+    "sha512": "cb92b662047208792e61191d372d1e255766200406c35769007101f8c578c1018938610c3b90352afd93ec42d7963acf3607e35c50e669df50ac85d7c5529560",
+    "sha1": "15e652d3628b1bcb644b93576fcab154496f770a",
+    "file_size": 4573244,
+    "release_type": "beta",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/Sinytra/Connector/blob/master/LICENSE"
+    },
+    "source_url": "https://github.com/Sinytra/Connector",
+    "dependencies": [
+      {
+        "project_id": "Aqlf1Shp",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "FYpiwiBR",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "Aqlf1Shp",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file",
+    "exception": "Owner explicitly approved Connector 2.0.0-beta.17 IITF0PRC for Better Smoke and Atmospheric Fauna.",
+    "dependency_note": "Embedded Fabric Loader 0.19.3; original Connector bundles its NeoForge mod and adapter runtime. Client-only for cosmetic Fabric mods."
+  },
+  {
+    "slug": "connector-extras",
+    "name": "Connector Extras",
+    "project_id": "FYpiwiBR",
+    "version_id": "dgLCqZyo",
+    "version": "1.12.1+1.21.1",
+    "filename": "ConnectorExtras-1.12.1+1.21.1.jar",
+    "sha512": "ff9fc5d48a81e820c8c26b8a045e0ab7a3b0e9b5eaee7369b2eadb3f93d7eb423255073dfc327d131cb667df93be066560f3704b4cc8a12b07486b98a12bad1d",
+    "sha1": "8ea07df55b26c8343d06df77936505a23e0d2140",
+    "file_size": 86284,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/Sinytra/ConnectorExtras/blob/master/LICENSE"
+    },
+    "source_url": "https://github.com/Sinytra/ConnectorExtras",
+    "dependencies": [
+      {
+        "project_id": "u58R1TMW",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "lhGA9TYQ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "nfn13YXA",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "kkmrDlKT",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "umyGl7zF",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "t5W7Jfwy",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "8BmcQJ2H",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "fRiHVvU7",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "u58R1TMW",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file"
   },
   {
     "slug": "continuity",
@@ -2087,6 +2365,50 @@
     "reason": "External LAN tunnel not needed for the private local foundation."
   },
   {
+    "slug": "eating-animations",
+    "name": "Eating Animations",
+    "project_id": "X8CISwXp",
+    "version_id": "D7saUVV5",
+    "version": "6.0.1",
+    "filename": "eatinganimation-1.21.0-6.0.1.jar",
+    "sha512": "1c2eacc647be8256d4a3f7caec9d13c974881e70819d184480294bff96f220718b2a223201c3146f8af69e04d3907012492ed9a488eb81463e9535a3f799a2a3",
+    "sha1": "68f276dc8cf57658b0afc2112c6ee63325989e02",
+    "file_size": 289863,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/MatyrobbrtMods/EatingAnimationForge",
+    "dependencies": [
+      {
+        "project_id": "zg2tT2Vu",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "zg2tT2Vu",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file",
+    "dependency_note": "Provider labels 1.21; exact NeoForge descriptor permits Minecraft [1.21.0,1.22). GroovyModLoader includes CommonGroovyLibrary and GML core."
+  },
+  {
     "slug": "effecttimerplus",
     "name": "Effect Timer Plus",
     "project_id": "JIUF2Wb5",
@@ -2631,6 +2953,37 @@
     ],
     "sha1": "55cf667b16b81df9b8f7fead042cf2f732b21b85",
     "file_size": 27239
+  },
+  {
+    "slug": "gml",
+    "name": "GroovyModLoader (GML)",
+    "project_id": "zg2tT2Vu",
+    "version_id": "IDRMIIb4",
+    "version": "6.0.2",
+    "filename": "gml-6.0.2.jar",
+    "sha512": "dba6da1b6b7248ca14be3bd40d886f6a92623aadda11eac43a1b7d4248beb5343da108e851c141eefa175c1705e5d83f2ced5067512f9e8c8ba2f00b9b966332",
+    "sha1": "29a8153c54b9b03a3b4b42be7d77fe4ac2459720",
+    "file_size": 10981280,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/GroovyMC/GroovyModLoader/blob/1.19.x/LICENSE"
+    },
+    "source_url": "https://github.com/GroovyMC/GroovyModLoader",
+    "dependencies": [],
+    "provider_dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file",
+    "dependency_note": "Provider labels 1.21; exact NeoForge descriptor permits Minecraft [1.21.0,1.22). GroovyModLoader includes CommonGroovyLibrary and GML core."
   },
   {
     "slug": "grapplemod-skybound",
@@ -3811,8 +4164,45 @@
     "slug": "particle-interactions",
     "name": "Particle Interactions",
     "project_id": "xFCYuAs8",
-    "status": "deferred",
-    "reason": "Beta cosmetic particles, deferred."
+    "version_id": "Js4y2r4d",
+    "version": "0.4.1",
+    "filename": "eg_particle_interactions-0.4.1-neoforge-mc1.21.1.jar",
+    "sha512": "4218eb6c842b687a2559bc2bc98437df5f105d77c49458f198942b34cb9f6a6cc748a57554f5be5647b753c73519a174a01c4525f603792dbfb2c7e132671df5",
+    "sha1": "5d851a305cd25dc98593ebe2612c9855b685de97",
+    "file_size": 322743,
+    "release_type": "beta",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "CC-BY-NC-4.0",
+      "name": "Creative Commons Attribution Non Commercial 4.0 International",
+      "url": "https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+    },
+    "source_url": "https://github.com/Enchanted-Games/block-place-particles",
+    "dependencies": [
+      {
+        "project_id": "1eAoo2KR",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "1eAoo2KR",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file",
+    "exception": "Owner explicitly approved Particle Interactions 0.4.1 beta Js4y2r4d for this integration."
   },
   {
     "slug": "particle-rain",
@@ -5108,15 +5498,20 @@
     "slug": "visuality-forge",
     "name": "Visuality: Reforged",
     "project_id": "z13R7Et1",
-    "version_id": "ZBidwV02",
-    "version": "2.1.0",
-    "filename": "visuality-forge-2.1.0.jar",
-    "sha512": "7ec2beefea92d32e27abf83da7791fbf2d14cc12341ad96672976c119b475e8b376d663e8b42970a3f12cdeb68ec31f976b05c6c749a29dbd3bed8744288aabf",
+    "version_id": "kOdevgPm",
+    "version": "3.0.0",
+    "filename": "visuality-forge-3.0.0.jar",
+    "sha512": "f90754b93efff9fc466351446e916b1aac314e8834985f97725fff9a4978bc5519e3497303c7136a2e8b0aedda36ae674858ddfe3f01b63d1886fa906440e373",
+    "sha1": "9786f023733a302b582b7349336e1ab47e93823e",
+    "file_size": 132898,
     "release_type": "release",
     "side": "client",
     "kind": "mod",
     "loaders": [
       "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
     ],
     "license": {
       "id": "MIT",
@@ -5125,9 +5520,9 @@
     },
     "source_url": "https://github.com/DragonsPlusMinecraft/VisualityReforged",
     "dependencies": [],
-    "status": "deferred",
-    "origin": "Aeroscapes 1.0.8",
-    "reason": "No external entity resource pack is shipped; avoid unused model/texture engines. Subtle Effects supplies the selected particle layer without a second overlapping system."
+    "provider_dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file"
   },
   {
     "slug": "wall-jump-txf",

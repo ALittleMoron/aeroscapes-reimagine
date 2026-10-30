@@ -1,6 +1,27 @@
-Aeroscapes Reimagine 0.1.5 — third-party notices
+Aeroscapes Reimagine 0.1.7 — third-party notices
 
 This independent pack is not endorsed by the original projects.
+Priority 4 visual effects use unchanged original downloads:
+Ambient Environment: Jaredlll08; MIT.
+https://modrinth.com/mod/ambient-environment/version/N7jam3SN
+Eating Animations: Matyrobbrt, based on Theoness1's Eating Animation; MIT.
+https://modrinth.com/mod/eating-animations/version/D7saUVV5
+GroovyModLoader: GroovyMC contributors; MIT; bundles CommonGroovyLibrary
+(LGPL-3.0-or-later) and the GML core.
+https://modrinth.com/mod/gml/version/IDRMIIb4
+Visuality: Reforged: LimonBlaze, based on PinkGoosik's Visuality; MIT.
+https://modrinth.com/mod/visuality-forge/version/kOdevgPm
+Particle Interactions: Enchanted_Games; CC BY-NC 4.0.
+https://modrinth.com/mod/particle-interactions/version/Js4y2r4d
+https://creativecommons.org/licenses/by-nc/4.0/
+Better Smoke: Marlilo; MIT.
+https://modrinth.com/mod/better-smoke/version/9It7IoUE
+Atmospheric Fauna: NmS; GPL-3.0-only.
+https://modrinth.com/mod/atmospheric-fauna/version/m4E3YdvX
+Connector and Connector Extras: Sinytra contributors; MIT.
+https://modrinth.com/mod/connector/version/IITF0PRC
+https://modrinth.com/mod/connector-extras/version/dgLCqZyo
+
 Aeroscapes 1.0.8: Isabel / nuclearobelisk; CC BY-SA 4.0 for that author's
 contributions. Selected data are reorganized and adapted for this pack.
 Underlying dependencies retain their own terms.

@@ -1,0 +1,6 @@
+{
+  "spawning": {
+    "enableMidairBorderSpawning": true,
+    "spawnBelowSeaLevel": true
+  }
+}

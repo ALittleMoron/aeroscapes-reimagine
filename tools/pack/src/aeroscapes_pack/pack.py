@@ -47,6 +47,8 @@ RELEASE_EXCEPTIONS = frozenset(
         ("COlSi5iR", "avwWYPbG", "alpha"),
         ("qtPMklut", "7rX3dlFf", "alpha"),
         ("qyVF9oeo", "85fA7L1W", "beta"),
+        ("xFCYuAs8", "Js4y2r4d", "beta"),
+        ("u58R1TMW", "IITF0PRC", "beta"),
     }
 )
 COMPAT_DIRECTORY = "global_packs/required_data/aeroscapes_reimagine_compat"
@@ -179,7 +181,20 @@ def audit_metadata(source: SourcePack, artifacts: tuple[Artifact, ...]) -> None:
             raise PackError(f"Re-evaluate export distribution for download host: {dependency.name}")
         validate_release(artifact)
         if artifact.kind == "mod" and "neoforge" not in artifact.loaders:
-            raise PackError(f"Non-native mod: {dependency.name}")
+            bridge = included.get("u58R1TMW")
+            api = included.get("Aqlf1Shp")
+            if (
+                "fabric" not in artifact.loaders
+                or (artifact.project_id, artifact.version_id)
+                not in {("Effrh3ze", "9It7IoUE"), ("yd14I2wN", "m4E3YdvX")}
+                or artifact.side != "client"
+                or bridge is None
+                or bridge.version_id != "IITF0PRC"
+                or bridge.side not in {"client", "both"}
+                or api is None
+                or api.side not in {"client", "both"}
+            ):
+                raise PackError(f"Fabric mod without its client bridge: {dependency.name}")
         if source.manifest.minecraft not in artifact.game_versions:
             raise PackError(f"Unsupported Minecraft version: {dependency.name}")
         validate_requirements(artifact, included, dependency.name)

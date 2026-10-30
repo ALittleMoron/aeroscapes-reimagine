@@ -1,0 +1,12 @@
+name = "Atmospheric Fauna"
+filename = "atmospheric-fauna-0.5.1+1.21.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/yd14I2wN/versions/m4E3YdvX/atmospheric-fauna-0.5.1%2B1.21.jar"
+hash-format = "sha512"
+hash = "0c051830c095803e9547e86c8907fec3354fcb7970793a83e051042d2773a8e05835b12ab139d58549f20955d1d7878ec027c24559b7ffe0097287818f3dcae5"
+
+[update.modrinth]
+mod-id = "yd14I2wN"
+version = "m4E3YdvX"

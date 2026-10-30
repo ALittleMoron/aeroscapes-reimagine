@@ -1,0 +1,14 @@
+{
+  "general_extraParticlePhysicsEnabled": false,
+  "campfireSpark_enabled": false,
+  "fireSpark_enabled": false,
+  "minecart_enabled": false,
+  "blaze_spawnOnHurt": false,
+  "blaze_spawnChance": 0,
+  "flintAndSteelSpark_onUse": false,
+  "axeStrip_onUse": false,
+  "maxCherryPetals_onBreak": 0,
+  "maxAzaleaLeaves_onBreak": 0,
+  "maxFloweringAzaleaLeaves_onBreak": 0,
+  "maxTintedLeaves_onBreak": 0
+}

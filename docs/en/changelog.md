@@ -4,6 +4,10 @@ description: Version history.
 status: available
 ---
 
+## 0.1.7
+
+- Add biome color variation, campfire smoke, decorative birds, eating animations and selected interaction and hit particles.
+
 ## 0.1.6
 
 - Add three small decorative planets, brighter accent stars and a fixed northern guide star, fading with daylight, weather and the horizon.
