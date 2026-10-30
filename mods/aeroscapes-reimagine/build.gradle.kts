@@ -246,6 +246,27 @@ val atmosphereContractTest by
     }
   }
 
+val celestialLayoutTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.atmosphere.CelestialLayoutTest"
+  }
+
+tasks.register<JavaExec>("generateCelestialAtlas") {
+  group = "build"
+  dependsOn(tasks.named(policy.classesTaskName))
+  classpath = policy.runtimeClasspath
+  mainClass = "dev.aeroscapes.atmosphere.CelestialAtlas"
+  args(
+    layout.projectDirectory
+      .file("src/main/resources/assets/aeroscapes_reimagine/textures/environment/celestials.png")
+      .asFile
+      .absolutePath
+  )
+}
+
 tasks.check {
   dependsOn(
     tasks.spotlessCheck,
@@ -255,6 +276,7 @@ tasks.check {
     monitorControllerTest,
     shoulderCameraTransformerTest,
     atmosphereContractTest,
+    celestialLayoutTest,
     worldgenRegressionJar,
   )
 }

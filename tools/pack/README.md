@@ -14,18 +14,32 @@ working directory; outside the checkout, pass `--root /path/to/repository`.
 Development commands and verification scope are documented in
 [development guide](../../CONTRIBUTING.md).
 
-Dependency metafiles use either `[update.modrinth]` or, for a pinned official
-Maven download, `[source.maven]` with `group`, `artifact` and exact `version`.
+Dependency metafiles use `[update.modrinth]`, `[update.curseforge]` with positive
+integer `project-id` and `file-id`, or, for a pinned official Maven download,
+`[source.maven]` with `group`, `artifact` and exact `version`.
+The CurseForge metadata identity is `curseforge:<project-id>` with the file ID
+as its exact version identity.
 The Maven form has no automatic updater. Its metadata identity is
 `maven:<group>:<artifact>`; download hashes, installation sides and exported
 files are checked by the same artifact audit as Modrinth dependencies.
 
 Exports use packwiz's normal download-host restrictions. Artifact metadata
 explicitly selects `distribution=bundle` for the unchanged client-only Flywheel
-Maven file, so it is stored in `client-overrides` rather than the remote download
+Maven file and ImmersiveThunder CurseForge file, so they are stored in
+`client-overrides` rather than the remote download
 manifest. Verification checks its side, size and exact SHA-512/SHA-1; unreviewed
 export-mode changes are rejected. See the
 [third-party integration reference](../../metadata/README.md).
+
+`build` fetches the pinned artifacts and audits native JARs before exporting.
+The audit checks required dependency presence and required NeoForge ranges,
+including nested JarJar modules on each installation side. Numeric and `-beta`
+Maven interval bounds, exact ranges and unions follow the pinned loader's rules;
+unsupported endpoint syntax fails explicitly. For Minecraft 1.21.1 with NeoForge
+21.1.230, the audit retains FML 4.0.42's NeoForge 21.0.166 compatibility fallback.
+Minecraft, Java, FML loader and other mods' version ranges, optional/incompatible
+dependency rules and native JarJar selection remain launch checks. A successful
+audit does not establish a successful Minecraft client start.
 
 ## Automated releases
 

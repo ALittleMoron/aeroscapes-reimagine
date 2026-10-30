@@ -26,6 +26,17 @@ const artifact = z.union([
     })),
   commonArtifact
     .extend({
+      project_id: z.string().regex(/^curseforge:[1-9][0-9]*$/),
+      version_id: z.string().regex(/^[1-9][0-9]*$/),
+      slug: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
+      source: z.object({ type: z.literal("curseforge") }),
+    })
+    .transform((entry) => ({
+      ...entry,
+      url: `https://www.curseforge.com/minecraft/mc-mods/${entry.slug}/files/${entry.version_id}`,
+    })),
+  commonArtifact
+    .extend({
       project_id: z.string().regex(/^maven:[A-Za-z0-9_.-]+:[A-Za-z0-9_.-]+$/),
       version_id: z.string().min(1),
       source: z.object({

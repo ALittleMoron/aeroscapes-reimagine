@@ -48,6 +48,13 @@ does not start Minecraft. `jar` alone builds the main binary without the quality
 checks. The separate `aeroscapes-worldgen-regression` fixture is not installed as
 part of the pack.
 
+The original celestial atlas can be regenerated with
+`sh ./gradlew --no-daemon generateCelestialAtlas`. Its deterministic Java pixel
+composition uses no external images. `celestialLayoutTest` checks the sky hook,
+directions, time continuity and visibility without starting a Minecraft client.
+The added sky layer is client-only; `celestialSky` in the native
+`aeroscapes_reimagine-client.toml` controls it independently of other atmosphere.
+
 For local installation, replace the matching owned JAR in an existing compatible
 pack's `mods/` directory with your result. Keep the runtime dependencies and pack
 data matching that pack version. The source project does not include third-party

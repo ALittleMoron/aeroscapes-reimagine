@@ -65,6 +65,10 @@ file = "config/particlerain/particles.json"
 hash = "b1b0ce817959e926f3a6664e86ce933df6f54cbecfeaca8146963303efc3036b"
 
 [[files]]
+file = "config/puddleflood.json"
+hash = "0065fe7a7a44de86a351b5ddbda619289c22f13b9a77661cdcaf5dde3535cd03"
+
+[[files]]
 file = "config/punchy/punchy_config.json"
 hash = "f37189c4f181369cded8409b4d9b711858152d1e84bd6e2a54de77d7f5f29ccc"
 
@@ -79,6 +83,10 @@ hash = "607aa6836728c767b59a13e976786d199b5e684ccc747dc0c0b58378e5b71e1e"
 [[files]]
 file = "config/shouldersurfing-client.toml"
 hash = "fb44c9f0beada8941053e4d31329966d927ade163acb80c20c24308ef3465278"
+
+[[files]]
+file = "config/sound_physics_remastered/soundphysics.properties"
+hash = "c2e1cb328fa82a9404e4c6a8b82c6e5646a458b5d372c7cd9782e08993cdab6a"
 
 [[files]]
 file = "config/structure_layout_optimizer.json"
@@ -675,11 +683,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "5a2807bb0794ba3610ed3d75cffeccb8c29d87a4e70df94d5fa892692dd90fae"
+hash = "2489661fad6e3ad916d5c5888b0a8ff84a471911eb35f81d46982f88d1edc29e"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "99c873f9717af355d2ba179bebfa9efb6f32ad86fbb16a4941740a134bf7dee2"
+hash = "e668153938adeac6e763064164ba71c9b6e8353265d75a806954778b2b34f2e9"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -688,7 +696,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "efb370c0fe2f1819edcd2fe8d6a354db87cd2a2ceeeebb883633b5235a44d83a"
+hash = "96de63a61da9943401623f92c363b5c2324dd3319bf4839cfa58a6f3a2033412"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -971,6 +979,11 @@ hash = "23f2f6bc02d2350b0f5ff933f2c83a5f215d0059482accab1eebfdb0b44338cf"
 metafile = true
 
 [[files]]
+file = "mods/forgified-fabric-api.pw.toml"
+hash = "abb947d0a57ecfe3787bed75b787ff7a1f1506f54a9e97eed08370116c0f5ac2"
+metafile = true
+
+[[files]]
 file = "mods/fungi-delight.pw.toml"
 hash = "83d36997040fd7cc6abc5155cc758345e919a2e842ad978c2203382284cec356"
 metafile = true
@@ -1008,6 +1021,11 @@ metafile = true
 [[files]]
 file = "mods/immersive-melodies.pw.toml"
 hash = "5104c83a7fa7ffffad8ff6508f78d9817a4aa77205adc6e808034056030bc92e"
+metafile = true
+
+[[files]]
+file = "mods/immersivethunder.pw.toml"
+hash = "07a6cb74759fd4d28db6b25c4d70c5cb39bb6c42f8a555499869c64bbc380812"
 metafile = true
 
 [[files]]
@@ -1143,6 +1161,11 @@ metafile = true
 [[files]]
 file = "mods/polytone.pw.toml"
 hash = "5a05cbd17d52f1c739681dbe54cc9cb676ae7a809c7256d3da118b8a73da18f0"
+metafile = true
+
+[[files]]
+file = "mods/puddles-floods.pw.toml"
+hash = "05735af06d0797f1790e36623071975b4602765be90a0b5095e7bf5bc5ef8834"
 metafile = true
 
 [[files]]
@@ -1340,7 +1363,7 @@ hash = "1cdaff66c4ad5dbc984bbe5d6f036f3fe29f4e7e4ea028e120669d294cbce1fa"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/polytone/colors.json"
-hash = "06110d82dd2a95de10e3b09b05d29120f5f0e16e4a066a612a42f0bf5c7bda06"
+hash = "eda45cb2d56627cb906b625b403dbc532e292d34eb7ec6d767b974029ab45a29"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/fallingleaves/settings/flowering_azalea_leaves.json"
@@ -1435,7 +1458,7 @@ metafile = true
 
 [[files]]
 file = "shaderpacks/ComplementaryReimagined_r5.9.3.zip.txt"
-hash = "d385fe2881c7ec6d8000010ce635585be7a964749938b3ee1ce4bb85eda65712"
+hash = "14d5385816f74e30e3428efe9b9d5c3c71aac2e4791d39e95db17d110d5af77a"
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"

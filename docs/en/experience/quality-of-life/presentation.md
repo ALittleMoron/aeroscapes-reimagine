@@ -44,11 +44,15 @@ These resourcepacks and the small atmosphere integration pack are selected in ne
 
 ## Sound and visual details
 
-AmbientSounds adds environmental sound, while Sounds expands the sounds of everyday interactions. Drip Sounds adds sounds for dripping particles. Subtle Effects supplies waterfall mist, water splashes and ripples, fireflies, sparks and other small details.
+[AmbientSounds](https://modrinth.com/mod/ambientsounds) adds environmental sound, while [Sounds](https://modrinth.com/mod/sound) supplies material footsteps and expands everyday interaction sounds. [Drip Sounds](https://modrinth.com/mod/dripsounds) adds sounds for dripping particles. [Subtle Effects](https://modrinth.com/mod/subtle-effects) supplies waterfall mist, water splashes and ripples, fireflies, sparks and other small details.
 
 [Cool Rain Reforged](https://modrinth.com/mod/cool-rain-reforged) changes the sound of rainfall according to the surface it hits, including glass, metal, foliage, wool and water. Its sounds use Minecraft's **Weather** volume control.
 
+[ImmersiveThunder](https://www.curseforge.com/minecraft/mc-mods/immersivethunder) changes individual lightning strikes according to their distance: close cracks, medium-distance thunder and distant rumbles. AmbientSounds continues to supply the storm background. Thunder uses the **Weather** volume control.
+
 [Particle Rain](https://modrinth.com/mod/particle-rain) replaces rain and snow with wind-driven particles and adds weather fog and surface streaks. The initial profile keeps wind at lower island heights. Subtle Effects retains rain impacts and water ripples; Particle Rain's duplicate ripple/splatter effects are disabled. Cool Rain still supplies material rain sounds: keep Particle Rain's rain volume above zero, because zero suppresses that sound path too.
+
+[Puddles & Floods](https://modrinth.com/mod/puddles-floods) adds temporary puddles on exposed flat ground during rain, including without shaders. Walking through them makes a small splash; they gradually disappear after the rain. Flooding and raised water levels are disabled. Drip puddles are also disabled because the shared particle hook can mistake Subtle Effects' villager sweat for water. The mod and its [Forgified Fabric API](https://modrinth.com/mod/forgified-fabric-api) dependency are client-only here: flowing water, broken cauldrons and melting snow do not create server-side puddles. Rain placement uses the top exposed surface in each column, so a higher island shelters the ground below it.
 
 In the interface, Chat Animation animates chat, while Smooth Gui animates menu opening.
 
@@ -56,9 +60,13 @@ In the interface, Chat Animation animates chat, while Smooth Gui animates menu o
 
 ## Sky
 
-The atmosphere resourcepack uses [Polytone](https://modrinth.com/mod/polytone) to slightly deepen each biome's daytime sky colors and give dawn and dusk soft peach and amber tones. The vanilla night sky has more, smaller stars. It retains Minecraft's square sun and moon without photographic panoramas or a Milky Way backdrop; weather and night darkening remain active.
+The atmosphere resourcepack uses [Polytone](https://modrinth.com/mod/polytone) to slightly deepen each biome's daytime sky colors and give dawn and dusk soft peach and amber tones. Most stars remain small, with occasional larger points that make the night sky more varied. It retains Minecraft's square sun and moon without photographic panoramas or a Milky Way backdrop; weather and night darkening remain active.
 
-Smooth Skies smooths the distant color gradient, and Clear Void removes the black lower part of the skybox. Complementary supplies its own procedural sky and stars when enabled; MakeUp retains the vanilla star geometry. The prepared profiles keep their existing cloud route.
+Smooth Skies smooths the distant color gradient, and Clear Void removes the black lower part of the skybox. [Complementary](https://modrinth.com/shader/complementary-reimagined) supplies its own procedural sky and stars, with a denser star field in the prepared profile; [MakeUp](https://modrinth.com/shader/makeup-ultra-fast-shaders) retains the vanilla star geometry and its varied sizes. The prepared profiles keep their existing cloud route.
+
+Three small decorative planets add a pale, a softly banded and a reddish point to the night sky. They slowly shift against the stars as world days pass. Six brighter stars accompany the ordinary star field, while a northern guide star stays above north. The added lights fade with dawn, rain and the horizon and appear only in the Overworld.
+
+To hide the added planets and stars, set `celestialSky = false` in `config/aeroscapes_reimagine-client.toml` and restart the game.
 
 ## Rendering
 
@@ -69,6 +77,8 @@ Vanillin uses Flywheel to render vanilla chests, shulker boxes and bells.
 ## Shaders
 
 The pack includes [Complementary Reimagined](https://modrinth.com/project/HVnmMxH1) and [MakeUp Ultra Fast](https://modrinth.com/project/izsIPI7a), with prepared starting profiles. Shaders are disabled by default and remain optional for play.
+
+The prepared Complementary profile disables **Waving Water Height** so puddles stay above the ground. Water surface normals retain their wave detail. If using your own shader settings, disable that option if puddles dip into blocks. MakeUp's prepared profile does not displace water vertices.
 
 [Better Clouds](https://modrinth.com/mod/better-clouds) supplies the clouds. The prepared shader profiles select their **Vanilla** cloud mode so Better Clouds can use that rendering path. Keep Minecraft clouds enabled; an existing profile with clouds turned off retains that preference. Other shader profiles may need their own cloud setting.
 

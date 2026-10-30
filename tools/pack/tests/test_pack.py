@@ -11,7 +11,13 @@ from textwrap import dedent
 import pytest
 
 from aeroscapes_pack import cli
-from aeroscapes_pack.artifacts import JarRequirement, audit_jars, declared_mods, jar_mods
+from aeroscapes_pack.artifacts import (
+    JarRequirement,
+    audit_jars,
+    declared_mods,
+    jar_mods,
+    neoforge_range_matches,
+)
 from aeroscapes_pack.cli import main
 from aeroscapes_pack.data import PackError, Table
 from aeroscapes_pack.files import digest, download, new_target, safe_path
@@ -465,6 +471,44 @@ def test_maven_dependency_keeps_exact_identity_and_export(
         audit_metadata(source, (replace(maven_artifact, version_id="1.0.4"),))
 
 
+def test_curseforge_dependency_keeps_exact_file_identity(
+    project: Project, artifact: Artifact
+) -> None:
+    metadata = project.pack / "mods/client.pw.toml"
+    metadata.write_text(
+        metadata.read_text(encoding="utf-8").split("[update.modrinth]")[0]
+        + "[update.curseforge]\nproject-id = 1220929\nfile-id = 6711308\n",
+        encoding="utf-8",
+    )
+    write_lock(project.pack)
+    source = read_source(project.pack)
+    selected = replace(artifact, project_id="curseforge:1220929", version_id="6711308")
+    audit_metadata(source, (selected,))
+    dependency = source.dependencies["mods/client.jar"]
+    assert dependency.project_id == "curseforge:1220929"
+    assert dependency.version_id == "6711308"
+    with pytest.raises(PackError, match="identity/hash/side mismatch"):
+        audit_metadata(source, (replace(selected, version_id="6711307"),))
+
+
+@pytest.mark.parametrize("identifier", ["0", "-1", "true", '"6711308"', "1.5"])
+@pytest.mark.parametrize("key", ["project-id", "file-id"])
+def test_curseforge_ids_must_be_positive_integers(
+    project: Project, key: str, identifier: str
+) -> None:
+    metadata = project.pack / "mods/client.pw.toml"
+    identifiers = {"project-id": "1220929", "file-id": "6711308", key: identifier}
+    metadata.write_text(
+        metadata.read_text(encoding="utf-8").split("[update.modrinth]")[0]
+        + "[update.curseforge]\n"
+        + "".join(f"{name} = {value}\n" for name, value in identifiers.items()),
+        encoding="utf-8",
+    )
+    write_lock(project.pack)
+    with pytest.raises(PackError, match="CurseForge"):
+        read_source(project.pack)
+
+
 @pytest.mark.parametrize(
     "provenance",
     [
@@ -472,6 +516,8 @@ def test_maven_dependency_keeps_exact_identity_and_export(
         '[update.modrinth]\nmod-id = "fixture"\nversion = "exact"\n'
         '[source.maven]\ngroup = "dev.engine-room"\nartifact = "flywheel"\n'
         'version = "1.0.6"\n',
+        '[update.modrinth]\nmod-id = "fixture"\nversion = "exact"\n'
+        "[update.curseforge]\nproject-id = 1220929\nfile-id = 6711308\n",
     ],
 )
 def test_dependency_requires_one_source_identity(project: Project, provenance: str) -> None:
@@ -481,7 +527,7 @@ def test_dependency_requires_one_source_identity(project: Project, provenance: s
         encoding="utf-8",
     )
     write_lock(project.pack)
-    with pytest.raises(PackError, match="exactly one Modrinth or Maven"):
+    with pytest.raises(PackError, match="exactly one .* source identity"):
         read_source(project.pack)
 
 
@@ -605,7 +651,7 @@ def test_selected_prerelease_exception_is_exact(
 
 
 def test_actual_jar_dependencies_are_checked_on_the_installed_side(
-    tmp_path: Path, artifact: Artifact
+    tmp_path: Path, artifact: Artifact, source: SourcePack
 ) -> None:
     path = tmp_path / artifact.filename
     path.write_bytes(
@@ -623,10 +669,12 @@ def test_actual_jar_dependencies_are_checked_on_the_installed_side(
     actual = replace(artifact, sha512=digest(path, "sha512"))
 
     with pytest.raises(PackError, match="client.*kotlinforforge"):
-        audit_jars(tmp_path, (actual,), {})
+        audit_jars(tmp_path, (actual,), {}, manifest=source.manifest)
 
 
-def test_bundled_library_satisfies_dependency(tmp_path: Path, artifact: Artifact) -> None:
+def test_bundled_library_satisfies_dependency(
+    tmp_path: Path, artifact: Artifact, source: SourcePack
+) -> None:
     nested = make_jar('[[mods]]\nmodId = "library"\n')
     outer = make_jar(
         """\
@@ -646,10 +694,149 @@ def test_bundled_library_satisfies_dependency(tmp_path: Path, artifact: Artifact
     identifiers, _ = jar_mods(outer)
 
     assert identifiers == {"parent", "library"}
-    assert audit_jars(tmp_path, (actual,), {}) == {"client": 2, "server": 2}
+    assert audit_jars(tmp_path, (actual,), {}, manifest=source.manifest) == {
+        "client": 2,
+        "server": 2,
+    }
 
 
-def test_owned_mod_dependency_is_audited_with_remote_mods(tmp_path: Path) -> None:
+@pytest.mark.parametrize(("minimum", "accepted"), [("21.1.262", False), ("21.1.219", True)])
+def test_nested_loader_requirement_cannot_hide_behind_compatible_parent(
+    tmp_path: Path, artifact: Artifact, source: SourcePack, minimum: str, accepted: bool
+) -> None:
+    nested = make_jar(
+        '[[mods]]\nmodId = "nested_api"\n'
+        '[[dependencies.nested_api]]\nmodId = "neoforge"\n'
+        f'versionRange = "[{minimum},)"\n'
+    )
+    outer = make_jar(
+        '[[mods]]\nmodId = "parent"\n'
+        '[[dependencies.parent]]\nmodId = "neoforge"\n'
+        'versionRange = "[21.1.169,)"\n',
+        bundled=nested,
+    )
+    path = tmp_path / artifact.filename
+    path.write_bytes(outer)
+    actual = replace(artifact, sha512=digest(path, "sha512"))
+
+    if accepted:
+        assert audit_jars(tmp_path, (actual,), {}, manifest=source.manifest) == {
+            "client": 2,
+            "server": 0,
+        }
+    else:
+        with pytest.raises(PackError, match=r"nested_api.*21\.1\.262.*21\.1\.230"):
+            audit_jars(tmp_path, (actual,), {}, manifest=source.manifest)
+
+
+@pytest.mark.parametrize(
+    ("expression", "accepted"),
+    [
+        (None, True),
+        ("", False),
+        (" ", True),
+        ("*", True),
+        ("21.1.262", True),
+        ("[21.1.219,)", True),
+        ("[21.1.262,)", False),
+        ("[21.1.230]", True),
+        ("[21.1.230.0]", True),
+        ("(21.1.230,)", False),
+        ("(,21.1.230]", True),
+        ("(,21.1.230)", False),
+        ("[21.1.230-beta,21.1.230]", True),
+        ("[21.0.110-beta, 21.2.0)", True),
+        ("[21.0.143,21.1),[21.1.1,21.2),", True),
+        ("[21,21.1),[21.1.250,)", False),
+    ],
+)
+def test_neoforge_ranges_follow_pinned_maven_semantics(
+    expression: str | None, accepted: bool
+) -> None:
+    assert neoforge_range_matches(expression, ("21.1.230",)) is accepted
+
+
+@pytest.mark.parametrize(
+    "expression",
+    [
+        "[21.1.230-rc1,)",
+        "[21.1.231,21.1.230]",
+        "[21.1.230,21.1.230)",
+        "[21,22],[21.1,23]",
+        "[21,22)garbage",
+        "[21,22",
+    ],
+)
+def test_unsupported_or_invalid_neoforge_range_is_not_silently_accepted(expression: str) -> None:
+    with pytest.raises(PackError, match="NeoForge"):
+        neoforge_range_matches(expression, ("21.1.230",))
+
+
+def test_neoforge_range_requires_the_actual_installed_version() -> None:
+    with pytest.raises(PackError, match="installed version"):
+        neoforge_range_matches("[21.1.219,)", ())
+
+
+def test_neoforge_range_respects_the_installed_side(
+    tmp_path: Path, artifact: Artifact, source: SourcePack
+) -> None:
+    template = (
+        '[[mods]]\nmodId = "owner"\n'
+        '[[dependencies.owner]]\nmodId = "neoforge"\n'
+        'versionRange = "[21.1.262,)"\nside = "CLIENT"\n'
+    )
+    path = tmp_path / artifact.filename
+    path.write_bytes(make_jar(template.replace('side = "CLIENT"', 'side = "SERVER"')))
+    selected = replace(artifact, sha512=digest(path, "sha512"), side="client")
+    assert audit_jars(tmp_path, (selected,), {}, manifest=source.manifest) == {
+        "client": 1,
+        "server": 0,
+    }
+    path.write_bytes(make_jar(template))
+    selected = replace(selected, sha512=digest(path, "sha512"))
+    with pytest.raises(PackError, match="on client"):
+        audit_jars(tmp_path, (selected,), {}, manifest=source.manifest)
+
+
+def test_pinned_fml_neoforge_compatibility_fallback_is_preserved(source: SourcePack) -> None:
+    compatible = make_jar(
+        '[[mods]]\nmodId = "owner"\n'
+        '[[dependencies.owner]]\nmodId = "neoforge"\n'
+        'versionRange = "[21.0.166]"\n'
+    )
+    assert audit_jars(Path(), (), {"mods/owner.jar": compatible}, manifest=source.manifest) == {
+        "client": 1,
+        "server": 1,
+    }
+
+
+def test_build_rejects_incompatible_owned_bundle_before_export(
+    project: Project, source: SourcePack, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    nested = make_jar(
+        '[[mods]]\nmodId = "nested_api"\n'
+        '[[dependencies.nested_api]]\nmodId = "neoforge"\n'
+        'versionRange = "[21.1.262,)"\n'
+    )
+    selected = replace(
+        source,
+        dependencies={},
+        overrides={"mods/parent.jar": make_jar('[[mods]]\nmodId = "parent"\n', bundled=nested)},
+    )
+    (project.root / "metadata/artifacts.json").write_text("[]", encoding="utf-8")
+
+    def unexpected_export(_project: Project, *arguments: str) -> str:
+        raise AssertionError(f"Exporter ran before checking dependencies: {arguments}")
+
+    monkeypatch.setattr(cli, "run_packwiz", unexpected_export)
+
+    with pytest.raises(PackError, match=r"nested_api.*21\.1\.262.*21\.1\.230"):
+        cli.build(project, selected)
+
+
+def test_owned_mod_dependency_is_audited_with_remote_mods(
+    tmp_path: Path, source: SourcePack
+) -> None:
     companion = make_jar(
         '[[mods]]\nmodId = "companion"\n'
         '[[dependencies.companion]]\nmodId = "generator"\n'
@@ -658,10 +845,13 @@ def test_owned_mod_dependency_is_audited_with_remote_mods(tmp_path: Path) -> Non
     overrides = {"mods/companion.jar": companion}
 
     with pytest.raises(PackError, match="companion.*generator"):
-        audit_jars(tmp_path, (), overrides)
+        audit_jars(tmp_path, (), overrides, manifest=source.manifest)
 
     overrides["mods/generator.jar"] = make_jar('[[mods]]\nmodId = "generator"\n')
-    assert audit_jars(tmp_path, (), overrides) == {"client": 2, "server": 2}
+    assert audit_jars(tmp_path, (), overrides, manifest=source.manifest) == {
+        "client": 2,
+        "server": 2,
+    }
 
 
 def test_missing_bundled_jar_reports_the_referenced_entry() -> None:
@@ -800,8 +990,10 @@ def test_failed_build_preserves_previous_archive_and_checksum(
 
     monkeypatch.setattr(cli, "run_packwiz", export_invalid_archive)
 
+    (project.root / "metadata/artifacts.json").write_text("[]", encoding="utf-8")
+    selected = replace(export.source, dependencies={})
     with pytest.raises(zipfile.BadZipFile):
-        cli.build(project, export.source)
+        cli.build(project, selected)
 
     assert output.read_bytes() == previous_archive
     assert checksum_path.read_bytes() == previous_checksum

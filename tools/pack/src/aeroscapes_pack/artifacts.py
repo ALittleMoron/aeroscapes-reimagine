@@ -1,6 +1,7 @@
 """Inspect published JAR metadata, including bundled NeoForge libraries."""
 
 import io
+import re
 import zipfile
 from collections.abc import Mapping
 from concurrent.futures import ThreadPoolExecutor
@@ -10,7 +11,7 @@ from pathlib import Path
 
 from aeroscapes_pack.data import PackError, array, field, json_value, table, toml_table
 from aeroscapes_pack.files import digest, download, safe_path
-from aeroscapes_pack.models import Artifact, PinnedFile, Project
+from aeroscapes_pack.models import Artifact, Manifest, PinnedFile, Project
 from aeroscapes_pack.pack import SourcePack
 
 MAX_NESTED_DEPTH = 8
@@ -23,6 +24,78 @@ class JarRequirement:
     owner: str
     dependency: str
     side: str
+    version_range: str | None = None
+
+
+def neoforge_version_key(value: str) -> tuple[tuple[int, ...], bool]:
+    match = re.fullmatch(r"([0-9]+(?:\.[0-9]+)*)(-beta)?", value)
+    if match is None:
+        raise PackError(f"Unsupported NeoForge version endpoint: {value!r}")
+    components = [int(component) for component in match[1].split(".")]
+    while len(components) > 1 and components[-1] == 0:
+        components.pop()
+    return tuple(components), match[2] is None
+
+
+def neoforge_range_matches(expression: str | None, versions: tuple[str, ...]) -> bool:
+    """Check numeric/beta Maven intervals used by the pinned NeoForge descriptors."""
+    if not versions:
+        raise PackError("NeoForge range check needs the installed version")
+    candidates = tuple(neoforge_version_key(version) for version in versions)
+    if expression is None:
+        return True
+    if not expression:
+        return False
+    remaining = expression.strip()
+    if not remaining or remaining[0] not in "[(":
+        # Maven treats a bare recommended version, including '*', as unrestricted.
+        return True
+    accepted = False
+    seen_range = False
+    previous_upper = None
+    previous_upper_inclusive = False
+    while remaining:
+        match = re.match(r"([\[(])([^\[\]()]*)([\])])", remaining)
+        if match is None:
+            raise PackError(f"Unsupported NeoForge range: {expression!r}")
+        bounds = match[2].split(",")
+        lower_inclusive = match[1] == "["
+        upper_inclusive = match[3] == "]"
+        if len(bounds) == 1 and match[1] == "[" and match[3] == "]":
+            lower = upper = neoforge_version_key(bounds[0].strip())
+        elif len(bounds) == 2:
+            lower_text, upper_text = (bound.strip() for bound in bounds)
+            lower = neoforge_version_key(lower_text) if lower_text else None
+            upper = neoforge_version_key(upper_text) if upper_text else None
+        else:
+            raise PackError(f"Unsupported NeoForge range: {expression!r}")
+        if (
+            lower is not None
+            and upper is not None
+            and (lower > upper or lower == upper and not (lower_inclusive and upper_inclusive))
+        ):
+            raise PackError(f"Invalid NeoForge range: {expression!r}")
+        if seen_range and (
+            previous_upper is None
+            or lower is None
+            or previous_upper > lower
+            or previous_upper == lower
+            and previous_upper_inclusive
+            and lower_inclusive
+        ):
+            raise PackError(f"Invalid overlapping NeoForge ranges: {expression!r}")
+        accepted |= any(
+            (lower is None or candidate > lower or candidate == lower and lower_inclusive)
+            and (upper is None or candidate < upper or candidate == upper and upper_inclusive)
+            for candidate in candidates
+        )
+        previous_upper = upper
+        previous_upper_inclusive = upper_inclusive
+        seen_range = True
+        remaining = remaining[match.end() :].strip()
+        if remaining.startswith(","):
+            remaining = remaining[1:].strip()
+    return accepted
 
 
 def read_entry(archive: zipfile.ZipFile, name: str) -> bytes:
@@ -81,7 +154,14 @@ def declared_mods(data: dict[str, object]) -> tuple[set[str], list[JarRequiremen
             if side not in {"BOTH", "CLIENT", "SERVER"}:
                 raise PackError(f"Invalid dependency side for {owner}: {side}")
             requirements.append(
-                JarRequirement(owner=owner, dependency=field(entry, "modId", owner), side=side)
+                JarRequirement(
+                    owner=owner,
+                    dependency=field(entry, "modId", owner),
+                    side=side,
+                    version_range=field(entry, "versionRange", owner)
+                    if "versionRange" in entry
+                    else None,
+                )
             )
     return identifiers, requirements
 
@@ -106,7 +186,11 @@ def add_jar(
 
 
 def audit_jars(
-    directory: Path, artifacts: tuple[Artifact, ...], overrides: Mapping[str, bytes]
+    directory: Path,
+    artifacts: tuple[Artifact, ...],
+    overrides: Mapping[str, bytes],
+    *,
+    manifest: Manifest,
 ) -> dict[str, int]:
     installations = {side: InstallationSide() for side in ("client", "server")}
     for artifact in artifacts:
@@ -131,6 +215,25 @@ def audit_jars(
         ]
         if missing:
             raise PackError(f"Missing declared JAR dependencies on {side}: {missing}")
+        versions = (manifest.neoforge,)
+        if (manifest.minecraft, manifest.neoforge) == ("1.21.1", "21.1.230"):
+            # This exact platform's FML 4.0.42 also accepts the 1.21 compatibility version.
+            versions += ("21.0.166",)
+        for requirement in installed.requirements:
+            if requirement.dependency != "neoforge" or requirement.side not in {
+                "BOTH",
+                side.upper(),
+            }:
+                continue
+            try:
+                compatible = neoforge_range_matches(requirement.version_range, versions)
+            except PackError as error:
+                raise PackError(f"{requirement.owner} on {side}: {error}") from error
+            if not compatible:
+                raise PackError(
+                    f"{requirement.owner} requires NeoForge {requirement.version_range} "
+                    f"on {side}; installed {manifest.neoforge}"
+                )
     return {
         side: len(installed.identifiers - PLATFORM_IDS) for side, installed in installations.items()
     }

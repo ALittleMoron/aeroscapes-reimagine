@@ -114,12 +114,22 @@ class PinnedFile:
             raise PackError(f"{context}: dependency needs an exact SHA-512")
         update = table(record.get("update", {}), f"{context}.update")
         source = table(record.get("source", {}), f"{context}.source")
-        if ("modrinth" in update) == ("maven" in source):
-            raise PackError(f"{context}: need exactly one Modrinth or Maven source identity")
+        if sum(("modrinth" in update, "curseforge" in update, "maven" in source)) != 1:
+            raise PackError(
+                f"{context}: need exactly one Modrinth, CurseForge or Maven source identity"
+            )
         if "modrinth" in update:
             modrinth = table(update.get("modrinth"), f"{context}.update.modrinth")
             project_id = field(modrinth, "mod-id", context)
             version_id = field(modrinth, "version", context)
+        elif "curseforge" in update:
+            curseforge = table(update.get("curseforge"), f"{context}.update.curseforge")
+            project = integer(curseforge.get("project-id"), f"{context}: CurseForge project-id")
+            version = integer(curseforge.get("file-id"), f"{context}: CurseForge file-id")
+            if project == 0 or version == 0:
+                raise PackError(f"{context}: CurseForge project-id and file-id must be positive")
+            project_id = f"curseforge:{project}"
+            version_id = str(version)
         else:
             maven = table(source.get("maven"), f"{context}.source.maven")
             group = field(maven, "group", context)

@@ -58,6 +58,8 @@ def build(project: Project, source: SourcePack) -> None:
     output = project.root / "dist" / f"aeroscapes-reimagine-{source.manifest.version}.mrpack"
     output.parent.mkdir(exist_ok=True)
     artifacts = load_artifacts(project)
+    directory = fetch_artifacts(project, source)
+    audit_jars(directory, artifacts, source.overrides, manifest=source.manifest)
     checksum_path = output.with_suffix(".mrpack.sha256")
     with tempfile.TemporaryDirectory(dir=output.parent, prefix=".build-") as scratch:
         candidate = Path(scratch) / output.name
@@ -114,9 +116,14 @@ def audit(project: Project, source: SourcePack, options: Options) -> None:
     if directory is None:
         raise PackError("Choose --directory or --fetch")
     artifacts = load_artifacts(project)
-    for side, count in audit_jars(directory, artifacts, source.overrides).items():
+    for side, count in audit_jars(
+        directory, artifacts, source.overrides, manifest=source.manifest
+    ).items():
         print(f"OK: {side}: {count} declared mod IDs including bundled libraries")
-    print("Artifact hashes and dependency presence verified; NeoForge checks ranges at launch.")
+    print(
+        "Artifact hashes, required dependency presence and required NeoForge ranges verified; "
+        "other version ranges remain launch checks."
+    )
 
 
 def main(argv: Sequence[str] | None = None) -> int:

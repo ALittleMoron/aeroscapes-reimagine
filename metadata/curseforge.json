@@ -1901,6 +1901,54 @@
       "primary_sha512": "dc5fd6224dbd58079d9c82ef318ba2b945e5aa58f3476daea371ca86bb9ce976db5f4893a7093a990c0c1a8ddb7716089b24cced176f30cb253c2696b0cfd5b2",
       "status": "blocked",
       "reason": "Exact selected Modrinth file has no reviewed byte-identical CurseForge mapping; channel remains disabled."
+    },
+    {
+      "slug": "immersivethunder",
+      "primary_project_id": "curseforge:1220929",
+      "primary_sha512": "fedf50b46c40daf4a4ce59dcb062fee89fed2e666f08ab226b32cf746238ffef8221231761ffb2673f54f1623a5539c2846ecf89a0e72737194b2eaf6eba9123",
+      "status": "hosted",
+      "project_id": 1220929,
+      "file_id": 6711308,
+      "filename": "immersivethunder-neoforge-1.21.1-1.3.0.jar",
+      "sha512": "fedf50b46c40daf4a4ce59dcb062fee89fed2e666f08ab226b32cf746238ffef8221231761ffb2673f54f1623a5539c2846ecf89a0e72737194b2eaf6eba9123",
+      "sha1": "32a42967a5cb077a5689c7ed1e7f28c4e3bb9ccc",
+      "file_size": 3306839,
+      "parity": "exact",
+      "review": {},
+      "verification": "Primary source is this exact official CurseForge native file; locally rehashed original CDN download."
+    },
+    {
+      "slug": "puddles-floods",
+      "primary_project_id": "xeRVd78z",
+      "primary_sha512": "298148787841dd9ed76291f86f63ea424e37ff159d2621d81709b78710c17e3a8bc320ce26bfd5527bb96a13e8d5b2a6bd235b8b449d3e49c96b60319c4d7666",
+      "status": "hosted",
+      "project_id": 1450615,
+      "file_id": 9013560,
+      "filename": "puddleflood-1.1.6+1.21.1-neoforge.jar",
+      "sha512": "298148787841dd9ed76291f86f63ea424e37ff159d2621d81709b78710c17e3a8bc320ce26bfd5527bb96a13e8d5b2a6bd235b8b449d3e49c96b60319c4d7666",
+      "sha1": "aae9b4651171a1258aa144bf8018b7d82eb93342",
+      "file_size": 209236,
+      "parity": "exact",
+      "review": {
+        "changed_entries": [],
+        "added_entries": [],
+        "removed_entries": []
+      },
+      "verification": "Official CurseForge identity/size verified and all decompressed ZIP entries compared with the selected Modrinth artifact; differences in ZIP compression/container bytes do not change entry contents."
+    },
+    {
+      "slug": "forgified-fabric-api",
+      "primary_project_id": "Aqlf1Shp",
+      "primary_sha512": "2de84db829cae926f7a90d8d828114b8d8d735ca230d518c6c3772f6f25b48838b209f75d7c198ba3bb6ec5a64d12094c7b7dacc76af387263a50e97e07c262e",
+      "status": "blocked",
+      "reason": "Pinned compatible2.3.4 replaces2.3.6. The disabled CurseForge channel must not reuse the old file mapping; exact2.3.4 parity review is pending."
+    },
+    {
+      "slug": "fresh-animations-quivers",
+      "primary_project_id": "T4pK4GiQ",
+      "primary_sha512": "7414d6207279ee34cabc30d847e550c158d361131e401bc7b4d70fe4aceec226aeff07bc9f2e27afc9daa9945d651e9dacdb0d84df1d4b4d94964b10c62dccd5",
+      "status": "blocked",
+      "reason": "The exact Modrinth file selected in 0.1.5 has no reviewed CurseForge channel mapping. The disabled channel must not substitute or omit it."
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

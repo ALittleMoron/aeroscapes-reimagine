@@ -12,7 +12,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
     Map<String, String> versions;
-    if (mixinClassName.endsWith("QuiverEmfMixin")) {
+    if (mixinClassName.endsWith("CelestialSkyMixin")) {
+      versions = Map.of("neoforge", "21.1.230");
+    } else if (mixinClassName.endsWith("QuiverEmfMixin")) {
       versions = Map.of("entity_model_features", "3.3.12");
     } else if (mixinClassName.endsWith("PunchyEmfMixin")) {
       versions =

@@ -41,3 +41,8 @@ redundant zero-sway rotation after the provider mixin has been applied. The
 original provider archives are unchanged; no provider classes are distributed
 inside this mod. The upstream issue and later zero-sway fix informed the repair.
 https://github.com/Exopandora/ShoulderSurfing/issues/448
+
+The celestial atlas is original deterministic pixel artwork with no third-party
+image inputs. Its AI-assisted Java composition script is CelestialAtlas.java in
+the corresponding source; regenerate with ./gradlew generateCelestialAtlas.
+The atlas and its renderer are distributed under this project's GPL-3.0-or-later.

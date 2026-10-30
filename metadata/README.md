@@ -8,7 +8,56 @@ Keep original upstream JARs byte-identical, retain notices, and prefer independe
 
 Unchanged files hosted on Modrinth are referenced through their official downloads under its [specific-file modpack policy](https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions). Redistribution of a separate unchanged MIT artifact retains its embedded license; Flywheel's packaging is described below. Do not substitute the C2ME base's MIT license for the separate OpenCL module's terms.
 
+## Rain puddles and direct thunder
+
+[Puddles & Floods 1.1.6](https://modrinth.com/mod/puddles-floods/version/ba9E4XOp)
+and its required
+[Forgified Fabric API](https://modrinth.com/mod/forgified-fabric-api/version/K4hHKnnI)
+are unchanged official native NeoForge downloads installed only on the client.
+The API build is pinned to 2.3.4: its nested modules require NeoForge 21.1.219,
+within the pack's 21.1.230. Later 2.3.5 and 2.3.6 raise that nested minimum to
+21.1.248 and 21.1.262 despite retaining the outer archive's older minimum.
+Their MIT and Apache-2.0 notices remain inside the original archives. No
+[Connector](https://modrinth.com/mod/connector) or modified provider renderer is
+supplied. Flooding and raised water are disabled. Drip puddles are disabled to
+avoid the provider-documented overlap with
+[Subtle Effects](https://modrinth.com/mod/subtle-effects) villager sweat. Cauldron,
+flowing-water and melting-snow puddles are disabled so an integrated server does
+not write puddle blocks. The shader-water material remains enabled; the
+[Complementary](https://modrinth.com/shader/complementary-reimagined) profile
+disables water vertex displacement, while
+[MakeUp](https://modrinth.com/shader/makeup-ultra-fast-shaders) has no water vertex
+displacement in its selected water program.
+
+[ImmersiveThunder 1.3.0](https://www.curseforge.com/minecraft/mc-mods/immersivethunder/files/6711308)
+uses its real CurseForge project/file identity in the packwiz metafile. The exact
+native file is MIT, copyright 2025 netcatgirl, with no additional libraries. Its
+embedded `LICENSE_Immersive Thunder` remains in the unchanged JAR, which packwiz
+bundles at `client-overrides/mods/` under its download-host policy. The metadata
+and export verifier bind its SHA-512, SHA-1, size and client-only destination.
+The officially linked source branch contains Fabric code and is not used to
+infer native configuration; the selected JAR has distance-based strike sounds
+and no configuration class. Existing [Sounds](https://modrinth.com/mod/sound)
+footsteps and interaction audio remain enabled.
+
 ## Local resource integration
+
+### Decorative celestial layer
+
+The owned client renderer adds three small planets, six accent stars and a fixed
+northern guide star. `CelestialLayout` owns their decorative directions, gradual
+world-day drift and visibility. The client-only `CelestialSkyMixin` draws before
+the single blend-ending call in the pinned vanilla sky renderer. This keeps the
+existing [Iris](https://modrinth.com/mod/iris) sky phase and selects its textured-sky
+program naturally, including the Custom Sky branch of
+[Complementary](https://modrinth.com/shader/complementary-reimagined) and the
+textured path of [MakeUp](https://modrinth.com/shader/makeup-ultra-fast-shaders).
+No provider shader files, internal phase setters or additional libraries are used.
+
+The original atlas uses deterministic pixel composition in `CelestialAtlas.java`,
+an AI-assisted Java script included in the corresponding-source archive. It uses
+no third-party image inputs and shares the owned mod's GPL-3.0-or-later license.
+Its provenance also appears in the JAR's `META-INF/NOTICE.txt`.
 
 ### Fresh Animations: Quivers
 
@@ -37,7 +86,9 @@ references do not grant separate binary rehosting or modified redistribution.
 
 The universal Lamb file's provider dependency list includes Fabric API, but its
 native NeoForge descriptor loads a bundled runtime/API, SpruceUI and Yumi
-libraries. No Fabric API or Connector is selected. The raw provider list remains
+libraries. This native route needs neither a separate Fabric API nor Connector;
+the client Forgified Fabric API is selected independently for Puddles & Floods.
+The raw provider list remains
 in `provider_dependencies`; `dependencies` reflects this pack's native route.
 Its bundled native requirements are checked by the artifact audit. Lamb's
 native settings remain unchanged; shader handlight coordination and ship-local
@@ -112,8 +163,11 @@ for the selected singleplayer acoustics.
 
 The owner explicitly approved the exact Sound Physics beta file `85fA7L1W`.
 The validator exception binds project, version and release type; other beta files
-remain unapproved. Native Sound Physics settings and existing volume levels are
-retained. Listener-relative ambient beds are not evidence of spatial occlusion;
+remain unapproved. The owner-selected **Hear yourself** option is enabled through
+the native `simple_voice_chat_hear_self` key. Other Sound Physics settings retain
+their native defaults, and existing volume levels are unchanged. The provider
+scopes this key to its Simple Voice Chat integration. Listener-relative ambient
+beds are not evidence of spatial occlusion;
 moving ship geometry is not covered by the static audit. No custom sound/ship
 adapter or unsafe level access is enabled.
 

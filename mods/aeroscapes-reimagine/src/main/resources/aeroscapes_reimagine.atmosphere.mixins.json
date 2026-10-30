@@ -6,6 +6,7 @@
   "compatibilityLevel": "JAVA_21",
   "priority": 900,
   "client": [
+    "CelestialSkyMixin",
     "PrecipitationParticleMixin",
     "RainHeightMixin",
     "RainWindMixin",

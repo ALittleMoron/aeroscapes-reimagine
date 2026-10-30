@@ -1,6 +1,7 @@
 package dev.aeroscapes.worldgen;
 
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.atmosphere.CelestialConfig;
 import dev.aeroscapes.worldgen.c2me.C2meIslandCompiler;
 import dev.aeroscapes.worldgen.feature.IslandFeatures;
 import dev.aeroscapes.worldgen.opencl.IslandOpenCl;
@@ -26,8 +27,10 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.level.LevelEvent;
 import org.slf4j.Logger;
@@ -43,7 +46,8 @@ public final class AeroscapesReimagine {
   // Covers every possible column chosen by vanilla's default first-spawn fuzz.
   private static final int VANILLA_SPAWN_RADIUS = 10;
 
-  public AeroscapesReimagine(IEventBus modBus) {
+  public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
+    container.registerConfig(ModConfig.Type.CLIENT, CelestialConfig.SPEC);
     if (ModList.get().isLoaded("c2me_opts_dfc")) {
       C2meIslandCompiler.register();
       if (ModList.get().isLoaded("c2me_opts_accel_opencl")) IslandOpenCl.register();

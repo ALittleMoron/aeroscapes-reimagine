@@ -1,0 +1,8 @@
+{
+  "doFloods": false,
+  "raiseWaterHeight": false,
+  "doDripPuddles": false,
+  "doCauldronPuddles": false,
+  "doFlowingWaterPuddles": false,
+  "doMeltingSnowPuddles": false
+}

@@ -4,6 +4,16 @@ description: Version history.
 status: available
 ---
 
+## 0.1.6
+
+- Add three small decorative planets, brighter accent stars and a fixed northern guide star, fading with daylight, weather and the horizon.
+- Enable **Hear yourself** in the initial [Sound Physics Remastered](https://modrinth.com/mod/sound-physics-remastered) profile.
+- Pin Forgified Fabric API to a build whose bundled modules support the current NeoForge; reject incompatible bundled NeoForge requirements before export.
+- Add client-side Puddles & Floods with Forgified Fabric API, disabling floods, raised water and drip puddles; disable Complementary water-height waves to keep puddles above the ground.
+- Add distance-dependent lightning strike sounds with ImmersiveThunder, retaining Sounds footsteps and interaction audio.
+- Give the vanilla/MakeUp star field a wider size range and increase Complementary star density.
+- Pin official CurseForge files by project/file ID and verify their unchanged client override exports.
+
 ## 0.1.5
 
 - Add Fresh Animations: Quivers for skeletons, strays and bogged, retaining their current Fresh Animations models and movement through a client compatibility adapter.

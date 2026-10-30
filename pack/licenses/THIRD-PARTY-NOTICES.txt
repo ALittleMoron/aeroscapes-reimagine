@@ -135,6 +135,15 @@ Visual Workbench 21.1.2 and Puzzles Lib 21.1.66: Fuzs and contributors; MPL-2.0.
 https://modrinth.com/mod/visual-workbench/version/3646RfLS
 https://modrinth.com/mod/puzzles-lib/version/kmN5PWk9
 
+Rain puddles and direct thunder (unchanged official files):
+Puddles & Floods 1.1.6: PigCart; MIT.
+https://modrinth.com/mod/puddles-floods/version/ba9E4XOp
+Forgified Fabric API 0.116.15+2.3.4+1.21.1: Sinytra and FabricMC; Apache-2.0.
+https://modrinth.com/mod/forgified-fabric-api/version/K4hHKnnI
+ImmersiveThunder 1.3.0: Copyright (c) 2025 netcatgirl; MIT.
+Its complete LICENSE_Immersive Thunder is retained inside the unchanged client JAR.
+https://www.curseforge.com/minecraft/mc-mods/immersivethunder/files/6711308
+
 Rain, wind chimes, camera and sky additions (unchanged official downloads):
 Cool Rain Reforged 1.0.2: Leclowndu93150; original Cool Rain by JaizYT.
 Project terms are All Rights Reserved; the exact native descriptor declares MIT.
