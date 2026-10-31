@@ -4,6 +4,16 @@ description: История версий.
 status: available
 ---
 
+## 0.2.1
+
+- Подземные комнаты Creeping Crypt из [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) размещаются внутри подходящих островов с сохранением поверхностного входа.
+- Ручки обычного фонаря и фонаря душ совмещены с захватом рук [Punchy](https://modrinth.com/mod/punchy-fpa) от первого лица при использовании [Extended Illumina NEA](https://modrinth.com/resourcepack/extended-illumina-not-enough-animations).
+- Брызги дождя ограничены дождливыми биомами с сохранением погодных звуков [Particle Rain](https://modrinth.com/mod/particle-rain).
+- Залежи восьми ванильных руд, цинка из [Create](https://modrinth.com/mod/create) и палладия из [Galosphere](https://modrinth.com/mod/galosphere) в чернитовом рельефе используют чернитовые варианты рудных блоков.
+- Дополнены недостающие английские и русские названия, описания и тексты интерфейса, включая составные названия древесины в хранилищах; исправлены потерянные параметры строк, а русский язык административных команд [Saplanting](https://modrinth.com/mod/saplanting) доступен для выбора.
+- Добавлены клиентские [BetterF3](https://modrinth.com/mod/betterf3), [Cherished Worlds](https://modrinth.com/mod/cherished-worlds) и [Leave My Bars Alone](https://modrinth.com/mod/leave-my-bars-alone).
+- Проверка сборки учитывает собственные дополнения рудных тегов отдельно от заимствованных данных генератора.
+
 ## 0.2.0
 
 - Завершён выбранный этап аудиовизуальной атмосферы, подготовленный в предыдущих выпусках 0.1.x.

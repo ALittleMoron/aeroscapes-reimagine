@@ -12,8 +12,14 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
     Map<String, String> versions;
-    if (mixinClassName.endsWith("CelestialSkyMixin")) {
+    if (mixinClassName.endsWith("CelestialSkyMixin")
+        || mixinClassName.endsWith("LanguageCorrectionMixin")
+        || mixinClassName.endsWith("NativeConfigurationLanguageMixin")) {
       versions = Map.of("neoforge", "21.1.230");
+    } else if (mixinClassName.contains("CatnipConfig")) {
+      versions = Map.of("ponder", "1.0.82+mc1.21.1");
+    } else if (mixinClassName.endsWith("PuzzlesConfigurationLanguageMixin")) {
+      versions = Map.of("puzzleslib", "21.1.66");
     } else if (mixinClassName.endsWith("QuiverEmfMixin")) {
       versions = Map.of("entity_model_features", "3.3.12");
     } else if (mixinClassName.endsWith("PunchyEmfMixin")) {
@@ -27,6 +33,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "7.2.6");
     } else if (mixinClassName.endsWith("FastRodCaptureMixin")) {
       versions = Map.of("punchy", "3.0", "flerovium", "1.1.2");
+    } else if (mixinClassName.endsWith("LanternGripMixin")) {
+      versions = Map.of("punchy", "3.0");
     } else if (mixinClassName.endsWith("RodCaptureTraceMixin")
         || mixinClassName.endsWith("RodLineTraceMixin")) {
       versions = Map.of("punchy", "3.0");

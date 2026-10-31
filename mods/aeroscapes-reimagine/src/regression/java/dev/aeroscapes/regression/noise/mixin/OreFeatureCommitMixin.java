@@ -61,13 +61,14 @@ public abstract class OreFeatureCommitMixin {
       @Local(argsOnly = true) WorldGenLevel region,
       @Local BlockPos.MutableBlockPos position) {
     BlockState before = original.call(section, x, y, z, state, lock);
+    BlockState placed = section.getBlockState(x, y, z);
     if (FeatureCommitObserver.armed() || StructureCommitObserver.armed()) {
       if ((position.getX() & 15) != x || (position.getY() & 15) != y || (position.getZ() & 15) != z)
         throw new IllegalStateException("Native ore local/absolute write coordinates differ");
       if (FeatureCommitObserver.armed())
-        FeatureCommitObserver.committed(region.getLevel(), region, position, before, state);
+        FeatureCommitObserver.committed(region.getLevel(), region, position, before, placed);
       if (StructureCommitObserver.armed())
-        StructureCommitObserver.committed(region.getLevel(), region, position, before, state);
+        StructureCommitObserver.committed(region.getLevel(), region, position, before, placed);
     }
     return before;
   }

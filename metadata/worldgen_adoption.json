@@ -1060,9 +1060,9 @@
       "source": "data/minecraft/tags/block/mineable/pickaxe.json",
       "source_sha256": "7420a90bff16f51478fdf10852e03b6c11220b2dd16f142bd8e1c54965d987e8",
       "output": "data/minecraft/tags/block/mineable/pickaxe.json",
-      "sha256": "0c615d27d6e7932dab70603593b0d4b2098f06e605c17c7e8549a677ec84ef94",
+      "sha256": "0f746820a5c9eec0b43fd3a2e23ac619fe53cb506c513e76d987412f908f48a3",
       "mode": "adapted",
-      "reason": "Map removed Aero content to vanilla equivalents; retain density and native resource placement"
+      "reason": "Map removed Aero content to vanilla equivalents; extend the retained pickaxe mining tag with the ten owned blackstone ore variants while preserving existing entries."
     },
     {
       "source": "data/minecraft/tags/block/moss_replaceable.json",
@@ -1665,5 +1665,97 @@
     "history_introduction": "977b4d6b9f9597da90d0dd6a2212427f58b3f3b0",
     "comparison_scope": "Eight original class fingerprints map to seven current files; algorithmic correspondences include pillar taper, selected draw order and mineshaft assembly. This is a behavior/source comparison, not an authorship determination for the complete generator.",
     "license_decision": "Retain GPL-3.0-or-later for the complete owned mod in 0.1.0; 160 exact and 37 changed Aero JSON remain incorporated, plus one separately attributed Minecraft resource."
-  }
+  },
+  "authored_resources": [
+    {
+      "output": "data/minecraft/tags/block/coal_ores.json",
+      "sha256": "80cda90e5c382d78036da54f3f35cb6cb5c4e1edb84c1dc2673a3e59b2e27b96",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/copper_ores.json",
+      "sha256": "e24182fda440d78064b49e570e878bb0da2bd35e020e29ac51dae46d8994bd35",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/diamond_ores.json",
+      "sha256": "a705dfddce685de2138ccf544cdbcd5d972e907a956cf8a2d854e2ad8b07dea2",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/emerald_ores.json",
+      "sha256": "87ccf2ed9d386e16d9817b393847d19efe674d3ce6371381ea8bfa8d67e0882a",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/gold_ores.json",
+      "sha256": "a26ca8858c862294da8e5b0bd38cd5dd759aa8a32e692b25b399de1ea54e7cb6",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/iron_ores.json",
+      "sha256": "fe599a442c764afc46639e6ef56e94632f4759327ac4bed40dcb8d24b4642dd2",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/lapis_ores.json",
+      "sha256": "2aea2881cd716a4a6ff6b5126c700780242722bf06f76f77be8dc47badf7e9b6",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/needs_iron_tool.json",
+      "sha256": "454aacfbc32bea947675897d1f9a457054e3e74f4aca693868e2e52deba14f5b",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/needs_stone_tool.json",
+      "sha256": "5a2e476090df13d408c0958175f3dd95a306bc42b030c97bd8b3370c1502e15b",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/redstone_ores.json",
+      "sha256": "c4ff0a3678fa9d324537a304e20b9470df8b61e595491f5fe2c592a415a43b86",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/item/coal_ores.json",
+      "sha256": "80cda90e5c382d78036da54f3f35cb6cb5c4e1edb84c1dc2673a3e59b2e27b96",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/item/copper_ores.json",
+      "sha256": "e24182fda440d78064b49e570e878bb0da2bd35e020e29ac51dae46d8994bd35",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/item/diamond_ores.json",
+      "sha256": "a705dfddce685de2138ccf544cdbcd5d972e907a956cf8a2d854e2ad8b07dea2",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/item/emerald_ores.json",
+      "sha256": "87ccf2ed9d386e16d9817b393847d19efe674d3ce6371381ea8bfa8d67e0882a",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/item/gold_ores.json",
+      "sha256": "a26ca8858c862294da8e5b0bd38cd5dd759aa8a32e692b25b399de1ea54e7cb6",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/item/iron_ores.json",
+      "sha256": "fe599a442c764afc46639e6ef56e94632f4759327ac4bed40dcb8d24b4642dd2",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/item/lapis_ores.json",
+      "sha256": "2aea2881cd716a4a6ff6b5126c700780242722bf06f76f77be8dc47badf7e9b6",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/item/redstone_ores.json",
+      "sha256": "c4ff0a3678fa9d324537a304e20b9470df8b61e595491f5fe2c592a415a43b86",
+      "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    }
+  ]
 }

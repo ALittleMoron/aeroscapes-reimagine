@@ -35,6 +35,7 @@ repositories {
       includeModule("maven.modrinth", "entity-model-features")
       includeModule("maven.modrinth", "entitytexturefeatures")
       includeModule("maven.modrinth", "puzzle")
+      includeModule("maven.modrinth", "puzzles-lib")
       includeModule("maven.modrinth", "flerovium")
       includeModule("maven.modrinth", "create-aeronautics")
       includeModule("maven.modrinth", "create")
@@ -119,6 +120,7 @@ dependencies {
   atmosphereApi("maven.modrinth:entity-model-features:197m3VoU")
   atmosphereApi("maven.modrinth:entitytexturefeatures:lwNx1nD1")
   atmosphereApi("maven.modrinth:puzzle:bZNDTLHq")
+  atmosphereApi("maven.modrinth:puzzles-lib:kmN5PWk9")
   atmosphereApi("maven.modrinth:flerovium:oU1q3eIj")
   compileOnly(files(atmosphereApi))
   compileOnly(
@@ -249,7 +251,10 @@ val atmosphereContractTest by
     doFirst {
       systemProperty(
         "aeroscapes.atmosphere.apis",
-        (atmosphereApi.files + sableApi.files).joinToString(File.pathSeparator),
+        (atmosphereApi.files +
+            sableApi.files +
+            fileTree(shipNestedApiDirectory) { include("*.jar") }.files)
+          .joinToString(File.pathSeparator),
       )
     }
   }

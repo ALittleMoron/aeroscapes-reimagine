@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "zinc_ingot",
+  "ingredient": {
+    "item": "aeroscapes_reimagine:blackstone_zinc_ore"
+  },
+  "result": {
+    "id": "create:zinc_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

@@ -5,6 +5,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BeeGoalRandomMixin",
+    "BlackstoneOreFeatureMixin",
+    "BlackstoneBlobFeatureMixin",
     "BuriedTreasureSupportMixin",
     "RandomStateMixin",
     "IslandBiomeSamplerMixin",
@@ -18,6 +20,8 @@
     "LocalChunkPacingMixin",
     "BasinAnimalSpawnMixin",
     "StrongholdShellMixin",
+    "SaplantingTranslationMixin",
+    "SaplantingLanguageMixin",
     "MonumentBuildingWaterMixin",
     "MonumentRoomWaterMixin",
     "MonumentReloadMixin",

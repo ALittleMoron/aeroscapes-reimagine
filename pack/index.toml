@@ -699,11 +699,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "71846090db02ddf221f2a82ed30319590bf6039b52b2a28c05e27eb9b90b1667"
+hash = "6c7f0e75736fbdf7ad2ccb82875dda013c9a691da3e49be23a8f011c18114e14"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "0c1b320ee91662ee154565e96f3b232af9a42dcacb729114e9c32508c83bcc41"
+hash = "3d7bab8966b54bf74e020095904ca3c6c79cd3f02856fbbcc9a7d13bc108f1e4"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -712,7 +712,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "632d202011791bc252260ec6f4ec994e030df975c8b7f58298c4b4b3f3d6164d"
+hash = "301528717a333a89c5fc4cf623d070f03d8253b89d623ccc791005bf6d84bc87"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -765,6 +765,11 @@ hash = "b8ce4a231e9107645d0abbaae4fe08e4fd7388d47e155fb2c08ff52cefb6ace9"
 metafile = true
 
 [[files]]
+file = "mods/betterf3.pw.toml"
+hash = "6be40d26a96fce2db4809e468f6d4d4b84ecdb1b9a52e1716c97739f9538e7cf"
+metafile = true
+
+[[files]]
 file = "mods/blueprint.pw.toml"
 hash = "baa996b917b28a70e6c6e216ef1a9333552a5b0462f8d6dc448664f59fabec5b"
 metafile = true
@@ -797,6 +802,11 @@ metafile = true
 [[files]]
 file = "mods/chatanimation.pw.toml"
 hash = "786dbe15362fc3fe9ba5790a3b10e8990f64c383972891c7f4fbf0a7af8d1f12"
+metafile = true
+
+[[files]]
+file = "mods/cherished-worlds.pw.toml"
+hash = "4207fda740fbb06f98d83a5abbbbf0bc0eeacfb1d4f1dac330bb7df0bc343904"
 metafile = true
 
 [[files]]
@@ -1107,6 +1117,11 @@ metafile = true
 [[files]]
 file = "mods/lambdynamiclights.pw.toml"
 hash = "88ce67a644ff425064dc24478ed35e1f603975d4699d6d48946fd7a3ecde45d0"
+metafile = true
+
+[[files]]
+file = "mods/leave-my-bars-alone.pw.toml"
+hash = "92d50a5d4e8279a316994c9084862c7f107d0cfe1d889fd7b55aa8dd78e1b2d5"
 metafile = true
 
 [[files]]

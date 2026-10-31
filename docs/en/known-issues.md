@@ -20,9 +20,11 @@ Keep an untouched world backup before updating. To roll back, restore both the p
 
 The Open Sky biome applies to newly generated chunks. Previously explored empty space keeps its saved biomes, so biome colors and weather can change at the boundary. A save written with Open Sky contains a new biome ID; use the untouched backup when returning to a version that predates it.
 
+Blackstone ore variants add saved block and item IDs. Existing ore blocks and explored dungeons are not rebuilt by the new placement rules; use the untouched backup when returning to a pack without those IDs.
+
 ## In-game language
 
-Project-owned in-game text is written in English first. Biome names and selected missing interface labels have Russian translations; a complete Russian game localization remains planned.
+The pack supplies missing English and Russian names, descriptions and interface text for its included content. Select **English (US)** or **Русский** in Minecraft's language settings. Mod and resourcepack project names retain their original spelling. [Saplanting](https://modrinth.com/mod/saplanting)'s administrative commands use their separate native language setting; `/saplanting language ru_ru` selects Russian for those messages.
 
 ## Feedback
 

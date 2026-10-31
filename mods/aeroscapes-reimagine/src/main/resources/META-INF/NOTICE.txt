@@ -13,7 +13,11 @@ One separately identified Minecraft resource is recorded in the same inventory.
 Origins, changed-resource hashes and Java comparisons: metadata/worldgen_adoption.json
 in the corresponding-source archive. No author endorsement is implied.
 
-Local compatibility transformations were changed on 2026-10-27. Original code
+Additional ore-family and mining-tier tag files in the Minecraft namespace are
+independently authored extensions. They are recorded as authored_resources in
+that inventory, separately from incorporated Aero/Minecraft resources.
+
+Local compatibility transformations were changed on 2026-10-31. Original code
 reads CTOV, Dungeons and Taverns, Philips Ruins, Galosphere and Minecraft resources
 from the user's installed originals. No repaired NBT templates or complete JSON
 copies for these repairs are bundled. Their authors retain all rights in original
@@ -47,8 +51,83 @@ image inputs. Its AI-assisted Java composition script is CelestialAtlas.java in
 the corresponding source; regenerate with ./gradlew generateCelestialAtlas.
 The atlas and its renderer are distributed under this project's GPL-3.0-or-later.
 
-The English/Russian missing-key language overrides are authored for this pack.
-They supply biome and content labels and selected interface messages, including
-aliases for the exact key forms used by installed consumers. No complete provider
-language dictionary is bundled by these overrides. Their audit is separate from
-the providers' dynamically generated client translations.
+English/Russian language supplements combine text authored for this pack with
+separately licensed selected upstream translations described below. Each
+selected dictionary retains its stated license; the Java code and unrelated
+resources remain GPL-3.0-or-later. Original provider JARs are unchanged.
+
+Russian catalog language resources
+
+assets/aeroscapes_reimagine_bmp_translations/lang/ru_ru.json contains a selected,
+unmodified subset of translations from BMP Translations / BMProjects (BMP),
+https://github.com/BMProjects-Development/BMP-Translations at commit
+df7bf970d0de519b1cd288fd09f0f45fb1b764ac. Only missing keys used by the exact
+pinned pack dictionaries with matching format placeholders are retained.
+The selected dictionary remains under CC BY-SA 4.0; the source license and its
+scope are in META-INF/licenses/BMP-Translations-CC-BY-SA-4.0.md.
+https://creativecommons.org/licenses/by-sa/4.0/
+This does not imply endorsement or relicense unrelated code or resources.
+
+assets/aeroscapes_reimagine_food_translations/lang/ru_ru.json contains a selected
+subset of Russian translations from Create: Food / AverageAnime and contributors,
+https://github.com/AverageAnime/create-food-multiloader at commit
+6033b2d15da02db568cdad2a9611c13cfce2c441, GPL-3.0-only. Only missing keys whose
+English text is unchanged from the pinned 2.3.0 and whose placeholders match are
+retained. License: META-INF/licenses/Create-Food-GPL-3.0.txt.
+
+No other translations, artwork or implementations from either source are included.
+
+Selected missing Russian Item Descriptions entries come from cassiancc and
+contributors, https://github.com/cassiancc/Item-Descriptions, stonecutter branch
+Russian blob b26cedd7eca63d74af6f68b06f8caba7b1945d7d. They retain the MIT License
+in META-INF/licenses/Item-Descriptions-MIT.txt. Configuration labels and a few
+descriptions were authored/adapted for the pinned version.
+
+Selected missing Russian Jade entries come from Snownee and contributors,
+https://github.com/Snownee/Jade, 26.3-fabric branch Russian blob
+ae6d343956490b31c5061deb298b80462b8b1281. Only keys with identical pinned/current
+English text are included, unchanged, in the separate Jade translation resource.
+They retain CC BY-NC-SA 4.0 in META-INF/licenses/Jade-translations-CC-BY-NC-SA-4.0.txt.
+Authored additional Jade text is separate from that selected resource.
+
+Configuration translations
+
+assets/aeroscapes_reimagine_quark_config_translations contains Russian names and
+descriptions adapted from Quark 4.1-477 / Zeta 1.1-40 configuration definitions.
+Quark authors include Vazkii, WireSegal, MCVinnyq, Sully and Violet Moon.
+Zeta authors include Vazkii, quat, IThundxr, Siuol, wiresegal and MehVahdJukaar.
+https://github.com/VazkiiMods/Quark
+https://github.com/VazkiiMods/Zeta
+These translations retain CC BY-NC-SA 3.0; the complete license is in
+META-INF/licenses/Quark-Zeta-CC-BY-NC-SA-3.0.md. The names, descriptions and
+display-only hash aliases are new Russian translations for this pack.
+
+Direct Catnip configuration text comes from non-asset code in Create 6.0.10,
+Ponder 1.0.82+mc1.21.1 and the Simulated Project 1.3.2 bundle, whose code is MIT.
+Their copyrights and full terms are retained in Create-6.0.10-license.md,
+Ponder-1.0.82-license.txt and Aeronautics-1.3.2-license.md under META-INF/licenses/.
+https://github.com/Creators-of-Create/Create
+https://github.com/Creators-of-Create/Ponder
+https://github.com/Creators-of-Aeronautics/Simulated-Project
+Additional short source-derived labels retain the applicable provider terms
+and author credits recorded in the localization inventory, including raprek's
+Gyroscope Stabilizers code and the Bits n Bobs authors' MIT code.
+https://modrinth.com/mod/create-aeronautics-gyroscope-stabilizers
+https://modrinth.com/mod/create-bits-n-bobs
+Russian labels and functional explanations supplement installed configuration
+definitions. Original English comments remain runtime fallbacks in the installed
+provider archives. Short setting names, registry identifiers and technical
+constraints retain their meaning; provider code and UI artwork are not copied.
+The localization inventory identifies the pinned inputs and their distinct terms;
+licensing of this mod does not relicense original provider resources.
+
+Blackstone ore models compose installed Minecraft, Create and Galosphere texture
+pixels locally during the client atlas load. Their original artwork is not
+bundled or relicensed. No provider PNGs are distributed by this mod. The zinc ore
+loot definition is adapted from Create 6.0.10 non-asset data, MIT, copyright The
+Create Team / The Creators of Create. The complete file-specific license is
+in META-INF/licenses/Create-6.0.10-license.md. Other ore loot, processing recipes,
+material adaptation and composition code are authored for this pack.
+
+META-INF/localization-sources.json records selected translation inputs, licenses,
+filtering and resource identities. Source and notices accompany the binary.

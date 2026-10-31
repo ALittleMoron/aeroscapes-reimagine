@@ -55,6 +55,22 @@ directions, time continuity and visibility without starting a Minecraft client.
 The added sky layer is client-only; `celestialSky` in the native
 `aeroscapes_reimagine-client.toml` controls it independently of other atmosphere.
 
+Language supplements and their separate licenses are recorded in
+`src/main/resources/META-INF/localization-sources.json`. Exact-value Russian
+corrections preserve changed provider translations. Client adapters translate
+literal Catnip, NeoForge and Puzzles configuration text while retaining native
+settings and metadata; runtime-dependent default/range values remain unchanged.
+The corresponding bytecode contracts and pure fallback behavior are checked by
+`atmosphereContractTest`. Saplanting's classloader language path has a separate
+Russian dictionary and native language-selection adapter.
+
+Ten ore variants use blackstone as their host material. Native ore/blob writes
+select those variants without changing their shape or random draws. Loot,
+experience, tool requirements and processing retain the pinned source behavior.
+The client composes their sprites from installed ore and blackstone textures;
+provider PNGs are not bundled. The separate server fixture contains opt-in ore,
+crypt placement/reload and copied-save upgrade/rollback checks.
+
 For local installation, replace the matching owned JAR in an existing compatible
 pack's `mods/` directory with your result. Keep the runtime dependencies and pack
 data matching that pack version. The source project does not include third-party

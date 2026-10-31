@@ -1,6 +1,6 @@
 modLoader = "javafml"
 loaderVersion = "[4,)"
-license = "GPL-3.0-or-later"
+license = "Code: GPL-3.0-or-later; translation resources retain separate licenses (see META-INF/NOTICE.txt)"
 
 [[mods]]
 modId = "aeroscapes_reimagine"

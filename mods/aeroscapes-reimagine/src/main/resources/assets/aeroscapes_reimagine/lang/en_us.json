@@ -295,5 +295,15 @@
   "block.supplementaries.rope_buntings": "Rope with Bunting",
   "block.supplementaries.sconce_wall_green": "Cupric Sconce",
   "block.supplementaries.sconce_wall_soul": "Soul Sconce",
-  "block.supplementaries.way_sign_wall": "Way Sign"
+  "block.supplementaries.way_sign_wall": "Way Sign",
+  "block.aeroscapes_reimagine.blackstone_coal_ore": "Blackstone Coal Ore",
+  "block.aeroscapes_reimagine.blackstone_copper_ore": "Blackstone Copper Ore",
+  "block.aeroscapes_reimagine.blackstone_diamond_ore": "Blackstone Diamond Ore",
+  "block.aeroscapes_reimagine.blackstone_emerald_ore": "Blackstone Emerald Ore",
+  "block.aeroscapes_reimagine.blackstone_gold_ore": "Blackstone Gold Ore",
+  "block.aeroscapes_reimagine.blackstone_iron_ore": "Blackstone Iron Ore",
+  "block.aeroscapes_reimagine.blackstone_lapis_ore": "Blackstone Lapis Lazuli Ore",
+  "block.aeroscapes_reimagine.blackstone_palladium_ore": "Blackstone Palladium Ore",
+  "block.aeroscapes_reimagine.blackstone_redstone_ore": "Blackstone Redstone Ore",
+  "block.aeroscapes_reimagine.blackstone_zinc_ore": "Blackstone Zinc Ore"
 }

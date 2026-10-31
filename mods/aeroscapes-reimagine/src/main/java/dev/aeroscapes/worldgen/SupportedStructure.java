@@ -55,6 +55,7 @@ public final class SupportedStructure extends Structure {
     MARINE_SURFACE,
     CAVERN,
     ANCHORED_COMPLEX,
+    ANCHORED_BURIED,
     WET_RUIN,
     ENCLOSED,
     CORE_ENCLOSED,
@@ -135,6 +136,8 @@ public final class SupportedStructure extends Structure {
     if (embedsUnderground()) return fitAssembly(context, stub, builder, pieces, columns);
     if (terrainCheck == TerrainCheck.GROUNDED_SURFACE)
       return fitSurface(context, stub, builder, pieces, columns);
+    if (terrainCheck == TerrainCheck.ANCHORED_BURIED)
+      return fitAnchoredBuried(context, stub, builder, pieces, columns);
     if (terrainCheck == TerrainCheck.ANCHORED_COMPLEX) {
       if (!supportedSurfaceRoot(context, pieces.pieces().getFirst(), columns)
           || !assemblySupport(context, pieces, 0, 0, 0, new StructureTerrain(context), false))
@@ -347,6 +350,72 @@ public final class SupportedStructure extends Structure {
       for (StructurePiece piece : pieces.pieces()) movePiece(piece, dx, dy, dz);
       return Optional.of(
           new GenerationStub(stub.position().offset(dx, dy, dz), Either.right(builder)));
+    }
+    return Optional.empty();
+  }
+
+  private static Optional<GenerationStub> fitAnchoredBuried(
+      GenerationContext context,
+      GenerationStub stub,
+      StructurePiecesBuilder builder,
+      PiecesContainer pieces,
+      Map<Long, NoiseColumn> columns) {
+    StructurePiece root = pieces.pieces().getFirst();
+    int rootFloor =
+        root.getBoundingBox().minY()
+            + (root instanceof PoolElementStructurePiece pool ? pool.getGroundLevelDelta() : 0);
+    BlockPos center = root.getBoundingBox().getCenter();
+    BoundingBox bounds = builder.getBoundingBox();
+    StructureTerrain terrain = new StructureTerrain(context);
+    // The entrance and its overlapping stair shaft remain open. Only the shared
+    // exterior roof below the entrance contributes to underground burial.
+    List<BlockPos> roof =
+        exteriorRoof(pieces).stream()
+            .filter(position -> position.getY() < root.getBoundingBox().minY())
+            .toList();
+    if (roof.isEmpty()) return Optional.empty();
+    // Wide assemblies may fit only near the edge of their native reference window.
+    for (int radius = 0; radius <= 128; radius += 8) {
+      for (int dx = -radius; dx <= radius; dx += 8) {
+        for (int dz = -radius; dz <= radius; dz += 8) {
+          if (Math.max(Math.abs(dx), Math.abs(dz)) != radius) continue;
+          if (bounds.minX() + dx < context.chunkPos().getMinBlockX() - 128
+              || bounds.maxX() + dx > context.chunkPos().getMaxBlockX() + 128
+              || bounds.minZ() + dz < context.chunkPos().getMinBlockZ() - 128
+              || bounds.maxZ() + dz > context.chunkPos().getMaxBlockZ() + 128) continue;
+          int targetFloor =
+              context
+                  .chunkGenerator()
+                  .getBaseHeight(
+                      center.getX() + dx,
+                      center.getZ() + dz,
+                      Heightmap.Types.WORLD_SURFACE_WG,
+                      context.heightAccessor(),
+                      context.randomState());
+          int dy = targetFloor - rootFloor;
+          if (Math.abs(dy) > 12
+              || context.heightAccessor().isOutsideBuildHeight(bounds.minY() + dy)
+              || context.heightAccessor().isOutsideBuildHeight(bounds.maxY() + dy)) continue;
+          NoiseColumn natural = column(context, center.getX() + dx, center.getZ() + dz, columns);
+          if (!solidFloor(natural.getBlock(targetFloor - 1))
+              || !solidFloor(natural.getBlock(targetFloor - 4))
+              || !assemblySupport(context, pieces, dx, dy, dz, terrain, true)
+              || !buriedRoof(roof, dx, dy, dz, terrain)) continue;
+          BlockPos target = stub.position().offset(dx, dy, dz);
+          if (!context
+              .validBiome()
+              .test(
+                  context
+                      .biomeSource()
+                      .getNoiseBiome(
+                          target.getX() >> 2,
+                          target.getY() >> 2,
+                          target.getZ() >> 2,
+                          context.randomState().sampler()))) continue;
+          for (StructurePiece piece : pieces.pieces()) movePiece(piece, dx, dy, dz);
+          return Optional.of(new GenerationStub(target, Either.right(builder)));
+        }
+      }
     }
     return Optional.empty();
   }

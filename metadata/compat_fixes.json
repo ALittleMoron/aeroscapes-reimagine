@@ -522,5 +522,54 @@
     },
     "files": [],
     "reason": "The adopted Aero voidsea_surface_rules.json (SHA-256 e9164792487fd5af4e3ca2f445ff8ba2f8f7faea1a4c2221cdf3f3a3a702f864) makes minecraft:beach columns basalt. Minecraft 1.21.1 BuriedTreasurePiece accepts only five other default rock states and can retain a valid start without any chest. Owned BuriedTreasureSupportMixin first runs the unchanged native scan; only failure with the identical bounding-box object retries it with the owned buried_treasure_support block tag, initially basalt only. Retain native coordinates, frequency, RNG, cover, loot and Blueprint/Zeta createChest hooks; old FULL chunks are not retrofitted. Recheck exact scan bytecode, box-identity failure contract and support-tag contents when updating Minecraft or the adopted surface rule."
+  },
+  {
+    "targets": {
+      "nrikgvxm": "RxfaR4ud",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Particle Rain 4.0.2 WeatherEffectRendererMixin replaces every vanilla tickRain impact-biome lookup with plains, allowing native/Subtle Effects rain impacts in dry and snowy biomes. Owned RainImpactBiomeMixin guards only the native impact-particle emission using the original tickRain precipitation-sample BlockPos, captured from its verified native local; particle coordinates can differ on slabs and fluids. The original location-selection branch remains available to PR's snow/sandstorm audio, which deliberately uses that plains substitution before checking actual weather. Sky precipitation, weather audio and impact options remain with their existing owners. Exact provider bytecode contract checked offline; dry/snow/rain and ship visuals remain owner acceptance."
+  },
+  {
+    "targets": {
+      "8aoMKplv": "83nCNSX4",
+      "UHU8yZyL": "3hkMp9g6",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Punchy 3.0 renders first-person items through third-person model display transforms. Extended Illumina NEA's three-dimensional lantern geometry is therefore displaced from Punchy's flat-item grip. Owned LanternGripMixin uses the resolved cached render stack, preserving equip transitions, and replaces only the two native first-person translation calls for vanilla/soul lanterns whose effective item model comes from the exact Illumina file. Native ItemTransform.apply maps the handle centre to the existing per-hand pendulum pivot; custom positional differences from the pinned default remain additive. Original arms, scale, rotations, physics, third-person rendering and alternate resource models remain native. Offline matrix coverage checks both hands, swing and custom offsets; graphical grip and shader acceptance remain pending."
+  },
+  {
+    "targets": {
+      "Vo4uFiz0": "4nzNnTDi",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Saplanting 1.3.1 save tooltip requests commands.saplanting.file.open, but its classloader dictionary defines command.saplanting.file.open. SaplantingTranslationMixin normalizes only that exact key before native lookup; unrelated keys and native language selection remain intact. The complete missing Russian dictionary lives at assets/saplanting/lang/ru_ru.json so native updateLanguage can load it. The server translation fixture verifies the actual transformed lookup in both en_us and ru_ru plus unrelated-key fallback. SaplantingLanguageMixin adds ru_ru to its fixed native language set during construction, preserving the existing en_us/zh_cn choices and command/configuration workflow."
+  },
+  {
+    "targets": {
+      "LNytGWDc": "UjX6dr61",
+      "cRci7UZp": "bmqftD2D",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Ponder 1.0.82+mc1.21.1 bundled by Create 6.0.10 builds Catnip labels, titles, enum displays, units and comments as literals. Owned CatnipConfig mixins translate only display strings after native annotation parsing; full-comment context precedes line fallback. Settings, metadata, raw keys, enum identities and styles remain native. Exact provider bytecode is checked; the runtime gate requires this Ponder version. Two obsolete Crops Love Rain 3.2.1 literal comment IDs resolve existing provider tooltip keys, preserving resource-pack overrides and readable fallbacks."
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Minecraft 1.21.1 / NeoForge 21.1.230 native ConfigurationScreen falls back to literal comments and Enum.name for non-TranslatableEnum values. Owned NativeConfigurationLanguageMixin translates these display-only fallbacks, retaining existing provider tooltip-key priority and the native TranslatableEnum branch. Explicit whole-block overrides precede line fallback; known Default/Range/Allowed Values headings translate independently of runtime CPU-dependent values. The exact platform version is enforced by AtmosphereMixinPlugin and checked against native source/bytecode."
+  },
+  {
+    "targets": {
+      "QAGBst4M": "kmN5PWk9",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Puzzles Lib 21.1.66 native configuration section overrides NeoForge labels with getConfigValueComponent literal text. Owned PuzzlesConfigurationLanguageMixin translates only its final display string after native capitalization and And/Or substitutions. Original config keys, values, component style and behavior remain native; unknown text falls back unchanged. Exact provider helper bytecode and version gate are checked."
   }
 ]

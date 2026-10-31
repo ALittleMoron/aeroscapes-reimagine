@@ -1,0 +1,835 @@
+{
+  "format": 1,
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.230",
+  "scope": "Effective missing English/Russian player-facing catalog, nested-item, biome/HUD, interface and configuration text for exact pinned resources. Registered server configuration is supplemented by client-only and Dist.CLIENT-created definitions, native/factory/shared-menu routes, literal comments/enums/units and runtime metadata. Existing changed provider/user text is preserved by guarded correction and native fallback priority. Saplanting uses its separate classloader dictionary.",
+  "sources": {
+    "bmp": {
+      "repository": "https://github.com/BMProjects-Development/BMP-Translations",
+      "commit": "df7bf970d0de519b1cd288fd09f0f45fb1b764ac",
+      "license": "CC-BY-SA-4.0",
+      "license_file": "LICENSE.md",
+      "modrinth_label": "ARR (differs from explicit source license at selected commit)",
+      "modifications": "Exact installed missing-key intersection, unchanged individual translations, exact format placeholders required; all other keys omitted.",
+      "entries": 8081,
+      "files": {
+        "bmp-chipped-ru.json": 7265,
+        "bmp-subtle-effects-ru.json": 363,
+        "bmp-blueprint-ru.json": 4,
+        "bmp-ctov-ru.json": 0,
+        "bmp-eatinganimation-ru.json": 2,
+        "bmp-entityculling-ru.json": 0,
+        "bmp-immersivethunder-ru.json": 2,
+        "bmp-mod_menu-ru.json": 57,
+        "bmp-particlerain-ru.json": 0,
+        "bmp-shulkerboxtooltip-ru.json": 3,
+        "bmp-sophisticatedbackpacks-ru.json": 0,
+        "bmp-sophisticatedstorage-ru.json": 128,
+        "bmp-sounds-ru.json": 8,
+        "bmp-xaeroworldmap-ru.json": 249
+      },
+      "resource": "assets/aeroscapes_reimagine_bmp_translations/lang/ru_ru.json",
+      "sha256": "dc1070822b898d3c7c39fb5d990d384ea6d35ffd789bf3cb227edc54fbaa6968"
+    },
+    "createfood": {
+      "repository": "https://github.com/AverageAnime/create-food-multiloader",
+      "commit": "6033b2d15da02db568cdad2a9611c13cfce2c441",
+      "license": "GPL-3.0-only",
+      "file": "common/src/main/resources/assets/createfood/lang/ru_ru.json",
+      "blob_sha": "c510332f9a1e0ff9557ee87a9dcc952817de2013",
+      "modifications": "Only keys missing Russian in pinned 2.3.0 with byte-identical current/pinned English text and identical format placeholders.",
+      "entries": 407,
+      "resource": "assets/aeroscapes_reimagine_food_translations/lang/ru_ru.json",
+      "sha256": "880c01989948ce28f3e14b0a05071a3b0f723680f57bd82e893613107424ce7a"
+    },
+    "item_descriptions": {
+      "repository": "https://github.com/cassiancc/Item-Descriptions",
+      "branch": "stonecutter",
+      "license": "MIT",
+      "english_blob": "2fff2eb6d7d7956e0b6a88c969e47a9e501fafb9",
+      "russian_blob": "b26cedd7eca63d74af6f68b06f8caba7b1945d7d",
+      "resource": "assets/item_descriptions/lang/ru_ru.json",
+      "modifications": "Missing pinned keys only: 1152 identical-English matches, semantically reviewed older-version descriptions, authored legacy configuration labels and two corrected descriptions. 1227 unchanged selected translations and 53 authored/adapted entries. The combined file retains MIT.",
+      "license_file": "META-INF/licenses/Item-Descriptions-MIT.txt",
+      "entries": 1280,
+      "sha256": "f92d275ea2cf1afa47d8bf9ab57772cfe1dfb8dd85bdd663ce54629da30ff85a"
+    },
+    "jade": {
+      "repository": "https://github.com/Snownee/Jade",
+      "branch": "26.3-fabric",
+      "license": "CC-BY-NC-SA-4.0",
+      "english_blob": "7560e8e2ffe36cfa21f91f4cd68e64d8fa32e0be",
+      "russian_blob": "ae6d343956490b31c5061deb298b80462b8b1281",
+      "resource": "assets/aeroscapes_reimagine_jade_translations/lang/ru_ru.json",
+      "modifications": "80 selected missing keys with identical pinned/current English, unchanged individual Russian translations. Other authored Jade labels are in the separate GPL client translation resource.",
+      "license_file": "META-INF/licenses/Jade-translations-CC-BY-NC-SA-4.0.txt",
+      "entries": 80,
+      "sha256": "01e8723a68798df04f7c2bf0f1dce012a2efd83ed77127197096ce66626c4c45"
+    },
+    "quark_zeta": {
+      "repositories": [
+        "https://github.com/VazkiiMods/Quark",
+        "https://github.com/VazkiiMods/Zeta"
+      ],
+      "pinned_inputs": {
+        "qnQsVE2z": "qcDWHGnS",
+        "MVARlG2f": "9GjNW2Gf"
+      },
+      "license": "CC-BY-NC-SA-3.0",
+      "license_file": "META-INF/licenses/Quark-Zeta-CC-BY-NC-SA-3.0.md",
+      "modifications": "Authored Russian configuration names/descriptions and display-only exact-source hash aliases. Native Zeta descriptions use I18n percent escaping; literal hash values use direct language lookup.",
+      "resource": "assets/aeroscapes_reimagine_quark_config_translations/lang/ru_ru.json",
+      "entries": 2495,
+      "sha256": "b0daef5b1a6b15e4a223d37b08a2223bc11dfb25d4f6e79d2adbe0b24b5e1ab2"
+    }
+  },
+  "authored_resources": [
+    {
+      "resource": "assets/aeroscapes_reimagine/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 307,
+      "sha256": "e2360c8beb137ed02296dc0bcbd8657569645d23cc83281c6c4326bb0aa4fff6"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 334,
+      "sha256": "f56a9c114c480d591fde9a083f49471b1c85e5afd9f855a5d68dcdf06e382a8a"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_catalog_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 477,
+      "sha256": "1309dc0f37e7a656f00b9aee0894c6ce59bb26f3ec1ef69165cf1cb1fc3d0420"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_catnip_config_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 733,
+      "sha256": "698fe989526e27981969d367ac54ffbf5d4dfb1b90eea3f5092f2a743d360de6"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_catnip_config_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 733,
+      "sha256": "6abd1d2635d5af1ca08d99acdc9e5ddca208e1944996a9abc68c89c4d5eb6b78"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_client_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 1644,
+      "sha256": "893cdf2625954aea19331742a47371c3c8a0fec2102443f4e10a28a1620f2335"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_config_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 101,
+      "sha256": "faa37cf3d504314f4956039e40ec29b35c55987b4b4d99f239c0fcc446a8a1f0"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_config_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 3034,
+      "sha256": "b441aecb8fba51df1dc3bd99f80e154456e939c4ee400d63c57bfa271fb16a1d"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_native_config_names/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 837,
+      "sha256": "3794350ed6e7894afad5022de658a02d3c0dfec989ab166c5adc9a45ac4cc44c"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_native_config_names/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 837,
+      "sha256": "23912a764c0bd0deadf154b817b05105bf698860b96444fe4b32d7f87a4b126c"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_ui_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 24,
+      "sha256": "b9161356ff7a1a31347f7cdd97615f32bdd0319cacef075f56fcd17f182108f2"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_ui_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 1016,
+      "sha256": "4ae7597bdb1c2eb7801f013d07519954c7300981a55497532f028d71064b095a"
+    },
+    {
+      "resource": "assets/item_descriptions/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 1,
+      "sha256": "4ad17c2e6638026b13653969d07c324ec1428221f11068b3608c8d5942fe214a"
+    },
+    {
+      "resource": "assets/saplanting/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
+      "entries": 58,
+      "sha256": "dfebbd07e50916030242bdd6bde3518ef36e5861dee629048ebb4555ee7e6fb6"
+    }
+  ],
+  "guarded_corrections": {
+    "resource": "assets/aeroscapes_reimagine/language_corrections.json",
+    "rules": 356,
+    "selection": "Russian selected language only, exact normalized source-value match; other locales and custom translations unchanged.",
+    "sha256": "acb549df68802eb82880e095e25e776a9724296bf31fb11680fd8e6c9f5c1065"
+  },
+  "configuration_inputs": {
+    "minecraft": "1.21.1",
+    "neoforge": "21.1.230",
+    "ponder": "1.0.82+mc1.21.1",
+    "puzzleslib": "21.1.66",
+    "definition_coverage": {
+      "dedicated_snapshot": 2904,
+      "additional_client_only": 239,
+      "additional_client_in_both_artifacts": 113,
+      "additional_reflective_puzzles": 2
+    },
+    "literal_keys": "aeroscapes_reimagine.config.literal. + lowercase SHA-256 of exact UTF-8 display source",
+    "fallback": "Original English source; full-block context before display-line fallback. Native metadata heading translations preserve arbitrary runtime suffix values. Config values, identities and parser input are unchanged.",
+    "crops_love_rain_aliases": {
+      "cropsloverain.configuration.chance_description": "cropsloverain.configuration.rain_growth_speed.tooltip",
+      "cropsloverain.configuration.chance_description_individual": "cropsloverain.configuration.use_individual_speeds.tooltip"
+    },
+    "providers": {
+      "allurement": {
+        "provider_project": "eIO12l2t",
+        "provider_version": "avOuW96I",
+        "filename": "allurement-1.21.1-5.0.1.jar",
+        "origin": "allurement-1.21.1-5.0.1.jar",
+        "embedded_license": "https://github.com/team-abnormals/allurement/blob/main/LICENSE.txt",
+        "metadata_license": {
+          "id": "LicenseRef-Abnormals-License",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/team-abnormals/allurement",
+        "authors": "Team Abnormals"
+      },
+      "appleskin": {
+        "provider_project": "EsAfCjCV",
+        "provider_version": "uAKA6Laj",
+        "filename": "appleskin-neoforge-mc1.21-3.0.9.jar",
+        "origin": "appleskin-neoforge-mc1.21-3.0.9.jar",
+        "embedded_license": "The Unlicense",
+        "metadata_license": {
+          "id": "Unlicense",
+          "name": "The Unlicense",
+          "url": null
+        },
+        "source_url": "https://github.com/squeek502/AppleSkin",
+        "authors": "squeek"
+      },
+      "blueprint": {
+        "provider_project": "VsM5EDoI",
+        "provider_version": "YSWV62mG",
+        "filename": "blueprint-1.21.1-8.0.8.jar",
+        "origin": "blueprint-1.21.1-8.0.8.jar",
+        "embedded_license": "https://github.com/team-abnormals/blueprint/blob/main/LICENSE.txt",
+        "metadata_license": {
+          "id": "LicenseRef-Abnormals-License",
+          "name": "",
+          "url": "https://github.com/team-abnormals/blueprint/blob/1.20.x/LICENSE.txt"
+        },
+        "source_url": "https://github.com/team-abnormals/blueprint",
+        "authors": "Team Abnormals"
+      },
+      "carryon": {
+        "provider_project": "joEfVgkn",
+        "provider_version": "PV8oLZ1q",
+        "filename": "carryon-neoforge-1.21.1-2.2.6.13.jar",
+        "origin": "carryon-neoforge-1.21.1-2.2.6.13.jar",
+        "embedded_license": "GNU LGPLv3",
+        "metadata_license": {
+          "id": "LGPL-3.0-only",
+          "name": "GNU Lesser General Public License v3.0 only",
+          "url": null
+        },
+        "source_url": "https://github.com/Tschipp/CarryOn",
+        "authors": "Tschipp, PurpliciousCow"
+      },
+      "corpse": {
+        "provider_project": "WrpuIfhw",
+        "provider_version": "SElnDbg1",
+        "filename": "corpse-neoforge-1.21.1-1.1.22.jar",
+        "origin": "corpse-neoforge-1.21.1-1.1.22.jar",
+        "embedded_license": "All rights reserved",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/henkelmax/corpse",
+        "authors": "Max Henkel"
+      },
+      "create": {
+        "provider_project": "LNytGWDc",
+        "provider_version": "UjX6dr61",
+        "filename": "create-1.21.1-6.0.10.jar",
+        "origin": "create-1.21.1-6.0.10.jar",
+        "embedded_license": "Read attached LICENSE.md",
+        "metadata_license": {
+          "id": "LicenseRef-Create-Mod-License",
+          "name": "",
+          "url": "https://github.com/Creators-of-Create/Create/blob/HEAD/LICENSE.md"
+        },
+        "source_url": "https://github.com/Creators-of-Create/Create",
+        "authors": "simibubi"
+      },
+      "ponder": {
+        "provider_project": "LNytGWDc",
+        "provider_version": "UjX6dr61",
+        "filename": "create-1.21.1-6.0.10.jar",
+        "origin": "META-INF/jarjar/ponder-neoforge-1.0.82+mc1.21.1.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "LicenseRef-Create-Mod-License",
+          "name": "",
+          "url": "https://github.com/Creators-of-Create/Create/blob/HEAD/LICENSE.md"
+        },
+        "source_url": "https://github.com/Creators-of-Create/Create",
+        "authors": "simibubi, Pepper, zelophed"
+      },
+      "aeronautics": {
+        "provider_project": "oWaK0Q19",
+        "provider_version": "44pLdPGg",
+        "filename": "create-aeronautics-bundled-1.21.1-1.3.2.jar",
+        "origin": "META-INF/jarjar/dev.eriksonn.aeronautics.aeronautics-neoforge-1.21.1-1.3.2.jar",
+        "embedded_license": "Read attached LICENSE.md",
+        "metadata_license": {
+          "id": "LicenseRef-Simulated-Project-License",
+          "name": "",
+          "url": "https://github.com/Creators-of-Aeronautics/Simulated-Project/blob/main/LICENSE.md"
+        },
+        "source_url": "https://github.com/Creators-of-Aeronautics/Simulated-Project",
+        "authors": "Simulated Team"
+      },
+      "offroad": {
+        "provider_project": "oWaK0Q19",
+        "provider_version": "44pLdPGg",
+        "filename": "create-aeronautics-bundled-1.21.1-1.3.2.jar",
+        "origin": "META-INF/jarjar/dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.3.2.jar",
+        "embedded_license": "Read attached LICENSE.md",
+        "metadata_license": {
+          "id": "LicenseRef-Simulated-Project-License",
+          "name": "",
+          "url": "https://github.com/Creators-of-Aeronautics/Simulated-Project/blob/main/LICENSE.md"
+        },
+        "source_url": "https://github.com/Creators-of-Aeronautics/Simulated-Project",
+        "authors": "Simulated Team"
+      },
+      "simulated": {
+        "provider_project": "oWaK0Q19",
+        "provider_version": "44pLdPGg",
+        "filename": "create-aeronautics-bundled-1.21.1-1.3.2.jar",
+        "origin": "META-INF/jarjar/dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.3.2.jar",
+        "embedded_license": "Read attached LICENSE.md",
+        "metadata_license": {
+          "id": "LicenseRef-Simulated-Project-License",
+          "name": "",
+          "url": "https://github.com/Creators-of-Aeronautics/Simulated-Project/blob/main/LICENSE.md"
+        },
+        "source_url": "https://github.com/Creators-of-Aeronautics/Simulated-Project",
+        "authors": "Simulated Team"
+      },
+      "gyro": {
+        "provider_project": "JcEFpckH",
+        "provider_version": "9P9dNVUn",
+        "filename": "Create Aeronautics Gyroscope Stabilizers.jar",
+        "origin": "Create Aeronautics Gyroscope Stabilizers.jar",
+        "embedded_license": "MIT (code), All Rights Reserved (assets)",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": null,
+        "authors": "raprek"
+      },
+      "create_aeronautics_throwable_rope_connector": {
+        "provider_project": "9xiCbKmM",
+        "provider_version": "EDzeTV17",
+        "filename": "create_aeronautics_throwable_rope_connector-0.4.3.jar",
+        "origin": "create_aeronautics_throwable_rope_connector-0.4.3.jar",
+        "embedded_license": "All Rights Reserved",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "All Rights Reserved",
+          "url": null
+        },
+        "source_url": "https://github.com/sprocketaudio/Create-Aeronautics-Throwable-Rope-Connector",
+        "authors": null
+      },
+      "bits_n_bobs": {
+        "provider_project": "T8bvmqVZ",
+        "provider_version": "XKDQlGJW",
+        "filename": "bits_n_bobs-0.0.44.jar",
+        "origin": "bits_n_bobs-0.0.44.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/Industrialists-Of-Create/Create-Bits-n-Bobs",
+        "authors": "Cake, Kipti, NormalGuy, Astral, Spydnel"
+      },
+      "createfood": {
+        "provider_project": "4HnO3el1",
+        "provider_version": "OViKhK8K",
+        "filename": "createfood-neoforge-1.21.1-2.3.0.jar",
+        "origin": "createfood-neoforge-1.21.1-2.3.0.jar",
+        "embedded_license": "GPL-3.0",
+        "metadata_license": {
+          "id": "GPL-3.0-only",
+          "name": "GNU General Public License v3.0 only",
+          "url": null
+        },
+        "source_url": "https://github.com/AverageAnime/create-food-multiloader",
+        "authors": "average_anime"
+      },
+      "ratatouille": {
+        "provider_project": "XM0ifg8q",
+        "provider_version": "Ovv4xLQg",
+        "filename": "create_ratatouille-1.21.1-1.3.9-2.jar",
+        "origin": "create_ratatouille-1.21.1-1.3.9-2.jar",
+        "embedded_license": "All Rights Reserved",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/TeamStarfruit/Ratatouille",
+        "authors": "Forsteri, Thaumstrial, Even"
+      },
+      "cropsloverain": {
+        "provider_project": "cRci7UZp",
+        "provider_version": "bmqftD2D",
+        "filename": "cropsloverain-3.2.1.jar",
+        "origin": "cropsloverain-3.2.1.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://codeberg.org/ThePoultryMan/Crops-Love-Rain",
+        "authors": "ThePoultryMan"
+      },
+      "farmersdelight": {
+        "provider_project": "R2OftAxM",
+        "provider_version": "rOESN0jP",
+        "filename": "FarmersDelight-1.21.1-1.2.11a.jar",
+        "origin": "FarmersDelight-1.21.1-1.2.11a.jar",
+        "embedded_license": "MIT License",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/vectorwing/FarmersDelight",
+        "authors": "vectorwing"
+      },
+      "fungidelight": {
+        "provider_project": "fHzhaX3z",
+        "provider_version": "oQ0fb2cX",
+        "filename": "FungiDelight-1.21.1-1.3.jar",
+        "origin": "FungiDelight-1.21.1-1.3.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/MehdiNoui/FungiDelight",
+        "authors": "Eggmain"
+      },
+      "galosphere": {
+        "provider_project": "Kn7xyQ1v",
+        "provider_version": "Y3deS8Po",
+        "filename": "Galosphere-1.21.1-1.5.3-NeoForge.jar",
+        "origin": "Galosphere-1.21.1-1.5.3-NeoForge.jar",
+        "embedded_license": "All-Rights-Reserved",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/0rc1nus/Galosphere-Main",
+        "authors": "Orcinus"
+      },
+      "modernfix": {
+        "provider_project": "nmDcB62a",
+        "provider_version": "7Jy58lnT",
+        "filename": "modernfix-neoforge-5.27.26+mc1.21.1.jar",
+        "origin": "modernfix-neoforge-5.27.26+mc1.21.1.jar",
+        "embedded_license": "GNU LGPL 3.0",
+        "metadata_license": {
+          "id": "LGPL-3.0-only",
+          "name": "GNU Lesser General Public License v3.0 only",
+          "url": null
+        },
+        "source_url": "https://github.com/embeddedt/ModernFix",
+        "authors": "embeddedt"
+      },
+      "moonlight": {
+        "provider_project": "twkfQtEc",
+        "provider_version": "CO2fjXOk",
+        "filename": "moonlight-neoforge-1.21.1-3.0.18.jar",
+        "origin": "moonlight-neoforge-1.21.1-3.0.18.jar",
+        "embedded_license": "Supplementaries Team License v.1.5",
+        "metadata_license": {
+          "id": "LicenseRef-Supplementaries-Team-License",
+          "name": "Supplementaries Team License v1.5",
+          "url": "https://github.com/MehVahdJukaar/Supplementaries-Team-License/blob/main/LICENSE.md"
+        },
+        "source_url": "https://github.com/MehVahdJukaar/Moonlight/tree/multi-loader",
+        "authors": "MehVahdJukaar"
+      },
+      "natures_spirit": {
+        "provider_project": "WBvnqHfV",
+        "provider_version": "MGjl80vc",
+        "filename": "natures_spirit-2.2.5-1.21.1.jar",
+        "origin": "natures_spirit-2.2.5-1.21.1.jar",
+        "embedded_license": "All Rights Reserved",
+        "metadata_license": {
+          "id": "LicenseRef-Natures-Spirit-License-",
+          "name": "",
+          "url": "https://github.com/Team-Hibiscus/NatureSpirit/blob/master/LICENSE"
+        },
+        "source_url": "https://github.com/Team-Hibiscus/NaturesSpirit",
+        "authors": "Team Hibiscus"
+      },
+      "nyfsspiders": {
+        "provider_project": "dOGM7ccu",
+        "provider_version": "pjXVTyLu",
+        "filename": "nyfsspiders-neoforge-1.21.1-3.0.1.jar",
+        "origin": "nyfsspiders-neoforge-1.21.1-3.0.1.jar",
+        "embedded_license": "ARR",
+        "metadata_license": {
+          "id": "LGPL-2.1-only",
+          "name": "GNU Lesser General Public License v2.1 only",
+          "url": null
+        },
+        "source_url": "https://github.com/Nyfaria/Spiders-2.0",
+        "authors": "Nyfaria"
+      },
+      "quark": {
+        "provider_project": "qnQsVE2z",
+        "provider_version": "qcDWHGnS",
+        "filename": "Quark-4.1-477.jar",
+        "origin": "Quark-4.1-477.jar",
+        "embedded_license": "https://github.com/VazkiiMods/Quark/blob/master/LICENSE.md",
+        "metadata_license": {
+          "id": "CC-BY-NC-SA-3.0",
+          "name": "Creative Commons Attribution Non Commercial Share Alike 3.0 Unported",
+          "url": null
+        },
+        "source_url": "https://github.com/VazkiiMods/Quark",
+        "authors": "Vazkii, WireSegal, MCVinnyq, Sully"
+      },
+      "sable": {
+        "provider_project": "T9PomCSv",
+        "provider_version": "fg9dTRz9",
+        "filename": "sable-neoforge-1.21.1-2.0.6.jar",
+        "origin": "sable-neoforge-1.21.1-2.0.6.jar",
+        "embedded_license": "PolyForm Shield License 1.0.0",
+        "metadata_license": {
+          "id": "LicenseRef-PolyForm-Shield-License-1.0.0",
+          "name": "",
+          "url": "https://github.com/ryanhcode/sable/blob/main/LICENSE.md"
+        },
+        "source_url": "https://github.com/ryanhcode/sable",
+        "authors": "RyanHCode"
+      },
+      "smarterfarmers": {
+        "provider_project": "Bh6ZOMvp",
+        "provider_version": "odppGdXf",
+        "filename": "smarterfarmers-1.21-2.2.4-neoforge.jar",
+        "origin": "smarterfarmers-1.21-2.2.4-neoforge.jar",
+        "embedded_license": "Supplementaries Team License v.1.4",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/MehVahdJukaar/SmarterFarmers",
+        "authors": "MehVahdJukaar"
+      },
+      "snowundertrees": {
+        "provider_project": "Q3vyMuj2",
+        "provider_version": "rtNRLZvR",
+        "filename": "snowundertrees-1.21.1-1.5.jar",
+        "origin": "snowundertrees-1.21.1-1.5.jar",
+        "embedded_license": "MIT https://github.com/bl4ckscor3/SnowUnderTrees/blob/1.21/LICENSE",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/bl4ckscor3/SnowUnderTrees",
+        "authors": "bl4ckscor3"
+      },
+      "sophisticatedbackpacks": {
+        "provider_project": "TyCTlI4b",
+        "provider_version": "eg9lPtG4",
+        "filename": "sophisticatedbackpacks-1.21.1-3.26.14.2222.jar",
+        "origin": "sophisticatedbackpacks-1.21.1-3.26.14.2222.jar",
+        "embedded_license": "All Rights Reserved",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/P3pp3rF1y/SophisticatedBackpacks",
+        "authors": "P3pp3rF1y, Ridanisaurus"
+      },
+      "sophisticatedcore": {
+        "provider_project": "nmoqTijg",
+        "provider_version": "gtPF4VTh",
+        "filename": "sophisticatedcore-1.21.1-1.5.17.2426.jar",
+        "origin": "sophisticatedcore-1.21.1-1.5.17.2426.jar",
+        "embedded_license": "All Rights Reserved",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/P3pp3rF1y/SophisticatedCore",
+        "authors": "P3pp3rF1y"
+      },
+      "sophisticatedstorage": {
+        "provider_project": "hMlaZH8f",
+        "provider_version": "wVZfDecJ",
+        "filename": "sophisticatedstorage-1.21.1-1.6.9.2199.jar",
+        "origin": "sophisticatedstorage-1.21.1-1.6.9.2199.jar",
+        "embedded_license": "All Rights Reserved",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/P3pp3rF1y/SophisticatedStorage",
+        "authors": "P3pp3rF1y, Ridanisaurus"
+      },
+      "supplementaries": {
+        "provider_project": "fFEIiSDQ",
+        "provider_version": "Agn1kmUY",
+        "filename": "supplementaries-neoforge-1.21.1-3.6.8.jar",
+        "origin": "supplementaries-neoforge-1.21.1-3.6.8.jar",
+        "embedded_license": "Supplementaries Team License v.1.5",
+        "metadata_license": {
+          "id": "LicenseRef-Supplementaries-Team-License",
+          "name": "Supplementaries Team License v1.5",
+          "url": "https://github.com/MehVahdJukaar/Supplementaries-Team-License/blob/main/LICENSE.md"
+        },
+        "source_url": "https://github.com/MehVahdJukaar/Supplementaries",
+        "authors": "MehVahdJukaar, Plantkillable"
+      },
+      "toms_storage": {
+        "provider_project": "XZNI4Cpy",
+        "provider_version": "WQAMoIMC",
+        "filename": "toms_storage-1.21-2.4.2.jar",
+        "origin": "toms_storage-1.21-2.4.2.jar",
+        "embedded_license": "MIT License https://github.com/tom5454/Toms-Storage/blob/master/LICENSE",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/tom5454/Toms-Storage",
+        "authors": "tom5454"
+      },
+      "zeta": {
+        "provider_project": "MVARlG2f",
+        "provider_version": "9GjNW2Gf",
+        "filename": "Zeta-1.1-40.jar",
+        "origin": "Zeta-1.1-40.jar",
+        "embedded_license": "https://github.com/VazkiiMods/Zeta/blob/master/LICENSE.md",
+        "metadata_license": {
+          "id": "CC-BY-NC-SA-3.0",
+          "name": "Creative Commons Attribution Non Commercial Share Alike 3.0 Unported",
+          "url": "https://github.com/VazkiiMods/Zeta/blob/main/LICENSE.md"
+        },
+        "source_url": "https://github.com/VazkiiMods/Zeta",
+        "authors": "Vazkii, quat, IThundxr, Siuol, wiresegal, MehVahdJukaar"
+      },
+      "exposure": {
+        "provider_project": "hB899VmG",
+        "provider_version": "iBvaR6AK",
+        "filename": "exposure-neoforge-1.21.1-1.9.19.jar",
+        "origin": "exposure-neoforge-1.21.1-1.9.19.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/mortuusars/Exposure",
+        "authors": "mortuusars"
+      },
+      "visualworkbench": {
+        "provider_project": "kfqD1JRw",
+        "provider_version": "3646RfLS",
+        "filename": "VisualWorkbench-v21.1.2-1.21.1-NeoForge.jar",
+        "origin": "VisualWorkbench-v21.1.2-1.21.1-NeoForge.jar",
+        "embedded_license": "MPL-2.0",
+        "metadata_license": {
+          "id": "MPL-2.0",
+          "name": "Mozilla Public License 2.0",
+          "url": null
+        },
+        "source_url": "https://github.com/Fuzss/visualworkbench",
+        "authors": "Fuzs"
+      },
+      "ctov": {
+        "provider_project": "fgmhI8kH",
+        "provider_version": "ztzRUnQ7",
+        "filename": "[Neoforge]ctov-3.6.3.jar",
+        "origin": "[Neoforge]ctov-3.6.3.jar",
+        "embedded_license": "BY-NC-ND-4.0",
+        "metadata_license": {
+          "id": "CC-BY-NC-ND-4.0",
+          "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+          "url": null
+        },
+        "source_url": "https://github.com/ChoiceTheorem/ChoiceTheorem-s-overhauled-village",
+        "authors": "ChoiceTheorem"
+      },
+      "colorwheel": {
+        "project": "BzHgFoGz",
+        "version": "8rq5KP4U",
+        "filename": "colorwheel-neoforge-1.3.0+mc1.21.1.jar",
+        "source_url": "https://github.com/djefrey/Colorwheel",
+        "license": "LGPLv3",
+        "metadata_license": {
+          "id": "LGPL-3.0-only",
+          "name": "GNU Lesser General Public License v3.0 only",
+          "url": null
+        }
+      },
+      "vanillin": {
+        "project": "6qTrsXCy",
+        "version": "Qn76dRvj",
+        "filename": "vanillin-neoforge-1.21.1-1.1.3.jar",
+        "source_url": "https://github.com/Engine-Room/Flywheel",
+        "license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        }
+      },
+      "flywheel": {
+        "project": "maven:dev.engine-room.flywheel:flywheel-neoforge-1.21.1",
+        "version": "1.0.6",
+        "filename": "flywheel-neoforge-1.21.1-1.0.6.jar",
+        "source_url": "https://github.com/Engine-Room/Flywheel",
+        "license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": "https://github.com/Engine-Room/Flywheel/blob/mc1.21.1/dev/LICENSE.md"
+        }
+      },
+      "mod_menu": {
+        "project": "31TqAmXC",
+        "version": "NTKPm1J1",
+        "filename": "Mod Menu (NeoForge Edition) 1.21.1-1.0.2.jar",
+        "source_url": null,
+        "license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        }
+      },
+      "modelfix": {
+        "project": "QdG47OkI",
+        "version": "X2U8ceG9",
+        "filename": "modelfix-1.21-1.10.jar",
+        "source_url": "https://github.com/MehVahdJukaar/modefix-multi",
+        "license": "GLP3",
+        "metadata_license": {
+          "id": "GPL-3.0-only",
+          "name": "GNU General Public License v3.0 only",
+          "url": null
+        }
+      },
+      "visuality": {
+        "project": "z13R7Et1",
+        "version": "kOdevgPm",
+        "filename": "visuality-forge-3.0.0.jar",
+        "source_url": "https://github.com/DragonsPlusMinecraft/VisualityReforged",
+        "license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        }
+      },
+      "fallingleaves": {
+        "project": "2JAUNCL4",
+        "version": "ZTfOTZtM",
+        "filename": "fallingleaves-1.21.1-2.6.0.jar",
+        "source_url": "https://github.com/Cheaterpaul/fallingleaves",
+        "license": "LGPL-3.0",
+        "metadata_license": {
+          "id": "LGPL-3.0-only",
+          "name": "GNU Lesser General Public License v3.0 only",
+          "url": null
+        }
+      },
+      "shouldersurfing": {
+        "project": "kepjj2sy",
+        "version": "hIHjK7MW",
+        "filename": "ShoulderSurfing-NeoForge-1.21.1-4.22.12.jar",
+        "source_url": "https://github.com/Exopandora/ShoulderSurfing",
+        "license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        }
+      },
+      "connectorextras_energy_bridge": {
+        "project": "FYpiwiBR",
+        "version": "dgLCqZyo",
+        "filename": "ConnectorExtras-1.12.1+1.21.1.jar",
+        "source_url": "https://github.com/Sinytra/ConnectorExtras",
+        "license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": "https://github.com/Sinytra/ConnectorExtras/blob/master/LICENSE"
+        }
+      },
+      "leavemybarsalone": {
+        "project_id": "gK9mebQg",
+        "version_id": "27kYf7JI",
+        "filename": "LeaveMyBarsAlone-v21.1.2-1.21.1-NeoForge.jar",
+        "source_url": "https://github.com/Fuzss/leavemybarsalone",
+        "license": {
+          "id": "MPL-2.0",
+          "name": "Mozilla Public License 2.0",
+          "url": null
+        }
+      }
+    }
+  }
+}

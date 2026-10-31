@@ -6,6 +6,14 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Language supplements and ore materials
+
+The owned mod's [localization source inventory](../mods/aeroscapes-reimagine/src/main/resources/META-INF/localization-sources.json) records the exact selected upstream dictionaries, licenses, missing-key filters and authored supplements. Selected [BMP Translations](https://github.com/BMProjects-Development/BMP-Translations), [Create: Food](https://modrinth.com/mod/create-food), [Item Descriptions](https://modrinth.com/mod/item-descriptions) and [Jade](https://modrinth.com/mod/jade) translations retain their individual licenses in separate resources. Their notices and full license texts are shipped in the JAR and corresponding source archive. These additions do not replace provider JARs or their existing translations.
+
+[Blackstone ore provenance](blackstone_ores.json) identifies the installed texture inputs and material-generation contract. The client composes those textures in memory; the owned JAR contains no copied Minecraft, [Create](https://modrinth.com/mod/create) or [Galosphere](https://modrinth.com/mod/galosphere) PNGs. Adapted non-asset zinc loot data retain the Create MIT notice.
+
+In `worldgen_adoption.json`, `resources` binds incorporated data to its source and result hashes. `authored_resources` separately binds independently authored Minecraft-namespace tag extensions to their result hashes and reasons. Both lists participate in complete resource coverage, duplicate checks and shipped-byte validation; an authored extension does not imply that it came from Aero.
+
 Unchanged files hosted on Modrinth are referenced through their official downloads under its [specific-file modpack policy](https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions). Redistribution of a separate unchanged MIT artifact retains its embedded license; Flywheel's packaging is described below. Do not substitute the C2ME base's MIT license for the separate OpenCL module's terms.
 
 ## Local visual effects

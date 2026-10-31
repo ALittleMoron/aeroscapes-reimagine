@@ -36,6 +36,8 @@ Open air between islands follows the world's rain and thunderstorm weather, incl
 
 Biome names are provided in English and Russian.
 
+In blackstone terrain such as Mantle Caves, ore generation previously left deepslate patches around deposits. Those deposits now use blackstone variants for the eight vanilla ores, [Create](https://modrinth.com/mod/create)'s zinc and [Galosphere](https://modrinth.com/mod/galosphere)'s palladium. Their mining requirements, drops and processing follow the corresponding deepslate ores. Silk Touch preserves the blackstone ore block.
+
 A compatibility repair also restores [Quark](https://quarkmod.net/)'s cave biome to island generation after it had been skipped by the biome source.
 
 ## How structure placement was repaired
@@ -45,6 +47,8 @@ Structure mods expected continuous land: on floating islands, parts of dungeons 
 Trial chambers could previously appear almost entirely above ground. The pack now selects sites with rock above most exterior roofs and rejects attempts without that cover. Terrain filling used to block the spaces between ancient city buildings; they now share a cavern with uneven ceilings. Sites where a city would cut through an ocean basin’s floor and send water into the cavern are also rejected.
 
 The stricter checks have made some structures rarer. A matching biome alone does not guarantee that a particular island can accommodate a dungeon.
+
+Creeping Crypt from [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) previously checked the ground beneath its entrance alone, allowing most underground rooms to hang outside an island. Its placement now checks the underground assembly's support and rock cover while retaining the surface entrance, trying nearby ground before rejecting an unsuitable site.
 
 Buried treasure could register a location without a chest on basalt shores because the usual search did not accept that rock. Newly generated treasures retry the native search on basalt only after the usual search fails, retaining their normal coordinates and loot.
 

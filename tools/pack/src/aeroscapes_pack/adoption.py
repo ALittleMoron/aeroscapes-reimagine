@@ -69,7 +69,13 @@ def check_adoption(
         raise PackError("Missing owned adoption JAR")
     with checked_archive(overrides[name], name) as archive:
         owned = check_descriptor(archive, record, name)
-        check_resources(project, archive, record.get("resources"), jar_name=name)
+        check_resources(
+            project,
+            archive,
+            record.get("resources"),
+            record.get("authored_resources", []),
+            jar_name=name,
+        )
     check_java(project, record.get("java"))
     return owned, sources
 
@@ -112,7 +118,12 @@ def check_descriptor(
 
 
 def check_resources(
-    project: Project, archive: zipfile.ZipFile, value: object, *, jar_name: str
+    project: Project,
+    archive: zipfile.ZipFile,
+    value: object,
+    authored_value: object,
+    *,
+    jar_name: str,
 ) -> None:
     covered: set[str] = set()
     for item in array(value, "adoption.resources"):
@@ -124,6 +135,18 @@ def check_resources(
         json_value(content, output)
         if hashlib.sha256(content).hexdigest() != checksum(binding, "sha256", 64):
             raise PackError(f"Changed adopted resource: {output}")
+        covered.add(output)
+    for item in array(authored_value, "adoption.authored_resources"):
+        binding = table(item, "adoption.authored_resource")
+        output = field(binding, "output", "adoption.authored_resource")
+        safe_path(project.root, output)
+        field(binding, "reason", "adoption.authored_resource")
+        if output in covered or output not in archive.namelist():
+            raise PackError(f"Missing or duplicate authored resource: {output}")
+        content = read_member(archive, output, jar_name=jar_name)
+        json_value(content, output)
+        if hashlib.sha256(content).hexdigest() != checksum(binding, "sha256", 64):
+            raise PackError(f"Changed authored resource: {output}")
         covered.add(output)
     actual = {name for name in archive.namelist() if is_adopted_json(name)}
     if covered != actual:

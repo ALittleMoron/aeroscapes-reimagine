@@ -1,6 +1,29 @@
-Aeroscapes Reimagine 0.2.0 — third-party notices
+Aeroscapes Reimagine 0.2.1 — third-party notices
 
 This independent pack is not endorsed by the original projects.
+Client convenience additions use unchanged official downloads:
+BetterF3 11.0.3: TreyRuffy and cominixo; MIT.
+https://modrinth.com/mod/betterf3/version/maXNB1dn
+Cherished Worlds 10.1.1: Illusive Soulworks; LGPL-3.0-or-later.
+https://modrinth.com/mod/cherished-worlds/version/o5lwJaRU
+Leave My Bars Alone 21.1.2: Fuzs; MPL-2.0.
+https://modrinth.com/mod/leave-my-bars-alone/version/27kYf7JI
+Their embedded licenses remain in the original JARs. Existing Cloth Config
+and Puzzles Lib satisfy the required dependencies; no provider code is patched.
+
+Selected Russian translations retain their individual licenses:
+BMP Translations / BMProjects, CC BY-SA 4.0:
+https://github.com/BMProjects-Development/BMP-Translations
+Create: Food / AverageAnime and contributors, GPL-3.0-only:
+https://github.com/AverageAnime/create-food-multiloader
+Item Descriptions / cassiancc and contributors, MIT:
+https://github.com/cassiancc/Item-Descriptions
+Jade / Snownee and contributors, CC BY-NC-SA 4.0:
+https://github.com/Snownee/Jade
+The owned mod's META-INF/NOTICE.txt, localization-sources.json and licenses/
+identify selected revisions, filtering and changes. They also accompany
+licenses/aeroscapes-reimagine-source.zip. Other owned code is GPL-3.0-or-later.
+
 Priority 4 visual effects use unchanged original downloads:
 Ambient Environment: Jaredlll08; MIT.
 https://modrinth.com/mod/ambient-environment/version/N7jam3SN

@@ -4,6 +4,16 @@ description: Version history.
 status: available
 ---
 
+## 0.2.1
+
+- Fit the underground rooms of Creeping Crypt from [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) inside suitable islands while preserving its surface entrance.
+- Align held lantern and soul lantern handles with [Punchy](https://modrinth.com/mod/punchy-fpa)'s first-person grip when using [Extended Illumina NEA](https://modrinth.com/resourcepack/extended-illumina-not-enough-animations).
+- Restrict rain-impact particles to rainy biomes while retaining [Particle Rain](https://modrinth.com/mod/particle-rain)'s weather sounds.
+- Use blackstone variants for the eight vanilla ores, [Create](https://modrinth.com/mod/create) zinc and [Galosphere](https://modrinth.com/mod/galosphere) palladium when deposits form in blackstone terrain.
+- Fill missing English and Russian content, description and interface translations, including generated storage wood names; correct lost formatting arguments and make [Saplanting](https://modrinth.com/mod/saplanting)'s Russian command language selectable.
+- Add client-only [BetterF3](https://modrinth.com/mod/betterf3), [Cherished Worlds](https://modrinth.com/mod/cherished-worlds) and [Leave My Bars Alone](https://modrinth.com/mod/leave-my-bars-alone).
+- Track authored ore-tag extensions separately from adopted generator data during pack validation.
+
 ## 0.2.0
 
 - Complete the selected audiovisual atmosphere stage developed through the preceding 0.1.x releases.

@@ -2278,7 +2278,7 @@
     "wrappers": [
       {
         "type": "aeroscapes_reimagine:supported",
-        "terrain_check": "surface"
+        "terrain_check": "anchored_buried"
       }
     ]
   },

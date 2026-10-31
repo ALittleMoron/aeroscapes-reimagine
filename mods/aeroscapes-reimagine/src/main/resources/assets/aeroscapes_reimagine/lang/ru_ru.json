@@ -322,5 +322,15 @@
   "effect.xaeroworldmap.no_cave_maps": "Карта пещер недоступна",
   "effect.xaeroworldmap.no_cave_maps_harmful": "Карта пещер недоступна",
   "effect.xaeroworldmap.no_world_map": "Карта мира недоступна",
-  "effect.xaeroworldmap.no_world_map_harmful": "Карта мира недоступна"
+  "effect.xaeroworldmap.no_world_map_harmful": "Карта мира недоступна",
+  "block.aeroscapes_reimagine.blackstone_coal_ore": "Угольная руда в черните",
+  "block.aeroscapes_reimagine.blackstone_copper_ore": "Медная руда в черните",
+  "block.aeroscapes_reimagine.blackstone_diamond_ore": "Алмазная руда в черните",
+  "block.aeroscapes_reimagine.blackstone_emerald_ore": "Изумрудная руда в черните",
+  "block.aeroscapes_reimagine.blackstone_gold_ore": "Золотая руда в черните",
+  "block.aeroscapes_reimagine.blackstone_iron_ore": "Железная руда в черните",
+  "block.aeroscapes_reimagine.blackstone_lapis_ore": "Лазуритовая руда в черните",
+  "block.aeroscapes_reimagine.blackstone_palladium_ore": "Палладиевая руда в черните",
+  "block.aeroscapes_reimagine.blackstone_redstone_ore": "Редстоуновая руда в черните",
+  "block.aeroscapes_reimagine.blackstone_zinc_ore": "Цинковая руда в черните"
 }

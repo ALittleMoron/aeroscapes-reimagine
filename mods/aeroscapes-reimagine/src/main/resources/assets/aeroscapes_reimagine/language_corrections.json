@@ -1,0 +1,1782 @@
+[
+  {
+    "key": "death.attack.allurement.shockwave",
+    "expected": "%1$s был растоптан",
+    "replacement": "%1$s растоптан: %2$s"
+  },
+  {
+    "key": "betterclouds.message.profiling.genTimes",
+    "expected": "§5Время генерации§r: %s §7мс§r || %s §7в секунду§r",
+    "replacement": "§5Время генерации§r: %s §7мс§r || %s §7в секунду§r || §7Попадания в кэш§r %s/%s/%s (%s%%)"
+  },
+  {
+    "key": "quark.jei.hint.gold_tool_fortune",
+    "expected": "Золотые инструменты обладают встроенным эффектом чар «Удача» или «Добыча». Эффекты не суммируются с накладываемыми чарами — будут применяться только чары самого высокого уровня.",
+    "replacement": "Золотые инструменты имеют встроенную «Удачу» %s или «Добычу». Эффект не суммируется с наложенными чарами: действует только больший уровень."
+  },
+  {
+    "key": "item.supplementaries.bamboo_spikes_tipped.effect",
+    "expected": "Обработанные бамбуковые шипы",
+    "replacement": "Обработанные бамбуковые шипы (%s)"
+  },
+  {
+    "key": "message.supplementaries.cannon.maneuver",
+    "expected": "Нажмите %2$s, чтобы слезть, %2$s, чтобы выстрелить",
+    "replacement": "Нажмите %1$s, чтобы слезть, %2$s, чтобы выстрелить"
+  },
+  {
+    "key": "tooltip.emi.synfav.fully_craftable",
+    "expected": "Можно создать §dвсе§r предметы\n§6Взаимодействуйте§r, чтобы создать до §9%1$s§r предметов",
+    "replacement": "Можно изготовить §aвсе партии§r: %s"
+  },
+  {
+    "key": "particlerain.opacity.description",
+    "expected": "Степень прозрачности частиц от полностью прозрачных (0) до полностью непрозрачных (100).",
+    "replacement": "Непрозрачность частиц: от полностью прозрачных (0) до полностью непрозрачных (100). В режиме «Смешиваемый» частицы с непрозрачностью ниже 50% не видны."
+  },
+  {
+    "key": "particlerain.renderType.description",
+    "expected": "Определяет обработку прозрачности.\nТип «Смешиваемый» позволяет полупрозрачным частицам перекрываться, но не работает с наборами шейдеров в Minecraft 1.21.5.",
+    "replacement": "Определяет обработку прозрачности.\nТип «Смешиваемый» позволяет полупрозрачным частицам смешиваться при наложении, но может неправильно работать с некоторыми наборами шейдеров."
+  },
+  {
+    "key": "fml.menu.multiplayer.missingdatapackregistries",
+    "expected": "Missing required datapack registries: %1$s",
+    "replacement": "Отсутствуют обязательные реестры датапаков: %1$s"
+  },
+  {
+    "key": "fml.menu.branding",
+    "expected": "%s (%s mods)",
+    "replacement": "%s (модов: %s)"
+  },
+  {
+    "key": "fml.menu.accessdenied.message",
+    "expected": "Fancy Mod Loader could not connect to this server\nThe server %1$s has forbidden modded access",
+    "replacement": "Fancy Mod Loader не удалось подключиться к серверу\nСервер %1$s запретил вход с модами"
+  },
+  {
+    "key": "fml.menu.backupfailed.message",
+    "expected": "There was an error saving the archive %1$s\nPlease fix the problem and try again",
+    "replacement": "При сохранении архива %1$s произошла ошибка\nУстраните проблему и повторите попытку"
+  },
+  {
+    "key": "fml.modmismatchscreen.additional",
+    "expected": "[%1$s additional, see latest.log for the full list]",
+    "replacement": "[ещё %1$s; полный список — в latest.log]"
+  },
+  {
+    "key": "commands.neoforge.arguments.enum.invalid",
+    "expected": "Enum constant must be one of %1$s, found %2$s",
+    "replacement": "Допустимы значения %1$s, получено %2$s"
+  },
+  {
+    "key": "commands.neoforge.entity.list.invalidworld",
+    "expected": "Could not load world for dimension %1$s. Please select a valid dimension.",
+    "replacement": "Не удалось загрузить мир измерения %1$s. Выберите допустимое измерение."
+  },
+  {
+    "key": "commands.neoforge.setdim.invalid.entity",
+    "expected": "The entity selected (%1$s) is not valid.",
+    "replacement": "Выбранная сущность (%1$s) недопустима."
+  },
+  {
+    "key": "commands.neoforge.setdim.invalid.dim",
+    "expected": "The dimension ID specified (%1$s) is not valid.",
+    "replacement": "Указанный ID измерения (%1$s) недопустим."
+  },
+  {
+    "key": "commands.neoforge.setdim.invalid.nochange",
+    "expected": "The entity selected (%1$s) is already in the dimension specified (%2$s).",
+    "replacement": "Выбранная сущность (%1$s) уже находится в указанном измерении (%2$s)."
+  },
+  {
+    "key": "commands.neoforge.tps.overall",
+    "expected": "Overall: %s TPS (%s ms/tick)",
+    "replacement": "Всего: %s TPS (%s мс/такт)"
+  },
+  {
+    "key": "commands.neoforge.tps.tooltip",
+    "expected": "Mean TPS; higher is better. Target TPS: %s",
+    "replacement": "Средний TPS: чем выше, тем лучше. Целевой TPS: %s"
+  },
+  {
+    "key": "commands.neoforge.tps.dimension",
+    "expected": "%s: %s TPS (%s ms/tick)",
+    "replacement": "%s: %s TPS (%s мс/такт)"
+  },
+  {
+    "key": "commands.neoforge.tps.dimension.tooltip",
+    "expected": "%s (Dimension Type: %s)",
+    "replacement": "%s (тип измерения: %s)"
+  },
+  {
+    "key": "commands.neoforge.chunkgen.progress_bar_progress",
+    "expected": "Generating %1$s chunks - ",
+    "replacement": "Генерация чанков (%1$s) — "
+  },
+  {
+    "key": "commands.neoforge.chunkgen.started",
+    "expected": "Generating %1$s chunks, in an area of %2$sx%3$s chunks (%4$sx%5$s blocks).",
+    "replacement": "Генерация %1$s чанков в области %2$sx%3$s чанков (%4$sx%5$s блоков)."
+  },
+  {
+    "key": "commands.neoforge.chunkgen.error",
+    "expected": "Generation experienced %1$s errors! Check the log for more information.",
+    "replacement": "При генерации возникло ошибок: %1$s! Подробности — в журнале."
+  },
+  {
+    "key": "commands.neoforge.chunkgen.stopped",
+    "expected": "Generation stopped! %1$s out of %2$s chunks generated. (%3$s%%)",
+    "replacement": "Генерация остановлена! Создано %1$s из %2$s чанков. (%3$s%%)"
+  },
+  {
+    "key": "commands.neoforge.chunkgen.status",
+    "expected": "Generation status! %1$s out of %2$s chunks generated. (%3$s%%)",
+    "replacement": "Состояние генерации: создано %1$s из %2$s чанков. (%3$s%%)"
+  },
+  {
+    "key": "commands.neoforge.timespeed.query",
+    "expected": "Time in %s flows at a rate of %sx (%s minutes per day).",
+    "replacement": "Время в %s идёт со скоростью %sx (%s минут в сутках)."
+  },
+  {
+    "key": "commands.neoforge.timespeed.query.default",
+    "expected": "Time in %s flows normally (20 minutes per day).",
+    "replacement": "Время в %s идёт с обычной скоростью (20 минут в сутках)."
+  },
+  {
+    "key": "commands.neoforge.timespeed.set",
+    "expected": "Set flow of time in %s to %sx (%s minutes per day).",
+    "replacement": "Скорость времени в %s установлена в %sx (%s минут в сутках)."
+  },
+  {
+    "key": "commands.neoforge.timespeed.set.default",
+    "expected": "Set flow of time in %s to default (20 minutes per day).",
+    "replacement": "В %s установлена стандартная скорость времени (20 минут в сутках)."
+  },
+  {
+    "key": "commands.neoforge.data_components.list.error.held_stack_empty",
+    "expected": "You are not holding any item",
+    "replacement": "У вас в руке нет предмета"
+  },
+  {
+    "key": "commands.neoforge.data_components.list.title",
+    "expected": "Data components on %s:",
+    "replacement": "Компоненты данных предмета %s:"
+  },
+  {
+    "key": "commands.neoforge.data_components.list.tooltip.default",
+    "expected": "Component %s holds its default value",
+    "replacement": "Компонент %s имеет стандартное значение"
+  },
+  {
+    "key": "commands.neoforge.data_components.list.tooltip.deleted",
+    "expected": "Component %s with value %s was deleted",
+    "replacement": "Компонент %s со значением %s удалён"
+  },
+  {
+    "key": "commands.neoforge.data_components.list.tooltip.modified",
+    "expected": "Component %s was modified from %s to %s",
+    "replacement": "Компонент %s изменён с %s на %s"
+  },
+  {
+    "key": "commands.neoforge.data_components.list.tooltip.added",
+    "expected": "Component %s was added with value %s",
+    "replacement": "Добавлен компонент %s со значением %s"
+  },
+  {
+    "key": "neoforge.configuration.uitext.title",
+    "expected": "%s Configuration",
+    "replacement": "Настройки %s"
+  },
+  {
+    "key": "neoforge.configuration.uitext.type.client",
+    "expected": "Client Settings",
+    "replacement": "Настройки клиента"
+  },
+  {
+    "key": "neoforge.configuration.uitext.type.server",
+    "expected": "Server Settings",
+    "replacement": "Настройки сервера"
+  },
+  {
+    "key": "neoforge.configuration.uitext.type.common",
+    "expected": "Common settings",
+    "replacement": "Общие настройки"
+  },
+  {
+    "key": "neoforge.configuration.uitext.type.startup",
+    "expected": "Startup settings",
+    "replacement": "Настройки запуска"
+  },
+  {
+    "key": "neoforge.configuration.uitext.title.client",
+    "expected": "%s Client Configuration",
+    "replacement": "Настройки клиента %s"
+  },
+  {
+    "key": "neoforge.configuration.uitext.title.server",
+    "expected": "%s Server Configuration",
+    "replacement": "Настройки сервера %s"
+  },
+  {
+    "key": "neoforge.configuration.uitext.title.common",
+    "expected": "%s Common Configuration",
+    "replacement": "Общие настройки %s"
+  },
+  {
+    "key": "neoforge.configuration.uitext.title.startup",
+    "expected": "%s Startup Configuration",
+    "replacement": "Настройки запуска %s"
+  },
+  {
+    "key": "neoforge.configuration.uitext.notonline",
+    "expected": "Settings in here are determined by the server and cannot be changed while online.",
+    "replacement": "Эти настройки задаются сервером и не могут меняться во время подключения."
+  },
+  {
+    "key": "neoforge.configuration.uitext.notlan",
+    "expected": "Settings in here cannot be edited while your game is open to LAN. Please return to the main menu and load the world again.",
+    "replacement": "Эти настройки нельзя менять, пока мир открыт для сети. Выйдите в главное меню и загрузите мир снова."
+  },
+  {
+    "key": "neoforge.configuration.uitext.notloaded",
+    "expected": "Settings in here are only available while a world is loaded.",
+    "replacement": "Эти настройки доступны только при загруженном мире."
+  },
+  {
+    "key": "neoforge.configuration.uitext.unsupportedelement",
+    "expected": "This value cannot be edited in the UI. Please contact the mod author about providing a custom UI for it.",
+    "replacement": "Это значение нельзя изменить через интерфейс. Обратитесь к автору мода с просьбой добавить для него отдельный интерфейс."
+  },
+  {
+    "key": "neoforge.configuration.uitext.longstring",
+    "expected": "This value is too long to be edited in the UI. Please edit it in the config file.",
+    "replacement": "Значение слишком длинное для редактирования в интерфейсе. Измените его в файле настроек."
+  },
+  {
+    "key": "neoforge.configuration.uitext.sectiontext",
+    "expected": "Edit",
+    "replacement": "Изменить"
+  },
+  {
+    "key": "neoforge.configuration.uitext.undo",
+    "expected": "Undo",
+    "replacement": "Отменить"
+  },
+  {
+    "key": "neoforge.configuration.uitext.undo.tooltip",
+    "expected": "Reverts changes on this screen only.",
+    "replacement": "Отменяет изменения только на этом экране."
+  },
+  {
+    "key": "neoforge.configuration.uitext.reset",
+    "expected": "Reset",
+    "replacement": "Сбросить"
+  },
+  {
+    "key": "neoforge.configuration.uitext.reset.tooltip",
+    "expected": "Reverts everything on this screen to its default value.",
+    "replacement": "Восстанавливает стандартные значения всех настроек на этом экране."
+  },
+  {
+    "key": "neoforge.configuration.uitext.rangetooltip",
+    "expected": "Range: %s",
+    "replacement": "Диапазон: %s"
+  },
+  {
+    "key": "neoforge.configuration.uitext.filenametooltip",
+    "expected": "File: \"%s\"",
+    "replacement": "Файл: «%s»"
+  },
+  {
+    "key": "neoforge.configuration.uitext.common",
+    "expected": "Common Options",
+    "replacement": "Общие параметры"
+  },
+  {
+    "key": "neoforge.configuration.uitext.client",
+    "expected": "Client Options",
+    "replacement": "Параметры клиента"
+  },
+  {
+    "key": "neoforge.configuration.uitext.server",
+    "expected": "Server Options",
+    "replacement": "Параметры сервера"
+  },
+  {
+    "key": "neoforge.configuration.uitext.startup",
+    "expected": "Startup Options",
+    "replacement": "Параметры запуска"
+  },
+  {
+    "key": "neoforge.configuration.uitext.restart.game.title",
+    "expected": "Minecraft needs to be restarted",
+    "replacement": "Требуется перезапуск Minecraft"
+  },
+  {
+    "key": "neoforge.configuration.uitext.restart.game.text",
+    "expected": "One or more of the configuration option that were changed will only take effect when the game is started.",
+    "replacement": "Некоторые изменённые настройки вступят в силу только после перезапуска игры."
+  },
+  {
+    "key": "neoforge.configuration.uitext.restart.server.title",
+    "expected": "World needs to be reloaded",
+    "replacement": "Требуется перезагрузка мира"
+  },
+  {
+    "key": "neoforge.configuration.uitext.restart.server.text",
+    "expected": "One or more of the configuration option that were changed will only take effect when the world is reloaded.",
+    "replacement": "Некоторые изменённые настройки вступят в силу только после перезагрузки мира."
+  },
+  {
+    "key": "neoforge.configuration.uitext.restart.return",
+    "expected": "Ignore",
+    "replacement": "Игнорировать"
+  },
+  {
+    "key": "neoforge.configuration.uitext.restart.return.tooltip",
+    "expected": "Your changes will have no effect until you restart!",
+    "replacement": "Изменения не вступят в силу до перезапуска!"
+  },
+  {
+    "key": "neoforge.configuration.title",
+    "expected": "NeoForge Configuration",
+    "replacement": "Настройки NeoForge"
+  },
+  {
+    "key": "neoforge.configuration.section.neoforge.client.toml",
+    "expected": "Client settings",
+    "replacement": "Настройки клиента"
+  },
+  {
+    "key": "neoforge.configuration.section.neoforge.client.toml.title",
+    "expected": "Client settings",
+    "replacement": "Настройки клиента"
+  },
+  {
+    "key": "neoforge.configuration.section.neoforge.common.toml",
+    "expected": "Common settings",
+    "replacement": "Общие настройки"
+  },
+  {
+    "key": "neoforge.configuration.section.neoforge.common.toml.title",
+    "expected": "Common settings",
+    "replacement": "Общие настройки"
+  },
+  {
+    "key": "neoforge.configuration.section.neoforge.server.toml",
+    "expected": "Server settings",
+    "replacement": "Настройки сервера"
+  },
+  {
+    "key": "neoforge.configuration.section.neoforge.server.toml.title",
+    "expected": "Server settings",
+    "replacement": "Настройки сервера"
+  },
+  {
+    "key": "neoforge.configgui.advertiseDedicatedServerToLan",
+    "expected": "Advertise Dedicated Server To LAN",
+    "replacement": "Объявлять выделенный сервер в локальной сети"
+  },
+  {
+    "key": "neoforge.configgui.advertiseDedicatedServerToLan.tooltip",
+    "expected": "Set this to true to enable advertising the dedicated server to local LAN clients so that it shows up in the Multiplayer screen automatically.",
+    "replacement": "Разрешает выделенному серверу объявлять себя клиентам в локальной сети, чтобы он автоматически появлялся на экране сетевой игры."
+  },
+  {
+    "key": "neoforge.configgui.forgeLightPipelineEnabled",
+    "expected": "NeoForge Light Pipeline",
+    "replacement": "Конвейер освещения NeoForge"
+  },
+  {
+    "key": "neoforge.configgui.logLegacyTagWarnings",
+    "expected": "Log Legacy Tags",
+    "replacement": "Записывать устаревшие теги"
+  },
+  {
+    "key": "neoforge.configgui.logLegacyTagWarnings.tooltip",
+    "expected": "A config option mainly for developers. Logs out modded tags that are using the 'forge' namespace when running on integrated server. Defaults to DEV_SHORT.",
+    "replacement": "Настройка преимущественно для разработчиков. На встроенном сервере записывает в журнал теги модов, использующие пространство имён 'forge'. По умолчанию DEV_SHORT."
+  },
+  {
+    "key": "neoforge.configgui.logUntranslatedConfigurationWarnings",
+    "expected": "Log Untranslated Configuration Keys",
+    "replacement": "Записывать непереведённые ключи настроек"
+  },
+  {
+    "key": "neoforge.configgui.logUntranslatedConfigurationWarnings.tooltip",
+    "expected": "A config option mainly for developers. Logs out configuration values that do not have translations when running a client in a development environment.",
+    "replacement": "Настройка преимущественно для разработчиков. При запуске клиента в среде разработки записывает в журнал значения настроек без перевода."
+  },
+  {
+    "key": "neoforge.configgui.logUntranslatedItemTagWarnings",
+    "expected": "Log Untranslated Item Tags",
+    "replacement": "Записывать непереведённые теги предметов"
+  },
+  {
+    "key": "neoforge.configgui.logUntranslatedItemTagWarnings.tooltip",
+    "expected": "A config option mainly for developers. Logs out modded item tags that do not have translations when running on integrated server. Format desired is tag.item.<namespace>.<path> for the translation key. Defaults to SILENCED.",
+    "replacement": "Настройка преимущественно для разработчиков. На встроенном сервере записывает в журнал теги предметов без перевода. Ожидаемый формат ключа перевода: tag.item.<namespace>.<path>. По умолчанию SILENCED."
+  },
+  {
+    "key": "neoforge.configgui.permissionHandler",
+    "expected": "Permission Handler",
+    "replacement": "Обработчик разрешений"
+  },
+  {
+    "key": "neoforge.configgui.permissionHandler.tooltip",
+    "expected": "The permission handler used by the server. Defaults to neoforge:default_handler if no such handler with that name is registered.",
+    "replacement": "Обработчик разрешений сервера. Если обработчик с заданным именем не зарегистрирован, используется neoforge:default_handler."
+  },
+  {
+    "key": "neoforge.configgui.removeErroringBlockEntities.tooltip",
+    "expected": "Set this to true to remove any BlockEntity that throws an error in its update method instead of closing the server and reporting a crash log.",
+    "replacement": "Удалять блок-сущности, вызывающие ошибку в методе обновления, вместо остановки сервера с отчётом о сбое."
+  },
+  {
+    "key": "neoforge.configgui.removeErroringBlockEntities.tooltip.warning",
+    "expected": "BE WARNED THIS COULD SCREW UP EVERYTHING.\nUSE SPARINGLY.\nWE ARE NOT RESPONSIBLE FOR DAMAGES.",
+    "replacement": "ВНИМАНИЕ: ЭТО МОЖЕТ ПРИВЕСТИ К СЕРЬЁЗНЫМ ПОВРЕЖДЕНИЯМ.\nИСПОЛЬЗУЙТЕ ТОЛЬКО ПРИ НЕОБХОДИМОСТИ.\nМЫ НЕ НЕСЁМ ОТВЕТСТВЕННОСТИ ЗА УЩЕРБ."
+  },
+  {
+    "key": "neoforge.configgui.removeErroringEntities.tooltip",
+    "expected": "Set this to true to remove any Entity that throws an error in its update method instead of closing the server and reporting a crash log.",
+    "replacement": "Удалять сущности, вызывающие ошибку в методе обновления, вместо остановки сервера с отчётом о сбое."
+  },
+  {
+    "key": "neoforge.configgui.removeErroringEntities.tooltip.warning",
+    "expected": "BE WARNED THIS COULD SCREW UP EVERYTHING.\nUSE SPARINGLY.\nWE ARE NOT RESPONSIBLE FOR DAMAGES.",
+    "replacement": "ВНИМАНИЕ: ЭТО МОЖЕТ ПРИВЕСТИ К СЕРЬЁЗНЫМ ПОВРЕЖДЕНИЯМ.\nИСПОЛЬЗУЙТЕ ТОЛЬКО ПРИ НЕОБХОДИМОСТИ.\nМЫ НЕ НЕСЁМ ОТВЕТСТВЕННОСТИ ЗА УЩЕРБ."
+  },
+  {
+    "key": "neoforge.configgui.useCombinedDepthStencilAttachment",
+    "expected": "Use combined DEPTH_STENCIL Attachment",
+    "replacement": "Объединённое вложение DEPTH_STENCIL"
+  },
+  {
+    "key": "neoforge.configgui.useCombinedDepthStencilAttachment.tooltip",
+    "expected": "Set to true to use a combined DEPTH_STENCIL attachment instead of two separate ones.",
+    "replacement": "Использовать объединённое вложение DEPTH_STENCIL вместо двух отдельных."
+  },
+  {
+    "key": "neoforge.froge.warningScreen.text",
+    "expected": "Froge is not officially supported. Bugs and instability are expected.",
+    "replacement": "Froge официально не поддерживается. Возможны ошибки и нестабильная работа."
+  },
+  {
+    "key": "neoforge.network.negotiation.failure.mod",
+    "expected": "Channel of mod \"%1$s\" failed to connect: %2$s",
+    "replacement": "Не удалось подключить канал мода «%1$s»: %2$s"
+  },
+  {
+    "key": "neoforge.network.extensible_enums.no_vanilla_server",
+    "expected": "This client does not support vanilla servers as it has extended enums used in serverbound networking",
+    "replacement": "Этот клиент не поддерживает обычные серверы Minecraft, поскольку использует расширенные перечисления в сетевых сообщениях серверу"
+  },
+  {
+    "key": "neoforge.network.extensible_enums.enum_entry_mismatch",
+    "expected": "The set of values added to extensible enums on the client and server do not match. Make sure you are using the same mod and NeoForge versions as the server. See the log for more details",
+    "replacement": "Значения, добавленные в расширяемые перечисления, различаются на клиенте и сервере. Проверьте совпадение версий модов и NeoForge с сервером. Подробности — в журнале."
+  },
+  {
+    "key": "item.delightfulcreators.incomplete_squid_ink_pasta",
+    "expected": "Incomplete Squid Ink Pasta",
+    "replacement": "Незавершённая паста с чернилами спрута"
+  },
+  {
+    "key": "ratatouille.oven.idle",
+    "expected": "idle ",
+    "replacement": "ожидание "
+  },
+  {
+    "key": "item.delightfulcreators.cooked_rice_bucket",
+    "expected": "Cooked Rice Bucket",
+    "replacement": "Ведро варёного риса"
+  },
+  {
+    "key": "block.delightfulcreators.cooked_rice_block",
+    "expected": "Cooked Rice",
+    "replacement": "Варёный рис"
+  },
+  {
+    "key": "item.delightfulcreators.bone_broth_bucket",
+    "expected": "Bone Broth Bucket",
+    "replacement": "Ведро костного бульона"
+  },
+  {
+    "key": "block.delightfulcreators.bone_broth_block",
+    "expected": "Bone Broth",
+    "replacement": "Костный бульон"
+  },
+  {
+    "key": "item.delightfulcreators.baked_cod_stew_bucket",
+    "expected": "Baked Cod Stew Bucket",
+    "replacement": "Ведро похлёбки с запечённой треской"
+  },
+  {
+    "key": "block.delightfulcreators.baked_cod_stew_block",
+    "expected": "Baked Cod Stew",
+    "replacement": "Похлёбка с запечённой треской"
+  },
+  {
+    "key": "item.delightfulcreators.ratatouille_bucket",
+    "expected": "Ratatouille Bucket",
+    "replacement": "Ведро рататуя"
+  },
+  {
+    "key": "block.delightfulcreators.ratatouille_block",
+    "expected": "Ratatouille",
+    "replacement": "Рататуй"
+  },
+  {
+    "key": "item.delightfulcreators.dog_food_bucket",
+    "expected": "Dog Food Bucket",
+    "replacement": "Ведро собачьего корма"
+  },
+  {
+    "key": "block.delightfulcreators.dog_food_block",
+    "expected": "Dog Food",
+    "replacement": "Собачий корм"
+  },
+  {
+    "key": "fluid_type.delightfulcreators.cooked_rice_fluid_type",
+    "expected": "Cooked Rice",
+    "replacement": "Варёный рис"
+  },
+  {
+    "key": "fluid_type.delightfulcreators.bone_broth_fluid_type",
+    "expected": "Bone Broth",
+    "replacement": "Костный бульон"
+  },
+  {
+    "key": "fluid_type.delightfulcreators.baked_cod_stew_fluid_type",
+    "expected": "Baked Cod Stew",
+    "replacement": "Похлёбка с запечённой треской"
+  },
+  {
+    "key": "fluid_type.delightfulcreators.ratatouille_fluid_type",
+    "expected": "Ratatouille",
+    "replacement": "Рататуй"
+  },
+  {
+    "key": "fluid_type.delightfulcreators.dog_food_fluid_type",
+    "expected": "Dog Food",
+    "replacement": "Собачий корм"
+  },
+  {
+    "key": "item.delightfulcreators.incomplete_vegetable_noodles",
+    "expected": "Incomplete Vegetable Noodles",
+    "replacement": "Незавершённая овощная лапша"
+  },
+  {
+    "key": "item.delightfulcreators.incomplete_mushroom_rice",
+    "expected": "Incomplete Mushroom Rice",
+    "replacement": "Незавершённый рис с грибами"
+  },
+  {
+    "key": "item.delightfulcreators.incomplete_fried_rice",
+    "expected": "Incomplete Fried Rice",
+    "replacement": "Незавершённый жареный рис"
+  },
+  {
+    "key": "item.delightfulcreators.incomplete_dumplings",
+    "expected": "Incomplete Dumplings",
+    "replacement": "Незавершённые пельмени"
+  },
+  {
+    "key": "entity_model_features.config.animate_once",
+    "expected": "Animate models once per entity",
+    "replacement": "Анимировать модель один раз для каждой сущности"
+  },
+  {
+    "key": "entity_model_features.config.debug_right_click",
+    "expected": "Show EMF debug data on entity right click",
+    "replacement": "Показывать отладочные данные EMF при нажатии ПКМ по сущности"
+  },
+  {
+    "key": "entity_model_features.config.debug_right_click.tooltip",
+    "expected": "If enabled, this will print out EMf debug info into\nthe log and chat when an entity is right clicked.",
+    "replacement": "При нажатии правой кнопки по сущности выводит\nотладочные данные EMF в журнал и чат."
+  },
+  {
+    "key": "entity_model_features.config.force_models",
+    "expected": "Try to prevent EMF models being overridden",
+    "replacement": "Препятствовать замене моделей EMF"
+  },
+  {
+    "key": "entity_model_features.config.force_models.tooltip",
+    "expected": "Will try and force entity renderers to use the models set by EMF\n this can override vanilla models changed by other mods\n this wont work with all mods",
+    "replacement": "Пытается заставить отрисовщики сущностей использовать модели EMF.\nМожет переопределить обычные модели, изменённые другими модами.\nРаботает не со всеми модами."
+  },
+  {
+    "key": "entity_model_features.config.options",
+    "expected": "Options & fixes",
+    "replacement": "Параметры и исправления"
+  },
+  {
+    "key": "entity_model_features.config.options.tooltip",
+    "expected": "Various options for fundamental features or mod compatibility fixes",
+    "replacement": "Параметры основных возможностей и исправления совместимости с модами"
+  },
+  {
+    "key": "entity_model_features.config.texture_override_mode",
+    "expected": "Sub-model texture handling",
+    "replacement": "Обработка текстур подмоделей"
+  },
+  {
+    "key": "entity_model_features.config.texture_override_mode.dont",
+    "expected": "Ignore texture overrides",
+    "replacement": "Игнорировать замены текстур"
+  },
+  {
+    "key": "entity_model_features.config.texture_override_mode.emf",
+    "expected": "Try with EMF code",
+    "replacement": "Использовать код EMF"
+  },
+  {
+    "key": "entity_model_features.config.texture_override_mode.iris",
+    "expected": "Try with Iris first",
+    "replacement": "Сначала попробовать Iris"
+  },
+  {
+    "key": "entity_model_features.config.texture_override_mode.tooltip",
+    "expected": "This controls how EMF handles rendering sub-models that have an override texture set\nfor example if a creeper model has a separate texture for the head sub-model\nThere are two ways to do this, rely on my code, or rely on a quirk of the Iris mod\nMy code 'works' but I am not an expert with render buffers and it may cause issues\nThe Iris quirk uses a pretty straightforward and seemingly safe/stable method but i'm told its not intended Iris behaviour\nThe Iris option will default to the EMF code if Iris isn't installed\nthis should almost always be left on default except when debugging texture overrides in sub-models",
+    "replacement": "Определяет отрисовку подмоделей с отдельной текстурой,\nнапример головы крипера с собственной текстурой.\nЕсть два способа: использовать код EMF или особенность Iris.\nКод EMF работает, но автор не является специалистом по буферам отрисовки, поэтому возможны проблемы.\nСпособ Iris довольно прост и выглядит безопасным и стабильным, однако это непредусмотренное поведение Iris.\nЕсли Iris не установлен, соответствующий вариант использует код EMF.\nОбычно следует оставлять стандартное значение и менять его только при отладке замен текстур подмоделей."
+  },
+  {
+    "key": "entity_model_features.config.tools",
+    "expected": "Tools",
+    "replacement": "Инструменты"
+  },
+  {
+    "key": "entity_model_features.config.tools.tooltip",
+    "expected": "Optional tools to help with model making or distinguishing custom models",
+    "replacement": "Дополнительные инструменты для создания и распознавания пользовательских моделей"
+  },
+  {
+    "key": "config.entity_features.optifine_settings",
+    "expected": "OptiFine Compat",
+    "replacement": "Совместимость с OptiFine"
+  },
+  {
+    "key": "config.entity_texture_features.optifine.desc",
+    "expected": "These options are for backwards compatibility with OptiFine.\nSome will put limitations on certain features because OptiFine does.\nSome will enable some odd behaviours because OptiFine does.",
+    "replacement": "Параметры обратной совместимости с OptiFine.\nНекоторые ограничивают возможности, как это делает OptiFine.\nДругие включают необычное поведение, повторяя OptiFine."
+  },
+  {
+    "key": "config.entity_texture_features.optifine.variant_gap.title",
+    "expected": "Limit rule number gaps",
+    "replacement": "Ограничивать пропуски номеров правил"
+  },
+  {
+    "key": "config.entity_texture_features.optifine.variant_gap.tooltip",
+    "expected": "OptiFine limits random .properties file rule numbers such that in\nsequential order the rule numbers do not exceed a gap of 9.\nThis setting enforces this limit in ETF if enabled, for OptiFine compatibility.",
+    "replacement": "OptiFine требует, чтобы промежуток между последовательными\nномерами правил в файле случайных вариантов .properties не превышал 9.\nПрименяет то же ограничение в ETF для совместимости с OptiFine."
+  },
+  {
+    "key": "config.entity_texture_features.optifine.random_skips.title",
+    "expected": "Allow random suffix number skipping",
+    "replacement": "Разрешать пропуски номеров суффиксов вариантов"
+  },
+  {
+    "key": "config.entity_texture_features.optifine.random_skips.tooltip",
+    "expected": "OptiFine allows random suffix variants, when not using .properties, to skip some numbers\nDoing so is considered a bad practise, they should always be sequential.\nThis setting will allow ETF to skip numbers like OptiFine.",
+    "replacement": "OptiFine допускает пропуски номеров случайных вариантов без файлов .properties.\nЭто считается нежелательным: номера должны идти подряд.\nРазрешает ETF пропускать номера так же, как OptiFine."
+  },
+  {
+    "key": "config.entity_texture_features.render_layer.translucent_cull",
+    "expected": "Translucent Cull",
+    "replacement": "Полупрозрачность с отсечением"
+  },
+  {
+    "key": "config.entity_texture_features.render_layer.end",
+    "expected": "The End",
+    "replacement": "Энд"
+  },
+  {
+    "key": "config.entity_texture_features.debug_screen.mass_log.done",
+    "expected": "Send ALL! ETF data to the log",
+    "replacement": "Записать ВСЕ данные ETF в журнал"
+  },
+  {
+    "key": "painting.handcrafted.ad_astra.title",
+    "expected": "Ad Astra",
+    "replacement": "К звёздам"
+  },
+  {
+    "key": "inventoryprofiles.common.gui.config.true",
+    "expected": "§2true",
+    "replacement": "§2Да"
+  },
+  {
+    "key": "inventoryprofiles.common.gui.config.false",
+    "expected": "§4false",
+    "replacement": "§4Нет"
+  },
+  {
+    "key": "jade.energy.text",
+    "expected": "Energy: %s",
+    "replacement": "Энергия: %s"
+  },
+  {
+    "key": "libipn.common.gui.config.true",
+    "expected": "§2true",
+    "replacement": "§2Да"
+  },
+  {
+    "key": "libipn.common.gui.config.false",
+    "expected": "§4false",
+    "replacement": "§4Нет"
+  },
+  {
+    "key": "mod_menu.searchTerms.hasUpdate",
+    "expected": "updates version",
+    "replacement": "обновления версия"
+  },
+  {
+    "key": "config.subtle_effects.blocks.workstationsGroup",
+    "expected": "Workstations",
+    "replacement": "Рабочие места"
+  },
+  {
+    "key": "config.subtle_effects.blocks.amethystGroup",
+    "expected": "Amethyst",
+    "replacement": "Аметист"
+  },
+  {
+    "key": "commands.supplementaries.cage",
+    "expected": "Added %s to temporary Cage and Jars catchable list",
+    "replacement": "%s добавлен во временный список существ, улавливаемых клетками и банками"
+  },
+  {
+    "key": "itemGroup.windchimes.main",
+    "expected": "wind chimes",
+    "replacement": "Музыка ветра"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.biome",
+    "expected": "List of biomes\nThe vanilla biome names are listed here: https://minecraft.gamepedia.com/Biome#Biome_IDs\nBiomes added by mods can also be used but require \"modID:biomeName\", whereas vanilla biomes can be either \"minecraft:plains\" or just \"plains\".\nWith ETF only, you can also use regex: iregex: pattern: and ipattern: like the Name property\n§abiomes.<n>=<biome_list>",
+    "replacement": "Список биомов.\nID обычных биомов: https://minecraft.gamepedia.com/Biome#Biome_IDs\nДля биомов из модов требуется «modID:biomeName». Обычные биомы можно задавать как «minecraft:plains» или «plains».\nВ ETF также доступны regex:, iregex:, pattern: и ipattern:, как у свойства имени.\n§abiomes.<n>=<biome_list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.block",
+    "expected": "Blocks\nsets the texture for the entity based on the block it is on\nthis also checks the block it is inside allowing things like water, cave_air, flowers, etc. to be used\nBlocks added by mods can also be used but require \"modID:blockName\", whereas vanilla blocks can be either \"minecraft:stone\" or just \"stone\".\nas of v4.4 this property also allows comparing additional block properties as per the OptiFine spec here https://optifine.readthedocs.io/syntax.html#blocks-and-items\n§ablocks.<n>=<block_list>",
+    "replacement": "Блоки.\nВыбирает текстуру сущности по блоку, на котором она стоит.\nПроверяет также блок внутри сущности, поэтому можно использовать воду, cave_air, цветы и т. д.\nДля блоков модов требуется «modID:blockName». Обычные блоки можно задавать как «minecraft:stone» или «stone».\nС версии 4.4 поддерживается сравнение дополнительных свойств блока по спецификации OptiFine: https://optifine.readthedocs.io/syntax.html#blocks-and-items\n§ablocks.<n>=<block_list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.block_spawned",
+    "expected": "Blocks spawned\nsets the texture for the entity based on the block it spawned on or first appeared on\nthis also checks the block it spawned inside allowing things like water, cave_air, flowers, etc. to be used\nBlocks added by mods can also be used but require \"modID:blockName\", whereas vanilla blocks can be either \"minecraft:stone\" or just \"stone\".\nas of v4.4 this property also allows comparing additional block properties as per the OptiFine spec here https://optifine.readthedocs.io/syntax.html#blocks-and-items\n§ablockSpawned.<n>=<block_list>",
+    "replacement": "Блоки появления.\nВыбирает текстуру сущности по блоку, на котором она появилась или впервые была замечена.\nПроверяет также блок внутри сущности при появлении, поэтому можно использовать воду, cave_air, цветы и т. д.\nДля блоков модов требуется «modID:blockName». Обычные блоки можно задавать как «minecraft:stone» или «stone».\nС версии 4.4 поддерживается сравнение дополнительных свойств блока по спецификации OptiFine: https://optifine.readthedocs.io/syntax.html#blocks-and-items\n§ablockSpawned.<n>=<block_list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.height",
+    "expected": "Height ranges\nReplaces legacy minHeight and maxHeight properties.\nSince 1.18 negative values may be specified for height. When used in a range they can be put in brackets for Optifine but will function as written for ETF.\nETF supports:             1 2-4   -65-2  -65--2   1-4   (-65)-2  (-65)-(-2)\nOptifine supports only:   1 2-4                   1-4   (-65)-2  (-65)-(-2)\n§aheights.<n>=<height_ranges>\n\nHeight legacy\nETF also supports the legacy minHeight and maxHeight properties.\nthey can be a single number from -64 to 319\n§aminHeight.<n>=<height>\n§amaxHeight.<n>=<height>",
+    "replacement": "Диапазоны высоты.\nЗаменяет прежние свойства minHeight и maxHeight.\nС версии 1.18 допускаются отрицательные высоты. В диапазонах OptiFine требует заключать их в скобки; ETF понимает и запись без скобок.\nETF поддерживает:             1 2-4   -65-2  -65--2   1-4   (-65)-2  (-65)-(-2)\nOptiFine поддерживает только:  1 2-4                   1-4   (-65)-2  (-65)-(-2)\n§aheights.<n>=<height_ranges>\n\nУстаревшие настройки высоты.\nETF также поддерживает прежние minHeight и maxHeight.\nКаждое свойство задаётся одним числом от -64 до 319.\n§aminHeight.<n>=<height>\n§amaxHeight.<n>=<height>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.team",
+    "expected": "Teams\nETF only!\nThis is identical to the Names property behaviour however allows definition by way of scoreboard teams\nsupports grouping names between \"\" quotations.\nyou can also use regex: iregex: pattern: and ipattern: like the Name property\nExample:\n - teams.1=Red red red_team \"red team\"\n§ateams.<n>=<teams>",
+    "replacement": "Команды.\nТолько ETF!\nРаботает как свойство имён, но выбирает по командам таблицы счёта.\nИмена с пробелами можно заключать в двойные кавычки.\nТакже поддерживаются regex:, iregex:, pattern: и ipattern:, как у свойства имени.\nПример:\n - teams.1=Red red red_team \"red team\"\n§ateams.<n>=<teams>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.profession",
+    "expected": "Professions \nList of villager professions with levels\nEntry format\n  <profession>[:level1,level2,...]\nProfessions: none, armorer, butcher, cartographer, cleric, farmer, fisherman, fletcher,\n             leatherworker, librarian, mason, nitwit, shepherd, toolsmith, weaponsmith\nExample:\nProfessions farmer (all levels) or librarian (levels 1,3,4)\n  professions=farmer librarian:1,3-4\n  professions=minecraft:farmer minecraft:librarian:1,3-4\nProfessions full\n  professions=fisherman shepherd minecraft:nitwit villager_mod:town_mayor\n  professions=minecraft:fisherman minecraft:shepherd minecraft:nitwit\n§aprofessions.<n>=<professions>",
+    "replacement": "Профессии.\nСписок профессий жителей с уровнями.\nФормат записи:\n  <profession>[:level1,level2,...]\nПрофессии: none, armorer, butcher, cartographer, cleric, farmer, fisherman, fletcher,\n             leatherworker, librarian, mason, nitwit, shepherd, toolsmith, weaponsmith\nПример:\nФермер любого уровня или библиотекарь уровней 1, 3 и 4:\n  professions=farmer librarian:1,3-4\n  professions=minecraft:farmer minecraft:librarian:1,3-4\nПрофессии с полными ID:\n  professions=fisherman shepherd minecraft:nitwit villager_mod:town_mayor\n  professions=minecraft:fisherman minecraft:shepherd minecraft:nitwit\n§aprofessions.<n>=<professions>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.color",
+    "expected": "Colors \nList of wolf/cat collar colors or sheep/llama colors\nETF also supports shulker colors & tropical fish colours (but only for the base fish texture)\nColors: white orange magenta light_blue yellow lime pink gray light_gray cyan purple blue brown green red black\nExample:\n  colors.2=pink magenta purple\nThe legacy property \"collarColors\" is also recognized\n§acolors.<n>=<colors>",
+    "replacement": "Цвета.\nЦвета ошейников волков и кошек, а также цвета овец и лам.\nETF также поддерживает цвета шалкеров и тропических рыб (только основной текстуры рыбы).\nДопустимые значения: white orange magenta light_blue yellow lime pink gray light_gray cyan purple blue brown green red black\nПример:\n  colors.2=pink magenta purple\nПрежнее свойство «collarColors» также поддерживается.\n§acolors.<n>=<colors>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.baby",
+    "expected": "Baby \nOnly valid for mobs\n§ababy.<n>=<true/false>",
+    "replacement": "Детёныш.\nДействует только для мобов.\n§ababy.<n>=<true/false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.health",
+    "expected": "Health \nRange of health values, can also be given in percent.\nOnly valid for mobs.\nExample:\n  health.1=10\n  health.2=5-8 10-12\n  health.3=0-50%\n§ahealth.<n>=<list>",
+    "replacement": "Здоровье.\nДиапазоны здоровья; можно задавать в процентах.\nДействует только для мобов.\nПример:\n  health.1=10\n  health.2=5-8 10-12\n  health.3=0-50%\n§ahealth.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.moon",
+    "expected": "Moon phase \nList of moon phases (0-7)\nExample\n  moonPhase.1=3\n  moonPhase.2=0 1 2\n  moonPhase.1=0-2 4-7\n§amoonPhase.<n>=<list>",
+    "replacement": "Фаза Луны.\nСписок фаз Луны (0–7).\nПример:\n  moonPhase.1=3\n  moonPhase.2=0 1 2\n  moonPhase.1=0-2 4-7\n§amoonPhase.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.day_time",
+    "expected": "Day time \nList of day times in ticks (0-24000)\nExample\n  dayTime.1=2000-10000\n  dayTime.2=0-1000 18000-24000\n§adayTime.<n>=<list>",
+    "replacement": "Время суток.\nСписок времён суток в тактах (0–24000).\nПример:\n  dayTime.1=2000-10000\n  dayTime.2=0-1000 18000-24000\n§adayTime.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.weather",
+    "expected": "Weather \nSeveral values can be specified, separated by space\nfor example \"weather=clear rain thunder\"\n§aweather.<n>=<clear|rain|thunder>",
+    "replacement": "Погода.\nМожно задать несколько значений через пробел,\nнапример «weather=clear rain thunder».\n§aweather.<n>=<clear|rain|thunder>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.size",
+    "expected": "Sizes \nOnly valid for mobs with multiple sizes (0-255 for slimes and magma cubes and 0-64 for phantoms)\nSlimes and magma cubes naturally spawn in three sizes: 0=small, 1=medium, 3=big.\nNaturally spawning phantoms only spawn in one size: 0.\nExample\n  sizes.1=3\n  sizes.2=0 1 3\n  sizes.3=0-2 4-7\n§asizes.<n>=<list>",
+    "replacement": "Размеры.\nДействует только для мобов с несколькими размерами: 0–255 для слизней и магмовых кубов, 0–64 для фантомов.\nСлизни и магмовые кубы появляются в трёх размерах: 0 = маленький, 1 = средний, 3 = большой.\nПриродные фантомы появляются только с размером 0.\nПример:\n  sizes.1=3\n  sizes.2=0 1 3\n  sizes.3=0-2 4-7\n§asizes.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.nbt",
+    "expected": "NBT \nSelect whether a mob must have matching NBT data values\nNote: this is an OptiFine feature that has not yet received official documentation,\nETF has copied the syntax listed in https://optifine.readthedocs.io/syntax.html#nbt for now.\nNBT requires an additional value in the key this is called <nbtPath>.\n- nbtPath must match the exact name of the nbt element and is case-sensitive\n- nbtPath supports matching nested nbt elements by defining the full nbt path with '.' marking a separation\n- E.G. the Villager profession level nbtPath is \"VillagerData.level\" meaning the full property key would be \"nbt.<n>.VillagerData.level\"\nNBT can be used in several ways see this link https://optifine.readthedocs.io/syntax.html#nbt for details\nAdditionally ETF adds a variation to the \"raw:\" syntax called \"print_raw:\" which will act just like \"raw:\" but will\nalso print what that raw value is to the log for testing purposes,\nETF also allows you to start the string with \"print:\" to always print the full NBT data of the entity\n§anbt.<n>.<nbtPath>=<exists:|raw:|print_raw:|print:|range:|regex:|iregex:|pattern:|ipattern:|string_list>",
+    "replacement": "NBT.\nПроверяет, совпадают ли значения NBT-данных моба.\nЭто возможность OptiFine без официальной документации;\nETF пока использует синтаксис из https://optifine.readthedocs.io/syntax.html#nbt.\nВ ключе требуется дополнительное значение <nbtPath>.\n- nbtPath должен точно совпадать с именем элемента NBT с учётом регистра.\n- Вложенные элементы задаются полным путём с разделителем '.'.\n- Например, уровень профессии жителя имеет путь «VillagerData.level», а полный ключ свойства — «nbt.<n>.VillagerData.level».\nСпособы использования NBT описаны здесь: https://optifine.readthedocs.io/syntax.html#nbt.\nETF добавляет вариант «print_raw:», работающий как «raw:», но также\nзаписывающий сырое значение в журнал для проверки.\nПрефикс «print:» всегда выводит полные NBT-данные сущности.\n§anbt.<n>.<nbtPath>=<exists:|raw:|print_raw:|print:|range:|regex:|iregex:|pattern:|ipattern:|string_list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.speed",
+    "expected": "Speed Ranges \nETF Only!\nSelect a range of top speeds a mob must match\nFunctional for all mobs but intended for Horses, Donkeys & Mules\nHorse, Donkey & Mule speeds exist within a range of: 0.1125 - 0.3375\nThe \"-\" and two numbers either side are necessary\n§aspeed.<n>=minimum_speed - maximum_speed",
+    "replacement": "Диапазоны скорости.\nТолько ETF!\nВыбирает диапазон максимальной скорости моба.\nРаботает для всех мобов, но предназначено для лошадей, ослов и мулов.\nИх скорость лежит в диапазоне 0.1125–0.3375.\nДва числа и знак «-» между ними обязательны.\n§aspeed.<n>=minimum_speed - maximum_speed"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.jump",
+    "expected": "Jump Strength \nETF Only!\nSelect a range of Jump Strength a mob must match\nFunctional for Horses, Donkeys & Mules\nHorse, Donkey & Mule jump strengths exist within a range of: 0.4 - 1.0\nThe \"-\" and two numbers either side are necessary\n§ajumpStrength.<n>=minimum_strength - maximum_strength",
+    "replacement": "Сила прыжка.\nТолько ETF!\nВыбирает диапазон силы прыжка моба.\nРаботает для лошадей, ослов и мулов.\nИх сила прыжка лежит в диапазоне 0.4–1.0.\nДва числа и знак «-» между ними обязательны.\n§ajumpStrength.<n>=minimum_strength - maximum_strength"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.max_health",
+    "expected": "Max Health \nETF Only!\nSelect Max Health values a mob must match\nFunctional for all mobs but intended for Horses, Donkeys & Mules\nHorse, Donkey & Mule max health exist within a range of: 15 - 30\nExample: maxHealth.1= 3 5 15-20 25 27-29\n§amaxHealth.<n>=<list>",
+    "replacement": "Максимальное здоровье.\nТолько ETF!\nВыбирает значения максимального здоровья моба.\nРаботает для всех мобов, но предназначено для лошадей, ослов и мулов.\nИх максимальное здоровье лежит в диапазоне 15–30.\nПример: maxHealth.1= 3 5 15-20 25 27-29\n§amaxHealth.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.llama",
+    "expected": "Llama Inventory Slots \nETF Only!\nSelect Inventory size values a llama must match\nFunctional for Llamas only\nLlama inventory sizes exist within a range of: 1 - 5\nExample: llamaInventory.1= 1 4-5\n§allamaInventory.<n>=<list>",
+    "replacement": "Слоты инвентаря ламы.\nТолько ETF!\nВыбирает размер инвентаря ламы.\nРаботает только для лам.\nРазмер инвентаря находится в диапазоне 1–5.\nПример: llamaInventory.1= 1 4-5\n§allamaInventory.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.gene",
+    "expected": "Panda Hidden Gene \nETF Only!\nSelect what hidden gene a panda must have\n§ahiddenGene.<n>=<normal|lazy|worried|playful|brown|weak|aggressive>",
+    "replacement": "Скрытый ген панды.\nТолько ETF!\nВыбирает, какой скрытый ген должен быть у панды.\n§ahiddenGene.<n>=<normal|lazy|worried|playful|brown|weak|aggressive>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.created",
+    "expected": "Player Created Golem \nETF Only!\nSelect whether an Iron Golem must be player created or naturally spawned\ntrue = player made, false = naturally spawned\n§aplayerCreated.<n>=<true|false>",
+    "replacement": "Голем, созданный игроком.\nТолько ETF!\nВыбирает железных големов по способу появления.\ntrue = создан игроком, false = появился естественно.\n§aplayerCreated.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.goat",
+    "expected": "Screaming Goats \nETF Only!\nSelect whether a Goat needs to be the screaming variant or not\ntrue = must be screaming goat, false = must be normal goat\n§ascreamingGoat.<n>=<true|false>",
+    "replacement": "Кричащие козы.\nТолько ETF!\nВыбирает, должна ли коза относиться к кричащему варианту.\ntrue = кричащая коза, false = обычная.\n§ascreamingGoat.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.distance",
+    "expected": "Distance from player \nETF Only!\nSelect what distance from the Player a mob must match\nValues are in blocks, ranges can be used like: 1-5\nExample: distanceFromPlayer.1= 3 5 15-20 25 27-50\n§adistance.<n>=<list>",
+    "replacement": "Расстояние до игрока.\nТолько ETF!\nВыбирает расстояние от моба до игрока.\nЗначения задаются в блоках; допускаются диапазоны вида 1-5.\nПример: distanceFromPlayer.1= 3 5 15-20 25 27-50\n§adistance.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.creeper",
+    "expected": "Charged Creeper \nETF Only!\nSelect whether a Creeper needs to be charged by lightning or not\ntrue = charged, false = normal\n§acreeperCharged.<n>=<true|false>",
+    "replacement": "Заряженный крипер.\nТолько ETF!\nВыбирает, должен ли крипер быть заряжен молнией.\ntrue = заряженный, false = обычный.\n§acreeperCharged.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.angry",
+    "expected": "Angry \nETF Only!\nSelect whether a Mob must be in their angered / attacking state or not\nworks for Endermen, Blazes, Guardians, Vindicators and Evokers\nTriggers when these mobs display their client side 'angered or attacking state' (e.g. open mouth for endermen & blazes igniting)\nExample: angry.1=true\n§aangry.<n>=<true|false>",
+    "replacement": "Злость.\nТолько ETF!\nВыбирает мобов в состоянии злости или атаки.\nРаботает для эндерменов, всполохов, стражей, поборников и заклинателей.\nСрабатывает при отображаемом клиентом состоянии злости или атаки, например открытом рте эндермена или воспламенении всполоха.\nПример: angry.1=true\n§aangry.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.items",
+    "expected": "Items \nSelect whether a mob must have certain, or any, items equipped or held\nExample: items.1=minecraft:book cool_mod:sunglasses   (matches a mob holding or wearing one of these items)\nExample: items.1=any                                  (matches a mob holding or wearing any item)\nExample: items.1=wearing                              (matches a mob wearing any item)\nExample: items.1=none                                 (matches a mob holding or wearing no items)\n§aitems.<n>=<list|none|any|holding|wearing>",
+    "replacement": "Предметы.\nПроверяет определённые или любые предметы в руках и экипировке моба.\nПример: items.1=minecraft:book cool_mod:sunglasses   (моб держит или носит один из этих предметов)\nПример: items.1=any                                  (моб держит или носит любой предмет)\nПример: items.1=wearing                              (на мобе надет любой предмет)\nПример: items.1=none                                 (у моба нет предметов в руках и экипировке)\n§aitems.<n>=<list|none|any|holding|wearing>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.moving",
+    "expected": "Moving \nSelect whether a mob must be moving or standing still\nNote: functionally this only detects horizontal movement as vertical velocity is quite unstable in the code\nExample: moving.1=false   (matches only a mob standing still)\n§amoving.<n>=<true|false>",
+    "replacement": "Движение.\nВыбирает движущихся или стоящих мобов.\nОбнаруживает только горизонтальное движение, поскольку вертикальная скорость в коде нестабильна.\nПример: moving.1=false   (только стоящий на месте моб)\n§amoving.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.spawner",
+    "expected": "Spawner \nETF Only!\nSelect whether a mob must be a miniature mob inside a mob spawner block\nExample: isSpawner.1=true\n§aisSpawner.<n>=<true|false>",
+    "replacement": "Рассадник мобов.\nТолько ETF!\nПроверяет, является ли моб миниатюрой внутри блока рассадника.\nПример: isSpawner.1=true\n§aisSpawner.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.dimension",
+    "expected": "Dimension \nETF Only!\nSelect which dimension a mob must be in\nCan prefix with \"print:\" to always print the dimension the mob is in to the log\nhelps to identify modded dimension names\nExample: dimension.1=minecraft:overworld\n§adimension.<n>=<overworld|the_nether|the_end|<modded_dimension_name>>",
+    "replacement": "Измерение.\nТолько ETF!\nВыбирает измерение, в котором должен находиться моб.\nПрефикс «print:» всегда выводит его измерение в журнал\nи помогает узнать имена измерений модов.\nПример: dimension.1=minecraft:overworld\n§adimension.<n>=<overworld|the_nether|the_end|<modded_dimension_name>>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.light",
+    "expected": "Light \nETF Only!\nSelect which light level a mob must be in from 0-15\nExample: light.1=0-7 9 14\n§alight.<n>=<list>",
+    "replacement": "Освещение.\nТолько ETF!\nВыбирает уровень освещения моба от 0 до 15.\nПример: light.1=0-7 9 14\n§alight.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.variant",
+    "expected": "Variant \nETF Only!\nSelect which variant a mob must be\nThis property will work with any vanilla or modded entity that implements the VariantHolder class and\nwill use the string representation of the type, e.g. \"black\" for a cat, \"oak\" for a boat.\nThis property also works uniquely with these block entities:\n- signs (wood)\n- bed (color)\n- shulkerbox (color)\n- Decorated pot (all 4 sherd face types)\n- skulls(appending facing direction at the end)\nFor all other regular & block entities it returns the EntityType or BlockEntityType registry id.\nThis allows for the separation of different entity types that might use the same model or texture.\nCan prefix with \"print:\" to always print the variant the mob appears as to the log\nExample: variant.1=black yellow\n§avariant.<n>=<list>",
+    "replacement": "Вариант.\nТолько ETF!\nВыбирает вариант моба.\nРаботает для обычных сущностей и сущностей модов, реализующих VariantHolder,\nи использует строковое представление варианта: например «black» для кошки или «oak» для лодки.\nТакже поддерживает следующие блок-сущности:\n- таблички (порода дерева);\n- кровати (цвет);\n- шалкеровые ящики (цвет);\n- узорчатые вазы (типы черепков на всех четырёх сторонах);\n- черепа (с направлением взгляда в конце).\nДля остальных сущностей возвращает ID типа из реестра EntityType или BlockEntityType.\nПозволяет различать типы сущностей, использующие одну модель или текстуру.\nПрефикс «print:» всегда выводит вариант моба в журнал.\nПример: variant.1=black yellow\n§avariant.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.creative",
+    "expected": "Creative \nETF Only!\nSelect whether a player must be in creative mode or not\ntrue = creative mode, false = survival mode\n§aisCreative.<n>=<true|false>",
+    "replacement": "Творческий режим.\nТолько ETF!\nПроверяет, находится ли игрок в творческом режиме.\ntrue = творческий режим, false = выживание.\n§aisCreative.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.teammate",
+    "expected": "Teammate \nETF Only!\nSelect whether a mob must be a teammate of the player\ntrue = teammate, false = not a teammate\n§aisTeammate.<n>=<true|false>",
+    "replacement": "Участник команды.\nТолько ETF!\nПроверяет, находится ли моб в одной команде с игроком.\ntrue = одна команда, false = разные команды.\n§aisTeammate.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.client",
+    "expected": "Client Player \nETF Only!\nSelect whether a mob must be the client player\ntrue = client player, false = not the client player\n§aisClientPlayer.<n>=<true|false>",
+    "replacement": "Игрок клиента.\nТолько ETF!\nПроверяет, является ли сущность игроком этого клиента.\ntrue = игрок клиента, false = другая сущность.\n§aisClientPlayer.<n>=<true|false>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.lang",
+    "expected": "Language \nSelect which language the game must be set to\nExample: language.1=en_us\n§alanguage.<n>=<language_code>",
+    "replacement": "Язык.\nПроверяет выбранный язык игры.\nПример: language.1=en_us\n§alanguage.<n>=<language_code>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.hour",
+    "expected": "Hour \nSelect which hour of the day it must be in 24 hour format from 0 - 23\nExample: hour.1=0-6 18-23\n§ahour.<n>=<list>",
+    "replacement": "Час.\nПроверяет час суток в 24-часовом формате от 0 до 23.\nПример: hour.1=0-6 18-23\n§ahour.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.min",
+    "expected": "Minute \nSelect which minute of the hour it must be from 0 - 59\nExample: minute.1=0-30\n§aminute.<n>=<list>",
+    "replacement": "Минута.\nПроверяет минуту часа от 0 до 59.\nПример: minute.1=0-30\n§aminute.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.sec",
+    "expected": "Second \nSelect which second of the minute it must be from 0 - 59\nExample: second.1=0-30\n§asecond.<n>=<list>",
+    "replacement": "Секунда.\nПроверяет секунду минуты от 0 до 59.\nПример: second.1=0-30\n§asecond.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.month",
+    "expected": "Month \nSelect which month of the year it must be from 0 - 11\nExample: month.1=1-6\n§amonth.<n>=<list>",
+    "replacement": "Месяц.\nПроверяет месяц года от 0 до 11.\nПример: month.1=1-6\n§amonth.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.year",
+    "expected": "Year \nSelect which year it must be from 0 - 9999\nExample: year.1=2020-2022\n§ayear.<n>=<list>",
+    "replacement": "Год.\nПроверяет год от 0 до 9999.\nПример: year.1=2020-2022\n§ayear.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.week_day",
+    "expected": "Week day \nSelect which day of the week it must be from 1 - 7 with 1 being Sunday and 7 being Saturday\nExample: weekDay.1=1-4\n§aweekDay.<n>=<list>",
+    "replacement": "День недели.\nПроверяет день недели от 1 до 7: 1 — воскресенье, 7 — суббота.\nПример: weekDay.1=1-4\n§aweekDay.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.month_day",
+    "expected": "Month Day \nSelect which day of the month it must be from 1 - 31\nExample: monthDay.1=1-15\n§amonthDay.<n>=<list>",
+    "replacement": "День месяца.\nПроверяет день месяца от 1 до 31.\nПример: monthDay.1=1-15\n§amonthDay.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.year_day",
+    "expected": "Year Day \nSelect which day of the year it must be from 1 - 366\nExample: yearDay.1=1-100\n§ayearDay.<n>=<list>",
+    "replacement": "День года.\nПроверяет день года от 1 до 366.\nПример: yearDay.1=1-100\n§ayearDay.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.mod_rule",
+    "expected": "Mods Loaded \nSelect what mods must be loaded\nfor instance if you need to disable or modify certain textures or animations for certain mod compatibilites\nExample: modLoaded.1=sodium iris\n§amodLoaded.<n>=<list>",
+    "replacement": "Загруженные моды.\nВыбирает обязательные загруженные моды,\nнапример для отключения или изменения текстур и анимаций ради совместимости.\nПример: modLoaded.1=sodium iris\n§amodLoaded.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.texture_rule",
+    "expected": "Texture Rule (Optional)\nmatches the last random texture rule number that the entities texture matched against\ndefaults to 0\nExample: textureRule.1= 2 4 6\n§atextureRule.<n>=<list>",
+    "replacement": "Правило текстуры (необязательно).\nПроверяет номер последнего правила случайных текстур, которому соответствовала сущность.\nПо умолчанию 0.\nПример: textureRule.1= 2 4 6\n§atextureRule.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.texture_suffix",
+    "expected": "Texture Suffix (Optional)\nmatches the last random texture suffix number that the entities texture was set to\ndefaults to 0\nExample: textureSuffix.1= 2 4 6\n§atextureSuffix.<n>=<list>",
+    "replacement": "Суффикс текстуры (необязательно).\nПроверяет номер последнего суффикса случайной текстуры, назначенного сущности.\nПо умолчанию 0.\nПример: textureSuffix.1= 2 4 6\n§atextureSuffix.<n>=<list>"
+  },
+  {
+    "key": "config.entity_texture_features.property_explanation.name",
+    "expected": "Name\nMatches to an entities name.\nA value starting with \"!\" performs a negative match (not).\nExamples:\n - Match string: \"name=Pinky pinkyyy\"\n - Match special formatting: \"name=\\u00a74\\u00a7oPinky\"\n   (for best compatibility, use the escape sequence '\\u00a7' instead of \"§\")\n - Wildcards using \"?\" and \"*\": \"name=pattern:Pinky*\"\n - Wildcards, case insensitive: \"name=ipattern:Pinky*\"\n - Java regular expressions: \"name=regex:Pin(k)+y\"\n   (see http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html)\n - Java regular expressions, case insensitive: \"name=iregex:Pin(k)+y\"\nAny backslashes in the match string must be doubled.\nLiteral backslashes within a regular expression or wildcard must be quadrupled.\nCorrect:\n  name=regex:\\\\d+\n  name=regex:\\\\\\\\\n  name=/\\\\/\\\\\nWrong:\n  name=regex:\\d+\n  name=regex:\\\\\n  name=/\\/\\\n§anames.<n>=<name_list|regex|pattern>",
+    "replacement": "Имя\nПроверяет имя сущности.\nЗначение с префиксом \"!\" задаёт отрицательное совпадение (НЕ).\nПримеры:\n - Точная строка: \"name=Pinky pinkyyy\"\n - С учётом форматирования: \"name=\\u00a74\\u00a7oPinky\"\n   (для совместимости используйте управляющую последовательность '\\u00a7' вместо \"§\")\n - Шаблоны с \"?\" и \"*\": \"name=pattern:Pinky*\"\n - Шаблоны без учёта регистра: \"name=ipattern:Pinky*\"\n - Регулярные выражения Java: \"name=regex:Pin(k)+y\"\n   (см. http://docs.oracle.com/javase/6/docs/api/java/util/regex/Pattern.html)\n - Регулярные выражения Java без учёта регистра: \"name=iregex:Pin(k)+y\"\nОбратные косые черты в строке поиска нужно удваивать.\nБуквальные обратные косые черты в регулярном выражении или шаблоне нужно записывать вчетверо.\nВерно:\n  name=regex:\\\\d+\n  name=regex:\\\\\\\\\n  name=/\\\\/\\\\\nНеверно:\n  name=regex:\\d+\n  name=regex:\\\\\n  name=/\\/\\\n§anames.<n>=<name_list|regex|pattern>"
+  },
+  {
+    "key": "inventoryprofiles.config.category.villager_trading",
+    "expected": "Villager Trading",
+    "replacement": "Торговля с жителями"
+  },
+  {
+    "key": "inventoryprofiles.config.description.move_focus_mach_modifier",
+    "expected": "Hold this key to move all the items of the type under the cursor or currently held in the cursor.\nNOTE: This will move all the items of the selected type despite it already being present on the other side.",
+    "replacement": "Удерживайте эту клавишу, чтобы переместить все предметы того же типа, что под курсором или на курсоре.\nПРИМЕЧАНИЕ: перемещает все предметы выбранного типа, даже если на другой стороне они уже есть."
+  },
+  {
+    "key": "inventoryprofiles.config.name.highlight_foused_items",
+    "expected": "Enable Items Highlight",
+    "replacement": "Подсвечивать одинаковые предметы"
+  },
+  {
+    "key": "inventoryprofiles.config.name.highlight_foused_items_animated",
+    "expected": "Blink the Highlight",
+    "replacement": "Мигающая подсветка"
+  },
+  {
+    "key": "inventoryprofiles.config.name.highlight_foused_items_foreground",
+    "expected": "Highlight Whole Slot",
+    "replacement": "Подсвечивать весь слот"
+  },
+  {
+    "key": "inventoryprofiles.config.name.highlight_foused_items_color",
+    "expected": "Whole Slot Color",
+    "replacement": "Цвет всего слота"
+  },
+  {
+    "key": "inventoryprofiles.config.name.highlight_foused_items_bg_color",
+    "expected": "Background Only Color",
+    "replacement": "Цвет только фона"
+  },
+  {
+    "key": "inventoryprofiles.config.description.highlight_foused_items_bg_color",
+    "expected": "The color used when highlighting only the background of the slot.",
+    "replacement": "Цвет подсветки только фона слота."
+  },
+  {
+    "key": "inventoryprofiles.config.description.highlight_foused_items_color",
+    "expected": "The color used when highlighting the whole slot.",
+    "replacement": "Цвет подсветки всего слота."
+  },
+  {
+    "key": "inventoryprofiles.config.description.highlight_foused_items_foreground",
+    "expected": "If true the highlight will be drown over the whole slot, if false only the background and not the item will be highlighted.",
+    "replacement": "При true подсвечивается весь слот; при false — только фон, без предмета."
+  },
+  {
+    "key": "inventoryprofiles.config.description.highlight_foused_items_animated",
+    "expected": "If true the items highlight will blink, if false the highlight will be static.",
+    "replacement": "При true подсветка предметов мигает; при false она постоянная."
+  },
+  {
+    "key": "inventoryprofiles.config.description.highlight_foused_items",
+    "expected": "If true all the items with the same type as the items under cursor will be highlighted.",
+    "replacement": "При true подсвечиваются все предметы того же типа, что под курсором."
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_enable",
+    "expected": "Enable Villager Trading",
+    "replacement": "Улучшения торговли с жителями"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_enable",
+    "expected": "Toggles villager trading enhancements.\n\nThis allows you to bookmark one or more type of trades.\nAnd do all possible trades for these types\nwith a single click.\n\nThere are 2 types of bookmarks Global and Local.\n - Global select the trade type for all villagers with the same profession.\n - Local select the trade for the active villager only.\n\nBookmarks also work for Wandering Traders but they only have Global type.",
+    "replacement": "Включает улучшения торговли с жителями.\n\nМожно добавить в закладки один или несколько видов сделок\nи выполнить все доступные сделки этих видов\nодним нажатием.\n\nЕсть два типа закладок: общие и местные.\n - Общие выбирают вид сделки для всех жителей одной профессии.\n - Местные выбирают сделку только для текущего жителя.\n\nЗакладки работают и для странствующих торговцев, но только общие."
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_local_color",
+    "expected": "Local Bookmarks Color",
+    "replacement": "Цвет местных закладок"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_local_color",
+    "expected": "The color used to highlight the locally bookmarked trades.",
+    "replacement": "Цвет подсветки сделок в местных закладках."
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_global_color",
+    "expected": "Global Bookmarks Color",
+    "replacement": "Цвет общих закладок"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_global_color",
+    "expected": "The color used to highlight the globally bookmarked trades.",
+    "replacement": "Цвет подсветки сделок в общих закладках."
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_group_1",
+    "expected": "Enable Second Bookmarks Group",
+    "replacement": "Включить вторую группу закладок"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_group_1",
+    "expected": "Enables second Global/Local group of bookmarks",
+    "replacement": "Включает вторую группу общих и местных закладок"
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_local_color1",
+    "expected": "Second Group Local Color",
+    "replacement": "Цвет местных закладок второй группы"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_local_color1",
+    "expected": "The color used to highlight the second local group of bookmarked trades.",
+    "replacement": "Цвет подсветки сделок в местных закладках второй группы."
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_global_color1",
+    "expected": "Second Group Global Color",
+    "replacement": "Цвет общих закладок второй группы"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_global_color1",
+    "expected": "The color used to highlight the second global group of bookmarked trades.",
+    "replacement": "Цвет подсветки сделок в общих закладках второй группы."
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_group_2",
+    "expected": "Enable Third Bookmarks Group",
+    "replacement": "Включить третью группу закладок"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_group_2",
+    "expected": "Enables third Global/Local group of bookmarks",
+    "replacement": "Включает третью группу общих и местных закладок"
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_local_color2",
+    "expected": "Third Group Local Color",
+    "replacement": "Цвет местных закладок третьей группы"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_local_color2",
+    "expected": "The color used to highlight the third local group of bookmarked trades.",
+    "replacement": "Цвет подсветки сделок в местных закладках третьей группы."
+  },
+  {
+    "key": "inventoryprofiles.config.name.villager_trading_global_color2",
+    "expected": "Third Group Global Color",
+    "replacement": "Цвет общих закладок третьей группы"
+  },
+  {
+    "key": "inventoryprofiles.config.description.villager_trading_global_color2",
+    "expected": "The color used to highlight the third global group of bookmarked trades.",
+    "replacement": "Цвет подсветки сделок в общих закладках третьей группы."
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_craft_delay",
+    "expected": "Wait Ticks Before Next Craft Click",
+    "replacement": "Тактов ожидания до следующего создания"
+  },
+  {
+    "key": "inventoryprofiles.config.name.continuous_crafting_method",
+    "expected": "Continuous Crafting Method",
+    "replacement": "Способ непрерывного создания"
+  },
+  {
+    "key": "inventoryprofiles.config.name.highlight_clicking_slot",
+    "expected": "Highlight Clicking Slot",
+    "replacement": "Подсвечивать нажимаемый слот"
+  },
+  {
+    "key": "inventoryprofiles.config.name.ignore_durability",
+    "expected": "Ignore item durability for Throw/Move",
+    "replacement": "Игнорировать прочность при выбрасывании и перемещении"
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_craft_delay",
+    "expected": "Wait this number of client ticks before doing next craft while auto-crafting.\nIncrease this if auto-crafting stops before it uses all available resources.\nThis is server ping dependent. The higher the ping the higher the value is needed.",
+    "replacement": "Число тактов клиента между созданиями предметов при автоматическом крафте.\nУвеличьте, если создание останавливается до расходования всех ресурсов.\nЗависит от задержки сервера: чем выше пинг, тем больше нужно значение."
+  },
+  {
+    "key": "inventoryprofiles.config.description.continuous_crafting_method",
+    "expected": "Method 2 is pre 1.3.7 behaviour, Method 1 is post 1.3.7.\nMethod 1 is better overall, but Method 2 works better on some servers.",
+    "replacement": "Способ 2 соответствует поведению до версии 1.3.7, способ 1 — после неё.\nОбычно лучше способ 1, но на некоторых серверах лучше работает способ 2."
+  },
+  {
+    "key": "inventoryprofiles.config.description.ignore_durability",
+    "expected": "If set to true Move Matching and Throw Matching operations will ignore the item durability when deciding what to move or throw.",
+    "replacement": "При true команды перемещения и выбрасывания совпадающих предметов игнорируют прочность при выборе предметов."
+  },
+  {
+    "key": "inventoryprofiles.config.name.inventory_overlay_buttons_visible",
+    "expected": "Toggle overlay buttons visibility",
+    "replacement": "Показывать или скрывать кнопки поверх интерфейса"
+  },
+  {
+    "key": "inventoryprofiles.config.description.inventory_overlay_buttons_visible",
+    "expected": "This is not meant to disable the overlay buttons!\nThis is meant so you can assign a shortcut to temporary hide/show the overlay buttons!\nTo permanently enable/disable overlay buttons use the other options on this page.",
+    "replacement": "Эта настройка не предназначена для постоянного отключения кнопок!\nОна позволяет назначить клавишу для временного показа и скрытия кнопок.\nДля постоянного включения и отключения используйте другие настройки этой страницы."
+  },
+  {
+    "key": "inventoryprofiles.config.name.enable_inventory_settings_button",
+    "expected": "Enable Settings Button in Inventory",
+    "replacement": "Кнопка настроек в инвентаре"
+  },
+  {
+    "key": "inventoryprofiles.config.description.enable_inventory_settings_button",
+    "expected": "When enabled a small button will appear in the to left of the screen that will the Inventory Profiles Settings.",
+    "replacement": "Показывает небольшую кнопку в левом верхнем углу экрана, открывающую настройки Inventory Profiles."
+  },
+  {
+    "key": "inventoryprofiles.config.name.show_buttons_both_sides",
+    "expected": "Show 2 Sets of Sort Buttons",
+    "replacement": "Два набора кнопок сортировки"
+  },
+  {
+    "key": "inventoryprofiles.config.description.show_buttons_both_sides",
+    "expected": "When set to true there will be two sets of sort buttons one of the player inventory and one for the opened chest.",
+    "replacement": "При true показываются два набора кнопок сортировки: для инвентаря игрока и для открытого сундука."
+  },
+  {
+    "key": "inventoryprofiles.config.name.show_fast_rename_checkbox",
+    "expected": "Show Bulk Rename Checkbox",
+    "replacement": "Флажок массового переименования"
+  },
+  {
+    "key": "inventoryprofiles.config.name.fast_rename_checkbox_value",
+    "expected": "§bRemember Checkbox State",
+    "replacement": "§bЗапоминать состояние флажка"
+  },
+  {
+    "key": "inventoryprofiles.config.name.fast_rename_saved_value",
+    "expected": "§bLast State of the Checkbox",
+    "replacement": "§bПоследнее состояние флажка"
+  },
+  {
+    "key": "inventoryprofiles.config.description.show_fast_rename_checkbox",
+    "expected": "Show Bulk Rename checkbox in the anvil UI.\nThis is useful when renaming multiple stacks of items for use as filters.",
+    "replacement": "Показывает флажок массового переименования в интерфейсе наковальни.\nПолезно при переименовании нескольких стаков предметов для использования в фильтрах."
+  },
+  {
+    "key": "inventoryprofiles.config.description.fast_rename_checkbox_value",
+    "expected": "This setting controls if the checkbox state is preserved after the screen is closed or is always reset to the configured value below.",
+    "replacement": "Определяет, сохранять ли состояние флажка после закрытия экрана или всегда сбрасывать его к значению ниже."
+  },
+  {
+    "key": "inventoryprofiles.config.description.fast_rename_saved_value",
+    "expected": "The saved/default value of the \"Bulk Rename\" checkbox.",
+    "replacement": "Сохранённое или стандартное состояние флажка массового переименования."
+  },
+  {
+    "key": "inventoryprofiles.config.category.auto-refill.general",
+    "expected": "General",
+    "replacement": "Общие"
+  },
+  {
+    "key": "inventoryprofiles.config.category.auto-refill.matching",
+    "expected": "Items Matching",
+    "replacement": "Сопоставление предметов"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_prefer_smaller_stacks",
+    "expected": "Refill with smallest available stack",
+    "replacement": "Пополнять самым маленьким доступным стаком"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_match_custom_name",
+    "expected": "Differentiate By Custom Name",
+    "replacement": "Различать по собственному имени"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_match_nbt",
+    "expected": "Differentiate By NBT",
+    "replacement": "Различать по NBT"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_match_nbt_type",
+    "expected": "NBT Comparison Type",
+    "replacement": "Способ сравнения NBT"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_ignore_nbt_for_buckets",
+    "expected": "Ignore NBT for buckets",
+    "replacement": "Игнорировать NBT вёдер"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_match_any_food",
+    "expected": "Refill With Any Food",
+    "replacement": "Пополнять любой едой"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_match_harmful_food",
+    "expected": "Allow refill with harmful foods.",
+    "replacement": "Разрешить пополнение вредной едой"
+  },
+  {
+    "key": "inventoryprofiles.config.name.stackable_threshold",
+    "expected": "Stackable Threshold",
+    "replacement": "Порог количества в стаке"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_temp_disable_refill_for_tools",
+    "expected": "Disable Refill for Tools While Holding",
+    "replacement": "Отключать пополнение инструментов при удержании клавиши"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_enable_per_slot_config",
+    "expected": "Toggle Refill Per Slot",
+    "replacement": "Пополнение для отдельных слотов"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_enable_indicator_icons",
+    "expected": "Show Icons on Enabled Slots",
+    "replacement": "Значки на включённых слотах"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_enable_horbar_indicator_icons",
+    "expected": "Also Show Icons in the Hotbar",
+    "replacement": "Показывать значки и на панели быстрого доступа"
+  },
+  {
+    "key": "inventoryprofiles.config.name.allow_alerts_without_tool_protection",
+    "expected": "Notifications Without Tool Protection",
+    "replacement": "Уведомления без защиты инструментов"
+  },
+  {
+    "key": "inventoryprofiles.config.description.allow_alerts_without_tool_protection",
+    "expected": "Show low durability notifications even when early tool replacement is disabled",
+    "replacement": "Уведомлять о низкой прочности, даже если заблаговременная замена инструментов отключена"
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_prefer_smaller_stacks",
+    "expected": "Be default the stack with most items in it will be used for auto refill. If this is set to `true` the smallest available will be used first.",
+    "replacement": "По умолчанию для пополнения берётся самый большой стак. При true сначала используется самый маленький доступный стак."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_match_custom_name",
+    "expected": "Auto refill will take Custom Names into account when refilling blocks\nFor gear custom names are ignored.",
+    "replacement": "Учитывать собственные имена при пополнении блоков.\nДля снаряжения собственные имена игнорируются."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_match_nbt",
+    "expected": "Auto refill will take NBT into account when refilling blocks\nFor gear NBT is ignored.",
+    "replacement": "Учитывать NBT при пополнении блоков.\nДля снаряжения NBT игнорируется."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_match_nbt_type",
+    "expected": "This controls how is NBT compared.\n'Exact' means that NBT must fully match.\n'Allow Extra' means that only tags that are the same will be compared.",
+    "replacement": "Способ сравнения NBT.\n«Точное» требует полного совпадения NBT.\n«Допускать дополнительные» сравнивает только общие теги."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_ignore_nbt_for_buckets",
+    "expected": "If this is set to false Fish and Axolotl buckets will only refill if they contain the same type of Fish/Axolotl.",
+    "replacement": "При false вёдра с рыбами и аксолотлями пополняются только вёдрами с тем же видом рыбы или аксолотля."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_match_any_food",
+    "expected": "When this is set to true when a food item stack is depleted any other food item can be used to refill it.\n\nNOTE:\nThis will sort the food items by saturation, i.e. and enchanted golden apple will be the first choice. And so on...",
+    "replacement": "При true израсходованный стак еды может пополняться любой другой едой.\n\nПРИМЕЧАНИЕ:\nЕда сортируется по насыщению: первым будет выбрано зачарованное золотое яблоко и так далее."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_match_harmful_food",
+    "expected": "When this and the above are set to true, harmful foods, like 'puffer fish', will also be uset to refill depleted food stacks.",
+    "replacement": "Если включены эта и предыдущая настройки, для пополнения еды также используются вредные продукты, например иглобрюх."
+  },
+  {
+    "key": "inventoryprofiles.config.description.stackable_threshold",
+    "expected": "Controls the quantity in a stackable item that will trigger auto refill.",
+    "replacement": "Количество предметов в стаке, при котором срабатывает автоматическое пополнение."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_temp_disable_refill_for_tools",
+    "expected": "Holding this key will disable auto refill for tools this allows you to break tools if you want to.",
+    "replacement": "Удерживайте эту клавишу, чтобы отключить пополнение инструментов и при желании полностью их сломать."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_enable_per_slot_config",
+    "expected": "Allows you to enable/disable Auto Refill per slot.",
+    "replacement": "Позволяет включать и отключать автоматическое пополнение отдельных слотов."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_enable_indicator_icons",
+    "expected": "When enabled a small icon will be show on top left of every slot that\nhas Auto Refill enabled.",
+    "replacement": "Показывает небольшой значок в левом верхнем углу каждого слота,\nдля которого включено автоматическое пополнение."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_enable_horbar_indicator_icons",
+    "expected": "Enables the small icon from above option to be shown in the hotbar too.",
+    "replacement": "Показывает значок из предыдущей настройки и на панели быстрого доступа."
+  },
+  {
+    "key": "inventoryprofiles.config.name.show_locked_slots_bg_color",
+    "expected": "Background Color",
+    "replacement": "Цвет фона"
+  },
+  {
+    "key": "inventoryprofiles.config.name.show_locked_slots_hotbar_color",
+    "expected": "Locked Hotbar Highlight Color",
+    "replacement": "Цвет подсветки заблокированных слотов панели"
+  },
+  {
+    "key": "inventoryprofiles.config.name.locked_slots_empty_hotbar_blacklist",
+    "expected": "Items Allowed in Hotbar",
+    "replacement": "Предметы, разрешённые на панели быстрого доступа"
+  },
+  {
+    "key": "inventoryprofiles.config.description.locked_slots_empty_hotbar_blacklist",
+    "expected": "A list of item ids that will be allowed to be picked up into the hotbar\n\nThe format is 'namespace:item' so if you want stone to be allowed you need to add 'minecraft:stone'\nif the name doesn't contain ':' it will be considered that the whole namespace is allowed.",
+    "replacement": "Список ID предметов, которые разрешено подбирать на панель быстрого доступа.\n\nФормат: 'namespace:item'. Например, чтобы разрешить камень, добавьте 'minecraft:stone'.\nЕсли имя не содержит ':', разрешается всё пространство имён."
+  },
+  {
+    "key": "inventoryprofiles.config.name.locked_slots_empty_hotbar_as_semi_locked",
+    "expected": "Pick Items Directly into the Inventory",
+    "replacement": "Подбирать предметы сразу в инвентарь"
+  },
+  {
+    "key": "inventoryprofiles.config.description.show_locked_slots_hotbar_color",
+    "expected": "Color to use to highlight locked hotbar slots in the HUD",
+    "replacement": "Цвет подсветки заблокированных слотов панели быстрого доступа в игровом интерфейсе"
+  },
+  {
+    "key": "inventoryprofiles.config.description.show_locked_slots_bg_color",
+    "expected": "The color used as background of locked slots.",
+    "replacement": "Цвет фона заблокированных слотов."
+  },
+  {
+    "key": "inventoryprofiles.config.description.locked_slots_empty_hotbar_as_semi_locked",
+    "expected": "This will try to pickup items directly into the inventory instead of taking empty slot from the hotbar.\nNOTE: For this to work \"Enable Picking Items into Empty Locked Slots\" must be set to \"false\"!",
+    "replacement": "Пытается подбирать предметы прямо в инвентарь вместо пустого слота панели быстрого доступа.\nПРИМЕЧАНИЕ: параметр «Разрешить подбор в пустые заблокированные слоты» должен быть установлен в false!"
+  },
+  {
+    "key": "inventoryprofiles.config.name.include_custom_name",
+    "expected": "Include custom names in the 'Saved' profiles",
+    "replacement": "Включать собственные имена в сохранённые профили"
+  },
+  {
+    "key": "inventoryprofiles.config.description.include_custom_name",
+    "expected": "If this is enabled the custom item names will be included in the 'Saved' profiles.\nThis is NOT recommended for general use, but it's useful is some cases like having a profiles with different backpacks or some other type of storage.\n\nWhen it comes to normal gear matching by enchantments is the best approach.",
+    "replacement": "Включает собственные имена предметов в сохранённые профили.\nОбычно это не рекомендуется, но полезно, например, для профилей с разными рюкзаками или другими хранилищами.\n\nДля обычного снаряжения лучше сопоставление по зачарованиям."
+  },
+  {
+    "key": "inventoryprofiles.gui.config.ScrollSettings",
+    "expected": "Item Scrolling",
+    "replacement": "Прокрутка предметов"
+  },
+  {
+    "key": "inventoryprofiles.config.category.scroll.modifiers",
+    "expected": "Scroll Hot Keys Modifiers",
+    "replacement": "Клавиши-модификаторы прокрутки"
+  },
+  {
+    "key": "inventoryprofiles.config.category.scroll.single",
+    "expected": "Scrolling Cursor Items",
+    "replacement": "Прокрутка предметов на курсоре"
+  },
+  {
+    "key": "inventoryprofiles.config.name.scroll_full_stack",
+    "expected": "Scroll The Whole Stack",
+    "replacement": "Перемещать прокруткой весь стак"
+  },
+  {
+    "key": "inventoryprofiles.config.description.scroll_full_stack",
+    "expected": "If you hold this key while using the scroll to chest/player keys the full stack will be scrolled not just 1 item.\nNOTE:\nThis modifies the behaviour of the options below to work on a stack level not on single item.",
+    "replacement": "При удержании этой клавиши перенос прокруткой между сундуком и игроком перемещает весь стак, а не один предмет.\nПРИМЕЧАНИЕ:\nМеняет действие настроек ниже: они работают со стаками, а не с отдельными предметами."
+  },
+  {
+    "key": "inventoryprofiles.config.name.scroll_leave_last",
+    "expected": "Leave One",
+    "replacement": "Оставлять один"
+  },
+  {
+    "key": "inventoryprofiles.config.description.scroll_leave_last",
+    "expected": "If you hold this key while using the scroll to chest/player keys the 1 item from the source stack will be left in the original slot",
+    "replacement": "При удержании этой клавиши во время переноса прокруткой один предмет исходного стака остаётся в исходном слоте"
+  },
+  {
+    "key": "inventoryprofiles.config.name.scroll_spread",
+    "expected": "Spread",
+    "replacement": "Распределять"
+  },
+  {
+    "key": "inventoryprofiles.config.description.scroll_spread",
+    "expected": "If you hold this key while using the scroll to chest/player keys All free target slots will be filled with the same or almost the same amount of items",
+    "replacement": "При удержании этой клавиши во время переноса прокруткой все свободные целевые слоты заполняются одинаковым или почти одинаковым числом предметов"
+  },
+  {
+    "key": "inventoryprofiles.config.name.scroll_throw",
+    "expected": "Drop/Throw",
+    "replacement": "Выбросить"
+  },
+  {
+    "key": "inventoryprofiles.config.description.scroll_throw",
+    "expected": "If you hold this key while using the scroll to chest/player keys the items will be dropped out of the inventory and opened container.\nNOTE:\nThe direction is ignored.",
+    "replacement": "При удержании этой клавиши во время переноса прокруткой предметы выбрасываются из инвентаря и открытого контейнера.\nПРИМЕЧАНИЕ:\nНаправление переноса игнорируется."
+  },
+  {
+    "key": "inventoryprofiles.config.name.temp_disable",
+    "expected": "Temporary Disable Scrolling",
+    "replacement": "Временно отключить прокрутку"
+  },
+  {
+    "key": "inventoryprofiles.config.description.temp_disable",
+    "expected": "Disables item scrolling while this key is pressed.",
+    "replacement": "Отключает прокрутку предметов, пока эта клавиша удерживается."
+  },
+  {
+    "key": "inventoryprofiles.config.name.scroll_auto_pickup_next_for_single",
+    "expected": "Auto refill cursor",
+    "replacement": "Автопополнение курсора"
+  },
+  {
+    "key": "inventoryprofiles.config.description.scroll_auto_pickup_next_for_single",
+    "expected": "If this is true a new stack will be picked up if the current stack in cursor ends while scrolling the cursor items ",
+    "replacement": "При true после исчерпания предметов на курсоре во время прокрутки берётся новый стак "
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_gui_toggle_for_slot",
+    "expected": "Toggle Auto Refill for Slot Under the Cursor",
+    "replacement": "Переключить автопополнение слота под курсором"
+  },
+  {
+    "key": "inventoryprofiles.config.name.auto_refill_game_toggle_for_slot",
+    "expected": "Toggle Auto Refill for the Active Hotbar Slot",
+    "replacement": "Переключить автопополнение активного слота панели"
+  },
+  {
+    "key": "inventoryprofiles.config.name.scroll_to_chest",
+    "expected": "Scroll Items From Player to Chest",
+    "replacement": "Прокруткой переносить предметы от игрока в сундук"
+  },
+  {
+    "key": "inventoryprofiles.config.name.scroll_to_inventory",
+    "expected": "Scroll Items From Chest to Player",
+    "replacement": "Прокруткой переносить предметы из сундука к игроку"
+  },
+  {
+    "key": "inventoryprofiles.config.name.global_bookmark_trade",
+    "expected": "Add Global Bookmark",
+    "replacement": "Добавить общую закладку"
+  },
+  {
+    "key": "inventoryprofiles.config.name.local_bookmark_trade",
+    "expected": "Add Local Bookmark",
+    "replacement": "Добавить местную закладку"
+  },
+  {
+    "key": "inventoryprofiles.config.name.do_global_trade",
+    "expected": "Do Global Trades",
+    "replacement": "Выполнить сделки общих закладок"
+  },
+  {
+    "key": "inventoryprofiles.config.name.do_local_trade",
+    "expected": "Do Local Trades",
+    "replacement": "Выполнить сделки местных закладок"
+  },
+  {
+    "key": "inventoryprofiles.config.description.global_bookmark_trade",
+    "expected": "Adds the trade under the mouse cursor as a global bookmark.",
+    "replacement": "Добавляет сделку под курсором в общие закладки."
+  },
+  {
+    "key": "inventoryprofiles.config.description.local_bookmark_trade",
+    "expected": "Adds the trade under the mouse cursor as a local bookmark.",
+    "replacement": "Добавляет сделку под курсором в местные закладки."
+  },
+  {
+    "key": "inventoryprofiles.config.description.do_global_trade",
+    "expected": "Executes all possible globally bookmarked trades.",
+    "replacement": "Выполняет все доступные сделки общих закладок."
+  },
+  {
+    "key": "inventoryprofiles.config.description.do_local_trade",
+    "expected": "Executes all possible locally bookmarked trades.",
+    "replacement": "Выполняет все доступные сделки местных закладок."
+  },
+  {
+    "key": "inventoryprofiles.config.name.global_bookmark_trade1",
+    "expected": "Add Group 2 Global Bookmark",
+    "replacement": "Добавить общую закладку второй группы"
+  },
+  {
+    "key": "inventoryprofiles.config.name.local_bookmark_trade1",
+    "expected": "Add Group 2 Local Bookmark",
+    "replacement": "Добавить местную закладку второй группы"
+  },
+  {
+    "key": "inventoryprofiles.config.name.do_global_trade1",
+    "expected": "Do Group 2 Global Trades",
+    "replacement": "Выполнить общие сделки второй группы"
+  },
+  {
+    "key": "inventoryprofiles.config.name.do_local_trade1",
+    "expected": "Do Group 2 Local Trades",
+    "replacement": "Выполнить местные сделки второй группы"
+  },
+  {
+    "key": "inventoryprofiles.config.description.global_bookmark_trade1",
+    "expected": "Adds the trade under the mouse cursor as a global bookmark in group 2.",
+    "replacement": "Добавляет сделку под курсором в общие закладки второй группы."
+  },
+  {
+    "key": "inventoryprofiles.config.description.local_bookmark_trade1",
+    "expected": "Adds the trade under the mouse cursor as a local bookmark in group 2.",
+    "replacement": "Добавляет сделку под курсором в местные закладки второй группы."
+  },
+  {
+    "key": "inventoryprofiles.config.description.do_global_trade1",
+    "expected": "Executes all possible globally bookmarked trades from group 2.",
+    "replacement": "Выполняет все доступные сделки общих закладок второй группы."
+  },
+  {
+    "key": "inventoryprofiles.config.description.do_local_trade1",
+    "expected": "Executes all possible locally bookmarked trades from group 2..",
+    "replacement": "Выполняет все доступные сделки местных закладок второй группы."
+  },
+  {
+    "key": "inventoryprofiles.config.name.global_bookmark_trade2",
+    "expected": "Add Group 3 Global Bookmark",
+    "replacement": "Добавить общую закладку третьей группы"
+  },
+  {
+    "key": "inventoryprofiles.config.name.local_bookmark_trade2",
+    "expected": "Add Group 3 Local Bookmark",
+    "replacement": "Добавить местную закладку третьей группы"
+  },
+  {
+    "key": "inventoryprofiles.config.name.do_global_trade2",
+    "expected": "Do Group 3 Global Trades",
+    "replacement": "Выполнить общие сделки третьей группы"
+  },
+  {
+    "key": "inventoryprofiles.config.name.do_local_trade2",
+    "expected": "Do Group 3 Local Trades",
+    "replacement": "Выполнить местные сделки третьей группы"
+  },
+  {
+    "key": "inventoryprofiles.config.description.global_bookmark_trade2",
+    "expected": "Adds the trade under the mouse cursor as a global bookmark in group 3.",
+    "replacement": "Добавляет сделку под курсором в общие закладки третьей группы."
+  },
+  {
+    "key": "inventoryprofiles.config.description.local_bookmark_trade2",
+    "expected": "Adds the trade under the mouse cursor as a local bookmark in group 3.",
+    "replacement": "Добавляет сделку под курсором в местные закладки третьей группы."
+  },
+  {
+    "key": "inventoryprofiles.config.description.do_global_trade2",
+    "expected": "Executes all possible globally bookmarked trades from group 3.",
+    "replacement": "Выполняет все доступные сделки общих закладок третьей группы."
+  },
+  {
+    "key": "inventoryprofiles.config.description.do_local_trade2",
+    "expected": "Executes all possible locally bookmarked trades from group 3.",
+    "replacement": "Выполняет все доступные сделки местных закладок третьей группы."
+  },
+  {
+    "key": "inventoryprofiles.config.description.scroll_to_chest",
+    "expected": "When you press this key while the cursor is over a non empty slot or you hold a item stack in the cursor a single item will be transferred to the opened container.",
+    "replacement": "При нажатии этой клавиши над непустым слотом или со стаком на курсоре один предмет переносится в открытый контейнер."
+  },
+  {
+    "key": "inventoryprofiles.config.description.scroll_to_inventory",
+    "expected": "When you press this key while the cursor is over a non empty slot or you hold a item stack in the cursor a single item will be transferred to the player inventory.",
+    "replacement": "При нажатии этой клавиши над непустым слотом или со стаком на курсоре один предмет переносится в инвентарь игрока."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_gui_toggle_for_slot",
+    "expected": "Press this shortcut to toggle Auto Refill for the slot under the cursor.\nYou can also move the mouse while holding it to toggle multiple slots.\nOnly Hotbar and gear slots are supported.",
+    "replacement": "Переключает автопополнение слота под курсором.\nУдерживая клавишу и перемещая мышь, можно переключить несколько слотов.\nПоддерживаются только слоты панели быстрого доступа и снаряжения."
+  },
+  {
+    "key": "inventoryprofiles.config.description.auto_refill_game_toggle_for_slot",
+    "expected": "You can use this shortcut to toggle Auto Refill for the currently active Hotbar slot.\nThis will work only if no GUI is opened.",
+    "replacement": "Переключает автопополнение текущего активного слота панели быстрого доступа.\nРаботает только при закрытых интерфейсах."
+  },
+  {
+    "key": "inventoryprofiles.enum.auto_refill_nbt_match_type.can_have_extra",
+    "expected": "Allow Extra",
+    "replacement": "Допускать дополнительные"
+  },
+  {
+    "key": "inventoryprofiles.enum.auto_refill_nbt_match_type.exact",
+    "expected": "Exact",
+    "replacement": "Точное"
+  },
+  {
+    "key": "inventoryprofiles.enum.creative_menu_sort_order.search_tab",
+    "expected": "Search Tab",
+    "replacement": "Вкладка поиска"
+  },
+  {
+    "key": "inventoryprofiles.enum.creative_menu_sort_order.category_priority_list",
+    "expected": "Priority List",
+    "replacement": "Список приоритетов"
+  },
+  {
+    "key": "inventoryprofiles.tooltip.fast_rename",
+    "expected": "Bulk Rename",
+    "replacement": "Массовое переименование"
+  },
+  {
+    "key": "inventoryprofiles.tooltip.settings_open",
+    "expected": "Opens Inventory Profiles Next general configuration",
+    "replacement": "Открывает общие настройки Inventory Profiles Next"
+  },
+  {
+    "key": "inventoryprofiles.tooltip.do_global_trades_button",
+    "expected": "Makes all possible globally bookmarked trades.\n\nTrades for all global bookmarks until all\nresources are exhausted or no more trading is possible.\n\n",
+    "replacement": "Выполняет все доступные сделки общих закладок.\n\nТоргует по всем общим закладкам, пока не закончатся\nресурсы или не останется доступных сделок.\n\n"
+  },
+  {
+    "key": "inventoryprofiles.tooltip.do_local_trades_button",
+    "expected": "Makes all possible locally bookmarked trades.\n\nTrades for all local bookmarks until all\nresources are exhausted or no more trading is possible.",
+    "replacement": "Выполняет все доступные сделки местных закладок.\n\nТоргует по всем местным закладкам, пока не закончатся\nресурсы или не останется доступных сделок."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.do_global_trades_button1",
+    "expected": "Makes all possible globally bookmarked trades from group 2.",
+    "replacement": "Выполняет все доступные сделки общих закладок второй группы."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.do_local_trades_button1",
+    "expected": "Makes all possible locally bookmarked trades from group 2.",
+    "replacement": "Выполняет все доступные сделки местных закладок второй группы."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.do_global_trades_button2",
+    "expected": "Makes all possible globally bookmarked trades from group 3.",
+    "replacement": "Выполняет все доступные сделки общих закладок третьей группы."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.do_local_trades_button2",
+    "expected": "Makes all possible locally bookmarked trades from group 3.",
+    "replacement": "Выполняет все доступные сделки местных закладок третьей группы."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.set_local_bookmark",
+    "expected": "Adds local bookmark.\n\nBookmarks this trade for this specific Villager.",
+    "replacement": "Добавляет местную закладку.\n\nСохраняет сделку только для этого жителя."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.set_global_bookmark",
+    "expected": "Adds global bookmark.\n\nBookmarks this trade type for all Villagers of that profession,\nor to all Wandering Traders.",
+    "replacement": "Добавляет общую закладку.\n\nСохраняет этот вид сделки для всех жителей данной профессии\nили для всех странствующих торговцев."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.set_local_bookmark1",
+    "expected": "Adds local bookmark to group 2.",
+    "replacement": "Добавляет местную закладку во вторую группу."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.set_global_bookmark1",
+    "expected": "Adds global bookmark to group 2.",
+    "replacement": "Добавляет общую закладку во вторую группу."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.set_local_bookmark2",
+    "expected": "Adds local bookmark to group 3",
+    "replacement": "Добавляет местную закладку в третью группу."
+  },
+  {
+    "key": "inventoryprofiles.tooltip.set_global_bookmark2",
+    "expected": "Adds global bookmark to group 3.",
+    "replacement": "Добавляет общую закладку в третью группу."
+  },
+  {
+    "key": "inventoryprofiles.gui.editor.name.screen.disable_fast_swipe",
+    "expected": "Disable Fast Swipe",
+    "replacement": "Отключить быстрый перенос проведением"
+  },
+  {
+    "key": "inventoryprofiles.gui.editor.description.screen.disable_fast_swipe",
+    "expected": "If set to true swipe move/throw will try to use slower but more reliable method.\nNOTE: If you have problems with swipe move/throw for one or more but not all GUIs try setting this to true.",
+    "replacement": "При true перенос и выбрасывание проведением используют более медленный, но надёжный способ.\nПРИМЕЧАНИЕ: попробуйте включить, если перенос или выбрасывание проведением работает неправильно в отдельных интерфейсах."
+  },
+  {
+    "key": "inventoryprofiles.profiles.created_new_saved",
+    "expected": "Created new 'Saved' profile...",
+    "replacement": "Создан новый сохранённый профиль..."
+  },
+  {
+    "key": "quark.gui.config.social.forum",
+    "expected": "Violet Moon Forums",
+    "replacement": "Форумы Violet Moon"
+  },
+  {
+    "key": "shouldersurfing.configuration.obstruction.max_distance_to_obstruction.tooltip",
+    "expected": "Игнорировать препятствия, находящиеся дальше указанного расстояния (в чанках). Установите 0 для отключения ограничения.",
+    "replacement": "Игнорировать препятствия за пределами указанного расстояния от игрока в блоках. Значение 0 отключает ограничение."
+  },
+  {
+    "key": "shouldersurfing.configuration.player.player_x_rot_follows_camera.tooltip",
+    "expected": "Должен ли наклон головы игрока (ось X) следовать за наклоном камеры. Применяется только при отключённой камере.",
+    "replacement": "Наклон игрока по оси X следует за наклоном камеры. Действует только для независимой камеры."
+  },
+  {
+    "key": "shouldersurfing.configuration.player.player_y_rot_follows_camera.tooltip",
+    "expected": "Должен ли горизонтальный поворот игрока (ось Y) следовать за поворотом камеры. Применяется только при отключённой камере.",
+    "replacement": "Поворот игрока по оси Y следует за поворотом камеры. Действует только для независимой камеры."
+  }
+]

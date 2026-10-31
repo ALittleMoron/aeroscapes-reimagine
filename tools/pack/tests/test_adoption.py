@@ -112,6 +112,35 @@ def test_adopted_shipped_bytes_require_exact_reviewed_coverage(
         run_adoption((project, overrides, record))
 
 
+@pytest.mark.parametrize("mutation", ["none", "changed", "missing", "duplicate", "unsafe"])
+def test_authored_namespace_extensions_retain_complete_hash_bound_coverage(
+    adoption: tuple[Project, dict[str, bytes], dict[str, object]],
+    mutation: str,
+) -> None:
+    _, overrides, record = adoption
+    output = "data/minecraft/tags/block/iron_ores.json"
+    content = b'{"values":["aeroscapes_reimagine:blackstone_iron_ore"]}'
+    binding: dict[str, object] = {
+        "output": output,
+        "sha256": hashlib.sha256(content).hexdigest(),
+        "reason": "Authored additive tag for the owned ore; no adopted provider data",
+    }
+    resources = {RESOURCE: CONTENT, output: content}
+    if mutation == "changed":
+        resources[output] = b'{"values":[]}'
+    elif mutation == "missing":
+        resources.pop(output)
+    elif mutation == "unsafe":
+        binding["output"] = "../outside.json"
+    record["authored_resources"] = [binding, binding] if mutation == "duplicate" else [binding]
+    overrides["mods/owned.jar"] = jar(resources)
+    if mutation == "none":
+        assert run_adoption(adoption)[0] == {"owned:aeroscapes_reimagine": "0.1.0"}
+    else:
+        with pytest.raises(PackError):
+            run_adoption(adoption)
+
+
 def test_source_archive_identity_requires_reaudit(
     adoption: tuple[Project, dict[str, bytes], dict[str, object]],
 ) -> None:

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "aeroscapes_reimagine:block/blackstone_redstone_ore"
+    },
+    "lit=true": {
+      "model": "aeroscapes_reimagine:block/blackstone_redstone_ore"
+    }
+  }
+}

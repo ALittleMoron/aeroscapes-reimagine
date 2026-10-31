@@ -1,0 +1,211 @@
+{
+  "minecraft": "1.21.1",
+  "neoforge": "21.1.230",
+  "create": "6.0.10",
+  "create_project": "https://modrinth.com/mod/create/version/UjX6dr61",
+  "minecraft_eula": "https://www.minecraft.net/en-us/eula",
+  "strategy": "Client-only SpriteSource composes installed texture pixels in memory. The owned JAR distributes models and source code, no Minecraft/Create PNGs. Matching ore/base pixels become installed blackstone side/top; differing pixels retain the installed ore artwork. Existing selected resource packs remain inputs.",
+  "generation": "Accepted native OreFeature.doPlace writes whose actual replaced state is minecraft:blackstone select matching owned variants for ten vanilla/Create/Galosphere ores. For native ReplaceBlobsFeature configurations that replace deepslate with blackstone, preexisting recognized ore inside the unchanged native footprint is retained as its blackstone variant. This covers noise-stage large veins. Original blob anchor search, radii/random draws and unrelated blob configurations remain unchanged. Existing saved FULL chunks receive no retrogen.",
+  "source_assets": [
+    {
+      "resource": "assets/minecraft/textures/block/deepslate.png",
+      "sha256": "b4c5e7f5538608a371fd4c1f6b398e4b76f723702d10144432636a85a1a61832"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/deepslate_coal_ore.png",
+      "sha256": "a6e4d4c144d85be16fc67080fcc819e4c5d065af89ab900346b34e4ca34bdc88"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/blackstone.png",
+      "sha256": "99233c7c54210c813163833158dd631b0bb495c03db5d90aa2cd76be195f3678"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/blackstone_top.png",
+      "sha256": "804caaa08dbf54590712ebb85286ab2af47903e256700d933022503d1b1a1c65"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/deepslate_copper_ore.png",
+      "sha256": "37d6d3fa66a15e1acda7c52910b0904ab8d1027163fcc81d5a5cd5733148d6e4"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/deepslate_iron_ore.png",
+      "sha256": "4565d56881e85ceef38107f0ba37c588788cb96ba1c8e269ddc716d972e7a951"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/deepslate_gold_ore.png",
+      "sha256": "f468e3f00c7393aa01c234058095610820e7dbdc0b26eb64044beadac647701c"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/deepslate_lapis_ore.png",
+      "sha256": "e8855090fee951faa4ee5e29714f033aa56778f155eaaeb72a3b97f33382db19"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/deepslate_redstone_ore.png",
+      "sha256": "5cd3c3b20045c4ab9fe5d3803a9304ec4d723209c51d2bd609126c90a6eb74af"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/deepslate_diamond_ore.png",
+      "sha256": "7ff158066e1a9a9832b52b1eec7a54071c95478b18bd16207b322f41756753b0"
+    },
+    {
+      "resource": "assets/minecraft/textures/block/deepslate_emerald_ore.png",
+      "sha256": "29054e35459ee1a9e150d5f43432032095dde90291e9aca52f57b908ea2bef05"
+    },
+    {
+      "resource": "assets/create/textures/block/deepslate_zinc_ore.png",
+      "sha256": "d018b3d877e4a90088afc2a530ad3643d69122a5a8f7db2d811631d30d527e82"
+    },
+    {
+      "resource": "assets/galosphere/textures/block/deepslate_palladium_ore.png",
+      "sha256": "3c675e1fff938bbb8d20cc49116723f05af051a819aa0288868caa47b9d25db2"
+    }
+  ],
+  "expected_default_sprites": [
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_coal_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 90,
+      "rgba_sha256": "1b25ff046b868acb765f5c5fd8ec002cf897e2737655bef40faf76af72d54ea4"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_coal_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 90,
+      "rgba_sha256": "8267dd1468399c42dbe691cfe086faecf0c4cf6fd58c057edd701eeb44d55e26"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_copper_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 91,
+      "rgba_sha256": "96344daa59030f232a64bff7acaf1bb5dd4541ed6b687e5139f34202f138e45e"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_copper_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 91,
+      "rgba_sha256": "60430376edb11b5c578e03f0fbbf78708f086db723bec096f1efff3b8c6c3f93"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_iron_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 102,
+      "rgba_sha256": "0ba859ee5d99c3f9c1b2fd3e1e3f44a1696cfe31345f2d91a9224fc470795d21"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_iron_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 102,
+      "rgba_sha256": "f00e597bba1838d916821c3597ae55f8d1e3759900bdbb658e80b8ab92e89423"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_gold_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 107,
+      "rgba_sha256": "adc94e5d5f7879bb42d06bb9430b26900172a1377d1c42f36c21f9b41b95a0b2"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_gold_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 107,
+      "rgba_sha256": "be31410c57fbe644f05b5d565182d8cc899f8e38e794d0a32db69337544d2198"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_lapis_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 123,
+      "rgba_sha256": "afacc0dc387ea2a9da18d8ccf63b9daf5e4fb98c8bdab5d023ea27e3cb100687"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_lapis_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 123,
+      "rgba_sha256": "1eb8b2b5fc48979b9175a367a60beb4491498d3c0da342cbf3d5052dd74ad899"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_redstone_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 73,
+      "rgba_sha256": "bf4ba4d1f35eaf34c0444899d7201259926142535f1d498d83f4a24b2d7b3a38"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_redstone_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 73,
+      "rgba_sha256": "3dc87d49ea73f17683ee3cb6af627b3fbd4b687a433a8e19626e90865c6bdab6"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_diamond_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 86,
+      "rgba_sha256": "5459fbccd1757ed8c8bf37221e0af4306448a994012f4f8d1b210882ef5577e5"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_diamond_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 86,
+      "rgba_sha256": "35fa2f27fc3264f2eedf64536c054efc22d40aa70eb6cd5e09d212aa3a03b3f3"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_emerald_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 92,
+      "rgba_sha256": "8b85ee354a95fd58fcfd58fe4e1c230de58874241ba5053881a0e4ee98e38d15"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_emerald_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 92,
+      "rgba_sha256": "de48b586ca582edeeb30d0991465fc1fcce399ce007f0f864a1af783421246c1"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_zinc_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 124,
+      "rgba_sha256": "e7c68423d97e578a28ff8a2c7796b050edebe0d20ccc95338ef215febf306290"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_zinc_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 124,
+      "rgba_sha256": "ff8f6e8ac5a76625d8a30645d40b2493f8eaf6806c90647aa9e5cb2ef5b2a1d5"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_palladium_ore",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 156,
+      "rgba_sha256": "a70d13ee067c4ab572af4d83f18d8419f2154315da51350f1202ca42f45d0efa"
+    },
+    {
+      "sprite": "aeroscapes_reimagine:block/blackstone_palladium_ore_top",
+      "width": 16,
+      "height": 16,
+      "ore_pixels": 156,
+      "rgba_sha256": "1c2a6461920a5e4ca9a570c1eac0c0e4fde7eb3e4e1dfeadf307673bc4ca82ff"
+    }
+  ],
+  "loot": "Owned ore loot retains native ordinary/Fortune/explosion formulas and uses owned Silk Touch block and random sequence IDs. Minecraft/Create loot schemas were adapted. Palladium uses the same standard ore schema as zinc with the existing Galosphere raw-palladium item; no Galosphere table is redistributed.",
+  "client_acceptance": "Offline pixel identities and dimensions are checked separately from owner client atlas/model/shader acceptance.",
+  "galosphere": "1.5.3",
+  "galosphere_project": "https://modrinth.com/mod/galosphere/version/Y3deS8Po",
+  "processing": "Smelting/blasting retain original material outputs and furnace experience. Nine existing Create deepslate-ore crushing routes retain their exact yields/chances/durations and use blackstone instead of cobbled deepslate byproduct. Palladium retains its existing drop/furnace routes; no new crushing route is invented.",
+  "mining": "Native deepslate hardness/sound, tool tags, exact XP providers and XP random consumption are retained. Create zinc requires an iron-tier tool, matching its pinned needs_iron_tool tag. Galosphere deepslate palladium has requiresCorrectToolForDrops=false in its pinned artifact; its blackstone variant preserves that provider behavior."
+}

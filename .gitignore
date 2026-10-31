@@ -7,6 +7,7 @@ __pycache__/
 /tools/pack/dist/
 /mods/aeroscapes-reimagine/.gradle/
 /mods/aeroscapes-reimagine/build/
+/mods/aeroscapes-reimagine/logs/
 /tools/docs/node_modules/
 /tools/docs/.astro/
 /tools/docs/dist/

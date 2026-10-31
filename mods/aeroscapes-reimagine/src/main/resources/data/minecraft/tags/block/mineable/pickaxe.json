@@ -1,4 +1,15 @@
 {
   "replace": false,
-  "values": []
+  "values": [
+    "aeroscapes_reimagine:blackstone_coal_ore",
+    "aeroscapes_reimagine:blackstone_copper_ore",
+    "aeroscapes_reimagine:blackstone_iron_ore",
+    "aeroscapes_reimagine:blackstone_gold_ore",
+    "aeroscapes_reimagine:blackstone_lapis_ore",
+    "aeroscapes_reimagine:blackstone_redstone_ore",
+    "aeroscapes_reimagine:blackstone_diamond_ore",
+    "aeroscapes_reimagine:blackstone_emerald_ore",
+    "aeroscapes_reimagine:blackstone_zinc_ore",
+    "aeroscapes_reimagine:blackstone_palladium_ore"
+  ]
 }

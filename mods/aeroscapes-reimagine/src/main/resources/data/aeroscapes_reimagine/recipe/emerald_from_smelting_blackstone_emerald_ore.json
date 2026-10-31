@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "group": "emerald",
+  "ingredient": {
+    "item": "aeroscapes_reimagine:blackstone_emerald_ore"
+  },
+  "result": {
+    "id": "minecraft:emerald"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}

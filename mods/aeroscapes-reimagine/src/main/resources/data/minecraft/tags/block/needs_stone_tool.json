@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "aeroscapes_reimagine:blackstone_copper_ore",
+    "aeroscapes_reimagine:blackstone_iron_ore",
+    "aeroscapes_reimagine:blackstone_lapis_ore",
+    "aeroscapes_reimagine:blackstone_palladium_ore"
+  ]
+}

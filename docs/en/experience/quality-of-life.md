@@ -38,6 +38,12 @@ Corpse provides inventory recovery through a body after death. Recovery after a 
 
 ## Controls and presentation
 
+[BetterF3](https://modrinth.com/mod/betterf3) groups and colors the information on the F3 debug screen. Its settings let you choose which sections to show.
+
+[Cherished Worlds](https://modrinth.com/mod/cherished-worlds) pins favorite worlds and servers at the top of their lists. A favorite world must be unmarked before it can be deleted; this protection complements keeping world backups.
+
+[Leave My Bars Alone](https://modrinth.com/mod/leave-my-bars-alone) keeps hunger visible beside mount health and shows experience while the jump bar is idle.
+
 Controlling adds search to the keybinding menu, helping players find the controls supplied by different mods. Items lying flat on the ground and deliberate pickup by right-click or crouching are desired future features; they are not currently supplied. Which resources should still be collected automatically remains to be selected.
 
 [Graphics, sound and animation](presentation/) covers character rendering, atmosphere and the included shader choices.

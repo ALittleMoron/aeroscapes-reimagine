@@ -7201,5 +7201,113 @@
     "status": "included",
     "origin": "Owner-selected Priority 3 rain puddles",
     "native_route_note": "Native NeoForge file requires Forgified Fabric API; no Connector. Client-only cosmetic rain and potion puddles, without server block-interaction features. Floods, raised water and drip puddles disabled; drip hook overlaps Subtle Effects villager sweat. Shader-water route retained with Complementary water vertex displacement disabled. Rain uses exposed top heightmap surfaces, not every lower island; ship rendering remains owner acceptance."
+  },
+  {
+    "slug": "betterf3",
+    "name": "BetterF3",
+    "project_id": "8shC1gFX",
+    "version_id": "maXNB1dn",
+    "version": "11.0.3",
+    "filename": "BetterF3-11.0.3-NeoForge-1.21.1.jar",
+    "sha512": "59c36a882669399dce2110db42df05e8fe935a2e1194c4bac49abffc3129b2e19373dfe3c4a3d2f8b22f21b1d66ad8cbd653944ce0a71ae05d3d65528d1b7514",
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/TreyRuffy/BetterF3",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected drop-in QoL for 0.2.1",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "8fa17df26d3650416bc124be7a264bc1566a3b26",
+    "file_size": 481646
+  },
+  {
+    "slug": "cherished-worlds",
+    "name": "Cherished Worlds",
+    "project_id": "3azQ6p0W",
+    "version_id": "o5lwJaRU",
+    "version": "10.1.1+1.21.1",
+    "filename": "cherishedworlds-neoforge-10.1.1+1.21.1.jar",
+    "sha512": "b8872d92472417c15ebf91bc9772223653b5d2f5b1f4b9a5d43f4a400cd711204e5a7c07d06721c10d0f527f937e9a8f36684dd986af4a6d6dcc9fda76b3ade7",
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LGPL-3.0-or-later",
+      "name": "GNU Lesser General Public License v3.0 or later",
+      "url": null
+    },
+    "source_url": "https://github.com/illusivesoulworks/cherishedworlds/",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected drop-in QoL for 0.2.1",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "aefc8c79ba62606a71f509a9b3c881f3fc4cad5c",
+    "file_size": 61728
+  },
+  {
+    "slug": "leave-my-bars-alone",
+    "name": "Leave My Bars Alone",
+    "project_id": "gK9mebQg",
+    "version_id": "27kYf7JI",
+    "version": "v21.1.2-1.21.1-NeoForge",
+    "filename": "LeaveMyBarsAlone-v21.1.2-1.21.1-NeoForge.jar",
+    "sha512": "b42b4dc923df1557a475e3528ff7aa21ed8fd031f99dc807ce4c06035bb40008bf7f713b4ba883d97d91d43064a0d7c5b4f73ba22473c72f32e0e0e36cacd8f2",
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "source_url": "https://github.com/Fuzss/leavemybarsalone",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "5WeWGLoJ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "QAGBst4M",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected drop-in QoL for 0.2.1",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "7156b542431ea057539070c0c00feb8c9f58c099",
+    "file_size": 51042
   }
 ]

@@ -1,0 +1,33 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "aeroscapes_reimagine:blackstone_emerald_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "aeroscapes_reimagine:emerald_from_smelting_blackstone_emerald_ore"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "aeroscapes_reimagine:emerald_from_smelting_blackstone_emerald_ore",
+      "aeroscapes_reimagine:emerald_from_blasting_blackstone_emerald_ore"
+    ]
+  }
+}

@@ -98,6 +98,21 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String saveUpgradeReport = System.getProperty("aeroscapes.regression.saveUpgradeReport");
+    if (saveUpgradeReport != null) {
+      SaveUpgradeRegression.verify(level, Path.of(saveUpgradeReport));
+      return;
+    }
+    String blackstoneOres = System.getProperty("aeroscapes.regression.blackstoneOres");
+    if (blackstoneOres != null) {
+      BlackstoneOreRegression.verify(level, Path.of(blackstoneOres));
+      return;
+    }
+    String release021Worldgen = System.getProperty("aeroscapes.regression.release021Worldgen");
+    if (release021Worldgen != null) {
+      Release021WorldgenRegression.start(level, Path.of(release021Worldgen));
+      return;
+    }
     String beeConstructionReport =
         System.getProperty("aeroscapes.regression.beeConstructionReport");
     if (beeConstructionReport != null) {

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "aeroscapes_reimagine:block/blackstone_gold_ore_top",
+    "side": "aeroscapes_reimagine:block/blackstone_gold_ore"
+  }
+}
