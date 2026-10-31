@@ -996,13 +996,6 @@
     "file_size": 1163890
   },
   {
-    "slug": "collective",
-    "name": "Collective",
-    "project_id": "e0M1UDsY",
-    "status": "deferred",
-    "reason": "Only needed by removed spawn helper."
-  },
-  {
     "slug": "colorwheel",
     "name": "Colorwheel",
     "project_id": "BzHgFoGz",
@@ -5488,13 +5481,6 @@
     "file_size": 856803
   },
   {
-    "slug": "trade-cycling",
-    "name": "Trade Cycling",
-    "project_id": "qpPoAL6m",
-    "status": "deferred",
-    "reason": "Beta optional villager UI convenience."
-  },
-  {
     "slug": "txnilib",
     "name": "TxniLib",
     "project_id": "vBbPDuOs",
@@ -7670,5 +7656,524 @@
     "dependencies": [],
     "status": "included",
     "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
+  },
+  {
+    "slug": "better-advancements",
+    "name": "Better Advancements",
+    "project_id": "Q2OqKxDG",
+    "version_id": "FjTYILOi",
+    "version": "0.4.3.21",
+    "filename": "BetterAdvancements-NeoForge-1.21.1-0.4.3.21.jar",
+    "sha512": "b3deafd146dc3ea6e879fbc92f00de5797319a1aa620fb3b39be64c19271dab2efa07f824cda7139f8c22f2524ea413949357f5469bb6de584d1386de069c6b7",
+    "sha1": "870521cfaa1a4cb6c830e2409e8b9e4cf179aff2",
+    "file_size": 98641,
+    "release_type": "beta",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-Dont-Be-a-Jerk",
+      "name": "",
+      "url": "https://github.com/way2muchnoise/BetterAdvancements/blob/master/LICENSE.md"
+    },
+    "source_url": "https://github.com/way2muchnoise/BetterAdvancements",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "exception": "Owner selected this exact Better Advancements 0.4.3.21 beta file after its status was disclosed in the QoL selection.",
+    "native_route_note": "Owner-approved exact beta only. Client-only advancement UI; native NeoForge>=21.1.0 and Minecraft[1.21.1,1.22) match locked platform.",
+    "source_review": {
+      "repository": "https://github.com/way2muchnoise/BetterAdvancements",
+      "commit": "7d961a26be737b03861565227ba3a4f6b8c2db35",
+      "url": "https://github.com/way2muchnoise/BetterAdvancements/tree/7d961a26be737b03861565227ba3a4f6b8c2db35",
+      "archive_sha512": "2b10051298f7b80e5691ecaf3f8df3b695e3c3aabec6fb20cc1292b866dffce526fc6f74b1f1daeeb549eb43a9a1b7ee462a45c41a48800acb65d203220d83c8",
+      "files": [
+        {
+          "path": "NeoForge/src/main/java/betteradvancements/neoforge/config/ConfigValues.java",
+          "sha256": "2dfbbfc7319cea839dbe66b7f9105d92415d1359c643cacc8f3c0a6d3c063f37"
+        },
+        {
+          "path": "Common/src/main/java/betteradvancements/common/util/CriterionGrid.java",
+          "sha256": "0598aaa8638cf0c9f74dd895224ca875c948b30b9b9c33ad4b8debed2a8fe5af"
+        }
+      ],
+      "language_byte_comparisons": [
+        {
+          "resource": "assets/betteradvancements/lang/en_us.json",
+          "source_path": ".runtime/qol-group1/presentation/source/BetterAdvancements/Common/src/main/resources/assets/betteradvancements/lang/en_us.json",
+          "bytes_equal": true,
+          "sha256": "67f05f4a3fe7f651f6145cd305a1e3209632de359ce884a9a13bfe0294c48d6c"
+        },
+        {
+          "resource": "assets/betteradvancements/lang/fr_fr.json",
+          "source_path": ".runtime/qol-group1/presentation/source/BetterAdvancements/Common/src/main/resources/assets/betteradvancements/lang/fr_fr.json",
+          "bytes_equal": true,
+          "sha256": "c06ebae676a696104c0fdf63b0e729217d514f5af68239eca9c9eef957166a37"
+        }
+      ],
+      "comparison": "Relevant configuration/UI methods compared with actual selected JAR; no complete reproducible-build claim."
+    },
+    "embedded_license": "\"Don't Be a Jerk\" non-commercial care-free license"
+  },
+  {
+    "slug": "advancement-plaques",
+    "name": "Advancement Plaques",
+    "project_id": "9NM0dXub",
+    "version_id": "OWylG33I",
+    "version": "1.6.8",
+    "filename": "AdvancementPlaques-1.21.1-neoforge-1.6.8.jar",
+    "sha512": "94724dd77d005f0a189c4843efcc2800cf3d3e01d1f1ac184c6f6ad7c921aec508e93fa0bfac0e641a74c1629d4e5e4d06b8c1a3e0d8e63f97db89b2f879c106",
+    "sha1": "829d33e71b30e9158d772f5963bb6020f6026d78",
+    "file_size": 195730,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "CC-BY-NC-ND-4.0",
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+      "url": null
+    },
+    "source_url": "https://github.com/AHilyard/AdvancementPlaques/",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "1OE8wbN0",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "5faXoLqX",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth-hosted file; no provider artwork or classes extracted into the owned mod.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "native_route_note": "Existing Iceberg1.3.2 satisfies required>=1.2.2; Prism1.0.11 satisfies optional>=1.0.8. The toast wrapper replaces the native advancement toast and its sound instead of forwarding a duplicate. Config uses the existing version-gated Iceberg native editor view; provider JAR unchanged.",
+    "source_review": {
+      "repository": "https://github.com/AHilyard/AdvancementPlaques",
+      "commit": "0968907d79320d400761c7c3a9cbebab5b3a8064",
+      "url": "https://github.com/AHilyard/AdvancementPlaques/tree/0968907d79320d400761c7c3a9cbebab5b3a8064",
+      "archive_sha512": "417c995bd495a3a90f2f823fadc1a7d811a9f7badfb17216297d822f7c6759e216a344bb74a20f99aea6db855c062c53c87a5dbca9521fbdfe45c9ac8834d50b",
+      "files": [
+        {
+          "path": "common/src/main/java/com/anthonyhilyard/advancementplaques/config/AdvancementPlaquesConfig.java",
+          "sha256": "2892b57c4a8c924cee85ea0e45c974fa8e8b078d2cea4cbfa73ddde441e784fa"
+        },
+        {
+          "path": "common/src/main/java/com/anthonyhilyard/advancementplaques/ui/ToastComponentWrapper.java",
+          "sha256": "318001413fa3499d3d4468de54944eb33f5b5b5a90f62bbb51b2f020a5aa4d17"
+        },
+        {
+          "path": "common/src/main/java/com/anthonyhilyard/advancementplaques/ui/render/AdvancementPlaque.java",
+          "sha256": "3eb1f6936d1c7bac042acace0c721f2e5e079288934bd748427c70c929e18c67"
+        }
+      ],
+      "language_byte_comparisons": [],
+      "comparison": "Relevant configuration/UI methods compared with actual selected JAR; no complete reproducible-build claim."
+    },
+    "embedded_license": "CC BY-NC-ND 4.0"
+  },
+  {
+    "slug": "pick-up-notifier",
+    "name": "Pick Up Notifier",
+    "project_id": "ZX66K16c",
+    "version_id": "5NZounJc",
+    "version": "v21.1.1-1.21.1-NeoForge",
+    "filename": "PickUpNotifier-v21.1.1-1.21.1-NeoForge.jar",
+    "sha512": "9754f44f3bf084f45b47c88c3830dc37ffc68b4b5d6cf03ca5015177611068e8c1725670d20c0ed4674fb619227b18ccbff39cfc687a46f5258caf91c96db6db",
+    "sha1": "90d3fe207c95a3a5d849ebf8d70ffa885694e30f",
+    "file_size": 97094,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "source_url": "https://github.com/Fuzss/pickupnotifier",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "QAGBst4M",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "5WeWGLoJ",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "required",
+      "server": "optional"
+    },
+    "native_route_note": "Install both sides: real server item-pickup packets retain partial-stack and backpack pickup quantities; client-only fallback is less complete. Existing Puzzles Lib21.1.66 satisfies native>=21.1.0. Client HUD remains owner acceptance.",
+    "source_review": {
+      "repository": "https://github.com/Fuzss/pickupnotifier",
+      "commit": "1e3ffa627b17f22830d332f75f5bbba18a2649c2",
+      "url": "https://github.com/Fuzss/pickupnotifier/tree/1e3ffa627b17f22830d332f75f5bbba18a2649c2",
+      "archive_sha512": "8cfd4a4a7209b3324f0d466e2113f92c8c8f07340af1a8498cfd63ee370992be1e853cc2d742d9132cc2301a6945a51cd3de01eb447eb7f1bbb90442372415f1",
+      "files": [
+        {
+          "path": "Common/src/main/java/fuzs/pickupnotifier/config/ClientConfig.java",
+          "sha256": "c5690ed0a0416e8d3846ae44c2a1ceae58d05837829332a33b91d990bb61b53b"
+        },
+        {
+          "path": "Common/src/main/java/fuzs/pickupnotifier/config/ServerConfig.java",
+          "sha256": "c91e805e501ea63ea37fac9c84900c71a3bb84ddfaad6be656e7c5c873209c08"
+        },
+        {
+          "path": "NeoForge/src/main/java/fuzs/pickupnotifier/neoforge/handler/NeoForgeItemPickupHandler.java",
+          "sha256": "cb96cedc0d2cac40e9a67a355d697b4b371cb20bb6968d06f53b41a4d26c2b0c"
+        }
+      ],
+      "language_byte_comparisons": [],
+      "comparison": "Relevant configuration/UI methods compared with actual selected JAR; no complete reproducible-build claim.",
+      "timing": "Selected JAR publication2025-04-11T06:14:13Z; matching version source fix commit2025-04-11T06:15:05Z,52 seconds later. Branch head later changes build configuration."
+    },
+    "embedded_license": "MPL-2.0"
+  },
+  {
+    "slug": "boat-item-view",
+    "name": "Boat Item View",
+    "project_id": "BdKIyOLe",
+    "version_id": "6EYLZUOH",
+    "version": "1.21-1.21.1-0.0.6-neoforge",
+    "filename": "boatiview-neoforge-0.0.6-1.21.1.jar",
+    "sha512": "b61bcfb81daadcbd451538e088e34e42ec8876b62a1a960b729558dba9560614b76f593e743b1241703d3eae606f87a3ccfa01931da45e740526d811ca8df0f9",
+    "sha1": "77cadff679ed3f533f0510655d1d6088fb876d0f",
+    "file_size": 52795,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": "https://github.com/50ap5ud5/BoatItemView/blob/1.21.x-multiloader/LICENSE"
+    },
+    "source_url": "https://github.com/50ap5ud5/BoatItemView",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "native_route_note": "Exact0.0.6 descriptor advertises Minecraft[1.21,1.21.1) despite provider1.21.1 and source minecraft_version1.21.1. Native FML4.0.42 config/fml.toml removes only boatiview -> minecraft dependency; pack remains locked to Minecraft1.21.1 and this exact file. NeoForge dependency remains checked. Compare release source43800874a63d8ea4b7abdac612596b3f7ebdb607 on changes; graphical hand/camera acceptance pending.",
+    "source_review": {
+      "source_url": "https://github.com/50ap5ud5/BoatItemView",
+      "source_revision": "43800874a63d8ea4b7abdac612596b3f7ebdb607",
+      "artifact_logic_compared_to_source": true
+    },
+    "native_requirements": {
+      "neoforge": "[21.0.167,)",
+      "minecraft": "[1.21, 1.21.1)"
+    }
+  },
+  {
+    "slug": "trade-cycling",
+    "name": "Trade Cycling",
+    "project_id": "qpPoAL6m",
+    "version_id": "9dxmi65z",
+    "version": "neoforge-1.21.1-1.0.23",
+    "filename": "trade-cycling-neoforge-1.21.1-1.0.23.jar",
+    "sha512": "0a9b440da43f6946299fe69627969e5403a79a3d7b5ce8da3effde905d3acb179da4c2d86d32f2eeda33df2574cc908323c4f884e1e762956bbfd66d153a48bc",
+    "sha1": "e72bceb0d118839658f3eda9a60301b50fcef01c",
+    "file_size": 86678,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/henkelmax/trade-cycling",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "AhllI99f",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "required",
+      "server": "required"
+    },
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth-hosted file; no provider artwork or classes extracted into the owned mod.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "source_review": {
+      "source_url": "https://github.com/henkelmax/trade-cycling",
+      "source_revision": "a48f001f1b7f8bbe2ad5a268ea01944f7ba1b191",
+      "artifact_logic_compared_to_source": true
+    },
+    "native_requirements": {
+      "neoforge": "[21.0.0-beta,)",
+      "minecraft": "[1.21,1.21.1]"
+    }
+  },
+  {
+    "slug": "dismount-entity",
+    "name": "Dismount Entity",
+    "project_id": "H7N61Wcl",
+    "version_id": "5ihAfKKp",
+    "version": "1.21.1-3.8-fabric+forge+neo",
+    "filename": "dismountentity-1.21.1-3.8.jar",
+    "sha512": "6ddad20f72271cf44ab40a46ffc1b67cccc571b196c8f099e939bd9fce861ec31fb06ca7010e2f6970618e422a5af19b2fdbd61a1d2c7c708280a4ce6324c25a",
+    "sha1": "4bc93e8d86fac197773445c79147119d79b09df6",
+    "file_size": 40095,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/Serilum/Dismount-Entity",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "e0M1UDsY",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "unsupported",
+      "server": "required"
+    },
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth-hosted file; no provider artwork or classes extracted into the owned mod.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "native_route_note": "Install on both physical sides for the selected singleplayer integrated-server route; provider client=unsupported describes the server-owned effect. Native unrestricted common entry point registers Collective Dusk config on client and handles interaction only on server. Crouch+RMB ejects nonplayer passengers from clicked entity; player passengers remain by default. Requires Collective>=8.40.",
+    "source_review": {
+      "source_url": "https://github.com/Serilum/Dismount-Entity",
+      "source_revision": "404c9bc88eb5ea8ffe63a5f6342db07e24e33642",
+      "artifact_logic_compared_to_source": true
+    },
+    "native_requirements": {
+      "collective": "[8.40,)",
+      "minecraft": "[1.21,1.21.1]"
+    }
+  },
+  {
+    "slug": "clumps",
+    "name": "Clumps",
+    "project_id": "Wnxd13zP",
+    "version_id": "jo7lDoK4",
+    "version": "19.0.0.1",
+    "filename": "Clumps-neoforge-1.21.1-19.0.0.1.jar",
+    "sha512": "314d8d8e640d73041f27e0f3f2cad7aad8b4c77dbd7fb31700ef7760362261f77085eed5289555c725d99c3f47a114e7290cd608f39c9f0f12ef74958463bdcc",
+    "sha1": "fa2576297c7bd12b28aa7070e8141792bd66da4c",
+    "file_size": 18382,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/jaredlll08/Clumps",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "native_route_note": "Installed on both physical sides so the common entrypoint supplies XP merge/pickup and Mending handlers to the integrated server in singleplayer as well as a dedicated server. Server-side gameplay logic does not imply server-only installation in this pack; original provider optional environment labels are retained separately.",
+    "source_review": {
+      "source_url": "https://github.com/jaredlll08/Clumps",
+      "source_revision": "9dc57a1d3bd3cab65a34394718bc5813c46c9915",
+      "artifact_logic_compared_to_source": true
+    },
+    "native_requirements": {
+      "neoforge": "[4,)",
+      "minecraft": "[1.21.1]"
+    }
+  },
+  {
+    "slug": "emi-trades-reborn",
+    "name": "EMI Trades Reborn",
+    "project_id": "jbECV090",
+    "version_id": "VPRhN8yf",
+    "version": "2.0.0+neoforge",
+    "filename": "emitrades-reborn-2.0.0+mc1.21.1-neoforge.jar",
+    "sha512": "680b6417a7043b5df2094630b1d779f5c3f15c4af718d73b1188c6544bddbb6afff5e1aa7e9701fd5e65c2e1e52267a8c16fe4681944c31df2092ab31482b716",
+    "sha1": "d9f465b94aaa07e67fdc2b88fdc52081a7f09dc9",
+    "file_size": 34297,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "fRiHVvU7",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth-hosted file; no provider artwork or classes extracted into the owned mod.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "native_route_note": "Provider labels unchanged file as release2.0.0+neoforge/MIT; actual native descriptor retains internal version2.0.0+alpha.1 and All Rights Reserved. Preserve discrepancy; no new experimental provider file selected. Required EMI>=1.1.22+1.21.1 matches installed1.1.22. Uses vanilla/current-JVM trade maps, special renderers and sampled custom offers, not authoritative remote-server trade synchronization.",
+    "embedded_license": "All Rights Reserved",
+    "source_review": {
+      "reference_repository": "https://github.com/Prismwork/EMITrades",
+      "reference_commit": "88c57761ffadda7be1c02d18c48d7719a9be2b43",
+      "comparison": "Author-linked upstream reference matches inspected methods; continuation build revision unavailable. Actual descriptor version2.0.0+alpha.1/ARR differs from provider release2.0.0/MIT.",
+      "upstream_copyright": "Copyright (c) 2022-2023 Flamarine, 2023-2025 Prismwork",
+      "upstream_license": "pack/licenses/EMI-Trades-upstream-MIT.txt"
+    }
+  },
+  {
+    "slug": "collective",
+    "name": "Collective",
+    "project_id": "e0M1UDsY",
+    "version_id": "E1JoWIGl",
+    "version": "1.21.1-8.72-fabric+forge+neo",
+    "filename": "collective-1.21.1-8.72.jar",
+    "sha512": "ca7e6dea4faabd56ee7c9ae60beb345f613afd745985a8f50485c16b8fa200067374ea55d860383bc45cff4c0dd98c2daf1e50701061d34616bae56f13be0548",
+    "sha1": "8aec5f9a312a695fe9dd7da01db949b508f3ec40",
+    "file_size": 1319036,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/Serilum/Collective",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected remaining QoL group 1 for 0.2.3",
+    "provider_environment": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "distribution_review": {
+      "unchanged_file": "Unchanged official Modrinth-hosted file; no provider artwork or classes extracted into the owned mod.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "native_route_note": "Shared both-side library required by Dismount Entity, exact8.72. Native Dusk config/commands use literal display strings. Pack disables automatic download of unpinned translations; native setting stays configurable.",
+    "source_review": {
+      "source_url": "https://github.com/Serilum/Collective",
+      "source_revision": "b75424dc20b26523c9fc05a228237b0e2365294c",
+      "artifact_logic_compared_to_source": true
+    },
+    "native_requirements": {
+      "minecraft": "[1.21,1.21.1]"
+    }
   }
 ]

@@ -1,0 +1,4 @@
+{
+  "keys": ["minecraft:milk_bucket"],
+  "soundEvent": "minecraft:item.bucket.fill"
+}

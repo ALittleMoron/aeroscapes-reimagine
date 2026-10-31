@@ -4,6 +4,15 @@ description: Version history.
 status: available
 ---
 
+## 0.2.3
+
+- Added [Better Advancements](https://modrinth.com/mod/better-advancements), [Advancement Plaques](https://modrinth.com/mod/advancement-plaques) and [Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier) for advancement browsing, notifications and pickup information.
+- Added [Boat Item View](https://modrinth.com/mod/boat-item-view), [Trade Cycling](https://modrinth.com/mod/trade-cycling), [Dismount Entity](https://modrinth.com/mod/dismount-entity) and [Clumps](https://modrinth.com/mod/clumps) for boating, trading, dismounting mobs and collecting experience.
+- Added villager and wandering trader information through [EMI Trades Reborn](https://modrinth.com/mod/emi-trades-reborn).
+- Supplied missing English and Russian settings, advancement criteria and trade information for the new conveniences.
+- Include [Clumps](https://modrinth.com/mod/clumps) in client installations so experience merging also works in singleplayer.
+- Use a liquid interaction sound for milk buckets instead of the cow voice assigned by [Sounds](https://modrinth.com/mod/sound).
+
 ## 0.2.2
 
 - Disable item model previews in the starting [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips) configuration to prevent overlap with [Quark](https://modrinth.com/mod/quark)'s attribute icons.

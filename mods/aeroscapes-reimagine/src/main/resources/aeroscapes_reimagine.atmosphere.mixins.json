@@ -24,9 +24,20 @@
     "PuzzleLoadingOverlayMixin",
     "RodCaptureTraceMixin",
     "RodLineTraceMixin",
-    "FastRodCaptureMixin"
+    "FastRodCaptureMixin",
+    "DuskEntryLanguageMixin",
+    "DuskSettingLanguageMixin",
+    "DuskTextLanguageMixin",
+    "PickupNotifierLanguageMixin",
+    "EmiTradesOutputMixin",
+    "EmiTradesStatisticsMixin",
+    "AdvancementCriterionLanguageMixin",
+    "EmiTradesPaymentMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "mixins": [
+    "DuskCommandLanguageMixin"
+  ]
 }

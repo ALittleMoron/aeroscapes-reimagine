@@ -20,6 +20,14 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("ponder", "1.0.82+mc1.21.1");
     } else if (mixinClassName.endsWith("PuzzlesConfigurationLanguageMixin")) {
       versions = Map.of("puzzleslib", "21.1.66");
+    } else if (mixinClassName.contains("Dusk")) {
+      versions = Map.of("collective", "8.72");
+    } else if (mixinClassName.contains("EmiTrades")) {
+      versions = Map.of("emitrades", "2.0.0+alpha.1", "emi", "1.1.22+1.21.1+neoforge");
+    } else if (mixinClassName.endsWith("PickupNotifierLanguageMixin")) {
+      versions = Map.of("pickupnotifier", "21.1.1");
+    } else if (mixinClassName.endsWith("AdvancementCriterionLanguageMixin")) {
+      versions = Map.of("betteradvancements", "0.4.3.21", "zeta", "1.1-40");
     } else if (mixinClassName.endsWith("QuiverEmfMixin")) {
       versions = Map.of("entity_model_features", "3.3.12");
     } else if (mixinClassName.endsWith("PunchyEmfMixin")) {

@@ -50,6 +50,7 @@ public final class AtmosphereContractTest {
     nativeConfigurationTranslations();
     puzzlesConfigurationTranslations();
     IcebergConfigBridgeTest.verify();
+    AdvancementCriterionTranslationsTest.verify();
     ClassNode attachment = provider("punchy/client/render/FishingLineAttachment");
     method(
         attachment,

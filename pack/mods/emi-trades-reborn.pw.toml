@@ -1,0 +1,12 @@
+name = "EMI Trades Reborn"
+filename = "emitrades-reborn-2.0.0+mc1.21.1-neoforge.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/jbECV090/versions/VPRhN8yf/emitrades-reborn-2.0.0%2Bmc1.21.1-neoforge.jar"
+hash-format = "sha512"
+hash = "680b6417a7043b5df2094630b1d779f5c3f15c4af718d73b1188c6544bddbb6afff5e1aa7e9701fd5e65c2e1e52267a8c16fe4681944c31df2092ab31482b716"
+
+[update.modrinth]
+mod-id = "jbECV090"
+version = "VPRhN8yf"

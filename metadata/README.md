@@ -142,6 +142,16 @@ codec and resource loader accept per-block settings at
 no copied provider models or textures. It and the new third-party resourcepacks
 are switchable initial selections for fresh profiles, not enforced resources.
 
+The same pack supplies an independently authored milk-bucket sound profile at
+`assets/minecraft/sounds/items/moo.json` for the unchanged
+[Sounds 2.4.22+lts file](https://modrinth.com/mod/sound/version/kti7i9SG).
+Its native item-profile codec requires `keys` and `soundEvent`; omitted pitch and
+volume inherit the action settings. Milk uses `minecraft:item.bucket.fill`, as
+does the provider's water-bucket profile, replacing its cow ambient event.
+The existing file pack is selected above `mod_resources`, so native resource
+priority resolves the whole profile without modifying the provider or mod order.
+No provider sound samples, code or other item profiles are included.
+
 ### Furniture, building materials and leaves
 
 Handcrafted 4.0.3 and Chipped 4.0.2 are unchanged official NeoForge files on
@@ -404,6 +414,16 @@ The 18 adapted `data/natures_spirit/` JSON files from 2.2.5 / `MGjl80vc` use the
 The owned stateless End-area correction adapts the approach of Partonetrain's CC0-1.0 [TerrablEndFix](https://github.com/Partonetrain/terrablendfix/blob/8c29736c54a677742d4bb309713b82f229642be6/neoforge/src/main/java/info/partonetrain/terrablendfix/mixin/LayeredNoiseUtilMixin.java). It substitutes only the erroneous island-biome input and has no process-global first-call flag. The published TerrablEndFix JAR is not installed; inspection found that its stateful form fixed only the first initialization. The upstream defect is also described in [TerraBlender issue 179](https://github.com/Glitchfiend/TerraBlender/issues/179).
 
 Compile-only API `com.github.glitchfiend:TerraBlender-neoforge:1.21.1-4.1.0.8` comes from official Forge Maven without transitives or bundling. Gradle strict verification pins its JAR/POM. Runtime TerraBlender remains the unchanged Modrinth file `6e8GCrLb`, with original LGPLv3. Maven/runtime ZIP entries match except `META-INF/MANIFEST.MF`, so archive hashes are not interchangeable. The [owned TerraBlender adapter](../mods/aeroscapes-reimagine/src/main/java/dev/aeroscapes/mixin/TerraBlenderEndIslandMixin.java) records the exact-version/config dependence.
+
+## QoL additions
+
+The remaining first QoL group uses unchanged official files for [Better Advancements](https://modrinth.com/mod/better-advancements), [Advancement Plaques](https://modrinth.com/mod/advancement-plaques), [Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier), [Boat Item View](https://modrinth.com/mod/boat-item-view), [Trade Cycling](https://modrinth.com/mod/trade-cycling), [Dismount Entity](https://modrinth.com/mod/dismount-entity), [Clumps](https://modrinth.com/mod/clumps) and [EMI Trades Reborn](https://modrinth.com/mod/emi-trades-reborn). [Collective](https://modrinth.com/mod/collective) is the only additional library; existing libraries satisfy the other native requirements. Artifact records retain exact source revisions, hashes, ranges and comparison limits.
+
+The selected [Boat Item View file](https://modrinth.com/mod/boat-item-view/version/6EYLZUOH) was compiled for Minecraft 1.21.1, but its descriptor erroneously excludes that version. The exact FML 4.0.42 `dependencyOverrides` mechanism removes only this mod's Minecraft dependency clause. The pack remains pinned to Minecraft 1.21.1 and that exact JAR; other dependency checks remain active. Reassess this override with either update. The native default displays filled maps; it does not enable every item.
+
+[Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier) is installed on both sides for actual partial-stack and backpack pickup packets. [Dismount Entity](https://modrinth.com/mod/dismount-entity), [Collective](https://modrinth.com/mod/collective) and [Clumps](https://modrinth.com/mod/clumps) are also installed on both sides for the integrated server. Clumps handles server-side orb behavior, but singleplayer needs its common entrypoint in the physical client installation. The remaining additions are client-only. Automatic mutable translation downloads in Collective are disabled in the starting config; shipped language supplements and display adapters preserve configuration identities and player values.
+
+[EMI Trades Reborn](https://modrinth.com/mod/emi-trades-reborn/version/VPRhN8yf) is published as a release with MIT metadata, while its unchanged descriptor retains `2.0.0+alpha.1` and ARR. Its continuation build revision is unavailable. The inspected author-linked [upstream reference](https://github.com/Prismwork/EMITrades/tree/88c57761ffadda7be1c02d18c48d7719a9be2b43) and original MIT notice are retained separately; neither overrides the actual descriptor. Owned adapters repair wrapped-output item identity and shared fisherman payment lists, and translate display statistics. The viewer samples some custom offers and does not synchronize remote-server trade factories or cover every special merchant. Compile-only APIs are not bundled in the owned mod.
 
 ## Artifact metadata discrepancies
 

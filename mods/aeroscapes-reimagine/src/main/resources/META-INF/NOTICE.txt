@@ -143,3 +143,16 @@ Three internal Dungeons and Taverns enchantment names retain their original
 warning meaning; runtime description-only patches preserve all effect data.
 Exact provider versions, hashes, terms and source limitations are recorded in
 localization-sources.json and pack licenses/THIRD-PARTY-NOTICES.txt.
+
+Remaining first QoL group:
+Independent display adapters supplement Better Advancements, Advancement Plaques,
+Pick Up Notifier, Boat Item View, Trade Cycling, Dismount Entity, Collective and
+EMI Trades Reborn. Configuration values, field identities and original file
+comments are preserved. Criterion aliases resolve existing item/block/entity/
+biome/trim text at display time; provider/player criterion labels retain priority.
+The EMI trade adapters retain underlying item identity and decorated tooltips,
+snapshot the provider's two merchant payment slots, and localize XP/use counts.
+Compile-only EMI and EMI Trades APIs are not distributed in this binary.
+All provider JARs remain unchanged under their original terms. Exact sources,
+version discrepancies, resource hashes and interpretation limits are recorded in
+META-INF/localization-sources.json and metadata/artifacts.json in the pack source.

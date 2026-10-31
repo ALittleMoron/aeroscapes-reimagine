@@ -38,6 +38,8 @@ repositories {
       includeModule("maven.modrinth", "puzzles-lib")
       includeModule("maven.modrinth", "flerovium")
       includeModule("maven.modrinth", "iceberg")
+      includeModule("maven.modrinth", "emi")
+      includeModule("maven.modrinth", "emi-trades-reborn")
       includeModule("maven.modrinth", "create-aeronautics")
       includeModule("maven.modrinth", "create")
     }
@@ -124,6 +126,8 @@ dependencies {
   atmosphereApi("maven.modrinth:puzzles-lib:kmN5PWk9")
   atmosphereApi("maven.modrinth:flerovium:oU1q3eIj")
   atmosphereApi("maven.modrinth:iceberg:IMssx9du")
+  atmosphereApi("maven.modrinth:emi:ouSj7NfF")
+  atmosphereApi("maven.modrinth:emi-trades-reborn:VPRhN8yf")
   compileOnly(files(atmosphereApi))
   compileOnly(
     files(fileTree(sableNestedApiDirectory) { include("*.jar") }).builtBy(extractSableApi)
@@ -269,6 +273,20 @@ val celestialLayoutTest by
     mainClass = "dev.aeroscapes.atmosphere.CelestialLayoutTest"
   }
 
+val tradeRecipeContractTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath =
+      policy.runtimeClasspath +
+        files(
+          tasks
+            .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
+            .flatMap { it.resourcesArtifact }
+        )
+    mainClass = "dev.aeroscapes.qualityoflife.TradeRecipeContractTest"
+  }
+
 tasks.register<JavaExec>("generateCelestialAtlas") {
   group = "build"
   dependsOn(tasks.named(policy.classesTaskName))
@@ -293,6 +311,7 @@ tasks.check {
     shoulderCameraTransformerTest,
     atmosphereContractTest,
     celestialLayoutTest,
+    tradeRecipeContractTest,
     worldgenRegressionJar,
   )
 }

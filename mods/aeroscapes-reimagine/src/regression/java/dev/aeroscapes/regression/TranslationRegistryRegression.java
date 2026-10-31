@@ -91,6 +91,17 @@ public final class TranslationRegistryRegression {
       tabs.add(id.toString(), title);
     }
     report.add("creative_tabs", tabs);
+    JsonObject criteria = new JsonObject();
+    level.getServer().getAdvancements().getAllAdvancements().stream()
+        .sorted(Comparator.comparing(holder -> holder.id().toString()))
+        .filter(holder -> holder.value().requirements().size() > 1)
+        .forEach(
+            holder -> {
+              JsonArray names = new JsonArray();
+              holder.value().requirements().names().stream().sorted().forEach(names::add);
+              criteria.add(holder.id().toString(), names);
+            });
+    report.add("advancement_criteria", criteria);
     Path path = output.toAbsolutePath().normalize();
     try {
       Files.createDirectories(path.getParent());

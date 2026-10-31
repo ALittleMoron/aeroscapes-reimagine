@@ -275,3 +275,32 @@ https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions
 Equipment Compare, Legendary Tooltips, Iceberg and Prism retain CC BY-NC-ND 4.0.
 Independently authored display labels and concise functional help do not modify
 their binaries, configuration schema/parser, identifiers or player-defined values.
+
+Remaining first QoL group:
+Better Advancements: way2muchnoise; Don't Be a Jerk noncommercial license.
+https://modrinth.com/mod/better-advancements/version/FjTYILOi
+Advancement Plaques: Grend; CC-BY-NC-ND-4.0.
+https://modrinth.com/mod/advancement-plaques/version/OWylG33I
+Pick Up Notifier: Fuzs; MPL-2.0 code, original assets retain their separate ARR notice.
+https://modrinth.com/mod/pick-up-notifier/version/5NZounJc
+Boat Item View: 50ap5ud5; LGPL-3.0-only.
+https://modrinth.com/mod/boat-item-view/version/6EYLZUOH
+Trade Cycling: henkelmax; All Rights Reserved.
+https://modrinth.com/mod/trade-cycling/version/9dxmi65z
+Dismount Entity and Collective: Serilum; All Rights Reserved.
+https://modrinth.com/mod/dismount-entity/version/5ihAfKKp
+https://modrinth.com/mod/collective/version/E1JoWIGl
+Clumps: Jaredlll08; MIT.
+https://modrinth.com/mod/clumps/version/jo7lDoK4
+EMI Trades Reborn: unofficial continuation of EMI Trades by Flamarine/Prismwork.
+https://modrinth.com/mod/emi-trades-reborn/version/VPRhN8yf
+Provider release metadata says MIT; unchanged JAR descriptor says All Rights
+Reserved and internal version 2.0.0+alpha.1. Original author-linked upstream MIT
+notice is retained in licenses/EMI-Trades-upstream-MIT.txt; that reference is not
+proof of the continuation's complete build provenance. Do not silently replace
+the descriptor's terms. No provider JAR is modified or bundled into the owned mod.
+Exact native descriptors, source comparisons and limitations: metadata/artifacts.json.
+Independent English/Russian functional labels and display adapters belong to the
+owned mod. Advancement criterion aliases reuse effective native translations
+without copying their dictionaries. Collective's optional translation downloads
+are disabled by the starting config; later player choices remain configurable.

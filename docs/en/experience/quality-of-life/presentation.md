@@ -46,6 +46,8 @@ These resourcepacks and the small atmosphere integration pack are selected in ne
 
 [AmbientSounds](https://modrinth.com/mod/ambientsounds) adds environmental sound, while [Sounds](https://modrinth.com/mod/sound) supplies material footsteps and expands everyday interaction sounds. [Drip Sounds](https://modrinth.com/mod/dripsounds) adds sounds for dripping particles. [Subtle Effects](https://modrinth.com/mod/subtle-effects) supplies waterfall mist, water splashes and ripples, fireflies, sparks and other small details.
 
+The **Aeroscapes Reimagine atmosphere integration** resourcepack gives milk buckets the same liquid interaction sound as water buckets instead of a cow's voice. Keep it enabled for this adjustment.
+
 [Ambient Environment](https://modrinth.com/mod/ambient-environment) varies vegetation colors within biomes. [Better Smoke](https://modrinth.com/mod/better-smoke) gives campfires wind-blown plumes that combine when campfires are close together. [Eating Animations](https://modrinth.com/mod/eating-animations) changes supported food and drink sprites as they are consumed. [Visuality: Reforged](https://modrinth.com/mod/visuality-forge) adds hit particles and subtle ore sparkles, while [Particle Interactions](https://modrinth.com/mod/particle-interactions) adds feedback for placing blocks and using tools. Water ripples, axe stripping and fire sparks remain with Subtle Effects.
 
 [Atmospheric Fauna](https://modrinth.com/mod/atmospheric-fauna) adds decorative birds, including above the void and on lower islands. These birds are visual particles; they cannot be caught or bred.

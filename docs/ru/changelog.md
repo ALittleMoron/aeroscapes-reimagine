@@ -4,6 +4,15 @@ description: История версий.
 status: available
 ---
 
+## 0.2.3
+
+- Добавлены [Better Advancements](https://modrinth.com/mod/better-advancements), [Advancement Plaques](https://modrinth.com/mod/advancement-plaques) и [Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier) для просмотра достижений, уведомлений и сведений о подобранных предметах.
+- Добавлены [Boat Item View](https://modrinth.com/mod/boat-item-view), [Trade Cycling](https://modrinth.com/mod/trade-cycling), [Dismount Entity](https://modrinth.com/mod/dismount-entity) и [Clumps](https://modrinth.com/mod/clumps) для плавания на лодках, торговли, высадки мобов и сбора опыта.
+- Добавлена информация о торговле с жителями и странствующим торговцем через [EMI Trades Reborn](https://modrinth.com/mod/emi-trades-reborn).
+- Дополнены недостающие английские и русские настройки, условия достижений и сведения о торговле для новых удобств.
+- [Clumps](https://modrinth.com/mod/clumps) включён в клиентскую установку, чтобы объединение опыта работало и в одиночной игре.
+- Для молочного ведра используется звук жидкости вместо голоса коровы, назначенного [Sounds](https://modrinth.com/mod/sound).
+
 ## 0.2.2
 
 - В стартовой конфигурации [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips) выключены превью моделей предметов, перекрывавшие значки характеристик [Quark](https://modrinth.com/mod/quark).

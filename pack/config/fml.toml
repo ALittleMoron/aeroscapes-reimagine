@@ -1,3 +1,5 @@
 # The owned Sable lighting adapter handles this exact ScalableLux incompatibility.
 [dependencyOverrides]
 sable = ["-scalablelux"]
+# The exact Boat Item View file incorrectly excludes its advertised Minecraft 1.21.1 target.
+boatiview = ["-minecraft"]

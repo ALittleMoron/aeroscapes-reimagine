@@ -49,6 +49,7 @@ RELEASE_EXCEPTIONS = frozenset(
         ("qyVF9oeo", "85fA7L1W", "beta"),
         ("xFCYuAs8", "Js4y2r4d", "beta"),
         ("u58R1TMW", "IITF0PRC", "beta"),
+        ("Q2OqKxDG", "FjTYILOi", "beta"),
     }
 )
 COMPAT_DIRECTORY = "global_packs/required_data/aeroscapes_reimagine_compat"

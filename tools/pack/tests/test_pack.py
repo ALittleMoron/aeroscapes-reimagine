@@ -629,6 +629,7 @@ def test_exception_text_cannot_authorize_an_unrelated_beta(
         ("qyVF9oeo", "85fA7L1W", "beta"),
         ("xFCYuAs8", "Js4y2r4d", "beta"),
         ("u58R1TMW", "IITF0PRC", "beta"),
+        ("Q2OqKxDG", "FjTYILOi", "beta"),
     ],
 )
 def test_selected_prerelease_exception_is_exact(

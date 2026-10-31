@@ -24,6 +24,8 @@ The convenience tools help players find information, organize belongings and rem
 
 Shulker Box Tooltip previews shulker-box contents. Effect Timer Plus adds a countdown and potency indicator to status-effect icons.
 
+[EMI Trades Reborn](https://modrinth.com/mod/emi-trades-reborn) adds villager and wandering trader recipes to [EMI](https://modrinth.com/mod/emi), with profession, level and base prices. A villager's actual price can differ because of discounts and demand. Random and special modded offers may appear as individual examples; check the trader's actual offers. On a remote server, server changes to trades may be absent from the client reference.
+
 ## Inventory and storage
 
 [Inventory Profiles Next](https://modrinth.com/project/O7RBXm3n) provides sorting and automatic refill, while Mouse Tweaks expands mouse-based inventory handling. Refill arrow overlays on inventory and hotbar slots are hidden by default.
@@ -33,6 +35,8 @@ Sophisticated Backpacks and Sophisticated Storage provide portable and stationar
 [Create Style Sophisticated Backpacks](https://modrinth.com/resourcepack/create-sophisticated-backpacks) changes the existing backpacks and supported upgrade icons to match Create's visual style. It is an optional resourcepack; backpack storage and upgrade mechanics remain the same.
 
 Carry On helps move supported blocks. Ordinary and trial spawners are excluded, and the mod’s native restrictions still apply to other blocks.
+
+[Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier) briefly shows the names and quantities of collected items, including supported backpack pickups. [Clumps](https://modrinth.com/mod/clumps) merges nearby experience orbs; collected experience still repairs equipment with Mending and fills the experience bar.
 
 ## Maps and recovery
 
@@ -49,6 +53,12 @@ Corpse provides inventory recovery through a body after death. Recovery after a 
 [Cherished Worlds](https://modrinth.com/mod/cherished-worlds) pins favorite worlds and servers at the top of their lists. A favorite world must be unmarked before it can be deleted; this protection complements keeping world backups.
 
 [Leave My Bars Alone](https://modrinth.com/mod/leave-my-bars-alone) keeps hunger visible beside mount health and shows experience while the jump bar is idle.
+
+[Better Advancements](https://modrinth.com/mod/better-advancements) expands the advancement screen, while [Advancement Plaques](https://modrinth.com/mod/advancement-plaques) replaces ordinary advancement notifications with decorated plaques. As in vanilla Minecraft, the screen stays empty until the first advancement is earned. The mod list provides screen, appearance and notification sound settings.
+
+[Boat Item View](https://modrinth.com/mod/boat-item-view) keeps held maps visible while rowing an ordinary boat. Crouch and right-click a boat or minecart to eject its mob passengers with [Dismount Entity](https://modrinth.com/mod/dismount-entity). Hold an item if [Carry On](https://modrinth.com/mod/carry-on) intercepts the interaction for carrying. Player passengers stay seated by default.
+
+[Trade Cycling](https://modrinth.com/mod/trade-cycling) adds a button to reroll a villager's offers before the first trade. Trading locks the offers.
 
 Controlling adds search to the keybinding menu, helping players find the controls supplied by different mods. Items lying flat on the ground and deliberate pickup by right-click or crouching are desired future features; they are not currently supplied. Which resources should still be collected automatically remains to be selected.
 

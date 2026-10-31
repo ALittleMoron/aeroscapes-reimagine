@@ -98,6 +98,12 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String qolInteractions = System.getProperty("aeroscapes.regression.qolInteractions");
+    if (qolInteractions != null) {
+      QolInteractionRegression.verify(level, Path.of(qolInteractions));
+      LOGGER.info("QoL interaction regression passed");
+      return;
+    }
     String structureFootprints = System.getProperty("aeroscapes.regression.structureFootprints");
     if (structureFootprints != null) {
       StructureFootprintRegression.start(level, Path.of(structureFootprints));

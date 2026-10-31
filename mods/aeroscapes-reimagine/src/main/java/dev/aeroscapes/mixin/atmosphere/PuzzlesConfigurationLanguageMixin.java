@@ -11,6 +11,19 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
     remap = false)
 public abstract class PuzzlesConfigurationLanguageMixin {
   @ModifyArg(
+      method = "getConfigTitleComponent",
+      at =
+          @At(
+              value = "INVOKE",
+              target =
+                  "Lnet/minecraft/network/chat/Component;literal(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;"),
+      index = 0)
+  @SuppressWarnings("PMD.UnusedPrivateMethod") // Translate the final display title only.
+  private static String aeroscapes$translateConfigTitle(String source) {
+    return ConfigLiteralTranslations.translate(source, Language.getInstance()::getOrDefault);
+  }
+
+  @ModifyArg(
       method = "getConfigValueComponent",
       at =
           @At(

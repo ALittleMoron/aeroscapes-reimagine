@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/advancementplaques.toml"
+hash = "1475da889ccfd41387bcbb59782a92bde3d9014b7dced5ff75f0a0f3a3853ac9"
+
+[[files]]
 file = "config/aeroscapes_reimagine/test_airship.nbt"
 hash = "2ec7d3a941cf644b4aa8abda8357db20243cbfd92b4c3994296323d7e2e67ac2"
 
@@ -34,7 +38,7 @@ hash = "5caa0c197f0c412a2c460cb6bdc9a0b0bdd03607c2bd29865253d1d54c1b3e21"
 
 [[files]]
 file = "config/fml.toml"
-hash = "aafd8082ab1520568b10fbcaab44a09cd696690d37dab6a6a04e93c88aece12c"
+hash = "9bbe3235b51180c2369296c0df1b141bc8d040ef829f5b0d2d579b35444b4c8b"
 
 [[files]]
 file = "config/global_packs.toml"
@@ -91,6 +95,10 @@ hash = "a3fb30afa95651bb131202472613df69d00da302d370c231cfa7845f05f7b5d2"
 [[files]]
 file = "config/quark-common.toml"
 hash = "607aa6836728c767b59a13e976786d199b5e684ccc747dc0c0b58378e5b71e1e"
+
+[[files]]
+file = "config/serilum/collective.json"
+hash = "7093a1d1e6863cd2cce604b5950946816f77727e1b109cc6d9e71627c4ce1cbe"
 
 [[files]]
 file = "config/shouldersurfing-client.toml"
@@ -698,16 +706,20 @@ hash = "557e31cbed9a4ed87a526edb270724404f378c6d2a32eb54955d81bead862620"
 metafile = true
 
 [[files]]
+file = "licenses/EMI-Trades-upstream-MIT.txt"
+hash = "5559875e9fba6781f64338e01f1918a0a2de92a945ddc0da4c660ce5041f7b10"
+
+[[files]]
 file = "licenses/Natures-Spirit-data-MIT.txt"
 hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "ca13eeeffad459c8a00b1d59ae2605a89e9c15a6dce01074236d2c120b78ed2e"
+hash = "56a8247e6979479de260ec826448ffebebef835de7a0b914d51fc513653c1517"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "2b0c9d47b0e9d9efc8dfb0a6d10f891c716eabf57f6265e04251dbcc6fd60807"
+hash = "48d381d5c7d51f89bd432b0684198b6b4fbd413946b2ebc61a246eada7f3cdd7"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -715,8 +727,13 @@ hash = "9cc036f9ca77c8e51f36338a4e2ed9f60a5f1d3443bb2017da18e808a8e90510"
 metafile = true
 
 [[files]]
+file = "mods/advancement-plaques.pw.toml"
+hash = "37bee8733a462bc7a7a6281f0ebbce166e3ac7b3085ed4d9a711d0b8cccdabbe"
+metafile = true
+
+[[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "7a3050fae631f6e0fdc9b23ca2f8bc52a6758489709329c3aa870dac95a5d719"
+hash = "c1af2d29fe48bffa4d6563ccd5a54cd1a8d1be98368bf724f2558775b800bfcc"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -759,6 +776,11 @@ hash = "fe1592310dc150cd1fac23d0e1f9d3c749456e150961d57ea180fa4f26b49313"
 metafile = true
 
 [[files]]
+file = "mods/better-advancements.pw.toml"
+hash = "e3fcaa97f575c4ba2cdb8be8672324f0308b36d39d80578f4a683c0602161d7f"
+metafile = true
+
+[[files]]
 file = "mods/better-clouds.pw.toml"
 hash = "66f71388dd6e63b6d8965c92819cb1b93be9a4840b5aec6a029b48f1ab28b9fc"
 metafile = true
@@ -776,6 +798,11 @@ metafile = true
 [[files]]
 file = "mods/blueprint.pw.toml"
 hash = "baa996b917b28a70e6c6e216ef1a9333552a5b0462f8d6dc448664f59fabec5b"
+metafile = true
+
+[[files]]
+file = "mods/boat-item-view.pw.toml"
+hash = "c4587cb08ed713fd463c85ed4094f0a216cff88b6b3332a0d903df97ce708f81"
 metafile = true
 
 [[files]]
@@ -836,6 +863,16 @@ metafile = true
 [[files]]
 file = "mods/cloth-config.pw.toml"
 hash = "4517ac2439ff207e0eff4ada7b0093af14a8fd693f09846316b98a99a834ef4f"
+metafile = true
+
+[[files]]
+file = "mods/clumps.pw.toml"
+hash = "d46195b57b77b66bb7a9fed8aac664d182135a0933b1f5b1fab50d7f07257335"
+metafile = true
+
+[[files]]
+file = "mods/collective.pw.toml"
+hash = "585f11f95bd3b54fddc92c3f67ef98353498e839bff95dbc9c0b5ec5e4f78ff4"
 metafile = true
 
 [[files]]
@@ -959,6 +996,11 @@ hash = "4b624cf4638055ec621d39ef587154edb7cca1fee9a5c9748b7b583c57ce7958"
 metafile = true
 
 [[files]]
+file = "mods/dismount-entity.pw.toml"
+hash = "918b830e77996a6c0d74ebd5b3847071a35a227e6d0c499a1bad1a429ca71efd"
+metafile = true
+
+[[files]]
 file = "mods/dramatic-doors.pw.toml"
 hash = "ebdabdd9cf11e9dc5c1ddafc492c7e1e3fe1ffe5360697c05db121bb22b7d6b0"
 metafile = true
@@ -991,6 +1033,11 @@ metafile = true
 [[files]]
 file = "mods/emi-enchanting.pw.toml"
 hash = "a7cf3d209b1a7814a389dba943ab90aa91115e47594facf0611981ab405597b7"
+metafile = true
+
+[[files]]
+file = "mods/emi-trades-reborn.pw.toml"
+hash = "2aa05b42cb151ffee74a7b3cb4590460f0f3d72d48d3dbfdec7937a69fbf801e"
 metafile = true
 
 [[files]]
@@ -1269,6 +1316,11 @@ hash = "6a93ba098014bd60b0b708ab259b27f51003fa29dbdb9a700b39e6e07954e240"
 metafile = true
 
 [[files]]
+file = "mods/pick-up-notifier.pw.toml"
+hash = "4bc5b108d883c55c181909842001cd9edf8a68830635f29efffe2d5d327d69a5"
+metafile = true
+
+[[files]]
 file = "mods/polymorph.pw.toml"
 hash = "965ce7894aa8651410e9b8d51fcb22d77cf0c6749471f08bfe9685613d4f3188"
 metafile = true
@@ -1454,6 +1506,11 @@ hash = "6af2d566831cbfd4aa0e516800843c5918aed4920f0ca661da05cd7b9de582be"
 metafile = true
 
 [[files]]
+file = "mods/trade-cycling.pw.toml"
+hash = "a684e8647d5c3b2f8e4c3d21644118044a0bb8da43c75ad4d8274218ba3d8bdb"
+metafile = true
+
+[[files]]
 file = "mods/visual-workbench.pw.toml"
 hash = "0abaf4ca962cf3b75f69588ecb101327712be61750f1878685576c39d2ed5336"
 metafile = true
@@ -1512,6 +1569,10 @@ hash = "31c6a28688bfb9d951f4d0b86d8e66c20b80b48b029f51764b7f9df0464af29d"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/polytone/dimension_modifiers/overworld.json"
 hash = "7cada3221f0ad22653a398b7fa24d262cf8f190344628b829204f7f9f32feaba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/sounds/items/moo.json"
+hash = "d17b410782750d5c0eba20749921a824cbeb81e2bcced10859bbdc9c87f217a9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/pack.mcmeta"

@@ -41,7 +41,7 @@ import net.neoforged.neoforge.common.ModConfigSpec.Range;
 import net.neoforged.neoforge.common.ModConfigSpec.ValueSpec;
 import net.neoforged.neoforge.common.TranslatableEnum;
 
-/** Reuses the native editor for the two pinned Iceberg consumers. */
+/** Reuses the native editor for the pinned Iceberg consumers. */
 @EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
 public final class IcebergConfigScreens {
   private static final String NATIVE_UI = "neoforge.configuration.uitext.";
@@ -54,6 +54,7 @@ public final class IcebergConfigScreens {
         () -> {
           install("equipmentcompare", "1.3.13");
           install("legendarytooltips", "1.5.5");
+          install("advancementplaques", "1.6.8");
         });
   }
 

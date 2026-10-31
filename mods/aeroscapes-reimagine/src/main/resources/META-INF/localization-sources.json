@@ -181,13 +181,27 @@
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
       "entries": 58,
       "sha256": "dfebbd07e50916030242bdd6bde3518ef36e5861dee629048ebb4555ee7e6fb6"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_qol_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent functional labels and help; unchanged provider terms and English fallback comments remain with original providers.",
+      "entries": 331,
+      "sha256": "0b554ffcc788ca1642506ad14d4da196e792c16b25946700b972d116ed8d6263"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_qol_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent functional labels and help; unchanged provider terms and English fallback comments remain with original providers.",
+      "entries": 327,
+      "sha256": "1bc1bfe1fd8ecbc54c727a633897f425ecc8e4521328bf4cd955628edaead143"
     }
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 359,
+    "rules": 361,
     "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged.",
-    "sha256": "1d5ca2b6596e6e865b605616e5d35c43a57c7ef54a2d52297b8689d8e3db7736"
+    "sha256": "a73b8241be52b586a55f3d5a38e60fc68894485890388b4191354ae3a6999c8c"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
@@ -1323,6 +1337,38 @@
         "value": "NONE",
         "reason": "Owner confirmed that disabling the model preview resolves overlap with Quark attribute icons. Starting file only; no runtime override of later player choices. Native reset remains the provider default."
       }
+    },
+    "qol_group1": {
+      "selected_providers": {
+        "Q2OqKxDG": "FjTYILOi",
+        "9NM0dXub": "OWylG33I",
+        "ZX66K16c": "5NZounJc",
+        "BdKIyOLe": "6EYLZUOH",
+        "qpPoAL6m": "9dxmi65z",
+        "H7N61Wcl": "5ihAfKKp",
+        "Wnxd13zP": "jo7lDoK4",
+        "jbECV090": "VPRhN8yf",
+        "e0M1UDsY": "E1JoWIGl"
+      },
+      "routes": {
+        "betteradvancements": "Native16-option client config; criterion Component fallback uses verified native aliases and four exact Zeta dynamic criterion domains. Existing provider/player criterion translations win.",
+        "advancementplaques": "23 Iceberg options via existing native editor bridge; start hide_waila=true to hide Jade only while plaques show; other provider defaults retained.",
+        "pickupnotifier": "Client+server Puzzles definitions, native display/comment/enum hooks; exact final title hash and command feedback adapter.",
+        "collective_dismount": "Native Dusk display-name/option/help components and command description presentation; parser/file metadata and dynamic ranges preserved.49 active shared/command keys; absent Serilum mod families excluded.",
+        "trade_cycling": "Native NeoForge config keys plus guarded correction of two exact Russian labels; technical enum values preserved.",
+        "boat_item_view": "Native config keys and English/Russian display text. Native whitelist retains filled_map only.",
+        "clumps": "No registered player-facing language/config/command surfaces in selected artifact.",
+        "emitrades": "Missing active RU map-type prefix; translated dynamic XP/MAX components; original provider language used otherwise. Sampled offers are not authoritative remote-server trade data.",
+        "mod_menu": "Nine independent EN/RU descriptionTranslation summaries for all new providers/library; existing installed Mod Menu metadata translation route."
+      },
+      "criterion_aliases": {
+        "resource": "assets/aeroscapes_reimagine/advancement_criterion_aliases.json",
+        "entries": 372,
+        "sha256": "d13243d18d8c5943387d059e601badcfac3d8e66da88d2f199241b85eba1e424",
+        "selection": "Verified static criterion meaning maps to existing final item/block/entity/biome/trim names without copying their translations;67 additional paired labels are independently authored. Runtime Zeta four-domain fallback uses exact criterion IDs."
+      },
+      "authorship": "Provider archives unchanged. Added display adapters and short functional wording authored for pack; technical syntax/brands preserved. Literal SHA256 keys identify exact source display text, not parser identities.",
+      "source_limits": "Sources and actual native metadata in artifacts.json. Better Advancements source suffix21 comes from CI; Plaques1.6.8 and Notifier21.1.1 matching commits follow upload by minutes. Trades continuation source revision is unavailable; inspected author-linked reference is not a reproducible-build claim."
     }
   }
 }
