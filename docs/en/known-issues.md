@@ -14,13 +14,15 @@ Only the Default world type is currently supported for the island world.
 
 Create a new world for the Y−128…383 height and island layout described in [world generation](../experience/world/generation/). Generation changes apply to new chunks. Existing islands and structures are not rebuilt automatically, and lower layers are not added beneath explored terrain; boundaries between old and new terrain may differ.
 
-Replacing the external Aero Islands mod removes its biomes and custom content. Saves created with that mod have no supported conversion; create a new world when making that switch.
+Replacing the external [Aero Islands](https://modrinth.com/mod/tGVwBATM) mod removes its biomes and custom content. Saves created with that mod have no supported conversion; create a new world when making that switch.
 
 Keep an untouched world backup before updating. To roll back, restore both the previous pack and that backup.
 
+The Open Sky biome applies to newly generated chunks. Previously explored empty space keeps its saved biomes, so biome colors and weather can change at the boundary. A save written with Open Sky contains a new biome ID; use the untouched backup when returning to a version that predates it.
+
 ## In-game language
 
-Project-owned in-game text is written in English first. A complete Russian game localization is planned separately.
+Project-owned in-game text is written in English first. Biome names and selected missing interface labels have Russian translations; a complete Russian game localization remains planned.
 
 ## Feedback
 

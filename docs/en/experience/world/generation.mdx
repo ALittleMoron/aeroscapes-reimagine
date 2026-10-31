@@ -6,9 +6,9 @@ status: available
 
 import Screenshot from "../../../../tools/docs/src/components/Screenshot.astro";
 
-The floating Overworld is based on Aero Islands generation. Reimagine’s own mod develops that terrain alongside other mods’ biomes and structures: moving them to islands exposed assumptions about continuous land. The Default world preset is currently supported.
+The floating Overworld is based on [Aero Islands](https://modrinth.com/mod/tGVwBATM) generation. Reimagine’s own mod develops that terrain alongside other mods’ biomes and structures: moving them to islands exposed assumptions about continuous land. The Default world preset is currently supported.
 
-C2ME distributes chunk generation across workers and compiles terrain calculations. OpenCL can move noise calculations to a compatible GPU with native double-precision support; generation falls back to the CPU when that path is unavailable. The pack’s own adapter preserves its island shapes, basin water and city caverns. Structure Layout Optimizer reduces work when assembling and placing structures.
+[C2ME](https://modrinth.com/mod/COlSi5iR) distributes chunk generation across workers and compiles terrain calculations. OpenCL can move noise calculations to a compatible GPU with native double-precision support; generation falls back to the CPU when that path is unavailable. The pack’s own adapter preserves its island shapes, basin water and city caverns. [Structure Layout Optimizer](https://modrinth.com/mod/ayPU0OHc) reduces work when assembling and placing structures.
 
 Feature placement is prepared when the world opens. In singleplayer, ordinary terrain chunks arrive in batches adjusted to the client’s processing speed, spreading the work of receiving a large ready area.
 
@@ -26,7 +26,17 @@ Badlands spires that erroneously extended through the void to the bottom of the 
 
 A map could previously show an ocean where there was only void. Ocean regions now have a chance to contain large islands with deep basins, uneven seabeds, bays and shores. Ocean and shore biomes follow these basins, while monument, shipwreck and other water-structure placement adapts to the local waterline. These are separate island basins rather than a continuous sea beneath the islands.
 
-Terralith, Nature’s Spirit and Galosphere provide the other landscapes. Aero’s four original biomes and its custom content are excluded. Basalt formations and geodes were converted to vanilla materials, while the project’s own fractured jungle is retained. [Places and discoveries](../discoveries/) describes the landscapes and things to find.
+[Terralith](https://modrinth.com/datapack/8oi3bsk5), [Nature’s Spirit](https://modrinth.com/mod/WBvnqHfV) and [Galosphere](https://modrinth.com/mod/Kn7xyQ1v) provide the other landscapes. Aero’s four original biomes and its custom content are excluded. Basalt formations and geodes were converted to vanilla materials, while the project’s own fractured jungle is retained. [Places and discoveries](../discoveries/) describes the landscapes and things to find.
+
+## Biomes and empty space
+
+Previously, biome searches could point into an empty gap because the climate map assigned ordinary biomes there. Empty space away from island terrain now uses the Open Sky biome, which has no vegetation, structures or creature spawns of its own. A small buffer around islands retains their biomes, including their cave interiors; a search can therefore end just outside a cliff rather than exactly on a solid block.
+
+Open air between islands follows the world's rain and thunderstorm weather, including at flight heights.
+
+Biome names are provided in English and Russian.
+
+A compatibility repair also restores [Quark](https://quarkmod.net/)'s cave biome to island generation after it had been skipped by the biome source.
 
 ## How structure placement was repaired
 
@@ -35,6 +45,8 @@ Structure mods expected continuous land: on floating islands, parts of dungeons 
 Trial chambers could previously appear almost entirely above ground. The pack now selects sites with rock above most exterior roofs and rejects attempts without that cover. Terrain filling used to block the spaces between ancient city buildings; they now share a cavern with uneven ceilings. Sites where a city would cut through an ocean basin’s floor and send water into the cavern are also rejected.
 
 The stricter checks have made some structures rarer. A matching biome alone does not guarantee that a particular island can accommodate a dungeon.
+
+Buried treasure could register a location without a chest on basalt shores because the usual search did not accept that rock. Newly generated treasures retry the native search on basalt only after the usual search fails, retaining their normal coordinates and loot.
 
 ## Starting a game and saved worlds
 

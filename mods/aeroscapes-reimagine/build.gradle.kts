@@ -208,6 +208,14 @@ val islandLayoutTest by
     mainClass = "dev.aeroscapes.worldgen.IslandLayoutTest"
   }
 
+val biomeTerrainMaskTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.worldgen.BiomeTerrainMaskTest"
+  }
+
 val sableTraceBufferTest by
   tasks.registering(JavaExec::class) {
     group = "verification"
@@ -272,6 +280,7 @@ tasks.check {
     tasks.spotlessCheck,
     policyTest,
     islandLayoutTest,
+    biomeTerrainMaskTest,
     sableTraceBufferTest,
     monitorControllerTest,
     shoulderCameraTransformerTest,

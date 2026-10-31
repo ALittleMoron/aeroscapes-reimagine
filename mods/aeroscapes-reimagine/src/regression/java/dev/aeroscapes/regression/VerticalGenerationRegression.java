@@ -6,6 +6,7 @@ import dev.aeroscapes.worldgen.IslandLayout;
 import dev.aeroscapes.worldgen.IslandTerrain;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -13,12 +14,15 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.levelgen.Aquifer;
 import net.minecraft.world.level.levelgen.DensityFunction.SinglePointContext;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
+import net.minecraft.world.level.levelgen.structure.placement.ConcentricRingsStructurePlacement;
 import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
+import net.minecraft.world.level.levelgen.structure.placement.StructurePlacement;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
 
@@ -330,6 +334,8 @@ public final class VerticalGenerationRegression {
             .get(ResourceLocation.parse(id));
     StructureStart start = level.getChunk(chunkX, chunkZ).getStartForStructure(structure);
     if (start == null || !start.isValid()) {
+      String[] checkedBiome = {"not_reached"};
+      boolean[] biomeAllowed = {false};
       var context =
           new Structure.GenerationContext(
               level.registryAccess(),
@@ -340,14 +346,21 @@ public final class VerticalGenerationRegression {
               level.getSeed(),
               new ChunkPos(chunkX, chunkZ),
               level,
-              structure.biomes()::contains);
+              biome -> {
+                checkedBiome[0] = biome.unwrapKey().orElseThrow().location().toString();
+                biomeAllowed[0] = structure.biomes().contains(biome);
+                return biomeAllowed[0];
+              });
+      boolean stub = structure.findValidGenerationPoint(context).isPresent();
       LogUtils.getLogger()
           .info(
-              "Vertical prior site {} {},{} stub={}",
+              "Vertical prior site {} {},{} stub={} checkedBiome={} biomeAllowed={}",
               id,
               chunkX,
               chunkZ,
-              structure.findValidGenerationPoint(context).isPresent());
+              stub,
+              checkedBiome[0],
+              biomeAllowed[0]);
       start = replacementStart(level, structure, chunkX, chunkZ);
     }
     if (start == null) throw new IllegalStateException("Missing " + id);
@@ -477,7 +490,46 @@ public final class VerticalGenerationRegression {
     var state = level.getChunkSource().getGeneratorState();
     long deadline = System.nanoTime() + 60_000_000_000L;
     for (var placement : state.getPlacementsForStructure(registry.wrapAsHolder(structure))) {
+      ChunkPos prior = new ChunkPos(chunkX, chunkZ);
+      if (placement instanceof ConcentricRingsStructurePlacement rings) {
+        long remaining = deadline - System.nanoTime();
+        require(remaining > 0, "Natural replacement search exceeded 60 seconds");
+        var positionsFuture = state.ringPositions.get(rings);
+        require(
+            positionsFuture != null, "Registered concentric placement has no native ring future");
+        // Bound our wait without adding a timeout to the shared native future itself.
+        positionsFuture.copy().orTimeout(remaining, TimeUnit.NANOSECONDS).join();
+        var positions = state.getRingPositionsFor(rings);
+        require(positions != null, "Registered concentric placement has no native ring positions");
+        if (positions == null) throw new IllegalStateException("Missing native ring positions");
+        LogUtils.getLogger()
+            .info(
+                "Vertical prior placement {} chunk={} placement=concentric_rings ringCount={}"
+                    + " ringMember={} nativePlacement={}",
+                registry.getKey(structure),
+                prior,
+                positions.size(),
+                positions.contains(prior),
+                rings.isStructureChunk(state, chunkX, chunkZ));
+        for (ChunkPos chunk : positions) {
+          StructureStart candidate = replacementCandidate(level, structure, rings, chunk, deadline);
+          if (candidate != null) return candidate;
+        }
+        LogUtils.getLogger()
+            .info(
+                "Vertical exhausted native ring positions {} count={} without a valid FULL start",
+                registry.getKey(structure),
+                positions.size());
+        continue;
+      }
       if (!(placement instanceof RandomSpreadStructurePlacement spread)) continue;
+      LogUtils.getLogger()
+          .info(
+              "Vertical prior placement {} chunk={} placement=random_spread potential={} nativePlacement={}",
+              registry.getKey(structure),
+              prior,
+              spread.getPotentialStructureChunk(level.getSeed(), chunkX, chunkZ).equals(prior),
+              spread.isStructureChunk(state, chunkX, chunkZ));
       int centerX = Math.floorDiv(chunkX, spread.spacing());
       int centerZ = Math.floorDiv(chunkZ, spread.spacing());
       for (int radius = 0; radius <= 16; radius++) {
@@ -489,35 +541,94 @@ public final class VerticalGenerationRegression {
             ChunkPos chunk =
                 spread.getPotentialStructureChunk(
                     level.getSeed(), regionX * spread.spacing(), regionZ * spread.spacing());
-            var generator = level.getChunkSource().getGenerator();
-            var context =
-                new Structure.GenerationContext(
-                    level.registryAccess(),
-                    generator,
-                    generator.getBiomeSource(),
-                    level.getChunkSource().randomState(),
-                    level.getStructureManager(),
-                    level.getSeed(),
-                    chunk,
-                    level,
-                    structure.biomes()::contains);
-            if (!spread.isStructureChunk(state, chunk.x, chunk.z)
-                || structure.findValidGenerationPoint(context).isEmpty()) continue;
             StructureStart candidate =
-                level.getChunk(chunk.x, chunk.z).getStartForStructure(structure);
-            if (candidate != null && candidate.isValid()) {
-              LogUtils.getLogger()
-                  .info(
-                      "Vertical replacement natural start {} {}",
-                      registry.getKey(structure),
-                      chunk);
-              return candidate;
-            }
+                replacementCandidate(level, structure, spread, chunk, deadline);
+            if (candidate != null) return candidate;
           }
         }
       }
     }
-    throw new IllegalStateException("No naturally selected replacement start");
+    throw new IllegalStateException(
+        "No naturally selected replacement FULL start "
+            + registry.getKey(structure)
+            + " within the bounded native placement candidates");
+  }
+
+  private static StructureStart replacementCandidate(
+      ServerLevel level,
+      Structure structure,
+      StructurePlacement placement,
+      ChunkPos chunk,
+      long deadline) {
+    require(System.nanoTime() < deadline, "Natural replacement search exceeded 60 seconds");
+    var id = level.registryAccess().registryOrThrow(Registries.STRUCTURE).getKey(structure);
+    if (!placement.isStructureChunk(level.getChunkSource().getGeneratorState(), chunk.x, chunk.z)) {
+      LogUtils.getLogger()
+          .info(
+              "Vertical replacement eligibility {} chunk={} placement={} reason=native_placement_rejected",
+              id,
+              chunk,
+              placement.getClass().getSimpleName());
+      return null;
+    }
+    var generator = level.getChunkSource().getGenerator();
+    String[] checkedBiome = {"not_reached"};
+    boolean[] biomeAllowed = {false};
+    var context =
+        new Structure.GenerationContext(
+            level.registryAccess(),
+            generator,
+            generator.getBiomeSource(),
+            level.getChunkSource().randomState(),
+            level.getStructureManager(),
+            level.getSeed(),
+            chunk,
+            level,
+            biome -> {
+              checkedBiome[0] = biome.unwrapKey().orElseThrow().location().toString();
+              biomeAllowed[0] = structure.biomes().contains(biome);
+              return biomeAllowed[0];
+            });
+    var stub = structure.findValidGenerationPoint(context);
+    LogUtils.getLogger()
+        .info(
+            "Vertical replacement eligibility {} chunk={} placement={} nativePlacement=true stub={}"
+                + " checkedBiome={} biomeAllowed={} reason={}",
+            id,
+            chunk,
+            placement.getClass().getSimpleName(),
+            stub.map(Structure.GenerationStub::position),
+            checkedBiome[0],
+            biomeAllowed[0],
+            stub.isPresent()
+                ? "native_valid_stub"
+                : !checkedBiome[0].equals("not_reached") && !biomeAllowed[0]
+                    ? "biome_predicate_rejected"
+                    : "native_generation_point_rejected");
+    require(System.nanoTime() < deadline, "Natural replacement search exceeded 60 seconds");
+    if (stub.isEmpty()) return null;
+    var full = level.getChunk(chunk.x, chunk.z);
+    require(full.getPersistedStatus() == ChunkStatus.FULL, "Replacement chunk did not reach FULL");
+    StructureStart candidate = full.getStartForStructure(structure);
+    require(System.nanoTime() < deadline, "Natural replacement search exceeded 60 seconds");
+    if (candidate == null || !candidate.isValid()) {
+      LogUtils.getLogger()
+          .info(
+              "Vertical replacement FULL {} chunk={} reason=no_valid_saved_or_generated_FULL_start",
+              id,
+              chunk);
+      return null;
+    }
+    require(candidate.getChunkPos().equals(chunk), "Replacement FULL start has wrong origin chunk");
+    LogUtils.getLogger()
+        .info(
+            "Vertical replacement natural FULL start {} chunk={} placement={} nativeStub={} pieces={}",
+            id,
+            chunk,
+            placement.getClass().getSimpleName(),
+            stub.orElseThrow().position(),
+            candidate.getPieces().size());
+    return candidate;
   }
 
   private static void naturalMonument(

@@ -4,6 +4,19 @@ description: Version history.
 status: available
 ---
 
+## 0.2.0
+
+- Complete the selected audiovisual atmosphere stage developed through the preceding 0.1.x releases.
+- Assign empty space away from islands to an empty biome with a small terrain buffer.
+- Keep rain and thunderstorm weather enabled in the air between islands.
+- Check terrain only for matching climate candidates during native three-dimensional biome searches.
+- Restore [Quark](https://quarkmod.net/)'s cave biome selection through the island biome source.
+- Preserve native stronghold rings and underground structure eligibility when separating island biomes from empty sky.
+- Preserve bees placed from structure templates during background generation by isolating their AI constructor's random access.
+- Restore buried treasure chests on basalt beaches in newly generated chunks after the usual rock search finds no site.
+- Fill missing English and Russian biome names and selected item, entity, effect and interface translations.
+- Add dedicated-server coverage for Overworld, Nether and End biomes, natural feature and structure block writes, and native placement filters and weighted selection, plus teleport chunk-delivery diagnostics.
+
 ## 0.1.7
 
 - Add biome color variation, campfire smoke, decorative birds, eating animations and selected interaction and hit particles.

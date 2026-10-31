@@ -96,6 +96,7 @@ public final class WorldgenDataRegression {
   private WorldgenDataRegression() {}
 
   public static void verify(ServerLevel level) {
+    VoidWeatherRegression.biomeContract(level);
     var generator = level.getChunkSource().getGenerator();
     var possible = generator.getBiomeSource().possibleBiomes();
     var biomes = level.registryAccess().registryOrThrow(Registries.BIOME);
@@ -151,6 +152,7 @@ public final class WorldgenDataRegression {
       naturalBiome(level, "terralith:sandstone_valley", new BlockPos(-16384, 231, -7680));
       naturalBiome(level, "terralith:birch_taiga", new BlockPos(-15360, 217, 1536));
       naturalBiome(level, "terralith:glacial_chasm", new BlockPos(-5632, 217, 7168));
+      naturalBiome(level, "minecraft:ice_spikes", new BlockPos(5122, 142, -1022));
       naturalBiome(level, "aeroscapes:fractured_jungle", new BlockPos(-6656, 87, 13568));
       naturalGeode(level);
       LOGGER.info(

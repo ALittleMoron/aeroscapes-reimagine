@@ -5,11 +5,13 @@ import com.mojang.logging.LogUtils;
 import com.mojang.serialization.JsonOps;
 import java.io.IOException;
 import java.io.Reader;
+import java.nio.file.Path;
 import java.util.List;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.RegistryOps;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.TickTask;
 import net.minecraft.server.level.ServerLevel;
@@ -96,6 +98,141 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String beeConstructionReport =
+        System.getProperty("aeroscapes.regression.beeConstructionReport");
+    if (beeConstructionReport != null) {
+      BeeConstructionRegression.start(level, Path.of(beeConstructionReport));
+      return;
+    }
+    String dimensionBiomeReport = System.getProperty("aeroscapes.regression.dimensionBiomeReport");
+    if (dimensionBiomeReport != null) {
+      DimensionBiomeCoverageRegression.start(level, Path.of(dimensionBiomeReport));
+      return;
+    }
+    String translationAudit = System.getProperty("aeroscapes.regression.translations");
+    if (translationAudit != null)
+      TranslationRegistryRegression.verify(level, Path.of(translationAudit));
+    if (Boolean.getBoolean("aeroscapes.regression.strongholdBiome")) {
+      StrongholdBiomeRegression.verify(level);
+      return;
+    }
+    String voidWeather = System.getProperty("aeroscapes.regression.voidWeather");
+    if (voidWeather != null) {
+      VoidWeatherRegression.start(level, Path.of(voidWeather));
+      return;
+    }
+    String structureInventory = System.getProperty("aeroscapes.regression.structureInventory");
+    String biomeFeatureInventory =
+        System.getProperty("aeroscapes.regression.biomeFeatureInventory");
+    if (structureInventory != null) {
+      StructureInventoryRegression.verify(event.getServer(), Path.of(structureInventory));
+      if (biomeFeatureInventory == null) return;
+    }
+    if (biomeFeatureInventory != null) {
+      BiomeFeatureInventoryRegression.verify(level, Path.of(biomeFeatureInventory));
+      return;
+    }
+    String endGatewayPlan = System.getProperty("aeroscapes.regression.endGatewayPlan");
+    if (endGatewayPlan != null) {
+      ServerLevel endLevel = event.getServer().getLevel(net.minecraft.world.level.Level.END);
+      require(endLevel != null, "End gateway probe requires the End dimension");
+      EndGatewayReturnProbe.start(
+          endLevel,
+          Path.of(endGatewayPlan),
+          Path.of(System.getProperty("aeroscapes.regression.endGatewayReport")));
+      return;
+    }
+    String nonStructurePlan = System.getProperty("aeroscapes.regression.nonStructurePlan");
+    if (nonStructurePlan != null) {
+      ServerLevel featureLevel =
+          event
+              .getServer()
+              .getLevel(
+                  ResourceKey.create(
+                      Registries.DIMENSION,
+                      ResourceLocation.parse(
+                          System.getProperty(
+                              "aeroscapes.regression.nonStructureDimension",
+                              "minecraft:overworld"))));
+      require(featureLevel != null, "Unknown non-structure probe dimension");
+      NonStructureFeatureProbe.start(
+          featureLevel,
+          Path.of(nonStructurePlan),
+          Path.of(System.getProperty("aeroscapes.regression.nonStructureReport")));
+      return;
+    }
+    String surfacePrefilterPlan = System.getProperty("aeroscapes.regression.surfacePrefilterPlan");
+    if (surfacePrefilterPlan != null) {
+      SurfaceStructurePrefilter.start(
+          level,
+          Path.of(surfacePrefilterPlan),
+          Path.of(System.getProperty("aeroscapes.regression.surfacePrefilterReport")));
+      return;
+    }
+    String structureCoveragePlan =
+        System.getProperty("aeroscapes.regression.structureCoveragePlan");
+    if (structureCoveragePlan != null) {
+      StructureCoverageRegression.start(
+          event.getServer(),
+          Path.of(structureCoveragePlan),
+          Path.of(System.getProperty("aeroscapes.regression.structureCoverageReport")));
+      return;
+    }
+    String plantCoveragePlan = System.getProperty("aeroscapes.regression.plantCoveragePlan");
+    if (plantCoveragePlan != null) {
+      PlantCoverageRegression.start(
+          level,
+          Path.of(plantCoveragePlan),
+          Path.of(System.getProperty("aeroscapes.regression.plantCoverageReport")));
+      return;
+    }
+    String biomeFrequencyPlan = System.getProperty("aeroscapes.regression.biomeFrequencyPlan");
+    if (biomeFrequencyPlan != null) {
+      BiomeFrequencyRegression.start(
+          level,
+          Path.of(biomeFrequencyPlan),
+          Path.of(System.getProperty("aeroscapes.regression.biomeFrequencyReport")));
+      return;
+    }
+    String biomeReplayPlan = System.getProperty("aeroscapes.regression.biomeReplayPlan");
+    if (biomeReplayPlan != null) {
+      BiomeReplayRegression.start(
+          level,
+          Path.of(biomeReplayPlan),
+          Path.of(System.getProperty("aeroscapes.regression.biomeReplayReport")));
+      return;
+    }
+    String biomeMismatchFile = System.getProperty("aeroscapes.regression.biomeMismatchFile");
+    if (biomeMismatchFile != null) {
+      BiomeMismatchRegression.verify(level, Path.of(biomeMismatchFile));
+      return;
+    }
+    String biolithFile = System.getProperty("aeroscapes.regression.biolithFile");
+    if (biolithFile != null) {
+      BiolithBiomeRegression.verify(level, Path.of(biolithFile));
+      return;
+    }
+    String biomeUpgrade = System.getProperty("aeroscapes.regression.biomeUpgrade");
+    if (biomeUpgrade != null) {
+      BiomeUpgradeRegression.verify(
+          level,
+          Path.of(biomeUpgrade),
+          Boolean.getBoolean("aeroscapes.regression.biomeUpgradeCapture"));
+      return;
+    }
+    String biomeCoverage = System.getProperty("aeroscapes.regression.biomeCoverage");
+    if (biomeCoverage != null) {
+      BiomeCoverageRegression.start(level, Path.of(biomeCoverage));
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.teleportChunks")) {
+      TeleportChunkRegression.start(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.biomeLocate")) {
+      BiomeLocateRegression.verify(level);
+      return;
+    }
     String testShip = System.getProperty("aeroscapes.regression.testShip");
     if (testShip != null) {
       TestShipRegression.start(level, testShip);

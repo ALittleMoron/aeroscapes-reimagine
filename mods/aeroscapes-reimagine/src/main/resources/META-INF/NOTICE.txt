@@ -46,3 +46,9 @@ The celestial atlas is original deterministic pixel artwork with no third-party
 image inputs. Its AI-assisted Java composition script is CelestialAtlas.java in
 the corresponding source; regenerate with ./gradlew generateCelestialAtlas.
 The atlas and its renderer are distributed under this project's GPL-3.0-or-later.
+
+The English/Russian missing-key language overrides are authored for this pack.
+They supply biome and content labels and selected interface messages, including
+aliases for the exact key forms used by installed consumers. No complete provider
+language dictionary is bundled by these overrides. Their audit is separate from
+the providers' dynamically generated client translations.

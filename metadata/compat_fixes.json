@@ -134,7 +134,7 @@
       "data/minecraft/dimension/overworld.json",
       "data/aeroscapes_reimagine/lithostitched/worldgen_modifier/terralith_surface.json"
     ],
-    "reason": "Retain the selected Terralith climate table and original source as the delegate. The owned island habitat source assigns existing ocean/deep-ocean/shore biomes to the same deterministic physical basins and existing mountain/meadow biomes to added mountain relief; other positions preserve delegate selection and TerraBlender/Lithostitched participation. The paired biome-gated Terralith surface-rule restoration remains active.",
+    "reason": "Retain the selected Terralith climate table, including its historical biome replacements, and original source as the delegate. The owned island habitat source assigns existing ocean/deep-ocean/shore and mountain/meadow biomes to their physical habitats, and uses an empty owned biome outside a small terrain buffer. Island cave interiors retain their biomes. Preserve TerraBlender/Biolith/Lithostitched participation and the paired biome-gated Terralith surface-rule restoration.",
     "source_targets": {
       "tGVwBATM": "bzJ2edxy"
     }
@@ -504,5 +504,23 @@
     },
     "files": [],
     "reason": "Quivers 2.2 still references stray_animations.jpm and bogged_animations.jpm removed by FA 1.11, and its JEMs omit the new family flags. Client-only QuiverEmfMixin composes the locally loaded FA 1.11.1 models with the single original Quivers body attachment before EMF 3.3.12 prepares them; retain all base flags, transforms and bogged mushroom parts/animation. Require adjacent exact provider file IDs in the same native resource stack. Other custom JEMs and disabled packs remain untouched; no third-party artwork is copied or distributed."
+  },
+  {
+    "targets": {
+      "COlSi5iR": "avwWYPbG",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Minecraft 1.21.1 BeeGoToHiveGoal and BeeGoToKnownFlowerGoal initialize travellingTicks from Level.random during Mob construction. C2ME 0.4.0-alpha.0.123 constructs structure-template entities on generation workers; its enforced world-RNG check throws and native template loading omits the bee. Owned BeeGoalRandomMixin substitutes the already initialized bee-owned RandomSource only on a ServerLevel outside its server thread. Both original nextInt(10) calls, main-thread/client sources, goal behavior, template entities and placement rules remain. Recheck both exact constructor field reads and native main/worker construction on Minecraft or C2ME updates."
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "source_targets": {
+      "tGVwBATM": "bzJ2edxy"
+    },
+    "files": [],
+    "reason": "The adopted Aero voidsea_surface_rules.json (SHA-256 e9164792487fd5af4e3ca2f445ff8ba2f8f7faea1a4c2221cdf3f3a3a702f864) makes minecraft:beach columns basalt. Minecraft 1.21.1 BuriedTreasurePiece accepts only five other default rock states and can retain a valid start without any chest. Owned BuriedTreasureSupportMixin first runs the unchanged native scan; only failure with the identical bounding-box object retries it with the owned buried_treasure_support block tag, initially basalt only. Retain native coordinates, frequency, RNG, cover, loot and Blueprint/Zeta createChest hooks; old FULL chunks are not retrofitted. Recheck exact scan bytecode, box-identity failure contract and support-tag contents when updating Minecraft or the adopted surface rule."
   }
 ]

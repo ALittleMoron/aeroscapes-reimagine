@@ -4,9 +4,12 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.biome.Climate;
@@ -37,7 +40,10 @@ public final class IslandBiomeSource extends BiomeSource {
                           .fieldOf("deep_oceans")
                           .forGetter(value -> value.deepOceans),
                       Biome.CODEC.listOf().fieldOf("shores").forGetter(value -> value.shores),
-                      Biome.CODEC.listOf().fieldOf("mountains").forGetter(value -> value.mountains))
+                      Biome.CODEC.listOf().fieldOf("mountains").forGetter(value -> value.mountains),
+                      Biome.CODEC
+                          .optionalFieldOf("void_biome")
+                          .forGetter(value -> Optional.ofNullable(value.voidBiome)))
                   .apply(instance, IslandBiomeSource::new));
   private static final DeferredRegister<MapCodec<? extends BiomeSource>> TYPES =
       DeferredRegister.create(Registries.BIOME_SOURCE, "aeroscapes_reimagine");
@@ -46,6 +52,7 @@ public final class IslandBiomeSource extends BiomeSource {
   private final List<Holder<Biome>> deepOceans;
   private final List<Holder<Biome>> shores;
   private final List<Holder<Biome>> mountains;
+  private Holder<Biome> voidBiome;
   private volatile Habitat habitat;
 
   private record Habitat(
@@ -86,15 +93,18 @@ public final class IslandBiomeSource extends BiomeSource {
       List<Holder<Biome>> oceans,
       List<Holder<Biome>> deepOceans,
       List<Holder<Biome>> shores,
-      List<Holder<Biome>> mountains) {
+      List<Holder<Biome>> mountains,
+      Optional<Holder<Biome>> voidBiome) {
     if (oceans.size() != 5 || deepOceans.size() != 5 || shores.size() != 2 || mountains.size() != 4)
       throw new IllegalArgumentException(
           "Island habitats need 5 ocean pairs, 2 shores and 4 mountain biomes");
     this.delegate = delegate;
+    BiolithBiomeCompatibility.initialize(delegate);
     this.oceans = List.copyOf(oceans);
     this.deepOceans = List.copyOf(deepOceans);
     this.shores = List.copyOf(shores);
     this.mountains = List.copyOf(mountains);
+    this.voidBiome = voidBiome.orElse(null);
   }
 
   public static void register(IEventBus bus) {
@@ -110,6 +120,14 @@ public final class IslandBiomeSource extends BiomeSource {
       var stem = entry.getValue();
       if (stem.generator() instanceof NoiseBasedChunkGenerator generator
           && generator.getBiomeSource() instanceof IslandBiomeSource source) {
+        if (source.voidBiome == null)
+          source.voidBiome =
+              server
+                  .registryAccess()
+                  .registryOrThrow(Registries.BIOME)
+                  .getHolderOrThrow(
+                      ResourceKey.create(
+                          Registries.BIOME, ResourceLocation.parse("aeroscapes_reimagine:void")));
         // TerraBlender 4.1.0.8 recognizes only a top-level MultiNoiseBiomeSource.
         // Its public initializer must see the retained native delegate and the same settings.
         LevelUtils.initializeBiomes(
@@ -127,20 +145,19 @@ public final class IslandBiomeSource extends BiomeSource {
     if (!(delegate instanceof MultiNoiseBiomeSource multi)) return this;
     var parameters =
         (IExtendedParameterList<Holder<Biome>>)
-            ((MultiNoiseBiomeSourceAccess) multi)
-                .getParameters()
-                .map(value -> value, holder -> holder.value().parameters());
+            BiolithBiomeCompatibility.parameters(
+                multi,
+                ((MultiNoiseBiomeSourceAccess) multi)
+                    .getParameters()
+                    .map(value -> value, holder -> holder.value().parameters()));
     if (!parameters.isInitialized()) return this;
     MultiNoiseBiomeSource copy = ((IExtendedMultiNoiseBiomeSource) multi).clone();
-    var copiedParameters =
-        ((IExtendedParameterList<Holder<Biome>>)
-                ((MultiNoiseBiomeSourceAccess) copy)
-                    .getParameters()
-                    .map(value -> value, holder -> holder.value().parameters()))
-            .clone();
+    var copiedParameters = parameters.clone();
     ((IExtendedParameterList<Holder<Biome>>) copiedParameters).recreateUniqueness();
     ((MultiNoiseBiomeSourceAccess) copy).setParameters(Either.left(copiedParameters));
-    return new IslandBiomeSource(copy, oceans, deepOceans, shores, mountains);
+    BiolithBiomeCompatibility.bindGenerationCache(copy, copiedParameters);
+    return new IslandBiomeSource(
+        copy, oceans, deepOceans, shores, mountains, Optional.ofNullable(voidBiome));
   }
 
   @Override
@@ -155,12 +172,27 @@ public final class IslandBiomeSource extends BiomeSource {
             oceans.stream(),
             deepOceans.stream(),
             shores.stream(),
-            mountains.stream())
+            mountains.stream(),
+            Stream.ofNullable(voidBiome))
         .flatMap(stream -> stream);
   }
 
   @Override
   public Holder<Biome> getNoiseBiome(int quartX, int quartY, int quartZ, Climate.Sampler sampler) {
+    IslandBiomeSampler context = (IslandBiomeSampler) (Object) sampler;
+    BiomeTerrainMask mask = context.aeroscapesReimagine$terrainMask();
+    if (mask == null || voidBiome == null)
+      throw new IllegalStateException("Island biome terrain was not initialized");
+    context.aeroscapesReimagine$voidBiome(voidBiome);
+    // Keep delegate calls even in void: its nearest-leaf cache can affect climate ties.
+    Holder<Biome> selected = habitatBiome(quartX, quartY, quartZ, sampler);
+    return context.aeroscapesReimagine$deferTerrainMask()
+            || mask.nearTerrain(quartX * 4, quartY * 4, quartZ * 4)
+        ? selected
+        : voidBiome;
+  }
+
+  private Holder<Biome> habitatBiome(int quartX, int quartY, int quartZ, Climate.Sampler sampler) {
     int x = quartX * 4;
     int y = quartY * 4;
     int z = quartZ * 4;

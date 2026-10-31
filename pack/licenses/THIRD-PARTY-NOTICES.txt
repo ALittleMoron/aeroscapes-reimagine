@@ -1,4 +1,4 @@
-Aeroscapes Reimagine 0.1.7 — third-party notices
+Aeroscapes Reimagine 0.2.0 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 Priority 4 visual effects use unchanged original downloads:

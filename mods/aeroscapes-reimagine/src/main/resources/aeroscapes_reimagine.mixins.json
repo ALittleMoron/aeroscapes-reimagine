@@ -4,7 +4,13 @@
   "package": "dev.aeroscapes.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "BeeGoalRandomMixin",
+    "BuriedTreasureSupportMixin",
     "RandomStateMixin",
+    "IslandBiomeSamplerMixin",
+    "IslandBiomeSearchMixin",
+    "StructureBiomeEligibilityMixin",
+    "StrongholdRingBiomeMixin",
     "FeatureIndexAccess",
     "BasinAquiferMixin",
     "IslandBiomeGenerationMixin",

@@ -131,6 +131,10 @@ The owner's instruction to prepare the accumulated changes for a new stable
 release selects the next stage milestone: `0.1.1` becomes `0.2.0`, then a later
 stage becomes `0.3.0`. A milestone can record completion of content already
 delivered in patch releases; it does not require adding more content.
+Keep the milestone's goal distinct from the final release's changes: 0.2.0 means
+the selected atmosphere work is complete, while 0.3.0 means the selected QoL work
+is complete. Fixes to other systems may accompany either release without
+redefining that goal, even if the final release adds no new milestone features.
 A mention of a future milestone or its theme, a candidate discussion, or approval
 to add content does not request this promotion. Continue ordinary patch development
 until the owner explicitly asks to prepare the stage release or set the current target.

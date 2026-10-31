@@ -96,9 +96,7 @@ public final class SupportedStructure extends Structure {
 
   @Override
   public Optional<GenerationStub> findValidGenerationPoint(GenerationContext context) {
-    // Keep the native cave-biome selection at its original height. Aero's cave
-    // biomes mostly occupy the void below the islands; retesting at the relocated
-    // room would silently remove these structures from survival generation.
+    // Native climate eligibility is checked before relocation, using the scoped prefit context.
     return embedsUnderground()
         ? findGenerationPoint(context)
         : super.findValidGenerationPoint(context);
@@ -114,7 +112,9 @@ public final class SupportedStructure extends Structure {
 
   @Override
   protected Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
-    Optional<GenerationStub> nativeStub = delegate.findValidGenerationPoint(context);
+    Optional<GenerationStub> nativeStub =
+        delegate.findValidGenerationPoint(
+            embedsUnderground() ? StructureBiomeCompatibility.prefitContext(context) : context);
     if (nativeStub.isEmpty()) {
       return Optional.empty();
     }

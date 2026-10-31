@@ -186,6 +186,15 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
 
   @Override
   public double compute(FunctionContext context) {
+    return density(context, true);
+  }
+
+  /** Cave interiors belong to their island; carvers must not turn them into open-sky biomes. */
+  public double biomeDensity(FunctionContext context) {
+    return density(context, false);
+  }
+
+  private double density(FunctionContext context, boolean includeCaves) {
     int x = context.blockX();
     int y = context.blockY();
     int z = context.blockZ();
@@ -208,7 +217,7 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
               && column.radial() < 1.08
               && y >= column.floor() - 12
               && y <= column.floor() + 5;
-      if (!liner) added = Math.min(added, caves.compute(context));
+      if (includeCaves && !liner) added = Math.min(added, caves.compute(context));
     }
     if (y < -116) added = Math.min(added, (y + 125) / 12.0);
     // Basin water fills empty density through its aquifer; it must not cut a flat

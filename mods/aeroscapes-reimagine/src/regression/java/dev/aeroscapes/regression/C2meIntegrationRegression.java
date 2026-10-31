@@ -75,6 +75,14 @@ final class C2meIntegrationRegression {
       bounds(raw.form(), accelerated.form());
       bounds(raw.caves(), accelerated.caves());
       Coordinates coordinates = coordinates();
+      for (int index = 0; index < coordinates.x().length; index++) {
+        var point = coordinates.forIndex(index);
+        double expected = raw.biomeDensity(point);
+        double actual = accelerated.biomeDensity(point);
+        equal(expected, actual);
+        require(
+            (expected > 0) == (actual > 0), "Compiled biome envelope changed terrain occupancy");
+      }
       samples += compare(raw, random.router().finalDensity(), coordinates);
       samples += compare(raw, accelerated, coordinates);
       var visits = new AtomicInteger();

@@ -286,7 +286,7 @@ hash = "8a2b1457d821fd292f18adec2932a6701c6d10186aa55b1d605b2e261dc305ac"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/dimension/overworld.json"
-hash = "f29662e2b4efe20ff2ddf9bba81538dc239151edac4d53b9909a8bce024a0aa8"
+hash = "c267888e4df5af86a052ef199eb6cffca4b2f4dd275aef121015ffcfbd6de25e"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/placed_feature/amethyst_geode.json"
@@ -699,11 +699,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "1bbde94d784598060f30ee163310e3957058703dd6f0b3ddf5c346728ef4d262"
+hash = "71846090db02ddf221f2a82ed30319590bf6039b52b2a28c05e27eb9b90b1667"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "e668153938adeac6e763064164ba71c9b6e8353265d75a806954778b2b34f2e9"
+hash = "0c1b320ee91662ee154565e96f3b232af9a42dcacb729114e9c32508c83bcc41"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -712,7 +712,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "96de63a61da9943401623f92c363b5c2324dd3319bf4839cfa58a6f3a2033412"
+hash = "632d202011791bc252260ec6f4ec994e030df975c8b7f58298c4b4b3f3d6164d"
 
 [[files]]
 file = "mods/allurement.pw.toml"

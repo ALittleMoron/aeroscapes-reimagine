@@ -8,11 +8,11 @@ An Aeroscapes Reimagine release records a completed scope of pack changes and th
 
 ## Reading the number
 
-| Part  | What it records                                             | Example |
-| ----- | ----------------------------------------------------------- | ------- |
-| Major | A substantial stage in the development of the whole pack    | `1.0.0` |
-| Minor | A completed content area or development direction           | `0.2.0` |
-| Patch | Another set of additions and refinements within a direction | `0.1.1` |
+| Part  | What it records                                          | Example |
+| ----- | -------------------------------------------------------- | ------- |
+| Major | A substantial stage in the development of the whole pack | `1.0.0` |
+| Minor | Completion of an agreed content area or development goal | `0.2.0` |
+| Patch | Another set of additions and refinements                 | `0.1.1` |
 
 ### Major: a substantial completed stage
 
@@ -27,22 +27,22 @@ The project's major goals are:
 
 As the project develops, new large goals will receive subsequent major milestones, such as `3.0.0`. Their scope is defined with the goals themselves.
 
-### Minor: a completed content area
+### Minor: a completed development goal
 
-A minor milestone concludes work on a particular direction. `0.1.0` established the initial foundation: the island world, Create and Aeronautics, basic optimization and convenience.
+A minor version is a target: by that version, an agreed area of the pack should be complete. `0.1.0` established the initial foundation: the island world, [Create](https://modrinth.com/mod/create) and [Aeronautics](https://modrinth.com/mod/create-aeronautics), basic optimization and convenience.
 
 The next planned milestones are:
 
-| Milestone | Planned scope                                                                                                                          |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `0.2.0`   | Audiovisual atmosphere: animation, item and object appearance, sound, particles, visual effects, shaders and sky/weather presentation. |
-| `0.3.0`   | Quality of Life: more convenient everyday play, including improved tree felling inspired by Otherworld DnD.                            |
+| Milestone | Goal                                                                                                                                                                                          |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `0.2.0`   | Complete the selected audiovisual atmosphere: mods, resourcepacks, animation, appearance, sound, particles, shaders and sky/weather presentation.                                             |
+| `0.3.0`   | Complete the selected Quality of Life features for everyday play, including improved tree felling inspired by [Otherworld DnD](https://www.curseforge.com/minecraft/modpacks/otherworld-dnd). |
 
-Ordinary `0.1.x` patches gradually build toward the atmosphere milestone, for example through animation/resourcepack additions and lighting refinements. Once the selected scope is ready and accepted by the author, the minor milestone records it with the last part reset to zero. Discussing that future milestone does not start its release preparation or change the current target.
+Ordinary patches build toward that goal. Once its selected scope is ready and accepted by the author, the minor release records its completion with the last part reset to zero. Discussing a future milestone does not start its release preparation or change the current target.
 
-Later stages will address combat, biome and world appearance, magic and technical mod improvements. Their order and version numbers have not been assigned. Research and interest in a mod do not automatically place it in the audiovisual stage.
+Later work will address combat, biome and world appearance, magic and technical mod improvements. Its order and version numbers have not been assigned. Research and interest in a mod do not automatically put it in the current implementation queue.
 
-A minor release can conclude work already delivered through preceding patches. It does not require adding another mod solely to justify the number.
+The goal and the changes in the final release are separate. Most or all of a milestone's feature work may already have arrived in preceding patches. The final release can therefore contain fixes, including fixes to other systems, without adding another mod. Those changes do not redefine the milestone: `0.2.0` still marks completed atmosphere, and `0.3.0` marks the selected QoL scope.
 
 ### Patch: further additions and fixes
 

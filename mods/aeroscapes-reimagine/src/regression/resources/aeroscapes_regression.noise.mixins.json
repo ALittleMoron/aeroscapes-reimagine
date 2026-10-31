@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.aeroscapes.regression.noise.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["NoiseSnapshotMixin", "BlenderConstructor", "FeatureIndexAccess", "LazyCachedValueAccess", "MushroomEvidenceMixin"],
+  "mixins": ["NoiseSnapshotMixin", "BlenderConstructor", "FeatureIndexAccess", "LazyCachedValueAccess", "MushroomEvidenceMixin", "FeatureCommitScopeMixin", "FeatureCommitWriteMixin", "ConfiguredFeatureAttemptMixin", "StructureCommitScopeMixin", "PlacementModifierTraceMixin", "OreFeatureCommitMixin", "BeeConstructorProbeMixin", "TreasureSupportProbeMixin"],
   "injectors": {
     "defaultRequire": 1
   }
