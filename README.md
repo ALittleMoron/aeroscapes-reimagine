@@ -1,6 +1,6 @@
 # Aeroscapes Reimagine
 
-![Парящие острова Aeroscapes Reimagine / Floating islands in Aeroscapes Reimagine](tools/docs/src/assets/screenshots/island-panorama.webp)
+![Обложка Aeroscapes Reimagine: золотистое название на фоне парящей скальной арки / Aeroscapes Reimagine cover: gold lettering over a floating rock arch](tools/docs/src/assets/branding/mysterious-islands.webp)
 
 Minecraft-песочница с парящими островами, инженерией Create, воздушными кораблями
 Aeronautics и развивающимися фэнтезийными системами. Вдохновлена Isabel’s Aeroscapes

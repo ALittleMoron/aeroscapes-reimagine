@@ -1778,5 +1778,21 @@
     "key": "shouldersurfing.configuration.player.player_y_rot_follows_camera.tooltip",
     "expected": "Должен ли горизонтальный поворот игрока (ось Y) следовать за поворотом камеры. Применяется только при отключённой камере.",
     "replacement": "Поворот игрока по оси Y следует за поворотом камеры. Действует только для независимой камеры."
+  },
+  {
+    "key": "emi.category.emi_enchanting.enchantments",
+    "expected": "Информация о зачаровнии",
+    "replacement": "Информация о зачарованиях"
+  },
+  {
+    "key": "effect.minecraft.blindness.description",
+    "expected": "Ухудшает зрение и отключает способность к бегать и наносить критический урон.",
+    "replacement": "Ухудшает зрение и не позволяет бегать и наносить критические удары."
+  },
+  {
+    "key": "commands.bookshelf.font.bad_sender",
+    "expected": "The font rename command",
+    "replacement": "The target must be a living entity.",
+    "language": "en_us"
   }
 ]

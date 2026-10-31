@@ -10,6 +10,12 @@ The convenience tools help players find information, organize belongings and rem
 
 [EMI](https://modrinth.com/project/fRiHVvU7) lets players browse recipes and item uses across the pack. Jade shows information about the block or entity being looked at, while Item Descriptions adds descriptions of items, blocks and creatures. AppleSkin displays food information for hunger and saturation.
 
+[Jade Addons](https://modrinth.com/mod/jade-addons-forge) expands the existing block information with supported machine and contraption details, including fuel and carried inventories. The integrated engineering-goggles display remains disabled by default.
+
+[EMI Enchanting](https://modrinth.com/mod/emi-enchanting) adds enchantment information pages to [EMI](https://modrinth.com/mod/emi), and [EMIffect](https://modrinth.com/mod/emiffect) adds status-effect information. [Enchantment Descriptions](https://modrinth.com/mod/enchantment-descriptions) also explains enchantments directly in book and equipment tooltips. Missing descriptions for the pack's enchantments and effects are supplied in English and Russian.
+
+[Smart Tooltip Scroll](https://modrinth.com/mod/smart-tooltip-scroll) keeps oversized tooltips readable through resizing and scrolling. [Equipment Compare](https://modrinth.com/mod/equipment-compare) shows comparison tooltips while holding Shift over equipment. [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips) adds decorative frames; its separate scrolling feature stays disabled by default. Their settings are available through the mod list. Item model previews are disabled in the starting profile because they overlapped [Quark](https://modrinth.com/mod/quark) attribute icons. Model previews remain configurable in the mod list.
+
 [Polymorph](https://modrinth.com/mod/polymorph) adds a result-selection button when the same crafting ingredients match several recipes. Choose the intended item beside the output slot; its EMI integration also supports selecting a recipe while transferring ingredients. For example, beetroot can produce red dye or Create Food's shredded beetroot. This crafting-screen choice does not set the output of Create's mechanical crafters.
 
 [Visual Workbench](https://modrinth.com/mod/visual-workbench) keeps crafting ingredients in the table when its menu closes and displays them on top. The table's contents belong to that block, so return to the same table to continue a craft.

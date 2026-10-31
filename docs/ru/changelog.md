@@ -4,6 +4,15 @@ description: История версий.
 status: available
 ---
 
+## 0.2.2
+
+- В стартовой конфигурации [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips) выключены превью моделей предметов, перекрывавшие значки характеристик [Quark](https://modrinth.com/mod/quark).
+- Исправлен вылет при открытии разделов настроек [Equipment Compare](https://modrinth.com/mod/equipment-compare) и [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips).
+- Добавлена проверка опоры под всем основанием Ocean Fortress из [Philips Ruins](https://modrinth.com/mod/KdJhOYVV) и каменного перекрытия над Pink Salt Shrine из [Galosphere](https://modrinth.com/mod/Kn7xyQ1v), отсекающая неподходящие края островов.
+- Добавлены [Jade Addons](https://modrinth.com/mod/jade-addons-forge), [EMI Enchanting](https://modrinth.com/mod/emi-enchanting), [EMIffect](https://modrinth.com/mod/emiffect) и [Enchantment Descriptions](https://modrinth.com/mod/enchantment-descriptions) для информации о механизмах, зачарованиях и эффектах.
+- Добавлены [Smart Tooltip Scroll](https://modrinth.com/mod/smart-tooltip-scroll), [Equipment Compare](https://modrinth.com/mod/equipment-compare) и [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips), английские и русские тексты настроек и штатный редактор для двух последних модов.
+- Дополнены недостающие английские и русские описания зачарований и эффектов с сохранением предупреждающих названий внутренних зачарований.
+
 ## 0.2.1
 
 - Подземные комнаты Creeping Crypt из [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) размещаются внутри подходящих островов с сохранением поверхностного входа.

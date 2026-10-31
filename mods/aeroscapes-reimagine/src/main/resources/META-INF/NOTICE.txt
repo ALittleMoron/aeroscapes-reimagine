@@ -131,3 +131,15 @@ material adaptation and composition code are authored for this pack.
 
 META-INF/localization-sources.json records selected translation inputs, licenses,
 filtering and resource identities. Source and notices accompany the binary.
+
+QoL information and tooltip configuration display:
+Independently authored missing English/Russian descriptions, labels and concise
+functional help supplement exact pinned providers. Existing provider/player text,
+config values, identifiers and parser formats are preserved. New config display
+code is owned by this project; third-party JARs remain byte-identical.
+Equipment Compare, Legendary Tooltips, Iceberg and Prism retain CC BY-NC-ND 4.0.
+The authored help is factual interface wording, not copied provider prose/code.
+Three internal Dungeons and Taverns enchantment names retain their original
+warning meaning; runtime description-only patches preserve all effect data.
+Exact provider versions, hashes, terms and source limitations are recorded in
+localization-sources.json and pack licenses/THIRD-PARTY-NOTICES.txt.

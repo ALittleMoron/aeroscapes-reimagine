@@ -43,6 +43,7 @@ accents, with a matching light variant. Both use Starlight's existing theme
 selectors, preserving the automatic mode and the reader's manual theme choice.
 The homepages use Starlight's existing text hero and link-card components with the
 selected Mysterious Islands title cover from `src/components/PackCover.astro`.
+The project README uses the same full-size cover.
 Its editable source, font provenance and manual rendering commands live in
 [`src/assets/branding/README.md`](src/assets/branding/README.md). Prebuilt WebP files
 are served directly, so the website build needs no fonts or image-rendering CLI.

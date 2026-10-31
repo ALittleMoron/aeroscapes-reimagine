@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mojang.serialization.JsonOps;
 import dev.aeroscapes.worldgen.RuntimeJsonPatches;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -13,6 +14,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.ComponentSerialization;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.packs.resources.Resource;
@@ -27,12 +30,12 @@ final class RuntimeJsonPatchesRegression {
   static void verify(ServerLevel level) {
     try {
       JsonObject recipes = RuntimeJsonPatches.readRecipes();
-      require(recipes.size() == 253, "Incomplete runtime JSON recipe closure");
+      require(recipes.size() == 256, "Incomplete runtime JSON recipe closure");
       String baseline = System.getProperty("aeroscapes.regression.jsonRepairBaseline");
       JsonObject expected = baseline == null ? readExpected() : null;
       JsonObject report = new JsonObject();
       Map<ResourceLocation, Resource> listed = new HashMap<>();
-      for (String prefix : List.of("worldgen", "advancement", "tags")) {
+      for (String prefix : List.of("worldgen", "advancement", "tags", "enchantment")) {
         listed.putAll(
             level
                 .getServer()
@@ -56,6 +59,22 @@ final class RuntimeJsonPatchesRegression {
           effective = JsonParser.parseReader(reader);
         }
         require(patched.equals(effective), "Virtual pack precedence differs: " + id);
+        if (id.startsWith("nova_structures:enchantment/")) {
+          String name = id.substring("nova_structures:enchantment/".length(), id.length() - 5);
+          var enchantment =
+              level
+                  .registryAccess()
+                  .registryOrThrow(Registries.ENCHANTMENT)
+                  .get(ResourceLocation.fromNamespaceAndPath("nova_structures", name));
+          require(enchantment != null, "Missing decoded enchantment: " + id);
+          JsonElement description =
+              ComponentSerialization.CODEC
+                  .encodeStart(JsonOps.INSTANCE, enchantment.description())
+                  .getOrThrow();
+          require(
+              description.equals(patched.getAsJsonObject().get("description")),
+              "Decoded enchantment lost warning translation: " + id);
+        }
         try (var reader = listed.get(ResourceLocation.parse(id)).openAsReader()) {
           require(
               patched.equals(JsonParser.parseReader(reader)), "Resource listing differs: " + id);

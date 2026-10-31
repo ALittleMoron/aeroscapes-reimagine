@@ -1,4 +1,4 @@
-Aeroscapes Reimagine 0.2.1 — third-party notices
+Aeroscapes Reimagine 0.2.2 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 Client convenience additions use unchanged official downloads:
@@ -236,3 +236,42 @@ Stored separately at config/aeroscapes_reimagine/test_airship.nbt.
 The public download supports local use; no public redistribution grant is claimed.
 Resolve that permission before publishing the copied structure. Site terms:
 https://createmod.com/terms-of-service
+
+QoL information and tooltip additions (official files, unchanged):
+Jade Addons (Neo/Forge) 6.1.2+neoforge: Snownee; LicenseRef-All-Rights-Reserved.
+https://modrinth.com/project/xuDOzCLy/version/O3F6Dkle
+EMI Enchanting 0.1.2+1.21+neoforge: fzzyhmstrs; MIT.
+https://modrinth.com/project/wbWoo11W/version/ZyJ6TKvh
+EMIffect 2.1.6+mc1.21.1: Flamarine; MIT.
+https://modrinth.com/project/705gWllI/version/S6Q6duUj
+Enchantment Descriptions 21.1.9: Darkhax; LGPL-2.1-only.
+https://modrinth.com/project/UVtY3ZAC/version/zfAkJn0r
+Bookshelf 21.1.81: Darkhax; LGPL-2.1-only.
+https://modrinth.com/project/uy4Cnpcm/version/1sdJl7J1
+Prickle 21.1.11: Darkhax; LGPL-2.1-only.
+https://modrinth.com/project/aaRl8GiW/version/EE1FHDyD
+Smart Tooltip Scroll 1.1.1+1.21.1: Stalemated; MIT.
+https://modrinth.com/project/ZdbrmhGV/version/5yxY9Gl4
+Equipment Compare 1.3.13: Grend; CC-BY-NC-ND-4.0.
+https://modrinth.com/project/CYSUVOdj/version/efoMHHTh
+Legendary Tooltips 1.5.5: Grend; CC-BY-NC-ND-4.0.
+https://modrinth.com/project/atHH8NyV/version/BabRJO04
+S-Lib 3.0.1+1.21.1: Stalemated; MIT.
+https://modrinth.com/project/VtMfe1Va/version/NzIuDdqU
+Iceberg 1.3.2: Grend; CC-BY-NC-ND-4.0.
+https://modrinth.com/project/5faXoLqX/version/IMssx9du
+Prism 1.0.11: Grend; CC-BY-NC-ND-4.0.
+https://modrinth.com/project/1OE8wbN0/version/kMcz2lDj
+Embedded licenses and author notices remain in the original JARs.
+Jade Addons' general modpack policy permits publication only on CurseForge or Modrinth.
+https://modrinth.com/mod/jade-addons-forge
+On 2026-10-31 the pack owner confirmed separate author permission for GitHub
+publication of Aeroscapes Reimagine. This records the owner's attestation;
+no public permission URL was supplied and no broader rehosting or modification
+rights are inferred. The original All Rights Reserved license remains unchanged.
+Modrinth specific-file permission applies to Modrinth modpacks; it does not
+itself establish permission to publish this pack on GitHub.
+https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions
+Equipment Compare, Legendary Tooltips, Iceberg and Prism retain CC BY-NC-ND 4.0.
+Independently authored display labels and concise functional help do not modify
+their binaries, configuration schema/parser, identifiers or player-defined values.

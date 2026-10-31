@@ -24,12 +24,14 @@ public final class LanguageCorrections {
 
   public static Map<String, String> apply(
       Map<String, String> translations, List<String> languages) {
-    if (languages.isEmpty() || !languages.getLast().equals("ru_ru")) {
+    if (languages.isEmpty()) {
       return Map.copyOf(translations);
     }
     Map<String, String> corrected = new HashMap<>(translations);
     for (Correction correction : CORRECTIONS) {
-      corrected.replace(correction.key(), correction.expected(), correction.replacement());
+      if (correction.language().equals(languages.getLast())) {
+        corrected.replace(correction.key(), correction.expected(), correction.replacement());
+      }
     }
     return Map.copyOf(corrected);
   }
@@ -47,16 +49,21 @@ public final class LanguageCorrections {
       Set<String> keys = new HashSet<>();
       for (JsonElement row : rows) {
         if (!(row instanceof JsonObject object)
-            || !object.keySet().equals(Set.of("key", "expected", "replacement"))) {
+            || !(object.keySet().equals(Set.of("key", "expected", "replacement"))
+                || object.keySet().equals(Set.of("language", "key", "expected", "replacement")))) {
           throw new IllegalStateException("Invalid language correction: " + row);
         }
         String key = string(object, "key");
+        String language = object.has("language") ? string(object, "language") : "ru_ru";
         String expected = string(object, "expected");
         String replacement = string(object, "replacement");
-        if (key.isBlank() || !keys.add(key) || expected.equals(replacement)) {
+        if (!Set.of("en_us", "ru_ru").contains(language)
+            || key.isBlank()
+            || !keys.add(language + ":" + key)
+            || expected.equals(replacement)) {
           throw new IllegalStateException("Invalid or duplicate language correction: " + key);
         }
-        corrections.add(new Correction(key, expected, replacement));
+        corrections.add(new Correction(language, key, expected, replacement));
       }
       return List.copyOf(corrections);
     } catch (IOException exception) {
@@ -72,5 +79,5 @@ public final class LanguageCorrections {
     return value.getAsString();
   }
 
-  private record Correction(String key, String expected, String replacement) {}
+  private record Correction(String language, String key, String expected, String replacement) {}
 }

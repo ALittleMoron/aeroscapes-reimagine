@@ -4,6 +4,15 @@ description: Version history.
 status: available
 ---
 
+## 0.2.2
+
+- Disable item model previews in the starting [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips) configuration to prevent overlap with [Quark](https://modrinth.com/mod/quark)'s attribute icons.
+- Fix a crash when opening settings sections for [Equipment Compare](https://modrinth.com/mod/equipment-compare) and [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips).
+- Check the full ground footprint of Ocean Fortress from [Philips Ruins](https://modrinth.com/mod/KdJhOYVV) and the rock cover above Pink Salt Shrine from [Galosphere](https://modrinth.com/mod/Kn7xyQ1v), rejecting unsuitable island edges.
+- Add [Jade Addons](https://modrinth.com/mod/jade-addons-forge), [EMI Enchanting](https://modrinth.com/mod/emi-enchanting), [EMIffect](https://modrinth.com/mod/emiffect) and [Enchantment Descriptions](https://modrinth.com/mod/enchantment-descriptions) for machine, enchantment and effect information.
+- Add [Smart Tooltip Scroll](https://modrinth.com/mod/smart-tooltip-scroll), [Equipment Compare](https://modrinth.com/mod/equipment-compare) and [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips), with English/Russian settings and a native editor for the latter two.
+- Fill missing enchantment and effect descriptions in English and Russian while preserving the warning names of internal enchantments.
+
 ## 0.2.1
 
 - Fit the underground rooms of Creeping Crypt from [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) inside suitable islands while preserving its surface entrance.

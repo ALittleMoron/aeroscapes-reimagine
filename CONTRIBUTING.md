@@ -98,11 +98,14 @@ preparatory commits and local exports retain that number. The next substantive
 change after publication starts the next patch. Do not automatically create an
 empty successor version: main pushes feed automatic publication.
 
-Before choosing a number, inspect the actual non-draft GitHub releases and any
-pending publication in the existing release queue. A local export, changelog
-heading or tag alone does not establish publication. A main push awaiting
-publication already reserves its version; resolve that run's outcome before
-choosing a target. Published contents are immutable and cannot be overwritten.
+At the start of a task that changes the pack or its tooling, or adds a changelog
+entry, inspect the actual non-draft GitHub releases and any pending publication
+in the existing release queue, even when keeping the version already recorded
+locally. Recheck before exporting if publication may have advanced during the
+task. A local export, changelog heading or tag alone does not establish publication.
+A main push awaiting publication already reserves its version; resolve that
+run's outcome before choosing a target. Published contents are immutable and
+cannot be overwritten.
 
 One final PR or push to main carries one pack version. A push may contain several
 preparatory commits; the checked head is the source snapshot for its release.

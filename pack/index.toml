@@ -53,6 +53,10 @@ file = "config/iris.properties"
 hash = "eb4c72f6737a9c80e57445045729a969bb0bed4f4261c14ac07eebfd473a25f7"
 
 [[files]]
+file = "config/legendarytooltips.toml"
+hash = "27402b88c2e848cb3d4e125de391a06d5ac141d494462c99485c18beb2a0298d"
+
+[[files]]
 file = "config/modernfix-mixins.properties"
 hash = "8683b1a02d760ca7bcef7ac3a6a1954ec3287dba5eb76e2a41d1fdb72831e027"
 
@@ -699,11 +703,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "6c7f0e75736fbdf7ad2ccb82875dda013c9a691da3e49be23a8f011c18114e14"
+hash = "ca13eeeffad459c8a00b1d59ae2605a89e9c15a6dce01074236d2c120b78ed2e"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "3d7bab8966b54bf74e020095904ca3c6c79cd3f02856fbbcc9a7d13bc108f1e4"
+hash = "2b0c9d47b0e9d9efc8dfb0a6d10f891c716eabf57f6265e04251dbcc6fd60807"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -712,7 +716,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "301528717a333a89c5fc4cf623d070f03d8253b89d623ccc791005bf6d84bc87"
+hash = "7a3050fae631f6e0fdc9b23ca2f8bc52a6758489709329c3aa870dac95a5d719"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -772,6 +776,11 @@ metafile = true
 [[files]]
 file = "mods/blueprint.pw.toml"
 hash = "baa996b917b28a70e6c6e216ef1a9333552a5b0462f8d6dc448664f59fabec5b"
+metafile = true
+
+[[files]]
+file = "mods/bookshelf-lib.pw.toml"
+hash = "f43889f09d010095410c82672a394fe773fe44510a967ff5e186ba1e1adc7167"
 metafile = true
 
 [[files]]
@@ -980,8 +989,23 @@ hash = "5680dd7aec6ca3ea1c1e86fe28b3a652cc790286a10224fe46ba0f2758457777"
 metafile = true
 
 [[files]]
+file = "mods/emi-enchanting.pw.toml"
+hash = "a7cf3d209b1a7814a389dba943ab90aa91115e47594facf0611981ab405597b7"
+metafile = true
+
+[[files]]
 file = "mods/emi.pw.toml"
 hash = "ad8b8a9b149af6798e65c01a334bca7a6a65b1ddf9aff3f612df033c69f745f1"
+metafile = true
+
+[[files]]
+file = "mods/emiffect.pw.toml"
+hash = "b596ebe3ac3adc3cc5537fdb7481af183271876e960fecf4e4357701784b173a"
+metafile = true
+
+[[files]]
+file = "mods/enchantment-descriptions.pw.toml"
+hash = "3fd44281f9f4c2aeafb78f25a67669d90bd99aade31d2cfd5fc37d2566b332c8"
 metafile = true
 
 [[files]]
@@ -997,6 +1021,11 @@ metafile = true
 [[files]]
 file = "mods/entitytexturefeatures.pw.toml"
 hash = "aaa215489fb8199f1764163c5a85ca60b29c136b3665ace431eb63db2d283d77"
+metafile = true
+
+[[files]]
+file = "mods/equipment-compare.pw.toml"
+hash = "d704fbd35d39d2f93b7967551c929cc1599d51dbbdf91fa78ff5d31c49145ba6"
 metafile = true
 
 [[files]]
@@ -1075,6 +1104,11 @@ hash = "2827236cdf28e1d20904bbfca49d4e276d24a2562fac81ba87fd23eb7b9ab477"
 metafile = true
 
 [[files]]
+file = "mods/iceberg.pw.toml"
+hash = "a7d12eea258a731e6182bf06a96fc7350f0b7e72e5c2393ccd1d7512549f9948"
+metafile = true
+
+[[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "e0b6dcd277c36c1b24917f69d6c8bdc12029cc14451c279ff623d78ce38ef284"
 metafile = true
@@ -1105,6 +1139,11 @@ hash = "6efcfcc1acf823af4e381f9bdca555f7ab7ac8cb116f45684046428ce3d33a67"
 metafile = true
 
 [[files]]
+file = "mods/jade-addons-forge.pw.toml"
+hash = "73c1455b0c61d2b035acd58b5c4f9ae81d8421aee246dd00361a3632176296c9"
+metafile = true
+
+[[files]]
 file = "mods/jade.pw.toml"
 hash = "9a838bc3ebe8e413ae6494a77b9a79b731bf5a20273941585d81f795f77a27d0"
 metafile = true
@@ -1122,6 +1161,11 @@ metafile = true
 [[files]]
 file = "mods/leave-my-bars-alone.pw.toml"
 hash = "92d50a5d4e8279a316994c9084862c7f107d0cfe1d889fd7b55aa8dd78e1b2d5"
+metafile = true
+
+[[files]]
+file = "mods/legendary-tooltips.pw.toml"
+hash = "56a60a3d1aefc48f50d3b30f2c2c78cf674e363d0599c4c01c00d404af675d2b"
 metafile = true
 
 [[files]]
@@ -1235,6 +1279,16 @@ hash = "5a05cbd17d52f1c739681dbe54cc9cb676ae7a809c7256d3da118b8a73da18f0"
 metafile = true
 
 [[files]]
+file = "mods/prickle.pw.toml"
+hash = "e863ac6a3880959d299896cebda47fbe1a16b7c784983b091ac41942aefa55c5"
+metafile = true
+
+[[files]]
+file = "mods/prism-lib.pw.toml"
+hash = "534b0b42e57e90ed94ab40a059e9506dab3a98d918dd8baa3c15f66256b01636"
+metafile = true
+
+[[files]]
 file = "mods/puddles-floods.pw.toml"
 hash = "05735af06d0797f1790e36623071975b4602765be90a0b5095e7bf5bc5ef8834"
 metafile = true
@@ -1275,6 +1329,11 @@ hash = "36c7e1d360de3bafd5c4b8c7cd2aa1bf9ccae8be5ed94379d95f69fd48aa5ca2"
 metafile = true
 
 [[files]]
+file = "mods/s-lib.pw.toml"
+hash = "9f6217b331cf2424538167b30b813aaa335c6c84eed18c1b6e1bc245a2dfbb8c"
+metafile = true
+
+[[files]]
 file = "mods/sable.pw.toml"
 hash = "bc4dc367b41e578d1f8d12498227396e44590a601a348614f714eb56e26e2f89"
 metafile = true
@@ -1302,6 +1361,11 @@ metafile = true
 [[files]]
 file = "mods/shulkerboxtooltip.pw.toml"
 hash = "37e523bae980017bb16c0df0212bf3f70627db460e0ce530d73d8909ebbf4250"
+metafile = true
+
+[[files]]
+file = "mods/smart-tooltip-scroll.pw.toml"
+hash = "0bd7ea6ea0d6d3a6d107f444e3787ed7b758ee3d325f49518a83ad9c1211fc40"
 metafile = true
 
 [[files]]

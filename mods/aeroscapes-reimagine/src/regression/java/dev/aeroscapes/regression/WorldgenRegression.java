@@ -98,6 +98,11 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String structureFootprints = System.getProperty("aeroscapes.regression.structureFootprints");
+    if (structureFootprints != null) {
+      StructureFootprintRegression.start(level, Path.of(structureFootprints));
+      return;
+    }
     String saveUpgradeReport = System.getProperty("aeroscapes.regression.saveUpgradeReport");
     if (saveUpgradeReport != null) {
       SaveUpgradeRegression.verify(level, Path.of(saveUpgradeReport));
@@ -127,6 +132,10 @@ public final class WorldgenRegression {
     String translationAudit = System.getProperty("aeroscapes.regression.translations");
     if (translationAudit != null)
       TranslationRegistryRegression.verify(level, Path.of(translationAudit));
+    if (Boolean.getBoolean("aeroscapes.regression.jsonPatches")) {
+      RuntimeJsonPatchesRegression.verify(level);
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.strongholdBiome")) {
       StrongholdBiomeRegression.verify(level);
       return;

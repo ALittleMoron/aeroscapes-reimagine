@@ -1946,7 +1946,7 @@
     "wrappers": [
       {
         "type": "aeroscapes_reimagine:supported",
-        "terrain_check": "core_enclosed"
+        "terrain_check": "buried_complex"
       }
     ]
   },
@@ -5289,7 +5289,7 @@
     "wrappers": [
       {
         "type": "aeroscapes_reimagine:supported",
-        "terrain_check": "surface"
+        "terrain_check": "surface_footprint"
       }
     ]
   },
@@ -5467,6 +5467,60 @@
           "elements",
           "10"
         ]
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:enchantment/boss_behaviour.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/enchantment/boss_behaviour.json",
+    "sha256": "94ad47993c6abb3d1d05571b60bcfd25372d867c360b870e403e311e8064bda9",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "description"
+        ],
+        "value": {
+          "translate": "enchantment.nova_structures.boss_behaviour",
+          "fallback": "Illegal enchantment"
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:enchantment/shulker_boss.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/enchantment/shulker_boss.json",
+    "sha256": "eac69dcf4cab584b8f1b9f6c094291445bfa09ac2eaed27e58d3058c00dcdd62",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "description"
+        ],
+        "value": {
+          "translate": "enchantment.nova_structures.shulker_boss",
+          "fallback": "LOOT TABLE ERROR - REPORT TO MOD/DATAPACK AUTHOR"
+        }
+      }
+    ]
+  },
+  {
+    "id": "nova_structures:enchantment/shulker_miniboss.json",
+    "mod": "mr_dungeons_andtaverns",
+    "source": "data/nova_structures/enchantment/shulker_miniboss.json",
+    "sha256": "1c7210668d587acd40c150c6a9b89668a5ac8466e8b964808af6b5cc35b81db0",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "description"
+        ],
+        "value": {
+          "translate": "enchantment.nova_structures.shulker_miniboss",
+          "fallback": "I AM ERROR"
+        }
       }
     ]
   }

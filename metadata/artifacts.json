@@ -599,11 +599,16 @@
     "version": "21.1.81",
     "filename": "bookshelf-neoforge-1.21.1-21.1.81.jar",
     "sha512": "78d4577a8e8fbb241216968475dd73f5b9e5efeb7da802b18a4e6c290e49af6cb4a5676e9855d0d8ff3613f967812e4bd363bbb9196c17c954d19454f84b2214",
+    "sha1": "efc4cda6da4dd879f24d057ed0a6413764c9ba40",
+    "file_size": 328813,
     "release_type": "release",
-    "side": "both",
+    "side": "client",
     "kind": "mod",
     "loaders": [
       "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
     ],
     "license": {
       "id": "LGPL-2.1-only",
@@ -612,9 +617,8 @@
     },
     "source_url": "https://github.com/Darkhax-Minecraft/Bookshelf",
     "dependencies": [],
-    "status": "deferred",
-    "origin": "Aeroscapes 1.0.8",
-    "reason": "No required consumer remains after the native migration/reference filtering; omit unused libraries."
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
   },
   {
     "slug": "borderless-window",
@@ -3244,8 +3248,37 @@
     "slug": "jade-addons-forge",
     "name": "Jade Addons (Neo/Forge)",
     "project_id": "xuDOzCLy",
-    "status": "deferred",
-    "reason": "Exact reference file is beta; Jade base covers required tooltips."
+    "version_id": "O3F6Dkle",
+    "version": "6.1.2+neoforge",
+    "filename": "JadeAddons-1.21.1-NeoForge-6.1.2.jar",
+    "sha512": "7fc0f413a73e11af6463cc246d9390e0cbe14ff46d0778d9893be59bb1dbbf300a745cc50731412ab4a940f7fe06e5433fa61a423a38ff64b6c6742c5ee62c7b",
+    "sha1": "479b327078f8f0091e2413675d1236c931f68cf4",
+    "file_size": 82315,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/Snownee/JadeAddons",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "nvQzSEkH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Selected QoL batch 1A for 0.2.2. On 2026-10-31 the pack owner confirmed separate author permission for GitHub publication of Aeroscapes Reimagine. This is an owner attestation, with no public permission URL supplied; original ARR terms and general CurseForge/Modrinth modpack policy remain unchanged. No broader rehosting or modification rights inferred. https://modrinth.com/mod/jade-addons-forge"
   },
   {
     "slug": "kitchen-projectiles",
@@ -4297,11 +4330,16 @@
     "version": "21.1.11",
     "filename": "prickle-neoforge-1.21.1-21.1.11.jar",
     "sha512": "154d42795ccf1f3e07714775cdb82fd5db17574319286ced13d86b0456b64e4cf5bb89ffbcbfcefce67b73ed0b83e4e2944e493d79d9a385ff9de23006ee7bf5",
+    "sha1": "5174059ecf97340a0de5ef211b938de26c4eaa36",
+    "file_size": 84812,
     "release_type": "release",
-    "side": "both",
+    "side": "client",
     "kind": "mod",
     "loaders": [
       "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
     ],
     "license": {
       "id": "LGPL-2.1-only",
@@ -4310,14 +4348,8 @@
     },
     "source_url": "https://github.com/Darkhax-Minecraft/PrickleMC",
     "dependencies": [],
-    "status": "excluded",
-    "reason": "Unused library: no selected mod depends on or references Prickle; do not ship a library without a consumer.",
-    "origin": "Aeroscapes 1.0.8",
-    "game_versions": [
-      "1.21.1"
-    ],
-    "sha1": "5174059ecf97340a0de5ef211b938de26c4eaa36",
-    "file_size": 84812
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
   },
   {
     "slug": "puzzles-lib",
@@ -7309,5 +7341,334 @@
     ],
     "sha1": "7156b542431ea057539070c0c00feb8c9f58c099",
     "file_size": 51042
+  },
+  {
+    "slug": "emi-enchanting",
+    "name": "EMI Enchanting",
+    "project_id": "wbWoo11W",
+    "version_id": "ZyJ6TKvh",
+    "version": "0.1.2+1.21+neoforge",
+    "filename": "emi_enchanting-0.1.2+1.21+neoforge.jar",
+    "sha512": "90944c8ff897fa98d0323fe94e4053fb89f43cbaf4fd28d6ad58134cea1469c9398e0c0edd4328a5530e1578ad2286ec5822292bf9c587182e5606dbfff218be",
+    "sha1": "02ad74769ffcec259fd9bb14a1760593f6182b5c",
+    "file_size": 15680,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/fzzyhmstrs/EMI_enchanting/",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "fRiHVvU7",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
+  },
+  {
+    "slug": "emiffect",
+    "name": "EMIffect",
+    "project_id": "705gWllI",
+    "version_id": "S6Q6duUj",
+    "version": "2.1.6+mc1.21.1",
+    "filename": "emiffect-neoforge-2.1.6+mc1.21.1.jar",
+    "sha512": "60db5a6c2649d58de5514f851cda63c3bef9eb46a827f1f587cca1fa935fe9f8ef8d0fdf3ed71adb4b58193a72f9ce7ea2e9d4d83e274ee70faa6265b4c80dd6",
+    "sha1": "0afecce68c1fa9e13ef46d4b20a67f65b19c9d8c",
+    "file_size": 38160,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://git.sr.ht/~flamarine/emiffect",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "fRiHVvU7",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
+  },
+  {
+    "slug": "enchantment-descriptions",
+    "name": "Enchantment Descriptions",
+    "project_id": "UVtY3ZAC",
+    "version_id": "zfAkJn0r",
+    "version": "21.1.9",
+    "filename": "enchdesc-neoforge-1.21.1-21.1.9.jar",
+    "sha512": "22258e118552e690ae77ad1a13e5dfe69bf94bdd765d2e614e2e4cc7410c406866b7937b54e8475660bba858b0eadb7efd430146563301143643622622d2c928",
+    "sha1": "e4fa515c5deab3165f250f2a1297ac836d496064",
+    "file_size": 81847,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-2.1-only",
+      "name": "GNU Lesser General Public License v2.1 only",
+      "url": null
+    },
+    "source_url": "https://github.com/Darkhax-Minecraft/Enchantment-Descriptions",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "aaRl8GiW",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "uy4Cnpcm",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2",
+    "native_route_note": "21.1.9 is the selected stable file for NeoForge21.1.230; actual21.1.10/21.1.11 require >=21.1.233. Existing information mods lack equivalent complete enchantment explanations and direct book hover; EMI Enchanting reads supplied description keys but does not author them."
+  },
+  {
+    "slug": "smart-tooltip-scroll",
+    "name": "Smart Tooltip Scroll",
+    "project_id": "ZdbrmhGV",
+    "version_id": "5yxY9Gl4",
+    "version": "1.1.1+1.21.1",
+    "filename": "smart_tooltip_scroll-neoforge-1.1.1+1.21.1.jar",
+    "sha512": "c5ea327064181950049d9608a1196653f1f9f84bc8c75d6be55597a08ea3ca9fbe35b7f701547bb8dd18ee39b27054e7860bb335b71c58fedc87d7517dd256f2",
+    "sha1": "6aa510e69d0aeb4df759b52f7fc5c33171c1adeb",
+    "file_size": 79179,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/Stalemated/smart-tooltip-scroll",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "1eAoo2KR",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "VtMfe1Va",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
+  },
+  {
+    "slug": "equipment-compare",
+    "name": "Equipment Compare",
+    "project_id": "CYSUVOdj",
+    "version_id": "efoMHHTh",
+    "version": "1.3.13",
+    "filename": "EquipmentCompare-1.21.1-neoforge-1.3.13.jar",
+    "sha512": "2e96d8b54f3f2c99525c91cae298561cc122dde8840bcb2d64ec0cfd997b6f49efcd13050f82f500f5cf414c5caaae29118ac45532ac34b1b62e62ad49cbcb31",
+    "sha1": "fff2c71ff62d7c74bf9e73754536706cdf4893d1",
+    "file_size": 35691,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5"
+    ],
+    "license": {
+      "id": "CC-BY-NC-ND-4.0",
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+      "url": null
+    },
+    "source_url": "https://github.com/AHilyard/EquipmentCompare/",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "5faXoLqX",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
+  },
+  {
+    "slug": "legendary-tooltips",
+    "name": "Legendary Tooltips",
+    "project_id": "atHH8NyV",
+    "version_id": "BabRJO04",
+    "version": "1.5.5",
+    "filename": "LegendaryTooltips-1.21.1-neoforge-1.5.5.jar",
+    "sha512": "3c0de6b6597a57b0fc3a134dde03ea3aeed0a7d64db63def8eda182c8bb7717293d2e4753887dcecaa27e17051c308269039eec6e74186d5eede68f98e74feeb",
+    "sha1": "e7d3b66f3afe115c709749739f26f807ca8e827b",
+    "file_size": 81808,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "CC-BY-NC-ND-4.0",
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+      "url": null
+    },
+    "source_url": "https://github.com/AHilyard/LegendaryTooltips/",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "5faXoLqX",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "1OE8wbN0",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2",
+    "native_route_note": "Keep native tooltip scrolling NEVER and width/height limits0; Smart Tooltip Scroll owns scrolling. Provider JAR is unchanged; independently authored UI supplements and the shared display adapter belong to the owned mod."
+  },
+  {
+    "slug": "s-lib",
+    "name": "S-Lib",
+    "project_id": "VtMfe1Va",
+    "version_id": "NzIuDdqU",
+    "version": "3.0.1+1.21.1",
+    "filename": "s-lib-neoforge-3.0.1+1.21.1.jar",
+    "sha512": "625bc01ae4805da9dd797e0ef5c5872d7495c3eab51b73b0b24244a504402d0149040ad39005e44a9c2ec11a896e878e5eefc7a6e0be8b7b90342e7e75d8bb2a",
+    "sha1": "72295f54084d1f329c3c01057e7ca16a7ac336ab",
+    "file_size": 232767,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/Stalemated/s-lib",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
+  },
+  {
+    "slug": "iceberg",
+    "name": "Iceberg",
+    "project_id": "5faXoLqX",
+    "version_id": "IMssx9du",
+    "version": "1.3.2",
+    "filename": "Iceberg-1.21.1-neoforge-1.3.2.jar",
+    "sha512": "19d33195cfee0a640f40fb64d82346df7ac970ddb43ed68ba2dacb4793b18d577fd57dd43a4c2e94f731487c024b8d7ebcc52721764ec9d8a87bd68fc7df5c96",
+    "sha1": "f6014d198be9503573cd9cb41cc789d282768ad8",
+    "file_size": 213853,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "CC-BY-NC-ND-4.0",
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+      "url": null
+    },
+    "source_url": "https://github.com/AHilyard/Iceberg/",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
+  },
+  {
+    "slug": "prism-lib",
+    "name": "Prism",
+    "project_id": "1OE8wbN0",
+    "version_id": "kMcz2lDj",
+    "version": "1.0.11",
+    "filename": "Prism-1.21.1-neoforge-1.0.11.jar",
+    "sha512": "b3539b5dba6414b5f6db126dd703a0923984c1fa11a53e50090eb1b03ec3ef3a09fc048ae2d03b8241e4d182ec4e942cc905d0f3e7366608fd8a0bb2509f55f4",
+    "sha1": "1ae6f7be2ba8f963344dbf27e552920a7bc7a35f",
+    "file_size": 62031,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "CC-BY-NC-ND-4.0",
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+      "url": null
+    },
+    "source_url": "https://github.com/AHilyard/Prism/",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected QoL batches 1A/1B for 0.2.2"
   }
 ]

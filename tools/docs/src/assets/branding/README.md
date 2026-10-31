@@ -1,7 +1,8 @@
 # Mysterious Islands title cover
 
 The owner selected this cover on 2026-10-28 for the English/Russian documentation
-homepages and language landing page. It combines a real owner screenshot with
+homepages and language landing page, and authorized its use in the project
+README on 2026-10-31. It combines a real owner screenshot with
 existing font lettering, outlines, an offset shadow and two rules. No generative
 image model was used. The SVG layout was written with AI assistance; that does
 not establish an exception to Modrinth's AI-image policy. The Modrinth icon and

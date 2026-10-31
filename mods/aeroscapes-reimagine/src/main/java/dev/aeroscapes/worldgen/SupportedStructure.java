@@ -51,6 +51,7 @@ public final class SupportedStructure extends Structure {
   public enum TerrainCheck implements StringRepresentable {
     FLOOR,
     SURFACE,
+    SURFACE_FOOTPRINT,
     GROUNDED_SURFACE,
     MARINE_SURFACE,
     CAVERN,
@@ -154,12 +155,14 @@ public final class SupportedStructure extends Structure {
       return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
     boolean surface =
         terrainCheck == TerrainCheck.SURFACE
+            || terrainCheck == TerrainCheck.SURFACE_FOOTPRINT
             || terrainCheck == TerrainCheck.GROUNDED_SURFACE
             || terrainCheck == TerrainCheck.MARINE_SURFACE;
     if (surface && !supportedSurfaceRoot(context, pieces.pieces().getFirst(), columns)) {
       return Optional.empty();
     }
-    if ((terrainCheck == TerrainCheck.GROUNDED_SURFACE
+    if ((terrainCheck == TerrainCheck.SURFACE_FOOTPRINT
+            || terrainCheck == TerrainCheck.GROUNDED_SURFACE
             || terrainCheck == TerrainCheck.MARINE_SURFACE)
         && !supportedSurfaceFootprint(pieces, 0, 0, 0, new StructureTerrain(context)))
       return Optional.empty();

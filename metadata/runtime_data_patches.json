@@ -890,7 +890,7 @@
       "version": "Y3deS8Po",
       "source": "data/galosphere/worldgen/structure/pink_salt_shrine.json",
       "source_sha256": "853236350f2a26de2debd7ed949247602e990cbcd03167f676a807ac895b0dd7",
-      "result_json_sha256": "0e2b6919c59205d5ef52d2c30e1808d6389d51e28522c478964caf09adf63fd5",
+      "result_json_sha256": "55d4da1b35b8efe0fafd5316af7e2b0929c09416cebba5319d7912ea16751c95",
       "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/galosphere/worldgen/structure/pink_salt_shrine.json"
     },
     {
@@ -2222,7 +2222,7 @@
       "version": "EQHGxQAv",
       "source": "data/philipsruins/worldgen/structure/ocean_fortress.json",
       "source_sha256": "6b3bfe5a3d58dd1e756696048d8fe05a08d98f4df03fcd82dc8975e9c7325a87",
-      "result_json_sha256": "e23640117329d75f19493f2380ee193dd27653477cbb0027736d3f34fc102cb7",
+      "result_json_sha256": "b25befd15365f803f18bb35bca8440931a2ce098aaddd2af39b5636d85c1a650",
       "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/structure/ocean_fortress.json"
     },
     {
@@ -2305,6 +2305,33 @@
       "source_sha256": "e5ee50651bd71a9f9fb22274be285fea1fb6fd592cf5dad35061670541e0922a",
       "result_json_sha256": "695489fcd981159bb70abed552ba44200569addc66101c8044dc8508153483ab",
       "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/philipsruins/worldgen/template_pool/underground_structures.json"
+    },
+    {
+      "id": "nova_structures:enchantment/boss_behaviour.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/enchantment/boss_behaviour.json",
+      "source_sha256": "94ad47993c6abb3d1d05571b60bcfd25372d867c360b870e403e311e8064bda9",
+      "result_json_sha256": "49ae1f1ba8d5ec9576fc5852394afdb435ff1facb497128b17d254fa119cda35",
+      "reason": "Translate the literal internal-enchantment warning exposed by the selected enchantment information UI; preserve its original English warning and all effect/gameplay data."
+    },
+    {
+      "id": "nova_structures:enchantment/shulker_boss.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/enchantment/shulker_boss.json",
+      "source_sha256": "eac69dcf4cab584b8f1b9f6c094291445bfa09ac2eaed27e58d3058c00dcdd62",
+      "result_json_sha256": "7331ea56a465b1d399376450460fc525e20d2935516defe2d74006a000c27475",
+      "reason": "Translate the literal internal-enchantment warning exposed by the selected enchantment information UI; preserve its original English warning and all effect/gameplay data."
+    },
+    {
+      "id": "nova_structures:enchantment/shulker_miniboss.json",
+      "provider": "tpehi7ww",
+      "version": "BYUUUeZA",
+      "source": "data/nova_structures/enchantment/shulker_miniboss.json",
+      "source_sha256": "1c7210668d587acd40c150c6a9b89668a5ac8466e8b964808af6b5cc35b81db0",
+      "result_json_sha256": "5d988eb82a7f8ef251c1be0e5a5868b9f68e4fc829275c2cf0b74c91ba6da01e",
+      "reason": "Translate the literal internal-enchantment warning exposed by the selected enchantment information UI; preserve its original English warning and all effect/gameplay data."
     }
   ]
 }

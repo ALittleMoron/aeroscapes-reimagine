@@ -49,6 +49,7 @@ public final class AtmosphereContractTest {
     runtimeConfigMetadata();
     nativeConfigurationTranslations();
     puzzlesConfigurationTranslations();
+    IcebergConfigBridgeTest.verify();
     ClassNode attachment = provider("punchy/client/render/FishingLineAttachment");
     method(
         attachment,
@@ -653,6 +654,7 @@ public final class AtmosphereContractTest {
   private static void languageCorrections() throws IOException {
     Map<String, String> original = new HashMap<>();
     Map<String, String> replacements = new HashMap<>();
+    Map<String, String> englishReplacements = new HashMap<>();
     try (var input =
         AtmosphereContractTest.class.getResourceAsStream(
             "/assets/aeroscapes_reimagine/language_corrections.json")) {
@@ -664,7 +666,11 @@ public final class AtmosphereContractTest {
         var row = element.getAsJsonObject();
         String key = row.get("key").getAsString();
         original.put(key, row.get("expected").getAsString());
-        replacements.put(key, row.get("replacement").getAsString());
+        String source = row.get("expected").getAsString();
+        String replacement = row.get("replacement").getAsString();
+        boolean english = row.has("language") && row.get("language").getAsString().equals("en_us");
+        replacements.put(key, english ? source : replacement);
+        englishReplacements.put(key, english ? replacement : source);
       }
     }
     require(!original.isEmpty(), "verified provider defects have correction rules");
@@ -676,18 +682,25 @@ public final class AtmosphereContractTest {
     require(
         LanguageCorrections.apply(corrected, russian).equals(corrected),
         "language reload is idempotent");
-    for (List<String> languages :
-        List.of(List.<String>of(), List.of("en_us"), List.of("en_us", "de_de"))) {
+    for (List<String> languages : List.of(List.<String>of(), List.of("en_us", "de_de"))) {
       require(
           LanguageCorrections.apply(original, languages).equals(original),
           "other selected languages retain even identical source strings");
     }
+    Map<String, String> english = LanguageCorrections.apply(original, List.of("en_us"));
+    require(english.equals(englishReplacements), "English-only repairs preserve Russian rules");
+    require(
+        LanguageCorrections.apply(english, List.of("en_us")).equals(english),
+        "English language reload is idempotent");
     Map<String, String> custom = new HashMap<>();
     original.forEach((key, value) -> custom.put(key, value + " custom"));
     custom.put("unrelated.translation", "Unrelated");
     require(
         LanguageCorrections.apply(custom, russian).equals(custom),
         "changed provider strings and user resource-pack replacements win");
+    require(
+        LanguageCorrections.apply(custom, List.of("en_us")).equals(custom),
+        "English repairs preserve changed provider and user translations");
     require(
         LanguageCorrections.apply(Map.of("unrelated.translation", "Unrelated"), russian)
             .equals(Map.of("unrelated.translation", "Unrelated")),

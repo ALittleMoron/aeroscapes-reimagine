@@ -94,7 +94,7 @@
   "ctov:worldgen/template_pool/village/halloween/terminator.json": "18fcacb8b856c7f5a95a82abbaaf70822e3f24fe34e2c979e2f3ae8b978211cd",
   "galosphere:worldgen/placed_feature/ore_silver_small.json": "68af136dc9419de23b3db06021c9d63d0f179c25613504d90286f6f63fe04446",
   "galosphere:worldgen/structure/forgotten_ruins.json": "a10614eee5a4f6ba41f6f8ae086e0acdf8cd4f7a2053158d02a7bbb7e5db7716",
-  "galosphere:worldgen/structure/pink_salt_shrine.json": "0e2b6919c59205d5ef52d2c30e1808d6389d51e28522c478964caf09adf63fd5",
+  "galosphere:worldgen/structure/pink_salt_shrine.json": "55d4da1b35b8efe0fafd5316af7e2b0929c09416cebba5319d7912ea16751c95",
   "galosphere:worldgen/template_pool/pink_salt_shrine/coffin_decorations.json": "354e2131e71e4e27526c55f761a7b0a476f4ae9b222f7363fb419d2baaf225de",
   "minecraft:advancement/give_quest_trader_trade.json": "9e7d4e27bf69f237a92cd211d7348b3ab02139925a7456f114490ad9904de67f",
   "minecraft:advancement/wander_add_map.json": "2bb5a923868fe73a5a1220a408f99292c84f79b2154fdb3f0922e229f93a9ba1",
@@ -242,7 +242,7 @@
   "philipsruins:worldgen/structure/level_two_ruins_pool.json": "6f64677a391c58d86e4a92c84520af9f904c8ce6ea8f70b14b46f92f0e66cad6",
   "philipsruins:worldgen/structure/lost_soul_city.json": "8fe4083f73eb02a4fe9d8541d09e45b411738c47f931e9b7cc38fcf5cbf4cd90",
   "philipsruins:worldgen/structure/lost_soul_dungeon.json": "55b56b6775450ac38835a4e1fdef08411a54190b5ef31c6a290feeccfefe0771",
-  "philipsruins:worldgen/structure/ocean_fortress.json": "e23640117329d75f19493f2380ee193dd27653477cbb0027736d3f34fc102cb7",
+  "philipsruins:worldgen/structure/ocean_fortress.json": "b25befd15365f803f18bb35bca8440931a2ce098aaddd2af39b5636d85c1a650",
   "philipsruins:worldgen/structure/ocean_ruins.json": "c61fd4e8f51d2cc09a2c183daeae5917e43bf6c375852eb7b8b08fe6181f1841",
   "philipsruins:worldgen/structure/pumpkin_ruins.json": "0a0b11a7cc178be35ebd4969605f4207587a15af83895f7a70f87de5880168cb",
   "philipsruins:worldgen/structure/rare_ruin.json": "557850f7402be845f80cc80c218319c1104ff97ec1cd5b7110075b4f2b290b93",
@@ -251,5 +251,8 @@
   "philipsruins:worldgen/template_pool/ancient_ruins.json": "853ebf2517db1d1905aa2b29d97e3993d7b8938057639eb7111113c8dd8dc32d",
   "philipsruins:worldgen/template_pool/level_two_ruins.json": "cb642183ac0bef7fa46e2c5f88a3bc80f52ef26437749beb7c9bb12abd2fd177",
   "philipsruins:worldgen/template_pool/level_two_ruins_pool.json": "29afc961a29327cb2921eca82a9eb4256e2bb0444bf85fb56f37a6c46c8b1c10",
-  "philipsruins:worldgen/template_pool/underground_structures.json": "695489fcd981159bb70abed552ba44200569addc66101c8044dc8508153483ab"
+  "philipsruins:worldgen/template_pool/underground_structures.json": "695489fcd981159bb70abed552ba44200569addc66101c8044dc8508153483ab",
+  "nova_structures:enchantment/boss_behaviour.json": "49ae1f1ba8d5ec9576fc5852394afdb435ff1facb497128b17d254fa119cda35",
+  "nova_structures:enchantment/shulker_boss.json": "7331ea56a465b1d399376450460fc525e20d2935516defe2d74006a000c27475",
+  "nova_structures:enchantment/shulker_miniboss.json": "5d988eb82a7f8ef251c1be0e5a5868b9f68e4fc829275c2cf0b74c91ba6da01e"
 }

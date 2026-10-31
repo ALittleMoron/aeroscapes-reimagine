@@ -1,0 +1,12 @@
+name = "S-Lib"
+filename = "s-lib-neoforge-3.0.1+1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/VtMfe1Va/versions/NzIuDdqU/s-lib-neoforge-3.0.1%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "625bc01ae4805da9dd797e0ef5c5872d7495c3eab51b73b0b24244a504402d0149040ad39005e44a9c2ec11a896e878e5eefc7a6e0be8b7b90342e7e75d8bb2a"
+
+[update.modrinth]
+mod-id = "VtMfe1Va"
+version = "NzIuDdqU"

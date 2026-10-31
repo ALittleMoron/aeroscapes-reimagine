@@ -158,15 +158,15 @@
       "resource": "assets/aeroscapes_reimagine_ui_translations/lang/en_us.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
-      "entries": 24,
-      "sha256": "b9161356ff7a1a31347f7cdd97615f32bdd0319cacef075f56fcd17f182108f2"
+      "entries": 209,
+      "sha256": "5e3a2319ff372c2eb189369d4cc8a306246e0b42bb32fb36b90871c1ed52ec21"
     },
     {
       "resource": "assets/aeroscapes_reimagine_ui_translations/lang/ru_ru.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
-      "entries": 1016,
-      "sha256": "4ae7597bdb1c2eb7801f013d07519954c7300981a55497532f028d71064b095a"
+      "entries": 1244,
+      "sha256": "4f974cb6b3062ef852a6d9899f2fd9b95cc072a2261af1167d247bcf1fb3ecee"
     },
     {
       "resource": "assets/item_descriptions/lang/en_us.json",
@@ -185,9 +185,9 @@
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 356,
-    "selection": "Russian selected language only, exact normalized source-value match; other locales and custom translations unchanged.",
-    "sha256": "acb549df68802eb82880e095e25e776a9724296bf31fb11680fd8e6c9f5c1065"
+    "rules": 359,
+    "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged.",
+    "sha256": "1d5ca2b6596e6e865b605616e5d35c43a57c7ef54a2d52297b8689d8e3db7736"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
@@ -198,7 +198,8 @@
       "dedicated_snapshot": 2904,
       "additional_client_only": 239,
       "additional_client_in_both_artifacts": 113,
-      "additional_reflective_puzzles": 2
+      "additional_reflective_puzzles": 2,
+      "additional_iceberg_client_custom_spec": 60
     },
     "literal_keys": "aeroscapes_reimagine.config.literal. + lowercase SHA-256 of exact UTF-8 display source",
     "fallback": "Original English source; full-block context before display-line fallback. Native metadata heading translations preserve arbitrary runtime suffix values. Config values, identities and parser input are unchanged.",
@@ -829,6 +830,498 @@
           "name": "Mozilla Public License 2.0",
           "url": null
         }
+      },
+      "jadeaddons": {
+        "provider_project": "xuDOzCLy",
+        "provider_version": "O3F6Dkle",
+        "filename": "JadeAddons-1.21.1-NeoForge-6.1.2.jar",
+        "sha512": "7fc0f413a73e11af6463cc246d9390e0cbe14ff46d0778d9893be59bb1dbbf300a745cc50731412ab4a940f7fe06e5433fa61a423a38ff64b6c6742c5ee62c7b",
+        "origin": "JadeAddons-1.21.1-NeoForge-6.1.2.jar",
+        "embedded_license": "ARR",
+        "metadata_license": {
+          "id": "LicenseRef-All-Rights-Reserved",
+          "name": "",
+          "url": null
+        },
+        "source_url": "https://github.com/Snownee/JadeAddons",
+        "authors": "Snownee",
+        "modpack_permission": "Selected QoL batch 1A for 0.2.2. On 2026-10-31 the pack owner confirmed separate author permission for GitHub publication of Aeroscapes Reimagine. This is an owner attestation, with no public permission URL supplied; original ARR terms and general CurseForge/Modrinth modpack policy remain unchanged. No broader rehosting or modification rights inferred. https://modrinth.com/mod/jade-addons-forge"
+      },
+      "emi_enchanting": {
+        "provider_project": "wbWoo11W",
+        "provider_version": "ZyJ6TKvh",
+        "filename": "emi_enchanting-0.1.2+1.21+neoforge.jar",
+        "sha512": "90944c8ff897fa98d0323fe94e4053fb89f43cbaf4fd28d6ad58134cea1469c9398e0c0edd4328a5530e1578ad2286ec5822292bf9c587182e5606dbfff218be",
+        "origin": "emi_enchanting-0.1.2+1.21+neoforge.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/fzzyhmstrs/EMI_enchanting/",
+        "authors": "fzzyhmstrs"
+      },
+      "emiffect": {
+        "provider_project": "705gWllI",
+        "provider_version": "S6Q6duUj",
+        "filename": "emiffect-neoforge-2.1.6+mc1.21.1.jar",
+        "sha512": "60db5a6c2649d58de5514f851cda63c3bef9eb46a827f1f587cca1fa935fe9f8ef8d0fdf3ed71adb4b58193a72f9ce7ea2e9d4d83e274ee70faa6265b4c80dd6",
+        "origin": "emiffect-neoforge-2.1.6+mc1.21.1.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://git.sr.ht/~flamarine/emiffect",
+        "authors": "Flamarine"
+      },
+      "enchdesc": {
+        "provider_project": "UVtY3ZAC",
+        "provider_version": "zfAkJn0r",
+        "filename": "enchdesc-neoforge-1.21.1-21.1.9.jar",
+        "sha512": "22258e118552e690ae77ad1a13e5dfe69bf94bdd765d2e614e2e4cc7410c406866b7937b54e8475660bba858b0eadb7efd430146563301143643622622d2c928",
+        "origin": "enchdesc-neoforge-1.21.1-21.1.9.jar",
+        "embedded_license": "LGPL 2.1",
+        "metadata_license": {
+          "id": "LGPL-2.1-only",
+          "name": "GNU Lesser General Public License v2.1 only",
+          "url": null
+        },
+        "source_url": "https://github.com/Darkhax-Minecraft/Enchantment-Descriptions",
+        "authors": "Darkhax"
+      },
+      "bookshelf": {
+        "provider_project": "uy4Cnpcm",
+        "provider_version": "1sdJl7J1",
+        "filename": "bookshelf-neoforge-1.21.1-21.1.81.jar",
+        "sha512": "78d4577a8e8fbb241216968475dd73f5b9e5efeb7da802b18a4e6c290e49af6cb4a5676e9855d0d8ff3613f967812e4bd363bbb9196c17c954d19454f84b2214",
+        "origin": "bookshelf-neoforge-1.21.1-21.1.81.jar",
+        "embedded_license": "LGPL 2.1",
+        "metadata_license": {
+          "id": "LGPL-2.1-only",
+          "name": "GNU Lesser General Public License v2.1 only",
+          "url": null
+        },
+        "source_url": "https://github.com/Darkhax-Minecraft/Bookshelf",
+        "authors": "Darkhax"
+      },
+      "prickle": {
+        "provider_project": "aaRl8GiW",
+        "provider_version": "EE1FHDyD",
+        "filename": "prickle-neoforge-1.21.1-21.1.11.jar",
+        "sha512": "154d42795ccf1f3e07714775cdb82fd5db17574319286ced13d86b0456b64e4cf5bb89ffbcbfcefce67b73ed0b83e4e2944e493d79d9a385ff9de23006ee7bf5",
+        "origin": "prickle-neoforge-1.21.1-21.1.11.jar",
+        "embedded_license": "LGPL 2.1",
+        "metadata_license": {
+          "id": "LGPL-2.1-only",
+          "name": "GNU Lesser General Public License v2.1 only",
+          "url": null
+        },
+        "source_url": "https://github.com/Darkhax-Minecraft/PrickleMC",
+        "authors": "Darkhax"
+      },
+      "smart_tooltip_scroll": {
+        "provider_project": "ZdbrmhGV",
+        "provider_version": "5yxY9Gl4",
+        "filename": "smart_tooltip_scroll-neoforge-1.1.1+1.21.1.jar",
+        "sha512": "c5ea327064181950049d9608a1196653f1f9f84bc8c75d6be55597a08ea3ca9fbe35b7f701547bb8dd18ee39b27054e7860bb335b71c58fedc87d7517dd256f2",
+        "origin": "smart_tooltip_scroll-neoforge-1.1.1+1.21.1.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/Stalemated/smart-tooltip-scroll",
+        "authors": "Stalemated"
+      },
+      "equipmentcompare": {
+        "provider_project": "CYSUVOdj",
+        "provider_version": "efoMHHTh",
+        "filename": "EquipmentCompare-1.21.1-neoforge-1.3.13.jar",
+        "sha512": "2e96d8b54f3f2c99525c91cae298561cc122dde8840bcb2d64ec0cfd997b6f49efcd13050f82f500f5cf414c5caaae29118ac45532ac34b1b62e62ad49cbcb31",
+        "origin": "EquipmentCompare-1.21.1-neoforge-1.3.13.jar",
+        "embedded_license": "CC BY-NC-ND 4.0",
+        "metadata_license": {
+          "id": "CC-BY-NC-ND-4.0",
+          "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+          "url": null
+        },
+        "source_url": "https://github.com/AHilyard/EquipmentCompare/",
+        "authors": "Grend"
+      },
+      "legendarytooltips": {
+        "provider_project": "atHH8NyV",
+        "provider_version": "BabRJO04",
+        "filename": "LegendaryTooltips-1.21.1-neoforge-1.5.5.jar",
+        "sha512": "3c0de6b6597a57b0fc3a134dde03ea3aeed0a7d64db63def8eda182c8bb7717293d2e4753887dcecaa27e17051c308269039eec6e74186d5eede68f98e74feeb",
+        "origin": "LegendaryTooltips-1.21.1-neoforge-1.5.5.jar",
+        "embedded_license": "CC BY-NC-ND 4.0",
+        "metadata_license": {
+          "id": "CC-BY-NC-ND-4.0",
+          "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+          "url": null
+        },
+        "source_url": "https://github.com/AHilyard/LegendaryTooltips/",
+        "authors": "Grend"
+      },
+      "s_lib": {
+        "provider_project": "VtMfe1Va",
+        "provider_version": "NzIuDdqU",
+        "filename": "s-lib-neoforge-3.0.1+1.21.1.jar",
+        "sha512": "625bc01ae4805da9dd797e0ef5c5872d7495c3eab51b73b0b24244a504402d0149040ad39005e44a9c2ec11a896e878e5eefc7a6e0be8b7b90342e7e75d8bb2a",
+        "origin": "s-lib-neoforge-3.0.1+1.21.1.jar",
+        "embedded_license": "MIT",
+        "metadata_license": {
+          "id": "MIT",
+          "name": "MIT License",
+          "url": null
+        },
+        "source_url": "https://github.com/Stalemated/s-lib",
+        "authors": "Stalemated"
+      },
+      "iceberg": {
+        "provider_project": "5faXoLqX",
+        "provider_version": "IMssx9du",
+        "filename": "Iceberg-1.21.1-neoforge-1.3.2.jar",
+        "sha512": "19d33195cfee0a640f40fb64d82346df7ac970ddb43ed68ba2dacb4793b18d577fd57dd43a4c2e94f731487c024b8d7ebcc52721764ec9d8a87bd68fc7df5c96",
+        "origin": "Iceberg-1.21.1-neoforge-1.3.2.jar",
+        "embedded_license": "CC BY-NC-ND 4.0",
+        "metadata_license": {
+          "id": "CC-BY-NC-ND-4.0",
+          "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+          "url": null
+        },
+        "source_url": "https://github.com/AHilyard/Iceberg/",
+        "authors": "Grend"
+      },
+      "prism": {
+        "provider_project": "1OE8wbN0",
+        "provider_version": "kMcz2lDj",
+        "filename": "Prism-1.21.1-neoforge-1.0.11.jar",
+        "sha512": "b3539b5dba6414b5f6db126dd703a0923984c1fa11a53e50090eb1b03ec3ef3a09fc048ae2d03b8241e4d182ec4e942cc905d0f3e7366608fd8a0bb2509f55f4",
+        "origin": "Prism-1.21.1-neoforge-1.0.11.jar",
+        "embedded_license": "CC BY-NC-ND 4.0",
+        "metadata_license": {
+          "id": "CC-BY-NC-ND-4.0",
+          "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+          "url": null
+        },
+        "source_url": "https://github.com/AHilyard/Prism/",
+        "authors": "Grend"
+      }
+    },
+    "qol_1a1b": {
+      "routes": {
+        "jadeaddons": "Existing Jade plugin controls; preserve native goggles=false and requires_goggles=true.",
+        "emi_enchanting": "EMI information recipes; use effective enchantment description keys.",
+        "emiffect": "EMI effect descriptions with vanilla and modded registry keys.",
+        "enchdesc": "Prickle JSON file only; no registered config screen/spec. Descriptions on books and gear, no modifier required by default.",
+        "smart_tooltip_scroll": "S-Lib registered YACL factory; supplement all19 missing Russian controls/help.",
+        "equipmentcompare": "11 Iceberg custom-spec options via version-gated native editor view.",
+        "legendarytooltips": "49 Iceberg custom-spec options via same view; native scrolling defaults NEVER.",
+        "bookshelf": "Six production command messages; development-only debug messages excluded.",
+        "prickle": "No independent registered config UI in the selected consumer route.",
+        "s_lib": "Shared config route; no additional independent player screen.",
+        "iceberg": "Custom config backend; no independent player config.",
+        "prism": "Color utility; no independent player config."
+      },
+      "scope": "Effective English/Russian assets, runtime descriptions, Mod Menu metadata, controls, client-only config definitions, help, sections, enums and native editor save/list paths. Provider translations take precedence; fill missing keys only.",
+      "descriptions": "All34 currently installed modded enchantment definitions have EN/RU prose;17 missing modded effect descriptions supplied from actual effects. Three internal Nova warning names keep warning semantics through description-only runtime patches.",
+      "iceberg_editor": "Clone display values, retain original schema/parser/loaded-config and ConfigTracker identity. Native editor writes original config and clears original supplier caches before original save/reload event. No third-party code is replaced.",
+      "source_comparison_limits": "Equipment Compare public source found1.3.12 vs actual1.3.13; Prism source1.0.8 vs actual1.0.11. Actual target JARs are primary; no exact source equivalence claimed.",
+      "authorship": "Missing short functional labels/help and metadata summaries are independently authored. Provider prose and user custom strings retain their owners and values.",
+      "source_inputs_1a": [
+        {
+          "artifact_slug": "jadeaddons",
+          "project_id": "xuDOzCLy",
+          "selected_version_id": "O3F6Dkle",
+          "selected_version": "6.1.2+neoforge",
+          "selected_jar_sha512": "7fc0f413a73e11af6463cc246d9390e0cbe14ff46d0778d9893be59bb1dbbf300a745cc50731412ab4a940f7fe06e5433fa61a423a38ff64b6c6742c5ee62c7b",
+          "repository_url": "https://github.com/Snownee/JadeAddons",
+          "inspected_revision": "ccdb947e044dd185d0925529311c419fc3ab98e7",
+          "inspected_revision_url": "https://github.com/Snownee/JadeAddons/tree/ccdb947e044dd185d0925529311c419fc3ab98e7",
+          "source_ref_context": "neoforge-6.1.2",
+          "source_binding_evidence": "Release tag neoforge-6.1.2 resolves to this commit; source mod_version=6.1.2.",
+          "source_archive_url": "https://codeload.github.com/Snownee/JadeAddons/tar.gz/ccdb947e044dd185d0925529311c419fc3ab98e7",
+          "source_archive_sha256": "89c079a975e0a0a5a8fcc6cecf9b2a81b88ed29332352b4260333d5b421c243b",
+          "inspected_source_files": [
+            "src/main/java/snownee/jade/addon/JadeAddonsClient.java",
+            "src/main/java/snownee/jade/addon/create/CreatePlugin.java",
+            "src/main/java/snownee/jade/addon/create/GogglesProvider.java",
+            "src/main/java/snownee/jade/addon/general/GeneralPlugin.java"
+          ],
+          "selected_artifact_resource_comparisons": [
+            {
+              "language": "en_us",
+              "source_path": "src/main/resources/assets/jadeaddons/lang/en_us.json",
+              "jar_entry": "assets/jadeaddons/lang/en_us.json",
+              "semantic_equal_to_selected_jar": true
+            },
+            {
+              "language": "ru_ru",
+              "source_path": "src/main/resources/assets/jadeaddons/lang/ru_ru.json",
+              "jar_entry": "assets/jadeaddons/lang/ru_ru.json",
+              "semantic_equal_to_selected_jar": true
+            }
+          ],
+          "artifact_behavior_evidence": "Exact selected JAR descriptor and relevant entrypoint/consumer bytecode inspected; source comparison is limited to the stated resources and behavior.",
+          "limitations": [
+            "No reproducible-build or byte-for-byte whole-JAR-to-source proof was performed."
+          ]
+        },
+        {
+          "artifact_slug": "emi_enchanting",
+          "project_id": "wbWoo11W",
+          "selected_version_id": "ZyJ6TKvh",
+          "selected_version": "0.1.2+1.21+neoforge",
+          "selected_jar_sha512": "90944c8ff897fa98d0323fe94e4053fb89f43cbaf4fd28d6ad58134cea1469c9398e0c0edd4328a5530e1578ad2286ec5822292bf9c587182e5606dbfff218be",
+          "repository_url": "https://github.com/fzzyhmstrs/EMI_enchanting",
+          "inspected_revision": "690b7c28ff156b36ba1663b5e5aae121a1de2596",
+          "inspected_revision_url": "https://github.com/fzzyhmstrs/EMI_enchanting/tree/690b7c28ff156b36ba1663b5e5aae121a1de2596",
+          "source_ref_context": "neo/1.21",
+          "source_binding_evidence": "Author branch neo/1.21; gradle.properties declares exact selected 0.1.2+1.21+neoforge version. No release tag was published in inspected tags response.",
+          "source_archive_url": "https://codeload.github.com/fzzyhmstrs/EMI_enchanting/tar.gz/690b7c28ff156b36ba1663b5e5aae121a1de2596",
+          "source_archive_sha256": "7b719db93fa3a5fd6cd75b574da13cc502d663a6d7ee6bfdf5afda28c6d4ddbc",
+          "inspected_source_files": [
+            "src/main/java/fzzyhmstrs/emi_enchanting/EmiClientPlugin.java",
+            "src/main/java/fzzyhmstrs/emi_enchanting/EmiEnchanting.java",
+            "src/main/java/fzzyhmstrs/emi_enchanting/EnchantmentRecipe.java",
+            "src/main/java/fzzyhmstrs/emi_enchanting/widget/PageWidget.java"
+          ],
+          "selected_artifact_resource_comparisons": [
+            {
+              "language": "en_us",
+              "source_path": "src/main/resources/assets/emi_enchanting/lang/en_us.json",
+              "jar_entry": "assets/emi_enchanting/lang/en_us.json",
+              "semantic_equal_to_selected_jar": true
+            },
+            {
+              "language": "ru_ru",
+              "source_path": "src/main/resources/assets/emi_enchanting/lang/ru_ru.json",
+              "jar_entry": "assets/emi_enchanting/lang/ru_ru.json",
+              "semantic_equal_to_selected_jar": true
+            }
+          ],
+          "artifact_behavior_evidence": "Exact selected JAR descriptor and relevant entrypoint/consumer bytecode inspected; source comparison is limited to the stated resources and behavior.",
+          "limitations": [
+            "No reproducible-build or byte-for-byte whole-JAR-to-source proof was performed."
+          ]
+        },
+        {
+          "artifact_slug": "emiffect",
+          "project_id": "705gWllI",
+          "selected_version_id": "S6Q6duUj",
+          "selected_version": "2.1.6+mc1.21.1",
+          "selected_jar_sha512": "60db5a6c2649d58de5514f851cda63c3bef9eb46a827f1f587cca1fa935fe9f8ef8d0fdf3ed71adb4b58193a72f9ce7ea2e9d4d83e274ee70faa6265b4c80dd6",
+          "repository_url": "https://git.sr.ht/~flamarine/emiffect",
+          "inspected_revision": "77b673d2a51b01df35ab8d6db38e176120268f67",
+          "inspected_revision_url": "https://git.sr.ht/~flamarine/emiffect/tree/77b673d2a51b01df35ab8d6db38e176120268f67",
+          "source_ref_context": "stonecutter",
+          "source_binding_evidence": "Author stonecutter branch/HEAD; build.gradle.kts baseVersion=2.1.6 and source covers 1.21.1 NeoForge. No exact release tag or reproducible binary build was established.",
+          "source_archive_url": "https://git.sr.ht/~flamarine/emiffect/archive/77b673d2a51b01df35ab8d6db38e176120268f67.tar.gz",
+          "source_archive_sha256": "060e48badf2077cd9d36a8201ddd6dcc09002d009b5568eed34c2b3fcab1d255",
+          "inspected_source_files": [
+            "src/main/java/moe/prwk/emiffect/recipes/MobEffectInfo.java"
+          ],
+          "selected_artifact_resource_comparisons": [
+            {
+              "language": "en_us",
+              "source_path": "src/main/resources/assets/emiffect/lang/en_us.json",
+              "jar_entry": "assets/emiffect/lang/en_us.json",
+              "semantic_equal_to_selected_jar": true
+            },
+            {
+              "language": "ru_ru",
+              "source_path": "src/main/resources/assets/emiffect/lang/ru_ru.json",
+              "jar_entry": "assets/emiffect/lang/ru_ru.json",
+              "semantic_equal_to_selected_jar": true
+            }
+          ],
+          "artifact_behavior_evidence": "Exact selected JAR descriptor and relevant entrypoint/consumer bytecode inspected; source comparison is limited to the stated resources and behavior.",
+          "limitations": [
+            "No reproducible-build or byte-for-byte whole-JAR-to-source proof was performed."
+          ]
+        },
+        {
+          "artifact_slug": "enchantment-descriptions",
+          "project_id": "UVtY3ZAC",
+          "selected_version_id": "zfAkJn0r",
+          "selected_version": "21.1.9",
+          "selected_jar_sha512": "22258e118552e690ae77ad1a13e5dfe69bf94bdd765d2e614e2e4cc7410c406866b7937b54e8475660bba858b0eadb7efd430146563301143643622622d2c928",
+          "repository_url": "https://github.com/Darkhax-Minecraft/Enchantment-Descriptions",
+          "inspected_revision": "efb6ee1aa0618de8af7a9783e59e02917be47818",
+          "inspected_revision_url": "https://github.com/Darkhax-Minecraft/Enchantment-Descriptions/tree/efb6ee1aa0618de8af7a9783e59e02917be47818",
+          "source_ref_context": "1.21.1",
+          "source_binding_evidence": "Commit at 2025-09-27T19:23:55Z immediately precedes selected 21.1.9 publication at 19:25:22Z; branch version base is 21.1, build patch version is not asserted from source alone. Exact selected JAR EN/RU resources rechecked equal. This is the 21.1.9-era snapshot, not the later 21.1.11 source.",
+          "source_archive_url": "https://codeload.github.com/Darkhax-Minecraft/Enchantment-Descriptions/tar.gz/efb6ee1aa0618de8af7a9783e59e02917be47818",
+          "source_archive_sha256": "3c693b8d3df12d35cbe3ec538e439107e728d7bb9e9b63182ad4c5991349d7af",
+          "inspected_source_files": [
+            "common/src/main/java/net/darkhax/enchdesc/common/impl/Config.java",
+            "common/src/main/java/net/darkhax/enchdesc/common/impl/EnchdescMod.java",
+            "neoforge/src/main/java/net/darkhax/enchdesc/impl/NeoForgeMod.java"
+          ],
+          "selected_artifact_resource_comparisons": [
+            {
+              "language": "en_us",
+              "source_path": "common/src/main/resources/assets/enchdesc/lang/en_us.json",
+              "jar_entry": "assets/enchdesc/lang/en_us.json",
+              "semantic_equal_to_selected_jar": true
+            },
+            {
+              "language": "ru_ru",
+              "source_path": "common/src/main/resources/assets/enchdesc/lang/ru_ru.json",
+              "jar_entry": "assets/enchdesc/lang/ru_ru.json",
+              "semantic_equal_to_selected_jar": true
+            }
+          ],
+          "artifact_behavior_evidence": "Exact selected JAR descriptor and relevant entrypoint/consumer bytecode inspected; source comparison is limited to the stated resources and behavior.",
+          "limitations": [
+            "No reproducible-build or byte-for-byte whole-JAR-to-source proof was performed.",
+            "Later commits d8d23b94d471b936523739ea09d82930423f3f25 (ID lookup fix) and e98bfb987c0be5aa5697cd522e9390892b349ea1 (other-language Sweeping Edge fix) are outside the selected source snapshot; their changes must not be attributed to 21.1.9."
+          ]
+        },
+        {
+          "artifact_slug": "bookshelf-lib",
+          "project_id": "uy4Cnpcm",
+          "selected_version_id": "1sdJl7J1",
+          "selected_version": "21.1.81",
+          "selected_jar_sha512": "78d4577a8e8fbb241216968475dd73f5b9e5efeb7da802b18a4e6c290e49af6cb4a5676e9855d0d8ff3613f967812e4bd363bbb9196c17c954d19454f84b2214",
+          "repository_url": "https://github.com/Darkhax-Minecraft/Bookshelf",
+          "inspected_revision": "5dead24858668c3de411cec7956158dfc2aeeecf",
+          "inspected_revision_url": "https://github.com/Darkhax-Minecraft/Bookshelf/tree/5dead24858668c3de411cec7956158dfc2aeeecf",
+          "source_ref_context": "1.21.1",
+          "source_binding_evidence": "Latest author 1.21.1 commit before selected release: commit 2026-02-10T22:41:20Z, selected 21.1.81 publication 22:44:22Z. Branch version base 21.1; release association inferred from commit timing and inspected behavior/resources, not a signed release-to-commit mapping.",
+          "source_archive_url": "https://codeload.github.com/Darkhax-Minecraft/Bookshelf/tar.gz/5dead24858668c3de411cec7956158dfc2aeeecf",
+          "source_archive_sha256": "27b94f198b510921cf47962ec0f1580acdf33b92d5a365eaf6ad16d47cc8b8f6",
+          "inspected_source_files": [
+            "common/src/main/java/net/darkhax/bookshelf/common/api/commands/args/FontArgument.java",
+            "common/src/main/java/net/darkhax/bookshelf/common/impl/BookshelfContent.java",
+            "common/src/main/java/net/darkhax/bookshelf/common/impl/BookshelfMod.java",
+            "common/src/main/java/net/darkhax/bookshelf/common/impl/command/FontCommand.java",
+            "common/src/main/java/net/darkhax/bookshelf/common/impl/command/HandCommand.java",
+            "common/src/main/java/net/darkhax/bookshelf/common/impl/command/StructureCommand.java",
+            "common/src/main/java/net/darkhax/bookshelf/common/mixin/patch/item/MixinCreativeModeTab.java",
+            "neoforge/src/main/java/net/darkhax/bookshelf/neoforge/impl/NeoForgeMod.java",
+            "neoforge/src/main/java/net/darkhax/bookshelf/neoforge/impl/util/NeoForgeRegistryHelper.java"
+          ],
+          "selected_artifact_resource_comparisons": [
+            {
+              "language": "en_us",
+              "source_path": "common/src/main/resources/assets/bookshelf/lang/en_us.json",
+              "jar_entry": "assets/bookshelf/lang/en_us.json",
+              "semantic_equal_to_selected_jar": true
+            }
+          ],
+          "artifact_behavior_evidence": "Exact selected JAR descriptor and relevant entrypoint/consumer bytecode inspected; source comparison is limited to the stated resources and behavior.",
+          "limitations": [
+            "No reproducible-build or byte-for-byte whole-JAR-to-source proof was performed."
+          ]
+        },
+        {
+          "artifact_slug": "prickle",
+          "project_id": "aaRl8GiW",
+          "selected_version_id": "EE1FHDyD",
+          "selected_version": "21.1.11",
+          "selected_jar_sha512": "154d42795ccf1f3e07714775cdb82fd5db17574319286ced13d86b0456b64e4cf5bb89ffbcbfcefce67b73ed0b83e4e2944e493d79d9a385ff9de23006ee7bf5",
+          "repository_url": "https://github.com/Darkhax-Minecraft/PrickleMC",
+          "inspected_revision": "2dc52ff11b71bfce5106ebf8926b05126ba53389",
+          "inspected_revision_url": "https://github.com/Darkhax-Minecraft/PrickleMC/tree/2dc52ff11b71bfce5106ebf8926b05126ba53389",
+          "source_ref_context": "1.21.1",
+          "source_binding_evidence": "Latest author 1.21.1 commit before selected release: commit 2025-09-04T03:17:00Z, selected 21.1.11 publication 03:19:44Z. Branch version base 21.1; no signed release-to-commit mapping.",
+          "source_archive_url": "https://codeload.github.com/Darkhax-Minecraft/PrickleMC/tar.gz/2dc52ff11b71bfce5106ebf8926b05126ba53389",
+          "source_archive_sha256": "21d0b6270ec66421beeec3d2471876ffda2f5450d55b0e7d9836e38d5e9b60af",
+          "inspected_source_files": [
+            "common/src/main/java/net/darkhax/pricklemc/common/impl/PrickleMod.java",
+            "neoforge/src/main/java/net/darkhax/pricklemc/neoforge/impl/NeoForgeMod.java"
+          ],
+          "selected_artifact_resource_comparisons": [],
+          "artifact_behavior_evidence": "Exact selected JAR descriptor and relevant entrypoint/consumer bytecode inspected; source comparison is limited to the stated resources and behavior.",
+          "limitations": [
+            "No reproducible-build or byte-for-byte whole-JAR-to-source proof was performed.",
+            "No language comparison applies: selected JAR/source have no language resources or in-game config screen."
+          ]
+        }
+      ],
+      "source_inputs_1b": [
+        {
+          "repository": "Stalemated/smart-tooltip-scroll",
+          "branch": "1.21.1",
+          "commit": "ce3592db71658b79e6a48e6347a51ea417f11dc9",
+          "url": "https://github.com/Stalemated/smart-tooltip-scroll/tree/ce3592db71658b79e6a48e6347a51ea417f11dc9",
+          "archive_sha512": "cb2b9f7f46796cc288e5afa60c3d7ca78445a4079098cf6c1c661157823c38d7bfe096ce3a023869f0f9e026b7bbfc33d671b9bcb1e0bebcaf81d9daed20a5cf",
+          "comparison": "Version property matches target release; relevant config/API mechanism inspected against distributed decompilation.",
+          "selected_version": "1.1.1+1.21.1"
+        },
+        {
+          "repository": "Stalemated/s-lib",
+          "branch": "3.0.1+1.21.1",
+          "commit": "901f17811005290fed1c21d9c84f354f554c337b",
+          "url": "https://github.com/Stalemated/s-lib/tree/901f17811005290fed1c21d9c84f354f554c337b",
+          "comparison": "Version property matches target release; relevant config/API mechanism inspected against distributed decompilation.",
+          "selected_version": "3.0.1+1.21.1"
+        },
+        {
+          "repository": "AHilyard/EquipmentCompare",
+          "branch": "1.21-multi",
+          "commit": "563e39d94a3a604cd0e3511184f7427e18699fc6",
+          "url": "https://github.com/AHilyard/EquipmentCompare/tree/563e39d94a3a604cd0e3511184f7427e18699fc6",
+          "archive_sha512": "a5387161b82477eee123c075a848a143e563a09415030f70a24053b16ec4d26b501de9accf0a7415e383e293b39468cb9e46aeb2e077c06f5f72add041a6dae8",
+          "comparison": "Published branches expose 1.3.12 for the 1.21 line, not exact1.3.13. Distributed JAR is primary. Added compare_accessories setting and Curios support are present in actual JAR and named in official1.3.13 changelog. Do not claim exact source equivalence.",
+          "selected_version": "1.3.13"
+        },
+        {
+          "repository": "AHilyard/LegendaryTooltips",
+          "branch": "1.21-multi",
+          "commit": "1aecb2ba1db152c7c51368b48241c202dd97d20b",
+          "url": "https://github.com/AHilyard/LegendaryTooltips/tree/1aecb2ba1db152c7c51368b48241c202dd97d20b",
+          "archive_sha512": "a525cd2ad6443e4880d9895a4b7af2c9c6ff50a8f85be76fdcab05dc5d1590d8653065f22b1540586fba8026b343050f0bb59ea1423e47e94d8a2b47b4ed59d5",
+          "comparison": "Version property matches target release; relevant config/API mechanism inspected against distributed decompilation.",
+          "selected_version": "1.5.5"
+        },
+        {
+          "repository": "AHilyard/Iceberg",
+          "branch": "1.21.1-multi",
+          "commit": "aa35ced1a503fe53434b635d09a4b6dec73a554f",
+          "url": "https://github.com/AHilyard/Iceberg/tree/aa35ced1a503fe53434b635d09a4b6dec73a554f",
+          "archive_sha512": "a3664f5e8de96377b768e42efad423581cd934f2411900e35c34d39497c90cacc433f88f8f9fb0cb20d911167315f723c8d093a60a08bb077414fd2fb8f3fa8a",
+          "comparison": "Version property matches target release; relevant config/API mechanism inspected against distributed decompilation.",
+          "selected_version": "1.3.2"
+        },
+        {
+          "repository": "AHilyard/Prism",
+          "branch": "1.21-multi",
+          "commit": "6d8493c90e1ccea50442942d887826966f1d45c5",
+          "url": "https://github.com/AHilyard/Prism/tree/6d8493c90e1ccea50442942d887826966f1d45c5",
+          "archive_sha512": "56a4e6c676b6b6149c7d345f31752bcdcf45fa2e19eac202f61e6a47f15cbb6d1dfcc25a01f443c9b4dcf66533ab7c6d48306309fd441f0f6ae0e2add833f619",
+          "comparison": "Public 1.21-multi source declares1.0.8,1.21.3 declares1.0.10,and1.21.11 declares1.1.0. No exact1.0.11 tag/branch found. Actual JAR decompiled and dependency/API consumers inspected. Do not claim exact source equivalence.",
+          "selected_version": "1.0.11"
+        }
+      ],
+      "guarded_english_rule_evidence": {
+        "key": "commands.bookshelf.font.bad_sender",
+        "provider_version": "1sdJl7J1",
+        "provider_resource": "assets/bookshelf/lang/en_us.json",
+        "provider_resource_sha256": "b85d919b3936bd358cb082b52b02b621d312d39e3f0985bf5f978ad71edc89cf",
+        "expected": "The font rename command",
+        "replacement": "The target must be a living entity.",
+        "handler_source": "https://github.com/Darkhax-Minecraft/Bookshelf/blob/5dead24858668c3de411cec7956158dfc2aeeecf/common/src/main/java/net/darkhax/bookshelf/common/impl/command/FontCommand.java#L56-L71",
+        "condition": "bad_sender follows a failed target instanceof LivingEntity check. Empty main-hand stack has the distinct hand.error.not_air message; do not conflate those conditions."
+      },
+      "jade_contraption_scope": {
+        "uid": "jadeaddons.create:contraption_inv",
+        "registration_target": "com.simibubi.create.content.contraptions.AbstractContraptionEntity",
+        "behavior": "Item/fluid extensions read mounted storage only after the target passes the exact Create entity type check. Added ray tracing filters those contraptions and tests their block shapes. No Sable-specific or arbitrary ship-storage traversal is registered.",
+        "source": "https://github.com/Snownee/JadeAddons/tree/ccdb947e044dd185d0925529311c419fc3ab98e7/src/main/java/snownee/jade/addon/create",
+        "acceptance": "Ordinary Create contraption information is the selected role. General ship compatibility and gameplay occlusion are not established; owner client checks remain pending. No invented storage-UID toggle or disabled provider."
+      },
+      "starting_profile": {
+        "resource": "config/legendarytooltips.toml",
+        "setting": "client.visual_options.render_item_model",
+        "value": "NONE",
+        "reason": "Owner confirmed that disabling the model preview resolves overlap with Quark attribute icons. Starting file only; no runtime override of later player choices. Native reset remains the provider default."
       }
     }
   }
