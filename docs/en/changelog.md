@@ -4,6 +4,12 @@ description: Version history.
 status: available
 ---
 
+## 0.2.4
+
+- Add [Distant Horizons](https://modrinth.com/mod/distanthorizons) for distant islands, with a 64-chunk radius, Russian settings and support for both supplied shaderpacks. Spyglass zoom shows the distant view in more detail.
+- Optimize island terrain generation.
+- Fix startup when OpenCL acceleration is disabled in the generation configuration.
+
 ## 0.2.3
 
 - Added [Better Advancements](https://modrinth.com/mod/better-advancements), [Advancement Plaques](https://modrinth.com/mod/advancement-plaques) and [Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier) for advancement browsing, notifications and pickup information.

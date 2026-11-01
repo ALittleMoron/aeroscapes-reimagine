@@ -68,7 +68,7 @@ In the interface, Chat Animation animates chat, while Smooth Gui animates menu o
 
 The atmosphere resourcepack uses [Polytone](https://modrinth.com/mod/polytone) to slightly deepen each biome's daytime sky colors and give dawn and dusk soft peach and amber tones. Most stars remain small, with occasional larger points that make the night sky more varied. It retains Minecraft's square sun and moon without photographic panoramas or a Milky Way backdrop; weather and night darkening remain active.
 
-Smooth Skies smooths the distant color gradient, and Clear Void removes the black lower part of the skybox. [Complementary](https://modrinth.com/shader/complementary-reimagined) supplies its own procedural sky and stars, with a denser star field in the prepared profile; [MakeUp](https://modrinth.com/shader/makeup-ultra-fast-shaders) retains the vanilla star geometry and its varied sizes. The prepared profiles keep their existing cloud route.
+Smooth Skies smooths the distant color gradient, and Clear Void removes the black lower part of the skybox. [Complementary](https://modrinth.com/shader/complementary-reimagined) supplies its own procedural sky and stars, with a denser star field in the prepared profile; [MakeUp](https://modrinth.com/shader/makeup-ultra-fast-shaders) retains the vanilla star geometry and its varied sizes.
 
 Three small decorative planets add a pale, a softly banded and a reddish point to the night sky. They slowly shift against the stars as world days pass. Six brighter stars accompany the ordinary star field, while a northern guide star stays above north. The added lights fade with dawn, rain and the horizon and appear only in the Overworld.
 
@@ -80,12 +80,24 @@ Sodium handles world rendering. ImmediatelyFast batches drawing work, Flerovium 
 
 Vanillin uses Flywheel to render vanilla chests, shulker boxes and bells.
 
+### Distant islands
+
+[Distant Horizons](https://modrinth.com/mod/distanthorizons) draws simplified terrain beyond Minecraft's normal render distance. The starting radius is 64 chunks, about 1,024 blocks from the player. Nearby terrain keeps normal block detail; distant islands become less detailed. This does not extend simulation, creature visibility or interactions, and moving ships are not included in the distant terrain.
+
+New distant areas fill in gradually. Background generation uses CPU time and adds chunks to the world, increasing save and backup size. Previously explored terrain can reuse the saved distant view. For updates and rollback, follow the [saved-world guidance](../../../known-issues/).
+
+Spyglass zoom shows more detailed distant islands, sometimes after a short delay. Both supplied shaders use averaged colors rather than full block textures for distant terrain, so zooming does not give it the appearance of nearby blocks. Thin surfaces and distant water also remain approximate. During fast flight, gaps can appear while nearby chunks replace the distant view.
+
+Open the mod's menu from the video settings to adjust distance. Reducing distance lowers the rendering load; disabling distant generation stops the creation of new distant areas. Rendering has a separate switch: hiding the distant view does not stop background generation.
+
+For distant islands, use the **Chunks Only** generation plan and **Full - Save Chunks** mode: surface-only generation can misrepresent them. Leave cave culling off to keep lower layers visible. Increasing vertical quality may improve thin or overlapping islands at a higher memory cost. Avoid heightmap quality, which loses vertical layers.
+
 ## Shaders
 
 The pack includes [Complementary Reimagined](https://modrinth.com/project/HVnmMxH1) and [MakeUp Ultra Fast](https://modrinth.com/project/izsIPI7a), with prepared starting profiles. Shaders are disabled by default and remain optional for play.
 
 The prepared Complementary profile disables **Waving Water Height** so puddles stay above the ground. Water surface normals retain their wave detail. If using your own shader settings, disable that option if puddles dip into blocks. MakeUp's prepared profile does not displace water vertices.
 
-[Better Clouds](https://modrinth.com/mod/better-clouds) supplies the clouds. The prepared shader profiles select their **Vanilla** cloud mode so Better Clouds can use that rendering path. Keep Minecraft clouds enabled; an existing profile with clouds turned off retains that preference. Other shader profiles may need their own cloud setting.
+[Better Clouds](https://modrinth.com/mod/better-clouds) supplies the clouds. Both prepared shader profiles use **Vanilla** cloud mode for this. Keep clouds enabled in Minecraft's video settings. When using your own shader profile, also check that it allows Minecraft cloud rendering.
 
 Colorwheel connects Iris shaders to the Flywheel rendering used by Create and Vanillin.

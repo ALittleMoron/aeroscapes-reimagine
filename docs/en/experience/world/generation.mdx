@@ -8,7 +8,11 @@ import Screenshot from "../../../../tools/docs/src/components/Screenshot.astro";
 
 The floating Overworld is based on [Aero Islands](https://modrinth.com/mod/tGVwBATM) generation. Reimagine’s own mod develops that terrain alongside other mods’ biomes and structures: moving them to islands exposed assumptions about continuous land. The Default world preset is currently supported.
 
-[C2ME](https://modrinth.com/mod/COlSi5iR) distributes chunk generation across workers and compiles terrain calculations. OpenCL can move noise calculations to a compatible GPU with native double-precision support; generation falls back to the CPU when that path is unavailable. The pack’s own adapter preserves its island shapes, basin water and city caverns. [Structure Layout Optimizer](https://modrinth.com/mod/ayPU0OHc) reduces work when assembling and placing structures.
+[C2ME](https://modrinth.com/mod/COlSi5iR) distributes chunk loading and generation across CPU threads. OpenCL can use a compatible GPU for part of terrain generation; when that acceleration is unavailable, generation uses the CPU. [Structure Layout Optimizer](https://modrinth.com/mod/ayPU0OHc) reduces work when assembling and placing structures.
+
+If new terrain struggles to keep up while flying, compare GPU and CPU generation with your usual graphics settings. The faster option depends on your hardware; the pack does not select it automatically.
+
+To try CPU generation, close the game, set `enabled = false` under `[openclAccel]` in `config/c2me.toml`, then restart. Set it back to `true` to try GPU generation again. Compare both terrain arrival and the smoothness of movement in new areas.
 
 Feature placement is prepared when the world opens. In singleplayer, ordinary terrain chunks arrive in batches adjusted to the client’s processing speed, spreading the work of receiving a large ready area.
 

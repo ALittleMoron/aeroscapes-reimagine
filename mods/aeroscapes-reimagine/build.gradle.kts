@@ -42,6 +42,8 @@ repositories {
       includeModule("maven.modrinth", "emi-trades-reborn")
       includeModule("maven.modrinth", "create-aeronautics")
       includeModule("maven.modrinth", "create")
+      includeModule("maven.modrinth", "distanthorizons")
+      includeModule("maven.modrinth", "better-clouds")
     }
   }
 }
@@ -128,6 +130,8 @@ dependencies {
   atmosphereApi("maven.modrinth:iceberg:IMssx9du")
   atmosphereApi("maven.modrinth:emi:ouSj7NfF")
   atmosphereApi("maven.modrinth:emi-trades-reborn:VPRhN8yf")
+  atmosphereApi("maven.modrinth:distanthorizons:9w34y8ai")
+  atmosphereApi("maven.modrinth:better-clouds:UvRCtZxT")
   compileOnly(files(atmosphereApi))
   compileOnly(
     files(fileTree(sableNestedApiDirectory) { include("*.jar") }).builtBy(extractSableApi)
@@ -240,6 +244,14 @@ val monitorControllerTest by
     mainClass = "dev.aeroscapes.monitor.MonitorControllerTest"
   }
 
+val frameIntervalStatsTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.diagnostics.FrameIntervalStatsTest"
+  }
+
 val shoulderCameraTransformerTest by
   tasks.registering(JavaExec::class) {
     group = "verification"
@@ -308,6 +320,7 @@ tasks.check {
     biomeTerrainMaskTest,
     sableTraceBufferTest,
     monitorControllerTest,
+    frameIntervalStatsTest,
     shoulderCameraTransformerTest,
     atmosphereContractTest,
     celestialLayoutTest,

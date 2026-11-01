@@ -1804,5 +1804,17 @@
     "key": "key.trade_cycling.cycle_trades",
     "expected": "Цикл продаж",
     "replacement": "Обновить предложения"
+  },
+  {
+    "language": "en_us",
+    "key": "distanthorizons.config.common.multiThreading.threadRunTimeRatio",
+    "expected": "Runtime % for threads",
+    "replacement": "Thread Runtime Ratio"
+  },
+  {
+    "language": "en_us",
+    "key": "distanthorizons.config.client.advanced.graphics.culling.blocksToIgnore.@tooltip",
+    "expected": "Defines what blocks should be rendered as LODs. \n\n§NONE:§r Include all blocks in the LODs\n§NON_COLLIDING:§r Only render solid blocks in the LODs (tall grass, torches, etc. will be ignored)",
+    "replacement": "Defines what blocks should be rendered as LODs. \n\n§6NONE:§r Include all blocks in the LODs\n§6NON_COLLIDING:§r Only render solid blocks in the LODs (tall grass, torches, etc. will be ignored)"
   }
 ]

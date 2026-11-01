@@ -47,6 +47,10 @@ def neoforge_range_matches(expression: str | None, versions: tuple[str, ...]) ->
     if not expression:
         return False
     remaining = expression.strip()
+    if remaining == "[*,)":
+        # DH 3.3.3 uses this literal Maven bound. In the pinned loader it excludes
+        # only numeric zero among our supported numeric/beta candidate versions.
+        return any(any(components) or not released for components, released in candidates)
     if not remaining or remaining[0] not in "[(":
         # Maven treats a bare recommended version, including '*', as unrestricted.
         return True

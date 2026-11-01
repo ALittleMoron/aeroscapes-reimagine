@@ -28,6 +28,15 @@ public final class OpenClBatchEvidence {
     if (state == tracked) READBACKS.incrementAndGet();
   }
 
+  public static void checkpoint(String label) {
+    LogUtils.getLogger()
+        .info(
+            "OpenCL checkpoint {}: launches={}, readbacks={}",
+            label,
+            LAUNCHES.get(),
+            READBACKS.get());
+  }
+
   public static void verifyAndLog() {
     long readbacks = READBACKS.get();
     long launches = LAUNCHES.get();

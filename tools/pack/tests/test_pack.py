@@ -780,6 +780,7 @@ def test_nested_loader_requirement_cannot_hide_behind_compatible_parent(
         ("", False),
         (" ", True),
         ("*", True),
+        ("[*,)", True),
         ("21.1.262", True),
         ("[21.1.219,)", True),
         ("[21.1.262,)", False),
@@ -819,6 +820,16 @@ def test_unsupported_or_invalid_neoforge_range_is_not_silently_accepted(expressi
 def test_neoforge_range_requires_the_actual_installed_version() -> None:
     with pytest.raises(PackError, match="installed version"):
         neoforge_range_matches("[21.1.219,)", ())
+
+
+@pytest.mark.parametrize(
+    ("version", "accepted"),
+    [("0", False), ("0.0.0", False), ("0-beta", True), ("0.0.1", True)],
+)
+def test_distant_horizons_star_lower_bound_follows_native_maven_ordering(
+    version: str, accepted: bool
+) -> None:
+    assert neoforge_range_matches("[*,)", (version,)) is accepted
 
 
 def test_neoforge_range_respects_the_installed_side(

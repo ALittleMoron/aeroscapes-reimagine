@@ -255,8 +255,11 @@ public final class WorldgenRegression {
       BiomeCoverageRegression.start(level, Path.of(biomeCoverage));
       return;
     }
-    if (Boolean.getBoolean("aeroscapes.regression.teleportChunks")) {
-      TeleportChunkRegression.start(level);
+    if (Boolean.getBoolean("aeroscapes.regression.teleportChunks")
+        || Boolean.getBoolean("aeroscapes.regression.flightChunks")) {
+      if (Boolean.getBoolean("aeroscapes.regression.performance.opencl"))
+        OpenClPerformanceRegression.start(level, () -> TeleportChunkRegression.start(level));
+      else TeleportChunkRegression.start(level);
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.biomeLocate")) {

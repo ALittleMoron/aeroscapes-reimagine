@@ -571,5 +571,57 @@
     },
     "files": [],
     "reason": "Puzzles Lib 21.1.66 native configuration section overrides NeoForge labels with getConfigValueComponent literal text. Owned PuzzlesConfigurationLanguageMixin translates only its final display string after native capitalization and And/Or substitutions. Original config keys, values, component style and behavior remain native; unknown text falls back unchanged. Exact provider helper bytecode and version gate are checked."
+  },
+  {
+    "targets": {
+      "uCdwusMi": "9w34y8ai",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Exact DH3.3.3 native GuiHelper_neoforge sends validation limits and unknown API-owner text as literals. DistantHorizonsLanguageMixin translates only recognized display strings, preserving runtime suffixes and normal language-key lookup; the exact provider version gates the adapter."
+  },
+  {
+    "targets": {
+      "COlSi5iR": "avwWYPbG",
+      "qtPMklut": "7rX3dlFf",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "C2ME OpenCL alpha.123 omits its synthetic ChunkMap getter when openclAccel.enabled is false. Gate the owned adapters through the provider's ModuleMixinPlugin enablement, after checking module presence, so disabled acceleration does not fail injection into absent methods. Keep upstream config and Java-version gating rather than treating an installed module as enabled."
+  },
+  {
+    "targets": {
+      "uCdwusMi": "9w34y8ai",
+      "owned:aeroscapes_reimagine": "0.1.0",
+      "fALzjamp": "LuFhm4eU"
+    },
+    "files": [],
+    "reason": "DH3.3.3 attempts first Chunky listener registration while spawn chunks load, before Chunky1.4.23 creates its API during ServerStartingEvent. The provider throws Chunky is not loaded and DH has already set listenerBound. DistantHorizonsChunkyStartupMixin defers tryRunFirstTimeSetup until the current server is ready, preserving its unset flag and native later registration/pause behavior; it neither suppresses failures after startup nor disables coordination. Exact provider versions gate the adapter."
+  },
+  {
+    "targets": {
+      "uCdwusMi": "9w34y8ai",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "DH3.3.3 compatibility chat wraps only queueSlowChatMessage calls in AbstractModInitializer_neoforge.logIncompatibilityWarnings. Suppress the exact Chunky startup advice prefix while preserving other messages, file logging and compatibility side effects; keep the separate Chunky listener-readiness repair."
+  },
+  {
+    "targets": {
+      "uCdwusMi": "9w34y8ai",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Fixed client-side LOD presentation policy maps only the synthetic ILLUMINATED material15 to UNKNOWN0 at the native block-wrapper getter. This removes the excessive emission/direct-light boost in the supplied shader DH paths without changing RGB, opacity, textures, physical emission or block/skylight values. The getter covers wrappers reconstructed from existing FullData palettes and is independent of shader toggles; no world or LOD database migration. Other shaderpacks can interpret the category differently. Native shaderless terrain has no ILLUMINATED special case."
+  },
+  {
+    "targets": {
+      "5srFLIaK": "UvRCtZxT",
+      "uCdwusMi": "9w34y8ai",
+      "YL57xq9U": "KduFYu4t",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Better Clouds1.13.11 coverage assumes reverse-Z for DH depth, but pinned Iris1.8.14/DH3.3.3 uses forward-Z with shaders. A native source-load adapter changes only the hash-matched coverage fragment in memory, declares the already-populated u_dh_p_matrix uniform and selects comparison from its m22 sign, retaining the old comparison for zero/non-forward matrices. Both pinned modes use -1..1 clip depth, so keep the existing remap and missing-texture guard. Original resource SHA256 dbbe307a51f42abf9cc0492c9e3d130734dd2facb088e0a33aedaca0bb88ec41; unknown resource-pack overrides are preserved with one file-log warning. Provider JARs and shader ZIPs remain unchanged; cloud height is unchanged."
   }
 ]

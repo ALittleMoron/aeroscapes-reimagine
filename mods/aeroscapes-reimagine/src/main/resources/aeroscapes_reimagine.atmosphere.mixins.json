@@ -28,6 +28,10 @@
     "DuskEntryLanguageMixin",
     "DuskSettingLanguageMixin",
     "DuskTextLanguageMixin",
+    "DistantHorizonsLanguageMixin",
+    "DistantHorizonsCompatibilityChatMixin",
+    "DistantHorizonsLightMaterialMixin",
+    "BetterCloudsCoverageMixin",
     "PickupNotifierLanguageMixin",
     "EmiTradesOutputMixin",
     "EmiTradesStatisticsMixin",
@@ -38,6 +42,7 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "DuskCommandLanguageMixin"
+    "DuskCommandLanguageMixin",
+    "DistantHorizonsChunkyStartupMixin"
   ]
 }

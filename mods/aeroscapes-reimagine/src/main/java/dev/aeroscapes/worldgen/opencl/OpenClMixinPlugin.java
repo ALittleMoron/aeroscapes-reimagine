@@ -1,21 +1,30 @@
 package dev.aeroscapes.worldgen.opencl;
 
+import com.ishland.c2me.base.common.ModuleMixinPlugin;
 import java.util.List;
 import java.util.Set;
+import javax.annotation.Nullable;
 import net.neoforged.fml.loading.FMLLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
-/** Keep optional OpenCL classes unloaded when the accelerator is absent. */
+/** Follow the accelerator's native enablement before targeting its added methods. */
 public final class OpenClMixinPlugin implements IMixinConfigPlugin {
+  @Nullable private IMixinConfigPlugin module;
+
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-    return FMLLoader.getLoadingModList().getModFileById("c2me_opts_accel_opencl") != null;
+    return module != null && module.shouldApplyMixin(targetClassName, mixinClassName);
   }
 
   @Override
-  public void onLoad(String mixinPackage) {}
+  public void onLoad(String mixinPackage) {
+    if (FMLLoader.getLoadingModList().getModFileById("c2me_opts_accel_opencl") == null) return;
+    var gate = new ModuleMixinPlugin();
+    gate.onLoad("com.ishland.c2me.opts.accel.opencl.mixin");
+    module = gate;
+  }
 
   @Override
   public String getRefMapperConfig() {

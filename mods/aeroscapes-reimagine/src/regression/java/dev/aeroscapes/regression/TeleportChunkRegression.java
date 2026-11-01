@@ -2,11 +2,14 @@ package dev.aeroscapes.regression;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.regression.opencl.OpenClBatchEvidence;
 import io.netty.channel.embedded.EmbeddedChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.UUID;
 import javax.annotation.Nullable;
 import net.minecraft.network.Connection;
@@ -18,6 +21,7 @@ import net.minecraft.network.protocol.common.ServerboundKeepAlivePacket;
 import net.minecraft.network.protocol.game.ClientboundBundlePacket;
 import net.minecraft.network.protocol.game.ClientboundChunkBatchFinishedPacket;
 import net.minecraft.network.protocol.game.ClientboundChunkBatchStartPacket;
+import net.minecraft.network.protocol.game.ClientboundForgetLevelChunkPacket;
 import net.minecraft.network.protocol.game.ClientboundLevelChunkWithLightPacket;
 import net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket;
 import net.minecraft.network.protocol.game.ServerboundAcceptTeleportationPacket;
@@ -44,7 +48,10 @@ import net.neoforged.neoforge.network.registration.NetworkPayloadSetup;
 
 /** Real player tickets and terrain delivery to an ideal packet sink; no client or meshing. */
 public final class TeleportChunkRegression {
-  private static final ChunkPos ORIGIN = new ChunkPos(512, 512);
+  private static final ChunkPos ORIGIN =
+      new ChunkPos(
+          Integer.getInteger("aeroscapes.regression.originX", 512),
+          Integer.getInteger("aeroscapes.regression.originZ", 512));
   private static final ChunkPos DESTINATION = new ChunkPos(768, 768);
   private static final int NEAR_RADIUS = 2;
   private static final int NEAR_COUNT = 25;
@@ -58,6 +65,20 @@ public final class TeleportChunkRegression {
   private Leg leg;
   private int phase;
   private boolean finished;
+  private final boolean flightMode = Boolean.getBoolean("aeroscapes.regression.flightChunks");
+  private final boolean coldFlight = Boolean.getBoolean("aeroscapes.regression.flightCold");
+  private final double flightStep =
+      Double.parseDouble(System.getProperty("aeroscapes.regression.flightStep", "1"));
+  private final Set<Long> flightSeen = new HashSet<>();
+  private final Set<Long> flightReady = new HashSet<>();
+  private int movingTicks;
+  private int hoveringTicks;
+  private long movementStarted;
+  private long hoverStarted;
+  private long lastFlightReport;
+  private long lastFlightTick;
+  private long maximumTickGap;
+  private long firstHoverCaughtUp = -1;
 
   private TeleportChunkRegression(ServerLevel level) {
     this.level = level;
@@ -108,7 +129,7 @@ public final class TeleportChunkRegression {
       require(fixture.countSendable(ORIGIN) == 0, "Origin was already sendable");
       fixture.player.absMoveTo(
           ORIGIN.getMiddleBlockX(),
-          level.getMaxBuildHeight() + 32.0,
+          Integer.getInteger("aeroscapes.regression.flightY", level.getMaxBuildHeight() + 32),
           ORIGIN.getMiddleBlockZ(),
           0,
           0);
@@ -116,6 +137,9 @@ public final class TeleportChunkRegression {
       level.addNewPlayer(fixture.player);
       fixture.player.setGameMode(GameType.CREATIVE);
       fixture.player.getAbilities().flying = true;
+      require(
+          Double.isFinite(fixture.flightStep) && fixture.flightStep > 0 && fixture.flightStep <= 2,
+          "Flight step must be in (0, 2]");
       require(fixture.player.isAddedToLevel(), "Fixture player was not registered");
       require(level.getPlayerByUUID(fixture.player.getUUID()) == fixture.player, "Missing player");
       LogUtils.getLogger()
@@ -147,6 +171,10 @@ public final class TeleportChunkRegression {
           level.getServer().getPlayerList().getPlayerCount() == 0, "Real player joined fixture");
       acknowledge();
       listener.tick();
+      if (flightMode) {
+        tickFlight();
+        return;
+      }
       listener.handleMovePlayer(
           new ServerboundMovePlayerPacket.Rot(player.getYRot(), player.getXRot(), false));
       require(
@@ -178,6 +206,120 @@ public final class TeleportChunkRegression {
     } catch (RuntimeException | Error failure) {
       close();
       throw failure;
+    }
+  }
+
+  private void tickFlight() {
+    long now = System.nanoTime();
+    if (lastFlightTick != 0) maximumTickGap = Math.max(maximumTickGap, now - lastFlightTick);
+    lastFlightTick = now;
+    if (phase == 1) {
+      double expectedX = player.getX() + flightStep;
+      listener.handleMovePlayer(
+          new ServerboundMovePlayerPacket.Pos(expectedX, player.getY(), player.getZ(), false));
+      require(player.getX() == expectedX, "Movement packet did not advance the player");
+      movingTicks++;
+    } else {
+      listener.handleMovePlayer(
+          new ServerboundMovePlayerPacket.Rot(player.getYRot(), player.getXRot(), false));
+      if (phase == 2) hoveringTicks++;
+    }
+    require(connection.teleport == null, "Corrective teleport during flight");
+    require(
+        player.getLastSectionPos().chunk().equals(player.chunkPosition()),
+        "Flight did not update native player tickets");
+    listener.chunkSender.sendNextChunks(player);
+    require(!connection.batchOpen, "Unfinished flight chunk batch");
+    int[] coverage = new int[7];
+    Map<String, Integer> stages = new TreeMap<>();
+    var map = level.getChunkSource().chunkMap;
+    player
+        .getChunkTrackingView()
+        .forEach(
+            position -> {
+              long key = position.toLong();
+              flightSeen.add(key);
+              coverage[0]++;
+              boolean sendable = map.getChunkToSend(key) != null;
+              if (sendable) {
+                coverage[1]++;
+                flightReady.add(key);
+              }
+              if (connection.currentDelivered.contains(key)) coverage[2]++;
+              if (listener.chunkSender.isPending(key)) coverage[3]++;
+              if (position.x > player.chunkPosition().x) {
+                coverage[4]++;
+                if (sendable) coverage[5]++;
+              }
+              var holder = map.getVisibleChunkIfPresent(key);
+              String status = holder == null ? "absent" : String.valueOf(holder.getLatestStatus());
+              stages.merge(status, 1, Integer::sum);
+              if (listener.chunkSender.isPending(key) && sendable) coverage[6]++;
+            });
+    boolean caughtUp = coverage[0] > 0 && coverage[0] == coverage[1] && coverage[0] == coverage[2];
+    if (phase == 2 && caughtUp && firstHoverCaughtUp < 0) {
+      firstHoverCaughtUp = now - hoverStarted;
+      LogUtils.getLogger()
+          .info(
+              "Flight catch-up: wallMs={}, hoverTicks={}",
+              firstHoverCaughtUp / 1_000_000.0,
+              hoveringTicks);
+    }
+    boolean completed =
+        phase == 2 && now - hoverStarted >= 5_000_000_000L && hoveringTicks >= 100 && caughtUp;
+    if (now - lastFlightReport >= 1_000_000_000L
+        || phase == 0 && caughtUp
+        || phase == 1 && movingTicks == 200
+        || completed) {
+      LogUtils.getLogger()
+          .info(
+              "Flight sample: phase={}, moveTicks={}, hoverTicks={}, wallMs={}, hoverMs={}, x={}, view={}, sendable={}, delivered={}, pending={}, forwardView={}, forwardSendable={}, readyPending={}, seen={}, everReady={}, packets={}, maxTickGapMs={}, statuses={}",
+              phase,
+              movingTicks,
+              hoveringTicks,
+              movementStarted == 0 ? 0 : (now - movementStarted) / 1_000_000.0,
+              hoverStarted == 0 ? 0 : (now - hoverStarted) / 1_000_000.0,
+              player.getX(),
+              coverage[0],
+              coverage[1],
+              coverage[2],
+              coverage[3],
+              coverage[4],
+              coverage[5],
+              coverage[6],
+              flightSeen.size(),
+              flightReady.size(),
+              leg.packets,
+              maximumTickGap / 1_000_000.0,
+              stages);
+      lastFlightReport = now;
+    }
+    if (phase == 0 && (coldFlight ? leg.nearbyReceived.size() == NEAR_COUNT : caughtUp)) {
+      phase = 1;
+      movementStarted = now;
+      maximumTickGap = 0;
+      OpenClBatchEvidence.checkpoint("flight-start");
+      LogUtils.getLogger()
+          .info(
+              "Flight measurement started: coldView={}, step={}, y={}; 200 native movement packets, ideal ACK sink, no client",
+              coldFlight,
+              flightStep,
+              player.getY());
+    } else if (phase == 1 && movingTicks == 200) {
+      phase = 2;
+      hoverStarted = now;
+      if (caughtUp) firstHoverCaughtUp = 0;
+      LogUtils.getLogger()
+          .info(
+              "Flight movement ended: ticks=200 distance={} wallMs={}",
+              200 * flightStep,
+              (now - movementStarted) / 1_000_000.0);
+    } else if (completed) {
+      OpenClBatchEvidence.checkpoint("flight-complete");
+      close();
+      LogUtils.getLogger()
+          .info(
+              "Flight terrain measurement completed: server pipeline only, no client/FPS acceptance");
     }
   }
 
@@ -320,6 +462,7 @@ public final class TeleportChunkRegression {
     private boolean batchOpen;
     private int batchChunks;
     private int awaitingAck;
+    private final Set<Long> currentDelivered = new HashSet<>();
 
     private RecordingConnection() {
       super(PacketFlow.SERVERBOUND);
@@ -349,6 +492,8 @@ public final class TeleportChunkRegression {
         require(batchOpen && complete.batchSize() == batchChunks, "Chunk batch size mismatch");
         batchOpen = false;
         awaitingAck++;
+      } else if (packet instanceof ClientboundForgetLevelChunkPacket forgotten) {
+        currentDelivered.remove(forgotten.pos().toLong());
       } else if (packet instanceof ClientboundLevelChunkWithLightPacket chunk && leg != null) {
         require(batchOpen, "Chunk delivered outside batch");
         require(
@@ -357,6 +502,7 @@ public final class TeleportChunkRegression {
         batchChunks++;
         require(++leg.packets <= 4096, "Unbounded fixture terrain delivery");
         long position = ChunkPos.asLong(chunk.getX(), chunk.getZ());
+        currentDelivered.add(position);
         if (!leg.received.add(position)) {
           leg.resends++;
           if (leg.resends == 1) leg.firstResend = chunk.getX() + "," + chunk.getZ();

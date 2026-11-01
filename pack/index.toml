@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "config/DistantHorizons.toml"
+hash = "fb5f664293bb16938e6605794ad76b10f0fb9f2dcf0aec92ec6387ed9aba1ce9"
+
+[[files]]
 file = "config/advancementplaques.toml"
 hash = "1475da889ccfd41387bcbb59782a92bde3d9014b7dced5ff75f0a0f3a3853ac9"
 
@@ -715,11 +719,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "56a8247e6979479de260ec826448ffebebef835de7a0b914d51fc513653c1517"
+hash = "a095fa19d3d0ba25a1c7e868fcb88d2801fda12cb2a78539244cd2d86a6aee6a"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "48d381d5c7d51f89bd432b0684198b6b4fbd413946b2ebc61a246eada7f3cdd7"
+hash = "76a0d50326bc8349138abc62b5ee9301f58ace511e7625bf245c71fa5625dc16"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -733,7 +737,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "c1af2d29fe48bffa4d6563ccd5a54cd1a8d1be98368bf724f2558775b800bfcc"
+hash = "6ab43157b5339c406496c1b92a2c7654b357d5445c086a65e86b3e86f6c38f29"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -998,6 +1002,11 @@ metafile = true
 [[files]]
 file = "mods/dismount-entity.pw.toml"
 hash = "918b830e77996a6c0d74ebd5b3847071a35a227e6d0c499a1bad1a429ca71efd"
+metafile = true
+
+[[files]]
+file = "mods/distanthorizons.pw.toml"
+hash = "2802ae635c7d39e56f8b38d9b4cd8f3e636315f4e0a2502ed4de71e6927d4c60"
 metafile = true
 
 [[files]]

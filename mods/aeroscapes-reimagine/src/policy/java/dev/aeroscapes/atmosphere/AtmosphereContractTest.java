@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -28,6 +29,7 @@ import org.objectweb.asm.tree.ClassNode;
 import org.objectweb.asm.tree.FieldInsnNode;
 import org.objectweb.asm.tree.InvokeDynamicInsnNode;
 import org.objectweb.asm.tree.JumpInsnNode;
+import org.objectweb.asm.tree.LdcInsnNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.VarInsnNode;
@@ -49,6 +51,7 @@ public final class AtmosphereContractTest {
     runtimeConfigMetadata();
     nativeConfigurationTranslations();
     puzzlesConfigurationTranslations();
+    distantSceneryCompatibility();
     IcebergConfigBridgeTest.verify();
     AdvancementCriterionTranslationsTest.verify();
     ClassNode attachment = provider("punchy/client/render/FishingLineAttachment");
@@ -1121,19 +1124,112 @@ public final class AtmosphereContractTest {
     }
   }
 
+  private static void distantSceneryCompatibility() throws IOException {
+    require(
+        !DistantSceneryPolicy.showCompatibilityChat(
+            "§6Distant Horizons: Chunky detected.§r\nCompatibility advice"),
+        "only the Chunky startup chat is hidden");
+    for (String message :
+        List.of(
+            "§6Distant Horizons: Alex's Caves detected.§r\nCompatibility advice",
+            "Distant Horizons: not enough memory",
+            "Chunky generation failed",
+            "")) {
+      require(DistantSceneryPolicy.showCompatibilityChat(message), "other messages stay visible");
+    }
+    for (int material = 0; material < 256; material++) {
+      byte original = (byte) material;
+      require(
+          DistantSceneryPolicy.material(original) == (material == 15 ? 0 : original),
+          "only the synthetic illuminated category changes");
+    }
+    ClassNode initializer =
+        provider("com/seibel/distanthorizons/common/AbstractModInitializer_neoforge");
+    MethodNode warnings = method(initializer, "logIncompatibilityWarnings", "()V");
+    require((warnings.access & Opcodes.ACC_STATIC) != 0, "static compatibility startup boundary");
+    require(
+        executable(warnings).stream()
+            .anyMatch(
+                instruction ->
+                    instruction instanceof MethodInsnNode call
+                        && call.getOpcode() == Opcodes.INVOKEVIRTUAL
+                        && call.owner.equals(
+                            "com/seibel/distanthorizons/core/api/internal/ClientApi")
+                        && call.name.equals("queueSlowChatMessage")
+                        && call.desc.equals("(Ljava/lang/String;)V")),
+        "compatibility chat call is direct and has an instance receiver");
+    ClassNode wrapper =
+        provider("com/seibel/distanthorizons/common/wrappers/block/BlockStateWrapper_neoforge");
+    List<AbstractInsnNode> getter = executable(method(wrapper, "getMaterialId", "()B"));
+    require(
+        getter.size() == 3
+            && getter.get(1) instanceof FieldInsnNode field
+            && field.name.equals("blockMaterialId")
+            && field.desc.equals("B")
+            && getter.get(2).getOpcode() == Opcodes.IRETURN,
+        "material getter is separate from color, opacity and light sampling");
+    ClassNode clouds = provider("com/qendolin/betterclouds/clouds/shaders/Shader");
+    MethodNode compile =
+        method(
+            clouds,
+            "compileShader",
+            "(ILnet/minecraft/resources/ResourceLocation;Lnet/minecraft/server/packs/resources/ResourceManager;)I");
+    require((compile.access & Opcodes.ACC_STATIC) == 0, "instance cloud shader compiler");
+    MethodNode coverageResources =
+        method(
+            provider("com/qendolin/betterclouds/clouds/shaders/CoverageShader"), "<clinit>", "()V");
+    require(
+        executable(coverageResources).stream()
+            .anyMatch(
+                instruction ->
+                    instruction instanceof LdcInsnNode constant
+                        && constant.cst.equals("shaders/core/betterclouds_coverage.fsh")),
+        "native coverage compiler uses the exact intercepted resource path");
+    require(
+        executable(compile).stream()
+                .filter(
+                    instruction ->
+                        instruction instanceof MethodInsnNode call
+                            && call.owner.equals("org/apache/commons/io/IOUtils")
+                            && call.name.equals("toString")
+                            && call.desc.equals(
+                                "(Ljava/io/InputStream;Ljava/nio/charset/Charset;)Ljava/lang/String;"))
+                .count()
+            == 1,
+        "one source-loading boundary before native cloud shader preprocessing");
+    String resource = "betterclouds:shaders/core/betterclouds_coverage.fsh";
+    String source =
+        new String(
+            providerResource("assets/betterclouds/shaders/core/betterclouds_coverage.fsh"),
+            StandardCharsets.UTF_8);
+    String adapted = CloudCoverageShader.adapt(resource, source);
+    require(!adapted.equals(source), "the actual pinned cloud shader is adapted");
+    require(
+        CloudCoverageShader.adapt(resource, "custom cloud shader").equals("custom cloud shader"),
+        "player resource overrides remain unchanged");
+    require(
+        CloudCoverageShader.adapt("another:shader.fsh", source).equals(source),
+        "other shader programs remain unchanged");
+    Files.writeString(Path.of("build", "cloud-coverage.frag"), adapted);
+  }
+
   private static ClassNode provider(String name) throws IOException {
+    ClassNode type = new ClassNode();
+    new ClassReader(providerResource(name + ".class")).accept(type, 0);
+    return type;
+  }
+
+  private static byte[] providerResource(String name) throws IOException {
     for (String file : System.getProperty("aeroscapes.atmosphere.apis").split(File.pathSeparator)) {
       try (ZipFile archive = new ZipFile(Path.of(file).toFile())) {
-        var entry = archive.getEntry(name + ".class");
+        var entry = archive.getEntry(name);
         if (entry == null) continue;
-        ClassNode type = new ClassNode();
         try (var input = archive.getInputStream(entry)) {
-          new ClassReader(input.readAllBytes()).accept(type, 0);
+          return input.readAllBytes();
         }
-        return type;
       }
     }
-    throw new AssertionError("Missing provider class " + name);
+    throw new AssertionError("Missing provider resource " + name);
   }
 
   private static MethodNode method(ClassNode type, String name, String descriptor) {

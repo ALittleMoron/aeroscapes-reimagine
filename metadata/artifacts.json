@@ -8175,5 +8175,37 @@
     "native_requirements": {
       "minecraft": "[1.21,1.21.1]"
     }
+  },
+  {
+    "slug": "distanthorizons",
+    "name": "Distant Horizons",
+    "project_id": "uCdwusMi",
+    "version_id": "9w34y8ai",
+    "version": "3.3.3-1.21.1",
+    "filename": "DistantHorizons-3.3.3-1.21.1-fabric-neoforge.jar",
+    "sha512": "d14b32d3fd143a06514d6ad388eee11e9d657c84e1a937aaf8d033b1137fb43ef8b05cff1011a994cc42f3106823c51234f8bc18d72bb05bc317a20ea83c50ed",
+    "sha1": "4357b4d19fab818780c94f0e43dad1cc931634b2",
+    "file_size": 28289212,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "fabric",
+      "neoforge"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://gitlab.com/distant-horizons-team/distant-horizons",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Official native NeoForge release; distant island scenery",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "role": "Terrain LOD beyond normal rendering; integrated full-chunk generation and persistent cache.",
+    "native_route_note": "Exact 3.3.3 source tag a54dd3eb1df0078e63a71266d042c10d9cda4493 compared with artifact. NeoForge descriptor accepts Minecraft 1.21/1.21.1 and forbids SSRD<=1.8.6; no third-party mandatory dependency. Static Iris1.8.14-beta.1 member references resolve in both directions. Config schema5: CHUNKS_ONLY/INTERNAL_SERVER preserves native FULL scheduling, custom islands/C2ME and structures; generates saved chunks. MEDIUM vertical quality, cave culling disabled, radius64, 2 DH workers at0.5 runtime ratio; these are unmeasured defaults. DH cloud rendering disabled for existing cloud renderer. Native auto-updates disabled. Client LOD silhouettes, shader/depth composition, Intel performance and Sable moving geometry require owner acceptance. Dedicated headless checks cannot establish rendering."
   }
 ]

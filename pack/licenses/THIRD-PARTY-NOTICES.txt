@@ -1,6 +1,13 @@
 Aeroscapes Reimagine 0.2.2 — third-party notices
 
 This independent pack is not endorsed by the original projects.
+Better Clouds 1.13.11: Qendolin and contributors; MPL-2.0.
+https://modrinth.com/mod/better-clouds/version/UvRCtZxT
+The original JAR and its source shader resources remain unchanged. An owned
+runtime adapter corrects the hash-matched coverage shader's depth comparison;
+the original source and license remain in the provider JAR and the adapter
+source accompanies licenses/aeroscapes-reimagine-source.zip.
+
 Client convenience additions use unchanged official downloads:
 BetterF3 11.0.3: TreyRuffy and cominixo; MIT.
 https://modrinth.com/mod/betterf3/version/maXNB1dn
@@ -304,3 +311,10 @@ Independent English/Russian functional labels and display adapters belong to the
 owned mod. Advancement criterion aliases reuse effective native translations
 without copying their dictionaries. Collective's optional translation downloads
 are disabled by the starting config; later player choices remain configurable.
+
+Distant Horizons 3.3.3: James Seibel and contributors; LGPL-3.0-only.
+https://modrinth.com/mod/distanthorizons/version/9w34y8ai
+The unchanged official JAR retains its own library licenses. Selected Russian
+translations from official 2.4.5-b are adapted and supplemented for 3.3.3 inside
+the owned mod, with LGPL text and attribution in META-INF/licenses and NOTICE.txt.
+Exact language inputs and modifications: META-INF/localization-sources.json.

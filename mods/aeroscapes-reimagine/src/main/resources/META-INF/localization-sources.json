@@ -81,6 +81,35 @@
       "resource": "assets/aeroscapes_reimagine_quark_config_translations/lang/ru_ru.json",
       "entries": 2495,
       "sha256": "b0daef5b1a6b15e4a223d37b08a2223bc11dfb25d4f6e79d2adbe0b24b5e1ab2"
+    },
+    "distant_horizons": {
+      "repository": "https://gitlab.com/distant-horizons-team/distant-horizons",
+      "commit": "a54dd3eb1df0078e63a71266d042c10d9cda4493",
+      "license": "LGPL-3.0-only",
+      "license_file": "META-INF/licenses/Distant-Horizons-LGPL-3.0.txt",
+      "current_provider": "9w34y8ai",
+      "current_en_us_sha256": "f09e7d7abf8eaa644e2c0a9e836c7893425084668bfcc030bc66e8b3bd9b2ceb",
+      "reference_provider": "bLPLghy9",
+      "reference_resource": "assets/distanthorizons/lang/disabled/ru_ru.json",
+      "reference_resource_sha256": "8d769c3e880945975007bb8c283f4724155258093bc14cf699d452ea6627e1d2",
+      "modifications": "32 unchanged Russian entries from official2.4.5 reference;63 same-key entries adapted;394 authored current keys;25 missing functional tooltip/name supplements;5 exact literal display aliases. New translations and display code authored for this pack. No provider translation replaced. Native helper display patch preserves enum/config identities and numeric error limits.",
+      "resources": {
+        "en_us": {
+          "resource": "assets/aeroscapes_reimagine_dh_translations/lang/en_us.json",
+          "entries": 30,
+          "sha256": "876b804cbce343193f534c5285a422f2139e3cf8f636cfcb0b54bfc26953e435"
+        },
+        "ru_ru": {
+          "resource": "assets/aeroscapes_reimagine_dh_translations/lang/ru_ru.json",
+          "entries": 519,
+          "sha256": "a2f7082b395654e7a688b8b9d5a678cb2d4ccab2d9059f16038320054295d908"
+        }
+      },
+      "native_gui_note": "All current English489 keys covered; supplementary names/tooltips follow effective Config categories. Existing provider language entries retain ordinary resource priority; English supplement contains only missing keys. Unknown API owner and dynamic minimum/maximum/changelog labels are display-only. Developer diagnostics, external release-note body and administrative /dh command syntax remain upstream technical text.",
+      "guarded_english_corrections": [
+        "distanthorizons.config.common.multiThreading.threadRunTimeRatio",
+        "distanthorizons.config.client.advanced.graphics.culling.blocksToIgnore.@tooltip"
+      ]
     }
   },
   "authored_resources": [
@@ -199,9 +228,9 @@
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 361,
+    "rules": 363,
     "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged.",
-    "sha256": "a73b8241be52b586a55f3d5a38e60fc68894485890388b4191354ae3a6999c8c"
+    "sha256": "59274add1b0a78aa15b13328fe6767388836e7bd44d9c97ce2928ea307a990a2"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",

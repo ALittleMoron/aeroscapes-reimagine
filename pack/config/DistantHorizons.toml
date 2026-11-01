@@ -1,0 +1,28 @@
+_version = 5
+
+[client.advanced.graphics.quality]
+lodChunkRenderDistanceRadius = 64
+verticalQuality = "MEDIUM"
+increaseQualityWhenZoomedIn = true
+
+[client.advanced.graphics.culling]
+enableCaveCulling = false
+
+[client.advanced.graphics.genericRendering]
+enableCloudRendering = false
+
+[client.advanced.autoUpdater]
+enableAutoUpdater = false
+enableSilentUpdates = false
+
+[common.worldGenerator]
+generatorPlan = "CHUNKS_ONLY"
+chunkGeneratorMode = "INTERNAL_SERVER"
+
+[common.multiThreading]
+numberOfThreads = 2
+threadRunTimeRatio = "0.5"
+
+[common.logging.warning]
+showGarbageCollectorWarning = false
+logGarbageCollectorWarning = true

@@ -156,3 +156,30 @@ Compile-only EMI and EMI Trades APIs are not distributed in this binary.
 All provider JARs remain unchanged under their original terms. Exact sources,
 version discrepancies, resource hashes and interpretation limits are recorded in
 META-INF/localization-sources.json and metadata/artifacts.json in the pack source.
+
+Distant Horizons configuration display:
+Russian language supplements include selected translations adapted from the
+official Distant Horizons 2.4.5-b artifact, copyright its contributors, LGPL-3.0-only.
+New and revised translations cover the exact 3.3.3 interface; English additions
+supply missing functional labels and tooltips. The original LGPL license is in
+META-INF/licenses/Distant-Horizons-LGPL-3.0.txt. Display-only code translates native
+literal errors and preserves numeric limits, configuration keys and enum values.
+The original provider JAR remains unchanged. Translation input hashes, retained
+entries and modifications are recorded in META-INF/localization-sources.json.
+
+Distant-terrain and cloud presentation compatibility:
+Original Distant Horizons 3.3.3, Iris 1.8.14-beta.1 and Better Clouds
+1.13.11 provider JARs and both supplied shader ZIPs remain unchanged.
+Owned code filters only the Chunky advice in DH's compatibility chat and maps
+the synthetic illuminated LOD category to ordinary material without changing
+physical light or vertex colors. Normal shaderless terrain does not specialize
+that category; other shaderpacks may interpret it differently.
+The Better Clouds coverage fragment, MPL-2.0, is adapted only in memory from its
+hash-verified original resource to account for forward and reversed depth.
+Original shader source remains readable in the unchanged Better Clouds JAR;
+the transformation source is included in the corresponding owned source ZIP.
+Its full original license is retained in META-INF/licenses/Better-Clouds-MPL-2.0.txt.
+Unknown resource-pack overrides are retained. Provenance and exact provider
+versions are recorded in metadata/compat_fixes.json in the pack source.
+https://modrinth.com/mod/better-clouds/version/UvRCtZxT
+https://github.com/Qendolin/better-clouds

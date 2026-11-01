@@ -4,6 +4,12 @@ description: История версий.
 status: available
 ---
 
+## 0.2.4
+
+- Добавлен [Distant Horizons](https://modrinth.com/mod/distanthorizons) для прорисовки дальних островов с радиусом 64 чанка, русским переводом настроек и поддержкой обоих поставляемых шейдерпаков. Подзорная труба показывает дальний вид с большей детализацией.
+- Оптимизирована генерация рельефа островов.
+- Исправлен запуск при отключённом OpenCL-ускорении в настройках генерации.
+
 ## 0.2.3
 
 - Добавлены [Better Advancements](https://modrinth.com/mod/better-advancements), [Advancement Plaques](https://modrinth.com/mod/advancement-plaques) и [Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier) для просмотра достижений, уведомлений и сведений о подобранных предметах.

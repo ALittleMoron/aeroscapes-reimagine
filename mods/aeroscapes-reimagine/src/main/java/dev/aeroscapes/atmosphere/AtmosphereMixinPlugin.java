@@ -22,6 +22,18 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("puzzleslib", "21.1.66");
     } else if (mixinClassName.contains("Dusk")) {
       versions = Map.of("collective", "8.72");
+    } else if (mixinClassName.endsWith("DistantHorizonsLanguageMixin")
+        || mixinClassName.endsWith("DistantHorizonsCompatibilityChatMixin")
+        || mixinClassName.endsWith("DistantHorizonsLightMaterialMixin")) {
+      versions = Map.of("distanthorizons", "3.3.3");
+    } else if (mixinClassName.endsWith("BetterCloudsCoverageMixin")) {
+      versions =
+          Map.of(
+              "betterclouds", "1.13.11+1.21.1-neoforge",
+              "distanthorizons", "3.3.3",
+              "iris", "1.8.14-beta.1+mc1.21.1");
+    } else if (mixinClassName.endsWith("DistantHorizonsChunkyStartupMixin")) {
+      versions = Map.of("distanthorizons", "3.3.3", "chunky", "1.4.23");
     } else if (mixinClassName.contains("EmiTrades")) {
       versions = Map.of("emitrades", "2.0.0+alpha.1", "emi", "1.1.22+1.21.1+neoforge");
     } else if (mixinClassName.endsWith("PickupNotifierLanguageMixin")) {

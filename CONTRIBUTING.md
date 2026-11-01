@@ -73,6 +73,14 @@ Use the separate [`src/regression/`](mods/aeroscapes-reimagine/src/regression/) 
 
 Keep only Mixins in the Mixin config's declared package and descendants. Place `@Mod` entry points and ordinary helpers in a neighboring package. Mixin rejects direct loads from its reserved package with `IllegalClassLoadError`; successful javac does not catch this, so a fixture needs a strict dedicated boot.
 
+For a moving terrain-delivery measurement, use `-Daeroscapes.regression.flightChunks=true` and require `Flight terrain measurement completed`. By default the fixture warms the current tracking view, sends 200 native one-block movement packets, then holds position until delivery catches up. Optional `aeroscapes.regression.originX` and `originZ` select a cold chunk centre; `flightY` selects block height and `flightStep` sets blocks per packet (greater than zero, at most two). `flightCold=true` starts after the nearby 25 chunks arrive, while the rest of the view may still be generating. Its nine-chunk ACK feedback is an ideal sink, not a client. Packets follow server ticks, so this fixture does not reproduce a real client's packet backlog during a server stall or competition with rendering. Report wall time separately from server ticks; holder visibility can precede the later sending stage and neighbor lighting. GPU cases also use `aeroscapes.regression.performance.opencl=true` to wait for compiled programs and verify actual launches/readbacks.
+
+For opt-in live chunk diagnostics, create the empty file `config/aeroscapes-chunk-diagnostics.enabled` before starting the game. Server and client emit `[Aeroscapes chunk flow]` samples to the normal log at most once per second for five minutes per session. The samples cover existing server holders/pending delivery, client cache, frame rate and native renderer debug counters. They do not request chunks, change queues, or establish GPU completion. Remove the marker before the next launch to disable the probe. The owner performs all client launches and flight.
+
+Client samples also summarize intervals between consecutive rendered frames while focused, unpaused and without a screen or loading overlay. The count, measured active time, mean/maximum interval and strict `>50 ms`/`>100 ms` counts describe wall-clock frame pacing, including presentation waits; they do not identify CPU, GPU or GC costs. The threshold counts overlap. A zero interval count means no measured active frames, not hitch-free play. Menus, focus loss and world transitions discard cross-boundary intervals. A long hitch stretches a reporting window, so normalize counts by measured active time. Route, altitude, fresh terrain and graphics settings must match before claiming a numerical before/after improvement; the tick-paced headless sink cannot supply a client frame-time baseline.
+
+`maxFrameEndNanos` anchors the longest measured interval to `System.nanoTime()`. On the tested Linux JDK 25 runtime, unified JVM logs with the `timenanos` decorator use that same clock. Correlate actual GC pauses and safepoint stops with the interval ending at that timestamp; concurrent-cycle duration alone is not a pause. Keep the collector and heap unchanged when first adding logging, and archive rotated logs before another launch. Launcher-specific JVM arguments are not part of the standard `.mrpack` format.
+
 When checking whether Minecraft is already active, inspect process arguments internally but report only PID and process type. A client's command line can contain authorization arguments; never print it in diagnostics. State whether a functional run permits an existing client. Comparable performance runs require the client/load policy to be explicit. Process detection does not authorize operating the owner's client.
 
 For generation JFR, preserve the original recording and select relevant event types, fields and operation intervals. Full JSON expansion of allocation/classloader metadata can dwarf the recording. JDK 21 `jdk.jfr.consumer.RecordingFile` can stream bounded time/thread/allocation/stack data. A recording threshold excludes shorter events; summed recorded parks do not fully partition wall time. Separate complete MSPT from instrumented partial-tick intervals and rendering frame time.
@@ -80,10 +88,19 @@ For generation JFR, preserve the original recording and select relevant event ty
 ## Documentation changes
 
 Keep `docs/en/` and `docs/ru/` paired by meaning, facts and implementation status.
-Describe the current player experience; mark planned systems explicitly. Record
-pack and tooling changes under the current target version in both changelogs,
-using adjacent factual bullets without blank lines. See the [site guide](tools/docs/README.md)
-for routes, page status, formatting and media attribution.
+Describe the current player experience and useful choices; mark planned systems
+explicitly. Explain implementation details only where they help the player use
+a setting or understand a practical limitation.
+
+Public changelogs compare the previous release with the final delivered player
+experience. Include visible features and fixes, performance improvements, compatibility
+changes and required player actions. Exclude internal diagnostics, test fixtures,
+unchanged behavior and experiments or reversals that never reached a release.
+Describe an optimization by its player benefit without inventing measured gains.
+Keep developer diagnostics in this guide or the owning project README. Use the
+current target version in both changelogs, with adjacent factual bullets and no blank
+lines between them. See the [site guide](tools/docs/README.md) for routes, page
+status, formatting and media attribution.
 
 Dependency origins and distribution constraints are documented in
 [metadata](metadata/README.md) and the owning license notices. Exact pins and hashes
