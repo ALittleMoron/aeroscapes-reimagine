@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "CompassManagerAccess",
+    "CompassRandomSpreadAccess",
+    "CompassBiomeWorkerMixin",
+    "CompassStructureWorkerMixin",
+    "CompassNatureItemMixin",
+    "CompassExplorerItemMixin",
+    "CompassLegacyPacketMixin",
+    "CompassNaturePriceMixin",
+    "CompassExplorerPriceMixin"
+  ],
+  "client": [
+    "CompassNatureScreenMixin",
+    "CompassExplorerScreenMixin",
+    "AccuratePlacementInteractionMixin",
+    "AccuratePlacementEnumLanguageMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

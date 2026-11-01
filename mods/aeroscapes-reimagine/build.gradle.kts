@@ -44,6 +44,18 @@ repositories {
       includeModule("maven.modrinth", "create")
       includeModule("maven.modrinth", "distanthorizons")
       includeModule("maven.modrinth", "better-clouds")
+      includeModule("maven.modrinth", "invmove")
+      includeModule("maven.modrinth", "mafglib")
+      includeModule("maven.modrinth", "cloth-config")
+      includeModule("maven.modrinth", "sophisticated-core")
+      includeModule("maven.modrinth", "toms-storage")
+      includeModule("maven.modrinth", "easy-anvils")
+      includeModule("maven.modrinth", "easy-magic")
+      includeModule("maven.modrinth", "horseman")
+      includeModule("maven.modrinth", "simple-backups")
+      includeModule("maven.modrinth", "natures-compass")
+      includeModule("maven.modrinth", "explorers-compass")
+      includeModule("maven.modrinth", "accurate-block-placement-reborn")
     }
   }
 }
@@ -132,6 +144,18 @@ dependencies {
   atmosphereApi("maven.modrinth:emi-trades-reborn:VPRhN8yf")
   atmosphereApi("maven.modrinth:distanthorizons:9w34y8ai")
   atmosphereApi("maven.modrinth:better-clouds:UvRCtZxT")
+  atmosphereApi("maven.modrinth:invmove:C7ePwvWW")
+  atmosphereApi("maven.modrinth:mafglib:CgDQ0u0Q")
+  atmosphereApi("maven.modrinth:cloth-config:izKINKFg")
+  atmosphereApi("maven.modrinth:sophisticated-core:gtPF4VTh")
+  atmosphereApi("maven.modrinth:toms-storage:WQAMoIMC")
+  atmosphereApi("maven.modrinth:easy-anvils:fSQSKhdF")
+  atmosphereApi("maven.modrinth:easy-magic:MxbfrOEv")
+  atmosphereApi("maven.modrinth:horseman:jJ93aLVn")
+  atmosphereApi("maven.modrinth:simple-backups:6JQL4qSR")
+  atmosphereApi("maven.modrinth:natures-compass:nFniEtJV")
+  atmosphereApi("maven.modrinth:explorers-compass:hIJ2Ev1Q")
+  atmosphereApi("maven.modrinth:accurate-block-placement-reborn:rA95AHFG")
   compileOnly(files(atmosphereApi))
   compileOnly(
     files(fileTree(sableNestedApiDirectory) { include("*.jar") }).builtBy(extractSableApi)
@@ -299,6 +323,23 @@ val tradeRecipeContractTest by
     mainClass = "dev.aeroscapes.qualityoflife.TradeRecipeContractTest"
   }
 
+val managedBackupArchiveTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.backup.ManagedBackupArchiveTest"
+  }
+
+val distantHorizonsBackupPolicyTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.backup.DistantHorizonsBackupPolicyTest"
+    args(layout.projectDirectory.file("../../pack/config/simplebackups-common.toml").asFile)
+  }
+
 tasks.register<JavaExec>("generateCelestialAtlas") {
   group = "build"
   dependsOn(tasks.named(policy.classesTaskName))
@@ -325,6 +366,8 @@ tasks.check {
     atmosphereContractTest,
     celestialLayoutTest,
     tradeRecipeContractTest,
+    managedBackupArchiveTest,
+    distantHorizonsBackupPolicyTest,
     worldgenRegressionJar,
   )
 }

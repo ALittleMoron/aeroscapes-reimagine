@@ -4,6 +4,20 @@ description: История версий.
 status: available
 ---
 
+## 0.2.5
+
+- По умолчанию отключено предупреждение [Better Clouds](https://modrinth.com/mod/better-clouds) о выключенных облаках Minecraft.
+- Добавлен [Crafting Tweaks](https://modrinth.com/mod/crafting-tweaks) с поддержкой сетки крафта в терминале [Tom’s Simple Storage](https://modrinth.com/mod/toms-storage).
+- Добавлен импорт материалов из планшета в [EMI](https://modrinth.com/mod/emi) через [EMI: Create Schematics](https://modrinth.com/mod/emi-create-schematics).
+- Добавлены проекции схем, списки материалов и проверка постройки через [Forgematica](https://modrinth.com/mod/forgematica) с сочетаниями на правом Alt и обычной дальностью установки блоков.
+- Добавлен [InvMove](https://modrinth.com/mod/invmove) с учётом фокуса поиска и клавиши обучения, английские и русские тексты интерфейса и настроек новых удобств.
+- Добавлен поставщик рецептов [JEI](https://modrinth.com/mod/jei) через существующий интерфейс [EMI](https://modrinth.com/mod/emi), а также условия и функции добычи из [Advanced Loot Info](https://modrinth.com/mod/advanced-loot-info).
+- Добавлено сохранение содержимого рабочих станций с [Easy Anvils](https://modrinth.com/mod/easy-anvils) и [Easy Magic](https://modrinth.com/mod/easy-magic): бесплатные имена, работы на наковальне дороже 40 уровней за полную цену и ручной переброс зачарований за лазурит и пять очков опыта.
+- Добавлен [Horseman](https://modrinth.com/mod/horseman) с удобствами передвижения, приручения, перевозки грузов и призыва; сохранён существующий интерфейс ездовых животных.
+- Добавлена непрерывная установка рядов блоков с [Accurate Block Placement Reborn](https://modrinth.com/mod/accurate-block-placement-reborn) через существующий мост: обычная дальность и расход материалов, быстрое разрушение выключено.
+- Добавлены [Nature’s Compass](https://modrinth.com/mod/natures-compass) и [Explorer’s Compass](https://modrinth.com/mod/explorers-compass): бесплатный поиск до 5000 блоков и один уровень опыта только за найденный более дальний результат в пределах 10 000 блоков.
+- Добавлены копии миров раз в час активной игры через [Simple Backups](https://modrinth.com/mod/simple-backups), без обычных уведомлений, с пятью копиями на мир и общим мягким бюджетом 2 ГиБ.
+
 ## 0.2.4
 
 - Добавлен [Distant Horizons](https://modrinth.com/mod/distanthorizons) для прорисовки дальних островов с радиусом 64 чанка, русским переводом настроек и поддержкой обоих поставляемых шейдерпаков. Подзорная труба показывает дальний вид с большей детализацией.

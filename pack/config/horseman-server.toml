@@ -1,0 +1,43 @@
+[movement]
+fix_horse_moved_wrongly = true
+horse_step_height_modifier = 0.1
+horse_fast_step_down = true
+horse_fast_step_down_two_blocks = true
+increase_horse_airborne_speed = true
+increase_horse_airborne_speed_amount = 0.5
+horse_swim_when_ridden = true
+rotate_horse_instead_of_player = true
+saddled_horse_wander_radius = 16
+ridden_horse_prevent_rearing = true
+
+[hitching]
+enabled = true
+requires_lead = true
+lead_slot = true
+
+[summoning]
+copper_horn_enabled = true
+copper_horn_sound_range = 256
+copper_horn_cooldown = -1
+copper_horn_error_messages = true
+max_summoning_distance = -1
+max_walking_distance = 32.0
+walk_movement_speed = 2.0
+dimension_handling = "ANY"
+dimensions = []
+
+[free_camera]
+enabled = true
+angle_threshold = 100.0
+
+[misc]
+allow_taming_horse_with_item_in_hand = true
+mounted_block_break_speed_modifier = 5.0
+horse_fits_in_boat = true
+shears_remove_chest = true
+horse_creative_taming = true
+leaves_collision_mode_when_mounted = "IGNORE_LOWEST_BLOCK"
+leash_knot_sounds = true
+dismount_towards_view_direction = true
+fix_running_back_after_dismount = true
+leather_horse_armor_powder_snow = true

@@ -1,6 +1,31 @@
-Aeroscapes Reimagine 0.2.2 — third-party notices
+Aeroscapes Reimagine 0.2.5 — third-party notices
 
 This independent pack is not endorsed by the original projects.
+
+EMI: Create Schematics 1.1.0: LiukRast, swzo; MIT.
+https://modrinth.com/mod/emi-create-schematics/version/opyfkMHl
+The official client JAR is unchanged. Its original license remains embedded.
+The missing Russian tooltip and English/Russian mod-list summaries were authored
+for this pack. Existing Create and EMI satisfy its dependencies.
+
+Crafting Tweaks 21.1.11 and Balm 21.0.57: BlayTheNinth / TwelveIterations;
+All Rights Reserved, unchanged original official downloads under the author's
+modpack permissions. The bundled Kuma API remains in Balm with its notices.
+https://modrinth.com/mod/crafting-tweaks/version/IhkQpEve
+https://modrinth.com/mod/balm/version/XC1JUHmA
+https://mods.twelveiterations.com/permissions
+Independent language supplements and the Tom's Simple Storage menu registration
+are authored for this pack; no provider classes or artwork are redistributed here.
+
+Forgematica 0.4.3 and MaFgLib 0.4.3: masa, TexTrue, CagayakeGirls and contributors;
+LGPL-3.0-only. InvMove 0.9.3: PieKing1215; LGPL-3.0-only.
+https://modrinth.com/mod/forgematica/version/PFUOWUDF
+https://modrinth.com/mod/mafglib/version/CgDQ0u0Q
+https://modrinth.com/mod/invmove/version/C7ePwvWW
+Original executable JARs and their embedded licenses remain unchanged. Exact
+expected-value Russian display corrections, missing labels and the owned input
+adapter are recorded in the owned mod's localization-sources.json and NOTICE.
+
 Better Clouds 1.13.11: Qendolin and contributors; MPL-2.0.
 https://modrinth.com/mod/better-clouds/version/UvRCtZxT
 The original JAR and its source shader resources remain unchanged. An owned
@@ -318,3 +343,28 @@ The unchanged official JAR retains its own library licenses. Selected Russian
 translations from official 2.4.5-b are adapted and supplemented for 3.3.3 inside
 the owned mod, with LGPL text and attribution in META-INF/licenses and NOTICE.txt.
 Exact language inputs and modifications: META-INF/localization-sources.json.
+
+Second QoL group: workstation, loot, navigation and recovery additions.
+Just Enough Items (JEI): mezz and contributors; MIT.
+https://modrinth.com/mod/jei/version/zHNxmOqp
+Advanced Loot Info and Advanced Core Info: yanny7 and contributors; MIT.
+https://modrinth.com/mod/advanced-loot-info/version/adxS0PUF
+https://modrinth.com/mod/advanced-core-info/version/xaWwatoU
+Easy Anvils and Easy Magic: Fuzs and contributors; MPL-2.0 code,
+original assets retain their separate LICENSE-ASSETS.md reservation.
+https://modrinth.com/mod/easy-anvils/version/fSQSKhdF
+https://modrinth.com/mod/easy-magic/version/MxbfrOEv
+Horseman: Mortuusars and contributors; MIT.
+https://modrinth.com/mod/horseman/version/jJ93aLVn
+Simple Backups: MelanX and contributors; Apache-2.0.
+https://modrinth.com/mod/simple-backups/version/6JQL4qSR
+Accurate Block Placement Reborn: Clayborn, KadTheHunter and contributors; MIT.
+https://modrinth.com/mod/accurate-block-placement-reborn/version/rA95AHFG
+Nature's Compass and Explorer's Compass: MattCzyr and contributors; CC-BY-NC-SA-4.0.
+https://modrinth.com/mod/natures-compass/version/nFniEtJV
+https://modrinth.com/mod/explorers-compass/version/hIJ2Ev1Q
+Original provider archives remain unchanged. Exact files, source comparisons,
+compatibility boundaries and individual terms are retained in metadata/artifacts.json.
+New functional labels/help and scoped integration code are independently authored
+for Aeroscapes Reimagine. Expected original strings retain their provider terms.
+Localization routes and selected source revisions: META-INF/localization-sources.json.

@@ -22,6 +22,8 @@ A home aboard ship is part of the intended experience. The range of storage, kit
 
 ## Travel choices
 
-The first useful aircraft should make island travel easier after the effort of building it. There is no compulsory transport sequence: bridges, player-built routes and elytra remain options. Planned racial abilities and learned [magic](../magic/) will offer other ways to cross the same landscape, including innate flight from the start for suitable races.
+The first useful aircraft should make island travel easier after the effort of building it. Experimenting with a vessel should lead to more comfortable journeys, more capable expeditions, cargo transport and life aboard, supporting the player's other projects. Bridges and player-built routes remain options; learned [magic](../magic/) may provide fitting alternatives through its own progression. There is no compulsory transport sequence.
+
+Elytra are planned to be disabled, with a valuable reward that gives no strong flight advantage replacing them in item frames aboard End ships. This change has not been implemented; the replacement and treatment of existing items remain to be chosen. The reward should be proportionate to the expedition and the End's other useful finds. The aim is to preserve reasons to build and improve aircraft while keeping the End worth exploring. Planned [races](../character-and-combat/#races-and-classes) will also avoid unrestricted flight from the start.
 
 [Convenience](../quality-of-life/) covers shared storage access, backpacks and inventory tools used alongside engineering.

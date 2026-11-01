@@ -1,0 +1,7 @@
+[General]
+allowTeleport = false
+maxRadius = 10000
+maxSamples = 100000
+defaultXpLevels = 0
+xpLevelOverrides = []
+compassDurability = 0

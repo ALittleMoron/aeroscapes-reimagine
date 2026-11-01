@@ -98,6 +98,27 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String backupRoundtrip = System.getProperty("aeroscapes.regression.backupRoundtrip");
+    if (backupRoundtrip != null) {
+      BackupRoundtripRegression.start(level, backupRoundtrip);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.qolWorkstations")) {
+      QolWorkstationReadiness.start(
+          level,
+          () -> {
+            CraftingConvenienceRegression.verify(level);
+            QolWorkstationRegression.verify(level);
+            CompassSearchRegression.verify(level);
+            LOGGER.info("QoL workstation regression passed");
+          });
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.craftingTweaks")) {
+      CraftingConvenienceRegression.verify(level);
+      LOGGER.info("Crafting convenience regression passed");
+      return;
+    }
     String qolInteractions = System.getProperty("aeroscapes.regression.qolInteractions");
     if (qolInteractions != null) {
       QolInteractionRegression.verify(level, Path.of(qolInteractions));

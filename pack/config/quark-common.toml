@@ -3,3 +3,6 @@
 "Inventory Sorting" = false
 "Automatic Tool Restock" = false
 "Hotbar Changer" = false
+
+[tweaks]
+"Horses Swim" = false

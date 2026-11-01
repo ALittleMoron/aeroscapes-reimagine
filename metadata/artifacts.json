@@ -457,9 +457,19 @@
     },
     "source_url": "https://github.com/TwelveIterations/Balm",
     "dependencies": [],
-    "status": "deferred",
-    "origin": "Aeroscapes 1.0.8",
-    "reason": "No required consumer remains after the native migration/reference filtering; omit unused libraries."
+    "status": "included",
+    "origin": "Owner-selected unambiguous QoL group 2 subset for 0.2.5",
+    "sha1": "471e60cbd2ce9753315e763772a8c55fccf843b8",
+    "file_size": 701108,
+    "game_versions": [
+      "1.21.1"
+    ],
+    "dependency_note": "Exact descriptor: NeoForge>=21.0.82-beta, Minecraft>=1.21.1. Embeds unchanged KumaAPI21.0.8 via jarjar; no separate library pin required. Existing21.0.57 pin retained. Native ConfigurationScreen factory localizes common config via modern Crafting Tweaks keys; no own Balm configuration schema is registered.",
+    "distribution_review": {
+      "unchanged_file": "Official unmodified file; original license remains embedded.",
+      "policy_url": "https://mods.twelveiterations.com/permissions",
+      "integration_decision": "metadata/README.md"
+    }
   },
   {
     "slug": "better-smoke",
@@ -8207,5 +8217,669 @@
     ],
     "role": "Terrain LOD beyond normal rendering; integrated full-chunk generation and persistent cache.",
     "native_route_note": "Exact 3.3.3 source tag a54dd3eb1df0078e63a71266d042c10d9cda4493 compared with artifact. NeoForge descriptor accepts Minecraft 1.21/1.21.1 and forbids SSRD<=1.8.6; no third-party mandatory dependency. Static Iris1.8.14-beta.1 member references resolve in both directions. Config schema5: CHUNKS_ONLY/INTERNAL_SERVER preserves native FULL scheduling, custom islands/C2ME and structures; generates saved chunks. MEDIUM vertical quality, cave culling disabled, radius64, 2 DH workers at0.5 runtime ratio; these are unmeasured defaults. DH cloud rendering disabled for existing cloud renderer. Native auto-updates disabled. Client LOD silhouettes, shader/depth composition, Intel performance and Sable moving geometry require owner acceptance. Dedicated headless checks cannot establish rendering."
+  },
+  {
+    "slug": "emi-create-schematics",
+    "name": "EMI: Create Schematics",
+    "project_id": "5bgqgixq",
+    "version_id": "opyfkMHl",
+    "version": "1.1.0",
+    "filename": "emi_create_schematics-1.1.0.jar",
+    "sha512": "c25c5c0a7759d43790c785315e394bf81b064c79775bd032784d4588acd3afce37dd4e43be4d2db879561b9b7853245b7f9f79b5ffc40333a9703c8ff006f868",
+    "sha1": "a34c4df9c1a39c553ac7cef28bb78132e4185cb6",
+    "file_size": 848445,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/LIUKRAST/EmiCreateSchematics",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "fRiHVvU7",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected unambiguous QoL group 2 subset for 0.2.5",
+    "dependency_note": "Exact descriptor: Minecraft[1.21.1], NeoForge>=21.1.209, Create>=6.0.9, EMI>=1.1.22+1.21.1. Client only. ClipboardScreen.init/pages, ClipboardEntry.icon/itemAmount/checked, ItemEmiStack.render/getTooltip/getItemStack and EmiFavorites add/remove signatures match pinned Create6.0.10/EMI1.1.22. Imports all unchecked icon entries; replaces only its own tagged favorites, preserving ordinary favorites.",
+    "artifact_audit": {
+      "source_revision": "714e5678c79e581bb3627b6dd138b682e1d6a41c",
+      "source_url": "https://github.com/LIUKRAST/EmiCreateSchematics/tree/714e5678c79e581bb3627b6dd138b682e1d6a41c",
+      "comparison": "Exact distributed bytecode matches inspected helper/mixin logic at author source reference; no embedded source revision, so revision is a verified behavioral reference rather than proven release build commit.",
+      "localization": "One translatable tooltip key; no config screen/keybindings. Literal count syntax xN, separators and technical k/m/b/t abbreviations contain no prose."
+    }
+  },
+  {
+    "slug": "crafting-tweaks",
+    "name": "Crafting Tweaks",
+    "project_id": "DMu0oBKf",
+    "version_id": "IhkQpEve",
+    "version": "21.1.11+neoforge-1.21.1",
+    "filename": "craftingtweaks-neoforge-1.21.1-21.1.11.jar",
+    "sha512": "e1869211c2e037bdaadbe9b9f592d4ccfb7ab94d7ba6803629d6525945edc05db973db6bd7568f2af4550ae4616ae6cbb832e1684412ba439d37f523b564d9a7",
+    "sha1": "b6252039445978a742f439fc398f2a198b86bd4e",
+    "file_size": 256086,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://mods.twelveiterations.com/permissions"
+    },
+    "source_url": "https://github.com/TwelveIterations/CraftingTweaks",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "MBAkmtvl",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected unambiguous QoL group 2 subset for 0.2.5",
+    "dependency_note": "Exact native descriptor requires NeoForge>=21-beta, Minecraft>=1.21, Balm>=21.0.48. Existing metadata pin Balm21.0.57 satisfies this and embeds KumaAPI21.0.8. Both-side installation supports authoritative inventory operations; client-only fallback is not needed. Native vanilla provider handles VisualCraftingMenu via instanceof CraftingMenu. Sophisticated Core1.5.17.2426 registers native Crafting Tweaks API provider. Bundled Tom grid uses obsolete gui package; install owned config grid for menu package with verified crafting slots1..9; virtual storageSlotList does not enter menu.slots.",
+    "distribution_review": {
+      "unchanged_file": "Official unmodified file; original license remains embedded.",
+      "policy_url": "https://mods.twelveiterations.com/permissions",
+      "integration_decision": "metadata/README.md"
+    }
+  },
+  {
+    "slug": "forgematica",
+    "name": "Forgematica",
+    "project_id": "dCKRaeBC",
+    "version_id": "PFUOWUDF",
+    "version": "0.4.3+mc1.21.1",
+    "filename": "forgematica-0.4.3+mc1.21.1.jar",
+    "sha512": "babad424d23c39f196d931f4c63ba0d9f35791f59d5dee03daca3b9c3700430e7677f10a580f1567db6ae93e59fa5bd5b59b73a6d0a160e5a7200f7a15c7bdd0",
+    "sha1": "d27eec1a3b72520ec096a2c0e35adce65031d36e",
+    "file_size": 1646167,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/ThinkingStudios/Litematica-Forge",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "SKI34J7B",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected QoL group 2 for 0.2.5",
+    "distribution_review": {
+      "unchanged_file": "Official unmodified executable JAR; embedded LGPL and attribution retained.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "dependency_note": "Select executable non-primary file: the provider marks its sources JAR primary. Paired official sources inspected against binary. Projection/material/verifier baseline; Easy Place disabled, ordinary reach retained; RIGHT_ALT replaces every M-prefix shortcut. Moving-ship coordinate alignment remains unverified."
+  },
+  {
+    "slug": "mafglib",
+    "name": "MaFgLib",
+    "project_id": "SKI34J7B",
+    "version_id": "CgDQ0u0Q",
+    "version": "0.4.3+mc1.21.1",
+    "filename": "mafglib-0.4.3+mc1.21.1.jar",
+    "sha512": "b28b0552022ba22a729c917b848d119b84236689b550b99ba1fe11f2353551abcd2d9e23b190689be82376a9b2a47ffc22cdb116f413d6f76a5d19f075a9e78d",
+    "sha1": "9f62df832b1d5c9fe1aead873bd65cb8defacac7",
+    "file_size": 1314767,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/ThinkingStudios/MaLiLib-Forge",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected QoL group 2 for 0.2.5",
+    "distribution_review": {
+      "unchanged_file": "Official unmodified executable JAR; embedded LGPL and attribution retained.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "dependency_note": "Native NeoForge file provides mafglib and malilib compatibility stub IDs. Serialized config names remain unchanged; exact-source expected-value Russian display corrections live in owned mod."
+  },
+  {
+    "slug": "invmove",
+    "name": "InvMove",
+    "project_id": "REfW2AEX",
+    "version_id": "C7ePwvWW",
+    "version": "0.9.3+1.21.1-neoforge",
+    "filename": "InvMove-0.9.3+1.21.1-NeoForge.jar",
+    "sha512": "54daa1d39fc0319354f54c2e75b1261468e2f0d0bf36ec39a03921dbe07010cc07c73a9e3fdf6e803ce7cb66fe1df3c5a9ba209ec615bb8678163e378d4a7aa5",
+    "sha1": "536c78c3b97beb0f947b9f3765842ec990a873d8",
+    "file_size": 87005,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/PieKing1215/InvMove",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "6IpcGP7T",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected QoL group 2 for 0.2.5",
+    "distribution_review": {
+      "unchanged_file": "Official unmodified executable JAR; embedded LGPL and attribution retained.",
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
+      "integration_decision": "metadata/README.md"
+    },
+    "dependency_note": "Stable native base with existing Cloth Config. Owned public ModuleImpl adds EMI search focus, held Ponder tutorial and toolkit-config guards. No beta InvMoveCompats artifact. Config identities/player choices retained."
+  },
+  {
+    "slug": "jei",
+    "name": "Just Enough Items (JEI)",
+    "project_id": "u6dRKJwZ",
+    "version_id": "zHNxmOqp",
+    "version": "19.39.0.372",
+    "filename": "jei-1.21.1-neoforge-19.39.0.372.jar",
+    "sha512": "27ce1556b304ecfa828f1440b6142d0672f285c860436182328e9dd3e7f8011d0f962109553a59b1944494af70f784b9b16ce626fd011cc9ee54cda39650a0f5",
+    "sha1": "6e703a82a229d269855c3e0260c38aebc7f01abb",
+    "file_size": 1572695,
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/mezz/JustEnoughItems",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "exception": "Owner selected this exact beta file and its disclosed required library in the current QoL decisions; no permission for later experimental updates.",
+    "dependency_note": "Exact native descriptor requires NeoForge>=21.0.118-beta and Minecraft[1.21,1.21.1), accepted on1.21.1 by pinned FML4.0.42 VersionSupportMatrix mapping1.21.1 to1.21. Next19.42.0.379 requires NF>=21.1.238; later19.64.0.455 also requires unavailable MezzConfig. No extra JEMI/MezzConfig dependency for this version. Existing EMI1.1.22 suppresses native JEI GUI runtime plugin and imports categories/transfers. Static linkage checks passed for JEMI116 refs across41 owners and Create/FD69 refs across34 owners, including6 inherited methods.",
+    "artifact_audit": {
+      "source_artifact_url": "https://maven.blamejared.com/mezz/jei/jei-1.21.1-neoforge/19.39.0.372/jei-1.21.1-neoforge-19.39.0.372-sources.jar",
+      "source_revision": "Exact official Maven sources coordinate19.39.0.372; no embedded build commit",
+      "source_comparison": "Distributed plugin/API signatures and PluginCaller runtime dispatch compared with matching official source artifact. GUI/provider behavior remains owner client acceptance.",
+      "localization": "143 missing upstream RU keys authored independently;7 native server config caption/comment entries supplied. Key-combination syntax retained; unused debug/orphan translation entries verified absent from class references. Custom client config has no registered NeoForge screen factory, but Create foreign-mod selector exposes native server cheat settings."
+    }
+  },
+  {
+    "slug": "advanced-loot-info",
+    "name": "Advanced Loot Info (ALI)",
+    "project_id": "PEPVViac",
+    "version_id": "adxS0PUF",
+    "version": "1.21.1-2.5.0",
+    "filename": "AdvancedLootInfo-neoforge-1.21.1-2.5.0.jar",
+    "sha512": "0596ee6abfbc56fc49a4a32d1f4695cdbe852c61b6dff6e07ee3d6fb254b189abe535fad5939339c799a4e24e088573dfee0541abc915cb30392c4f88029d8a1",
+    "sha1": "d640286f05ff6417af467ba25e92f7f879cd888d",
+    "file_size": 730220,
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/yanny7/AdvancedLootInfo/blob/master/LICENSE"
+    },
+    "source_url": "https://github.com/yanny7/AdvancedLootInfo",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "fJFETWDN",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "BaR4ijFC",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "nfn13YXA",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "fRiHVvU7",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "exception": "Owner selected this exact beta file and its disclosed required library in the current QoL decisions; no permission for later experimental updates.",
+    "artifact_audit": {
+      "source_revision": "4b2954e8fe63f7ab8c0bd8c6400e51337d1c3f86",
+      "source_comparison": "Exact distributed entrypoints, configuration schema, relevant APIs and native behavior compared with the selected author source; no reproduced-build claim."
+    }
+  },
+  {
+    "slug": "advanced-core-info",
+    "name": "Advanced Core Info (ACI)",
+    "project_id": "BaR4ijFC",
+    "version_id": "xaWwatoU",
+    "version": "1.21.1-1.5.0",
+    "filename": "AdvancedCoreInfo-neoforge-1.21.1-1.5.0.jar",
+    "sha512": "cbf59540e3317b424cadf96497091a8c69c799ff6727e3c67719e46156bf5f5e4d4253670e5035c8b40b259cf6d05c0413279b859c0ad933448f7d8b36ade4fe",
+    "sha1": "81974fbd6bb03193be8310b31b6879d0fe4169e4",
+    "file_size": 270853,
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/yanny7/AdvancedLootInfo",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "exception": "Owner selected this exact beta file and its disclosed required library in the current QoL decisions; no permission for later experimental updates.",
+    "artifact_audit": {
+      "source_revision": "4b2954e8fe63f7ab8c0bd8c6400e51337d1c3f86",
+      "source_comparison": "Exact distributed entrypoints, configuration schema, relevant APIs and native behavior compared with the selected author source; no reproduced-build claim."
+    }
+  },
+  {
+    "slug": "easy-anvils",
+    "name": "Easy Anvils",
+    "project_id": "OZBR5JT5",
+    "version_id": "fSQSKhdF",
+    "version": "v21.1.0-1.21.1-NeoForge",
+    "filename": "EasyAnvils-v21.1.0-1.21.1-NeoForge.jar",
+    "sha512": "366eed1f4831e4044566833e07e5f6201ef1d178d0b30938b8a8a34bcac08c904c95ca0afe87bd55ea06b87cce85ee70c95d0cddd0ae053b1302d288252fe98f",
+    "sha1": "376c02e44dfcb44b79a494b1dba87b2ffb24277f",
+    "file_size": 152297,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "source_url": "https://github.com/Fuzss/easyanvils",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "5WeWGLoJ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "QAGBst4M",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "artifact_license_note": "MPL-2.0 code, separate LICENSE-ASSETS.md retains All Rights Reserved for original assets. Provider archive unchanged; additions independently authored.",
+    "artifact_audit": {
+      "source_revision": "159360bdc55c5fb696a2d0c357a91e2433d09878",
+      "source_comparison": "Exact distributed entrypoints, configuration schema, relevant APIs and native behavior compared with the selected author source; no reproduced-build claim."
+    }
+  },
+  {
+    "slug": "easy-magic",
+    "name": "Easy Magic",
+    "project_id": "9hx3AbJM",
+    "version_id": "MxbfrOEv",
+    "version": "v21.1.4-1.21.1-NeoForge",
+    "filename": "EasyMagic-v21.1.4-1.21.1-NeoForge.jar",
+    "sha512": "30c7383c0f3b6d767652fa58c3b4e4ee7169c28f1e7653493db1cd62289447cd0698967453c4fa09dc1327b322e7c7ad8476d24a557ac0cb521d08e8ab5fc8da",
+    "sha1": "bbd1d7afd2b803f6c8055b5342d581ea542e132e",
+    "file_size": 143992,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "source_url": "https://github.com/Fuzss/easymagic",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "5WeWGLoJ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "QAGBst4M",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "artifact_license_note": "MPL-2.0 code, separate LICENSE-ASSETS.md retains All Rights Reserved for original assets. Provider archive unchanged; additions independently authored.",
+    "artifact_audit": {
+      "source_revision": "6071a525a5e31b9545a718b1e0fdb0071f469e1b",
+      "source_comparison": "Exact distributed entrypoints, configuration schema, relevant APIs and native behavior compared with the selected author source; no reproduced-build claim."
+    }
+  },
+  {
+    "slug": "horseman",
+    "name": "Horseman",
+    "project_id": "qIv5FhAA",
+    "version_id": "jJ93aLVn",
+    "version": "1.5.13",
+    "filename": "horseman-neoforge-1.21.1-1.5.13.jar",
+    "sha512": "3a8aea3f060d4d4978499ad321deae4181b855a4572a3b2b8b3db82f0cb54996c895d95bdfb39dbbfc3584dbd9204c6984bba5f2e7faf895e2984b6e38d81e25",
+    "sha1": "e0a9fc419e471dce480000c3e663d6ccca13edc4",
+    "file_size": 453902,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/mortuusars/Horseman",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "artifact_audit": {
+      "source_revision": "4e6908b455f0d3f7976214e9a3166df70facc142",
+      "source_comparison": "Exact distributed entrypoints, configuration schema, relevant APIs and native behavior compared with the selected author source; no reproduced-build claim."
+    }
+  },
+  {
+    "slug": "simple-backups",
+    "name": "Simple Backups",
+    "project_id": "fzSKSXVK",
+    "version_id": "6JQL4qSR",
+    "version": "1.21-4.0.21",
+    "filename": "SimpleBackups-1.21-4.0.21.jar",
+    "sha512": "e31b437c9c2000f38d9d130fdde62276932081dbd3f62d1db9575a55a97164889efe5a40e7754c1e964483b1ca49327ce88c565879a59263b2523bd1dc0e64b1",
+    "sha1": "35bb3b98f330e0f6d08466860157a578a1ecfca2",
+    "file_size": 48608,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4"
+    ],
+    "license": {
+      "id": "Apache-2.0",
+      "name": "Apache License 2.0",
+      "url": null
+    },
+    "source_url": "https://github.com/ChaoticTrials/SimpleBackups",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "3azQ6p0W",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "artifact_audit": {
+      "source_revision": "b3cc8b033f042471592031c6d69297e55e36ba67",
+      "source_comparison": "Exact distributed entrypoints, configuration schema, relevant APIs and native behavior compared with the selected author source; no reproduced-build claim."
+    }
+  },
+  {
+    "slug": "accurate-block-placement-reborn",
+    "name": "Accurate Block Placement Reborn",
+    "project_id": "kzwxhsjp",
+    "version_id": "rA95AHFG",
+    "version": "1.4.8",
+    "filename": "AccurateBlockPlacement-Reborn-1.4.8+mc-1.20.5-1.21.1.jar",
+    "sha512": "0476f8ceb9a91dc2904c41968dec38fc15076ff0b200090f53781e357fbf3fc07e568cc79cd54a0e663914f4d07a63746e23df90bb53b320501960e866ca06be",
+    "sha1": "6f83a52b1fc1869d8f7a52382c4eb2032aef6e94",
+    "file_size": 47295,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "fabric"
+    ],
+    "game_versions": [
+      "1.20.5",
+      "1.20.6",
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/KadTheHunter/AccurateBlockPlacement-Reborn/",
+    "dependencies": [
+      {
+        "project_id": "u58R1TMW",
+        "version_id": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "Aqlf1Shp",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "mOgUt4GM",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "dependency_note": "Exact Fabric client file uses existing Connector2.0.0-beta.17 and ForgifiedFabricAPI2.3.4. NativeClothConfig already supplies optional configuration UI. No alternate placement handler; fast breaking disabled.",
+    "artifact_audit": {
+      "source_commit": "1e9ad0d368559c7a31c634070f534eac65b17db0",
+      "source_comparison_scope": "Version/config fields, entrypoints, worker and screen/packet methods crosschecked with exact distributed bytecode/decompiled artifact. Not a reproduced-build attestation.",
+      "route": "Unchanged Fabric artifact through already selected Connector beta17 + Extras1.12.1 + Forgified Fabric API0.116.15+2.3.4. No new runtime bridge dependencies. Cloth15.0.140 satisfies optional >=14.0.139; ModMenu optional, existing Extras bridge route.",
+      "license_scope": "Provider MIT; embedded fabric descriptor MIT and LICENSE_AccurateBlockPlacement-Reborn MIT agree."
+    }
+  },
+  {
+    "slug": "natures-compass",
+    "name": "Nature's Compass",
+    "project_id": "fPetb5Kh",
+    "version_id": "nFniEtJV",
+    "version": "1.21.1-3.4.0-neoforge",
+    "filename": "NaturesCompass-1.21.1-3.4.0-neoforge.jar",
+    "sha512": "5314b536bcb9a594a9cf2bbd46c82468d17e1559bd6c00da9d91e96c0814f50416799a011705f0d184bd731dac3f03dec009c76fea3d02b3556a6013f9649014",
+    "sha1": "e19721873bebc4dbc1674bb101af39d0ea406b95",
+    "file_size": 224657,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "CC-BY-NC-SA-4.0",
+      "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+      "url": null
+    },
+    "source_url": "https://github.com/MattCzyr/NaturesCompass",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "artifact_audit": {
+      "source_commit": "3a5d8534cc52f492c78f8d525f83bbe9a89e642f",
+      "source_comparison_scope": "Version/config fields, entrypoints, worker and screen/packet methods crosschecked with exact distributed bytecode/decompiled artifact. Not a reproduced-build attestation.",
+      "route": "Unchanged native NeoForge artifact. Actual Minecraft [1.21,1.21.1) is accepted on1.21.1 by pinned FML4.0.42 VersionSupportMatrix fallback1.21. No override or descriptor edit.",
+      "license_scope": "Provider CC-BY-NC-SA-4.0; descriptor CC BY-NC-SA4.0; author source LICENSE agrees. JAR has no separate license file. Native unchanged JAR redistribution under this noncommercial sharealike license; owned adapters are new code, not copied source."
+    }
+  },
+  {
+    "slug": "explorers-compass",
+    "name": "Explorer's Compass",
+    "project_id": "RV1qfVQ8",
+    "version_id": "hIJ2Ev1Q",
+    "version": "1.21.1-3.4.0-neoforge",
+    "filename": "ExplorersCompass-1.21.1-3.4.0-neoforge.jar",
+    "sha512": "a1b2e385aaacb547763441fc23e9a33a0b1d67bd32094cd605ded3fbdd1c7a0e5fc4520fdfa090c29d2d3384b685e3ead91b32d20030e45632c94145ee3ec668",
+    "sha1": "9f62af344988a6e2d855b113e61cf0e1611c7e0f",
+    "file_size": 174668,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "CC-BY-NC-SA-4.0",
+      "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+      "url": null
+    },
+    "source_url": "https://github.com/MattCzyr/ExplorersCompass",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected second QoL group; unchanged official provider file",
+    "artifact_audit": {
+      "source_commit": "53fb4478fc44197d4d159c9e83928368ed1e0f45",
+      "source_comparison_scope": "Version/config fields, entrypoints, worker and screen/packet methods crosschecked with exact distributed bytecode/decompiled artifact. Not a reproduced-build attestation.",
+      "route": "Unchanged native NeoForge artifact. Actual Minecraft [1.21,1.21.1) is accepted on1.21.1 by pinned FML4.0.42 VersionSupportMatrix fallback1.21. No override or descriptor edit.",
+      "license_scope": "Provider CC-BY-NC-SA-4.0; descriptor CC BY-NC-SA4.0; author source LICENSE agrees. JAR has no separate license file. Native unchanged JAR redistribution under this noncommercial sharealike license; owned adapters are new code, not copied source."
+    }
   }
 ]

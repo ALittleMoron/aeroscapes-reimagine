@@ -14,6 +14,6 @@ Learning and casting should involve proportionate resources, preparation or limi
 
 ## Travel
 
-Learned flight and teleportation are intended alternatives to [aircraft](../engineering/). Their unlocks and use costs remain to be chosen; long or unlimited-duration flight can be appropriate after mastery.
+Learned magic may offer useful ways to travel alongside [aircraft](../engineering/). Unlocks, reach and use costs remain to be chosen. Creative-like personal flight is excluded at every stage, including after mastery.
 
-Innate racial flight has a separate role and may be available from the beginning. The planned [character system](../character-and-combat/) should support different ways to travel without requiring every player to build a ship first.
+Strong spells and ingredient production can give a mage worthwhile projects of their own. Their effects should remain within useful limits after the supply of ingredients is automated; a large resource cost alone does not establish balance. Evaluate repeated use and combinations with other equipment while preserving reasons to build, explore and use other systems. Suitable magical alternatives do not require a compulsory ship milestone.

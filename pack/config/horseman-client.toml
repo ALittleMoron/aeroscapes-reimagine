@@ -1,0 +1,24 @@
+improved_mount_gui = false
+fix_mounted_camera_lag = true
+prevent_jumping_in_water = true
+horse_model_head_offset = 20
+horse_model_y_offset = 2
+render_lead_indication_without_slot = true
+jeb_horse = true
+copper_horn_details_tooltip = true
+
+[switch_inventory]
+enabled = true
+player_button_position_x = 176
+player_button_position_y = 9
+horse_button_position_x = -14
+horse_button_position_y = 9
+
+[transparent_horse]
+enabled = true
+max_opacity = 0.08
+start_angle = 30
+end_angle = 70
+
+[integration]
+jei_information = true

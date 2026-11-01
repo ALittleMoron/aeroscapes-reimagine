@@ -5,12 +5,20 @@ file = "config/DistantHorizons.toml"
 hash = "fb5f664293bb16938e6605794ad76b10f0fb9f2dcf0aec92ec6387ed9aba1ce9"
 
 [[files]]
+file = "config/accurateblockplacement.properties"
+hash = "968baa72000eca76e098d3c326abbf4f5b9de2b414fcd39dbc0a2b0667606012"
+
+[[files]]
 file = "config/advancementplaques.toml"
 hash = "1475da889ccfd41387bcbb59782a92bde3d9014b7dced5ff75f0a0f3a3853ac9"
 
 [[files]]
 file = "config/aeroscapes_reimagine/test_airship.nbt"
 hash = "2ec7d3a941cf644b4aa8abda8357db20243cbfd92b4c3994296323d7e2e67ac2"
+
+[[files]]
+file = "config/ali/ali_common.json"
+hash = "964dc7512e9c22a7cfcb88b557545b8c85ecddf78922261bceb6fff1c35018d7"
 
 [[files]]
 file = "config/atmospheric-fauna.json"
@@ -29,12 +37,32 @@ file = "config/colorwheel-client.toml"
 hash = "10bae919cad5e462007da61deb8b45bc86470daf404664f87885fd57b83d1835"
 
 [[files]]
+file = "config/craftingtweaks/grids/toms_storage.json"
+hash = "ecd2e6c2a39b76d33b41a90924719de3f01d6a16af5923229b5f92297b56c842"
+
+[[files]]
+file = "config/easyanvils-server.toml"
+hash = "ce96bd0887fe77b5ec1b9fd86dabd5992ae19a85dfeea37cbaad2f5d64d84cfe"
+
+[[files]]
+file = "config/easymagic-client.toml"
+hash = "d9eb1bf5341e2b5c24ff2aeb6496edb53d73f3c54908e2c509d2ade2c406b9ac"
+
+[[files]]
+file = "config/easymagic-server.toml"
+hash = "6f4df7f49ec97d2f4af3877d0ff2c9155cdb570bf91fcf5f3b9f37cdfac27e07"
+
+[[files]]
 file = "config/eg_particle_interactions_config.json"
 hash = "e12e4092b822f330fe1cc58364d1bb7e723e29576efd1f347339518ed8e51564"
 
 [[files]]
 file = "config/entity_model_features.json"
 hash = "67005e1a77cf4b111ebd17137bb0e3e3bc73d9ea62154be41ea542e2ee2432a8"
+
+[[files]]
+file = "config/explorerscompass-common.toml"
+hash = "e9f565649fb04d65ba956d2d2ba3a07e0f7ec9e5a625a9f3a8b5b64dd069059c"
 
 [[files]]
 file = "config/flerovium.json"
@@ -47,6 +75,18 @@ hash = "9bbe3235b51180c2369296c0df1b141bc8d040ef829f5b0d2d579b35444b4c8b"
 [[files]]
 file = "config/global_packs.toml"
 hash = "8046b960f488fdb986184bd3622a0eedb05e020befa086184bf00dc2c344b44e"
+
+[[files]]
+file = "config/horseman-client.toml"
+hash = "9ecc8f8ba6ccc5275d738d0cc94466a3fe6ba72df8ae70fe72fdb188c0f97aee"
+
+[[files]]
+file = "config/horseman-common.toml"
+hash = "b6661a4bd42eb5610af4c441e285cc91c419e077c071a9d36554be208a60129f"
+
+[[files]]
+file = "config/horseman-server.toml"
+hash = "d5adb191366db54e14a8b8488cbb6eff3033da116e3bfb7bedc34138839faee5"
 
 [[files]]
 file = "config/immediatelyfast.json"
@@ -65,6 +105,10 @@ file = "config/legendarytooltips.toml"
 hash = "27402b88c2e848cb3d4e125de391a06d5ac141d494462c99485c18beb2a0298d"
 
 [[files]]
+file = "config/litematica.json"
+hash = "00c7c65f8efd93bcb7f19fbaf7e484f46bfee659fcbe162148738ea233f034a4"
+
+[[files]]
 file = "config/modernfix-mixins.properties"
 hash = "8683b1a02d760ca7bcef7ac3a6a1954ec3287dba5eb76e2a41d1fdb72831e027"
 
@@ -75,6 +119,10 @@ hash = "ac7ce4bcd5f590d07f4a11dd912bd0dd0c92979b3839b50eb50c4b8a6038c604"
 [[files]]
 file = "config/natures_spirit-common.toml"
 hash = "4202bb8d0d24f6960ec162e9819dbe15733a9e01d0e93c5d1f57f43622c6d9a3"
+
+[[files]]
+file = "config/naturescompass-common.toml"
+hash = "4563c0d566a53d2901bcbc1efe9a2f75e186ddcedfcf704a5d871ccd5ccfdc1e"
 
 [[files]]
 file = "config/particlerain/config.json"
@@ -98,7 +146,7 @@ hash = "a3fb30afa95651bb131202472613df69d00da302d370c231cfa7845f05f7b5d2"
 
 [[files]]
 file = "config/quark-common.toml"
-hash = "607aa6836728c767b59a13e976786d199b5e684ccc747dc0c0b58378e5b71e1e"
+hash = "9d6859882365b751729fca3f4a72073bbaaf4ae4b3b6d1c5597ebca8e29d0c3b"
 
 [[files]]
 file = "config/serilum/collective.json"
@@ -107,6 +155,14 @@ hash = "7093a1d1e6863cd2cce604b5950946816f77727e1b109cc6d9e71627c4ce1cbe"
 [[files]]
 file = "config/shouldersurfing-client.toml"
 hash = "fb44c9f0beada8941053e4d31329966d927ade163acb80c20c24308ef3465278"
+
+[[files]]
+file = "config/simplebackups-common.toml"
+hash = "224fb2edf1f108e37fa676ef9b04962c2e67d7f49ec59721e41e276f31e50fca"
+
+[[files]]
+file = "config/simplebackups-server.toml"
+hash = "d5cb2a2a967ba03b332d4c1799de764b5dabf7ef35cc00390f7f9dc278fdbb2e"
 
 [[files]]
 file = "config/sound_physics_remastered/soundphysics.properties"
@@ -719,15 +775,30 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "a095fa19d3d0ba25a1c7e868fcb88d2801fda12cb2a78539244cd2d86a6aee6a"
+hash = "5f65c2031b44555d2bb5922a8ce719b0cfd8f842424a93ef9c4b86e296ed76d9"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "76a0d50326bc8349138abc62b5ee9301f58ace511e7625bf245c71fa5625dc16"
+hash = "b19a0c3b3cd60071fe74eb86db04665dee4b65cc176a2ee6fa178692665777ef"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
 hash = "9cc036f9ca77c8e51f36338a4e2ed9f60a5f1d3443bb2017da18e808a8e90510"
+metafile = true
+
+[[files]]
+file = "mods/accurate-block-placement-reborn.pw.toml"
+hash = "b19c5f7a0b5cdcf6aa3648dc5e8ced89c3d7578b60009cd643c7160bf8974195"
+metafile = true
+
+[[files]]
+file = "mods/advanced-core-info.pw.toml"
+hash = "8e99c5f98fae7835a967f5ce4f332f0d2487633bcbaf6ff10a4be4ded384daaa"
+metafile = true
+
+[[files]]
+file = "mods/advanced-loot-info.pw.toml"
+hash = "c6bf7d8639312104fb2045d9eaac0b203fc94d5636e4d0c536101a26dce27f3a"
 metafile = true
 
 [[files]]
@@ -737,7 +808,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "6ab43157b5339c406496c1b92a2c7654b357d5445c086a65e86b3e86f6c38f29"
+hash = "c4cdaba6871ecd213e5977022d69a8228ca70b3aa36ed7511612530238fb35cf"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -772,6 +843,11 @@ metafile = true
 [[files]]
 file = "mods/badoptimizations.pw.toml"
 hash = "cb7e2166aa909cbd176e57fb12ebd303943b941bc10a5b35b85aa86f50cacd15"
+metafile = true
+
+[[files]]
+file = "mods/balm.pw.toml"
+hash = "0223a0d5363ebd753b95952f493b0b131050b6aa30346b8bc1205a42475abbe0"
 metafile = true
 
 [[files]]
@@ -920,6 +996,11 @@ hash = "8a48b9aef277dae61c31d6846fa92d85da9dd0ff07b8b51acbc8dbc27bbf9211"
 metafile = true
 
 [[files]]
+file = "mods/crafting-tweaks.pw.toml"
+hash = "3c519391153ef7316c6e577510a9d17c713d9b43a0d3a427476b396950d80a48"
+metafile = true
+
+[[files]]
 file = "mods/crate-delight.pw.toml"
 hash = "dbc90f84862d109acb4bf7f4b14346dda11c3f0fa0cc118ba4f0827b23d6e5e8"
 metafile = true
@@ -1030,6 +1111,16 @@ hash = "67241a713fbf873928f39f4f7bc7661cb4f2fdcc70a8fe41cdaee8df1faee024"
 metafile = true
 
 [[files]]
+file = "mods/easy-anvils.pw.toml"
+hash = "f751bb6b937c4488e6db3b0bf575363246b42e8e59e7a12c1f364a0105a767dc"
+metafile = true
+
+[[files]]
+file = "mods/easy-magic.pw.toml"
+hash = "c4e08ccc567add18c41decc5f57efb879a1cddd3d6e8cfabdeeda260fee5bbf3"
+metafile = true
+
+[[files]]
 file = "mods/eating-animations.pw.toml"
 hash = "be50c78b4085f6c8feba0d2d53627a9d46e3291cea308fd120334d32ab260f7e"
 metafile = true
@@ -1037,6 +1128,11 @@ metafile = true
 [[files]]
 file = "mods/effecttimerplus.pw.toml"
 hash = "5680dd7aec6ca3ea1c1e86fe28b3a652cc790286a10224fe46ba0f2758457777"
+metafile = true
+
+[[files]]
+file = "mods/emi-create-schematics.pw.toml"
+hash = "222d05b6194de0537b0912ef1d14646e7bec7f1de5b9c8b3082cbf5d8cd1f3a9"
 metafile = true
 
 [[files]]
@@ -1085,6 +1181,11 @@ hash = "d704fbd35d39d2f93b7967551c929cc1599d51dbbdf91fa78ff5d31c49145ba6"
 metafile = true
 
 [[files]]
+file = "mods/explorers-compass.pw.toml"
+hash = "7056fb7f39b5a08f54e0290adb11367c016e0d707d21f7453435bc54e0f50383"
+metafile = true
+
+[[files]]
 file = "mods/exposure.pw.toml"
 hash = "b112e38749c8ec3c2312db862abc8cbfae41048a65057c464d8db3e02e10f243"
 metafile = true
@@ -1117,6 +1218,11 @@ metafile = true
 [[files]]
 file = "mods/flywheel.pw.toml"
 hash = "23f2f6bc02d2350b0f5ff933f2c83a5f215d0059482accab1eebfdb0b44338cf"
+metafile = true
+
+[[files]]
+file = "mods/forgematica.pw.toml"
+hash = "1e34f4d65f913e798e2f3f11c48714b4b4bc378283d67e9f523fabf12cca8450"
 metafile = true
 
 [[files]]
@@ -1160,6 +1266,11 @@ hash = "2827236cdf28e1d20904bbfca49d4e276d24a2562fac81ba87fd23eb7b9ab477"
 metafile = true
 
 [[files]]
+file = "mods/horseman.pw.toml"
+hash = "90c1abbe263f01ce96018987d932bc9fa573133d0a3694d0d74b63752dd8750a"
+metafile = true
+
+[[files]]
 file = "mods/iceberg.pw.toml"
 hash = "a7d12eea258a731e6182bf06a96fc7350f0b7e72e5c2393ccd1d7512549f9948"
 metafile = true
@@ -1185,6 +1296,11 @@ hash = "b631186f87c45a08f213d356820a3756f388f1a5e2238a5a76cef7ffe38ee13b"
 metafile = true
 
 [[files]]
+file = "mods/invmove.pw.toml"
+hash = "081fc4a83703aace8977056efa05455513ddcd6ec8a6296727039ce0848b66a4"
+metafile = true
+
+[[files]]
 file = "mods/iris.pw.toml"
 hash = "7a8146b9e25966b5172fb584f6d6fdf2fde99588021020735abe461e6392522e"
 metafile = true
@@ -1202,6 +1318,11 @@ metafile = true
 [[files]]
 file = "mods/jade.pw.toml"
 hash = "9a838bc3ebe8e413ae6494a77b9a79b731bf5a20273941585d81f795f77a27d0"
+metafile = true
+
+[[files]]
+file = "mods/jei.pw.toml"
+hash = "39ca69e2ebff263afe0d6b0878d1d45f5167753bf7035c9ae7d9979f97257a67"
 metafile = true
 
 [[files]]
@@ -1237,6 +1358,11 @@ metafile = true
 [[files]]
 file = "mods/lithostitched.pw.toml"
 hash = "99dba8d824b608ca4dc8e8ae2fa94599d6691def2388447c71fdb8be72e8145c"
+metafile = true
+
+[[files]]
+file = "mods/mafglib.pw.toml"
+hash = "cec49e98a86987a54a93dd26e56ce6dcceead1fa21511c49c698fd335cc9a895"
 metafile = true
 
 [[files]]
@@ -1277,6 +1403,11 @@ metafile = true
 [[files]]
 file = "mods/mru.pw.toml"
 hash = "01529c94dce623104e15277223d882ec69190f9663a3a919761a8c7cb63490c7"
+metafile = true
+
+[[files]]
+file = "mods/natures-compass.pw.toml"
+hash = "6f317710a24d3d0908c22b70970b222b95a079005257f40f0ba773ae9b48498d"
 metafile = true
 
 [[files]]
@@ -1422,6 +1553,11 @@ metafile = true
 [[files]]
 file = "mods/shulkerboxtooltip.pw.toml"
 hash = "37e523bae980017bb16c0df0212bf3f70627db460e0ce530d73d8909ebbf4250"
+metafile = true
+
+[[files]]
+file = "mods/simple-backups.pw.toml"
+hash = "e1eccfca24bbb2f5306172399ff978717275cbd11c758fbad72eceba1746152c"
 metafile = true
 
 [[files]]

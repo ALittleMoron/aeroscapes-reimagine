@@ -50,6 +50,9 @@ RELEASE_EXCEPTIONS = frozenset(
         ("xFCYuAs8", "Js4y2r4d", "beta"),
         ("u58R1TMW", "IITF0PRC", "beta"),
         ("Q2OqKxDG", "FjTYILOi", "beta"),
+        ("u6dRKJwZ", "zHNxmOqp", "beta"),
+        ("PEPVViac", "adxS0PUF", "beta"),
+        ("BaR4ijFC", "xaWwatoU", "beta"),
     }
 )
 COMPAT_DIRECTORY = "global_packs/required_data/aeroscapes_reimagine_compat"
@@ -187,7 +190,11 @@ def audit_metadata(source: SourcePack, artifacts: tuple[Artifact, ...]) -> None:
             if (
                 "fabric" not in artifact.loaders
                 or (artifact.project_id, artifact.version_id)
-                not in {("Effrh3ze", "9It7IoUE"), ("yd14I2wN", "m4E3YdvX")}
+                not in {
+                    ("Effrh3ze", "9It7IoUE"),
+                    ("yd14I2wN", "m4E3YdvX"),
+                    ("kzwxhsjp", "rA95AHFG"),
+                }
                 or artifact.side != "client"
                 or bridge is None
                 or bridge.version_id != "IITF0PRC"

@@ -1816,5 +1816,3461 @@
     "key": "distanthorizons.config.client.advanced.graphics.culling.blocksToIgnore.@tooltip",
     "expected": "Defines what blocks should be rendered as LODs. \n\n§NONE:§r Include all blocks in the LODs\n§NON_COLLIDING:§r Only render solid blocks in the LODs (tall grass, torches, etc. will be ignored)",
     "replacement": "Defines what blocks should be rendered as LODs. \n\n§6NONE:§r Include all blocks in the LODs\n§6NON_COLLIDING:§r Only render solid blocks in the LODs (tall grass, torches, etc. will be ignored)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.title",
+    "expected": "InvMove Config",
+    "replacement": "Настройки InvMove"
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.category.general",
+    "expected": "General",
+    "replacement": "Общие"
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.category.movement",
+    "expected": "UI Movement",
+    "replacement": "Движение в интерфейсах"
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.category.background",
+    "expected": "UI Background",
+    "replacement": "Фон интерфейсов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.general.enable",
+    "expected": "Enable Mod",
+    "replacement": "Включить мод"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.general.enable",
+    "expected": "Enable the entire mod",
+    "replacement": "Включить все функции мода."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.general.debugDisplay",
+    "expected": "Debug Display",
+    "replacement": "Отладочная информация"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.general.debugDisplay",
+    "expected": "Enable debug display.",
+    "replacement": "Показывать отладочную информацию."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.movement.enable",
+    "expected": "Move In Inventories",
+    "replacement": "Движение в инвентарях"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.movement.enable",
+    "expected": "Enable movement while inside inventories.\nYou can manually turn off certain inventories below.\nThere is a keybind you can set to toggle this.",
+    "replacement": "Разрешить движение с открытым инвентарём.\nНиже можно отключить движение в отдельных интерфейсах.\nДля переключения этой функции можно назначить клавишу."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.movement.sneak",
+    "expected": "Sneak Mode",
+    "replacement": "Режим приседания"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.movement.sneak",
+    "expected": "How to handle sneaking while inside inventories:\nOff = No sneaking\nMaintain = Keep sneaking if you were when the inventory opened\nPressed = Sneak only while holding the sneak button\nMaintainWhilePressed = Maintain until the sneak button is released\n(Pressed can be distracting when shift-clicking)\n(If using toggle sneak, Pressed allows toggling and both other modes maintain)",
+    "replacement": "Приседание с открытым инвентарём:\nВыключено — не приседать.\nСохранять — продолжать приседать, если инвентарь открыт в приседе.\nПри удержании — приседать, пока зажата клавиша приседания.\nСохранять до отпускания — продолжать приседать до отпускания клавиши.\nРежим удержания может мешать переносу предметов с Shift.\nПри переключаемом приседании режим удержания позволяет переключать приседание,\nа оба режима сохранения сохраняют прежнее состояние."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.movement.sneak_disallowed",
+    "expected": "Sneak Mode When Disallowed",
+    "replacement": "Приседание без движения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.movement.sneak_disallowed",
+    "expected": "Determines sneaking behavior inside inventories that have movement disabled.\nOff = Automatically unsneak (Vanilla behavior)\nMaintain = Keep sneaking if you were when you opened the inventory\nPressed = Sneak only while holding the sneak button\nMaintainWhilePressed = Maintain until the sneak button is released\n(Pressed can be distracting when shift-clicking)\n(If using toggle sneak, Pressed allows toggling and both other modes maintain)",
+    "replacement": "Приседание в интерфейсах, где движение запрещено:\nВыключено — автоматически встать, как в обычной игре.\nСохранять — продолжать приседать, если инвентарь открыт в приседе.\nПри удержании — приседать, пока зажата клавиша приседания.\nСохранять до отпускания — продолжать приседать до отпускания клавиши.\nРежим удержания может мешать переносу предметов с Shift.\nПри переключаемом приседании режим удержания позволяет переключать приседание,\nа оба режима сохранения сохраняют прежнее состояние."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.movement.sneak_flying",
+    "expected": "Sneak Mode When Creative Flying",
+    "replacement": "Приседание в творческом полёте"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.movement.sneak_flying",
+    "expected": "Determines sneaking behavior inside inventories that have movement enabled while creative flying.\nOff = Automatically unsneak (Vanilla behavior)\nMaintain = Keep sneaking if you were when you opened the inventory\nPressed = Sneak only while holding the sneak button\nMaintainWhilePressed = Maintain until the sneak button is released\n(Pressed can be distracting when shift-clicking)\n(If using toggle sneak, Pressed allows toggling and both other modes maintain)",
+    "replacement": "Приседание в интерфейсах с разрешённым движением во время творческого полёта:\nВыключено — автоматически встать, как в обычной игре.\nСохранять — продолжать приседать, если инвентарь открыт в приседе.\nПри удержании — приседать, пока зажата клавиша приседания.\nСохранять до отпускания — продолжать приседать до отпускания клавиши.\nРежим удержания может мешать переносу предметов с Shift.\nПри переключаемом приседании режим удержания позволяет переключать приседание,\nа оба режима сохранения сохраняют прежнее состояние."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.movement.jump",
+    "expected": "Allow Jumping",
+    "replacement": "Разрешить прыжки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.movement.jump",
+    "expected": "Allow jumping while inside inventories.",
+    "replacement": "Разрешить прыжки с открытым инвентарём."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.movement.dismount",
+    "expected": "Allow Dismounting",
+    "replacement": "Разрешить спешивание"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.movement.dismount",
+    "expected": "Allow dismounting while inside inventories.",
+    "replacement": "Разрешить спешивание с открытым инвентарём."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.movement.textFieldDisables",
+    "expected": "Text Field Disables Movement",
+    "replacement": "Остановка при вводе текста"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.movement.textFieldDisables",
+    "expected": "Disable movement in inventories when a text field is focused.",
+    "replacement": "Запрещать движение, когда текстовое поле принимает ввод."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.movement.unrecognizedScreenDefault",
+    "expected": "Unrecognized Screens Default",
+    "replacement": "Новые неизвестные интерфейсы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.movement.unrecognizedScreenDefault",
+    "expected": "Default state for new unrecognized UIs.",
+    "replacement": "Режим по умолчанию для новых неизвестных интерфейсов."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.background.enable",
+    "expected": "Hide Inventory Backgrounds",
+    "replacement": "Скрывать фон инвентарей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.background.enable",
+    "expected": "Hides the background tint while inside inventories.\nYou can manually turn off certain inventories below.",
+    "replacement": "Убирать затемнение фона с открытым инвентарём.\nНиже можно отключить эту функцию в отдельных интерфейсах."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.background.hideOnPause",
+    "expected": "Pause Screens Background",
+    "replacement": "Фон меню с паузой"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.background.hideOnPause",
+    "expected": "How to handle screens that pause the game:\nShow = Always show background\nShowSP = Show background in singleplayer, otherwise allow hide\nAllowHide = Allow background to be hidden",
+    "replacement": "Фон меню, которые ставят игру на паузу:\nПоказывать — всегда показывать фон.\nПоказывать в одиночной игре — разрешать скрытие в остальных случаях.\nРазрешить скрытие — разрешать скрывать фон."
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.background.unrecognizedScreenDefault",
+    "expected": "Unrecognized Screens Default",
+    "replacement": "Новые неизвестные интерфейсы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.config.invmove.background.unrecognizedScreenDefault",
+    "expected": "Default state for new unrecognized UIs.",
+    "replacement": "Режим по умолчанию для новых неизвестных интерфейсов."
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.category.movement.keys",
+    "expected": "Allowed Keys",
+    "replacement": "Разрешённые клавиши"
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.category.movement.keys.desc",
+    "expected": "Only keys marked \"Allow\" will be handled by the mod.",
+    "replacement": "Мод обрабатывает только клавиши с пометкой «Разрешить»."
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.module.nooptions",
+    "expected": "This module doesn't have any options.",
+    "replacement": "В этом модуле нет настроек."
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.unrecognized",
+    "expected": "Unrecognized UI Types",
+    "replacement": "Неизвестные типы интерфейсов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.unrecognized.desc",
+    "expected": "Unrecognized GUIs show up here once they have been interacted with.",
+    "replacement": "Неизвестный интерфейс появляется здесь после первого взаимодействия с ним."
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.unrecognized.nomod",
+    "expected": "Unknown",
+    "replacement": "Неизвестный мод"
+  },
+  {
+    "language": "ru_ru",
+    "key": "keybind.invmove.toggleMove",
+    "expected": "Toggle UI Movement",
+    "replacement": "Переключить движение в интерфейсах"
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.modules",
+    "expected": "Modules",
+    "replacement": "Модули"
+  },
+  {
+    "language": "ru_ru",
+    "key": "key.invmove.module.vanilla",
+    "expected": "Vanilla",
+    "replacement": "Основная игра"
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.vanilla.movement.horseInventory",
+    "expected": "Horse Inventory",
+    "replacement": "Инвентарь лошади"
+  },
+  {
+    "language": "ru_ru",
+    "key": "config.invmove.vanilla.backgroundHide.horseInventory",
+    "expected": "Horse Inventory",
+    "replacement": "Инвентарь лошади"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.gui.advancements",
+    "expected": "This menu is a pause screen so this option may be overridden.",
+    "replacement": "Это меню ставит игру на паузу, поэтому настройка может не применяться."
+  },
+  {
+    "language": "ru_ru",
+    "key": "tooltip.item.minecraft.book",
+    "expected": "This menu is a pause screen so this option may be overridden.",
+    "replacement": "Это меню ставит игру на паузу, поэтому настройка может не применяться."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.comment.configElementDebug",
+    "expected": "When enabled, individual config element\ncalls are printed to the game console/log",
+    "replacement": "Выводит отдельные обращения к элементам\nнастроек в игровую консоль и журнал"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.comment.debugMessages",
+    "expected": "When enabled, debug level events\nare printed to the game console/log",
+    "replacement": "Выводит события уровня отладки\nв игровую консоль и журнал"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.comment.inputCancellationDebugging",
+    "expected": "When enabled, then the cancellation reason/source\nfor inputs (keyboard and mouse) is printed out",
+    "replacement": "Выводит причину и источник отмены\nсобытий клавиатуры и мыши"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.comment.keybindDebugging",
+    "expected": "When enabled, key presses and held keys are\nprinted to the game console (and the action bar, if enabled)",
+    "replacement": "Выводит нажатые и удерживаемые клавиши\nв игровую консоль и, если включено, над панелью быстрого доступа"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.comment.keybindDebuggingIngame",
+    "expected": "If enabled, then the messages from 'keybindDebugging'\nare also printed to the in-game action bar",
+    "replacement": "Также показывает сообщения об отладке клавиш\nнад панелью быстрого доступа"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.comment.mouseScrollDebug",
+    "expected": "If enabled, some debug values from mouse scrolling\nare printed to the game console/log",
+    "replacement": "Выводит отладочные значения прокрутки мыши\nв игровую консоль и журнал"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.comment.printTranslationKeys",
+    "expected": "Print all translation keys to the logger that\nare translated via the §eStringUtils.translate()§r method.\n\nThis is intended for finding out certain translation keys,\nif you for example want to add a translation override in-game for a given display string\nvia the translation overrides system, without having to make a resource pack for it.\n\n§dDon't forget this on!§r It will likely spam your log quite fast...",
+    "replacement": "Выводит в журнал ключи переводов,\nобрабатываемые методом §eStringUtils.translate()§r.\n\nПомогает найти ключ нужной надписи\nдля проверки перевода или подготовки собственного перевода\nв наборе ресурсов.\n\n§dВыключите после проверки!§r Журнал быстро заполнится сообщениями."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.name.configElementDebug",
+    "expected": "configElementDebug",
+    "replacement": "Отладка элементов настроек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.name.debugMessages",
+    "expected": "debugMessages",
+    "replacement": "Отладочные сообщения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.name.inputCancellationDebugging",
+    "expected": "inputCancellationDebugging",
+    "replacement": "Отладка отмены ввода"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.name.keybindDebugging",
+    "expected": "keybindDebugging",
+    "replacement": "Отладка клавиш"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.name.keybindDebuggingIngame",
+    "expected": "keybindDebuggingIngame",
+    "replacement": "Отладка клавиш в игре"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.name.mouseScrollDebug",
+    "expected": "mouseScrollDebug",
+    "replacement": "Отладка прокрутки мыши"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.name.printTranslationKeys",
+    "expected": "printTranslationKeys",
+    "replacement": "Вывод ключей переводов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.prettyName.configElementDebug",
+    "expected": "Config Element Debug",
+    "replacement": "Отладка элементов настроек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.prettyName.debugMessages",
+    "expected": "Debug Messages",
+    "replacement": "Отладочные сообщения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.prettyName.inputCancellationDebugging",
+    "expected": "Input Cancellation Debugging",
+    "replacement": "Отладка отмены ввода"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.prettyName.keybindDebugging",
+    "expected": "Keybind Debugging",
+    "replacement": "Отладка клавиш"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.prettyName.keybindDebuggingIngame",
+    "expected": "Keybind Debugging In-Game",
+    "replacement": "Отладка клавиш в игре"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.prettyName.mouseScrollDebug",
+    "expected": "Mouse Scroll Debug",
+    "replacement": "Отладка прокрутки мыши"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.debug.prettyName.printTranslationKeys",
+    "expected": "Print Translation Keys",
+    "replacement": "Вывод ключей переводов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.comment.actionbarHudTicks",
+    "expected": "The time in ticks that an actionbar message should appear for.",
+    "replacement": "Время показа сообщения над панелью быстрого доступа, в тактах."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.comment.enableConfigSwitcher",
+    "expected": "Enable the \"Config Switcher\" at the top right to\nquickly switch between Registered Config Screens\nNOTE: If the Config Screen isn't registered,\nwe will try to automatically register them.",
+    "replacement": "Показывает справа вверху переключатель\nдля быстрого перехода между экранами настроек модов.\nЕсли экран ещё не зарегистрирован,\nбиблиотека попытается зарегистрировать его автоматически."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.comment.ignoredKeys",
+    "expected": "Any keys set here will be completely ignored",
+    "replacement": "Указанные здесь клавиши полностью игнорируются библиотекой"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.comment.inGameMessageTimeout",
+    "expected": "The time in seconds that an in game message should appear for.",
+    "replacement": "Время показа внутриигрового сообщения, в секундах."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.comment.openGuiConfigs",
+    "expected": "Open the in-game malilib config GUI",
+    "replacement": "Открывает внутриигровой экран настроек MaLiLib"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.comment.realmsCommonConfig",
+    "expected": "Whether or not to use a common config file name for all realms servers.\nIf this is disabled, then the server IP and port are used in the generated config file names.\nHowever, apparently the Realms server addresses change regularly, so the config names would change\nall the time and thus the configs wouldn't save properly.\nSo basically leave this enabled if you only play on one Realms server.\nIf you play on multiple Realms... then the configs will get mixed up regardless.\nUnless you play on the different servers on different Minecraft instances\nto keep the configs separated by the Minecraft instance.",
+    "replacement": "Использовать одно имя файла настроек для всех серверов Realms.\nЕсли выключено, имя файла строится из IP-адреса и порта сервера.\nАдреса серверов Realms могут регулярно меняться, а вместе с ними — имена файлов,\nпоэтому сохранённые настройки перестают находиться.\nОставьте включённым, если играете только на одном сервере Realms.\nПри игре на нескольких серверах их настройки будут общими.\nЧтобы хранить настройки раздельно, используйте разные экземпляры Minecraft\nдля разных серверов Realms."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.comment.renderTransparencyFix",
+    "expected": "Disable the Vanilla §bImproved Transparency§r Experimental Video option.\nThis Video setting causes MaLiLib's rendering to be\nrendered behind water, and other things.\nDisable this if you want MaLiLib to\nignore if this configuration is enabled.",
+    "replacement": "Отключает экспериментальную настройку видео §bУлучшенная прозрачность§r.\nПри её использовании графика MaLiLib может\nоказаться за водой и другими объектами.\nВыключите эту опцию, чтобы MaLiLib\nне меняла эту настройку видео."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.name.actionbarHudTicks",
+    "expected": "actionbarHudTicks",
+    "replacement": "Время сообщения над панелью"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.name.enableConfigSwitcher",
+    "expected": "enableConfigSwitcher",
+    "replacement": "Переключатель экранов настроек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.name.ignoredKeys",
+    "expected": "ignoredKeys",
+    "replacement": "Игнорируемые клавиши"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.name.inGameMessageTimeout",
+    "expected": "inGameMessageTimeout",
+    "replacement": "Время внутриигрового сообщения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.name.openGuiConfigs",
+    "expected": "openGuiConfigs",
+    "replacement": "Открыть настройки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.name.realmsCommonConfig",
+    "expected": "realmsCommonConfig",
+    "replacement": "Общие настройки Realms"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.name.renderTransparencyFix",
+    "expected": "renderTransparencyFix",
+    "replacement": "Исправление прозрачности"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.prettyName.enableConfigSwitcher",
+    "expected": "Config Switcher",
+    "replacement": "Переключатель экранов настроек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.prettyName.ignoredKeys",
+    "expected": "Ignored Keys",
+    "replacement": "Игнорируемые клавиши"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.prettyName.openGuiConfigs",
+    "expected": "Open Gui Configs",
+    "replacement": "Открытие настроек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.prettyName.realmsCommonConfig",
+    "expected": "Realms Common Config",
+    "replacement": "Общие настройки Realms"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.config.generic.prettyName.renderTransparencyFix",
+    "expected": "Render Transparency Fix",
+    "replacement": "Исправление прозрачности"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.error.invalid_item_stack_entry.nbt_syntax",
+    "expected": "Invalid item stack NBT syntax: '%s'",
+    "replacement": "Неверный синтаксис NBT стопки предметов: '%s'"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.error.invalid_item_stack_entry.string",
+    "expected": "Invalid item stack string: '%s'",
+    "replacement": "Неверная строка стопки предметов: '%s'"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.button.hovertext.add",
+    "expected": "Add",
+    "replacement": "Добавить"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.button.hovertext.move_down",
+    "expected": "Move Down",
+    "replacement": "Переместить вниз"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.button.hovertext.move_up",
+    "expected": "Move Up",
+    "replacement": "Переместить вверх"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.button.hovertext.remove",
+    "expected": "Remove",
+    "replacement": "Удалить"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.button.reset",
+    "expected": "Reset",
+    "replacement": "Сброс"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.button.reset.caps",
+    "expected": "RESET",
+    "replacement": "СБРОС"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.block_snap.none",
+    "expected": "None",
+    "replacement": "Нет"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.duration_format.error.invalid",
+    "expected": "Invalid Duration [%s]",
+    "replacement": "Неверная длительность [%s]"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.duration_format.error.invalid_format",
+    "expected": "Invalid Duration format // [%s]",
+    "replacement": "Неверный формат длительности // [%s]"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.duration_format.formatted",
+    "expected": "Formatted",
+    "replacement": "По шаблону"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.duration_format.iso_extended",
+    "expected": "ISO Extended",
+    "replacement": "Расширенный ISO"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.duration_format.pretty",
+    "expected": "Pretty",
+    "replacement": "Удобочитаемый"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.duration_format.regular",
+    "expected": "Regular",
+    "replacement": "Обычный"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.keybind_settings.context",
+    "expected": "Context",
+    "replacement": "Область действия"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.no",
+    "expected": "no",
+    "replacement": "нет"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.date_am_pm",
+    "expected": "Date AM/PM",
+    "replacement": "Дата и время AM/PM"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.date_only",
+    "expected": "Date Only",
+    "replacement": "Только дата"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.day_am_pm",
+    "expected": "Day AM/PM",
+    "replacement": "День и время AM/PM"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.error.invalid_format",
+    "expected": "Invalid Date/Time format // [%s]",
+    "replacement": "Неверный формат даты и времени // [%s]"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.formatted",
+    "expected": "Formatted",
+    "replacement": "По шаблону"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.iso_local",
+    "expected": "ISO Local",
+    "replacement": "ISO без часового пояса"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.iso_offset",
+    "expected": "ISO Offset",
+    "replacement": "ISO со смещением часового пояса"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.regular",
+    "expected": "Regular",
+    "replacement": "Обычный"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.time_am_pm",
+    "expected": "Time AM/PM",
+    "replacement": "Время AM/PM"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.label.time_format.time_only",
+    "expected": "Time 24-Hour",
+    "replacement": "Время в 24-часовом формате"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.title.color_editor",
+    "expected": "§nColor Editor",
+    "replacement": "§nРедактор цвета"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.title.debug",
+    "expected": "Debug",
+    "replacement": "Отладка"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.title.locked_list_edit",
+    "expected": "Edit locked list for '%s'",
+    "replacement": "Редактирование фиксированного списка '%s'"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.title.table_edit",
+    "expected": "Edit table for '%s'",
+    "replacement": "Редактирование таблицы '%s'"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.gui.title.inventory_overlay",
+    "expected": "%s Inventory Overlay Screen",
+    "replacement": "Просмотр инвентаря: %s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.hover.color_indicator.open_color_editor",
+    "expected": "Open Color Editor",
+    "replacement": "Открыть редактор цвета"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.alignment.top_right",
+    "expected": "Top Right",
+    "replacement": "Справа вверху"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.key_action.both",
+    "expected": "BOTH",
+    "replacement": "ОБА"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.key_action.press",
+    "expected": "PRESS",
+    "replacement": "НАЖАТИЕ"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.key_action.release",
+    "expected": "RELEASE",
+    "replacement": "ОТПУСКАНИЕ"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.key_context.gui",
+    "expected": "GUI",
+    "replacement": "В МЕНЮ"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.list_type.blacklist",
+    "expected": "Black List",
+    "replacement": "Список исключений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.list_type.none",
+    "expected": "None",
+    "replacement": "Нет"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.list_type.whitelist",
+    "expected": "White List",
+    "replacement": "Список разрешений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.message_output_type.message",
+    "expected": "Message",
+    "replacement": "Сообщение"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.message_output_type.none",
+    "expected": "None",
+    "replacement": "Нет"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_copy_file",
+    "expected": "Failed to copy file\n  §e'%s'§r\nto\n  §e'%s'§r",
+    "replacement": "Не удалось скопировать файл\n  §e'%s'§r\nв\n  §e'%s'§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_copy_file.destination_exists",
+    "expected": "Won't copy file §e'%s'§r\nto §e'%s'§r,\nthe destination file already exists",
+    "replacement": "Нельзя скопировать файл §e'%s'§r\nв §e'%s'§r:\nцелевой файл уже существует"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_copy_file.exception",
+    "expected": "Failed to copy file\n  §e'%s'§r\nto\n  §e'%s'§r\n%s,\nexception: %s",
+    "replacement": "Не удалось скопировать файл\n  §e'%s'§r\nв\n  §e'%s'§r\n%s,\nисключение: %s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_copy_file_with_message",
+    "expected": "Failed to copy file\n  §e'%s'§r\nto\n  §e'%s'§r\n%s",
+    "replacement": "Не удалось скопировать файл\n  §e'%s'§r\nв\n  §e'%s'§r\n%s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_create_directory",
+    "expected": "Failed to create directory\n  §e'%s'§r",
+    "replacement": "Не удалось создать папку\n  §e'%s'§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_create_file",
+    "expected": "Failed to create file\n  §e'%s'§r",
+    "replacement": "Не удалось создать файл\n  §e'%s'§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_delete_file",
+    "expected": "Failed to delete file\n  §e'%s'§r",
+    "replacement": "Не удалось удалить файл\n  §e'%s'§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_delete_file_is_dir",
+    "expected": "Won't delete\n  §e'%s'§r\nas it's a directory",
+    "replacement": "Нельзя удалить\n  §e'%s'§r:\nэто папка"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_move_file",
+    "expected": "Failed to move file\n  §e'%s'§r\nto\n  §e'%s'§r",
+    "replacement": "Не удалось переместить файл\n  §e'%s'§r\nв\n  §e'%s'§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_move_file.destination_exists",
+    "expected": "Won't move file\n  §e'%s'§r\nto\n  §e'%s'§r,\nas the destination file already exists",
+    "replacement": "Нельзя переместить файл\n  §e'%s'§r\nв\n  §e'%s'§r:\nцелевой файл уже существует"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_rename_file.exception",
+    "expected": "Failed to rename file\n  §e'%s'§r\nto\n  §e'%s'§r,\nexception: %s",
+    "replacement": "Не удалось переименовать файл\n  §e'%s'§r\nв\n  §e'%s'§r:\nисключение: %s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.failed_to_rename_file.exists",
+    "expected": "Failed to rename the file\n  §e'%s'§r\nto\n  §e'%s'§r\nthe target file already exists",
+    "replacement": "Не удалось переименовать файл\n  §e'%s'§r\nв\n  §e'%s'§r:\nцелевой файл уже существует"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.file_or_directory_already_exists",
+    "expected": "File or directory\n  §e'%s'§r\nalready exists",
+    "replacement": "Файл или папка\n  §e'%s'§r\nуже существует"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.file_or_directory_does_not_exist",
+    "expected": "File or directory '%s' does not exist",
+    "replacement": "Файл или папка '%s' не существует"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.file_rename.rename_failed",
+    "expected": "Failed to rename the file\n  §e'%s'§r\nto\n  §e'%s'§r",
+    "replacement": "Не удалось переименовать файл\n  §e'%s'§r\nв\n  §e'%s'§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.file_rename.same_name",
+    "expected": "Won't rename the file\n  §e'%s'§r,\nbecause the new name is the same as the original name",
+    "replacement": "Нельзя переименовать файл\n  §e'%s'§r:\nновое имя совпадает с прежним"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.illegal_characters_in_file_name",
+    "expected": "Invalid characters in the given file name\n  §e'%s'§r.\n\nFor example slashes are not allowed, and on Windows also many other special characters are not valid for file names!",
+    "replacement": "Недопустимые символы в имени файла\n  §e'%s'§r.\n\nНапример, косая черта запрещена; в Windows также запрещён ряд других специальных символов."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.error.invalid_file_or_directory",
+    "expected": "Invalid file or directory",
+    "replacement": "Неверный файл или папка"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.file_copied",
+    "expected": "File\n  §e'%s'§r\ncopied to\n  §e'%s'§r",
+    "replacement": "Файл\n  §e'%s'§r\nскопирован в\n  §e'%s'§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.file_or_directory_deleted",
+    "expected": "File or directory\n  §e'%s'§r\ndeleted",
+    "replacement": "Файл или папка\n  §e'%s'§r\nудалены"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.file_or_directory_renamed",
+    "expected": "File or directory\n  §e'%s'§r\nrenamed to\n  §e'%s'§r",
+    "replacement": "Файл или папка\n  §e'%s'§r\nпереименованы в\n  §e'%s'§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.layer_range.range_max",
+    "expected": "max",
+    "replacement": "макс."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.layer_range.range_min",
+    "expected": "min",
+    "replacement": "мин."
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.value.off",
+    "expected": "OFF",
+    "replacement": "ВЫКЛ"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.message.value.on",
+    "expected": "ON",
+    "replacement": "ВКЛ"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.name.file_write_type.normal_write",
+    "expected": "Normal Write",
+    "replacement": "Прямая запись"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.name.file_write_type.temp_and_rename",
+    "expected": "Temp and Rename",
+    "replacement": "Временный файл с переименованием"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.hotkeys.category.generic_hotkeys",
+    "expected": "Generic hotkeys",
+    "replacement": "Основные клавиши"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.hotkeys.category.debug_hotkeys",
+    "expected": "Debug hotkeys",
+    "replacement": "Клавиши отладки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.block_mirror.none",
+    "expected": "None",
+    "replacement": "Без отражения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "malilib.label.block_rotation.none",
+    "expected": "None",
+    "replacement": "Без поворота"
+  },
+  {
+    "language": "ru_ru",
+    "key": "modmenu.descriptionTranslation.malilib",
+    "expected": "A library mod required by masa's client-side mods",
+    "replacement": "Библиотека для клиентских модов masa"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.all_banners_fix",
+    "expected": "All Banners",
+    "replacement": "Все знамёна"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.all_signs_fix",
+    "expected": "All Signs",
+    "replacement": "Все таблички"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.concrete_blocks",
+    "expected": "Concrete Blocks",
+    "replacement": "Бетон"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.concrete_powder_fix",
+    "expected": "Concrete Powders",
+    "replacement": "Сухой бетон"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.coral_fans_fix",
+    "expected": "Coral Fans",
+    "replacement": "Веерные кораллы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.glass_blocks",
+    "expected": "Glass Blocks",
+    "replacement": "Стеклянные блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.glass_panes",
+    "expected": "Glass Panes",
+    "replacement": "Стеклянные панели"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.glazed_terracotta_blocks",
+    "expected": "Glazed Terracotta Blocks",
+    "replacement": "Глазурованная керамика"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.gravity_blocks",
+    "expected": "Gravity Blocks",
+    "replacement": "Падающие блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.immovable_blocks",
+    "expected": "Immovable Blocks",
+    "replacement": "Неподвижные блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.leaves_fix",
+    "expected": "Leaves",
+    "replacement": "Листва"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.needs_shears",
+    "expected": "Needs Shears",
+    "replacement": "Требуют ножниц"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.needs_silk_touch",
+    "expected": "Needs Silk Touch",
+    "replacement": "Требуют Шёлкового касания"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.ore_blocks",
+    "expected": "Ore Blocks",
+    "replacement": "Руды"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.sculk_blocks",
+    "expected": "Sculk Blocks",
+    "replacement": "Скалк"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.block.malilib.wool_blocks_fix",
+    "expected": "Wool Blocks",
+    "replacement": "Шерсть"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.areaSelectionBoxSideColor",
+    "expected": "areaSelectionBoxSideColor",
+    "replacement": "Цвет граней выделенной области"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.hightlightBlockInInventoryColor",
+    "expected": "hightlightBlockInInventoryColor",
+    "replacement": "Цвет подсветки блока в инвентаре"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.materialListHudItemCountsColor",
+    "expected": "materialListHudItemCountsColor",
+    "replacement": "Цвет количества материалов на экране"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.schematicOverlayColorDiffBlock",
+    "expected": "schematicOverlayColorDiffBlock",
+    "replacement": "Цвет отличающегося блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.schematicOverlayColorExtra",
+    "expected": "schematicOverlayColorExtra",
+    "replacement": "Цвет лишнего блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.schematicOverlayColorMissing",
+    "expected": "schematicOverlayColorMissing",
+    "replacement": "Цвет недостающего блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.schematicOverlayColorWrongBlock",
+    "expected": "schematicOverlayColorWrongBlock",
+    "replacement": "Цвет неверного блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.schematicOverlayColorWrongState",
+    "expected": "schematicOverlayColorWrongState",
+    "replacement": "Цвет неверного состояния блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.schematicRebuildBreakExceptPlaceOverlayColor",
+    "expected": "schematicRebuildBreakExceptPlaceOverlayColor",
+    "replacement": "Цвет режима удаления с исключением"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.schematicRebuildBreakPlaceOverlayColor",
+    "expected": "schematicRebuildBreakPlaceOverlayColor",
+    "replacement": "Цвет режима удаления и установки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.colors.name.schematicRebuildReplaceOverlayColor",
+    "expected": "schematicRebuildReplaceOverlayColor",
+    "replacement": "Цвет режима замены блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.areaSelectionsPerWorld",
+    "expected": "areaSelectionsPerWorld",
+    "replacement": "Отдельные выделения для каждого мира"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.changeSelectedCornerOnMove",
+    "expected": "changeSelectedCornerOnMove",
+    "replacement": "Выбирать перемещаемый угол"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.cloneAtOriginalPosition",
+    "expected": "cloneAtOriginalPosition",
+    "replacement": "Клонировать в исходных координатах"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandDisableFeedback",
+    "expected": "commandDisableFeedback",
+    "replacement": "Отключать сообщения команд"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandFillMaxVolume",
+    "expected": "commandFillMaxVolume",
+    "replacement": "Предельный объём команды fill"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandFillNoChunkClamp",
+    "expected": "commandFillNoChunkClamp",
+    "replacement": "Не ограничивать fill границами чанка"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandLimitPerTick",
+    "expected": "commandLimitPerTick",
+    "replacement": "Команд за такт"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandNameClone",
+    "expected": "commandNameClone",
+    "replacement": "Название команды клонирования"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandNameFill",
+    "expected": "commandNameFill",
+    "replacement": "Название команды заполнения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandNameSetblock",
+    "expected": "commandNameSetblock",
+    "replacement": "Название команды установки блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandNameSummon",
+    "expected": "commandNameSummon",
+    "replacement": "Название команды призыва"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandTaskInterval",
+    "expected": "commandTaskInterval",
+    "replacement": "Интервал выполнения команд"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.commandUseWorldEdit",
+    "expected": "commandUseWorldEdit",
+    "replacement": "Использовать команды WorldEdit"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.customSchematicBaseDirectory",
+    "expected": "customSchematicBaseDirectory",
+    "replacement": "Свой каталог схем"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.customSchematicBaseDirectoryEnabled",
+    "expected": "customSchematicBaseDirectoryEnabled",
+    "replacement": "Использовать свой каталог схем"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.datafixerDefaultSchema",
+    "expected": "datafixerDefaultSchema",
+    "replacement": "Версия данных по умолчанию"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.datafixerMode",
+    "expected": "datafixerMode",
+    "replacement": "Режим преобразования старых данных"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.debugLogging",
+    "expected": "debugLogging",
+    "replacement": "Отладочные записи в журнале"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.displayFileOpsFeedback",
+    "expected": "displayFileOpsFeedback",
+    "replacement": "Подтверждать операции с файлами"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceFirst",
+    "expected": "easyPlaceFirst",
+    "replacement": "Приоритет упрощённой установки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceHoldEnabled",
+    "expected": "easyPlaceHoldEnabled",
+    "replacement": "Упрощённая установка при удержании"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceMode",
+    "expected": "easyPlaceMode",
+    "replacement": "Режим упрощённого строительства"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceProtocolVersion",
+    "expected": "easyPlaceProtocolVersion",
+    "replacement": "Протокол упрощённой установки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceSinglePlayerHandling",
+    "expected": "easyPlaceSinglePlayerHandling",
+    "replacement": "Обработка упрощённой установки в одиночной игре"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceSinglePlayerValidation",
+    "expected": "easyPlaceSinglePlayerValidation",
+    "replacement": "Проверка упрощённой установки в одиночной игре"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceSwapInterval",
+    "expected": "easyPlaceSwapInterval",
+    "replacement": "Интервал смены предметов при установке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceSwingHand",
+    "expected": "easyPlaceSwingHand",
+    "replacement": "Взмах руки при упрощённой установке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.easyPlaceVanillaReach",
+    "expected": "easyPlaceVanillaReach",
+    "replacement": "Обычная дальность упрощённой установки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.enableDifferentBlocks",
+    "expected": "enableDifferentBlocks",
+    "replacement": "Разрешить отличающиеся блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.entityDataSync",
+    "expected": "entityDataSync",
+    "replacement": "Синхронизация данных сущностей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.entityDataSyncBackup",
+    "expected": "entityDataSyncBackup",
+    "replacement": "Резервный способ синхронизации сущностей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.entityDataSyncCacheTimeout",
+    "expected": "entityDataSyncCacheTimeout",
+    "replacement": "Время хранения данных сущностей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.entityDataSyncLoadNbt",
+    "expected": "entityDataSyncLoadNbt",
+    "replacement": "Загружать NBT сущностей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.executeRequireHoldingTool",
+    "expected": "executeRequireHoldingTool",
+    "replacement": "Выполнять операции только с инструментом в руке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.fixChestMirror",
+    "expected": "fixChestMirror",
+    "replacement": "Исправлять отражение сундуков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.fixRailRotation",
+    "expected": "fixRailRotation",
+    "replacement": "Исправлять поворот рельсов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.fixStairsMirror",
+    "expected": "fixStairsMirror",
+    "replacement": "Исправлять отражение ступеней"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.generateLowercaseNames",
+    "expected": "generateLowercaseNames",
+    "replacement": "Создавать названия строчными буквами"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.highlightBlockInInventory",
+    "expected": "highlightBlockInInventory",
+    "replacement": "Подсвечивать блок в инвентаре"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.itemUsePacketCheckBypass",
+    "expected": "itemUsePacketCheckBypass",
+    "replacement": "Обход проверки пакетов использования"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.layerModeFollowsPlayer",
+    "expected": "layerModeFollowsPlayer",
+    "replacement": "Перемещать видимый слой вслед за игроком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.loadEntireSchematics",
+    "expected": "loadEntireSchematics",
+    "replacement": "Загружать схемы целиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.materialListIgnoreState",
+    "expected": "materialListIgnoreState",
+    "replacement": "Не учитывать состояние блоков в материалах"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteAlwaysUseFill",
+    "expected": "pasteAlwaysUseFill",
+    "replacement": "Всегда вставлять командой fill"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteIgnoreBlockEntitiesEntirely",
+    "expected": "pasteIgnoreBlockEntitiesEntirely",
+    "replacement": "Полностью пропускать блочные сущности при вставке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteIgnoreBlockEntitiesFromFill",
+    "expected": "pasteIgnoreBlockEntitiesFromFill",
+    "replacement": "Пропускать блочные сущности в fill"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteIgnoreCommandLimitWithNbtRestore",
+    "expected": "pasteIgnoreCommandLimitWithNbtRestore",
+    "replacement": "Игнорировать лимит команд при восстановлении NBT"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteIgnoreEntities",
+    "expected": "pasteIgnoreEntities",
+    "replacement": "Не вставлять сущности"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteIgnoreInventories",
+    "expected": "pasteIgnoreInventories",
+    "replacement": "Не вставлять содержимое инвентарей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteLayerBehavior",
+    "expected": "pasteLayerBehavior",
+    "replacement": "Какие слои вставлять"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteNbtRestoreBehavior",
+    "expected": "pasteNbtRestoreBehavior",
+    "replacement": "Восстановление NBT при вставке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteReplaceBehavior",
+    "expected": "pasteReplaceBehavior",
+    "replacement": "Замена блоков при вставке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteToMcFunctionFiles",
+    "expected": "pasteToMcFunctionFiles",
+    "replacement": "Записывать вставку в файлы mcfunction"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteUseFillCommand",
+    "expected": "pasteUseFillCommand",
+    "replacement": "Использовать fill при вставке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteUsingCommandsInSp",
+    "expected": "pasteUsingCommandsInSp",
+    "replacement": "Вставлять командами в одиночной игре"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pasteUsingServux",
+    "expected": "pasteUsingServux",
+    "replacement": "Вставлять через Servux"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pickBlockAvoidDamageable",
+    "expected": "pickBlockAvoidDamageable",
+    "replacement": "Не выбирать предметы с прочностью"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pickBlockAvoidTools",
+    "expected": "pickBlockAvoidTools",
+    "replacement": "Не выбирать инструменты"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pickBlockEnabled",
+    "expected": "pickBlockEnabled",
+    "replacement": "Выбор нужного блока схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pickBlockShulkers",
+    "expected": "pickBlockShulkers",
+    "replacement": "Искать нужный блок в шалкерах"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.pickBlockableSlots",
+    "expected": "pickBlockableSlots",
+    "replacement": "Слоты для выбора блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.placementReplaceBehavior",
+    "expected": "placementReplaceBehavior",
+    "replacement": "Замена блоков при размещении"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.placementRestriction",
+    "expected": "placementRestriction",
+    "replacement": "Ограничение установки по схеме"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.placementRestrictionWarn",
+    "expected": "placementRestrictionWarn",
+    "replacement": "Предупреждение об ограничении установки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.renderMaterialListInGuis",
+    "expected": "renderMaterialListInGuis",
+    "replacement": "Показывать список материалов в интерфейсах"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.renderThreadNoTimeout",
+    "expected": "renderThreadNoTimeout",
+    "replacement": "Не ограничивать ожидание потока отрисовки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.schematicVcsDeleteMode",
+    "expected": "schematicVcsDeleteMode",
+    "replacement": "Удаление блоков по версии схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.selectionCornersMode",
+    "expected": "selectionCornersMode",
+    "replacement": "Режим углов выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.serverNbtRequestRate",
+    "expected": "serverNbtRequestRate",
+    "replacement": "Частота запросов NBT к серверу"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.signTextPaste",
+    "expected": "signTextPaste",
+    "replacement": "Вставка текста табличек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.toolItem",
+    "expected": "toolItem",
+    "replacement": "Предмет для выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.toolItemComponents",
+    "expected": "toolItemComponents",
+    "replacement": "Компоненты предмета для выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.toolItemEnabled",
+    "expected": "toolItemEnabled",
+    "replacement": "Включить предмет для выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.name.unhideSchematicVCS",
+    "expected": "unhideSchematicVCS",
+    "replacement": "Показывать проекты схем"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.addSelectionBox",
+    "expected": "addSelectionBox",
+    "replacement": "Добавить область выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.cloneSelection",
+    "expected": "cloneSelection",
+    "replacement": "Клонировать выделенное"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.deleteSelectionBox",
+    "expected": "deleteSelectionBox",
+    "replacement": "Удалить область выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.easyPlaceFirst",
+    "expected": "easyPlaceFirst",
+    "replacement": "Приоритет упрощённой установки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.easyPlaceToggle",
+    "expected": "easyPlaceToggle",
+    "replacement": "Переключить упрощённое строительство"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.easyPlaceUseKey",
+    "expected": "easyPlaceUseKey",
+    "replacement": "Применить упрощённую установку"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.executeOperation",
+    "expected": "executeOperation",
+    "replacement": "Выполнить операцию"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.invertGhostBlockRenderState",
+    "expected": "invertGhostBlockRenderState",
+    "replacement": "Временно переключить призрачные блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.invertOverlayRenderState",
+    "expected": "invertOverlayRenderState",
+    "replacement": "Временно переключить наложение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.layerModeNext",
+    "expected": "layerModeNext",
+    "replacement": "Следующий режим слоёв"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.layerModePrevious",
+    "expected": "layerModePrevious",
+    "replacement": "Предыдущий режим слоёв"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.layerNext",
+    "expected": "layerNext",
+    "replacement": "Следующий слой"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.layerPrevious",
+    "expected": "layerPrevious",
+    "replacement": "Предыдущий слой"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.layerSetHere",
+    "expected": "layerSetHere",
+    "replacement": "Выбрать слой здесь"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.moveEntireSelection",
+    "expected": "moveEntireSelection",
+    "replacement": "Переместить выделение целиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.nudgeSelectionNegative",
+    "expected": "nudgeSelectionNegative",
+    "replacement": "Сдвинуть выделение назад"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.nudgeSelectionPositive",
+    "expected": "nudgeSelectionPositive",
+    "replacement": "Сдвинуть выделение вперёд"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiAreaSettings",
+    "expected": "openGuiAreaSettings",
+    "replacement": "Открыть настройки области"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiLoadedSchematics",
+    "expected": "openGuiLoadedSchematics",
+    "replacement": "Открыть загруженные схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiMainMenu",
+    "expected": "openGuiMainMenu",
+    "replacement": "Открыть главное меню схем"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiMaterialList",
+    "expected": "openGuiMaterialList",
+    "replacement": "Открыть список материалов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiPlacementSettings",
+    "expected": "openGuiPlacementSettings",
+    "replacement": "Открыть настройки размещения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiSchematicPlacements",
+    "expected": "openGuiSchematicPlacements",
+    "replacement": "Открыть размещения схем"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiSchematicProjects",
+    "expected": "openGuiSchematicProjects",
+    "replacement": "Открыть проекты схем"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiSchematicVerifier",
+    "expected": "openGuiSchematicVerifier",
+    "replacement": "Открыть проверку схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiSelectionManager",
+    "expected": "openGuiSelectionManager",
+    "replacement": "Открыть менеджер выделений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.openGuiSettings",
+    "expected": "openGuiSettings",
+    "replacement": "Открыть настройки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.operationModeChangeModifier",
+    "expected": "operationModeChangeModifier",
+    "replacement": "Модификатор смены режима инструмента"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.pickBlockFirst",
+    "expected": "pickBlockFirst",
+    "replacement": "Выбрать ближайший блок схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.pickBlockLast",
+    "expected": "pickBlockLast",
+    "replacement": "Выбрать дальний блок схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.pickBlockToggle",
+    "expected": "pickBlockToggle",
+    "replacement": "Переключить выбор блока схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.renderInfoOverlay",
+    "expected": "renderInfoOverlay",
+    "replacement": "Показать сведения о блоке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.renderOverlayThroughBlocks",
+    "expected": "renderOverlayThroughBlocks",
+    "replacement": "Показать наложение сквозь блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.rerenderSchematic",
+    "expected": "rerenderSchematic",
+    "replacement": "Перерисовать схему"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.saveAreaAsInMemorySchematic",
+    "expected": "saveAreaAsInMemorySchematic",
+    "replacement": "Сохранить область как схему в памяти"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.saveAreaAsSchematicToFile",
+    "expected": "saveAreaAsSchematicToFile",
+    "replacement": "Сохранить область в файл схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicEditBreakAllExcept",
+    "expected": "schematicEditBreakAllExcept",
+    "replacement": "Удалять блоки схемы с исключением"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicEditBreakPlaceAll",
+    "expected": "schematicEditBreakPlaceAll",
+    "replacement": "Удалять или ставить все такие блоки схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicEditBreakPlaceDirection",
+    "expected": "schematicEditBreakPlaceDirection",
+    "replacement": "Удалять или ставить блоки схемы по направлению"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicEditReplaceAll",
+    "expected": "schematicEditReplaceAll",
+    "replacement": "Заменять все такие блоки схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicEditReplaceBlock",
+    "expected": "schematicEditReplaceBlock",
+    "replacement": "Заменять блок схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicEditReplaceDirection",
+    "expected": "schematicEditReplaceDirection",
+    "replacement": "Заменять блоки схемы по направлению"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicEditReplaceSelection",
+    "expected": "schematicEditReplaceSelection",
+    "replacement": "Заменить схему выделенными блоками мира"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicPlacementMirror",
+    "expected": "schematicPlacementMirror",
+    "replacement": "Отразить размещение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicPlacementRotation",
+    "expected": "schematicPlacementRotation",
+    "replacement": "Повернуть размещение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicVCSDeleteBlockByPlacement",
+    "expected": "schematicVCSDeleteBlockByPlacement",
+    "replacement": "Удалить блоки по размещению версии"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicVersionCycleModifier",
+    "expected": "schematicVersionCycleModifier",
+    "replacement": "Модификатор переключения версий схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicVersionCycleNext",
+    "expected": "schematicVersionCycleNext",
+    "replacement": "Следующая версия схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.schematicVersionCyclePrevious",
+    "expected": "schematicVersionCyclePrevious",
+    "replacement": "Предыдущая версия схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.selectionGrabModifier",
+    "expected": "selectionGrabModifier",
+    "replacement": "Модификатор захвата выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.selectionGrow",
+    "expected": "selectionGrow",
+    "replacement": "Расширить выделение"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.selectionGrowModifier",
+    "expected": "selectionGrowModifier",
+    "replacement": "Модификатор расширения выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.selectionModeCycle",
+    "expected": "selectionModeCycle",
+    "replacement": "Переключить режим выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.selectionNudgeModifier",
+    "expected": "selectionNudgeModifier",
+    "replacement": "Модификатор сдвига выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.selectionShrink",
+    "expected": "selectionShrink",
+    "replacement": "Уменьшить выделение"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.setAreaOrigin",
+    "expected": "setAreaOrigin",
+    "replacement": "Задать начало области"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.setSelectionBoxPosition1",
+    "expected": "setSelectionBoxPosition1",
+    "replacement": "Задать первый угол выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.setSelectionBoxPosition2",
+    "expected": "setSelectionBoxPosition2",
+    "replacement": "Задать второй угол выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleAllRendering",
+    "expected": "toggleAllRendering",
+    "replacement": "Переключить всю отрисовку"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleAreaSelectionBoxesRendering",
+    "expected": "toggleAreaSelectionBoxesRendering",
+    "replacement": "Переключить границы выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleInfoOverlayRendering",
+    "expected": "toggleInfoOverlayRendering",
+    "replacement": "Переключить сведения о блоках"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleOverlayOutlineRendering",
+    "expected": "toggleOverlayOutlineRendering",
+    "replacement": "Переключить контуры наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleOverlayRendering",
+    "expected": "toggleOverlayRendering",
+    "replacement": "Переключить наложение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleOverlaySideRendering",
+    "expected": "toggleOverlaySideRendering",
+    "replacement": "Переключить грани наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.togglePlacementBoxesRendering",
+    "expected": "togglePlacementBoxesRendering",
+    "replacement": "Переключить границы размещений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.togglePlacementRestriction",
+    "expected": "togglePlacementRestriction",
+    "replacement": "Переключить ограничение установки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleSchematicBlockRendering",
+    "expected": "toggleSchematicBlockRendering",
+    "replacement": "Переключить отрисовку блоков схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleSchematicRendering",
+    "expected": "toggleSchematicRendering",
+    "replacement": "Переключить отрисовку схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleSignTextPaste",
+    "expected": "toggleSignTextPaste",
+    "replacement": "Переключить вставку текста табличек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleTranslucentRendering",
+    "expected": "toggleTranslucentRendering",
+    "replacement": "Переключить полупрозрачную отрисовку"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toggleVerifierOverlayRendering",
+    "expected": "toggleVerifierOverlayRendering",
+    "replacement": "Переключить наложение проверки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toolEnabledToggle",
+    "expected": "toolEnabledToggle",
+    "replacement": "Переключить инструмент выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toolPlaceCorner1",
+    "expected": "toolPlaceCorner1",
+    "replacement": "Установить первый угол инструментом"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toolPlaceCorner2",
+    "expected": "toolPlaceCorner2",
+    "replacement": "Установить второй угол инструментом"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toolSelectElements",
+    "expected": "toolSelectElements",
+    "replacement": "Выбрать элемент инструментом"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toolSelectModifierBlock1",
+    "expected": "toolSelectModifierBlock1",
+    "replacement": "Модификатор выбора первого блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.toolSelectModifierBlock2",
+    "expected": "toolSelectModifierBlock2",
+    "replacement": "Модификатор выбора второго блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.name.unloadCurrentSchematic",
+    "expected": "unloadCurrentSchematic",
+    "replacement": "Выгрузить текущую схему"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.blockInfoLinesAlignment",
+    "expected": "blockInfoLinesAlignment",
+    "replacement": "Выравнивание строк сведений о блоке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.blockInfoLinesEnabled",
+    "expected": "blockInfoLinesEnabled",
+    "replacement": "Показывать строки сведений о блоке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.blockInfoLinesFontScale",
+    "expected": "blockInfoLinesFontScale",
+    "replacement": "Масштаб шрифта сведений о блоке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.blockInfoLinesOffsetX",
+    "expected": "blockInfoLinesOffsetX",
+    "replacement": "Сдвиг строк сведений по горизонтали"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.blockInfoLinesOffsetY",
+    "expected": "blockInfoLinesOffsetY",
+    "replacement": "Сдвиг строк сведений по вертикали"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.blockInfoOverlayAlignment",
+    "expected": "blockInfoOverlayAlignment",
+    "replacement": "Выравнивание панели сведений о блоке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.blockInfoOverlayEnabled",
+    "expected": "blockInfoOverlayEnabled",
+    "replacement": "Показывать панель сведений о блоке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.blockInfoOverlayOffsetY",
+    "expected": "blockInfoOverlayOffsetY",
+    "replacement": "Вертикальный сдвиг панели сведений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.defaultSelectionMode",
+    "expected": "defaultSelectionMode",
+    "replacement": "Начальный режим выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.infoHudAlignment",
+    "expected": "infoHudAlignment",
+    "replacement": "Выравнивание информационной панели"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.infoHudMaxLines",
+    "expected": "infoHudMaxLines",
+    "replacement": "Число строк информационной панели"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.infoHudOffsetX",
+    "expected": "infoHudOffsetX",
+    "replacement": "Сдвиг информационной панели по горизонтали"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.infoHudOffsetY",
+    "expected": "infoHudOffsetY",
+    "replacement": "Сдвиг информационной панели по вертикали"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.infoHudScale",
+    "expected": "infoHudScale",
+    "replacement": "Масштаб информационной панели"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.infoOverlaysTargetFluids",
+    "expected": "infoOverlaysTargetFluids",
+    "replacement": "Учитывать жидкости при выборе цели"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.materialListHudMaxLines",
+    "expected": "materialListHudMaxLines",
+    "replacement": "Число строк списка материалов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.materialListHudScale",
+    "expected": "materialListHudScale",
+    "replacement": "Масштаб списка материалов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.statusInfoHud",
+    "expected": "statusInfoHud",
+    "replacement": "Показывать состояние настроек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.statusInfoHudAuto",
+    "expected": "statusInfoHudAuto",
+    "replacement": "Автоматически показывать состояние настроек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.toolHudAlignment",
+    "expected": "toolHudAlignment",
+    "replacement": "Выравнивание панели инструмента"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.toolHudOffsetX",
+    "expected": "toolHudOffsetX",
+    "replacement": "Сдвиг панели инструмента по горизонтали"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.toolHudOffsetY",
+    "expected": "toolHudOffsetY",
+    "replacement": "Сдвиг панели инструмента по вертикали"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.toolHudScale",
+    "expected": "toolHudScale",
+    "replacement": "Масштаб панели инструмента"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.verifierErrorHilightAlpha",
+    "expected": "verifierErrorHilightAlpha",
+    "replacement": "Непрозрачность подсветки ошибок"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.verifierErrorHilightMaxPositions",
+    "expected": "verifierErrorHilightMaxPositions",
+    "replacement": "Число подсвечиваемых ошибок"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.verifierOverlayEnabled",
+    "expected": "verifierOverlayEnabled",
+    "replacement": "Показывать наложение проверки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.name.warnDisabledRendering",
+    "expected": "warnDisabledRendering",
+    "replacement": "Предупреждать об отключённой отрисовке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enableAreaSelectionBoxesRendering",
+    "expected": "enableAreaSelectionBoxesRendering",
+    "replacement": "Показывать границы выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enablePlacementBoxesRendering",
+    "expected": "enablePlacementBoxesRendering",
+    "replacement": "Показывать границы размещений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enableRendering",
+    "expected": "enableRendering",
+    "replacement": "Включить отрисовку"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enableSchematicBlocksRendering",
+    "expected": "enableSchematicBlocksRendering",
+    "replacement": "Показывать блоки схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enableSchematicFakeLighting",
+    "expected": "enableSchematicFakeLighting",
+    "replacement": "Искусственное освещение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enableSchematicFluidRendering",
+    "expected": "enableSchematicFluidRendering",
+    "replacement": "Показывать жидкости схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enableSchematicOverlay",
+    "expected": "enableSchematicOverlay",
+    "replacement": "Показывать наложение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enableSchematicOverlayCulling",
+    "expected": "enableSchematicOverlayCulling",
+    "replacement": "Отсекать скрытое наложение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.enableSchematicRendering",
+    "expected": "enableSchematicRendering",
+    "replacement": "Показывать схему"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.ghostBlockAlpha",
+    "expected": "ghostBlockAlpha",
+    "replacement": "Непрозрачность призрачных блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.ignorableExistingBlocks",
+    "expected": "ignorableExistingBlocks",
+    "replacement": "Игнорируемые существующие блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.ignoreExistingBlocks",
+    "expected": "ignoreExistingBlocks",
+    "replacement": "Игнорировать существующие блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.ignoreExistingFluids",
+    "expected": "ignoreExistingFluids",
+    "replacement": "Игнорировать существующие жидкости"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.overlayReducedInnerSides",
+    "expected": "overlayReducedInnerSides",
+    "replacement": "Сокращать внутренние грани наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.placementBoxSideAlpha",
+    "expected": "placementBoxSideAlpha",
+    "replacement": "Непрозрачность граней размещения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderAOModernEnable",
+    "expected": "renderAOModernEnable",
+    "replacement": "Современный расчёт окружающего затенения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderAreaSelectionBoxSides",
+    "expected": "renderAreaSelectionBoxSides",
+    "replacement": "Показывать грани выделения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderBlocksAsTranslucent",
+    "expected": "renderBlocksAsTranslucent",
+    "replacement": "Полупрозрачные блоки схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderCollidingSchematicBlocks",
+    "expected": "renderCollidingSchematicBlocks",
+    "replacement": "Показывать блоки схемы внутри существующих"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderEnableTranslucentResorting",
+    "expected": "renderEnableTranslucentResorting",
+    "replacement": "Пересортировка полупрозрачных блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderErrorMarkerConnections",
+    "expected": "renderErrorMarkerConnections",
+    "replacement": "Соединительные линии меток ошибок"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderErrorMarkerSides",
+    "expected": "renderErrorMarkerSides",
+    "replacement": "Грани меток ошибок"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderFakeLightingLevel",
+    "expected": "renderFakeLightingLevel",
+    "replacement": "Уровень искусственного освещения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderPlacementBoxSides",
+    "expected": "renderPlacementBoxSides",
+    "replacement": "Показывать грани размещений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderPlacementEnclosingBox",
+    "expected": "renderPlacementEnclosingBox",
+    "replacement": "Показывать общий контур размещения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderPlacementEnclosingBoxSides",
+    "expected": "renderPlacementEnclosingBoxSides",
+    "replacement": "Показывать грани общего контура размещения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderSchematicEntities",
+    "expected": "renderSchematicEntities",
+    "replacement": "Показывать сущности схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderSchematicTileEntities",
+    "expected": "renderSchematicTileEntities",
+    "replacement": "Показывать блочные сущности схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.renderTranslucentBlockInnerSides",
+    "expected": "renderTranslucentBlockInnerSides",
+    "replacement": "Внутренние грани полупрозрачных блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayEnableOutlines",
+    "expected": "schematicOverlayEnableOutlines",
+    "replacement": "Показывать контуры наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayEnableSides",
+    "expected": "schematicOverlayEnableSides",
+    "replacement": "Показывать грани наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayModelOutline",
+    "expected": "schematicOverlayModelOutline",
+    "replacement": "Контуры моделей в наложении"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayModelSides",
+    "expected": "schematicOverlayModelSides",
+    "replacement": "Грани моделей в наложении"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayOutlineWidth",
+    "expected": "schematicOverlayOutlineWidth",
+    "replacement": "Толщина контуров наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayOutlineWidthThrough",
+    "expected": "schematicOverlayOutlineWidthThrough",
+    "replacement": "Толщина контуров сквозь блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayRenderThroughBlocks",
+    "expected": "schematicOverlayRenderThroughBlocks",
+    "replacement": "Наложение сквозь блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayTypeDiffBlock",
+    "expected": "schematicOverlayTypeDiffBlock",
+    "replacement": "Подсвечивать отличающиеся блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayTypeExtra",
+    "expected": "schematicOverlayTypeExtra",
+    "replacement": "Подсвечивать лишние блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayTypeMissing",
+    "expected": "schematicOverlayTypeMissing",
+    "replacement": "Подсвечивать недостающие блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayTypeWrongBlock",
+    "expected": "schematicOverlayTypeWrongBlock",
+    "replacement": "Подсвечивать неверные блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicOverlayTypeWrongState",
+    "expected": "schematicOverlayTypeWrongState",
+    "replacement": "Подсвечивать неверные состояния блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.name.schematicVerifierUseBlockModels",
+    "expected": "schematicVerifierUseBlockModels",
+    "replacement": "Модели блоков в наложении проверки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.comment.displayFileOpsFeedback",
+    "expected": "Display file operation confirmation feedback.\n§7Example: Deleting a file will display a message\n§7confirming that the operation was successful.",
+    "replacement": "Показывать подтверждения операций с файлами.\n§7Например, после удаления файла появится сообщение\n§7об успешном завершении операции."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.comment.easyPlaceSinglePlayerValidation",
+    "expected": "Enables the Single Player Easy Placement Block validation.",
+    "replacement": "Проверять правильность блока при упрощённой установке в одиночной игре."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.comment.pasteLayerBehavior",
+    "expected": "The behavior of pasting rendered layers\nin the Paste schematic tool mode",
+    "replacement": "Какие из отображаемых слоёв вставлять\nв режиме инструмента «Вставка схемы»."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.generic.prettyName.entityDataSync",
+    "expected": "Entity Data Sync",
+    "replacement": "Синхронизация данных сущностей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.comment.easyPlaceFirst",
+    "expected": "Toggle the Easy Place First on/off",
+    "replacement": "Включить или выключить приоритет упрощённой установки."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.comment.schematicEditReplaceSelection",
+    "expected": "A hotkey to copy the blocks in the world within the area selection into the litematic.\nThis feature was requested to be added from Litemoretica by Earthcomputer.",
+    "replacement": "Скопировать блоки мира внутри выделенной области в схему Litematic.\nФункция перенесена по запросу из Litemoretica от Earthcomputer."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.easyPlaceFirst",
+    "expected": "Easy Place First",
+    "replacement": "Приоритет упрощённой установки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.easyPlaceToggle",
+    "expected": "Easy Place",
+    "replacement": "Упрощённое строительство"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.pickBlockToggle",
+    "expected": "Pick Block",
+    "replacement": "Выбор блока"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleInfoOverlayRendering",
+    "expected": "Info Overlay Rendering",
+    "replacement": "Информационное наложение"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleOverlayOutlineRendering",
+    "expected": "Overlay Outline Rendering",
+    "replacement": "Контуры наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleOverlayRendering",
+    "expected": "Overlay Rendering",
+    "replacement": "Наложение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleOverlaySideRendering",
+    "expected": "Overlay Side Rendering",
+    "replacement": "Грани наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.togglePlacementBoxesRendering",
+    "expected": "Placement Boxes Rendering",
+    "replacement": "Границы размещений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.togglePlacementRestriction",
+    "expected": "Placement Restriction",
+    "replacement": "Ограничение установки блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleSchematicBlockRendering",
+    "expected": "Schematic Block Rendering",
+    "replacement": "Блоки схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleSchematicRendering",
+    "expected": "Schematic Rendering",
+    "replacement": "Отображение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleSignTextPaste",
+    "expected": "Sign Text Paste",
+    "replacement": "Вставка текста табличек"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleTranslucentRendering",
+    "expected": "Translucent Rendering",
+    "replacement": "Полупрозрачное отображение"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.hotkeys.prettyName.toggleVerifierOverlayRendering",
+    "expected": "Verifier Overlay Rendering",
+    "replacement": "Наложение проверки схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.info_overlays.comment.defaultSelectionMode",
+    "expected": "Set the Default Selection Mode when creating new worlds.\n- In Simple mode, this creates a single selection box at [§d0, 0, 0§r].\n- In Normal mode, you need to define each of the selections manually.",
+    "replacement": "Режим выделения для новых миров.\n- В простом режиме создаётся одна область в точке [§d0, 0, 0§r].\n- В обычном режиме каждую область нужно задать вручную."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.comment.enableSchematicOverlayCulling",
+    "expected": "Cull most of the Schematic Overlay whenever\nit is surrounded by Full Blocks.\n\nThis should help cut down the GPU lag by half or so\nwhile the Overlay Rendering is enabled.\nThis feature works independently of §boverlayReducedInnerSides§r\nand should take priority over using it.",
+    "replacement": "Не отрисовывать большую часть наложения схемы,\nкогда его закрывают полноразмерные блоки.\n\nЭто должно примерно вдвое снизить нагрузку на видеокарту\nпри включённом отображении наложения.\nРаботает независимо от §boverlayReducedInnerSides§r\nи предпочтительнее этого параметра."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.comment.ignoreExistingBlocks",
+    "expected": "Makes it so all blocks in ignorableExistingBlocks are ignored when building a schematic.",
+    "replacement": "Игнорировать при строительстве по схеме все блоки из списка ignorableExistingBlocks."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.comment.renderEnableTranslucentResorting",
+    "expected": "Enables Translucent Sorting for\nthe schematic block translucent layer",
+    "replacement": "Сортировать полупрозрачные блоки\nв полупрозрачном слое схемы."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.enableSchematicFakeLighting",
+    "expected": "Schematic Fake Lighting",
+    "replacement": "Искусственное освещение схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.enableSchematicOverlayCulling",
+    "expected": "Schematic Overlay Culling",
+    "replacement": "Отсечение закрытых частей наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.overlayReducedInnerSides",
+    "expected": "Overlay Reduced Inner Sides",
+    "replacement": "Сокращать внутренние грани наложения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.renderAOModernEnable",
+    "expected": "AO Modern Processor",
+    "replacement": "Современный расчёт окружающего затенения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.renderCollidingSchematicBlocks",
+    "expected": "Render Colliding Schematic Blocks",
+    "replacement": "Показывать блоки схемы на занятых местах"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.renderSchematicEntities",
+    "expected": "Schematic Entity Rendering",
+    "replacement": "Сущности схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.renderSchematicTileEntities",
+    "expected": "Schematic Tile Entity Rendering",
+    "replacement": "Блочные сущности схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.renderTranslucentBlockInnerSides",
+    "expected": "Schematic Translucent Block Inner Sides",
+    "replacement": "Внутренние грани полупрозрачных блоков схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.schematicOverlayModelOutline",
+    "expected": "Schematic Overlay Model Outline",
+    "replacement": "Контуры моделей в наложении"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.schematicOverlayModelSides",
+    "expected": "Schematic Overlay Model Sides",
+    "replacement": "Грани моделей в наложении"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.schematicOverlayRenderThroughBlocks",
+    "expected": "Schematic Overlay Render Through",
+    "replacement": "Наложение сквозь блоки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.schematicOverlayTypeDiffBlock",
+    "expected": "Schematic Overlay Type Different Blocks",
+    "replacement": "Наложение для отличающихся блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.schematicOverlayTypeExtra",
+    "expected": "Schematic Overlay Type Extra",
+    "replacement": "Наложение для лишних блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.schematicOverlayTypeMissing",
+    "expected": "Schematic Overlay Type Missing",
+    "replacement": "Наложение для недостающих блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.schematicOverlayTypeWrongBlock",
+    "expected": "Schematic Overlay Type Wrong Block",
+    "replacement": "Наложение для неверных блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.config.visuals.prettyName.schematicOverlayTypeWrongState",
+    "expected": "Schematic Overlay Type Wrong State",
+    "replacement": "Наложение для неверных состояний блоков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.error.schematic_conversion.litematic_to_structure.failed_to_read_litematic",
+    "expected": "Failed to load the Litematica Schematic",
+    "replacement": "Не удалось загрузить схему Litematica"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.error.schematic_manager.schematic_edit.unsupported_type",
+    "expected": "Only Litematica schematics can be edited!",
+    "replacement": "Можно редактировать только схемы Litematica!"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.import.hover",
+    "expected": "Click to import the selected file to save as a new Litematic\n§dThis can be used to import any supported\n§dschematic formats; including old litematic files",
+    "replacement": "Импортировать выбранный файл и сохранить как новую схему Litematic.\n§dПоддерживаются все совместимые форматы схем,\n§dвключая старые файлы Litematic."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.placement_sub.slice_type",
+    "expected": "Slice: %s",
+    "replacement": "Срез: %s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.rename_file",
+    "expected": "Rename File",
+    "replacement": "Переименовать файл"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.rename_schematic",
+    "expected": "Rename Schematic",
+    "replacement": "Переименовать схему"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.schematic_manager.edit_schematic",
+    "expected": "Schematic Edit:",
+    "replacement": "Изменение схемы:"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.schematic_manager.edit_schematic.hover",
+    "expected": "Click to execute the selected Schematic Edit Operation\n§eThis also upgrades the litematic to the current version of Minecraft",
+    "replacement": "Выполнить выбранную операцию со схемой.\n§eФайл Litematic также будет обновлён до текущей версии Minecraft."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.schematic_manager.export_as.hover",
+    "expected": "Click to execute the selected Export Type",
+    "replacement": "Выполнить выбранный вариант экспорта."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.schematic_manager.file_ops",
+    "expected": "File:",
+    "replacement": "Файл:"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.button.schematic_manager.file_ops.hover",
+    "expected": "Click to execute the selected File Operation",
+    "replacement": "Выполнить выбранную операцию с файлом."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.paste_layer_behavior.all",
+    "expected": "All Layers",
+    "replacement": "Все слои"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.paste_layer_behavior.rendered_only",
+    "expected": "Rendered Layers Only",
+    "replacement": "Только отображаемые слои"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_info.vanilla_version",
+    "expected": "Vanilla Structure",
+    "replacement": "Стандартная структура Minecraft"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.edit_type.change_author",
+    "expected": "Change Author",
+    "replacement": "Изменить автора"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.edit_type.change_author.hover",
+    "expected": "Change the selected litematics' Author in the Metadata\n§bClick this button to cycle this option",
+    "replacement": "Изменить автора выбранной схемы Litematic в её метаданных.\n§bНажмите эту кнопку, чтобы сменить операцию."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.edit_type.rename_schematic",
+    "expected": "Rename Schematic",
+    "replacement": "Переименовать схему"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.edit_type.rename_schematic.hover",
+    "expected": "Change the selected litematics' Name in the Metadata\n§bClick this button to cycle this option",
+    "replacement": "Изменить название выбранной схемы Litematic в её метаданных.\n§bНажмите эту кнопку, чтобы сменить операцию."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.edit_type.set_preview",
+    "expected": "Set Preview",
+    "replacement": "Задать изображение предпросмотра"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.edit_type.set_preview.hover",
+    "expected": "Change the selected litematics' Preview in the Metadata\n§bClick this button to cycle this option",
+    "replacement": "Изменить изображение предпросмотра выбранной схемы Litematic в её метаданных.\n§bНажмите эту кнопку, чтобы сменить операцию."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.export_type.schematic.hover",
+    "expected": "Export the selected litematic as a Schematica Schematic\n§bClick this button to cycle this option",
+    "replacement": "Экспортировать выбранный файл Litematic в формат Schematica Schematic.\n§bНажмите эту кнопку, чтобы сменить формат."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.export_type.v6_litematic",
+    "expected": "V6 (1.20.4) Litematic",
+    "replacement": "Формат Litematic V6 (1.20.4)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.export_type.v6_litematic.hover",
+    "expected": "Export the selected litematic to a new litematic,\nDowngraded in the §e1.20.4 (V6)§r format\n§bClick this button to cycle this option",
+    "replacement": "Экспортировать выбранную схему Litematic в новый файл\nв более раннем формате §e1.20.4 (V6)§r.\n§bНажмите эту кнопку, чтобы сменить формат."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.export_type.vanilla",
+    "expected": "Vanilla Structure",
+    "replacement": "Стандартная структура Minecraft"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.export_type.vanilla.hover",
+    "expected": "Export the selected litematic as a Vanilla Structure\n§bClick this button to cycle this option",
+    "replacement": "Экспортировать выбранную схему Litematic в формат стандартной структуры Minecraft.\n§bНажмите эту кнопку, чтобы сменить формат."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.file_op_type.copy",
+    "expected": "Copy",
+    "replacement": "Копировать"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.file_op_type.copy.hover",
+    "expected": "Copy the selected file to a new file\n§6Hold Shift to overwrite the destination file\n§bClick this button to cycle this option",
+    "replacement": "Скопировать выбранный файл в новый файл.\n§6Удерживайте Shift, чтобы перезаписать целевой файл.\n§bНажмите эту кнопку, чтобы сменить операцию."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.file_op_type.delete",
+    "expected": "Delete",
+    "replacement": "Удалить"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.file_op_type.delete.hover",
+    "expected": "§cDelete the selected file\n§bClick this button to cycle this option",
+    "replacement": "§cУдалить выбранный файл.\n§bНажмите эту кнопку, чтобы сменить операцию."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.file_op_type.rename",
+    "expected": "Rename",
+    "replacement": "Переименовать"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.label.schematic_manager.file_op_type.rename.hover",
+    "expected": "Rename the selected file\n§6Hold Shift to overwrite the destination file\n§bClick this button to cycle this option",
+    "replacement": "Переименовать выбранный файл.\n§6Удерживайте Shift, чтобы перезаписать целевой файл.\n§bНажмите эту кнопку, чтобы сменить операцию."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.title.copy_file",
+    "expected": "Copy File",
+    "replacement": "Копирование файла"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.title.rename_file",
+    "expected": "Rename File",
+    "replacement": "Переименование файла"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.gui.title.schematic_change_author",
+    "expected": "Change Schematic Author",
+    "replacement": "Изменение автора схемы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.hud.misc.schematic_paste.layer_mode",
+    "expected": "Layers: %s",
+    "replacement": "Слои: %s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.message.error.placement_paste_rendering_disabled",
+    "expected": "The selected placement cannot be pasted in it's current position, because rendering is not enabled for it.",
+    "replacement": "Невозможно вставить выбранное размещение в текущем положении: его отображение отключено."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.message.error.placement_paste_too_large_for_servux",
+    "expected": "The placement is too large to be safely transmitted to Servux\nConsider splitting it up before pasting.",
+    "replacement": "Размещение слишком велико для безопасной передачи в Servux.\nРазделите его на части перед вставкой."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.message.error.schematic_transmit_fail",
+    "expected": "§cSchematic transmit to Servux has failed.  Check that the litematic file is readable§r",
+    "replacement": "§cНе удалось передать схему в Servux. Проверьте, доступен ли файл Litematic для чтения.§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.message.error.schematic_transmit_not_available",
+    "expected": "§cSchematic transmission to Servux not available.  Connect to a Servux server§r",
+    "replacement": "§cПередача схемы в Servux недоступна. Подключитесь к серверу с Servux.§r"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.message.schematic_edit_replace_selection",
+    "expected": "Selection at '%s', copied to current schematic (In memory only)",
+    "replacement": "Область в точке «%s» скопирована в текущую схему (только в памяти)."
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.message.schematic_transmit_complete",
+    "expected": "Schematic transmit completed (total bytes: %s)",
+    "replacement": "Передача схемы завершена (всего байтов: %s)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "litematica.message.schematic_transmit_start",
+    "expected": "Schematic transmit start",
+    "replacement": "Начало передачи схемы"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.not_enough_space",
+    "expected": "Not enough space on disk to create backup. Aborted!",
+    "replacement": "Not enough disk space for a backup. Previous copies were preserved."
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.saveAll",
+    "expected": "save-all",
+    "replacement": "Save before backup (required)"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.onlyFavorites",
+    "expected": "Cherished Worlds",
+    "replacement": "Only favourite worlds (Cherished Worlds)"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.commandsCheatsDisabled",
+    "expected": "Commands for Non-OP",
+    "replacement": "Allow commands without cheats or operator status"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.timer",
+    "expected": "Timer",
+    "replacement": "Minutes of active play between backups"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.backupsToKeep",
+    "expected": "Backups to keep",
+    "replacement": "Completed copies to keep per world"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.maxDiskSize",
+    "expected": "Max Disk Size",
+    "replacement": "Shared soft storage budget"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.createSubDirs",
+    "expected": "Create subdirectories",
+    "replacement": "World subfolders (unused in this pack)"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.useTickCounter",
+    "expected": "Use tick counter",
+    "replacement": "Tick counter (always used in this pack)"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.backupType",
+    "expected": "Backup Type",
+    "replacement": "Backup type (full required)"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.fullBackupTimer",
+    "expected": "Full Backup Timer",
+    "replacement": "Partial-mode full backup interval (unused)"
+  },
+  {
+    "language": "en_us",
+    "key": "simplebackups.configuration.mc2discord",
+    "expected": "Mc2Discord",
+    "replacement": "Discord notifications (unavailable)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.not_enough_space",
+    "expected": "Not enough space on disk to create backup. Aborted!",
+    "replacement": "Недостаточно места для резервной копии. Предыдущие копии сохранены."
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.saveAll",
+    "expected": "save-all",
+    "replacement": "Сохранение перед копированием (обязательно)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.onlyFavorites",
+    "expected": "Cherished Worlds",
+    "replacement": "Только избранные миры (Cherished Worlds)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.commandsCheatsDisabled",
+    "expected": "Команды только для операторов",
+    "replacement": "Разрешить команды без читов и прав оператора"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.timer",
+    "expected": "Интервал",
+    "replacement": "Минуты активной игры между копиями"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.backupsToKeep",
+    "expected": "Количество хранимых копий",
+    "replacement": "Количество завершённых копий каждого мира"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.maxDiskSize",
+    "expected": "Максимальный размер на диске",
+    "replacement": "Общий мягкий лимит хранения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.createSubDirs",
+    "expected": "Создавать подкаталоги",
+    "replacement": "Подкаталоги миров (не используются в сборке)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.useTickCounter",
+    "expected": "Использовать счётчик тактов",
+    "replacement": "Счётчик тактов (в сборке используется всегда)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.backupType",
+    "expected": "Тип резервного копирования",
+    "replacement": "Тип копирования (требуются полные копии)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.fullBackupTimer",
+    "expected": "Интервал полного копирования",
+    "replacement": "Интервал полных копий в частичном режиме (не используется)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "simplebackups.configuration.mc2discord",
+    "expected": "Mc2Discord",
+    "replacement": "Уведомления в Discord (недоступно)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_step_height_modifier.tooltip",
+    "expected": "У лошадей будет добавлена дополнительная высота шага.\nЕсли задано значение 1, лошадь сможет подниматься на два блока. Для ванильного поведения задайте 0.\n\nПо умолчанию 0,1\nДиапазон: -1,0 ~ 10,0",
+    "replacement": "Дополнительная высота шага в блоках:0,1 прибавляется к обычному шагу высотой 1 блок; 1 позволяет подниматься на 2 блока. Значение 0 сохраняет обычную высоту."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_fast_step_down.tooltip",
+    "expected": "Увеличивает скорость спуска лошади на один блок быстрее.\nУменьшает замедление при съезде с блока, делая езду намного плавнее.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Ускорять движение вниз при спуске с одного блока, уменьшая замедление."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_fast_step_down_two_blocks.tooltip",
+    "expected": "Запускает функцию 'Быстрый спуск' при спуске на два блока. Лучше работает на крутых лестницах, но может привести к нежелательному поведению в других местах.\n\nПо умолчанию: ВЫКЛ",
+    "replacement": "Распространить ускоренный спуск на перепады высотой 2 блока, в том числе на крутые лестницы."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.increase_horse_airborne_speed.tooltip",
+    "expected": "Увеличивает скорость полёта лошади. Улучшает дистанцию прыжка (по горизонтали и скорость ходьбы с высоты).\n\nПо умолчанию: ВКЛ",
+    "replacement": "Уменьшать горизонтальное замедление в прыжке и при сходе с края блока."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.increase_horse_airborne_speed_amount.tooltip",
+    "expected": "Определяет, на сколько увеличивается скорость полёта по сравнению с ваниллой.\n0 - скорость ваниллы,\n1 - полная скорость (такая же, как при беге по земле),\nПримечание: при сходе с блока все еще наблюдается небольшое начальное замедление (начало падения), после чего скорость увеличивается до нужного значения.\n\nПо умолчанию: 0.5\nДиапазон: 0.0 ~ 1.0",
+    "replacement": "Скорость в воздухе между обычной (0) и полной наземной (1). Небольшое начальное замедление при сходе с края сохраняется."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.rotate_horse_instead_of_player.tooltip",
+    "expected": "Садясь на лошадь, она поворачивается так, чтобы соответствовала направлению взгляда игрока, вместо того, чтобы поворачивался игрок.\n\nПо умолчанию: ВКЛ",
+    "replacement": "При посадке поворачивать лошадь в направлении взгляда игрока."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.saddled_horse_wander_radius.tooltip",
+    "expected": "Максимальное расстояние (в блоках) от последнего места для спешивания, до которого может дойти оседланная лошадь. Установите значение -1 для ванильного поведения.\n\nПо умолчанию: 16\nДиапазон: -1 ~ 64",
+    "replacement": "Максимальное расстояние блуждания оседланной лошади в блоках от последнего места спешивания. Значение−1 возвращает обычное неограниченное блуждание."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.enabled.tooltip",
+    "expected": "Включает опцию. Вроде бы логично.",
+    "replacement": "Включить возможность, которой посвящён этот раздел."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.requires_lead.tooltip",
+    "expected": "При включении для привязки требует, чтобы на лошади был поводок. Если эта функция отключена, то также будет отключена функция 'Слот для поводка'.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Для привязи нужен надетый поводок. При отключении также убирается отдельный слот поводка."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.lead_slot.tooltip",
+    "expected": "В меню инвентаря лошади будет добавлен слот для поводка.\nЕсли эта опция отключена, поводок можно добавить, нажав [Shift + ПКМ] на лошади с предметом в руках.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Добавить в инвентарь лошади слот поводка. Без этого слота поводок надевается использованием на лошади при приседании."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.copper_horn_sound_range.tooltip",
+    "expected": "Дальность, на которой другие игроки могут услышать звук медного рога. Дальность действия козьего составляет 256 блоков.\n\nПо умолчанию: 256\nДиапазон: 16 ~ 256",
+    "replacement": "Дальность слышимости медного рога в блоках. На расстояние призыва не влияет."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.copper_horn_cooldown.tooltip",
+    "expected": "Время восстановления в тиках после использования медного рога.\n\nПо умолчанию: 200\nДиапазон: > 1",
+    "replacement": "Время восстановления в тиках:20 тиков = 1 секунда. Значение−1 использует длительность мелодии рога:140 тиков, или 7 секунд, для обычных козьих рогов."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.copper_horn_error_messages.tooltip",
+    "expected": "Если при попытке призвать/привязать лошадь с помощью медного рога ничего не происходит, над панелью быстрого доступа появится сообщение об ошибке.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Показывать причины неудачной привязки или призыва над панелью быстрого доступа."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.max_summoning_distance.tooltip",
+    "expected": "Максимальное расстояние в блоках от игрока, на котором можно призвать лошадь.\nУстановите значение -1, чтобы разрешить любое расстояние.\n\nПо умолчанию: -1\nДиапазон: > -1",
+    "replacement": "Максимальное расстояние призыва в блоках. Значение−1 снимает ограничение. Доступность измерений задаётся отдельно."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.max_walking_distance.tooltip",
+    "expected": "Максимальное расстояние в блоках от игрока, на котором лошадь будет идти, а не телепортироваться.\nУстановите значение «0», чтобы лошадь всегда телепортировалась.\n\nПо умолчанию: 32\nДиапазон: 0,0 ~ 1024,0",
+    "replacement": "Загруженная лошадь в том же измерении и ближе этого расстояния идёт к вам; в остальных случаях переносится к вам. Значение 0 всегда включает прямой перенос."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.walk_movement_speed.tooltip",
+    "expected": "Скорость передвижения лошади при приближении к игроку после призыва.\n\nПо умолчанию: 2.0\nДиапазон: 0.1 ~ 2.5",
+    "replacement": "Множитель скорости поиска пути, когда призванная лошадь идёт к игроку. Значение не измеряется в блоках в секунду."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.dimension_handling.tooltip",
+    "expected": "Поведение при призыве в зависимости от измерения.\n\nANY: можно призвать в любом измерении,\nSAME: можно призвать, только если лошадь находится в том же измерении, что и игрок,\nWHITELIST: можно призвать, только если игрок находится в одном из измерений, указанных в списке измерений,\nBLACKLIST: можно призвать, только если игрок НЕ находится в одном из измерений, указанных в списке\n\nПо умолчанию: ANY\nДопустимые значения: ANY, SAME, WHITELIST, BLACKLIST",
+    "replacement": "ANY разрешает призыв между любыми измерениями; SAME требует одинакового измерения. WHITELIST разрешает призыв только в перечисленные измерения игрока; BLACKLIST запрещает их."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.dimensions.tooltip",
+    "expected": "Белый или черный список измерений в зависимости от параметра 'dimension_handling'.\nФормат: ['minecraft:overworld', 'minecraft:the_end']\n\nПо умолчанию: [] (пустой список)",
+    "replacement": "Идентификаторы измерений для режимов WHITELIST и BLACKLIST, например minecraft:overworld. В режимах ANY и SAME список не используется."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.angle_threshold.tooltip",
+    "expected": "Порог в градусах, после которого лошадь будет следовать за вращением игрока.\n\nПо умолчанию: 100\nДиапазон: 0,0 ~ 180,0",
+    "replacement": "Разница горизонтальных углов взгляда в градусах, после которой стоящая лошадь поворачивается вслед за игроком."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.allow_taming_horse_with_item_in_hand.tooltip",
+    "expected": "Если включено, то вы сможете приручать лошадь, не заменяя активный слот на пустую руку.\n\nПо умолчанию: ВЫКЛ",
+    "replacement": "Разрешить попытки приручения с предметом в активной руке."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.mounted_block_break_speed_modifier.tooltip",
+    "expected": "Измените дополнительную скорость разрушения блоков.\nУстановите значение 0 для ванильного поведения.\n\nПо умолчанию — 5 (обычная скорость разрушения)\nДиапазон: 0,0 ~ 5,0",
+    "replacement": "Добавить эту долю базовой скорости добычи при езде на лошадиных. Значение 5 добавляет 500% до обычного штрафа за отсутствие опоры; 0 ничего не добавляет."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_fits_in_boat.tooltip",
+    "expected": "Лошади смогут поместиться в лодку.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Разрешить перевозку лошадиных в лодках."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.shears_remove_chest.tooltip",
+    "expected": "Если щелкнуть ПКМ (держа ножницы) по мулу, ослу или ламе, у которых есть сундук - он исчезнет, а содержимое выпадет.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Использовать ножницы на осле, муле или ламе, чтобы снять сундук и выбросить его содержимое."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_creative_taming.tooltip",
+    "expected": "Если в творческом режиме использовать седло на неприрученной лошади, то она мгновенно станет вашей.\n\nПо умолчанию: ВКЛ",
+    "replacement": "В творческом режиме использование седла мгновенно приручает лошадиное."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.leaves_collision_mode_when_mounted.tooltip",
+    "expected": "Управляет столкновением с листьями при езде на лошади.\n\nFULL: полное столкновение, как в ванилле,\nIGNORE_LOWEST_BLOCK: столкновение с самым нижним слоем листьев игнорируется,\nIGNORE_ALL: столкновение со всеми слоями листьев игнорируются\n\nПо умолчанию: IGNORE_LOWEST_BLOCK (этого достаточно, чтобы езда по лесу была возможной),\nДопустимые значения: FULL, IGNORE_LOWEST_BLOCK, IGNORE_ALL",
+    "replacement": "FULL сохраняет обычные столкновения с листвой. IGNORE_LOWEST_BLOCK убирает столкновения с нижним слоем; IGNORE_ALL позволяет проезжать через всю листву."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.dismount_towards_view_direction.tooltip",
+    "expected": "При спешивании игрок окажется лицом в направлении взгляда.\n\nПо умолчанию: ВКЛ",
+    "replacement": "По возможности спешиваться в направлении взгляда игрока."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.fix_running_back_after_dismount.tooltip",
+    "expected": "Исправляет ошибку, из-за которой лошадь убегала назад после того, как игрок спешился (это происходило, если лошадь была на поводке перед посадкой).\n\nПо умолчанию: ВКЛ",
+    "replacement": "Не давать ранее привязанной лошади сразу бежать назад после спешивания."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.leather_horse_armor_powder_snow.tooltip",
+    "expected": "Лошадь в кожаной конской броне может ходить по рыхлому снегу так же, как игрок в кожаных ботинках.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Лошадь в кожаной конской броне может идти по рыхлому снегу, как игрок в кожаных ботинках."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_stats_tooltip.tooltip",
+    "expected": "Всплывающая подсказка со статистикой лошади появится, когда вы смотрите на лошадь и держите в руках корм, который ей нравится.",
+    "replacement": "Показывать здоровье лошади, расчётную высоту прыжка и базовую скорость, если смотреть на лошадь с подходящим кормом в любой руке."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.improved_mount_gui.tooltip",
+    "expected": "Настраивает графический интерфейс для отображения шкалы голода, полоски опыта и уровня. Заставляет полоску прыжка лошади отображаться только во время прыжка.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Показывать голод, опыт и уровень при езде, а заряд прыжка только во время прыжка. В этой сборке верховой интерфейс обеспечивает Leave My Bars Alone."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.fix_mounted_camera_lag.tooltip",
+    "expected": "Устраняет небольшую задержку при горизонтальном перемещении камеры во время езды — MC-259512.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Устранить задержку горизонтального поворота камеры при езде (MC-259512)."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.prevent_jumping_in_water.tooltip",
+    "expected": "Предотвращает заполнение шкалы прыжков лошади, когда она находится в воде.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Не заряжать шкалу прыжка, пока верховое животное находится в воде."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_model_head_offset.tooltip",
+    "expected": "Смещение наклона головы модели лошади во время езды. Опускает голову, чтобы она не загораживала обзор.\n\nПо умолчанию: 20\nДиапазон: 0 ~ 45",
+    "replacement": "Дополнительный наклон головы вниз в сотых долях радиана, с общим пределом 1,5 радиана. Значение 20 добавляет 0,2 радиана (около 11,5 градуса), а не 20 градусов."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_model_y_offset.tooltip",
+    "expected": "Смещение относительно положения головы лошади по оси Y во время езды, предназначенное для того, чтобы опустить голову и не загораживать обзор.\n\nПо умолчанию: 2\nДиапазон: 0 ~ 4",
+    "replacement": "Опустить голову лошади при виде от первого лица на указанное число единиц модели."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.render_lead_indication_without_slot.tooltip",
+    "expected": "Если слот для поводка отключен, но поводок все еще необходим для привязывания лошади, на экране инвентаря лошади будет отображаться информация о том, надет ли поводок.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Показывать наличие надетого поводка, если для привязи он нужен, но отдельный слот отключён."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.player_button_position_x.tooltip",
+    "expected": "Расположение кнопки переключения по оси X в инвентаре игрока.\n\nПо умолчанию: 176\nДиапазон: > -2147483648",
+    "replacement": "Горизонтальное смещение кнопки инвентаря животного в инвентаре игрока, в пикселях."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.player_button_position_y.tooltip",
+    "expected": "Расположение кнопки переключения по оси Y в инвентаре игрока.\n\nПо умолчанию: 9\nДиапазон: > -2147483648",
+    "replacement": "Вертикальное смещение кнопки инвентаря животного в инвентаре игрока, в пикселях."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_button_position_x.tooltip",
+    "expected": "Расположение кнопки по оси X в инвентаре ездового животного.\n\nПо умолчанию: -14\nДиапазон: > -2147483648",
+    "replacement": "Горизонтальное смещение кнопки инвентаря игрока в инвентаре животного, в пикселях."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_button_position_y.tooltip",
+    "expected": "Расположение кнопки по оси Y в инвентаре ездового животного.\n\nПо умолчанию: 9\nДиапазон: > -2147483648",
+    "replacement": "Вертикальное смещение кнопки инвентаря игрока в инвентаре животного, в пикселях."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.max_opacity.tooltip",
+    "expected": "Максимальная непрозрачность (в крайнем углу).\n0 — полностью прозрачный,\n1 — полностью непрозрачный.\n\nПо умолчанию: 0,08\nДиапазон: 0,0 ~ 1,0",
+    "replacement": "Оставшаяся непрозрачность при конечном угле:0 означает невидимость,1 полную непрозрачность."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.start_angle.tooltip",
+    "expected": "Угол, при котором лошадь начнет становиться прозрачной.\n\nПо умолчанию: 30\nДиапазон: -90 ~ 90",
+    "replacement": "Угол взгляда вниз в градусах, при котором животное начинает становиться прозрачным."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.end_angle.tooltip",
+    "expected": "Угол, при котором лошадь достигнет максимальной прозрачности.\n\nПо умолчанию: 70\nДиапазон: -90 ~ 90",
+    "replacement": "Угол взгляда вниз в градусах, при котором животное достигает заданной минимальной видимости."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.jei_information.tooltip",
+    "expected": "Полезная информация о некоторых вещах будет отображаться в категории описания JEI.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Показывать инструкции к медному рогу в категории информации о предметах обозревателя рецептов."
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.copper_horn_details_tooltip.tooltip",
+    "expected": "Всплывающая подсказка для медного рога отобразит полезную информацию.\n\nПо умолчанию: ВКЛ",
+    "replacement": "Добавить в подсказку медного рога управление привязкой и призывом."
+  },
+  {
+    "language": "en_us",
+    "key": "gui.horseman.horse_stats_tooltip.health",
+    "expected": "§7Health: %s",
+    "replacement": "§7Health: %s HP"
+  },
+  {
+    "language": "ru_ru",
+    "key": "gui.horseman.horse_stats_tooltip.health",
+    "expected": "§7Здоровье: %s",
+    "replacement": "§7Здоровье: %s ед."
+  },
+  {
+    "language": "en_us",
+    "key": "gui.horseman.horse_stats_tooltip.jump_height",
+    "expected": "§7Jump Height: %s",
+    "replacement": "§7Estimated jump height: %s blocks"
+  },
+  {
+    "language": "ru_ru",
+    "key": "gui.horseman.horse_stats_tooltip.jump_height",
+    "expected": "§7Высота прыжка: %s",
+    "replacement": "§7Расчётная высота прыжка: %s бл."
+  },
+  {
+    "language": "en_us",
+    "key": "gui.horseman.horse_stats_tooltip.speed",
+    "expected": "§7Speed: %s",
+    "replacement": "§7Base speed: %s blocks/s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "gui.horseman.horse_stats_tooltip.speed",
+    "expected": "§7Скорость: %s",
+    "replacement": "§7Базовая скорость: %s бл./с"
+  },
+  {
+    "language": "ru_ru",
+    "key": "gui.horseman.switch_inventory.button.to_mount.tooltip",
+    "expected": "%s Инвентарь лошади §8[§7CTRL+%s§8]",
+    "replacement": "Инвентарь: %s §8[§7CTRL+%s§8]"
+  },
+  {
+    "language": "en_us",
+    "key": "horseman.configuration.horse_model_head_offset",
+    "expected": "Horse head pitch offset",
+    "replacement": "Horse head pitch offset (0.01 rad)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_model_head_offset",
+    "expected": "Смещение наклона головы лошади",
+    "replacement": "Наклон головы (0,01 рад)"
+  },
+  {
+    "language": "en_us",
+    "key": "horseman.configuration.horse_model_y_offset",
+    "expected": "Horse head Y offset",
+    "replacement": "Horse head Y offset (model units)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.horse_model_y_offset",
+    "expected": "Смещение головы лошади по Y",
+    "replacement": "Смещение головы по Y (ед. модели)"
+  },
+  {
+    "language": "en_us",
+    "key": "horseman.configuration.copper_horn_cooldown",
+    "expected": "Copper Horn Cooldown",
+    "replacement": "Copper Horn cooldown (ticks)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.copper_horn_cooldown",
+    "expected": "Время восстановления",
+    "replacement": "Восстановление медного рога (тики)"
+  },
+  {
+    "language": "en_us",
+    "key": "horseman.configuration.walk_movement_speed",
+    "expected": "Walk Movement Speed",
+    "replacement": "Recall walking speed multiplier"
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.walk_movement_speed",
+    "expected": "Скорость передвижения при ходьбе",
+    "replacement": "Множитель скорости подхода при призыве"
+  },
+  {
+    "language": "en_us",
+    "key": "horseman.configuration.mounted_block_break_speed_modifier",
+    "expected": "Mounted block break speed",
+    "replacement": "Horseback mining speed bonus"
+  },
+  {
+    "language": "ru_ru",
+    "key": "horseman.configuration.mounted_block_break_speed_modifier",
+    "expected": "Скорость разрушения при езде",
+    "replacement": "Бонус добычи верхом на лошади"
+  },
+  {
+    "language": "ru_ru",
+    "key": "text.autoconfig.accurateblockplacement.option.confirmationType.HUD",
+    "expected": "HUD",
+    "replacement": "На экране"
+  },
+  {
+    "language": "ru_ru",
+    "key": "string.naturescompass.samples",
+    "expected": "Список",
+    "replacement": "Проверок"
+  },
+  {
+    "language": "ru_ru",
+    "key": "string.explorerscompass.samples",
+    "expected": "Список",
+    "replacement": "Проверок"
   }
 ]

@@ -3,6 +3,7 @@ package dev.aeroscapes.atmosphere;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import net.neoforged.fml.loading.FMLLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
@@ -11,8 +12,47 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+    var mods = FMLLoader.getLoadingModList();
+    return shouldApplyForVersions(
+        mixinClassName,
+        id -> {
+          var file = mods.getModFileById(id);
+          if (file == null) return null;
+          return file.getMods().stream()
+              .filter(mod -> mod.getModId().equals(id))
+              .map(mod -> mod.getVersion().toString())
+              .findFirst()
+              .orElseThrow();
+        });
+  }
+
+  static boolean shouldApplyForVersions(
+      String mixinClassName, Function<String, String> versionLookup) {
     Map<String, String> versions;
-    if (mixinClassName.endsWith("CelestialSkyMixin")
+    if (mixinClassName.startsWith("dev.aeroscapes.mixin.backup.")) {
+      versions = Map.of("simplebackups", "1.21-4.0.21", "sable", "2.0.6", "neoforge", "21.1.230");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.Compass")) {
+      versions =
+          Map.of(
+              "naturescompass",
+              "1.21.1-3.4.0-neoforge",
+              "explorerscompass",
+              "1.21.1-3.4.0-neoforge",
+              "neoforge",
+              "21.1.230");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.AccuratePlacement")) {
+      // Connector exposes the Fabric build separator as '_' in the loaded mod version.
+      versions =
+          Map.of(
+              "accurateblockplacement",
+              "1.4.8_mc-1.20.5-1.21.1",
+              "connector",
+              "2.0.0-beta.17+1.21.1",
+              "cloth_config",
+              "15.0.140",
+              "neoforge",
+              "21.1.230");
+    } else if (mixinClassName.endsWith("CelestialSkyMixin")
         || mixinClassName.endsWith("LanguageCorrectionMixin")
         || mixinClassName.endsWith("NativeConfigurationLanguageMixin")) {
       versions = Map.of("neoforge", "21.1.230");
@@ -26,6 +66,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
         || mixinClassName.endsWith("DistantHorizonsCompatibilityChatMixin")
         || mixinClassName.endsWith("DistantHorizonsLightMaterialMixin")) {
       versions = Map.of("distanthorizons", "3.3.3");
+    } else if (mixinClassName.endsWith("BetterCloudsMessageDefaultMixin")) {
+      versions = Map.of("betterclouds", "1.13.11+1.21.1-neoforge");
     } else if (mixinClassName.endsWith("BetterCloudsCoverageMixin")) {
       versions =
           Map.of(
@@ -36,8 +78,35 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("distanthorizons", "3.3.3", "chunky", "1.4.23");
     } else if (mixinClassName.contains("EmiTrades")) {
       versions = Map.of("emitrades", "2.0.0+alpha.1", "emi", "1.1.22+1.21.1+neoforge");
+    } else if (mixinClassName.endsWith("EmiReloadStepLanguageMixin")) {
+      versions = Map.of("emi", "1.1.22+1.21.1+neoforge", "jei", "19.39.0.372");
+    } else if (mixinClassName.endsWith("HorseMountedMiningScopeMixin")
+        || mixinClassName.endsWith("HorseRecallSnapshotMixin")) {
+      versions = Map.of("horseman", "1.5.13");
+    } else if (mixinClassName.endsWith("EasyAnvilsFreeRenameMixin")) {
+      versions =
+          Map.of(
+              "easyanvils",
+              "21.1.0",
+              "allurement",
+              "5.0.1",
+              "puzzleslib",
+              "21.1.66",
+              "neoforge",
+              "21.1.230");
+    } else if (mixinClassName.endsWith("EasyMagicExperiencePointsMixin")) {
+      versions = Map.of("easymagic", "21.1.4", "neoforge", "21.1.230");
     } else if (mixinClassName.endsWith("PickupNotifierLanguageMixin")) {
       versions = Map.of("pickupnotifier", "21.1.1");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.atmosphere.InvMove")) {
+      versions = Map.of("invmove", "0.9.3", "cloth_config", "15.0.140");
+    } else if (mixinClassName.endsWith("SophisticatedInventoryFocusAccess")) {
+      versions = Map.of("sophisticatedcore", "1.5.17");
+    } else if (mixinClassName.endsWith("TomsTerminalPopupAccess")
+        || mixinClassName.endsWith("TomsPopupMenuAccess")) {
+      versions = Map.of("toms_storage", "2.4.2");
+    } else if (mixinClassName.endsWith("ForgematicaMessageMixin")) {
+      versions = Map.of("forgematica", "0.4.3+mc1.21.1", "mafglib", "0.4.3+mc1.21.1");
     } else if (mixinClassName.endsWith("AdvancementCriterionLanguageMixin")) {
       versions = Map.of("betteradvancements", "0.4.3.21", "zeta", "1.1-40");
     } else if (mixinClassName.endsWith("QuiverEmfMixin")) {
@@ -69,15 +138,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     } else {
       versions = Map.of("particlerain", "4.0.2");
     }
-    var mods = FMLLoader.getLoadingModList();
-    if (versions.keySet().stream().anyMatch(id -> mods.getModFileById(id) == null)) return false;
+    if (versions.keySet().stream().anyMatch(id -> versionLookup.apply(id) == null)) return false;
     for (var entry : versions.entrySet()) {
-      String actual =
-          mods.getModFileById(entry.getKey()).getMods().stream()
-              .filter(mod -> mod.getModId().equals(entry.getKey()))
-              .map(mod -> mod.getVersion().toString())
-              .findFirst()
-              .orElseThrow();
+      String actual = versionLookup.apply(entry.getKey());
       if (!entry.getValue().equals(actual)) {
         throw new IllegalStateException(
             "Review atmosphere adapter for "

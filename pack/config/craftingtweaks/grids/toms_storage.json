@@ -1,0 +1,7 @@
+{
+  "modid": "toms_storage",
+  "containerClass": "com.tom.storagemod.menu.CraftingTerminalMenu",
+  "gridSlotNumber": 1,
+  "gridSize": 9,
+  "alignToGrid": "left"
+}

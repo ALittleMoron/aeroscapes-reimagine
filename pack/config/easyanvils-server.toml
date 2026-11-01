@@ -1,0 +1,23 @@
+[prior_work_penalty]
+prior_work_penalty = "VANILLA"
+maximum_prior_work_penalty_increase = 4
+rename_and_repair_costs = "VANILLA"
+penalty_free_renames_and_repairs = false
+penalty_free_enchants_for_books = false
+
+[costs]
+too_expensive_limit = -1
+free_renames = "ALL_ITEMS"
+halved_book_costs = true
+repair_with_material_unit_cost = 1
+repair_with_material_restored_durability = 0.25
+repair_with_other_item_cost = 2
+repair_with_other_item_bonus_durability = 0.12
+
+[miscellaneous]
+anvil_repairing = true
+edit_name_tags_no_anvil = true
+anvil_break_chance = 0.12
+risk_free_anvil_renaming = true
+renaming_supports_formatting = true
+name_tags_drop_from_mobs = false

@@ -215,22 +215,22 @@
       "resource": "assets/aeroscapes_reimagine_qol_translations/lang/en_us.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Independent functional labels and help; unchanged provider terms and English fallback comments remain with original providers.",
-      "entries": 331,
-      "sha256": "0b554ffcc788ca1642506ad14d4da196e792c16b25946700b972d116ed8d6263"
+      "entries": 950,
+      "sha256": "0c3ab0c07e229e15397fb3fde0291facb4207aa0d7d0254b27f7c9443a5c2aac"
     },
     {
       "resource": "assets/aeroscapes_reimagine_qol_translations/lang/ru_ru.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Independent functional labels and help; unchanged provider terms and English fallback comments remain with original providers.",
-      "entries": 327,
-      "sha256": "1bc1bfe1fd8ecbc54c727a633897f425ecc8e4521328bf4cd955628edaead143"
+      "entries": 1796,
+      "sha256": "0931b23a8824a8760004475708bf3a5a6e99c78476a17bdfed5208b91698d6b4"
     }
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 363,
+    "rules": 939,
     "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged.",
-    "sha256": "59274add1b0a78aa15b13328fe6767388836e7bd44d9c97ce2928ea307a990a2"
+    "sha256": "d6faea5a721b54f7f94fb7360152b4e4671a1632d198f7f1f801379c4e7e2a2a"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
@@ -1398,6 +1398,52 @@
       },
       "authorship": "Provider archives unchanged. Added display adapters and short functional wording authored for pack; technical syntax/brands preserved. Literal SHA256 keys identify exact source display text, not parser identities.",
       "source_limits": "Sources and actual native metadata in artifacts.json. Better Advancements source suffix21 comes from CI; Plaques1.6.8 and Notifier21.1.1 matching commits follow upload by minutes. Trades continuation source revision is unavailable; inspected author-linked reference is not a reproducible-build claim."
+    },
+    "qol_group2": {
+      "selected_providers": {
+        "MBAkmtvl": "XC1JUHmA",
+        "5bgqgixq": "opyfkMHl",
+        "DMu0oBKf": "IhkQpEve",
+        "dCKRaeBC": "PFUOWUDF",
+        "SKI34J7B": "CgDQ0u0Q",
+        "REfW2AEX": "C7ePwvWW",
+        "u6dRKJwZ": "zHNxmOqp",
+        "PEPVViac": "adxS0PUF",
+        "BaR4ijFC": "xaWwatoU",
+        "OZBR5JT5": "fSQSKhdF",
+        "9hx3AbJM": "MxbfrOEv",
+        "qIv5FhAA": "jJ93aLVn",
+        "fzSKSXVK": "6JQL4qSR",
+        "kzwxhsjp": "rA95AHFG",
+        "fPetb5Kh": "nFniEtJV",
+        "RV1qfVQ8": "hIJ2Ev1Q"
+      },
+      "routes": {
+        "craftingtweaks": "Native Balm/NeoForge configuration factory, common+client sections in craftingtweaks-common.toml. Missing active RU keys; native DEFAULT/DISABLED literal labels already covered; BUTTONS/HOTKEYS use existing exact-literal display hook. Tom2.4.2 menu class registration is independently authored; VisualWorkbench extends native CraftingMenu, Sophisticated Core has native provider.",
+        "balm": "Six active shared RU labels; bundled KumaAPI21.0.8. Inactive example configuration category excluded. Native config identities unchanged.",
+        "emi_create_schematics": "One missing RU import tooltip; no config/hotkey registration. Exact clipboard/EMI helper APIs verified. Replaces only own tagged favorites.",
+        "forgematica": "314 expected-value Russian corrections for active display keys;104 unused/internal keys and3 technical/brand equalities excluded after paired-source consumer audit.16 finite literal/dynamic message templates use scoped native InfoUtils routes; captured filenames/IDs/exceptions remain format arguments.232 displayed name labels are distinct from serialized IDs.",
+        "mafglib": "131 expected-value Russian corrections;148 remaining equalities classified:100 false-gated test/experimental,6 inactive generic,15 formatting only,8 conventional notation,19 unused resources without exact binary/dependant consumer.",
+        "invmove": "43 ordinary RU corrections; native brand retained.13 exact literal/enum labels plus Recipe Book alias; display-only native enum-name provider preserves parser/default identities. Owned ModuleImpl uses EMI focus, storage text/modal focus, Tom popup guard, live mouse/Ponder scene resolution and configuration-toolkit pause policy. No beta compatibility addon.",
+        "mod_menu": "Paired independent provider/library summaries, including compatibility stub identities. No provider/player changed translations replaced.",
+        "jei": "Exact beta19.39.0.372 owner-selected. Native EMI1.1.22 JEMI imports additional processing/cooking categories and suppresses the native GUI runtime plugin.150 independent missing RU/config labels and6 loading-progress components. Static API references resolved; owner graphical categories/transfers pending.",
+        "advanced_loot_info": "620 independent RU keys; ACI67. Source4b2954e English maps exactly match distributed artifacts. JSON codec config retains loot categories and disables only tradeCategories; existing trade viewer keeps XP/max-use/enchantment pages. ALI random-offer count/price-multiplier trade details are deferred.26 math/technical equalities classified; unsupported custom condition/function diagnostics remain visible.",
+        "workstations": "Native Puzzles/NeoForge labels, comments and113 exact literal labels/help;28 enum aliases scoped by declaring class, preserving existing FLAT/VANILLA aliases. Native FML4.0.42 global config/ defaults with existing world-local SERVER overrides. Missing RU asset keys supplied without replacing upstream dictionaries. Scoped compatibility preserves free standalone rename while retaining native custom/combined-operation prices. The enchanting point helper corrects float drift only at integer point boundaries, preserving genuinely fractional budgets; stale cached totalExperience cannot fund rerolls.",
+        "horseman": "61 exact guarded corrections for displayed units/config comments/statistics;50 missing EN tooltips and6 RU counterparts. Full native feature set, including two default-false mechanics. Controlled swimming is owner of input action; passive duplicate disabled, existing HUD retained. Mining modifier scoped to horse-type mounts. Native owner/instrument aliases follow the current horse snapshot and recreated UUID, including remaining bindings after reassignment; old cargo and dead animals cannot be restored by another horn.",
+        "simple_backups": "12 expected-value corrections per language,55 exact config-literal labels/comments/enums and4 owned notices per language. Full save+capture, immutable stage, verified ZIP, atomic publish then rotation;60 active minutes,5/world, shared2GiB soft budget, newest complete copy/world protected. Prior files preserved on failure; source serializer limitations remain. Historical managed payloads are read and CRC-verified before retention admission; a corrupt newer archive cannot displace the last valid copy of its world. Native file exclusions omit only the rebuildable asynchronous terrain SQLite/WAL family in dimension data directories, keeping player, region and Sable files.",
+        "compasses": "Owned validated server requests and two-phase native workers:5000free,10000extension,1XPlevel only for successful far results. Session/item/affordability and pre-chunk-load bounds; legacy direct requests remain free-only.188 dynamic structure/group labels plus exact GUI/provider text. Native biome sampling/void limits disclosed. Dense native grid workers enter the chosen extension from a conservative square shell after free-budget exhaustion, retaining native sample caps and honest incomplete-search notices. Native direct XP getters are zero because owned distance pricing supplies the charge. Stored target IDs are safely parsed. The paid biome pass resumes at an exact native cursor inside the free circle, avoiding repeated inner sampling. Copied inventory/cursor stacks lose orphaned search state without inheriting jobs or charges.",
+        "accurate_placement": "Exact1.4.8 Fabric file on existing bridge, fast breaking disabled. Current block/item interaction predicates repair stale reflection signatures. Cloth enum name provider activates native translated labels; binding category gap supplied. Client acceptance remains pending."
+      },
+      "source_review": {
+        "craftingtweaks": "Official21.1.11 tag c4ab2e35a4ba2242e3ce8346ab5c6d407156f069; exact binary config/grid/packet paths compared.",
+        "balm": "Official21.0.57 source and binary factory/schema paths compared.",
+        "emi_create_schematics": "Author reference714e5678c79e581bb3627b6dd138b682e1d6a41c matches helper behavior; not a reproducible-build revision claim.",
+        "forgematica_mafglib": "Paired official0.4.3+mc1.21.1 source JARs and executable bytecode. Provider marks Forgematica source archive primary; runtime uses executable secondary.",
+        "invmove": "Exact0.9.3 distributed bytecode; native FML4.0.42 modClasses reflection and lifecycle checked. Adapter uses stable public API and exact pinned storage accessors."
+      },
+      "normalization": "Vanilla Language converts numeric printf d/f placeholders to s before guarded corrections. Expected and replacement values are post-normalized at that boundary.",
+      "authorship": "All additional text independently authored; provider archives and changed provider/player translations untouched. Expected original text retains provider terms; NOTICE identifies them. Source flags/config IDs remain original.",
+      "client_acceptance": "Rendering, actual menu/input interaction, shader composition and any ship alignment remain owner-only pending."
     }
   }
 }

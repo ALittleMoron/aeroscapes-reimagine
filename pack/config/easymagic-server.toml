@@ -1,0 +1,9 @@
+reroll_enchantments = true
+reroll_catalyst_cost = 1
+reroll_experience_points_cost = 5
+rerolling_takes_enchantment_levels = false
+enchantment_hint = "SINGLE"
+max_enchanting_power = 15
+lenient_bookshelves = false
+dedicated_reroll_catalyst = false
+chiseled_bookshelf_enchanting_power = "NONE"

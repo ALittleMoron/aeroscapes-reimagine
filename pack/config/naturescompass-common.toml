@@ -1,0 +1,8 @@
+[General]
+allowTeleport = false
+radiusModifier = 2500
+sampleSpaceModifier = 16
+maxSamples = 50000
+defaultXpLevels = 0
+perBiomeXpLevels = []
+compassDurability = 0

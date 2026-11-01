@@ -630,6 +630,9 @@ def test_exception_text_cannot_authorize_an_unrelated_beta(
         ("xFCYuAs8", "Js4y2r4d", "beta"),
         ("u58R1TMW", "IITF0PRC", "beta"),
         ("Q2OqKxDG", "FjTYILOi", "beta"),
+        ("u6dRKJwZ", "zHNxmOqp", "beta"),
+        ("PEPVViac", "adxS0PUF", "beta"),
+        ("BaR4ijFC", "xaWwatoU", "beta"),
     ],
 )
 def test_selected_prerelease_exception_is_exact(
@@ -714,6 +717,44 @@ def test_fabric_metadata_cannot_bypass_client_bridge(
 ) -> None:
     with pytest.raises(PackError, match="without its client bridge"):
         audit_metadata(source, (replace(artifact, loaders=("fabric",)),))
+
+
+def test_selected_placement_bridge_rejects_unreviewed_versions_and_server_install(
+    artifact: Artifact, source: SourcePack
+) -> None:
+    placement = replace(artifact, project_id="kzwxhsjp", version_id="rA95AHFG", loaders=("fabric",))
+    bridge = replace(
+        artifact,
+        project_id="u58R1TMW",
+        version_id="IITF0PRC",
+        release_type="beta",
+        exception="Owner selected this exact bridge.",
+    )
+    api = replace(artifact, project_id="Aqlf1Shp", version_id="native-api")
+    original = next(iter(source.dependencies.values()))
+
+    def check(placement_version: Artifact, bridge_version: Artifact) -> None:
+        artifacts = (placement_version, bridge_version, api)
+        dependencies = {
+            item.project_id: replace(
+                original,
+                project_id=item.project_id,
+                version_id=item.version_id,
+                side=item.side,
+            )
+            for item in artifacts
+        }
+        audit_metadata(replace(source, dependencies=dependencies), artifacts)
+
+    check(placement, bridge)
+    for changed in (
+        replace(placement, version_id="unreviewed"),
+        replace(placement, side="both"),
+    ):
+        with pytest.raises(PackError, match="without its client bridge"):
+            check(changed, bridge)
+    with pytest.raises(PackError, match="without its client bridge"):
+        check(placement, replace(bridge, side="server"))
 
 
 def test_bundled_library_satisfies_dependency(

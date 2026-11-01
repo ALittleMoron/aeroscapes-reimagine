@@ -40,6 +40,16 @@ public final class ConfigLiteralTranslations {
         : translations.apply(source, translations.apply(alias, fallback));
   }
 
+  public static String translateEnum(
+      Enum<?> value, String sourceName, BiFunction<String, String, String> translations) {
+    String scopedKey =
+        "aeroscapes_reimagine.config.enum."
+            + value.getDeclaringClass().getName()
+            + "."
+            + value.name();
+    return translations.apply(scopedKey, translate(sourceName, translations));
+  }
+
   public static String translateCommentLine(
       String sourceLine, String sourceBlock, BiFunction<String, String, String> translations) {
     if (COMMENT_ALIASES.containsKey(sourceLine)) return translate(sourceLine, translations);

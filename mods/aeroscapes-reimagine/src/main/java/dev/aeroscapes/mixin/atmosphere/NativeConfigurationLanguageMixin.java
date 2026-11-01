@@ -2,6 +2,7 @@ package dev.aeroscapes.mixin.atmosphere;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
+import com.llamalad7.mixinextras.sugar.Local;
 import dev.aeroscapes.atmosphere.ConfigLiteralTranslations;
 import net.minecraft.locale.Language;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
@@ -23,7 +24,9 @@ public abstract class NativeConfigurationLanguageMixin {
       method = "lambda$createEnumValue$12",
       at = @At(value = "INVOKE", target = "Ljava/lang/Enum;name()Ljava/lang/String;"))
   @SuppressWarnings("PMD.UnusedPrivateMethod") // The TranslatableEnum branch remains native.
-  private static String aeroscapes$translateEnumLabel(String name) {
-    return ConfigLiteralTranslations.translate(name, Language.getInstance()::getOrDefault);
+  private static String aeroscapes$translateEnumLabel(
+      String name, @Local(argsOnly = true) Enum<?> value) {
+    return ConfigLiteralTranslations.translateEnum(
+        value, name, Language.getInstance()::getOrDefault);
   }
 }

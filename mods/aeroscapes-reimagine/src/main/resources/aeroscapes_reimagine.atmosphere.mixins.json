@@ -18,6 +18,12 @@
     "LanternGripMixin",
     "LanguageCorrectionMixin",
     "NativeConfigurationLanguageMixin",
+    "InvMoveLanguageMixin",
+    "InvMoveEnumLanguageMixin",
+    "SophisticatedInventoryFocusAccess",
+    "TomsTerminalPopupAccess",
+    "TomsPopupMenuAccess",
+    "ForgematicaMessageMixin",
     "PuzzlesConfigurationLanguageMixin",
     "PunchyEmfMixin",
     "QuiverEmfMixin",
@@ -32,8 +38,10 @@
     "DistantHorizonsCompatibilityChatMixin",
     "DistantHorizonsLightMaterialMixin",
     "BetterCloudsCoverageMixin",
+    "BetterCloudsMessageDefaultMixin",
     "PickupNotifierLanguageMixin",
     "EmiTradesOutputMixin",
+    "EmiReloadStepLanguageMixin",
     "EmiTradesStatisticsMixin",
     "AdvancementCriterionLanguageMixin",
     "EmiTradesPaymentMixin"
@@ -42,6 +50,10 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "HorseMountedMiningScopeMixin",
+    "HorseRecallSnapshotMixin",
+    "EasyAnvilsFreeRenameMixin",
+    "EasyMagicExperiencePointsMixin",
     "DuskCommandLanguageMixin",
     "DistantHorizonsChunkyStartupMixin"
   ]

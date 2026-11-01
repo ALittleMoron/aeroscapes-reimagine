@@ -41,6 +41,7 @@ public final class AtmosphereContractTest {
   private AtmosphereContractTest() {}
 
   public static void main(String[] arguments) throws IOException {
+    bridgedPlacementVersionGate();
     quiverComposition();
     fastRodRenderers();
     lanternGrip();
@@ -48,9 +49,12 @@ public final class AtmosphereContractTest {
     languageCorrections();
     catnipConfigTranslations();
     contextualConfigComments();
+    contextualConfigEnums();
     runtimeConfigMetadata();
     nativeConfigurationTranslations();
     puzzlesConfigurationTranslations();
+    inventoryMovementCompatibility();
+    schematicMessages();
     distantSceneryCompatibility();
     IcebergConfigBridgeTest.verify();
     AdvancementCriterionTranslationsTest.verify();
@@ -161,6 +165,41 @@ public final class AtmosphereContractTest {
         "Atmosphere: quiver composition, precipitation scope and native API contracts passed");
   }
 
+  private static void bridgedPlacementVersionGate() {
+    Map<String, String> versions =
+        new HashMap<>(
+            Map.of(
+                "accurateblockplacement", "1.4.8_mc-1.20.5-1.21.1",
+                "connector", "2.0.0-beta.17+1.21.1",
+                "cloth_config", "15.0.140",
+                "neoforge", "21.1.230"));
+    for (String mixin :
+        List.of("AccuratePlacementInteractionMixin", "AccuratePlacementEnumLanguageMixin")) {
+      String name = "dev.aeroscapes.mixin." + mixin;
+      require(
+          AtmosphereMixinPlugin.shouldApplyForVersions(name, versions::get),
+          "Connector's loaded mod version must enable the pinned placement adapter");
+      for (String unreviewed :
+          List.of("1.4.9_mc-1.20.5-1.21.1", "1.4.8_mc-1.21.2", "1.4.8+mc-1.20.5-1.21.1")) {
+        versions.put("accurateblockplacement", unreviewed);
+        try {
+          AtmosphereMixinPlugin.shouldApplyForVersions(name, versions::get);
+          throw new AssertionError("Unexpected runtime version must require adapter review");
+        } catch (IllegalStateException expected) {
+          require(
+              expected.getMessage().contains("accurateblockplacement"),
+              "Name the mismatched provider");
+        }
+      }
+      versions.put("accurateblockplacement", "1.4.8_mc-1.20.5-1.21.1");
+      versions.remove("connector");
+      require(
+          !AtmosphereMixinPlugin.shouldApplyForVersions(name, versions::get),
+          "A missing bridge must disable the adapter");
+      versions.put("connector", "2.0.0-beta.17+1.21.1");
+    }
+  }
+
   private static void quiverComposition() {
     for (String mob : List.of("skeleton", "stray", "bogged")) {
       EMFJemData base = new EMFJemData();
@@ -199,6 +238,10 @@ public final class AtmosphereContractTest {
 
   private static void puzzlesConfigurationTranslations() throws IOException {
     String owner = "fuzs/puzzleslib/neoforge/impl/client/config/NeoForgeConfigurationScreen";
+    method(
+        provider(owner),
+        "getConfigSectionComponent",
+        "(Lnet/neoforged/fml/config/ModConfig$Type;)Lnet/minecraft/network/chat/Component;");
     MethodNode label =
         method(
             provider(owner),
@@ -239,6 +282,39 @@ public final class AtmosphereContractTest {
                 .count()
             == 1,
         "Puzzles custom configuration labels use the scoped display helper");
+  }
+
+  private enum SurfaceStyle {
+    FLAT
+  }
+
+  private enum ItemDisplay {
+    FLAT
+  }
+
+  private static void contextualConfigEnums() {
+    Map<String, String> translations =
+        Map.of(
+            ConfigLiteralTranslations.key("FLAT"),
+            "No smoothing",
+            "aeroscapes_reimagine.config.enum." + ItemDisplay.class.getName() + ".FLAT",
+            "Laid flat");
+    require(
+        ConfigLiteralTranslations.translateEnum(
+                ItemDisplay.FLAT, "FLAT", translations::getOrDefault)
+            .equals("Laid flat"),
+        "Item display labels use their own enum identity");
+    require(
+        ConfigLiteralTranslations.translateEnum(
+                SurfaceStyle.FLAT, "FLAT", translations::getOrDefault)
+            .equals("No smoothing"),
+        "Unrelated enum retains the existing generic translation");
+    require(
+        ConfigLiteralTranslations.translateEnum(
+                    ItemDisplay.FLAT, "FLAT", Map.<String, String>of()::getOrDefault)
+                .equals("FLAT")
+            && ItemDisplay.FLAT.name().equals("FLAT"),
+        "Missing display translations preserve native labels and serialized values");
   }
 
   private static void catnipConfigTranslations() throws IOException {
@@ -657,6 +733,7 @@ public final class AtmosphereContractTest {
 
   private static void languageCorrections() throws IOException {
     Map<String, String> original = new HashMap<>();
+    Map<String, String> englishOriginal = new HashMap<>();
     Map<String, String> replacements = new HashMap<>();
     Map<String, String> englishReplacements = new HashMap<>();
     try (var input =
@@ -669,12 +746,20 @@ public final class AtmosphereContractTest {
       for (var element : rows) {
         var row = element.getAsJsonObject();
         String key = row.get("key").getAsString();
-        original.put(key, row.get("expected").getAsString());
         String source = row.get("expected").getAsString();
         String replacement = row.get("replacement").getAsString();
         boolean english = row.has("language") && row.get("language").getAsString().equals("en_us");
-        replacements.put(key, english ? source : replacement);
-        englishReplacements.put(key, english ? replacement : source);
+        if (english) {
+          englishOriginal.put(key, source);
+          englishReplacements.put(key, replacement);
+          original.putIfAbsent(key, source);
+          replacements.putIfAbsent(key, source);
+        } else {
+          original.put(key, source);
+          replacements.put(key, replacement);
+          englishOriginal.putIfAbsent(key, source);
+          englishReplacements.putIfAbsent(key, source);
+        }
       }
     }
     require(!original.isEmpty(), "verified provider defects have correction rules");
@@ -691,7 +776,7 @@ public final class AtmosphereContractTest {
           LanguageCorrections.apply(original, languages).equals(original),
           "other selected languages retain even identical source strings");
     }
-    Map<String, String> english = LanguageCorrections.apply(original, List.of("en_us"));
+    Map<String, String> english = LanguageCorrections.apply(englishOriginal, List.of("en_us"));
     require(english.equals(englishReplacements), "English-only repairs preserve Russian rules");
     require(
         LanguageCorrections.apply(english, List.of("en_us")).equals(english),
@@ -1211,6 +1296,85 @@ public final class AtmosphereContractTest {
         CloudCoverageShader.adapt("another:shader.fsh", source).equals(source),
         "other shader programs remain unchanged");
     Files.writeString(Path.of("build", "cloud-coverage.frag"), adapted);
+  }
+
+  private static void schematicMessages() throws IOException {
+    String filename = "factory%20%s.schem";
+    var translated =
+        ForgematicaMessages.resolve(
+            "Failed to read the Sponge schematic from '" + filename + "\"", new Object[0]);
+    require(translated != null, "Native schematic import failure has a translation route");
+    require(
+        translated.key().equals("aeroscapes_reimagine.forgematica.message.sponge_read_failed")
+            && List.of(translated.arguments()).equals(List.of(filename)),
+        "Filenames stay raw arguments instead of format strings");
+    require(
+        ForgematicaMessages.resolve(translated.key(), translated.arguments()) == null,
+        "Translated calls cannot reenter literal handling");
+    require(
+        ForgematicaMessages.resolve("Deleted twelve blocks", new Object[0]) == null,
+        "Unrecognized dynamic text remains unchanged");
+    require(
+        ForgematicaMessages.resolve("Custom preview image set!", new Object[0]) == null,
+        "Changed provider text remains unchanged");
+    ClassNode messages = provider("fi/dy/masa/malilib/util/InfoUtils");
+    for (String name :
+        List.of("showGuiOrInGameMessage", "showGuiAndInGameMessage", "showGuiOrActionBarMessage")) {
+      method(
+          messages,
+          name,
+          "(Lfi/dy/masa/malilib/gui/Message$MessageType;ILjava/lang/String;[Ljava/lang/Object;)V");
+    }
+  }
+
+  private static void inventoryMovementCompatibility() throws IOException {
+    ClassNode movement = provider("me/pieking1215/invmove/InvMove");
+    method(movement, "registerModule", "(Lme/pieking1215/invmove/module/Module;)V");
+    require(
+        (method(
+                        movement,
+                        "literalComponent",
+                        "(Ljava/lang/String;)Lnet/minecraft/network/chat/MutableComponent;")
+                    .access
+                & Opcodes.ACC_STATIC)
+            == 0,
+        "Native literal helper remains an instance method for its instance injector");
+    method(provider("dev/emi/emi/api/EmiApi"), "isSearchFocused", "()Z");
+    ClassNode enums = provider("me/pieking1215/invmove/module/config/ConfigEnum");
+    long selectors =
+        enums.methods.stream()
+            .filter(candidate -> candidate.name.equals("addTo"))
+            .flatMap(candidate -> executable(candidate).stream())
+            .filter(
+                instruction ->
+                    instruction instanceof MethodInsnNode call
+                        && call.owner.equals("me/shedaniel/clothconfig2/api/ConfigEntryBuilder")
+                        && call.name.equals("startEnumSelector")
+                        && call.desc.equals(
+                            "(Lnet/minecraft/network/chat/Component;Ljava/lang/Class;Ljava/lang/Enum;)Lme/shedaniel/clothconfig2/impl/builders/EnumSelectorBuilder;"))
+            .count();
+    require(selectors == 2, "Both native inventory-movement enum editor paths remain covered");
+    ClassNode storage = provider("net/p3pp3rf1y/sophisticatedcore/client/gui/StorageScreenBase");
+    method(storage, "isTextBoxFocused", "()Z");
+    require(
+        storage.fields.stream()
+            .anyMatch(
+                field ->
+                    field.name.equals("modalOverlay")
+                        && field.desc.equals(
+                            "Lnet/p3pp3rf1y/sophisticatedcore/client/gui/controls/WidgetBase;")),
+        "Storage modal input guard uses the pinned native overlay field");
+    require(
+        provider("com/tom/storagemod/screen/AbstractStorageTerminalScreen").fields.stream()
+            .anyMatch(
+                field ->
+                    field.name.equals("popup")
+                        && field.desc.equals("Lcom/tom/storagemod/util/PopupMenuManager;")),
+        "Terminal popup accessor retains the native manager type");
+    require(
+        provider("com/tom/storagemod/util/PopupMenuManager").fields.stream()
+            .anyMatch(field -> field.name.equals("menu") && field.desc.equals("Ljava/util/List;")),
+        "Terminal modal accessor retains the native popup list type");
   }
 
   private static ClassNode provider(String name) throws IOException {

@@ -14,7 +14,7 @@ Fresh Animations: Player Extension, Not Enough Animations and 3D Skin Layers cha
 
 ## Races and classes
 
-Races should differ through appearance, abilities, size, health and interactions with the world. Humans, goblins and dwarves suit the setting; the complete roster remains to be selected. Advantages and disadvantages should be understandable before selection. A race with innate flight may have that ability from the beginning, even when it makes island travel much easier.
+Races should differ through appearance, abilities, size, health and interactions with the world. Humans, goblins and dwarves suit the setting; the complete roster remains to be selected. Advantages and disadvantages should be understandable before selection. Races that grant unrestricted flight from the start will be excluded or adapted so their movement abilities preserve the challenge of crossing islands. Other meaningful advantages and disadvantages remain welcome.
 
 Classes and specializations should support mixed builds. A warrior who learns [magic](../magic/) is a valid character. Specialists can excel while other skills remain useful. The preferred direction is development through use, with peaceful and combat activities improving related abilities; the actual progression system has not been selected.
 

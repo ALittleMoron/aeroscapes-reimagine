@@ -10,6 +10,87 @@ Keep original upstream JARs byte-identical, retain notices, and prefer independe
 
 The owned mod's [localization source inventory](../mods/aeroscapes-reimagine/src/main/resources/META-INF/localization-sources.json) records the exact selected upstream dictionaries, licenses, missing-key filters and authored supplements. Selected [BMP Translations](https://github.com/BMProjects-Development/BMP-Translations), [Create: Food](https://modrinth.com/mod/create-food), [Item Descriptions](https://modrinth.com/mod/item-descriptions) and [Jade](https://modrinth.com/mod/jade) translations retain their individual licenses in separate resources. Their notices and full license texts are shipped in the JAR and corresponding source archive. These additions do not replace provider JARs or their existing translations.
 
+## Crafting and inventory planning
+
+[Crafting Tweaks](https://modrinth.com/mod/crafting-tweaks/version/IhkQpEve) and
+[Balm](https://modrinth.com/mod/balm/version/XC1JUHmA) use unchanged official files
+under the author's [modpack permissions](https://mods.twelveiterations.com/permissions).
+The independent `config/craftingtweaks/grids/toms_storage.json` targets the installed
+[Tom's Simple Storage](https://modrinth.com/mod/toms-storage) menu package; the
+provider's bundled registration still names its older GUI package. The owned
+server fixture exercises rotate, spread and clear through native packet handlers
+on ordinary crafting, player crafting and the actual terminal menu.
+
+[EMI: Create Schematics](https://modrinth.com/mod/emi-create-schematics/version/opyfkMHl)
+is an unchanged MIT client helper. Its import replaces only its own tagged
+favorites, preserving ordinary entries and the original clipboard.
+[Forgematica](https://modrinth.com/mod/forgematica/version/PFUOWUDF) and
+[MaFgLib](https://modrinth.com/mod/mafglib/version/CgDQ0u0Q) remain unchanged LGPL
+client artifacts. The former's provider marks its source archive as primary;
+the pack deliberately pins the executable secondary file. Paired official source
+archives were compared with the executable APIs. Their compatibility stub IDs
+retain native configuration namespaces. The starting schematic configuration uses
+Right Alt shortcuts, ordinary reach and no Easy Place.
+
+[InvMove](https://modrinth.com/mod/invmove/version/C7ePwvWW) uses its stable native
+file and public module API. The owned adapter recognizes recipe-browser focus,
+storage text/modal input, terminal popups and held Ponder tutorials. Tutorial
+targets come from live mouse coordinates and the native scene registry. Toolkit
+configuration screens keep movement disabled. Small version-gated storage
+accessors expose existing focus/modal state; the original providers are unchanged.
+
+The owned localization inventory records independent missing text and guarded
+Russian display corrections for these exact files. Raw configuration IDs and
+changed provider/player translations are preserved. Native numeric placeholder
+normalization is applied before matching correction expectations. Finite schematic
+messages keep captured filenames and IDs as format arguments. Provider LGPL terms
+still apply to original expected text; notices and licenses remain available in
+the original archives and the corresponding-source inventory.
+
+## Workstations, loot, locating and backups
+
+The exact beta files of [JEI](https://modrinth.com/mod/jei/version/zHNxmOqp),
+[Advanced Loot Info](https://modrinth.com/mod/advanced-loot-info/version/adxS0PUF)
+and [Advanced Core Info](https://modrinth.com/mod/advanced-core-info/version/xaWwatoU)
+are owner-selected exceptions. The existing browser supplies the interface;
+the existing trade viewer retains trade pages while the new loot viewer supplies
+block, creature and chest rules. Unsupported custom functions remain visible.
+
+[Easy Anvils](https://modrinth.com/mod/easy-anvils/version/fSQSKhdF) and
+[Easy Magic](https://modrinth.com/mod/easy-magic/version/MxbfrOEv) retain MPL-2.0
+code and separate reserved asset terms. Display additions are independent.
+Enum aliases use declaring-class identity before generic fallback, preserving
+different meanings of FLAT. Exact FML 4.0.42 loads their SERVER defaults from
+global `config/`; existing world-local overrides take precedence. A narrow comparator
+adapter permits configured free standalone renames alongside the existing economy
+mod while preserving custom repair/tome results and combined costs. The enchanting
+point helper corrects float drift at integer boundaries, retaining fractional
+budgets below the next whole point, so rounding does not
+reject an otherwise affordable five-point reroll.
+[Horseman](https://modrinth.com/mod/horseman/version/jJ93aLVn) retains its mobility,
+hitching, recall and inventory mechanics. The owned mining guard restricts its
+native bonus to horse-type mounts. Native instrument aliases share the latest
+owned horse snapshot across UUID replacement and rebinding, preserving cargo
+without resurrection. Duplicate swimming/HUD handlers have one owner.
+
+[Simple Backups](https://modrinth.com/mod/simple-backups/version/6JQL4qSR) remains
+unchanged Apache-2.0. The owned transaction saves and captures files synchronously,
+then compresses, verifies and atomically publishes before retention. Its soft
+budget preserves each world's newest complete copy. Unknown/legacy archives are
+preserved; historical managed payloads are CRC-checked before retention admission.
+The configured file exclusion omits the rebuildable live SQLite/WAL terrain cache
+from world and dimension data folders. This verifies captured files, not every
+third-party serializer's success.
+
+[Accurate Block Placement Reborn](https://modrinth.com/mod/accurate-block-placement-reborn/version/rA95AHFG)
+uses the existing bridge and unchanged MIT file. Scoped predicates repair current
+interaction-signature recognition without copying its placement algorithm.
+[Nature's Compass](https://modrinth.com/mod/natures-compass/version/nFniEtJV) and
+[Explorer's Compass](https://modrinth.com/mod/explorers-compass/version/hIJ2Ev1Q)
+retain CC-BY-NC-SA-4.0. Their Minecraft ranges use the exact loader's 1.21
+compatibility mapping. Owned search requests enforce bounds, lifecycle and payment;
+sampling does not promise every small biome or a dry destination.
+
 ## Distant terrain
 
 [Distant Horizons 3.3.3](https://modrinth.com/mod/distanthorizons/version/9w34y8ai) is an unchanged official native NeoForge/Fabric file, installed on both sides for the logical-server generation and technical headless checks. This does not establish multiplayer support. Its source tag is `a54dd3eb1df0078e63a71266d042c10d9cda4493`; the actual JAR supplies the exact API and configuration evidence. The descriptor has no required third-party dependency and rejects Separate Sable Render Distance through 1.8.6. LGPL-3.0 and bundled library notices remain in the original JAR.

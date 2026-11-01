@@ -14,7 +14,9 @@ I want the space between islands to matter. An ordinary character may spend the 
 
 One player might build a workshop and a town on a large island. Another might automate food, live aboard an airship, explore without a permanent base, or devote most of their time to building. A colony can become the center of a world without becoming everyone’s obligation. Some materials and equipment will provide reasons to venture out, while familiar places remain worth returning to.
 
-The same freedom applies to movement. Bridges, player-built transport routes, elytra and learned magical travel can all have a place. A race with innate flight should keep that defining ability from the start. Ships earn their value through what they let players build, carry and do together. Choosing another way to travel is a valid playstyle.
+The intended difficulty is moderate, with useful progress through learning, preparation and improving what players build. Ships should be the main practical way to undertake ordinary inter-island expeditions. The landscape, varied vehicle designs and increasingly comfortable journeys should invite players to experiment and keep improving a vessel for their own projects. Bridges, player-built routes and fitting learned magical travel remain valid choices, without requiring everyone to build a ship or explore every system.
+
+Everyday conveniences should reduce repeated handling while preserving meaningful decisions. Strong later abilities can reward mastery and infrastructure within grounded limits: creative-tier universal equipment, near-total invulnerability and creative-like personal flight are outside the intended experience, however long they take to obtain. Progress should help players pursue their own farms, workshops, homes and expeditions, keeping those activities worthwhile after major achievements. The planned [travel changes](../experience/engineering/#travel-choices) apply this direction to elytra and starting flight.
 
 ## Engineering, magic and settlements
 

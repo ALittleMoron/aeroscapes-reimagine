@@ -1,0 +1,59 @@
+{
+  "Generic": {
+    "easyPlaceMode": false,
+    "easyPlaceHoldEnabled": false,
+    "easyPlaceVanillaReach": true,
+    "placementRestriction": false,
+    "pickBlockEnabled": false,
+    "pasteUsingCommandsInSp": false,
+    "pasteUsingServux": false,
+    "itemUsePacketCheckBypass": false
+  },
+  "Hotkeys": {
+    "addSelectionBox": {
+      "keys": "RIGHT_ALT,A"
+    },
+    "layerModeNext": {
+      "keys": "RIGHT_ALT,PAGE_UP"
+    },
+    "layerModePrevious": {
+      "keys": "RIGHT_ALT,PAGE_DOWN"
+    },
+    "openGuiMainMenu": {
+      "keys": "RIGHT_ALT"
+    },
+    "openGuiMaterialList": {
+      "keys": "RIGHT_ALT,L"
+    },
+    "openGuiSchematicPlacements": {
+      "keys": "RIGHT_ALT,P"
+    },
+    "openGuiSchematicVerifier": {
+      "keys": "RIGHT_ALT,V"
+    },
+    "openGuiSelectionManager": {
+      "keys": "RIGHT_ALT,S"
+    },
+    "openGuiSettings": {
+      "keys": "RIGHT_ALT,C"
+    },
+    "pickBlockToggle": {
+      "keys": "RIGHT_ALT,BUTTON_3"
+    },
+    "rerenderSchematic": {
+      "keys": "F3,RIGHT_ALT"
+    },
+    "selectionModeCycle": {
+      "keys": "LEFT_CONTROL,RIGHT_ALT"
+    },
+    "toggleAllRendering": {
+      "keys": "RIGHT_ALT,R"
+    },
+    "toggleSchematicRendering": {
+      "keys": "RIGHT_ALT,G"
+    },
+    "toolEnabledToggle": {
+      "keys": "RIGHT_ALT,T"
+    }
+  }
+}

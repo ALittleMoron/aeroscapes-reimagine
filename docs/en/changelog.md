@@ -4,6 +4,20 @@ description: Version history.
 status: available
 ---
 
+## 0.2.5
+
+- Disable the [Better Clouds](https://modrinth.com/mod/better-clouds) warning about Minecraft clouds being turned off by default.
+- Add [Crafting Tweaks](https://modrinth.com/mod/crafting-tweaks), including support for the crafting terminal from [Tom’s Simple Storage](https://modrinth.com/mod/toms-storage).
+- Add clipboard material imports into [EMI](https://modrinth.com/mod/emi) with [EMI: Create Schematics](https://modrinth.com/mod/emi-create-schematics).
+- Add schematic projections, material lists and verification with [Forgematica](https://modrinth.com/mod/forgematica), using Right Alt shortcuts and ordinary placement reach.
+- Add [InvMove](https://modrinth.com/mod/invmove) with search-focus and tutorial-input compatibility, plus English and Russian interface and configuration text for the new conveniences.
+- Add [JEI](https://modrinth.com/mod/jei) recipe providers through the existing [EMI](https://modrinth.com/mod/emi) interface, plus loot conditions and functions from [Advanced Loot Info](https://modrinth.com/mod/advanced-loot-info).
+- Add persistent workstation contents with [Easy Anvils](https://modrinth.com/mod/easy-anvils) and [Easy Magic](https://modrinth.com/mod/easy-magic): free names, fully priced anvil work above 40 levels, and manual enchanting rerolls for one lapis and five experience points.
+- Add [Horseman](https://modrinth.com/mod/horseman) with movement, taming, cargo and recall conveniences, retaining the existing mount HUD.
+- Add [Accurate Block Placement Reborn](https://modrinth.com/mod/accurate-block-placement-reborn) through the existing bridge for continuous block rows with ordinary reach and material consumption; fast breaking is disabled.
+- Add [Nature’s Compass](https://modrinth.com/mod/natures-compass) and [Explorer’s Compass](https://modrinth.com/mod/explorers-compass): free search to 5,000 blocks, with one experience level charged only for a successful farther result within 10,000 blocks.
+- Add hourly active-play world backups with [Simple Backups](https://modrinth.com/mod/simple-backups), quiet routine operation, five copies per world and a shared soft 2 GiB storage budget.
+
 ## 0.2.4
 
 - Add [Distant Horizons](https://modrinth.com/mod/distanthorizons) for distant islands, with a 64-chunk radius, Russian settings and support for both supplied shaderpacks. Spyglass zoom shows the distant view in more detail.

@@ -1,0 +1,22 @@
+enabled = true
+backupType = "FULL_BACKUPS"
+saveAll = true
+backupsToKeep = 5
+timer = 60
+compressionLevel = 1
+sendMessages = false
+maxDiskSize = "2 GB"
+outputPath = "simplebackups"
+noPlayerBackups = false
+createSubDirs = false
+useTickCounter = true
+
+[to_ignore]
+ignored_paths = []
+ignored_files = []
+# Rebuildable terrain cache; live SQLite/WAL files cannot be copied coherently.
+ignored_files_regex = '^(?:data|DIM-1/data|DIM1/data|dimensions/[^/]+/(?:[^/]+/)+data)/DistantHorizons[.]sqlite(?:-wal|-shm|-journal)?$'
+
+[mod_compat]
+mc2discord = false
+onlyFavorites = false

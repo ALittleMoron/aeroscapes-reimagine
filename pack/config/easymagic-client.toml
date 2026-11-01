@@ -1,0 +1,5 @@
+render_enchanting_table_contents = "FLOATING"
+keep_enchantment_screen_book = false
+chiseled_bookshelf_tooltip = "DISABLED"
+chiseled_bookshelf_tooltip_offset_x = 0
+chiseled_bookshelf_tooltip_offset_y = 0

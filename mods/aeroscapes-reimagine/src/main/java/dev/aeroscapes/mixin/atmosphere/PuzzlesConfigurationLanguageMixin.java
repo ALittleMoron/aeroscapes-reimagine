@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.ModifyArg;
     remap = false)
 public abstract class PuzzlesConfigurationLanguageMixin {
   @ModifyArg(
-      method = "getConfigTitleComponent",
+      method = {"getConfigTitleComponent", "getConfigSectionComponent"},
       at =
           @At(
               value = "INVOKE",
