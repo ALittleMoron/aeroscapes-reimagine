@@ -47,6 +47,7 @@ public final class ClientChunkFlow {
       return;
     }
     long now = System.nanoTime();
+    LivenessProbe.clientFrame(now);
     FRAMES.frame(
         now,
         client.isWindowActive()
@@ -62,11 +63,14 @@ public final class ClientChunkFlow {
         if (level.getChunkSource().getChunk(x, z, ChunkStatus.FULL, false) != null) nearby++;
     LogUtils.getLogger()
         .info(
-            "[Aeroscapes chunk flow] client dimension={} pos={},{},{} paused={} fps={} frameIntervals={} measuredFrameMs={} meanFrameMs={} maxFrameMs={} maxFrameEndNanos={} framesOver50Ms={} framesOver100Ms={} cached={} nearby9={} tasks={} sections={} renderer={}",
+            "[Aeroscapes chunk flow] client nowNanos={} dimension={} pos={},{},{} focused={} screen={} paused={} fps={} frameIntervals={} measuredFrameMs={} meanFrameMs={} maxFrameMs={} maxFrameEndNanos={} framesOver50Ms={} framesOver100Ms={} cached={} nearby9={} tasks={} sections={} renderer={}",
+            now,
             level.dimension().location(),
             player.getX(),
             player.getY(),
             player.getZ(),
+            client.isWindowActive(),
+            client.screen == null ? "none" : client.screen.getClass().getName(),
             client.isPaused(),
             client.getFps(),
             timing.intervals(),

@@ -23,6 +23,15 @@ public final class BasinAquifer implements Aquifer {
   public BlockState computeSubstance(DensityFunction.FunctionContext context, double density) {
     delegated = false;
     IslandTerrain.Column column = column(context.blockX(), context.blockZ());
+    int y = context.blockY();
+    if (column.lavaIsland() != null
+        && column.lavaRadial() < 1.22
+        && y >= column.lavaShape().bottom() - 4
+        && y <= column.lavaIsland().waterline() + 16) {
+      if (column.lava(y) && density <= 0) return Blocks.LAVA.defaultBlockState();
+      if (column.lavaRadial() < 1.05 && y >= column.lavaFloor() - 12 && y <= column.lavaFloor())
+        return density > 0 ? null : Blocks.STONE.defaultBlockState();
+    }
     if (column.water(context.blockY()))
       return density > 0 ? null : Blocks.WATER.defaultBlockState();
     if (column.basin() != null

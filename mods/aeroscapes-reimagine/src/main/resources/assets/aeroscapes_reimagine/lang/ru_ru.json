@@ -1,4 +1,5 @@
 {
+  "biome.aeroscapes_reimagine.volcanic_island": "Вулканический остров",
   "message.aeroscapes_reimagine.monitor.toggle": "Запрошено переключение панели мониторинга.",
   "message.aeroscapes_reimagine.monitor.record": "Запрошена запись длительностью %s с.",
   "message.aeroscapes_reimagine.monitor.stopped": "Запрошена остановка записи.",

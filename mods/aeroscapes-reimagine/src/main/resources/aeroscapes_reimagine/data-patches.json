@@ -2227,11 +2227,19 @@
     "mod": "mr_dungeons_andtaverns",
     "source": "data/nova_structures/worldgen/structure/badlands_miner_outpost.json",
     "sha256": "7b5a3efb844f470189b2a20bbe9c36751f6af1e1f8a6ea430851f7b533aa5a0c",
-    "edits": [],
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
     "wrappers": [
       {
         "type": "aeroscapes_reimagine:supported",
-        "terrain_check": "surface"
+        "terrain_check": "surface_root_footprint"
       }
     ]
   },

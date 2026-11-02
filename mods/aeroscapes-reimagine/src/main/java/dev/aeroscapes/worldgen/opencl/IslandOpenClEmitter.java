@@ -27,23 +27,28 @@ public final class IslandOpenClEmitter {
         global const double *%1$s = aeroscapes_column(ctx, %2$d);
         double %3$s = (ctx.y >= -64 && ctx.y < 304) ? %4$s : -1.0;
         if (ctx.y < 32) %3$s = fmax(%3$s, %5$s);
-        double %6$s = aeroscapes_islands(%1$s, ctx.y, 0.0, false);
+        double %6$s = fmax(aeroscapes_islands(%1$s, ctx.y, 0.0, false), aeroscapes_shape(%1$s + 30, ctx.y));
         if (%1$s[27] != 0.0 && %1$s[24] < 1.22)
             %6$s = fmax(%6$s, aeroscapes_shape(%1$s + 20, ctx.y));
         if (%1$s[28] != 0.0 && %6$s > %7$s) {
             double %8$s = %9$s;
             %6$s = aeroscapes_islands(%1$s, ctx.y, %8$s, true);
+            double lavaWeight = fmax(0.0, fmin(1.0, %1$s[30] / 0.4));
+            %6$s = fmax(%6$s, aeroscapes_shape(%1$s + 30, ctx.y)
+                + %8$s * lavaWeight * lavaWeight * (3.0 - 2.0 * lavaWeight));
             if (%1$s[27] != 0.0) {
                 double weight = fmax(0.0, fmin(1.0, %1$s[20] / 0.4));
                 %6$s = fmax(%6$s, aeroscapes_shape(%1$s + 20, ctx.y)
                     + %8$s * weight * weight * (3.0 - 2.0 * weight));
             }
-            bool %10$s = %1$s[27] != 0.0 && %1$s[24] < 1.08
-                && ctx.y >= %1$s[25] - 12.0 && ctx.y <= %1$s[25] + 5.0;
-            if (!%10$s) %6$s = fmin(%6$s, %11$s);
         }
         if (ctx.y < -116) %6$s = fmin(%6$s, (ctx.y + 125) / 12.0);
         %12$s = fmax(%3$s, %6$s);
+        bool %10$s = (%1$s[27] != 0.0 && %1$s[24] < 1.08
+                && ctx.y >= %1$s[25] - 12.0 && ctx.y <= %1$s[25] + 5.0)
+            || (%1$s[37] != 0.0 && %1$s[34] < 1.08
+                && ctx.y >= %1$s[35] - 12.0 && ctx.y <= %1$s[35] + 5.0);
+        if (%12$s > -1.0 && !%10$s) %12$s = fmin(%12$s, %11$s);
         """
         .formatted(
             column,

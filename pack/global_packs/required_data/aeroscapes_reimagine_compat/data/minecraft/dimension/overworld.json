@@ -5,6 +5,7 @@
     "biome_source": {
       "type": "aeroscapes_reimagine:island_biomes",
       "void_biome": "aeroscapes_reimagine:void",
+      "volcanic_biome": "aeroscapes_reimagine:volcanic_island",
       "delegate": {
       "biomes": [
         {

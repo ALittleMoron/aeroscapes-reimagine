@@ -1236,9 +1236,9 @@
       "source": "data/minecraft/worldgen/placed_feature/ore_diorite_upper.json",
       "source_sha256": "34fecf938c1c49bc4a7410f4d294c76e70ea90701f92db85c25fb1a5077f0bd0",
       "output": "data/minecraft/worldgen/placed_feature/ore_diorite_upper.json",
-      "sha256": "34fecf938c1c49bc4a7410f4d294c76e70ea90701f92db85c25fb1a5077f0bd0",
-      "mode": "exact",
-      "reason": "Retain published worldgen behavior"
+      "sha256": "85775bba1b91adc9aca485ccf06545e45fe3264899c7a4bec1d78a4e6c3ccce5",
+      "mode": "adapted",
+      "reason": "Retain configured stone, rarity and biome guard; sample below OCEAN_FLOOR_WG instead of mostly empty absolute-height columns in the floating-island world."
     },
     {
       "source": "data/minecraft/worldgen/placed_feature/ore_emerald.json",
@@ -1268,9 +1268,9 @@
       "source": "data/minecraft/worldgen/placed_feature/ore_granite_upper.json",
       "source_sha256": "014cc2c3c2c0fe7020d3507ddc7793b68f5c9e8010b08e362af7dfed5ec57a2a",
       "output": "data/minecraft/worldgen/placed_feature/ore_granite_upper.json",
-      "sha256": "014cc2c3c2c0fe7020d3507ddc7793b68f5c9e8010b08e362af7dfed5ec57a2a",
-      "mode": "exact",
-      "reason": "Retain published worldgen behavior"
+      "sha256": "aca28f9739e8c81a0dfe76a9734b49b2b73205d137fada821587e6bd5e38ae11",
+      "mode": "adapted",
+      "reason": "Retain configured stone, rarity and biome guard; sample below OCEAN_FLOOR_WG instead of mostly empty absolute-height columns in the floating-island world."
     },
     {
       "source": "data/minecraft/worldgen/placed_feature/ore_iron_middle.json",
@@ -1756,6 +1756,11 @@
       "output": "data/minecraft/tags/item/redstone_ores.json",
       "sha256": "c4ff0a3678fa9d324537a304e20b9470df8b61e595491f5fe2c592a415a43b86",
       "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."
+    },
+    {
+      "output": "data/minecraft/tags/block/overworld_carver_replaceables.json",
+      "sha256": "f4aaf2246a539004251e5f57b1c61e0b7a31f9fcab29bbbd12f981d793a59ea9",
+      "reason": "Authored additive carver-only tag for verified bulk basalt, cobble, ice and chalk island substrates; no ore/base-stone tags or provider tag contents are changed."
     }
   ]
 }

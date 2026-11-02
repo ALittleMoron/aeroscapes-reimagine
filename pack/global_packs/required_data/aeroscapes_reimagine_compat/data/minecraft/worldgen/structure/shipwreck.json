@@ -1,7 +1,7 @@
 {
   "type": "lithostitched:delegating",
   "delegate": {
-    "type": "minecraft:shipwreck",
+    "type": "aeroscapes_reimagine:island_shipwreck",
     "biomes": "#aeroscapes_reimagine:has_structure/coastal_shipwreck",
     "is_beached": false,
     "spawn_overrides": {},

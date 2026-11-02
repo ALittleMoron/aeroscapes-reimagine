@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:basalt",
+    "minecraft:smooth_basalt",
+    "minecraft:cobblestone",
+    "minecraft:cobbled_deepslate",
+    "minecraft:blue_ice",
+    "natures_spirit:white_chalk"
+  ]
+}

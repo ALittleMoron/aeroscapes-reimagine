@@ -64,6 +64,7 @@ public final class AeroscapesReimagine {
     SupportedStructure.register(modBus);
     IslandMonumentStructure.register(modBus);
     IslandOceanRuinStructure.register(modBus);
+    IslandShipwreckStructure.register(modBus);
     IslandPyramidStructure.register(modBus);
     IslandIglooStructure.register(modBus);
     IslandSwampHutStructure.register(modBus);

@@ -1,10 +1,12 @@
 package dev.aeroscapes.worldgen.opencl;
 
 import com.ishland.c2me.base.common.ModuleMixinPlugin;
+import java.nio.file.Files;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Nullable;
 import net.neoforged.fml.loading.FMLLoader;
+import net.neoforged.fml.loading.FMLPaths;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
@@ -15,6 +17,9 @@ public final class OpenClMixinPlugin implements IMixinConfigPlugin {
 
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
+    if (mixinClassName.endsWith("OpenClEventDiagnosticsMixin")
+        && !Files.isRegularFile(
+            FMLPaths.CONFIGDIR.get().resolve("aeroscapes-chunk-diagnostics.enabled"))) return false;
     return module != null && module.shouldApplyMixin(targetClassName, mixinClassName);
   }
 

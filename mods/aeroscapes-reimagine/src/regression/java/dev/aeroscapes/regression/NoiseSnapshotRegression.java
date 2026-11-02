@@ -38,9 +38,15 @@ import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSeriali
 public final class NoiseSnapshotRegression {
   private static final List<ChunkPos> SITES =
       List.of(
-          new ChunkPos(764, 766), new ChunkPos(765, 766),
-          new ChunkPos(764, 767), new ChunkPos(765, 767),
-          new ChunkPos(162, -298), new ChunkPos(163, -298));
+          new ChunkPos(764, 766),
+          new ChunkPos(765, 766),
+          new ChunkPos(764, 767),
+          new ChunkPos(765, 767),
+          new ChunkPos(162, -298),
+          new ChunkPos(163, -298),
+          new ChunkPos(-479, -225),
+          new ChunkPos(-489, -225),
+          new ChunkPos(-153, 40));
   private static volatile Capture active;
 
   private NoiseSnapshotRegression() {}
@@ -115,6 +121,7 @@ public final class NoiseSnapshotRegression {
     // A getChunk(NOISE) result remains mutable: equal ticket radii allow SURFACE/CARVERS next.
     // Only stage-boundary hooks freeze data; all assertions and comparisons use those copies.
     basinPositive(level, capture.chunks);
+    lavaPositive(capture.chunks);
     CompoundTag actual = new CompoundTag();
     actual.putInt("format", 2);
     actual.putLong("seed", level.getSeed());
@@ -257,6 +264,13 @@ public final class NoiseSnapshotRegression {
             stone,
             floor,
             column.basin().waterline());
+  }
+
+  private static void lavaPositive(Map<Long, CompoundTag> chunks) {
+    CompoundTag chunk = chunks.get(ChunkPos.asLong(-479, -225));
+    require(
+        blockAt(chunk, -7656, -21, -3592).startsWith("minecraft:lava["),
+        "NOISE volcanic fixture lost its natural local lava");
   }
 
   private static String blockAt(CompoundTag chunk, int x, int y, int z) {

@@ -130,7 +130,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "7.2.6");
     } else if (mixinClassName.endsWith("FastRodCaptureMixin")) {
       versions = Map.of("punchy", "3.0", "flerovium", "1.1.2");
-    } else if (mixinClassName.endsWith("LanternGripMixin")) {
+    } else if (mixinClassName.endsWith("LanternGripMixin")
+        || mixinClassName.endsWith("PunchyMapMixin")) {
       versions = Map.of("punchy", "3.0");
     } else if (mixinClassName.endsWith("RodCaptureTraceMixin")
         || mixinClassName.endsWith("RodLineTraceMixin")) {

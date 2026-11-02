@@ -13,7 +13,8 @@
     "OpenClShutdownMixin",
     "OpenClPlatformMixin",
     "OpenClReadinessMixin",
-    "OpenClChunkMapMixin"
+    "OpenClChunkMapMixin",
+    "OpenClEventDiagnosticsMixin"
   ],
   "injectors": {
     "defaultRequire": 1

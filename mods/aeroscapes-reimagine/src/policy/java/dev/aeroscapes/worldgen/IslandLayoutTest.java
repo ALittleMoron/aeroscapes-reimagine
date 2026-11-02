@@ -5,7 +5,9 @@ public final class IslandLayoutTest {
   private IslandLayoutTest() {}
 
   public static void main(String[] arguments) {
+    verifyCaveHeights();
     verifyBasinSampling();
+    verifyLavaIslands();
     for (double cap : new double[] {-1, -0.5, -0.36, -0.01, 0}) {
       var edge = new IslandLayout.VerticalShape(cap, 80, 0, 12);
       require(edge.terrainDensity(40, 10) <= 0, "Detail crosses the bounded island outline");
@@ -62,13 +64,15 @@ public final class IslandLayoutTest {
     require(basins > 0 && different > 0, "Layout lacks seeded variation");
     int unevenSmall = 0;
     int smallIslands = 0;
-    for (int cellX = -1024; cellX < 1024; cellX += 128)
-      for (int cellZ = -1024; cellZ < 1024; cellZ += 128) {
+    for (int cellX = -4096; cellX < 4096; cellX += 256)
+      for (int cellZ = -4096; cellZ < 4096; cellZ += 256) {
+        var island = first.smallIsland(cellX, cellZ, 2);
+        if (island == null) continue;
         double minimum = Double.POSITIVE_INFINITY;
         double maximum = Double.NEGATIVE_INFINITY;
-        for (int dx = 32; dx < 96; dx += 4)
-          for (int dz = 32; dz < 96; dz += 4) {
-            var shape = first.smallShape(cellX + dx, cellZ + dz, 2);
+        for (int dx = -16; dx <= 16; dx += 4)
+          for (int dz = -16; dz <= 16; dz += 4) {
+            var shape = first.smallShape(island.centerX() + dx, island.centerZ() + dz, 2);
             if (shape.cap() < 0.3) continue;
             minimum = Math.min(minimum, shape.top());
             maximum = Math.max(maximum, shape.top());
@@ -81,6 +85,7 @@ public final class IslandLayoutTest {
     require(
         smallIslands > 10 && unevenSmall * 5 >= smallIslands * 4,
         "Small islands reverted to flat tops");
+    require(smallIslands < 180, "Small-island density reverted to the former crowded grid");
     for (int x = -1024; x <= 1024; x += 4) {
       for (int z = -1024; z <= 1024; z += 4) {
         require(
@@ -95,6 +100,62 @@ public final class IslandLayoutTest {
 
   private static void require(boolean condition, String message) {
     if (!condition) throw new AssertionError(message);
+  }
+
+  private static void verifyCaveHeights() {
+    var hosts =
+        new IslandCaveHosts(
+            new net.minecraft.world.level.ChunkPos(0, 0),
+            java.util.List.of(
+                new IslandCaveHosts.Range(-90, -60),
+                new IslandCaveHosts.Range(80, 120),
+                new IslandCaveHosts.Range(200, 250)));
+    var random = net.minecraft.util.RandomSource.create(1);
+    for (var range : hosts.ranges()) {
+      java.util.Set<Integer> selected = new java.util.HashSet<>();
+      for (int sample = 0; sample < 4096; sample++) {
+        int y = range.height(random);
+        require(
+            y >= range.minimum() && y <= range.maximum(), "Cave height escaped its island layer");
+        selected.add(y);
+      }
+      require(
+          selected.size() == range.maximum() - range.minimum() + 1,
+          "Cave anchors starve part of a layer");
+    }
+  }
+
+  private static void verifyLavaIslands() {
+    int seen = 0;
+    for (long seed : new long[] {1, 42, 777, -1}) {
+      var layout = new IslandLayout(seed);
+      for (int x = -4096; x <= 4096; x += 1024) {
+        for (int z = -4096; z <= 4096; z += 1024) {
+          var lava = layout.lavaIsland(x, z);
+          if (lava == null) continue;
+          seen++;
+          require(
+              lava.waterline() < 0
+                  && lava.radiusX() >= 100
+                  && lava.radiusX() < 172
+                  && lava.radiusZ() >= 100
+                  && lava.radiusZ() < 172,
+              "Lava islands must be low, broad landforms");
+          for (int angle = 0; angle < 360; angle += 5) {
+            double radians = Math.toRadians(angle);
+            boolean closed = false;
+            for (double radius = 0.65; radius <= 1.55; radius += 0.01) {
+              int rimX = lava.centerX() + (int) (Math.cos(radians) * lava.radiusX() * radius);
+              int rimZ = lava.centerZ() + (int) (Math.sin(radians) * lava.radiusZ() * radius);
+              require(lava.density(rimX, -128, rimZ) < 0, "Lava island clips minY");
+              if (lava.density(rimX, lava.waterline(), rimZ) > 0) closed = true;
+            }
+            require(closed, "Lava island has an open rim");
+          }
+        }
+      }
+    }
+    require(seen > 0 && seen < 120, "Lava island layout lost its rare seeded selection");
   }
 
   private static void verifyBasinSampling() {

@@ -108,7 +108,7 @@
   "minecraft:worldgen/template_pool/nether_fortress/nether_fortress_inside.json": "47b6b8679bd1bb71d7b64b660f0166a4a873dc109eef8f27275c0fee0ea2044a",
   "minecraft:worldgen/template_pool/swamp_village/swamp_house.json": "2f269a39d4d35e1ca6164a258f5a04c2e658b4d5cb0678beafd1adb44592e097",
   "minecraft:worldgen/template_pool/swamp_village/swamp_path.json": "94662c816bbe3f4618b4d368418edc5bb7fae0c3f269f6683f5a0f50d6133d69",
-  "nova_structures:worldgen/structure/badlands_miner_outpost.json": "36e021a5cee505711612d2f71c0b63486add86c147c59c7fadeb6d21b6774b80",
+  "nova_structures:worldgen/structure/badlands_miner_outpost.json": "2d90b6ceed5ceb3b16f7dae26dfacaaf59f7e7ea4612084677b321abc3c767aa",
   "nova_structures:worldgen/structure/bunker.json": "b462a7661d879d157b098ca37ec3c0afd494a8abe5bcd770cd7dc807c17f4dd3",
   "nova_structures:worldgen/structure/conduit_ruin.json": "644432938a88959197fbb8d8369d4f9b3bb4d3f8cf0ad5af0e469aa83e59d324",
   "nova_structures:worldgen/structure/creeping_crypt.json": "8976b467f4231c4ee1687df9f12a469f06d1527f9cc2e161f021078ffb50fc56",

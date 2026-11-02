@@ -386,7 +386,7 @@ hash = "8a2b1457d821fd292f18adec2932a6701c6d10186aa55b1d605b2e261dc305ac"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/dimension/overworld.json"
-hash = "c267888e4df5af86a052ef199eb6cffca4b2f4dd275aef121015ffcfbd6de25e"
+hash = "5c3baa901c6c0382005fdaa6436a6c5088424d72d437920c36931c1e5aa39105"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/placed_feature/amethyst_geode.json"
@@ -426,7 +426,7 @@ hash = "60377734fe58421084b900a5faae563da72ffca7ecc3190dba930a7667606ebb"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/shipwreck.json"
-hash = "3d9f29dce017d382c300c5e549e9ee06e757fe9b49b2db85c0a25c1e4921b87d"
+hash = "845fbcaeb7e6c4d1e35b6aa006058f584ce0ec600ef47296475883dca4ef23cf"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/structure/stronghold.json"
@@ -963,7 +963,7 @@ hash = "1361b77ba45155c4cb658928a5e6791408befb6a855e396b688f2a9669e2a700"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "64a723b6fbd2632719232426ee889c3e6b6f677e1f3cd3ead3d32817699fdf21"
+hash = "b57d5a9c4f782944a1f7d128a229a18e2a7ea9749945c2255e556925c917e61c"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -992,7 +992,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "5b8e52a476cc47ae813420dfa6314aa4cec526624e94db6add654d1a3d9204f2"
+hash = "768cedea828ee12670c9bc5ea0de07d62297d16ec5e18ad8f4f1ac4e45099efd"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1928,6 +1928,10 @@ hash = "31c6a28688bfb9d951f4d0b86d8e66c20b80b48b029f51764b7f9df0464af29d"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/polytone/dimension_modifiers/overworld.json"
 hash = "7cada3221f0ad22653a398b7fa24d262cf8f190344628b829204f7f9f32feaba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/punchy/compat/aeroscapes_map.json"
+hash = "bac3c5531e712b38f70475210956d2af3c13bf4640b92962025b113726e7949e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/sounds/items/moo.json"

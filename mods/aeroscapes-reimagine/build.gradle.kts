@@ -294,6 +294,14 @@ val frameIntervalStatsTest by
     mainClass = "dev.aeroscapes.diagnostics.FrameIntervalStatsTest"
   }
 
+val awaitTrackerTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.diagnostics.AwaitTrackerTest"
+  }
+
 val shoulderCameraTransformerTest by
   tasks.registering(JavaExec::class) {
     group = "verification"
@@ -317,6 +325,23 @@ val atmosphereContractTest by
           .joinToString(File.pathSeparator),
       )
     }
+  }
+
+val punchyMapProfileTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.atmosphere.PunchyMapProfileTest"
+    systemProperty(
+      "aeroscapes.map.profile",
+      layout.projectDirectory
+        .file(
+          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/punchy/compat/aeroscapes_map.json"
+        )
+        .asFile
+        .absolutePath,
+    )
   }
 
 val celestialLayoutTest by
@@ -380,8 +405,10 @@ tasks.check {
     sableTraceBufferTest,
     monitorControllerTest,
     frameIntervalStatsTest,
+    awaitTrackerTest,
     shoulderCameraTransformerTest,
     atmosphereContractTest,
+    punchyMapProfileTest,
     celestialLayoutTest,
     tradeRecipeContractTest,
     managedBackupArchiveTest,

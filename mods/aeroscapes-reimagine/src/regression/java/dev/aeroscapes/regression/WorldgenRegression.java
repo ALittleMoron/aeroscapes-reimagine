@@ -98,6 +98,24 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    if (System.getProperty("aeroscapes.regression.outpostTerrainReport") != null) {
+      OutpostTerrainRegression.verify(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.sableOffsets")) {
+      SableOffsetRegression.verify(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.caveNetwork")) {
+      CaveNetworkRegression.verify(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.islandUpdate")) {
+      SableOffsetRegression.verify(level);
+      ShipwreckSupportRegression.verify(level);
+      IslandUpdateRegression.verify(level);
+      return;
+    }
     String backupRoundtrip = System.getProperty("aeroscapes.regression.backupRoundtrip");
     String thirdQol = System.getProperty("aeroscapes.regression.qolGroup3");
     if (Boolean.getBoolean("aeroscapes.regression.waystoneCreativeSearch")) {
@@ -380,7 +398,13 @@ public final class WorldgenRegression {
     }
     if (System.getProperty("aeroscapes.regression.noiseSnapshot") != null) {
       if (Boolean.getBoolean("aeroscapes.regression.performance.opencl"))
-        OpenClPerformanceRegression.start(level, () -> NoiseSnapshotRegression.verify(level));
+        OpenClPerformanceRegression.start(
+            level,
+            () -> {
+              if (Boolean.getBoolean("aeroscapes.regression.diagnosticProbe"))
+                OpenClProbeRegression.verify(level);
+              NoiseSnapshotRegression.verify(level);
+            });
       else NoiseSnapshotRegression.verify(level);
       return;
     }

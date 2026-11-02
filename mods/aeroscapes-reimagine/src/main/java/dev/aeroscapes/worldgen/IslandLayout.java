@@ -25,30 +25,39 @@ public record IslandLayout(long seed) {
   }
 
   public VerticalShape smallShape(int x, int z, int layer) {
-    long key = cell(x, z, 128, layer * 42595009L);
-    if (random(key) >= 0.255) return VerticalShape.EMPTY;
-    double centerX = Math.floorDiv(x, 128) * 128.0 + 48 + random(key + 1) * 32;
-    double centerZ = Math.floorDiv(z, 128) * 128.0 + 48 + random(key + 2) * 32;
-    double radius = 12 + random(key + 4) * 18;
-    double dx = x - centerX + 7 * noise(seed, x, z, 23, 11);
-    double dz = z - centerZ + 7 * noise(seed, x, z, 23, 12);
-    double horizontal = Math.hypot(dx / radius, dz / (radius * (0.75 + random(key + 9) * 0.35)));
-    double edge = 1 - horizontal + 0.2 * noise(seed, x, z, 11, 13);
-    if (edge < -0.25) return VerticalShape.EMPTY;
-    double top =
-        -72
-            + layer * 94
-            + random(key + 3) * 30
-            - 15
-            + 9 * noise(seed, x, z, 29, 14)
-            + 4 * noise(seed, x, z, 9, 15);
-    double bottom =
-        Math.max(
-            -121,
-            top
-                - radius * (0.45 + 0.7 * Math.sqrt(Math.max(0, edge)))
-                + 7 * noise(seed, x, z, 17, 16));
-    return new VerticalShape(edge * 2, top, bottom, 9);
+    SmallIsland island = smallIsland(x, z, layer);
+    return island == null ? VerticalShape.EMPTY : island.shape(seed, x, z);
+  }
+
+  public SmallIsland smallIsland(int x, int z, int layer) {
+    long key = cell(x, z, 256, layer * 42595009L);
+    if (random(key) >= 0.12) return null;
+    return new SmallIsland(
+        Math.floorDiv(x, 256) * 256 + 80 + (int) (random(key + 1) * 96),
+        Math.floorDiv(z, 256) * 256 + 80 + (int) (random(key + 2) * 96),
+        16 + Math.pow(random(key + 4), 2) * 48,
+        -72 + layer * 94 + random(key + 3) * 60 - 30,
+        0.75 + random(key + 9) * 0.35,
+        random(key + 10) < 0.4);
+  }
+
+  public record SmallIsland(
+      int centerX, int centerZ, double radius, double anchor, double aspect, boolean monobiome) {
+    public VerticalShape shape(long seed, int x, int z) {
+      double dx = x - centerX + 7 * noise(seed, x, z, 23, 11);
+      double dz = z - centerZ + 7 * noise(seed, x, z, 23, 12);
+      double horizontal = Math.hypot(dx / radius, dz / (radius * aspect));
+      double edge = 1 - horizontal + 0.2 * noise(seed, x, z, 11, 13);
+      if (edge < -0.25) return VerticalShape.EMPTY;
+      double top = anchor + 9 * noise(seed, x, z, 29, 14) + 4 * noise(seed, x, z, 9, 15);
+      double bottom =
+          Math.max(
+              -121,
+              top
+                  - radius * (0.45 + 0.7 * Math.sqrt(Math.max(0, edge)))
+                  + 7 * noise(seed, x, z, 17, 16));
+      return new VerticalShape(edge * 2, top, bottom, 9);
+    }
   }
 
   /** Smooth seeded gradient noise; evaluated only while constructing an X/Z column. */
@@ -92,6 +101,10 @@ public record IslandLayout(long seed) {
   /** X/Z geometry is constant through a vertical noise column. */
   public record VerticalShape(double cap, double top, double bottom, double scale) {
     public static final VerticalShape EMPTY = new VerticalShape(-1, 0, 0, 1);
+
+    public boolean containsHabitat(int y, int fluidSurface, int margin) {
+      return cap > -0.2 && y >= bottom - margin && y <= Math.max(top, fluidSurface) + margin;
+    }
 
     public double density(int y) {
       if (this == EMPTY) return -1;
@@ -209,6 +222,19 @@ public record IslandLayout(long seed) {
         centerX, centerZ, waterline, radiusX, radiusZ, 64 + (int) (random(key + 6) * 24), key);
   }
 
+  public Basin lavaIsland(int x, int z) {
+    long key = cell(x, z, 1024, 0x7a2d84e103bL);
+    if (random(key) >= 0.22) return null;
+    return new Basin(
+        Math.floorDiv(x, 1024) * 1024 + 384 + (int) (random(key + 1) * 256),
+        Math.floorDiv(z, 1024) * 1024 + 384 + (int) (random(key + 2) * 256),
+        -40 + (int) (random(key + 3) * 32),
+        100 + random(key + 4) * 72,
+        100 + random(key + 5) * 72,
+        18 + (int) (random(key + 6) * 10),
+        key);
+  }
+
   public record Basin(
       int centerX,
       int centerZ,
@@ -221,8 +247,8 @@ public record IslandLayout(long seed) {
       double dx = x - centerX + 45 * noise(key, x, z, 137, 81);
       double dz = z - centerZ + 45 * noise(key, x, z, 137, 82);
       double radial = Math.hypot(dx / radiusX, dz / radiusZ);
-      // Bound: radius*(1.22+.26+.08)+45 < 448, the closest layout-cell edge.
-      // The coast stays wholly inside its cell without a rectangular clipping mask.
+      // radius*(1.22+.26+.08)+45 stays below the nearest cell edge:
+      // water <448 blocks; lava <384. Neither coast needs a rectangular clipping mask.
       return radial + 0.26 * noise(key, x, z, 97, 83) + 0.08 * noise(key, x, z, 29, 84);
     }
 
@@ -255,12 +281,14 @@ public record IslandLayout(long seed) {
     VerticalShape shape(int x, int z, double radial, double floor) {
       if (radial >= 1.22) return VerticalShape.EMPTY;
       double bottom =
-          waterline
-              - depth
-              - 25
-              - 35 * Math.sqrt(Math.max(0, 1 - radial / 1.22))
-              + 16 * noise(key, x, z, 91, 89)
-              + 6 * noise(key, x, z, 27, 90);
+          Math.max(
+              -121,
+              waterline
+                  - depth
+                  - 25
+                  - 35 * Math.sqrt(Math.max(0, 1 - radial / 1.22))
+                  + 16 * noise(key, x, z, 91, 89)
+                  + 6 * noise(key, x, z, 27, 90));
       return new VerticalShape((1.22 - radial) * 4, floor, bottom, 12);
     }
 

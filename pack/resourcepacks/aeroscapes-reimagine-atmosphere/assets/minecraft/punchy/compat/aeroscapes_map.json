@@ -1,0 +1,16 @@
+{
+  "itemSpecific": {
+    "minecraft:filled_map": {
+      "armTransforms": {
+        "right": {
+          "scale": 1.0,
+          "offY": -0.2
+        },
+        "left": {
+          "scale": 1.0,
+          "offY": -0.2
+        }
+      }
+    }
+  }
+}

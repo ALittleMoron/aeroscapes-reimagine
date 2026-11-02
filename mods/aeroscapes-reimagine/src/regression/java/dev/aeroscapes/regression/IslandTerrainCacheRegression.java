@@ -23,6 +23,7 @@ final class IslandTerrainCacheRegression {
     IslandTerrain terrain = IslandTerrain.from(random);
     if (terrain == null) throw new IllegalStateException("Missing owned island terrain");
     verifyDeferredBound();
+    verifyRetainedCaves();
     verifySamples(terrain, 0);
     try (var workers = Executors.newFixedThreadPool(4)) {
       var checks = new ArrayList<CompletableFuture<Void>>();
@@ -33,6 +34,21 @@ final class IslandTerrainCacheRegression {
       CompletableFuture.allOf(checks.toArray(CompletableFuture[]::new)).join();
     }
     LogUtils.getLogger().info("Island terrain scalar/concurrent cache parity passed");
+  }
+
+  private static void verifyRetainedCaves() {
+    var terrain =
+        new IslandTerrain(
+            DensityFunctions.constant(1),
+            DensityFunctions.constant(1),
+            DensityFunctions.constant(0),
+            DensityFunctions.constant(0),
+            DensityFunctions.constant(-0.5));
+    for (int y : new int[] {-80, 64, 200, 280}) {
+      var position = new DensityFunction.SinglePointContext(17, y, 17);
+      if (terrain.compute(position) >= 0 || terrain.biomeDensity(position) <= 0)
+        throw new IllegalStateException("Retained island mass refills a cave or erases its biome");
+    }
   }
 
   private static void verifyDeferredBound() {
@@ -105,24 +121,20 @@ final class IslandTerrainCacheRegression {
     double retained = y >= -64 && y < 304 ? terrain.original().compute(context) : -1;
     if (y < 32) retained = Math.max(retained, terrain.lower().compute(context));
     var column = terrain.column(context.blockX(), context.blockZ());
-    double added = column.islands(y);
+    double added = Math.max(column.islands(y), column.lavaShape().density(y));
     if (column.basin() != null && column.radial() < 1.22) {
       added = Math.max(added, column.basinShape().density(y));
     }
     if (column.hasDetail() && added > -terrain.form().maxValue()) {
       double detail = terrain.form().compute(context);
       added = column.islands(y, detail);
+      added = Math.max(added, column.lavaShape().sealedDensity(y, detail));
       if (column.basin() != null)
         added = Math.max(added, column.basinShape().sealedDensity(y, detail));
-      boolean liner =
-          column.basin() != null
-              && column.radial() < 1.08
-              && y >= column.floor() - 12
-              && y <= column.floor() + 5;
-      if (!liner) added = Math.min(added, terrain.caves().compute(context));
     }
     if (y < -116) added = Math.min(added, (y + 125) / 12.0);
-    return Math.max(retained, added);
+    double body = Math.max(retained, added);
+    return body > -1 && !column.liner(y) ? Math.min(body, terrain.caves().compute(context)) : body;
   }
 
   private static final class ProbeAquifer implements Aquifer {

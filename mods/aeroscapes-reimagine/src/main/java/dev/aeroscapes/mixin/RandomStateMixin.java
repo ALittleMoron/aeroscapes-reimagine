@@ -77,7 +77,8 @@ public abstract class RandomStateMixin implements RetainedIslandTerrain {
         new BiomeTerrainMask(
             (x, y, z) ->
                 biomeTerrain.get().biomeDensity(new DensityFunction.SinglePointContext(x, y, z)) > 0
-                    || terrain.column(x, z).water(y),
+                    || terrain.column(x, z).water(y)
+                    || terrain.column(x, z).lava(y),
             noise.minY(),
             noise.minY() + noise.height(),
             noise.getCellWidth(),

@@ -4,6 +4,17 @@ description: Version history.
 status: available
 ---
 
+## 0.3.0
+
+- Complete the selected QoL mod set introduced in the preceding updates.
+- Restore branching cave passages and chambers inside island layers, including basalt and chalk terrain; place granite and diorite below the actual island surface.
+- Greatly reduce the frequent small-island grid, vary their sizes and positions, and give selected small and medium islands a single biome.
+- Add broad low-altitude volcanic islands with enclosed lava basins, blackstone, deepslate, magma, cooled basalt patches and basalt columns.
+- Reject shipwrecks hanging between island layers and require natural support beneath the badlands miner outpost's main platform.
+- Prevent a recursive origin-chunk load during [Sable](https://modrinth.com/mod/sable) physics classification with [Supplementaries](https://modrinth.com/mod/supplementaries), which could stall server progress and commands.
+- Render held maps while their data arrives and raise both map-holding arms in [Punchy](https://modrinth.com/mod/punchy-fpa).
+- World generation changes apply to new chunks; existing islands retain their terrain, with possible seams along explored boundaries.
+
 ## 0.2.6
 
 - Add the Waystone Sigil to the waystone creative tab and Minecraft's creative search.

@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.function.BiFunction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -51,6 +52,7 @@ public final class SupportedStructure extends Structure {
   public enum TerrainCheck implements StringRepresentable {
     FLOOR,
     SURFACE,
+    SURFACE_ROOT_FOOTPRINT,
     SURFACE_FOOTPRINT,
     GROUNDED_SURFACE,
     MARINE_SURFACE,
@@ -155,11 +157,21 @@ public final class SupportedStructure extends Structure {
       return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
     boolean surface =
         terrainCheck == TerrainCheck.SURFACE
+            || terrainCheck == TerrainCheck.SURFACE_ROOT_FOOTPRINT
             || terrainCheck == TerrainCheck.SURFACE_FOOTPRINT
             || terrainCheck == TerrainCheck.GROUNDED_SURFACE
             || terrainCheck == TerrainCheck.MARINE_SURFACE;
     if (surface && !supportedSurfaceRoot(context, pieces.pieces().getFirst(), columns)) {
       return Optional.empty();
+    }
+    if (terrainCheck == TerrainCheck.SURFACE_ROOT_FOOTPRINT) {
+      StructurePiece root = pieces.pieces().getFirst();
+      int floor =
+          root.getBoundingBox().minY()
+              + (root instanceof PoolElementStructurePiece pool ? pool.getGroundLevelDelta() : 0);
+      if (!supportedRootFootprint(
+          root.getBoundingBox(), floor, (x, z) -> column(context, x, z, columns)))
+        return Optional.empty();
     }
     if ((terrainCheck == TerrainCheck.SURFACE_FOOTPRINT
             || terrainCheck == TerrainCheck.GROUNDED_SURFACE
@@ -213,6 +225,31 @@ public final class SupportedStructure extends Structure {
       if (x == bounds.maxX()) break;
     }
     return true;
+  }
+
+  private static boolean supportedRootFootprint(
+      BoundingBox bounds, int floor, BiFunction<Integer, Integer, NoiseColumn> columns) {
+    int samples = 0;
+    int deepSupport = 0;
+    for (int x = bounds.minX(); ; x = Math.min(x + SAMPLE_STEP, bounds.maxX())) {
+      for (int z = bounds.minZ(); ; z = Math.min(z + SAMPLE_STEP, bounds.maxZ())) {
+        NoiseColumn natural = columns.apply(x, z);
+        boolean grounded = false;
+        for (int depth = 1; depth <= 8; depth++)
+          if (solidFloor(natural.getBlock(floor - depth))) {
+            grounded = true;
+            break;
+          }
+        if (!grounded) return false;
+        samples++;
+        if (solidFloor(natural.getBlock(floor - 4))) deepSupport++;
+        if (z == bounds.maxZ()) break;
+      }
+      if (x == bounds.maxX()) break;
+    }
+    // Authored terraces can bridge small slopes and cave openings, but cannot
+    // become a substitute island across empty columns or a predominantly hollow bed.
+    return deepSupport * 10 >= samples * 9;
   }
 
   private static boolean supportedSurfaceRoot(
@@ -528,28 +565,36 @@ public final class SupportedStructure extends Structure {
       if (solid) covered++;
     }
     if (tested == 0 || covered * 5 < tested * 3) return false;
-    if (islands != null) {
-      BoundingBox bounds = BoundingBox.encapsulatingBoxes(shifted).orElseThrow().inflatedBy(12);
-      // Basin eligibility is constant within a layout cell. Avoid sampling any
-      // cavity geometry in dry cells, but check every column near actual basins:
-      // a sparse roof grid cannot establish a watertight rim or template boundary.
-      for (int cellX = Math.floorDiv(bounds.minX(), 1024);
-          cellX <= Math.floorDiv(bounds.maxX(), 1024);
-          cellX++)
-        for (int cellZ = Math.floorDiv(bounds.minZ(), 1024);
-            cellZ <= Math.floorDiv(bounds.maxZ(), 1024);
-            cellZ++) {
-          var basin = islands.basin(cellX * 1024 + 512, cellZ * 1024 + 512);
+    return islands == null
+        || cavernSeparatesBasins(
+            cavern, BoundingBox.encapsulatingBoxes(shifted).orElseThrow().inflatedBy(12), islands);
+  }
+
+  private static boolean cavernSeparatesBasins(
+      CityCavern cavern, BoundingBox bounds, IslandTerrain islands) {
+    // Template AIR bypasses aquifers. Check every affected column of either local fluid liner.
+    for (int cellX = Math.floorDiv(bounds.minX(), 1024);
+        cellX <= Math.floorDiv(bounds.maxX(), 1024);
+        cellX++) {
+      for (int cellZ = Math.floorDiv(bounds.minZ(), 1024);
+          cellZ <= Math.floorDiv(bounds.maxZ(), 1024);
+          cellZ++) {
+        var column = islands.column(cellX * 1024 + 512, cellZ * 1024 + 512);
+        for (var basin : new IslandLayout.Basin[] {column.basin(), column.lavaIsland()}) {
           if (basin == null) continue;
           int extentX = (int) Math.ceil(basin.radiusX() * 1.56 + 45);
           int extentZ = (int) Math.ceil(basin.radiusZ() * 1.56 + 45);
           for (int x = Math.max(bounds.minX(), basin.centerX() - extentX);
               x <= Math.min(bounds.maxX(), basin.centerX() + extentX);
-              x++)
+              x++) {
             for (int z = Math.max(bounds.minZ(), basin.centerZ() - extentZ);
                 z <= Math.min(bounds.maxZ(), basin.centerZ() + extentZ);
-                z++) if (!cavern.separatesBasin(basin, x, z)) return false;
+                z++) {
+              if (!cavern.separatesBasin(basin, x, z)) return false;
+            }
+          }
         }
+      }
     }
     return true;
   }

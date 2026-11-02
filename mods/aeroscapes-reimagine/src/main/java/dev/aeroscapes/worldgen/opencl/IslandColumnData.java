@@ -15,7 +15,7 @@ import net.minecraft.world.level.StructureManager;
 /** Exact CPU geometry uploaded once for a GPU batch, rather than recomputed per voxel. */
 public final class IslandColumnData {
   public static final int HEADER_BYTES = 16;
-  public static final int COLUMN_BYTES = 240;
+  public static final int COLUMN_BYTES = 304;
 
   private IslandColumnData() {}
 
@@ -65,6 +65,11 @@ public final class IslandColumnData {
           data.putDouble(cityOffset + 8, cavern.ceiling(blockX, blockZ));
           cityOffset += 16;
         }
+        putShape(data, column.lavaShape());
+        data.putDouble(column.lavaRadial())
+            .putDouble(column.lavaFloor())
+            .putDouble(column.lavaIsland() == null ? 0 : column.lavaIsland().waterline())
+            .putDouble(column.lavaIsland() == null ? 0 : 1);
       }
     }
     return data.array();

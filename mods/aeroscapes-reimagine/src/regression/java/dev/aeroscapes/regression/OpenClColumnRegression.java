@@ -56,6 +56,12 @@ final class OpenClColumnRegression {
           equal(data.getDouble(), column.hasDetail() ? 1 : 0);
           require(data.getInt() == data.capacity(), "Unexpected city payload offset");
           require(data.getInt() == 0, "Flat-cache upload invented structure data");
+          shape(data, column.lavaShape());
+          equal(data.getDouble(), column.lavaRadial());
+          equal(data.getDouble(), column.lavaFloor());
+          equal(
+              data.getDouble(), column.lavaIsland() == null ? 0 : column.lavaIsland().waterline());
+          equal(data.getDouble(), column.lavaIsland() == null ? 0 : 1);
         }
       }
       require(data.position() == data.capacity(), "GPU upload stride does not cover its payload");

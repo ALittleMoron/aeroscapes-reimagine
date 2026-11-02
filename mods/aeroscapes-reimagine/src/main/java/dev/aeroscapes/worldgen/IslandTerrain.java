@@ -48,6 +48,7 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
   private final Supplier<Double> detailThreshold;
   // Fixed-size, full-coordinate-keyed cache: no world-size growth and no shared mutable shape.
   private final AtomicReferenceArray<Column> columns = new AtomicReferenceArray<>(256);
+  private final AtomicReferenceArray<IslandCaveHosts> caveHosts = new AtomicReferenceArray<>(1024);
 
   public record Column(
       int x,
@@ -60,9 +61,22 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
       IslandLayout.Basin basin,
       double radial,
       double floor,
-      IslandLayout.VerticalShape basinShape) {
+      IslandLayout.VerticalShape basinShape,
+      IslandLayout.Basin lavaIsland,
+      double lavaRadial,
+      double lavaFloor,
+      IslandLayout.VerticalShape lavaShape) {
     public boolean water(int y) {
       return basin != null && radial < 1 && y > floor && y <= basin.waterline();
+    }
+
+    public boolean lava(int y) {
+      return lavaIsland != null && lavaRadial < 1 && y > lavaFloor && y <= lavaIsland.waterline();
+    }
+
+    public boolean liner(int y) {
+      return basin != null && radial < 1.08 && y >= floor - 12 && y <= floor + 5
+          || lavaIsland != null && lavaRadial < 1.08 && y >= lavaFloor - 12 && y <= lavaFloor + 5;
     }
 
     public double islands(int y) {
@@ -79,7 +93,8 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
           || small2.cap() > 0
           || small3.cap() > 0
           || large.cap() > 0
-          || basinShape.cap() > 0;
+          || basinShape.cap() > 0
+          || lavaShape.cap() > 0;
     }
 
     public double islands(int y, double detail) {
@@ -139,6 +154,15 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
     return caves;
   }
 
+  public IslandCaveHosts caveHosts(net.minecraft.world.level.ChunkPos source) {
+    int index = (source.x & 31) | ((source.z & 31) << 5);
+    IslandCaveHosts cached = caveHosts.get(index);
+    if (cached != null && cached.source().equals(source)) return cached;
+    IslandCaveHosts computed = IslandCaveHosts.sample(this, source);
+    caveHosts.set(index, computed);
+    return computed;
+  }
+
   public static IslandLayout layout(DensityFunction continents) {
     // Quart alignment gives native FlatCache the same coordinates as raw queries.
     return new IslandLayout(
@@ -173,9 +197,28 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
     double floor = basin == null ? 0 : basin.floor(x, z, radial);
     var basinShape =
         basin == null ? IslandLayout.VerticalShape.EMPTY : basin.shape(x, z, radial, floor);
+    var lava = islands.lavaIsland(x, z);
+    double lavaRadial = lava == null ? 2 : lava.radius(x, z);
+    double lavaFloor = lava == null ? 0 : lava.floor(x, z, lavaRadial);
+    var lavaShape =
+        lava == null ? IslandLayout.VerticalShape.EMPTY : lava.shape(x, z, lavaRadial, lavaFloor);
     Column computed =
         new Column(
-            x, z, small[0], small[1], small[2], small[3], large, basin, radial, floor, basinShape);
+            x,
+            z,
+            small[0],
+            small[1],
+            small[2],
+            small[3],
+            large,
+            basin,
+            radial,
+            floor,
+            basinShape,
+            lava,
+            lavaRadial,
+            lavaFloor,
+            lavaShape);
     columns.set(index, computed);
     return computed;
   }
@@ -201,7 +244,7 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
     double retained = y >= -64 && y < 304 ? original.compute(context) : -1;
     if (y < 32) retained = Math.max(retained, lower.compute(context));
     Column column = column(x, z);
-    double added = column.islands(y);
+    double added = Math.max(column.islands(y), column.lavaShape().density(y));
     if (column.basin() != null && column.radial() < 1.22) {
       added = Math.max(added, column.basinShape().density(y));
     }
@@ -210,19 +253,17 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
       // composition. Native interpolation evaluates both noise fields on its 4x8x4 grid.
       double detail = form.compute(context);
       added = column.islands(y, detail);
+      added = Math.max(added, column.lavaShape().sealedDensity(y, detail));
       if (column.basin() != null)
         added = Math.max(added, column.basinShape().sealedDensity(y, detail));
-      boolean liner =
-          column.basin() != null
-              && column.radial() < 1.08
-              && y >= column.floor() - 12
-              && y <= column.floor() + 5;
-      if (includeCaves && !liner) added = Math.min(added, caves.compute(context));
     }
     if (y < -116) added = Math.min(added, (y + 125) / 12.0);
     // Basin water fills empty density through its aquifer; it must not cut a flat
     // waterline underside into original Aero islands or erase rocky shoals.
-    return Math.max(retained, added);
+    double body = Math.max(retained, added);
+    return includeCaves && body > -1 && !column.liner(y)
+        ? Math.min(body, caves.compute(context))
+        : body;
   }
 
   @Override

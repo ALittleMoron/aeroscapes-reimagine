@@ -28,6 +28,10 @@ import terrablender.worldgen.IExtendedParameterList;
 
 /** Matches the added physical habitats while retaining the original biome source elsewhere. */
 public final class IslandBiomeSource extends BiomeSource {
+  // Pinned form bound 2.4375 displaces scale-9/12 caps by <22/30 blocks;
+  // include another eight blocks for the native vertical biome lattice.
+  private static final int SMALL_HABITAT_MARGIN = 32;
+  public static final int VOLCANIC_HABITAT_MARGIN = 40;
   public static final MapCodec<IslandBiomeSource> CODEC =
       RecordCodecBuilder.mapCodec(
           instance ->
@@ -43,7 +47,10 @@ public final class IslandBiomeSource extends BiomeSource {
                       Biome.CODEC.listOf().fieldOf("mountains").forGetter(value -> value.mountains),
                       Biome.CODEC
                           .optionalFieldOf("void_biome")
-                          .forGetter(value -> Optional.ofNullable(value.voidBiome)))
+                          .forGetter(value -> Optional.ofNullable(value.voidBiome)),
+                      Biome.CODEC
+                          .optionalFieldOf("volcanic_biome")
+                          .forGetter(value -> Optional.ofNullable(value.volcanicBiome)))
                   .apply(instance, IslandBiomeSource::new));
   private static final DeferredRegister<MapCodec<? extends BiomeSource>> TYPES =
       DeferredRegister.create(Registries.BIOME_SOURCE, "aeroscapes_reimagine");
@@ -53,6 +60,7 @@ public final class IslandBiomeSource extends BiomeSource {
   private final List<Holder<Biome>> shores;
   private final List<Holder<Biome>> mountains;
   private Holder<Biome> voidBiome;
+  private Holder<Biome> volcanicBiome;
   private volatile Habitat habitat;
 
   private record Habitat(
@@ -61,7 +69,8 @@ public final class IslandBiomeSource extends BiomeSource {
       int cellZ,
       IslandLayout layout,
       IslandLayout.Basin basin,
-      IslandLayout.LargeIsland island) {}
+      IslandLayout.LargeIsland island,
+      IslandLayout.Basin lavaIsland) {}
 
   private Habitat habitat(int x, int z, DensityFunction continents) {
     // Both layout cell widths (1024 and 1536) are multiples of 512.
@@ -83,7 +92,8 @@ public final class IslandBiomeSource extends BiomeSource {
             cellZ,
             layout,
             IslandTerrain.basin(layout, continents, x, z),
-            layout.largeIsland(x, z));
+            layout.largeIsland(x, z),
+            layout.lavaIsland(x, z));
     habitat = computed;
     return computed;
   }
@@ -94,7 +104,8 @@ public final class IslandBiomeSource extends BiomeSource {
       List<Holder<Biome>> deepOceans,
       List<Holder<Biome>> shores,
       List<Holder<Biome>> mountains,
-      Optional<Holder<Biome>> voidBiome) {
+      Optional<Holder<Biome>> voidBiome,
+      Optional<Holder<Biome>> volcanicBiome) {
     if (oceans.size() != 5 || deepOceans.size() != 5 || shores.size() != 2 || mountains.size() != 4)
       throw new IllegalArgumentException(
           "Island habitats need 5 ocean pairs, 2 shores and 4 mountain biomes");
@@ -105,6 +116,7 @@ public final class IslandBiomeSource extends BiomeSource {
     this.shores = List.copyOf(shores);
     this.mountains = List.copyOf(mountains);
     this.voidBiome = voidBiome.orElse(null);
+    this.volcanicBiome = volcanicBiome.orElse(null);
   }
 
   public static void register(IEventBus bus) {
@@ -128,6 +140,15 @@ public final class IslandBiomeSource extends BiomeSource {
                   .getHolderOrThrow(
                       ResourceKey.create(
                           Registries.BIOME, ResourceLocation.parse("aeroscapes_reimagine:void")));
+        if (source.volcanicBiome == null)
+          source.volcanicBiome =
+              server
+                  .registryAccess()
+                  .registryOrThrow(Registries.BIOME)
+                  .getHolderOrThrow(
+                      ResourceKey.create(
+                          Registries.BIOME,
+                          ResourceLocation.parse("aeroscapes_reimagine:volcanic_island")));
         // TerraBlender 4.1.0.8 recognizes only a top-level MultiNoiseBiomeSource.
         // Its public initializer must see the retained native delegate and the same settings.
         LevelUtils.initializeBiomes(
@@ -157,7 +178,13 @@ public final class IslandBiomeSource extends BiomeSource {
     ((MultiNoiseBiomeSourceAccess) copy).setParameters(Either.left(copiedParameters));
     BiolithBiomeCompatibility.bindGenerationCache(copy, copiedParameters);
     return new IslandBiomeSource(
-        copy, oceans, deepOceans, shores, mountains, Optional.ofNullable(voidBiome));
+        copy,
+        oceans,
+        deepOceans,
+        shores,
+        mountains,
+        Optional.ofNullable(voidBiome),
+        Optional.ofNullable(volcanicBiome));
   }
 
   @Override
@@ -173,7 +200,8 @@ public final class IslandBiomeSource extends BiomeSource {
             deepOceans.stream(),
             shores.stream(),
             mountains.stream(),
-            Stream.ofNullable(voidBiome))
+            Stream.ofNullable(voidBiome),
+            Stream.ofNullable(volcanicBiome))
         .flatMap(stream -> stream);
   }
 
@@ -197,6 +225,11 @@ public final class IslandBiomeSource extends BiomeSource {
     int y = quartY * 4;
     int z = quartZ * 4;
     Habitat current = habitat(x, z, sampler.continentalness());
+    var lava = current.lavaIsland();
+    if (lava != null && volcanicBiome != null) {
+      var shape = lava.shape(x, z);
+      if (shape.containsHabitat(y, lava.waterline(), VOLCANIC_HABITAT_MARGIN)) return volcanicBiome;
+    }
     IslandLayout.Basin basin = current.basin();
     if (basin != null
         && basin.radius(x, z) < 1.1
@@ -223,6 +256,16 @@ public final class IslandBiomeSource extends BiomeSource {
       double temperature = sampler.temperature().compute(new SinglePointContext(x, y, z));
       if (island.peak(x, z) < 48) return mountains.get(0);
       return mountains.get(temperature < -0.15 ? 1 : temperature > 0.35 ? 3 : 2);
+    }
+    for (int layer = 0; layer < 4; layer++) {
+      var small = current.layout().smallIsland(x, z, layer);
+      if (small == null || !small.monobiome()) continue;
+      var shape = small.shape(current.layout().seed(), x, z);
+      if (shape.cap() > -0.2
+          && y >= shape.bottom() - SMALL_HABITAT_MARGIN
+          && y <= shape.top() + SMALL_HABITAT_MARGIN)
+        return delegate.getNoiseBiome(
+            Math.floorDiv(small.centerX(), 4), 64, Math.floorDiv(small.centerZ(), 4), sampler);
     }
     return delegate.getNoiseBiome(quartX, quartY, quartZ, sampler);
   }

@@ -1,4 +1,5 @@
 {
+  "biome.aeroscapes_reimagine.volcanic_island": "Volcanic Island",
   "commands.aeroscapes_reimagine.locate.searching": "Searching for %s. You can keep playing; a new structure search replaces this one.",
   "commands.aeroscapes_reimagine.locate.cancelled": "Structure search cancelled (%s).",
   "commands.aeroscapes_reimagine.locate.replaced": "replaced by your new search",

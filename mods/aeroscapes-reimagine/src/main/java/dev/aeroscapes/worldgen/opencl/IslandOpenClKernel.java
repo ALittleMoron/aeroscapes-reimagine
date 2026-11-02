@@ -44,7 +44,7 @@ public final class IslandOpenClKernel {
                 __builtin_trap(); return NULL;
             }
             return (global const double *)((global const char *)header + 16
-                + ((size_t)z * header[2] + x) * 240);
+                + ((size_t)z * header[2] + x) * 304);
         }
 
         static double aeroscapes_shape(global const double *shape, const int y) {
@@ -94,6 +94,14 @@ public final class IslandOpenClKernel {
 
         static aquifer_result_t aquifer_sample(const sample_int32_ctx_t ctx, const double density) {
             global const double *column = aeroscapes_column(ctx, %d);
+            if (column[37] != 0.0 && column[34] < 1.22
+                && ctx.y >= column[32] - 4.0 && ctx.y <= column[36] + 16.0) {
+                if (column[34] < 1.0 && ctx.y > column[35] && ctx.y <= column[36] && density <= 0.0)
+                    return (aquifer_result_t){ .blockState = BLOCK_LAVA, .needsFluidTick = false };
+                if (column[34] < 1.05 && ctx.y >= column[35] - 12.0 && ctx.y <= column[35])
+                    return (aquifer_result_t){ .blockState = density > 0.0 ? BLOCK_NULL : BLOCK_DEFAULT_BLOCK,
+                        .needsFluidTick = false };
+            }
             if (column[27] != 0.0) {
                 if (column[24] < 1.0 && ctx.y > column[25] && ctx.y <= column[26])
                     return (aquifer_result_t){ .blockState = density > 0.0 ? BLOCK_NULL : BLOCK_WATER,

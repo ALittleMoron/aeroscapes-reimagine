@@ -18,13 +18,21 @@ Feature placement is prepared when the world opens. In singleplayer, ordinary te
 
 ## Islands, mountains and lower heights
 
-Most islands used to be concentrated high above a largely empty lower world. Lower islands and additional ore placements were added so exploration could extend downward. The Overworld now spans Y−128…383; the original upper islands retain their heights and density.
+Most islands used to be concentrated high above a largely empty lower world. Lower islands and additional ore placements were added so exploration could extend downward. The Overworld now spans Y−128…383; the original upper islands retain their height range.
 
-The added large islands initially looked too smooth, and their mountains resembled symmetrical cones. Their terrain was reworked into connected areas at different heights, with hills, ridges, chasms and caves. One such island can contain several biomes, with plains alongside high peaks. These large formations are rare, with smaller islands scattered between them.
+The added large islands initially looked too smooth, and their mountains resembled symmetrical cones. Their terrain was reworked into connected areas at different heights, with hills, ridges, chasms and caves. One such island can contain several biomes, with plains alongside high peaks. These large formations are rare.
+
+Small islands are much less frequent and vary more in size and position, reducing the repeating grid of similar shapes between larger landforms. Some small and medium islands have one surface biome throughout their body; the largest formations retain several biomes. Ocean basins and mountain habitats keep their own biome selection.
+
+High islands previously often lost the long cave passages because cave generation selected an empty biome below them or started outside the island; several bulk rock types also could not be carved. Cave passages and chambers now start inside the island layers; small noise pockets no longer stand in for cave systems. Carving protects the floors and rims of water and lava basins. Granite and diorite deposits are placed below the actual island surface rather than at a random height that often fell in empty space.
 
 <Screenshot id="arch" />
 
 Badlands spires that erroneously extended through the void to the bottom of the world were corrected; those growing on the islands remain. Long accidental basalt bridges between islands separated by large height gaps were also removed.
+
+## Low volcanic islands
+
+Occasional broad volcanic islands contain lava below Y0. Their enclosed basins have blackstone and deepslate shores with magma patches, cooled basalt surfaces and groups of basalt columns, providing a concentrated lava source without adding more high-altitude lava lakes. They use their own volcanic biome with no Nether structures or creature spawns of its own.
 
 ## Oceans
 
@@ -51,6 +59,8 @@ Structure mods expected continuous land: on floating islands, parts of dungeons 
 Trial chambers and the pink salt shrine from [Galosphere](https://modrinth.com/mod/Kn7xyQ1v) could previously expose large rooms outside an island. The pack now selects sites with rock above most exterior roofs, counting large rooms by their area. Ocean Fortress from [Philips Ruins](https://modrinth.com/mod/KdJhOYVV) also checks ground beneath its whole foundation, since support under its center alone allowed it to hang over an island edge. Terrain filling used to block the spaces between ancient city buildings; they now share a cavern with uneven ceilings. Sites where a city would cut through an ocean basin’s floor and send water into the cavern are also rejected.
 
 The stricter checks have made some structures rarer. A matching biome alone does not guarantee that a particular island can accommodate a dungeon.
+
+Shipwrecks also check the ground at their final placement height: averaging an upper island and a much lower seabed could previously leave a hull hanging between them. The badlands miner outpost from [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) requires natural ground beneath its full main platform, so its square template no longer qualifies as an island by itself.
 
 Creeping Crypt from [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) previously checked the ground beneath its entrance alone, allowing most underground rooms to hang outside an island. Its placement now checks the underground assembly's support and rock cover while retaining the surface entrance, trying nearby ground before rejecting an unsuitable site.
 

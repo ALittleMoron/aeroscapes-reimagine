@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.mehvahdjukaar.supplementaries.mixins",
+  "plugin": "dev.aeroscapes.regression.RegressionServerOffsetPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["BlockBehaviourPlanterMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
