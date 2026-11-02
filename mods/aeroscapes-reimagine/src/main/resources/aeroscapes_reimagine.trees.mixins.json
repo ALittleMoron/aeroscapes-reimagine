@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.trees",
+  "plugin": "dev.aeroscapes.trees.TreesMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "TreeChopTransactionMixin",
+    "TreeChopFellMixin",
+    "TreeChopFinalProgressMixin",
+    "PandaTreeChopMixin",
+    "PandaTreeHandlerMixin",
+    "PandaTreeSnapshotMixin",
+    "PandaTreeSaveTypeMixin",
+    "PandaTreeSaveMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

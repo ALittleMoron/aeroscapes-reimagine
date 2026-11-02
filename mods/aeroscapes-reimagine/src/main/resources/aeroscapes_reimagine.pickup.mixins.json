@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.pickup",
+  "plugin": "dev.aeroscapes.pickup.PickupMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ItemPickupDelayAccess",
+    "PickupPacketMixin",
+    "DropPacketMixin",
+    "PickupTransferMixin"
+  ],
+  "client": [
+    "CreativeCoreIngredientTypeMixin",
+    "CreativeCoreFuelHintMixin",
+    "CreativeCoreEmptyIngredientMixin",
+    "CreativeCoreResetHintMixin",
+    "CreativeCoreSelectorTypeMixin",
+    "CreativeCoreSelectorSummaryMixin",
+    "CreativeCoreSelectorJoinMixin"
+  ],
+  "injectors": {"defaultRequire": 1}
+}

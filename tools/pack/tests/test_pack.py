@@ -633,6 +633,8 @@ def test_exception_text_cannot_authorize_an_unrelated_beta(
         ("u6dRKJwZ", "zHNxmOqp", "beta"),
         ("PEPVViac", "adxS0PUF", "beta"),
         ("BaR4ijFC", "xaWwatoU", "beta"),
+        ("curseforge:880630", "7858908", "beta"),
+        ("curseforge:975460", "8787579", "beta"),
     ],
 )
 def test_selected_prerelease_exception_is_exact(

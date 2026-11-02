@@ -1,0 +1,36 @@
+[mod]
+enabled = true
+
+[general]
+dropLootForChoppedBlocks = true
+dropLootOnFirstChop = false
+
+[treeDetection]
+maxTreeBlocks = 320
+maxLeavesBlocks = 1024
+breakOrDecayLeaves = "BREAK"
+fellCredit = "PLAYER_AND_TOOL"
+ignorePersistentLeaves = true
+maxBreakLeavesDistance = 7
+
+[chopCounting]
+algorithm = "LOGARITHMIC"
+rounding = "NEAREST"
+canRequireMoreChopsThanBlocks = false
+
+[chopCounting.logarithmic]
+a = 10.0
+
+[compatibility.general]
+choppingRequiresCorrectToolForDrops = true
+# Cut-log blocks lack vanilla axe-speed tags; the whitelist below already requires an axe.
+choppingRequiresFastBreakingTool = false
+preventChopRecursion = true
+
+[compatibility.general.blacklist]
+blacklistOrWhitelist = "WHITELIST"
+items = ["#minecraft:axes"]
+
+[compatibility.general.fakePlayerChopSettings]
+choppingEnabled = false
+treesMustHaveLeaves = true

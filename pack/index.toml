@@ -65,6 +65,14 @@ file = "config/explorerscompass-common.toml"
 hash = "e9f565649fb04d65ba956d2d2ba3a07e0f7ec9e5a625a9f3a8b5b64dd069059c"
 
 [[files]]
+file = "config/fallingtrees/client.json"
+hash = "74dfda816c6f9f3473d9bc5ba9fb291a51f81c96b531d4f5ef9041afa41d4751"
+
+[[files]]
+file = "config/fallingtrees/common.json"
+hash = "4fbe0c0ac049752c0d673b232c295f89afe868a6af694b9e68cba22bafa8a3a4"
+
+[[files]]
 file = "config/flerovium.json"
 hash = "5caa0c197f0c412a2c460cb6bdc9a0b0bdd03607c2bd29865253d1d54c1b3e21"
 
@@ -99,6 +107,14 @@ hash = "20fac53472eedb689fee861ca234d8363f0a435422ca57b25f8e9aa05af2309e"
 [[files]]
 file = "config/iris.properties"
 hash = "eb4c72f6737a9c80e57445045729a969bb0bed4f4261c14ac07eebfd473a25f7"
+
+[[files]]
+file = "config/itemphysic-client.json"
+hash = "2c725253a3cd357f68d23a4b1a52ca672356645b7bb6f5e8091bf1a38f45aee2"
+
+[[files]]
+file = "config/itemphysic.json"
+hash = "69b178ba2b71ce8eb76f89127b21d58a91396dc18aeb7b2bd2a0eb11c2ece4dd"
 
 [[files]]
 file = "config/legendarytooltips.toml"
@@ -177,6 +193,14 @@ file = "config/terrablender.toml"
 hash = "1eca390ee239e9d4be0f913be120323b4a87cb0f863169e3e7a0bfc72b8bd20c"
 
 [[files]]
+file = "config/treechop-client.toml"
+hash = "1652ce0c11f712f5a71f08a3dba2946dd561b065635e90d78eb9f10d643a3edd"
+
+[[files]]
+file = "config/treechop-common.toml"
+hash = "eb5a9936705c4f80fddbc630a4d2224a394bee83a4d147da76fe5fa168f42c62"
+
+[[files]]
 file = "config/vanillin-client.toml"
 hash = "50afa67b41e1a206785abe1431425b33707da051cd2cc15ecaddf57703614e70"
 
@@ -187,6 +211,10 @@ hash = "6264ff4fecf2eacc100d2c2c0b8ece0d0dd857511eccb2a662befbbabe6f626b"
 [[files]]
 file = "config/visuality/particle_emitters/block_ambient.json"
 hash = "b06102e86e0f9e46e99762a36a3af271cb56f492d68694326c61c82c7414f293"
+
+[[files]]
+file = "config/waystones-common.toml"
+hash = "a2397acae1af827c1bb7af83eabeff28e7be2d9a3ae98967d243a8d982dce032"
 
 [[files]]
 file = "config/xaero/minimap/common.cfg"
@@ -609,6 +637,162 @@ file = "global_packs/required_data/aeroscapes_reimagine_rules/data/toms_storage/
 hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/black_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/black_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/blank_scroll.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/blue_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/blue_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/brown_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/brown_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/cyan_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/cyan_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/dormant_shard.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/epitaph.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/gray_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/gray_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/green_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/green_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/light_blue_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/light_blue_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/light_gray_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/light_gray_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/lime_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/lime_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/magenta_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/magenta_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/orange_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/orange_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/pink_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/pink_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/portal_scroll.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/purple_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/purple_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/red_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/red_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/return_scroll.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/twinbound_feather.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/warp_plate.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/warp_scroll.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/white_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/yellow_portstone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/waystones/recipe/yellow_sharestone.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/pack.mcmeta"
 hash = "64b5d464dd28304c8838d17aa4d4c7daec642d9df93c158f9ad0b589457adb09"
 
@@ -775,11 +959,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "5f65c2031b44555d2bb5922a8ce719b0cfd8f842424a93ef9c4b86e296ed76d9"
+hash = "1361b77ba45155c4cb658928a5e6791408befb6a855e396b688f2a9669e2a700"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "b19a0c3b3cd60071fe74eb86db04665dee4b65cc176a2ee6fa178692665777ef"
+hash = "64a723b6fbd2632719232426ee889c3e6b6f677e1f3cd3ead3d32817699fdf21"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -808,7 +992,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "c4cdaba6871ecd213e5977022d69a8228ca70b3aa36ed7511612530238fb35cf"
+hash = "5b8e52a476cc47ae813420dfa6314aa4cec526624e94db6add654d1a3d9204f2"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1047,7 +1231,7 @@ metafile = true
 
 [[files]]
 file = "mods/creativecore.pw.toml"
-hash = "beb9f693bb3cc301ca2eda7f9f151474f0a2e13f0218a0c271d749a0d07752f1"
+hash = "bfb84325b390c95c3d1a66465cb0d36c3c8c8789bfcf1c44c504f06da12f9070"
 metafile = true
 
 [[files]]
@@ -1311,6 +1495,11 @@ hash = "6efcfcc1acf823af4e381f9bdca555f7ab7ac8cb116f45684046428ce3d33a67"
 metafile = true
 
 [[files]]
+file = "mods/itemphysic.pw.toml"
+hash = "798590395914f33241697a0e42da2ae8ba9d2b19388c273bd6e9a4225a4a5a48"
+metafile = true
+
+[[files]]
 file = "mods/jade-addons-forge.pw.toml"
 hash = "73c1455b0c61d2b035acd58b5c4f9ae81d8421aee246dd00361a3632176296c9"
 metafile = true
@@ -1438,6 +1627,16 @@ metafile = true
 [[files]]
 file = "mods/nyfs-spiders.pw.toml"
 hash = "a63cf2386e21958fc5d593c48d6493954928486a563e6b43ab983d61c107cf70"
+metafile = true
+
+[[files]]
+file = "mods/pandalib.pw.toml"
+hash = "0429ff6d1f3e7f929cce454e802664497e22ca9f8ed0fc8e0557234430a025d0"
+metafile = true
+
+[[files]]
+file = "mods/pandas-falling-trees.pw.toml"
+hash = "8bb48d0db6eb54af0eb7023fa33ad2d8bd62ac709bcfd70fdc124b5e84234585"
 metafile = true
 
 [[files]]
@@ -1656,6 +1855,11 @@ hash = "a684e8647d5c3b2f8e4c3d21644118044a0bb8da43c75ad4d8274218ba3d8bdb"
 metafile = true
 
 [[files]]
+file = "mods/treechop.pw.toml"
+hash = "8c7b25807fb0de0c0e982046030b0bc4e5e99043ea6fe05d056ee87a1c7be083"
+metafile = true
+
+[[files]]
 file = "mods/visual-workbench.pw.toml"
 hash = "0abaf4ca962cf3b75f69588ecb101327712be61750f1878685576c39d2ed5336"
 metafile = true
@@ -1663,6 +1867,16 @@ metafile = true
 [[files]]
 file = "mods/visuality-forge.pw.toml"
 hash = "68f9fa4a3299e7bff3dc4ef962d568d819ba8f14a5bfaeb2d1487e42fb16de8d"
+metafile = true
+
+[[files]]
+file = "mods/waystones-sable.pw.toml"
+hash = "28d4ec7f7b3fe36a08a2a5b31e3795f30c50449d5d2198e5a7a7d320ed8a4432"
+metafile = true
+
+[[files]]
+file = "mods/waystones.pw.toml"
+hash = "149e5a8efddd4dcd06437f87da74bbaafd684550148e131814f4d8c99af64716"
 metafile = true
 
 [[files]]

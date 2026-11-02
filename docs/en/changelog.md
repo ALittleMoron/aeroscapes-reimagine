@@ -4,6 +4,16 @@ description: Version history.
 status: available
 ---
 
+## 0.2.6
+
+- Add the Waystone Sigil to the waystone creative tab and Minecraft's creative search.
+- Show exact waystone XP prices and level-progress balances, replace the activation sigil artwork, and extend its 25% loot roll to selected modded exploration containers.
+- Remove crafting and catalog entries for three disabled travel items; prevent existing epitaphs being spent for an unavailable death-return route.
+- Add [HT's TreeChop](https://www.curseforge.com/minecraft/mc-mods/treechop) and [Panda's Falling Trees](https://www.curseforge.com/minecraft/mc-mods/pandas-falling-trees): progressive chopping, falling trees and approximately 1.5 nominal axe durability per harvested log.
+- Add grounded dropped items and deliberate right-click/crouch collection with [ItemPhysic Full](https://modrinth.com/mod/itemphysic), retaining automatic pickup for common resources.
+- Add [Waystones](https://modrinth.com/mod/waystones) and [Waystones: Sable](https://modrinth.com/mod/waystones-sable): loot-only activation sigils, paid stone-to-stone travel and support for ship destinations; portable teleports are disabled.
+- Add English and Russian interface, configuration and help text for the new conveniences.
+
 ## 0.2.5
 
 - Disable the [Better Clouds](https://modrinth.com/mod/better-clouds) warning about Minecraft clouds being turned off by default.

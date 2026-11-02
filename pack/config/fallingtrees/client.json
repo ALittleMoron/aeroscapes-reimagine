@@ -1,0 +1,4 @@
+{
+  "miningShould": "CHOP_TREE",
+  "miningWhileCrouchingShould": "MINE_SINGLE_BLOCK"
+}

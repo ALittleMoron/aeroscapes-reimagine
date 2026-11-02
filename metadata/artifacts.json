@@ -1896,35 +1896,6 @@
     "reason": "Exact 1.1.5 stores a static position-only lighting cache without invalidation, world identity or bounds. Defer stale cross-world lighting and retained explored positions."
   },
   {
-    "slug": "creativecore",
-    "name": "CreativeCore",
-    "project_id": "OsZiaDHq",
-    "version_id": "ObUu8hxJ",
-    "version": "2.13.38",
-    "filename": "CreativeCore_NEOFORGE_v2.13.38_mc1.21.1.jar",
-    "sha512": "33ecac767a2ff2bcec96a0a1d2126f2344a82b59b7b4981695e5e2347c465f5c2004e9386a33c84ec0143d36dde50efc0afe7aa262b9a6b927910cdea064c428",
-    "release_type": "release",
-    "side": "client",
-    "kind": "mod",
-    "loaders": [
-      "neoforge"
-    ],
-    "license": {
-      "id": "LGPL-3.0-only",
-      "name": "GNU Lesser General Public License v3.0 only",
-      "url": null
-    },
-    "source_url": "https://github.com/CreativeMD/CreativeCore",
-    "dependencies": [],
-    "status": "included",
-    "origin": "Aeroscapes 1.0.8",
-    "game_versions": [
-      "1.21.1"
-    ],
-    "sha1": "c3f1aa493ce0d3d60ba76e2b2d6b1dd65f60bde6",
-    "file_size": 1216443
-  },
-  {
     "slug": "crops-love-rain",
     "name": "Crops Love Rain",
     "project_id": "cRci7UZp",
@@ -5567,13 +5538,6 @@
     "reason": "Depends on deferred teleportation system."
   },
   {
-    "slug": "waystones",
-    "name": "Waystones",
-    "project_id": "LOpKHB2A",
-    "status": "deferred",
-    "reason": "Teleportation costs and role have not been selected."
-  },
-  {
     "slug": "windchime-unofficial-continued",
     "name": "WindChime Unofficial Continued",
     "project_id": "WCrhl0ep",
@@ -8880,6 +8844,290 @@
       "source_comparison_scope": "Version/config fields, entrypoints, worker and screen/packet methods crosschecked with exact distributed bytecode/decompiled artifact. Not a reproduced-build attestation.",
       "route": "Unchanged native NeoForge artifact. Actual Minecraft [1.21,1.21.1) is accepted on1.21.1 by pinned FML4.0.42 VersionSupportMatrix fallback1.21. No override or descriptor edit.",
       "license_scope": "Provider CC-BY-NC-SA-4.0; descriptor CC BY-NC-SA4.0; author source LICENSE agrees. JAR has no separate license file. Native unchanged JAR redistribution under this noncommercial sharealike license; owned adapters are new code, not copied source."
+    }
+  },
+  {
+    "slug": "creativecore",
+    "name": "CreativeCore",
+    "project_id": "OsZiaDHq",
+    "version_id": "JS0K93bG",
+    "version": "2.13.52",
+    "filename": "CreativeCore_NEOFORGE_v2.13.52_mc1.21.1.jar",
+    "sha512": "4c4e6ba154875ad5b944a7ccbf9a0b298c43382c35f00bbde61876d4d03115b43678a463b90cc134ebb766615e144217588f4a10fab8eb0a485adbe07b5d102c",
+    "sha1": "1a8b2594b4d88920c6017f7f1f2cd7120ba1937d",
+    "file_size": 1236541,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/CreativeMD/CreativeCore",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected third QoL group; unchanged official provider file",
+    "dependency_note": "Updated from2.13.38 client-only to2.13.52 both sides for ItemPhysic Full>=2.13.48 and relevant Sable rotation/origin collision fixes in2.13.51/52. Existing AmbientSounds6.3.7 requires>=2.13.37; exact required classes/config loader inspected against official matching source archive. No bundled alteration."
+  },
+  {
+    "slug": "itemphysic",
+    "name": "ItemPhysic",
+    "project_id": "aT8BzaOj",
+    "version_id": "rYw9JKpB",
+    "version": "1.8.17",
+    "filename": "ItemPhysic_NEOFORGE_v1.8.17_mc1.21.1.jar",
+    "sha512": "4fd8eef8eaeadb4f90244c4f98ce641da65d7fa379bb2cc071047effe78bb59bc61390c61c1193e6f30d3d5aa87e9fe8a88547945d29a388d4e740e64cdb4b60",
+    "sha1": "1e79f5b43efa5a46f37dd8fc5f640b1df7916d49",
+    "file_size": 54627,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-2.1-only",
+      "name": "GNU Lesser General Public License v2.1 only",
+      "url": null
+    },
+    "source_url": "https://github.com/CreativeMD/ItemPhysic",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "OsZiaDHq",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected third QoL group; unchanged official provider file",
+    "artifact_audit": {
+      "descriptor_license": "LGPL-3.0-only",
+      "provider_license_label": "LGPL-2.1-only",
+      "source_comparison": "Official paired1.8.17 source archive compared with selected executable entrypoints/config and pickup/toss bytecode; no reproduced-build claim."
+    },
+    "dependency_note": "Requires CreativeCore>=2.13.48 BOTH. Configured exact reference automatic material/mineable/sleeping-bag exceptions; absent mods and empty/malformed reference tags omitted. Owned packet guards retain normal range/visibility/ownership and preserve documented toss-event ownership, rejecting never-pickable display entities while retaining finite-delay manual pickup. Native lifetime retained; no advertised-but-absent ignition/despawn configuration invented."
+  },
+  {
+    "slug": "waystones",
+    "name": "Waystones",
+    "project_id": "LOpKHB2A",
+    "version_id": "6Z6MQ6os",
+    "version": "21.1.46+neoforge-1.21.1",
+    "filename": "waystones-neoforge-1.21.1-21.1.46.jar",
+    "sha512": "ca90b58d884d4bc2b08a870484ae7ede397e71d31eaaf01ff2603ad498d584763e099c2094e57031522385339705d2c011ed4910bf36efae688e64935b49ece9",
+    "sha1": "75718161662d9ec957ba22e10e497788ec1687ba",
+    "file_size": 1223229,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://mods.twelveiterations.com/permissions"
+    },
+    "source_url": "https://github.com/TwelveIterations/Waystones",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "MBAkmtvl",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected third QoL group; unchanged official provider file",
+    "artifact_audit": {
+      "source_revision": "9d280c1ac8d036516a2927e3d2cad8054e491074",
+      "source_reference": "v21.1.46",
+      "source_comparison": "Official exact tag, inspected APIs/configuration/activation/teleport bytecode compared with distributed file; no reproduced-build claim."
+    },
+    "dependency_note": "Balm>=21.0.39; existing21.0.57 retained. Physical paid normal-waystone network with per-player UUID activation sigil and authoritative XP-point payment/refund. Ordinary recipes retained including inert portable warp-stone ingredient. Original ARR archive unchanged under author modpack permission."
+  },
+  {
+    "slug": "waystones-sable",
+    "name": "Waystones: Sable (Create Aeronautics Addon)",
+    "project_id": "BxhPGfcK",
+    "version_id": "Wot8Pf4C",
+    "version": "1.0.7",
+    "filename": "waystonessable-1.0.7.jar",
+    "sha512": "20b677c77baf5fd33cccf1ac2bf80220d7162d30ca33dc04516285690f8fac9392a4789b57545b5fd20014213a1f55812ad6e2efd3518a2ba77a9a54bc6ab51a",
+    "sha1": "cebbc2cf9a7a8b2255caff04f2109d9611b28091",
+    "file_size": 113903,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/SShakusora/WaystonesSable/blob/1.21.1/LICENSE"
+    },
+    "source_url": "https://github.com/SShakusora/WaystonesSable",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected third QoL group; unchanged official provider file",
+    "artifact_audit": {
+      "source_revision": "f5240a9c7c8b9a5cfd0c22c5a7d906faf0debc5d",
+      "source_comparison": "Release-era source matches1.0.7 distributed mixin inventory; later HEAD holding-index changes are absent and not claimed as installed."
+    },
+    "dependency_note": "Actual descriptor requires Waystones>=21.1.39,Sable>=2.0.3,Create>=6.0.10,NeoForge>=21.1.228. All exact current pins satisfy. Native Sable transform/loading/client guard used; actual owner visual acceptance remains separate."
+  },
+  {
+    "slug": "treechop",
+    "name": "HT's TreeChop",
+    "project_id": "curseforge:421377",
+    "version_id": "6254465",
+    "version": "0.19.3",
+    "filename": "TreeChop-1.21.1-neoforge-0.19.3.jar",
+    "sha512": "f7e2dba5b40d544383048e9cb846977b01eca7f653d6513cf9d2b26abd10ab5d73eefe3956a0759cb342c7ac8af41e61fc338873ca47a8e4899e4407cb44b17d",
+    "sha1": "7bf7c1bde0f574e3fb9077115a2d4f59e534486c",
+    "file_size": 517750,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT",
+      "url": "https://github.com/hammertater/treechop/blob/main/LICENSE"
+    },
+    "source_url": "https://github.com/hammertater/treechop",
+    "source": {
+      "type": "curseforge",
+      "project_id": 421377,
+      "file_id": 6254465,
+      "url": "https://edge.forgecdn.net/files/6254/465/TreeChop-1.21.1-neoforge-0.19.3.jar"
+    },
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected TreeChop/Panda combination for third QoL group",
+    "distribution": "bundle",
+    "distribution_note": "Unchanged official CurseForge file; embedded license retained; bundled by Modrinth export.",
+    "artifact_audit": {
+      "source_comparison": "Official0.19.3 source and executable chop/event/tool-charge paths inspected; full reproducible source-to-binary identity is not claimed.",
+      "source_revision": "2b77b906b89cbd2882114c1e83dae178a1f0b028"
+    },
+    "dependency_note": "NeoForge>=21.0.167 and Minecraft>=1.21; no extra library. Native logarithmic work with explicitly selected Panda presentation. Owned final transaction accounts cumulative nominal wear and suppresses overlapping native charges."
+  },
+  {
+    "slug": "pandas-falling-trees",
+    "name": "Panda's Falling Trees",
+    "project_id": "curseforge:880630",
+    "version_id": "7858908",
+    "version": "0.14.0",
+    "filename": "fallingtrees-neoforge-1.21.1-0.14.0.jar",
+    "sha512": "9a7a4efd1f71e73243221d67659ed487212af959decb90fcf5073e5f7fa96dd8c4a7333e9e4fbf053418319f883e1ae3044f3f182c35214c3d6a7de4ef68b8b7",
+    "sha1": "070260f182d10bdc23de5e8e9297bec0231e2bec",
+    "file_size": 4086627,
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GPL-3.0-only",
+      "url": "https://github.com/ThePandaOliver/Pandas-Falling-Trees/blob/legacy/1.21.1/LICENSE.md"
+    },
+    "source_url": "https://github.com/ThePandaOliver/Pandas-Falling-Trees",
+    "source": {
+      "type": "curseforge",
+      "project_id": 880630,
+      "file_id": 7858908,
+      "url": "https://edge.forgecdn.net/files/7858/908/fallingtrees-neoforge-1.21.1-0.14.0.jar"
+    },
+    "dependencies": [
+      {
+        "project_id": "curseforge:975460",
+        "version_id": null,
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected TreeChop/Panda combination for third QoL group",
+    "distribution": "bundle",
+    "distribution_note": "Unchanged official CurseForge file; embedded license retained; bundled by Modrinth export.",
+    "exception": "Owner explicitly retained selected Panda falling-tree combination after exact beta disclosure in the supplied third-group context; this exact native file/dependency only.",
+    "artifact_audit": {
+      "source_revision": "2f2e447c9603edd0f53c83d2c7890abd9fbf8a69",
+      "source_comparison": "Author legacy/1.21.1 source includes restored native TreeChop integration; relevant distributed bytecode matched, no reproduced-build claim.",
+      "license_note": "Source headers GPL-3.0-or-later; distributed LICENSE is GPLv3 and descriptor GNU GPLv3; retain original file."
+    },
+    "dependency_note": "Exact0.14.0 beta requires PandaLib>=0.6.0 and Minecraft1.21.1. Owned adapter supplies TreeChop bounded log/leaf set, native animated fall and saved pending drops; Sable mass felling disabled."
+  },
+  {
+    "slug": "pandalib",
+    "name": "PandaLib",
+    "project_id": "curseforge:975460",
+    "version_id": "8787579",
+    "version": "0.6.2",
+    "filename": "pandalib-neoforge-1.21.1-0.6.2.jar",
+    "sha512": "99c025485ce42af875dbd0b4a8b3a46319ddc8f891d6068ddb3bb2e0511682a3705357a936d1488c04bc1ff1c1b0cfd69fcd7eab48165130b41d25f91a69bd9a",
+    "sha1": "0d93a27bcb4ee06be500c333d7232e1d1fe02706",
+    "file_size": 7904509,
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "LGPL-3.0-only",
+      "url": "https://github.com/ThePandaOliver/PandaLib/blob/legacy/1.21.1/LICENSE.md"
+    },
+    "source_url": "https://github.com/ThePandaOliver/PandaLib",
+    "source": {
+      "type": "curseforge",
+      "project_id": 975460,
+      "file_id": 8787579,
+      "url": "https://edge.forgecdn.net/files/8787/579/pandalib-neoforge-1.21.1-0.6.2.jar"
+    },
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected TreeChop/Panda combination for third QoL group",
+    "distribution": "bundle",
+    "distribution_note": "Unchanged official CurseForge file; embedded license retained; bundled by Modrinth export.",
+    "exception": "Owner explicitly retained selected Panda falling-tree combination after exact beta disclosure in the supplied third-group context; this exact native file/dependency only.",
+    "dependency_note": "Exact0.6.2 beta requires NeoForge>=21.1.218. Embedded Kotlin2.3.0/coroutines1.10.2/serialization1.9.0 retain original provider notices; runtime JarJar provider selection audited with existing KotlinForForge.",
+    "artifact_audit": {
+      "source_revision": "f3a37859490314482c97e03a7b367f0a82cd1f2a",
+      "source_comparison": "Author legacy1.21.1 source still declares0.6.0 versus selected0.6.2; exact release build source identity unavailable. Behavior/configuration/dependencies inspected in actual0.6.2 JAR; source used only as lineage reference."
     }
   }
 ]

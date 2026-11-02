@@ -48,6 +48,9 @@ public final class AeroscapesReimagine {
 
   public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
     container.registerConfig(ModConfig.Type.CLIENT, CelestialConfig.SPEC);
+    if (ModList.get().isLoaded("waystones")) {
+      dev.aeroscapes.travel.TravelIntegration.register(modBus);
+    }
     if (ModList.get().isLoaded("c2me_opts_dfc")) {
       C2meIslandCompiler.register();
       if (ModList.get().isLoaded("c2me_opts_accel_opencl")) IslandOpenCl.register();

@@ -224,13 +224,55 @@
       "provider_terms": "Independent functional labels and help; unchanged provider terms and English fallback comments remain with original providers.",
       "entries": 1796,
       "sha256": "0931b23a8824a8760004475708bf3a5a6e99c78476a17bdfed5208b91698d6b4"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_trees/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Provider text retains its individual source terms; independently authored missing translations and integration help. See exact third-group inputs and NOTICE.txt.",
+      "entries": 53,
+      "sha256": "4de2d3c4abc834af710275070b77c57a496ae804aeb83f3e13143614b97ae495"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_trees/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Provider text retains its individual source terms; independently authored missing translations and integration help. See exact third-group inputs and NOTICE.txt.",
+      "entries": 53,
+      "sha256": "9ec4018a4bad1edb3b73b962e8a13e98323aa65b01ad92b5663558c8ab42f6a4"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_pickup/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Provider text retains its individual source terms; independently authored missing translations and integration help. See exact third-group inputs and NOTICE.txt.",
+      "entries": 123,
+      "sha256": "264b18565716ffa2c2f7a590de61c0e0ffed5a9ccdbd265c2cbd8dca749fc7ac"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_pickup/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Provider text retains its individual source terms; independently authored missing translations and integration help. See exact third-group inputs and NOTICE.txt.",
+      "entries": 126,
+      "sha256": "1eec05c3b5fbc5267e070023129e2243e344f3272668b7d25b93d6dd0eb1688d"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_travel_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Provider text retains its individual source terms; independently authored missing translations and integration help. See exact third-group inputs and NOTICE.txt.",
+      "entries": 37,
+      "sha256": "266dbe829bea26b3c0b0b6d8c4d0d64fb02814b1aa73b8c07fa24a573596b06f"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_travel_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Provider text retains its individual source terms; independently authored missing translations and integration help. See exact third-group inputs and NOTICE.txt.",
+      "entries": 309,
+      "sha256": "70fdc7d5bb5d4df1e99da03d86dc9b21d89568550f464bffd8c11b8511527ae2"
     }
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 939,
+    "rules": 949,
     "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged.",
-    "sha256": "d6faea5a721b54f7f94fb7360152b4e4671a1632d198f7f1f801379c4e7e2a2a"
+    "sha256": "82d9f53f48c1d0cb5c24ad2eceea69f711836e4e8c363f38a6fd70fcb9026899"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
@@ -1444,6 +1486,34 @@
       "normalization": "Vanilla Language converts numeric printf d/f placeholders to s before guarded corrections. Expected and replacement values are post-normalized at that boundary.",
       "authorship": "All additional text independently authored; provider archives and changed provider/player translations untouched. Expected original text retains provider terms; NOTICE identifies them. Source flags/config IDs remain original.",
       "client_acceptance": "Rendering, actual menu/input interaction, shader composition and any ship alignment remain owner-only pending."
+    },
+    "qol_group3": {
+      "selected_providers": {
+        "curseforge:421377": "6254465",
+        "curseforge:880630": "7858908",
+        "curseforge:975460": "8787579",
+        "OsZiaDHq": "JS0K93bG",
+        "aT8BzaOj": "rYw9JKpB",
+        "LOpKHB2A": "6Z6MQ6os",
+        "BxhPGfcK": "Wot8Pf4C"
+      },
+      "routes": {
+        "treechop": "59 native EN/RU entries audited, seven substantive untranslated RU values corrected only on exact source match. Native private chopping settings overlay and Jade labels retained.",
+        "fallingtrees_pandalib": "42 Panda and one PandaLib missing Russian entries supplied; native0.14.0/0.6.2 artifacts expose no configuration-screen registration. Stale autoconfig keys translated as resources, not claimed as an active screen.",
+        "itemphysic_creativecore": "Full1.8.17 and official matching CreativeCore2.13.52 sources/JARs. Nested common/client CreativeCore config .name/.comment paths, three missing coreRU labels and literal ingredient/reset labels covered without parser identity changes. Native reference extras retained, absent/malformed entries omitted.",
+        "waystones": "268 missing providerRU strings, four Sable-addonRU labels, five owned names/help/errors plus three guarded English-in-Russian provider values. Balm native entrypoints retain parser/config identities; original provider archives unchanged. Native scalar enum display uses24 class-scoped aliases per language. Editable origin/visibility/dimension/entity lists, naming placeholders and requirement expressions remain parser syntax.",
+        "owned_policy": "Per-player UUID activation from finite chest sigils, experience-point fees and refund; cumulative tree wear and persisted pending drops; validated native pickup/toss packets. See production code and native fixture."
+      },
+      "source_review": {
+        "treechop": "2b77b906b89cbd2882114c1e83dae178a1f0b028",
+        "fallingtrees": "2f2e447c9603edd0f53c83d2c7890abd9fbf8a69",
+        "pandalib": "Exact0.6.2 JAR; f3a37859490314482c97e03a7b367f0a82cd1f2a source declares0.6.0, no exact release source assertion.",
+        "waystones": "9d280c1ac8d036516a2927e3d2cad8054e491074 exactv21.1.46",
+        "waystones_sable": "f5240a9c7c8b9a5cfd0c22c5a7d906faf0debc5d release-era1.0.7; laterHEAD fixes not installed.",
+        "itemphysic_creativecore": "Official paired executable/source JARs1.8.17 and2.13.52; identical methods/config consumers inspected, no reproducible-build claim."
+      },
+      "authorship": "Missing text independently authored. Original expected strings retain original MIT/GPL/LGPL/Waystones author terms; see NOTICE.txt and unchanged archives.",
+      "client_acceptance": "Actual configuration screens, perspective/input, shader composition and moving-ship arrival remain owner-only."
     }
   }
 }

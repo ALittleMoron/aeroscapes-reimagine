@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.travel",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "WaystoneActivationMixin",
+    "WaystoneExperienceMixin",
+    "WaystoneInteractionMixin",
+    "WaystonePaymentFailureMixin",
+    "WaystoneEpitaphMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

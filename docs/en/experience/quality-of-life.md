@@ -46,6 +46,24 @@ Carry On helps move supported blocks. Ordinary and trial spawners are excluded, 
 
 [Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier) briefly shows the names and quantities of collected items, including supported backpack pickups. [Clumps](https://modrinth.com/mod/clumps) merges nearby experience orbs; collected experience still repairs equipment with Mending and fills the experience bar.
 
+## Trees and dropped items
+
+[HT's TreeChop](https://www.curseforge.com/minecraft/mc-mods/treechop) lets players fell a tree by repeatedly chopping its trunk. [Panda's Falling Trees](https://www.curseforge.com/minecraft/mc-mods/pandas-falling-trees) supplies the falling animation. The number of chops grows logarithmically with tree size; the complete operation costs approximately 1.5 nominal axe durability per harvested log, with Unbreaking applied normally. Crouching allows ordinary single-block chopping. An axe with insufficient remaining durability cannot finish the whole tree; use another axe or break individual logs.
+
+On ships, logs are broken individually. Root and foliage checks protect ordinary constructions, but decorative logs connected to a living tree can be included in the same trunk. Crouch when chopping next to connected timber.
+
+[ItemPhysic Full](https://modrinth.com/mod/itemphysic) makes dropped items rest on the ground. Right-click an item to collect it, or crouch nearby to collect a group. Common mined blocks, raw materials, gems, dusts, ingots, nuggets, coal and sleeping bags retain automatic collection. Containers and machines can still collect items through their own supported mechanisms.
+
+## Travel between waystones
+
+[Waystones](https://modrinth.com/mod/waystones) connects places reached through exploration. Find a natural stone or craft one using its ordinary recipe, then open it with a Waystone Sigil. Each player needs one sigil for the first activation of each stone; opening a known stone again costs no sigil. Sigils have a 25% chance in each eligible unopened chest or barrel, including selected ruins and dungeons from the installed structure mods, shipwrecks, bastions and End cities. Vaults do not provide sigils. Already opened containers do not receive new loot; sigils have no recipe.
+
+Travel requires standing at another activated stone. The fare is 100 experience points plus 20 per started 1,000 horizontal blocks, capped at 360 points. Crossing dimensions costs 360 points. These are experience points, not levels; a failed trip returns its payment. The menu shows the exact point price. Its tooltip gives the minimum balance as a level plus progress points and shows the balance after payment; for example, 120 XP means level 8 plus 8 XP, rather than eight whole levels. Portable teleport items, the inventory teleport button, warp plates and shared-network shortcuts are disabled. Recipes for the disabled routes are unavailable. The Warp Stone remains a crafting ingredient for ordinary waystones, with a tooltip explaining its role.
+
+Natural stones can be destroyed but do not drop themselves. Player-placed stones retain their normal drops. [Waystones: Sable](https://modrinth.com/mod/waystones-sable) provides the connection to stones on Aeronautics ships; distance pricing uses their position in the world.
+
+Twinbound Feathers create player destinations, Epitaphs create one-use death-site return points, and Dormant Shards belong to warp plates. These routes are disabled here, so the three items cannot be crafted and are hidden from item catalogs. Existing epitaphs are not automatically spent on death.
+
 ## Anvils and enchanting
 
 [Easy Anvils](https://modrinth.com/mod/easy-anvils) keeps inputs in the anvil and displays them on the block. Renaming on its own is free and does not damage the anvil. Repairs and combining enchantments retain ordinary material costs, experience costs and increasing prior-work penalties. Combined operations and special recipes retain their existing pricing. Operations above 40 levels remain available at their full price. Iron blocks can repair a worn anvil, and name tags can be edited while crouching without an anvil.
@@ -94,6 +112,6 @@ The starting configuration keeps ordinary block reach and leaves Easy Place disa
 
 [Trade Cycling](https://modrinth.com/mod/trade-cycling) adds a button to reroll a villager's offers before the first trade. Trading locks the offers.
 
-Controlling adds search to the keybinding menu, helping players find the controls supplied by different mods. Items lying flat on the ground and deliberate pickup by right-click or crouching are desired future features; they are not currently supplied. Which resources should still be collected automatically remains to be selected.
+Controlling adds search to the keybinding menu, helping players find the controls supplied by different mods.
 
 [Graphics, sound and animation](presentation/) covers character rendering, atmosphere and the included shader choices.

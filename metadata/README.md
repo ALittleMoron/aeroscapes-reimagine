@@ -91,6 +91,55 @@ retain CC-BY-NC-SA-4.0. Their Minecraft ranges use the exact loader's 1.21
 compatibility mapping. Owned search requests enforce bounds, lifecycle and payment;
 sampling does not promise every small biome or a dry destination.
 
+## Tree felling, dropped items and paid travel
+
+[HT's TreeChop](https://www.curseforge.com/minecraft/mc-mods/treechop/files/6254465),
+[Panda's Falling Trees](https://www.curseforge.com/minecraft/mc-mods/pandas-falling-trees/files/7858908)
+and [PandaLib](https://www.curseforge.com/minecraft/mc-mods/pandalib/files/8787579)
+remain unchanged official files. The selected falling-tree beta and its library
+are exact exceptions. The owned transaction retains logarithmic work, charges
+cumulative nominal axe wear through native enchantment handling, and persists
+the pending falling-tree snapshot and drops. Native default double charges and
+the animation entity's unsaved state require these scoped adapters. Ships are
+excluded from mass felling. PandaLib's available source declares 0.6.0, while
+the selected file is 0.6.2; exact release-source identity is unproven.
+
+[ItemPhysic Full](https://modrinth.com/mod/itemphysic/version/rYw9JKpB) needs
+[CreativeCore](https://modrinth.com/mod/creativecore/version/JS0K93bG) on both sides.
+The library update includes relevant Sable collision fixes. Exact paired source
+archives identify configuration and pickup/toss behavior. Native API labels for
+ItemPhysic say LGPL-2.1-only, while its actual descriptor says LGPL-3.0-only;
+neither original archive is modified. Reference pickup exceptions are mapped to
+registered pack tags. Empty tags, absent mods and a malformed block ingredient
+that resolved to air are omitted. Owned server guards validate targeted pickup
+and toss requests, preserve never-pickable display entities, and retain the
+native ownership of cancelled-toss inventory handling.
+
+[Waystones](https://modrinth.com/mod/waystones/version/6Z6MQ6os) retains its
+author's [modpack terms](https://mods.twelveiterations.com/permissions), existing
+[Balm](https://modrinth.com/mod/balm/version/XC1JUHmA) and ordinary recipes.
+[Waystones: Sable](https://modrinth.com/mod/waystones-sable/version/Wot8Pf4C) is the
+native ship integration. The owned policy uses per-player UUID activation,
+loot-only sigils, physical normal stones and XP-point payment with failure
+refunds. An independent loot modifier filters natural stone drops even for
+direct loot-table consumers. The sigil has original stone-seal pixel art; its editable SVG is shipped beside
+the PNG under the owned resource tree. No game texture is reused. The 25% sigil
+roll matches 151 explicit, defined exploration-container root tables from the
+pinned structure artifacts, including custom Minecraft-namespace aliases.
+Nested tables use raw generation and do not receive another independent roll.
+A vault-location exclusion separates two IDs shared by normal chests and vaults.
+Village-prefixed tables, pots, dispensers, spawner rewards and undefined provider
+IDs are excluded; a known village template reuses `simple_dungeon`, so this is
+a table policy rather than a universal structure-location restriction.
+The exact point badge replaces the native three-level sprite through the public
+client renderer API; hover text derives minimum and post-payment balances from
+real points. Disabled epitaph/dormant-shard recipes and native death handling
+are suppressed; the common recipe-viewer tag and creative event hide these
+items and the already disabled twinbound feather without removing registry IDs. Original
+provider files and their notices remain unchanged. Exact pins, source comparison
+limits and authored EN/RU supplements remain in the artifact and localization
+inventories. Graphical and ship-control acceptance belongs to the owner.
+
 ## Distant terrain
 
 [Distant Horizons 3.3.3](https://modrinth.com/mod/distanthorizons/version/9w34y8ai) is an unchanged official native NeoForge/Fabric file, installed on both sides for the logical-server generation and technical headless checks. This does not establish multiplayer support. Its source tag is `a54dd3eb1df0078e63a71266d042c10d9cda4493`; the actual JAR supplies the exact API and configuration evidence. The descriptor has no required third-party dependency and rejects Separate Sable Render Distance through 1.8.6. LGPL-3.0 and bundled library notices remain in the original JAR.

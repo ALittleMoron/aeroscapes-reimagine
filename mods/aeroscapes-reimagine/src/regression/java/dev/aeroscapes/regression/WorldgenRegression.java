@@ -99,6 +99,49 @@ public final class WorldgenRegression {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
     String backupRoundtrip = System.getProperty("aeroscapes.regression.backupRoundtrip");
+    String thirdQol = System.getProperty("aeroscapes.regression.qolGroup3");
+    if (Boolean.getBoolean("aeroscapes.regression.waystoneCreativeSearch")) {
+      verifyQolCase(
+          "Waystone creative search", () -> WaystoneFeedbackRegression.verifyCreativeTabs(level));
+      LOGGER.info("Waystone creative search regression completed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.waystoneFeedback")) {
+      QolWorkstationReadiness.start(
+          level,
+          () -> {
+            if (verifyQolCase(
+                "Waystone feedback", () -> WaystoneFeedbackRegression.verify(level))) {
+              LOGGER.info("Waystone feedback regression passed");
+            }
+            LOGGER.info("Waystone feedback regression completed");
+          },
+          level.getSharedSpawnPos(),
+          level.getSharedSpawnPos().offset(96, 0, 96));
+      return;
+    }
+    if (thirdQol != null) {
+      QolWorkstationReadiness.start(
+          level,
+          () -> {
+            boolean trees = verifyQolCase("Trees", () -> TreesRegression.verify(level));
+            boolean pickup =
+                verifyQolCase("Pickup", () -> PickupRegression.verify(level, Path.of(thirdQol)));
+            boolean travel = verifyQolCase("Waystones", () -> WaystonesRegression.verify(level));
+            if (trees && pickup && travel) {
+              LOGGER.info("Third QoL group regression passed");
+            }
+            LOGGER.info("Third QoL group regression completed");
+          },
+          level.getSharedSpawnPos(),
+          level.getSharedSpawnPos().offset(48, 0, 48),
+          level.getSharedSpawnPos().offset(96, 0, 96));
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.waystoneGeneration")) {
+      WaystoneGenerationRegression.verify(level);
+      return;
+    }
     if (backupRoundtrip != null) {
       BackupRoundtripRegression.start(level, backupRoundtrip);
       return;
@@ -408,6 +451,17 @@ public final class WorldgenRegression {
         "Worldgen regression passed: {} clipped starts, {} column floors, natural underground starts",
         NEGATIVE_SITES.size(),
         COLUMN_SITES.size());
+  }
+
+  private static boolean verifyQolCase(String name, Runnable checks) {
+    try {
+      checks.run();
+      LOGGER.info("{} native regression passed", name);
+      return true;
+    } catch (RuntimeException failure) {
+      LOGGER.error("{} native regression failed", name, failure);
+      return false;
+    }
   }
 
   private static void raisedSurfaceRoot(ServerLevel level, NoiseBasedChunkGenerator generator) {

@@ -21,6 +21,10 @@ neoForge {
 repositories {
   mavenCentral()
   exclusiveContent {
+    forRepository { maven("https://cursemaven.com") }
+    filter { includeGroup("curse.maven") }
+  }
+  exclusiveContent {
     forRepository { maven("https://maven.minecraftforge.net/") }
     filter { includeModule("com.github.glitchfiend", "TerraBlender-neoforge") }
   }
@@ -56,6 +60,11 @@ repositories {
       includeModule("maven.modrinth", "natures-compass")
       includeModule("maven.modrinth", "explorers-compass")
       includeModule("maven.modrinth", "accurate-block-placement-reborn")
+      includeModule("maven.modrinth", "creativecore")
+      includeModule("maven.modrinth", "itemphysic")
+      includeModule("maven.modrinth", "waystones")
+      includeModule("maven.modrinth", "waystones-sable")
+      includeModule("maven.modrinth", "balm")
     }
   }
 }
@@ -122,6 +131,7 @@ val extractSableApi by
   }
 
 dependencies {
+  compileOnly("org.jetbrains.kotlin:kotlin-stdlib:2.3.0") { isTransitive = false }
   // Compile-only API: classes match the pinned Modrinth runtime; only MANIFEST.MF differs.
   compileOnly("com.github.glitchfiend:TerraBlender-neoforge:1.21.1-4.1.0.8") {
     isTransitive = false
@@ -156,6 +166,14 @@ dependencies {
   atmosphereApi("maven.modrinth:natures-compass:nFniEtJV")
   atmosphereApi("maven.modrinth:explorers-compass:hIJ2Ev1Q")
   atmosphereApi("maven.modrinth:accurate-block-placement-reborn:rA95AHFG")
+  atmosphereApi("maven.modrinth:creativecore:JS0K93bG")
+  atmosphereApi("maven.modrinth:itemphysic:rYw9JKpB")
+  atmosphereApi("maven.modrinth:waystones:6Z6MQ6os")
+  atmosphereApi("maven.modrinth:waystones-sable:Wot8Pf4C")
+  atmosphereApi("maven.modrinth:balm:XC1JUHmA")
+  atmosphereApi("curse.maven:treechop-421377:6254465")
+  atmosphereApi("curse.maven:pandas-falling-trees-880630:7858908")
+  atmosphereApi("curse.maven:pandalib-975460:8787579")
   compileOnly(files(atmosphereApi))
   compileOnly(
     files(fileTree(sableNestedApiDirectory) { include("*.jar") }).builtBy(extractSableApi)

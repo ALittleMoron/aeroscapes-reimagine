@@ -229,3 +229,34 @@ compatibility boundaries and individual terms are retained in metadata/artifacts
 New functional labels/help and scoped integration code are independently authored
 for Aeroscapes Reimagine. Expected original strings retain their provider terms.
 Localization routes and selected source revisions: META-INF/localization-sources.json.
+
+Third QoL group: tree felling, physical drops and paid travel.
+HT's TreeChop: hammertater and contributors, MIT; full notice in
+META-INF/licenses/TreeChop-MIT.txt.
+https://www.curseforge.com/minecraft/mc-mods/treechop/files/6254465
+Panda's Falling Trees: ThePandaOliver and contributors, GPLv3;
+source headers permit GPL-3.0-or-later. PandaLib: same authors, LGPLv3;
+its full license is in META-INF/licenses/PandaLib-LGPL-3.0.md.
+https://www.curseforge.com/minecraft/mc-mods/pandas-falling-trees/files/7858908
+https://www.curseforge.com/minecraft/mc-mods/pandalib/files/8787579
+ItemPhysic Full and CreativeCore: CreativeMD and contributors.
+ItemPhysic's provider label says LGPL-2.1-only while the selected descriptor
+says LGPL-3.0-only. CreativeCore's selected descriptor says LGPL-3.0-only.
+Both original artifacts remain unchanged, with exact official source companions
+identified in the source inventory.
+https://modrinth.com/mod/itemphysic/version/rYw9JKpB
+https://modrinth.com/mod/creativecore/version/JS0K93bG
+Waystones: BlayTheNinth and contributors, original author terms retained.
+https://modrinth.com/mod/waystones/version/6Z6MQ6os
+https://mods.twelveiterations.com/permissions
+Waystones: Sable: Shinonome Shakusora and contributors, MIT; full notice in
+META-INF/licenses/WaystonesSable-MIT.txt (absent from the original JAR).
+https://modrinth.com/mod/waystones-sable/version/Wot8Pf4C
+Missing English/Russian labels, help and narrowly scoped integration code are
+independently authored. Guarded expected text retains its provider's terms.
+No complete provider dictionary or modified provider archive is distributed.
+The activation sigil has original stone-seal pixel artwork, composed deterministically
+for this project without copied game pixels or a generative image model. Editable
+pixel source: META-INF/artwork/waystone_sigil.svg; its RGBA PNG is the item texture.
+Exact resource hashes, source version
+limits and display routes are retained in META-INF/localization-sources.json.

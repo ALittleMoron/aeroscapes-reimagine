@@ -1,0 +1,17 @@
+[general]
+defaultVisibility = "ACTIVATION"
+allowEveryoneToManageGlobalWaystones = false
+
+[teleports]
+enableCosts = true
+warpRequirements = [
+  "[is_not_interdimensional] add_xp_cost(100)",
+  "[is_not_interdimensional] scaled_add_xp_cost(aeroscapes_reimagine:waystone_distance_steps, 20)",
+  "[is_not_interdimensional] max_xp_cost(360)",
+  "[is_interdimensional] add_xp_cost(360)",
+  "[source_is_not_waystone] refuse($chat.aeroscapes_reimagine.travel.physical_only)",
+  "[target_is_not_waystone] refuse($chat.aeroscapes_reimagine.travel.physical_only)"
+]
+
+[inventoryButton]
+inventoryButton = "NONE"

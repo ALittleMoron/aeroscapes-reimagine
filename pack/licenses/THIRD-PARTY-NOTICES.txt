@@ -368,3 +368,19 @@ compatibility boundaries and individual terms are retained in metadata/artifacts
 New functional labels/help and scoped integration code are independently authored
 for Aeroscapes Reimagine. Expected original strings retain their provider terms.
 Localization routes and selected source revisions: META-INF/localization-sources.json.
+
+Third QoL group: unchanged official files for HT's TreeChop (MIT),
+Panda's Falling Trees (GPLv3), PandaLib (LGPLv3), ItemPhysic Full and
+CreativeCore (selected descriptors LGPL-3.0-only), Waystones (author terms),
+and Waystones: Sable (MIT). Original notices remain in provider files.
+ItemPhysic's provider label differs (LGPL-2.1-only); exact file terms are recorded.
+https://www.curseforge.com/minecraft/mc-mods/treechop/files/6254465
+https://www.curseforge.com/minecraft/mc-mods/pandas-falling-trees/files/7858908
+https://www.curseforge.com/minecraft/mc-mods/pandalib/files/8787579
+https://modrinth.com/mod/itemphysic/version/rYw9JKpB
+https://modrinth.com/mod/creativecore/version/JS0K93bG
+https://modrinth.com/mod/waystones/version/6Z6MQ6os
+https://modrinth.com/mod/waystones-sable/version/Wot8Pf4C
+https://mods.twelveiterations.com/permissions
+Owned integration and independent EN/RU text: see the shipped owned mod's
+META-INF/NOTICE.txt, META-INF/localization-sources.json and corresponding source.

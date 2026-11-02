@@ -1,0 +1,21 @@
+{
+  "disableCrouchMining": false,
+  "disableExtraToolDamage": false,
+  "disableExtraFoodExhaustion": false,
+  "treeLifetimeLength": 4.0,
+  "dynamicMiningSpeed": {
+    "disable": true,
+    "speedMultiplication": 0.5,
+    "maxSpeedMultiplication": 16.0
+  },
+  "trees": {
+    "genericTree": {
+      "requireTool": true,
+      "algorithm": {
+        "maxLeavesRadius": 7,
+        "maxLogAmount": 320,
+        "shouldIgnorePersistentLeaves": true
+      }
+    }
+  }
+}
