@@ -127,7 +127,7 @@
   {
     "targets": {
       "8oi3bsk5": "MuJMtPGQ",
-      "XaDC71GB": "qPASucBM",
+      "XaDC71GB": "cZu4cHY3",
       "owned:aeroscapes_reimagine": "0.1.0"
     },
     "files": [
@@ -623,5 +623,53 @@
     },
     "files": [],
     "reason": "Better Clouds1.13.11 coverage assumes reverse-Z for DH depth, but pinned Iris1.8.14/DH3.3.3 uses forward-Z with shaders. A native source-load adapter changes only the hash-matched coverage fragment in memory, declares the already-populated u_dh_p_matrix uniform and selects comparison from its m22 sign, retaining the old comparison for zero/non-forward matrices. Both pinned modes use -1..1 clip depth, so keep the existing remap and missing-texture guard. Original resource SHA256 dbbe307a51f42abf9cc0492c9e3d130734dd2facb088e0a33aedaca0bb88ec41; unknown resource-pack overrides are preserved with one file-log warning. Provider JARs and shader ZIPs remain unchanged; cloud height is unchanged."
+  },
+  {
+    "targets": {
+      "curseforge:289240": "7795089",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/paraglider/worldgen/structure/tarrey_town_goddess_statue.json",
+      "data/paraglider/worldgen/structure/underground_horned_statue.json"
+    ],
+    "reason": "Retain native statue templates, placement and rewards while requiring natural surface support for the Goddess statue and a complete natural host for the underground Horned Statue in the layered island generator. Nether statue retains native placement."
+  },
+  {
+    "targets": {
+      "curseforge:840254": "8597620"
+    },
+    "files": [],
+    "reason": "Disable recipes and remove loot for only the unselected limb/health mechanics; preserve native thirst/temperature equipment, rings and Purity book rewards. Viewer exclusions hide inert items while retaining their registry IDs for save decoding.",
+    "rules_files": [
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/abandoned_mineshaft.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/bastion_treasure.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/buried_treasure.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/jungle_temple.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/pillager_outpost.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/bandage.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/healing_herbs.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/heart_container.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/medkit.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/morphine.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/plaster.json",
+      "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/tonic.json"
+    ]
+  },
+  {
+    "targets": {
+      "HH4FjUqN": "jdOU7Pzu",
+      "yv9f5EAG": "4HsWNhJz",
+      "XaDC71GB": "cZu4cHY3",
+      "die1AF7i": "1ki6UyqV",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/hybrid_aquatic/worldgen/structure/whale_fall.json",
+      "data/hybrid_aquatic/fishing/fish/freshwater/african_butterflyfish.json",
+      "data/hybrid_aquatic/fishing/fish/freshwater/trout.json",
+      "data/hybrid_aquatic/fishing/fish/underground/hagfish.json"
+    ],
+    "reason": "Fit native whale-fall pieces to actual supported basin seabed; retain native templates and loot. Scope global terrain/injector exclusion to the owned source, use physical local waterline/depth for fauna and fishing, repair once-only Ominous Hook retrieval and persist the native delayed conch encounter across reloads. Complete the native52fishitem catch/journal roster, retain conditional native hook perks and recognize block-only aquatic crate rewards at selection and retrieval."
   }
 ]

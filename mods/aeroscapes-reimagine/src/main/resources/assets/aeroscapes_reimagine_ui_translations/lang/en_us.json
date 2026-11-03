@@ -47,6 +47,7 @@
   "effect.fungidelight.weak_stomach.description": "Drinking non-water potions or alcohol, or eating certain foods, causes nausea, poison and weakness while this effect is active.",
   "effect.galosphere.astral.description": "Allows passage through most solid blocks, changes vision and prevents suffocation inside blocks. Some blocks remain impassable.",
   "effect.galosphere.halite_curse.description": "Immobilizes the affected entity and marks it as afflicted by the halite curse.",
+  "effect.paraglider.stamina_efficiency.description": "Reduces stamina consumption while gliding. Each level adds 50% efficiency: level I uses two thirds of the normal stamina, level II uses half. Does not restore stamina or increase its maximum.",
   "effect.quark.resilience.description": "Increases knockback resistance. Higher levels provide more resistance.",
   "effect.xaerominimap.no_minimap.description": "Temporarily disables the minimap. This is a map-restriction effect, not a normal potion.",
   "effect.xaerominimap.no_minimap_harmful.description": "Temporarily disables the minimap. This is a map-restriction effect, not a normal potion.",

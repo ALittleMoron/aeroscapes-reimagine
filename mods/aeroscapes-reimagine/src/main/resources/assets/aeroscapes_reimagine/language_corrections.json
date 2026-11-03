@@ -750,11 +750,6 @@
     "replacement": "%s добавлен во временный список существ, улавливаемых клетками и банками"
   },
   {
-    "key": "itemGroup.windchimes.main",
-    "expected": "wind chimes",
-    "replacement": "Музыка ветра"
-  },
-  {
     "key": "config.entity_texture_features.property_explanation.biome",
     "expected": "List of biomes\nThe vanilla biome names are listed here: https://minecraft.gamepedia.com/Biome#Biome_IDs\nBiomes added by mods can also be used but require \"modID:biomeName\", whereas vanilla biomes can be either \"minecraft:plains\" or just \"plains\".\nWith ETF only, you can also use regex: iregex: pattern: and ipattern: like the Name property\n§abiomes.<n>=<biome_list>",
     "replacement": "Список биомов.\nID обычных биомов: https://minecraft.gamepedia.com/Biome#Biome_IDs\nДля биомов из модов требуется «modID:biomeName». Обычные биомы можно задавать как «minecraft:plains» или «plains».\nВ ETF также доступны regex:, iregex:, pattern: и ipattern:, как у свойства имени.\n§abiomes.<n>=<biome_list>"
@@ -5322,5 +5317,3503 @@
     "key": "config.jade.plugin_treechop.show_tree_block_counts",
     "expected": "Block counts",
     "replacement": "Количество блоков"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.ascending",
+    "expected": "ascending",
+    "replacement": "Riding an updraft"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.breathing_underwater",
+    "expected": "breathing_underwater",
+    "replacement": "Breathing underwater"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.creative_flying",
+    "expected": "creative_flying",
+    "replacement": "Creative flight"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.debug",
+    "expected": "Debug",
+    "replacement": "Diagnostics"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.debugPlayerMovement",
+    "expected": "debugPlayerMovement",
+    "replacement": "Log player movement"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.elderGuardianDropsSpiritOrb",
+    "expected": "elderGuardianDropsSpiritOrb",
+    "replacement": "Elder guardian drops a Spirit Orb"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.elytra_flying",
+    "expected": "elytra_flying",
+    "replacement": "Elytra flight"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.enderDragonDropsVessel",
+    "expected": "enderDragonDropsVessel",
+    "replacement": "Ender dragon drops a vessel"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.enderDragonVesselSpawnsOnPodium",
+    "expected": "enderDragonVesselSpawnsOnPodium",
+    "replacement": "Place dragon vessel on exit portal"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.flying",
+    "expected": "flying",
+    "replacement": "Flight"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.heartContainers",
+    "expected": "heartContainers",
+    "replacement": "Heart Containers"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.idle",
+    "expected": "idle",
+    "replacement": "Resting"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.maxHeartContainers",
+    "expected": "maxHeartContainers",
+    "replacement": "Maximum Heart Containers"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.maxStaminaVessels",
+    "expected": "maxStaminaVessels",
+    "replacement": "Maximum Stamina Vessels"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.midair",
+    "expected": "midair",
+    "replacement": "Airborne"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.ominousTrialSpiritOrbDrops",
+    "expected": "ominousTrialSpiritOrbDrops",
+    "replacement": "Spirit Orbs per ominous trial"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.on_vehicle",
+    "expected": "on_vehicle",
+    "replacement": "Riding a vehicle"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.panic_paragliding",
+    "expected": "panic_paragliding",
+    "replacement": "Exhausted paragliding"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.paragliderDurability",
+    "expected": "paragliderDurability",
+    "replacement": "Paraglider durability"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.paragliderInTowersOfTheWild",
+    "expected": "paragliderInTowersOfTheWild",
+    "replacement": "Towers of the Wild loot"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.paragliding",
+    "expected": "paragliding",
+    "replacement": "Paragliding"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.paraglidingConsumesStamina",
+    "expected": "paraglidingConsumesStamina",
+    "replacement": "Paragliding consumes stamina"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.paraglidingSpeed",
+    "expected": "paraglidingSpeed",
+    "replacement": "Paragliding speed multiplier"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.raidGivesVessel",
+    "expected": "raidGivesVessel",
+    "replacement": "Raid victory grants a vessel"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.recoveryDelay",
+    "expected": "recoveryDelay",
+    "replacement": "Recovery delay (ticks)"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.running",
+    "expected": "running",
+    "replacement": "Sprinting"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.runningAndSwimmingConsumesStamina",
+    "expected": "runningAndSwimmingConsumesStamina",
+    "replacement": "Sprinting and fast swimming consume stamina"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.section.paraglider.common.toml",
+    "expected": "Feature Flags...",
+    "replacement": "Feature flags…"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.section.paraglider.player.states.toml",
+    "expected": "Player States...",
+    "replacement": "Player states…"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.spawnerSpiritOrbDrops",
+    "expected": "spawnerSpiritOrbDrops",
+    "replacement": "Spirit Orbs per broken spawner"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.spiritOrbGens",
+    "expected": "spiritOrbGens",
+    "replacement": "Generate Spirit Orbs"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.spiritOrbLoots",
+    "expected": "spiritOrbLoots",
+    "replacement": "Spirit Orbs in chests"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.spiritOrbs",
+    "expected": "spiritOrbs",
+    "replacement": "Spirit Orbs"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.stamina",
+    "expected": "stamina",
+    "replacement": "Stamina"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.staminaDelta",
+    "expected": "staminaDelta",
+    "replacement": "Stamina change per tick"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.staminaIncreasePerVessel",
+    "expected": "staminaIncreasePerVessel",
+    "replacement": "Stamina gained per vessel"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.staminaVessels",
+    "expected": "staminaVessels",
+    "replacement": "Stamina Vessels"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.startingHearts",
+    "expected": "startingHearts",
+    "replacement": "Starting hearts"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.startingStamina",
+    "expected": "startingStamina",
+    "replacement": "Starting stamina"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.swimming",
+    "expected": "swimming",
+    "replacement": "Fast swimming"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.traceBargainPacket",
+    "expected": "traceBargainPacket",
+    "replacement": "Trace bargain packets"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.traceMovementPacket",
+    "expected": "traceMovementPacket",
+    "replacement": "Trace movement packets"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.traceVesselPacket",
+    "expected": "traceVesselPacket",
+    "replacement": "Trace vessel packets"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.traceWindPacket",
+    "expected": "traceWindPacket",
+    "replacement": "Trace wind packets"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.trialSpiritOrbDrops",
+    "expected": "trialSpiritOrbDrops",
+    "replacement": "Spirit Orbs per trial"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.underwater",
+    "expected": "underwater",
+    "replacement": "In water"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.updraft",
+    "expected": "updraft",
+    "replacement": "Updrafts"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.verboseWindSourceLoading",
+    "expected": "verboseWindSourceLoading",
+    "replacement": "Detailed wind-source loading log"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.vessels",
+    "expected": "vessels",
+    "replacement": "Vessels"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.villageStructures",
+    "expected": "villageStructures",
+    "replacement": "Statues in villages"
+  },
+  {
+    "language": "en_us",
+    "key": "paraglider.configuration.witherDropsVessel",
+    "expected": "witherDropsVessel",
+    "replacement": "Wither drops a vessel"
+  },
+  {
+    "key": "key.nutritionalbalance.opennutrientgui",
+    "expected": "Nutrient GUI",
+    "replacement": "Баланс питания"
+  },
+  {
+    "language": "en_us",
+    "key": "nutritionalbalance.nutrientstatus.details.MALNOURISHED",
+    "expected": "You're feeling a little slow and weak.",
+    "replacement": "A required food group is low: attack damage reduced by 1."
+  },
+  {
+    "language": "en_us",
+    "key": "nutritionalbalance.nutrientstatus.details.ON_TARGET",
+    "expected": "You're feeling strong, fast and efficient.",
+    "replacement": "All required food groups are balanced."
+  },
+  {
+    "language": "en_us",
+    "key": "nutritionalbalance.nutrientstatus.details.ENGORGED",
+    "expected": "You're feeling a little slow and inefficient.",
+    "replacement": "A food group is above the target."
+  },
+  {
+    "language": "ru_ru",
+    "key": "nutritionalbalance.nutrientstatus.details.MALNOURISHED",
+    "expected": "Вы чувствуйте себя медленным и слабым.",
+    "replacement": "Не хватает одной из основных групп: урон снижен на 1."
+  },
+  {
+    "language": "ru_ru",
+    "key": "nutritionalbalance.nutrientstatus.details.ON_TARGET",
+    "expected": "Вы чувствуйте себя сильным, быстрым и рукастым",
+    "replacement": "Все основные группы питания в норме."
+  },
+  {
+    "language": "ru_ru",
+    "key": "nutritionalbalance.nutrientstatus.details.ENGORGED",
+    "expected": "Вы чувствуйте себя слабым и менее эффективным",
+    "replacement": "Одна из групп выше целевого уровня."
+  },
+  {
+    "language": "ru_ru",
+    "key": "nutritionalbalance.nutrient.dairy",
+    "expected": "Молочки",
+    "replacement": "Молочные продукты"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.argonaut.description",
+    "expected": "Build the Argonaut",
+    "replacement": "Постройте «Аргонавт»"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.argonaut.title",
+    "expected": "This Boat Has Fins",
+    "replacement": "У этой лодки есть плавники"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.conduit.description",
+    "expected": "Craft a conduit",
+    "replacement": "Создайте морской источник"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.conduit.title",
+    "expected": "Better Than Gills",
+    "replacement": "Лучше жабр"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.coral_chunk.description",
+    "expected": "Shear a decorator crab to get a coral chunk",
+    "replacement": "Подстригите краба-декоратора, чтобы получить кусок коралла"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.coral_chunk.title",
+    "expected": "That's Not A Sheep",
+    "replacement": "Это вам не овца"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.coral_tools.description",
+    "expected": "Craft a tool out of coral chunks",
+    "replacement": "Создайте инструмент из кусков коралла"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.coral_tools.title",
+    "expected": "Who Needs Mending?",
+    "replacement": "Кому нужна починка?"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.creeper_hook.description",
+    "expected": "Also try The Creeper's Code!",
+    "replacement": "Попробуйте также The Creeper's Code!"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.depth_charge.description",
+    "expected": "Craft a depth charge",
+    "replacement": "Создайте глубинную бомбу"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.depth_charge.title",
+    "expected": "Mining Fatigue?",
+    "replacement": "Устали копать?"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.diving_upgrade.description",
+    "expected": "Find a diving suit upgrade template",
+    "replacement": "Найдите шаблон улучшения водолазного костюма"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.diving_upgrade.title",
+    "expected": "Beachcombing",
+    "replacement": "Находки на берегу"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.diving_weight.description",
+    "expected": "Craft a diving weight",
+    "replacement": "Создайте водолазный груз"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.diving_weight.title",
+    "expected": "The Fast Way Down",
+    "replacement": "Быстрый спуск"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.get_clam.description",
+    "expected": "Feed a dugong some sea lettuce to get a clam",
+    "replacement": "Покормите дюгоня морским салатом, чтобы получить моллюска"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.get_clam.title",
+    "expected": "Happy As A Clam",
+    "replacement": "Довольный моллюск"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.glowing_diving_suit.description",
+    "expected": "Make your diving suit glow in the dark",
+    "replacement": "Сделайте свой водолазный костюм светящимся в темноте"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.glowing_diving_suit.title",
+    "expected": "The Light In The Abyss",
+    "replacement": "Свет в бездне"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.kill_sirenian.description",
+    "expected": "They're endangered, you know",
+    "replacement": "Между прочим, они под угрозой исчезновения"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.kill_sirenian.title",
+    "expected": "Sea Cow Tipper",
+    "replacement": "Охотник на морских коров"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.nautilus_shell.description",
+    "expected": "Obtain a nautilus shell",
+    "replacement": "Получите раковину наутилуса"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.nautilus_shell.title",
+    "expected": "Someone Used To Live Here",
+    "replacement": "Здесь кто-то жил"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.ominous_conch.description",
+    "expected": "Trade shells with a hermit crab for an Ominous Conch",
+    "replacement": "Обменяйте раковины у рака-отшельника на зловещую раковину"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.ominous_conch.title",
+    "expected": "If You Listen Closely..",
+    "replacement": "Если прислушаться…"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.plant_clam.description",
+    "expected": "Grow your own clams underwater",
+    "replacement": "Вырастите собственных моллюсков под водой"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.plant_clam.title",
+    "expected": "Shell Corporation",
+    "replacement": "Ракушечное хозяйство"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.reinforced_diving_suit.description",
+    "expected": "Reinforce your diving gear",
+    "replacement": "Усильте своё водолазное снаряжение"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.reinforced_diving_suit.title",
+    "expected": "Diving Deeper",
+    "replacement": "Погружение глубже"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.seashell_tools.description",
+    "expected": "Craft a tool out of nautilus shells",
+    "replacement": "Создайте инструмент из раковин наутилуса"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.seashell_tools.title",
+    "expected": "Shell Yeah!",
+    "replacement": "Вот это раковина!"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.shell_beast.description",
+    "expected": "Kill the Shell Beast",
+    "replacement": "Победите раковинного зверя"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.shell_beast.title",
+    "expected": "Shell-Shocked",
+    "replacement": "Сокрушая панцирь"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.sulfur.description",
+    "expected": "Find sulfur in a sulfuric cave",
+    "replacement": "Найдите серу в серной пещере"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.sulfur.title",
+    "expected": "Not Glowstone Dust",
+    "replacement": "Это не светокаменная пыль"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.trident.description",
+    "expected": "Obtain a trident",
+    "replacement": "Получите трезубец"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.trident.title",
+    "expected": "Poseidon Quivers Before Him!",
+    "replacement": "Даже Посейдон трепещет!"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.turtle_scute.description",
+    "expected": "Obtain a turtle scute",
+    "replacement": "Получите черепаший щиток"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.turtle_scute.title",
+    "expected": "They Grow Up So Fast!",
+    "replacement": "Как быстро они растут!"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.turtle_set.description",
+    "expected": "Craft a piece of turtle armor",
+    "replacement": "Создайте часть черепашьей брони"
+  },
+  {
+    "key": "advancements.hybrid_aquatic.turtle_set.title",
+    "expected": "Cowabunga!",
+    "replacement": "Кавабанга!"
+  },
+  {
+    "key": "block.hybrid_aquatic.acacia_raft",
+    "expected": "Acacia Raft",
+    "replacement": "Плот из акации"
+  },
+  {
+    "key": "block.hybrid_aquatic.aerated_sand",
+    "expected": "Aerated Sand",
+    "replacement": "Рыхлый песок"
+  },
+  {
+    "key": "block.hybrid_aquatic.bamboo_coral",
+    "expected": "Bamboo Coral",
+    "replacement": "Бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bamboo_coral_block",
+    "expected": "Bamboo Coral Block",
+    "replacement": "Блок: бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bamboo_coral_fan",
+    "expected": "Bamboo Coral Fan",
+    "replacement": "Веер: бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bamboo_crate",
+    "expected": "Bamboo Crate",
+    "replacement": "Бамбуковый ящик"
+  },
+  {
+    "key": "block.hybrid_aquatic.barnacle_shorestone",
+    "expected": "Barnacle Shorestone",
+    "replacement": "Береговой камень с усоногими раками"
+  },
+  {
+    "key": "block.hybrid_aquatic.basking_shark_plushie.description",
+    "expected": "Can be worn as a hat!",
+    "replacement": "Можно носить как шляпу!"
+  },
+  {
+    "key": "block.hybrid_aquatic.bell_buoy",
+    "expected": "Bell Buoy",
+    "replacement": "Буй с колоколом"
+  },
+  {
+    "key": "block.hybrid_aquatic.birch_raft",
+    "expected": "Birch Raft",
+    "replacement": "Плот из берёзы"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_bamboo_coral",
+    "expected": "Bleached Bamboo Coral",
+    "replacement": "Обесцвеченный бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_bamboo_coral_block",
+    "expected": "Bleached Bamboo Coral Block",
+    "replacement": "Блок: обесцвеченный бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_bamboo_coral_fan",
+    "expected": "Bleached Bamboo Coral Fan",
+    "replacement": "Веер: обесцвеченный бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_brain_coral",
+    "expected": "Bleached Brain Coral",
+    "replacement": "Обесцвеченный мозговой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_brain_coral_block",
+    "expected": "Bleached Brain Coral Block",
+    "replacement": "Блок: обесцвеченный мозговой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_brain_coral_fan",
+    "expected": "Bleached Brain Coral Fan",
+    "replacement": "Веер: обесцвеченный мозговой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_bubble_coral",
+    "expected": "Bleached Bubble Coral",
+    "replacement": "Обесцвеченный пузырчатый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_bubble_coral_block",
+    "expected": "Bleached Bubble Coral Block",
+    "replacement": "Блок: обесцвеченный пузырчатый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_bubble_coral_fan",
+    "expected": "Bleached Bubble Coral Fan",
+    "replacement": "Веер: обесцвеченный пузырчатый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_button_coral",
+    "expected": "Bleached Button Coral",
+    "replacement": "Обесцвеченный пуговичный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_button_coral_block",
+    "expected": "Bleached Button Coral Block",
+    "replacement": "Блок: обесцвеченный пуговичный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_button_coral_fan",
+    "expected": "Bleached Button Coral Fan",
+    "replacement": "Веер: обесцвеченный пуговичный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_fire_coral",
+    "expected": "Bleached Fire Coral",
+    "replacement": "Обесцвеченный огненный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_fire_coral_block",
+    "expected": "Bleached Fire Coral Block",
+    "replacement": "Блок: обесцвеченный огненный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_fire_coral_fan",
+    "expected": "Bleached Fire Coral Fan",
+    "replacement": "Веер: обесцвеченный огненный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_horn_coral",
+    "expected": "Bleached Horn Coral",
+    "replacement": "Обесцвеченный роговой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_horn_coral_block",
+    "expected": "Bleached Horn Coral Block",
+    "replacement": "Блок: обесцвеченный роговой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_horn_coral_fan",
+    "expected": "Bleached Horn Coral Fan",
+    "replacement": "Веер: обесцвеченный роговой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_leaf_coral",
+    "expected": "Bleached Leaf Coral",
+    "replacement": "Обесцвеченный листовой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_leaf_coral_block",
+    "expected": "Bleached Leaf Coral Block",
+    "replacement": "Блок: обесцвеченный листовой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_leaf_coral_fan",
+    "expected": "Bleached Leaf Coral Fan",
+    "replacement": "Веер: обесцвеченный листовой коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_lophelia_coral",
+    "expected": "Bleached Lophelia Coral",
+    "replacement": "Обесцвеченный лофелиевый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_lophelia_coral_block",
+    "expected": "Bleached Lophelia Coral Block",
+    "replacement": "Блок: обесцвеченный лофелиевый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_lophelia_coral_fan",
+    "expected": "Bleached Lophelia Coral Fan",
+    "replacement": "Веер: обесцвеченный лофелиевый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_rose_coral",
+    "expected": "Bleached Rose Coral",
+    "replacement": "Обесцвеченный розовый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_rose_coral_block",
+    "expected": "Bleached Rose Coral Block",
+    "replacement": "Блок: обесцвеченный розовый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_rose_coral_fan",
+    "expected": "Bleached Rose Coral Fan",
+    "replacement": "Веер: обесцвеченный розовый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_sun_coral",
+    "expected": "Bleached Sun Coral",
+    "replacement": "Обесцвеченный солнечный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_sun_coral_block",
+    "expected": "Bleached Sun Coral Block",
+    "replacement": "Блок: обесцвеченный солнечный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_sun_coral_fan",
+    "expected": "Bleached Sun Coral Fan",
+    "replacement": "Веер: обесцвеченный солнечный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_thorn_coral",
+    "expected": "Bleached Thorn Coral",
+    "replacement": "Обесцвеченный шипастый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_thorn_coral_block",
+    "expected": "Bleached Thorn Coral Block",
+    "replacement": "Блок: обесцвеченный шипастый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_thorn_coral_fan",
+    "expected": "Bleached Thorn Coral Fan",
+    "replacement": "Веер: обесцвеченный шипастый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_tube_coral",
+    "expected": "Bleached Tube Coral",
+    "replacement": "Обесцвеченный трубчатый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_tube_coral_block",
+    "expected": "Bleached Tube Coral Block",
+    "replacement": "Блок: обесцвеченный трубчатый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_tube_coral_fan",
+    "expected": "Bleached Tube Coral Fan",
+    "replacement": "Веер: обесцвеченный трубчатый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_zigzag_coral",
+    "expected": "Bleached Zigzag Coral",
+    "replacement": "Обесцвеченный зигзагообразный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_zigzag_coral_block",
+    "expected": "Bleached Zigzag Coral Block",
+    "replacement": "Блок: обесцвеченный зигзагообразный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bleached_zigzag_coral_fan",
+    "expected": "Bleached Zigzag Coral Fan",
+    "replacement": "Веер: обесцвеченный зигзагообразный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.bone_fence",
+    "expected": "Bone Fence",
+    "replacement": "Костяной забор"
+  },
+  {
+    "key": "block.hybrid_aquatic.bone_slab",
+    "expected": "Bone Slab",
+    "replacement": "Плита из кости"
+  },
+  {
+    "key": "block.hybrid_aquatic.bone_stairs",
+    "expected": "Bone Stairs",
+    "replacement": "Ступеньки из кости"
+  },
+  {
+    "key": "block.hybrid_aquatic.bone_wall",
+    "expected": "Bone Wall",
+    "replacement": "Ограда из кости"
+  },
+  {
+    "key": "block.hybrid_aquatic.bone_worms",
+    "expected": "Bone Worms",
+    "replacement": "Костяные черви"
+  },
+  {
+    "key": "block.hybrid_aquatic.bubble_geyser",
+    "expected": "Bubble Geyser",
+    "replacement": "Пузырьковый гейзер"
+  },
+  {
+    "key": "block.hybrid_aquatic.bull_shark_plushie.description",
+    "expected": "Can be worn as a hat!",
+    "replacement": "Можно носить как шляпу!"
+  },
+  {
+    "key": "block.hybrid_aquatic.cherry_raft",
+    "expected": "Cherry Raft",
+    "replacement": "Плот из вишни"
+  },
+  {
+    "key": "block.hybrid_aquatic.chimneystone",
+    "expected": "Chimneystone",
+    "replacement": "Камень гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chimneystone_brick_slab",
+    "expected": "Chimneystone Brick Slab",
+    "replacement": "Плита из кирпичей из камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chimneystone_brick_stairs",
+    "expected": "Chimneystone Brick Stairs",
+    "replacement": "Ступеньки из кирпичей из камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chimneystone_brick_wall",
+    "expected": "Chimneystone Brick Wall",
+    "replacement": "Ограда из кирпичей из камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chimneystone_bricks",
+    "expected": "Chimneystone Bricks",
+    "replacement": "Кирпичи из камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chimneystone_slab",
+    "expected": "Chimneystone Slab",
+    "replacement": "Плита из камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chimneystone_stairs",
+    "expected": "Chimneystone Stairs",
+    "replacement": "Ступеньки из камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chimneystone_wall",
+    "expected": "Chimneystone Wall",
+    "replacement": "Ограда из камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chiseled_chimneystone",
+    "expected": "Chiseled Chimneystone",
+    "replacement": "Резной камень гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.chiseled_orange_brinestone",
+    "expected": "Chiseled Orange Brinestone",
+    "replacement": "Резной оранжевый соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.chiseled_red_brinestone",
+    "expected": "Chiseled Red Brinestone",
+    "replacement": "Резной красный соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.chiseled_schist",
+    "expected": "Chiseled Schist",
+    "replacement": "Резной сланец"
+  },
+  {
+    "key": "block.hybrid_aquatic.chiseled_white_sandstone",
+    "expected": "Chiseled White Sandstone",
+    "replacement": "Резной белый песчаник"
+  },
+  {
+    "key": "block.hybrid_aquatic.chiseled_yellow_brinestone",
+    "expected": "Chiseled Yellow Brinestone",
+    "replacement": "Резной жёлтый соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.clams",
+    "expected": "Clam",
+    "replacement": "Двустворчатый моллюск"
+  },
+  {
+    "key": "block.hybrid_aquatic.coralstone",
+    "expected": "Coralstone",
+    "replacement": "Коралловый камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.crystalline_sulfur",
+    "expected": "Crystalline Sulfur",
+    "replacement": "Кристаллическая сера"
+  },
+  {
+    "key": "block.hybrid_aquatic.cut_white_sandstone",
+    "expected": "Cut White Sandstone",
+    "replacement": "Пиленый белый песчаник"
+  },
+  {
+    "key": "block.hybrid_aquatic.cut_white_sandstone_slab",
+    "expected": "Cut White Sandstone Slab",
+    "replacement": "Плита из пиленого белого песчаника"
+  },
+  {
+    "key": "block.hybrid_aquatic.dark_oak_raft",
+    "expected": "Dark Oak Raft",
+    "replacement": "Плот из тёмного дуба"
+  },
+  {
+    "key": "block.hybrid_aquatic.dead_bamboo_coral",
+    "expected": "Dead Bamboo Coral",
+    "replacement": "Мёртвый бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.dead_bamboo_coral_block",
+    "expected": "Dead Bamboo Coral Block",
+    "replacement": "Блок: мёртвый бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.dead_bamboo_coral_fan",
+    "expected": "Dead Bamboo Coral Fan",
+    "replacement": "Веер: мёртвый бамбуковый коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.dead_zigzag_coral",
+    "expected": "Dead Zigzag Coral",
+    "replacement": "Мёртвый зигзагообразный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.dead_zigzag_coral_block",
+    "expected": "Dead Zigzag Coral Block",
+    "replacement": "Блок: мёртвый зигзагообразный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.dead_zigzag_coral_fan",
+    "expected": "Dead Zigzag Coral Fan",
+    "replacement": "Веер: мёртвый зигзагообразный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.delesseria",
+    "expected": "Delesseria",
+    "replacement": "Делессерия"
+  },
+  {
+    "key": "block.hybrid_aquatic.delesseria_plant",
+    "expected": "Delesseria Plant",
+    "replacement": "Стебель делессерии"
+  },
+  {
+    "key": "block.hybrid_aquatic.depth_charge",
+    "expected": "Depth Charge",
+    "replacement": "Глубинная бомба"
+  },
+  {
+    "key": "block.hybrid_aquatic.driftwood_raft",
+    "expected": "Driftwood Raft",
+    "replacement": "Плот из плавника"
+  },
+  {
+    "key": "block.hybrid_aquatic.frilled_shark_plushie.description",
+    "expected": "Can be worn as a hat!",
+    "replacement": "Можно носить как шляпу!"
+  },
+  {
+    "key": "block.hybrid_aquatic.giant_thermal_vent",
+    "expected": "Giant Thermal Vent",
+    "replacement": "Гигантский гидротермальный источник"
+  },
+  {
+    "key": "block.hybrid_aquatic.glass_sponge",
+    "expected": "Glass Sponge",
+    "replacement": "Стеклянная губка"
+  },
+  {
+    "key": "block.hybrid_aquatic.grassy_sand",
+    "expected": "Grassy Sand",
+    "replacement": "Песок с травой"
+  },
+  {
+    "key": "block.hybrid_aquatic.great_white_shark_plushie.description",
+    "expected": "Can be worn as a hat!",
+    "replacement": "Можно носить как шляпу!"
+  },
+  {
+    "key": "block.hybrid_aquatic.hagslime_block",
+    "expected": "Hagslime Block",
+    "replacement": "Блок слизи миксины"
+  },
+  {
+    "key": "block.hybrid_aquatic.hammerhead_shark_plushie.description",
+    "expected": "Can be worn as a hat!",
+    "replacement": "Можно носить как шляпу!"
+  },
+  {
+    "key": "block.hybrid_aquatic.harp_sponge",
+    "expected": "Harp Sponge",
+    "replacement": "Губка-лира"
+  },
+  {
+    "key": "block.hybrid_aquatic.jungle_raft",
+    "expected": "Jungle Raft",
+    "replacement": "Плот из тропического дерева"
+  },
+  {
+    "key": "block.hybrid_aquatic.mangrove_raft",
+    "expected": "Mangrove Raft",
+    "replacement": "Плот из мангрового дерева"
+  },
+  {
+    "key": "block.hybrid_aquatic.marine_snow",
+    "expected": "Marine Snow",
+    "replacement": "Морской снег"
+  },
+  {
+    "key": "block.hybrid_aquatic.message_in_a_bottle.change_hint",
+    "expected": "Interact in-world to change variant",
+    "replacement": "Взаимодействуйте с установленным блоком, чтобы сменить вариант"
+  },
+  {
+    "key": "block.hybrid_aquatic.message_in_a_bottle.variant.bottle",
+    "expected": "Bottle",
+    "replacement": "Бутылка"
+  },
+  {
+    "key": "block.hybrid_aquatic.message_in_a_bottle.variant.jar",
+    "expected": "Jar",
+    "replacement": "Банка"
+  },
+  {
+    "key": "block.hybrid_aquatic.message_in_a_bottle.variant.longneck",
+    "expected": "Longneck Bottle",
+    "replacement": "Бутылка с длинным горлышком"
+  },
+  {
+    "key": "block.hybrid_aquatic.message_in_a_bottle.variant.potion",
+    "expected": "Potion Bottle",
+    "replacement": "Бутылочка для зелья"
+  },
+  {
+    "key": "block.hybrid_aquatic.message_in_a_bottle.variant.wine",
+    "expected": "Wine Bottle",
+    "replacement": "Винная бутылка"
+  },
+  {
+    "key": "block.hybrid_aquatic.mussels",
+    "expected": "Mussel",
+    "replacement": "Мидия"
+  },
+  {
+    "key": "block.hybrid_aquatic.oak_raft",
+    "expected": "Oak Raft",
+    "replacement": "Плот из дуба"
+  },
+  {
+    "key": "block.hybrid_aquatic.orange_brinestone",
+    "expected": "Orange Brinestone",
+    "replacement": "Оранжевый соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.orange_brinestone_brick_slab",
+    "expected": "Orange Brinestone Brick Slab",
+    "replacement": "Плита из кирпичей из оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.orange_brinestone_brick_stairs",
+    "expected": "Orange Brinestone Brick Stairs",
+    "replacement": "Ступеньки из кирпичей из оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.orange_brinestone_brick_wall",
+    "expected": "Orange Brinestone Brick Wall",
+    "replacement": "Ограда из кирпичей из оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.orange_brinestone_bricks",
+    "expected": "Orange Brinestone Bricks",
+    "replacement": "Кирпичи из оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.orange_brinestone_slab",
+    "expected": "Orange Brinestone Slab",
+    "replacement": "Плита из оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.orange_brinestone_stairs",
+    "expected": "Orange Brinestone Stairs",
+    "replacement": "Ступеньки из оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.orange_brinestone_wall",
+    "expected": "Orange Brinestone Wall",
+    "replacement": "Ограда из оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.oyster_block",
+    "expected": "Oyster",
+    "replacement": "Устрица"
+  },
+  {
+    "key": "block.hybrid_aquatic.ping_pong_sponge",
+    "expected": "Ping Pong Sponge",
+    "replacement": "Шаровидная губка"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_chimneystone",
+    "expected": "Polished Chimneystone",
+    "replacement": "Полированный камень гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_chimneystone_slab",
+    "expected": "Polished Chimneystone Slab",
+    "replacement": "Плита из полированного камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_chimneystone_stairs",
+    "expected": "Polished Chimneystone Stairs",
+    "replacement": "Ступеньки из полированного камня гидротермальных труб"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_orange_brinestone",
+    "expected": "Polished Orange Brinestone",
+    "replacement": "Полированный оранжевый соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_orange_brinestone_slab",
+    "expected": "Polished Orange Brinestone Slab",
+    "replacement": "Плита из полированного оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_orange_brinestone_stairs",
+    "expected": "Polished Orange Brinestone Stairs",
+    "replacement": "Ступеньки из полированного оранжевого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_red_brinestone",
+    "expected": "Polished Red Brinestone",
+    "replacement": "Полированный красный соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_red_brinestone_slab",
+    "expected": "Polished Red Brinestone Slab",
+    "replacement": "Плита из полированного красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_red_brinestone_stairs",
+    "expected": "Polished Red Brinestone Stairs",
+    "replacement": "Ступеньки из полированного красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_schist",
+    "expected": "Polished Schist",
+    "replacement": "Полированный сланец"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_schist_slab",
+    "expected": "Polished Schist Slab",
+    "replacement": "Плита из полированного сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_schist_stairs",
+    "expected": "Polished Schist Stairs",
+    "replacement": "Ступеньки из полированного сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_yellow_brinestone",
+    "expected": "Polished Yellow Brinestone",
+    "replacement": "Полированный жёлтый соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_yellow_brinestone_slab",
+    "expected": "Polished Yellow Brinestone Slab",
+    "replacement": "Плита из полированного жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.polished_yellow_brinestone_stairs",
+    "expected": "Polished Yellow Brinestone Stairs",
+    "replacement": "Ступеньки из полированного жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.red_brinestone",
+    "expected": "Red Brinestone",
+    "replacement": "Красный соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.red_brinestone_brick_slab",
+    "expected": "Red Brinestone Brick Slab",
+    "replacement": "Плита из кирпичей из красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.red_brinestone_brick_stairs",
+    "expected": "Red Brinestone Brick Stairs",
+    "replacement": "Ступеньки из кирпичей из красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.red_brinestone_brick_wall",
+    "expected": "Red Brinestone Brick Wall",
+    "replacement": "Ограда из кирпичей из красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.red_brinestone_bricks",
+    "expected": "Red Brinestone Bricks",
+    "replacement": "Кирпичи из красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.red_brinestone_slab",
+    "expected": "Red Brinestone Slab",
+    "replacement": "Плита из красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.red_brinestone_stairs",
+    "expected": "Red Brinestone Stairs",
+    "replacement": "Ступеньки из красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.red_brinestone_wall",
+    "expected": "Red Brinestone Wall",
+    "replacement": "Ограда из красного соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.schist",
+    "expected": "Schist",
+    "replacement": "Сланец"
+  },
+  {
+    "key": "block.hybrid_aquatic.schist_brick_slab",
+    "expected": "Schist Brick Slab",
+    "replacement": "Плита из кирпичей из сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.schist_brick_stairs",
+    "expected": "Schist Brick Stairs",
+    "replacement": "Ступеньки из кирпичей из сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.schist_brick_wall",
+    "expected": "Schist Brick Wall",
+    "replacement": "Ограда из кирпичей из сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.schist_bricks",
+    "expected": "Schist Bricks",
+    "replacement": "Кирпичи из сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.schist_slab",
+    "expected": "Schist Slab",
+    "replacement": "Плита из сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.schist_stairs",
+    "expected": "Schist Stairs",
+    "replacement": "Ступеньки из сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.schist_wall",
+    "expected": "Schist Wall",
+    "replacement": "Ограда из сланца"
+  },
+  {
+    "key": "block.hybrid_aquatic.shorestone",
+    "expected": "Shorestone",
+    "replacement": "Береговой камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.short_red_algae",
+    "expected": "Short Red Algae",
+    "replacement": "Низкие красные водоросли"
+  },
+  {
+    "key": "block.hybrid_aquatic.smooth_white_sandstone",
+    "expected": "Smooth White Sandstone",
+    "replacement": "Гладкий белый песчаник"
+  },
+  {
+    "key": "block.hybrid_aquatic.smooth_white_sandstone_slab",
+    "expected": "Smooth White Sandstone Slab",
+    "replacement": "Плита из гладкого белого песчаника"
+  },
+  {
+    "key": "block.hybrid_aquatic.smooth_white_sandstone_stairs",
+    "expected": "Smooth White Sandstone Stairs",
+    "replacement": "Ступеньки из гладкого белого песчаника"
+  },
+  {
+    "key": "block.hybrid_aquatic.spruce_raft",
+    "expected": "Spruce Raft",
+    "replacement": "Плот из ели"
+  },
+  {
+    "key": "block.hybrid_aquatic.suspicious_red_sand",
+    "expected": "Suspicious Red Sand",
+    "replacement": "Подозрительный красный песок"
+  },
+  {
+    "key": "block.hybrid_aquatic.thresher_shark_plushie.description",
+    "expected": "Can be worn as a hat!",
+    "replacement": "Можно носить как шляпу!"
+  },
+  {
+    "key": "block.hybrid_aquatic.tiger_shark_plushie.description",
+    "expected": "Can be worn as a hat!",
+    "replacement": "Можно носить как шляпу!"
+  },
+  {
+    "key": "block.hybrid_aquatic.water_hyacinth",
+    "expected": "Water Hyacinth",
+    "replacement": "Водный гиацинт"
+  },
+  {
+    "key": "block.hybrid_aquatic.whale_shark_plushie.description",
+    "expected": "Can be worn as a hat!",
+    "replacement": "Можно носить как шляпу!"
+  },
+  {
+    "key": "block.hybrid_aquatic.white_sand",
+    "expected": "White Sand",
+    "replacement": "Белый песок"
+  },
+  {
+    "key": "block.hybrid_aquatic.white_sandstone",
+    "expected": "White Sandstone",
+    "replacement": "Белый песчаник"
+  },
+  {
+    "key": "block.hybrid_aquatic.white_sandstone_slab",
+    "expected": "White Sandstone Slab",
+    "replacement": "Плита из белого песчаника"
+  },
+  {
+    "key": "block.hybrid_aquatic.white_sandstone_stairs",
+    "expected": "White Sandstone Stairs",
+    "replacement": "Ступеньки из белого песчаника"
+  },
+  {
+    "key": "block.hybrid_aquatic.white_sandstone_wall",
+    "expected": "White Sandstone Wall",
+    "replacement": "Ограда из белого песчаника"
+  },
+  {
+    "key": "block.hybrid_aquatic.wild_mussels",
+    "expected": "Wild Mussels",
+    "replacement": "Дикие мидии"
+  },
+  {
+    "key": "block.hybrid_aquatic.yellow_brinestone",
+    "expected": "Yellow Brinestone",
+    "replacement": "Жёлтый соляной камень"
+  },
+  {
+    "key": "block.hybrid_aquatic.yellow_brinestone_brick_slab",
+    "expected": "Yellow Brinestone Brick Slab",
+    "replacement": "Плита из кирпичей из жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.yellow_brinestone_brick_stairs",
+    "expected": "Yellow Brinestone Brick Stairs",
+    "replacement": "Ступеньки из кирпичей из жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.yellow_brinestone_brick_wall",
+    "expected": "Yellow Brinestone Brick Wall",
+    "replacement": "Ограда из кирпичей из жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.yellow_brinestone_bricks",
+    "expected": "Yellow Brinestone Bricks",
+    "replacement": "Кирпичи из жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.yellow_brinestone_slab",
+    "expected": "Yellow Brinestone Slab",
+    "replacement": "Плита из жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.yellow_brinestone_stairs",
+    "expected": "Yellow Brinestone Stairs",
+    "replacement": "Ступеньки из жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.yellow_brinestone_wall",
+    "expected": "Yellow Brinestone Wall",
+    "replacement": "Ограда из жёлтого соляного камня"
+  },
+  {
+    "key": "block.hybrid_aquatic.zigzag_coral",
+    "expected": "Zigzag Coral",
+    "replacement": "Зигзагообразный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.zigzag_coral_block",
+    "expected": "Zigzag Coral Block",
+    "replacement": "Блок: зигзагообразный коралл"
+  },
+  {
+    "key": "block.hybrid_aquatic.zigzag_coral_fan",
+    "expected": "Zigzag Coral Fan",
+    "replacement": "Веер: зигзагообразный коралл"
+  },
+  {
+    "key": "effect.hybrid_aquatic.buoyancy",
+    "expected": "Buoyancy",
+    "replacement": "Плавучесть"
+  },
+  {
+    "key": "effect.hybrid_aquatic.corrosion",
+    "expected": "Corrosion",
+    "replacement": "Коррозия"
+  },
+  {
+    "key": "effect.hybrid_aquatic.thorns",
+    "expected": "Thorns",
+    "replacement": "Шипы"
+  },
+  {
+    "key": "entity.hybrid_aquatic.african_butterflyfish",
+    "expected": "African Butterflyfish",
+    "replacement": "Африканская рыба-бабочка"
+  },
+  {
+    "key": "entity.hybrid_aquatic.argonaut",
+    "expected": "Argonaut",
+    "replacement": "Аргонавт"
+  },
+  {
+    "key": "entity.hybrid_aquatic.arrow_squid",
+    "expected": "Arrow Squid",
+    "replacement": "Кальмар-стрела"
+  },
+  {
+    "key": "entity.hybrid_aquatic.barracuda",
+    "expected": "Barracuda",
+    "replacement": "Барракуда"
+  },
+  {
+    "key": "entity.hybrid_aquatic.beakling",
+    "expected": "Beakling",
+    "replacement": "Клювик"
+  },
+  {
+    "key": "entity.hybrid_aquatic.big_red_jellyfish",
+    "expected": "Big Red Jellyfish",
+    "replacement": "Большая красная медуза"
+  },
+  {
+    "key": "entity.hybrid_aquatic.blobfish",
+    "expected": "Blobfish",
+    "replacement": "Рыба-капля"
+  },
+  {
+    "key": "entity.hybrid_aquatic.blowfish",
+    "expected": "Blowfish",
+    "replacement": "Иглобрюх"
+  },
+  {
+    "key": "entity.hybrid_aquatic.box_jellyfish",
+    "expected": "Box Jellyfish",
+    "replacement": "Кубомедуза"
+  },
+  {
+    "key": "entity.hybrid_aquatic.boxfish",
+    "expected": "Boxfish",
+    "replacement": "Кузовок"
+  },
+  {
+    "key": "entity.hybrid_aquatic.carp",
+    "expected": "Carp",
+    "replacement": "Карп"
+  },
+  {
+    "key": "entity.hybrid_aquatic.cavitation_bubble",
+    "expected": "Cavitation Bubble",
+    "replacement": "Кавитационный пузырь"
+  },
+  {
+    "key": "entity.hybrid_aquatic.cepheidae_jellyfish",
+    "expected": "Cepheidae Jellyfish",
+    "replacement": "Медуза-цефея"
+  },
+  {
+    "key": "entity.hybrid_aquatic.coelacanth",
+    "expected": "Coelacanth",
+    "replacement": "Латимерия"
+  },
+  {
+    "key": "entity.hybrid_aquatic.colossal_squid",
+    "expected": "Colossal Squid",
+    "replacement": "Колоссальный кальмар"
+  },
+  {
+    "key": "entity.hybrid_aquatic.comb_jelly",
+    "expected": "Comb Jelly",
+    "replacement": "Гребневик"
+  },
+  {
+    "key": "entity.hybrid_aquatic.corydora",
+    "expected": "Corydora",
+    "replacement": "Коридорас"
+  },
+  {
+    "key": "entity.hybrid_aquatic.cosmic_jellyfish",
+    "expected": "Cosmic Jellyfish",
+    "replacement": "Космическая медуза"
+  },
+  {
+    "key": "entity.hybrid_aquatic.crown_jellyfish",
+    "expected": "Crown Jellyfish",
+    "replacement": "Коронованная медуза"
+  },
+  {
+    "key": "entity.hybrid_aquatic.damselfish",
+    "expected": "Damselfish",
+    "replacement": "Рыба-ласточка"
+  },
+  {
+    "key": "entity.hybrid_aquatic.danio",
+    "expected": "Danio",
+    "replacement": "Данио"
+  },
+  {
+    "key": "entity.hybrid_aquatic.decorator_crab",
+    "expected": "Decorator Crab",
+    "replacement": "Краб-декоратор"
+  },
+  {
+    "key": "entity.hybrid_aquatic.depth_charge",
+    "expected": "Depth Charge",
+    "replacement": "Глубинная бомба"
+  },
+  {
+    "key": "entity.hybrid_aquatic.dugong",
+    "expected": "Dugong",
+    "replacement": "Дюгонь"
+  },
+  {
+    "key": "entity.hybrid_aquatic.fangtooth",
+    "expected": "Fangtooth",
+    "replacement": "Саблезуб"
+  },
+  {
+    "key": "entity.hybrid_aquatic.firework_jellyfish",
+    "expected": "Firework Jellyfish",
+    "replacement": "Медуза-фейерверк"
+  },
+  {
+    "key": "entity.hybrid_aquatic.flying_fish",
+    "expected": "Flying Fish",
+    "replacement": "Летучая рыба"
+  },
+  {
+    "key": "entity.hybrid_aquatic.garden_eel",
+    "expected": "Garden Eel",
+    "replacement": "Садовый угорь"
+  },
+  {
+    "key": "entity.hybrid_aquatic.giant_squid",
+    "expected": "Giant Squid",
+    "replacement": "Гигантский кальмар"
+  },
+  {
+    "key": "entity.hybrid_aquatic.goblin_shark",
+    "expected": "Goblin Shark",
+    "replacement": "Акула-гоблин"
+  },
+  {
+    "key": "entity.hybrid_aquatic.golden_dorado",
+    "expected": "Golden Dorado",
+    "replacement": "Золотой дорадо"
+  },
+  {
+    "key": "entity.hybrid_aquatic.goldfish",
+    "expected": "Goldfish",
+    "replacement": "Золотая рыбка"
+  },
+  {
+    "key": "entity.hybrid_aquatic.hagfish",
+    "expected": "Hagfish",
+    "replacement": "Миксина"
+  },
+  {
+    "key": "entity.hybrid_aquatic.hatchetfish",
+    "expected": "Hatchetfish",
+    "replacement": "Рыба-топорик"
+  },
+  {
+    "key": "entity.hybrid_aquatic.herring",
+    "expected": "Herring",
+    "replacement": "Сельдь"
+  },
+  {
+    "key": "entity.hybrid_aquatic.hound_shark",
+    "expected": "Hound Shark",
+    "replacement": "Кунья акула"
+  },
+  {
+    "key": "entity.hybrid_aquatic.john_dory",
+    "expected": "John Dory",
+    "replacement": "Солнечник"
+  },
+  {
+    "key": "entity.hybrid_aquatic.karcinogen",
+    "expected": "Karcinogen",
+    "replacement": "Карциноген"
+  },
+  {
+    "key": "entity.hybrid_aquatic.karcinoma",
+    "expected": "Karcinoma",
+    "replacement": "Карцинома"
+  },
+  {
+    "key": "entity.hybrid_aquatic.lantern_shark",
+    "expected": "Lantern Shark",
+    "replacement": "Светящаяся акула"
+  },
+  {
+    "key": "entity.hybrid_aquatic.mackerel",
+    "expected": "Mackerel",
+    "replacement": "Скумбрия"
+  },
+  {
+    "key": "entity.hybrid_aquatic.mahi",
+    "expected": "Mahi",
+    "replacement": "Махи-махи"
+  },
+  {
+    "key": "entity.hybrid_aquatic.manatee",
+    "expected": "Manatee",
+    "replacement": "Ламантин"
+  },
+  {
+    "key": "entity.hybrid_aquatic.manta_ray",
+    "expected": "Manta Ray",
+    "replacement": "Манта"
+  },
+  {
+    "key": "entity.hybrid_aquatic.ocean_sunfish",
+    "expected": "Ocean Sunfish",
+    "replacement": "Рыба-луна"
+  },
+  {
+    "key": "entity.hybrid_aquatic.octopus",
+    "expected": "Octopus",
+    "replacement": "Осьминог"
+  },
+  {
+    "key": "entity.hybrid_aquatic.orca",
+    "expected": "Orca",
+    "replacement": "Косатка"
+  },
+  {
+    "key": "entity.hybrid_aquatic.otter",
+    "expected": "Otter",
+    "replacement": "Выдра"
+  },
+  {
+    "key": "entity.hybrid_aquatic.parrotfish",
+    "expected": "Parrotfish",
+    "replacement": "Рыба-попугай"
+  },
+  {
+    "key": "entity.hybrid_aquatic.pearlfish",
+    "expected": "Pearlfish",
+    "replacement": "Жемчужная рыба"
+  },
+  {
+    "key": "entity.hybrid_aquatic.pleco",
+    "expected": "Pleco",
+    "replacement": "Плекостомус"
+  },
+  {
+    "key": "entity.hybrid_aquatic.pupfish",
+    "expected": "Pupfish",
+    "replacement": "Карпозубик"
+  },
+  {
+    "key": "entity.hybrid_aquatic.scalyfoot_snail",
+    "expected": "Scalyfoot Snail",
+    "replacement": "Чешуеногая улитка"
+  },
+  {
+    "key": "entity.hybrid_aquatic.sea_bass",
+    "expected": "Sea Bass",
+    "replacement": "Морской окунь"
+  },
+  {
+    "key": "entity.hybrid_aquatic.sea_slug",
+    "expected": "Sea Slug",
+    "replacement": "Морской слизень"
+  },
+  {
+    "key": "entity.hybrid_aquatic.seadragon",
+    "expected": "Seadragon",
+    "replacement": "Морской дракон"
+  },
+  {
+    "key": "entity.hybrid_aquatic.shell_beast",
+    "expected": "Shell Beast",
+    "replacement": "Раковинный зверь"
+  },
+  {
+    "key": "entity.hybrid_aquatic.shiner",
+    "expected": "Shiner",
+    "replacement": "Шайнер"
+  },
+  {
+    "key": "entity.hybrid_aquatic.sixgill_shark",
+    "expected": "Sixgill Shark",
+    "replacement": "Шестижаберная акула"
+  },
+  {
+    "key": "entity.hybrid_aquatic.sleeper_shark",
+    "expected": "Sleeper Shark",
+    "replacement": "Полярная акула"
+  },
+  {
+    "key": "entity.hybrid_aquatic.slickhead",
+    "expected": "Slickhead",
+    "replacement": "Гладкоголов"
+  },
+  {
+    "key": "entity.hybrid_aquatic.small_tnt",
+    "expected": "Small TNT",
+    "replacement": "Маленький динамит"
+  },
+  {
+    "key": "entity.hybrid_aquatic.snailfish",
+    "expected": "Snailfish",
+    "replacement": "Морской слизень-липарис"
+  },
+  {
+    "key": "entity.hybrid_aquatic.squirrelfish",
+    "expected": "Squirrelfish",
+    "replacement": "Рыба-белка"
+  },
+  {
+    "key": "entity.hybrid_aquatic.starfish_projectile",
+    "expected": "Thrown Starfish",
+    "replacement": "Брошенная морская звезда"
+  },
+  {
+    "key": "entity.hybrid_aquatic.stingray",
+    "expected": "Stingray",
+    "replacement": "Скат-хвостокол"
+  },
+  {
+    "key": "entity.hybrid_aquatic.surgeonfish",
+    "expected": "Surgeonfish",
+    "replacement": "Рыба-хирург"
+  },
+  {
+    "key": "entity.hybrid_aquatic.trevally",
+    "expected": "Trevally",
+    "replacement": "Каранкс"
+  },
+  {
+    "key": "entity.hybrid_aquatic.tripod_fish",
+    "expected": "Tripod Fish",
+    "replacement": "Рыба-тренога"
+  },
+  {
+    "key": "entity.hybrid_aquatic.trout",
+    "expected": "Trout",
+    "replacement": "Форель"
+  },
+  {
+    "key": "entity.hybrid_aquatic.tuna",
+    "expected": "Tuna",
+    "replacement": "Тунец"
+  },
+  {
+    "key": "entity.hybrid_aquatic.viperfish",
+    "expected": "Viperfish",
+    "replacement": "Рыба-гадюка"
+  },
+  {
+    "key": "entity.hybrid_aquatic.wrasse",
+    "expected": "Wrasse",
+    "replacement": "Губан"
+  },
+  {
+    "key": "item.hybrid_aquatic.african_butterflyfish",
+    "expected": "African Butterflyfish",
+    "replacement": "Африканская рыба-бабочка"
+  },
+  {
+    "key": "item.hybrid_aquatic.african_butterflyfish_spawn_egg",
+    "expected": "African Butterflyfish Spawn Egg",
+    "replacement": "Яйцо призыва: Африканская рыба-бабочка"
+  },
+  {
+    "key": "item.hybrid_aquatic.argonaut",
+    "expected": "Argonaut",
+    "replacement": "Аргонавт"
+  },
+  {
+    "key": "item.hybrid_aquatic.argonaut_spawn_egg",
+    "expected": "Argonaut Spawn Egg",
+    "replacement": "Яйцо призыва: Аргонавт"
+  },
+  {
+    "key": "item.hybrid_aquatic.arrow_squid_spawn_egg",
+    "expected": "Arrow Squid Spawn Egg",
+    "replacement": "Яйцо призыва: Кальмар-стрела"
+  },
+  {
+    "key": "item.hybrid_aquatic.barracuda_spawn_egg",
+    "expected": "Barracuda Spawn Egg",
+    "replacement": "Яйцо призыва: Барракуда"
+  },
+  {
+    "key": "item.hybrid_aquatic.beakling_spawn_egg",
+    "expected": "Beakling Spawn Egg",
+    "replacement": "Яйцо призыва: Клювик"
+  },
+  {
+    "key": "item.hybrid_aquatic.betta",
+    "expected": "Betta",
+    "replacement": "Петушок"
+  },
+  {
+    "key": "item.hybrid_aquatic.big_red_jellyfish_spawn_egg",
+    "expected": "Big Red Jellyfish Spawn Egg",
+    "replacement": "Яйцо призыва: Большая красная медуза"
+  },
+  {
+    "key": "item.hybrid_aquatic.blobfish",
+    "expected": "Blobfish",
+    "replacement": "Рыба-капля"
+  },
+  {
+    "key": "item.hybrid_aquatic.blobfish_spawn_egg",
+    "expected": "Blobfish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-капля"
+  },
+  {
+    "key": "item.hybrid_aquatic.blowfish",
+    "expected": "Blowfish",
+    "replacement": "Иглобрюх"
+  },
+  {
+    "key": "item.hybrid_aquatic.blowfish_spawn_egg",
+    "expected": "Blowfish Spawn Egg",
+    "replacement": "Яйцо призыва: Иглобрюх"
+  },
+  {
+    "key": "item.hybrid_aquatic.blue_hatxolotl",
+    "expected": "Blue Hatxolotl",
+    "replacement": "Синяя шапка-аксолотль"
+  },
+  {
+    "key": "item.hybrid_aquatic.box_jellyfish_spawn_egg",
+    "expected": "Box Jellyfish Spawn Egg",
+    "replacement": "Яйцо призыва: Кубомедуза"
+  },
+  {
+    "key": "item.hybrid_aquatic.boxfish",
+    "expected": "Boxfish",
+    "replacement": "Кузовок"
+  },
+  {
+    "key": "item.hybrid_aquatic.boxfish_spawn_egg",
+    "expected": "Boxfish Spawn Egg",
+    "replacement": "Яйцо призыва: Кузовок"
+  },
+  {
+    "key": "item.hybrid_aquatic.brine_bucket",
+    "expected": "Brine Bucket",
+    "replacement": "Ведро рассола"
+  },
+  {
+    "key": "item.hybrid_aquatic.brown_hatxolotl",
+    "expected": "Brown Hatxolotl",
+    "replacement": "Коричневая шапка-аксолотль"
+  },
+  {
+    "key": "item.hybrid_aquatic.carp",
+    "expected": "Carp",
+    "replacement": "Карп"
+  },
+  {
+    "key": "item.hybrid_aquatic.carp_spawn_egg",
+    "expected": "Carp Spawn Egg",
+    "replacement": "Яйцо призыва: Карп"
+  },
+  {
+    "key": "item.hybrid_aquatic.cavitation_bubble_spawn_egg",
+    "expected": "Cavitation Bubble Spawn Egg",
+    "replacement": "Яйцо призыва: Кавитационный пузырь"
+  },
+  {
+    "key": "item.hybrid_aquatic.cepheidae_jellyfish_spawn_egg",
+    "expected": "Cepheidae Jellyfish Spawn Egg",
+    "replacement": "Яйцо призыва: Медуза-цефея"
+  },
+  {
+    "key": "item.hybrid_aquatic.coelacanth",
+    "expected": "Coelacanth",
+    "replacement": "Латимерия"
+  },
+  {
+    "key": "item.hybrid_aquatic.coelacanth_spawn_egg",
+    "expected": "Coelacanth Spawn Egg",
+    "replacement": "Яйцо призыва: Латимерия"
+  },
+  {
+    "key": "item.hybrid_aquatic.colossal_squid_spawn_egg",
+    "expected": "Colossal Squid Spawn Egg",
+    "replacement": "Яйцо призыва: Колоссальный кальмар"
+  },
+  {
+    "key": "item.hybrid_aquatic.comb_jelly_spawn_egg",
+    "expected": "Comb Jelly Spawn Egg",
+    "replacement": "Яйцо призыва: Гребневик"
+  },
+  {
+    "key": "item.hybrid_aquatic.comically_large_nautilus_shell",
+    "expected": "Comically Large Nautilus Shell",
+    "replacement": "Нелепо большая раковина наутилуса"
+  },
+  {
+    "key": "item.hybrid_aquatic.cooked_clam",
+    "expected": "Cooked Clam",
+    "replacement": "Жареный моллюск"
+  },
+  {
+    "key": "item.hybrid_aquatic.cooked_lobster_tail",
+    "expected": "Cooked Lobster Tail",
+    "replacement": "Жареный хвост омара"
+  },
+  {
+    "key": "item.hybrid_aquatic.cooked_mussel",
+    "expected": "Cooked Mussel",
+    "replacement": "Жареная мидия"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_axe",
+    "expected": "Coral Axe",
+    "replacement": "Коралловый топор"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_axe.description",
+    "expected": "Repairs itself when underwater",
+    "replacement": "Восстанавливается под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_blade",
+    "expected": "Coral Blade",
+    "replacement": "Коралловый клинок"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_blade.description",
+    "expected": "Repairs itself when underwater",
+    "replacement": "Восстанавливается под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_chunk",
+    "expected": "Coral Chunk",
+    "replacement": "Кусок коралла"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_hoe",
+    "expected": "Coral Hoe",
+    "replacement": "Коралловая мотыга"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_hoe.description",
+    "expected": "Repairs itself when underwater",
+    "replacement": "Восстанавливается под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_pickaxe",
+    "expected": "Coral Pickaxe",
+    "replacement": "Коралловая кирка"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_pickaxe.description",
+    "expected": "Repairs itself when underwater",
+    "replacement": "Восстанавливается под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_shovel",
+    "expected": "Coral Shovel",
+    "replacement": "Коралловая лопата"
+  },
+  {
+    "key": "item.hybrid_aquatic.coral_shovel.description",
+    "expected": "Repairs itself when underwater",
+    "replacement": "Восстанавливается под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.corydora_spawn_egg",
+    "expected": "Corydora Spawn Egg",
+    "replacement": "Яйцо призыва: Коридорас"
+  },
+  {
+    "key": "item.hybrid_aquatic.cosmic_jellyfish_spawn_egg",
+    "expected": "Cosmic Jellyfish Spawn Egg",
+    "replacement": "Яйцо призыва: Космическая медуза"
+  },
+  {
+    "key": "item.hybrid_aquatic.creepermagnet_hook",
+    "expected": "CreeperMagnet Hook",
+    "replacement": "Крючок для криперов"
+  },
+  {
+    "key": "item.hybrid_aquatic.creepermagnet_hook.description",
+    "expected": "Don't use indoors",
+    "replacement": "Не используйте в помещении"
+  },
+  {
+    "key": "item.hybrid_aquatic.crown_jellyfish_spawn_egg",
+    "expected": "Crown Jellyfish Spawn Egg",
+    "replacement": "Яйцо призыва: Коронованная медуза"
+  },
+  {
+    "key": "item.hybrid_aquatic.cuttlebone",
+    "expected": "Cuttlebone",
+    "replacement": "Кость каракатицы"
+  },
+  {
+    "key": "item.hybrid_aquatic.cyan_hatxolotl",
+    "expected": "Cyan Hatxolotl",
+    "replacement": "Бирюзовая шапка-аксолотль"
+  },
+  {
+    "key": "item.hybrid_aquatic.damselfish",
+    "expected": "Damselfish",
+    "replacement": "Рыба-ласточка"
+  },
+  {
+    "key": "item.hybrid_aquatic.damselfish_spawn_egg",
+    "expected": "Damselfish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-ласточка"
+  },
+  {
+    "key": "item.hybrid_aquatic.danio",
+    "expected": "Danio",
+    "replacement": "Данио"
+  },
+  {
+    "key": "item.hybrid_aquatic.danio_spawn_egg",
+    "expected": "Danio Spawn Egg",
+    "replacement": "Яйцо призыва: Данио"
+  },
+  {
+    "key": "item.hybrid_aquatic.decorator_crab_spawn_egg",
+    "expected": "Decorator Crab Spawn Egg",
+    "replacement": "Яйцо призыва: Краб-декоратор"
+  },
+  {
+    "key": "item.hybrid_aquatic.depth_charge_spawn_egg",
+    "expected": "Depth Charge Spawn Egg",
+    "replacement": "Яйцо призыва: Глубинная бомба"
+  },
+  {
+    "key": "item.hybrid_aquatic.discus",
+    "expected": "Discus",
+    "replacement": "Дискус"
+  },
+  {
+    "key": "item.hybrid_aquatic.diving_armor_upgrade_template",
+    "expected": "Diving Armor Upgrade Template",
+    "replacement": "Шаблон улучшения водолазного снаряжения"
+  },
+  {
+    "key": "item.hybrid_aquatic.diving_weight",
+    "expected": "Diving Weight",
+    "replacement": "Водолазный груз"
+  },
+  {
+    "key": "item.hybrid_aquatic.diving_weight.description",
+    "expected": "Quite heavy",
+    "replacement": "Довольно тяжёлый"
+  },
+  {
+    "key": "item.hybrid_aquatic.dragonfish",
+    "expected": "Dragonfish",
+    "replacement": "Иглорот"
+  },
+  {
+    "key": "item.hybrid_aquatic.dugong_spawn_egg",
+    "expected": "Dugong Spawn Egg",
+    "replacement": "Яйцо призыва: Дюгонь"
+  },
+  {
+    "key": "item.hybrid_aquatic.fangtooth_spawn_egg",
+    "expected": "Fangtooth Spawn Egg",
+    "replacement": "Яйцо призыва: Саблезуб"
+  },
+  {
+    "key": "item.hybrid_aquatic.firework_jellyfish_spawn_egg",
+    "expected": "Firework Jellyfish Spawn Egg",
+    "replacement": "Яйцо призыва: Медуза-фейерверк"
+  },
+  {
+    "key": "item.hybrid_aquatic.fish_food",
+    "expected": "Fish Food",
+    "replacement": "Корм для рыб"
+  },
+  {
+    "key": "item.hybrid_aquatic.flashlight_fish",
+    "expected": "Flashlight Fish",
+    "replacement": "Светящийся анчоус"
+  },
+  {
+    "key": "item.hybrid_aquatic.flying_fish",
+    "expected": "Flying Fish",
+    "replacement": "Летучая рыба"
+  },
+  {
+    "key": "item.hybrid_aquatic.flying_fish_spawn_egg",
+    "expected": "Flying Fish Spawn Egg",
+    "replacement": "Яйцо призыва: Летучая рыба"
+  },
+  {
+    "key": "item.hybrid_aquatic.garden_eel_spawn_egg",
+    "expected": "Garden Eel Spawn Egg",
+    "replacement": "Яйцо призыва: Садовый угорь"
+  },
+  {
+    "key": "item.hybrid_aquatic.giant_squid_spawn_egg",
+    "expected": "Giant Squid Spawn Egg",
+    "replacement": "Яйцо призыва: Гигантский кальмар"
+  },
+  {
+    "key": "item.hybrid_aquatic.glowing_diving_boots",
+    "expected": "Glowing Diving Boots",
+    "replacement": "Светящиеся водолазные ботинки"
+  },
+  {
+    "key": "item.hybrid_aquatic.glowing_diving_helmet",
+    "expected": "Glowing Diving Helmet",
+    "replacement": "Светящийся водолазный шлем"
+  },
+  {
+    "key": "item.hybrid_aquatic.glowing_diving_leggings",
+    "expected": "Glowing Diving Leggings",
+    "replacement": "Светящиеся водолазные поножи"
+  },
+  {
+    "key": "item.hybrid_aquatic.glowing_diving_suit",
+    "expected": "Glowing Diving Suit",
+    "replacement": "Светящийся водолазный костюм"
+  },
+  {
+    "key": "item.hybrid_aquatic.glowslime",
+    "expected": "Glowslime",
+    "replacement": "Светящаяся слизь"
+  },
+  {
+    "key": "item.hybrid_aquatic.goblin_shark_spawn_egg",
+    "expected": "Goblin Shark Spawn Egg",
+    "replacement": "Яйцо призыва: Акула-гоблин"
+  },
+  {
+    "key": "item.hybrid_aquatic.gold_hatxolotl",
+    "expected": "Gold Hatxolotl",
+    "replacement": "Золотистая шапка-аксолотль"
+  },
+  {
+    "key": "item.hybrid_aquatic.golden_dorado",
+    "expected": "Golden Dorado",
+    "replacement": "Золотой дорадо"
+  },
+  {
+    "key": "item.hybrid_aquatic.golden_dorado_spawn_egg",
+    "expected": "Golden Dorado Spawn Egg",
+    "replacement": "Яйцо призыва: Золотой дорадо"
+  },
+  {
+    "key": "item.hybrid_aquatic.goldfish",
+    "expected": "Goldfish",
+    "replacement": "Золотая рыбка"
+  },
+  {
+    "key": "item.hybrid_aquatic.goldfish_spawn_egg",
+    "expected": "Goldfish Spawn Egg",
+    "replacement": "Яйцо призыва: Золотая рыбка"
+  },
+  {
+    "key": "item.hybrid_aquatic.gourami",
+    "expected": "Gourami",
+    "replacement": "Гурами"
+  },
+  {
+    "key": "item.hybrid_aquatic.hagfish",
+    "expected": "Hagfish",
+    "replacement": "Миксина"
+  },
+  {
+    "key": "item.hybrid_aquatic.hagfish_spawn_egg",
+    "expected": "Hagfish Spawn Egg",
+    "replacement": "Яйцо призыва: Миксина"
+  },
+  {
+    "key": "item.hybrid_aquatic.hagslime",
+    "expected": "Hagslime",
+    "replacement": "Слизь миксины"
+  },
+  {
+    "key": "item.hybrid_aquatic.hatchetfish_spawn_egg",
+    "expected": "Hatchetfish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-топорик"
+  },
+  {
+    "key": "item.hybrid_aquatic.herring",
+    "expected": "Herring",
+    "replacement": "Сельдь"
+  },
+  {
+    "key": "item.hybrid_aquatic.herring_spawn_egg",
+    "expected": "Herring Spawn Egg",
+    "replacement": "Яйцо призыва: Сельдь"
+  },
+  {
+    "key": "item.hybrid_aquatic.hook.description_tide",
+    "expected": "Apply at an angling table",
+    "replacement": "Установите на рыболовном столе"
+  },
+  {
+    "key": "item.hybrid_aquatic.hound_shark_spawn_egg",
+    "expected": "Hound Shark Spawn Egg",
+    "replacement": "Яйцо призыва: Кунья акула"
+  },
+  {
+    "key": "item.hybrid_aquatic.john_dory",
+    "expected": "John Dory",
+    "replacement": "Солнечник"
+  },
+  {
+    "key": "item.hybrid_aquatic.john_dory_spawn_egg",
+    "expected": "John Dory Spawn Egg",
+    "replacement": "Яйцо призыва: Солнечник"
+  },
+  {
+    "key": "item.hybrid_aquatic.karcinogen_spawn_egg",
+    "expected": "Karcinogen Spawn Egg",
+    "replacement": "Яйцо призыва: Карциноген"
+  },
+  {
+    "key": "item.hybrid_aquatic.karcinoma_spawn_egg",
+    "expected": "Karcinoma Spawn Egg",
+    "replacement": "Яйцо призыва: Карцинома"
+  },
+  {
+    "key": "item.hybrid_aquatic.lantern_shark_spawn_egg",
+    "expected": "Lantern Shark Spawn Egg",
+    "replacement": "Яйцо призыва: Светящаяся акула"
+  },
+  {
+    "key": "item.hybrid_aquatic.mackerel",
+    "expected": "Mackerel",
+    "replacement": "Скумбрия"
+  },
+  {
+    "key": "item.hybrid_aquatic.mackerel_spawn_egg",
+    "expected": "Mackerel Spawn Egg",
+    "replacement": "Яйцо призыва: Скумбрия"
+  },
+  {
+    "key": "item.hybrid_aquatic.manatee_spawn_egg",
+    "expected": "Manatee Spawn Egg",
+    "replacement": "Яйцо призыва: Ламантин"
+  },
+  {
+    "key": "item.hybrid_aquatic.manta_ray_spawn_egg",
+    "expected": "Manta Ray Spawn Egg",
+    "replacement": "Яйцо призыва: Манта"
+  },
+  {
+    "key": "item.hybrid_aquatic.nautilus_helmet",
+    "expected": "Nautilus Helmet",
+    "replacement": "Шлем из раковин наутилуса"
+  },
+  {
+    "key": "item.hybrid_aquatic.nautilus_pauldrons",
+    "expected": "Nautilus Pauldrons",
+    "replacement": "Наплечники из раковин наутилуса"
+  },
+  {
+    "key": "item.hybrid_aquatic.oarfish",
+    "expected": "Oarfish",
+    "replacement": "Сельдяной король"
+  },
+  {
+    "key": "item.hybrid_aquatic.ocean_sunfish",
+    "expected": "Ocean Sunfish",
+    "replacement": "Рыба-луна"
+  },
+  {
+    "key": "item.hybrid_aquatic.ocean_sunfish_spawn_egg",
+    "expected": "Ocean Sunfish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-луна"
+  },
+  {
+    "key": "item.hybrid_aquatic.octopus_spawn_egg",
+    "expected": "Octopus Spawn Egg",
+    "replacement": "Яйцо призыва: Осьминог"
+  },
+  {
+    "key": "item.hybrid_aquatic.ominous_conch",
+    "expected": "Ominous Conch",
+    "replacement": "Зловещая раковина"
+  },
+  {
+    "key": "item.hybrid_aquatic.ominous_conch.function",
+    "expected": "Summons the Shell Beast",
+    "replacement": "Призывает раковинного зверя"
+  },
+  {
+    "key": "item.hybrid_aquatic.orca_spawn_egg",
+    "expected": "Orca Spawn Egg",
+    "replacement": "Яйцо призыва: Косатка"
+  },
+  {
+    "key": "item.hybrid_aquatic.otter_spawn_egg",
+    "expected": "Otter Spawn Egg",
+    "replacement": "Яйцо призыва: Выдра"
+  },
+  {
+    "key": "item.hybrid_aquatic.parrotfish",
+    "expected": "Parrotfish",
+    "replacement": "Рыба-попугай"
+  },
+  {
+    "key": "item.hybrid_aquatic.parrotfish_spawn_egg",
+    "expected": "Parrotfish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-попугай"
+  },
+  {
+    "key": "item.hybrid_aquatic.pearlfish",
+    "expected": "Pearlfish",
+    "replacement": "Жемчужная рыба"
+  },
+  {
+    "key": "item.hybrid_aquatic.pearlfish_spawn_egg",
+    "expected": "Pearlfish Spawn Egg",
+    "replacement": "Яйцо призыва: Жемчужная рыба"
+  },
+  {
+    "key": "item.hybrid_aquatic.pink_hatxolotl",
+    "expected": "Pink Hatxolotl",
+    "replacement": "Розовая шапка-аксолотль"
+  },
+  {
+    "key": "item.hybrid_aquatic.pleco",
+    "expected": "Pleco",
+    "replacement": "Плекостомус"
+  },
+  {
+    "key": "item.hybrid_aquatic.pleco_spawn_egg",
+    "expected": "Pleco Spawn Egg",
+    "replacement": "Яйцо призыва: Плекостомус"
+  },
+  {
+    "key": "item.hybrid_aquatic.prismarine_rod",
+    "expected": "Prismarine Rod",
+    "replacement": "Призмариновый стержень"
+  },
+  {
+    "key": "item.hybrid_aquatic.pupfish_spawn_egg",
+    "expected": "Pupfish Spawn Egg",
+    "replacement": "Яйцо призыва: Карпозубик"
+  },
+  {
+    "key": "item.hybrid_aquatic.ratfish",
+    "expected": "Ratfish",
+    "replacement": "Химера"
+  },
+  {
+    "key": "item.hybrid_aquatic.raw_lobster_tail",
+    "expected": "Raw Lobster Tail",
+    "replacement": "Сырой хвост омара"
+  },
+  {
+    "key": "item.hybrid_aquatic.reinforced_diving_boots",
+    "expected": "Reinforced Diving Boots",
+    "replacement": "Усиленные водолазные ботинки"
+  },
+  {
+    "key": "item.hybrid_aquatic.reinforced_diving_helmet",
+    "expected": "Reinforced Diving Helmet",
+    "replacement": "Усиленный водолазный шлем"
+  },
+  {
+    "key": "item.hybrid_aquatic.reinforced_diving_leggings",
+    "expected": "Reinforced Diving Leggings",
+    "replacement": "Усиленные водолазные поножи"
+  },
+  {
+    "key": "item.hybrid_aquatic.reinforced_diving_suit",
+    "expected": "Reinforced Diving Suit",
+    "replacement": "Усиленный водолазный костюм"
+  },
+  {
+    "key": "item.hybrid_aquatic.scalyfoot_snail_spawn_egg",
+    "expected": "Scalyfoot Snail Spawn Egg",
+    "replacement": "Яйцо призыва: Чешуеногая улитка"
+  },
+  {
+    "key": "item.hybrid_aquatic.sea_bass",
+    "expected": "Sea Bass",
+    "replacement": "Морской окунь"
+  },
+  {
+    "key": "item.hybrid_aquatic.sea_bass_spawn_egg",
+    "expected": "Sea Bass Spawn Egg",
+    "replacement": "Яйцо призыва: Морской окунь"
+  },
+  {
+    "key": "item.hybrid_aquatic.sea_slug_spawn_egg",
+    "expected": "Sea Slug Spawn Egg",
+    "replacement": "Яйцо призыва: Морской слизень"
+  },
+  {
+    "key": "item.hybrid_aquatic.sea_urchin_spine",
+    "expected": "Sea Urchin Spine",
+    "replacement": "Игла морского ежа"
+  },
+  {
+    "key": "item.hybrid_aquatic.seadragon_spawn_egg",
+    "expected": "Seadragon Spawn Egg",
+    "replacement": "Яйцо призыва: Морской дракон"
+  },
+  {
+    "key": "item.hybrid_aquatic.seahorse",
+    "expected": "Seahorse",
+    "replacement": "Морской конёк"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_axe",
+    "expected": "Seashell Axe",
+    "replacement": "Топор из раковин"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_axe.description",
+    "expected": "Increased mining speed underwater",
+    "replacement": "Повышает скорость добычи под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_hoe",
+    "expected": "Seashell Hoe",
+    "replacement": "Мотыга из раковин"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_hoe.description",
+    "expected": "Increased mining speed underwater",
+    "replacement": "Повышает скорость добычи под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_pickaxe",
+    "expected": "Seashell Pickaxe",
+    "replacement": "Кирка из раковин"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_pickaxe.description",
+    "expected": "Increased mining speed underwater",
+    "replacement": "Повышает скорость добычи под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_shovel",
+    "expected": "Seashell Shovel",
+    "replacement": "Лопата из раковин"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_shovel.description",
+    "expected": "Increased mining speed underwater",
+    "replacement": "Повышает скорость добычи под водой"
+  },
+  {
+    "key": "item.hybrid_aquatic.seashell_spear",
+    "expected": "Seashell Spear",
+    "replacement": "Копьё из раковин"
+  },
+  {
+    "key": "item.hybrid_aquatic.sheepshead_wrasse",
+    "expected": "Sheepshead Wrasse",
+    "replacement": "Овцеголовый губан"
+  },
+  {
+    "key": "item.hybrid_aquatic.shell_beast_spawn_egg",
+    "expected": "Shell Beast Spawn Egg",
+    "replacement": "Яйцо призыва: Раковинный зверь"
+  },
+  {
+    "key": "item.hybrid_aquatic.shiner_spawn_egg",
+    "expected": "Shiner Spawn Egg",
+    "replacement": "Яйцо призыва: Шайнер"
+  },
+  {
+    "key": "item.hybrid_aquatic.sirenian_beef",
+    "expected": "Sirenian Beef",
+    "replacement": "Сырое мясо морской коровы"
+  },
+  {
+    "key": "item.hybrid_aquatic.sirenian_steak",
+    "expected": "Sirenian Steak",
+    "replacement": "Стейк из мяса морской коровы"
+  },
+  {
+    "key": "item.hybrid_aquatic.sixgill_shark_spawn_egg",
+    "expected": "Sixgill Shark Spawn Egg",
+    "replacement": "Яйцо призыва: Шестижаберная акула"
+  },
+  {
+    "key": "item.hybrid_aquatic.sleeper_shark_spawn_egg",
+    "expected": "Sleeper Shark Spawn Egg",
+    "replacement": "Яйцо призыва: Полярная акула"
+  },
+  {
+    "key": "item.hybrid_aquatic.slickhead_spawn_egg",
+    "expected": "Slickhead Spawn Egg",
+    "replacement": "Яйцо призыва: Гладкоголов"
+  },
+  {
+    "key": "item.hybrid_aquatic.small_tnt_spawn_egg",
+    "expected": "Small TNT Spawn Egg",
+    "replacement": "Яйцо призыва: Маленький динамит"
+  },
+  {
+    "key": "item.hybrid_aquatic.snailfish",
+    "expected": "Snailfish",
+    "replacement": "Морской слизень-липарис"
+  },
+  {
+    "key": "item.hybrid_aquatic.snailfish_spawn_egg",
+    "expected": "Snailfish Spawn Egg",
+    "replacement": "Яйцо призыва: Морской слизень-липарис"
+  },
+  {
+    "key": "item.hybrid_aquatic.squirrelfish",
+    "expected": "Squirrel Fish",
+    "replacement": "Рыба-белка"
+  },
+  {
+    "key": "item.hybrid_aquatic.squirrelfish_spawn_egg",
+    "expected": "Squirrelfish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-белка"
+  },
+  {
+    "key": "item.hybrid_aquatic.starfish",
+    "expected": "Starfish",
+    "replacement": "Морская звезда"
+  },
+  {
+    "key": "item.hybrid_aquatic.starfish_projectile_spawn_egg",
+    "expected": "Thrown Starfish Spawn Egg",
+    "replacement": "Яйцо призыва: Брошенная морская звезда"
+  },
+  {
+    "key": "item.hybrid_aquatic.stingray",
+    "expected": "Stingray",
+    "replacement": "Скат-хвостокол"
+  },
+  {
+    "key": "item.hybrid_aquatic.stingray_spawn_egg",
+    "expected": "Stingray Spawn Egg",
+    "replacement": "Яйцо призыва: Скат-хвостокол"
+  },
+  {
+    "key": "item.hybrid_aquatic.stonefish",
+    "expected": "Stonefish",
+    "replacement": "Рыба-камень"
+  },
+  {
+    "key": "item.hybrid_aquatic.striped_eel_scarf",
+    "expected": "Striped Eel Scarf",
+    "replacement": "Шарф из полосатого угря"
+  },
+  {
+    "key": "item.hybrid_aquatic.sulfur",
+    "expected": "Sulfur",
+    "replacement": "Сера"
+  },
+  {
+    "key": "item.hybrid_aquatic.sunfish",
+    "expected": "Sunfish",
+    "replacement": "Солнечный окунь"
+  },
+  {
+    "key": "item.hybrid_aquatic.surgeonfish",
+    "expected": "Surgeonfish",
+    "replacement": "Рыба-хирург"
+  },
+  {
+    "key": "item.hybrid_aquatic.surgeonfish_spawn_egg",
+    "expected": "Surgeonfish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-хирург"
+  },
+  {
+    "key": "item.hybrid_aquatic.tetra",
+    "expected": "Neon Tetra",
+    "replacement": "Неоновая тетра"
+  },
+  {
+    "key": "item.hybrid_aquatic.trevally",
+    "expected": "Trevally",
+    "replacement": "Каранкс"
+  },
+  {
+    "key": "item.hybrid_aquatic.trevally_spawn_egg",
+    "expected": "Trevally Spawn Egg",
+    "replacement": "Яйцо призыва: Каранкс"
+  },
+  {
+    "key": "item.hybrid_aquatic.tripod_fish_spawn_egg",
+    "expected": "Tripod Fish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-тренога"
+  },
+  {
+    "key": "item.hybrid_aquatic.trout",
+    "expected": "Trout",
+    "replacement": "Форель"
+  },
+  {
+    "key": "item.hybrid_aquatic.trout_spawn_egg",
+    "expected": "Trout Spawn Egg",
+    "replacement": "Яйцо призыва: Форель"
+  },
+  {
+    "key": "item.hybrid_aquatic.tuna",
+    "expected": "Tuna",
+    "replacement": "Тунец"
+  },
+  {
+    "key": "item.hybrid_aquatic.tuna_spawn_egg",
+    "expected": "Tuna Spawn Egg",
+    "replacement": "Яйцо призыва: Тунец"
+  },
+  {
+    "key": "item.hybrid_aquatic.uni",
+    "expected": "Uni",
+    "replacement": "Икра морского ежа"
+  },
+  {
+    "key": "item.hybrid_aquatic.viperfish_spawn_egg",
+    "expected": "Viperfish Spawn Egg",
+    "replacement": "Яйцо призыва: Рыба-гадюка"
+  },
+  {
+    "key": "item.hybrid_aquatic.wrasse_spawn_egg",
+    "expected": "Wrasse Spawn Egg",
+    "replacement": "Яйцо призыва: Губан"
+  },
+  {
+    "key": "item.minecraft.lingering_potion.effect.blindness",
+    "expected": "Lingering Potion of Blindness",
+    "replacement": "Туманное зелье слепоты"
+  },
+  {
+    "key": "item.minecraft.lingering_potion.effect.buoyancy",
+    "expected": "Lingering Potion of Buoyancy",
+    "replacement": "Туманное зелье плавучести"
+  },
+  {
+    "key": "item.minecraft.lingering_potion.effect.corrosion",
+    "expected": "Lingering Potion of Corrosion",
+    "replacement": "Туманное зелье коррозии"
+  },
+  {
+    "key": "item.minecraft.lingering_potion.effect.major_luck",
+    "expected": "Lingering Potion of Major Luck",
+    "replacement": "Туманное зелье большой удачи"
+  },
+  {
+    "key": "item.minecraft.lingering_potion.effect.minor_luck",
+    "expected": "Lingering Potion of Minor Luck",
+    "replacement": "Туманное зелье малой удачи"
+  },
+  {
+    "key": "item.minecraft.lingering_potion.effect.swimming",
+    "expected": "Lingering Potion of Swimming",
+    "replacement": "Туманное зелье плавания"
+  },
+  {
+    "key": "item.minecraft.lingering_potion.effect.thorns",
+    "expected": "Lingering Potion of Thorns",
+    "replacement": "Туманное зелье шипов"
+  },
+  {
+    "key": "item.minecraft.potion.effect.blindness",
+    "expected": "Potion of Blindness",
+    "replacement": "Зелье слепоты"
+  },
+  {
+    "key": "item.minecraft.potion.effect.buoyancy",
+    "expected": "Potion of Buoyancy",
+    "replacement": "Зелье плавучести"
+  },
+  {
+    "key": "item.minecraft.potion.effect.corrosion",
+    "expected": "Potion of Corrosion",
+    "replacement": "Зелье коррозии"
+  },
+  {
+    "key": "item.minecraft.potion.effect.major_luck",
+    "expected": "Potion of Major Luck",
+    "replacement": "Зелье большой удачи"
+  },
+  {
+    "key": "item.minecraft.potion.effect.minor_luck",
+    "expected": "Potion of Minor Luck",
+    "replacement": "Зелье малой удачи"
+  },
+  {
+    "key": "item.minecraft.potion.effect.swimming",
+    "expected": "Potion of Swimming",
+    "replacement": "Зелье плавания"
+  },
+  {
+    "key": "item.minecraft.potion.effect.thorns",
+    "expected": "Potion of Thorns",
+    "replacement": "Зелье шипов"
+  },
+  {
+    "key": "item.minecraft.splash_potion.effect.blindness",
+    "expected": "Splash Potion of Blindness",
+    "replacement": "Взрывное зелье слепоты"
+  },
+  {
+    "key": "item.minecraft.splash_potion.effect.buoyancy",
+    "expected": "Splash Potion of Buoyancy",
+    "replacement": "Взрывное зелье плавучести"
+  },
+  {
+    "key": "item.minecraft.splash_potion.effect.corrosion",
+    "expected": "Splash Potion of Corrosion",
+    "replacement": "Взрывное зелье коррозии"
+  },
+  {
+    "key": "item.minecraft.splash_potion.effect.major_luck",
+    "expected": "Splash Potion of Major Luck",
+    "replacement": "Взрывное зелье большой удачи"
+  },
+  {
+    "key": "item.minecraft.splash_potion.effect.minor_luck",
+    "expected": "Splash Potion of Minor Luck",
+    "replacement": "Взрывное зелье малой удачи"
+  },
+  {
+    "key": "item.minecraft.splash_potion.effect.swimming",
+    "expected": "Splash Potion of Swimming",
+    "replacement": "Взрывное зелье плавания"
+  },
+  {
+    "key": "item.minecraft.splash_potion.effect.thorns",
+    "expected": "Splash Potion of Thorns",
+    "replacement": "Взрывное зелье шипов"
+  },
+  {
+    "key": "item.minecraft.tipped_arrow.effect.blindness",
+    "expected": "Arrow of Blindness",
+    "replacement": "Стрела слепоты"
+  },
+  {
+    "key": "item.minecraft.tipped_arrow.effect.buoyancy",
+    "expected": "Arrow of Buoyancy",
+    "replacement": "Стрела плавучести"
+  },
+  {
+    "key": "item.minecraft.tipped_arrow.effect.corrosion",
+    "expected": "Arrow of Corrosion",
+    "replacement": "Стрела коррозии"
+  },
+  {
+    "key": "item.minecraft.tipped_arrow.effect.major_luck",
+    "expected": "Arrow of Major Luck",
+    "replacement": "Стрела большой удачи"
+  },
+  {
+    "key": "item.minecraft.tipped_arrow.effect.minor_luck",
+    "expected": "Arrow of Minor Luck",
+    "replacement": "Стрела малой удачи"
+  },
+  {
+    "key": "item.minecraft.tipped_arrow.effect.swimming",
+    "expected": "Arrow of Swimming",
+    "replacement": "Стрела плавания"
+  },
+  {
+    "key": "item.minecraft.tipped_arrow.effect.thorns",
+    "expected": "Arrow of Thorns",
+    "replacement": "Стрела шипов"
+  },
+  {
+    "key": "itemGroup.hybrid_aquatic.blocks",
+    "expected": "Hybrid Aquatic Blocks",
+    "replacement": "Блоки Hybrid Aquatic"
+  },
+  {
+    "key": "itemGroup.hybrid_aquatic.items",
+    "expected": "Hybrid Aquatic Items",
+    "replacement": "Предметы Hybrid Aquatic"
+  },
+  {
+    "key": "itemGroup.hybrid_aquatic.spawn_eggs",
+    "expected": "Hybrid Aquatic Spawn Eggs",
+    "replacement": "Яйца призыва Hybrid Aquatic"
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.anglerfish",
+    "expected": "A deep-sea fish with a glowing lure, used to attract prey.",
+    "replacement": "Глубоководная рыба со светящейся приманкой, которой она привлекает добычу."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.barreleye",
+    "expected": "A deep-sea fish with a transparent head, letting it see far above it.",
+    "replacement": "Глубоководная рыба с прозрачной головой, позволяющей ей смотреть далеко вверх."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.betta",
+    "expected": "A small freshwater fish, known for its flowing fins, territorial behaviour, and beautiful colors.",
+    "replacement": "Небольшая пресноводная рыба, известная длинными плавниками, яркими цветами и защитой своей территории."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.blobfish",
+    "expected": "A deep-sea fish with a soft gelatinous body, adapted to survive under immense pressure.",
+    "replacement": "Глубоководная рыба с мягким студенистым телом, приспособленная к огромному давлению."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.blowfish",
+    "expected": "A type of pufferfish, known for making intricate designs in the sandy seabed.",
+    "replacement": "Иглобрюх, создающий замысловатые узоры на песчаном морском дне."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.boxfish",
+    "expected": "A small box-shaped fish, capable of releasing powerful toxins when stressed.",
+    "replacement": "Небольшая рыба с телом в форме коробочки, способная выделять сильные токсины при стрессе."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.carp",
+    "expected": "A hardy freshwater fish, can be bred to produce koi and goldfish.",
+    "replacement": "Выносливая пресноводная рыба, от которой путём разведения получают карпов кои и золотых рыбок."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.cichlid",
+    "expected": "A freshwater fish, popular in aquariums for its intelligence and striking patterns.",
+    "replacement": "Пресноводная рыба, популярная у аквариумистов благодаря сообразительности и выразительной окраске."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.clownfish",
+    "expected": "A brightly colored reef fish, often found living in anemones, and popularized by a children's movie.",
+    "replacement": "Яркая рифовая рыба, которая часто живёт среди актиний и стала известной благодаря детскому мультфильму."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.coelacanth",
+    "expected": "A deep-sea fish once thought to be extinct, now considered a living fossil.",
+    "replacement": "Глубоководная рыба, которую когда-то считали вымершей, а теперь называют живым ископаемым."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.damselfish",
+    "expected": "An extremely common reef fish, found in a variety of shapes and colors, often swimming in large schools.",
+    "replacement": "Очень распространённая рифовая рыба разнообразных форм и расцветок, часто собирающаяся в большие стаи."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.danio",
+    "expected": "The Danio, a small, colorful freshwater fish known for its active swimming behavior and popularity in home aquariums.",
+    "replacement": "Небольшая яркая пресноводная рыба, известная подвижностью и популярная в домашних аквариумах."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.discus",
+    "expected": "A disc-shaped freshwater fish, known for being territorial and having colorful scales.",
+    "replacement": "Пресноводная рыба с дисковидным телом и яркой чешуёй, которая защищает свою территорию."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.dragonfish",
+    "expected": "A deep-sea fish with a long glowing lure extending from its jaw, used to attract prey.",
+    "replacement": "Глубоководная рыба с длинной светящейся приманкой на челюсти для привлечения добычи."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.flashlight_fish",
+    "expected": "A nocturnal deep-sea fish with glowing organs beneath its eyes, used for communication and attracting prey.",
+    "replacement": "Ночная глубоководная рыба со светящимися органами под глазами, которые служат для общения и привлечения добычи."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.flying_fish",
+    "expected": "An open-ocean fish capable of gliding above the water using its enlarged fins.",
+    "replacement": "Обитатель открытого океана, способный планировать над водой на увеличенных плавниках."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.golden_dorado",
+    "expected": "A large freshwater predator, known for its strong scales and large teeth.",
+    "replacement": "Крупный пресноводный хищник с прочной чешуёй и большими зубами."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.goldfish",
+    "expected": "A domesticated freshwater fish bred from carp, known for its bright colors and many varieties.",
+    "replacement": "Одомашненная пресноводная рыба, выведенная из карпа и известная яркой окраской и разнообразием пород."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.gourami",
+    "expected": "A small freshwater fish, known for being territorial and having colorful scales.",
+    "replacement": "Небольшая пресноводная рыба с яркой чешуёй, которая защищает свою территорию."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.hagfish",
+    "expected": "A primitive eel-like scavenger, capable of producing large amounts of slime when threatened.",
+    "replacement": "Примитивный падальщик, похожий на угря и выделяющий много слизи при опасности."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.herring",
+    "expected": "A small baitfish known for forming large schools.",
+    "replacement": "Небольшая кормовая рыба, образующая большие стаи."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.john_dory",
+    "expected": "A predatory saltwater fish recognized by the large dark spot on its side and highly protrusible jaws.",
+    "replacement": "Хищная морская рыба с крупным тёмным пятном на боку и сильно выдвигающимися челюстями."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.lionfish",
+    "expected": "A predatory reef fish with venomous spines, considered invasive in some parts of the world.",
+    "replacement": "Хищная рифовая рыба с ядовитыми шипами, которая стала инвазивным видом в некоторых частях света."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.mackerel",
+    "expected": "A small baitfish known for forming large schools.",
+    "replacement": "Небольшая кормовая рыба, образующая большие стаи."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.mahi",
+    "expected": "An open-water predatory fish, known for its bright colors.",
+    "replacement": "Ярко окрашенный хищник открытых вод."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.moray_eel",
+    "expected": "A snake-like predatory fish that hides in crevices and caves on the coral reef.",
+    "replacement": "Похожая на змею хищная рыба, которая прячется в расщелинах и пещерах кораллового рифа."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.needlefish",
+    "expected": "A slender predatory fish with a long beak filled with sharp teeth, often found near the water's surface.",
+    "replacement": "Стройный хищник с длинными челюстями, полными острых зубов; часто держится у поверхности воды."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.oarfish",
+    "expected": "A long deep-sea fish that often appears before earthquakes, thought to be the inspiration behind sea serpents.",
+    "replacement": "Длинная глубоководная рыба, которую нередко замечают перед землетрясениями и считают прообразом морских змеев."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.ocean_sunfish",
+    "expected": "The largest bony fish in the world, known for its indifference to pain.",
+    "replacement": "Крупнейшая костная рыба в мире, известная своим безразличием к боли."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.opah",
+    "expected": "A large open-ocean fish, notable for being one of the few warm-blooded fish in the world.",
+    "replacement": "Крупная рыба открытого океана, одна из немногих теплокровных рыб в мире."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.parrotfish",
+    "expected": "An important reef fish, known for its parrot-like beak, as well as its ability to eat corals and produce sand.",
+    "replacement": "Важный обитатель рифов с клювом, похожим на попугайский; поедает кораллы и производит песок."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.pearlfish",
+    "expected": "A small fish that lives inside sea cucumbers.",
+    "replacement": "Небольшая рыба, живущая внутри морских огурцов."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.piranha",
+    "expected": "A small freshwater fish known for its sharp teeth and voracious appetite.",
+    "replacement": "Небольшая пресноводная рыба с острыми зубами и ненасытным аппетитом."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.pleco",
+    "expected": "An armored freshwater catfish that feeds on algae and uses its sucker-like mouth to cling to surfaces.",
+    "replacement": "Пресноводный сом с костными пластинками, который питается водорослями и цепляется за поверхности ртом-присоской."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.ratfish",
+    "expected": "A deep-sea relative of sharks, known for its large eyes, long tail, and unusual appearance.",
+    "replacement": "Глубоководный родственник акул с большими глазами, длинным хвостом и необычной внешностью."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.rockfish",
+    "expected": "A saltwater fish, known for its large eyes and its tendency to hide among rocks.",
+    "replacement": "Морская рыба с большими глазами, которая любит прятаться среди камней."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.sea_bass",
+    "expected": "A predatory saltwater fish, often used as a food source and known for its delicious flavor.",
+    "replacement": "Хищная морская рыба, которую часто добывают ради вкусного мяса."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.seahorse",
+    "expected": "A small reef fish that swims upright, known for its curled tail and the male's ability to carry eggs.",
+    "replacement": "Небольшая рифовая рыба, плавающая вертикально; известна закрученным хвостом и тем, что икру вынашивают самцы."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.sheepshead_wrasse",
+    "expected": "A large fish that lives in kelp forests, eating sea urchins and helping keep the kelp alive.",
+    "replacement": "Крупная рыба из лесов водорослей, которая поедает морских ежей и помогает сохранять заросли."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.snailfish",
+    "expected": "A deep-sea fish with an extremely soft and fragile body",
+    "replacement": "Глубоководная рыба с очень мягким и хрупким телом."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.squirrelfish",
+    "expected": "A nocturnal reef fish known for its large eyes and sharp spine on its underside",
+    "replacement": "Ночная рифовая рыба с большими глазами и острым шипом на нижней стороне тела."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.stingray",
+    "expected": "A large circular fish that swims along the seafloor, known for having a venomous spine on the end of its tail.",
+    "replacement": "Крупная рыба с округлым телом, которая плавает у дна и имеет ядовитый шип на конце хвоста."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.stonefish",
+    "expected": "A bottom-dwelling fish that mimics the appearance of rocks around it, known for its extremely potent venom.",
+    "replacement": "Донная рыба, маскирующаяся под окружающие камни и известная чрезвычайно сильным ядом."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.sunfish",
+    "expected": "A common freshwater fish known for its rounded body and willingness to bite almost anything.",
+    "replacement": "Обычная пресноводная рыба с округлым телом, готовая клюнуть почти на что угодно."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.surgeonfish",
+    "expected": "A reef fish, named after sharp protrusions on either side of its tail.",
+    "replacement": "Рифовая рыба, названная в честь острых выростов по обеим сторонам хвоста."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.tetra",
+    "expected": "A small freshwater fish, known for its bright colors and schooling behaviour.",
+    "replacement": "Небольшая яркая пресноводная рыба, живущая стаями."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.tiger_barb",
+    "expected": "A small freshwater fish, known for its striped pattern and schooling behaviour.",
+    "replacement": "Небольшая полосатая пресноводная рыба, живущая стаями."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.trevally",
+    "expected": "A schooling fish that prefers to follow large animals around.",
+    "replacement": "Стайная рыба, которая любит сопровождать крупных животных."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.triggerfish",
+    "expected": "A large reef fish, known for its sharp teeth and aggressive behaviour, named after a sharp spine protruding out of its back.",
+    "replacement": "Крупная агрессивная рифовая рыба с острыми зубами, названная в честь острого шипа на спине."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.trout",
+    "expected": "A freshwater fish commonly found in rivers and lakes, valued for its speed and ability to swim upstream.",
+    "replacement": "Пресноводная рыба из рек и озёр, известная скоростью и умением плыть против течения."
+  },
+  {
+    "key": "journal.description.hybrid_aquatic.tuna",
+    "expected": "An open-water predatory fish that never stops swimming.",
+    "replacement": "Хищник открытых вод, который никогда не перестаёт плавать."
+  },
+  {
+    "key": "painting.hybrid_aquatic.asexual_pride_flag.title",
+    "expected": "Asexual Pride",
+    "replacement": "Асексуальная гордость"
+  },
+  {
+    "key": "painting.hybrid_aquatic.below.title",
+    "expected": "Below",
+    "replacement": "Внизу"
+  },
+  {
+    "key": "painting.hybrid_aquatic.big_lure.title",
+    "expected": "Big Lure",
+    "replacement": "Большая приманка"
+  },
+  {
+    "key": "painting.hybrid_aquatic.bigeye.title",
+    "expected": "Bigeye",
+    "replacement": "Большеглаз"
+  },
+  {
+    "key": "painting.hybrid_aquatic.bisexual_pride_flag.title",
+    "expected": "Bisexual Pride",
+    "replacement": "Бисексуальная гордость"
+  },
+  {
+    "key": "painting.hybrid_aquatic.bold_and_brash.title",
+    "expected": "Bold And Brash",
+    "replacement": "Смело и дерзко"
+  },
+  {
+    "key": "painting.hybrid_aquatic.conch_street.title",
+    "expected": "Conch Street",
+    "replacement": "Ракушечная улица"
+  },
+  {
+    "key": "painting.hybrid_aquatic.creatures_of_the_deep.title",
+    "expected": "Creatures Of The Deep",
+    "replacement": "Обитатели глубин"
+  },
+  {
+    "key": "painting.hybrid_aquatic.gay_pride_flag.title",
+    "expected": "Gay Pride",
+    "replacement": "Гей-гордость"
+  },
+  {
+    "key": "painting.hybrid_aquatic.great_lake.title",
+    "expected": "Great Lake",
+    "replacement": "Великое озеро"
+  },
+  {
+    "key": "painting.hybrid_aquatic.jam.title",
+    "expected": "Jam",
+    "replacement": "Джем"
+  },
+  {
+    "key": "painting.hybrid_aquatic.jaws.title",
+    "expected": "Jaws",
+    "replacement": "Челюсти"
+  },
+  {
+    "key": "painting.hybrid_aquatic.jolly_roger.title",
+    "expected": "Jolly",
+    "replacement": "Весёлый Роджер"
+  },
+  {
+    "key": "painting.hybrid_aquatic.king_of_herring.title",
+    "expected": "King Of Herring",
+    "replacement": "Сельдяной король"
+  },
+  {
+    "key": "painting.hybrid_aquatic.lesbian_pride_flag.title",
+    "expected": "Lesbian Pride",
+    "replacement": "Лесбийская гордость"
+  },
+  {
+    "key": "painting.hybrid_aquatic.lighthouse.title",
+    "expected": "Lighthouse",
+    "replacement": "Маяк"
+  },
+  {
+    "key": "painting.hybrid_aquatic.melon.title",
+    "expected": "Melon",
+    "replacement": "Арбуз"
+  },
+  {
+    "key": "painting.hybrid_aquatic.mooncatcher.title",
+    "expected": "Mooncatcher",
+    "replacement": "Ловец луны"
+  },
+  {
+    "key": "painting.hybrid_aquatic.nonbinary_pride_flag.title",
+    "expected": "Nonbinary Pride",
+    "replacement": "Небинарная гордость"
+  },
+  {
+    "key": "painting.hybrid_aquatic.organon.title",
+    "expected": "Organon",
+    "replacement": "Органон"
+  },
+  {
+    "key": "painting.hybrid_aquatic.palestine_flag.title",
+    "expected": "Palestine",
+    "replacement": "Палестина"
+  },
+  {
+    "key": "painting.hybrid_aquatic.poulpe_colossal.title",
+    "expected": "Le Poulpe Colossal",
+    "replacement": "Колоссальный осьминог"
+  },
+  {
+    "key": "painting.hybrid_aquatic.preserver.title",
+    "expected": "Life",
+    "replacement": "Жизнь"
+  },
+  {
+    "key": "painting.hybrid_aquatic.pressed_bull_kelp.title",
+    "expected": "Pressed Bull Kelp",
+    "replacement": "Засушенный бурый келп"
+  },
+  {
+    "key": "painting.hybrid_aquatic.pressed_kelp.title",
+    "expected": "Pressed Kelp",
+    "replacement": "Засушенные водоросли"
+  },
+  {
+    "key": "painting.hybrid_aquatic.pride_flag.title",
+    "expected": "Pride",
+    "replacement": "Гордость"
+  },
+  {
+    "key": "painting.hybrid_aquatic.riverfish.title",
+    "expected": "Riverfish",
+    "replacement": "Речная рыба"
+  },
+  {
+    "key": "painting.hybrid_aquatic.sunset.title",
+    "expected": "Sunset",
+    "replacement": "Закат"
+  },
+  {
+    "key": "painting.hybrid_aquatic.suntide.title",
+    "expected": "Suntide",
+    "replacement": "Солнечный прилив"
+  },
+  {
+    "key": "painting.hybrid_aquatic.swirling.title",
+    "expected": "Swirling",
+    "replacement": "Водоворот"
+  },
+  {
+    "key": "painting.hybrid_aquatic.the_watchful.title",
+    "expected": "The Watchful",
+    "replacement": "Наблюдатель"
+  },
+  {
+    "key": "painting.hybrid_aquatic.trans_pride_flag.title",
+    "expected": "Trans Pride",
+    "replacement": "Трансгендерная гордость"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.dugong.ambient",
+    "expected": "Dugong chirps",
+    "replacement": "Дюгонь издаёт писк"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.dugong.die",
+    "expected": "Dugong dies",
+    "replacement": "Дюгонь умирает"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.dugong.hurt",
+    "expected": "Dugong hurts",
+    "replacement": "Дюгонь получает урон"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.dugong.splash",
+    "expected": "Dugong splashes",
+    "replacement": "Дюгонь плещется"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.dugong.swim",
+    "expected": "Dugong swims",
+    "replacement": "Дюгонь плывёт"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karcinogen.ambient",
+    "expected": "Karcinogen chitters",
+    "replacement": "Карциноген стрекочет"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karcinogen.die",
+    "expected": "Karcinogen dies",
+    "replacement": "Карциноген умирает"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karcinogen.hurt",
+    "expected": "Karcinogen hurts",
+    "replacement": "Карциноген получает урон"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karcinoma.ambient",
+    "expected": "Karcinoma chitters",
+    "replacement": "Карцинома стрекочет"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karcinoma.die",
+    "expected": "Karcinoma dies",
+    "replacement": "Карцинома умирает"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karcinoma.hurt",
+    "expected": "Karcinoma hurts",
+    "replacement": "Карцинома получает урон"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karkinos.ambient",
+    "expected": "Karkinos chitters",
+    "replacement": "Каркинос стрекочет"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karkinos.die",
+    "expected": "Karkinos dies",
+    "replacement": "Каркинос умирает"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.karkinos.hurt",
+    "expected": "Karkinos hurts",
+    "replacement": "Каркинос получает урон"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.manatee.ambient",
+    "expected": "Manatee snorts",
+    "replacement": "Ламантин фыркает"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.manatee.die",
+    "expected": "Manatee dies",
+    "replacement": "Ламантин умирает"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.manatee.hurt",
+    "expected": "Manatee hurts",
+    "replacement": "Ламантин получает урон"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.manatee.splash",
+    "expected": "Manatee splashes",
+    "replacement": "Ламантин плещется"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.manatee.swim",
+    "expected": "Manatee swims",
+    "replacement": "Ламантин плывёт"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.shell_beast.ambient",
+    "expected": "Shell Beast chitters",
+    "replacement": "Раковинный зверь стрекочет"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.shell_beast.die",
+    "expected": "Shell Beast dies",
+    "replacement": "Раковинный зверь умирает"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.shell_beast.hurt",
+    "expected": "Shell Beast hurts",
+    "replacement": "Раковинный зверь получает урон"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.shell_beast.roar",
+    "expected": "Shell Beast roars",
+    "replacement": "Раковинный зверь ревёт"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.shell_beast.shoot",
+    "expected": "Shell Beast fires",
+    "replacement": "Раковинный зверь стреляет"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.entity.sirenian.eat",
+    "expected": "Sirenian eats",
+    "replacement": "Морская корова ест"
+  },
+  {
+    "key": "subtitles.hybrid_aquatic.item.ominous_conch.blows",
+    "expected": "Ominous Conch plays",
+    "replacement": "Зловещая раковина звучит"
+  },
+  {
+    "key": "tooltip.hybrid_aquatic.argonaut.glowing",
+    "expected": "Glowing",
+    "replacement": "Светящийся"
+  },
+  {
+    "key": "tooltip.hybrid_aquatic.argonaut.sail",
+    "expected": "%s Sails",
+    "replacement": "Паруса: %s"
+  },
+  {
+    "key": "tooltip.hybrid_aquatic.argonaut.shell",
+    "expected": "%s Shell",
+    "replacement": "Раковина: %s"
+  },
+  {
+    "key": "tooltip.hybrid_aquatic.ominous_conch.unused",
+    "expected": "The deep ocean calls from within..",
+    "replacement": "Из глубины раковины доносится зов океана…"
+  },
+  {
+    "key": "tooltip.hybrid_aquatic.ominous_conch.used",
+    "expected": "The conch is silent",
+    "replacement": "Раковина молчит"
+  },
+  {
+    "key": "itemGroup.brewinandchewin",
+    "expected": "Варим и Жуём",
+    "replacement": "Brewin' and Chewin'"
+  },
+  {
+    "key": "brewinandchewin.advancement.root",
+    "expected": "Варим и Жуём",
+    "replacement": "Brewin' and Chewin'"
+  },
+  {
+    "key": "brewinandchewin.advancement.chef_of_the_ages.desc",
+    "expected": "Съешьте по одному из всех доступных блюд «Варим и Жуём»",
+    "replacement": "Съешьте по одному из всех доступных блюд Brewin' and Chewin'"
+  },
+  {
+    "key": "itemGroup.cratedelight",
+    "expected": "Ящичные Изыски",
+    "replacement": "Crate Delight"
+  },
+  {
+    "key": "itemGroup.ratatouille.base",
+    "expected": "Create: Рататуль",
+    "replacement": "Create:Ratatouille"
+  },
+  {
+    "key": "ratatouille.ponder.tag.ratatouille",
+    "expected": "Рататуй",
+    "replacement": "Ratatouille"
+  },
+  {
+    "key": "ratatouille.ponder.tag.ratatouille.description",
+    "expected": "Компоненты в Рататуе",
+    "replacement": "Компоненты Ratatouille"
+  },
+  {
+    "key": "creativetab.delightfulcreators_tab",
+    "expected": "Восхитительные создатели",
+    "replacement": "Delightful Creators"
+  },
+  {
+    "key": "itemGroup.farmersdelight",
+    "expected": "Фермерский Восторг",
+    "replacement": "Farmer's Delight"
+  },
+  {
+    "key": "farmersdelight.advancement.root",
+    "expected": "Фермерский восторг",
+    "replacement": "Farmer's Delight"
+  },
+  {
+    "key": "mod_menu.configuration.title",
+    "expected": "Настройки списка модов",
+    "replacement": "Настройки Mod Menu"
+  },
+  {
+    "key": "sounds.config.static",
+    "expected": "Звуки",
+    "replacement": "Sounds"
+  },
+  {
+    "key": "sounds.config.title",
+    "expected": "Конфигурация звуков",
+    "replacement": "Настройки Sounds"
+  },
+  {
+    "key": "category.exposure",
+    "expected": "Экспозиция",
+    "replacement": "Exposure"
+  },
+  {
+    "key": "itemGroup.exposure.exposure",
+    "expected": "Экспозиция",
+    "replacement": "Exposure"
+  },
+  {
+    "key": "itemGroup.immersive_melodies.immersive_melodies_tab",
+    "expected": "Захватывающие Мелодии",
+    "replacement": "Immersive Melodies"
+  },
+  {
+    "key": "puddleflood.title",
+    "expected": "Настройки луж",
+    "replacement": "Puddles & Floods"
+  },
+  {
+    "key": "key.category.accurateblockplacement.category",
+    "expected": "Режим аккуратного размещения",
+    "replacement": "Accurate Block Placement"
+  },
+  {
+    "key": "mod_menu.nameTranslation.mod_menu",
+    "expected": "Better ModList",
+    "replacement": "Mod Menu (NeoForge Edition)"
   }
 ]

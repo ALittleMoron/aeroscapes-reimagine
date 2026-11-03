@@ -36,6 +36,6 @@ Comforts adds portable sleeping bags and hammocks without changing the player’
 
 ## Planned survival systems
 
-Nutrition groups, thirst with water quality, and moderate heat and cold are planned additions. They should make varied meals, drinking water, equipment and shelter useful without constant interruption. Ordinary hunger will remain. [Cooking and farming](food/#planned-nutrition-and-thirst) describes the intended food and water mechanics.
+Food groups, thirst with water quality, and moderate heat and cold add reasons to prepare varied meals, drinking water, equipment and shelter. Ordinary hunger remains. [Cooking and farming](food/#nutrition-and-drinking-water) explains the supplies and their effects.
 
 Seasons remain optional. Their interaction with food supplies and drinking water is part of [household planning](food/#seasons-and-household-planning).

@@ -1,0 +1,40 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.aquatic",
+  "plugin": "dev.aeroscapes.aquatic.AquaticMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AquaticTerrainMixin",
+    "AquaticInjectorAccess",
+    "BlueprintBiomeSourceAccess",
+    "AquaticInjectorsMixin",
+    "AquaticSpawnMixin",
+    "AquaticConchMixin",
+    "AquaticConchAccess",
+    "ArgonautColorMixin",
+    "AquaticFloorPlacementMixin",
+    "AquaticFloorFeatureMixin",
+    "AquaticStructureAccess",
+    "TideDepthMixin",
+    "TideSpawnMixin",
+    "TideDepthMeterMixin",
+    "TideEncounterMixin",
+    "TideHookPerksMixin",
+    "TideCrateResultMixin",
+    "TideCrateHookMixin",
+    "TideHookAccess"
+  ],
+  "client": [
+    "BlockModelElementsAccess",
+    "RefinedRodCastMixin",
+    "TideInfoPlacementMixin",
+    "ModefiteTideCastMixin",
+    "PunchyRodTypeMixin",
+    "TideRodLineMixin",
+    "TideRodPropertiesMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

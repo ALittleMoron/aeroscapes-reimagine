@@ -98,6 +98,28 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String groupOneCatalog = System.getProperty("aeroscapes.regression.groupOneCatalog");
+    if (groupOneCatalog != null) GroupOneCatalog.write(level, Path.of(groupOneCatalog));
+    if (Boolean.getBoolean("aeroscapes.regression.statues")) {
+      StatueGenerationRegression.run(event.getServer());
+      LOGGER.info("Statue generation regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.aquatic")) {
+      AquaticRegression.run(event.getServer());
+      return;
+    }
+    String survivalReport = System.getProperty("aeroscapes.regression.survival");
+    if (survivalReport != null) {
+      SurvivalRegression.verify(level, Path.of(survivalReport));
+      LOGGER.info("Survival regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.movement")) {
+      MovementRegression.verify(level);
+      LOGGER.info("Movement regression passed");
+      return;
+    }
     if (System.getProperty("aeroscapes.regression.outpostTerrainReport") != null) {
       OutpostTerrainRegression.verify(level);
       return;

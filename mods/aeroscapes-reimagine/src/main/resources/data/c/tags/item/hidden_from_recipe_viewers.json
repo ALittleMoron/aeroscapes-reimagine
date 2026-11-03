@@ -3,6 +3,16 @@
   "values": [
     "waystones:twinbound_feather",
     "waystones:epitaph",
-    "waystones:dormant_shard"
+    "waystones:dormant_shard",
+    "legendarysurvivaloverhaul:bandage",
+    "legendarysurvivaloverhaul:healing_herbs",
+    "legendarysurvivaloverhaul:medkit",
+    "legendarysurvivaloverhaul:morphine",
+    "legendarysurvivaloverhaul:plaster",
+    "legendarysurvivaloverhaul:tonic",
+    "legendarysurvivaloverhaul:first_aid_supplies",
+    "legendarysurvivaloverhaul:heart_container",
+    "legendarysurvivaloverhaul:heart_fragment",
+    "legendarysurvivaloverhaul:shield_container"
   ]
 }

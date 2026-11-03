@@ -65,6 +65,11 @@ repositories {
       includeModule("maven.modrinth", "waystones")
       includeModule("maven.modrinth", "waystones-sable")
       includeModule("maven.modrinth", "balm")
+      includeModule("maven.modrinth", "hybrid-aquatic")
+      includeModule("maven.modrinth", "hybrid-api")
+      includeModule("maven.modrinth", "geckolib")
+      includeModule("maven.modrinth", "tide")
+      includeModule("maven.modrinth", "yori3os-grappling-hooks")
     }
   }
 }
@@ -117,6 +122,10 @@ val atmosphereApi by configurations.creating {
   isCanBeConsumed = false
   isTransitive = false
 }
+val explorationApi by configurations.creating {
+  isCanBeConsumed = false
+  isTransitive = false
+}
 val sableNestedApiDirectory = layout.buildDirectory.dir("sable-api")
 val extractSableApi by
   tasks.registering(Sync::class) {
@@ -131,6 +140,15 @@ val extractSableApi by
   }
 
 dependencies {
+  explorationApi("maven.modrinth:hybrid-aquatic:jdOU7Pzu")
+  explorationApi("maven.modrinth:hybrid-api:4HsWNhJz")
+  explorationApi("maven.modrinth:geckolib:Grwn5rUB")
+  explorationApi("maven.modrinth:tide:1ki6UyqV")
+  explorationApi("maven.modrinth:yori3os-grappling-hooks:lf4DqQBf")
+  explorationApi("curse.maven:paragliders-289240:7795089")
+  explorationApi("curse.maven:legendary-survival-overhaul-840254:8597620")
+  explorationApi("curse.maven:nutritional-balance-448222:7980604")
+  compileOnly(files(explorationApi))
   compileOnly("org.jetbrains.kotlin:kotlin-stdlib:2.3.0") { isTransitive = false }
   // Compile-only API: classes match the pinned Modrinth runtime; only MANIFEST.MF differs.
   compileOnly("com.github.glitchfiend:TerraBlender-neoforge:1.21.1-4.1.0.8") {
@@ -396,9 +414,73 @@ tasks.register<JavaExec>("generateCelestialAtlas") {
   )
 }
 
+val equipmentModelsCheck by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.aquatic.EquipmentModels"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath, "--check")
+    systemProperty("java.awt.headless", "true")
+  }
+
+val hookCompatibilityTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.movement.HookCompatibilityTest"
+    args(
+      layout.projectDirectory
+        .dir("../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item")
+        .asFile
+        .absolutePath
+    )
+  }
+
+val rodModelContractTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.aquatic.RodModelContractTest"
+  }
+
+val paragliderExhaustionTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.movement.ParagliderExhaustionTest"
+  }
+
+tasks.register<JavaExec>("refinedRodCastTest") {
+  group = "verification"
+  description = "Audits the pinned Refined archive supplied by -PrefinedRodArchive=<file>."
+  dependsOn(tasks.named(policy.classesTaskName))
+  classpath = policy.runtimeClasspath
+  mainClass = "dev.aeroscapes.aquatic.RefinedRodCastCleanupTest"
+  argumentProviders.add(
+    CommandLineArgumentProvider { listOf(providers.gradleProperty("refinedRodArchive").get()) }
+  )
+}
+
+tasks.register<JavaExec>("generateEquipmentModels") {
+  group = "build"
+  dependsOn(tasks.named(policy.classesTaskName))
+  classpath = policy.runtimeClasspath
+  mainClass = "dev.aeroscapes.aquatic.EquipmentModels"
+  args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  systemProperty("java.awt.headless", "true")
+}
+
 tasks.check {
   dependsOn(
     tasks.spotlessCheck,
+    equipmentModelsCheck,
+    hookCompatibilityTest,
+    rodModelContractTest,
+    paragliderExhaustionTest,
     policyTest,
     islandLayoutTest,
     biomeTerrainMaskTest,

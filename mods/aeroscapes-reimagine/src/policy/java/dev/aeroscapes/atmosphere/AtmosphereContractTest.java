@@ -47,6 +47,7 @@ public final class AtmosphereContractTest {
     lanternGrip();
     rainImpactBiome();
     languageCorrections();
+    ConfigLiteralNamespaceTest.verify();
     catnipConfigTranslations();
     contextualConfigComments();
     contextualConfigEnums();
@@ -767,6 +768,26 @@ public final class AtmosphereContractTest {
     List<String> russian = List.of("en_us", "ru_ru");
     Map<String, String> corrected = LanguageCorrections.apply(original, russian);
     require(corrected.equals(replacements), "all exact provider strings are corrected in Russian");
+    Map<String, String> brandLabels =
+        Map.of(
+            "itemGroup.cratedelight", "Ящичные Изыски",
+            "itemGroup.windchimes.main", "wind chimes",
+            "entity.corpse.corpse", "Труп",
+            "advancement.exposure.exposure.title", "Разрезая время светом");
+    require(
+        LanguageCorrections.apply(brandLabels, russian)
+            .equals(
+                Map.of(
+                    "itemGroup.cratedelight", "Crate Delight",
+                    "itemGroup.windchimes.main", "wind chimes",
+                    "entity.corpse.corpse", "Труп",
+                    "advancement.exposure.exposure.title", "Разрезая время светом")),
+        "mod brands retain their names while ordinary nouns and advancement titles stay localized");
+    require(
+        LanguageCorrections.apply(
+                Map.of("itemGroup.cratedelight", "Custom resource-pack title"), russian)
+            .equals(Map.of("itemGroup.cratedelight", "Custom resource-pack title")),
+        "brand repairs preserve changed player translations");
     require(original.equals(baseline), "provider maps are not mutated");
     require(
         LanguageCorrections.apply(corrected, russian).equals(corrected),

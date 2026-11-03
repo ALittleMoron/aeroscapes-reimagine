@@ -1,0 +1,38 @@
+[general.nutrient_levels]
+nutrient_initial = 50.0
+nutrient_level_malnourished = 10.0
+nutrient_level_low_target = 100.0
+nutrient_level_target_high = 120.0
+nutrient_level_engorged = 180.0
+nutrient_level_max = 180.0
+nutrient_increment_rate = 1.0
+nutrient_decay_rate = 1.0
+nutrient_death_loss = 0.0
+
+[general.nutrition_affects]
+effect_bad_nutrients = ["sugars"]
+effect_good_nutrients = []
+
+[general.nutrition_affects.nourished_affects]
+nourished_max_health = 0.0
+nourished_knockback_resistance = 0.0
+nourished_movement_speed = 0.0
+nourished_attack_damage = 0.0
+nourished_knockback = 0.0
+nourished_mining_speed = 0.0
+
+[general.nutrition_affects.malnourished_affects]
+malnourished_max_health = 0.0
+malnourished_knockback_resistance = 0.0
+malnourished_movement_speed = 0.0
+malnourished_attack_damage = -4.0
+malnourished_knockback = 0.0
+malnourished_mining_speed = 0.0
+
+[general.nutrition_affects.engorged_affects]
+engorged_max_health = 0.0
+engorged_knockback_resistance = 0.0
+engorged_movement_speed = 0.0
+engorged_attack_damage = 0.0
+engorged_knockback = 0.0
+engorged_mining_speed = 0.0

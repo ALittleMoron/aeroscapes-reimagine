@@ -369,6 +369,40 @@ New functional labels/help and scoped integration code are independently authore
 for Aeroscapes Reimagine. Expected original strings retain their provider terms.
 Localization routes and selected source revisions: META-INF/localization-sources.json.
 
+Travel, aquatic and survival additions for 0.3.1:
+Hybrid Aquatic: Hybrid Labs and contributors; All Rights Reserved.
+https://modrinth.com/mod/hybrid-aquatic/version/jdOU7Pzu
+Hybrid API: Hybrid Labs and contributors; MIT.
+https://modrinth.com/mod/hybrid-api/version/4HsWNhJz
+GeckoLib: GeckoLib contributors; MIT.
+https://modrinth.com/mod/geckolib/version/Grwn5rUB
+Lithostitched: Apollo and contributors; MIT; selected archive embeds Apollib 1.2.0.
+https://modrinth.com/mod/lithostitched/version/cZu4cHY3
+Tide: Lightning64 and contributors; MPL-2.0.
+https://modrinth.com/mod/tide/version/1ki6UyqV
+Paragliders: Tictim and contributors; GPL-3.0-only.
+https://www.curseforge.com/minecraft/mc-mods/paragliders/files/7795089
+https://github.com/Tictim/Paraglider/tree/53dc49464be242f5396c587ebfa20e16d21d10b8
+Yori3o's Grappling Hooks: yori3o and contributors; MIT.
+https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf
+Legendary Survival Overhaul: Alex-Hashtag, Sfiomn and contributors.
+https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul/files/8597620
+https://github.com/Alex-Hashtag/LegendarySurvivalOverhaul/tree/1.21.1
+The selected archive declares MIT; its CurseForge project says All Rights
+Reserved, and its linked LICENSE.txt retains Forge LGPL boilerplate. These
+conflicting declarations are recorded rather than silently replaced. The
+official archive remains unchanged; no broader asset-reuse grant is inferred.
+Nutritional Balance: Danny and contributors; GPL-3.0-only.
+https://www.curseforge.com/minecraft/mc-mods/nutritional-balance/files/7980604
+https://github.com/dannydjdk/Nutritional-Balance/tree/fce213e966b395b16ae30a801a19a37f6a73da50
+Original third-party notices remain in their unchanged archives. Owned field-level
+placement, fishing, display and survival integration and authored EN/RU text
+accompany corresponding source in licenses/aeroscapes-reimagine-source.zip.
+Paragliders' small structure definitions retain their upstream GPL terms inside
+the owned placement wrappers; provider templates and assets are not copied.
+Exact artifacts, source comparisons and channel parity: metadata/artifacts.json
+and metadata/curseforge.json. These records do not authorize publication.
+
 Third QoL group: unchanged official files for HT's TreeChop (MIT),
 Panda's Falling Trees (GPLv3), PandaLib (LGPLv3), ItemPhysic Full and
 CreativeCore (selected descriptors LGPL-3.0-only), Waystones (author terms),
@@ -384,3 +418,9 @@ https://modrinth.com/mod/waystones-sable/version/Wot8Pf4C
 https://mods.twelveiterations.com/permissions
 Owned integration and independent EN/RU text: see the shipped owned mod's
 META-INF/NOTICE.txt, META-INF/localization-sources.json and corresponding source.
+
+Owned equipment artwork: original deterministic Java pixel materials and cuboid
+models, GPL-3.0-or-later; corresponding generator source accompanies the owned mod.
+Tide rod models supply independent geometry while referencing Refined Tools 3.0
+parent display transforms. A guarded runtime adapter removes stowed tackle from
+known cast models. No provider meshes or textures are copied; their licenses remain.

@@ -19,4 +19,9 @@ public interface IslandBiomeSampler {
   Holder<Biome> aeroscapesReimagine$voidBiome();
 
   void aeroscapesReimagine$voidBiome(@Nullable Holder<Biome> biome);
+
+  @Nullable
+  IslandBiomeSource aeroscapesReimagine$generationSource();
+
+  void aeroscapesReimagine$generationSource(@Nullable IslandBiomeSource source);
 }

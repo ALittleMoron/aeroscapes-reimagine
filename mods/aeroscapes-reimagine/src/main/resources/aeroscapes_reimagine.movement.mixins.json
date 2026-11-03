@@ -1,0 +1,29 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.movement",
+  "plugin": "dev.aeroscapes.movement.MovementMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ParagliderStatueBoundsMixin"
+  ],
+  "client": [
+    "HookConfigurationLanguageMixin",
+    "CatnipConfigurationAccess",
+    "ParagliderForeignConfigurationLanguageMixin",
+    "ParagliderForeignConfigurationTitleMixin",
+    "ParagliderWheelLanguageMixin",
+    "ParagliderPreviewLanguageMixin",
+    "HookSprintMixin",
+    "HookToggleKeyAccess",
+    "HookOptionsMixin",
+    "ParagliderExhaustionMixin",
+    "HookKeyDefaultsMixin",
+    "HookItemCaptureMixin",
+    "HookWorldRenderMixin",
+    "HookLineMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

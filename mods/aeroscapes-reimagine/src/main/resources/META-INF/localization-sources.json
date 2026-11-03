@@ -124,8 +124,8 @@
       "resource": "assets/aeroscapes_reimagine/lang/ru_ru.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
-      "entries": 334,
-      "sha256": "f56a9c114c480d591fde9a083f49471b1c85e5afd9f855a5d68dcdf06e382a8a"
+      "entries": 335,
+      "sha256": "0d8dbcfae0697e5e426c6fc18bbc618b58399750f3ea300ab407aacd005ac566"
     },
     {
       "resource": "assets/aeroscapes_reimagine_catalog_translations/lang/ru_ru.json",
@@ -187,15 +187,15 @@
       "resource": "assets/aeroscapes_reimagine_ui_translations/lang/en_us.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
-      "entries": 209,
-      "sha256": "5e3a2319ff372c2eb189369d4cc8a306246e0b42bb32fb36b90871c1ed52ec21"
+      "entries": 210,
+      "sha256": "c13a28e3bf43ea24b7d51caa43eb86d671697c42792f968c7b813cf430be534d"
     },
     {
       "resource": "assets/aeroscapes_reimagine_ui_translations/lang/ru_ru.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
-      "entries": 1244,
-      "sha256": "4f974cb6b3062ef852a6d9899f2fd9b95cc072a2261af1167d247bcf1fb3ecee"
+      "entries": 1245,
+      "sha256": "8cade1c5773cc3927ba77d132acfe263feba6fb00fecc43eb81a32cd385da180"
     },
     {
       "resource": "assets/item_descriptions/lang/en_us.json",
@@ -266,13 +266,69 @@
       "provider_terms": "Provider text retains its individual source terms; independently authored missing translations and integration help. See exact third-group inputs and NOTICE.txt.",
       "entries": 309,
       "sha256": "70fdc7d5bb5d4df1e99da03d86dc9b21d89568550f464bffd8c11b8511527ae2"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_movement_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent English/Russian functional text; original provider terms remain applicable to expected source strings. See configuration_inputs and NOTICE.txt.",
+      "entries": 104,
+      "sha256": "daf08011e51549e7779197b4b42fbd89cb9fd0965e0d60c1a154ceb06658dbd4"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_movement_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent English/Russian functional text; original provider terms remain applicable to expected source strings. See configuration_inputs and NOTICE.txt.",
+      "entries": 315,
+      "sha256": "54848daf634d27710cf13f97cd0592ef7704605a234ed67990a989629f8fd466"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_survival/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent English/Russian functional text; original provider terms remain applicable to expected source strings. See configuration_inputs and NOTICE.txt.",
+      "entries": 110,
+      "sha256": "499ceda8c8ae2ab3f36c5b2f125c85747bb4738a9fff4e3f5b9bc2607f054ffe"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_survival/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent English/Russian functional text; original provider terms remain applicable to expected source strings. See configuration_inputs and NOTICE.txt.",
+      "entries": 110,
+      "sha256": "fcaea07d45f3985d0c6ec0128cd5a59b1a7dee1bd6d875340c0d50556073629a"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_survival_config_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent English/Russian functional text; original provider terms remain applicable to expected source strings. See configuration_inputs and NOTICE.txt.",
+      "entries": 1045,
+      "sha256": "96454647cf45f5185dfaeb69c3eefe1275db0a637a6c9906f10965842144d6a2"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_survival_config_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent English/Russian functional text; original provider terms remain applicable to expected source strings. See configuration_inputs and NOTICE.txt.",
+      "entries": 1045,
+      "sha256": "3650ccb246c4311e32eb349177c26200beb41c56204fb9d46d7850e98fb81148"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_aquatic_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independently authored missing English/Russian and nested display labels; unchanged original provider/user translations retain priority. Expected originals retain their provider terms.",
+      "entries": 22,
+      "sha256": "9dae320d99daec644f354e10d11bb02bb21cf8aee9b1e4f01a9adc9e42338100"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_aquatic_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independently authored missing English/Russian and nested display labels; unchanged original provider/user translations retain priority. Expected originals retain their provider terms.",
+      "entries": 181,
+      "sha256": "f3cad0395368dbd0fc774ee02443d7618a38d7f21f2664d67b5752aecb553e21"
     }
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 949,
-    "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged.",
-    "sha256": "82d9f53f48c1d0cb5c24ad2eceea69f711836e4e8c363f38a6fd70fcb9026899"
+    "rules": 1636,
+    "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged. Native creative-tab, menu, keybinding and root-advancement mod titles retain provider branding; ordinary gameplay nouns and non-root advancement titles remain localized.",
+    "sha256": "5a746c9701eb746c5fc5bcc91701ff47695eacd1f1985408fa309eb13f0aa3cb"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
@@ -1102,7 +1158,7 @@
       "routes": {
         "jadeaddons": "Existing Jade plugin controls; preserve native goggles=false and requires_goggles=true.",
         "emi_enchanting": "EMI information recipes; use effective enchantment description keys.",
-        "emiffect": "EMI effect descriptions with vanilla and modded registry keys.",
+        "emiffect": "MobEffectInfo.getDescription in pinned EMIffect2.1.6 checks effect.<namespace>.<path>.description with I18n.exists, then .desc, then the missing-description label. Authored EN/RU effect descriptions use the first route.",
         "enchdesc": "Prickle JSON file only; no registered config screen/spec. Descriptions on books and gear, no modifier required by default.",
         "smart_tooltip_scroll": "S-Lib registered YACL factory; supplement all19 missing Russian controls/help.",
         "equipmentcompare": "11 Iceberg custom-spec options via version-gated native editor view.",
@@ -1114,7 +1170,7 @@
         "prism": "Color utility; no independent player config."
       },
       "scope": "Effective English/Russian assets, runtime descriptions, Mod Menu metadata, controls, client-only config definitions, help, sections, enums and native editor save/list paths. Provider translations take precedence; fill missing keys only.",
-      "descriptions": "All34 currently installed modded enchantment definitions have EN/RU prose;17 missing modded effect descriptions supplied from actual effects. Three internal Nova warning names keep warning semantics through description-only runtime patches.",
+      "descriptions": "All34 currently installed modded enchantment definitions have EN/RU prose;18 missing modded effect descriptions supplied from actual effects. Three internal Nova warning names keep warning semantics through description-only runtime patches.",
       "iceberg_editor": "Clone display values, retain original schema/parser/loaded-config and ConfigTracker identity. Native editor writes original config and clears original supplier caches before original save/reload event. No third-party code is replaced.",
       "source_comparison_limits": "Equipment Compare public source found1.3.12 vs actual1.3.13; Prism source1.0.8 vs actual1.0.11. Actual target JARs are primary; no exact source equivalence claimed.",
       "authorship": "Missing short functional labels/help and metadata summaries are independently authored. Provider prose and user custom strings retain their owners and values.",
@@ -1407,7 +1463,8 @@
         "setting": "client.visual_options.render_item_model",
         "value": "NONE",
         "reason": "Owner confirmed that disabling the model preview resolves overlap with Quark attribute icons. Starting file only; no runtime override of later player choices. Native reset remains the provider default."
-      }
+      },
+      "stamina_efficiency_description": "Paraglider21.1.5 registers paraglider:stamina_efficiency via Contents.staminaEfficiencyEffect. StaminaEfficiencyMobEffect adds0.5 per level with ADD_MULTIPLIED_BASE to the base1 stamina-efficiency attribute; ParagliderDefaultPlugin applies it only to negative stamina deltas and StaminaEfficiencyLogic.applyEfficiency divides cost by1+efficiency. LevelI consumes2/3 of baseline; levelII consumes1/2. Neither recovery nor maximum capacity is modified. The pack currently spends stamina only while gliding."
     },
     "qol_group1": {
       "selected_providers": {
@@ -1514,6 +1571,168 @@
       },
       "authorship": "Missing text independently authored. Original expected strings retain original MIT/GPL/LGPL/Waystones author terms; see NOTICE.txt and unchanged archives.",
       "client_acceptance": "Actual configuration screens, perspective/input, shader composition and moving-ship arrival remain owner-only."
+    },
+    "movement_031": {
+      "selected_providers": {
+        "curseforge:289240": "7795089",
+        "t1p8V2nl": "lf4DqQBf"
+      },
+      "resources": {
+        "en_us": {
+          "resource": "assets/aeroscapes_reimagine_movement_translations/lang/en_us.json",
+          "entries": 92,
+          "sha256": "f2d1e8eb2ce58e803fb7cfaab66ffc6d512fc869081953d53b1ad5a406edf1c2"
+        },
+        "ru_ru": {
+          "resource": "assets/aeroscapes_reimagine_movement_translations/lang/ru_ru.json",
+          "entries": 303,
+          "sha256": "a1cee9c33ca6cfde870c9d765e4a036a00589c822bc993f2b5456a01ebbb26ca"
+        }
+      },
+      "routes": {
+        "paraglider": "21.1.5 JAR contains 211 English entries and no Russian. Independently authored complete Russian supplement covers names, nested vessel/elixir preview components, dialogues, commands, HUD settings and native NeoForge common/server/player-state configuration. Three native command singular-prefix aliases supplied in EN/RU. 51 exact original-value English label corrections make raw camelCase/state captions readable; provider/player-changed text remains preserved. 26 complete config comment blocks use existing SHA256 literal lookup; dynamic native default/range lines remain untouched. Native TotwCompatConfigOption labels receive declaring-class aliases; literal extra-wheel labels and No Preview fallback use exact class/method-scoped client mixins. Technical Dir8 position codes, numeric coordinates, paths, command syntax and genuine mod-brand entries remain unchanged. 51 exact Catnip humanized state/config captions were computed with the pinned Ponder1.0.82 method body and Minecraft Commons Lang3.14.0; hashes map its post-humanization display strings, preserving config IDs. The ambiguous Ascending caption is scoped to Paraglider in Catnip entry/title display, preserving the shared sort-order translation. Exact Ponder1.0.82+mc1.21.1 guard; config identities unchanged.",
+        "yo_hooks": "5.4.0 JAR has matching 76 EN/RU keys; all active registered names, enchantments, range/damage tooltips and generated YACL settings translated upstream. Only equalities are three genuine mod-brand/category labels. Four literal screen category names are translated through exact ConfigScreenFactory.create adapter. Native parameter labels concatenate already translated item/suffix values; booleans/sliders render through existing YACL. Absent Vivecraft means VR controls unavailable, not an unlocalized enabled UI."
+      },
+      "source_review": {
+        "paraglider": "Exact author revision53dc49464be242f5396c587ebfa20e16d21d10b8, 21.1.5 descriptors/registered resources/config/movement compared to distributed JAR using Vineflower1.10.1 and javap; no reproducible-build claim.",
+        "yo_hooks": "Author revision4794df07f2d5a9f2a389999300051fb2c5c33683, 5.4.0, multi-version source compared to exact NeoForge1.21.1 JAR. SableCompat, controls, offhand UUID ownership and configuration screen verified against distributed bytecode."
+      },
+      "authorship": "Additional Russian text and English display labels independently authored; original expected English strings retain Paraglider GPLv3 terms. Yori native MIT dictionaries are unchanged. No provider archive modified.",
+      "client_acceptance": "Actual screens/input, uninterrupted suspended mining, glider/hook interaction, shader/camera composition and moving-ship behavior require owner graphical acceptance; static source and server fixtures do not establish it."
+    },
+    "survival_031": {
+      "selected_providers": {
+        "curseforge:840254": "8597620",
+        "curseforge:448222": "7980604"
+      },
+      "routes": {
+        "legendarysurvivaloverhaul": "Exact2.4.7.2 executable audited, including monolithic common/client config registration, nested potion/canteen descriptions and client-only migration screen.98 missing RU keys authored. Brand, empty display strings and printf-only template retained. Native commands still use upstream literal English for operator diagnostics.",
+        "nutritionalbalance": "Exact7.0.3 executable audited. Three missing RU resources supplied; untranslated keybinding guarded correction. Replaces static nutrition helper with live shared panel in standalone/lunchbox screens; preserves close/inventory input and menu slots. Readable localized command output no client-class call on dedicated server. Dynamic five nutrient groups covered; dairy resource retained but not a selected group.",
+        "config": "Native both-side/common plus client and server specs audited against distributed binary. Parent-owned complete labels/comments/enums corpus. Mods menu native factory adapters expose those same definitions; foreign-selector path remains existing shared consumer."
+      },
+      "resources": {
+        "en_us": {
+          "resource": "assets/aeroscapes_reimagine_survival/lang/en_us.json",
+          "entries": 110,
+          "sha256": "cdf0b01a62bbdcbe33808b3d78671d8c7ac6e3a9346a85d14209ece21863eaf4"
+        },
+        "ru_ru": {
+          "resource": "assets/aeroscapes_reimagine_survival/lang/ru_ru.json",
+          "entries": 110,
+          "sha256": "33f5d135001a2cc7c4b2484e9fa463f6bcc7a9c97be85f4f3e9b8e51d103dbc3"
+        }
+      },
+      "source_review": {
+        "legendarysurvivaloverhaul": "Official source-linked branch at4abeefba3adb2087b4ff7aa7ace83f03189042cc differs in config layout; executable is authority for actual fields/filenames.",
+        "nutritionalbalance": "Official1.21.1 sourcefce213e966b395b16ae30a801a19a37f6a73da50 claims7.0.3; executable includes cached/prewarmed recipe index, audited directly."
+      },
+      "authorship": "Missing RU text, shared nutrition panel and integration help independently authored; expected strings retain provider terms; changed resource-pack/user translations preserved by exact expected-value corrections.",
+      "client_acceptance": "Actual English/Russian screen rendering, zoom/window sizes, key input, lunchbox and shader/HUD composition require owner verification.",
+      "config_corpus": {
+        "literal_strings": 567,
+        "native_labels": 336,
+        "enum_values": 17,
+        "comments": 232,
+        "consumer": "Existing native NeoForge and Catnip display adapters; direct-language hash aliases preserve parser keys, arbitrary runtime defaults/ranges and user/provider replacements. English attack-damage comments correct upstream status-effect comparison. Independently authored translations of exact distributed monolithic LSO common/client and NB client/server specs. Catnip display aliases replay exact Ponder1.0.82 CommonsLang humanization of the source labels.",
+        "foreign_display_aliases": 125
+      }
+    },
+    "aquatic_031": {
+      "selected_providers": {
+        "HH4FjUqN": "jdOU7Pzu",
+        "yv9f5EAG": "4HsWNhJz",
+        "XaDC71GB": "cZu4cHY3",
+        "die1AF7i": "1ki6UyqV",
+        "8BmcQJ2H": "Grwn5rUB"
+      },
+      "resources": [
+        {
+          "language": "en_us",
+          "resource": "assets/aeroscapes_reimagine_aquatic_translations/lang/en_us.json",
+          "entries": 22,
+          "sha256": "9dae320d99daec644f354e10d11bb02bb21cf8aee9b1e4f01a9adc9e42338100"
+        },
+        {
+          "language": "ru_ru",
+          "resource": "assets/aeroscapes_reimagine_aquatic_translations/lang/ru_ru.json",
+          "entries": 181,
+          "sha256": "f3cad0395368dbd0fc774ee02443d7618a38d7f21f2664d67b5752aecb553e21"
+        }
+      ],
+      "guarded_russian_corrections": 610,
+      "routes": {
+        "hybrid_aquatic": "1040 EN/998 RU:53 missing RU keys and610 substantive equal-English corrections. Missing-only authored supplement; expected-value corrections preserve changed upstream/player text.51 journal paragraphs, nested potion/item names, biome/HUD names, interfaces and subtitles audited. Argonaut color arguments use17 translatable display components while native numeric colors stay unchanged. Upstream JSON config has no registered NeoForge configuration-screen factory; no invented config UI claims.",
+        "tide": "865 EN/835RU:95 missing RU keys including actual AutoConfig2.1.1 client+server categories/options/tooltips.4 client InfoPlacement enum labels supplied via native Cloth Translatable contract; remaining server enum paths retain original native consumers and identities. Native depth bars retain63-relative units; local basin fishing compares actual contiguous water-column depth. X/<<>> navigation and m/percent/numeric units are symbols, not untranslated prose. Native Tide mob contexts reuse catch conditions with nullhook; their animal-position depth remains separate from rod water-column depth.",
+        "hapi": "4 EN keys; all4 independently authored RU entries cover creature net name, stored entity component and behavior tooltips.",
+        "apollib": "7 EN-only native config labels/tooltips from nested1.2.0 JAR covered; no separate artifact pin. Exact Lithostitched1.8.1 NeoForge client entrypoint constructor registers no screen; generic Apollib labels are supplied without claiming a separate active Lithostitched GUI."
+      },
+      "exclusions": {
+        "advancements.hybrid_aquatic.enter_water.title": "Project brand.",
+        "modmenu.nameTranslation.hybrid_aquatic": "Project brand.",
+        "painting.hybrid_aquatic.asexual_pride_flag.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.below.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.big_lure.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.bigeye.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.bisexual_pride_flag.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.bold_and_brash.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.conch_street.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.creatures_of_the_deep.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.gay_pride_flag.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.great_lake.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.jam.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.jaws.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.jolly_roger.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.king_of_herring.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.lesbian_pride_flag.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.lighthouse.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.melon.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.mooncatcher.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.neven_naiven.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.neven_naiven.title": "Artwork proper title / Latin species name.",
+        "painting.hybrid_aquatic.nonbinary_pride_flag.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.organon.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.palestine_flag.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.poulpe_colossal.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.praya_dubia.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.praya_dubia.title": "Artwork proper title / Latin species name.",
+        "painting.hybrid_aquatic.preserver.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.pressed_bull_kelp.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.pressed_kelp.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.pride_flag.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.riverfish.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.sunset.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.suntide.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.swirling.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.the_watchful.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.trans_pride_flag.author": "Creator credit: preserve the credited name exactly.",
+        "subtitles.hybrid_aquatic.entity.hypnautilus.ambient": "Inactive: entity and spawn egg registrations are commented out in exact 1.7.4 source; no registered entity consumer.",
+        "subtitles.hybrid_aquatic.entity.hypnautilus.die": "Inactive: entity and spawn egg registrations are commented out in exact 1.7.4 source; no registered entity consumer.",
+        "subtitles.hybrid_aquatic.entity.hypnautilus.hurt": "Inactive: entity and spawn egg registrations are commented out in exact 1.7.4 source; no registered entity consumer.",
+        "painting.hybrid_aquatic.abyssal.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.admiral_skellington.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.admiral_steve.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.calm_waters.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.chasm.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.diorama.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.gone_fishing.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.jona_saxisa.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.lighthouse_after_dusk.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.majestic_behemoth.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.pansexual_pride_flag.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.red_devil.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.seashell_seashelf.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.selgio.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.shallows.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.steve_and_the_sea.author": "Creator credit: preserve the credited name exactly.",
+        "painting.hybrid_aquatic.the_fast_regiment.author": "Creator credit: preserve the credited name exactly."
+      },
+      "source_review": {
+        "hybrid_aquatic": "5e2782130bf3f1d8f042c0aadc1fbf51ddd73510 release1.7.4; selected registry, conch, terrain, hook/spawn methods compared with exact distributed bytecode.",
+        "hapi": "14fc20e release-era1.1.3 source; BaseFish/WorldHelper exact bytecode confirms sea-level/depth/sky algorithm.",
+        "tide": "876b95f31328f4e698d5150f7d840ab033d1b06d release2.1.1 with1.21.1 conditional compilation; no-op encounter conversion andHookAccessor proxy independently verified from exact JAR."
+      },
+      "authorship": "Additional Russian prose, missing labels and display adapters authored independently for this pack. Upstream artifacts remain unchanged; brands, creator credits and parser identities retained. Hybrid Aquatic provider remains ARR; HAPI/GeckoLib/Lithostitched/Apollib MIT, Tide MPL-2.0. Expected original values identify compatibility boundaries, not a relicense of provider text.",
+      "client_acceptance": "Native actual menus, journal tooltips, underwater palette/visibility, Argonaut colors/controls, shaders and moving-ship composition await owner visual acceptance."
     }
   }
 }

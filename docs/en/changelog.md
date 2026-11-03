@@ -4,6 +4,23 @@ description: Version history.
 status: available
 ---
 
+## 0.3.1
+
+- Replace the repeating square marine-biome pattern with seeded irregular habitats; existing generated chunks retain their stored biomes.
+- Give fishing rods distinct three-dimensional models matching their inventory sprites, with volumetric reels and no hanging tackle after casting; add volumetric grappling hooks and lunch box models.
+- Adapt glider hand poses to the installed animation stack.
+- Keep ordinary sprinting and swimming available when glider stamina is depleted.
+- Use Shift/Ctrl for rope control, migrate the former default pair once, and attach the chain to the animated handle.
+- Preserve original mod titles in Russian menus and add English/Russian Stamina Efficiency descriptions for [EMIffect](https://modrinth.com/mod/emiffect).
+- Increase the nutrition deficit penalty to four attack-damage points, wrap nutrient hints, and explain attachment and statue trades in item hints and guides.
+- Add [Hybrid Aquatic](https://modrinth.com/mod/hybrid-aquatic) for marine habitats, wildlife, diving equipment and underwater encounters, with [Tide](https://www.curseforge.com/minecraft/mc-mods/tide) for fishing equipment and the fishing journal.
+- Add [Paragliders](https://www.curseforge.com/minecraft/mc-mods/paragliders) with its stamina and statue progression, and [Yori3o’s Grappling Hooks](https://modrinth.com/mod/yori3os-grappling-hooks) for rope movement and hanging while mining.
+- Add drinking water, purification and moderate temperature through [Legendary Survival Overhaul](https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul), preserving ordinary hunger and health regeneration without limb injuries.
+- Add food groups through [Nutritional Balance](https://www.curseforge.com/minecraft/mc-mods/nutritional-balance), with a deficit penalty and a redesigned nutrition display.
+- Add English and Russian names, help and configuration text for the new systems.
+- Adapt marine habitats, seabed structures and fishing depth to island basins; retain native aquatic hook rewards and floating crates through the unified fishing system.
+- Require natural support for standalone Overworld statues and correct rotated underground statue bounds before placement.
+
 ## 0.3.0
 
 - Complete the selected QoL mod set introduced in the preceding updates.

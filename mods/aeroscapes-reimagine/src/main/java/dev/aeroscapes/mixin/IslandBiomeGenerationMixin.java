@@ -1,7 +1,7 @@
 package dev.aeroscapes.mixin;
 
 import dev.aeroscapes.worldgen.IslandBiomeSampler;
-import dev.aeroscapes.worldgen.IslandBiomeSource;
+import dev.aeroscapes.worldgen.IslandBiomeSources;
 import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.biome.BiomeResolver;
 import net.minecraft.world.level.biome.Climate;
@@ -31,12 +31,12 @@ public abstract class IslandBiomeGenerationMixin {
       StructureManager structures,
       ChunkAccess chunk) {
     BiomeResolver resolver = arguments.get(0);
-    if (resolver instanceof IslandBiomeSource source) {
-      arguments.set(0, source.forGeneration());
-    }
     Climate.Sampler sampler = arguments.get(1);
-    ((IslandBiomeSampler) (Object) sampler)
-        .aeroscapesReimagine$terrainMask(
-            ((IslandBiomeSampler) (Object) random.sampler()).aeroscapesReimagine$terrainMask());
+    arguments.set(
+        1,
+        IslandBiomeSources.forGeneration(
+            resolver,
+            sampler,
+            ((IslandBiomeSampler) (Object) random.sampler()).aeroscapesReimagine$terrainMask()));
   }
 }

@@ -1,0 +1,78 @@
+{
+  "projectile_use": {
+    "reason": "Splash/lingering potion Item inherits DRINK animation but use actually throws a projectile; it is not drunk.",
+    "ids": [
+      "minecraft:splash_potion",
+      "minecraft:lingering_potion"
+    ]
+  },
+  "effect_consumable": {
+    "reason": "Existing non-hydration effect consumables retain their provider role; no new thirst/stamina or trial-omen integration.",
+    "ids": [
+      "minecraft:ominous_bottle",
+      "paraglider:energizing_elixir_1",
+      "paraglider:energizing_elixir_2",
+      "paraglider:energizing_elixir_3",
+      "paraglider:enduring_elixir_1",
+      "paraglider:enduring_elixir_2",
+      "paraglider:enduring_elixir_3"
+    ]
+  },
+  "component_driven_canteen": {
+    "reason": "Default empty item has no hydration. Native charged canteen components select water quality and consumption; actual native filled-item path is covered separately.",
+    "ids": [
+      "legendarysurvivaloverhaul:canteen",
+      "legendarysurvivaloverhaul:large_canteen"
+    ]
+  },
+  "disabled_limb_consumable": {
+    "reason": "Tonic belongs to the disabled limb module; recipe removed and item hidden. Registered only for existing-save identity.",
+    "ids": [
+      "legendarysurvivaloverhaul:tonic"
+    ]
+  },
+  "culinary_food": {
+    "reason": "Dense culinary food/ingredient (preserves, custard, frosting, sauces, cream, syrup, eggs or chocolate), not a selected hydration beverage. DRINK animation alone is not evidence of a water-drinking role. Nutrition still applies through food properties.",
+    "ids": [
+      "brewinandchewin:apple_jelly",
+      "brewinandchewin:glow_berry_marmalade",
+      "brewinandchewin:sweet_berry_jam",
+      "createfood:apple_cream_frosting_bottle",
+      "createfood:apple_custard_bottle",
+      "createfood:apple_jam_bottle",
+      "createfood:berry_cream_frosting_bottle",
+      "createfood:berry_custard_bottle",
+      "createfood:berry_jam_bottle",
+      "createfood:blackstrap_molasses_bottle",
+      "createfood:chocolate_bottle",
+      "createfood:chocolate_cream_frosting_bottle",
+      "createfood:chocolate_custard_bottle",
+      "createfood:chorus_fruit_cream_frosting_bottle",
+      "createfood:chorus_fruit_custard_bottle",
+      "createfood:chorus_fruit_jam_bottle",
+      "createfood:condensed_milk_bottle",
+      "createfood:cream_frosting_bottle",
+      "createfood:creme_brulee_bottle",
+      "createfood:custard_bottle",
+      "createfood:custard_sugar_bottle",
+      "createfood:dark_chocolate_bottle",
+      "createfood:egg_whites_bottle",
+      "createfood:glow_berry_cream_frosting_bottle",
+      "createfood:glow_berry_jam_bottle",
+      "createfood:heavy_cream_bottle",
+      "createfood:melon_cream_frosting_bottle",
+      "createfood:melon_custard_bottle",
+      "createfood:melon_jam_bottle",
+      "createfood:molasses_bottle",
+      "createfood:pumpkin_custard_bottle",
+      "createfood:pumpkin_puree_bottle",
+      "createfood:sour_cream_bottle",
+      "createfood:taco_sauce_bottle",
+      "createfood:ube_cream_frosting_bottle",
+      "createfood:vinegar_bottle",
+      "createfood:white_chocolate_bottle",
+      "createfood:yogurt_bottle",
+      "minecraft:honey_bottle"
+    ]
+  }
+}

@@ -77,6 +77,45 @@ data matching that pack version. The source project does not include third-party
 Minecraft/mod binaries. It builds without the pack repository's Python tools,
 Makefile, private evidence, saved worlds or caches.
 
+## Aquatic, movement and survival integration
+
+The `aquatic`, `movement` and `survival` packages isolate exact-version content
+adapters from the island generator. [Hybrid Aquatic](https://modrinth.com/mod/hybrid-aquatic)
+habitats use the existing enclosed basins; the provider's global terrain wrappers
+are skipped only for the owned island source. Local waterlines, seabed placement
+and [Tide](https://modrinth.com/mod/tide) depth conditions follow actual basin water.
+Fishing retrieval invokes the aquatic encounter once before ordinary catch
+rewards. Both native encounter hooks, conditional hook perks and block-only
+floating crates retain their original behavior; missing catch records complete
+the native aquatic fish-item selection. Pending conch encounters use dimension
+saved data across restarts. Wrapper discovery traverses the exact native
+Blueprint and Lithostitched delegates, retaining the outer resolvers while an
+invocation-local sampler carries the isolated TerraBlender/Biolith source clone.
+
+[Paragliders](https://www.curseforge.com/minecraft/mc-mods/paragliders) retains its
+native stamina, rewards and exchanges. Its rotated underground template bounds
+are corrected before natural support checks and chunk references are computed.
+[Yori3o’s Grappling Hooks](https://modrinth.com/mod/yori3os-grappling-hooks) retains
+native motion and its provider's ship integration. Client display adapters cover
+literal settings without changing parser values or personal key assignments.
+
+[Legendary Survival Overhaul](https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul)
+and [Nutritional Balance](https://www.curseforge.com/minecraft/mc-mods/nutritional-balance)
+are tuned in the pack, with a shared live nutrition panel for the standalone and
+lunchbox screens. On the pinned loader, global SERVER configuration belongs in
+`config/`; an existing world's `serverconfig/` can override it. The data pack
+assigns actual foods to the provider's nutrient tags and removes recipes and
+loot for the disabled limb/health systems while retaining their registry IDs.
+
+The separate regression JAR has `movement`, `aquatic` and `survival` opt-ins in
+`WorldgenRegression`. They exercise loaded provider behavior on disposable
+dedicated worlds; the survival report includes registered food/drink coverage.
+They do not operate a client or establish visual, input or shader acceptance.
+The optional aquatic biome list preserves old definition decoding. The active
+dimension data supplies the current habitat roster on load, while saved FULL
+chunks retain their stored biomes and terrain. Rollback restores an untouched
+world with its matching older pack.
+
 ## Source archive in the pack repository
 
 From the full repository root, `make companion` builds and checks the JAR, copies
@@ -87,3 +126,22 @@ updating pack files. Pack validation rejects a source ZIP that no longer matches
 the current Java, resources, build inputs, provenance inventory or binary hash.
 The ZIP travels with the binary as a pack override; recipients can extract it
 without accessing a private repository or an external source-hosting account.
+
+### Equipment resource generation
+
+In the complete pack repository, `./gradlew generateEquipmentModels` regenerates
+the original equipment meshes/materials in the two existing owned resource packs.
+`equipmentModelsCheck` checks these outputs as part of `check`. Independent rod
+geometry retains the pinned Refined Tools display transforms through parent
+references; the generator does not copy provider assets. `rodModelContractTest`
+checks cast/idle meshes, mirrored reels, atlas coordinates and Punchy's actual
+tip detector; `hookCompatibilityTest` checks selective binding migration and
+the animated handle projection.
+
+For the four vanilla cast parents, `refinedRodCastTest` audits the exact provider
+archive through native geometry parsers. Run it with
+`./gradlew refinedRodCastTest -PrefinedRodArchive=/absolute/path/to/provider.zip`.
+It checks removal of only the stowed tackle, idempotence and replacement guards.
+The full item catalog is not converted: the current scope is held fishing rods,
+grappling equipment and the lunch box. Native glider emergency descent remains;
+client adapters reconcile its arm pose with the installed animation stack.

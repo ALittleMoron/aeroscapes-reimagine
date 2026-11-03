@@ -1,0 +1,1617 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "brewinandchewin:beer",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:bloody_mary",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:cheesy_pasta",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:creamy_onion_soup",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:egg_grog",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:fiery_fondue",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:fiery_fondue_pot",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:horror_lasagna",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:kimchi",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:kippers",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:pizza",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:quiche",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:red_rum",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:rice_wine",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:salty_folly",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:scarlet_pierogi",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:steel_toe_stout",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:strongroot_ale",
+      "required": false
+    },
+    {
+      "id": "brewinandchewin:vegetable_omelet",
+      "required": false
+    },
+    {
+      "id": "cratedelight:beetroot_crate",
+      "required": false
+    },
+    {
+      "id": "cratedelight:brown_mushroom_crate",
+      "required": false
+    },
+    {
+      "id": "cratedelight:carrot_crate",
+      "required": false
+    },
+    {
+      "id": "cratedelight:potato_crate",
+      "required": false
+    },
+    {
+      "id": "cratedelight:pumpkin_slice_crate",
+      "required": false
+    },
+    {
+      "id": "cratedelight:red_mushroom_crate",
+      "required": false
+    },
+    {
+      "id": "create:builders_tea",
+      "required": false
+    },
+    {
+      "id": "createfood:apple_cream_chocolate_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:apple_cream_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:bacon_sandwich_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:baked_potato_butter_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_bacon_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_bacon_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_onion",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_onion_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_onion_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_onion_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_onion_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_cheese_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_crimson_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_onion",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_onion_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_onion_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_onion_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_onion_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_bun_warped_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_burrito_rice",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_taco",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_taco_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_taco_lettuce_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:beef_wrap_lettuce_beetroot",
+      "required": false
+    },
+    {
+      "id": "createfood:berry_cream_chocolate_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:berry_cream_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_carrot",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_lettuce_carrot",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_slice_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_slice_bacon_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_slice_beetroot",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_slice_beetroot_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_slice_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_slice_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_slice_mutton_beetroot",
+      "required": false
+    },
+    {
+      "id": "createfood:bread_slice_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:breakfast_bar",
+      "required": false
+    },
+    {
+      "id": "createfood:breakfast_plate",
+      "required": false
+    },
+    {
+      "id": "createfood:cheese_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:cheese_potato_dumplings",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_bacon_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_onion",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_onion_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_onion_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_onion_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_onion_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:cheeseburger_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_bun_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_bun_cheese_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_bun_cheese_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_bun_cheese_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_bun_cheese_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_bun_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_bun_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_bun_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_burger_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_burger_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_burger_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_burger_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_burrito_rice",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_cheeseburger_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_cheeseburger_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_cheeseburger_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_cheeseburger_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_taco",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_taco_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_taco_lettuce_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:chicken_wrap_onion_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_cream_chocolate_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_cream_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_donut_base",
+      "required": false
+    },
+    {
+      "id": "createfood:chocolate_donut_sugar",
+      "required": false
+    },
+    {
+      "id": "createfood:chorus_fruit_cream_chocolate_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:chorus_fruit_cream_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:cream_chocolate_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:cream_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:diced_onion",
+      "required": false
+    },
+    {
+      "id": "createfood:donut_base",
+      "required": false
+    },
+    {
+      "id": "createfood:donut_sugar",
+      "required": false
+    },
+    {
+      "id": "createfood:dragon_bun_crimson_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:dragon_bun_warped_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:dragon_burger_crimson_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:dragon_burger_warped_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_burrito",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_burrito_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_burrito_cheese",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_burrito_cheese_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_burrito_cheese_sausage",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_burrito_cheese_sausage_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_burrito_sausage",
+      "required": false
+    },
+    {
+      "id": "createfood:egg_dumplings",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_bun_cheese_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_bun_cheese_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_bun_cheese_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_bun_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_bun_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_bun_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_burger_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_burger_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_cheeseburger_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_cheeseburger_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:eggplant_cheeseburger_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_burrito_rice",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_chowder_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_chowder_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_onion_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_rice_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_taco",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_taco_kelp",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_taco_kelp_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:fish_wrap_kelp_onion",
+      "required": false
+    },
+    {
+      "id": "createfood:fishcake",
+      "required": false
+    },
+    {
+      "id": "createfood:fried_egg_hash_brown_sandwich",
+      "required": false
+    },
+    {
+      "id": "createfood:fried_pita_bread",
+      "required": false
+    },
+    {
+      "id": "createfood:glow_berry_cream_chocolate_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:glow_berry_cream_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_bacon_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_crimson_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_onion",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_onion_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_onion_bacon_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_onion_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:hamburger_warped_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:hash_brown_fried_egg_plate",
+      "required": false
+    },
+    {
+      "id": "createfood:hash_brown_plate",
+      "required": false
+    },
+    {
+      "id": "createfood:hash_brown_toast_plate",
+      "required": false
+    },
+    {
+      "id": "createfood:hash_browns",
+      "required": false
+    },
+    {
+      "id": "createfood:honeyed_chocolate_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:honeyed_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_beetroot",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_brown_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_crimson_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_fish",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_onion",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_red_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_rice",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_roll_warped_fungus",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_soup_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:kelp_soup_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:leather_soup_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:leather_soup_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:mashed_potatoes_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:mashed_potatoes_bowl_bacon",
+      "required": false
+    },
+    {
+      "id": "createfood:mashed_potatoes_bowl_cheese",
+      "required": false
+    },
+    {
+      "id": "createfood:mashed_potatoes_bowl_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:mashed_potatoes_bowl_sour_cream",
+      "required": false
+    },
+    {
+      "id": "createfood:meat_pie",
+      "required": false
+    },
+    {
+      "id": "createfood:meat_pie_filling",
+      "required": false
+    },
+    {
+      "id": "createfood:melon_cream_chocolate_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:melon_cream_donut",
+      "required": false
+    },
+    {
+      "id": "createfood:mixed_salad_beetroot_carrot",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_burrito_rice",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_calzone",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_cream_soup_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_cream_soup_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_fish_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_onion_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_taco",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_taco_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_taco_lettuce_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:mushroom_wrap_lettuce_potato",
+      "required": false
+    },
+    {
+      "id": "createfood:mutton_burrito_rice",
+      "required": false
+    },
+    {
+      "id": "createfood:mutton_sandwich_beetroot",
+      "required": false
+    },
+    {
+      "id": "createfood:mutton_stew_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:mutton_stew_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:mutton_taco",
+      "required": false
+    },
+    {
+      "id": "createfood:mutton_taco_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:mutton_taco_lettuce_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:mutton_wrap_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:nacho_bowl_beef_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:nacho_bowl_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:onion_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:onion_calzone",
+      "required": false
+    },
+    {
+      "id": "createfood:onion_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:onion_rings",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_cheese_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_chicken_cut_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_endermite_meatballs_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_fish_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_mushroom_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_pork_meatballs_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_rabbit_meatballs_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_strider_meatballs_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pasta_plate_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pita_bread",
+      "required": false
+    },
+    {
+      "id": "createfood:pita_dough",
+      "required": false
+    },
+    {
+      "id": "createfood:pizza_dough_tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_burrito_rice",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_stew_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_stew_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_taco",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_taco_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_taco_lettuce_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:pork_wrap_onion_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:potato_cream_soup_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:potato_cream_soup_bowl_cheese",
+      "required": false
+    },
+    {
+      "id": "createfood:potato_cream_soup_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:pumpkin_custard_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:pumpkin_custard_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:pumpkin_pie_filling_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:pumpkin_puree_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:pumpkin_puree_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:rabbit_burrito_rice",
+      "required": false
+    },
+    {
+      "id": "createfood:rabbit_taco",
+      "required": false
+    },
+    {
+      "id": "createfood:rabbit_taco_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:rabbit_taco_lettuce_taco_sauce",
+      "required": false
+    },
+    {
+      "id": "createfood:rabbit_wrap_onion_potato",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_cheese_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_fish_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_fish_onion_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_fish_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_fishcake",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_meat_pie",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_mushroom_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_mushroom_calzone",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_mushroom_fish_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_mushroom_onion_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_mushroom_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_onion_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_onion_calzone",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_onion_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_onion_rings",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_pumpkin_pie",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_sausage_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_sausage_fish_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_sausage_mushroom_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_sausage_onion_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_sausage_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:raw_tater_tots",
+      "required": false
+    },
+    {
+      "id": "createfood:sausage_bacon_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:sausage_fish_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:sausage_mushroom_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:sausage_onion_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:sausage_pizza",
+      "required": false
+    },
+    {
+      "id": "createfood:scrambled_eggs_plate_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:scrambled_eggs_plate_onion",
+      "required": false
+    },
+    {
+      "id": "createfood:scrambled_eggs_plate_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:shredded_beetroot",
+      "required": false
+    },
+    {
+      "id": "createfood:shredded_carrot",
+      "required": false
+    },
+    {
+      "id": "createfood:shredded_potato",
+      "required": false
+    },
+    {
+      "id": "createfood:sliced_brown_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:sliced_brown_mushroom_salt",
+      "required": false
+    },
+    {
+      "id": "createfood:sliced_red_mushroom",
+      "required": false
+    },
+    {
+      "id": "createfood:sliced_red_mushroom_salt",
+      "required": false
+    },
+    {
+      "id": "createfood:taco_sauce_bottle",
+      "required": false
+    },
+    {
+      "id": "createfood:taco_sauce_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:taco_shell",
+      "required": false
+    },
+    {
+      "id": "createfood:tater_tots",
+      "required": false
+    },
+    {
+      "id": "createfood:tomato_cream_soup_bowl",
+      "required": false
+    },
+    {
+      "id": "createfood:tomato_cream_soup_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:vegetable_oil_bucket",
+      "required": false
+    },
+    {
+      "id": "createfood:vegetable_sandwich_beetroot_lettuce",
+      "required": false
+    },
+    {
+      "id": "createfood:vegetable_sandwich_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "createfood:vegetable_wrap_onion_lettuce_tomato",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_dumplings",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_mixed_salad",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_mushroom_rice",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_nether_salad",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_pumpkin_pie",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_rice_roll_medley",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_squid_ink_pasta",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_stuffed_potato",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_stuffed_pumpkin",
+      "required": false
+    },
+    {
+      "id": "delightfulcreators:incomplete_vegetable_noodles",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:bacon_sandwich",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:baked_cod_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:barbecue_stick",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:beef_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:beetroot_crate",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:bone_broth",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_crate",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_leaf",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:cabbage_rolls",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:carrot_crate",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:chicken_sandwich",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:chicken_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:dumplings",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fish_stew",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fried_rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:fruit_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:grilled_salmon",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:hamburger",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:honey_glazed_ham",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:kelp_roll",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:mixed_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:mushroom_rice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:mutton_wrap",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:nether_salad",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:noodle_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:onion",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:onion_crate",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pasta_with_meatballs",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pasta_with_mutton_chop",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:potato_crate",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pumpkin_slice",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:pumpkin_soup",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:ratatouille",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:roast_chicken",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:roasted_mutton_chops",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:rotten_tomato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:shepherds_pie",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:squid_ink_pasta",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:steak_and_potatoes",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:stuffed_pumpkin",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato_crate",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato_sauce",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:tomato_seeds",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:vegetable_noodles",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:vegetable_soup",
+      "required": false
+    },
+    {
+      "id": "fungidelight:brown_mushroom_crate",
+      "required": false
+    },
+    {
+      "id": "fungidelight:cleaned_cap",
+      "required": false
+    },
+    {
+      "id": "fungidelight:cooked_cleaned_cap",
+      "required": false
+    },
+    {
+      "id": "fungidelight:creamy_morel_soup",
+      "required": false
+    },
+    {
+      "id": "fungidelight:inky_cap_mushroom",
+      "required": false
+    },
+    {
+      "id": "fungidelight:inky_cap_mushroom_crate",
+      "required": false
+    },
+    {
+      "id": "fungidelight:inky_cap_scrambled_eggs",
+      "required": false
+    },
+    {
+      "id": "fungidelight:inky_caps_salad",
+      "required": false
+    },
+    {
+      "id": "fungidelight:morel_mushroom",
+      "required": false
+    },
+    {
+      "id": "fungidelight:morel_mushroom_crate",
+      "required": false
+    },
+    {
+      "id": "fungidelight:mutton_chops_with_truffle",
+      "required": false
+    },
+    {
+      "id": "fungidelight:pork_marsala_with_mushrooms",
+      "required": false
+    },
+    {
+      "id": "fungidelight:rabbit_with_morels",
+      "required": false
+    },
+    {
+      "id": "fungidelight:red_mushroom_crate",
+      "required": false
+    },
+    {
+      "id": "fungidelight:steak_with_mushrooms",
+      "required": false
+    },
+    {
+      "id": "fungidelight:stuffed_morels",
+      "required": false
+    },
+    {
+      "id": "fungidelight:truffle",
+      "required": false
+    },
+    {
+      "id": "fungidelight:truffle_crate",
+      "required": false
+    },
+    {
+      "id": "fungidelight:truffle_ice_cream",
+      "required": false
+    },
+    {
+      "id": "fungidelight:truffle_pasta",
+      "required": false
+    },
+    {
+      "id": "fungidelight:truffle_slice",
+      "required": false
+    },
+    {
+      "id": "galosphere:golden_lichen_cordyceps",
+      "required": false
+    },
+    {
+      "id": "galosphere:lichen_cordyceps",
+      "required": false
+    },
+    {
+      "id": "natures_delight:alfredo_pasta",
+      "required": false
+    },
+    {
+      "id": "natures_delight:fafaru",
+      "required": false
+    },
+    {
+      "id": "natures_delight:manakish",
+      "required": false
+    },
+    {
+      "id": "natures_delight:manakish_slice",
+      "required": false
+    },
+    {
+      "id": "natures_delight:sweet_and_savory_saute",
+      "required": false
+    },
+    {
+      "id": "natures_delight:turnip_tagine",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cheese_bucket",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:desert_turnip",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:half_pizza",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:three_quarters_pizza",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:whole_pizza",
+      "required": false
+    },
+    {
+      "id": "quark:beetroot_crate",
+      "required": false
+    },
+    {
+      "id": "quark:carrot_crate",
+      "required": false
+    },
+    {
+      "id": "quark:potato_crate",
+      "required": false
+    },
+    {
+      "id": "ratatouille:compost_mass",
+      "required": false
+    },
+    {
+      "id": "ratatouille:compost_tea_bottle",
+      "required": false
+    },
+    {
+      "id": "ratatouille:raw_sausage",
+      "required": false
+    },
+    {
+      "id": "ratatouille:sausage",
+      "required": false
+    },
+    {
+      "id": "ratatouille:sausage_casing",
+      "required": false
+    }
+  ]
+}

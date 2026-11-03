@@ -1,0 +1,12 @@
+name = "Yori3o’s Grappling Hooks"
+filename = "yo_hooks-neoforge-5.4.0+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/t1p8V2nl/versions/lf4DqQBf/yo_hooks-neoforge-5.4.0%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "8cbbeff4052bf2952c8f7e9dd5c31b0a7dd7a26533104d9f470d808b7e0a268cc856e87d3a765a2ca298a5e2b431d60aeb1f37a69089b8317bf5d8ca04346354"
+
+[update.modrinth]
+mod-id = "t1p8V2nl"
+version = "lf4DqQBf"

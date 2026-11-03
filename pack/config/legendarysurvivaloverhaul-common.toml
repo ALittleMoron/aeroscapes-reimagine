@@ -1,0 +1,64 @@
+[core]
+"Temperature Enabled" = true
+"Thirst Enabled" = true
+"Health Overhaul Enabled" = false
+"Localized Body Damage Enabled" = false
+"Temperature Difficulty Mode" = "NORMAL"
+
+[core.misc]
+"Hide Info From Debug" = false
+"Natural Regeneration Enabled" = true
+"Vanilla Freeze Enabled" = true
+"Initial Player Health" = 20.0
+
+[food]
+"Base Food Exhaustion" = 0.0
+"Sprinting Food Exhaustion" = 0.0
+"On Attack Food Exhaustion" = 0.0
+
+[temperature]
+"Dangerous Heat Temperature Effects" = true
+"Dangerous Cold Temperature Effects" = true
+"Player Sprint Modifier" = 0.75
+"Altitude Modifier" = 0.0
+
+[temperature.temperature-immunity]
+"Temperature Immunity On Death Enabled" = true
+"Temperature Immunity On Death Time" = 1800
+"Temperature Immunity On First Spawn Enabled" = true
+"Temperature Immunity On First Spawn Time" = 1800
+
+[temperature.secondary_effects]
+"Heat Temperature Secondary Effects" = true
+"Cold Temperature Secondary Effects" = false
+"Heat Thirst Effect Modifier" = 0.1
+
+[temperature.wetness]
+"Wetness Modifier" = -4.0
+
+[temperature.biomes]
+"Biome Temperature Multiplier" = 12.0
+
+[temperature.weather]
+"Rain Temperature Modifier" = -1.0
+"Snow Temperature Modifier" = -3.0
+
+[thirst]
+"Dangerous Dehydration" = true
+"Cumulative Thirst Effect Duration" = false
+"Dehydration Damage Scaling" = 0.1
+
+[thirst.exhaustion]
+"Base Hydration Exhaustion" = 0.02
+"Sprinting Hydration Exhaustion" = 0.06
+"On Jump Hydration Exhaustion" = 0.075
+"On Block Break Hydration Exhaustion" = 0.035
+"On Attack Hydration Exhaustion" = 0.15
+
+[thirst.canteen]
+"Canteen Capacity" = 10
+"Large Canteen Capacity" = 20
+"Allow Override Purified Water" = false
+
+[body-damage.healing-limbs.custom-health-regen]
+"Custom Health Regen Enabled" = false

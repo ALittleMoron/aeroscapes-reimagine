@@ -28,6 +28,7 @@ public final class StructureBiomeCompatibility {
     IslandBiomeSampler context = (IslandBiomeSampler) (Object) copy;
     context.aeroscapesReimagine$terrainMask(mask);
     context.aeroscapesReimagine$deferTerrainMask(true);
+    context.aeroscapesReimagine$generationSource(original.aeroscapesReimagine$generationSource());
     return copy;
   }
 

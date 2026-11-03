@@ -1,10 +1,10 @@
 ---
 title: Cooking and farming
-description: Crops, kitchen equipment, fermentation and Create food production, with plans for nutrition and water.
+description: Crops, kitchen equipment, food groups, drinking water and Create food production.
 status: partial
 ---
 
-Food connects a garden, kitchen and workshop. The included mods expand ingredients and preparation methods, while Create offers ways to turn some of that work into production lines. Ordinary hunger and saturation remain the current eating mechanics; nutrition groups and thirst are planned.
+Food connects a garden, kitchen and workshop. The included mods expand ingredients and preparation methods, while Create offers ways to turn some of that work into production lines. Food groups and drinking water add preparation for journeys alongside ordinary hunger and saturation.
 
 ## Ingredients and kitchens
 
@@ -20,14 +20,18 @@ Crate Delight adds crates and bags for produce. Crops Love Rain makes crops grow
 
 A kitchen can remain a small place for manual cooking or become part of an automated farm. Individual recipes and uses can be browsed through [EMI](../../quality-of-life/); the wider production group is described under [machines and logistics](../../engineering/mods/).
 
-## Planned nutrition and thirst
+## Nutrition and drinking water
 
-The intended nutrition system will show food-group levels and encourage a varied diet. Mixed dishes should replenish several groups, giving diverse farms and the existing kitchen equipment a practical role. A mild temporary weakness is the preferred consequence of a low group, ending when nutrition recovers. Groups, thresholds and exact effects have not yet been selected. This will accompany ordinary hunger.
+[Nutritional Balance](https://www.curseforge.com/minecraft/mc-mods/nutritional-balance) tracks carbohydrates, proteins, fruits, vegetables and sugars. The first four groups are needed for a varied diet; sugar is optional. Open the nutrition display from the inventory to see each group's level and point at a row for its explanation. Food tooltips show what a meal supplies, and mixed dishes can replenish several groups.
 
-Planned thirst includes water quality. Untreated water may be drunk with a negative effect; boiling or another supported purification method should prepare normal drinking water. Consumption should be moderate. Prolonged dehydration may have stronger consequences, potentially including periodic damage, with timing and severity still to be decided.
+If a required group falls below 10, attack damage decreases by 4 until it recovers. This is an attribute penalty, rather than the vanilla Weakness effect. Nutrition does not change maximum health or movement speed, and a balanced diet does not grant additional combat bonuses. Ordinary hunger and natural health regeneration remain active.
+
+[Legendary Survival Overhaul](https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul) adds thirst and water quality. Untreated water can be drunk, but may cause a temporary thirst effect. Purify water in a furnace and carry it in bottles or canteens; use the recipe viewer for the exact ingredients and containers. Drinking water and nutrient groups are separate supplies.
+
+Heat, cold and wetness make suitable clothing, shelter and heat sources useful. Height alone does not make every island cold. Extreme exposure and prolonged dehydration can cause damage; replenish water and seek a suitable temperature before health becomes critical. Limb injuries and the mod's separate health overhaul are disabled.
 
 ### Seasons and household planning
 
-Nutrition, drinking water and possible seasonal crop rules need to work together. Early preparation should lead to dependable routines: varied ingredient sources, cooking in batches and sufficient food and clean-water supplies. Later machinery should reduce repeated household work, leaving time for building and journeys. The intended challenge is planning ahead rather than constantly watching several meters.
+Varied ingredient sources, cooking in batches and carrying clean water help establish dependable routines. Machinery can reduce repeated kitchen work, leaving time for building and journeys.
 
 Seasons remain optional. Before seasonal crop limits are chosen, every required food group and drinking water need a practical supply route throughout the year, including for a new character starting in winter. Stored harvests, alternative crops and protected growing areas are possible ways to provide that access. Food or water shortages combined with penalties must not create a cycle that makes obtaining food or water progressively harder. Exact seasonal rules, integration and balance remain unselected.

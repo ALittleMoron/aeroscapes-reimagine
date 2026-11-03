@@ -18,6 +18,8 @@ Replacing the external [Aero Islands](https://modrinth.com/mod/tGVwBATM) mod rem
 
 Keep an untouched world backup before updating. To roll back, restore both the previous pack and that backup.
 
+The added [Hybrid Aquatic](https://modrinth.com/mod/hybrid-aquatic) habitats apply to newly generated chunks. Previously explored areas retain their stored biomes and terrain, with possible visible boundaries. Added equipment and survival systems also save new item and player data; removing their mods from an updated save is not a supported rollback.
+
 The Open Sky biome applies to newly generated chunks. Previously explored empty space keeps its saved biomes, so biome colors and weather can change at the boundary. A save written with Open Sky contains a new biome ID; use the untouched backup when returning to a version that predates it.
 
 Blackstone ore variants add saved block and item IDs. Existing ore blocks and explored dungeons are not rebuilt by the new placement rules; use the untouched backup when returning to a pack without those IDs.

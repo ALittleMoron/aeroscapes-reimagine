@@ -117,6 +117,14 @@ file = "config/itemphysic.json"
 hash = "69b178ba2b71ce8eb76f89127b21d58a91396dc18aeb7b2bd2a0eb11c2ece4dd"
 
 [[files]]
+file = "config/legendarysurvivaloverhaul-client.toml"
+hash = "f23ac544bf770d7807569586b2e411e0af812051220f9ade6d5de8ff7327730b"
+
+[[files]]
+file = "config/legendarysurvivaloverhaul-common.toml"
+hash = "9320d7d9dd65816e276a7d5125339b6034948c4f361433f9de284394be2a4412"
+
+[[files]]
 file = "config/legendarytooltips.toml"
 hash = "27402b88c2e848cb3d4e125de391a06d5ac141d494462c99485c18beb2a0298d"
 
@@ -141,6 +149,10 @@ file = "config/naturescompass-common.toml"
 hash = "4563c0d566a53d2901bcbc1efe9a2f75e186ddcedfcf704a5d871ccd5ccfdc1e"
 
 [[files]]
+file = "config/nutritionalbalance-server.toml"
+hash = "aa1712deff25ae6005b95ee788e53edfb0364c937704fd7160bfdacb2aacd0fe"
+
+[[files]]
 file = "config/particlerain/config.json"
 hash = "37e1fec6dec64bf22d238d68deef6ebeec7fd93f9b91176c9966af8a529f4e97"
 
@@ -154,7 +166,7 @@ hash = "0065fe7a7a44de86a351b5ddbda619289c22f13b9a77661cdcaf5dde3535cd03"
 
 [[files]]
 file = "config/punchy/punchy_config.json"
-hash = "f37189c4f181369cded8409b4d9b711858152d1e84bd6e2a54de77d7f5f29ccc"
+hash = "25594a904f1a5281affd35ac538297ac3f43c0a3abe9347acc27331d3379715f"
 
 [[files]]
 file = "config/punchy/triggerable-keybindings.json"
@@ -385,8 +397,24 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/delightfulcr
 hash = "8a2b1457d821fd292f18adec2932a6701c6d10186aa55b1d605b2e261dc305ac"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_aquatic/fishing/fish/freshwater/african_butterflyfish.json"
+hash = "bb14d0f917dc5dca9e4a2cf5208f805eca0211a872326b8c384e7fcfb8ad31ad"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_aquatic/fishing/fish/freshwater/trout.json"
+hash = "16980b71546917d2bf8e150ce514b6c0ee977f9bbc308b09b848f2dc6f063162"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_aquatic/fishing/fish/underground/hagfish.json"
+hash = "5a32ede5ad21dcb7325be0db5d9ff892d853d76bf0ef6ed2333a2cd16f87cab1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_aquatic/worldgen/structure/whale_fall.json"
+hash = "a02262416a9589b4d0a74c9b597d089fbea6df1afe4a38111a28339d062394aa"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/dimension/overworld.json"
-hash = "5c3baa901c6c0382005fdaa6436a6c5088424d72d437920c36931c1e5aa39105"
+hash = "84bab90bae27da0c5db11085ee32b69a6b4d7280318d9b534e1be2909e2dba39"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/placed_feature/amethyst_geode.json"
@@ -525,6 +553,14 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/natures_spir
 hash = "b12fce28c0585d452fdcb520cb379efc5f47cede1d32a438276aa1914c92bac5"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/paraglider/worldgen/structure/tarrey_town_goddess_statue.json"
+hash = "483cfd96e869d385cd4e32389398e9902f468128f076577aad1541cd14c726e6"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/paraglider/worldgen/structure/underground_horned_statue.json"
+hash = "a80875433c33ab6a773a18dc7e1f5d5b17997c0383224d44c022e59264882925"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/supplementaries/tags/worldgen/biome/has_galleons.json"
 hash = "2af9ace04c06b8ec8371ce279427f6331f86c3174c499691d979876905074bf9"
 
@@ -627,6 +663,54 @@ hash = "98a2ed7fd3d2ba25a7e302baa1d0a9a188be502488d976fff6dc2fbdad285142"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/carryon/tags/block/block_blacklist.json"
 hash = "37fa80b5768a6f765bb686ac6873d8f304ee073f6842607169e307250c2cf722"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/abandoned_mineshaft.json"
+hash = "4626066112cf9179d13c1d6f705f70977080ecb853f10491e596a3b5e1cbe491"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/bastion_treasure.json"
+hash = "85e5992ff7c6dd9973b235ab71ca9560bf80e0191d7110d9f07e43348cd88a85"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/buried_treasure.json"
+hash = "4626066112cf9179d13c1d6f705f70977080ecb853f10491e596a3b5e1cbe491"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/jungle_temple.json"
+hash = "4626066112cf9179d13c1d6f705f70977080ecb853f10491e596a3b5e1cbe491"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/pillager_outpost.json"
+hash = "4626066112cf9179d13c1d6f705f70977080ecb853f10491e596a3b5e1cbe491"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/bandage.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/healing_herbs.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/heart_container.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/medkit.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/morphine.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/plaster.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/tonic.json"
+hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/toms_storage/recipe/adv_wireless_terminal.json"
@@ -959,11 +1043,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "1361b77ba45155c4cb658928a5e6791408befb6a855e396b688f2a9669e2a700"
+hash = "160fa9c6f3777e8d5a8b87c96a66d611bc295756e1d9c56b0fd04ef68e70ca7d"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "b57d5a9c4f782944a1f7d128a229a18e2a7ea9749945c2255e556925c917e61c"
+hash = "d3084fd94051687aab4d77e5293ec3055c75ac942b00535a1d6ee72f64d35c79"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -992,7 +1076,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "768cedea828ee12670c9bc5ea0de07d62297d16ec5e18ad8f4f1ac4e45099efd"
+hash = "dac417eda00dffa0a11be71eef0c6f5c6e5d777628fa78916cafbe09eb0aa30d"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1435,6 +1519,11 @@ hash = "799c341e3840812dbe477bcf74bcc79b97eb8a68f6c4aeb72fbfdf4279979985"
 metafile = true
 
 [[files]]
+file = "mods/geckolib.pw.toml"
+hash = "b78e88ef67215f2e63a2c0dd8f59e89f135ae1140cee4d32bb4cecf6797d7bbd"
+metafile = true
+
+[[files]]
 file = "mods/globalpacks.pw.toml"
 hash = "de418c840ec0e040286039a262aeeef44a052c4feca5279ee227da17377ae4a8"
 metafile = true
@@ -1452,6 +1541,16 @@ metafile = true
 [[files]]
 file = "mods/horseman.pw.toml"
 hash = "90c1abbe263f01ce96018987d932bc9fa573133d0a3694d0d74b63752dd8750a"
+metafile = true
+
+[[files]]
+file = "mods/hybrid-api.pw.toml"
+hash = "35716d3c557e0c5c0852c18b53428f2cf5368f8077b334e09f1f42840daa1c02"
+metafile = true
+
+[[files]]
+file = "mods/hybrid-aquatic.pw.toml"
+hash = "4d434f82e5c517337632203e022f4a807de60ec8d3a89b44b250807b3c583af2"
 metafile = true
 
 [[files]]
@@ -1530,6 +1629,11 @@ hash = "92d50a5d4e8279a316994c9084862c7f107d0cfe1d889fd7b55aa8dd78e1b2d5"
 metafile = true
 
 [[files]]
+file = "mods/legendary-survival-overhaul.pw.toml"
+hash = "dc643d19640aace6b22f9f1c56a3713b6398e9e9845be6a6d0e1de5e4972f2a0"
+metafile = true
+
+[[files]]
 file = "mods/legendary-tooltips.pw.toml"
 hash = "56a60a3d1aefc48f50d3b30f2c2c78cf674e363d0599c4c01c00d404af675d2b"
 metafile = true
@@ -1546,7 +1650,7 @@ metafile = true
 
 [[files]]
 file = "mods/lithostitched.pw.toml"
-hash = "99dba8d824b608ca4dc8e8ae2fa94599d6691def2388447c71fdb8be72e8145c"
+hash = "e73ef95e450c2dec3364011df3717c89d5c11d3f71aa915b634e030ab7429061"
 metafile = true
 
 [[files]]
@@ -1625,6 +1729,11 @@ hash = "fd3b6f3a4ccb918e804d68ccb4df5a11f84152d73f0b22c2368aeb15dd15b2b7"
 metafile = true
 
 [[files]]
+file = "mods/nutritional-balance.pw.toml"
+hash = "ddff1905862ca3dc206afa7135d1a96fdd2b8ae5acbb78971533b3550fae4cd9"
+metafile = true
+
+[[files]]
 file = "mods/nyfs-spiders.pw.toml"
 hash = "a63cf2386e21958fc5d593c48d6493954928486a563e6b43ab983d61c107cf70"
 metafile = true
@@ -1637,6 +1746,11 @@ metafile = true
 [[files]]
 file = "mods/pandas-falling-trees.pw.toml"
 hash = "8bb48d0db6eb54af0eb7023fa33ad2d8bd62ac709bcfd70fdc124b5e84234585"
+metafile = true
+
+[[files]]
+file = "mods/paragliders.pw.toml"
+hash = "44486bd3712c86bb5be070ddac94684ede8f3253a9ab2ba26e87834fff8cbd56"
 metafile = true
 
 [[files]]
@@ -1845,6 +1959,11 @@ hash = "0de40afcea63987a8c01a23ed0acaea781c1579abbe73b5181c81e54ffce905a"
 metafile = true
 
 [[files]]
+file = "mods/tide.pw.toml"
+hash = "847cc37d48c51ce079300fd02b58c97eff7c8fb5df1b134baec608c25c0f2f79"
+metafile = true
+
+[[files]]
 file = "mods/toms-storage.pw.toml"
 hash = "6af2d566831cbfd4aa0e516800843c5918aed4920f0ca661da05cd7b9de582be"
 metafile = true
@@ -1905,13 +2024,18 @@ hash = "8a92e0e3599a585b05f258c4f5c3edec72998a852d4ab5dc704c4ee6b47da972"
 metafile = true
 
 [[files]]
+file = "mods/yori3os-grappling-hooks.pw.toml"
+hash = "88c1512da5b401a5cd2a828b8b8f29b225f21ec5daaa4142ffa67d5bea7b24da"
+metafile = true
+
+[[files]]
 file = "mods/zeta.pw.toml"
 hash = "a544cdd001d5197d4414e6c38735b540a69e00da4376576521dffa25b435d32a"
 metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "6e1518efec05d4b2832b3811e67ec5108aa223a7b150830453d5d242dcfaa249"
+hash = "7f6a0ffcf95cd92f497c79037733a13b3929115cab5705c1eafb014ea15aa5e3"
 
 [[files]]
 file = "polytone_options.json"
@@ -1920,6 +2044,38 @@ hash = "1cdaff66c4ad5dbc984bbe5d6f036f3fe29f4e7e4ea028e120669d294cbce1fa"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/polytone/colors.json"
 hash = "eda45cb2d56627cb906b625b403dbc532e292d34eb7ec6d767b974029ab45a29"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/textures/item/equipment/copper.png"
+hash = "b2a49c189283519767642be176d69fdffbc81d4391b1d87be798bb2880761c2f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/textures/item/equipment/diamond.png"
+hash = "1dbbb84efe58ad8fff7be770108fde9f29e020db15dd1165536e191d5f1ed3f9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/textures/item/equipment/gold.png"
+hash = "e24970ae17d1b3f698307a14c1bf88082f1db592d305b1bb4d386880b368d2b0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/textures/item/equipment/grip.png"
+hash = "8a4a1d4a2b81927ce760191e21ddc9ce460faa45564649cb632724f7a57bfe75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/textures/item/equipment/iron.png"
+hash = "c7fb438bd03827b151bb2ad765e27f6dd28c212fb294707c9c86ea055e5c54b6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/textures/item/equipment/lunchbox.png"
+hash = "dbc43a2fac3ce845e991d0d18b2a105dc0ba495cc96ea35cfdc0bc360ddfff5e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/textures/item/equipment/netherite.png"
+hash = "c55c66de59405904ec56920fa3fea6af986d81a29deb22b82a8890b1c7b7773b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/aeroscapes_reimagine/textures/item/equipment/rope.png"
+hash = "c3791990c1a1f1d41847dab52fb1d1eeee08d033442f4537a48e44525d00fbef"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/fallingleaves/settings/flowering_azalea_leaves.json"
@@ -1936,6 +2092,58 @@ hash = "bac3c5531e712b38f70475210956d2af3c13bf4640b92962025b113726e7949e"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/sounds/items/moo.json"
 hash = "d17b410782750d5c0eba20749921a824cbeb81e2bcced10859bbdc9c87f217a9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/nutritionalbalance/models/item/lunchbox_3d.json"
+hash = "e3c810dc642c9fd4676484ecdce026b6f3ffcb2d9162f058ccc3c80f4693537c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/copper_grappling_hook.json"
+hash = "f3aa16dc93113d4490818fa0f486bb4f12ba2b30e01995e102799146ff82877d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/copper_hook_head.json"
+hash = "895563b92ad3a33951469b9653a33f30113d8302ab77a19374cd202bdb33d1a8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/diamond_grappling_hook.json"
+hash = "69df06021adeb529691af1d6348dc2bb6659c420e9961a0012e3d5f06ec194a1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/diamond_hook_head.json"
+hash = "8ce37663911664c15b2e73182d4af12c3106992876e6440a4d480ee27ab19950"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/gold_grappling_hook.json"
+hash = "0698724799ee0bcf1b1c8edd189f91745a71715f148702fcf58e378e12be01ea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/gold_hook_head.json"
+hash = "a7b75f7741c3046bf1a79b6310071fc49cd7481a5655be43becb877bdb24c2d4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/grappling_hook_handle.json"
+hash = "4dab9d9183f6f6db313fc5a3326248627211d2648b552e45b979d56aab99ad7f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/grappling_hook_handle_netherite.json"
+hash = "5ae7dbfb006111614705a1e2fa8874c4c67f189ce4d0e6702673b3b8a4925ede"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/iron_grappling_hook.json"
+hash = "702d96d4dcbe63a455e82ca37a1f94098842b9cc3deb2bc5be2132115782a806"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/iron_hook_head.json"
+hash = "8fb6502fcde4a817cb9407657bdb620047226ae25ddd422c4d39e2e4d4ef5ffd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/netherite_grappling_hook.json"
+hash = "eb6cafa4eddc2b6f80efcb6a2d7d9cbb1924cf68c474621b1bb306f33022d769"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/netherite_hook_head.json"
+hash = "6867dffd5771cb0416a75387905c46d9ef81affa0c24b60e73d5bb3c26a96765"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/pack.mcmeta"
@@ -1960,6 +2168,526 @@ hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/tool_shovel.json"
 hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/blazing_fishing_rod.json"
+hash = "ab03afc424680257fed0f751d8c5bca8b6b3f9976ac7b86f88401232aaaf7cfd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/crystal_fishing_rod.json"
+hash = "3aa27acd8e6c16697cb28cf418e46262ee8e5f2574a055b8a4a53a64cde671cb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/diamond_fishing_rod.json"
+hash = "8fe944b4c760dc47a63cfde6b252956b414c838c8b74bd7c9e21f89991bd8f53"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/echo_fishing_rod.json"
+hash = "eb089c1ec66fd792e879c995ba8162eba274e41104e17fef9350e43cc1f19613"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/golden_fishing_rod.json"
+hash = "ea3cefdcbc4a8a8b9eb0fa255538ef1d7743d9718880374605e33df944d66128"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/honeycomb_fishing_rod.json"
+hash = "e25f6ac5b05c73ee497889965980e6d445d145f2749d0b62496f937d25fc7ad4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/iron_fishing_rod.json"
+hash = "04ca7b9881d4eb037361c3a441d5f2a27dbed57c1dc6b7cd1ff2295d573d780d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/midas_fishing_rod.json"
+hash = "bed63735865d0f2691168b29ebfcce455c344765bfad68cbaf9e813fce67fe3d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/netherite_fishing_rod.json"
+hash = "4f773402569d076b5fc00b251917a64e8b9c4e44d87c237208d5fe71e1b98fbb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/prismarine_fishing_rod.json"
+hash = "ff17ad7a3743ec967298843de01f1ba48fa804393d4aa3073b10f213072baf57"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/stone_fishing_rod.json"
+hash = "9833c8e80c69d39c76a68f4432204ba0f86cc35a075857ea6706d1ed35118927"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/sunflower_fishing_rod.json"
+hash = "4e6710474a8fbfd2779809e6a70c151b2ca52c5dff64e9f038f706ef4d082317"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/village_fishing_rod.json"
+hash = "c79b59caf937e7007efb58973c24aa16056991823b2da807ce40ef2bd1cee8a4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/blazing_fishing_rod_cast_held.json"
+hash = "9e1869a95dad39008c97f14ea98d109cc3003565e6c1a1ab123f97bfabc72b00"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/blazing_fishing_rod_cast_held_fp.json"
+hash = "8200c89fee97ca88d2f39ad537919930c14ca91caea604ce4307864e4133e2d9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/blazing_fishing_rod_cast_held_fp_left.json"
+hash = "4c3dbfe2a0ae2cfe534bcacdc089e08e50c02a742728dc9073f9db59fe3a7bae"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/blazing_fishing_rod_cast_held_left.json"
+hash = "d010f9c210e5ce28aed97d02f252929c25755d9483e492109e1044769e3dfe23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/blazing_fishing_rod_held.json"
+hash = "16258ff4133877a65323f0835aa1fd1cd77061b1a97b73445d064a92c1e02c35"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/blazing_fishing_rod_held_fp.json"
+hash = "6a30b6f9d031994629d4431cdc9bfa672ce33f576070116f5e63af1a12a1327b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/blazing_fishing_rod_held_fp_left.json"
+hash = "1a0cfc0e27947a459e0952f68835471bf2f4d69d57e7eb0a5092441fbbc35c72"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/blazing_fishing_rod_held_left.json"
+hash = "9a0e7428eb15dc3b2fcde8fd36ea2060199627f35b0fc2b3418f30b7fc01a7fb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/crystal_fishing_rod_cast_held.json"
+hash = "cb9de3c819084a417ca741e0bdbd517ed7d8f0c6fd862f27665199b5cb5621d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/crystal_fishing_rod_cast_held_fp.json"
+hash = "6b4f89857b4cececa3608e0248cfc88477077308c61226be5dc321ea28cf6a58"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/crystal_fishing_rod_cast_held_fp_left.json"
+hash = "d7113bcd169d9d9befec4bebb1ae11e2476fd13313bb51678093d6da36a9e6ad"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/crystal_fishing_rod_cast_held_left.json"
+hash = "8e772f005a75052ebc8ffe085aaa7af6f6a94fcfeb340a8450ef3510eee4cfbf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/crystal_fishing_rod_held.json"
+hash = "249f8ced997df464da80db13dc5fc536aa49801152b7a57e4aba24394a1c516d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/crystal_fishing_rod_held_fp.json"
+hash = "29c8b1644a8b51d8c76f065948d748f9fe966b2d3f65dc6fbd90d837bb29c700"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/crystal_fishing_rod_held_fp_left.json"
+hash = "ab4d56f584e389847738f30c3b3734ddca95afb31ee7f03054b2384785eb87dc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/crystal_fishing_rod_held_left.json"
+hash = "04fde20716c193006d4ed43c330ff596e2276b749e348aaff1947697ec7577bd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/diamond_fishing_rod_cast_held.json"
+hash = "ddad9a09b3cf158a4e21b4b1afb8d2607098fc2f199234d12b8d453ce175c155"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/diamond_fishing_rod_cast_held_fp.json"
+hash = "110412b0649e754a643388c5184cb128bbe033b6d1f3e402f85755f96512b262"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/diamond_fishing_rod_cast_held_fp_left.json"
+hash = "65de542a7b3637675a76d27f09030c4c9945d548abe94117803f431e118189af"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/diamond_fishing_rod_cast_held_left.json"
+hash = "e8299851b33ce8da564a074c41b2ffc7795c39e91a297a10ccf77f6086c79f08"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/diamond_fishing_rod_held.json"
+hash = "940b89010fb43c04e1b811f28d620e726ad2faeb0c3a817f4d54e5a741dc00c9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/diamond_fishing_rod_held_fp.json"
+hash = "a97ca56daf7de4f838ec4f1d2dd29aa9370074994aa9408ef6f6ea0abd6d8971"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/diamond_fishing_rod_held_fp_left.json"
+hash = "06969d2121f76e631b914a13f2da8044e33131859c896dd69f51d9277fbd33a2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/diamond_fishing_rod_held_left.json"
+hash = "0a94868fdfe5f61434141d5e9f24dc91f4f3a3cae5107e1118d1ebe7a1d92f63"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/echo_fishing_rod_cast_held.json"
+hash = "5d39b9b3a8f8ee31babe97ff5b43a343ea19927b0630d1c22897c36c0741da1e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/echo_fishing_rod_cast_held_fp.json"
+hash = "ec5d63eb192a82a4f88f4a91a0604cacef8abc0fba706972caf43d428f4b3d43"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/echo_fishing_rod_cast_held_fp_left.json"
+hash = "0421030076ab36194c59188a46e304625ad214acf67fac58a74e92e72908f73b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/echo_fishing_rod_cast_held_left.json"
+hash = "de7e74ccb541b325ae2109eafb23ba6b5c5c7f5899b1f8aa0a47607d7fcc97fe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/echo_fishing_rod_held.json"
+hash = "8f05da6036d83f9f6806ae281c5a05bf7741fdef7fda1b1d767295e9b0b0cb8a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/echo_fishing_rod_held_fp.json"
+hash = "80c9c0647af2b68929ea6314a65b0c7211db1168e72ddcf9fd35c2411110f67b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/echo_fishing_rod_held_fp_left.json"
+hash = "adc2792e7c7f73769c72ce68c773e47ff6bce79d682d9cb7b89bdcbaa598bfc1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/echo_fishing_rod_held_left.json"
+hash = "b3d66766d276b90fb3e03e54b40c8812ab11f6b35201254a6820a1eff076d51c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_cast_held.json"
+hash = "90385701277d539870296d6582f7306e3aa7124654fc063c945ae5b2d364cd1f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_cast_held_fp.json"
+hash = "14f80271a246e41f20ddedef94a4e692a0bcb0182dd227d9c3b3b6aad6fd5844"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_cast_held_fp_left.json"
+hash = "5ae443c06e4f05f0d1e499b402dd65b9e617fb4d5e98b1845bf674ca06b7b889"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_cast_held_left.json"
+hash = "6e85c01b026ed844f73e8dc2b14eaccc327d03c3ca1adb5a2902a2087af8446b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_held.json"
+hash = "aa581a15c1cf201dc5b903dc68e604cb81f1274efbdf139ba28c2ab1491a7356"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_held_fp.json"
+hash = "97da10922c2fb74cbcc5325d8e6dda21a51e96c4fd13885c1677caef6a9a8631"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_held_fp_left.json"
+hash = "700dadb8e9c8a2f8a3ae6e28f4bd5215f183aece3f9da8513e4e45e550ab0dc1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_held_left.json"
+hash = "fe1d3cca40d4bab559d52bf1c6ee1f127c9c5ea7a6d6841954d3a354db10a24d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/honeycomb_fishing_rod_cast_held.json"
+hash = "1ca37ed523149f958ba24012c1342c34666c745e7fb558e109d0b2742c223988"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/honeycomb_fishing_rod_cast_held_fp.json"
+hash = "52b9c4c6a03480047dc114a01f20e049aa509171783fbb7d92cec78df4e7f486"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/honeycomb_fishing_rod_cast_held_fp_left.json"
+hash = "ab551454450de767aa30b389fb9866c78d9428925cac74f85837d88801c37593"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/honeycomb_fishing_rod_cast_held_left.json"
+hash = "d68fde35f2eeff237991293181231f70f676b1652136339ad8a00223615391ef"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/honeycomb_fishing_rod_held.json"
+hash = "cf4364ae48b9d412d1a4321ca32101054cfb368f47be9eb91007ff9262bd5a83"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/honeycomb_fishing_rod_held_fp.json"
+hash = "ef73ef0c8fc842a8b5a3a6ebeea274dc2b3b867b5fcfdd8c1c7888acc2916b3b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/honeycomb_fishing_rod_held_fp_left.json"
+hash = "7fbf625f9e98b3f83cc5983fe6ceae88aa7498fdf8bbfe2a77f120839d323f9d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/honeycomb_fishing_rod_held_left.json"
+hash = "2989411387b7c75e67918c5ad33c6339948ab8b0068b3aaeb07cabeaa40c9d20"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/iron_fishing_rod_cast_held.json"
+hash = "fba969921b4ca801057191eb225abcd0620b52fc7f47f9d1b7186142792f8c25"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/iron_fishing_rod_cast_held_fp.json"
+hash = "0f9ee4e26e4c1c62ae3c3acabf8ede69121e54e3febdb3f427ffe5602b052f12"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/iron_fishing_rod_cast_held_fp_left.json"
+hash = "a039683b6ca63480d79c37339f9a6239032338bc27fd0a88ba1c7cc8d7d9c47d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/iron_fishing_rod_cast_held_left.json"
+hash = "7500e5c3da3c03c0b1720579f78f8007959d04e430639e5ba04ef4f40e361746"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/iron_fishing_rod_held.json"
+hash = "b305540b03cb54a8107b1e9aadce0eff49b22ac5d09dc3a480dd36bdab9b3335"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/iron_fishing_rod_held_fp.json"
+hash = "0af8445b39442e5b6fe69b6ccab0163460d06e0918bfa5f5f805136c9ad68b0c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/iron_fishing_rod_held_fp_left.json"
+hash = "5842b0aab1bd9f8c77fe280058ea190f4af9e4771b2d55232dfad488d1d6aab3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/iron_fishing_rod_held_left.json"
+hash = "81244ae2af773a5db600d18da8212cf796f3c48e5f3f4c694ced13d90a6f8cef"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/midas_fishing_rod_cast_held.json"
+hash = "f0f3e92d24646ce8f42d3104c5a1b9771f5422db0d1be358f9faab5912cac028"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/midas_fishing_rod_cast_held_fp.json"
+hash = "359212631e267869ca90c472848e4c8971c92499bff6696439c0fff16685438a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/midas_fishing_rod_cast_held_fp_left.json"
+hash = "406ad3d9d881b54d94698194f8928164d23245c57aa4c804b6eba044c4557f0b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/midas_fishing_rod_cast_held_left.json"
+hash = "6be28bfd651981cd4a0c50c62cea9be69533a9b913591535b35a65a41b62d1b6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/midas_fishing_rod_held.json"
+hash = "3291df08f115106554ad5b3e73a4905ef18ffaa57aad5d1893ddf25169fc8ac4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/midas_fishing_rod_held_fp.json"
+hash = "d0e8b68bb751b94e097a124883b564049e2746363988ef32ccfae57137c2d553"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/midas_fishing_rod_held_fp_left.json"
+hash = "f3e6d54cbc7ecfd6bb6fd22dbd527bcc4cfe9fb5190e3b4a22a0bee3465e7a1b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/midas_fishing_rod_held_left.json"
+hash = "840919393baf359caf39a3b515e5acb59278b8d97d6bd3838cded130bc7033b8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/netherite_fishing_rod_cast_held.json"
+hash = "1a0ffdd4cc344a08267a314977ddbd217dc40a0831f1939a9105da8db316770c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/netherite_fishing_rod_cast_held_fp.json"
+hash = "9c4e8bd9a311079adc0d791b8cc042283c496cd3b3c67068e13c02b4f9045945"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/netherite_fishing_rod_cast_held_fp_left.json"
+hash = "a3b345d910ae033215b553229f8761dcbf615cbe298149ae2d0f278c5c2a40c3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/netherite_fishing_rod_cast_held_left.json"
+hash = "13dec925bf74d4cc79a14c27979f0939311379e3fd32339ba491f3770c71c1e3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/netherite_fishing_rod_held.json"
+hash = "c43b9413cc40ff581f27cf42150504d6a6d2dc1d4ea6ce4198dc1fb226cb1cc3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/netherite_fishing_rod_held_fp.json"
+hash = "78c994436c43d002159255b76199ea20cb05f7e3e303a0f6eebf30d821f71ed3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/netherite_fishing_rod_held_fp_left.json"
+hash = "a46676f40808d8a64252c5dd909bb72762c905c34993eb1effe33da65865c60d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/netherite_fishing_rod_held_left.json"
+hash = "71ad95315e31eb217152c626464cf39b394e829481397936f287e65bd3cd4daa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/prismarine_fishing_rod_cast_held.json"
+hash = "b380ceba1e2d6e5ff60b6211267e3c3f0bd962a7c2dc6b2e78f6ca93c2552449"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/prismarine_fishing_rod_cast_held_fp.json"
+hash = "25f0350ada533bb1959076da9757fdb0cd66ef26321e1de16c1c9c283d0d4257"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/prismarine_fishing_rod_cast_held_fp_left.json"
+hash = "03c4b8ae0093aaddd80351156609dcee6c1493f7bf32ccddbeed7fd0e9022a3e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/prismarine_fishing_rod_cast_held_left.json"
+hash = "0e27a9c5ef752adb6969a6a4a3bd5249579a24e10782fb648c67291aeebfc507"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/prismarine_fishing_rod_held.json"
+hash = "82703015b91537b6cd17019086f5fad49b4be1a84bcb11ad8bd186efd6090b4d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/prismarine_fishing_rod_held_fp.json"
+hash = "5aa2733e7138284da4b11697feb15280efc9cf1e9f00713b9c272da98f73742c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/prismarine_fishing_rod_held_fp_left.json"
+hash = "1416a24b2a09ad28a3699ab24ed01246cd99391f8d6a75d2d3be39dfaf7e58b3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/prismarine_fishing_rod_held_left.json"
+hash = "9815f8b77b706dbe263410e088441b84942f1fbe9dad830d90cd8b16f43757b0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/stone_fishing_rod_cast_held.json"
+hash = "c0eb3cbf943044146e079c609860e51e0652545b62a35835d0cae7777c005e05"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/stone_fishing_rod_cast_held_fp.json"
+hash = "3cbdc783665d75af5167ba9b74868d3e2a96343119cbc467ffb2f48917bb2207"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/stone_fishing_rod_cast_held_fp_left.json"
+hash = "1ace3930d7d837bd7b8cc083ad54fea9f69073133d1d1cdd23adcf065d1857c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/stone_fishing_rod_cast_held_left.json"
+hash = "222541ecbaad00b99c563e4b9690df220635e35e1717d00356cf4d9a5fe4fd72"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/stone_fishing_rod_held.json"
+hash = "dca9944797f108c66e8563fe34a01999e0aaf6d535809b839879386d8b1b87e1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/stone_fishing_rod_held_fp.json"
+hash = "de8ec84dc8197d86c559a43bc2ee82267e4099be1896ccbb8c53d466d79d83b3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/stone_fishing_rod_held_fp_left.json"
+hash = "cee312ebfcf69586c05c5a50eddf898e9e9d21e990aef6b5ef444c63784ec32e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/stone_fishing_rod_held_left.json"
+hash = "e389c510d6f982faa0604ecd7224c4076445d3b2b8f9e82bdd179159d4db0dcf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/sunflower_fishing_rod_cast_held.json"
+hash = "c63cc5fb0567ae0fbd3e4b81b309aff6b8cf31d0afa17f52d50b84ff4ae32da1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/sunflower_fishing_rod_cast_held_fp.json"
+hash = "57304918a6619d50ed191884de434c92399edf372587c32433c78a1c8e45303b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/sunflower_fishing_rod_cast_held_fp_left.json"
+hash = "b77f05caaef590ef0e097fc751a3c1db545e7fed05daa944ffc7fe24901d7756"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/sunflower_fishing_rod_cast_held_left.json"
+hash = "7eeba89d0c9635e55e418d68cfb6e348a5db2d205e0dcefd37f43a8bd0aa4e23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/sunflower_fishing_rod_held.json"
+hash = "104d36762d58b521c69c63795e78b39d90ad839cbbbbe9af03c974248b513036"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/sunflower_fishing_rod_held_fp.json"
+hash = "e3142b002435921aa996591a803fa2dff0a02c90da657cc05d80d8e11e6fb1c6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/sunflower_fishing_rod_held_fp_left.json"
+hash = "a46f45aff0bf8eb660744fbb7f8a134a993b12372b1de51dfe2635f882be614a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/sunflower_fishing_rod_held_left.json"
+hash = "b6505429263cc9b7b86f7dbbada51eee5e60b0cd3f3500d4c5f197a9d90f0bf1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/village_fishing_rod_cast_held.json"
+hash = "4b1cb7982d90b01ffff2339f829538693d3a57040f452ee2daaf95aace579f46"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/village_fishing_rod_cast_held_fp.json"
+hash = "53e8df8c11546a6623db3f25c408cf41410d99be6c7e4fecdf88933d6f044292"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/village_fishing_rod_cast_held_fp_left.json"
+hash = "a2c13376f285bc614fb6f8def6b19fe803acd97c82340a62776bb1dc789c3f94"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/village_fishing_rod_cast_held_left.json"
+hash = "2702e2ac0d0627872cf1237e53b48571e5caa2632d5ec96c1bd523150ee0389e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/village_fishing_rod_held.json"
+hash = "2d72ab805acbaa5e6902eeaeeb12560742630f17456c08498d85dba3c0cc6168"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/village_fishing_rod_held_fp.json"
+hash = "f3b9bcfc35d777dee4fd844dca3eaf4512fc2bb31e42765e398d1a441470ca0b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/village_fishing_rod_held_fp_left.json"
+hash = "c3a1dd3e2e98d2914f9572d9d6ce8c94c3a98cc54a6e2ea1d91bac49fa1fa6f3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/village_fishing_rod_held_left.json"
+hash = "3118215f69227850b10eae04fc30d22d1e6b8bc703a08f8dcc0553d69be55364"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/blazing_fishing_rod.png"
+hash = "357d0f7ea37ecfa9e209cbdb8f5166637de594f748e3bb6890f8890b12d30c84"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/crystal_fishing_rod.png"
+hash = "d11a4868c8890d791c56eabb6931c494f85d3b2b3031a675de533abb3f4495d9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/diamond_fishing_rod.png"
+hash = "61d68e0d9a7fbd8a93a648ccf585e2b893e8e66016d4e61b7d38f6dec2576d3b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/echo_fishing_rod.png"
+hash = "11ce62fea621f039d632ff6caa2bb09fa19016a68324f824773a79e20e082eb0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/golden_fishing_rod.png"
+hash = "dbd153ed6ce5bc73b685bf9a28f01e0b5579dcec9700c6436b4d38f55f59abc5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/honeycomb_fishing_rod.png"
+hash = "a0b398e2a8ea3dcf07652ac43c6ed9df0f8b2e9f17954f04caf3ba68d052c599"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/iron_fishing_rod.png"
+hash = "272f8a11f599959d0ca1d5c7d8a97fd3421336f5cf13a6641f80096640ca8aa9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/midas_fishing_rod.png"
+hash = "fb85236b5b4367b514ed4bc8a3243519276129281fdf954fdd271bbeca124650"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/netherite_fishing_rod.png"
+hash = "a0e8e78c737fc0fa7aa1be87ab24b4be625e7e19e1f36d8f2bbed0e89eb4086c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/prismarine_fishing_rod.png"
+hash = "e5a1426ca8dfaf6cf8b039c78387f2154295784772737865da95f5602d600f75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/stone_fishing_rod.png"
+hash = "f41e43f508384520326a89a507764e327f2013590e1fe3394baf4a8117f55d2d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/sunflower_fishing_rod.png"
+hash = "52b681e3c4c98a58367ac8714ebdbad041200edec72c23009b5c97a245b5bf21"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/textures/item/equipment/village_fishing_rod.png"
+hash = "c2c6fb372c316c68b056f631a9e6265d2888bd27ab2af7ed98093251c2363728"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/pack.mcmeta"

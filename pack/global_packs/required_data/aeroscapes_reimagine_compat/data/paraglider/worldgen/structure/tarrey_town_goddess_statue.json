@@ -1,0 +1,10 @@
+{
+  "type": "aeroscapes_reimagine:supported",
+  "terrain_check": "surface_root_footprint",
+  "delegate": {
+    "type": "paraglider:tarrey_town_goddess_statue",
+    "biomes": "#paraglider:has_structure/tarrey_town_goddess_statue",
+    "spawn_overrides": {},
+    "step": "surface_structures"
+  }
+}

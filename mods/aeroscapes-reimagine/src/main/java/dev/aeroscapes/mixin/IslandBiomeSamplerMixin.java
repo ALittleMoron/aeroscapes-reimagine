@@ -2,6 +2,7 @@ package dev.aeroscapes.mixin;
 
 import dev.aeroscapes.worldgen.BiomeTerrainMask;
 import dev.aeroscapes.worldgen.IslandBiomeSampler;
+import dev.aeroscapes.worldgen.IslandBiomeSource;
 import javax.annotation.Nullable;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.biome.Biome;
@@ -14,6 +15,7 @@ public abstract class IslandBiomeSamplerMixin implements IslandBiomeSampler {
   @Unique @Nullable private volatile BiomeTerrainMask aeroscapesReimagine$terrainMask;
   @Unique private boolean aeroscapesReimagine$deferred;
   @Unique @Nullable private volatile Holder<Biome> aeroscapesReimagine$voidBiome;
+  @Unique @Nullable private IslandBiomeSource aeroscapesReimagine$generationSource;
 
   @Override
   @Nullable
@@ -45,5 +47,16 @@ public abstract class IslandBiomeSamplerMixin implements IslandBiomeSampler {
   @Override
   public void aeroscapesReimagine$voidBiome(@Nullable Holder<Biome> biome) {
     aeroscapesReimagine$voidBiome = biome;
+  }
+
+  @Override
+  @Nullable
+  public IslandBiomeSource aeroscapesReimagine$generationSource() {
+    return aeroscapesReimagine$generationSource;
+  }
+
+  @Override
+  public void aeroscapesReimagine$generationSource(@Nullable IslandBiomeSource source) {
+    aeroscapesReimagine$generationSource = source;
   }
 }

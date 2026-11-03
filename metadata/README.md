@@ -14,6 +14,95 @@ The owned generator's volcanic islands use native lava, blackstone, deepslate an
 
 [Punchy 3.0](https://modrinth.com/mod/punchy-fpa/version/83nCNSX4) selects its held-map path only after saved map data arrives. The owned client adapter selects `MapItem` subclasses immediately, matching the pinned native renderer's safe blank-map fallback. The atmosphere resource pack raises both map arms through native `armTransforms`; saved tuning and active profiles retain precedence. Grip and framing remain graphical acceptance, separate from compilation and server checks.
 
+## Aquatic, movement and survival providers
+
+The added [Hybrid Aquatic](https://modrinth.com/mod/hybrid-aquatic) habitats are
+selected inside existing island basins. Its native terrain changes and biome
+injectors are excluded only for the owned source; other providers' injectors
+remain active. [Lithostitched](https://modrinth.com/mod/lithostitched)'s exact
+distributed API is authoritative: the author branch used for comparison still
+declares an older version. Local seabed and waterline adapters retain native
+decoration and fauna predicates. [Tide](https://modrinth.com/mod/tide) uses
+physical water-column depth for a fishing line and waterline-relative position
+for its native fish spawning. Encounter retrieval precedes the ordinary reward
+loop, and pending conch summons persist with the dimension. Both native encounter
+hooks, the three conditional hook perks and block-only aquatic crates retain
+their provider behavior. Three missing fish records restore the complete native
+52-item aquatic fishing selection without adding a separate ordinary-rod mode.
+
+[Paragliders](https://www.curseforge.com/minecraft/mc-mods/paragliders) retains
+native templates and rewards. Its surface and underground structures use the
+existing support wrappers; a narrow native rotation repair updates template
+bounds before generation checks and chunk references. [Yori3o’s Grappling Hooks](https://modrinth.com/mod/yori3os-grappling-hooks)
+retains its own motion and ship compatibility.
+
+The gliding-only stamina setup also guards the glider provider's client exhaustion path:
+disabling running costs does not by itself stop the provider from cancelling
+sprint/swimming every depleted tick. The client adapter conditions only those
+two cancellation calls on the running-cost setting, active gliding or its exit
+tick, preserving one-time pose cleanup after an exhausted landing. Native
+glider pose transitions, stamina updates and elytra exhaustion remain intact.
+`paragliderExhaustionTest` executes the pinned native update bytecode against a
+client-free fixture, including the original failure and forty stable depleted
+ticks with the guard.
+
+[Legendary Survival Overhaul](https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul)
+supplies thirst and temperature without its health or limb modules. Independently
+authored minimal rules-pack resources remove the latter modules' recipes and
+loot while retaining relevant temperature rewards. Its archive declares MIT,
+the project page says All Rights Reserved and the linked license retains Forge
+boilerplate; the artifact record and notices preserve that discrepancy.
+[Nutritional Balance](https://www.curseforge.com/minecraft/mc-mods/nutritional-balance)
+uses the owned nutrient tags and native food events, with a separate live display. Its native −2 lower bound is extended to −4 only for the malnourished attack-damage setting before configuration validation; the native ADD_VALUE effect remains authoritative.
+Current food assignments derive from pinned ingredient tags and recipes rather
+than item-name matching. Registered non-edible ingredient anchors remain where
+recipe inheritance needs them; absent optional outputs are excluded. The server
+regression reports effective foods and drinks and requires complete classification.
+
+Provider binaries remain unchanged. Pins and channel parity live in the existing
+artifact inventories; display sources and guarded corrections live in the owned
+mod's localization inventory. The active dimension data supplies the aquatic
+biome roster for future generation when a world loads; saved FULL chunks keep
+their stored biomes and terrain.
+
+### Equipment models and material artwork
+
+The existing owned resource packs add held models for all thirteen
+[Tide](https://modrinth.com/mod/tide) rods, the five held grappling hooks and
+five deployed heads from [Yori3o’s Grappling Hooks](https://modrinth.com/mod/yori3os-grappling-hooks),
+and the [Nutritional Balance](https://www.curseforge.com/minecraft/mc-mods/nutritional-balance)
+lunch box. Active grappling handles remain separate model states. This does not
+replace the complete catalog of fish, ingredients, bottles, armor icons or eggs.
+
+The rod children reference the eight existing hand/cast parents from the pinned
+[Refined Tools](https://modrinth.com/resourcepack/refined-tools/version/ndAFoNmO)
+resource pack through [Modefite](https://modrinth.com/mod/qjlkcVfy), retaining
+their display transforms while supplying independent geometry. Each rod follows
+the palette and identifying motifs of its native inventory icon and has a solid
+drum, flanges and mirrored crank. `RodModelContractTest` checks all 104 variants,
+local atlas UVs and the actual Punchy tip detector. Cast meshes omit the stowed
+tackle. The vanilla rod's four pinned cast parents receive a guarded runtime
+removal of those five elements before baking; a full parsed-geometry fingerprint
+leaves changed replacement models alone. No provider cuboids or textures are
+copied. The original meshes and materials are composed by `EquipmentModels.java`
+and `RodModels.java`, with no generative image model. Their source and the
+original pixel materials are GPL-3.0-or-later; the upstream packs retain their
+own terms. The source is included in the corresponding-source archive. Run
+`./gradlew generateEquipmentModels` from the owned mod project in the full
+repository to regenerate the 151 resources; `equipmentModelsCheck` verifies
+their exact bytes through `check`.
+
+The additional native lunch-box model keeps the provider's custom renderer and
+its food planes. Deployed grappling heads compensate for the native rotation and
+retain the rope anchor. Exact-version client adapters select the actual cast rod,
+restore the missing native Midas predicate and connect the fishing line to the
+rendered three-dimensional tip. Native inventory rod icons remain available.
+The grappling chain uses the emitted animated handle pose for its local
+first-person endpoint, retaining native third-person/VR/fallback paths. Native
+rope defaults are Shift/Ctrl. A version stored through the native Options
+serializer migrates only the former unmodified Page Up/Page Down pair once,
+after NeoForge's late binding reload; other preferences are retained.
+
 ## Language supplements and ore materials
 
 The owned mod's [localization source inventory](../mods/aeroscapes-reimagine/src/main/resources/META-INF/localization-sources.json) records the exact selected upstream dictionaries, licenses, missing-key filters and authored supplements. Selected [BMP Translations](https://github.com/BMProjects-Development/BMP-Translations), [Create: Food](https://modrinth.com/mod/create-food), [Item Descriptions](https://modrinth.com/mod/item-descriptions) and [Jade](https://modrinth.com/mod/jade) translations retain their individual licenses in separate resources. Their notices and full license texts are shipped in the JAR and corresponding source archive. These additions do not replace provider JARs or their existing translations.

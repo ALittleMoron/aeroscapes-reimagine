@@ -260,3 +260,38 @@ for this project without copied game pixels or a generative image model. Editabl
 pixel source: META-INF/artwork/waystone_sigil.svg; its RGBA PNG is the item texture.
 Exact resource hashes, source version
 limits and display routes are retained in META-INF/localization-sources.json.
+
+Aquatic, travel and survival integration:
+Independently authored habitat selection, local-water predicates, encounter
+scheduling, fishing compatibility, nutrition display and functional EN/RU text
+target the exact provider artifacts identified in localization-sources.json and
+the pack metadata. Expected original strings retain their provider terms;
+guarded corrections preserve changed provider/user translations.
+https://modrinth.com/mod/hybrid-aquatic
+https://modrinth.com/mod/hybrid-api
+https://modrinth.com/mod/lithostitched
+https://modrinth.com/mod/geckolib
+https://modrinth.com/mod/tide
+https://www.curseforge.com/minecraft/mc-mods/paragliders
+https://modrinth.com/mod/yori3os-grappling-hooks
+https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul
+https://www.curseforge.com/minecraft/mc-mods/nutritional-balance
+Provider archives, textures and templates remain unchanged and are not merged
+into this JAR. Independently authored language supplements do not replace the
+providers' complete dictionaries. Paragliders structure-placement definitions
+in the pack retain their upstream GPL-3.0-only terms. Hybrid Aquatic retains
+All Rights Reserved; its original English matching strings are not relicensed.
+Legendary Survival Overhaul's archive declares MIT while its provider page says
+All Rights Reserved and linked license file contains Forge boilerplate. Preserve
+those conflicting declarations; this integration does not grant asset reuse.
+
+Equipment artwork and compatibility
+-----------------------------------
+EquipmentModels.java and RodModels.java independently compose original pixel
+materials and cuboid meshes for rods, grappling equipment and the lunch box.
+The work is AI-assisted deterministic Java composition, without generative images,
+and is licensed GPL-3.0-or-later. Generated resources are distributed in the owned
+atmosphere and Refined compatibility resource packs. Rod child models reference
+the Refined Tools 3.0 parents for display transforms; no Refined cuboids or textures
+are copied. A guarded runtime adapter removes stowed tackle from known cast models.
+Upstream provider terms remain with their unchanged artifacts.

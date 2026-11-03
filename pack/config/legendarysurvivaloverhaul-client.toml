@@ -1,0 +1,9 @@
+[general]
+"Show Food Saturation Bar" = false
+
+[temperature]
+"Heat Temperature Overlay" = false
+"Cold Temperature Overlay" = false
+
+[thirst]
+"Low Hydration Effect" = false

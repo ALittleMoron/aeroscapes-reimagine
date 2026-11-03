@@ -3,6 +3,7 @@ package dev.aeroscapes.worldgen;
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import dev.aeroscapes.aquatic.AquaticHabitats;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -50,7 +51,11 @@ public final class IslandBiomeSource extends BiomeSource {
                           .forGetter(value -> Optional.ofNullable(value.voidBiome)),
                       Biome.CODEC
                           .optionalFieldOf("volcanic_biome")
-                          .forGetter(value -> Optional.ofNullable(value.volcanicBiome)))
+                          .forGetter(value -> Optional.ofNullable(value.volcanicBiome)),
+                      Biome.CODEC
+                          .listOf()
+                          .optionalFieldOf("aquatic_biomes", List.of())
+                          .forGetter(value -> value.aquaticBiomes))
                   .apply(instance, IslandBiomeSource::new));
   private static final DeferredRegister<MapCodec<? extends BiomeSource>> TYPES =
       DeferredRegister.create(Registries.BIOME_SOURCE, "aeroscapes_reimagine");
@@ -59,6 +64,8 @@ public final class IslandBiomeSource extends BiomeSource {
   private final List<Holder<Biome>> deepOceans;
   private final List<Holder<Biome>> shores;
   private final List<Holder<Biome>> mountains;
+  private final List<Holder<Biome>> aquaticBiomes;
+  private final AquaticHabitats aquaticHabitats;
   private Holder<Biome> voidBiome;
   private Holder<Biome> volcanicBiome;
   private volatile Habitat habitat;
@@ -105,7 +112,8 @@ public final class IslandBiomeSource extends BiomeSource {
       List<Holder<Biome>> shores,
       List<Holder<Biome>> mountains,
       Optional<Holder<Biome>> voidBiome,
-      Optional<Holder<Biome>> volcanicBiome) {
+      Optional<Holder<Biome>> volcanicBiome,
+      List<Holder<Biome>> aquaticBiomes) {
     if (oceans.size() != 5 || deepOceans.size() != 5 || shores.size() != 2 || mountains.size() != 4)
       throw new IllegalArgumentException(
           "Island habitats need 5 ocean pairs, 2 shores and 4 mountain biomes");
@@ -115,6 +123,8 @@ public final class IslandBiomeSource extends BiomeSource {
     this.deepOceans = List.copyOf(deepOceans);
     this.shores = List.copyOf(shores);
     this.mountains = List.copyOf(mountains);
+    this.aquaticBiomes = List.copyOf(aquaticBiomes);
+    this.aquaticHabitats = new AquaticHabitats(aquaticBiomes);
     this.voidBiome = voidBiome.orElse(null);
     this.volcanicBiome = volcanicBiome.orElse(null);
   }
@@ -130,8 +140,9 @@ public final class IslandBiomeSource extends BiomeSource {
     var stems = server.registryAccess().registryOrThrow(Registries.LEVEL_STEM);
     for (var entry : stems.entrySet()) {
       var stem = entry.getValue();
-      if (stem.generator() instanceof NoiseBasedChunkGenerator generator
-          && generator.getBiomeSource() instanceof IslandBiomeSource source) {
+      if (stem.generator() instanceof NoiseBasedChunkGenerator generator) {
+        IslandBiomeSource source = IslandBiomeSources.find(generator.getBiomeSource());
+        if (source == null) continue;
         if (source.voidBiome == null)
           source.voidBiome =
               server
@@ -184,7 +195,8 @@ public final class IslandBiomeSource extends BiomeSource {
         shores,
         mountains,
         Optional.ofNullable(voidBiome),
-        Optional.ofNullable(volcanicBiome));
+        Optional.ofNullable(volcanicBiome),
+        aquaticBiomes);
   }
 
   @Override
@@ -200,6 +212,7 @@ public final class IslandBiomeSource extends BiomeSource {
             deepOceans.stream(),
             shores.stream(),
             mountains.stream(),
+            aquaticBiomes.stream(),
             Stream.ofNullable(voidBiome),
             Stream.ofNullable(volcanicBiome))
         .flatMap(stream -> stream);
@@ -208,6 +221,10 @@ public final class IslandBiomeSource extends BiomeSource {
   @Override
   public Holder<Biome> getNoiseBiome(int quartX, int quartY, int quartZ, Climate.Sampler sampler) {
     IslandBiomeSampler context = (IslandBiomeSampler) (Object) sampler;
+    IslandBiomeSource generationSource = context.aeroscapesReimagine$generationSource();
+    if (generationSource != null && generationSource != this) {
+      return generationSource.getNoiseBiome(quartX, quartY, quartZ, sampler);
+    }
     BiomeTerrainMask mask = context.aeroscapesReimagine$terrainMask();
     if (mask == null || voidBiome == null)
       throw new IllegalStateException("Island biome terrain was not initialized");
@@ -241,11 +258,12 @@ public final class IslandBiomeSource extends BiomeSource {
             temperature < -0.45
                 ? 0
                 : temperature < -0.15 ? 1 : temperature < 0.2 ? 2 : temperature < 0.5 ? 3 : 4;
-        return basin.waterline() - basin.floor(x, z) >= 30
-            ? deepOceans.get(index)
-            : oceans.get(index);
+        Holder<Biome> ocean =
+            basin.waterline() - basin.floor(x, z) >= 30 ? deepOceans.get(index) : oceans.get(index);
+        return aquaticHabitats.select(ocean, basin, x, y, z, temperature);
       }
-      return shores.get(temperature < -0.15 ? 0 : 1);
+      return aquaticHabitats.select(
+          shores.get(temperature < -0.15 ? 0 : 1), basin, x, y, z, temperature);
     }
     IslandLayout.LargeIsland island = current.island();
     if (island != null

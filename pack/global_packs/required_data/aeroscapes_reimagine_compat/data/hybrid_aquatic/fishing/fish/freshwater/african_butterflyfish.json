@@ -1,0 +1,12 @@
+{
+  "fish": "hybrid_aquatic:african_butterflyfish",
+  "associated_mods": ["hybrid_aquatic"],
+  "conditions": [{"type": "tide:fluid", "fluid": "water"}],
+  "selection_weight": 30.0,
+  "strength": 0.5,
+  "speed": 0.9,
+  "journal_profile": {
+    "description": "journal.description.hybrid_aquatic.african_butterflyfish",
+    "group": "freshwater"
+  }
+}

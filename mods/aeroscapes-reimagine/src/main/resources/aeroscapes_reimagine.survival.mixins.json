@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.survival",
+  "plugin": "dev.aeroscapes.survival.SurvivalMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "NutritionCommandMixin",
+    "NutritionConfigRangeMixin"
+  ],
+  "client": [
+    "NutritionHelperMixin",
+    "NutritionScreenMixin",
+    "NutritionLunchboxMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
