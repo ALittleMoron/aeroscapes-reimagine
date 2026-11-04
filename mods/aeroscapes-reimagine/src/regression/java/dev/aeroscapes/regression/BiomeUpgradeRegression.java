@@ -7,6 +7,8 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.JsonOps;
+import dev.aeroscapes.worldgen.IslandBiomeSource;
+import dev.aeroscapes.worldgen.IslandBiomeSources;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -69,7 +71,8 @@ public final class BiomeUpgradeRegression {
     require(
         baselineFile.isAbsolute() && baselineFile.normalize().toString().contains("/.runtime/"),
         "Baseline must be an absolute ignored .runtime path");
-    JsonObject contract = savedContract(level);
+    List<ChunkPos> centers = centers();
+    JsonObject contract = savedContract(level, centers);
     JsonObject report = new JsonObject();
     report.addProperty("format", 1);
     report.addProperty("mode", capture ? "capture" : "verify");
@@ -94,7 +97,8 @@ public final class BiomeUpgradeRegression {
         boolean matches = expected.get("saved_contract").equals(contract);
         report.addProperty("saved_contract_matches", matches);
         boolean upgraded =
-            level.registryAccess().registryOrThrow(Registries.BIOME).containsKey(VOID);
+            !Boolean.getBoolean("aeroscapes.regression.biomeUpgradeRollback")
+                && level.registryAccess().registryOrThrow(Registries.BIOME).containsKey(VOID);
         boolean reload = Boolean.getBoolean("aeroscapes.regression.biomeUpgradeReload");
         report.addProperty("verification", upgraded ? "upgraded_copy" : "old_pack_rollback_copy");
         if (matches && upgraded)
@@ -117,11 +121,26 @@ public final class BiomeUpgradeRegression {
         .info(
             "Biome upgrade regression passed: mode={}, savedCenters={}, baseline={}; no client acceptance",
             capture ? "capture" : "verify",
-            CENTERS.size(),
+            centers.size(),
             baselineFile);
   }
 
-  private static JsonObject savedContract(ServerLevel level) {
+  private static List<ChunkPos> centers() {
+    String configured = System.getProperty("aeroscapes.regression.biomeUpgradeCenters");
+    if (configured == null) return CENTERS;
+    var selected = new java.util.ArrayList<ChunkPos>();
+    for (String pair : configured.split(";", -1)) {
+      String[] coordinates = pair.split(",", -1);
+      require(coordinates.length == 2, "Expected saved chunk pairs x,z;x,z");
+      selected.add(
+          new ChunkPos(Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1])));
+    }
+    require(
+        selected.stream().distinct().count() == selected.size(), "Duplicate saved chunk centers");
+    return List.copyOf(selected);
+  }
+
+  private static JsonObject savedContract(ServerLevel level, List<ChunkPos> centers) {
     JsonObject result = new JsonObject();
     result.addProperty("seed", level.getSeed());
     result.add("spawn", position(level.getSharedSpawnPos()));
@@ -131,7 +150,7 @@ public final class BiomeUpgradeRegression {
     result.addProperty(
         "sampling", "Every quart cell: saved block at local 4q+2 and saved noise biome");
     JsonArray chunks = new JsonArray();
-    for (ChunkPos center : CENTERS) chunks.add(snapshot(level, center));
+    for (ChunkPos center : centers) chunks.add(snapshot(level, center));
     result.add("chunks", chunks);
     return result;
   }
@@ -235,6 +254,19 @@ public final class BiomeUpgradeRegression {
     summary.addProperty("biome_source_class", source.getClass().getName());
     fingerprint(summary, "generator", ChunkGenerator.CODEC.encodeStart(operations, generator));
     fingerprint(summary, "biome_source", BiomeSource.CODEC.encodeStart(operations, source));
+    var owned = IslandBiomeSources.find(source);
+    if (owned != null) {
+      var encoded =
+          IslandBiomeSource.CODEC
+              .codec()
+              .encodeStart(operations, owned)
+              .getOrThrow()
+              .getAsJsonObject();
+      JsonObject marine = new JsonObject();
+      for (String name : List.of("aquatic_biomes", "spawn_biomes", "deep_oceans"))
+        marine.add(name, encoded.get(name));
+      summary.add("owned_marine_rosters", marine);
+    }
     JsonArray possible = new JsonArray();
     source.possibleBiomes().stream()
         .map(BiomeUpgradeRegression::biomeId)

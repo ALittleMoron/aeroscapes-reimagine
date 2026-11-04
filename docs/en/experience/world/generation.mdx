@@ -40,6 +40,12 @@ A map could previously show an ocean where there was only void. Ocean regions no
 
 [Terralith](https://modrinth.com/datapack/8oi3bsk5), [Nature’s Spirit](https://modrinth.com/mod/WBvnqHfV) and [Galosphere](https://modrinth.com/mod/Kn7xyQ1v) provide the other landscapes. Aero’s four original biomes and its custom content are excluded. Basalt formations and geodes were converted to vanilla materials, while the project’s own fractured jungle is retained. [Places and discoveries](../discoveries/) describes the landscapes and things to find.
 
+[Spawn](https://modrinth.com/mod/spawn-mod)'s small island ecosystems use basins with a physical seabed and room above the water. Their decoration, marine life and water-dependent behavior follow that basin's surface. They remain distinct from the low lava islands described above.
+
+The dodo-island search could previously select a location without a suitable basin, leaving the island absent. It now rejects those locations and continues searching for a supported site.
+
+Its native surface filter could leave deep seagrass meadows with ordinary gravel instead of algal sand. Marine soil rules now reach the actual submerged basin floor, preserving their original layer order.
+
 ## Biomes and empty space
 
 Previously, biome searches could point into an empty gap because the climate map assigned ordinary biomes there. Empty space away from island terrain now uses the Open Sky biome, which has no vegetation, structures or creature spawns of its own. A small buffer around islands retains their biomes, including their cave interiors; a search can therefore end just outside a cliff rather than exactly on a solid block.
@@ -65,6 +71,8 @@ Shipwrecks also check the ground at their final placement height: averaging an u
 Creeping Crypt from [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) previously checked the ground beneath its entrance alone, allowing most underground rooms to hang outside an island. Its placement now checks the underground assembly's support and rock cover while retaining the surface entrance, trying nearby ground before rejecting an unsuitable site.
 
 Buried treasure could register a location without a chest on basalt shores because the usual search did not accept that rock. Newly generated treasures retry the native search on basalt only after the usual search fails, retaining their normal coordinates and loot.
+
+[Explorify](https://www.curseforge.com/minecraft/mc-mods/explorify)'s surface buildings and [Spawn](https://modrinth.com/mod/spawn-mod)'s ant mounds check their original templates against connected natural ground. Paths projected onto terrain also need support. Underwater settlements use the actual basin floor; a higher island in the same column must not suspend them between the two surfaces. An unsuitable assembly is rejected as a whole.
 
 ## Starting a game and saved worlds
 

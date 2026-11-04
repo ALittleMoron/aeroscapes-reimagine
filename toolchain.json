@@ -23,8 +23,8 @@
     "sha256": "c9f646908d340d84773948a9a7d98bc1dae250d35e1016dc6e2b8459760b5598"
   },
   "neoforge": {
-    "filename": "neoforge-21.1.230-installer.jar",
-    "url": "https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.230/neoforge-21.1.230-installer.jar",
-    "sha256": "88f4a6efd54049b7c14f4588e879a964d1868688fd52efb64b29dd03ad991ef1"
+    "filename": "neoforge-21.1.234-installer.jar",
+    "url": "https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.234/neoforge-21.1.234-installer.jar",
+    "sha256": "4b8d1632c6bc188faa2f4d6dc53a53f43f8b188c3f208e5102fe2ee82dfaf8e9"
   }
 }

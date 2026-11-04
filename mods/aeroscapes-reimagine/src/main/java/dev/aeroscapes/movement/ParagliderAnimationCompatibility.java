@@ -35,7 +35,7 @@ public final class ParagliderAnimationCompatibility {
                       "paraglider", "21.1.5",
                       "entity_model_features", "3.3.12",
                       "entity_texture_features", "7.2.6",
-                      "neoforge", "21.1.230")
+                      "neoforge", "21.1.234")
                   .entrySet()) {
             String actual =
                 ModList.get()

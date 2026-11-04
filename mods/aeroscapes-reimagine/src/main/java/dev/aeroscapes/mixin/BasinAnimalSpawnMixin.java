@@ -2,6 +2,7 @@ package dev.aeroscapes.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.aeroscapes.ecology.ScopedSeaLevel;
 import dev.aeroscapes.worldgen.IslandTerrain;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.animal.WaterAnimal;
@@ -25,8 +26,9 @@ public abstract class BasinAnimalSpawnMixin {
     IslandTerrain terrain = IslandTerrain.from(server.getLevel().getChunkSource().randomState());
     if (terrain == null) return nativeSea;
     var basin = terrain.basin(position.getX(), position.getZ());
-    return basin != null && basin.water(position.getX(), position.getY(), position.getZ())
-        ? basin.waterline()
-        : nativeSea;
+    return ScopedSeaLevel.resolve(
+        basin != null && basin.water(position.getX(), position.getY(), position.getZ())
+            ? basin.waterline()
+            : nativeSea);
   }
 }

@@ -69,10 +69,22 @@ public final class NativeTerrainVolume {
             ? generator.generatorSettings().value()
             : solidSettings(generator.generatorSettings().value());
     int cellWidth = settings.noiseSettings().getCellWidth();
-    int cellHeight = settings.noiseSettings().getCellHeight();
     NoiseSettings noiseSettings = settings.noiseSettings().clampToHeightAccessor(sampleHeight);
     sampleMinimum = noiseSettings.minY();
     sampleMaximum = sampleMinimum + noiseSettings.height();
+    if (nativeColumns) {
+      // Native aquifer caches are sized to one chunk, including their neighbour stencil.
+      // Wider or unaligned NoiseChunks can address beyond those caches at chunk edges.
+      for (int chunkX = Math.floorDiv(bounds.minX(), 16);
+          chunkX <= Math.floorDiv(bounds.maxX(), 16);
+          chunkX++)
+        for (int chunkZ = Math.floorDiv(bounds.minZ(), 16);
+            chunkZ <= Math.floorDiv(bounds.maxZ(), 16);
+            chunkZ++)
+          sample(
+              generator, random, settings, noiseSettings, chunkX * 16, chunkZ * 16, 16 / cellWidth);
+      return;
+    }
     int originX = Math.floorDiv(bounds.minX(), cellWidth) * cellWidth;
     int originZ = Math.floorDiv(bounds.minZ(), cellWidth) * cellWidth;
     int cellCount =
@@ -80,6 +92,19 @@ public final class NativeTerrainVolume {
                 Math.floorDiv(bounds.maxX() - originX, cellWidth),
                 Math.floorDiv(bounds.maxZ() - originZ, cellWidth))
             + 1;
+    sample(generator, random, settings, noiseSettings, originX, originZ, cellCount);
+  }
+
+  private void sample(
+      NoiseBasedChunkGenerator generator,
+      RandomState random,
+      NoiseGeneratorSettings settings,
+      NoiseSettings noiseSettings,
+      int originX,
+      int originZ,
+      int cellCount) {
+    int cellWidth = settings.noiseSettings().getCellWidth();
+    int cellHeight = settings.noiseSettings().getCellHeight();
     NoiseChunk noise =
         new NoiseChunk(
             cellCount,

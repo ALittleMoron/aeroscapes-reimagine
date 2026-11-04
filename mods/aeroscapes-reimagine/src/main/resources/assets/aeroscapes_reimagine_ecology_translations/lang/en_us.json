@@ -1,0 +1,14 @@
+{
+  "aeroscapes_reimagine.config.enum.com.ninni.spawn.server.SpawnServerConfig$FlyParticleMode.BATCH": "Batched",
+  "aeroscapes_reimagine.config.enum.com.ninni.spawn.server.SpawnServerConfig$FlyParticleMode.INDIVIDUAL": "Individual",
+  "config.spawn.bucket_tooltip": "Bucket contents in tooltips",
+  "config.spawn.bucket_tooltip.tooltip": "Show the captured animal in its bucket tooltip.",
+  "rocks.configuration.General": "General",
+  "rocks.configuration.geyserLevitation": "Geyser levitation",
+  "rocks.configuration.geyserLevitation.tooltip": "Geysers lift entities with the Levitation effect.",
+  "rocks.configuration.netherGeyserDamage": "Nether geyser damage",
+  "rocks.configuration.netherGeyserDamage.tooltip": "Nether geysers damage entities.",
+  "subtitles.entity.penguin.baby.call": "Baby penguin calls",
+  "aeroscapes_reimagine.pack.spawn.respawned": "Alternative appearances for some Minecraft mobs",
+  "aeroscapes_reimagine.pack.spawn.respawned_eggs": "Spawn eggs styled after Minecraft 1.21.5"
+}

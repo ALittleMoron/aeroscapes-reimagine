@@ -4,6 +4,17 @@ description: Version history.
 status: available
 ---
 
+## 0.3.2
+
+- Reduce the new-world creation pause by reusing native terrain checks during [Spawn](https://modrinth.com/mod/spawn-mod)'s dodo-island search, retaining its placement and support criteria.
+- Fix dodo-island site selection accepting unsuitable locations where the island could not generate.
+- Fix crashes in food tooltips, meal effects and serving shared dishes caused by [Spawn](https://modrinth.com/mod/spawn-mod)'s compatibility with the installed [Farmer's Delight](https://modrinth.com/mod/farmers-delight).
+- Update NeoForge to 21.1.234.
+- Add [Fowl Play](https://modrinth.com/mod/fowlplay) and [Hybrid Birds](https://modrinth.com/mod/hybrid-birds), with habitats and ground/flight checks adapted to exposed island layers.
+- Add [Spawn](https://modrinth.com/mod/spawn-mod)'s wildlife, ant gardens, marine habitats and small island ecosystems, using physical basin waterlines and seabeds.
+- Add [This Rocks!](https://modrinth.com/mod/this-rocks-forge)'s collectible ground and underwater details on island surfaces.
+- Add [Explorify](https://www.curseforge.com/minecraft/mc-mods/explorify)'s camps, buildings and ruins, with complete-assembly support and projected-path checks.
+
 ## 0.3.1
 
 - Replace the repeating square marine-biome pattern with seeded irregular habitats; existing generated chunks retain their stored biomes.

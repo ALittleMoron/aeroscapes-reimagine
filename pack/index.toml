@@ -249,6 +249,10 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes/w
 hash = "0d9f23e1576baf95ef03d1bb4784ffe00a03b0967beaf1c5ed991fe88fdeef1f"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/lithostitched/worldgen_modifier/explorify_projection.json"
+hash = "55a65aadeb45e30b6ea77e7651ae849be02584d0628b2ac42566426049927e65"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/lithostitched/worldgen_modifier/natures_spirit_villages.json"
 hash = "8db52260a959632b9dc8fe9395158beb0f4553543c74d255f09c7c0729091f16"
 
@@ -397,6 +401,10 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/delightfulcr
 hash = "8a2b1457d821fd292f18adec2932a6701c6d10186aa55b1d605b2e261dc305ac"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/fowlplay/tags/worldgen/biome/spawns_gulls.json"
+hash = "dd0baa3e655153c3d4fd103da2e3c3e56e54beb15b8f25f121ebf08c819913b8"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_aquatic/fishing/fish/freshwater/african_butterflyfish.json"
 hash = "bb14d0f917dc5dca9e4a2cf5208f805eca0211a872326b8c384e7fcfb8ad31ad"
 
@@ -413,8 +421,32 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_aquat
 hash = "a02262416a9589b4d0a74c9b597d089fbea6df1afe4a38111a28339d062394aa"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_birds/tags/worldgen/biome/duck_spawn_biomes.json"
+hash = "184568e0611f2ab38de33314d7f91570222bb28878b863500e938b6fe2c12967"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_birds/tags/worldgen/biome/goose_spawn_biomes.json"
+hash = "184568e0611f2ab38de33314d7f91570222bb28878b863500e938b6fe2c12967"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_birds/tags/worldgen/biome/pelican_spawn_biomes.json"
+hash = "dd0baa3e655153c3d4fd103da2e3c3e56e54beb15b8f25f121ebf08c819913b8"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_birds/tags/worldgen/biome/puffin_spawn_biomes.json"
+hash = "ab5e07b5b0cdaf51c7c8d49ba6f3e23640fbd0a73dec7898b631dcdf5422d31b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_birds/tags/worldgen/biome/rooster_spawn_biomes.json"
+hash = "69b29306e0dfaf98941d197a3a83a31b0cfadaf6f36a66b24fa1b12d5f663896"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_birds/tags/worldgen/biome/seagull_spawn_biomes.json"
+hash = "dd0baa3e655153c3d4fd103da2e3c3e56e54beb15b8f25f121ebf08c819913b8"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/dimension/overworld.json"
-hash = "84bab90bae27da0c5db11085ee32b69a6b4d7280318d9b534e1be2909e2dba39"
+hash = "07cb4d08e420d75260ca2a564fb2e0ee2922d290446a2db0ac7e4029143961f0"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/placed_feature/amethyst_geode.json"
@@ -1047,7 +1079,7 @@ hash = "160fa9c6f3777e8d5a8b87c96a66d611bc295756e1d9c56b0fd04ef68e70ca7d"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "d3084fd94051687aab4d77e5293ec3055c75ac942b00535a1d6ee72f64d35c79"
+hash = "d1010e8039ade3d6f3413e3f97e8d8876f1efd350c02b40fe2e0da22b72bbf68"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1076,7 +1108,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "dac417eda00dffa0a11be71eef0c6f5c6e5d777628fa78916cafbe09eb0aa30d"
+hash = "e51a3b906eafe6a7f7b6691e96947a5cd05a13df938af36f8b9545b5e304cf24"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1454,6 +1486,11 @@ hash = "7056fb7f39b5a08f54e0290adb11367c016e0d707d21f7453435bc54e0f50383"
 metafile = true
 
 [[files]]
+file = "mods/explorify.pw.toml"
+hash = "cc0e74fe173d8814d983f6a2c68e284848f6c7b0005194acbba59ae5033e04e6"
+metafile = true
+
+[[files]]
 file = "mods/exposure.pw.toml"
 hash = "b112e38749c8ec3c2312db862abc8cbfae41048a65057c464d8db3e02e10f243"
 metafile = true
@@ -1496,6 +1533,11 @@ metafile = true
 [[files]]
 file = "mods/forgified-fabric-api.pw.toml"
 hash = "abb947d0a57ecfe3787bed75b787ff7a1f1506f54a9e97eed08370116c0f5ac2"
+metafile = true
+
+[[files]]
+file = "mods/fowlplay.pw.toml"
+hash = "84e9e3093357db62cdadcf520f325d65d53d7706babaec76d9e7ffca6c2f3096"
 metafile = true
 
 [[files]]
@@ -1551,6 +1593,11 @@ metafile = true
 [[files]]
 file = "mods/hybrid-aquatic.pw.toml"
 hash = "4d434f82e5c517337632203e022f4a807de60ec8d3a89b44b250807b3c583af2"
+metafile = true
+
+[[files]]
+file = "mods/hybrid-birds.pw.toml"
+hash = "dc68de8095ce90a624de72507eb5153e108825efdad743d3fe07ac7560b5bba3"
 metafile = true
 
 [[files]]
@@ -1879,6 +1926,11 @@ hash = "0bd7ea6ea0d6d3a6d107f444e3787ed7b758ee3d325f49518a83ad9c1211fc40"
 metafile = true
 
 [[files]]
+file = "mods/smartbrainlib.pw.toml"
+hash = "96240588bf2e3a0a582b39e3f8504286eab87eb6dbba110f4082fb41d593424a"
+metafile = true
+
+[[files]]
 file = "mods/smarter-farmers-farmers-replant.pw.toml"
 hash = "69ab6739a5af63ceca2c0805043554591bebac0e8e8a305e76eb56b277b1de5b"
 metafile = true
@@ -1929,6 +1981,11 @@ hash = "5298077320fd9554f97e30b71a14f0acb4fe0c6bfa62dabece1fd370a4dcc02c"
 metafile = true
 
 [[files]]
+file = "mods/spawn-mod.pw.toml"
+hash = "518a5f3b1f734e8370c4eb1e5863b571bcf9c629875f34ad5cac3d351f322945"
+metafile = true
+
+[[files]]
 file = "mods/spyglass-improvements.pw.toml"
 hash = "bdcc346e883d2a782581bc577be5ea6805139eeba3230dd67a6dfd68c0466a23"
 metafile = true
@@ -1949,6 +2006,11 @@ hash = "9fb0ad6235096587fd9df08dbe1030311e9a7a2df93fe2c8c29ed3bbdc0de0a8"
 metafile = true
 
 [[files]]
+file = "mods/teallib.pw.toml"
+hash = "e92dae4e5a8e519a33a148c6ceb50369ef40f591353f882caea870528153775b"
+metafile = true
+
+[[files]]
 file = "mods/terrablender.pw.toml"
 hash = "ad981b8558a7882655d20ed2e8d5daa4b97489368045426f581bfe3762c547c2"
 metafile = true
@@ -1956,6 +2018,11 @@ metafile = true
 [[files]]
 file = "mods/terralith.pw.toml"
 hash = "0de40afcea63987a8c01a23ed0acaea781c1579abbe73b5181c81e54ffce905a"
+metafile = true
+
+[[files]]
+file = "mods/this-rocks-forge.pw.toml"
+hash = "724b27860f1bc1f26904e5d9d7c54e6ce019556398383105c9d60b0c2342b090"
 metafile = true
 
 [[files]]

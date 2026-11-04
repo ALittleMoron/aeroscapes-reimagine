@@ -1,0 +1,12 @@
+name = "Hybrid Birds"
+filename = "hybrid_birds-neoforge-1.21.1-1.3.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/txgXquyE/versions/JjW0y3WF/hybrid_birds-neoforge-1.21.1-1.3.3.jar"
+hash-format = "sha512"
+hash = "599cd7a1ab1cd484d9104edd00745f3de9470bb0df3706cff9c28a41e58e6c619776372116691865c8d81ce281281edc220d132c56ec477ffa2c0a6f6623f960"
+
+[update.modrinth]
+mod-id = "txgXquyE"
+version = "JjW0y3WF"

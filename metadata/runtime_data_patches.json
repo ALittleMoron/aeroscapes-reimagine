@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "neoforge": "21.1.230",
+  "neoforge": "21.1.234",
   "patch_resource": "mods/aeroscapes-reimagine/src/main/resources/aeroscapes_reimagine/data-patches.json",
   "providers": [
     {
@@ -26,6 +26,24 @@
       "version_id": "EQHGxQAv",
       "filename": "Philips-Ruins1.21.1-2.0-NeoForge.jar",
       "sha512": "e18119706fe065ccf571abc5d3f0e2badc95e26cee0ba5641aa88a67c2238ce2fd589459969a7691ae246658c601d7d35cc87562cc7b40b345965cbdd23fe2c6"
+    },
+    {
+      "project_id": "rex9wwpz",
+      "version_id": "OgmUYgeL",
+      "filename": "spawn-4.0.8-1.21.1.jar",
+      "sha512": "f6db8f8a11d90d973ad4e7041816793a70e298949c4d378cb08a2b78937327c8f2d5c75d1f938a0493adad1a5a1c6fda67949867b7c7b1c56c5d58eda8ae8204"
+    },
+    {
+      "project_id": "HSfsxuTo",
+      "version_id": "9vHj342y",
+      "filename": "Explorify v1.6.4 f15-88.mod.jar",
+      "sha512": "601ee61e3619ab6a929ff06e4e3db6cc480d97a19e5716ac40a2a325d2d609b857a1ac17f2c0ed2b242e662b5486f4e0f59584fbd47acd481b318c45c244254b"
+    },
+    {
+      "project_id": "nsHXyrFh",
+      "version_id": "9WI0UM3H",
+      "filename": "ThisRocks-1.21-1.8.0.jar",
+      "sha512": "50413e636980c6d6b50a97d4668225327222c53e3bd5254d70bc9f7a2944536e86797e6d212c1d9210ca24283d1ce4496c0b126989a0b5785a4a41ded609cce3"
     }
   ],
   "resources": [
@@ -2332,6 +2350,240 @@
       "source_sha256": "1c7210668d587acd40c150c6a9b89668a5ac8466e8b964808af6b5cc35b81db0",
       "result_json_sha256": "5d988eb82a7f8ef251c1be0e5a5868b9f68e4fc829275c2cf0b74c91ba6da01e",
       "reason": "Translate the literal internal-enchantment warning exposed by the selected enchantment information UI; preserve its original English warning and all effect/gameplay data."
+    },
+    {
+      "id": "spawn:loot_table/archaeology/anthill.json",
+      "provider": "rex9wwpz",
+      "version": "OgmUYgeL",
+      "source": "data/spawn/loot_table/archaeology/anthill.json",
+      "source_sha256": "fced2f3aaf5c12da0eef9f2ff9b3c553d52912e83f597bc4f669b9337dd65eee",
+      "result_json_sha256": "092933086d7af626a4950b4d1e874e517f6ac807f70b60d9ca425717db758ea8",
+      "reason": "Remove the nonexistent spawn:roly_poly item so the remaining native anthill archaeology loot can load."
+    },
+    {
+      "id": "explorify:worldgen/structure/campsite.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/campsite.json",
+      "source_sha256": "583aff06b8ff321863c37ef0c925dd68864291ba256299effa2c95c071e0c82d",
+      "result_json_sha256": "fc7c8ce8083579896e433803fcf89be3194bc28d8bbddc017d14b9ec325d13c8",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/dark_forest_settlement.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/dark_forest_settlement.json",
+      "source_sha256": "9ef5c4a8eadec73149baf5c5c70b3afc7b298bfd93deef8800a91ece3f7b22c2",
+      "result_json_sha256": "7354dc15051eb50e0accf78eab522d9b7ac0a457e440c393f10e16d8b070605a",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/farmstead.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/farmstead.json",
+      "source_sha256": "f8f67fe9e6f6151762dc7e203d6693e6a3e3fd3d997da3697e56be4963b2b872",
+      "result_json_sha256": "781aad5f7060c6f580bd547d764b3addee8c8c20dc537e5fe04d34d838370117",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/mausoleum.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/mausoleum.json",
+      "source_sha256": "3f841879fa78fd80e2460bc174e4bfb2b56b5924cdbb6c80bc0bfb190772fb29",
+      "result_json_sha256": "d107402e6b6a3dd57611c5b08bff5aab4519d2fff2cdd647cb5607c67eccc56e",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/supply_cache/birch.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/supply_cache/birch.json",
+      "source_sha256": "65cad792da3cdd0ee50fdb463d7a99ab7bb678c25f92346c36fe42f5a5b6bdaf",
+      "result_json_sha256": "1907f26db6052e5b436e3d3ef879d7e52a6f0ad64de6f20582368524862992e0",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/supply_cache/dark.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/supply_cache/dark.json",
+      "source_sha256": "54c983c1ba0e914da7082753cbd32266b153a05e76c8deb24d57ec9b939da3fd",
+      "result_json_sha256": "e5272cd801901ef8b2265cd871c81ee7ce450a82e17e4627a0231d79474b551b",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/supply_cache/desert.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/supply_cache/desert.json",
+      "source_sha256": "8040a3c155775e7cc4d4e0b6ffe665052ce077a5d570cc5992ea4fad70f47b4e",
+      "result_json_sha256": "3e7402990f31544e7f3cf8f455e32e1d4979aa2da96b4cf96d1305be34cbdcb4",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/supply_cache/forest.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/supply_cache/forest.json",
+      "source_sha256": "897c459143a94d6e3e014c2654542639bd14dd4467cb877293b74ed6a4673557",
+      "result_json_sha256": "d30112c685cdaaeec84c4b623862640104fdb2eedc7ae474ee2b2be770ecbb09",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/supply_cache/jungle.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/supply_cache/jungle.json",
+      "source_sha256": "2b389ea475a020378d4dd1729f4b2c63a788230643cb5dd472b1feb7cef5de63",
+      "result_json_sha256": "fd1739a22ace33e0f8e7525bad31af50e5254b558066a470053fc71fb04eaffb",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/supply_cache/mangrove.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/supply_cache/mangrove.json",
+      "source_sha256": "7006f43e2e9cda6e3a625b0ae08589201b7e1696d6a1ca7af086d4bbaf651351",
+      "result_json_sha256": "09917aa988825ef8361e3655261d7ccdbf857b4f6e2f55b29395df98fce5bc53",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/supply_cache/taiga.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/supply_cache/taiga.json",
+      "source_sha256": "f9a2dcef41aea913e8e1948ae3973c1d60b275c9a09e7ea6b270e01085b88787",
+      "result_json_sha256": "e8c2bd072b6320ae7edf8285ae9c5493541eecf5a2bf762eaf737285cd5c6b28",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/tavern.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/tavern.json",
+      "source_sha256": "7b7cd5f6aa7da4a95f3c6f740a94d6c2a954510bb5457a71ba93d1a5e3b5a347",
+      "result_json_sha256": "aa89b33ac5fe40204275701ae7ba47cd73532248027738a9056b4cade708e85c",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/watchtower/plains.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/watchtower/plains.json",
+      "source_sha256": "7edd4e470828201ab6d738aa060d5c0d8ce5fd28bc2bdaae82eac74d212a791d",
+      "result_json_sha256": "43f278512b504c7a6bd195ec294a48c178ec6e9c6713b511b930d8f4f64327fc",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/watchtower/savanna.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/watchtower/savanna.json",
+      "source_sha256": "02ea684fef648ba88e429474012f7f6e17801636e4150b2bbed2803621fc24b1",
+      "result_json_sha256": "a92973f8ddedbb8220a9c195f231261226fe8290f756d0ee46bccb1c276ce3dc",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/watchtower/taiga.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/watchtower/taiga.json",
+      "source_sha256": "f9f6d4cffd5735e52b0dd5e7926472b550a1d412e8f1f173b2183f4c803eefea",
+      "result_json_sha256": "a4b0353fd0ced7d76b33e0bfc3346871529f80d457f1aa10898bd80bd4bc520a",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/badlands_pyramid.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/badlands_pyramid.json",
+      "source_sha256": "7e499260aa3bfd989629f28dceefe4f551cd87dca3ae996d2b10176d6055b9bf",
+      "result_json_sha256": "eb107b66d70566f1cfd35a5b3ed8463a688412ae9fa2c8966172594e4a3349f0",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/desert_shrine.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/desert_shrine.json",
+      "source_sha256": "054a508911fa172dbb562c1f0b1d7978a2052746c21bcec16d9b3e3794813135",
+      "result_json_sha256": "de61c1f6e13e9eccf80de1fdf428e1a47e442035f765e2d9dec314d5a5e32868",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/guide_post_cold.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/guide_post_cold.json",
+      "source_sha256": "4708dc6bf04dbfe1d67517bc074314a0ab2c0e4bd5c22f1c58b888933ab39006",
+      "result_json_sha256": "c197c83f3d68843f1da6e2469513c2b733a153b623abb1a2fabb579573371dd7",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/guide_post_warm.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/guide_post_warm.json",
+      "source_sha256": "44cceb75bb6495561aeaea6bbb6e8f349d662137605ca4277db00e6c323cd6ef",
+      "result_json_sha256": "3256b0e6be63cfe5d6ab3a629fa0bb1094cc8cb0acfd4322e19736c8c275c1aa",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/mangrove_hut.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/mangrove_hut.json",
+      "source_sha256": "5eb37ce3c97acaf709084c432f77202fbcd6a015936d4f01996f23b4f529d4ef",
+      "result_json_sha256": "bf0fe9a2018fd1b94fda595daff24518ca7e0c0e08dccbfd60ca310c42b7b9e6",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "explorify:worldgen/structure/ruins.json",
+      "provider": "HSfsxuTo",
+      "version": "9vHj342y",
+      "source": "data/explorify/worldgen/structure/ruins.json",
+      "source_sha256": "32c8fea211f70a2f29f3a4a78f421ec116b7eaa51419830d4aa450ecd86a3b46",
+      "result_json_sha256": "969ba6969a9d79259e05b4e43e85b8f0d555f656a7bd7e433df89b7e5aeae175",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "spawn:worldgen/structure/ant_mount.json",
+      "provider": "rex9wwpz",
+      "version": "OgmUYgeL",
+      "source": "data/spawn/worldgen/structure/ant_mount.json",
+      "source_sha256": "1f96304830961f80711fe987de851abb1f92d5d155a7c28d85f67d61536bacb8",
+      "result_json_sha256": "d3a730b2dbba7cf657a9788c4c5fe75cc148e781bce276f9508ea8d7e9d76479",
+      "reason": "Validate original loaded bearing cells and connected natural island support, preserving native offsets, templates, projection and loot."
+    },
+    {
+      "id": "spawn:worldgen/structure/octopolis.json",
+      "provider": "rex9wwpz",
+      "version": "OgmUYgeL",
+      "source": "data/spawn/worldgen/structure/octopolis.json",
+      "source_sha256": "efc80894347cf02748f61e21c635e62be3cf7c9c179891460161f82e3c49a2c2",
+      "result_json_sha256": "1c681aad1ca1b0630c0e2694d46fd0f570507d82f3355a329548ac24fbd34191",
+      "reason": "Select the physical local basin seabed before native rigid assembly and validate its original foundations and water clearance."
+    },
+    {
+      "id": "spawn:worldgen/placed_feature/stranded_spawns.json",
+      "provider": "rex9wwpz",
+      "version": "OgmUYgeL",
+      "source": "data/spawn/worldgen/placed_feature/stranded_spawns.json",
+      "source_sha256": "9b24d82672e2c92f96df521c2e66ff41c327174302c0e3fd76ca98d0e16d0e7f",
+      "result_json_sha256": "599cd64e6e9e1b0a20a19a674973ff8fee82ea91a3c03855a2fb59109822ed55",
+      "reason": "Select physical local seabed before the native biome filter instead of testing the void at the chunk minimum; preserve rarity, entity and native conditions."
+    },
+    {
+      "id": "rocks:loot_table/blocks/red_sand_rock.json",
+      "provider": "nsHXyrFh",
+      "version": "9WI0UM3H",
+      "source": "data/rocks/loot_table/blocks/red_sand_rock.json",
+      "source_sha256": "46ca857870c2a498d4ad81e930c5bd3108eb2ac7957ad9952e2ef9af21f98632",
+      "result_json_sha256": "36ff9bba5ce86ca48b2cb44daefb1deb103052f6d38cabef005300e97dcc477c",
+      "reason": "Restore survival access to the red sandstone splitter consumed by the native four-splitter recipe, matching the other stone debris drops."
     }
   ]
 }

@@ -25,6 +25,8 @@ import net.minecraft.server.commands.LocateCommand;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.levelgen.structure.Structure;
+import net.minecraft.world.level.levelgen.structure.placement.ConcentricRingsStructurePlacement;
+import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStructurePlacement;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.CommandEvent;
 import net.neoforged.neoforge.event.level.LevelEvent;
@@ -112,6 +114,23 @@ public final class InteractiveStructureLocator {
             .map(key -> registry.getHolder(key).map(HolderSet::direct), registry::getTag);
     if (holders.isEmpty()) {
       return; // Missing IDs/tags retain vanilla's error rather than becoming empty searches.
+    }
+    var generatorState = source.getLevel().getChunkSource().getGeneratorState();
+    boolean providerPlacement =
+        holders.orElseThrow().stream()
+            .flatMap(holder -> generatorState.getPlacementsForStructure(holder).stream())
+            .anyMatch(
+                placement ->
+                    !(placement instanceof RandomSpreadStructurePlacement)
+                        && !(placement instanceof ConcentricRingsStructurePlacement));
+    if (providerPlacement) {
+      ServerSearches state = searches.get(source.getServer());
+      Search previous = state == null ? null : state.active.remove(player.getUUID());
+      if (previous != null) {
+        state.queue.remove(previous);
+        cancel(previous, "replaced");
+      }
+      return;
     }
     event.setCanceled(true);
     BlockPos origin = BlockPos.containing(source.getPosition());

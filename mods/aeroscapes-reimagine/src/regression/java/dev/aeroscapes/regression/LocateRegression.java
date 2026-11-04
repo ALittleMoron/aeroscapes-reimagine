@@ -66,6 +66,21 @@ public final class LocateRegression {
 
   private LocateRegression() {}
 
+  static void providerRouting(ServerLevel level) {
+    try (ProbeSession session = session(level, 0)) {
+      InteractiveStructureLocator locator = new InteractiveStructureLocator();
+      CommandSourceStack source = session.player().createCommandSourceStack().withPermission(4);
+      require(
+          route(locator, source, DIRECT_COMMAND), "Ordinary placement lost cooperative routing");
+      require(
+          !route(locator, source, "locate structure spawn:dodo_island"),
+          "Custom provider placement lost native routing");
+      require(
+          locator.pending(level.getServer()) == 0,
+          "Native provider request left the preceding search alive");
+    }
+  }
+
   public static void verify(ServerLevel level) {
     require(level.getServer().isDedicatedServer(), "Locate regression needs a disposable server");
     require(level.getSeed() == -4851711576543251912L, "Use the reported locate-stall seed");

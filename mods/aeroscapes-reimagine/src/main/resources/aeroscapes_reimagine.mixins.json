@@ -21,6 +21,7 @@
     "StructureBiomeEligibilityMixin",
     "StrongholdRingBiomeMixin",
     "FeatureIndexAccess",
+    "EffectiveBiomeParametersAccess",
     "BasinAquiferMixin",
     "IslandBiomeGenerationMixin",
     "BiomeFillOrderMixin",

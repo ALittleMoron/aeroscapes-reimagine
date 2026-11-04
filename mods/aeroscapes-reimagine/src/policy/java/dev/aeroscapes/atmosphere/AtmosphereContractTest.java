@@ -173,7 +173,7 @@ public final class AtmosphereContractTest {
                 "accurateblockplacement", "1.4.8_mc-1.20.5-1.21.1",
                 "connector", "2.0.0-beta.17+1.21.1",
                 "cloth_config", "15.0.140",
-                "neoforge", "21.1.230"));
+                "neoforge", "21.1.234"));
     for (String mixin :
         List.of("AccuratePlacementInteractionMixin", "AccuratePlacementEnumLanguageMixin")) {
       String name = "dev.aeroscapes.mixin." + mixin;

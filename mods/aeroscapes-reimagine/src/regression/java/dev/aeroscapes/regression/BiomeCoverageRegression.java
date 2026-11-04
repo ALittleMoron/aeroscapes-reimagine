@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.regression.biome.NativeIslandPaintEvidence;
 import dev.aeroscapes.worldgen.IslandBiomeSampler;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -137,6 +138,7 @@ public final class BiomeCoverageRegression {
     private final Set<ChunkPos> fullChunks = new LinkedHashSet<>();
     private final JsonArray violations = new JsonArray();
     private final JsonArray nativeClimateTies = new JsonArray();
+    private final JsonArray nativeIslandPaints = new JsonArray();
     private final JsonArray farControls = new JsonArray();
     private final JsonArray caveAirControls = new JsonArray();
     private final JsonArray oreSamples = new JsonArray();
@@ -156,6 +158,7 @@ public final class BiomeCoverageRegression {
     private long fullMaterialSamples;
     private long violationCount;
     private long nativeClimateTieCount;
+    private long nativeIslandPaintCount;
     private long nextProgress;
     private ChunkPos pendingPosition;
     private CompletableFuture<ChunkResult<ChunkAccess>> pending;
@@ -502,6 +505,13 @@ public final class BiomeCoverageRegression {
             if (!material && !emptyVoid) continue;
             if (selected == null) selected = sourceBiome(x, y, z);
             if (!selected.equals(actual)) {
+              JsonObject paint =
+                  NativeIslandPaintEvidence.classify(level, position, selected, actual);
+              if (paint != null) {
+                nativeIslandPaintCount++;
+                if (nativeIslandPaints.size() < 32) nativeIslandPaints.add(paint);
+                continue;
+              }
               JsonObject tie =
                   BiomeMismatchRegression.nativeTie(level, source, position, selected, actual);
               if (tie == null) {
@@ -809,6 +819,8 @@ public final class BiomeCoverageRegression {
       report.add("violation_examples", violations);
       report.addProperty("native_climate_tie_count", nativeClimateTieCount);
       report.add("native_climate_tie_examples", nativeClimateTies);
+      report.addProperty("native_structure_paint_count", nativeIslandPaintCount);
+      report.add("native_structure_paint_examples", nativeIslandPaints);
       report.add("far_empty_controls", farControls);
       report.add("cave_air_controls", caveAirControls);
       report.add("FULL_ore_adjacency_samples", oreSamples);

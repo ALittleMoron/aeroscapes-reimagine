@@ -9450,5 +9450,250 @@
     "origin": "Owner-selected moderate survival and nutrition for 0.3.1",
     "distribution": "bundle",
     "distribution_note": "Unchanged official GPLv3 artifact. Retain corresponding-source link and notice."
+  },
+  {
+    "slug": "fowlplay",
+    "name": "Fowl Play",
+    "project_id": "WpXfePbg",
+    "version_id": "kZyPjCmU",
+    "version": "1.2.3+1.21.1-neoforge",
+    "filename": "fowlplay-1.2.3+1.21.1-neoforge.jar",
+    "sha512": "69d78df0c54cf77cc8dde61a51ccd6e3b9eebda5f07fd8ed7d4d8fe72f9d7f2d51c025a1c5a7b3f7eeeddc75515ea6ba5c15cf878c111016fbde00581c30dd84",
+    "sha1": "6c2d872bb014c84d8bd0f892140928d8f278764b",
+    "file_size": 2614463,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/aqariio/Fowl-Play",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "PuyPazRT",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "1eAoo2KR",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected group 2 integration, original provider file"
+  },
+  {
+    "slug": "hybrid-birds",
+    "name": "Hybrid Birds",
+    "project_id": "txgXquyE",
+    "version_id": "JjW0y3WF",
+    "version": "mc1.21.1-1.3.3-neoforge",
+    "filename": "hybrid_birds-neoforge-1.21.1-1.3.3.jar",
+    "sha512": "599cd7a1ab1cd484d9104edd00745f3de9470bb0df3706cff9c28a41e58e6c619776372116691865c8d81ce281281edc220d132c56ec477ffa2c0a6f6623f960",
+    "sha1": "f2c76d324a0e4110b1e3b1a67e1cd993b4b84a04",
+    "file_size": 1825986,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/hybridlabs/hybrid-birds",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "8BmcQJ2H",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "yv9f5EAG",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "ordsPcFz",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected group 2 integration, original provider file"
+  },
+  {
+    "slug": "spawn-mod",
+    "name": "Spawn",
+    "project_id": "rex9wwpz",
+    "version_id": "OgmUYgeL",
+    "version": "4.0.8",
+    "filename": "spawn-4.0.8-1.21.1.jar",
+    "sha512": "f6db8f8a11d90d973ad4e7041816793a70e298949c4d378cb08a2b78937327c8f2d5c75d1f938a0493adad1a5a1c6fda67949867b7c7b1c56c5d58eda8ae8204",
+    "sha1": "3af0c476f36a3888f4686c181036a0a179a8b7b5",
+    "file_size": 73681436,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://github.com/N1nn1/spawn/blob/main/LICENSE"
+    },
+    "source_url": null,
+    "dependencies": [
+      {
+        "version_id": "lZTBRemW",
+        "project_id": "rLJ1qF79",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected group 2 integration, original provider file"
+  },
+  {
+    "slug": "this-rocks-forge",
+    "name": "This Rocks! (Forge)",
+    "project_id": "nsHXyrFh",
+    "version_id": "9WI0UM3H",
+    "version": "1.8.0",
+    "filename": "ThisRocks-1.21-1.8.0.jar",
+    "sha512": "50413e636980c6d6b50a97d4668225327222c53e3bd5254d70bc9f7a2944536e86797e6d212c1d9210ca24283d1ce4496c0b126989a0b5785a4a41ded609cce3",
+    "sha1": "51452202032ae09ace233cce2203b53efbcb0689",
+    "file_size": 201456,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/Mrbysco/ThisRocksForge",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected group 2 integration, original provider file"
+  },
+  {
+    "slug": "explorify",
+    "name": "Explorify",
+    "project_id": "HSfsxuTo",
+    "version_id": "9vHj342y",
+    "version": "1.6.4",
+    "filename": "Explorify v1.6.4 f15-88.mod.jar",
+    "sha512": "601ee61e3619ab6a929ff06e4e3db6cc480d97a19e5716ac40a2a325d2d609b857a1ac17f2c0ed2b242e662b5486f4e0f59584fbd47acd481b318c45c244254b",
+    "sha1": "5a9b99242bdb9437396f5a3c78decc567adab6a5",
+    "file_size": 951495,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected group 2 integration, original provider file"
+  },
+  {
+    "slug": "teallib",
+    "name": "Teal Lib",
+    "project_id": "rLJ1qF79",
+    "version_id": "lZTBRemW",
+    "version": "1.3.teal",
+    "filename": "teallib-1.3.teal.jar",
+    "sha512": "11060adb8aae151879e8e4db4ad5409df1044784fe9e6d6a5f4750ea778317bd37ca9129f39d23e18988b912ab036a9fb3a128761726f927ac23797dd02ed381",
+    "sha1": "b186cdfd311158858429e494ecd11e2157274eff",
+    "file_size": 262609,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-Teal-License",
+      "name": "",
+      "url": "https://github.com/N1nn1/TealLib/blob/main/LICENSE.txt"
+    },
+    "source_url": "https://github.com/N1nn1/TealLib",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected group 2 integration, original provider file"
+  },
+  {
+    "slug": "smartbrainlib",
+    "name": "SmartBrainLib",
+    "project_id": "PuyPazRT",
+    "version_id": "O5EpeqI3",
+    "version": "1.16.11",
+    "filename": "SmartBrainLib-neoforge-1.21.1-1.16.11.jar",
+    "sha512": "bfc76f6fd8c388d01b80601ad1b826f6b3f5ec5ea915e5725af129561e6bc4a10890975e6f6d2a0348d842c13042dcf1a9d0a1574fba76bce60119bee76e2dc2",
+    "sha1": "0310135a01eeceefbc7f1ab017498a65f3ad6836",
+    "file_size": 391053,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "source_url": "https://github.com/Tslat/SmartBrainLib",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected group 2 integration, original provider file"
   }
 ]

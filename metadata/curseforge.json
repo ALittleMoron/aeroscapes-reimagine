@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "minecraft": "1.21.1",
-  "neoforge": "21.1.230",
-  "loader_id": "neoforge-21.1.230",
+  "neoforge": "21.1.234",
+  "loader_id": "neoforge-21.1.234",
   "artifacts": [
     {
       "slug": "3dskinlayers",

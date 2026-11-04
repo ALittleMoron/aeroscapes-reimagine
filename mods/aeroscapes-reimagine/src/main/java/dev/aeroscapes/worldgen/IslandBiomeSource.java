@@ -4,6 +4,8 @@ import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import dev.aeroscapes.aquatic.AquaticHabitats;
+import dev.aeroscapes.ecology.SpawnHabitats;
+import dev.aeroscapes.mixin.EffectiveBiomeParametersAccess;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -55,7 +57,11 @@ public final class IslandBiomeSource extends BiomeSource {
                       Biome.CODEC
                           .listOf()
                           .optionalFieldOf("aquatic_biomes", List.of())
-                          .forGetter(value -> value.aquaticBiomes))
+                          .forGetter(value -> value.aquaticBiomes),
+                      Biome.CODEC
+                          .listOf()
+                          .optionalFieldOf("spawn_biomes", List.of())
+                          .forGetter(value -> value.spawnBiomes))
                   .apply(instance, IslandBiomeSource::new));
   private static final DeferredRegister<MapCodec<? extends BiomeSource>> TYPES =
       DeferredRegister.create(Registries.BIOME_SOURCE, "aeroscapes_reimagine");
@@ -66,6 +72,8 @@ public final class IslandBiomeSource extends BiomeSource {
   private final List<Holder<Biome>> mountains;
   private final List<Holder<Biome>> aquaticBiomes;
   private final AquaticHabitats aquaticHabitats;
+  private final List<Holder<Biome>> spawnBiomes;
+  private final SpawnHabitats spawnHabitats;
   private Holder<Biome> voidBiome;
   private Holder<Biome> volcanicBiome;
   private volatile Habitat habitat;
@@ -113,7 +121,8 @@ public final class IslandBiomeSource extends BiomeSource {
       List<Holder<Biome>> mountains,
       Optional<Holder<Biome>> voidBiome,
       Optional<Holder<Biome>> volcanicBiome,
-      List<Holder<Biome>> aquaticBiomes) {
+      List<Holder<Biome>> aquaticBiomes,
+      List<Holder<Biome>> spawnBiomes) {
     if (oceans.size() != 5 || deepOceans.size() != 5 || shores.size() != 2 || mountains.size() != 4)
       throw new IllegalArgumentException(
           "Island habitats need 5 ocean pairs, 2 shores and 4 mountain biomes");
@@ -125,6 +134,8 @@ public final class IslandBiomeSource extends BiomeSource {
     this.mountains = List.copyOf(mountains);
     this.aquaticBiomes = List.copyOf(aquaticBiomes);
     this.aquaticHabitats = new AquaticHabitats(aquaticBiomes);
+    this.spawnBiomes = List.copyOf(spawnBiomes);
+    this.spawnHabitats = new SpawnHabitats(spawnBiomes);
     this.voidBiome = voidBiome.orElse(null);
     this.volcanicBiome = volcanicBiome.orElse(null);
   }
@@ -177,11 +188,7 @@ public final class IslandBiomeSource extends BiomeSource {
     if (!(delegate instanceof MultiNoiseBiomeSource multi)) return this;
     var parameters =
         (IExtendedParameterList<Holder<Biome>>)
-            BiolithBiomeCompatibility.parameters(
-                multi,
-                ((MultiNoiseBiomeSourceAccess) multi)
-                    .getParameters()
-                    .map(value -> value, holder -> holder.value().parameters()));
+            ((EffectiveBiomeParametersAccess) multi).aeroscapes$parameters();
     if (!parameters.isInitialized()) return this;
     MultiNoiseBiomeSource copy = ((IExtendedMultiNoiseBiomeSource) multi).clone();
     var copiedParameters = parameters.clone();
@@ -196,7 +203,8 @@ public final class IslandBiomeSource extends BiomeSource {
         mountains,
         Optional.ofNullable(voidBiome),
         Optional.ofNullable(volcanicBiome),
-        aquaticBiomes);
+        aquaticBiomes,
+        spawnBiomes);
   }
 
   @Override
@@ -213,6 +221,7 @@ public final class IslandBiomeSource extends BiomeSource {
             shores.stream(),
             mountains.stream(),
             aquaticBiomes.stream(),
+            spawnBiomes.stream(),
             Stream.ofNullable(voidBiome),
             Stream.ofNullable(volcanicBiome))
         .flatMap(stream -> stream);
@@ -253,13 +262,10 @@ public final class IslandBiomeSource extends BiomeSource {
         && y >= basin.floor(x, z) - 8
         && y <= basin.waterline() + 16) {
       double temperature = sampler.temperature().compute(new SinglePointContext(x, y, z));
+      Holder<Biome> spawn = spawnHabitats.select(basin, x, y, z, sampler, temperature);
+      if (spawn != null) return spawn;
       if (basin.floor(x, z) < basin.waterline()) {
-        int index =
-            temperature < -0.45
-                ? 0
-                : temperature < -0.15 ? 1 : temperature < 0.2 ? 2 : temperature < 0.5 ? 3 : 4;
-        Holder<Biome> ocean =
-            basin.waterline() - basin.floor(x, z) >= 30 ? deepOceans.get(index) : oceans.get(index);
+        Holder<Biome> ocean = ocean(basin, x, z, temperature);
         return aquaticHabitats.select(ocean, basin, x, y, z, temperature);
       }
       return aquaticHabitats.select(
@@ -286,5 +292,24 @@ public final class IslandBiomeSource extends BiomeSource {
             Math.floorDiv(small.centerX(), 4), 64, Math.floorDiv(small.centerZ(), 4), sampler);
     }
     return delegate.getNoiseBiome(quartX, quartY, quartZ, sampler);
+  }
+
+  /** Marine decoration must not erase a native island structure's ocean-climate eligibility. */
+  public Holder<Biome> basinOcean(int x, int z, Climate.Sampler sampler) {
+    var basin = habitat(x, z, sampler.continentalness()).basin();
+    if (basin == null || !basin.water(x, basin.waterline(), z)) return null;
+    return ocean(
+        basin,
+        x,
+        z,
+        sampler.temperature().compute(new SinglePointContext(x, basin.waterline(), z)));
+  }
+
+  private Holder<Biome> ocean(IslandLayout.Basin basin, int x, int z, double temperature) {
+    int index =
+        temperature < -0.45
+            ? 0
+            : temperature < -0.15 ? 1 : temperature < 0.2 ? 2 : temperature < 0.5 ? 3 : 4;
+    return basin.waterline() - basin.floor(x, z) >= 30 ? deepOceans.get(index) : oceans.get(index);
   }
 }

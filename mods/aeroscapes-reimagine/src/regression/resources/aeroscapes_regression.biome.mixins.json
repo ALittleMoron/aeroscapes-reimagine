@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "dev.aeroscapes.regression.biome.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["BiomeSampleEvidenceMixin"],
+  "mixins": ["BiomeSampleEvidenceMixin", "NativeIslandPaintMixin", "SurfaceContextProbeAccess", "SurfaceConditionProbeMixin"],
   "injectors": {
     "defaultRequire": 1
   }

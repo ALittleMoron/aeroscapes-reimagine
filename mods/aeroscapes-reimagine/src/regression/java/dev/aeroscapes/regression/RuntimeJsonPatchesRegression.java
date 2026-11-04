@@ -30,12 +30,13 @@ final class RuntimeJsonPatchesRegression {
   static void verify(ServerLevel level) {
     try {
       JsonObject recipes = RuntimeJsonPatches.readRecipes();
-      require(recipes.size() == 256, "Incomplete runtime JSON recipe closure");
       String baseline = System.getProperty("aeroscapes.regression.jsonRepairBaseline");
-      JsonObject expected = baseline == null ? readExpected() : null;
+      JsonObject expected = readExpected();
+      require(recipes.keySet().equals(expected.keySet()), "Incomplete runtime JSON recipe closure");
       JsonObject report = new JsonObject();
       Map<ResourceLocation, Resource> listed = new HashMap<>();
-      for (String prefix : List.of("worldgen", "advancement", "tags", "enchantment")) {
+      for (String prefix :
+          List.of("worldgen", "advancement", "tags", "enchantment", "loot_table")) {
         listed.putAll(
             level
                 .getServer()
@@ -80,15 +81,17 @@ final class RuntimeJsonPatchesRegression {
               patched.equals(JsonParser.parseReader(reader)), "Resource listing differs: " + id);
         }
         String fingerprint = ResourceFingerprints.json(effective);
-        if (baseline != null) {
-          String relative = "data/" + id.replace(':', '/');
+        String relative = "data/" + id.replace(':', '/');
+        if (baseline != null
+            && !id.startsWith("spawn:")
+            && !id.startsWith("explorify:")
+            && !id.startsWith("rocks:")) {
           JsonElement previous =
               JsonParser.parseString(Files.readString(Path.of(baseline, relative)));
           require(effective.equals(previous), "Former override differs: " + id);
         } else {
           require(
-              Objects.requireNonNull(expected).has(id)
-                  && fingerprint.equals(expected.get(id).getAsString()),
+              expected.has(id) && fingerprint.equals(expected.get(id).getAsString()),
               "Changed JSON result: " + id);
         }
         report.addProperty(id, fingerprint);

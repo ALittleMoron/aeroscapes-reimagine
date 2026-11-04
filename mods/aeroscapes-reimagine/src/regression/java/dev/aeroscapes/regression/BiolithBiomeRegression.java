@@ -5,6 +5,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.mixin.EffectiveBiomeParametersAccess;
 import dev.aeroscapes.worldgen.IslandBiomeSource;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -52,7 +53,7 @@ public final class BiolithBiomeRegression {
       IslandBiomeSource owned = ownedSource(outer, unwrapSteps);
       MultiNoiseBiomeSource delegate = delegate(owned);
       Climate.ParameterList<?> raw = rawParameters(delegate);
-      Object effective = entries.invoke(delegate);
+      var effective = ((EffectiveBiomeParametersAccess) delegate).aeroscapes$parameters();
       JsonObject report = new JsonObject();
       report.addProperty("format", 1);
       report.addProperty("seed", level.getSeed());
@@ -64,7 +65,8 @@ public final class BiolithBiomeRegression {
 
       IslandBiomeSource generation = owned.forGeneration();
       MultiNoiseBiomeSource generationDelegate = delegate(generation);
-      Object generationEffective = entries.invoke(generationDelegate);
+      var generationEffective =
+          ((EffectiveBiomeParametersAccess) generationDelegate).aeroscapes$parameters();
       Climate.ParameterList<?> generationRaw = rawParameters(generationDelegate);
       report.add("generation_delegate", summary(generationDelegate, dimension, entries));
       report.addProperty("generation_wrapper_is_original", generation == owned);
@@ -80,6 +82,21 @@ public final class BiolithBiomeRegression {
       checks.addProperty("live_weald_possible", containsWeald(outer) && containsWeald(owned));
       checks.addProperty("live_effective_weald_entry", wealdEntry(effective));
       checks.addProperty("live_effective_TB_initialized", initialized(effective));
+      for (String name :
+          java.util.List.of("ant_gardens", "seagrass_meadow", "deep_warm_ocean", "rocky_shore")) {
+        checks.addProperty(
+            "native_spawn_" + name,
+            effective.values().stream()
+                .anyMatch(
+                    pair ->
+                        pair.getSecond()
+                                .unwrapKey()
+                                .orElseThrow()
+                                .location()
+                                .toString()
+                                .equals("spawn:" + name)
+                            && pair.getFirst().temperature().max() <= Climate.quantizeCoord(1.0F)));
+      }
       checks.addProperty(
           "generation_overworld",
           BuiltinDimensionTypes.OVERWORLD.equals(dimension.invoke(generationDelegate)));
@@ -195,6 +212,9 @@ public final class BiolithBiomeRegression {
     }
     Climate.ParameterList<?> raw = rawParameters(source);
     result.add("raw_parameters", parameters(raw));
+    result.add(
+        "returned_parameters",
+        parameters(((EffectiveBiomeParametersAccess) source).aeroscapes$parameters()));
     Object effective = entries.invoke(source);
     if (effective == null) {
       result.addProperty("effective_cache_populated", false);

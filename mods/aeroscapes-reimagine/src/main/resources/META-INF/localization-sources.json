@@ -1,7 +1,7 @@
 {
   "format": 1,
   "minecraft": "1.21.1",
-  "neoforge": "21.1.230",
+  "neoforge": "21.1.234",
   "scope": "Effective missing English/Russian player-facing catalog, nested-item, biome/HUD, interface and configuration text for exact pinned resources. Registered server configuration is supplemented by client-only and Dist.CLIENT-created definitions, native/factory/shared-menu routes, literal comments/enums/units and runtime metadata. Existing changed provider/user text is preserved by guarded correction and native fallback priority. Saplanting uses its separate classloader dictionary.",
   "sources": {
     "bmp": {
@@ -322,17 +322,38 @@
       "provider_terms": "Independently authored missing English/Russian and nested display labels; unchanged original provider/user translations retain priority. Expected originals retain their provider terms.",
       "entries": 181,
       "sha256": "f3cad0395368dbd0fc774ee02443d7618a38d7f21f2664d67b5752aecb553e21"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_bird_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Hybrid Birds remains All Rights Reserved; these Russian labels and subtitles are independently authored.",
+      "entries": 72,
+      "sha256": "de42447b424e9132a6fd6bb7d52841cb0e62aa8133b75d63010d4410723d3639"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_ecology_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent translations of missing labels from the exact selected provider files; original providers retain their terms.",
+      "entries": 40,
+      "sha256": "b8b139c9edad77ab3f4c536790a2d6f369802206ee1c26b0912cc31125f7ef82"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_ecology_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independent missing English labels for exact selected ecology providers; provider and user translations retain priority.",
+      "entries": 12,
+      "sha256": "83ae9d55f130a67738220370e9ec2b374bcb18e64b7500cd904aaadee853a391"
     }
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 1636,
+    "rules": 1693,
     "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged. Native creative-tab, menu, keybinding and root-advancement mod titles retain provider branding; ordinary gameplay nouns and non-root advancement titles remain localized.",
-    "sha256": "5a746c9701eb746c5fc5bcc91701ff47695eacd1f1985408fa309eb13f0aa3cb"
+    "sha256": "e2a89fc4090392aa80ab0e1cacb3a67ea406cd1630b751b4e52dc7c4976f4e6f"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
-    "neoforge": "21.1.230",
+    "neoforge": "21.1.234",
     "ponder": "1.0.82+mc1.21.1",
     "puzzleslib": "21.1.66",
     "definition_coverage": {

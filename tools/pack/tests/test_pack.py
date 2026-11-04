@@ -902,7 +902,8 @@ def test_pinned_fml_neoforge_compatibility_fallback_is_preserved(source: SourceP
         '[[dependencies.owner]]\nmodId = "neoforge"\n'
         'versionRange = "[21.0.166]"\n'
     )
-    assert audit_jars(Path(), (), {"mods/owner.jar": compatible}, manifest=source.manifest) == {
+    manifest = replace(source.manifest, neoforge="21.1.234")
+    assert audit_jars(Path(), (), {"mods/owner.jar": compatible}, manifest=manifest) == {
         "client": 1,
         "server": 1,
     }

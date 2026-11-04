@@ -33,31 +33,6 @@ final class BiolithBiomeCompatibility {
     }
   }
 
-  @SuppressWarnings(
-      "unchecked") // Retain the initialized instance after validating its biome holders.
-  static Climate.ParameterList<Holder<Biome>> parameters(
-      MultiNoiseBiomeSource source, Climate.ParameterList<Holder<Biome>> raw) {
-    if (API == null) return raw;
-    try {
-      Object effective = API.entries().invoke(source);
-      if (effective == null) {
-        source.possibleBiomes();
-        effective = API.entries().invoke(source);
-      }
-      if (!(effective instanceof Climate.ParameterList<?> parameters))
-        throw new IllegalStateException(
-            "Biolith did not expose the island delegate's effective parameter list");
-      for (var pair : parameters.values())
-        if (!(pair.getSecond() instanceof Holder<?> holder) || !(holder.value() instanceof Biome))
-          throw new IllegalStateException(
-              "Biolith effective parameter list contains a non-biome value");
-      return (Climate.ParameterList<Holder<Biome>>) parameters;
-    } catch (ReflectiveOperationException failure) {
-      throw new IllegalStateException(
-          "Cannot read Biolith 3.0.10 effective biome parameters", failure);
-    }
-  }
-
   static void bindGenerationCache(
       MultiNoiseBiomeSource source, Climate.ParameterList<Holder<Biome>> parameters) {
     if (API == null) return;

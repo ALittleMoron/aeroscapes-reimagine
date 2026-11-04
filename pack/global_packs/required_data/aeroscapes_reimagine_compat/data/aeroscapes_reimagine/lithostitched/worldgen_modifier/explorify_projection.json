@@ -1,0 +1,23 @@
+{
+  "type": "lithostitched:set_pool_element_processors",
+  "template_pools": [
+    "explorify:dark_forest_settlement/path",
+    "explorify:farmstead/build",
+    "explorify:ruins/square",
+    "explorify:ruins/path"
+  ],
+  "locations": [
+    "explorify:dark_forest_settlement/path/straight_01",
+    "explorify:dark_forest_settlement/path/junction_01",
+    "explorify:dark_forest_settlement/path/turn_01",
+    "explorify:farmstead/build/bees",
+    "explorify:farmstead/build/road",
+    "explorify:farmstead/build/turn",
+    "explorify:ruins/square/01",
+    "explorify:ruins/path/straight",
+    "explorify:ruins/path/turn",
+    "explorify:ruins/path/junction"
+  ],
+  "processor_list": "aeroscapes_reimagine:non_void_projection",
+  "append": true
+}

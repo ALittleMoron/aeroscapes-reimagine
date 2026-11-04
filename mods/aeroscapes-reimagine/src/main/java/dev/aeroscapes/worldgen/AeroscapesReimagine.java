@@ -48,6 +48,7 @@ public final class AeroscapesReimagine {
 
   public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
     container.registerConfig(ModConfig.Type.CLIENT, CelestialConfig.SPEC);
+    if (ModList.get().isLoaded("spawn")) dev.aeroscapes.ecology.EcologyNetwork.register(modBus);
     if (ModList.get().isLoaded("waystones")) {
       dev.aeroscapes.travel.TravelIntegration.register(modBus);
     }

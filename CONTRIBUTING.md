@@ -114,19 +114,20 @@ remain in the manifests and metadata rather than a second manual inventory.
 
 The [release guide](docs/en/releases.md) owns the meaning of the three version
 parts and the project's milestones. Use plain `major.minor.patch` numbers.
-Accumulate additions and fixes under the current target until publication;
-preparatory commits and local exports retain that number. The next substantive
-change after publication starts the next patch. Do not automatically create an
-empty successor version: main pushes feed automatic publication.
+Accumulate a change group under its selected target until integration into main;
+preparatory commits and local exports retain that number. A separate substantive
+group after that integration starts the next patch, even if CI or publication of
+the previous group failed. Recovering that same integration retains its number.
+Do not automatically create an empty successor version: main pushes feed publication.
 
 At the start of a task that changes the pack or its tooling, or adds a changelog
-entry, inspect the actual non-draft GitHub releases and any pending publication
-in the existing release queue, even when keeping the version already recorded
-locally. Recheck before exporting if publication may have advanced during the
-task. A local export, changelog heading or tag alone does not establish publication.
-A main push awaiting publication already reserves its version; resolve that
-run's outcome before choosing a target. Published contents are immutable and
-cannot be overwritten.
+entry, inspect the current main integration, actual non-draft GitHub releases,
+CI outcome and existing release queue, even when keeping the version recorded
+locally. Recheck before exporting if these may have advanced during the task.
+A local export, changelog heading or tag alone does not establish publication;
+absence of a release does not establish that its version was never integrated.
+A main push reserves its version even if CI fails. Distinguish recovery of that
+group from new content before choosing a target. Published contents are immutable.
 
 One final PR or push to main carries one pack version. A push may contain several
 preparatory commits; the checked head is the source snapshot for its release.
@@ -162,15 +163,15 @@ redefining that goal, even if the final release adds no new milestone features.
 A mention of a future milestone or its theme, a candidate discussion, or approval
 to add content does not request this promotion. Continue ordinary patch development
 until the owner explicitly asks to prepare the stage release or set the current target.
-A selected minor milestone target stays unchanged until publication, including
-additional content and repeated preparation. The major milestones `1.0.0` and
+A selected minor milestone target stays unchanged through its preparation and
+integration; publication recovery does not select another milestone. The major milestones `1.0.0` and
 `2.0.0` need the owner's corresponding scope decision. Preparing a release does
 not itself authorize a commit or push.
 
 Set the target in `pack/pack.toml` before exporting. Use one matching section in
 each changelog, headed only by the number, such as `## 0.1.1`, without a release
 status suffix. When the current changes are promoted to a stage milestone before
-publication, move them into that milestone's section; preserve published sections.
+integration, move them into that milestone's section; preserve integrated sections.
 Release descriptions use only the target section from the checked source
 snapshot. Keep checks and remaining owner acceptance in the handoff, outside release notes.
 The owned mod and build tools retain their independent versions.

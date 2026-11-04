@@ -54,6 +54,8 @@ public final class SupportedStructure extends Structure {
     SURFACE,
     SURFACE_ROOT_FOOTPRINT,
     SURFACE_FOOTPRINT,
+    TEMPLATE_SURFACE,
+    TEMPLATE_SEABED,
     GROUNDED_SURFACE,
     MARINE_SURFACE,
     CAVERN,
@@ -117,8 +119,23 @@ public final class SupportedStructure extends Structure {
   @Override
   protected Optional<GenerationStub> findGenerationPoint(GenerationContext context) {
     Optional<GenerationStub> nativeStub =
-        delegate.findValidGenerationPoint(
-            embedsUnderground() ? StructureBiomeCompatibility.prefitContext(context) : context);
+        terrainCheck == TerrainCheck.TEMPLATE_SEABED
+            ? SeabedProjection.call(
+                () ->
+                    delegate.findValidGenerationPoint(
+                        new GenerationContext(
+                            context.registryAccess(),
+                            context.chunkGenerator(),
+                            context.biomeSource(),
+                            context.randomState(),
+                            context.structureTemplateManager(),
+                            context.random(),
+                            context.seed(),
+                            context.chunkPos(),
+                            context.heightAccessor(),
+                            biome -> true)))
+            : delegate.findValidGenerationPoint(
+                embedsUnderground() ? StructureBiomeCompatibility.prefitContext(context) : context);
     if (nativeStub.isEmpty()) {
       return Optional.empty();
     }
@@ -134,6 +151,13 @@ public final class SupportedStructure extends Structure {
         && (context.heightAccessor().isOutsideBuildHeight(assemblyBounds.minY())
             || context.heightAccessor().isOutsideBuildHeight(assemblyBounds.maxY()))) {
       return Optional.empty();
+    }
+    if (terrainCheck == TerrainCheck.TEMPLATE_SURFACE
+        || terrainCheck == TerrainCheck.TEMPLATE_SEABED) {
+      if (!TemplateStructureSupport.accepts(
+          context, delegate, pieces, terrainCheck == TerrainCheck.TEMPLATE_SEABED))
+        return Optional.empty();
+      return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
     }
     Map<Long, NoiseColumn> columns = new HashMap<>();
     if (embedsUnderground()) return fitAssembly(context, stub, builder, pieces, columns);

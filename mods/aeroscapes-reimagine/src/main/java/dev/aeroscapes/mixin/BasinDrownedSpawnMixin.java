@@ -2,6 +2,7 @@ package dev.aeroscapes.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.aeroscapes.ecology.ScopedSeaLevel;
 import dev.aeroscapes.worldgen.BasinSeaLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.monster.Drowned;
@@ -20,6 +21,6 @@ public abstract class BasinDrownedSpawnMixin {
       int nativeSea,
       @Local(argsOnly = true) LevelAccessor level,
       @Local(argsOnly = true) BlockPos position) {
-    return BasinSeaLevel.water(nativeSea, level, position);
+    return ScopedSeaLevel.resolve(BasinSeaLevel.water(nativeSea, level, position));
   }
 }

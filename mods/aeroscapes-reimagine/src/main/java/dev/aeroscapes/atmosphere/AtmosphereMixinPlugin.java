@@ -36,9 +36,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "waystonessable", "1.0.7",
               "balm", "21.0.57",
               "sable", "2.0.6",
-              "neoforge", "21.1.230");
+              "neoforge", "21.1.234");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.backup.")) {
-      versions = Map.of("simplebackups", "1.21-4.0.21", "sable", "2.0.6", "neoforge", "21.1.230");
+      versions = Map.of("simplebackups", "1.21-4.0.21", "sable", "2.0.6", "neoforge", "21.1.234");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.Compass")) {
       versions =
           Map.of(
@@ -47,7 +47,7 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "explorerscompass",
               "1.21.1-3.4.0-neoforge",
               "neoforge",
-              "21.1.230");
+              "21.1.234");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.AccuratePlacement")) {
       // Connector exposes the Fabric build separator as '_' in the loaded mod version.
       versions =
@@ -59,11 +59,11 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "cloth_config",
               "15.0.140",
               "neoforge",
-              "21.1.230");
+              "21.1.234");
     } else if (mixinClassName.endsWith("CelestialSkyMixin")
         || mixinClassName.endsWith("LanguageCorrectionMixin")
         || mixinClassName.endsWith("NativeConfigurationLanguageMixin")) {
-      versions = Map.of("neoforge", "21.1.230");
+      versions = Map.of("neoforge", "21.1.234");
     } else if (mixinClassName.contains("CatnipConfig")) {
       versions = Map.of("ponder", "1.0.82+mc1.21.1");
     } else if (mixinClassName.endsWith("PuzzlesConfigurationLanguageMixin")) {
@@ -101,9 +101,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "puzzleslib",
               "21.1.66",
               "neoforge",
-              "21.1.230");
+              "21.1.234");
     } else if (mixinClassName.endsWith("EasyMagicExperiencePointsMixin")) {
-      versions = Map.of("easymagic", "21.1.4", "neoforge", "21.1.230");
+      versions = Map.of("easymagic", "21.1.4", "neoforge", "21.1.234");
     } else if (mixinClassName.endsWith("PickupNotifierLanguageMixin")) {
       versions = Map.of("pickupnotifier", "21.1.1");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.atmosphere.InvMove")) {
@@ -141,7 +141,7 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     } else if (mixinClassName.endsWith("TestShipContainerMixin")) {
       versions = Map.of("sable", "2.0.6");
     } else if (mixinClassName.endsWith("PuzzleLoadingOverlayMixin")) {
-      versions = Map.of("puzzle", "2.3.0", "neoforge", "21.1.230");
+      versions = Map.of("puzzle", "2.3.0", "neoforge", "21.1.234");
     } else if (mixinClassName.endsWith("PrecipitationParticleMixin")) {
       versions = Map.of("particlerain", "4.0.2", "sable", "2.0.6");
     } else {

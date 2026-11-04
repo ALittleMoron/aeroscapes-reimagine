@@ -53,10 +53,13 @@ config = "aeroscapes_reimagine.movement.mixins.json"
 [[mixins]]
 config = "aeroscapes_reimagine.survival.mixins.json"
 
+[[mixins]]
+config = "aeroscapes_reimagine.ecology.mixins.json"
+
 [[dependencies.aeroscapes_reimagine]]
 modId = "neoforge"
 type = "required"
-versionRange = "[21.1.230]"
+versionRange = "[21.1.234]"
 ordering = "NONE"
 side = "BOTH"
 

@@ -14,7 +14,7 @@ public final class MovementMixinPlugin implements IMixinConfigPlugin {
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
     var mods = FMLLoader.getLoadingModList();
     Map<String, String> versions =
-        new HashMap<>(Map.of("paraglider", "21.1.5", "yo_hooks", "5.4.0", "neoforge", "21.1.230"));
+        new HashMap<>(Map.of("paraglider", "21.1.5", "yo_hooks", "5.4.0", "neoforge", "21.1.234"));
     if (mixinClassName.contains("ForeignConfiguration")
         || mixinClassName.endsWith("CatnipConfigurationAccess"))
       versions.put("ponder", "1.0.82+mc1.21.1");

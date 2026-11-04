@@ -1,5 +1,6 @@
 package dev.aeroscapes.regression;
 
+import dev.aeroscapes.worldgen.IslandTerrain;
 import dev.aeroscapes.worldgen.NativeTerrainVolume;
 import java.util.HashSet;
 import java.util.Set;
@@ -10,6 +11,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.TicketType;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.monster.Evoker;
 import net.minecraft.world.entity.monster.Vindicator;
 import net.minecraft.world.entity.monster.ZombieVillager;
@@ -52,6 +54,59 @@ final class NativeSurfaceRegression {
   };
 
   private NativeSurfaceRegression() {}
+
+  static void nativeColumnEdges(ServerLevel level) {
+    for (int start : new int[] {-17, -1, 15, 31})
+      nativeColumns(
+          level,
+          new BoundingBox(
+              start,
+              level.getMinBuildHeight(),
+              start,
+              start + 20,
+              level.getMaxBuildHeight() - 1,
+              start + 20));
+    for (int[] tile : new int[][] {{-16, -16}, {-800, -3488}, {4584, -9800}})
+      nativeColumns(
+          level,
+          new BoundingBox(
+              tile[0] >> 4 << 4,
+              level.getMinBuildHeight(),
+              tile[1] >> 4 << 4,
+              (tile[0] >> 4 << 4) + 15,
+              level.getMaxBuildHeight() - 1,
+              (tile[1] >> 4 << 4) + 15),
+          true);
+    var terrain = IslandTerrain.from(level.getChunkSource().randomState());
+    require(terrain != null, "Owned lava tile requires island terrain");
+    for (int x = -4096; x <= 4096; x += 1024)
+      for (int z = -4096; z <= 4096; z += 1024) {
+        var lava = terrain.layout().lavaIsland(x, z);
+        if (lava == null) continue;
+        if (!level
+            .getChunkSource()
+            .getGenerator()
+            .getBaseColumn(
+                lava.centerX(), lava.centerZ(), level, level.getChunkSource().randomState())
+            .getBlock(lava.waterline())
+            .getFluidState()
+            .is(FluidTags.LAVA)) continue;
+        int left = lava.centerX() >> 4 << 4;
+        int front = lava.centerZ() >> 4 << 4;
+        nativeColumns(
+            level,
+            new BoundingBox(
+                left,
+                level.getMinBuildHeight(),
+                front,
+                left + 15,
+                level.getMaxBuildHeight() - 1,
+                front + 15),
+            true);
+        return;
+      }
+    throw new IllegalStateException("No representative native lava tile");
+  }
 
   static void nativeNegatives(ServerLevel level) {
     negative(level, "desert_pyramid", 160, 131);
@@ -345,13 +400,19 @@ final class NativeSurfaceRegression {
   }
 
   private static void nativeColumns(ServerLevel level, BoundingBox footprint) {
+    nativeColumns(level, footprint, false);
+  }
+
+  private static void nativeColumns(ServerLevel level, BoundingBox footprint, boolean allColumns) {
     var generator = level.getChunkSource().getGenerator();
     require(generator instanceof NoiseBasedChunkGenerator, "Unexpected pyramid noise generator");
     var noise = (NoiseBasedChunkGenerator) generator;
     var random = level.getChunkSource().randomState();
     var volume = NativeTerrainVolume.nativeColumns(noise, random, level, footprint);
-    for (int x : new int[] {footprint.minX(), footprint.getCenter().getX(), footprint.maxX()}) {
-      for (int z : new int[] {footprint.minZ(), footprint.getCenter().getZ(), footprint.maxZ()}) {
+    int stepX = allColumns ? 1 : (footprint.maxX() - footprint.minX()) / 2;
+    int stepZ = allColumns ? 1 : (footprint.maxZ() - footprint.minZ()) / 2;
+    for (int x = footprint.minX(); x <= footprint.maxX(); x += Math.max(1, stepX)) {
+      for (int z = footprint.minZ(); z <= footprint.maxZ(); z += Math.max(1, stepZ)) {
         var column = noise.getBaseColumn(x, z, level, random);
         int height = level.getMaxBuildHeight();
         while (height > level.getMinBuildHeight()
@@ -363,6 +424,13 @@ final class NativeSurfaceRegression {
                 == noise.getBaseHeight(
                     x, z, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, level, random),
             "Shared native column changed the pyramid height predicate");
+        int surface = level.getMaxBuildHeight();
+        while (surface > level.getMinBuildHeight()
+            && !Heightmap.Types.WORLD_SURFACE_WG.isOpaque().test(volume.block(x, surface - 1, z)))
+          surface--;
+        require(
+            surface == noise.getBaseHeight(x, z, Heightmap.Types.WORLD_SURFACE_WG, level, random),
+            "Shared native column changed WORLD_SURFACE_WG");
         for (int y = level.getMinBuildHeight(); y < level.getMaxBuildHeight(); y++)
           require(
               column.getBlock(y).equals(volume.block(x, y, z)),

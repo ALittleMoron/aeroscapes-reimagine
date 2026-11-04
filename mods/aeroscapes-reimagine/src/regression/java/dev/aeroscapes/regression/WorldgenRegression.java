@@ -98,6 +98,41 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String hostParity = System.getProperty("aeroscapes.regression.spawnHostParity");
+    if (hostParity != null) {
+      SpawnIslandHostRegression.start(
+          level,
+          Path.of(System.getProperty("aeroscapes.regression.spawnHostPlan")),
+          Path.of(System.getProperty("aeroscapes.regression.spawnHostBaseline")),
+          Path.of(hostParity));
+      return;
+    }
+    String foodCompatibility = System.getProperty("aeroscapes.regression.spawnFoodCompat");
+    if (foodCompatibility != null) {
+      SpawnFoodCompatibilityRegression.run(level, Path.of(foodCompatibility));
+      return;
+    }
+    String ecology = System.getProperty("aeroscapes.regression.ecology");
+    String templates = System.getProperty("aeroscapes.regression.groupTwoTemplates");
+    if (templates != null) {
+      GroupTwoTemplateRegression.start(
+          level,
+          Path.of(System.getProperty("aeroscapes.regression.groupTwoTemplatePlan")),
+          Path.of(templates));
+      return;
+    }
+    if (ecology != null) {
+      GroupTwoEcologyRegression.run(
+          level,
+          Path.of(System.getProperty("aeroscapes.regression.ecologyPlan")),
+          Path.of(ecology));
+      return;
+    }
+    String groupTwoReport = System.getProperty("aeroscapes.regression.groupTwo");
+    if (groupTwoReport != null) {
+      GroupTwoGenerationRegression.run(level, Path.of(groupTwoReport));
+      return;
+    }
     String groupOneCatalog = System.getProperty("aeroscapes.regression.groupOneCatalog");
     if (groupOneCatalog != null) GroupOneCatalog.write(level, Path.of(groupOneCatalog));
     if (Boolean.getBoolean("aeroscapes.regression.statues")) {

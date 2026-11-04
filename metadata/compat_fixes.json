@@ -671,5 +671,56 @@
       "data/hybrid_aquatic/fishing/fish/underground/hagfish.json"
     ],
     "reason": "Fit native whale-fall pieces to actual supported basin seabed; retain native templates and loot. Scope global terrain/injector exclusion to the owned source, use physical local waterline/depth for fauna and fishing, repair once-only Ominous Hook retrieval and persist the native delayed conch encounter across reloads. Complete the native52fishitem catch/journal roster, retain conditional native hook perks and recognize block-only aquatic crate rewards at selection and retrieval."
+  },
+  {
+    "targets": {
+      "txgXquyE": "JjW0y3WF",
+      "HH4FjUqN": "jdOU7Pzu",
+      "WBvnqHfV": "MGjl80vc",
+      "8oi3bsk5": "MuJMtPGQ",
+      "rex9wwpz": "OgmUYgeL"
+    },
+    "files": [
+      "data/hybrid_birds/tags/worldgen/biome/duck_spawn_biomes.json",
+      "data/hybrid_birds/tags/worldgen/biome/goose_spawn_biomes.json",
+      "data/hybrid_birds/tags/worldgen/biome/pelican_spawn_biomes.json",
+      "data/hybrid_birds/tags/worldgen/biome/puffin_spawn_biomes.json",
+      "data/hybrid_birds/tags/worldgen/biome/rooster_spawn_biomes.json",
+      "data/hybrid_birds/tags/worldgen/biome/seagull_spawn_biomes.json"
+    ],
+    "reason": "Append compatible wetlands, flowering fields, rocky coasts and tide pools without replacing provider habitats or changing native weights, groups or population caps; also repair the tropical-river namespace typo."
+  },
+  {
+    "targets": {
+      "HSfsxuTo": "9vHj342y",
+      "rex9wwpz": "OgmUYgeL",
+      "rLJ1qF79": "lZTBRemW",
+      "WpXfePbg": "kZyPjCmU",
+      "txgXquyE": "JjW0y3WF",
+      "nsHXyrFh": "9WI0UM3H",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/lithostitched/worldgen_modifier/explorify_projection.json"
+    ],
+    "reason": "Preserve native ecology algorithms with exact-version local sea-level scopes, physically supported complete island hosts and template bearing/connected-body checks. Keep the Teal client accessor on clients and remove only its verified erroneous dedicated-side registration; incompatible startup assumptions are fatal. Original provider JARs and templates remain unchanged."
+  },
+  {
+    "targets": {
+      "nsHXyrFh": "9WI0UM3H",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Virtual hash-bound red-sand-rock loot repair: drop the registered red sandstone splitter required by the native recipe instead of repeating the debris block."
+  },
+  {
+    "targets": {
+      "WpXfePbg": "kZyPjCmU",
+      "HH4FjUqN": "jdOU7Pzu"
+    },
+    "files": [
+      "data/fowlplay/tags/worldgen/biome/spawns_gulls.json"
+    ],
+    "reason": "Append the selected tide-pool coast to native gull habitats while preserving provider habitat lists and population defaults."
   }
 ]

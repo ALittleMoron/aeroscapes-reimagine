@@ -48,7 +48,7 @@ The goal and the changes in the final release are separate. Most or all of a mil
 
 Patches can include new mods, resourcepacks, settings, compatibility work and fixes. The last number does not restrict a release to bug fixes.
 
-For example, after `0.1.0`, an initial animation and resourcepack wave could be `0.1.1`, followed by another refinement in `0.1.2`. All further changes accumulate under the selected number until publication. Local rebuilds and preparatory commits do not increment it on their own.
+For example, after `0.1.0`, an initial animation and resourcepack wave could be `0.1.1`, followed by another refinement in `0.1.2`. Each group keeps its selected number through preparation and integration into `main`. A separate group after that integration uses the next patch even if the previous publication failed. Local rebuilds and preparatory commits do not increment it on their own.
 
 ## Release readiness and compatibility
 
@@ -68,7 +68,7 @@ Site documentation and infrastructure changes that preserve the exported pack's 
 
 ## A missing version in the title
 
-For a PR, correct its title: editing the title triggers CI again. If the mistake has already reached `main`, the check prevents publication. A normal follow-up commit with the correct number in its title can repair it. Until publication, the target number stays the same, and the next successful push includes the accumulated changes.
+For a PR, correct its title: editing the title triggers CI again. If the mistake has already reached `main`, the check prevents publication. A normal follow-up commit with the correct number in its title can repair it. Recovery of that group keeps its number; a failed publication does not undo the integrated version.
 
 Published version contents are immutable. Further changes need the next number; the tag, archive and checksum identify the original release independently of wording in Git history.
 

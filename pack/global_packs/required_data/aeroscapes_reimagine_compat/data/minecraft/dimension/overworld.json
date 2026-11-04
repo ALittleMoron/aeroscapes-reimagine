@@ -22,6 +22,11 @@
         "hybrid_aquatic:tropical_river",
         "hybrid_aquatic:warm_trench"
       ],
+      "spawn_biomes": [
+        "spawn:deep_warm_ocean",
+        "spawn:rocky_shore",
+        "spawn:seagrass_meadow"
+      ],
       "delegate": {
       "biomes": [
         {
@@ -49618,7 +49623,7 @@
       "type": "minecraft:multi_noise"
     },
       "oceans": ["minecraft:frozen_ocean", "minecraft:cold_ocean", "minecraft:ocean", "minecraft:lukewarm_ocean", "minecraft:warm_ocean"],
-      "deep_oceans": ["minecraft:deep_frozen_ocean", "minecraft:deep_cold_ocean", "minecraft:deep_ocean", "minecraft:deep_lukewarm_ocean", "minecraft:deep_lukewarm_ocean"],
+      "deep_oceans": ["minecraft:deep_frozen_ocean", "minecraft:deep_cold_ocean", "minecraft:deep_ocean", "minecraft:deep_lukewarm_ocean", "spawn:deep_warm_ocean"],
       "shores": ["minecraft:snowy_beach", "minecraft:beach"],
       "mountains": ["minecraft:meadow", "minecraft:frozen_peaks", "minecraft:jagged_peaks", "minecraft:stony_peaks"]
     },

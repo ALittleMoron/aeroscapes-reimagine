@@ -23,7 +23,7 @@ Amazon Corretto 25.0.5.0.9. Network access is needed for the wrapper and verifie
 build dependencies on the first build; no existing project cache is required.
 
 The wrapper pins Gradle 9.2.1 and its distribution checksum. The build pins
-NeoForge 21.1.230 for Minecraft 1.21.1, ModDev 2.0.148, Spotless 8.10.4,
+NeoForge 21.1.234 for Minecraft 1.21.1, ModDev 2.0.148, Spotless 8.10.4,
 google-java-format 1.36.1, ktfmt 0.64 and PMD 7.28.0. Compile-only integration
 APIs are downloaded using the exact coordinates in `build.gradle.kts` and checked
 against `gradle/verification-metadata.xml`. These APIs are not bundled into the
@@ -115,6 +115,59 @@ The optional aquatic biome list preserves old definition decoding. The active
 dimension data supplies the current habitat roster on load, while saved FULL
 chunks retain their stored biomes and terrain. Rollback restores an untouched
 world with its matching older pack.
+
+## Ecology integration
+
+The `ecology` package adapts [Spawn](https://modrinth.com/mod/spawn-mod),
+[Fowl Play](https://modrinth.com/mod/fowlplay),
+[Hybrid Birds](https://modrinth.com/mod/hybrid-birds) and
+[This Rocks!](https://modrinth.com/mod/this-rocks-forge) to the island terrain.
+Provider and loader gates belong to `EcologyMixinPlugin`; the original provider
+JARs remain unchanged. Native bird population defaults are retained.
+
+Spawn operations use a thread-local, nested first-air sea level above the actual
+basin water. Native pieces, random streams and saved origins remain authoritative.
+Its small islands require a complete natural basin host and open clearance;
+marine decoration does not erase the underlying ocean family's structure
+eligibility. The three ordinary marine biomes use physical basin selection,
+while ant gardens retain native climate selection. Client tint reads bounded
+per-level basin metadata sent before chunk meshes; an exact merged-handler
+transform preserves the provider's original tint calculation.
+
+The native preliminary surface cutoff can lie above deep basin floors.
+`SpawnMarineSurfaceMixin` admits only the native marine soil band below an
+observed basin water column: one block for deep warm ocean, nine for seagrass.
+It retains the original biome, water and stone-depth rules; dry ground, cave
+floors below the basin liner and unrelated biome rules keep the native cutoff.
+
+Spawn restores climate tuples after Biolith's parameter cache. Retrieve the final
+transformed `MultiNoiseBiomeSource.parameters()` result through
+`EffectiveBiomeParametersAccess` before cloning initialized TerraBlender trees.
+The inner Biolith cache alone is not that result. Bind the resulting clone to
+both native fields and the Biolith cache.
+
+`TemplateStructureSupport` checks the original loaded palettes for
+[Explorify](https://www.curseforge.com/minecraft/mc-mods/explorify)'s land buildings
+and the selected Spawn jigsaws. It keeps native assembly and checks material
+bearings against connected natural solid intervals. Seabed projection runs before
+native jigsaw height clamps; terrain-matching elements also check their projected
+content against build bounds. `ExposedIslandSurfaces` uses the generator's
+uncarved interpolation to distinguish lower exterior layers from cave floors.
+
+Dodo's synchronous initial search keeps its native spiral and monument exclusion.
+Its native tag check rejects unsuitable sites directly; querying a different
+height cannot provide a reliable non-ocean biome to signal rejection.
+`SpawnIslandColumns` reuses scalar heights and compact, sea-independent native
+column summaries within one search. The bounded caches are discarded in `finally`;
+other structure calls do not retain them. The full water footprint is checked
+before native noise sampling, and tile rectangles outside the clearance circle
+are skipped without changing the support or open-sky predicates.
+
+The separate regression JAR includes `groupTwo`, `ecology` and biome-coverage
+branches. Source selection, observed native structure painting and stored FULL
+biomes are distinct evidence. The paint observer records exact native extents
+and requires a matching reference-linked piece; it does not turn painted cells
+into source-selection witnesses. Keep the diagnostic JAR out of the pack.
 
 ## Source archive in the pack repository
 

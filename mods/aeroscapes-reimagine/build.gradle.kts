@@ -14,7 +14,7 @@ version = "0.1.0"
 java { toolchain.languageVersion = JavaLanguageVersion.of(25) }
 
 neoForge {
-  version = "21.1.230"
+  version = "21.1.234"
   mods { create("aeroscapes_reimagine") { sourceSet(sourceSets.main.get()) } }
 }
 
@@ -70,6 +70,9 @@ repositories {
       includeModule("maven.modrinth", "geckolib")
       includeModule("maven.modrinth", "tide")
       includeModule("maven.modrinth", "yori3os-grappling-hooks")
+      includeModule("maven.modrinth", "spawn-mod")
+      includeModule("maven.modrinth", "teallib")
+      includeModule("maven.modrinth", "farmers-delight")
     }
   }
 }
@@ -145,6 +148,9 @@ dependencies {
   explorationApi("maven.modrinth:geckolib:Grwn5rUB")
   explorationApi("maven.modrinth:tide:1ki6UyqV")
   explorationApi("maven.modrinth:yori3os-grappling-hooks:lf4DqQBf")
+  explorationApi("maven.modrinth:spawn-mod:OgmUYgeL")
+  explorationApi("maven.modrinth:teallib:lZTBRemW")
+  explorationApi("maven.modrinth:farmers-delight:rOESN0jP")
   explorationApi("curse.maven:paragliders-289240:7795089")
   explorationApi("curse.maven:legendary-survival-overhaul-840254:8597620")
   explorationApi("curse.maven:nutritional-balance-448222:7980604")
@@ -209,7 +215,10 @@ val policy by sourceSets.creating {
   runtimeClasspath = output + compileClasspath
 }
 
-dependencies { add(policy.implementationConfigurationName, "org.ow2.asm:asm-tree:9.8") }
+dependencies {
+  add(policy.implementationConfigurationName, "org.ow2.asm:asm-tree:9.8")
+  add(policy.implementationConfigurationName, "org.ow2.asm:asm-analysis:9.8")
+}
 
 val regression by sourceSets.creating {
   compileClasspath = sourceSets.main.get().compileClasspath + sourceSets.main.get().output
@@ -278,6 +287,38 @@ val islandLayoutTest by
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.worldgen.IslandLayoutTest"
+  }
+
+val exposedIslandSurfacesTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.worldgen.ExposedIslandSurfacesTest"
+  }
+
+val ecologyContractTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.ecology.EcologyContractTest"
+  }
+
+val spawnTintTransformerTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.ecology.SpawnTintTransformerTest"
+  }
+
+val templateStructureSupportTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.worldgen.TemplateStructureSupportTest"
   }
 
 val biomeTerrainMaskTest by
@@ -483,6 +524,10 @@ tasks.check {
     paragliderExhaustionTest,
     policyTest,
     islandLayoutTest,
+    exposedIslandSurfacesTest,
+    ecologyContractTest,
+    spawnTintTransformerTest,
+    templateStructureSupportTest,
     biomeTerrainMaskTest,
     sableTraceBufferTest,
     monitorControllerTest,

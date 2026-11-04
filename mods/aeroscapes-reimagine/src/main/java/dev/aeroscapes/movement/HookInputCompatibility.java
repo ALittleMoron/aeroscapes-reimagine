@@ -31,7 +31,7 @@ public final class HookInputCompatibility {
     if (!ModList.get().isLoaded("yo_hooks")) return;
     event.enqueueWork(
         () -> {
-          for (var expected : Map.of("yo_hooks", "5.4.0", "neoforge", "21.1.230").entrySet()) {
+          for (var expected : Map.of("yo_hooks", "5.4.0", "neoforge", "21.1.234").entrySet()) {
             String actual =
                 ModList.get()
                     .getModContainerById(expected.getKey())

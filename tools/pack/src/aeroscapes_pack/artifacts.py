@@ -262,7 +262,7 @@ def audit_jars(
         if missing:
             raise PackError(f"Missing declared JAR dependencies on {side}: {missing}")
         versions = (manifest.neoforge,)
-        if (manifest.minecraft, manifest.neoforge) == ("1.21.1", "21.1.230"):
+        if (manifest.minecraft, manifest.neoforge) == ("1.21.1", "21.1.234"):
             # This exact platform's FML 4.0.42 also accepts the 1.21 compatibility version.
             versions += ("21.0.166",)
         for requirement in installed.requirements:

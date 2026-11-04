@@ -4,6 +4,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.mixin.EffectiveBiomeParametersAccess;
 import dev.aeroscapes.worldgen.IslandBiomeSource;
 import java.io.IOException;
 import java.lang.reflect.Field;
@@ -514,12 +515,8 @@ public final class BiomeMismatchRegression {
     return result;
   }
 
-  private static IExtendedParameterList<?> effective(MultiNoiseBiomeSource source)
-      throws ReflectiveOperationException {
-    Object parameters =
-        Class.forName("com.terraformersmc.biolith.impl.biome.InterfaceBiomeSource")
-            .getMethod("biolith$getBiomeEntries")
-            .invoke(source);
+  private static IExtendedParameterList<?> effective(MultiNoiseBiomeSource source) {
+    Object parameters = ((EffectiveBiomeParametersAccess) source).aeroscapes$parameters();
     require(parameters instanceof IExtendedParameterList<?>, "Missing effective TerraBlender list");
     return (IExtendedParameterList<?>) parameters;
   }
@@ -556,7 +553,16 @@ public final class BiomeMismatchRegression {
       throws ReflectiveOperationException {
     TreeSet<String> result = new TreeSet<>();
     result.add("aeroscapes_reimagine:void");
-    for (String name : List.of("oceans", "deepOceans", "shores", "mountains", "voidBiome")) {
+    for (String name :
+        List.of(
+            "oceans",
+            "deepOceans",
+            "shores",
+            "mountains",
+            "voidBiome",
+            "volcanicBiome",
+            "aquaticBiomes",
+            "spawnBiomes")) {
       Object value = field(IslandBiomeSource.class, name).get(source);
       if (value instanceof Holder<?> biome) result.add(id(biome));
       else if (value instanceof List<?> biomes) {
@@ -565,7 +571,9 @@ public final class BiomeMismatchRegression {
           result.add(id((Holder<?>) entry));
         }
       } else
-        require(value == null && name.equals("voidBiome"), "Invalid owned habitat field " + name);
+        require(
+            value == null && (name.equals("voidBiome") || name.equals("volcanicBiome")),
+            "Invalid owned habitat field " + name);
     }
     return result;
   }

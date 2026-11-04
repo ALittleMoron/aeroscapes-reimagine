@@ -8815,5 +8815,290 @@
     "key": "mod_menu.nameTranslation.mod_menu",
     "expected": "Better ModList",
     "replacement": "Mod Menu (NeoForge Edition)"
+  },
+  {
+    "key": "block.rocks.mangrove_stick",
+    "expected": "Mangrove Stick",
+    "replacement": "Мангровая веточка"
+  },
+  {
+    "key": "block.rocks.crimson_stick",
+    "expected": "Crimson Stick",
+    "replacement": "Багровая веточка"
+  },
+  {
+    "key": "block.rocks.warped_stick",
+    "expected": "Warped Stick",
+    "replacement": "Искажённая веточка"
+  },
+  {
+    "key": "entity.fowlplay.goose",
+    "expected": "Goose",
+    "replacement": "Гусь"
+  },
+  {
+    "key": "entity.fowlplay.scarecrow",
+    "expected": "Scarecrow",
+    "replacement": "Пугало"
+  },
+  {
+    "key": "item.fowlplay.goose_spawn_egg",
+    "expected": "Goose Spawn Egg",
+    "replacement": "Яйцо призыва гуся"
+  },
+  {
+    "key": "item.fowlplay.scarecrow",
+    "expected": "Scarecrow",
+    "replacement": "Пугало"
+  },
+  {
+    "key": "tag.item.fowlplay.goose_food",
+    "expected": "Goose food",
+    "replacement": "Корм для гусей"
+  },
+  {
+    "key": "config.jade.plugin_spawn.stickbug_as_item",
+    "expected": "Hidden Stickbugs display as Sticks",
+    "replacement": "Скрывающиеся палочники отображаются как палки"
+  },
+  {
+    "key": "config.spawn.section.spawn_general",
+    "expected": "General",
+    "replacement": "Общие"
+  },
+  {
+    "key": "config.spawn.section.bucket_changes",
+    "expected": "Bucket Changes",
+    "replacement": "Изменения вёдер"
+  },
+  {
+    "key": "config.spawn.first_person_fly_opacity",
+    "expected": "First Person Fly Opacity",
+    "replacement": "Непрозрачность мух от первого лица"
+  },
+  {
+    "key": "config.spawn.first_person_fly_opacity.tooltip",
+    "expected": "Opacity of flies when in first person, leave 0 to disable.",
+    "replacement": "Непрозрачность мух при виде от первого лица; 0 отключает их отображение."
+  },
+  {
+    "key": "config.spawn.fly_particle_mode",
+    "expected": "Fly Spawning",
+    "replacement": "Появление мух"
+  },
+  {
+    "key": "config.spawn.fly_particle_mode.tooltip",
+    "expected": "How fly particles spawn around entities. BATCH spawns them in groups, INDIVIDUAL spawns them one at a time.",
+    "replacement": "Как частицы мух появляются вокруг существ: BATCH — группами, INDIVIDUAL — по одной."
+  },
+  {
+    "key": "config.spawn.lighter_inland_water_for_tagged_biomes",
+    "expected": "Lighter Inland Water for Tagged Biomes",
+    "replacement": "Светлая вода в отмеченных биомах"
+  },
+  {
+    "key": "config.spawn.lighter_inland_water_for_tagged_biomes.tooltip",
+    "expected": "Whether biomes in a tag (by default only Tide Pools) display lighter water above sea level. Can be turned off for performance reasons.",
+    "replacement": "Делает воду выше уровня моря светлее в биомах из тега. Можно отключить для производительности."
+  },
+  {
+    "key": "config.spawn.add_onto_tabs",
+    "expected": "Add Onto Tabs",
+    "replacement": "Предметы во вкладках игры"
+  },
+  {
+    "key": "config.spawn.add_onto_tabs.tooltip",
+    "expected": "Whether Spawn items are added to the Minecraft creative tabs.",
+    "replacement": "Добавляет предметы Spawn в обычные вкладки творческого режима."
+  },
+  {
+    "key": "config.spawn.creative_tab",
+    "expected": "Creative Tab",
+    "replacement": "Вкладка Spawn"
+  },
+  {
+    "key": "config.spawn.creative_tab.tooltip",
+    "expected": "Whether Spawn items are all found in a spawn tab.",
+    "replacement": "Собирает предметы Spawn в отдельной вкладке творческого режима."
+  },
+  {
+    "key": "config.spawn.spawn_egg_tab",
+    "expected": "Spawn Egg Tab",
+    "replacement": "Вкладка яиц призыва"
+  },
+  {
+    "key": "config.spawn.spawn_egg_tab.tooltip",
+    "expected": "Whether Spawn Spawn Eggs are all found in a different tab and aren't present in the spawn tab.",
+    "replacement": "Помещает яйца призыва Spawn в отдельную вкладку вместо основной вкладки мода."
+  },
+  {
+    "key": "config.spawn.unbreakable_locked_chests",
+    "expected": "Unbreakable Locked Chests",
+    "replacement": "Защищённые сундуки осьминога"
+  },
+  {
+    "key": "config.spawn.unbreakable_locked_chests.tooltip",
+    "expected": "Whether Chests locked by an octopus can't be broken by non-owner players. If enabled, they can still be broken with explosives.",
+    "replacement": "Запрещает другим игрокам ломать сундуки, запертые осьминогом; взрывчатка по-прежнему действует."
+  },
+  {
+    "key": "config.spawn.sunflower_replacement",
+    "expected": "Sunflower Replacement",
+    "replacement": "Замена подсолнухов"
+  },
+  {
+    "key": "config.spawn.sunflower_replacement.tooltip",
+    "expected": "Whether vanilla Sunflowers are replaced by new ones that follow the sun and give Sunflower Seeds.",
+    "replacement": "Заменяет подсолнухи поворачивающимися к солнцу растениями, дающими семена."
+  },
+  {
+    "key": "config.spawn.parrot_dismounting_changes",
+    "expected": "Parrot Dismounting Changes",
+    "replacement": "Как попугай слетает с плеча"
+  },
+  {
+    "key": "config.spawn.parrot_dismounting_changes.tooltip",
+    "expected": "Whether you only dismount Parrots while shifting in the air.",
+    "replacement": "Попугай слетает с плеча только когда игрок приседает в воздухе."
+  },
+  {
+    "key": "config.spawn.barnacle_turtle",
+    "expected": "Barnacle Turtle",
+    "replacement": "Ракушки на черепахах"
+  },
+  {
+    "key": "config.spawn.barnacle_turtle.tooltip",
+    "expected": "Whether Turtles have a chance of spawning with barnacles covering their shell.",
+    "replacement": "Черепахи могут появляться с ракушками на панцире."
+  },
+  {
+    "key": "config.spawn.evoker_booby_transformation",
+    "expected": "Evoker Booby Transformation",
+    "replacement": "Превращение олуш призывателем"
+  },
+  {
+    "key": "config.spawn.evoker_booby_transformation.tooltip",
+    "expected": "Whether Evokers turn Blue Footed Boobies into Red Footed Boobies.",
+    "replacement": "Призыватели превращают голубоногих олуш в красноногих."
+  },
+  {
+    "key": "config.spawn.fish_tide_pool_spawning_change",
+    "expected": "Fish Tide Pool Spawning Change",
+    "replacement": "Появление рыб в приливных лужах"
+  },
+  {
+    "key": "config.spawn.fish_tide_pool_spawning_change.tooltip",
+    "expected": "Whether Fish only spawn in the pools rather than the ocean in Tide Pools.",
+    "replacement": "В биоме приливных луж рыбы появляются только в лужах, а не в океане."
+  },
+  {
+    "key": "config.spawn.fish_follow_stranded",
+    "expected": "Fish Follow Stranded",
+    "replacement": "Рыбы следуют за затонувшими големами"
+  },
+  {
+    "key": "config.spawn.fish_follow_stranded.tooltip",
+    "expected": "Whether Fish have a chance of swimming towards Stranded.",
+    "replacement": "Рыбы могут подплывать к затонувшим големам."
+  },
+  {
+    "key": "config.spawn.fish_follow_sea_cows",
+    "expected": "Fish Follow Sea Cows",
+    "replacement": "Рыбы следуют за морскими коровами"
+  },
+  {
+    "key": "config.spawn.fish_follow_sea_cows.tooltip",
+    "expected": "Whether Fish have a chance of swimming towards Sea Cows.",
+    "replacement": "Рыбы могут подплывать к морским коровам."
+  },
+  {
+    "key": "config.spawn.skeleton_convert_into_barbed",
+    "expected": "Skeleton Convert Into Barbed",
+    "replacement": "Превращение скелетов в исколотых"
+  },
+  {
+    "key": "config.spawn.skeleton_convert_into_barbed.tooltip",
+    "expected": "Whether Skeletons convert into Barbed after sitting in the water for a while.",
+    "replacement": "Скелеты превращаются в исколотых, проведя некоторое время в воде."
+  },
+  {
+    "key": "config.spawn.drowned_placement_changes",
+    "expected": "Drowned Placement Changes",
+    "replacement": "Появление утопленников на суше"
+  },
+  {
+    "key": "config.spawn.drowned_placement_changes.tooltip",
+    "expected": "Whether Drowneds can spawn on land at night in biomes marked as #spawns_water_hostiles_on_land. If disabled, make sure to also remove them from the #overridden_spawns tag.",
+    "replacement": "Разрешает утопленникам появляться ночью на суше в биомах с соответствующим тегом; при отключении также удалите их из #overridden_spawns."
+  },
+  {
+    "key": "config.spawn.seahorse_jockeys_drop_disc",
+    "expected": "Seahorse Jockeys Drop Disc",
+    "replacement": "Пластинка с наездников морских коньков"
+  },
+  {
+    "key": "config.spawn.seahorse_jockeys_drop_disc.tooltip",
+    "expected": "Whether Baby Drowned killed when riding a Seahorse drop a new disc.",
+    "replacement": "При убийстве утопленника-ребёнка верхом на морском коньке может выпасть новая пластинка."
+  },
+  {
+    "key": "config.spawn.creeper_drops_barbaric",
+    "expected": "Creeper Drops Barbaric",
+    "replacement": "Пластинка Barbaric с крипера"
+  },
+  {
+    "key": "config.spawn.creeper_drops_barbaric.tooltip",
+    "expected": "Whether Creepers killed by a Barb drop a new Disc.",
+    "replacement": "Крипер, убитый колючкой исколотого, может уронить новую пластинку."
+  },
+  {
+    "key": "config.spawn.wolves_hunt_dodos",
+    "expected": "Wolves Hunt Dodos",
+    "replacement": "Волки охотятся на додо"
+  },
+  {
+    "key": "config.spawn.wolves_hunt_dodos.tooltip",
+    "expected": "Whether Wolves hunt Dodos.",
+    "replacement": "Волки охотятся на додо."
+  },
+  {
+    "key": "config.spawn.cats_hunt_dodos",
+    "expected": "Cats Hunt Dodos",
+    "replacement": "Кошки охотятся на додо"
+  },
+  {
+    "key": "config.spawn.cats_hunt_dodos.tooltip",
+    "expected": "Whether Cats hunt Dodos.",
+    "replacement": "Кошки охотятся на додо."
+  },
+  {
+    "key": "config.spawn.ocelots_hunt_dodos",
+    "expected": "Ocelots Hunt Dodos",
+    "replacement": "Оцелоты охотятся на додо"
+  },
+  {
+    "key": "config.spawn.ocelots_hunt_dodos.tooltip",
+    "expected": "Whether Ocelots hunt Dodos.",
+    "replacement": "Оцелоты охотятся на додо."
+  },
+  {
+    "key": "config.spawn.polar_bears_hunt_seals",
+    "expected": "Polar Bears Hunt Seals",
+    "replacement": "Белые медведи охотятся на тюленей"
+  },
+  {
+    "key": "config.spawn.polar_bears_hunt_seals.tooltip",
+    "expected": "Whether Polar Bears hunt Seals.",
+    "replacement": "Белые медведи охотятся на тюленей."
+  },
+  {
+    "key": "config.spawn.bucket_tooltip",
+    "expected": "Bucket Tooltip",
+    "replacement": "Содержимое ведра в подсказке"
+  },
+  {
+    "key": "config.spawn.bucket_tooltip.tooltip",
+    "expected": "Whether bucketed mobs display the contents in the tooltip.",
+    "replacement": "Показывает пойманное животное в подсказке ведра."
   }
 ]
