@@ -37,10 +37,14 @@ The next planned milestones are:
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `0.2.0`   | Complete the selected audiovisual atmosphere: mods, resourcepacks, animation, appearance, sound, particles, shaders and sky/weather presentation.                                             |
 | `0.3.0`   | Complete the selected Quality of Life features for everyday play, including improved tree felling inspired by [Otherworld DnD](https://www.curseforge.com/minecraft/modpacks/otherworld-dnd). |
+| `0.4.0`   | Tentative direction: richer exploration and expeditions through distinctive islands, local wildlife, varied discoveries and reasons to visit settlements.                                     |
+| `0.5.0`   | Tentative direction: RPG systems, including races, character development, magic and combat, with room for different specializations and mixed builds.                                         |
+
+The approximate path is exploration first, then RPG with combat as part of it. Each of these two milestones will be designed separately: its exact content, mod selection and completion criteria remain open. The directions can be refined during that work.
 
 Ordinary patches build toward that goal. Once its selected scope is ready and accepted by the author, the minor release records its completion with the last part reset to zero. Discussing a future milestone does not start its release preparation or change the current target.
 
-Later work will address combat, biome and world appearance, magic and technical mod improvements. Its order and version numbers have not been assigned. Research and interest in a mod do not automatically put it in the current implementation queue.
+Release numbers for further engineering work, colonies and enrichment of the Nether and End have not been assigned. Research and interest in a mod do not automatically put it in the current implementation queue.
 
 The goal and the changes in the final release are separate. Most or all of a milestone's feature work may already have arrived in preceding patches. The final release can therefore contain fixes, including fixes to other systems, without adding another mod. Those changes do not redefine the milestone: `0.2.0` still marks completed atmosphere, and `0.3.0` marks the selected QoL scope.
 
