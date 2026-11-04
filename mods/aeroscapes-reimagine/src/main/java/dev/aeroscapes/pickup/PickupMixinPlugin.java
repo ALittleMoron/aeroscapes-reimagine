@@ -17,7 +17,7 @@ public final class PickupMixinPlugin implements IMixinConfigPlugin {
                 "itemphysic", "1.8.17",
                 "creativecore", "2.13.52",
                 "sable", "2.0.6",
-                "neoforge", "21.1.234")
+                "neoforge", "21.1.244")
             .entrySet()) {
       var file = mods.getModFileById(expected.getKey());
       if (file == null) return false;

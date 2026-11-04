@@ -1,7 +1,7 @@
 {
   "format": 1,
   "minecraft": "1.21.1",
-  "neoforge": "21.1.234",
+  "neoforge": "21.1.244",
   "scope": "Effective missing English/Russian player-facing catalog, nested-item, biome/HUD, interface and configuration text for exact pinned resources. Registered server configuration is supplemented by client-only and Dist.CLIENT-created definitions, native/factory/shared-menu routes, literal comments/enums/units and runtime metadata. Existing changed provider/user text is preserved by guarded correction and native fallback priority. Saplanting uses its separate classloader dictionary.",
   "sources": {
     "bmp": {
@@ -117,8 +117,8 @@
       "resource": "assets/aeroscapes_reimagine/lang/en_us.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
-      "entries": 307,
-      "sha256": "e2360c8beb137ed02296dc0bcbd8657569645d23cc83281c6c4326bb0aa4fff6"
+      "entries": 308,
+      "sha256": "021b69ea609bbf201ac5aa2a25ce6808ca165108b95c7113afd4c9190f9f302a"
     },
     {
       "resource": "assets/aeroscapes_reimagine/lang/ru_ru.json",
@@ -343,6 +343,41 @@
       "provider_terms": "Independent missing English labels for exact selected ecology providers; provider and user translations retain priority.",
       "entries": 12,
       "sha256": "83ae9d55f130a67738220370e9ec2b374bcb18e64b7500cd904aaadee853a391"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_fauna_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independently authored missing functional text; unchanged original provider text and assets retain their own terms. Expected-value corrections preserve resource-pack replacements.",
+      "entries": 79,
+      "sha256": "fcb60bff83531be5ea73608b024de958568d9b14c3707c8d75cc309a5c949e7a"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_fauna_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independently authored missing functional text; unchanged original provider text and assets retain their own terms. Expected-value corrections preserve resource-pack replacements.",
+      "entries": 78,
+      "sha256": "d3154e8f4225b447f8e3d1f765d813db99d5007c71c79da3cd1287408e785af9"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_archeology_translations/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Functional translations authored for this pack; English sword names/lore retain Pandarix copyright and the original source terms in META-INF/licenses/Better-Archeology-LICENSE.txt. The original art, sounds, models and structures remain All Rights Reserved and are not copied.",
+      "entries": 30,
+      "sha256": "8c11cd0175c1ae4afbc879fb1a10e7391ad21a4097426d3fe49b754869b4da60"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_archeology_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Functional translations authored for this pack; English sword names/lore retain Pandarix copyright and the original source terms in META-INF/licenses/Better-Archeology-LICENSE.txt. The original art, sounds, models and structures remain All Rights Reserved and are not copied.",
+      "entries": 76,
+      "sha256": "62305b5f400008df91cd92be945949eeda9382c66a9b831624238349236b7108"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_wetland_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Independently authored missing functional text; unchanged original provider text and assets retain their own terms. Expected-value corrections preserve resource-pack replacements.",
+      "entries": 100,
+      "sha256": "0d12bb672d2bf01397454d0fee31270bb83789f3d1c619b36b49be070e4689d8"
     }
   ],
   "guarded_corrections": {
@@ -353,7 +388,7 @@
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
-    "neoforge": "21.1.234",
+    "neoforge": "21.1.244",
     "ponder": "1.0.82+mc1.21.1",
     "puzzleslib": "21.1.66",
     "definition_coverage": {
@@ -1754,6 +1789,23 @@
       },
       "authorship": "Additional Russian prose, missing labels and display adapters authored independently for this pack. Upstream artifacts remain unchanged; brands, creator credits and parser identities retained. Hybrid Aquatic provider remains ARR; HAPI/GeckoLib/Lithostitched/Apollib MIT, Tide MPL-2.0. Expected original values identify compatibility boundaries, not a relicense of provider text.",
       "client_acceptance": "Native actual menus, journal tooltips, underwater palette/visibility, Argonaut colors/controls, shaders and moving-ship composition await owner visual acceptance."
+    }
+  },
+  "group_three": {
+    "pins": {
+      "naturalist": "2.0.7",
+      "crittersandcompanions": "2.7.0",
+      "wetland_whimsy": "2.1.0-1.21.1",
+      "betterarcheology": "1.21.1-1.3.9",
+      "cr_aero_structures": "1.0.0",
+      "skyvillages": "1.0.6"
+    },
+    "scope": "Registered EN/RU names, nested archaeological loot components, biome aliases, advancements, native NeoForge config, Resourceful Config sections, YACL literal categories and fields, brush/glow-goop tooltips and optional pack descriptions. Native configuration identity and changed provider/user translations are preserved.",
+    "exclusions": "Provider names, music/artist credits, nonverbal emoji and stylized enchanting-script sword text retain their native identities. Sky Villages has vanilla block/entity names only; obsolete examplemod entries in the vessel provider are not registered content.",
+    "archeology_source_license": {
+      "resource": "META-INF/licenses/Better-Archeology-LICENSE.txt",
+      "sha256": "24e252544ceb1010dccf777f9a3336205028646de6aac7e33b575bf98846391a",
+      "scope": "Original source-license notice retained for source-derived loot names, lore and literal configuration labels; artwork and templates remain only in the unchanged provider JAR."
     }
   }
 }

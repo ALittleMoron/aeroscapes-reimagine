@@ -14,7 +14,7 @@ version = "0.1.0"
 java { toolchain.languageVersion = JavaLanguageVersion.of(25) }
 
 neoForge {
-  version = "21.1.234"
+  version = "21.1.244"
   mods { create("aeroscapes_reimagine") { sourceSet(sourceSets.main.get()) } }
 }
 
@@ -73,6 +73,12 @@ repositories {
       includeModule("maven.modrinth", "spawn-mod")
       includeModule("maven.modrinth", "teallib")
       includeModule("maven.modrinth", "farmers-delight")
+      includeModule("maven.modrinth", "biolith")
+      includeModule("maven.modrinth", "wetland-whimsy")
+      includeModule("maven.modrinth", "naturalist")
+      includeModule("maven.modrinth", "critters-and-companions")
+      includeModule("maven.modrinth", "better-archeology")
+      includeModule("maven.modrinth", "architectury-api")
     }
   }
 }
@@ -149,6 +155,12 @@ dependencies {
   explorationApi("maven.modrinth:tide:1ki6UyqV")
   explorationApi("maven.modrinth:yori3os-grappling-hooks:lf4DqQBf")
   explorationApi("maven.modrinth:spawn-mod:OgmUYgeL")
+  explorationApi("maven.modrinth:biolith:EAjbdreT")
+  explorationApi("maven.modrinth:wetland-whimsy:rSs37OB4")
+  explorationApi("maven.modrinth:naturalist:9Yn8ig4c")
+  explorationApi("maven.modrinth:critters-and-companions:aeDUpTJS")
+  explorationApi("maven.modrinth:better-archeology:zTMR6t3J")
+  explorationApi("maven.modrinth:architectury-api:1IiqEQGl")
   explorationApi("maven.modrinth:teallib:lZTBRemW")
   explorationApi("maven.modrinth:farmers-delight:rOESN0jP")
   explorationApi("curse.maven:paragliders-289240:7795089")
@@ -495,6 +507,14 @@ val paragliderExhaustionTest by
     mainClass = "dev.aeroscapes.movement.ParagliderExhaustionTest"
   }
 
+val seatedRiderAnimationTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.fauna.SeatedRiderAnimationTest"
+  }
+
 tasks.register<JavaExec>("refinedRodCastTest") {
   group = "verification"
   description = "Audits the pinned Refined archive supplied by -PrefinedRodArchive=<file>."
@@ -522,6 +542,7 @@ tasks.check {
     hookCompatibilityTest,
     rodModelContractTest,
     paragliderExhaustionTest,
+    seatedRiderAnimationTest,
     policyTest,
     islandLayoutTest,
     exposedIslandSurfacesTest,

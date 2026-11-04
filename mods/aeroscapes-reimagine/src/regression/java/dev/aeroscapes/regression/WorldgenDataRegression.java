@@ -20,7 +20,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.decoration.HangingEntity;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.world.entity.decoration.Painting;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Mirror;
 import net.minecraft.world.level.block.Rotation;
@@ -312,8 +312,7 @@ public final class WorldgenDataRegression {
     throw new IllegalStateException("Native underground-house painting was discarded");
   }
 
-  private static void hangingAnchor(
-      ServerLevel level, StructureTemplate.StructureEntityInfo entity) {
+  static void hangingAnchor(ServerLevel level, StructureTemplate.StructureEntityInfo entity) {
     CompoundTag original = entity.nbt;
     CompoundTag before = original.copy();
     BlockPos origin = new BlockPos(1000, 200, -1000);
@@ -352,8 +351,11 @@ public final class WorldgenDataRegression {
                 && hanging.getPos().equals(transformed.blockPos),
             "Native entity loading lost the hanging anchor");
         if (loaded instanceof ItemFrame frame) {
+          ItemStack expectedItem =
+              ItemStack.parseOptional(level.registryAccess(), before.getCompound("Item"));
           require(
-              frame.getItem().is(Items.QUARTZ) && frame.getItem().getCount() == 1,
+              ItemStack.isSameItemSameComponents(frame.getItem(), expectedItem)
+                  && frame.getItem().getCount() == expectedItem.getCount(),
               "Native entity loading lost the frame's item");
         } else if (loaded instanceof Painting painting) {
           require(

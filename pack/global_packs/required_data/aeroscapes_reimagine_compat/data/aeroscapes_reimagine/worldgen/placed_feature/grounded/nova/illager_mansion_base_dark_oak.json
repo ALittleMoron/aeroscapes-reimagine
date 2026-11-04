@@ -1,0 +1,12 @@
+{
+  "feature": "minecraft:illager_mansion_base_dark_oak",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "aeroscapes_reimagine:grounded_column",
+        "max_depth": 12
+      }
+    }
+  ]
+}

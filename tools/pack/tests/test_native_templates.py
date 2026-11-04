@@ -58,7 +58,7 @@ def upgrade(tmp_path: Path) -> UpgradeFixture:
         index_algorithm="sha256",
         index_hash="0" * 64,
         minecraft="1.21.1",
-        neoforge="21.1.234",
+        neoforge="21.1.244",
     )
     template: Table = {
         "id": identifier,
@@ -73,7 +73,7 @@ def upgrade(tmp_path: Path) -> UpgradeFixture:
     manifest: Table = {
         "strategy": "minecraft-runtime-dfu",
         "minecraft": "1.21.1",
-        "neoforge": "21.1.234",
+        "neoforge": "21.1.244",
         "target_data_version": 3955,
         "upstream_project_id": artifact.project_id,
         "upstream_version_id": artifact.version_id,

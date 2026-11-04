@@ -11,7 +11,7 @@ import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 
-/** Keeps the optional pinned Biolith 3.0.10 parameter cache aligned with the owned delegate. */
+/** Keeps the optional pinned Biolith 3.0.14 parameter cache aligned with the owned delegate. */
 final class BiolithBiomeCompatibility {
   private static final Api API = loadApi();
 
@@ -29,7 +29,7 @@ final class BiolithBiomeCompatibility {
       API.setDimension().invoke(source, BuiltinDimensionTypes.OVERWORLD);
     } catch (ReflectiveOperationException failure) {
       throw new IllegalStateException(
-          "Cannot initialize the island delegate for Biolith 3.0.10", failure);
+          "Cannot initialize the island delegate for Biolith 3.0.14", failure);
     }
   }
 
@@ -41,7 +41,7 @@ final class BiolithBiomeCompatibility {
       API.cachedEntries().set(source, parameters);
     } catch (IllegalAccessException failure) {
       throw new IllegalStateException(
-          "Cannot bind Biolith 3.0.10 generation parameter cache", failure);
+          "Cannot bind Biolith 3.0.14 generation parameter cache", failure);
     }
   }
 
@@ -55,7 +55,7 @@ final class BiolithBiomeCompatibility {
     try {
       Field cache = MultiNoiseBiomeSource.class.getDeclaredField("biolith$biomeEntries");
       if (cache.getType() != Climate.ParameterList.class)
-        throw new IllegalStateException("Unexpected Biolith 3.0.10 parameter cache type");
+        throw new IllegalStateException("Unexpected Biolith 3.0.14 parameter cache type");
       cache.setAccessible(true);
       return new Api(
           carrier.getMethod("biolith$getDimensionType"),
@@ -66,7 +66,7 @@ final class BiolithBiomeCompatibility {
         | InaccessibleObjectException
         | SecurityException failure) {
       throw new IllegalStateException(
-          "Cannot access the pinned Biolith 3.0.10 biome-source contract", failure);
+          "Cannot access the pinned Biolith 3.0.14 biome-source contract", failure);
     }
   }
 }

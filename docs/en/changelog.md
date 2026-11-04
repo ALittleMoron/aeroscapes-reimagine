@@ -4,6 +4,20 @@ description: Version history.
 status: available
 ---
 
+## 0.3.3
+
+- Fixed the rider animation on elephants from [Naturalist](https://modrinth.com/mod/naturalist).
+- Illager manors from [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) now check ground beneath their wings and no longer extend unsupported foundations far into the void.
+- Add [Naturalist](https://modrinth.com/mod/naturalist) and [Critters and Companions](https://modrinth.com/mod/critters-and-companions) wildlife, taming, cargo animals and useful small companions; disable bird head-perching and parrot ascent, and fix extra food consumption when feeding otters.
+- Add [Wetland Whimsy](https://modrinth.com/mod/wetland-whimsy)'s swamp habitat, ruins, suspicious-mud archaeology, coins, pots and incense encounters; preserve complete swamp dungeons with supported entrances and room floors.
+- Add [Better Archeology](https://www.curseforge.com/minecraft/mc-mods/better-archeology)'s excavation sites, fossil reconstruction, archeology table and artifact rewards, adapting structure support to the islands.
+- Protect fossil-bearing dirt and its finds from ordinary grass and moss replacement during world decoration.
+- Add the four intact static merchant and pillager balloons and dirigibles from [Creat Aeronautics Structures](https://modrinth.com/mod/creat-aeronautics-structures/version/aMCksPon).
+- Add rare complete settlements from [Sky Villages](https://www.curseforge.com/minecraft/mc-mods/sky-villages-forge) in the upper sky, keeping their assembly below the world ceiling.
+- Update NeoForge to 21.1.244.
+- Assign the previous bird and coastal foods to their nutrition groups, including crab boil servings.
+- Spread long structure searches in server checks across ticks.
+
 ## 0.3.2
 
 - Reduce the new-world creation pause by reusing native terrain checks during [Spawn](https://modrinth.com/mod/spawn-mod)'s dodo-island search, retaining its placement and support criteria.
@@ -93,7 +107,7 @@ status: available
 
 ## 0.2.1
 
-- Fit the underground rooms of Creeping Crypt from [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) inside suitable islands while preserving its surface entrance.
+- Fit the underground rooms of Creeping Crypt from [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) inside suitable islands while preserving its surface entrance.
 - Align held lantern and soul lantern handles with [Punchy](https://modrinth.com/mod/punchy-fpa)'s first-person grip when using [Extended Illumina NEA](https://modrinth.com/resourcepack/extended-illumina-not-enough-animations).
 - Restrict rain-impact particles to rainy biomes while retaining [Particle Rain](https://modrinth.com/mod/particle-rain)'s weather sounds.
 - Use blackstone variants for the eight vanilla ores, [Create](https://modrinth.com/mod/create) zinc and [Galosphere](https://modrinth.com/mod/galosphere) palladium when deposits form in blackstone terrain.

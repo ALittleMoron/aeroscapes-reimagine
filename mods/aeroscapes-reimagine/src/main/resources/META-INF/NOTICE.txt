@@ -56,6 +56,19 @@ separately licensed selected upstream translations described below. Each
 selected dictionary retains its stated license; the Java code and unrelated
 resources remain GPL-3.0-or-later. Original provider JARs are unchanged.
 
+The wildlife, wetland, archaeology and aerial adapters read the exact unchanged
+Naturalist 2.0.7, Critters and Companions 2.7.0, Wetland Whimsy 2.1.0,
+Better Archeology 1.3.9, Creat Aeronautics Structures 1.0.0 and Sky Villages 1.0.6
+resources at runtime. No original templates, art, models or sounds from those
+providers are included in this mod. Functional missing translations and display
+labels were authored independently; expected source strings retain provider terms.
+Better Archeology's descriptor says MIT, while its official source license keeps
+art, sounds and structures All Rights Reserved and allows unchanged modpack use.
+Naturalist's custom project label and MIT descriptor remain separately recorded.
+Original archaeological sword names/lore and source labels retain Pandarix's
+copyright and source terms in META-INF/licenses/Better-Archeology-LICENSE.txt;
+their language keys and Russian functional translations were added for this pack.
+
 The EMI: Create Schematics 1.1.0 Russian import tooltip and paired mod-list
 summaries are independently authored functional text. The original MIT provider
 JAR, https://github.com/LIUKRAST/EmiCreateSchematics, remains unchanged.

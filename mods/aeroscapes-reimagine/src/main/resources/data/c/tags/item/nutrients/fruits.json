@@ -1426,6 +1426,10 @@
       "required": false
     },
     {
+      "id": "spawn:dates",
+      "required": false
+    },
+    {
       "id": "supplementaries:lumisene_bottle",
       "required": false
     }

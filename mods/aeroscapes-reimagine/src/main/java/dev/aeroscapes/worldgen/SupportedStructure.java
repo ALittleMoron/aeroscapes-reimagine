@@ -54,6 +54,7 @@ public final class SupportedStructure extends Structure {
     SURFACE,
     SURFACE_ROOT_FOOTPRINT,
     SURFACE_FOOTPRINT,
+    FOUNDATION_SURFACE,
     TEMPLATE_SURFACE,
     TEMPLATE_SEABED,
     GROUNDED_SURFACE,
@@ -160,9 +161,17 @@ public final class SupportedStructure extends Structure {
       return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
     }
     Map<Long, NoiseColumn> columns = new HashMap<>();
+    if (terrainCheck == TerrainCheck.FOUNDATION_SURFACE) {
+      StructureTerrain terrain = new StructureTerrain(context);
+      if (!supportedSurfaceRoot(context, pieces.pieces().getFirst(), columns)
+          || !supportedFoundations(pieces, terrain, 0, 0, 0)
+          || !supportedSurfaceFootprint(pieces, 0, 0, 0, terrain))
+        return fitSurface(context, stub, builder, pieces, columns, true);
+      return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
+    }
     if (embedsUnderground()) return fitAssembly(context, stub, builder, pieces, columns);
     if (terrainCheck == TerrainCheck.GROUNDED_SURFACE)
-      return fitSurface(context, stub, builder, pieces, columns);
+      return fitSurface(context, stub, builder, pieces, columns, false);
     if (terrainCheck == TerrainCheck.ANCHORED_BURIED)
       return fitAnchoredBuried(context, stub, builder, pieces, columns);
     if (terrainCheck == TerrainCheck.ANCHORED_COMPLEX) {
@@ -345,12 +354,68 @@ public final class SupportedStructure extends Structure {
     return totalTested == 0 || totalSupported * 5 >= totalTested * 3;
   }
 
+  private record Foundation(BlockPos position, boolean supported) {}
+
+  private static boolean supportedFoundations(
+      PiecesContainer pieces, StructureTerrain terrain, int dx, int dy, int dz) {
+    long foundations =
+        pieces.pieces().stream()
+            .filter(
+                piece ->
+                    piece instanceof PoolElementStructurePiece pool
+                        && pool.getElement() instanceof FeaturePoolElement)
+            .count();
+    if (foundations == 0)
+      throw new IllegalStateException("Foundation support requires native feature columns");
+    int unsupported = 0;
+    var columns = new java.util.ArrayList<Foundation>();
+    for (StructurePiece piece : pieces.pieces()) {
+      if (!(piece instanceof PoolElementStructurePiece pool)
+          || !(pool.getElement() instanceof FeaturePoolElement)) continue;
+      BlockPos origin = pool.getPosition().offset(dx, dy, dz);
+      boolean supported = false;
+      for (int depth = 0; depth <= 12; depth++) {
+        if (terrain.foundationBed(origin.getX(), origin.getY() - depth, origin.getZ())) {
+          supported = true;
+          break;
+        }
+      }
+      // Small slope/cave gaps may remain beneath authored floors; entire wings may not.
+      if (!supported && ++unsupported * 20 > foundations) return false;
+      columns.add(new Foundation(pool.getPosition(), supported));
+    }
+    var root = pieces.pieces().getFirst();
+    int rootFloor =
+        root.getBoundingBox().minY()
+            + (root instanceof PoolElementStructurePiece pool ? pool.getGroundLevelDelta() : 0);
+    for (var piece : pieces.pieces()) {
+      if (!(piece instanceof PoolElementStructurePiece pool)
+          || pool.getElement() instanceof FeaturePoolElement) continue;
+      var bounds = piece.getBoundingBox();
+      if (bounds.minY() > rootFloor || bounds.getXSpan() < 8 || bounds.getZSpan() < 8) continue;
+      int tested = 0;
+      int supported = 0;
+      for (var column : columns) {
+        var position = column.position();
+        if (position.getX() < bounds.minX()
+            || position.getX() > bounds.maxX()
+            || position.getZ() < bounds.minZ()
+            || position.getZ() > bounds.maxZ()) continue;
+        tested++;
+        if (column.supported()) supported++;
+      }
+      if (supported * 10 < tested * 9) return false;
+    }
+    return true;
+  }
+
   private static Optional<GenerationStub> fitSurface(
       GenerationContext context,
       GenerationStub stub,
       StructurePiecesBuilder builder,
       PiecesContainer pieces,
-      Map<Long, NoiseColumn> columns) {
+      Map<Long, NoiseColumn> columns,
+      boolean foundations) {
     StructurePiece root = pieces.pieces().getFirst();
     int rootFloor =
         root.getBoundingBox().minY()
@@ -380,10 +445,11 @@ public final class SupportedStructure extends Structure {
     for (int[] offset : offsets) {
       int dx = offset[0];
       int dz = offset[1];
-      if (bounds.minX() + dx - 12 < context.chunkPos().getMinBlockX() - 128
-          || bounds.maxX() + dx + 12 > context.chunkPos().getMaxBlockX() + 128
-          || bounds.minZ() + dz - 12 < context.chunkPos().getMinBlockZ() - 128
-          || bounds.maxZ() + dz + 12 > context.chunkPos().getMaxBlockZ() + 128) continue;
+      int halo = foundations ? 0 : 12;
+      if (bounds.minX() + dx - halo < context.chunkPos().getMinBlockX() - 128
+          || bounds.maxX() + dx + halo > context.chunkPos().getMaxBlockX() + 128
+          || bounds.minZ() + dz - halo < context.chunkPos().getMinBlockZ() - 128
+          || bounds.maxZ() + dz + halo > context.chunkPos().getMaxBlockZ() + 128) continue;
       int targetFloor =
           context
               .chunkGenerator()
@@ -399,6 +465,7 @@ public final class SupportedStructure extends Structure {
           || context.heightAccessor().isOutsideBuildHeight(bounds.maxY() + dy)) continue;
       NoiseColumn natural = column(context, center.getX() + dx, center.getZ() + dz, columns);
       if (!solidFloor(natural.getBlock(targetFloor - 1))) continue;
+      if (foundations && !supportedFoundations(pieces, terrain, dx, dy, dz)) continue;
       if (!supportedSurfaceFootprint(pieces, dx, dy, dz, terrain)) continue;
       BlockPos target = stub.position().offset(dx, dy, dz);
       if (!context
@@ -660,7 +727,7 @@ public final class SupportedStructure extends Structure {
     return covered * 4 >= roof.size() * 3;
   }
 
-  private static void movePiece(StructurePiece piece, int dx, int dy, int dz) {
+  static void movePiece(StructurePiece piece, int dx, int dy, int dz) {
     piece.move(dx, dy, dz);
     // Native move() leaves jigsaw terrain junctions at their former coordinates.
     if (piece instanceof PoolElementStructurePiece pool)

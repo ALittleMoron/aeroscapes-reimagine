@@ -1,9 +1,10 @@
 {
   "projectile_use": {
-    "reason": "Splash/lingering potion Item inherits DRINK animation but use actually throws a projectile; it is not drunk.",
+    "reason": "Throwable potion items inherit DRINK animation but use throws a projectile, including Spawn's fly bottle; they are not drunk.",
     "ids": [
       "minecraft:splash_potion",
-      "minecraft:lingering_potion"
+      "minecraft:lingering_potion",
+      "spawn:fly_bottle"
     ]
   },
   "effect_consumable": {

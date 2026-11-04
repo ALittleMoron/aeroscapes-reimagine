@@ -1612,6 +1612,18 @@
     {
       "id": "ratatouille:sausage_casing",
       "required": false
+    },
+    {
+      "id": "spawn:crab_boil",
+      "required": false
+    },
+    {
+      "id": "wetland_whimsy:gumbo",
+      "required": false
+    },
+    {
+      "id": "wetland_whimsy:pennywort_salad",
+      "required": false
     }
   ]
 }

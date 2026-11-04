@@ -2,6 +2,31 @@ Aeroscapes Reimagine 0.2.5 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 
+Exploration group 3 uses unchanged official artifacts on both sides:
+Naturalist 2.0.7: Starfish Studios; descriptor MIT, project API custom license.
+https://modrinth.com/mod/naturalist/version/9Yn8ig4c
+Critters and Companions 2.7.0: Bonsai Studios; All Rights Reserved.
+https://modrinth.com/mod/critters-and-companions/version/aeDUpTJS
+Wetland Whimsy 2.1.0: Juniper; Artistic License 2.0.
+https://modrinth.com/mod/wetland-whimsy/version/rSs37OB4
+Better Archeology 1.3.9: Pandarix and contributors; descriptor MIT. Its source
+license distinguishes MIT code from All Rights Reserved artwork, sounds and
+structures, and permits unchanged modpack inclusion.
+https://modrinth.com/mod/better-archeology/version/zTMR6t3J
+Creat Aeronautics Structures 1.0.0: MIT.
+https://modrinth.com/mod/creat-aeronautics-structures/version/aMCksPon
+Sky Villages 1.0.6: All Rights Reserved.
+https://modrinth.com/mod/sky-villages/version/3InSHTOp
+Architectury API 13.0.11 and Biolith 3.0.14: LGPL-3.0-only.
+https://modrinth.com/mod/architectury-api/version/1IiqEQGl
+https://modrinth.com/mod/biolith/version/EAjbdreT
+Original binaries, embedded notices and source/asset license distinctions remain
+unchanged. The owned mod supplies independent field-level placement, habitat,
+display and template-state adapters; it does not redistribute provider templates.
+Exact pins and CurseForge parity are in the metadata inventories. Its independent
+functional language supplements are recorded in localization-sources.json and
+accompany the corresponding source archive.
+
 EMI: Create Schematics 1.1.0: LiukRast, swzo; MIT.
 https://modrinth.com/mod/emi-create-schematics/version/opyfkMHl
 The official client JAR is unchanged. Its original license remains embedded.

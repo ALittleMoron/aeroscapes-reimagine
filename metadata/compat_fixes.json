@@ -722,5 +722,38 @@
       "data/fowlplay/tags/worldgen/biome/spawns_gulls.json"
     ],
     "reason": "Append the selected tide-pool coast to native gull habitats while preserving provider habitat lists and population defaults."
+  },
+  {
+    "targets": {
+      "HH4FjUqN": "jdOU7Pzu",
+      "rex9wwpz": "OgmUYgeL",
+      "F8BQNPWX": "9Yn8ig4c",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Connect Naturalist freshwater, warm marine and deep-water spawn selections to existing physical aquatic basin biomes without changing global ocean tags or native weights."
+  },
+  {
+    "targets": {
+      "tpehi7ww": "BYUUUeZA",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/worldgen/template_pool/grounded/illager_manor/base.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/illager_mansion_base.json",
+      "data/aeroscapes_reimagine/worldgen/template_pool/grounded/illager_manor/base_dark_oak.json",
+      "data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/illager_mansion_base_dark_oak.json"
+    ],
+    "reason": "Keep the native Illager Manor graph, templates, rooms, weights and placement sets. Require a natural solid bed within twelve blocks under at least 95 percent of the actual native foundation origins and at least 90 percent within each ground-intersecting main piece, plus the existing surface-footprint checks, rather than only the entrance. Limited slope/cave gaps retain authored floors. If needed, try the existing local surface offsets within 32 blocks and twelve blocks vertically; move the intact assembly and junctions together within native reference bounds. Private direct aliases retain original foundation pool weights and lock pieces; the stone pool retains its self-fallback within the private pool. The private placed features retain native configured holders/materials and require a real non-pass-through solid stop within twelve blocks before the native hundred-block column may run. Unrelated native foundation features keep their original behavior."
+  },
+  {
+    "targets": {
+      "F8BQNPWX": "9Yn8ig4c",
+      "4I1XuqiY": "197m3VoU",
+      "BVzZfTc1": "lwNx1nD1",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Naturalist renders seated passengers directly through EntityRenderer, bypassing the dispatcher that mounts ETF/EMF state. Mount the actual passenger state around only that nested call and restore the outer state in finally, so FA Player uses the rider vehicle and movement instead of the elephant. Keep native seats and independent walking/first-person rendering."
   }
 ]

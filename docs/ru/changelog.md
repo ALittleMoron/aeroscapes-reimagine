@@ -4,6 +4,20 @@ description: История версий.
 status: available
 ---
 
+## 0.3.3
+
+- Исправлена анимация всадника на слонах из [Naturalist](https://modrinth.com/mod/naturalist).
+- Особняки разбойников из [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) теперь учитывают естественную опору под крыльями; неподдерживаемые основания больше не уходят далеко в пустоту.
+- Добавлены животные, приручение, перевозка грузов и полезные маленькие спутники из [Naturalist](https://modrinth.com/mod/naturalist) и [Critters and Companions](https://modrinth.com/mod/critters-and-companions); отключены посадка птиц на голову и подъём с помощью попугаев, исправлен лишний расход еды при кормлении выдр.
+- Добавлены болотная среда, руины, раскопки подозрительной грязи, монеты, горшки и встречи с благовониями из [Wetland Whimsy](https://modrinth.com/mod/wetland-whimsy); целые болотные подземелья размещаются с опорой входа и полов комнат.
+- Добавлены места раскопок, восстановление окаменелостей, стол археолога и награды-артефакты из [Better Archeology](https://www.curseforge.com/minecraft/mc-mods/better-archeology); опора построек адаптирована к островам.
+- Земля с окаменелостями и её находки защищены от замены обычной травой и мхом при украшении мира.
+- Добавлены четыре целых неподвижных воздушных судна из [Creat Aeronautics Structures](https://modrinth.com/mod/creat-aeronautics-structures/version/aMCksPon): торговые и разбойничьи шар и дирижабль.
+- Добавлены редкие целые поселения [Sky Villages](https://www.curseforge.com/minecraft/mc-mods/sky-villages-forge) в верхней части неба, с размещением всей деревни ниже потолка мира.
+- NeoForge обновлён до версии 21.1.244.
+- Еда из предыдущей группы птиц и прибрежной фауны включена в группы питания, в том числе порции варёных крабов.
+- Длительные поиски построек в серверных проверках распределены между тиками.
+
 ## 0.3.2
 
 - Сокращена пауза при создании мира: поиск острова додо из [Spawn](https://modrinth.com/mod/spawn-mod) повторно использует расчёты рельефа, сохраняя критерии размещения и опоры.
@@ -93,7 +107,7 @@ status: available
 
 ## 0.2.1
 
-- Подземные комнаты Creeping Crypt из [Dungeons and Taverns](https://modrinth.com/mod/dungeons-and-taverns) размещаются внутри подходящих островов с сохранением поверхностного входа.
+- Подземные комнаты Creeping Crypt из [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) размещаются внутри подходящих островов с сохранением поверхностного входа.
 - Ручки обычного фонаря и фонаря душ совмещены с захватом рук [Punchy](https://modrinth.com/mod/punchy-fpa) от первого лица при использовании [Extended Illumina NEA](https://modrinth.com/resourcepack/extended-illumina-not-enough-animations).
 - Брызги дождя ограничены дождливыми биомами с сохранением погодных звуков [Particle Rain](https://modrinth.com/mod/particle-rain).
 - Залежи восьми ванильных руд, цинка из [Create](https://modrinth.com/mod/create) и палладия из [Galosphere](https://modrinth.com/mod/galosphere) в чернитовом рельефе используют чернитовые варианты рудных блоков.

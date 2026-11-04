@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.aerial",
+  "plugin": "dev.aeroscapes.aerial.AerialMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["VesselLoginMessageMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

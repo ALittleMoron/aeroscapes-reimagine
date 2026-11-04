@@ -98,6 +98,55 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    if (Boolean.getBoolean("aeroscapes.regression.manorFoundations")) {
+      ManorFoundationRegression.verify(level);
+      if (System.getProperty("aeroscapes.regression.groupThree") == null) return;
+    }
+    String wetlandHabitat = System.getProperty("aeroscapes.regression.wetlandHabitat");
+    if (wetlandHabitat != null) {
+      WetlandMarshHabitatRegression.run(level, Path.of(wetlandHabitat));
+      return;
+    }
+    String groupThreeInteractions =
+        System.getProperty("aeroscapes.regression.groupThreeInteractions");
+    if (groupThreeInteractions != null) {
+      Path directory = Path.of(groupThreeInteractions);
+      GroupThreeFaunaRegression.verify(level, directory.resolve("fauna-runtime.json"));
+      GroupThreeArcheologyRegression.run(level, directory.resolve("archeology-runtime.json"));
+      GroupThreeWetlandRegression.run(level, directory.resolve("wetland-runtime.json"));
+      SurvivalRegression.verify(level, directory.resolve("survival-runtime.json"));
+      TranslationRegistryRegression.verify(level, directory.resolve("translations-runtime.json"));
+      LOGGER.info("Group three interaction regression passed");
+      return;
+    }
+    String groupThree = System.getProperty("aeroscapes.regression.groupThree");
+    if (groupThree != null) {
+      GroupThreeGenerationRegression.run(level, Path.of(groupThree));
+      return;
+    }
+    String aerial = System.getProperty("aeroscapes.regression.aerial");
+    if (aerial != null) {
+      AerialGenerationRegression.run(level, Path.of(aerial));
+      return;
+    }
+    String fauna = System.getProperty("aeroscapes.regression.fauna");
+    if (fauna != null) {
+      GroupThreeFaunaRegression.verify(level, Path.of(fauna));
+      LOGGER.info("Group three fauna regression passed");
+      return;
+    }
+    String archeology = System.getProperty("aeroscapes.regression.archeology");
+    if (archeology != null) {
+      GroupThreeArcheologyRegression.run(level, Path.of(archeology));
+      LOGGER.info("Group three archeology regression passed");
+      return;
+    }
+    String wetland = System.getProperty("aeroscapes.regression.wetland");
+    if (wetland != null) {
+      GroupThreeWetlandRegression.run(level, Path.of(wetland));
+      LOGGER.info("Group three wetland regression passed");
+      return;
+    }
     String hostParity = System.getProperty("aeroscapes.regression.spawnHostParity");
     if (hostParity != null) {
       SpawnIslandHostRegression.start(

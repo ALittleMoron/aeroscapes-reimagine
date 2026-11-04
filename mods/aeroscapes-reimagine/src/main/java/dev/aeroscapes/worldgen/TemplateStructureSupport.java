@@ -56,7 +56,13 @@ final class TemplateStructureSupport {
   }
 
   private boolean test(Structure delegate, PiecesContainer pieces, boolean seabed) {
-    if (!(delegate instanceof JigsawStructure jigsaw) || jigsaw.projectStartToHeightmap.isEmpty())
+    var heightmap =
+        delegate instanceof JigsawStructure jigsaw
+            ? jigsaw.projectStartToHeightmap
+            : delegate instanceof dev.aeroscapes.archeology.ArcheologyProjection archeology
+                ? archeology.aeroscapes$heightmap()
+                : java.util.Optional.<Heightmap.Types>empty();
+    if (heightmap.isEmpty())
       throw new IllegalStateException("Template support requires a projected native jigsaw");
     var root = pieces.pieces().getFirst();
     var bounds = root.getBoundingBox();
@@ -69,7 +75,7 @@ final class TemplateStructureSupport {
             .getBaseHeight(
                 center.getX(),
                 center.getZ(),
-                jigsaw.projectStartToHeightmap.orElseThrow(),
+                heightmap.orElseThrow(),
                 context.heightAccessor(),
                 context.randomState());
     if (seabed)

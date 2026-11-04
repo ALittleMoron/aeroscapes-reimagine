@@ -72,6 +72,7 @@ public final class AeroscapesReimagine {
     IslandSwampHutStructure.register(modBus);
     IslandMansionStructure.register(modBus);
     RootSupportedStructure.register(modBus);
+    AerialStructure.register(modBus);
     GroundedColumnPredicate.register(modBus);
     HangingEntityAnchorProcessor.register(modBus);
     NonVoidProjectionProcessor.register(modBus);

@@ -14,6 +14,49 @@ The owned generator's volcanic islands use native lava, blackstone, deepslate an
 
 [Punchy 3.0](https://modrinth.com/mod/punchy-fpa/version/83nCNSX4) selects its held-map path only after saved map data arrives. The owned client adapter selects `MapItem` subclasses immediately, matching the pinned native renderer's safe blank-map fallback. The atmosphere resource pack raises both map arms through native `armTransforms`; saved tuning and active profiles retain precedence. Grip and framing remain graphical acceptance, separate from compilation and server checks.
 
+## Wildlife, archaeology and aerial places
+
+[Naturalist](https://modrinth.com/mod/naturalist) and
+[Critters and Companions](https://modrinth.com/mod/critters-and-companions) keep
+their native taming, equipment and rewards. Scoped predicates use local basin
+waterlines and exposed island surfaces. The bird head-perching goal is disabled
+as a whole; native slow falling and parrot ascent are off. The three livestock
+removal modifiers have empty biome selections, preserving ordinary farming.
+Append-only fauna tags connect river fish, warm-water sharks and deep marine
+species to the already selected physical aquatic habitats. They do not expand
+the global ocean tags or change native spawn weights. The natural-water fixture
+checks source, raw water, saved FULL biomes and effective native spawn entries
+together; an isolated predicate call is not evidence of a reachable habitat.
+
+[Wetland Whimsy](https://modrinth.com/mod/wetland-whimsy) keeps its marsh and
+ruin/archaeology/ritual loop. Its continentalness deviation is adapted to the
+retained climate delegate; global disk replacement is disabled, and its guarded
+replacement witch hut owns new hut generation. The exact loader uplift also
+selects [Biolith](https://modrinth.com/mod/biolith) 3.0.14 explicitly on both
+sides. The delegate cache/clone contract remains enforced by the owned code.
+
+[Better Archeology](https://www.curseforge.com/minecraft/mc-mods/better-archeology)
+keeps its native generators, including assemblies larger than vanilla jigsaw
+limits. Only the high-surface rejection is bypassed for the owned generator;
+existing support wrappers inspect native pieces and projection. Native mobility
+rewards remain enabled. Its descriptor says MIT, while the official source
+license separates MIT code from All Rights Reserved artwork, sounds and
+structures and allows unchanged modpack inclusion. No original templates are
+copied into the owned mod. [Architectury API](https://modrinth.com/mod/architectury-api)
+is an unchanged shared dependency.
+
+The four intact static designs from
+[Creat Aeronautics Structures](https://modrinth.com/mod/creat-aeronautics-structures/version/aMCksPon)
+and [Sky Villages](https://www.curseforge.com/minecraft/mc-mods/sky-villages-forge)
+use one assembled-pieces airspace wrapper. Whole bounds fit below Y384; native
+pieces and their saved anchors move together. Missing optional village pool
+references are excluded. Scoped template processing removes saved author maps,
+unavailable offers, incidental entities and fixed container loot seeds, while
+retaining crews and valid trades. The vessel provider's unsolicited login
+advertisement is suppressed. The native artifacts and their licenses remain
+unchanged; exact field edits and provider hashes are inventoried alongside the
+earlier compatibility repairs.
+
 ## Aquatic, movement and survival providers
 
 The added [Hybrid Aquatic](https://modrinth.com/mod/hybrid-aquatic) habitats are

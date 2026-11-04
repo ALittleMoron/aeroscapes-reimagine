@@ -72,7 +72,7 @@ def check_native_template_upgrades(
         field(record, "minecraft", "native template upgrades"),
         field(record, "neoforge", "native template upgrades"),
     )
-    if expected_platform != ("1.21.1", "21.1.234") or expected_platform != (
+    if expected_platform != ("1.21.1", "21.1.244") or expected_platform != (
         platform.minecraft,
         platform.neoforge,
     ):

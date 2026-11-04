@@ -1,0 +1,5 @@
+generate_marsh = true
+disable_vanilla_swamp_huts = true
+modify_trades = true
+upgrade_disks = false
+ancient_pot_max_particles = 24

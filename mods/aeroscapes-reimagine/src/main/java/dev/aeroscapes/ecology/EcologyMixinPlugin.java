@@ -12,20 +12,24 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 public final class EcologyMixinPlugin implements IMixinConfigPlugin {
   @Override
   public boolean shouldApplyMixin(String target, String mixin) {
+    if (mixin.contains("Wetland") || mixin.endsWith("SpawnHeightPlacementMixin"))
+      return available("wetland_whimsy", "2.1.0-1.21.1")
+          && available("biolith", "3.0.14")
+          && available("neoforge", "21.1.244");
     if (mixin.endsWith(".SpawnFoodConfigurationMixin")
         || mixin.endsWith(".SpawnFeastCompatibilityMixin"))
       return available("spawn", "4.0.8-1.21.1")
           && available("farmersdelight", "1.2.11a")
-          && available("neoforge", "21.1.234");
+          && available("neoforge", "21.1.244");
     if (mixin.contains("Fowl"))
-      return available("fowlplay", "1.2.3") && available("neoforge", "21.1.234");
+      return available("fowlplay", "1.2.3") && available("neoforge", "21.1.244");
     if (mixin.contains("Hybrid"))
       return available("hybrid_birds", "1.3.3")
           && available("hapi", "1.1.3")
-          && available("neoforge", "21.1.234");
+          && available("neoforge", "21.1.244");
     String id = mixin.contains("Debris") ? "rocks" : "spawn";
     String expected = id.equals("rocks") ? "1.8.0" : "4.0.8-1.21.1";
-    return available(id, expected) && available("neoforge", "21.1.234");
+    return available(id, expected) && available("neoforge", "21.1.244");
   }
 
   private static boolean available(String id, String expected) {

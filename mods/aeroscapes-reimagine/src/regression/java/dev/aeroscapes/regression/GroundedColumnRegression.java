@@ -39,6 +39,13 @@ final class GroundedColumnRegression {
     // Grass is in the native pass-through tag: do not mistake it for an early stop.
     check(0, Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.AIR.defaultBlockState(), false);
     check(100, Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.AIR.defaultBlockState(), true);
+    for (int depth : new int[] {0, 1, 12})
+      check(depth, Blocks.STONE.defaultBlockState(), Blocks.AIR.defaultBlockState(), true, 12);
+    check(13, Blocks.STONE.defaultBlockState(), Blocks.AIR.defaultBlockState(), false, 12);
+    check(-1, Blocks.STONE.defaultBlockState(), Blocks.AIR.defaultBlockState(), false, 12);
+    check(12, Blocks.GRASS_BLOCK.defaultBlockState(), Blocks.AIR.defaultBlockState(), false, 12);
+    check(12, Blocks.SAND.defaultBlockState(), Blocks.AIR.defaultBlockState(), false, 12);
+    check(12, Blocks.WATER.defaultBlockState(), Blocks.AIR.defaultBlockState(), false, 12);
   }
 
   static void verifyWitchWiring(ServerLevel level) {
@@ -259,6 +266,11 @@ final class GroundedColumnRegression {
   }
 
   private static void check(int depth, BlockState stop, BlockState traversed, boolean expected) {
+    check(depth, stop, traversed, expected, 100);
+  }
+
+  private static void check(
+      int depth, BlockState stop, BlockState traversed, boolean expected, int maximumDepth) {
     BlockPos origin = new BlockPos(0, 150, 0);
     AtomicInteger reads = new AtomicInteger();
     WorldGenLevel level =
@@ -272,7 +284,7 @@ final class GroundedColumnRegression {
                   }
                   if (method.getName().equals("getBlockState")) {
                     BlockPos position = (BlockPos) arguments[0];
-                    if (reads.incrementAndGet() > 101
+                    if (reads.incrementAndGet() > maximumDepth + 1
                         || position.getX() != origin.getX()
                         || position.getZ() != origin.getZ()) {
                       throw new IllegalStateException(
@@ -289,11 +301,10 @@ final class GroundedColumnRegression {
                   }
                   throw new IllegalStateException("Unexpected world call " + method.getName());
                 });
+    JsonObject definition = new JsonObject();
+    if (maximumDepth != 100) definition.addProperty("max_depth", maximumDepth);
     var predicate =
-        GroundedColumnPredicate.CODEC
-            .codec()
-            .parse(JsonOps.INSTANCE, new JsonObject())
-            .getOrThrow();
+        GroundedColumnPredicate.CODEC.codec().parse(JsonOps.INSTANCE, definition).getOrThrow();
     if (predicate.test(level, origin) != expected || reads.get() == 0) {
       throw new IllegalStateException("Incorrect column support at depth " + depth + ": " + stop);
     }

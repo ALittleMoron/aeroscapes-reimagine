@@ -129,6 +129,7 @@ public final class RuntimeTemplateRepairs {
   private RuntimeTemplateRepairs() {}
 
   public static boolean applies(ResourceLocation id) {
+    if (AerialTemplateRepairs.applies(id)) return true;
     return switch (id.getNamespace()) {
       case "ctov" -> CTOV.contains(id.getPath());
       case "philipsruins" -> PHILIPS.contains(id.getPath());
@@ -143,6 +144,10 @@ public final class RuntimeTemplateRepairs {
    * Mutates only a private decoded resource, never a shared template or saved/generated structure.
    */
   public static void apply(ResourceLocation id, CompoundTag data) {
+    if (AerialTemplateRepairs.applies(id)) {
+      AerialTemplateRepairs.apply(id, data);
+      return;
+    }
     if (!applies(id)) return;
     switch (id.getNamespace()) {
       case "ctov" -> {

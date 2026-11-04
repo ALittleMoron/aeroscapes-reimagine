@@ -2090,6 +2090,10 @@
       "required": false
     },
     {
+      "id": "crittersandcompanions:acorn",
+      "required": false
+    },
+    {
       "id": "delightfulcreators:incomplete_apple_pie",
       "required": false
     },
@@ -2439,6 +2443,18 @@
     },
     {
       "id": "ratatouille:wheat_kernels",
+      "required": false
+    },
+    {
+      "id": "spawn:crab_boil",
+      "required": false
+    },
+    {
+      "id": "wetland_whimsy:gumbo",
+      "required": false
+    },
+    {
+      "id": "wetland_whimsy:popcorn_crawfish",
       "required": false
     }
   ]

@@ -65,7 +65,7 @@ public final class IcebergConfigScreens {
             container -> {
               if (container.getCustomExtension(IConfigScreenFactory.class).isPresent()) return;
               for (var expected :
-                  Map.of("neoforge", "21.1.234", "iceberg", "1.3.2", modId, version).entrySet()) {
+                  Map.of("neoforge", "21.1.244", "iceberg", "1.3.2", modId, version).entrySet()) {
                 String actual =
                     ModList.get()
                         .getModContainerById(expected.getKey())

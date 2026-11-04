@@ -1,0 +1,24 @@
+{
+  "elements": [
+    {
+      "element": {
+        "element_type": "minecraft:feature_pool_element",
+        "feature": "aeroscapes_reimagine:grounded/nova/illager_mansion_base",
+        "projection": "rigid"
+      },
+      "weight": 6
+    },
+    {
+      "weight": 1,
+      "element": {
+        "location": "minecraft:illager_mansion/mansion_house_lock",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ],
+  "fallback": "aeroscapes_reimagine:grounded/illager_manor/base"
+}

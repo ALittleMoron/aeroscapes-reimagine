@@ -141,6 +141,10 @@ file = "config/moreculling.toml"
 hash = "ac7ce4bcd5f590d07f4a11dd912bd0dd0c92979b3839b50eb50c4b8a6038c604"
 
 [[files]]
+file = "config/naturalist-server.toml"
+hash = "a91d0639097f5bc02ddc7cf298ef10b8eaa262e9d29a71a9ac06ecacd4228158"
+
+[[files]]
 file = "config/natures_spirit-common.toml"
 hash = "4202bb8d0d24f6960ec162e9819dbe15733a9e01d0e93c5d1f57f43622c6d9a3"
 
@@ -229,6 +233,10 @@ file = "config/waystones-common.toml"
 hash = "a2397acae1af827c1bb7af83eabeff28e7be2d9a3ae98967d243a8d982dce032"
 
 [[files]]
+file = "config/wetland_whimsy-common.toml"
+hash = "28a747017140e8c28508f1fe94c31aac0274a4c71425ecc6945b3b6f45727353"
+
+[[files]]
 file = "config/xaero/minimap/common.cfg"
 hash = "b5e9291e7b85cf407db9451a59a1b9005e8ce828e0ae78eedf5be078a56606a7"
 
@@ -305,6 +313,14 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_r
 hash = "329f16dd65b4cb3dcbbb0a93373d6e6aa88dadb12b15413f6f6d4e8fbd106c32"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/illager_mansion_base.json"
+hash = "7bd34912bfb31a393e4dcd4a37937b5a1d61fe8d5555858fa36479786b48b200"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/illager_mansion_base_dark_oak.json"
+hash = "ad1311b01925fa946e35bd1ac8e7fb16352d5e2c252b26e84ab51208841a9aea"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/placed_feature/grounded/nova/monument_base.json"
 hash = "40a3ab8323e3930006779efcb2b56fcf57ac6924147ded81950a22719b83d1c9"
 
@@ -339,6 +355,14 @@ hash = "143cf340697972d33b32344f93cc444cb973f6f99ecee705fcef807d971cf1af"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/processor_list/non_void_projection.json"
 hash = "5fe42b6cdaea1d7bd91fa532f8a4aa30f717c08d2792ba22cca43616531e151e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/template_pool/grounded/illager_manor/base.json"
+hash = "f408f86844d7adbfd640b62b678ec8d1ce81fd1f4122de0e9bccb1ddb7cb0ef1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/template_pool/grounded/illager_manor/base_dark_oak.json"
+hash = "18762b5089e2a2be2bd6d08456aa5414511ce894951fc423a6c2aec50ba81091"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/worldgen/template_pool/grounded/witch_villa/foundation.json"
@@ -1075,11 +1099,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "160fa9c6f3777e8d5a8b87c96a66d611bc295756e1d9c56b0fd04ef68e70ca7d"
+hash = "c4f41481bef4fe54e8f172a6c69cd6b17f68b66021fd151b1ee4edb188821715"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "d1010e8039ade3d6f3413e3f97e8d8876f1efd350c02b40fe2e0da22b72bbf68"
+hash = "7615842ef7814731289103b92180f84efade28d64fa9f3b5578126327ce9d16e"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1108,7 +1132,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "e51a3b906eafe6a7f7b6691e96947a5cd05a13df938af36f8b9545b5e304cf24"
+hash = "4fcb32d5a7e94bcf4917afa5b1c714f5dde6b25e02a9cc1dcd00609885547cb4"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1128,6 +1152,11 @@ metafile = true
 [[files]]
 file = "mods/appleskin.pw.toml"
 hash = "43e2d4365fb5e804dbed3488005273e814a32e990f04d31d871d3d2ddf6d9d8d"
+metafile = true
+
+[[files]]
+file = "mods/architectury-api.pw.toml"
+hash = "5933052a046ada4564dc97cdc191f4950afbe19c5fc53b5f50b5bb222a9b9199"
 metafile = true
 
 [[files]]
@@ -1161,6 +1190,11 @@ hash = "e3fcaa97f575c4ba2cdb8be8672324f0308b36d39d80578f4a683c0602161d7f"
 metafile = true
 
 [[files]]
+file = "mods/better-archeology.pw.toml"
+hash = "4663cf1a2d7ca1b99a73032a4da97c2924799303c61e1989fa483a9dd94b37c5"
+metafile = true
+
+[[files]]
 file = "mods/better-clouds.pw.toml"
 hash = "66f71388dd6e63b6d8965c92819cb1b93be9a4840b5aec6a029b48f1ab28b9fc"
 metafile = true
@@ -1173,6 +1207,11 @@ metafile = true
 [[files]]
 file = "mods/betterf3.pw.toml"
 hash = "6be40d26a96fce2db4809e468f6d4d4b84ecdb1b9a52e1716c97739f9538e7cf"
+metafile = true
+
+[[files]]
+file = "mods/biolith.pw.toml"
+hash = "c91c0ff99a3503cfa5b1088f1188e1416659e76520f99416148cfaeafedc0700"
 metafile = true
 
 [[files]]
@@ -1306,6 +1345,11 @@ hash = "dbc90f84862d109acb4bf7f4b14346dda11c3f0fa0cc118ba4f0827b23d6e5e8"
 metafile = true
 
 [[files]]
+file = "mods/creat-aeronautics-structures.pw.toml"
+hash = "cd44d1b86a1fba9e29b7109d434e0218fa329d661eb2d8904c131739217f95c3"
+metafile = true
+
+[[files]]
 file = "mods/create-aeronautics-compatability.pw.toml"
 hash = "04b0bab59012cb24d23e083ffd28f481f0b8aa680ef461efa3854b6d2af6301a"
 metafile = true
@@ -1348,6 +1392,11 @@ metafile = true
 [[files]]
 file = "mods/creativecore.pw.toml"
 hash = "bfb84325b390c95c3d1a66465cb0d36c3c8c8789bfcf1c44c504f06da12f9070"
+metafile = true
+
+[[files]]
+file = "mods/critters-and-companions.pw.toml"
+hash = "0a8be83b360fd9a871feb67b87ea0b8d0e517d30d828a0960c27ae37563a6516"
 metafile = true
 
 [[files]]
@@ -1746,6 +1795,11 @@ hash = "01529c94dce623104e15277223d882ec69190f9663a3a919761a8c7cb63490c7"
 metafile = true
 
 [[files]]
+file = "mods/naturalist.pw.toml"
+hash = "0d298aedae7625052006c4cb3e0de09056e5074fcf3353ed00710e283c485ad9"
+metafile = true
+
+[[files]]
 file = "mods/natures-compass.pw.toml"
 hash = "6f317710a24d3d0908c22b70970b222b95a079005257f40f0ba773ae9b48498d"
 metafile = true
@@ -1921,6 +1975,11 @@ hash = "e1eccfca24bbb2f5306172399ff978717275cbd11c758fbad72eceba1746152c"
 metafile = true
 
 [[files]]
+file = "mods/sky-villages.pw.toml"
+hash = "c9f02ae0c45cb2acce8a96fc1d34d05274d71c992d2fecc8842b8c2f4245cdcc"
+metafile = true
+
+[[files]]
 file = "mods/smart-tooltip-scroll.pw.toml"
 hash = "0bd7ea6ea0d6d3a6d107f444e3787ed7b758ee3d325f49518a83ad9c1211fc40"
 metafile = true
@@ -2063,6 +2122,11 @@ metafile = true
 [[files]]
 file = "mods/waystones.pw.toml"
 hash = "149e5a8efddd4dcd06437f87da74bbaafd684550148e131814f4d8c99af64716"
+metafile = true
+
+[[files]]
+file = "mods/wetland-whimsy.pw.toml"
+hash = "436ced0c31f0cf42228644317bd480ec5ce74fc1328b10760f32bb4068c7707e"
 metafile = true
 
 [[files]]

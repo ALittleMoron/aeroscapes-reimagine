@@ -2516,11 +2516,30 @@
     "mod": "mr_dungeons_andtaverns",
     "source": "data/nova_structures/worldgen/structure/illager_manor.json",
     "sha256": "efd769614a2c73bdee48d979e50c4bcd782c06795f782160b58a4a5ab0320132",
-    "edits": [],
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pool_aliases"
+        ],
+        "value": [
+          {
+            "type": "minecraft:direct",
+            "alias": "minecraft:illager_mansion/illager_mansion_base",
+            "target": "aeroscapes_reimagine:grounded/illager_manor/base"
+          },
+          {
+            "type": "minecraft:direct",
+            "alias": "minecraft:illager_mansion/illager_mansion_base_dark_oak",
+            "target": "aeroscapes_reimagine:grounded/illager_manor/base_dark_oak"
+          }
+        ]
+      }
+    ],
     "wrappers": [
       {
         "type": "aeroscapes_reimagine:supported",
-        "terrain_check": "surface"
+        "terrain_check": "foundation_surface"
       }
     ]
   },
@@ -5883,6 +5902,1344 @@
           "name"
         ],
         "value": "rocks:red_sandstone_splitter"
+      }
+    ]
+  },
+  {
+    "id": "cr_aero_structures:worldgen/structure/airballoon.json",
+    "mod": "cr_aero_structures",
+    "source": "data/cr_aero_structures/worldgen/structure/airballoon.json",
+    "sha256": "bedc7c91d066257f92f9f863864f31f52bdc4431dab7b5264adf3929308d3707",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": [
+          "minecraft:plains",
+          "minecraft:desert",
+          "minecraft:badlands",
+          "minecraft:snowy_plains",
+          "minecraft:windswept_hills",
+          "minecraft:windswept_gravelly_hills",
+          "minecraft:windswept_forest",
+          "minecraft:stony_peaks",
+          "minecraft:snowy_slopes",
+          "minecraft:frozen_peaks",
+          "minecraft:jagged_peaks",
+          "minecraft:meadow",
+          "minecraft:grove",
+          "minecraft:forest",
+          "minecraft:birch_forest",
+          "minecraft:dark_forest",
+          "minecraft:flower_forest",
+          "minecraft:jungle",
+          "minecraft:sparse_jungle",
+          "minecraft:bamboo_jungle",
+          "minecraft:swamp",
+          "minecraft:mangrove_swamp",
+          "minecraft:taiga",
+          "minecraft:snowy_taiga",
+          "minecraft:old_growth_pine_taiga",
+          "minecraft:old_growth_spruce_taiga",
+          "aeroscapes_reimagine:void"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:aerial",
+        "min_y": 144,
+        "max_y": 288,
+        "clearance": 3
+      }
+    ]
+  },
+  {
+    "id": "cr_aero_structures:worldgen/structure/airship.json",
+    "mod": "cr_aero_structures",
+    "source": "data/cr_aero_structures/worldgen/structure/airship.json",
+    "sha256": "2e5f16559cfe917bb016bf2c093a570c3d4d169f77a5b57355ba182861aab9f9",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": [
+          "minecraft:plains",
+          "minecraft:desert",
+          "minecraft:badlands",
+          "minecraft:snowy_plains",
+          "minecraft:windswept_hills",
+          "minecraft:windswept_gravelly_hills",
+          "minecraft:windswept_forest",
+          "minecraft:stony_peaks",
+          "minecraft:snowy_slopes",
+          "minecraft:frozen_peaks",
+          "minecraft:jagged_peaks",
+          "minecraft:meadow",
+          "minecraft:grove",
+          "minecraft:forest",
+          "minecraft:birch_forest",
+          "minecraft:dark_forest",
+          "minecraft:flower_forest",
+          "minecraft:jungle",
+          "minecraft:sparse_jungle",
+          "minecraft:bamboo_jungle",
+          "minecraft:swamp",
+          "minecraft:mangrove_swamp",
+          "minecraft:taiga",
+          "minecraft:snowy_taiga",
+          "minecraft:old_growth_pine_taiga",
+          "minecraft:old_growth_spruce_taiga",
+          "aeroscapes_reimagine:void"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:aerial",
+        "min_y": 144,
+        "max_y": 288,
+        "clearance": 3
+      }
+    ]
+  },
+  {
+    "id": "cr_aero_structures:worldgen/structure/pillager_airballoon.json",
+    "mod": "cr_aero_structures",
+    "source": "data/cr_aero_structures/worldgen/structure/pillager_airballoon.json",
+    "sha256": "88f6877a5f0c6db7f77e1365d0abe5d3cca3a1c79029820d80ce45a344f2ad50",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": [
+          "minecraft:plains",
+          "minecraft:desert",
+          "minecraft:badlands",
+          "minecraft:snowy_plains",
+          "minecraft:windswept_hills",
+          "minecraft:windswept_gravelly_hills",
+          "minecraft:windswept_forest",
+          "minecraft:stony_peaks",
+          "minecraft:snowy_slopes",
+          "minecraft:frozen_peaks",
+          "minecraft:jagged_peaks",
+          "minecraft:meadow",
+          "minecraft:grove",
+          "minecraft:forest",
+          "minecraft:birch_forest",
+          "minecraft:dark_forest",
+          "minecraft:flower_forest",
+          "minecraft:jungle",
+          "minecraft:sparse_jungle",
+          "minecraft:bamboo_jungle",
+          "minecraft:swamp",
+          "minecraft:mangrove_swamp",
+          "minecraft:taiga",
+          "minecraft:snowy_taiga",
+          "minecraft:old_growth_pine_taiga",
+          "minecraft:old_growth_spruce_taiga",
+          "aeroscapes_reimagine:void"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:aerial",
+        "min_y": 144,
+        "max_y": 288,
+        "clearance": 3
+      }
+    ]
+  },
+  {
+    "id": "cr_aero_structures:worldgen/structure/pillager_airship.json",
+    "mod": "cr_aero_structures",
+    "source": "data/cr_aero_structures/worldgen/structure/pillager_airship.json",
+    "sha256": "678bcd1f8839170796c6d5b12627dc3ff50dc1d4d780e0075d88a3743c0abf24",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": [
+          "minecraft:plains",
+          "minecraft:desert",
+          "minecraft:badlands",
+          "minecraft:snowy_plains",
+          "minecraft:windswept_hills",
+          "minecraft:windswept_gravelly_hills",
+          "minecraft:windswept_forest",
+          "minecraft:stony_peaks",
+          "minecraft:snowy_slopes",
+          "minecraft:frozen_peaks",
+          "minecraft:jagged_peaks",
+          "minecraft:meadow",
+          "minecraft:grove",
+          "minecraft:forest",
+          "minecraft:birch_forest",
+          "minecraft:dark_forest",
+          "minecraft:flower_forest",
+          "minecraft:jungle",
+          "minecraft:sparse_jungle",
+          "minecraft:bamboo_jungle",
+          "minecraft:swamp",
+          "minecraft:mangrove_swamp",
+          "minecraft:taiga",
+          "minecraft:snowy_taiga",
+          "minecraft:old_growth_pine_taiga",
+          "minecraft:old_growth_spruce_taiga",
+          "aeroscapes_reimagine:void"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:aerial",
+        "min_y": 144,
+        "max_y": 288,
+        "clearance": 3
+      }
+    ]
+  },
+  {
+    "id": "cr_aero_structures:worldgen/structure_set/cr_aero_structures.json",
+    "mod": "cr_aero_structures",
+    "source": "data/cr_aero_structures/worldgen/structure_set/cr_aero_structures.json",
+    "sha256": "a82658199bbec8f4286c8f78512b37495d9d00cf72027340461032a63a338c4b",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "structures"
+        ],
+        "value": [
+          {
+            "structure": "cr_aero_structures:airship",
+            "weight": 6
+          },
+          {
+            "structure": "cr_aero_structures:airballoon",
+            "weight": 6
+          },
+          {
+            "structure": "cr_aero_structures:pillager_airballoon",
+            "weight": 4
+          },
+          {
+            "structure": "cr_aero_structures:pillager_airship",
+            "weight": 4
+          }
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "placement",
+          "spacing"
+        ],
+        "value": 47
+      },
+      {
+        "op": "set",
+        "path": [
+          "placement",
+          "separation"
+        ],
+        "value": 18
+      },
+      {
+        "op": "set",
+        "path": [
+          "placement",
+          "exclusion_zone"
+        ],
+        "value": {
+          "other_set": "skyvillages:skyvillage",
+          "chunk_count": 12
+        }
+      }
+    ]
+  },
+  {
+    "id": "cr_aero_structures:worldgen/structure_set/boat_set.json",
+    "mod": "cr_aero_structures",
+    "source": "data/cr_aero_structures/worldgen/structure_set/boat_set.json",
+    "sha256": "d9132439bfa3c5ebe559757d89910d7bef1e37e8e84e6e8ff65012d52d134c1d",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "placement",
+          "frequency"
+        ],
+        "value": 0.0
+      }
+    ]
+  },
+  {
+    "id": "skyvillages:worldgen/structure/skyvillage.json",
+    "mod": "skyvillages",
+    "source": "data/skyvillages/worldgen/structure/skyvillage.json",
+    "sha256": "6b68bfa4ef78d7b1c729258ec1ec4c28ab4b99509bb958918401085fc689a325",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#aeroscapes_reimagine:has_aerial_village"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "project_start_to_heightmap"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height"
+        ],
+        "value": {
+          "absolute": 0
+        }
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:aerial",
+        "min_y": 288,
+        "max_y": 352,
+        "clearance": 4
+      }
+    ]
+  },
+  {
+    "id": "skyvillages:worldgen/template_pool/skyvillage_bridges.json",
+    "mod": "skyvillages",
+    "source": "data/skyvillages/worldgen/template_pool/skyvillage_bridges.json",
+    "sha256": "b1dc7ba9f31dae814986e3b1c391b360645e429558aa95463e625c733e407629",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements"
+        ],
+        "value": [
+          {
+            "weight": 20,
+            "element": {
+              "location": "skyvillages:bridge_1",
+              "processors": "minecraft:empty",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 100,
+            "element": {
+              "location": "skyvillages:bridge_2",
+              "processors": "minecraft:empty",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 100,
+            "element": {
+              "location": "skyvillages:bridge_3",
+              "processors": "minecraft:empty",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 5,
+            "element": {
+              "location": "skyvillages:bridge_4",
+              "processors": "minecraft:empty",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 60,
+            "element": {
+              "location": "skyvillages:bridge_5",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "skyvillages:worldgen/template_pool/skyvillage_houses.json",
+    "mod": "skyvillages",
+    "source": "data/skyvillages/worldgen/template_pool/skyvillage_houses.json",
+    "sha256": "9ad7d19b8f8344ad21851b8837e793f883f97d72bef8a7c18ef990376fd76e8d",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements"
+        ],
+        "value": [
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:librarian_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:house_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:weaponsmith_2",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:mason_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:alchemist_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:loom_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:cartographer_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:farm_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:farm_2",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:farm_3",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:fletcher_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:librarian_2",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          },
+          {
+            "weight": 50,
+            "element": {
+              "location": "skyvillages:weaponsmith_1",
+              "processors": "skyvillages:house_processor",
+              "projection": "rigid",
+              "element_type": "minecraft:single_pool_element"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "skyvillages:worldgen/template_pool/skyvillage_deco.json",
+    "mod": "skyvillages",
+    "source": "data/skyvillages/worldgen/template_pool/skyvillage_deco.json",
+    "sha256": "2377e454deba60da5e8911fd22d13e2784c70ae3d95eb0473da78c0c83af6cc5",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "elements"
+        ],
+        "value": [
+          {
+            "weight": 5,
+            "element": {
+              "element_type": "minecraft:empty_pool_element"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "skyvillages:worldgen/processor_list/house_processor.json",
+    "mod": "skyvillages",
+    "source": "data/skyvillages/worldgen/processor_list/house_processor.json",
+    "sha256": "87f216c42e8c2309ac3e978404dbc81a1a4b267d3c84c90fdab414258b356758",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "processors",
+          "3"
+        ],
+        "value": {
+          "processor_type": "aeroscapes_reimagine:hanging_entity_anchor"
+        }
+      }
+    ]
+  },
+  {
+    "id": "cr_aero_structures:loot_table/chests/uniform.json",
+    "mod": "cr_aero_structures",
+    "source": "data/cr_aero_structures/loot_table/chests/uniform.json",
+    "sha256": "e175c4cf19109e45299928fe7559d2685a3ada3adc8862ab8e3cebabf5397b5c",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0",
+          "components",
+          "minecraft:dyed_color",
+          "rgb"
+        ],
+        "value": 3886177
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "1",
+          "functions",
+          "0",
+          "components",
+          "minecraft:dyed_color",
+          "rgb"
+        ],
+        "value": 3886177
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "2",
+          "functions",
+          "0",
+          "components",
+          "minecraft:dyed_color",
+          "rgb"
+        ],
+        "value": 3886177
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "3",
+          "functions",
+          "0",
+          "components",
+          "minecraft:dyed_color",
+          "rgb"
+        ],
+        "value": 3886177
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/archeologist_camp_grassy.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/archeologist_camp_grassy.json",
+    "sha256": "24a8071a4056545ae4e4b837ed8199edc22bc82836381db7a0001934f83b3df7",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/archeologist_camp_redsand.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/archeologist_camp_redsand.json",
+    "sha256": "b39064358a442bfb1235a56def1f028a42f742b17edac6929ba6c478fa1ad153",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/archeologist_camp_sand.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/archeologist_camp_sand.json",
+    "sha256": "f1d8db693cbf44c81d96985deed67f5167d9c70d35c0fd4b1b8e55668ee97e9b",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/buried_ruins_sand.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/buried_ruins_sand.json",
+    "sha256": "0878514194a475b7c37a2cdc7a8a3dbfcf341c2dcd9304c118da03dd7c3d0063",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/catacombs.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/catacombs.json",
+    "sha256": "7ed420d5554596430114356cb18d0b20c3ebc67e500bea10933369f025883be0",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_complex"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/desert_obelisk.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/desert_obelisk.json",
+    "sha256": "8c5fd8c61dd1096635c17b62982b6727a9bed93f4659e1c81965f0cf3c0260d6",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/fossil_chicken.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/fossil_chicken.json",
+    "sha256": "002fe89c35cdc9a8f14f542904e96fe7973a0c55c8a81b725c77eeead276274a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/fossil_chicken_birch.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/fossil_chicken_birch.json",
+    "sha256": "c94cab661b96f28744faa92f998c4861f32e0317a0214b70e13b822f50090322",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/fossil_creeper.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/fossil_creeper.json",
+    "sha256": "f9988c7cbf44fae5deb73afc1d282099136c51565d722b8e024829286bb5b4ba",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/fossil_jungle_0.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/fossil_jungle_0.json",
+    "sha256": "5f3af50da1c2f577a94412bd11a54da175c887a351faf18d3a7bacfdbf6fb2e6",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/fossil_jungle_1.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/fossil_jungle_1.json",
+    "sha256": "15f04895d44f8f9d00f4dffcbcb1d6586988bb1039288a9a6ffa871f75b255d9",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/fossil_sheep_0.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/fossil_sheep_0.json",
+    "sha256": "8a4db057cd2ac33619bf6e8318374aa3e690bd6007060336813fb228b278ba29",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/fossil_wolf.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/fossil_wolf.json",
+    "sha256": "9a6d847c5e129afaeffd4a901b8e75e64293da9e8a288d559b11458e414b5951",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/light_temple.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/light_temple.json",
+    "sha256": "a2557c99a578107bf986d1252f8a4d8230b23719b2bcce3b2ee95df0e33e3c41",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_complex"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/mesa_ruins.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/mesa_ruins.json",
+    "sha256": "19bcf8429583382bfd8ecf1b6c58759ee1aff1de4d1cbd6000141ee129127dc0",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/mott.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/mott.json",
+    "sha256": "6626e88dc9ed2aa65b0941729a0d6025b03825496cb42897becc37a6cc0f7fb6",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/ruins_sand.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/ruins_sand.json",
+    "sha256": "d885986839dc2f10dba8651e506363592c279d00fca0e4d03065d0836e13b4a0",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/stonehenge_grassy.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/stonehenge_grassy.json",
+    "sha256": "6a364f88495fdbe517ca38b8d0fe73f30665730529aca60f0c00995552749ed5",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/temple_jungle.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/temple_jungle.json",
+    "sha256": "2f4da00a82ee57734573a211e13d89668e7aeebed1c7dda1c2ba6db2c3f4b024",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/tumulus_grassy.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/tumulus_grassy.json",
+    "sha256": "5dd3bd97123bda63da95a840b800cadd7470d890fd833c771513934d8f5f0a76",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/underwater_0.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/underwater_0.json",
+    "sha256": "3057fad8c4618f922aadce1465948045ecf65d7e69c09de4515aa018acdbacc2",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_seabed"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/underwater_1.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/underwater_1.json",
+    "sha256": "4c949517fb333b704cb9ed76d3d92abd4d7346680df8308d7c212b97ef39c8e3",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_seabed"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/underwater_2.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/underwater_2.json",
+    "sha256": "cece4ce3c37f2452cb2f7ca6aa7291238ef33e0138b114081a79b57a231a6c1e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_seabed"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/underwater_3.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/underwater_3.json",
+    "sha256": "5d0fa86d85077ccf6fd0b802d9440a3dd60d0a3dfaa6dd2a2fbb9bced4aa742d",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_seabed"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:worldgen/structure/villager_grave.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/worldgen/structure/villager_grave.json",
+    "sha256": "9bc73f2d07d1c761a6d74863c7faa8fd86772b2ebeb1d36702b5f5b39ffe4b4e",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "betterarcheology:loot_table/archeology/sword_loot.json",
+    "mod": "betterarcheology",
+    "source": "data/betterarcheology/loot_table/archeology/sword_loot.json",
+    "sha256": "af23ccb4030d6dbd27e2517a8ad6c093976bdf9e3ca2a16ad175f1fb1135f026",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "1",
+          "name"
+        ],
+        "value": {
+          "color": "light_purple",
+          "translate": "aeroscapes_reimagine.archeology.sword.0.name"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "2",
+          "lore",
+          "0"
+        ],
+        "value": {
+          "color": "white",
+          "translate": "aeroscapes_reimagine.archeology.sword.0.lore"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "1",
+          "functions",
+          "0",
+          "name"
+        ],
+        "value": {
+          "color": "light_purple",
+          "translate": "aeroscapes_reimagine.archeology.sword.1.name"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "1",
+          "functions",
+          "1",
+          "lore",
+          "0"
+        ],
+        "value": {
+          "color": "white",
+          "translate": "aeroscapes_reimagine.archeology.sword.1.lore"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "2",
+          "functions",
+          "0",
+          "name"
+        ],
+        "value": {
+          "color": "light_purple",
+          "translate": "aeroscapes_reimagine.archeology.sword.2.name"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "2",
+          "functions",
+          "1",
+          "lore",
+          "0"
+        ],
+        "value": {
+          "color": "white",
+          "translate": "aeroscapes_reimagine.archeology.sword.2.lore"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "3",
+          "functions",
+          "0",
+          "name"
+        ],
+        "value": {
+          "color": "aqua",
+          "translate": "aeroscapes_reimagine.archeology.sword.3.name"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "3",
+          "functions",
+          "1",
+          "lore",
+          "0"
+        ],
+        "value": {
+          "color": "white",
+          "translate": "aeroscapes_reimagine.archeology.sword.3.lore"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "4",
+          "functions",
+          "1",
+          "name"
+        ],
+        "value": {
+          "color": "aqua",
+          "translate": "aeroscapes_reimagine.archeology.sword.4.name"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "4",
+          "functions",
+          "2",
+          "lore",
+          "0"
+        ],
+        "value": {
+          "color": "white",
+          "translate": "aeroscapes_reimagine.archeology.sword.4.lore"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "5",
+          "functions",
+          "1",
+          "lore",
+          "0"
+        ],
+        "value": {
+          "color": "white",
+          "translate": "aeroscapes_reimagine.archeology.sword.5.lore"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "6",
+          "functions",
+          "1",
+          "name"
+        ],
+        "value": {
+          "color": "aqua",
+          "translate": "aeroscapes_reimagine.archeology.sword.6.name"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "6",
+          "functions",
+          "2",
+          "lore",
+          "0"
+        ],
+        "value": {
+          "color": "white",
+          "translate": "aeroscapes_reimagine.archeology.sword.6.lore"
+        }
+      }
+    ]
+  },
+  {
+    "id": "wetland_whimsy:worldgen/structure/arch.json",
+    "mod": "wetland_whimsy",
+    "source": "data/wetland_whimsy/worldgen/structure/arch.json",
+    "sha256": "2317046ef3e84bca3baa89e7df20ed5c3810cd08a0b8bd79b7dd715d8389c6e9",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "wetland_whimsy:worldgen/structure/arena.json",
+    "mod": "wetland_whimsy",
+    "source": "data/wetland_whimsy/worldgen/structure/arena.json",
+    "sha256": "0d597beaefc252743af310b36841ab753b5d9fc28421c18400f09ddabe7875fa",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "wetland_whimsy:worldgen/structure/pillar.json",
+    "mod": "wetland_whimsy",
+    "source": "data/wetland_whimsy/worldgen/structure/pillar.json",
+    "sha256": "e9a1404c06ddd10fb001f2747124095d7b47d1d30f794f9ff6cf7de268008403",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "wetland_whimsy:worldgen/structure/swamp_dungeon.json",
+    "mod": "wetland_whimsy",
+    "source": "data/wetland_whimsy/worldgen/structure/swamp_dungeon.json",
+    "sha256": "8c25973cf4c62b13eb6702d3308bbb7f43b88b12fff57570086b034c68644d75",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_complex"
+      }
+    ]
+  },
+  {
+    "id": "wetland_whimsy:worldgen/structure/wall.json",
+    "mod": "wetland_whimsy",
+    "source": "data/wetland_whimsy/worldgen/structure/wall.json",
+    "sha256": "fe61e63a737af5f399a31bd32093e176981d422a84b56e61a436e3ff7de7ae15",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "wetland_whimsy:worldgen/structure/witch_hut.json",
+    "mod": "wetland_whimsy",
+    "source": "data/wetland_whimsy/worldgen/structure/witch_hut.json",
+    "sha256": "c936b4f1485e8229ffbfa58391ead40ed70c68c096bd508c3e3dd241434bc80a",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "template_surface"
+      }
+    ]
+  },
+  {
+    "id": "naturalist:neoforge/biome_modifier/remove_farm_animals_savanna.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/neoforge/biome_modifier/remove_farm_animals_savanna.json",
+    "sha256": "6d75f151196e4da5cb21b188f1e9e6ebdb2a48e6f9d8d4ce1c86169dbd88446e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": []
+      }
+    ]
+  },
+  {
+    "id": "naturalist:neoforge/biome_modifier/remove_farm_animals_swamp.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/neoforge/biome_modifier/remove_farm_animals_swamp.json",
+    "sha256": "a39eed8efaf34dccbe6db35a1f530e6da11aef1df326371dca857f82c0f9a036",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": []
+      }
+    ]
+  },
+  {
+    "id": "naturalist:neoforge/biome_modifier/remove_forest_pigs.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/neoforge/biome_modifier/remove_forest_pigs.json",
+    "sha256": "176b9d488247e8e5048ab197ace710a764cc4b476c21ef8fafe7d4fcef957791",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": []
+      }
+    ]
+  },
+  {
+    "id": "minecraft:tags/block/dirt.json",
+    "mod": "betterarcheology",
+    "source": "data/minecraft/tags/block/dirt.json",
+    "sha256": "f22902ee5975a8ee97085814d401c72d959ceea4fc1a61bf9dae5f58e8f65578",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "values"
+        ],
+        "value": []
+      },
+      {
+        "op": "set",
+        "path": [
+          "remove"
+        ],
+        "value": [
+          "betterarcheology:fossiliferous_dirt"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:tags/block/lush_ground_replaceable.json",
+    "mod": "betterarcheology",
+    "source": "data/minecraft/tags/block/lush_ground_replaceable.json",
+    "sha256": "f22902ee5975a8ee97085814d401c72d959ceea4fc1a61bf9dae5f58e8f65578",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "values"
+        ],
+        "value": []
+      },
+      {
+        "op": "set",
+        "path": [
+          "remove"
+        ],
+        "value": [
+          "betterarcheology:fossiliferous_dirt"
+        ]
       }
     ]
   }

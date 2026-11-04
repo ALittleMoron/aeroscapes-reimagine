@@ -24,7 +24,7 @@ public abstract class SpawnHeightPlacementMixin {
 
   @Inject(method = "getPositions", at = @At("RETURN"), cancellable = true)
   @SuppressWarnings(
-      "PMD.UnusedPrivateMethod") // Only Spawn's pinned placed features gain local layer selection.
+      "PMD.UnusedPrivateMethod") // Exact ecology providers share the natural exposed-layer rule.
   private void aeroscapes$localFeatureLayer(
       PlacementContext context,
       RandomSource random,
@@ -37,17 +37,23 @@ public abstract class SpawnHeightPlacementMixin {
             .registryAccess()
             .registryOrThrow(Registries.PLACED_FEATURE)
             .getKey(context.topFeature().orElseThrow());
-    if (key == null || !key.getNamespace().equals("spawn")) return;
+    if (key == null
+        || !(key.getNamespace().equals("spawn") || key.getNamespace().equals("wetland_whimsy")))
+      return;
     IslandTerrain terrain = IslandTerrain.from(level.getLevel().getChunkSource().randomState());
     if (terrain == null) return;
     int x = position.getX();
     int z = position.getZ();
     int top = level.getHeight(heightmap, x, z);
-    if (heightmap == Heightmap.Types.OCEAN_FLOOR_WG || heightmap == Heightmap.Types.OCEAN_FLOOR) {
+    if (key.getNamespace().equals("spawn")
+        && (heightmap == Heightmap.Types.OCEAN_FLOOR_WG
+            || heightmap == Heightmap.Types.OCEAN_FLOOR)) {
       callback.setReturnValue(Stream.of(position.atY(AquaticWater.floor(level, x, z, top))));
       return;
     }
-    if (heightmap != Heightmap.Types.WORLD_SURFACE_WG) return;
+    if (heightmap != Heightmap.Types.WORLD_SURFACE_WG
+        && heightmap != Heightmap.Types.OCEAN_FLOOR_WG
+        && heightmap != Heightmap.Types.OCEAN_FLOOR) return;
     var cursor = new BlockPos.MutableBlockPos();
     var lower =
         ExposedIslandSurfaces.below(

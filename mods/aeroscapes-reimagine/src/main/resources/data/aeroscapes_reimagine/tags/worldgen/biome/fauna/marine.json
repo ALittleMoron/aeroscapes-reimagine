@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "hybrid_aquatic:cold_trench",
+    "hybrid_aquatic:coral_reef",
+    "hybrid_aquatic:deep_coral_reef",
+    "hybrid_aquatic:deep_warm_ocean",
+    "hybrid_aquatic:frozen_trench",
+    "hybrid_aquatic:lukewarm_trench",
+    "hybrid_aquatic:red_meadow",
+    "hybrid_aquatic:seagrass_bed",
+    "hybrid_aquatic:trench",
+    "hybrid_aquatic:tropical_deep_coral_reef",
+    "hybrid_aquatic:warm_trench"
+  ]
+}

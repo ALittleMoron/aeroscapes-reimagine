@@ -43,7 +43,7 @@ public final class IcebergConfigView {
       return view;
     } catch (ReflectiveOperationException failure) {
       throw new IllegalStateException(
-          "Review the NeoForge 21.1.234 / Iceberg 1.3.2 editor bridge", failure);
+          "Review the NeoForge 21.1.244 / Iceberg 1.3.2 editor bridge", failure);
     }
   }
 

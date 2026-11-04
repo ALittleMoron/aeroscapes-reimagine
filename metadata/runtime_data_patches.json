@@ -1,6 +1,6 @@
 {
   "minecraft": "1.21.1",
-  "neoforge": "21.1.234",
+  "neoforge": "21.1.244",
   "patch_resource": "mods/aeroscapes-reimagine/src/main/resources/aeroscapes_reimagine/data-patches.json",
   "providers": [
     {
@@ -44,6 +44,36 @@
       "version_id": "9WI0UM3H",
       "filename": "ThisRocks-1.21-1.8.0.jar",
       "sha512": "50413e636980c6d6b50a97d4668225327222c53e3bd5254d70bc9f7a2944536e86797e6d212c1d9210ca24283d1ce4496c0b126989a0b5785a4a41ded609cce3"
+    },
+    {
+      "project_id": "F8BQNPWX",
+      "version_id": "9Yn8ig4c",
+      "filename": "naturalist-2.0.7-neoforge-1.21.1.jar",
+      "sha512": "5d56ec2d1e5f994c9b63cf7578e9ed1be2cd4f58a055503e32bdd90c80d9802af04d3f6e1eec08394180e196ce32b2c2e71df8ba19d918e77df1694c9007e7e1"
+    },
+    {
+      "project_id": "mb68eIfx",
+      "version_id": "3InSHTOp",
+      "filename": "SkyVillages-1.0.6-1.21.x-neoforge-release.jar",
+      "sha512": "e5c1c2030714b2dfb2349edd1c2666df1b3d6b7644708089f6fda89cede3aa0390c357b912adc7a92adc33db0dcc272a7256af2a2299e159570791c8854666b4"
+    },
+    {
+      "project_id": "aX7eWKKb",
+      "version_id": "aMCksPon",
+      "filename": "cr_aero_structures.jar",
+      "sha512": "4a892ea70c733afbd02d64927ca30e080aca443f7d30d686a9fc84d4294bcf44e7c150d6adb843198dc125979ae0545af70e9a2fd0843b5ddc46085987c544f9"
+    },
+    {
+      "project_id": "PsS0ZPEe",
+      "version_id": "rSs37OB4",
+      "filename": "wetland_whimsy-2.1.0-1.21.1.jar",
+      "sha512": "d16ef908206d80d4a5eea7df520692d5cefefe155e08d0997fc374d3257e8c1581caa3da2c62b910e75707697d493729a461adc2c4f3d1c4eb60f5c6635ea8f8"
+    },
+    {
+      "project_id": "zCh7omyG",
+      "version_id": "zTMR6t3J",
+      "filename": "betterarcheology-neoforge-1.21.1-1.3.9.jar",
+      "sha512": "c539aac7eee3ec51d55e9c053d4ad29ee467c9ef6d1206a33a15b7ad5c7937f684453f856ed304b657e6baa8bcc63c6fd56090c46d2d6ff1dcefd0f854a943c2"
     }
   ],
   "resources": [
@@ -1187,7 +1217,7 @@
       "version": "BYUUUeZA",
       "source": "data/nova_structures/worldgen/structure/illager_manor.json",
       "source_sha256": "efd769614a2c73bdee48d979e50c4bcd782c06795f782160b58a4a5ab0320132",
-      "result_json_sha256": "3e1b3bce37556a1954783b45fe0d37037cd25dfecc6e80405921fb2efb05041e",
+      "result_json_sha256": "05d1065400c93366f1f869a3339469f6e3297350306875ce3aa261cf18981a04",
       "retired_path": "pack/global_packs/required_data/aeroscapes_reimagine_compat/data/nova_structures/worldgen/structure/illager_manor.json"
     },
     {
@@ -2584,6 +2614,400 @@
       "source_sha256": "46ca857870c2a498d4ad81e930c5bd3108eb2ac7957ad9952e2ef9af21f98632",
       "result_json_sha256": "36ff9bba5ce86ca48b2cb44daefb1deb103052f6d38cabef005300e97dcc477c",
       "reason": "Restore survival access to the red sandstone splitter consumed by the native four-splitter recipe, matching the other stone debris drops."
+    },
+    {
+      "id": "cr_aero_structures:worldgen/structure/airballoon.json",
+      "provider": "aX7eWKKb",
+      "version": "aMCksPon",
+      "source": "data/cr_aero_structures/worldgen/structure/airballoon.json",
+      "source_sha256": "bedc7c91d066257f92f9f863864f31f52bdc4431dab7b5264adf3929308d3707",
+      "result_json_sha256": "d7bf6d4be3e4b62bbff94d11d7ea81b4e5c20df3201531fa918c34c6e92b2c4d"
+    },
+    {
+      "id": "cr_aero_structures:worldgen/structure/airship.json",
+      "provider": "aX7eWKKb",
+      "version": "aMCksPon",
+      "source": "data/cr_aero_structures/worldgen/structure/airship.json",
+      "source_sha256": "2e5f16559cfe917bb016bf2c093a570c3d4d169f77a5b57355ba182861aab9f9",
+      "result_json_sha256": "d1101d769c3a21bb04a0c65669ea73b77847b351216daf662796c9eb4677d781"
+    },
+    {
+      "id": "cr_aero_structures:worldgen/structure/pillager_airballoon.json",
+      "provider": "aX7eWKKb",
+      "version": "aMCksPon",
+      "source": "data/cr_aero_structures/worldgen/structure/pillager_airballoon.json",
+      "source_sha256": "88f6877a5f0c6db7f77e1365d0abe5d3cca3a1c79029820d80ce45a344f2ad50",
+      "result_json_sha256": "27d059a32c5d9b55773d015c87eb35f3f343d32cb85ced183d4ae4f87579bf1e"
+    },
+    {
+      "id": "cr_aero_structures:worldgen/structure/pillager_airship.json",
+      "provider": "aX7eWKKb",
+      "version": "aMCksPon",
+      "source": "data/cr_aero_structures/worldgen/structure/pillager_airship.json",
+      "source_sha256": "678bcd1f8839170796c6d5b12627dc3ff50dc1d4d780e0075d88a3743c0abf24",
+      "result_json_sha256": "44d3b9b17f5ac09e9790dfb3c96fc2c925cd0a3dc0604119d1ae1962b8baf1f8"
+    },
+    {
+      "id": "cr_aero_structures:worldgen/structure_set/cr_aero_structures.json",
+      "provider": "aX7eWKKb",
+      "version": "aMCksPon",
+      "source": "data/cr_aero_structures/worldgen/structure_set/cr_aero_structures.json",
+      "source_sha256": "a82658199bbec8f4286c8f78512b37495d9d00cf72027340461032a63a338c4b",
+      "result_json_sha256": "7efaf1f250321e358cf0b96c33aad27ffb1e95dc67c5d32030e43bc824bcf0d8"
+    },
+    {
+      "id": "cr_aero_structures:worldgen/structure_set/boat_set.json",
+      "provider": "aX7eWKKb",
+      "version": "aMCksPon",
+      "source": "data/cr_aero_structures/worldgen/structure_set/boat_set.json",
+      "source_sha256": "d9132439bfa3c5ebe559757d89910d7bef1e37e8e84e6e8ff65012d52d134c1d",
+      "result_json_sha256": "4235a6185017ba8596b1b7796f3c19c6b653097a193cdd9afc14ff10ca96fb12"
+    },
+    {
+      "id": "skyvillages:worldgen/structure/skyvillage.json",
+      "provider": "mb68eIfx",
+      "version": "3InSHTOp",
+      "source": "data/skyvillages/worldgen/structure/skyvillage.json",
+      "source_sha256": "6b68bfa4ef78d7b1c729258ec1ec4c28ab4b99509bb958918401085fc689a325",
+      "result_json_sha256": "e9cfd9ba81a9f0781e65cb7b3c2a5368752c0bc925d8ac850f1c5c83ab7f5705"
+    },
+    {
+      "id": "skyvillages:worldgen/template_pool/skyvillage_bridges.json",
+      "provider": "mb68eIfx",
+      "version": "3InSHTOp",
+      "source": "data/skyvillages/worldgen/template_pool/skyvillage_bridges.json",
+      "source_sha256": "b1dc7ba9f31dae814986e3b1c391b360645e429558aa95463e625c733e407629",
+      "result_json_sha256": "f7fa7c3d2750c615ca9a8054409d85ef828629c9b67807e5eb952eab2ed92917"
+    },
+    {
+      "id": "skyvillages:worldgen/template_pool/skyvillage_houses.json",
+      "provider": "mb68eIfx",
+      "version": "3InSHTOp",
+      "source": "data/skyvillages/worldgen/template_pool/skyvillage_houses.json",
+      "source_sha256": "9ad7d19b8f8344ad21851b8837e793f883f97d72bef8a7c18ef990376fd76e8d",
+      "result_json_sha256": "d6671e8fa59a797771cf94dd0786d3d1af362665db6699860fd04ccb887e6a65"
+    },
+    {
+      "id": "skyvillages:worldgen/template_pool/skyvillage_deco.json",
+      "provider": "mb68eIfx",
+      "version": "3InSHTOp",
+      "source": "data/skyvillages/worldgen/template_pool/skyvillage_deco.json",
+      "source_sha256": "2377e454deba60da5e8911fd22d13e2784c70ae3d95eb0473da78c0c83af6cc5",
+      "result_json_sha256": "89ac5f60539f5b47169eb2b2c0ab330b73ecc65cc841e81bea2c9d25bd187089"
+    },
+    {
+      "id": "skyvillages:worldgen/processor_list/house_processor.json",
+      "provider": "mb68eIfx",
+      "version": "3InSHTOp",
+      "source": "data/skyvillages/worldgen/processor_list/house_processor.json",
+      "source_sha256": "87f216c42e8c2309ac3e978404dbc81a1a4b267d3c84c90fdab414258b356758",
+      "result_json_sha256": "92e1b0992bd55f35a3ba8cda190f0ea07befc7805cf9934a0b113825ad31d864"
+    },
+    {
+      "id": "cr_aero_structures:loot_table/chests/uniform.json",
+      "provider": "aX7eWKKb",
+      "version": "aMCksPon",
+      "source": "data/cr_aero_structures/loot_table/chests/uniform.json",
+      "source_sha256": "e175c4cf19109e45299928fe7559d2685a3ada3adc8862ab8e3cebabf5397b5c",
+      "result_json_sha256": "6d452efad500faec7bee1a818b641abe4244024768439c857fae40c96e58e2f8"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/archeologist_camp_grassy.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/archeologist_camp_grassy.json",
+      "source_sha256": "24a8071a4056545ae4e4b837ed8199edc22bc82836381db7a0001934f83b3df7",
+      "result_json_sha256": "6f72ca7331cfd3943178c929c8e8a0a0d3bebbb36043974c12e501a93e6058f1"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/archeologist_camp_redsand.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/archeologist_camp_redsand.json",
+      "source_sha256": "b39064358a442bfb1235a56def1f028a42f742b17edac6929ba6c478fa1ad153",
+      "result_json_sha256": "766cf5afe86ad2ed9ea038ac851bac92a7f048029df27a1fe6807d664d8288b1"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/archeologist_camp_sand.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/archeologist_camp_sand.json",
+      "source_sha256": "f1d8db693cbf44c81d96985deed67f5167d9c70d35c0fd4b1b8e55668ee97e9b",
+      "result_json_sha256": "a43777526495333a9f43ee0300ecdfca0f6b0d49a687e797c3d7d6c34fa7570b"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/buried_ruins_sand.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/buried_ruins_sand.json",
+      "source_sha256": "0878514194a475b7c37a2cdc7a8a3dbfcf341c2dcd9304c118da03dd7c3d0063",
+      "result_json_sha256": "98b84c5c50ba0a66056e71c5e82898d3263c73126308597f137a1b15e96a3eef"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/catacombs.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/catacombs.json",
+      "source_sha256": "7ed420d5554596430114356cb18d0b20c3ebc67e500bea10933369f025883be0",
+      "result_json_sha256": "3ed40f468c87d1407c5afc84c0c674b185a2b036d7f39c01a7f2e0e56d2e431f"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/desert_obelisk.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/desert_obelisk.json",
+      "source_sha256": "8c5fd8c61dd1096635c17b62982b6727a9bed93f4659e1c81965f0cf3c0260d6",
+      "result_json_sha256": "69f0f7aa6612d7e32eb2dbe1760cb0f91f95f258ba3fce3ffd4de4a0b62595c2"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/fossil_chicken.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/fossil_chicken.json",
+      "source_sha256": "002fe89c35cdc9a8f14f542904e96fe7973a0c55c8a81b725c77eeead276274a",
+      "result_json_sha256": "8ad1d57bd368e9060d8dbb173d0289e9c7a066183af9485c6f46a3997d80b6bd"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/fossil_chicken_birch.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/fossil_chicken_birch.json",
+      "source_sha256": "c94cab661b96f28744faa92f998c4861f32e0317a0214b70e13b822f50090322",
+      "result_json_sha256": "855ff21560fb71f2ad93f0c70c661caf53e76f68c7ce2d0185ad2d6293b811fe"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/fossil_creeper.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/fossil_creeper.json",
+      "source_sha256": "f9988c7cbf44fae5deb73afc1d282099136c51565d722b8e024829286bb5b4ba",
+      "result_json_sha256": "c9f058acc30d55b0c185e4047fa6b2e21ea64a1be5c38a0e2a3a889c9071d7e2"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/fossil_jungle_0.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/fossil_jungle_0.json",
+      "source_sha256": "5f3af50da1c2f577a94412bd11a54da175c887a351faf18d3a7bacfdbf6fb2e6",
+      "result_json_sha256": "a8dbab8d6b4fcb4cb54940aef4c48eef1d2c37e2f8658f59d845eeba61d0fc0d"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/fossil_jungle_1.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/fossil_jungle_1.json",
+      "source_sha256": "15f04895d44f8f9d00f4dffcbcb1d6586988bb1039288a9a6ffa871f75b255d9",
+      "result_json_sha256": "41a5221a73b2afd3f7a8424a9e4239240ed84818cda967cf3f6d2afca733e2cd"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/fossil_sheep_0.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/fossil_sheep_0.json",
+      "source_sha256": "8a4db057cd2ac33619bf6e8318374aa3e690bd6007060336813fb228b278ba29",
+      "result_json_sha256": "ebbd5d10c761517bcc82f3bb5a6f27e82ec908bfffec56c786a11666cbc4770c"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/fossil_wolf.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/fossil_wolf.json",
+      "source_sha256": "9a6d847c5e129afaeffd4a901b8e75e64293da9e8a288d559b11458e414b5951",
+      "result_json_sha256": "6e82f726beabe7c273bfea590a0091a4e0f41fe91104079297ec395919b8907e"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/light_temple.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/light_temple.json",
+      "source_sha256": "a2557c99a578107bf986d1252f8a4d8230b23719b2bcce3b2ee95df0e33e3c41",
+      "result_json_sha256": "db9fddbea1d1ad2498ea12e6fa8dd2d5135e0400c88600a8859bf6b4444e7b1a"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/mesa_ruins.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/mesa_ruins.json",
+      "source_sha256": "19bcf8429583382bfd8ecf1b6c58759ee1aff1de4d1cbd6000141ee129127dc0",
+      "result_json_sha256": "366614342faaf2e3ad8d183c7dcae580ae4a7855e35d35759eee3c4f6433c71f"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/mott.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/mott.json",
+      "source_sha256": "6626e88dc9ed2aa65b0941729a0d6025b03825496cb42897becc37a6cc0f7fb6",
+      "result_json_sha256": "d5adc07eebee1fe2732a3750e002d9093170bec71a7919e60e2c66ee8cc59a83"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/ruins_sand.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/ruins_sand.json",
+      "source_sha256": "d885986839dc2f10dba8651e506363592c279d00fca0e4d03065d0836e13b4a0",
+      "result_json_sha256": "d001f02f759e8b4db8cb4b76aa2f3635b966ffc7da0e1aec650d396ebff386d6"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/stonehenge_grassy.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/stonehenge_grassy.json",
+      "source_sha256": "6a364f88495fdbe517ca38b8d0fe73f30665730529aca60f0c00995552749ed5",
+      "result_json_sha256": "626a9aee21041fec988f638948a6ffc710e2f5a0f2c29047ea3431154bb58d2f"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/temple_jungle.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/temple_jungle.json",
+      "source_sha256": "2f4da00a82ee57734573a211e13d89668e7aeebed1c7dda1c2ba6db2c3f4b024",
+      "result_json_sha256": "13c47430a64db37db7715eb1b7f1e92ede201b148c88dbafcf8346a193b17ba8"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/tumulus_grassy.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/tumulus_grassy.json",
+      "source_sha256": "5dd3bd97123bda63da95a840b800cadd7470d890fd833c771513934d8f5f0a76",
+      "result_json_sha256": "7cad2e972b4cec12442d40513b6b272ef1de23a40984675306dc2463911535b4"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/underwater_0.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/underwater_0.json",
+      "source_sha256": "3057fad8c4618f922aadce1465948045ecf65d7e69c09de4515aa018acdbacc2",
+      "result_json_sha256": "ec4b9067d69a6b1e113ff50c4088089527546819632edfe8de4d707dd243f5a0"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/underwater_1.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/underwater_1.json",
+      "source_sha256": "4c949517fb333b704cb9ed76d3d92abd4d7346680df8308d7c212b97ef39c8e3",
+      "result_json_sha256": "7f2d0ba932afc8e83eb71cabb298fc3eacf741790a82cbf1055a4d27e8f84e63"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/underwater_2.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/underwater_2.json",
+      "source_sha256": "cece4ce3c37f2452cb2f7ca6aa7291238ef33e0138b114081a79b57a231a6c1e",
+      "result_json_sha256": "e6da131c3a8b4b5f18e291499eef5473a5098feff874682ba3bfed27177a2b9c"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/underwater_3.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/underwater_3.json",
+      "source_sha256": "5d0fa86d85077ccf6fd0b802d9440a3dd60d0a3dfaa6dd2a2fbb9bced4aa742d",
+      "result_json_sha256": "939f91c303f9e953bb0f254ff40595c53eb301db94c57ee473be7d8106dcc388"
+    },
+    {
+      "id": "betterarcheology:worldgen/structure/villager_grave.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/worldgen/structure/villager_grave.json",
+      "source_sha256": "9bc73f2d07d1c761a6d74863c7faa8fd86772b2ebeb1d36702b5f5b39ffe4b4e",
+      "result_json_sha256": "2634484f1582663b57dd363d8a14e3114a7546c4627f129ad83732d25121c54d"
+    },
+    {
+      "id": "betterarcheology:loot_table/archeology/sword_loot.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/betterarcheology/loot_table/archeology/sword_loot.json",
+      "source_sha256": "af23ccb4030d6dbd27e2517a8ad6c093976bdf9e3ca2a16ad175f1fb1135f026",
+      "result_json_sha256": "e6904dc42d24e12ff92c90ab440984e5703c29fe427662f3fbf2953089c520d9"
+    },
+    {
+      "id": "wetland_whimsy:worldgen/structure/arch.json",
+      "provider": "PsS0ZPEe",
+      "version": "rSs37OB4",
+      "source": "data/wetland_whimsy/worldgen/structure/arch.json",
+      "source_sha256": "2317046ef3e84bca3baa89e7df20ed5c3810cd08a0b8bd79b7dd715d8389c6e9",
+      "result_json_sha256": "0ad1b78c7771a43f32450e082f99bf34783faa82be13c9ec7651517d25efcd5d"
+    },
+    {
+      "id": "wetland_whimsy:worldgen/structure/arena.json",
+      "provider": "PsS0ZPEe",
+      "version": "rSs37OB4",
+      "source": "data/wetland_whimsy/worldgen/structure/arena.json",
+      "source_sha256": "0d597beaefc252743af310b36841ab753b5d9fc28421c18400f09ddabe7875fa",
+      "result_json_sha256": "491e5480d5dcb4cd80bf42beea57f845b436478205417f0da34e4364dbd8e609"
+    },
+    {
+      "id": "wetland_whimsy:worldgen/structure/pillar.json",
+      "provider": "PsS0ZPEe",
+      "version": "rSs37OB4",
+      "source": "data/wetland_whimsy/worldgen/structure/pillar.json",
+      "source_sha256": "e9a1404c06ddd10fb001f2747124095d7b47d1d30f794f9ff6cf7de268008403",
+      "result_json_sha256": "8d971bc1643ed851534e3789d49d57e9631a452fbb45f4b47e6a966fee382429"
+    },
+    {
+      "id": "wetland_whimsy:worldgen/structure/swamp_dungeon.json",
+      "provider": "PsS0ZPEe",
+      "version": "rSs37OB4",
+      "source": "data/wetland_whimsy/worldgen/structure/swamp_dungeon.json",
+      "source_sha256": "8c25973cf4c62b13eb6702d3308bbb7f43b88b12fff57570086b034c68644d75",
+      "result_json_sha256": "032991dc8fe0ae65f811f1a591d619406db9915c92586b03194201cd8c04352d"
+    },
+    {
+      "id": "wetland_whimsy:worldgen/structure/wall.json",
+      "provider": "PsS0ZPEe",
+      "version": "rSs37OB4",
+      "source": "data/wetland_whimsy/worldgen/structure/wall.json",
+      "source_sha256": "fe61e63a737af5f399a31bd32093e176981d422a84b56e61a436e3ff7de7ae15",
+      "result_json_sha256": "b4496c6f9a938165812c4ef579c7eec52be7a27ceb8e4e22fda198e8972234d2"
+    },
+    {
+      "id": "wetland_whimsy:worldgen/structure/witch_hut.json",
+      "provider": "PsS0ZPEe",
+      "version": "rSs37OB4",
+      "source": "data/wetland_whimsy/worldgen/structure/witch_hut.json",
+      "source_sha256": "c936b4f1485e8229ffbfa58391ead40ed70c68c096bd508c3e3dd241434bc80a",
+      "result_json_sha256": "2b67fe59c0ad93dcc9ac8d0a2e1442cc5ad419df03af077e2e91ee84a0539e26"
+    },
+    {
+      "id": "naturalist:neoforge/biome_modifier/remove_farm_animals_savanna.json",
+      "provider": "F8BQNPWX",
+      "version": "9Yn8ig4c",
+      "source": "data/naturalist/neoforge/biome_modifier/remove_farm_animals_savanna.json",
+      "source_sha256": "6d75f151196e4da5cb21b188f1e9e6ebdb2a48e6f9d8d4ce1c86169dbd88446e",
+      "result_json_sha256": "e573f5ed21fc25cc539116ff2a00e38a9fcf7cd7a3207abe3cca108e8c7e8338"
+    },
+    {
+      "id": "naturalist:neoforge/biome_modifier/remove_farm_animals_swamp.json",
+      "provider": "F8BQNPWX",
+      "version": "9Yn8ig4c",
+      "source": "data/naturalist/neoforge/biome_modifier/remove_farm_animals_swamp.json",
+      "source_sha256": "a39eed8efaf34dccbe6db35a1f530e6da11aef1df326371dca857f82c0f9a036",
+      "result_json_sha256": "e573f5ed21fc25cc539116ff2a00e38a9fcf7cd7a3207abe3cca108e8c7e8338"
+    },
+    {
+      "id": "naturalist:neoforge/biome_modifier/remove_forest_pigs.json",
+      "provider": "F8BQNPWX",
+      "version": "9Yn8ig4c",
+      "source": "data/naturalist/neoforge/biome_modifier/remove_forest_pigs.json",
+      "source_sha256": "176b9d488247e8e5048ab197ace710a764cc4b476c21ef8fafe7d4fcef957791",
+      "result_json_sha256": "d9255aab296f5f3217cf88b48837b2d6f082f3a44b3877ad0103de7407761fcc"
+    },
+    {
+      "id": "minecraft:tags/block/dirt.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/minecraft/tags/block/dirt.json",
+      "source_sha256": "f22902ee5975a8ee97085814d401c72d959ceea4fc1a61bf9dae5f58e8f65578",
+      "result_json_sha256": "625ad7466621d5dc16b57db3f1b22e96ae22e37ddd32b84b912e0bf03554f8fc",
+      "reason": "Keep archaeological deposits and their brush loot out of ordinary soil replacement during decoration."
+    },
+    {
+      "id": "minecraft:tags/block/lush_ground_replaceable.json",
+      "provider": "zCh7omyG",
+      "version": "zTMR6t3J",
+      "source": "data/minecraft/tags/block/lush_ground_replaceable.json",
+      "source_sha256": "f22902ee5975a8ee97085814d401c72d959ceea4fc1a61bf9dae5f58e8f65578",
+      "result_json_sha256": "625ad7466621d5dc16b57db3f1b22e96ae22e37ddd32b84b912e0bf03554f8fc",
+      "reason": "Keep archaeological deposits and their brush loot out of ordinary soil replacement during decoration."
     }
   ]
 }

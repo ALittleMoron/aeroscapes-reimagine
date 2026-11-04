@@ -18,7 +18,7 @@ public final class TreesMixinPlugin implements IMixinConfigPlugin {
             "fallingtrees", "0.14.0",
             "pandalib", "0.6.2",
             "sable", "2.0.6",
-            "neoforge", "21.1.234");
+            "neoforge", "21.1.244");
     if (expected.keySet().stream().anyMatch(id -> mods.getModFileById(id) == null)) return false;
     for (var entry : expected.entrySet()) {
       String actual =

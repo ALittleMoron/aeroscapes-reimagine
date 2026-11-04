@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.archeology",
+  "plugin": "dev.aeroscapes.archeology.ArcheologyMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["ArcheologyStructureMixin", "ArcheologyBrushLanguageMixin"],
+  "client": ["ResourcefulValueLanguageMixin", "ResourcefulSeparatorLanguageMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

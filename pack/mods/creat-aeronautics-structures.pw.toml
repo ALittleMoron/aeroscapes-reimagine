@@ -1,0 +1,12 @@
+name = "Creat Aeronautics Structures"
+filename = "cr_aero_structures.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/aX7eWKKb/versions/aMCksPon/cr_aero_structures.jar"
+hash-format = "sha512"
+hash = "4a892ea70c733afbd02d64927ca30e080aca443f7d30d686a9fc84d4294bcf44e7c150d6adb843198dc125979ae0545af70e9a2fd0843b5ddc46085987c544f9"
+
+[update.modrinth]
+mod-id = "aX7eWKKb"
+version = "aMCksPon"

@@ -5,6 +5,7 @@
   "plugin": "dev.aeroscapes.ecology.EcologyMixinPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ecology.WetlandMarshCriterionMixin",
     "DebrisSurfacePlacementMixin",
     "DebrisSnowFloorMixin",
     "DebrisUnderwaterFloorMixin",

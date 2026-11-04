@@ -36,7 +36,7 @@ final class RuntimeJsonPatchesRegression {
       JsonObject report = new JsonObject();
       Map<ResourceLocation, Resource> listed = new HashMap<>();
       for (String prefix :
-          List.of("worldgen", "advancement", "tags", "enchantment", "loot_table")) {
+          List.of("worldgen", "advancement", "tags", "enchantment", "loot_table", "neoforge")) {
         listed.putAll(
             level
                 .getServer()

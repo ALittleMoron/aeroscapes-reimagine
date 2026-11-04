@@ -9100,5 +9100,10 @@
     "key": "config.spawn.bucket_tooltip.tooltip",
     "expected": "Whether bucketed mobs display the contents in the tooltip.",
     "replacement": "Показывает пойманное животное в подсказке ведра."
+  },
+  {
+    "key": "painting.naturalist.bear_necessities.title",
+    "expected": "Bear Necessities",
+    "replacement": "Медвежьи нужды"
   }
 ]

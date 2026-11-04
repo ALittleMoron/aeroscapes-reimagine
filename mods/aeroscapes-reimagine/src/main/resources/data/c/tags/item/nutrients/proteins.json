@@ -3494,6 +3494,10 @@
       "required": false
     },
     {
+      "id": "crittersandcompanions:koi_fish",
+      "required": false
+    },
+    {
       "id": "delightfulcreators:incomplete_apple_pie",
       "required": false
     },
@@ -3942,6 +3946,154 @@
       "required": false
     },
     {
+      "id": "hybrid_birds:cooked_duck",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:cooked_egg",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:cooked_goose",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:cooked_puffin",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:cooked_turkey",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:duck",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:goose",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:puffin",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:turkey",
+      "required": false
+    },
+    {
+      "id": "naturalist:anglerfish",
+      "required": false
+    },
+    {
+      "id": "naturalist:bass",
+      "required": false
+    },
+    {
+      "id": "naturalist:blobfish",
+      "required": false
+    },
+    {
+      "id": "naturalist:bushmeat",
+      "required": false
+    },
+    {
+      "id": "naturalist:catfish",
+      "required": false
+    },
+    {
+      "id": "naturalist:clam_meat",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_anglerfish",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_bass",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_blobfish",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_bushmeat",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_catfish",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_clam_meat",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_crab_meat",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_drumstick",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_duck",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_egg",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_lizard_tail",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_mammoth_meat",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_piranha",
+      "required": false
+    },
+    {
+      "id": "naturalist:cooked_venison",
+      "required": false
+    },
+    {
+      "id": "naturalist:crab_meat",
+      "required": false
+    },
+    {
+      "id": "naturalist:drumstick",
+      "required": false
+    },
+    {
+      "id": "naturalist:duck",
+      "required": false
+    },
+    {
+      "id": "naturalist:lizard_tail",
+      "required": false
+    },
+    {
+      "id": "naturalist:mammoth_meat",
+      "required": false
+    },
+    {
+      "id": "naturalist:morsel",
+      "required": false
+    },
+    {
+      "id": "naturalist:piranha",
+      "required": false
+    },
+    {
+      "id": "naturalist:venison",
+      "required": false
+    },
+    {
       "id": "natures_delight:alfredo_pasta",
       "required": false
     },
@@ -4070,11 +4222,59 @@
       "required": false
     },
     {
+      "id": "spawn:bluefish",
+      "required": false
+    },
+    {
+      "id": "spawn:bluefish_slice",
+      "required": false
+    },
+    {
+      "id": "spawn:cooked_bluefish",
+      "required": false
+    },
+    {
+      "id": "spawn:cooked_bluefish_slice",
+      "required": false
+    },
+    {
+      "id": "spawn:cooked_clam",
+      "required": false
+    },
+    {
+      "id": "spawn:cooked_dodo",
+      "required": false
+    },
+    {
+      "id": "spawn:crab_boil",
+      "required": false
+    },
+    {
+      "id": "spawn:dodo",
+      "required": false
+    },
+    {
       "id": "supplementaries:soap",
       "required": false
     },
     {
       "id": "supplementaries:soap_block",
+      "required": false
+    },
+    {
+      "id": "wetland_whimsy:cooked_crawfish",
+      "required": false
+    },
+    {
+      "id": "wetland_whimsy:crawfish",
+      "required": false
+    },
+    {
+      "id": "wetland_whimsy:gumbo",
+      "required": false
+    },
+    {
+      "id": "wetland_whimsy:popcorn_crawfish",
       "required": false
     }
   ]

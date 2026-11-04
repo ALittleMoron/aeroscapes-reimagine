@@ -23,7 +23,7 @@ Amazon Corretto 25.0.5.0.9. Network access is needed for the wrapper and verifie
 build dependencies on the first build; no existing project cache is required.
 
 The wrapper pins Gradle 9.2.1 and its distribution checksum. The build pins
-NeoForge 21.1.234 for Minecraft 1.21.1, ModDev 2.0.148, Spotless 8.10.4,
+NeoForge 21.1.244 for Minecraft 1.21.1, ModDev 2.0.148, Spotless 8.10.4,
 google-java-format 1.36.1, ktfmt 0.64 and PMD 7.28.0. Compile-only integration
 APIs are downloaded using the exact coordinates in `build.gradle.kts` and checked
 against `gradle/verification-metadata.xml`. These APIs are not bundled into the
