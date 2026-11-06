@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "farmersdelight:item/flint_knife"
+    }
+  },
+  "textures": {
+    "layer0": "farmersdelight:item/flint_knife",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "farmersdelight:item/equipment/held/flint_knife"
+    },
+    "firstperson_lefthand": {
+      "parent": "farmersdelight:item/equipment/held/flint_knife"
+    },
+    "thirdperson_righthand": {
+      "parent": "farmersdelight:item/equipment/held/flint_knife"
+    },
+    "thirdperson_lefthand": {
+      "parent": "farmersdelight:item/equipment/held/flint_knife"
+    }
+  }
+}

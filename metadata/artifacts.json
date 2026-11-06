@@ -734,9 +734,8 @@
         "dependency_type": "required"
       }
     ],
-    "status": "included",
+    "status": "excluded",
     "origin": "Official C2ME/OpenCL experimental rollout selected by owner",
-    "exception": "Owner explicitly selected the C2ME/OpenCL alpha experiment on 2026-10-26.",
     "provider_dependencies": [
       {
         "version_id": null,
@@ -755,9 +754,9 @@
     "artifact_license": "All Rights Reserved; Do not redistribute. Original official JAR remains unchanged; owned extension code is separate.",
     "distribution_review": {
       "unchanged_file": "The exact pinned file is hosted on Modrinth; unchanged inclusion in Modrinth modpacks follows its specific-file permission policy. This does not relicense the file or grant off-platform bundled redistribution.",
-      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
-      "integration_decision": "metadata/README.md"
-    }
+      "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions"
+    },
+    "reason": "Removed at the owner's request after their gameplay comparison found chunk generation worked better without OpenCL; CPU C2ME remains selected."
   },
   {
     "slug": "carry-on",
@@ -4054,7 +4053,7 @@
     ],
     "sha1": "1bea6b61378ba80f038256c4345d9ff3b67928c4",
     "file_size": 60296,
-    "reason": "Replaced by C2ME OpenCL: Noisium 2.3.0 redirects the noise-fill body overwritten by the pinned OpenCL module and prevents startup."
+    "reason": "Not selected for the current CPU generation stack; C2ME replaced the earlier Noisium experiment."
   },
   {
     "slug": "not-enough-animations",

@@ -1,5 +1,8 @@
 package dev.aeroscapes.aquatic;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+import dev.aeroscapes.atmosphere.EquipmentStyle;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -49,37 +52,75 @@ public final class EquipmentModels {
         Files.write(resource.getKey(), resource.getValue());
       }
     }
+    artwork(repository, resources, !check);
     System.out.println(
         "Equipment resources " + (check ? "verified: " : "generated: ") + resources.size());
+  }
+
+  private static void artwork(Path repository, Map<Path, byte[]> resources, boolean write)
+      throws IOException {
+    for (var entry : resources.entrySet()) {
+      if (!entry.getKey().endsWith("atlases/blocks.json")) continue;
+      var atlas =
+          JsonParser.parseString(new String(entry.getValue(), StandardCharsets.UTF_8))
+              .getAsJsonObject();
+      for (var element : atlas.getAsJsonArray("sources")) {
+        var source = element.getAsJsonObject();
+        if (!source.get("type").getAsString().equals("aeroscapes_reimagine:equipment_paint"))
+          continue;
+        String sprite = source.get("sprite").getAsString();
+        String id = sprite.replace(":item/equipment/painted/", ":");
+        var profile =
+            EquipmentStyle.valueOf(source.get("profile").getAsString().toUpperCase(Locale.ROOT));
+        byte[] pixels;
+        try {
+          pixels = EquipmentSculpture.texture(id, profile);
+        } catch (IllegalArgumentException failure) {
+          throw new IOException("Invalid equipment paint " + id, failure);
+        }
+        if (write) {
+          Path preview =
+              repository.resolve(
+                  ".runtime/equipment-artwork/assets/"
+                      + sprite.replace(":", "/textures/")
+                      + ".png");
+          Files.createDirectories(preview.getParent());
+          Files.write(preview, pixels);
+        }
+      }
+    }
   }
 
   private static Map<Path, byte[]> resources(Path repository) throws IOException {
     Map<Path, byte[]> output = new LinkedHashMap<>();
     Path assets = repository.resolve("pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets");
+    output.put(assets.resolve("yo_hooks/textures/entity/hook_rope.png"), chainTexture());
+    try (var license = EquipmentModels.class.getResourceAsStream("/LICENSE-yo_hooks")) {
+      if (license == null)
+        throw new IOException("Missing Yo Hooks MIT attribution for its chain texture");
+      output.put(assets.getParent().resolve("licenses/yo_hooks-MIT.txt"), license.readAllBytes());
+    }
     RodModels.addResources(repository, output);
+    ToolModels.addResources(repository, output);
+    Map<String, JsonObject> hooks = new LinkedHashMap<>();
     for (Map.Entry<String, Integer> metal : METALS.entrySet()) {
       String tier = metal.getKey();
       output.put(
           assets.resolve("aeroscapes_reimagine/textures/item/equipment/" + tier + ".png"),
           material(metal.getValue(), false));
-      text(
-          output,
-          assets.resolve("yo_hooks/models/item/" + tier + "_grappling_hook.json"),
-          hookModel(tier, true));
-      text(
-          output,
-          assets.resolve("yo_hooks/models/item/" + tier + "_hook_head.json"),
-          hookModel(tier, false));
+      hooks.put(
+          "yo_hooks:" + tier + "_grappling_hook",
+          JsonParser.parseString(hookModel(tier, true)).getAsJsonObject());
+      hooks.put(
+          "yo_hooks:" + tier + "_hook_head",
+          JsonParser.parseString(hookModel(tier, false)).getAsJsonObject());
     }
     for (boolean netherite : new boolean[] {false, true}) {
-      text(
-          output,
-          assets.resolve(
-              "yo_hooks/models/item/grappling_hook_handle"
-                  + (netherite ? "_netherite" : "")
-                  + ".json"),
-          handleModel(netherite ? "netherite" : "iron"));
+      hooks.put(
+          "yo_hooks:grappling_hook_handle" + (netherite ? "_netherite" : ""),
+          JsonParser.parseString(handleModel(netherite ? "netherite" : "iron")).getAsJsonObject());
     }
+    HeldItemModels.add(assets, output, hooks);
     output.put(
         assets.resolve("aeroscapes_reimagine/textures/item/equipment/grip.png"),
         material(0x654632, true));
@@ -87,11 +128,43 @@ public final class EquipmentModels {
         assets.resolve("aeroscapes_reimagine/textures/item/equipment/rope.png"),
         material(0xB99A64, true));
     output.put(
-        assets.resolve("aeroscapes_reimagine/textures/item/equipment/lunchbox.png"),
-        material(0x658776, false));
+        assets.resolve("aeroscapes_reimagine/textures/item/equipment/chain.png"),
+        material(0x283E51, false));
     text(
-        output, assets.resolve("nutritionalbalance/models/item/lunchbox_3d.json"), lunchboxModel());
+        output,
+        assets.resolve("nutritionalbalance/models/item/lunchbox_3d.json"),
+        HeldItemModels.nativeModel("nutritionalbalance:lunchbox_3d").toString());
+    text(
+        output,
+        assets.resolve("nutritionalbalance/models/item/equipment/held/lunchbox.json"),
+        NativeEquipmentModels.sculpt("nutritionalbalance:lunchbox_3d", EquipmentStyle.LUNCHBOX)
+            .toString());
+    JsonObject atlas = new JsonObject();
+    com.google.gson.JsonArray sprites = new com.google.gson.JsonArray();
+    sprites.add(
+        EquipmentSculpture.spriteSource("nutritionalbalance:lunchbox_3d", EquipmentStyle.LUNCHBOX));
+    atlas.add("sources", sprites);
+    text(output, assets.resolve("minecraft/atlases/blocks.json"), atlas.toString());
     return output;
+  }
+
+  private static byte[] chainTexture() throws IOException {
+    BufferedImage original = NativeEquipmentModels.image("yo_hooks:entity/hook_rope");
+    BufferedImage recolored =
+        new BufferedImage(original.getWidth(), original.getHeight(), BufferedImage.TYPE_INT_ARGB);
+    for (int y = 0; y < original.getHeight(); y++)
+      for (int x = 0; x < original.getWidth(); x++) {
+        int color = original.getRGB(x, y);
+        int rgb =
+            switch (color & 0xFFFFFF) {
+              case 0x252C3D -> 0x657481;
+              case 0x3E4453 -> 0x9AA7B3;
+              case 0x495065 -> 0xD8E0E6;
+              default -> color & 0xFFFFFF;
+            };
+        recolored.setRGB(x, y, (color & 0xFF000000) | rgb);
+      }
+    return png(recolored);
   }
 
   static String rodDefinition(String name) {
@@ -120,8 +193,7 @@ public final class EquipmentModels {
         + "    \"property\": \"minecraft:display_context\",\n    \"cases\": [\n      "
         + String.join(",\n      ", cases)
         + "\n    ],\n    \"fallback\": "
-        + castModels(
-            "tide:item/equipment/" + name + "_held", "tide:item/equipment/" + name + "_cast_held")
+        + castModels("tide:item/" + name, "tide:item/" + name + "_cast")
         + "\n  }\n}\n";
   }
 
@@ -137,17 +209,19 @@ public final class EquipmentModels {
   private static String hookModel(String tier, boolean held) {
     List<String> cubes = new ArrayList<>();
     if (held) addHandle(cubes);
-    cubes.add(box(7.1, 6.5, 7.1, 8.9, 15.5, 8.9, "metal"));
-    cubes.add(box(3.5, 10.5, 7.1, 12.5, 12, 8.9, "metal"));
-    cubes.add(box(7.1, 10.5, 3.5, 8.9, 12, 12.5, "metal"));
-    cubes.add(box(3.5, 10.5, 7.1, 5, 15.5, 8.9, "metal"));
-    cubes.add(box(11, 10.5, 7.1, 12.5, 15.5, 8.9, "metal"));
-    cubes.add(box(7.1, 10.5, 3.5, 8.9, 15.5, 5, "metal"));
-    cubes.add(box(7.1, 10.5, 11, 8.9, 15.5, 12.5, "metal"));
-    cubes.add(box(4, 14.5, 7.1, 6, 16, 8.9, "metal"));
-    cubes.add(box(10, 14.5, 7.1, 12, 16, 8.9, "metal"));
-    cubes.add(box(7.1, 14.5, 4, 8.9, 16, 6, "metal"));
-    cubes.add(box(7.1, 14.5, 10, 8.9, 16, 12, "metal"));
+    cubes.add(box(7.45, 6.5, 7.45, 8.55, 13.5, 8.55, "metal"));
+    for (int side : new int[] {-1, 1}) {
+      double x1 = side < 0 ? 4.6 : 8, x2 = side < 0 ? 8 : 11.4;
+      cubes.add(rotatedBox(x1, 10.2, 7.45, x2, 11, 8.55, "metal", "z", side * 22.5, 8, 10.6, 8));
+      double x = side < 0 ? 4.8 : 10.4;
+      cubes.add(
+          rotatedBox(x, 11.5, 7.55, x + .8, 14, 8.45, "metal", "z", side * 22.5, x + .4, 11.5, 8));
+      double z1 = side < 0 ? 4.6 : 8, z2 = side < 0 ? 8 : 11.4;
+      cubes.add(rotatedBox(7.45, 10.2, z1, 8.55, 11, z2, "metal", "x", -side * 22.5, 8, 10.6, 8));
+      double z = side < 0 ? 4.8 : 10.4;
+      cubes.add(
+          rotatedBox(7.55, 11.5, z, 8.45, 14, z + .8, "metal", "x", -side * 22.5, 8, 11.5, z + .4));
+    }
     String overrides =
         held
             ? ",\n  \"overrides\": [{\"predicate\": {\"yo_hooks:hook_active\": 1}, \"model\": "
@@ -168,11 +242,47 @@ public final class EquipmentModels {
   }
 
   private static void addHandle(List<String> cubes) {
-    cubes.add(box(6.5, 0.5, 6.5, 9.5, 7.5, 9.5, "grip"));
-    cubes.add(box(6.2, 0.5, 6.2, 9.8, 1.5, 9.8, "metal"));
-    cubes.add(box(6.2, 6.5, 6.2, 9.8, 7.8, 9.8, "metal"));
-    cubes.add(box(6.35, 2.3, 6.35, 9.65, 3.1, 9.65, "rope"));
-    cubes.add(box(6.35, 4.5, 6.35, 9.65, 5.3, 9.65, "rope"));
+    cubes.add(box(7, .5, 7, 9, 7.5, 9, "grip"));
+    cubes.add(box(6.8, .5, 6.8, 9.2, 1.1, 9.2, "metal"));
+    cubes.add(box(6.8, 6.8, 6.8, 9.2, 7.5, 9.2, "metal"));
+    cubes.add(box(8.6, 8.5, 8.3, 10.4, 8.8, 8.65, "chain"));
+    for (int ring = 0; ring < 2; ring++) {
+      double y = 4.8 + ring * 1.6;
+      if (ring == 0) {
+        cubes.add(box(9, y, 9.3, 9.35, y + 3, 9.75, "chain"));
+        cubes.add(box(10.85, y, 9.3, 11.2, y + 3, 9.75, "chain"));
+        cubes.add(box(9, y, 9.3, 11.2, y + .35, 9.75, "chain"));
+        cubes.add(box(9, y + 2.65, 9.3, 11.2, y + 3, 9.75, "chain"));
+      } else {
+        cubes.add(box(10.15, y, 8.4, 10.6, y + 3, 8.75, "chain"));
+        cubes.add(box(10.15, y, 10.65, 10.6, y + 3, 11, "chain"));
+        cubes.add(box(10.15, y, 8.4, 10.6, y + .35, 11, "chain"));
+        cubes.add(box(10.15, y + 2.65, 8.4, 10.6, y + 3, 11, "chain"));
+      }
+    }
+  }
+
+  private static String rotatedBox(
+      double x1,
+      double y1,
+      double z1,
+      double x2,
+      double y2,
+      double z2,
+      String texture,
+      String axis,
+      double angle,
+      double ox,
+      double oy,
+      double oz) {
+    JsonObject part =
+        JsonParser.parseString(box(x1, y1, z1, x2, y2, z2, texture)).getAsJsonObject();
+    JsonObject rotation = new JsonObject();
+    rotation.addProperty("axis", axis);
+    rotation.addProperty("angle", angle);
+    rotation.add("origin", JsonParser.parseString("[" + ox + "," + oy + "," + oz + "]"));
+    part.add("rotation", rotation);
+    return part.toString();
   }
 
   private static String hookDisplay(boolean held) {
@@ -201,24 +311,6 @@ public final class EquipmentModels {
         + "\"fixed\": {\"rotation\": [0, 180, 0], \"scale\": [0.8, 0.8, 0.8]}}";
   }
 
-  private static String lunchboxModel() {
-    List<String> cubes = new ArrayList<>();
-    cubes.add(box(2.5, 0.5, 5, 13.5, 1.3, 11, "box"));
-    cubes.add(box(2.5, 1.3, 5, 3.5, 10.4, 11, "box"));
-    cubes.add(box(12.5, 1.3, 5, 13.5, 10.4, 11, "box"));
-    cubes.add(box(3.5, 9.7, 5, 12.5, 10.4, 11, "box"));
-    // Native food previews sit at z=7.2/8.8; these inset panels leave both visible.
-    cubes.add(box(3.5, 1.3, 7.5, 12.5, 9.7, 8.5, "box"));
-    cubes.add(box(2.3, 9.6, 4.8, 13.7, 10.2, 5.5, "metal"));
-    cubes.add(box(2.3, 9.6, 10.5, 13.7, 10.2, 11.2, "metal"));
-    cubes.add(box(4.7, 10.4, 7.2, 5.7, 13.5, 8.8, "grip"));
-    cubes.add(box(10.3, 10.4, 7.2, 11.3, 13.5, 8.8, "grip"));
-    cubes.add(box(4.7, 12.5, 7.2, 11.3, 13.5, 8.8, "grip"));
-    cubes.add(box(7, 9.7, 4.5, 9, 11, 5.5, "metal"));
-    cubes.add(box(7, 9.7, 10.5, 9, 11, 11.5, "metal"));
-    return mesh("iron", cubes, "{}", "");
-  }
-
   private static String mesh(String metal, List<String> cubes, String display, String overrides) {
     return "{\n  \"parent\": \"minecraft:block/block\",\n  \"ambientocclusion\": false,\n"
         + "  \"textures\": {\"particle\": \""
@@ -229,11 +321,10 @@ public final class EquipmentModels {
         + metal
         + "\", \"grip\": \""
         + MATERIALS
-        + "grip\", \"rope\": \""
+        + (metal.equals("netherite") ? "netherite" : "grip")
+        + "\", \"chain\": \""
         + MATERIALS
-        + "rope\", \"box\": \""
-        + MATERIALS
-        + "lunchbox\"},\n  \"elements\": [\n    "
+        + "chain\"},\n  \"elements\": [\n    "
         + String.join(",\n    ", cubes)
         + "\n  ],\n  \"display\": "
         + display

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "hybrid_aquatic:item/seashell_pickaxe"
+    }
+  },
+  "textures": {
+    "layer0": "hybrid_aquatic:item/seashell_pickaxe",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/seashell_pickaxe"
+    },
+    "firstperson_lefthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/seashell_pickaxe"
+    },
+    "thirdperson_righthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/seashell_pickaxe"
+    },
+    "thirdperson_lefthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/seashell_pickaxe"
+    }
+  }
+}

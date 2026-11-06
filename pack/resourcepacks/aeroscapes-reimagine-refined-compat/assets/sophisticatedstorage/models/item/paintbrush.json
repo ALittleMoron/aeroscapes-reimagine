@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "sophisticatedstorage:item/paintbrush"
+    }
+  },
+  "textures": {
+    "layer0": "sophisticatedstorage:item/paintbrush",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "sophisticatedstorage:item/equipment/held/paintbrush"
+    },
+    "firstperson_lefthand": {
+      "parent": "sophisticatedstorage:item/equipment/held/paintbrush"
+    },
+    "thirdperson_righthand": {
+      "parent": "sophisticatedstorage:item/equipment/held/paintbrush"
+    },
+    "thirdperson_lefthand": {
+      "parent": "sophisticatedstorage:item/equipment/held/paintbrush"
+    }
+  }
+}

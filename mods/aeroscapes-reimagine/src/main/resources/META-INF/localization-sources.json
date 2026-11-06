@@ -187,15 +187,15 @@
       "resource": "assets/aeroscapes_reimagine_ui_translations/lang/en_us.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
-      "entries": 210,
-      "sha256": "c13a28e3bf43ea24b7d51caa43eb86d671697c42792f968c7b813cf430be534d"
+      "entries": 212,
+      "sha256": "7339003953834e268e2ce33a91177aff3b3a9a45fa224ceb7ff68e3951d9e115"
     },
     {
       "resource": "assets/aeroscapes_reimagine_ui_translations/lang/ru_ru.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
-      "entries": 1245,
-      "sha256": "8cade1c5773cc3927ba77d132acfe263feba6fb00fecc43eb81a32cd385da180"
+      "entries": 1247,
+      "sha256": "76bf2d85ccc18374bcd573975e175c3015abefdc9fdd8e718e439ff66c199154"
     },
     {
       "resource": "assets/item_descriptions/lang/en_us.json",

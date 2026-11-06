@@ -1,0 +1,47 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "item/lead"
+    },
+    "display": {
+      "head": {
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "translation": [
+          2.75,
+          -2.75,
+          -6.5
+        ],
+        "scale": [
+          0.8,
+          0.8,
+          0.8
+        ]
+      }
+    }
+  },
+  "textures": {
+    "layer0": "item/lead",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "minecraft:item/equipment/held/lead"
+    },
+    "firstperson_lefthand": {
+      "parent": "minecraft:item/equipment/held/lead"
+    },
+    "thirdperson_righthand": {
+      "parent": "minecraft:item/equipment/held/lead"
+    },
+    "thirdperson_lefthand": {
+      "parent": "minecraft:item/equipment/held/lead"
+    }
+  }
+}

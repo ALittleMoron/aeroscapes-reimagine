@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/brush_brushing_2",
+    "textures": {
+      "layer0": "betterarcheology:item/brushes/netherite_brush"
+    }
+  },
+  "textures": {
+    "layer0": "betterarcheology:item/brushes/netherite_brush",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "betterarcheology:item/equipment/held/netherite_brush_brushing_2"
+    },
+    "firstperson_lefthand": {
+      "parent": "betterarcheology:item/equipment/held/netherite_brush_brushing_2"
+    },
+    "thirdperson_righthand": {
+      "parent": "betterarcheology:item/equipment/held/netherite_brush_brushing_2"
+    },
+    "thirdperson_lefthand": {
+      "parent": "betterarcheology:item/equipment/held/netherite_brush_brushing_2"
+    }
+  }
+}

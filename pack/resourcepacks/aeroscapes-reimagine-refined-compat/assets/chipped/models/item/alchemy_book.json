@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "chipped:item/alchemy_book"
+    }
+  },
+  "textures": {
+    "layer0": "chipped:item/alchemy_book",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "chipped:item/equipment/held/alchemy_book"
+    },
+    "firstperson_lefthand": {
+      "parent": "chipped:item/equipment/held/alchemy_book"
+    },
+    "thirdperson_righthand": {
+      "parent": "chipped:item/equipment/held/alchemy_book"
+    },
+    "thirdperson_lefthand": {
+      "parent": "chipped:item/equipment/held/alchemy_book"
+    }
+  }
+}

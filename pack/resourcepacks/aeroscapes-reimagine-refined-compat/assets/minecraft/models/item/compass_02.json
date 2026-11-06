@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/compass_02"
+    }
+  },
+  "textures": {
+    "layer0": "minecraft:item/compass_02",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "minecraft:item/equipment/held/compass_02"
+    },
+    "firstperson_lefthand": {
+      "parent": "minecraft:item/equipment/held/compass_02"
+    },
+    "thirdperson_righthand": {
+      "parent": "minecraft:item/equipment/held/compass_02"
+    },
+    "thirdperson_lefthand": {
+      "parent": "minecraft:item/equipment/held/compass_02"
+    }
+  }
+}

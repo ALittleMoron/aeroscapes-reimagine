@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "supplementaries:item/bomb_spiky"
+    }
+  },
+  "textures": {
+    "layer0": "supplementaries:item/bomb_spiky",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "supplementaries:item/equipment/held/bomb_spiky"
+    },
+    "firstperson_lefthand": {
+      "parent": "supplementaries:item/equipment/held/bomb_spiky"
+    },
+    "thirdperson_righthand": {
+      "parent": "supplementaries:item/equipment/held/bomb_spiky"
+    },
+    "thirdperson_lefthand": {
+      "parent": "supplementaries:item/equipment/held/bomb_spiky"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "supplementaries:item/bomb_spiky_projectile"
+    }
+  ]
+}

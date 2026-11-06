@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "galosphere:item/spectre_flare"
+    }
+  },
+  "textures": {
+    "layer0": "galosphere:item/spectre_flare",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "galosphere:item/equipment/held/spectre_flare"
+    },
+    "firstperson_lefthand": {
+      "parent": "galosphere:item/equipment/held/spectre_flare"
+    },
+    "thirdperson_righthand": {
+      "parent": "galosphere:item/equipment/held/spectre_flare"
+    },
+    "thirdperson_lefthand": {
+      "parent": "galosphere:item/equipment/held/spectre_flare"
+    }
+  }
+}

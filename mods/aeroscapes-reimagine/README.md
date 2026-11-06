@@ -4,7 +4,9 @@ This is the editable project for `aeroscapes-reimagine-0.1.0.jar`, licensed unde
 GPL-3.0-or-later. See `LICENSE` and `src/main/resources/META-INF/NOTICE.txt` for
 terms and origins. The source archive includes the project's Java sources,
 resources, regression fixtures, build configuration, Gradle wrapper and dependency
-verification metadata. `SOURCE-MANIFEST.json` at the archive root identifies the
+verification metadata. It also includes the pack's backup configuration,
+the two owned resource packs and their notices, which the quality checks read.
+`SOURCE-MANIFEST.json` at the archive root identifies the
 associated binary by SHA-256 and hashes every included source input. The binary
 itself is not inside the source archive.
 
@@ -47,6 +49,11 @@ PMD, policy tests and compilation of the separate server regression fixture. It
 does not start Minecraft. `jar` alone builds the main binary without the quality
 checks. The separate `aeroscapes-worldgen-regression` fixture is not installed as
 part of the pack.
+
+Keep the extracted `pack/` directory beside `mods/`; the checks validate the
+shipped configuration and generated equipment resources there. Minecraft resource
+contracts use the artifact resolved by the Gradle build, independently of the
+location of your Gradle cache.
 
 The original celestial atlas can be regenerated with
 `sh ./gradlew --no-daemon generateCelestialAtlas`. Its deterministic Java pixel
@@ -182,7 +189,7 @@ without accessing a private repository or an external source-hosting account.
 
 ### Equipment resource generation
 
-In the complete pack repository, `./gradlew generateEquipmentModels` regenerates
+`./gradlew generateEquipmentModels` regenerates
 the original equipment meshes/materials in the two existing owned resource packs.
 `equipmentModelsCheck` checks these outputs as part of `check`. Independent rod
 geometry retains the pinned Refined Tools display transforms through parent

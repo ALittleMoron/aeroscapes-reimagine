@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "crittersandcompanions:item/grappling_hook"
+    }
+  },
+  "textures": {
+    "layer0": "crittersandcompanions:item/grappling_hook",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "crittersandcompanions:item/equipment/held/grappling_hook"
+    },
+    "firstperson_lefthand": {
+      "parent": "crittersandcompanions:item/equipment/held/grappling_hook"
+    },
+    "thirdperson_righthand": {
+      "parent": "crittersandcompanions:item/equipment/held/grappling_hook"
+    },
+    "thirdperson_lefthand": {
+      "parent": "crittersandcompanions:item/equipment/held/grappling_hook"
+    }
+  }
+}

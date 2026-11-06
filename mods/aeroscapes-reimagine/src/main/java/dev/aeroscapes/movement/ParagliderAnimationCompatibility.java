@@ -53,6 +53,7 @@ public final class ParagliderAnimationCompatibility {
           }
           try {
             EMFAnimationApi.registerAnimationHook(new ParaglidingPose());
+            EMFAnimationApi.registerAnimationHook(new HookPoseSnapshot.AnimationHook());
           } catch (Exception failure) {
             throw new IllegalStateException(
                 "Cannot register paraglider animation compatibility", failure);

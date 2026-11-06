@@ -1,0 +1,2114 @@
+newmtl supplementaries_wrench_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/wrench
+
+newmtl supplementaries_wrench_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/wrench
+
+newmtl supplementaries_wrench_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/wrench
+
+newmtl supplementaries_wrench_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/wrench
+
+newmtl sophisticatedstorage_storage_tool_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedstorage:item/storage_tool
+
+newmtl sophisticatedstorage_storage_tool_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedstorage:item/storage_tool
+
+newmtl sophisticatedstorage_storage_tool_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedstorage:item/storage_tool
+
+newmtl sophisticatedstorage_storage_tool_marker
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedstorage:item/storage_tool
+
+newmtl sophisticatedstorage_storage_tool_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedstorage:item/storage_tool
+
+newmtl toms_storage_inventory_configurator_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/inventory_configurator
+
+newmtl toms_storage_inventory_configurator_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/inventory_configurator
+
+newmtl toms_storage_inventory_configurator_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/inventory_configurator
+
+newmtl toms_storage_inventory_configurator_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/inventory_configurator
+
+newmtl galosphere_rope_dart_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/rope_dart
+
+newmtl galosphere_rope_dart_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/rope_dart
+
+newmtl galosphere_rope_dart_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/rope_dart
+
+newmtl galosphere_rope_dart_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/rope_dart
+
+newmtl galosphere_echo_bell_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl galosphere_echo_bell_cavity
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl galosphere_echo_bell_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl galosphere_echo_bell_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl galosphere_echo_bell_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl chipped_watering_can_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/watering_can
+
+newmtl chipped_watering_can_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/watering_can
+
+newmtl chipped_watering_can_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/watering_can
+
+newmtl chipped_watering_can_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/watering_can
+
+newmtl create_super_glue_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd create:item/super_glue
+
+newmtl create_super_glue_collar
+Ka 0 0 0
+Kd 1 1 1
+map_Kd create:item/super_glue
+
+newmtl create_super_glue_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd create:item/super_glue
+
+newmtl create_super_glue_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd create:item/super_glue
+
+newmtl create_super_glue_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd create:item/super_glue
+
+newmtl simulated_honey_glue_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd simulated:item/honey_glue
+
+newmtl simulated_honey_glue_collar
+Ka 0 0 0
+Kd 1 1 1
+map_Kd simulated:item/honey_glue
+
+newmtl simulated_honey_glue_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd simulated:item/honey_glue
+
+newmtl simulated_honey_glue_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd simulated:item/honey_glue
+
+newmtl simulated_honey_glue_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd simulated:item/honey_glue
+
+newmtl explorerscompass_explorerscompass_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_17_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_17_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_17_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_17_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_17_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_18_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_18_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_18_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_18_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_18_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_19_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_19_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_19_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_19_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_19_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_20_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_20_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_20_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_20_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_20_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_21_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_21_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_21_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_21_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_21_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_22_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_22_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_22_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_22_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_22_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_23_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_23_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_23_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_23_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_23_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_24_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_24_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_24_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_24_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_24_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_25_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_25_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_25_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_25_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_25_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_26_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_26_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_26_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_26_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_26_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_27_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_27_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_27_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_27_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_27_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_28_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_28_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_28_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_28_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_28_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_29_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_29_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_29_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_29_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_29_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_30_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_30_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_30_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_30_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_30_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_31_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_31_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_31_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_31_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_31_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_00_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_00_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_00_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_00_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_00_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_01_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_01_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_01_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_01_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_01_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_02_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_02_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_02_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_02_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_02_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_03_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_03_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_03_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_03_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_03_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_04_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_04_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_04_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_04_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_04_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_05_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_05_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_05_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_05_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_05_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_06_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_06_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_06_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_06_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_06_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_07_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_07_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_07_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_07_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_07_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_08_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_08_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_08_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_08_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_08_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_09_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_09_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_09_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_09_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_09_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_10_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_10_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_10_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_10_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_10_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_11_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_11_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_11_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_11_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_11_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_12_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_12_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_12_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_12_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_12_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_13_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_13_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_13_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_13_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_13_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_14_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_14_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_14_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_14_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_14_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_15_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_15_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_15_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_15_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_15_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl naturescompass_naturescompass_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_17_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_17_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_17_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_17_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_17_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_17_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_18_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_18_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_18_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_18_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_18_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_18_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_19_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_19_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_19_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_19_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_19_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_19_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_20_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_20_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_20_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_20_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_20_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_20_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_21_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_21_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_21_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_21_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_21_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_21_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_22_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_22_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_22_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_22_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_22_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_22_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_23_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_23_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_23_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_23_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_23_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_23_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_24_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_24_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_24_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_24_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_24_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_24_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_25_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_25_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_25_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_25_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_25_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_25_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_26_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_26_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_26_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_26_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_26_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_26_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_27_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_27_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_27_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_27_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_27_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_27_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_28_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_28_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_28_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_28_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_28_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_28_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_29_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_29_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_29_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_29_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_29_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_29_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_30_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_30_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_30_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_30_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_30_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_30_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_31_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_31_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_31_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_31_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_31_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_31_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_00_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_00_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_00_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_00_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_00_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_00_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_01_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_01_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_01_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_01_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_01_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_01_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_02_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_02_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_02_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_02_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_02_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_02_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_03_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_03_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_03_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_03_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_03_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_03_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_04_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_04_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_04_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_04_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_04_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_04_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_05_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_05_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_05_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_05_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_05_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_05_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_06_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_06_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_06_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_06_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_06_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_06_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_07_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_07_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_07_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_07_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_07_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_07_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_08_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_08_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_08_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_08_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_08_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_08_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_09_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_09_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_09_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_09_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_09_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_09_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_10_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_10_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_10_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_10_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_10_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_10_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_11_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_11_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_11_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_11_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_11_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_11_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_12_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_12_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_12_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_12_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_12_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_12_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_13_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_13_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_13_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_13_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_13_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_13_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_14_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_14_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_14_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_14_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_14_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_14_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_15_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_15_dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_15_leaf
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_15_marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_15_tail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_15_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl galosphere_glow_flare_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl galosphere_glow_flare_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl galosphere_glow_flare_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl galosphere_glow_flare_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl galosphere_monstrometer_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl galosphere_monstrometer_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl galosphere_monstrometer_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl galosphere_monstrometer_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl galosphere_monstrometer_pin
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl galosphere_monstrometer_fueled_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl galosphere_monstrometer_fueled_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl galosphere_monstrometer_fueled_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl galosphere_monstrometer_fueled_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl galosphere_monstrometer_fueled_pin
+Ka 0 0 0
+Kd 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl sophisticatedcore_ender_linker_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_blank
+
+newmtl sophisticatedcore_ender_linker_center
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_blank
+
+newmtl sophisticatedcore_ender_linker_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_blank
+
+newmtl sophisticatedcore_ender_linker_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_blank
+
+newmtl sophisticatedcore_ender_linker_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_blank
+
+newmtl sophisticatedcore_ender_linker_bound_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_bound
+
+newmtl sophisticatedcore_ender_linker_bound_center
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_bound
+
+newmtl sophisticatedcore_ender_linker_bound_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_bound
+
+newmtl sophisticatedcore_ender_linker_bound_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_bound
+
+newmtl sophisticatedcore_ender_linker_bound_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd sophisticatedcore:item/ender_linker_bound
+
+newmtl toms_storage_paint_kit_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/paint_kit
+
+newmtl toms_storage_paint_kit_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/paint_kit
+
+newmtl toms_storage_paint_kit_bristles
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/paint_kit
+
+newmtl toms_storage_paint_kit_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/paint_kit
+
+newmtl toms_storage_paint_kit_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/paint_kit
+
+newmtl toms_storage_paint_kit_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/paint_kit
+
+newmtl toms_storage_paint_kit_paint
+Ka 0 0 0
+Kd 1 1 1
+map_Kd toms_storage:item/paint_kit
+
+newmtl waystones_warp_stone_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd waystones:item/warp_stone
+
+newmtl waystones_warp_stone_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd waystones:item/warp_stone
+
+newmtl waystones_warp_stone_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd waystones:item/warp_stone
+
+newmtl waystones_warp_stone_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd waystones:item/warp_stone

@@ -17,7 +17,8 @@
     "OreFeatureCommitMixin",
     "BeeConstructorProbeMixin",
     "TreasureSupportProbeMixin",
-    "CaveWriteCaptureMixin"
+    "CaveWriteCaptureMixin",
+    "CaveStartCaptureMixin"
   ],
   "injectors": {
     "defaultRequire": 1

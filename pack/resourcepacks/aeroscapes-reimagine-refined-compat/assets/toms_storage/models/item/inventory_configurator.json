@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "toms_storage:item/inventory_configurator"
+    }
+  },
+  "textures": {
+    "layer0": "toms_storage:item/inventory_configurator",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "toms_storage:item/equipment/held/inventory_configurator"
+    },
+    "firstperson_lefthand": {
+      "parent": "toms_storage:item/equipment/held/inventory_configurator"
+    },
+    "thirdperson_righthand": {
+      "parent": "toms_storage:item/equipment/held/inventory_configurator"
+    },
+    "thirdperson_lefthand": {
+      "parent": "toms_storage:item/equipment/held/inventory_configurator"
+    }
+  }
+}

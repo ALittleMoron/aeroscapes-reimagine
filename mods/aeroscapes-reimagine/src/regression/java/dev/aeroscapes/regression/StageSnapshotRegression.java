@@ -18,13 +18,10 @@ import net.minecraft.nbt.NbtIo;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.StaticCache2D;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.chunk.ChunkAccess;
-import net.minecraft.world.level.chunk.ProtoChunk;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
-import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
@@ -165,26 +162,6 @@ public final class StageSnapshotRegression {
     capture.featureCenters.add(chunk.getPos());
     capture.featureInputs.computeIfAbsent(
         chunk.getPos().toLong(), ignored -> NoiseSnapshotRegression.snapshot(level, chunk));
-  }
-
-  public static void captureOpenCl(
-      RandomState state, StaticCache2D<ProtoChunk> chunks, ChunkPos start, int size) {
-    Capture capture = active;
-    if (capture == null || capture.level.getChunkSource().randomState() != state) return;
-    for (ChunkPos site : SITES) {
-      if (site.x < start.x
-          || site.x >= start.x + size
-          || site.z < start.z
-          || site.z >= start.z + size) continue;
-      ProtoChunk chunk = chunks.get(site.x, site.z);
-      if (chunk.getPersistedStatus() != ChunkStatus.NOISE)
-        throw new IllegalStateException("Late OpenCL NOISE capture");
-      capture
-          .chunks
-          .get(ChunkStatus.NOISE)
-          .computeIfAbsent(
-              site.toLong(), ignored -> NoiseSnapshotRegression.snapshot(capture.level, chunk));
-    }
   }
 
   private static final class ConcurrentCapture {

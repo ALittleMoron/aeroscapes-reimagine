@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "galosphere:item/rope_dart"
+    }
+  },
+  "textures": {
+    "layer0": "galosphere:item/rope_dart",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "galosphere:item/equipment/held/rope_dart"
+    },
+    "firstperson_lefthand": {
+      "parent": "galosphere:item/equipment/held/rope_dart"
+    },
+    "thirdperson_righthand": {
+      "parent": "galosphere:item/equipment/held/rope_dart"
+    },
+    "thirdperson_lefthand": {
+      "parent": "galosphere:item/equipment/held/rope_dart"
+    }
+  }
+}

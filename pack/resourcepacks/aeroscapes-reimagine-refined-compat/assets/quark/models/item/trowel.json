@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/handheld",
+    "textures": {
+      "layer0": "quark:item/trowel"
+    }
+  },
+  "textures": {
+    "layer0": "quark:item/trowel",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "quark:item/equipment/held/trowel"
+    },
+    "firstperson_lefthand": {
+      "parent": "quark:item/equipment/held/trowel"
+    },
+    "thirdperson_righthand": {
+      "parent": "quark:item/equipment/held/trowel"
+    },
+    "thirdperson_lefthand": {
+      "parent": "quark:item/equipment/held/trowel"
+    }
+  }
+}

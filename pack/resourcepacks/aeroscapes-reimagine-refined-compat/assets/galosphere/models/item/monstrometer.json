@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "galosphere:item/monstrometer"
+    }
+  },
+  "textures": {
+    "layer0": "galosphere:item/monstrometer",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "galosphere:item/equipment/held/monstrometer"
+    },
+    "firstperson_lefthand": {
+      "parent": "galosphere:item/equipment/held/monstrometer"
+    },
+    "thirdperson_righthand": {
+      "parent": "galosphere:item/equipment/held/monstrometer"
+    },
+    "thirdperson_lefthand": {
+      "parent": "galosphere:item/equipment/held/monstrometer"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "galosphere:fueled": 1
+      },
+      "model": "galosphere:item/monstrometer_fueled"
+    }
+  ]
+}

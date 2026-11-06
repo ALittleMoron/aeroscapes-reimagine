@@ -1,0 +1,50 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "spawn:item/coastal_crab_claw_standby"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw"
+    },
+    "firstperson_lefthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw"
+    },
+    "thirdperson_righthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw"
+    },
+    "thirdperson_lefthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "empty": 0,
+        "pull": 0.01
+      },
+      "model": "spawn:item/coastal_crab_claw_shooting0"
+    },
+    {
+      "predicate": {
+        "empty": 0,
+        "pull": 0.65
+      },
+      "model": "spawn:item/coastal_crab_claw_shooting1"
+    },
+    {
+      "predicate": {
+        "empty": 0,
+        "pull": 1
+      },
+      "model": "spawn:item/coastal_crab_claw_shooting2"
+    },
+    {
+      "predicate": {
+        "empty": 1
+      },
+      "model": "spawn:item/coastal_crab_claw_empty"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "chipped:item/multimeter"
+    }
+  },
+  "textures": {
+    "layer0": "chipped:item/multimeter",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "chipped:item/equipment/held/multimeter"
+    },
+    "firstperson_lefthand": {
+      "parent": "chipped:item/equipment/held/multimeter"
+    },
+    "thirdperson_righthand": {
+      "parent": "chipped:item/equipment/held/multimeter"
+    },
+    "thirdperson_lefthand": {
+      "parent": "chipped:item/equipment/held/multimeter"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "sophisticatedstorage:item/storage_tool"
+    }
+  },
+  "textures": {
+    "layer0": "sophisticatedstorage:item/storage_tool",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "sophisticatedstorage:item/equipment/held/storage_tool"
+    },
+    "firstperson_lefthand": {
+      "parent": "sophisticatedstorage:item/equipment/held/storage_tool"
+    },
+    "thirdperson_righthand": {
+      "parent": "sophisticatedstorage:item/equipment/held/storage_tool"
+    },
+    "thirdperson_lefthand": {
+      "parent": "sophisticatedstorage:item/equipment/held/storage_tool"
+    }
+  }
+}

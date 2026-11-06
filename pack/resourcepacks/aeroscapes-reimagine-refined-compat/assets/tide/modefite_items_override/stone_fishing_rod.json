@@ -9,6 +9,6 @@
       {"when": ["firstperson_righthand"], "model": {"type": "minecraft:condition", "property": "minecraft:fishing_rod/cast", "on_true": {"type": "minecraft:model", "model": "tide:item/equipment/stone_fishing_rod_cast_held_fp"}, "on_false": {"type": "minecraft:model", "model": "tide:item/equipment/stone_fishing_rod_held_fp"}}},
       {"when": ["firstperson_lefthand"], "model": {"type": "minecraft:condition", "property": "minecraft:fishing_rod/cast", "on_true": {"type": "minecraft:model", "model": "tide:item/equipment/stone_fishing_rod_cast_held_fp_left"}, "on_false": {"type": "minecraft:model", "model": "tide:item/equipment/stone_fishing_rod_held_fp_left"}}}
     ],
-    "fallback": {"type": "minecraft:condition", "property": "minecraft:fishing_rod/cast", "on_true": {"type": "minecraft:model", "model": "tide:item/equipment/stone_fishing_rod_cast_held"}, "on_false": {"type": "minecraft:model", "model": "tide:item/equipment/stone_fishing_rod_held"}}
+    "fallback": {"type": "minecraft:condition", "property": "minecraft:fishing_rod/cast", "on_true": {"type": "minecraft:model", "model": "tide:item/stone_fishing_rod_cast"}, "on_false": {"type": "minecraft:model", "model": "tide:item/stone_fishing_rod"}}
   }
 }

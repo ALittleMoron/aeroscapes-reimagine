@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "chipped:item/watering_can"
+    }
+  },
+  "textures": {
+    "layer0": "chipped:item/watering_can",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "chipped:item/equipment/held/watering_can"
+    },
+    "firstperson_lefthand": {
+      "parent": "chipped:item/equipment/held/watering_can"
+    },
+    "thirdperson_righthand": {
+      "parent": "chipped:item/equipment/held/watering_can"
+    },
+    "thirdperson_lefthand": {
+      "parent": "chipped:item/equipment/held/watering_can"
+    }
+  }
+}

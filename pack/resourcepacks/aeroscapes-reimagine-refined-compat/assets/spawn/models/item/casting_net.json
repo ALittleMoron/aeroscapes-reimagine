@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "spawn:item/casting_net"
+    }
+  },
+  "textures": {
+    "layer0": "spawn:item/casting_net",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "spawn:item/equipment/held/casting_net"
+    },
+    "firstperson_lefthand": {
+      "parent": "spawn:item/equipment/held/casting_net"
+    },
+    "thirdperson_righthand": {
+      "parent": "spawn:item/equipment/held/casting_net"
+    },
+    "thirdperson_lefthand": {
+      "parent": "spawn:item/equipment/held/casting_net"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "full": 1
+      },
+      "model": "spawn:item/casting_net_full"
+    }
+  ]
+}

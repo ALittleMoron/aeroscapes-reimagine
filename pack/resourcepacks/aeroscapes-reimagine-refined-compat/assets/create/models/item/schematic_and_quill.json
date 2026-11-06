@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "create:item/schematic_and_quill"
+    }
+  },
+  "textures": {
+    "layer0": "create:item/schematic_and_quill",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "create:item/equipment/held/schematic_and_quill"
+    },
+    "firstperson_lefthand": {
+      "parent": "create:item/equipment/held/schematic_and_quill"
+    },
+    "thirdperson_righthand": {
+      "parent": "create:item/equipment/held/schematic_and_quill"
+    },
+    "thirdperson_lefthand": {
+      "parent": "create:item/equipment/held/schematic_and_quill"
+    }
+  }
+}

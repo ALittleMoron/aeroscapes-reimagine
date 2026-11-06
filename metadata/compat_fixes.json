@@ -582,15 +582,6 @@
   },
   {
     "targets": {
-      "COlSi5iR": "avwWYPbG",
-      "qtPMklut": "7rX3dlFf",
-      "owned:aeroscapes_reimagine": "0.1.0"
-    },
-    "files": [],
-    "reason": "C2ME OpenCL alpha.123 omits its synthetic ChunkMap getter when openclAccel.enabled is false. Gate the owned adapters through the provider's ModuleMixinPlugin enablement, after checking module presence, so disabled acceleration does not fail injection into absent methods. Keep upstream config and Java-version gating rather than treating an installed module as enabled."
-  },
-  {
-    "targets": {
       "uCdwusMi": "9w34y8ai",
       "owned:aeroscapes_reimagine": "0.1.0",
       "fALzjamp": "LuFhm4eU"

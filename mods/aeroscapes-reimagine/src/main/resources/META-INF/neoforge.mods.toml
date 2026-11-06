@@ -12,9 +12,6 @@ description = "Owned island generation, natural spawning and adapted native stru
 config = "aeroscapes_reimagine.mixins.json"
 
 [[mixins]]
-config = "aeroscapes_reimagine.opencl.mixins.json"
-
-[[mixins]]
 config = "aeroscapes_reimagine.sable_diagnostics.mixins.json"
 
 [[mixins]]

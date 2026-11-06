@@ -32,7 +32,6 @@ repositories {
     forRepository { maven("https://api.modrinth.com/maven") }
     filter {
       includeModule("maven.modrinth", "c2me-neoforge")
-      includeModule("maven.modrinth", "c2me-ocl")
       includeModule("maven.modrinth", "sable")
       includeModule("maven.modrinth", "particle-rain")
       includeModule("maven.modrinth", "punchy-fpa")
@@ -79,6 +78,14 @@ repositories {
       includeModule("maven.modrinth", "critters-and-companions")
       includeModule("maven.modrinth", "better-archeology")
       includeModule("maven.modrinth", "architectury-api")
+      includeModule("maven.modrinth", "quark")
+      includeModule("maven.modrinth", "supplementaries")
+      includeModule("maven.modrinth", "handcrafted")
+      includeModule("maven.modrinth", "chipped")
+      includeModule("maven.modrinth", "galosphere")
+      includeModule("maven.modrinth", "sophisticated-storage")
+      includeModule("maven.modrinth", "create-aeronautics-throwable-rope-connector")
+      includeModule("maven.modrinth", "exposure")
     }
   }
 }
@@ -92,8 +99,6 @@ val c2meApiEntries =
   listOf(
     "META-INF/jars/c2me-neoforge-base-*.jar",
     "META-INF/jars/c2me-neoforge-opts-dfc-*.jar",
-    "META-INF/jars/c2me-neoforge-opts-accel-opencl-*.jar",
-    "META-INF/jars/lwjgl-opencl-3.3.3.jar",
   )
 val extractC2meApi by
   tasks.registering(Sync::class) {
@@ -135,6 +140,10 @@ val explorationApi by configurations.creating {
   isCanBeConsumed = false
   isTransitive = false
 }
+val equipmentAssets by configurations.creating {
+  isCanBeConsumed = false
+  isTransitive = false
+}
 val sableNestedApiDirectory = layout.buildDirectory.dir("sable-api")
 val extractSableApi by
   tasks.registering(Sync::class) {
@@ -149,6 +158,14 @@ val extractSableApi by
   }
 
 dependencies {
+  equipmentAssets("maven.modrinth:quark:qcDWHGnS")
+  equipmentAssets("maven.modrinth:supplementaries:Agn1kmUY")
+  equipmentAssets("maven.modrinth:handcrafted:JfqnpP2Z")
+  equipmentAssets("maven.modrinth:chipped:eqVowbGc")
+  equipmentAssets("maven.modrinth:galosphere:Y3deS8Po")
+  equipmentAssets("maven.modrinth:sophisticated-storage:wVZfDecJ")
+  equipmentAssets("maven.modrinth:create-aeronautics-throwable-rope-connector:EDzeTV17")
+  equipmentAssets("maven.modrinth:exposure:iBvaR6AK")
   explorationApi("maven.modrinth:hybrid-aquatic:jdOU7Pzu")
   explorationApi("maven.modrinth:hybrid-api:4HsWNhJz")
   explorationApi("maven.modrinth:geckolib:Grwn5rUB")
@@ -215,7 +232,6 @@ dependencies {
     files(fileTree(sableNestedApiDirectory) { include("*.jar") }).builtBy(extractSableApi)
   )
   c2meApi("maven.modrinth:c2me-neoforge:avwWYPbG")
-  c2meApi("maven.modrinth:c2me-ocl:7rX3dlFf")
   compileOnly(files(fileTree(c2meApiDirectory) { include("*.jar") }).builtBy(extractC2meApi))
 }
 
@@ -467,11 +483,23 @@ tasks.register<JavaExec>("generateCelestialAtlas") {
   )
 }
 
-val equipmentModelsCheck by
+val effectDescriptionPagesTest by
   tasks.registering(JavaExec::class) {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.atmosphere.EffectDescriptionPagesTest"
+  }
+
+val equipmentModelsCheck by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    val minecraftResources =
+      tasks
+        .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
+        .flatMap { it.resourcesArtifact }
+    dependsOn(tasks.named(policy.classesTaskName), minecraftResources)
+    classpath = policy.runtimeClasspath + files(minecraftResources) + files(equipmentAssets)
     mainClass = "dev.aeroscapes.aquatic.EquipmentModels"
     args(layout.projectDirectory.dir("../..").asFile.absolutePath, "--check")
     systemProperty("java.awt.headless", "true")
@@ -485,10 +513,57 @@ val hookCompatibilityTest by
     mainClass = "dev.aeroscapes.movement.HookCompatibilityTest"
     args(
       layout.projectDirectory
-        .dir("../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item")
+        .dir(
+          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/equipment/held"
+        )
         .asFile
-        .absolutePath
+        .absolutePath,
+      layout.projectDirectory
+        .file(
+          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/textures/entity/hook_rope.png"
+        )
+        .asFile
+        .absolutePath,
     )
+  }
+
+val toolModelContractTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    val minecraftResources =
+      tasks
+        .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
+        .flatMap { it.resourcesArtifact }
+    dependsOn(tasks.named(policy.classesTaskName), minecraftResources)
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.aquatic.ToolModelContractTest"
+    classpath += files(minecraftResources) + files(equipmentAssets)
+    argumentProviders.add(
+      CommandLineArgumentProvider { listOf(minecraftResources.get().asFile.absolutePath) }
+    )
+  }
+
+val equipmentArtworkTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.atmosphere.EquipmentArtworkTest"
+    systemProperty("java.awt.headless", "true")
+  }
+
+val vanillaEquipmentModelTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    val minecraftResources =
+      tasks
+        .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
+        .flatMap { it.resourcesArtifact }
+    dependsOn(tasks.named(policy.classesTaskName), minecraftResources)
+    classpath = policy.runtimeClasspath + files(minecraftResources) + files(equipmentAssets)
+    classpath += sourceSets.main.get().runtimeClasspath
+    mainClass = "dev.aeroscapes.aquatic.VanillaEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
 val rodModelContractTest by
@@ -497,6 +572,32 @@ val rodModelContractTest by
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.aquatic.RodModelContractTest"
+  }
+
+val reviewedEquipmentModelTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(vanillaEquipmentModelTest)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.ReviewedEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
+val heldEquipmentRenderingTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.atmosphere.HeldEquipmentRenderingTest"
+  }
+
+val utilityEquipmentModelTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(reviewedEquipmentModelTest)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.UtilityEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
 val paragliderExhaustionTest by
@@ -515,6 +616,14 @@ val seatedRiderAnimationTest by
     mainClass = "dev.aeroscapes.fauna.SeatedRiderAnimationTest"
   }
 
+val hookHangMathTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.movement.HookHangMathTest"
+  }
+
 tasks.register<JavaExec>("refinedRodCastTest") {
   group = "verification"
   description = "Audits the pinned Refined archive supplied by -PrefinedRodArchive=<file>."
@@ -528,8 +637,12 @@ tasks.register<JavaExec>("refinedRodCastTest") {
 
 tasks.register<JavaExec>("generateEquipmentModels") {
   group = "build"
-  dependsOn(tasks.named(policy.classesTaskName))
-  classpath = policy.runtimeClasspath
+  val minecraftResources =
+    tasks
+      .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
+      .flatMap { it.resourcesArtifact }
+  dependsOn(tasks.named(policy.classesTaskName), minecraftResources)
+  classpath = policy.runtimeClasspath + files(minecraftResources) + files(equipmentAssets)
   mainClass = "dev.aeroscapes.aquatic.EquipmentModels"
   args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   systemProperty("java.awt.headless", "true")
@@ -538,11 +651,19 @@ tasks.register<JavaExec>("generateEquipmentModels") {
 tasks.check {
   dependsOn(
     tasks.spotlessCheck,
+    effectDescriptionPagesTest,
     equipmentModelsCheck,
     hookCompatibilityTest,
+    toolModelContractTest,
+    equipmentArtworkTest,
+    vanillaEquipmentModelTest,
+    reviewedEquipmentModelTest,
+    utilityEquipmentModelTest,
+    heldEquipmentRenderingTest,
     rodModelContractTest,
     paragliderExhaustionTest,
     seatedRiderAnimationTest,
+    hookHangMathTest,
     policyTest,
     islandLayoutTest,
     exposedIslandSurfacesTest,

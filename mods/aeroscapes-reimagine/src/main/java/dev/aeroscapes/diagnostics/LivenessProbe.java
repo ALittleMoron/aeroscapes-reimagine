@@ -4,12 +4,10 @@ import com.mojang.logging.LogUtils;
 import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
 import java.util.List;
-import java.util.Objects;
 import java.util.StringJoiner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
 import javax.annotation.Nullable;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -20,13 +18,10 @@ import net.neoforged.neoforge.event.tick.ServerTickEvent;
 /** Opt-in wall-clock observations that remain available while the server awaits a chunk. */
 @EventBusSubscriber(modid = "aeroscapes_reimagine")
 public final class LivenessProbe {
-  private record GpuSampler(Supplier<String> snapshot, Runnable cleanup) {}
-
   private static final Object LIFECYCLE = new Object();
   private static final AwaitTracker AWAITS = new AwaitTracker();
   private static final long WINDOW_NANOS = TimeUnit.MINUTES.toNanos(5);
   @Nullable private static ScheduledExecutorService worker;
-  @Nullable private static GpuSampler gpuSampler;
   private static volatile long generation;
   private static volatile long deadline;
   private static volatile long tickPreNanos;
@@ -58,18 +53,6 @@ public final class LivenessProbe {
     if (!enabled()) return;
     frameNanos = nanos;
     frameCount++;
-  }
-
-  public static void registerGpuSampler(Supplier<String> snapshot, Runnable cleanup) {
-    if (!ChunkFlowWindow.ENABLED) return;
-    GpuSampler replacement =
-        new GpuSampler(Objects.requireNonNull(snapshot), Objects.requireNonNull(cleanup));
-    GpuSampler previous;
-    synchronized (LIFECYCLE) {
-      previous = gpuSampler;
-      gpuSampler = replacement;
-    }
-    if (previous != null) cleanup(previous);
   }
 
   @SubscribeEvent
@@ -151,24 +134,12 @@ public final class LivenessProbe {
       collections += Math.max(0, collector.getCollectionCount());
       collectionMillis += Math.max(0, collector.getCollectionTime());
     }
-    GpuSampler sampler;
-    synchronized (LIFECYCLE) {
-      sampler = gpuSampler;
-    }
-    String gpu = "unregistered";
-    if (sampler != null) {
-      try {
-        gpu = bounded(String.valueOf(sampler.snapshot().get()), 4096);
-      } catch (RuntimeException | LinkageError failure) {
-        gpu = "unavailable: " + failure.getClass().getSimpleName();
-      }
-    }
     if (!enabled() || generation != session) return;
     LogUtils.getLogger()
         .info(
             "[Aeroscapes liveness] nowNanos={} tickPre={} tickPost={} tickPreAgeMs={}"
                 + " tickPostAgeMs={} frames={} frameAgeMs={} awaits={} gcCount={} gcTimeMs={}"
-                + " awaitDropped={} gpu={}",
+                + " awaitDropped={}",
             now,
             tickPreCount,
             tickPostCount,
@@ -179,17 +150,11 @@ public final class LivenessProbe {
             waits,
             collections,
             collectionMillis,
-            AWAITS.dropped(),
-            gpu);
+            AWAITS.dropped());
   }
 
   private static long age(long now, long timestamp) {
     return timestamp == 0 ? -1 : TimeUnit.NANOSECONDS.toMillis(Math.max(0, now - timestamp));
-  }
-
-  private static String bounded(String text, int limit) {
-    String singleLine = text.replace('\n', ' ').replace('\r', ' ');
-    return singleLine.length() > limit ? singleLine.substring(0, limit) : singleLine;
   }
 
   private static void stop() {
@@ -198,7 +163,6 @@ public final class LivenessProbe {
 
   private static void stop(long session) {
     ScheduledExecutorService previous;
-    GpuSampler sampler;
     synchronized (LIFECYCLE) {
       if (session != 0 && generation != session) return;
       generation++;
@@ -206,18 +170,7 @@ public final class LivenessProbe {
       previous = worker;
       worker = null;
       AWAITS.clear();
-      sampler = gpuSampler;
     }
     if (previous != null) previous.shutdownNow();
-    if (sampler != null) cleanup(sampler);
-  }
-
-  private static void cleanup(GpuSampler sampler) {
-    try {
-      sampler.cleanup().run();
-    } catch (RuntimeException | LinkageError failure) {
-      LogUtils.getLogger()
-          .warn("[Aeroscapes liveness] GPU probe cleanup failed: {}", failure.toString());
-    }
   }
 }

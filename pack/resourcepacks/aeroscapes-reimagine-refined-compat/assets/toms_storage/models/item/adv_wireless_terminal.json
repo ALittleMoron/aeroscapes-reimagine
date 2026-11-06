@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "toms_storage:item/adv_wireless_terminal"
+    }
+  },
+  "textures": {
+    "layer0": "toms_storage:item/adv_wireless_terminal",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "toms_storage:item/equipment/held/adv_wireless_terminal"
+    },
+    "firstperson_lefthand": {
+      "parent": "toms_storage:item/equipment/held/adv_wireless_terminal"
+    },
+    "thirdperson_righthand": {
+      "parent": "toms_storage:item/equipment/held/adv_wireless_terminal"
+    },
+    "thirdperson_lefthand": {
+      "parent": "toms_storage:item/equipment/held/adv_wireless_terminal"
+    }
+  }
+}

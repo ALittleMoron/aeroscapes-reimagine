@@ -2,7 +2,6 @@ package dev.aeroscapes.regression;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.logging.LogUtils;
-import dev.aeroscapes.regression.opencl.OpenClBatchEvidence;
 import io.netty.channel.embedded.EmbeddedChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -298,7 +297,6 @@ public final class TeleportChunkRegression {
       phase = 1;
       movementStarted = now;
       maximumTickGap = 0;
-      OpenClBatchEvidence.checkpoint("flight-start");
       LogUtils.getLogger()
           .info(
               "Flight measurement started: coldView={}, step={}, y={}; 200 native movement packets, ideal ACK sink, no client",
@@ -315,7 +313,6 @@ public final class TeleportChunkRegression {
               200 * flightStep,
               (now - movementStarted) / 1_000_000.0);
     } else if (completed) {
-      OpenClBatchEvidence.checkpoint("flight-complete");
       close();
       LogUtils.getLogger()
           .info(

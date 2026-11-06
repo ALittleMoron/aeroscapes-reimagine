@@ -84,6 +84,8 @@ Corpse provides inventory recovery through a body after death. Recovery after a 
 
 [Simple Backups](https://modrinth.com/mod/simple-backups) saves a full world copy after each hour of active play, without routine start and finish messages. Up to five copies per world share a soft 2 GiB storage budget. The newest complete copy of every world is kept even if those minimum copies exceed the budget. Compression is light, and creating the snapshot can pause play while copying saved files and needs temporary space for an uncompressed copy. The distant-terrain cache is regenerated after restoration. Unrelated and older unmanaged archives remain untouched.
 
+If world saving reports an error, new backups and their rotation are blocked for the rest of that session. Earlier copies are kept. Check the server log, resolve the storage problem, then reopen the world; a later successful flush alone cannot prove that previously failed writes were recovered.
+
 Backups are ZIP files in `simplebackups`, beside the instance's `config` and `mods` folders. To restore one, close the game or server, preserve the current world separately and extract the archived world folder into a new save folder with the same pack installed. Check the restored save before replacing the original.
 
 ## Riding

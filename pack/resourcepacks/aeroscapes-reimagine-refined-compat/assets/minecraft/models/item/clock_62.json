@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/clock_62"
+    }
+  },
+  "textures": {
+    "layer0": "minecraft:item/clock_62",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "minecraft:item/equipment/held/clock_62"
+    },
+    "firstperson_lefthand": {
+      "parent": "minecraft:item/equipment/held/clock_62"
+    },
+    "thirdperson_righthand": {
+      "parent": "minecraft:item/equipment/held/clock_62"
+    },
+    "thirdperson_lefthand": {
+      "parent": "minecraft:item/equipment/held/clock_62"
+    }
+  }
+}

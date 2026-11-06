@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "legendarysurvivaloverhaul:item/thermometer/thermometer_07"
+    }
+  },
+  "textures": {
+    "layer0": "legendarysurvivaloverhaul:item/thermometer/thermometer_07",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/thermometer/thermometer_07"
+    },
+    "firstperson_lefthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/thermometer/thermometer_07"
+    },
+    "thirdperson_righthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/thermometer/thermometer_07"
+    },
+    "thirdperson_lefthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/thermometer/thermometer_07"
+    }
+  }
+}

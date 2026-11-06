@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "toms_storage:item/paint_kit"
+    }
+  },
+  "textures": {
+    "layer0": "toms_storage:item/paint_kit",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "toms_storage:item/equipment/held/paint_kit"
+    },
+    "firstperson_lefthand": {
+      "parent": "toms_storage:item/equipment/held/paint_kit"
+    },
+    "thirdperson_righthand": {
+      "parent": "toms_storage:item/equipment/held/paint_kit"
+    },
+    "thirdperson_lefthand": {
+      "parent": "toms_storage:item/equipment/held/paint_kit"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "create:item/sand_paper"
+    }
+  },
+  "textures": {
+    "layer0": "create:item/sand_paper",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "create:item/equipment/held/sand_paper"
+    },
+    "firstperson_lefthand": {
+      "parent": "create:item/equipment/held/sand_paper"
+    },
+    "thirdperson_righthand": {
+      "parent": "create:item/equipment/held/sand_paper"
+    },
+    "thirdperson_lefthand": {
+      "parent": "create:item/equipment/held/sand_paper"
+    }
+  }
+}

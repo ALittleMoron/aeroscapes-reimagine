@@ -1,0 +1,101 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "betterarcheology:item/brushes/iron_brush"
+    },
+    "display": {
+      "firstperson_lefthand": {
+        "rotation": [
+          55,
+          -85,
+          0
+        ],
+        "translation": [
+          8.0,
+          0.5,
+          -5.5
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "thirdperson_righthand": {
+        "rotation": [
+          0,
+          0,
+          45
+        ],
+        "translation": [
+          0,
+          4,
+          0
+        ],
+        "scale": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          0,
+          0,
+          -45
+        ],
+        "translation": [
+          0,
+          4,
+          0
+        ],
+        "scale": [
+          0.9,
+          0.9,
+          0.9
+        ]
+      }
+    }
+  },
+  "textures": {
+    "layer0": "betterarcheology:item/brushes/iron_brush",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "betterarcheology:item/equipment/held/iron_brush"
+    },
+    "firstperson_lefthand": {
+      "parent": "betterarcheology:item/equipment/held/iron_brush"
+    },
+    "thirdperson_righthand": {
+      "parent": "betterarcheology:item/equipment/held/iron_brush"
+    },
+    "thirdperson_lefthand": {
+      "parent": "betterarcheology:item/equipment/held/iron_brush"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "brushing": 0.25
+      },
+      "model": "betterarcheology:item/iron_brush_brushing_0"
+    },
+    {
+      "predicate": {
+        "brushing": 0.5
+      },
+      "model": "betterarcheology:item/iron_brush_brushing_1"
+    },
+    {
+      "predicate": {
+        "brushing": 0.75
+      },
+      "model": "betterarcheology:item/iron_brush_brushing_2"
+    }
+  ]
+}

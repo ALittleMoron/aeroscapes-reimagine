@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "simulated:item/honey_glue"
+    }
+  },
+  "textures": {
+    "layer0": "simulated:item/honey_glue",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "simulated:item/equipment/held/honey_glue"
+    },
+    "firstperson_lefthand": {
+      "parent": "simulated:item/equipment/held/honey_glue"
+    },
+    "thirdperson_righthand": {
+      "parent": "simulated:item/equipment/held/honey_glue"
+    },
+    "thirdperson_lefthand": {
+      "parent": "simulated:item/equipment/held/honey_glue"
+    }
+  }
+}

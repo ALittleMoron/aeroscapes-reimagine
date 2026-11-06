@@ -15,6 +15,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.MovementInputUpdateEvent;
 import net.neoforged.neoforge.client.loading.ClientModLoader;
@@ -25,6 +26,12 @@ public final class HookInputCompatibility {
   private static boolean bindingsChecked;
 
   private HookInputCompatibility() {}
+
+  @SubscribeEvent
+  public static void logout(ClientPlayerNetworkEvent.LoggingOut event) {
+    HookHangingPose.reset();
+    HookLineAttachment.reset();
+  }
 
   @SubscribeEvent
   public static void setup(FMLClientSetupEvent event) {

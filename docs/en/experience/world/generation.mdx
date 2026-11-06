@@ -8,13 +8,9 @@ import Screenshot from "../../../../tools/docs/src/components/Screenshot.astro";
 
 The floating Overworld is based on [Aero Islands](https://modrinth.com/mod/tGVwBATM) generation. Reimagine’s own mod develops that terrain alongside other mods’ biomes and structures: moving them to islands exposed assumptions about continuous land. The Default world preset is currently supported.
 
-[C2ME](https://modrinth.com/mod/COlSi5iR) distributes chunk loading and generation across CPU threads. OpenCL can use a compatible GPU for part of terrain generation; when that acceleration is unavailable, generation uses the CPU. [Structure Layout Optimizer](https://modrinth.com/mod/ayPU0OHc) reduces work when assembling and placing structures.
+[C2ME](https://modrinth.com/mod/COlSi5iR) distributes chunk loading and generation across CPU threads. [Structure Layout Optimizer](https://modrinth.com/mod/ayPU0OHc) reduces work when assembling and placing structures.
 
-If new terrain struggles to keep up while flying, compare GPU and CPU generation with your usual graphics settings. The faster option depends on your hardware; the pack does not select it automatically.
-
-To try CPU generation, close the game, set `enabled = false` under `[openclAccel]` in `config/c2me.toml`, then restart. Set it back to `true` to try GPU generation again. Compare both terrain arrival and the smoothness of movement in new areas.
-
-Feature placement is prepared when the world opens. In singleplayer, ordinary terrain chunks arrive in batches adjusted to the client’s processing speed, spreading the work of receiving a large ready area.
+Feature placement is prepared when the world opens. Singleplayer uses Minecraft's native local terrain delivery: available chunks do not wait behind a nearer chunk that is still being generated.
 
 ## Islands, mountains and lower heights
 
@@ -25,6 +21,8 @@ The added large islands initially looked too smooth, and their mountains resembl
 Small islands are much less frequent and vary more in size and position, reducing the repeating grid of similar shapes between larger landforms. Some small and medium islands have one surface biome throughout their body; the largest formations retain several biomes. Ocean basins and mountain habitats keep their own biome selection.
 
 High islands previously often lost the long cave passages because cave generation selected an empty biome below them or started outside the island; several bulk rock types also could not be carved. Cave passages and chambers now start inside the island layers; small noise pockets no longer stand in for cave systems. Carving protects the floors and rims of water and lava basins. Granite and diorite deposits are placed below the actual island surface rather than at a random height that often fell in empty space.
+
+Thinner island layers also used to be excluded even when they could contain a passage. They now receive cave starts where enough rock remains for a floor and roof; very shallow ledges remain solid.
 
 <Screenshot id="arch" />
 
@@ -45,6 +43,10 @@ A map could previously show an ocean where there was only void. Ocean regions no
 The dodo-island search could previously select a location without a suitable basin, leaving the island absent. It now rejects those locations and continues searching for a supported site.
 
 Its native surface filter could leave deep seagrass meadows with ordinary gravel instead of algal sand. Marine soil rules now reach the actual submerged basin floor, preserving their original layer order.
+
+## Rivers
+
+River biomes can occur without a physical water channel. Connected rivers integrated into the island relief have not yet been implemented.
 
 ## Biomes and empty space
 

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "tide:item/climate_gauge"
+    }
+  },
+  "textures": {
+    "layer0": "tide:item/climate_gauge",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "tide:item/equipment/held/climate_gauge"
+    },
+    "firstperson_lefthand": {
+      "parent": "tide:item/equipment/held/climate_gauge"
+    },
+    "thirdperson_righthand": {
+      "parent": "tide:item/equipment/held/climate_gauge"
+    },
+    "thirdperson_lefthand": {
+      "parent": "tide:item/equipment/held/climate_gauge"
+    }
+  }
+}

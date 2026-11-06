@@ -4,6 +4,21 @@
   "package": "dev.aeroscapes.mixin.backup",
   "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["SimpleBackupsEventMixin", "SimpleBackupsTriggerMixin"],
+  "mixins": [
+    "SimpleBackupsEventMixin",
+    "SimpleBackupsTriggerMixin",
+    "LevelSaveFailureMixin",
+    "PlayerSaveFailureMixin",
+    "SavedDataIoFailureMixin",
+    "RegionSaveFailureMixin",
+    "SafeReplaceFailureMixin",
+    "SableSaveFailureMixin",
+    "SableRegionSaveFailureMixin",
+    "ChunkSaveFailureMixin",
+    "EntitySerializationFailureMixin",
+    "StatsSaveFailureMixin",
+    "AdvancementSaveFailureMixin",
+    "BackupPoiStorageAccess"
+  ],
   "injectors": {"defaultRequire": 1}
 }

@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "supplementaries:item/bomb_blue"
+    }
+  },
+  "textures": {
+    "layer0": "supplementaries:item/bomb_blue",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "supplementaries:item/equipment/held/bomb_blue"
+    },
+    "firstperson_lefthand": {
+      "parent": "supplementaries:item/equipment/held/bomb_blue"
+    },
+    "thirdperson_righthand": {
+      "parent": "supplementaries:item/equipment/held/bomb_blue"
+    },
+    "thirdperson_lefthand": {
+      "parent": "supplementaries:item/equipment/held/bomb_blue"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 1
+      },
+      "model": "supplementaries:item/bomb_blue_projectile"
+    }
+  ]
+}

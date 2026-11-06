@@ -3,6 +3,7 @@
 import hashlib
 import io
 import json
+import shutil
 import zipfile
 from pathlib import Path
 
@@ -15,6 +16,19 @@ from aeroscapes_pack.source_archive import (
     SOURCE_ARCHIVE,
     check_source_archive,
     write_source_archive,
+)
+
+MAP_PROFILE = (
+    "pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/"
+    "minecraft/punchy/compat/aeroscapes_map.json"
+)
+HOOK_HANDLE = (
+    "pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/"
+    "yo_hooks/models/item/grappling_hook_handle.json"
+)
+ROD_TEXTURE = (
+    "pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets/"
+    "tide/textures/item/equipment/stone_fishing_rod.png"
 )
 
 
@@ -39,6 +53,12 @@ def source_project(tmp_path: Path) -> Project:
         "mods/aeroscapes-reimagine/build/secret.txt": b"generated",
         "mods/aeroscapes-reimagine/.gradle/secret.txt": b"cache",
         "pack/mods/owned.jar": b"binary",
+        "pack/config/simplebackups-common.toml": b'ignoredFiles = ["cache"]\n',
+        "pack/licenses/THIRD-PARTY-NOTICES.txt": b"Owned resource notices",
+        MAP_PROFILE: b'{"itemSpecific":{}}',
+        HOOK_HANDLE: b'{"elements":[]}',
+        ROD_TEXTURE: b"owned pixels",
+        "pack/resourcepacks/unrelated-provider.zip": b"not an owned build input",
         "metadata/worldgen_adoption.json": json.dumps({"jar": "mods/owned.jar"}).encode(),
         "metadata/runtime_data_patches.json": b'{"patches":[]}',
         "metadata/native_template_upgrades.json": b'{"templates":[]}',
@@ -77,7 +97,8 @@ def test_source_archive_is_deterministic_and_contains_editable_build_inputs(
         assert archive.read("metadata/runtime_data_patches.json") == b'{"patches":[]}'
         assert archive.read("metadata/native_template_upgrades.json") == b'{"templates":[]}'
         assert not any(
-            "secret" in name or name.endswith("owned.jar") for name in archive.namelist()
+            "secret" in name or name.endswith(("owned.jar", "unrelated-provider.zip"))
+            for name in archive.namelist()
         )
         assert archive.getinfo("mods/aeroscapes-reimagine/gradlew").external_attr >> 16 == 0o100755
         assert archive.getinfo("mods/aeroscapes-reimagine/gradlew").create_system == 3
@@ -92,23 +113,59 @@ def test_source_archive_is_deterministic_and_contains_editable_build_inputs(
     check_source_archive(source_project, {SOURCE_ARCHIVE: first, "mods/owned.jar": b"binary"})
 
 
-@pytest.mark.parametrize("changed", ["source", "binary", "archive", "missing"])
+def test_extracted_sources_preserve_pack_inputs_at_the_build_relative_paths(
+    source_project: Project, tmp_path: Path
+) -> None:
+    destination = tmp_path / "recipient"
+    with zipfile.ZipFile(write_source_archive(source_project)) as archive:
+        archive.extractall(destination)
+    mod_project = destination / "mods/aeroscapes-reimagine"
+    assert (mod_project / "../../pack/config/simplebackups-common.toml").read_bytes() == (
+        b'ignoredFiles = ["cache"]\n'
+    )
+    atmosphere = mod_project / "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets"
+    assert (atmosphere / "minecraft/punchy/compat/aeroscapes_map.json").read_bytes() == (
+        b'{"itemSpecific":{}}'
+    )
+    assert (atmosphere / "yo_hooks/models/item/grappling_hook_handle.json").read_bytes() == (
+        b'{"elements":[]}'
+    )
+    refined = mod_project / "../../pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets"
+    assert (refined / "tide/textures/item/equipment/stone_fishing_rod.png").read_bytes() == (
+        b"owned pixels"
+    )
+    manifest = json.loads((destination / "SOURCE-MANIFEST.json").read_bytes())
+    for name, checksum in manifest["files"].items():
+        assert hashlib.sha256((destination / name).read_bytes()).hexdigest() == checksum
+
+
+@pytest.mark.parametrize(
+    "changed",
+    [
+        "mods/aeroscapes-reimagine/src/main/java/Owned.java",
+        "pack/config/simplebackups-common.toml",
+        "pack/licenses/THIRD-PARTY-NOTICES.txt",
+        MAP_PROFILE,
+        ROD_TEXTURE,
+        "binary",
+        "archive",
+        "missing",
+    ],
+)
 def test_source_archive_rejects_stale_or_missing_recipient_sources(
     source_project: Project, changed: str
 ) -> None:
     content = write_source_archive(source_project).read_bytes()
     overrides = {SOURCE_ARCHIVE: content, "mods/owned.jar": b"binary"}
-    if changed == "source":
-        (source_project.root / "mods/aeroscapes-reimagine/src/main/java/Owned.java").write_bytes(
-            b"class Modified {}"
-        )
-    elif changed == "binary":
+    if changed == "binary":
         (source_project.pack / "mods/owned.jar").write_bytes(b"new binary")
         overrides["mods/owned.jar"] = b"new binary"
     elif changed == "archive":
         overrides[SOURCE_ARCHIVE] = b"truncated"
-    else:
+    elif changed == "missing":
         del overrides[SOURCE_ARCHIVE]
+    else:
+        (source_project.root / changed).write_bytes(b"modified build input")
     with pytest.raises(PackError, match="corresponding source"):
         check_source_archive(source_project, overrides)
 
@@ -119,6 +176,31 @@ def test_incomplete_or_symlinked_build_inputs_are_not_published(source_project: 
     with pytest.raises(PackError, match="Missing corresponding source input"):
         write_source_archive(source_project)
     wrapper.symlink_to(source_project.pack / "mods/owned.jar")
+    with pytest.raises(PackError, match="Symlinked corresponding source input"):
+        write_source_archive(source_project)
+
+
+@pytest.mark.parametrize(
+    "name",
+    [
+        "pack/config/simplebackups-common.toml",
+        "pack/licenses/THIRD-PARTY-NOTICES.txt",
+        "pack/resourcepacks/aeroscapes-reimagine-atmosphere",
+        "pack/resourcepacks/aeroscapes-reimagine-refined-compat",
+        "pack/resourcepacks",
+    ],
+)
+def test_missing_or_symlinked_pack_build_inputs_are_not_published(
+    source_project: Project, name: str
+) -> None:
+    path = source_project.root / name
+    if path.is_dir():
+        shutil.rmtree(path)
+    else:
+        path.unlink()
+    with pytest.raises(PackError, match="Missing corresponding source input"):
+        write_source_archive(source_project)
+    path.symlink_to(source_project.pack / "mods/owned.jar")
     with pytest.raises(PackError, match="Symlinked corresponding source input"):
         write_source_archive(source_project)
 

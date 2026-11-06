@@ -60,6 +60,10 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "15.0.140",
               "neoforge",
               "21.1.244");
+    } else if (mixinClassName.endsWith("LunchboxHeldModelMixin")) {
+      versions = Map.of("nutritionalbalance", "1.21.1-7.0.3", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("AltimeterHeldModelMixin")) {
+      versions = Map.of("supplementaries", "1.21.1-3.6.8", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("CelestialSkyMixin")
         || mixinClassName.endsWith("LanguageCorrectionMixin")
         || mixinClassName.endsWith("NativeConfigurationLanguageMixin")) {
@@ -84,6 +88,10 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "iris", "1.8.14-beta.1+mc1.21.1");
     } else if (mixinClassName.endsWith("DistantHorizonsChunkyStartupMixin")) {
       versions = Map.of("distanthorizons", "3.3.3", "chunky", "1.4.23");
+    } else if (mixinClassName.endsWith("EffectDescriptionPagesMixin")) {
+      versions = Map.of("emiffect", "2.1.6+mc1.21.1", "emi", "1.1.22+1.21.1+neoforge");
+    } else if (mixinClassName.endsWith("CreativeSearchMixin")) {
+      versions = Map.of("neoforge", "21.1.244");
     } else if (mixinClassName.contains("EmiTrades")) {
       versions = Map.of("emitrades", "2.0.0+alpha.1", "emi", "1.1.22+1.21.1+neoforge");
     } else if (mixinClassName.endsWith("EmiReloadStepLanguageMixin")) {

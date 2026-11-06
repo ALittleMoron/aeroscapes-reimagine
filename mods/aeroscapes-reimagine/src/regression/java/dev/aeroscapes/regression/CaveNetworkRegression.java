@@ -22,10 +22,30 @@ public final class CaveNetworkRegression {
   private record Capture(
       net.minecraft.world.level.levelgen.RandomState state,
       net.minecraft.world.level.levelgen.structure.BoundingBox bounds,
-      java.util.Set<Long> writes) {}
+      java.util.Set<Long> writes,
+      java.util.concurrent.ConcurrentMap<ChunkPos, RawChunk> raw,
+      java.util.Set<Start> starts) {}
+
+  private record RawChunk(java.util.List<java.util.List<Body>> columns) {
+    private java.util.List<Body> at(int x, int z) {
+      return columns.get((z & 15) * 16 + (x & 15));
+    }
+  }
+
+  private record Start(
+      ChunkPos source, String engine, dev.aeroscapes.worldgen.IslandCaveHosts.Range layer) {}
 
   private record Host(
-      BlockPos point, IslandLayout.SmallIsland small, IslandLayout.LargeIsland large, int layer) {
+      BlockPos point,
+      IslandLayout.SmallIsland small,
+      IslandLayout.LargeIsland large,
+      int layer,
+      dev.aeroscapes.worldgen.IslandCaveHosts.Range body) {
+    private Host(
+        BlockPos point, IslandLayout.SmallIsland small, IslandLayout.LargeIsland large, int layer) {
+      this(point, small, large, layer, null);
+    }
+
     private IslandLayout.VerticalShape shape(long seed, int x, int z) {
       return small != null ? small.shape(seed, x, z) : large != null ? large.shape(x, z) : null;
     }
@@ -47,6 +67,58 @@ public final class CaveNetworkRegression {
         && capture.bounds().isInside(position)) capture.writes().add(position.asLong());
   }
 
+  public static void beforeCarvers(
+      ServerLevel level, net.minecraft.world.level.chunk.ChunkAccess chunk) {
+    Capture capture = active;
+    if (capture == null
+        || capture.state() != level.getChunkSource().randomState()
+        || !inside(capture, chunk.getPos())
+        || capture.raw().containsKey(chunk.getPos())) return;
+    var columns = new java.util.ArrayList<java.util.List<Body>>(256);
+    var point = new BlockPos.MutableBlockPos();
+    for (int z = chunk.getPos().getMinBlockZ(); z <= chunk.getPos().getMaxBlockZ(); z++)
+      for (int x = chunk.getPos().getMinBlockX(); x <= chunk.getPos().getMaxBlockX(); x++) {
+        var bodies = new java.util.ArrayList<Body>();
+        int start = Integer.MIN_VALUE;
+        for (int y = chunk.getMinBuildHeight(); y <= chunk.getMaxBuildHeight(); y++) {
+          point.set(x, y, z);
+          var block = chunk.getBlockState(point);
+          boolean solid =
+              y < chunk.getMaxBuildHeight()
+                  && block.getFluidState().isEmpty()
+                  && block.isFaceSturdy(chunk, point, Direction.UP);
+          if (solid && start == Integer.MIN_VALUE) start = y;
+          if (!solid && start != Integer.MIN_VALUE) {
+            bodies.add(new Body(start, y));
+            start = Integer.MIN_VALUE;
+          }
+        }
+        columns.add(java.util.List.copyOf(bodies));
+      }
+    capture.raw().putIfAbsent(chunk.getPos(), new RawChunk(java.util.List.copyOf(columns)));
+  }
+
+  public static void started(
+      net.minecraft.world.level.levelgen.carver.CarvingContext context,
+      net.minecraft.world.level.chunk.ChunkAccess target,
+      ChunkPos source,
+      String engine) {
+    Capture capture = active;
+    if (capture == null
+        || capture.state() != context.randomState()
+        || !inside(capture, target.getPos())) return;
+    var layer =
+        ((dev.aeroscapes.worldgen.IslandCarvingContext) (Object) context).aeroscapes$layer();
+    capture.starts().add(new Start(source, engine, layer));
+  }
+
+  private static boolean inside(Capture capture, ChunkPos chunk) {
+    return chunk.getMaxBlockX() >= capture.bounds().minX()
+        && chunk.getMinBlockX() <= capture.bounds().maxX()
+        && chunk.getMaxBlockZ() >= capture.bounds().minZ()
+        && chunk.getMinBlockZ() <= capture.bounds().maxZ();
+  }
+
   private CaveNetworkRegression() {}
 
   public static void verify(ServerLevel level) {
@@ -55,13 +127,59 @@ public final class CaveNetworkRegression {
       throw new IllegalStateException("Cave fixture requires an empty disposable dedicated server");
     IslandTerrain terrain = IslandTerrain.from(level.getChunkSource().randomState());
     if (terrain == null) throw new IllegalStateException("Missing island terrain");
+    hostThicknessControls();
     String kind = System.getProperty("aeroscapes.regression.caveKind", "high");
+    String biome = System.getProperty("aeroscapes.regression.caveBiome");
+    String witness = System.getProperty("aeroscapes.regression.caveWitness");
+    if (witness != null) {
+      if (biome == null) throw new IllegalArgumentException("A named cave witness needs caveBiome");
+      String[] coordinates = witness.split(",", -1);
+      if (coordinates.length != 3) throw new IllegalArgumentException("Expected caveWitness=x,y,z");
+      BlockPos point =
+          new BlockPos(
+              Integer.parseInt(coordinates[0]),
+              Integer.parseInt(coordinates[1]),
+              Integer.parseInt(coordinates[2]));
+      Body body =
+          nativeColumnBodies(level, point.getX(), point.getZ()).stream()
+              .filter(range -> range.minimum() <= point.getY() && point.getY() < range.maximum())
+              .filter(range -> range.qualifies(kind))
+              .filter(range -> sourceSurfaceBiome(level, point.getX(), point.getZ(), range, biome))
+              .findFirst()
+              .orElseThrow(
+                  () ->
+                      new IllegalStateException(
+                          "Named cave witness lost its natural body/biome: " + point));
+      var selected =
+          new Host(
+              point,
+              null,
+              null,
+              -1,
+              new dev.aeroscapes.worldgen.IslandCaveHosts.Range(body.minimum(), body.maximum()));
+      if (!verifyHost(level, terrain, selected, kind, biome))
+        throw new IllegalStateException(
+            "Named cave witness lost its traversable network: " + point);
+      LogUtils.getLogger()
+          .info(
+              "Cave network regression passed: seed={} kind={} biome={} namedWitness={}",
+              level.getSeed(),
+              kind,
+              biome,
+              point);
+      return;
+    }
+    if (biome != null) {
+      var cohort = new BiomeCohort(level, terrain, biome, kind);
+      net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(cohort.listener);
+      return;
+    }
     var hosts =
         kind.equals("high")
             ? java.util.List.of(new Host(findHost(level, terrain), null, null, -1))
             : findAddedHosts(terrain, kind);
     int passed = 0;
-    for (var selected : hosts) if (verifyHost(level, terrain, selected, kind)) passed++;
+    for (var selected : hosts) if (verifyHost(level, terrain, selected, kind, null)) passed++;
     int required = (hosts.size() * 3 + 3) / 4;
     if (passed < required)
       throw new IllegalStateException(
@@ -84,7 +202,7 @@ public final class CaveNetworkRegression {
 
   @SuppressWarnings("deprecation") // Native per-source carver selection cache.
   private static boolean verifyHost(
-      ServerLevel level, IslandTerrain terrain, Host selected, String kind) {
+      ServerLevel level, IslandTerrain terrain, Host selected, String kind, String biome) {
     BlockPos host = selected.point();
     LogUtils.getLogger()
         .info(
@@ -93,7 +211,8 @@ public final class CaveNetworkRegression {
             host,
             selected.layer(),
             selected.shape(terrain.layout().seed(), host.getX(), host.getZ()));
-    int minimumSpan = kind.equals("small") ? 16 : kind.equals("medium") ? 24 : 40;
+    int minimumSpan =
+        kind.equals("small") || kind.equals("thin") ? 16 : kind.equals("medium") ? 24 : 40;
     int bottom = Math.max(-112, host.getY() - 40);
     for (int x = (host.getX() - 32) >> 4; x <= (host.getX() + 32) >> 4; x++) {
       for (int z = (host.getZ() - 32) >> 4; z <= (host.getZ() + 32) >> 4; z++) {
@@ -126,6 +245,8 @@ public final class CaveNetworkRegression {
                 host.getX() + 32,
                 bottom + 82,
                 host.getZ() + 32),
+            java.util.concurrent.ConcurrentHashMap.newKeySet(),
+            new java.util.concurrent.ConcurrentHashMap<>(),
             java.util.concurrent.ConcurrentHashMap.newKeySet());
     active = capture;
     try {
@@ -148,12 +269,26 @@ public final class CaveNetworkRegression {
                 + " host="
                 + host
                 + " bands="
-                + terrain.caveHosts(new ChunkPos(host)).ranges());
+                + terrain
+                    .caveHosts(
+                        new ChunkPos(host),
+                        (net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator)
+                            level.getChunkSource().getGenerator(),
+                        level.getChunkSource().randomState(),
+                        level)
+                    .ranges());
       LogUtils.getLogger()
           .info(
               "Cave source bands: host={} bands={}",
               host,
-              terrain.caveHosts(new ChunkPos(host)).ranges());
+              terrain
+                  .caveHosts(
+                      new ChunkPos(host),
+                      (net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator)
+                          level.getChunkSource().getGenerator(),
+                      level.getChunkSource().randomState(),
+                      level)
+                  .ranges());
       for (var carver : carvers)
         LogUtils.getLogger()
             .info(
@@ -169,6 +304,7 @@ public final class CaveNetworkRegression {
       int minY = Math.max(-112, host.getY() - 40);
       int minZ = host.getZ() - 32;
       boolean[] walkable = new boolean[width * width * height];
+      boolean[] cohort = new boolean[walkable.length];
       BlockPos.MutableBlockPos point = new BlockPos.MutableBlockPos();
       int airPairs = 0;
       int supported = 0;
@@ -181,8 +317,28 @@ public final class CaveNetworkRegression {
               chunks.computeIfAbsent(
                   new ChunkPos(blockX >> 4, blockZ >> 4), key -> level.getChunk(key.x, key.z));
           var envelope = selected.shape(terrain.layout().seed(), blockX, blockZ);
+          RawChunk raw = capture.raw().get(chunk.getPos());
+          if (raw == null)
+            throw new IllegalStateException(
+                "Missing actual pre-CARVERS body snapshot " + chunk.getPos());
+          var localBodies =
+              raw.at(blockX, blockZ).stream()
+                  .filter(
+                      body ->
+                          selected.body() == null
+                              || body.minimum() < selected.body().maximum()
+                                  && body.maximum() > selected.body().minimum())
+                  .toList();
+          var qualifying =
+              biome == null
+                  ? java.util.List.<Body>of()
+                  : localBodies.stream()
+                      .filter(body -> body.qualifies(kind))
+                      .filter(body -> surfaceBiome(level, chunk, blockX, blockZ, body, biome))
+                      .toList();
           for (int y = 0; y < height; y++) {
             int blockY = minY + y;
+            if (localBodies.stream().noneMatch(body -> body.containsPlayer(blockY))) continue;
             point.set(blockX, blockY, blockZ);
             if (!chunk.getBlockState(point).isAir() || !chunk.getBlockState(point.above()).isAir())
               continue;
@@ -192,11 +348,14 @@ public final class CaveNetworkRegression {
             supported++;
             if (envelope != null
                     && (envelope.density(blockY) < 0.1 || envelope.density(blockY + 6) < 0.1)
-                || terrain.biomeDensity(new SinglePointContext(blockX, blockY, blockZ)) < 0.15
-                || terrain.biomeDensity(new SinglePointContext(blockX, blockY + 6, blockZ)) < 0.15)
-              continue;
+                || biome == null
+                    && (terrain.biomeDensity(new SinglePointContext(blockX, blockY, blockZ)) < 0.15
+                        || terrain.biomeDensity(new SinglePointContext(blockX, blockY + 6, blockZ))
+                            < 0.15)) continue;
             interiorCells++;
             walkable[(z * width + x) * height + y] = true;
+            cohort[(z * width + x) * height + y] =
+                qualifying.stream().anyMatch(body -> body.containsPlayer(blockY));
           }
         }
       }
@@ -204,12 +363,30 @@ public final class CaveNetworkRegression {
       int longest = 0;
       LogUtils.getLogger()
           .info(
-              "Cave FULL cells: host={} airPairs={} supported={} interior={} actualCarvedAir={}",
+              "Cave FULL cells: host={} airPairs={} supported={} interior={} actualCarvedAir={} surfaceBiomeCohort={}",
               host,
               airPairs,
               supported,
               interiorCells,
-              capture.writes().size());
+              capture.writes().size(),
+              biome);
+      LogUtils.getLogger()
+          .info(
+              "Cave actual selected source layers: host={} all={} nearBody={}",
+              host,
+              capture.starts().size(),
+              capture.starts().stream()
+                  .filter(
+                      start ->
+                          start.layer() != null
+                              && start.layer().maximum() >= host.getY() - 20
+                              && start.layer().minimum() <= host.getY() + 20)
+                  .sorted(
+                      java.util.Comparator.comparingInt((Start start) -> start.source().x)
+                          .thenComparingInt(start -> start.source().z)
+                          .thenComparing(Start::engine))
+                  .limit(64)
+                  .toList());
       for (int start = 0; start < walkable.length; start++) {
         if (!walkable[start]) continue;
         ArrayDeque<Integer> queue = new ArrayDeque<>();
@@ -217,6 +394,9 @@ public final class CaveNetworkRegression {
         walkable[start] = false;
         int count = 0;
         int carvedCells = 0;
+        int cohortCells = 0;
+        int cohortCarvedCells = 0;
+        java.util.Set<Long> cohortColumns = new java.util.HashSet<>();
         int lowX = width;
         int highX = 0;
         int lowZ = width;
@@ -228,8 +408,17 @@ public final class CaveNetworkRegression {
           int z = index / height / width;
           count++;
           BlockPos foot = new BlockPos(minX + x, minY + y, minZ + z);
-          if (capture.writes().contains(foot.asLong())
-              || capture.writes().contains(foot.above().asLong())) carvedCells++;
+          boolean carved =
+              capture.writes().contains(foot.asLong())
+                  || capture.writes().contains(foot.above().asLong());
+          if (carved) carvedCells++;
+          if (cohort[index]) {
+            cohortCells++;
+            if (carved) {
+              cohortCarvedCells++;
+              cohortColumns.add(new BlockPos(foot.getX(), 0, foot.getZ()).asLong());
+            }
+          }
           lowX = Math.min(lowX, x);
           highX = Math.max(highX, x);
           lowZ = Math.min(lowZ, z);
@@ -265,11 +454,20 @@ public final class CaveNetworkRegression {
         largest = Math.max(largest, count);
         if (count >= 16)
           LogUtils.getLogger()
-              .info("Cave FULL component: host={} cells={} horizontalSpan={}", host, count, span);
+              .info(
+                  "Cave FULL component: host={} cells={} horizontalSpan={} cohortCells={} cohortCarved={} cohortColumns={}",
+                  host,
+                  count,
+                  span,
+                  cohortCells,
+                  cohortCarvedCells,
+                  cohortColumns.size());
         if (span >= minimumSpan
             && count >= minimumSpan * 3
             && carvedCells >= 8
-            && carvedCells * 3 >= count) {
+            && carvedCells * 3 >= count
+            && (biome == null
+                || cohortCells >= 8 && cohortCarvedCells >= 8 && cohortColumns.size() >= 4)) {
           LogUtils.getLogger()
               .info(
                   "Cave traversable witness: seed={} kind={} host={} cells={} horizontalSpan={} FULLchunks={} carvedPlayerCells={}",
@@ -297,6 +495,61 @@ public final class CaveNetworkRegression {
     }
   }
 
+  private record Body(int minimum, int maximum) {
+    private boolean qualifies(String kind) {
+      int thickness = maximum - minimum;
+      return thickness >= 12 && (kind.equals("thin") ? thickness < 24 : thickness >= 24);
+    }
+
+    private boolean containsPlayer(int footY) {
+      return footY - 1 >= minimum && footY + 3 < maximum;
+    }
+  }
+
+  private static boolean surfaceBiome(
+      ServerLevel level, LevelChunk chunk, int x, int z, Body body, String biome) {
+    int surfaceY = body.maximum() - 1;
+    var stored = chunk.getNoiseBiome(x >> 2, surfaceY >> 2, z >> 2);
+    return sourceSurfaceBiome(level, x, z, body, biome)
+        && stored.unwrapKey().orElseThrow().location().toString().equals(biome);
+  }
+
+  private static boolean sourceSurfaceBiome(
+      ServerLevel level, int x, int z, Body body, String biome) {
+    int surfaceY = body.maximum() - 1;
+    var state = level.getChunkSource().randomState();
+    var source =
+        level
+            .getChunkSource()
+            .getGenerator()
+            .getBiomeSource()
+            .getNoiseBiome(x >> 2, surfaceY >> 2, z >> 2, state.sampler());
+    return source.unwrapKey().orElseThrow().location().toString().equals(biome);
+  }
+
+  private static java.util.List<Body> nativeColumnBodies(ServerLevel level, int x, int z) {
+    var generator = level.getChunkSource().getGenerator();
+    var column = generator.getBaseColumn(x, z, level, level.getChunkSource().randomState());
+    var bodies = new java.util.ArrayList<Body>();
+    int start = Integer.MIN_VALUE;
+    for (int y = level.getMinBuildHeight(); y <= level.getMaxBuildHeight(); y++) {
+      var block = column.getBlock(y);
+      boolean solid =
+          y < level.getMaxBuildHeight()
+              && block.getFluidState().isEmpty()
+              && net.minecraft.world.level.block.Block.isFaceFull(
+                  block.getCollisionShape(
+                      net.minecraft.world.level.EmptyBlockGetter.INSTANCE, BlockPos.ZERO),
+                  Direction.UP);
+      if (solid && start == Integer.MIN_VALUE) start = y;
+      if (!solid && start != Integer.MIN_VALUE) {
+        bodies.add(new Body(start, y));
+        start = Integer.MIN_VALUE;
+      }
+    }
+    return java.util.List.copyOf(bodies);
+  }
+
   private static BlockPos findHost(ServerLevel level, IslandTerrain terrain) {
     var source = level.getChunkSource().getGenerator().getBiomeSource();
     var sampler = level.getChunkSource().randomState().sampler();
@@ -318,6 +571,181 @@ public final class CaveNetworkRegression {
       }
     }
     throw new IllegalStateException("No bounded thick high island with empty Y=0 found");
+  }
+
+  private static void hostThicknessControls() {
+    for (int thickness : new int[] {8, 12, 24}) {
+      var zero = net.minecraft.world.level.levelgen.DensityFunctions.zero();
+      var empty = net.minecraft.world.level.levelgen.DensityFunctions.constant(-1);
+      var original =
+          net.minecraft.world.level.levelgen.DensityFunctions.min(
+              net.minecraft.world.level.levelgen.DensityFunctions.yClampedGradient(96, 100, -1, 1),
+              net.minecraft.world.level.levelgen.DensityFunctions.yClampedGradient(
+                  96 + thickness, 100 + thickness, 1, -1));
+      var terrain =
+          new IslandTerrain(
+              original,
+              empty,
+              zero,
+              zero,
+              net.minecraft.world.level.levelgen.DensityFunctions.constant(1));
+      ChunkPos source = null;
+      for (int x = 256; x < 512; x++) {
+        var candidate = new ChunkPos(x, 256);
+        if (!terrain.column(candidate.getMiddleBlockX(), candidate.getMiddleBlockZ()).hasDetail()) {
+          source = candidate;
+          break;
+        }
+      }
+      if (source == null)
+        throw new IllegalStateException("No empty layout column for host thickness control");
+      var hosts = dev.aeroscapes.worldgen.IslandCaveHosts.sample(terrain, source).ranges();
+      if (thickness == 8 ? !hosts.isEmpty() : hosts.size() != 1)
+        throw new IllegalStateException(
+            "Native host sample lost viable thickness=" + thickness + ": " + hosts);
+      if (!hosts.isEmpty()) {
+        int margin = thickness == 12 ? 4 : 8;
+        if (hosts.getFirst().minimum() != 100 + margin
+            || hosts.getFirst().maximum() != 100 + thickness - margin)
+          throw new IllegalStateException("Thin-host floor/roof controls failed: " + hosts);
+      }
+    }
+  }
+
+  private static java.util.List<Host> findBiomeHosts(
+      ServerLevel level,
+      IslandTerrain terrain,
+      String biome,
+      boolean thin,
+      int startX,
+      int endX,
+      java.util.List<Host> selected) {
+    var source = level.getChunkSource().getGenerator().getBiomeSource();
+    var sampler = level.getChunkSource().randomState().sampler();
+    int originZ = Integer.getInteger("aeroscapes.regression.caveOriginZ", 0);
+    for (int x = startX; x < endX; x += 32)
+      for (int z = originZ - 4088; z < originZ + 4096; z += 32) {
+        int start = Integer.MIN_VALUE;
+        for (int y = -112; y <= 368; y += 4) {
+          var column = terrain.column(x, z);
+          boolean solid =
+              y < 368
+                  && !column.liner(y)
+                  && !(column.lavaIsland() != null
+                      && column
+                          .lavaShape()
+                          .containsHabitat(
+                              y,
+                              column.lavaIsland().waterline(),
+                              dev.aeroscapes.worldgen.IslandBiomeSource.VOLCANIC_HABITAT_MARGIN))
+                  && terrain.biomeDensity(new SinglePointContext(x, y, z)) > 0.15;
+          if (solid && start == Integer.MIN_VALUE) start = y;
+          if (solid || start == Integer.MIN_VALUE) continue;
+          int thickness = y - start;
+          if (thickness >= 12
+              && (thin ? thickness < 24 : thickness >= 24)
+              && source
+                  .getNoiseBiome(x >> 2, (y - 4) >> 2, z >> 2, sampler)
+                  .unwrapKey()
+                  .orElseThrow()
+                  .location()
+                  .toString()
+                  .equals(biome)) {
+            int selectedX = x;
+            int selectedZ = z;
+            int anchorY = (start + y) / 2;
+            Body physical =
+                nativeColumnBodies(level, x, z).stream()
+                    .filter(body -> body.minimum() <= anchorY && anchorY < body.maximum())
+                    .filter(body -> body.qualifies(thin ? "thin" : "high"))
+                    .filter(body -> sourceSurfaceBiome(level, selectedX, selectedZ, body, biome))
+                    .findFirst()
+                    .orElse(null);
+            if (physical == null) {
+              start = Integer.MIN_VALUE;
+              continue;
+            }
+            if (selected.stream()
+                .noneMatch(
+                    host ->
+                        Math.abs(host.point().getX() - selectedX) < 128
+                            && Math.abs(host.point().getZ() - selectedZ) < 128)) {
+              selected.add(
+                  new Host(
+                      new BlockPos(x, anchorY, z),
+                      null,
+                      null,
+                      -1,
+                      new dev.aeroscapes.worldgen.IslandCaveHosts.Range(
+                          physical.minimum(), physical.maximum())));
+              LogUtils.getLogger()
+                  .info(
+                      "Cave biome cohort: biome={} thickness={} body={}..{} point={},{}",
+                      biome,
+                      physical.maximum() - physical.minimum(),
+                      physical.minimum(),
+                      physical.maximum(),
+                      x,
+                      z);
+              if (selected.size() == 4) return java.util.List.copyOf(selected);
+            }
+          }
+          start = Integer.MIN_VALUE;
+        }
+      }
+    return java.util.List.copyOf(selected);
+  }
+
+  private static final class BiomeCohort {
+    private final ServerLevel level;
+    private final IslandTerrain terrain;
+    private final String biome;
+    private final String kind;
+    private final java.util.List<Host> hosts = new java.util.ArrayList<>();
+    private final java.util.function.Consumer<
+            net.neoforged.neoforge.event.tick.ServerTickEvent.Post>
+        listener = this::tick;
+    private final int maximumX = Integer.getInteger("aeroscapes.regression.caveOriginX", 0) + 4096;
+    private int nextX = maximumX - 8184;
+    private int verified;
+    private int passed;
+
+    private BiomeCohort(ServerLevel level, IslandTerrain terrain, String biome, String kind) {
+      this.level = level;
+      this.terrain = terrain;
+      this.biome = biome;
+      this.kind = kind;
+    }
+
+    private void tick(net.neoforged.neoforge.event.tick.ServerTickEvent.Post event) {
+      boolean keep = false;
+      try {
+        if (hosts.size() < 4 && nextX < maximumX) {
+          findBiomeHosts(level, terrain, biome, kind.equals("thin"), nextX, nextX + 32, hosts);
+          nextX += 32;
+          keep = true;
+          return;
+        }
+        if (hosts.isEmpty())
+          throw new IllegalStateException(
+              "Only " + hosts.size() + " independent " + biome + " cave hosts; kind=" + kind);
+        if (verifyHost(level, terrain, hosts.get(verified++), kind, biome)) passed++;
+        if (verified < hosts.size()) {
+          keep = true;
+          return;
+        }
+        LogUtils.getLogger()
+            .info(
+                "Cave biome observations completed: seed={} kind={} biome={} traversableIslands={}/{}; use a named witness for acceptance",
+                level.getSeed(),
+                kind,
+                biome,
+                passed,
+                hosts.size());
+      } finally {
+        if (!keep) net.neoforged.neoforge.common.NeoForge.EVENT_BUS.unregister(listener);
+      }
+    }
   }
 
   private static java.util.List<Host> findAddedHosts(IslandTerrain terrain, String kind) {

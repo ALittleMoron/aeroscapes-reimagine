@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "crittersandcompanions:grappling_hook",
     "waystones:twinbound_feather",
     "waystones:epitaph",
     "waystones:dormant_shard",

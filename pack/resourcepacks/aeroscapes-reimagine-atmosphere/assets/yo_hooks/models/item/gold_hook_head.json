@@ -1,19 +1,28 @@
 {
-  "parent": "minecraft:block/block",
-  "ambientocclusion": false,
-  "textures": {"particle": "aeroscapes_reimagine:item/equipment/gold", "metal": "aeroscapes_reimagine:item/equipment/gold", "grip": "aeroscapes_reimagine:item/equipment/grip", "rope": "aeroscapes_reimagine:item/equipment/rope", "box": "aeroscapes_reimagine:item/equipment/lunchbox"},
-  "elements": [
-    {"from": [7.1, 6.5, 7.1], "to": [8.9, 15.5, 8.9], "faces": {"north": {"uv": [7.1000, 0.5000, 8.9000, 9.5000], "texture": "#metal"}, "east": {"uv": [7.1000, 0.5000, 8.9000, 9.5000], "texture": "#metal"}, "south": {"uv": [7.1000, 0.5000, 8.9000, 9.5000], "texture": "#metal"}, "west": {"uv": [7.1000, 0.5000, 8.9000, 9.5000], "texture": "#metal"}, "up": {"uv": [7.1000, 7.1000, 8.9000, 8.9000], "texture": "#metal"}, "down": {"uv": [7.1000, 7.1000, 8.9000, 8.9000], "texture": "#metal"}}},
-    {"from": [3.5, 10.5, 7.1], "to": [12.5, 12.0, 8.9], "faces": {"north": {"uv": [3.5000, 4.0000, 12.5000, 5.5000], "texture": "#metal"}, "east": {"uv": [7.1000, 4.0000, 8.9000, 5.5000], "texture": "#metal"}, "south": {"uv": [3.5000, 4.0000, 12.5000, 5.5000], "texture": "#metal"}, "west": {"uv": [7.1000, 4.0000, 8.9000, 5.5000], "texture": "#metal"}, "up": {"uv": [3.5000, 7.1000, 12.5000, 8.9000], "texture": "#metal"}, "down": {"uv": [3.5000, 7.1000, 12.5000, 8.9000], "texture": "#metal"}}},
-    {"from": [7.1, 10.5, 3.5], "to": [8.9, 12.0, 12.5], "faces": {"north": {"uv": [7.1000, 4.0000, 8.9000, 5.5000], "texture": "#metal"}, "east": {"uv": [3.5000, 4.0000, 12.5000, 5.5000], "texture": "#metal"}, "south": {"uv": [7.1000, 4.0000, 8.9000, 5.5000], "texture": "#metal"}, "west": {"uv": [3.5000, 4.0000, 12.5000, 5.5000], "texture": "#metal"}, "up": {"uv": [7.1000, 3.5000, 8.9000, 12.5000], "texture": "#metal"}, "down": {"uv": [7.1000, 3.5000, 8.9000, 12.5000], "texture": "#metal"}}},
-    {"from": [3.5, 10.5, 7.1], "to": [5.0, 15.5, 8.9], "faces": {"north": {"uv": [11.0000, 0.5000, 12.5000, 5.5000], "texture": "#metal"}, "east": {"uv": [7.1000, 0.5000, 8.9000, 5.5000], "texture": "#metal"}, "south": {"uv": [3.5000, 0.5000, 5.0000, 5.5000], "texture": "#metal"}, "west": {"uv": [7.1000, 0.5000, 8.9000, 5.5000], "texture": "#metal"}, "up": {"uv": [3.5000, 7.1000, 5.0000, 8.9000], "texture": "#metal"}, "down": {"uv": [3.5000, 7.1000, 5.0000, 8.9000], "texture": "#metal"}}},
-    {"from": [11.0, 10.5, 7.1], "to": [12.5, 15.5, 8.9], "faces": {"north": {"uv": [3.5000, 0.5000, 5.0000, 5.5000], "texture": "#metal"}, "east": {"uv": [7.1000, 0.5000, 8.9000, 5.5000], "texture": "#metal"}, "south": {"uv": [11.0000, 0.5000, 12.5000, 5.5000], "texture": "#metal"}, "west": {"uv": [7.1000, 0.5000, 8.9000, 5.5000], "texture": "#metal"}, "up": {"uv": [11.0000, 7.1000, 12.5000, 8.9000], "texture": "#metal"}, "down": {"uv": [11.0000, 7.1000, 12.5000, 8.9000], "texture": "#metal"}}},
-    {"from": [7.1, 10.5, 3.5], "to": [8.9, 15.5, 5.0], "faces": {"north": {"uv": [7.1000, 0.5000, 8.9000, 5.5000], "texture": "#metal"}, "east": {"uv": [11.0000, 0.5000, 12.5000, 5.5000], "texture": "#metal"}, "south": {"uv": [7.1000, 0.5000, 8.9000, 5.5000], "texture": "#metal"}, "west": {"uv": [3.5000, 0.5000, 5.0000, 5.5000], "texture": "#metal"}, "up": {"uv": [7.1000, 3.5000, 8.9000, 5.0000], "texture": "#metal"}, "down": {"uv": [7.1000, 11.0000, 8.9000, 12.5000], "texture": "#metal"}}},
-    {"from": [7.1, 10.5, 11.0], "to": [8.9, 15.5, 12.5], "faces": {"north": {"uv": [7.1000, 0.5000, 8.9000, 5.5000], "texture": "#metal"}, "east": {"uv": [3.5000, 0.5000, 5.0000, 5.5000], "texture": "#metal"}, "south": {"uv": [7.1000, 0.5000, 8.9000, 5.5000], "texture": "#metal"}, "west": {"uv": [11.0000, 0.5000, 12.5000, 5.5000], "texture": "#metal"}, "up": {"uv": [7.1000, 11.0000, 8.9000, 12.5000], "texture": "#metal"}, "down": {"uv": [7.1000, 3.5000, 8.9000, 5.0000], "texture": "#metal"}}},
-    {"from": [4.0, 14.5, 7.1], "to": [6.0, 16.0, 8.9], "faces": {"north": {"uv": [10.0000, 0.0000, 12.0000, 1.5000], "texture": "#metal"}, "east": {"uv": [7.1000, 0.0000, 8.9000, 1.5000], "texture": "#metal"}, "south": {"uv": [4.0000, 0.0000, 6.0000, 1.5000], "texture": "#metal"}, "west": {"uv": [7.1000, 0.0000, 8.9000, 1.5000], "texture": "#metal"}, "up": {"uv": [4.0000, 7.1000, 6.0000, 8.9000], "texture": "#metal"}, "down": {"uv": [4.0000, 7.1000, 6.0000, 8.9000], "texture": "#metal"}}},
-    {"from": [10.0, 14.5, 7.1], "to": [12.0, 16.0, 8.9], "faces": {"north": {"uv": [4.0000, 0.0000, 6.0000, 1.5000], "texture": "#metal"}, "east": {"uv": [7.1000, 0.0000, 8.9000, 1.5000], "texture": "#metal"}, "south": {"uv": [10.0000, 0.0000, 12.0000, 1.5000], "texture": "#metal"}, "west": {"uv": [7.1000, 0.0000, 8.9000, 1.5000], "texture": "#metal"}, "up": {"uv": [10.0000, 7.1000, 12.0000, 8.9000], "texture": "#metal"}, "down": {"uv": [10.0000, 7.1000, 12.0000, 8.9000], "texture": "#metal"}}},
-    {"from": [7.1, 14.5, 4.0], "to": [8.9, 16.0, 6.0], "faces": {"north": {"uv": [7.1000, 0.0000, 8.9000, 1.5000], "texture": "#metal"}, "east": {"uv": [10.0000, 0.0000, 12.0000, 1.5000], "texture": "#metal"}, "south": {"uv": [7.1000, 0.0000, 8.9000, 1.5000], "texture": "#metal"}, "west": {"uv": [4.0000, 0.0000, 6.0000, 1.5000], "texture": "#metal"}, "up": {"uv": [7.1000, 4.0000, 8.9000, 6.0000], "texture": "#metal"}, "down": {"uv": [7.1000, 10.0000, 8.9000, 12.0000], "texture": "#metal"}}},
-    {"from": [7.1, 14.5, 10.0], "to": [8.9, 16.0, 12.0], "faces": {"north": {"uv": [7.1000, 0.0000, 8.9000, 1.5000], "texture": "#metal"}, "east": {"uv": [4.0000, 0.0000, 6.0000, 1.5000], "texture": "#metal"}, "south": {"uv": [7.1000, 0.0000, 8.9000, 1.5000], "texture": "#metal"}, "west": {"uv": [10.0000, 0.0000, 12.0000, 1.5000], "texture": "#metal"}, "up": {"uv": [7.1000, 10.0000, 8.9000, 12.0000], "texture": "#metal"}, "down": {"uv": [7.1000, 4.0000, 8.9000, 6.0000], "texture": "#metal"}}}
-  ],
-  "display": {"gui": {"rotation": [22.5, -35, -20], "scale": [0.8, 0.8, 0.8]},"ground": {"rotation": [0, 0, 45], "translation": [0.58967, 1.41033, 0], "scale": [0.5, 0.5, 0.5]},"fixed": {"rotation": [0, 180, 0], "scale": [0.8, 0.8, 0.8]}}
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "yo_hooks:item/gold_hook_head"
+    }
+  },
+  "textures": {
+    "layer0": "yo_hooks:item/gold_hook_head",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "yo_hooks:item/equipment/held/gold_hook_head"
+    },
+    "firstperson_lefthand": {
+      "parent": "yo_hooks:item/equipment/held/gold_hook_head"
+    },
+    "thirdperson_righthand": {
+      "parent": "yo_hooks:item/equipment/held/gold_hook_head"
+    },
+    "thirdperson_lefthand": {
+      "parent": "yo_hooks:item/equipment/held/gold_hook_head"
+    }
+  }
 }

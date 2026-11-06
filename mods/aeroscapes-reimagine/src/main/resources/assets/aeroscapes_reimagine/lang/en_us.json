@@ -306,5 +306,6 @@
   "block.aeroscapes_reimagine.blackstone_lapis_ore": "Blackstone Lapis Lazuli Ore",
   "block.aeroscapes_reimagine.blackstone_palladium_ore": "Blackstone Palladium Ore",
   "block.aeroscapes_reimagine.blackstone_redstone_ore": "Blackstone Redstone Ore",
-  "block.aeroscapes_reimagine.blackstone_zinc_ore": "Blackstone Zinc Ore"
+  "block.aeroscapes_reimagine.blackstone_zinc_ore": "Blackstone Zinc Ore",
+  "aeroscapes_reimagine.equipment.companion_hook_disabled": "Disabled in this pack."
 }

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "quark:item/abacus_41"
+    }
+  },
+  "textures": {
+    "layer0": "quark:item/abacus_41",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "quark:item/equipment/held/abacus_41"
+    },
+    "firstperson_lefthand": {
+      "parent": "quark:item/equipment/held/abacus_41"
+    },
+    "thirdperson_righthand": {
+      "parent": "quark:item/equipment/held/abacus_41"
+    },
+    "thirdperson_lefthand": {
+      "parent": "quark:item/equipment/held/abacus_41"
+    }
+  }
+}

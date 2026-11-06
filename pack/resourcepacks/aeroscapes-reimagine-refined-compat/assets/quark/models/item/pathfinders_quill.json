@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "quark:item/pathfinders_quill"
+    }
+  },
+  "textures": {
+    "layer0": "quark:item/pathfinders_quill",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "quark:item/equipment/held/pathfinders_quill"
+    },
+    "firstperson_lefthand": {
+      "parent": "quark:item/equipment/held/pathfinders_quill"
+    },
+    "thirdperson_righthand": {
+      "parent": "quark:item/equipment/held/pathfinders_quill"
+    },
+    "thirdperson_lefthand": {
+      "parent": "quark:item/equipment/held/pathfinders_quill"
+    }
+  },
+  "overrides": [
+    {
+      "model": "quark:item/pathfinders_quill_with_biome",
+      "predicate": {
+        "quark:has_biome": 1
+      }
+    }
+  ]
+}

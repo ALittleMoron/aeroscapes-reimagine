@@ -6,6 +6,7 @@ import de.melanx.simplebackups.compat.CherishedWorldsCompat;
 import de.melanx.simplebackups.config.BackupType;
 import de.melanx.simplebackups.config.CommonConfig;
 import de.melanx.simplebackups.config.ServerConfig;
+import dev.aeroscapes.mixin.backup.BackupPoiStorageAccess;
 import dev.ryanhcode.sable.api.sublevel.SubLevelContainer;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -20,9 +21,13 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.storage.LevelResource;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.event.server.ServerStoppedEvent;
 import net.neoforged.neoforge.event.tick.LevelTickEvent;
 
 /** Exact Simple Backups 4.0.21 / Sable 2.0.6 integration; invoke only on the server thread. */
+@EventBusSubscriber(modid = "aeroscapes_reimagine")
 public final class SimpleBackupsCoordinator {
   private static final Map<MinecraftServer, State> SERVERS = new WeakHashMap<>();
 
@@ -32,6 +37,12 @@ public final class SimpleBackupsCoordinator {
   }
 
   private SimpleBackupsCoordinator() {}
+
+  @SubscribeEvent
+  public static void stopped(ServerStoppedEvent event) {
+    BackupSaveFailures.clear(event.getServer().getWorldPath(LevelResource.ROOT));
+    SERVERS.remove(event.getServer());
+  }
 
   public static void tick(LevelTickEvent.Post event) {
     if (!(event.getLevel() instanceof ServerLevel level)
@@ -94,14 +105,21 @@ public final class SimpleBackupsCoordinator {
       copies = CommonConfig.getBackupsToKeep();
       limit = CommonConfig.getMaxDiskSize();
       Path output = CommonConfig.getOutputPath(null);
+      Path world = server.getWorldPath(LevelResource.ROOT);
       Predicate<Path> include = inclusionPolicy();
-      server.saveEverything(true, true, true);
+      BackupSaveFailures.requireHealthy(world);
+      if (!server.saveEverything(true, true, true))
+        throw new IOException("World save did not visit any dimensions");
       for (ServerLevel level : server.getAllLevels()) {
-        // Sable's save hook runs before saveLevelData; this final flush propagates I/O failure.
+        level.getPoiManager().tick(() -> true);
+        ((BackupPoiStorageAccess) level.getPoiManager())
+            .aeroscapes$backupStorage()
+            .synchronize(true)
+            .join();
         SubLevelContainer.getContainer(level).getHoldingChunkMap().getStorage().flush();
       }
-      snapshot =
-          ManagedBackupArchive.capture(server.getWorldPath(LevelResource.ROOT), output, include);
+      BackupSaveFailures.requireHealthy(world);
+      snapshot = ManagedBackupArchive.capture(world, output, include);
     } catch (IOException | RuntimeException | Error exception) {
       running.set(false);
       BackupScheduleData.get(server).failed();
@@ -227,7 +245,11 @@ public final class SimpleBackupsCoordinator {
         "Verified backup failed; prior complete copies were preserved", exception);
     notify(
         server,
-        Component.translatable("aeroscapes_reimagine.backup.failed").withStyle(ChatFormatting.RED));
+        Component.translatable(
+                BackupSaveFailures.blocked(server.getWorldPath(LevelResource.ROOT))
+                    ? "aeroscapes_reimagine.backup.save_failed"
+                    : "aeroscapes_reimagine.backup.failed")
+            .withStyle(ChatFormatting.RED));
   }
 
   private static void notify(MinecraftServer server, Component message) {

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "sophisticatedcore:item/ender_linker_bound"
+    }
+  },
+  "textures": {
+    "layer0": "sophisticatedcore:item/ender_linker_bound",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "sophisticatedcore:item/equipment/held/ender_linker_bound"
+    },
+    "firstperson_lefthand": {
+      "parent": "sophisticatedcore:item/equipment/held/ender_linker_bound"
+    },
+    "thirdperson_righthand": {
+      "parent": "sophisticatedcore:item/equipment/held/ender_linker_bound"
+    },
+    "thirdperson_lefthand": {
+      "parent": "sophisticatedcore:item/equipment/held/ender_linker_bound"
+    }
+  }
+}

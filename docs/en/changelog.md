@@ -4,6 +4,29 @@ description: Version history.
 status: available
 ---
 
+## 0.3.4
+
+- Replace the square sun and moon with a round golden Sun and a cool blue cratered Moon, retaining all eight lunar phases.
+- Block backup publication and rotation after world-save errors, including errors swallowed by native storage; wait for pending point-of-interest writes before taking a snapshot.
+- Include the owned resource packs and backup configuration needed to run the documented checks from the distributed source archive.
+- Add pages for long status-effect descriptions in [EMIffect](https://modrinth.com/mod/emiffect), retaining access to their ingredients.
+- Remove the [OpenCL](https://modrinth.com/mod/c2me-ocl) chunk-generation module; retain parallel CPU generation through [C2ME](https://modrinth.com/mod/COlSi5iR).
+- Restore native singleplayer terrain delivery so ready chunks are not held behind an unavailable nearest chunk by the pack's network-style quota.
+- Prepare creative-inventory search before opening the screen and keep queries responsive while their search index is being built.
+- Restore cave starts in thinner usable island bodies while protecting their undersides and fluid basins.
+- Rework equipment models around their original icons, with separate grips, thin working edges, hollow nets and coils, tier-specific fishing rods and native active states.
+- Retain native inventory icons while using custom equipment models only in hands; preserve the compass icon on the creative Search tab.
+- Correct the aquatic creature net's held orientation in both hands and perspectives.
+- Restore the overhead grappling pose after player animations, including creative hovering, while preserving ordinary item actions.
+- Attach the third-person grappling chain to the rendered handle, including animated arms and ship transforms.
+- Reduce grappling-chain link size, brighten its metal texture and correct its lighting normals.
+- Give held clocks and compasses bevelled metal cases, inset faces and moving celestial markers or raised needles; rebuild the goat horn as one curved hollow shell and the lead as separate faceted rope turns.
+- Align aquatic hoe heads, turn instrument faces and workshop working ends toward their intended directions, and restore flat inventory icons for grappling-hook components.
+- Rebuild the celestial bow with bending limbs, nets with mesh pouches, and the trowel with a pointed blade; correct wooden abacus materials and the metal surfaces of returning mining tools.
+- Simplify net weave and rebuild utility equipment around its original materials and working parts; remove protruding rim pieces and competing brush surfaces, and retain readable hand orientation through every instrument state.
+- Match the modded compasses and copper horn to their existing shape families, preserving their native targeting and use states; raise the rope connector in both hands.
+- Disable the grappling hook from [Critters and Companions](https://modrinth.com/mod/critters-and-companions), retaining its animals and other equipment.
+
 ## 0.3.3
 
 - Fixed the rider animation on elephants from [Naturalist](https://modrinth.com/mod/naturalist).

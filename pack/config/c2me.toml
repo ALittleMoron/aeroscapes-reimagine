@@ -28,14 +28,3 @@ chunkSendingSpeedMultiplierPercentage = 100
 
 [clientSideConfig.modifyMaxVDConfig]
 enabled = false
-
-[openclAccel]
-enabled = true
-maxConcurrentTasksPerDevice = 2
-useSmallerBatches = true
-lowPriorityQueues = true
-allowCPUDevices = false
-allowAcceleratorDevices = false
-allowIncompatibilityFallback = true
-enableBiomesAcceleration = false
-disableBuiltinDeviceBlocklist = false

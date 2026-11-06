@@ -128,11 +128,15 @@ tackle. The vanilla rod's four pinned cast parents receive a guarded runtime
 removal of those five elements before baking; a full parsed-geometry fingerprint
 leaves changed replacement models alone. No provider cuboids or textures are
 copied. The original meshes and materials are composed by `EquipmentModels.java`
-and `RodModels.java`, with no generative image model. Their source and the
+and `RodModels.java`, with no generative image model. Additional functional tools,
+blades, ranged weapons, nets and brushes are composed by `ToolModels.java`; they
+reference native icon textures and retain native use-state predicates. The aquatic
+creature net inherits its provider's geometry and changes only held transforms.
+Their source and the
 original pixel materials are GPL-3.0-or-later; the upstream packs retain their
 own terms. The source is included in the corresponding-source archive. Run
 `./gradlew generateEquipmentModels` from the owned mod project in the full
-repository to regenerate the 151 resources; `equipmentModelsCheck` verifies
+repository to regenerate the equipment resources; `equipmentModelsCheck` verifies
 their exact bytes through `check`.
 
 The additional native lunch-box model keeps the provider's custom renderer and
@@ -294,7 +298,7 @@ The current JAR omits Russian. The owned supplement covers its 489 English keys 
 
 In `worldgen_adoption.json`, `resources` binds incorporated data to its source and result hashes. `authored_resources` separately binds independently authored Minecraft-namespace tag extensions to their result hashes and reasons. Both lists participate in complete resource coverage, duplicate checks and shipped-byte validation; an authored extension does not imply that it came from Aero.
 
-Unchanged files hosted on Modrinth are referenced through their official downloads under its [specific-file modpack policy](https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions). Redistribution of a separate unchanged MIT artifact retains its embedded license; Flywheel's packaging is described below. Do not substitute the C2ME base's MIT license for the separate OpenCL module's terms.
+Unchanged files hosted on Modrinth are referenced through their official downloads under its [specific-file modpack policy](https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions). Redistribution of a separate unchanged MIT artifact retains its embedded license; Flywheel's packaging is described below.
 
 ## Local visual effects
 
@@ -376,6 +380,24 @@ The original atlas uses deterministic pixel composition in `CelestialAtlas.java`
 an AI-assisted Java script included in the corresponding-source archive. It uses
 no third-party image inputs and shares the owned mod's GPL-3.0-or-later license.
 Its provenance also appears in the JAR's `META-INF/NOTICE.txt`.
+
+### Sun and Moon artwork
+
+The atmosphere resourcepack replaces the native Sun and eight-phase Moon textures
+with original golden and cool blue pixel artwork. The editable sources are
+[`artwork/sun.svg`](../pack/resourcepacks/aeroscapes-reimagine-atmosphere/artwork/sun.svg)
+and [`artwork/moon_phases.svg`](../pack/resourcepacks/aeroscapes-reimagine-atmosphere/artwork/moon_phases.svg).
+They use AI-assisted deterministic vector composition, without third-party image
+inputs or generative image models, under GPL-3.0-or-later. The resourcepack carries
+the full license and the corresponding-source archive includes both SVGs and PNGs.
+
+Transparent padding keeps the apparent diameters close to the native textures:
+the Sun canvas is 128 × 128, and each Moon cell is 96 × 96. The Moon uses the
+Minecraft 1.21.1 four-column, two-row order: full, waning gibbous, third quarter,
+waning crescent, new, waxing crescent, first quarter, waxing gibbous. Every phase
+masks the same surface map; the new Moon is transparent. Native additive blending
+and weather fading remain unchanged. Shader styles that replace the native
+textured sun and moon can bypass this artwork.
 
 ### Fresh Animations: Quivers
 
@@ -720,9 +742,3 @@ License files remain inside unchanged downloaded artifacts. Create retains MIT, 
 `pack/mods/flywheel.pw.toml` pins official Maven Flywheel 1.0.6, client-only. Its bytes match Create 6.0.10's nested copy and its embedded `META-INF/LICENSE.md` retains MIT and Jozufozu's copyright. Vanillin 1.1.3 contains 1.0.4 under another Maven coordinate; an explicit provider prevents NeoForge's JarJar selection from satisfying Sable/Simulated with that older mod. Create retains its nested server library.
 
 The Maven coordinate, URL and hashes remain provenance. `metadata/artifacts.json` selects `distribution=bundle`. The pinned packwiz Modrinth exporter uses its normal domain restrictions to place this exact file at `client-overrides/mods/flywheel-neoforge-1.21.1-1.0.6.jar`, outside the remote download manifest. Python verification checks the reviewed export mode, exact side-specific archive path, size, SHA-512 and SHA-1; a common/server copy or a remote-manifest entry is rejected. Reconsider the explicit provider only when the replacement combination selects the required version without it.
-
-## C2ME OpenCL extension
-
-The C2ME base is MIT. The separate OpenCL module `7rX3dlFf` retains its embedded ARR/no-redistribution notice and is supplied through the unchanged official Modrinth file under that platform's modpack policy. The owned adapter uses public compiler registries and independent density/basin/city integration; it does not copy kernels or distribute extracted module classes/nested JARs. Gradle's extracted APIs and LWJGL bindings are compile-only. A different distribution channel is a separate scope to assess.
-
-The provider API lists ScalableLux as required, while this exact OpenCL descriptor declares it optional. The artifact audit preserves both records; ScalableLux is installed separately for lighting.

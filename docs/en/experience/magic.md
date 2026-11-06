@@ -4,7 +4,11 @@ description: Plans for learning spells, combining magical traditions and using m
 status: planned
 ---
 
-Dedicated magic systems are planned. The aim is to make finding, studying and experimenting with spells a way to develop a character, with Otherworld D&D as the main reference. The mods and progression rules have not yet been selected.
+Dedicated magic systems are planned. The aim is to make finding, studying and experimenting with spells a way to develop a character, with [Otherworld D&D](https://www.curseforge.com/minecraft/modpacks/otherworld-dnd) as the main reference. The final magic lineup and progression rules are still being refined.
+
+[Iron’s Spells ’n Spellbooks](https://www.curseforge.com/minecraft/mc-mods/irons-spells-n-spellbooks) is selected for ready-made spells and magical equipment. Programmable [Hex Casting](https://modrinth.com/mod/hex-casting) is planned before `1.0.0` if a suitable version passes verification. [Theurgy](https://www.curseforge.com/minecraft/mc-mods/theurgy) is provisionally selected for alchemy.
+
+By `1.0.0`, magic should be a substantial, varied activity alongside engineering. Ready-made spells come first; composing spells is also intended before that milestone if the selected systems and overall scope allow it. Deeper connections between magic and other areas belong to later development.
 
 ## Learning and using magic
 

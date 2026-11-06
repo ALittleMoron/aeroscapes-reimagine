@@ -1,0 +1,84 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "credit": "Made with Blockbench",
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "supplementaries:item/slingshot"
+    },
+    "display": {
+      "thirdperson_righthand": {
+        "translation": [
+          -0.25,
+          3.125,
+          1
+        ],
+        "scale": [
+          0.625,
+          0.625,
+          0.625
+        ]
+      },
+      "thirdperson_lefthand": {
+        "translation": [
+          0.25,
+          3.125,
+          1
+        ],
+        "scale": [
+          0.625,
+          0.625,
+          0.625
+        ]
+      },
+      "head": {
+        "translation": [
+          0,
+          6.5,
+          0
+        ]
+      }
+    }
+  },
+  "textures": {
+    "layer0": "supplementaries:item/slingshot",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "supplementaries:item/equipment/held/slingshot"
+    },
+    "firstperson_lefthand": {
+      "parent": "supplementaries:item/equipment/held/slingshot"
+    },
+    "thirdperson_righthand": {
+      "parent": "supplementaries:item/equipment/held/slingshot"
+    },
+    "thirdperson_lefthand": {
+      "parent": "supplementaries:item/equipment/held/slingshot"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "supplementaries:pulling": 1
+      },
+      "model": "supplementaries:item/slingshot_pulling_0"
+    },
+    {
+      "predicate": {
+        "supplementaries:pulling": 1,
+        "supplementaries:pull": 0.55
+      },
+      "model": "supplementaries:item/slingshot_pulling_1"
+    },
+    {
+      "predicate": {
+        "supplementaries:pulling": 1,
+        "supplementaries:pull": 0.9
+      },
+      "model": "supplementaries:item/slingshot_pulling_2"
+    }
+  ]
+}

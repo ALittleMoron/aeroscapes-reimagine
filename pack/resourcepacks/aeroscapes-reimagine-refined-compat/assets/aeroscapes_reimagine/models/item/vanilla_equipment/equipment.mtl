@@ -1,0 +1,69 @@
+newmtl gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/gold
+
+newmtl silver
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/silver
+
+newmtl recovery
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/recovery
+
+newmtl leather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/leather
+
+newmtl cyan
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/cyan
+
+newmtl day
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/day
+
+newmtl dial
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/dial
+
+newmtl engraving
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/engraving
+
+newmtl marks
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/marks
+
+newmtl moon
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/moon
+
+newmtl needle
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/needle
+
+newmtl night
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/night
+
+newmtl red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/red
+
+newmtl sun
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/vanilla_equipment/sun

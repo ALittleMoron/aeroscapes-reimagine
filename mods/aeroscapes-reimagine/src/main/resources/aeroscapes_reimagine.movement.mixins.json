@@ -20,8 +20,12 @@
     "ParagliderExhaustionMixin",
     "HookKeyDefaultsMixin",
     "HookItemCaptureMixin",
+    "HookItemOwnerMixin",
+    "HookRenderOrderMixin",
     "HookWorldRenderMixin",
-    "HookLineMixin"
+    "HookLineMixin",
+    "HookFirstPersonPoseMixin",
+    "HookPlayerPoseMixin"
   ],
   "injectors": {
     "defaultRequire": 1

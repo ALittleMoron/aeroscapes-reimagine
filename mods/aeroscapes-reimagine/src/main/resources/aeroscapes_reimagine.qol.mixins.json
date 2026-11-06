@@ -19,7 +19,9 @@
     "CompassNatureScreenMixin",
     "CompassExplorerScreenMixin",
     "AccuratePlacementInteractionMixin",
-    "AccuratePlacementEnumLanguageMixin"
+    "AccuratePlacementEnumLanguageMixin",
+    "EffectDescriptionPagesMixin",
+    "CreativeSearchMixin"
   ],
   "injectors": {
     "defaultRequire": 1

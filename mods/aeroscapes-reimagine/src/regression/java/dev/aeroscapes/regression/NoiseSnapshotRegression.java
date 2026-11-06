@@ -23,15 +23,12 @@ import net.minecraft.nbt.NbtIo;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.StaticCache2D;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.chunk.ChunkAccess;
-import net.minecraft.world.level.chunk.ProtoChunk;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
-import net.minecraft.world.level.levelgen.RandomState;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
 
 /** Exact natural NOISE outputs, before surface rules, carving and placed features. */
@@ -62,7 +59,7 @@ public final class NoiseSnapshotRegression {
     require(
         path.isAbsolute() && path.toString().contains("/.runtime/"),
         "noiseSnapshotFile must be absolute and inside ignored .runtime");
-    Capture capture = new Capture(level, level.getChunkSource().randomState());
+    Capture capture = new Capture(level);
     require(active == null, "Another NOISE snapshot capture is active");
     active = capture;
     try {
@@ -90,25 +87,6 @@ public final class NoiseSnapshotRegression {
           captureChunk(capture, chunk);
           return chunk;
         });
-  }
-
-  /** OpenCL completes NOISE in batches, bypassing the native task for already generated chunks. */
-  public static void captureOpenCl(
-      RandomState state, StaticCache2D<ProtoChunk> chunks, ChunkPos start, int batchSize) {
-    Capture capture = active;
-    if (capture == null || capture.state != state) return;
-    for (ChunkPos site : SITES)
-      if (site.x >= start.x
-          && site.x < start.x + batchSize
-          && site.z >= start.z
-          && site.z < start.z + batchSize) {
-        if (capture.chunks.containsKey(site.toLong())) continue;
-        ProtoChunk chunk = chunks.get(site.x, site.z);
-        require(
-            chunk.getPersistedStatus() == ChunkStatus.NOISE,
-            "OpenCL capture must follow completed block writes and WG heightmaps at " + site);
-        captureChunk(capture, chunk);
-      }
   }
 
   private static void captureChunk(Capture capture, ChunkAccess chunk) {
@@ -356,12 +334,10 @@ public final class NoiseSnapshotRegression {
 
   private static final class Capture {
     private final ServerLevel level;
-    private final RandomState state;
     private final Map<Long, CompoundTag> chunks = new ConcurrentHashMap<>();
 
-    private Capture(ServerLevel level, RandomState state) {
+    private Capture(ServerLevel level) {
       this.level = level;
-      this.state = state;
     }
   }
 

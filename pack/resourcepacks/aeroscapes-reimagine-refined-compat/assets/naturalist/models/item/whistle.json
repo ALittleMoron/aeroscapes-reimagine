@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "naturalist:item/whistle"
+    }
+  },
+  "textures": {
+    "layer0": "naturalist:item/whistle",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "naturalist:item/equipment/held/whistle"
+    },
+    "firstperson_lefthand": {
+      "parent": "naturalist:item/equipment/held/whistle"
+    },
+    "thirdperson_righthand": {
+      "parent": "naturalist:item/equipment/held/whistle"
+    },
+    "thirdperson_lefthand": {
+      "parent": "naturalist:item/equipment/held/whistle"
+    }
+  }
+}

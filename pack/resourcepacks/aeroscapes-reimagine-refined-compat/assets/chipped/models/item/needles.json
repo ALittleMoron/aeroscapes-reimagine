@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "chipped:item/needles"
+    }
+  },
+  "textures": {
+    "layer0": "chipped:item/needles",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "chipped:item/equipment/held/needles"
+    },
+    "firstperson_lefthand": {
+      "parent": "chipped:item/equipment/held/needles"
+    },
+    "thirdperson_righthand": {
+      "parent": "chipped:item/equipment/held/needles"
+    },
+    "thirdperson_lefthand": {
+      "parent": "chipped:item/equipment/held/needles"
+    }
+  }
+}

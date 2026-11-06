@@ -1,0 +1,64 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "spawn:item/coastal_crab_claw_empty"
+    },
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [
+          100,
+          -90,
+          55
+        ],
+        "translation": [
+          0,
+          2.25,
+          1
+        ],
+        "scale": [
+          0.65,
+          0.65,
+          0.65
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          100,
+          90,
+          -55
+        ],
+        "translation": [
+          0,
+          2.25,
+          1
+        ],
+        "scale": [
+          0.65,
+          0.65,
+          0.65
+        ]
+      }
+    }
+  },
+  "textures": {
+    "layer0": "spawn:item/coastal_crab_claw_empty",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw_empty"
+    },
+    "firstperson_lefthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw_empty"
+    },
+    "thirdperson_righthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw_empty"
+    },
+    "thirdperson_lefthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw_empty"
+    }
+  }
+}

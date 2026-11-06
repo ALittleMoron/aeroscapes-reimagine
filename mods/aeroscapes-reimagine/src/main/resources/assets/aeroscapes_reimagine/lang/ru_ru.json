@@ -333,5 +333,6 @@
   "block.aeroscapes_reimagine.blackstone_lapis_ore": "Лазуритовая руда в черните",
   "block.aeroscapes_reimagine.blackstone_palladium_ore": "Палладиевая руда в черните",
   "block.aeroscapes_reimagine.blackstone_redstone_ore": "Редстоуновая руда в черните",
-  "block.aeroscapes_reimagine.blackstone_zinc_ore": "Цинковая руда в черните"
+  "block.aeroscapes_reimagine.blackstone_zinc_ore": "Цинковая руда в черните",
+  "aeroscapes_reimagine.equipment.companion_hook_disabled": "Отключён в этой сборке."
 }

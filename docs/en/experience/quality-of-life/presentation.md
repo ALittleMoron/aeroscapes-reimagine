@@ -14,7 +14,7 @@ More detailed animations, environmental sound and small visual effects add to Mi
 
 [Punchy](https://modrinth.com/mod/punchy-fpa) handles first-person hands, with different movements for mining, chopping, digging and using items. The initial profile disables authored camera motion, extra walking/sprinting/falling movements and decorative overlays/particles. Inspection starts unbound and can be assigned in **Options → Controls**; Punchy's settings are available through **F8**. Combat rules remain unchanged.
 
-[Refined Tools](https://modrinth.com/resourcepack/refined-tools) gives supported vanilla tools and other held items more detailed three-dimensional models, while tools keep flat inventory icons. Modefite and Puzzle provide its model support on this Minecraft version. Tools added by other mods are not automatically remodeled. Keep the **Aeroscapes Reimagine — Refined Tools compatibility** resourcepack enabled with Refined Tools; disable both together. It supplies the missing model parents and the held-trident rendering route.
+[Refined Tools](https://modrinth.com/resourcepack/refined-tools) gives supported vanilla tools and other held items more detailed three-dimensional models, while tools keep flat inventory icons. Modefite and Puzzle provide its model support on this Minecraft version. Keep the **Aeroscapes Reimagine — Refined Tools compatibility** resourcepack enabled with Refined Tools; disable both together. It supplies missing model parents, the held-trident rendering route and additional models for selected modded equipment. These additional models appear in hands; inventory icons retain the original textures and active states.
 
 [Shoulder Surfing](https://modrinth.com/mod/shoulder-surfing-reloaded) places the third-person camera slightly to the side, using the framing of Otherworld D&D. The ordinary perspective key (**F5** by default) still switches views. Movement follows the normal player direction, the camera inherits the player's field of view, and first person remains available. Shoulder switching can be assigned in **Options → Controls**.
 
@@ -66,9 +66,11 @@ In the interface, Chat Animation animates chat, while Smooth Gui animates menu o
 
 ## Sky
 
-The atmosphere resourcepack uses [Polytone](https://modrinth.com/mod/polytone) to slightly deepen each biome's daytime sky colors and give dawn and dusk soft peach and amber tones. Most stars remain small, with occasional larger points that make the night sky more varied. It retains Minecraft's square sun and moon without photographic panoramas or a Milky Way backdrop; weather and night darkening remain active.
+The atmosphere resourcepack uses [Polytone](https://modrinth.com/mod/polytone) to slightly deepen each biome's daytime sky colors and give dawn and dusk soft peach and amber tones. Most stars remain small, with occasional larger points that make the night sky more varied. A round pixel-art Sun has a golden rim and a small halo; the cool blue Moon has seas and craters that stay in place through all eight phases. Weather and night darkening remain active, without photographic panoramas or a Milky Way backdrop.
 
 Smooth Skies smooths the distant color gradient, and Clear Void removes the black lower part of the skybox. [Complementary](https://modrinth.com/shader/complementary-reimagined) supplies its own procedural sky and stars, with a denser star field in the prepared profile; [MakeUp](https://modrinth.com/shader/makeup-ultra-fast-shaders) retains the vanilla star geometry and its varied sizes.
+
+In [Complementary](https://modrinth.com/shader/complementary-reimagined), the **Reimagined** Sun/Moon Style uses these textures, with the shader's own brightness and colors. The **Unbound** styles draw their own sun and moon instead.
 
 Three small decorative planets add a pale, a softly banded and a reddish point to the night sky. They slowly shift against the stars as world days pass. Six brighter stars accompany the ordinary star field, while a northern guide star stays above north. The added lights fade with dawn, rain and the horizon and appear only in the Overworld.
 

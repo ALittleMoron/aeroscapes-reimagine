@@ -65,10 +65,18 @@ public final class LocalChunkPacingRegression {
     if (!ready(level, center)) return;
     finished = true;
     try {
+      boolean negative = Boolean.getBoolean("aeroscapes.regression.expectPacingBlocked");
+      mixedReadiness(level, center, negative);
+      if (negative) {
+        LogUtils.getLogger()
+            .info(
+                "Local chunk pacing negative control confirmed: ready terrain blocked behind unready nearest chunk");
+        return;
+      }
       verifyReady(level, center, 1.0F);
       LogUtils.getLogger()
           .info(
-              "Local chunk pacing regression passed: local/remote quota, ACK, distance, drop and light bundles");
+              "Local chunk pacing regression passed: native local delivery, remote quota, ACK, readiness, drop and light bundles");
     } finally {
       releaseTicket();
     }
@@ -107,10 +115,45 @@ public final class LocalChunkPacingRegression {
       }
     }
     // Both controls use the actual listener's final sender and native inbound ACK handler.
-    List<Integer> local = verifyOne(level, center, chunks, true, ackInputForOneChunk);
-    List<Integer> remote = verifyOne(level, center, chunks, false, ackInputForOneChunk);
+    verifyOne(level, center, chunks, true, ackInputForOneChunk);
+    verifyOne(level, center, chunks, false, ackInputForOneChunk);
+  }
+
+  private static void mixedReadiness(ServerLevel level, ChunkPos center, boolean expectBlocked) {
+    var map = level.getChunkSource().chunkMap;
+    var ready = map.getChunkToSend(center.toLong());
+    var unready = new ChunkPos(center.x + 1024, center.z + 1024);
     check(
-        local.equals(remote), "Local/remote batch distribution differs: " + local + " / " + remote);
+        ready != null && map.getChunkToSend(unready.toLong()) == null,
+        "Mixed readiness requires one actual ready and one absent chunk");
+    try {
+      var quota = PlayerChunkSender.class.getDeclaredField("batchQuota");
+      quota.setAccessible(true);
+      var collect =
+          PlayerChunkSender.class.getDeclaredMethod(
+              "collectChunksToSend", net.minecraft.server.level.ChunkMap.class, ChunkPos.class);
+      collect.setAccessible(true);
+      for (boolean local : List.of(true, false)) {
+        var sender = new PlayerChunkSender(local);
+        sender.markChunkPendingToSend(new LevelChunk(level, unready));
+        sender.markChunkPendingToSend(ready);
+        quota.setFloat(sender, 1F);
+        Object result = collect.invoke(sender, map, unready);
+        boolean deliverReady = local && !expectBlocked;
+        check(
+            result instanceof List<?> chunks
+                && chunks.equals(deliverReady ? List.of(ready) : List.of()),
+            "Available local terrain must not wait behind an unavailable nearest chunk");
+        check(
+            sender.isPending(unready.toLong()) && sender.isPending(center.toLong()) != deliverReady,
+            "Readiness filtering retains unsent terrain and removes only delivered terrain");
+      }
+      check(
+          map.getVisibleChunkIfPresent(unready.toLong()) == null,
+          "Readiness inspection must not generate the absent chunk");
+    } catch (ReflectiveOperationException failure) {
+      throw new IllegalStateException("Pinned native chunk sender fields/method changed", failure);
+    }
   }
 
   private static List<Integer> verifyOne(
@@ -158,6 +201,20 @@ public final class LocalChunkPacingRegression {
       sender.markChunkPendingToSend(
           chunks.getFirst()); // Same pending chunk must not be duplicated.
       Set<ChunkPos> sent = new HashSet<>();
+
+      if (local) {
+        sendBatch(player, connection, center, remaining, sent, distribution, 25);
+        sender.markChunkPendingToSend(chunks.getFirst());
+        remaining.add(chunks.getFirst().getPos());
+        sent.remove(chunks.getFirst().getPos());
+        sendBatch(player, connection, center, remaining, sent, distribution, 0);
+        acknowledge(listener, ackInputForOneChunk);
+        sendBatch(player, connection, center, remaining, sent, distribution, 1);
+        acknowledge(listener, ackInputForOneChunk);
+        sendBatch(player, connection, center, remaining, sent, distribution, 0);
+        check(remaining.isEmpty() && sent.size() == 25, "Native local backlog must drain");
+        return List.copyOf(distribution);
+      }
 
       sendBatch(player, connection, center, remaining, sent, distribution, 9);
       sendBatch(

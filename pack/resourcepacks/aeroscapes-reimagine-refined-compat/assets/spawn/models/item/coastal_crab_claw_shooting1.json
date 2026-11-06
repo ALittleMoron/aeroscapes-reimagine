@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "spawn:item/coastal_crab_claw_shooting_template",
+    "textures": {
+      "layer0": "spawn:item/coastal_crab_claw_shooting1"
+    }
+  },
+  "textures": {
+    "layer0": "spawn:item/coastal_crab_claw_shooting1",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw_shooting1"
+    },
+    "firstperson_lefthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw_shooting1"
+    },
+    "thirdperson_righthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw_shooting1"
+    },
+    "thirdperson_lefthand": {
+      "parent": "spawn:item/equipment/held/coastal_crab_claw_shooting1"
+    }
+  }
+}

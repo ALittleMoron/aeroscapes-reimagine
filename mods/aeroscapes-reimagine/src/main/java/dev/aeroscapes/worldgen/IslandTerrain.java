@@ -49,6 +49,8 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
   // Fixed-size, full-coordinate-keyed cache: no world-size growth and no shared mutable shape.
   private final AtomicReferenceArray<Column> columns = new AtomicReferenceArray<>(256);
   private final AtomicReferenceArray<IslandCaveHosts> caveHosts = new AtomicReferenceArray<>(1024);
+  private final AtomicReferenceArray<IslandCaveHosts> nativeCaveHosts =
+      new AtomicReferenceArray<>(1024);
 
   public record Column(
       int x,
@@ -160,6 +162,19 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
     if (cached != null && cached.source().equals(source)) return cached;
     IslandCaveHosts computed = IslandCaveHosts.sample(this, source);
     caveHosts.set(index, computed);
+    return computed;
+  }
+
+  public IslandCaveHosts caveHosts(
+      net.minecraft.world.level.ChunkPos source,
+      net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator generator,
+      RandomState state,
+      net.minecraft.world.level.LevelHeightAccessor height) {
+    int index = (source.x & 31) | ((source.z & 31) << 5);
+    IslandCaveHosts cached = nativeCaveHosts.get(index);
+    if (cached != null && cached.source().equals(source)) return cached;
+    IslandCaveHosts computed = IslandCaveHosts.sample(this, source, generator, state, height);
+    nativeCaveHosts.set(index, computed);
     return computed;
   }
 

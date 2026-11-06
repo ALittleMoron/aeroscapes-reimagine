@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "waystones:item/warp_stone"
+    }
+  },
+  "textures": {
+    "layer0": "waystones:item/warp_stone",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "waystones:item/equipment/held/warp_stone"
+    },
+    "firstperson_lefthand": {
+      "parent": "waystones:item/equipment/held/warp_stone"
+    },
+    "thirdperson_righthand": {
+      "parent": "waystones:item/equipment/held/warp_stone"
+    },
+    "thirdperson_lefthand": {
+      "parent": "waystones:item/equipment/held/warp_stone"
+    }
+  }
+}

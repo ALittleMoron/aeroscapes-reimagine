@@ -2,6 +2,7 @@ package dev.aeroscapes.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import dev.aeroscapes.worldgen.IslandCarvingContext;
 import dev.aeroscapes.worldgen.IslandTerrain;
 import java.util.function.Function;
 import net.minecraft.core.BlockPos;
@@ -10,7 +11,6 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.chunk.CarvingMask;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.levelgen.Aquifer;
-import net.minecraft.world.level.levelgen.DensityFunction.SinglePointContext;
 import net.minecraft.world.level.levelgen.carver.CarverConfiguration;
 import net.minecraft.world.level.levelgen.carver.CarvingContext;
 import net.minecraft.world.level.levelgen.carver.WorldCarver;
@@ -47,7 +47,9 @@ public abstract class IslandCarverProtectionMixin {
       int z = position.getZ();
       if (y <= configuration.lavaLevel.resolveY(context)
           || terrain.column(x, z).liner(y)
-          || terrain.biomeDensity(new SinglePointContext(x, y - 4, z)) <= 0) return false;
+          || !((IslandCarvingContext) (Object) context)
+              .aeroscapes$support(target)
+              .solid(x, y - 4, z)) return false;
     }
     return original.call(
         carver,

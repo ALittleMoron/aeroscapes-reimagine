@@ -1,6 +1,7 @@
 package dev.aeroscapes.diagnostics;
 
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.mixin.ChunkSenderDiagnosticsAccess;
 import java.util.Map;
 import java.util.TreeMap;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -49,7 +50,7 @@ public final class ServerChunkFlow {
                 });
         LogUtils.getLogger()
             .info(
-                "[Aeroscapes chunk flow] server tick={} dimension={} pos={},{},{} view={} getterAvailable={} pendingInView={} readyPending={} meanTickMs={} statuses={}",
+                "[Aeroscapes chunk flow] server tick={} dimension={} pos={},{},{} view={} getterAvailable={} pendingInView={} readyPending={} meanTickMs={} desiredChunksPerTick={} batchQuota={} unacknowledgedBatches={} maximumUnacknowledgedBatches={} statuses={}",
                 server.getTickCount(),
                 level.dimension().location(),
                 player.getX(),
@@ -60,6 +61,14 @@ public final class ServerChunkFlow {
                 counts[2],
                 counts[3],
                 server.getAverageTickTimeNanos() / 1_000_000.0,
+                ((ChunkSenderDiagnosticsAccess) player.connection.chunkSender)
+                    .aeroscapes$desiredChunksPerTick(),
+                ((ChunkSenderDiagnosticsAccess) player.connection.chunkSender)
+                    .aeroscapes$batchQuota(),
+                ((ChunkSenderDiagnosticsAccess) player.connection.chunkSender)
+                    .aeroscapes$unacknowledgedBatches(),
+                ((ChunkSenderDiagnosticsAccess) player.connection.chunkSender)
+                    .aeroscapes$maximumUnacknowledgedBatches(),
                 statuses);
       }
     }

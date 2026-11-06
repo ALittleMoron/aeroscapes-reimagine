@@ -2,6 +2,7 @@ package dev.aeroscapes.regression.noise.mixin;
 
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import dev.aeroscapes.regression.CaveNetworkRegression;
 import dev.aeroscapes.regression.NoiseSnapshotRegression;
 import dev.aeroscapes.regression.StageSnapshotRegression;
 import java.util.concurrent.CompletableFuture;
@@ -44,6 +45,8 @@ public abstract class NoiseSnapshotMixin {
       Operation<CompletableFuture<ChunkAccess>> original) {
     if (step.targetStatus() == ChunkStatus.FEATURES)
       StageSnapshotRegression.captureFeatureInput(context.level(), chunk);
+    if (step.targetStatus() == ChunkStatus.CARVERS)
+      CaveNetworkRegression.beforeCarvers(context.level(), chunk);
     return StageSnapshotRegression.capture(
         context.level(),
         step.targetStatus(),

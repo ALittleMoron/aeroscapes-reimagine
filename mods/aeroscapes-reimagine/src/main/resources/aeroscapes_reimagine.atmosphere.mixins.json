@@ -16,6 +16,8 @@
     "RainWindMixin",
     "RainImpactBiomeMixin",
     "LanternGripMixin",
+    "LunchboxHeldModelMixin",
+    "AltimeterHeldModelMixin",
     "LanguageCorrectionMixin",
     "NativeConfigurationLanguageMixin",
     "InvMoveLanguageMixin",

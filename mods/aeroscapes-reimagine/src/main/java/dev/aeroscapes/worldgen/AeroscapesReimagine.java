@@ -4,7 +4,6 @@ import com.mojang.logging.LogUtils;
 import dev.aeroscapes.atmosphere.CelestialConfig;
 import dev.aeroscapes.worldgen.c2me.C2meIslandCompiler;
 import dev.aeroscapes.worldgen.feature.IslandFeatures;
-import dev.aeroscapes.worldgen.opencl.IslandOpenCl;
 import java.util.HashMap;
 import java.util.Map;
 import net.minecraft.core.BlockPos;
@@ -48,13 +47,14 @@ public final class AeroscapesReimagine {
 
   public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
     container.registerConfig(ModConfig.Type.CLIENT, CelestialConfig.SPEC);
+    if (ModList.get().isLoaded("crittersandcompanions"))
+      dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);
     if (ModList.get().isLoaded("spawn")) dev.aeroscapes.ecology.EcologyNetwork.register(modBus);
     if (ModList.get().isLoaded("waystones")) {
       dev.aeroscapes.travel.TravelIntegration.register(modBus);
     }
     if (ModList.get().isLoaded("c2me_opts_dfc")) {
       C2meIslandCompiler.register();
-      if (ModList.get().isLoaded("c2me_opts_accel_opencl")) IslandOpenCl.register();
     }
     modBus.addListener(RuntimeDataPack::register);
     modBus.addListener(dev.aeroscapes.testship.TestShipNetwork::register);

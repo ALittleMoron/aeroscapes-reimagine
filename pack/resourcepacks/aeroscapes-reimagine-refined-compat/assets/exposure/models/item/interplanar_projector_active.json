@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "exposure:item/interplanar_projector_active"
+    }
+  },
+  "textures": {
+    "layer0": "exposure:item/interplanar_projector_active",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "exposure:item/equipment/held/interplanar_projector_active"
+    },
+    "firstperson_lefthand": {
+      "parent": "exposure:item/equipment/held/interplanar_projector_active"
+    },
+    "thirdperson_righthand": {
+      "parent": "exposure:item/equipment/held/interplanar_projector_active"
+    },
+    "thirdperson_lefthand": {
+      "parent": "exposure:item/equipment/held/interplanar_projector_active"
+    }
+  }
+}

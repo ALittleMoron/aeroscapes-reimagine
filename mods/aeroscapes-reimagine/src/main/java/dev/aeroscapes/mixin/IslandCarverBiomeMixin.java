@@ -51,7 +51,14 @@ public abstract class IslandCarverBiomeMixin {
     var previous = selection.aeroscapes$layer();
     boolean carved = false;
     try {
-      for (var layer : terrain.caveHosts(source).ranges()) {
+      for (var layer :
+          terrain
+              .caveHosts(
+                  source,
+                  selection.aeroscapes$generator(),
+                  context.randomState(),
+                  target.getHeightAccessorForGeneration())
+              .ranges()) {
         selection.aeroscapes$layer(layer);
         carved |= original.call(carver, context, target, biomes, random, aquifer, source, mask);
       }
@@ -95,7 +102,15 @@ public abstract class IslandCarverBiomeMixin {
         source,
         (Supplier<BiomeGenerationSettings>)
             () -> {
-              var hosts = new java.util.ArrayList<>(terrain.caveHosts(source.getPos()).ranges());
+              var hosts =
+                  new java.util.ArrayList<>(
+                      terrain
+                          .caveHosts(
+                              source.getPos(),
+                              generator,
+                              state,
+                              source.getHeightAccessorForGeneration())
+                          .ranges());
               hosts.sort(
                   java.util.Comparator.comparingInt(
                           (dev.aeroscapes.worldgen.IslandCaveHosts.Range host) ->

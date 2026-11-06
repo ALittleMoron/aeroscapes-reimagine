@@ -1,5 +1,7 @@
 package dev.aeroscapes.aquatic;
 
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.nio.file.Path;
@@ -146,7 +148,7 @@ final class RodModels {
 
   private static void addShaft(List<String> parts, String style, boolean left) {
     String collar = style.equals("sunflower") ? "leaf" : "trim";
-    double width = style.equals("honeycomb") ? 2.4 : style.equals("netherite") ? 2.2 : 1.8;
+    double width = style.equals("honeycomb") ? .9 : style.equals("netherite") ? 1.6 : 1.2;
     part(
         parts,
         "butt",
@@ -162,8 +164,7 @@ final class RodModels {
     for (int index = 0; index < 4; index++) {
       double low = 6.8 + index * 5.7;
       double half = width / 2 - index * 0.12;
-      String material =
-          index % 2 == 1 && (style.equals("iron") || style.equals("diamond")) ? "dark" : "shaft";
+      String material = "shaft";
       part(
           parts,
           "shaft_" + index,
@@ -175,7 +176,19 @@ final class RodModels {
           13 + half,
           material,
           left);
-      part(parts, "joint_" + index, 7.25, low, 12.25, 8.75, low + 0.5, 13.75, collar, left);
+      if (style.equals("iron") || style.equals("diamond") || style.equals("golden"))
+        part(
+            parts,
+            "edge_" + index,
+            8 - half,
+            low,
+            13 - half - .08,
+            8 - half + .18,
+            low + (index == 3 ? 5.1 : 5.7),
+            13 - half + .12,
+            "highlight",
+            left);
+      part(parts, "joint_" + index, 7.3, low, 12.3, 8.7, low + 0.25, 13.7, collar, left);
     }
     part(parts, "tip", 7.55, 29, 12.55, 8.45, 29.3, 13.45, collar, left);
     part(parts, "tip_eye_mount", 7.7, 29.1, 11.55, 8.3, 29.4, 13.1, collar, left);
@@ -191,23 +204,13 @@ final class RodModels {
 
   private static void addReel(List<String> parts, String style, boolean left) {
     part(parts, "reel_seat", 7.45, 3.5, 10.3, 8.55, 7.4, 12.2, "wood", left);
-    drum(parts, "spool", 5.7, 10.3, 6, 9.5, 1.35, "line", left);
-    drum(parts, "flange_inner", 5.15, 5.7, 6, 9.5, 1.85, "reel", left);
-    drum(parts, "flange_outer", 10.3, 10.85, 6, 9.5, 1.85, "reel", left);
-    part(parts, "axle", 5, 5.65, 9.15, 11.6, 6.35, 9.85, "trim", left);
-    part(parts, "crank", 11.25, 4.2, 9.18, 11.7, 6.25, 9.82, "reel", left);
-    part(
-        parts,
-        "crank_knob",
-        11.25,
-        3.9,
-        8.75,
-        12.5,
-        4.7,
-        10.25,
-        style.equals("village") ? "trim" : "grip",
-        left);
-    part(parts, "spool_pin", 4.65, 5.6, 9.1, 5.2, 6.4, 9.9, "trim", left);
+    drum(parts, "spool", 6.4, 9.6, 6, 10.1, 1.05, "line", left);
+    drum(parts, "flange_inner", 6, 6.4, 6, 10.1, 1.4, "reel", left);
+    drum(parts, "flange_outer", 9.6, 10, 6, 10.1, 1.4, "reel", left);
+    part(parts, "axle", 5.8, 5.75, 9.85, 10.6, 6.25, 10.35, "trim", left);
+    part(parts, "crank", 10.25, 4.5, 9.85, 10.65, 6.2, 10.35, "reel", left);
+    part(parts, "crank_knob", 10.2, 4.2, 9.5, 11.3, 4.8, 10.7, "grip", left);
+    part(parts, "spool_pin", 5.65, 5.7, 9.8, 6, 6.3, 10.4, "trim", left);
   }
 
   private static void drum(
@@ -259,135 +262,352 @@ final class RodModels {
   private static void addMotif(List<String> parts, String style, boolean left) {
     switch (style) {
       case "crystal" -> {
-        for (int index = 0; index < 3; index++) {
-          double x = 5.7 + index * 1.8;
-          double high = index == 1 ? 29.2 : 27.6;
-          part(
+        for (int i = 0; i < 3; i++) {
+          double x = 6.2 + i * 1.6, y = i == 1 ? 25 : 23.6;
+          rotated(
               parts,
-              "crown_" + index,
+              "crystal_" + i,
+              x - .55,
+              y,
+              12.4,
+              x + .55,
+              y + (i == 1 ? 4 : 3.2),
+              13.6,
+              "reel",
+              left,
+              "z",
+              (i - 1) * 22.5,
               x,
-              24.1,
-              12.3,
-              x + 1.3,
-              high,
-              13.7,
-              index == 1 ? "highlight" : "reel",
-              left);
-          part(
+              y,
+              13);
+          rotated(
               parts,
-              "crystal_lug_" + index,
+              "crystal_tip_" + i,
+              x - .4,
+              y + 2.4,
+              12.6,
+              x + .4,
+              y + 3.2,
+              13.4,
+              "highlight",
+              left,
+              "z",
+              45,
               x,
-              0.5,
-              12.2,
-              x + 1.2,
-              3 + index * 0.4,
-              13.8,
-              "trim",
-              left);
+              y + 2.8,
+              13);
         }
+        rotated(
+            parts, "grip_crystal", 6.7, 1, 11.9, 8, 3.6, 13.5, "trim", left, "z", -22.5, 8, 1, 13);
       }
       case "echo" -> {
-        for (int index = 0; index < 3; index++) {
-          double y = 11.4 + index * 6.5;
-          part(parts, "sculk_cross_" + index, 6.1, y, 12.4, 9.9, y + 0.8, 13.6, "trim", left);
+        double[] levels = {10.8, 17.4, 23.7};
+        for (int i = 0; i < 3; i++) {
+          double y = levels[i], x = i == 1 ? 9 : 6.8;
+          rotated(
+              parts,
+              "sculk_branch_" + i,
+              Math.min(x, 8),
+              y,
+              12.6,
+              Math.max(x, 8) + .5,
+              y + 1.8,
+              13.4,
+              "trim",
+              left,
+              "z",
+              i == 1 ? -22.5 : 22.5,
+              8,
+              y,
+              13);
+          part(parts, "sculk_lobe_" + i, x - .6, y + .9, 12.4, x + .6, y + 2.2, 13.6, "reel", left);
           part(
               parts,
-              "sculk_knot_" + index,
-              7.45,
-              y - 0.6,
-              11.9,
-              8.55,
-              y + 1.6,
-              14.1,
+              "sculk_glint_" + i,
+              x - .3,
+              y + 1.8,
+              12.3,
+              x + .3,
+              y + 2.4,
+              12.6,
               "highlight",
               left);
         }
       }
       case "prismarine" -> {
-        part(parts, "blue_collar", 6.8, 3.2, 11.8, 9.2, 4.7, 14.2, "trim", left);
-        part(parts, "blue_tip", 7, 27.3, 12, 9, 28.7, 14, "grip", left);
-        part(parts, "sea_glass_tip", 7.25, 28.7, 12.25, 8.75, 29.5, 13.75, "trim", left);
+        part(parts, "blue_collar", 7, 3.2, 12, 9, 4.4, 14, "grip", left);
+        part(parts, "blue_tip", 7.35, 26.7, 12.35, 8.65, 28.8, 13.65, "grip", left);
+        part(parts, "sea_glass_tip", 7.65, 28.8, 12.65, 8.35, 29.5, 13.35, "trim", left);
       }
       case "sunflower" -> {
-        for (int index = 0; index < 5; index++) {
-          double y = 4 + index * 5;
-          double x = index % 2 == 0 ? 6.8 : 8.5;
-          part(parts, "vine_" + index, x, y, 11.6, x + 0.7, y + 4.2, 12.4, "leaf", left);
+        for (int i = 0; i < 5; i++) {
+          double y = 4 + i * 4.8;
+          rotated(
+              parts,
+              "vine_" + i,
+              7.6,
+              y,
+              12.1,
+              8.1,
+              y + 4.8,
+              12.6,
+              "leaf",
+              left,
+              "z",
+              i % 2 == 0 ? 22.5 : -22.5,
+              8,
+              y + 2.4,
+              13);
+          rotated(
+              parts,
+              "leaf_" + i,
+              i % 2 == 0 ? 6.3 : 8,
+              y + 1.5,
+              12.2,
+              i % 2 == 0 ? 8 : 9.7,
+              y + 2.2,
+              12.6,
+              "leaf",
+              left,
+              "z",
+              i % 2 == 0 ? -22.5 : 22.5,
+              8,
+              y + 1.8,
+              13);
+        }
+        for (int i = 0; i < 8; i++) {
+          double angle = i * Math.PI / 4,
+              y = 6 + Math.cos(angle) * 1.7,
+              z = 10.1 + Math.sin(angle) * 1.7;
           part(
-              parts, "leaf_" + index, x - 0.6, y + 1.5, 11.5, x + 1.2, y + 2.3, 12.1, "leaf", left);
+              parts,
+              "petal_" + i,
+              5.35,
+              y - .65,
+              z - .65,
+              5.9,
+              y + .65,
+              z + .65,
+              "highlight",
+              left);
         }
-        for (int index = 0; index < 4; index++) {
-          double y = index < 2 ? 4 : 7.5;
-          double z = index % 2 == 0 ? 7.6 : 10.3;
-          part(parts, "petal_" + index, 4.7, y, z, 5.2, y + 1.4, z + 1.1, "highlight", left);
-        }
-        part(parts, "flower_center", 4.3, 5.3, 8.5, 4.8, 7.1, 10.5, "trim", left);
+        drum(parts, "flower_center", 5.05, 5.5, 6, 10.1, .95, "wood", left);
       }
       case "village" -> {
-        part(parts, "emerald_butt", 6.7, -1.3, 11.7, 9.3, 0.7, 14.3, "trim", left);
-        part(parts, "emerald_tip", 6.8, 26.7, 11.8, 9.2, 29.2, 14.2, "trim", left);
-        part(parts, "emerald_facet", 7.2, 27.2, 11.5, 8.8, 28.7, 11.9, "highlight", left);
+        part(parts, "red_grip", 7.15, .5, 12.15, 8.85, 5.3, 13.85, "reel", left);
+        for (double y : new double[] {-1.1, 26.8}) {
+          part(parts, "emerald_base_" + y, 7.25, y, 12.25, 8.75, y + 1.2, 13.75, "leaf", left);
+          rotated(
+              parts,
+              "emerald_point_" + y,
+              7.5,
+              y + .7,
+              12.5,
+              8.5,
+              y + 1.7,
+              13.5,
+              "trim",
+              left,
+              "z",
+              45,
+              8,
+              y + 1.2,
+              13);
+        }
       }
       case "blazing" -> {
-        for (int index = 0; index < 3; index++) {
-          double y = 0.6 + index * 2;
-          part(parts, "purple_band_" + index, 6.8, y, 11.8, 9.2, y + 0.8, 14.2, "reel", left);
-        }
-        part(parts, "flame_left", 5.7, 23, 12.3, 6.8, 27.5, 13.7, "trim", left);
-        part(parts, "flame_left_tip", 6.3, 27.5, 12.4, 7.1, 28.8, 13.6, "highlight", left);
-        part(parts, "flame_right", 9.2, 23, 12.3, 10.3, 26.8, 13.7, "trim", left);
-        part(parts, "flame_bridge", 6.8, 22.6, 12.3, 9.2, 23.6, 13.7, "trim", left);
-        part(parts, "flame_core", 7.6, 25.6, 11.9, 8.4, 28.6, 12.6, "highlight", left);
+        part(parts, "purple_grip", 7.1, .7, 12.1, 8.9, 5.7, 13.9, "reel", left);
+        rotated(
+            parts,
+            "flame_left",
+            6.3,
+            22.4,
+            12.4,
+            7.4,
+            25.7,
+            13.6,
+            "trim",
+            left,
+            "z",
+            22.5,
+            7.2,
+            23,
+            13);
+        rotated(
+            parts,
+            "flame_sweep",
+            6.1,
+            25,
+            12.5,
+            7.1,
+            27.8,
+            13.5,
+            "trim",
+            left,
+            "z",
+            -22.5,
+            6.7,
+            25,
+            13);
+        rotated(
+            parts,
+            "flame_tip",
+            7.1,
+            27,
+            12.6,
+            7.7,
+            29,
+            13.4,
+            "highlight",
+            left,
+            "z",
+            -22.5,
+            7.2,
+            27,
+            13);
+        rotated(
+            parts,
+            "flame_right",
+            8.2,
+            22.9,
+            12.4,
+            9.2,
+            26.4,
+            13.6,
+            "trim",
+            left,
+            "z",
+            -22.5,
+            8.5,
+            23,
+            13);
+        part(parts, "flame_core", 7.7, 24, 12.2, 8.3, 27.3, 12.6, "highlight", left);
       }
       case "honeycomb" -> {
-        for (int index = 0; index < 8; index++) {
-          double y = 0.2 + index * 3.4;
-          double shift = index % 2 == 0 ? -0.55 : 0.55;
-          part(parts, "comb_rim_" + index, 6 + shift, y, 11, 10 + shift, y + 2.9, 15, "trim", left);
+        for (int i = 0; i < 14; i++) {
+          double y = i < 10 ? .3 + i * 2.85 : 11.7 + (i - 10) * 2.85,
+              x = 8 + (i < 10 ? (i % 2 == 0 ? -.4 : .4) : (i % 2 == 0 ? 2.5 : -2.5));
           part(
               parts,
-              "comb_cell_front_" + index,
-              6.8 + shift,
-              y + 0.6,
-              10.8,
-              9.2 + shift,
-              y + 2.3,
-              11.15,
-              "shaft",
+              "comb_left_" + i,
+              x - 1.5,
+              y + .6,
+              12.3,
+              x - 1.15,
+              y + 2.15,
+              13.7,
+              "trim",
               left);
           part(
               parts,
-              "comb_cell_back_" + index,
-              6.8 + shift,
-              y + 0.6,
-              14.85,
-              9.2 + shift,
-              y + 2.3,
-              15.2,
-              "reel",
+              "comb_right_" + i,
+              x + 1.15,
+              y + .6,
+              12.3,
+              x + 1.5,
+              y + 2.15,
+              13.7,
+              "trim",
               left);
+          for (int side : new int[] {-1, 1})
+            for (int edge : new int[] {-1, 1}) {
+              double cx = x + side * .65, cy = y + 1.37 + edge * 1.04;
+              rotated(
+                  parts,
+                  "comb_slant_" + i + "_" + side + "_" + edge,
+                  cx - .82,
+                  cy - .17,
+                  12.3,
+                  cx + .82,
+                  cy + .17,
+                  13.7,
+                  "trim",
+                  left,
+                  "z",
+                  side == edge ? -22.5 : 22.5,
+                  cx,
+                  cy,
+                  13);
+            }
         }
       }
       case "midas" -> {
-        for (int index = 0; index < 4; index++) {
-          double y = 5 + index * 6;
-          double x = index % 2 == 0 ? 5.5 : 8.5;
-          part(parts, "gold_branch_" + index, x, y, 12.2, x + 2.3, y + 1.2, 13.8, "trim", left);
+        for (int i = 0; i < 2; i++) {
+          double y = 8 + i * 14, x = i == 0 ? 6.4 : 8.4;
+          rotated(
+              parts,
+              "gold_branch_" + i,
+              Math.min(x, 8),
+              y,
+              12.5,
+              Math.max(x, 8) + .6,
+              y + 2.7,
+              13.5,
+              "shaft",
+              left,
+              "z",
+              i == 0 ? 22.5 : -22.5,
+              8,
+              y,
+              13);
+          rotated(
+              parts,
+              "gold_cluster_" + i,
+              x - .8,
+              y + 1.2,
+              12.1,
+              x + .8,
+              y + 3.4,
+              13.9,
+              "trim",
+              left,
+              "z",
+              22.5,
+              x,
+              y + 2.3,
+              13);
           part(
               parts,
-              "gold_nugget_" + index,
-              x,
-              y + 0.7,
-              12,
-              x + 1.4,
-              y + 2.4,
-              14,
+              "gold_glint_" + i,
+              x - .4,
+              y + 2.1,
+              11.95,
+              x + .4,
+              y + 3.1,
+              12.2,
               "highlight",
               left);
         }
       }
       default -> {}
     }
+  }
+
+  private static void rotated(
+      List<String> parts,
+      String name,
+      double x1,
+      double y1,
+      double z1,
+      double x2,
+      double y2,
+      double z2,
+      String material,
+      boolean left,
+      String axis,
+      double angle,
+      double ox,
+      double oy,
+      double oz) {
+    part(parts, name, x1, y1, z1, x2, y2, z2, material, left);
+    JsonObject part = JsonParser.parseString(parts.removeLast()).getAsJsonObject();
+    JsonObject rotation = new JsonObject();
+    rotation.addProperty("axis", axis);
+    rotation.addProperty("angle", left && !axis.equals("x") ? -angle : angle);
+    rotation.add(
+        "origin", JsonParser.parseString("[" + (left ? 16 - ox : ox) + "," + oy + "," + oz + "]"));
+    part.add("rotation", rotation);
+    parts.add(part.toString());
   }
 
   private static void eye(

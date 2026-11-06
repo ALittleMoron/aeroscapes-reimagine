@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "wetland_whimsy:item/dagger"
+    }
+  },
+  "textures": {
+    "layer0": "wetland_whimsy:item/dagger",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "wetland_whimsy:item/equipment/held/dagger"
+    },
+    "firstperson_lefthand": {
+      "parent": "wetland_whimsy:item/equipment/held/dagger"
+    },
+    "thirdperson_righthand": {
+      "parent": "wetland_whimsy:item/equipment/held/dagger"
+    },
+    "thirdperson_lefthand": {
+      "parent": "wetland_whimsy:item/equipment/held/dagger"
+    }
+  }
+}

@@ -19,11 +19,20 @@ public final class MovementMixinPlugin implements IMixinConfigPlugin {
         || mixinClassName.endsWith("CatnipConfigurationAccess"))
       versions.put("ponder", "1.0.82+mc1.21.1");
     if (mixinClassName.endsWith("HookItemCaptureMixin")
+        || mixinClassName.endsWith("HookItemOwnerMixin")
+        || mixinClassName.endsWith("HookRenderOrderMixin")
         || mixinClassName.endsWith("HookWorldRenderMixin")
-        || mixinClassName.endsWith("HookLineMixin")) {
+        || mixinClassName.endsWith("HookLineMixin")
+        || mixinClassName.endsWith("HookFirstPersonPoseMixin")) {
       versions.put("punchy", "3.0");
       versions.put("flerovium", "1.1.2");
     }
+    if (mixinClassName.endsWith("HookPlayerPoseMixin")) {
+      versions.put("entity_model_features", "3.3.12");
+      versions.put("entity_texture_features", "7.2.6");
+    }
+    if (mixinClassName.endsWith("HookRenderOrderMixin"))
+      versions.put("iris", "1.8.14-beta.1+mc1.21.1");
     for (var expected : versions.entrySet()) {
       var file = mods.getModFileById(expected.getKey());
       if (file == null) return false;

@@ -125,21 +125,6 @@
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
     },
     {
-      "slug": "c2me-ocl",
-      "primary_project_id": "qtPMklut",
-      "primary_sha512": "46d526bee3473dcd2f36ee73569b80910489e5e0896ace635732329c1726ea768fcbed0dcd5a5468bcb95562b48a0fcb6d5e1262f57716b7cd3327a3cdcc2341",
-      "status": "hosted",
-      "project_id": 1563823,
-      "file_id": 9131676,
-      "filename": "c2me-neoforge-opts-accel-opencl-mc1.21.1-0.4.0-alpha.0.123.jar",
-      "sha512": "46d526bee3473dcd2f36ee73569b80910489e5e0896ace635732329c1726ea768fcbed0dcd5a5468bcb95562b48a0fcb6d5e1262f57716b7cd3327a3cdcc2341",
-      "sha1": "ce4a3cf01d6b38f209bdcc991360bb311271553a",
-      "file_size": 2992308,
-      "parity": "exact",
-      "review": {},
-      "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
-    },
-    {
       "slug": "carry-on",
       "primary_project_id": "joEfVgkn",
       "primary_sha512": "e097b11d6f14e0957bab6c0276b81542e786cb86b9c31d9f25975f8c9fb04a734188b8790683298bbc5c695dc3de7d6e947616a20ad26d4a728a3beb0bb78667",

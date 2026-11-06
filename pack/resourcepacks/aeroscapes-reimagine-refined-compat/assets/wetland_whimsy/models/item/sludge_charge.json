@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "wetland_whimsy:item/sludge_charge"
+    }
+  },
+  "textures": {
+    "layer0": "wetland_whimsy:item/sludge_charge",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "wetland_whimsy:item/equipment/held/sludge_charge"
+    },
+    "firstperson_lefthand": {
+      "parent": "wetland_whimsy:item/equipment/held/sludge_charge"
+    },
+    "thirdperson_righthand": {
+      "parent": "wetland_whimsy:item/equipment/held/sludge_charge"
+    },
+    "thirdperson_lefthand": {
+      "parent": "wetland_whimsy:item/equipment/held/sludge_charge"
+    }
+  }
+}

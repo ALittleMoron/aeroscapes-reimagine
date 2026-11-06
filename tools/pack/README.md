@@ -178,8 +178,7 @@ uv run --locked --project tools/pack python -m aeroscapes_pack.curseforge_pack -
 dependency to its primary SHA-512. There are 98 hosted candidates matching the
 primary SHA-1 and seven reviewed platform variants whose differences are archive
 metadata or generated package names; these have separate exact hashes. They do
-not change the current Modrinth pack. The OpenCL module is hosted on CurseForge
-and referenced by file ID, never bundled under its no-redistribution notice.
+not change the current Modrinth pack.
 
 Four files remain blocked: Flywheel, No Void Structures, Custom Biome Saplings
 (Terralith), and XP From Crops. Obtain exact hosted alternatives or confirmed

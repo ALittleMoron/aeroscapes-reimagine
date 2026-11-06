@@ -31,22 +31,32 @@ As the project develops, new large goals will receive subsequent major milestone
 
 A minor version is a target: by that version, an agreed area of the pack should be complete. `0.1.0` established the initial foundation: the island world, [Create](https://modrinth.com/mod/create) and [Aeronautics](https://modrinth.com/mod/create-aeronautics), basic optimization and convenience.
 
-The next planned milestones are:
+The main development stages are:
 
-| Milestone | Goal                                                                                                                                                                                          |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `0.2.0`   | Complete the selected audiovisual atmosphere: mods, resourcepacks, animation, appearance, sound, particles, shaders and sky/weather presentation.                                             |
-| `0.3.0`   | Complete the selected Quality of Life features for everyday play, including improved tree felling inspired by [Otherworld DnD](https://www.curseforge.com/minecraft/modpacks/otherworld-dnd). |
-| `0.4.0`   | Tentative direction: richer exploration and expeditions through distinctive islands, local wildlife, varied discoveries and reasons to visit settlements.                                     |
-| `0.5.0`   | Tentative direction: RPG systems, including races, character development, magic and combat, with room for different specializations and mixed builds.                                         |
+| Milestone | Direction                                                                                       |
+| --------- | ----------------------------------------------------------------------------------------------- |
+| `0.2.0`   | Graphics, sound, weather and animation.                                                         |
+| `0.3.0`   | Everyday conveniences: inventory, recipes, controls and tree handling.                          |
+| `0.4.0`   | Island exploration, local nature, discoveries and expedition preparation.                       |
+| `0.5.0`   | The first magic set, equipment quality and random reforging.                                    |
+| `0.6.0`   | Engineering expansion: material processing, fuel, foundry work, machine controls and artillery. |
 
-The approximate path is exploration first, then RPG with combat as part of it. Each of these two milestones will be designed separately: its exact content, mod selection and completion criteria remain open. The directions can be refined during that work.
+The following directions are planned next, without new version numbers yet:
 
-Ordinary patches build toward that goal. Once its selected scope is ready and accepted by the author, the minor release records its completion with the last part reset to zero. Discussing a future milestone does not start its release preparation or change the current target.
+| Order | Direction                                                                   |
+| ----- | --------------------------------------------------------------------------- |
+| 1     | Characters: races, classes, professions and development through activities. |
+| 2     | Island geography, resource distribution and expedition routes.              |
+| 3     | Expanded equipment, mastery and later character specializations.            |
+| 4     | Detailed construction, seasons and peaceful daily life.                     |
+| 5     | New places, creatures and activities in the Nether.                         |
+| 6     | Everyday NPC errands with tracking and rewards.                             |
+| 7     | New places, encounters and discoveries in the End.                          |
+| 8     | Growing settlements, resident life, relationships and supply.               |
 
-Release numbers for further engineering work, colonies and enrichment of the Nether and End have not been assigned. Research and interest in a mod do not automatically put it in the current implementation queue.
+Races, classes and professions will arrive before subclasses. Subclasses are also planned before `1.0.0` and may receive a separate stage. Magic should offer worthwhile activities in both combat and daily life. The overall `1.0.0` goal is the agreed core working together.
 
-The goal and the changes in the final release are separate. Most or all of a milestone's feature work may already have arrived in preceding patches. The final release can therefore contain fixes, including fixes to other systems, without adding another mod. Those changes do not redefine the milestone: `0.2.0` still marks completed atmosphere, and `0.3.0` marks the selected QoL scope.
+The order and content can change as selections develop. Small patches build each stage; the final minor release records completion of the selected goal and may mainly contain fixes.
 
 ### Patch: further additions and fixes
 

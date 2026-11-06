@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "explorerscompass:item/explorerscompass_22"
+    }
+  },
+  "textures": {
+    "layer0": "explorerscompass:item/explorerscompass_22",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "explorerscompass:item/equipment/held/explorerscompass_22"
+    },
+    "firstperson_lefthand": {
+      "parent": "explorerscompass:item/equipment/held/explorerscompass_22"
+    },
+    "thirdperson_righthand": {
+      "parent": "explorerscompass:item/equipment/held/explorerscompass_22"
+    },
+    "thirdperson_lefthand": {
+      "parent": "explorerscompass:item/equipment/held/explorerscompass_22"
+    }
+  }
+}

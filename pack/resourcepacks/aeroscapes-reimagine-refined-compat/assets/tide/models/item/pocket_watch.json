@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "tide:item/pocket_watch"
+    }
+  },
+  "textures": {
+    "layer0": "tide:item/pocket_watch",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "tide:item/equipment/held/pocket_watch"
+    },
+    "firstperson_lefthand": {
+      "parent": "tide:item/equipment/held/pocket_watch"
+    },
+    "thirdperson_righthand": {
+      "parent": "tide:item/equipment/held/pocket_watch"
+    },
+    "thirdperson_lefthand": {
+      "parent": "tide:item/equipment/held/pocket_watch"
+    }
+  }
+}

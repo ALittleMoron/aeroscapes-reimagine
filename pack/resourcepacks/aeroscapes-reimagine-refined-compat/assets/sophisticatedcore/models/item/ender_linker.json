@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "sophisticatedcore:item/ender_linker_blank"
+    }
+  },
+  "textures": {
+    "layer0": "sophisticatedcore:item/ender_linker_blank",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "sophisticatedcore:item/equipment/held/ender_linker"
+    },
+    "firstperson_lefthand": {
+      "parent": "sophisticatedcore:item/equipment/held/ender_linker"
+    },
+    "thirdperson_righthand": {
+      "parent": "sophisticatedcore:item/equipment/held/ender_linker"
+    },
+    "thirdperson_lefthand": {
+      "parent": "sophisticatedcore:item/equipment/held/ender_linker"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "sophisticatedcore:bound": 1
+      },
+      "model": "sophisticatedcore:item/ender_linker_bound"
+    }
+  ]
+}

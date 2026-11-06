@@ -27,39 +27,51 @@ REQUIRED_INPUTS = (
     "config/pmd.xml",
     "src/main/resources/META-INF/NOTICE.txt",
 )
+PACK_INPUTS = (
+    "pack/config/simplebackups-common.toml",
+    "pack/licenses/THIRD-PARTY-NOTICES.txt",
+)
+PACK_INPUT_TREES = (
+    "pack/resourcepacks/aeroscapes-reimagine-atmosphere",
+    "pack/resourcepacks/aeroscapes-reimagine-refined-compat",
+)
+
+
+def _source_path(project: Project, name: str) -> Path:
+    path = project.root
+    for component in Path(name).parts:
+        path /= component
+        if path.is_symlink():
+            raise PackError(f"Symlinked corresponding source input: {path}")
+    return path
 
 
 def source_inputs(project: Project) -> dict[str, bytes]:
-    directory = project.root / MOD_PROJECT
     inputs: dict[str, bytes] = {}
-    for name in (".", "src", "config", "gradle", "gradle/wrapper"):
-        if (directory / name).is_symlink():
-            raise PackError(f"Symlinked corresponding source input: {directory / name}")
-    for name in REQUIRED_INPUTS:
-        path = directory / name
-        if path.is_symlink():
-            raise PackError(f"Symlinked corresponding source input: {path}")
+    required = (
+        *(f"{MOD_PROJECT}/{name}" for name in REQUIRED_INPUTS),
+        "metadata/worldgen_adoption.json",
+        "metadata/runtime_data_patches.json",
+        "metadata/native_template_upgrades.json",
+        *PACK_INPUTS,
+    )
+    for name in required:
+        path = _source_path(project, name)
         if not path.is_file():
             raise PackError(f"Missing corresponding source input: {path}")
-        inputs[f"{MOD_PROJECT}/{name}"] = path.read_bytes()
-    for name in ("src", "config", "gradle"):
-        subtree = directory / name
+        inputs[name] = path.read_bytes()
+    for name in (
+        *(f"{MOD_PROJECT}/{name}" for name in ("src", "config", "gradle")),
+        *PACK_INPUT_TREES,
+    ):
+        subtree = _source_path(project, name)
+        if not subtree.is_dir():
+            raise PackError(f"Missing corresponding source input: {subtree}")
         for path in (subtree, *sorted(subtree.rglob("*"))):
             if path.is_symlink():
                 raise PackError(f"Symlinked corresponding source input: {path}")
             if path.is_file():
                 inputs[path.relative_to(project.root).as_posix()] = path.read_bytes()
-    for name in (
-        "worldgen_adoption.json",
-        "runtime_data_patches.json",
-        "native_template_upgrades.json",
-    ):
-        inventory = project.root / "metadata" / name
-        if inventory.is_symlink():
-            raise PackError(f"Symlinked corresponding source input: {inventory}")
-        if not inventory.is_file():
-            raise PackError(f"Missing corresponding source input: {inventory}")
-        inputs[f"metadata/{name}"] = inventory.read_bytes()
     return inputs
 
 

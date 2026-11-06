@@ -119,6 +119,33 @@ public final class RodModelContractTest {
               Float.floatToIntBits((corner < 2 ? low : high).get(1).getAsFloat() / 16);
           quad[corner * 8 + 2] =
               Float.floatToIntBits((side == 0 ? low : high).get(2).getAsFloat() / 16);
+          if (part.has("rotation")) {
+            var rotation = part.getAsJsonObject("rotation");
+            var origin = rotation.getAsJsonArray("origin");
+            Vector3f point =
+                new Vector3f(
+                    Float.intBitsToFloat(quad[corner * 8]),
+                    Float.intBitsToFloat(quad[corner * 8 + 1]),
+                    Float.intBitsToFloat(quad[corner * 8 + 2]));
+            Vector3f center =
+                new Vector3f(
+                        origin.get(0).getAsFloat(),
+                        origin.get(1).getAsFloat(),
+                        origin.get(2).getAsFloat())
+                    .div(16);
+            point.sub(center);
+            float angle = (float) Math.toRadians(rotation.get("angle").getAsDouble());
+            switch (rotation.get("axis").getAsString()) {
+              case "x" -> point.rotateX(angle);
+              case "y" -> point.rotateY(angle);
+              case "z" -> point.rotateZ(angle);
+              default -> throw new AssertionError("Unknown rotation axis");
+            }
+            point.add(center);
+            quad[corner * 8] = Float.floatToIntBits(point.x);
+            quad[corner * 8 + 1] = Float.floatToIntBits(point.y);
+            quad[corner * 8 + 2] = Float.floatToIntBits(point.z);
+          }
         }
         vertices.add(quad);
       }

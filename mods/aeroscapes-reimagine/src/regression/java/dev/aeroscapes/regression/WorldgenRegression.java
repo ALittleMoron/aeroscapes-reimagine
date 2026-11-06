@@ -98,6 +98,17 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    if (Boolean.getBoolean("aeroscapes.regression.removedHook")) {
+      RemovedHookRegression.verify(level);
+      LOGGER.info("Removed companion hook policy regression passed");
+      return;
+    }
+    String equipmentCatalog = System.getProperty("aeroscapes.regression.equipmentCatalog");
+    if (equipmentCatalog != null) {
+      EquipmentCatalogRegression.verify(level, Path.of(equipmentCatalog));
+      LOGGER.info("Equipment registry catalog regression passed");
+      if (!Boolean.getBoolean("aeroscapes.regression.caveNetwork")) return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.manorFoundations")) {
       ManorFoundationRegression.verify(level);
       if (System.getProperty("aeroscapes.regression.groupThree") == null) return;
@@ -213,8 +224,9 @@ public final class WorldgenRegression {
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.caveNetwork")) {
+      CarvingSupportRegression.verify(level);
       CaveNetworkRegression.verify(level);
-      return;
+      if (!Boolean.getBoolean("aeroscapes.regression.localPacing")) return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.islandUpdate")) {
       SableOffsetRegression.verify(level);
@@ -223,6 +235,11 @@ public final class WorldgenRegression {
       return;
     }
     String backupRoundtrip = System.getProperty("aeroscapes.regression.backupRoundtrip");
+    String backupSaveFailure = System.getProperty("aeroscapes.regression.backupSaveFailure");
+    if (backupSaveFailure != null) {
+      BackupSaveFailureRegression.start(level, backupSaveFailure);
+      return;
+    }
     String thirdQol = System.getProperty("aeroscapes.regression.qolGroup3");
     if (Boolean.getBoolean("aeroscapes.regression.waystoneCreativeSearch")) {
       verifyQolCase(
@@ -445,9 +462,7 @@ public final class WorldgenRegression {
     }
     if (Boolean.getBoolean("aeroscapes.regression.teleportChunks")
         || Boolean.getBoolean("aeroscapes.regression.flightChunks")) {
-      if (Boolean.getBoolean("aeroscapes.regression.performance.opencl"))
-        OpenClPerformanceRegression.start(level, () -> TeleportChunkRegression.start(level));
-      else TeleportChunkRegression.start(level);
+      TeleportChunkRegression.start(level);
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.biomeLocate")) {
@@ -488,36 +503,19 @@ public final class WorldgenRegression {
       return;
     }
     if (System.getProperty("aeroscapes.regression.stageSnapshotFile") != null) {
-      if (Boolean.getBoolean("aeroscapes.regression.performance.opencl"))
-        OpenClPerformanceRegression.start(level, () -> StageSnapshotRegression.verify(level));
-      else
-        event
-            .getServer()
-            .tell(
-                new TickTask(
-                    event.getServer().getTickCount(), () -> StageSnapshotRegression.verify(level)));
-      return;
-    }
-    if (Boolean.getBoolean("aeroscapes.regression.opencl.forceBuildFailure")) {
-      OpenClBuildFailureRegression.verify(level);
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(), () -> StageSnapshotRegression.verify(level)));
       return;
     }
     if (System.getProperty("aeroscapes.regression.noiseSnapshot") != null) {
-      if (Boolean.getBoolean("aeroscapes.regression.performance.opencl"))
-        OpenClPerformanceRegression.start(
-            level,
-            () -> {
-              if (Boolean.getBoolean("aeroscapes.regression.diagnosticProbe"))
-                OpenClProbeRegression.verify(level);
-              NoiseSnapshotRegression.verify(level);
-            });
-      else NoiseSnapshotRegression.verify(level);
+      NoiseSnapshotRegression.verify(level);
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.performance")) {
-      if (Boolean.getBoolean("aeroscapes.regression.performance.opencl"))
-        OpenClPerformanceRegression.start(level);
-      else ChunkPerformanceRegression.start(level);
+      ChunkPerformanceRegression.start(level);
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.c2me")) {
@@ -525,9 +523,7 @@ public final class WorldgenRegression {
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.polish")) {
-      if (Boolean.getBoolean("aeroscapes.regression.performance.opencl"))
-        OpenClPerformanceRegression.start(level, () -> TerrainPolishRegression.verify(level));
-      else TerrainPolishRegression.verify(level);
+      TerrainPolishRegression.verify(level);
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.vertical")) {

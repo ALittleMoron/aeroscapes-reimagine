@@ -17,8 +17,10 @@ public final class ManagedBackupArchiveTest {
   private ManagedBackupArchiveTest() {}
 
   public static void main(String[] arguments) throws Exception {
+    NativeBackupSaveContractTest.verify();
     Path test = Files.createTempDirectory("aeroscapes-backup-test-");
     try {
+      BackupSaveFailuresTest.verify(test);
       Path world = test.resolve("world");
       Path output = test.resolve("backups");
       Files.createDirectories(world.resolve("sublevels"));

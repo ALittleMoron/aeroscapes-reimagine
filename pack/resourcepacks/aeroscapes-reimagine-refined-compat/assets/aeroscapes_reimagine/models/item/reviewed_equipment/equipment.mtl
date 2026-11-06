@@ -1,0 +1,584 @@
+newmtl quark_trowel_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/trowel
+
+newmtl quark_trowel_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl chipped_saw_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/equipment/painted/saw
+
+newmtl chipped_saw_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl tide_starlight_bow_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl tide_starlight_bow_pulling_0_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_0_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl tide_starlight_bow_pulling_1_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_1_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl tide_starlight_bow_pulling_2_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd tide:item/equipment/painted/starlight_bow
+
+newmtl tide_starlight_bow_pulling_2_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl naturalist_capture_net_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturalist:item/equipment/painted/capture_net
+
+newmtl naturalist_capture_net_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/white_net
+
+newmtl spawn_casting_net_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl spawn_casting_net_full_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/equipment/painted/casting_net
+
+newmtl spawn_casting_net_full_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net

@@ -139,12 +139,8 @@ Minecraft 1.21.1: Mojang / Microsoft. Ancient-city templates are read locally
 and modified in memory; copied ancient-city NBT is not supplied by this pack.
 https://www.minecraft.net/en-us/eula
 
-C2ME base: MIT. Separate OpenCL extension 7rX3dlFf retains its embedded
-All Rights Reserved/no-redistribution notice. Its unchanged official download is
-referenced under Modrinth's specific-file modpack permission; extracted kernels,
-classes and nested JARs are not bundled separately.
-https://modrinth.com/mod/c2me-ocl/version/7rX3dlFf
-https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions
+C2ME: MIT. The unchanged official CPU generation module retains its license.
+https://modrinth.com/mod/COlSi5iR
 
 Flywheel 1.0.6: Copyright (c) 2021-2024 Jozufozu; MIT. The unchanged client-only
 JAR includes its complete notice at META-INF/LICENSE.md.
@@ -410,6 +406,9 @@ https://www.curseforge.com/minecraft/mc-mods/paragliders/files/7795089
 https://github.com/Tictim/Paraglider/tree/53dc49464be242f5396c587ebfa20e16d21d10b8
 Yori3o's Grappling Hooks: yori3o and contributors; MIT.
 https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf
+Its hook_rope.png chain texture is recolored by Aeroscapes Reimagine; the original
+alpha/layout is retained. Copyright (c) 2026 yori3o. The complete upstream MIT
+license accompanies this texture in resourcepacks/aeroscapes-reimagine-atmosphere/licenses/yo_hooks-MIT.txt.
 Legendary Survival Overhaul: Alex-Hashtag, Sfiomn and contributors.
 https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul/files/8597620
 https://github.com/Alex-Hashtag/LegendarySurvivalOverhaul/tree/1.21.1
@@ -444,8 +443,18 @@ https://mods.twelveiterations.com/permissions
 Owned integration and independent EN/RU text: see the shipped owned mod's
 META-INF/NOTICE.txt, META-INF/localization-sources.json and corresponding source.
 
-Owned equipment artwork: original deterministic Java pixel materials and cuboid
-models, GPL-3.0-or-later; corresponding generator source accompanies the owned mod.
+Owned equipment artwork: original deterministic Java pixel materials, cuboid
+and OBJ models, GPL-3.0-or-later; generator source accompanies the owned mod.
 Tide rod models supply independent geometry while referencing Refined Tools 3.0
 parent display transforms. A guarded runtime adapter removes stowed tackle from
-known cast models. No provider meshes or textures are copied; their licenses remain.
+known cast models. The independently authored celestial bow uses compatible hand
+transforms and grip/draw axes for that animation frame. No Refined Tools meshes
+or textures are copied; provider licenses remain in force.
+
+Owned Sun and Moon artwork: original golden Sun and cool blue eight-phase Moon,
+GPL-3.0-or-later. AI-assisted deterministic vector composition uses no third-party
+image inputs or generative image models. Editable pixel sources and rendering
+instructions are in resourcepacks/aeroscapes-reimagine-atmosphere/artwork/;
+the matching PNGs are in that pack's assets/minecraft/textures/environment/.
+The full license is resourcepacks/aeroscapes-reimagine-atmosphere/licenses/celestial-artwork-GPL-3.0.txt.
+These files also accompany licenses/aeroscapes-reimagine-source.zip.

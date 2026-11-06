@@ -1,0 +1,11 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [{
+      "when": ["firstperson_righthand", "firstperson_lefthand", "thirdperson_righthand", "thirdperson_lefthand"],
+      "model": {"type": "minecraft:model", "model": "hapi:item/equipment/creature_net_held"}
+    }],
+    "fallback": {"type": "minecraft:model", "model": "hapi:item/creature_net"}
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "credit": "Made with Blockbench",
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "handcrafted:item/hammer"
+    },
+    "display": {
+      "thirdperson_righthand": {
+        "rotation": [
+          0,
+          90,
+          45
+        ],
+        "translation": [
+          0,
+          3,
+          -0.25
+        ],
+        "scale": [
+          0.55,
+          0.55,
+          0.55
+        ]
+      },
+      "thirdperson_lefthand": {
+        "rotation": [
+          0,
+          90,
+          -45
+        ],
+        "translation": [
+          0,
+          3,
+          -0.25
+        ],
+        "scale": [
+          0.55,
+          0.55,
+          0.55
+        ]
+      }
+    }
+  },
+  "textures": {
+    "layer0": "handcrafted:item/hammer",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "handcrafted:item/equipment/held/hammer"
+    },
+    "firstperson_lefthand": {
+      "parent": "handcrafted:item/equipment/held/hammer"
+    },
+    "thirdperson_righthand": {
+      "parent": "handcrafted:item/equipment/held/hammer"
+    },
+    "thirdperson_lefthand": {
+      "parent": "handcrafted:item/equipment/held/hammer"
+    }
+  }
+}

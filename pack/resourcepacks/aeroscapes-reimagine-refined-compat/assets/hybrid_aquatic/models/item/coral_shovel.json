@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "hybrid_aquatic:item/coral_shovel"
+    }
+  },
+  "textures": {
+    "layer0": "hybrid_aquatic:item/coral_shovel",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/coral_shovel"
+    },
+    "firstperson_lefthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/coral_shovel"
+    },
+    "thirdperson_righthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/coral_shovel"
+    },
+    "thirdperson_lefthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/coral_shovel"
+    }
+  }
+}

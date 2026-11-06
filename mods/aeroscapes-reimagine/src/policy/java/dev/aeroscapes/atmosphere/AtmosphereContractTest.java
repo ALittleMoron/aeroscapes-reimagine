@@ -55,6 +55,7 @@ public final class AtmosphereContractTest {
     nativeConfigurationTranslations();
     puzzlesConfigurationTranslations();
     inventoryMovementCompatibility();
+    creativeSearchContract();
     schematicMessages();
     distantSceneryCompatibility();
     IcebergConfigBridgeTest.verify();
@@ -1092,6 +1093,44 @@ public final class AtmosphereContractTest {
       ClassNode type = new ClassNode();
       new ClassReader(input.readAllBytes()).accept(type, 0);
       return type;
+    }
+  }
+
+  private static void creativeSearchContract() throws IOException {
+    ClassNode screen =
+        classpathClass("net/minecraft/client/gui/screens/inventory/CreativeModeInventoryScreen");
+    method(screen, "refreshSearchResults", "()V");
+    method(screen, "containerTick", "()V");
+    require(
+        screen.fields.stream()
+            .anyMatch(
+                field ->
+                    field.name.equals("selectedTab")
+                        && field.desc.equals("Lnet/minecraft/world/item/CreativeModeTab;")
+                        && (field.access & Opcodes.ACC_STATIC) != 0),
+        "native selected creative tab remains a static field");
+    require(
+        screen.fields.stream()
+            .anyMatch(
+                field ->
+                    field.name.equals("searchBox")
+                        && field.desc.equals("Lnet/minecraft/client/gui/components/EditBox;")),
+        "native creative query field remains available");
+    ClassNode search = classpathClass("net/minecraft/client/multiplayer/SessionSearchTrees");
+    for (String name : List.of("creativeNameSearch", "creativeTagSearch")) {
+      MethodNode lookup =
+          method(
+              search,
+              name,
+              "(Lnet/minecraft/client/multiplayer/SessionSearchTrees$Key;)Lnet/minecraft/client/searchtree/SearchTree;");
+      require(
+          executable(lookup).stream()
+              .anyMatch(
+                  instruction ->
+                      instruction instanceof MethodInsnNode call
+                          && call.owner.equals("java/util/concurrent/CompletableFuture")
+                          && call.name.equals("join")),
+          "creative index readiness must be checked before the native blocking lookup");
     }
   }
 

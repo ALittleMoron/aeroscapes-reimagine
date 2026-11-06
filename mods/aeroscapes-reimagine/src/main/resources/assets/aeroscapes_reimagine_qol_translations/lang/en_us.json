@@ -499,6 +499,7 @@
   "aeroscapes_reimagine.config.literal.f324f5447724e0547133e9f9af1547cf97898deddd9bbc70465222f508efabdb": "World Configurations",
   "aeroscapes_reimagine.backup.complete": "Verified backup completed.",
   "aeroscapes_reimagine.backup.failed": "Backup failed; previous completed copies were preserved. Check the server log.",
+  "aeroscapes_reimagine.backup.save_failed": "World saving failed. Backups are blocked for this session; previous copies are preserved. Check the server log, resolve the storage error, then reopen the world.",
   "aeroscapes_reimagine.backup.busy": "A backup is already in progress.",
   "aeroscapes_reimagine.backup.retention_warning": "Backup completed, but storage needs attention. The newest copy of each world is protected; check the server log.",
   "aeroscapes_reimagine.config.literal.2530b061a81ea2551aa74a89d626e1e2679b703104b6c1ed65a2d884cc3cc014": "Disable automatic backups. Manual backup commands remain available.",

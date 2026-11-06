@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "naturescompass:item/naturescompass_00"
+    }
+  },
+  "textures": {
+    "layer0": "naturescompass:item/naturescompass_00",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "naturescompass:item/equipment/held/naturescompass_00"
+    },
+    "firstperson_lefthand": {
+      "parent": "naturescompass:item/equipment/held/naturescompass_00"
+    },
+    "thirdperson_righthand": {
+      "parent": "naturescompass:item/equipment/held/naturescompass_00"
+    },
+    "thirdperson_lefthand": {
+      "parent": "naturescompass:item/equipment/held/naturescompass_00"
+    }
+  }
+}

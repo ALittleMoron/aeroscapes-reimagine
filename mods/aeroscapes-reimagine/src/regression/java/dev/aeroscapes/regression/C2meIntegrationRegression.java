@@ -95,7 +95,6 @@ final class C2meIntegrationRegression {
       require(visits.get() > 5, "Compiled child visitor did not reach its runtime arguments");
       samples += compare(raw.mapAll(function -> function), mapped, coordinates);
       BasinAquiferCacheRegression.verify(random);
-      OpenClColumnRegression.verify(random);
       if (seed == 1) blendingBounds(generator, random);
       if (seed == 1 && Boolean.getBoolean("aeroscapes.regression.c2me.noise"))
         mappedNoiseParity(generator, random, raw);

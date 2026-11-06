@@ -1,4 +1,6 @@
 {
+  "aeroscapes_reimagine.effect.next_page": "Следующая страница описания",
+  "aeroscapes_reimagine.effect.previous_page": "Предыдущая страница описания",
   "advancements.quark.tatami_gaeshi.description": "Ударьте кого-нибудь бамбуковой циновкой",
   "advancements.quark.tatami_gaeshi.title": "ПЕРЕВОРОТ ТАТАМИ!",
   "appleskin.configuration.maxHudOverlayFlashAlpha.tooltip": "Непрозрачность мигающих значков в самой яркой фазе: 1.0 — полностью непрозрачные, 0.0 — полностью прозрачные.",

@@ -1,0 +1,65 @@
+package dev.aeroscapes.atmosphere;
+
+public enum EquipmentStyle implements net.minecraft.util.StringRepresentable {
+  KNIFE,
+  CORAL,
+  SHELL,
+  FISH,
+  BRUSH,
+  HAMMER,
+  SPADE,
+  SAW,
+  CHISEL,
+  WRENCH,
+  BOOMERANG,
+  DART,
+  BOMB,
+  SLUDGE,
+  COIL,
+  BOW,
+  SLINGSHOT,
+  BELL,
+  CAPTURE_NET,
+  GRAPPLE,
+  CLAW,
+  PAPER,
+  BOOK,
+  MULTIMETER,
+  NEEDLES,
+  WATERING_CAN,
+  CLIPBOARD,
+  SCHEMATIC,
+  GLUE,
+  DIAL,
+  PROJECTOR,
+  GLOW_FLARE,
+  SPECTRE_FLARE,
+  MONSTROMETER,
+  TABLET,
+  SPYGLASS,
+  HORN,
+  LEAD,
+  WHISTLE,
+  ABACUS,
+  QUILL,
+  ENDER_EYE,
+  CASTING_NET,
+  ALTIMETER,
+  BUBBLE,
+  KEY,
+  CLIMATE_GAUGE,
+  DEPTH_METER,
+  WATCH,
+  FISH_FINDER,
+  TERMINAL,
+  PAINT_KIT,
+  CRYSTAL,
+  LUNCHBOX;
+  public static final com.mojang.serialization.Codec<EquipmentStyle> CODEC =
+      net.minecraft.util.StringRepresentable.fromEnum(EquipmentStyle::values);
+
+  @Override
+  public String getSerializedName() {
+    return name().toLowerCase(java.util.Locale.ROOT);
+  }
+}

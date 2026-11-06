@@ -625,7 +625,6 @@ def test_exception_text_cannot_authorize_an_unrelated_beta(
     ("project_id", "version_id", "release_type"),
     [
         ("COlSi5iR", "avwWYPbG", "alpha"),
-        ("qtPMklut", "7rX3dlFf", "alpha"),
         ("qyVF9oeo", "85fA7L1W", "beta"),
         ("xFCYuAs8", "Js4y2r4d", "beta"),
         ("u58R1TMW", "IITF0PRC", "beta"),
