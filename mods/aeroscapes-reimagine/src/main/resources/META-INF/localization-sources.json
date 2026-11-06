@@ -110,6 +110,15 @@
         "distanthorizons.config.common.multiThreading.threadRunTimeRatio",
         "distanthorizons.config.client.advanced.graphics.culling.blocksToIgnore.@tooltip"
       ]
+    },
+    "misc_content": {
+      "providers": {
+        "emi_ores": "https://modrinth.com/mod/emi-ores/version/V2MXZKsX",
+        "immersive_weathering": "https://modrinth.com/mod/immersive-weather-renewed/version/n3NgrJOg"
+      },
+      "license_file": "META-INF/licenses/Misc-content-LGPL-3.0.txt",
+      "scope": "Native content EN/RU dictionaries inspected;59 currently registered weathering configuration options with actual NeoForge tooltip paths and13 categories.14 disconnected options accurately labelled. Only three missing active EMI dimension tooltips and43 legacy biome-tag captions supplemented;55 guarded native caption corrections. Native config identities and user values retained. Optional built-in pack literals translated at the exact Pack ID. Missing-only direct names cover135 actual dynamic leaf-pile and bark entries in each language, before native English type-name defaults.",
+      "translation_pipeline": "Classloader-read missing-only dictionaries fill the original merged string map in the exact Moonlight3.0.18 AfterLanguageLoadEvent constructor, before generated English defaults/components. Changed provider/player entries remain authoritative. Native event/component behavior is exercised by the dedicated regression."
     }
   },
   "authored_resources": [
@@ -378,13 +387,41 @@
       "provider_terms": "Independently authored missing functional text; unchanged original provider text and assets retain their own terms. Expected-value corrections preserve resource-pack replacements.",
       "entries": 100,
       "sha256": "0d12bb672d2bf01397454d0fee31270bb83789f3d1c619b36b49be070e4689d8"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_construction/lang/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original CreativeMD LittleTiles and YUNG-GANG Traveler Titles source labels retain LGPL-3.0-only; new translations and functional additions authored for this pack.",
+      "entries": 329,
+      "sha256": "8d07e3830953a492f09a3d23c94a3208b6add995a3be3159725f1f90aaa9cfd9"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine_construction/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Original CreativeMD LittleTiles and YUNG-GANG Traveler Titles source labels retain LGPL-3.0-only; new translations and functional additions authored for this pack.",
+      "entries": 821,
+      "sha256": "360127806f7cfad481c8bf288c781ba49e0447ba6fb68835c69c028a862bfc18"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine/misc_translations/en_us.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Adapted native Immersive Weathering configuration labels retain provider LGPL terms (Modrinth LGPL-3.0-only; native descriptor LGPL-3.0-or-later). Independently authored current captions, tooltips, provider limitations and ore information text. Existing upstream/player text preserved; missing keys only. These dictionaries are classloader-read missing-only fallbacks after all ordinary language namespaces, never competing automatic lang resources.",
+      "entries": 277,
+      "sha256": "64d9838d5a6aa0fafd8903b275d7c01be4d782a645207105822ebd5ecc787f70"
+    },
+    {
+      "resource": "assets/aeroscapes_reimagine/misc_translations/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Adapted native Immersive Weathering configuration labels retain provider LGPL terms (Modrinth LGPL-3.0-only; native descriptor LGPL-3.0-or-later). Independently authored current captions, tooltips, provider limitations and ore information text. Existing upstream/player text preserved; missing keys only. These dictionaries are classloader-read missing-only fallbacks after all ordinary language namespaces, never competing automatic lang resources.",
+      "entries": 277,
+      "sha256": "cd09e203f451f2bbf6fad8389ce4f9f07931cf7faf8bd2c43a3391516044090b"
     }
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 1693,
+    "rules": 1754,
     "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged. Native creative-tab, menu, keybinding and root-advancement mod titles retain provider branding; ordinary gameplay nouns and non-root advancement titles remain localized.",
-    "sha256": "e2a89fc4090392aa80ab0e1cacb3a67ea406cd1630b751b4e52dc7c4976f4e6f"
+    "sha256": "ec4369bada54c02df49d4e4b99b5bf752bb0538d246aaf25e1cf19b6fa5cf0df"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
@@ -1807,5 +1844,42 @@
       "sha256": "24e252544ceb1010dccf777f9a3336205028646de6aac7e33b575bf98846391a",
       "scope": "Original source-license notice retained for source-derived loot names, lore and literal configuration labels; artwork and templates remain only in the unchanged provider JAR."
     }
+  },
+  "construction_integration": {
+    "targets": {
+      "littletiles": "1.6.0-pre236",
+      "creativecore": "2.13.52",
+      "travelerstitles": "1.21.1-NeoForge-5.1.3",
+      "yungsapi": "1.21.1-NeoForge-5.1.9",
+      "sable": "2.0.6"
+    },
+    "scope": "Complete492-key LittleTiles RU supplement; missing dynamic particle textures, interpolation/axis aliases, bed messages, nested CreativeCore config paths, native material-tier enum captions, literal signal units, material-volume lore, capacity, bed directions and blueprint root. Native TT config captions/comment lines and current EN/RU biome dictionaries. Display-only adapters preserve config identity, parser symbols, user-created names and current values.",
+    "source_comparison": "Official paired pre236 source archive and exact executable descriptor/classes/resources. TT author1.21.1 source branch declares5.1.3; selected artifact bytecode confirms config filename and blacklist-before-display/cache/sound. No reproduced-build claim.",
+    "held_inventory": "Seven survival tools (hammer,chisel,saw,wrench,paint_brush,glove,measure_tape) and useful bag receive hand-only native-sprite material meshes. Registered screwdriver is a legacy editor with no native recipe and omitted from native creative output; retained unchanged, not advertised as survival equipment. Blueprint is an intentionally unchanged paper/dynamic tile-box model; five color bottles keep all six fill states. Exact CreativeCore preview layer dispatch is GUI-only; unchanged chisel/glove base layers remain there.",
+    "acceptance_boundary": "Provider save/state, recipe reachability and moving ship behavior are separate from static resources and dictionary membership.",
+    "dynamic_feedback": "Nine native command literal calls in exact LittleTiles private serverStarting lambda methods plus the grid action in BlockPacket$BlockPacketAction$1 become localized components sent to the player. BlockPacketAction$2 structure names remain untouched. The upstream level command is commented out; its supplemental spawn_level key is inactive. Formula identifiers/operators, block/tag IDs, coordinates, permission-group identities and user-created names retain their meaning and saved values.",
+    "model_resources": [
+      "assets/littletiles/models/item/bag.json",
+      "assets/littletiles/models/item/chisel.json",
+      "assets/littletiles/models/item/equipment/held/bag.json",
+      "assets/littletiles/models/item/equipment/held/chisel.json",
+      "assets/littletiles/models/item/equipment/held/glove.json",
+      "assets/littletiles/models/item/equipment/held/hammer.json",
+      "assets/littletiles/models/item/equipment/held/measure_tape.json",
+      "assets/littletiles/models/item/equipment/held/paint_brush.json",
+      "assets/littletiles/models/item/equipment/held/saw.json",
+      "assets/littletiles/models/item/equipment/held/wrench.json",
+      "assets/littletiles/models/item/glove.json",
+      "assets/littletiles/models/item/hammer.json",
+      "assets/littletiles/models/item/measure_tape.json",
+      "assets/littletiles/models/item/paint_brush.json",
+      "assets/littletiles/models/item/saw.json",
+      "assets/littletiles/models/item/wrench.json"
+    ],
+    "model_authorship": "Independently authored broad-facet cuboid parts with distinct blue grips, metal working surfaces, open saw/wrench shapes, glove fingers/cuff, cyan/gold tape and tied blue bag. Original provider images are referenced at runtime, not extracted or modified. Source UV fields were checked opaque against exact native16x16 icons. Four hand contexts use existing accepted hammer hand frames; native GUI/ground/fixed/head/none models remain intact.",
+    "key_defaults": "Exact pre236 LittleTilesClient.registerKeys constructor arguments only: mark semicolon59, mirror apostrophe39, configure backslash92, secondary configure Shift+backslash92, building mode equals61. Native context/modifier/ignoreModifier logic and arrows/Ctrl+Z/Ctrl+Y remain unchanged; Minecraft saved Options values load afterward. Provider-bytecode/config scan includes current Aeronautics/Simulated nested artifacts; brackets91/93 excluded for SophisticatedCore inventory transfer.",
+    "literal_sites": "Exact target-specific selectors: blueprint create root1, signal changed delay2, bed Facing callback1, material collector lore1 and storage create capacity1. Signal operators and user-named signal components are outside these adapters. Policy reads compiled Mixin annotations and matches native Mixin selectors against exact executable classes and required invocation counts; the dedicated server supplies the actual common transformation witness.",
+    "physics_integration": "Exact LittleTiles pre236, CreativeCore2.13.52, Sable2.0.6 and NeoForge21.1.244 guard. VoxelNeighborhoodState.isSolid/isFullBlock use the supplied BlockGetter and BlockPos only for BlockTile, with native three-argument collision lookup and Block.isShapeFullBlock over actual occupied collision volume. BlockTile constructor declares dynamicShape; Minecraft state cache is absent, while the explicit collision context also bypasses it. Native LT side metadata can mark NOCLIP faces filled, so it is not a physical fullness test. Native material-volume mass and empty-body cleanup remain authoritative. Sable collision-shape/dynamic-collider extension interfaces have no consumers in this executable; position-aware classifier adaptation is the narrow consumed boundary.",
+    "physics_regression": "Real server recipe/payload checks, two simultaneous same-BlockState entities with empty/half/full/hollow/noncolliding payloads and a missing-BE boundary through native LevelAccelerator+MassTracker.build. Assembled pure LT/vanilla plank/vanilla slab/mixed bodies require masses0.25/0.5/0.25/0.75; native physical retention100fresh ticks plus20ticks after copied restart, preserving saved pose/velocity. Rendering, shader appearance and animated interaction remain separate behavior boundaries."
   }
 }

@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.weathering",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["WeatheringLootMixin", "WeatheringWaxMixin", "WeatheringCrownMixin", "WeatheringCreativeMixin"],
+  "client": ["WeatheringPackTextMixin", "WeatheringTextureMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

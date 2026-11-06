@@ -291,7 +291,7 @@ public final class VanillaEquipmentModelTest {
             .sub(vertices.getFirst())
             .cross(new Vector3f(vertices.get(2)).sub(vertices.getFirst()))
             .normalize();
-    return new Face(texture, vertices, normal, uv);
+    return new Face(texture, vertices, normal, uv, quad.getTintIndex());
   }
 
   private static JsonArray vector(float... values) {
@@ -405,7 +405,7 @@ public final class VanillaEquipmentModelTest {
     if (!condition) throw new AssertionError(message);
   }
 
-  record Face(String texture, List<Vector3f> vertices, Vector3f normal, JsonArray uv) {}
+  record Face(String texture, List<Vector3f> vertices, Vector3f normal, JsonArray uv, int tint) {}
 
   private static final class Sprite extends TextureAtlasSprite implements AutoCloseable {
     Sprite(ResourceLocation name) {

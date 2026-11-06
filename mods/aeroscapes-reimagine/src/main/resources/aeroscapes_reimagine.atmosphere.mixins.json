@@ -19,6 +19,7 @@
     "LunchboxHeldModelMixin",
     "AltimeterHeldModelMixin",
     "LanguageCorrectionMixin",
+    "TooltipScrollBoundaryMixin",
     "NativeConfigurationLanguageMixin",
     "InvMoveLanguageMixin",
     "InvMoveEnumLanguageMixin",
@@ -53,6 +54,7 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "MiscTranslationFallbackMixin",
     "HorseMountedMiningScopeMixin",
     "HorseRecallSnapshotMixin",
     "EasyAnvilsFreeRenameMixin",

@@ -42,7 +42,9 @@ public final class UtilityEquipmentModelTest {
           "legendarysurvivaloverhaul:thermometer",
           "horseman:copper_horn",
           "exposure:interplanar_projector",
-          "waystones:warp_stone");
+          "waystones:warp_stone",
+          "immersive_weathering:ice_sickle",
+          "immersive_weathering:steel_wool");
 
   private UtilityEquipmentModelTest() {}
 
@@ -102,6 +104,7 @@ public final class UtilityEquipmentModelTest {
             Math.hypot(point.x * 16 - 8, point.z * 16 - 8) <= 3.201,
             "The watering rim has no radial fins");
     connector(assets);
+    iceSickle(assets);
     if (arguments.length == 2) Files.writeString(Path.of(arguments[1]), preview.toString());
     System.out.println(
         "Utility equipment: "
@@ -109,6 +112,109 @@ public final class UtilityEquipmentModelTest {
             + " roots, "
             + count
             + " native states baked; source skins, readable hand faces, non-overlapping surfaces and connector placement passed");
+  }
+
+  private static void iceSickle(Path assets) throws IOException {
+    JsonObject model = read(assets, "immersive_weathering:ice_sickle");
+    var blade = VanillaEquipmentModelTest.bakeObj(model, assets, "ice_blade");
+    var handle = VanillaEquipmentModelTest.bakeObj(model, assets, "wood_handle");
+    require(!blade.isEmpty() && !handle.isEmpty(), "The sickle has a blade and a separate grip");
+    // Refined Tools 3.0's hoe/pickaxe use a 2x2 shaft and solid one-unit blades.
+    double[] grip = bounds(handle), head = bounds(blade);
+    require(
+        Math.abs(grip[3] - grip[0] - 2) < .00001 && Math.abs(grip[5] - grip[2] - 2) < .00001,
+        "The sickle has the substantial shaft section of the reference tool family");
+    require(
+        grip[4] - grip[1] >= 14 && grip[4] - grip[1] <= 18,
+        "The shaft has ordinary tool proportions rather than a miniature grip");
+    var woodTexture = NativeEquipmentModels.image("immersive_weathering:item/ice_sickle");
+    for (Face face : handle) {
+      for (var coordinates : face.uv()) {
+        var uv = coordinates.getAsJsonArray();
+        int x = (int) (uv.get(0).getAsDouble() * woodTexture.getWidth() / 16);
+        int y = (int) (uv.get(1).getAsDouble() * woodTexture.getHeight() / 16);
+        require(
+            (woodTexture.getRGB(x, y) >>> 24) == 255,
+            "The shaft samples opaque native wood pixels");
+      }
+      require(
+          Math.max(
+                  Math.abs(face.normal().x),
+                  Math.max(Math.abs(face.normal().y), Math.abs(face.normal().z)))
+              > .9999,
+          "The reference shaft has flat rectangular sides and square corners");
+      for (Vector3f point : face.vertices())
+        require(
+            Math.min(Math.abs(point.x * 16 - grip[0]), Math.abs(point.x * 16 - grip[3])) < .00001
+                && Math.min(Math.abs(point.z * 16 - grip[2]), Math.abs(point.z * 16 - grip[5]))
+                    < .00001,
+            "Shaft vertices remain on the prism corners instead of a round cross-section");
+    }
+    require(
+        head[5] - head[2] >= 1,
+        "The working head has solid volume comparable to the reference hoe blade");
+    require(
+        head[0] < 7 && head[3] > 15 && head[4] - head[1] > 3,
+        "The native short heel, lateral working blade and downward tip remain distinct");
+    var socket = VanillaEquipmentModelTest.bakeObj(model, assets, "ice_socket");
+    double[] collar = bounds(socket);
+    require(
+        collar[0] < grip[0]
+            && collar[3] > grip[3]
+            && collar[2] < grip[2]
+            && collar[5] > grip[5]
+            && collar[1] < grip[4],
+        "A substantial socket wraps the shaft");
+    require(
+        blade.stream()
+            .flatMap(face -> face.vertices().stream())
+            .anyMatch(
+                point ->
+                    point.x * 16 > collar[0]
+                        && point.x * 16 < collar[3]
+                        && point.y * 16 > collar[1]
+                        && point.y * 16 < collar[4]
+                        && point.z * 16 > collar[2]
+                        && point.z * 16 < collar[5]),
+        "The blade root physically enters the socket, without an air gap");
+    for (Face face : socket)
+      require(
+          Math.max(
+                  Math.abs(face.normal().x),
+                  Math.max(Math.abs(face.normal().y), Math.abs(face.normal().z)))
+              > .9999,
+          "The tool socket uses broad rectangular faces rather than a rounded collar");
+    for (Face face : blade) {
+      require(
+          Math.abs(face.normal().y) < .00001 || Math.abs(face.normal().z) < .00001,
+          "The blade has crisp rectangular sections without smoothing bevels");
+      var a = face.vertices().get(0);
+      var normal =
+          new Vector3f(face.vertices().get(1))
+              .sub(a)
+              .cross(new Vector3f(face.vertices().get(2)).sub(a))
+              .normalize();
+      for (Vector3f point : face.vertices())
+        require(
+            Math.abs(new Vector3f(point).sub(a).dot(normal)) < .00001,
+            "Broad blade facets are planar, without folded or twisted quads");
+    }
+  }
+
+  private static double[] bounds(List<Face> faces) {
+    require(!faces.isEmpty(), "Physical component has visible faces");
+    double[] bounds = {
+      Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY,
+      Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY
+    };
+    for (Face face : faces)
+      for (Vector3f point : face.vertices())
+        for (int axis = 0; axis < 3; axis++) {
+          double value = point.get(axis) * 16;
+          bounds[axis] = Math.min(bounds[axis], value);
+          bounds[axis + 3] = Math.max(bounds[axis + 3], value);
+        }
+    return bounds;
   }
 
   private static boolean touches(List<Face> part, List<Face> base) {

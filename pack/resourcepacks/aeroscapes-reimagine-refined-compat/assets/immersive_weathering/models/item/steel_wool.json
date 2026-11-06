@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "immersive_weathering:item/steel_wool"
+    }
+  },
+  "textures": {
+    "layer0": "immersive_weathering:item/steel_wool",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "immersive_weathering:item/equipment/held/steel_wool"
+    },
+    "firstperson_lefthand": {
+      "parent": "immersive_weathering:item/equipment/held/steel_wool"
+    },
+    "thirdperson_righthand": {
+      "parent": "immersive_weathering:item/equipment/held/steel_wool"
+    },
+    "thirdperson_lefthand": {
+      "parent": "immersive_weathering:item/equipment/held/steel_wool"
+    }
+  }
+}

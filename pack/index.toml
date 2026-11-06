@@ -209,6 +209,10 @@ file = "config/terrablender.toml"
 hash = "1eca390ee239e9d4be0f913be120323b4a87cb0f863169e3e7a0bfc72b8bd20c"
 
 [[files]]
+file = "config/travelerstitles-neoforge-1_21.toml"
+hash = "a1d6f402fea443d7c6267555aa5e7eced8297fe31f4911979583d51c90e488fb"
+
+[[files]]
 file = "config/treechop-client.toml"
 hash = "1652ce0c11f712f5a71f08a3dba2946dd561b065635e90d78eb9f10d643a3edd"
 
@@ -717,6 +721,14 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/pack.mcmeta"
 hash = "98a2ed7fd3d2ba25a7e302baa1d0a9a188be502488d976fff6dc2fbdad285142"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/advancement/recipes/tools/steel_wool.json"
+hash = "0d0566e0c6b8d67b8b9ed0ee688f8c838b9ed32322aa385e3087af72f020464a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/recipe/steel_wool.json"
+hash = "54099600758b7557a769230e42cfa629eb1c8cdbbf5c52be3866c7723c6e726e"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/carryon/tags/block/block_blacklist.json"
 hash = "37fa80b5768a6f765bb686ac6873d8f304ee073f6842607169e307250c2cf722"
 
@@ -1107,11 +1119,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "a19daccd445a462a040518d23380a0be1325e3345fbfbf17eaca108d5ab0289b"
+hash = "ff577e2d13de9052068a7fa93a3cb0e86a99e8cefeb9136ec920c1dffd900163"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "f98e40bf818c03d919d6e52c063b9877a7f6b11f10cd76c3f5a2c981278440d3"
+hash = "94852bd758d3bd82d60746bbfdd53ac6e8a9baec9550baa4e310a5036ab473d7"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1140,7 +1152,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "56f5df762a80d452a7d323321063d5e3c26f543d46f3c8fd803a24ce31b90fce"
+hash = "21cd3f9d531cd2e4f7fa1a91a266d93985af026af50696c795671ee68a16601c"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1493,6 +1505,11 @@ hash = "a7cf3d209b1a7814a389dba943ab90aa91115e47594facf0611981ab405597b7"
 metafile = true
 
 [[files]]
+file = "mods/emi-ores.pw.toml"
+hash = "c515de3503099fae8879b33a8c41027098680f40662be2555a5a58010aed6483"
+metafile = true
+
+[[files]]
 file = "mods/emi-trades-reborn.pw.toml"
 hash = "2aa05b42cb151ffee74a7b3cb4590460f0f3d72d48d3dbfdec7937a69fbf801e"
 metafile = true
@@ -1668,6 +1685,11 @@ hash = "5104c83a7fa7ffffad8ff6508f78d9817a4aa77205adc6e808034056030bc92e"
 metafile = true
 
 [[files]]
+file = "mods/immersive-weather-renewed.pw.toml"
+hash = "87c3f668db3a482789e13ed52aae564fae895beb8af02080705c68992c45bc47"
+metafile = true
+
+[[files]]
 file = "mods/immersivethunder.pw.toml"
 hash = "07a6cb74759fd4d28db6b25c4d70c5cb39bb6c42f8a555499869c64bbc380812"
 metafile = true
@@ -1750,6 +1772,11 @@ metafile = true
 [[files]]
 file = "mods/lithostitched.pw.toml"
 hash = "e73ef95e450c2dec3364011df3717c89d5c11d3f71aa915b634e030ab7429061"
+metafile = true
+
+[[files]]
+file = "mods/littletiles.pw.toml"
+hash = "9a5aa72481a252e0a1f55136cc82a3cbda6d82a7233d071a16b640609d62cb27"
 metafile = true
 
 [[files]]
@@ -2103,6 +2130,11 @@ hash = "a684e8647d5c3b2f8e4c3d21644118044a0bb8da43c75ad4d8274218ba3d8bdb"
 metafile = true
 
 [[files]]
+file = "mods/travelers-titles.pw.toml"
+hash = "35260ec2ada3cbc032bb7d8c9e0f094ef74e211b07e4216d11f269d184ea73ab"
+metafile = true
+
+[[files]]
 file = "mods/treechop.pw.toml"
 hash = "8c7b25807fb0de0c0e982046030b0bc4e5e99043ea6fe05d056ee87a1c7be083"
 metafile = true
@@ -2160,6 +2192,11 @@ metafile = true
 [[files]]
 file = "mods/yori3os-grappling-hooks.pw.toml"
 hash = "88c1512da5b401a5cd2a828b8b8f29b225f21ec5daaa4142ffa67d5bea7b24da"
+metafile = true
+
+[[files]]
+file = "mods/yungs-api.pw.toml"
+hash = "91d6c99629759bd09b526f5efc23a53fa3d6c48b359fe58bce57bf78611dce4d"
 metafile = true
 
 [[files]]
@@ -2421,7 +2458,7 @@ hash = "bdec0f38ad9cf5776e730ddb66f235f04d5b332c75b55f2d9ad5081ef122c89f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/equipment.mtl"
-hash = "a7b8c722f58205951cc99e314db393804f038c1260259517b8205241405ee4ab"
+hash = "4fe4cc8f7fed0188897f29d053320a407db455981a7b92f7f316d4a33063c832"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass.obj"
@@ -2570,6 +2607,14 @@ hash = "3858022c06c1109e97e4d10235640106f2c778c195a9f5a131842ed29aa4050f"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/galosphere_rope_dart.obj"
 hash = "e2d7a8c249ceb610823bc9bce76159bde1b7c665831daff85934b1c45d7bbb3b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/immersive_weathering_ice_sickle.obj"
+hash = "42561d5b4ad14beb847f2fc60fe32c05f8546f6e68a556917585dbeeb7af95f7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/immersive_weathering_steel_wool.obj"
+hash = "f108ecbb20d28bb396d6cf41d7eaff51a47fe6516fa637a31fdbd8970dec7865"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass.obj"
@@ -4072,6 +4117,22 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/
 hash = "3850b6eec81d5624d86a3e161b189c35f1a0ff5a29af2c563a0c8fb23cdb9865"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/immersive_weathering/models/item/equipment/held/ice_sickle.json"
+hash = "27262b6e85bb8022405d18b5cc388a56dba0c3aa0af1ef7400538550dd31a6da"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/immersive_weathering/models/item/equipment/held/steel_wool.json"
+hash = "8592616d0baf25a0fe14a7a9dc29adbffaad00fa37157019fba07e574dc0df25"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/immersive_weathering/models/item/ice_sickle.json"
+hash = "9ffa24e9ce7651822eaeae38d64f25914b12e3a828b9192e488e8dc9be090b5c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/immersive_weathering/models/item/steel_wool.json"
+hash = "792ae73543c00c023b32230ff96b0115e5187c0712e34c0a4365986ace48f129"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer.json"
 hash = "bc41afd11dc42a3059e3cb59d792620bde8e969eb60b3eb81cb36095a7c34b30"
 
@@ -4318,6 +4379,70 @@ hash = "a454ae43255dbf10b7d1425166ad7fa01fd16d692400d00e7b5ed5e676a13431"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/thermometer/thermometer_29.json"
 hash = "25cac813b8b92cdac6350b5a202e2195ba0e07a818b2425417ae46aa24a2bcb8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/bag.json"
+hash = "b1f89e5c3f4d835f7a8c9ac3e5900e3c3961279bba81fae7695ae8f15fdbf263"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/chisel.json"
+hash = "88271a802d8e94726058231eb74131ce52d7f8b14fc88af7ce9c6a8b2dda294d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/bag.json"
+hash = "62ccd71e5b4b9a5dce46f825ffe32afe206540f93dc1a04e9cac5b0a8839146d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/chisel.json"
+hash = "c72b0275cda5dc099052b6fb6f7973724d0f5419b607afa37defe1cb87c5b988"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/glove.json"
+hash = "b45e2b18445e950959eeeb609fdadb11df35f55aebd2dbf56b686611006dc3f9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/hammer.json"
+hash = "7d94dc48b73d34f1cf722212819a618bf1d02c1999c6d600a5f47541a9e24925"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/measure_tape.json"
+hash = "d877b06c36354d120fb5556a6619525f8e5a41e36f539deca04c1b031c5f6aad"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/paint_brush.json"
+hash = "fd990362ce822a7c626f6a642e26449cc19b85669a430e8a44e31407fe4ce4e0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/saw.json"
+hash = "eb3dcffeb15764c64b7543957884a9b3342f8c3b070d2a5ec6dc6d5ac0b899b3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/wrench.json"
+hash = "662fea769e64c68066ed3742d4a5911d9ace0c9cedaffa8a2a1bb9e97d2f6ac9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/glove.json"
+hash = "40e610876229690bfcc99a047de6914cdd25bc72740e8aad00cfdeffc7324026"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/hammer.json"
+hash = "0f1911f800bd1ca93b67f7755fd055345e5b1246a11bb7e3f75089f95e06dd89"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/measure_tape.json"
+hash = "b65b13f3220a37b2aac851e6b19c097643b85db9489e0f351527f62757e09fc2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/paint_brush.json"
+hash = "8ab7ccd731aca658c9173d20159009d535edda14a6008b5a16398c717f94b3e6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/saw.json"
+hash = "279660c59a52e2d1a8f84fdea08de5af4353e40618ff14f1c2d8487c6f284730"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/wrench.json"
+hash = "daef01bcbce5bc98388c5790a2728d9d1f9cf0407245355db53bd7c45db60d99"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/atlases/blocks.json"

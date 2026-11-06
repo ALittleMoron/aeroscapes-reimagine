@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.emi",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["EmiOresSyncMixin"],
+  "client": ["EmiOresRecipeMixin", "EmiOresFrequencyMixin", "EmiOreLayoutMixin", "EmiGeodeLayoutMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

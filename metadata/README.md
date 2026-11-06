@@ -6,6 +6,51 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Detailed construction and biome arrivals
+
+[LittleTiles pre236](https://modrinth.com/mod/littletiles/version/c2SowFEz) is an
+explicitly owner-approved exact beta on both sides, using the already pinned
+[CreativeCore 2.13.52](https://modrinth.com/mod/creativecore/version/JS0K93bG).
+The unchanged executable declares LGPL-3.0-only, matching its official paired
+source archive; the CurseForge project-level LGPL-2.1 label differs. Its native
+[Sable](https://modrinth.com/mod/sable/version/fg9dTRz9),
+[Sodium](https://modrinth.com/mod/sodium/version/uMOpc5uV) and
+[Iris](https://modrinth.com/mod/iris/version/KduFYu4t) integration remains upstream.
+The provider's material-volume mass calculation remains native. Sable's
+state-only collision classifiers sampled the origin and excluded nonempty
+LittleTiles block entities from mass, so tile-only assemblies were deleted as
+empty. Two exact-version adapters classify only LittleTiles at the supplied
+position using its actual collision shape. Fullness uses that shape's occupied
+volume, avoiding LittleTiles' visual-side metadata for hollow or noncolliding
+tiles. Ordinary blocks retain Sable's native classifiers and cache. Empty-body
+cleanup and material mass values are unchanged.
+
+[Traveler's Titles 5.1.3](https://modrinth.com/mod/travelers-titles/version/2y01mBUy)
+and [YUNG's API 5.1.9](https://modrinth.com/mod/yungs-api/version/2prKITKh) are
+unchanged LGPLv3 client installations. No server content consumes this API here.
+The selected title binary reads the full biome ID blacklist before displaying
+text, recording a recent entry or playing sound. The config hides only
+`aeroscapes_reimagine:void`, disables the skylight-only restriction for lower
+islands, and keeps dimension/Waystone titles off. Existing language resources
+supply biome names; no generator or terrain predicate is added.
+
+Independently authored EN/RU supplements cover LittleTiles' native names and
+interfaces, dynamic particle labels, CreativeCore configuration paths and
+display-only literal captions. Parser operators, permission-group identities,
+user-created structure names and numeric values remain native. Player-facing
+conversion/optimization command results are sent as localized components. Exact source
+comparisons, scope and resource hashes live in the owned mod's
+`META-INF/localization-sources.json`; original terms and attribution remain in
+its notices. Official CurseForge CDN bytes for all three new providers match
+their selected Modrinth files exactly, as recorded in `curseforge.json`.
+
+LittleTiles' new key registrations use semicolon for marking, apostrophe for
+mirroring, backslash for configuration and equals for building mode. Secondary
+configuration retains Shift on the same key. Exact native constructors are
+adapted before saved Minecraft options load; existing player bindings, arrows,
+undo/redo, modifier matching and key hints remain native. The two bracket keys
+are reserved by SophisticatedCore's inventory transfer controls.
+
 ## Island placement and held maps
 
 The owned generator's volcanic islands use native lava, blackstone, deepslate and magma, with a locally authored biome and surface rule. Selected bounded small/medium island bodies sample one native surface biome at their seeded centre; the native biome roster and larger mountain/ocean habitats remain. Granite and diorite retain their adopted configured features, rarity and biome guards, but their upper placements now sample below the actual island surface. The changed adopted-resource hashes and reasons live in `worldgen_adoption.json`.

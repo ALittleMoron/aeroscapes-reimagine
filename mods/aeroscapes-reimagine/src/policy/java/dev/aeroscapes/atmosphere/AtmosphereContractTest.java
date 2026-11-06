@@ -40,8 +40,45 @@ import traben.entity_model_features.models.jem_objects.EMFPartData;
 public final class AtmosphereContractTest {
   private AtmosphereContractTest() {}
 
+  private static void oreInformationSideGate() {
+    Map<String, String> server =
+        Map.of(
+            "emi_ores", "1.3+1.21.1+neoforge",
+            "create", "6.0.10",
+            "neoforge", "21.1.244");
+    require(
+        AtmosphereMixinPlugin.shouldApplyForVersions(
+            "dev.aeroscapes.mixin.emi.EmiOresSyncMixin", server::get),
+        "Dedicated ore synchronization does not require a client recipe viewer");
+    require(
+        !AtmosphereMixinPlugin.shouldApplyForVersions(
+            "dev.aeroscapes.mixin.emi.EmiOresRecipeMixin", server::get),
+        "Client ore widgets retain the recipe-viewer gate");
+  }
+
+  private static void miscellaneousTranslationFallbacks() {
+    String key = "immersive_weathering.configuration.general.creative_tab";
+    Map<String, String> player = Map.of(key, "Owner's custom caption");
+    List<String> russian = List.of("en_us", "ru_ru");
+    var translated = MiscTranslations.apply(player, russian);
+    require(translated.get(key).equals(player.get(key)), "Player configuration captions win");
+    require(player.size() == 1, "Translation input is not mutated");
+    String note = "aeroscapes_reimagine.ore_information.attempts";
+    require(
+        translated.containsKey(note), "Missing native/configuration captions receive fallbacks");
+    require(
+        !MiscTranslations.apply(Map.of(), List.of("en_us")).get(note).equals(translated.get(note)),
+        "English and Russian fallback captions differ");
+    require(
+        MiscTranslations.apply(translated, russian).equals(translated),
+        "Missing-key fallback is reload-idempotent");
+  }
+
   public static void main(String[] arguments) throws IOException {
     bridgedPlacementVersionGate();
+    oreInformationSideGate();
+    miscellaneousTranslationFallbacks();
+    constructionShapeVersionGate();
     quiverComposition();
     fastRodRenderers();
     lanternGrip();
@@ -199,6 +236,38 @@ public final class AtmosphereContractTest {
           !AtmosphereMixinPlugin.shouldApplyForVersions(name, versions::get),
           "A missing bridge must disable the adapter");
       versions.put("connector", "2.0.0-beta.17+1.21.1");
+    }
+  }
+
+  private static void constructionShapeVersionGate() {
+    String name = "dev.aeroscapes.mixin.construction.LittleSableShapeContextMixin";
+    Map<String, String> versions =
+        new HashMap<>(
+            Map.of(
+                "littletiles",
+                "1.6.0-pre236",
+                "creativecore",
+                "2.13.52",
+                "sable",
+                "2.0.6",
+                "neoforge",
+                "21.1.244"));
+    require(
+        AtmosphereMixinPlugin.shouldApplyForVersions(name, versions::get),
+        "The reviewed construction physics pins enable the position-aware shape adapter");
+    for (String provider : List.copyOf(versions.keySet())) {
+      String selected = versions.remove(provider);
+      require(
+          !AtmosphereMixinPlugin.shouldApplyForVersions(name, versions::get),
+          "Missing construction physics provider disables the adapter: " + provider);
+      versions.put(provider, "unreviewed");
+      try {
+        AtmosphereMixinPlugin.shouldApplyForVersions(name, versions::get);
+        throw new AssertionError("Changed construction physics provider requires review");
+      } catch (IllegalStateException expected) {
+        require(expected.getMessage().contains(provider), "Name the mismatched physics provider");
+      }
+      versions.put(provider, selected);
     }
   }
 
@@ -773,6 +842,11 @@ public final class AtmosphereContractTest {
         Map.of(
             "itemGroup.cratedelight", "Ящичные Изыски",
             "itemGroup.windchimes.main", "wind chimes",
+            "itemGroup.naturalist.tab", "Естествовед",
+            "spawn.item_group", "Спавн",
+            "item.spawn.spawn", "Спавн",
+            "itemGroup.comforts", "Удобства",
+            "itemGroup.comforts.general", "Удобства",
             "entity.corpse.corpse", "Труп",
             "advancement.exposure.exposure.title", "Разрезая время светом");
     require(
@@ -781,6 +855,11 @@ public final class AtmosphereContractTest {
                 Map.of(
                     "itemGroup.cratedelight", "Crate Delight",
                     "itemGroup.windchimes.main", "wind chimes",
+                    "itemGroup.naturalist.tab", "Naturalist",
+                    "spawn.item_group", "Spawn",
+                    "item.spawn.spawn", "Spawn",
+                    "itemGroup.comforts", "Comforts",
+                    "itemGroup.comforts.general", "Comforts",
                     "entity.corpse.corpse", "Труп",
                     "advancement.exposure.exposure.title", "Разрезая время светом")),
         "mod brands retain their names while ordinary nouns and advancement titles stay localized");

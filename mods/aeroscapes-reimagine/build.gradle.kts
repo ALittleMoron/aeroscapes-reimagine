@@ -42,6 +42,10 @@ repositories {
       includeModule("maven.modrinth", "flerovium")
       includeModule("maven.modrinth", "iceberg")
       includeModule("maven.modrinth", "emi")
+      includeModule("maven.modrinth", "emi-ores")
+      includeModule("maven.modrinth", "smart-tooltip-scroll")
+      includeModule("maven.modrinth", "immersive-weather-renewed")
+      includeModule("maven.modrinth", "moonlight")
       includeModule("maven.modrinth", "emi-trades-reborn")
       includeModule("maven.modrinth", "create-aeronautics")
       includeModule("maven.modrinth", "create")
@@ -60,6 +64,7 @@ repositories {
       includeModule("maven.modrinth", "explorers-compass")
       includeModule("maven.modrinth", "accurate-block-placement-reborn")
       includeModule("maven.modrinth", "creativecore")
+      includeModule("maven.modrinth", "littletiles")
       includeModule("maven.modrinth", "itemphysic")
       includeModule("maven.modrinth", "waystones")
       includeModule("maven.modrinth", "waystones-sable")
@@ -151,6 +156,7 @@ val extractSableApi by
     include(
       "META-INF/jarjar/veil-neoforge-1.21.1-4.3.2.jar",
       "META-INF/jarjar/sable-companion-common-1.21.1-1.6.0.jar",
+      "META-INF/jarjar/dev.ryanhcode.sable.sable-sable_rapier-1.21.1-2.0.6.jar",
     )
     eachFile { path = name }
     includeEmptyDirs = false
@@ -166,6 +172,7 @@ dependencies {
   equipmentAssets("maven.modrinth:sophisticated-storage:wVZfDecJ")
   equipmentAssets("maven.modrinth:create-aeronautics-throwable-rope-connector:EDzeTV17")
   equipmentAssets("maven.modrinth:exposure:iBvaR6AK")
+  equipmentAssets("maven.modrinth:littletiles:c2SowFEz")
   explorationApi("maven.modrinth:hybrid-aquatic:jdOU7Pzu")
   explorationApi("maven.modrinth:hybrid-api:4HsWNhJz")
   explorationApi("maven.modrinth:geckolib:Grwn5rUB")
@@ -204,6 +211,10 @@ dependencies {
   atmosphereApi("maven.modrinth:flerovium:oU1q3eIj")
   atmosphereApi("maven.modrinth:iceberg:IMssx9du")
   atmosphereApi("maven.modrinth:emi:ouSj7NfF")
+  atmosphereApi("maven.modrinth:emi-ores:V2MXZKsX")
+  atmosphereApi("maven.modrinth:smart-tooltip-scroll:5yxY9Gl4")
+  atmosphereApi("maven.modrinth:immersive-weather-renewed:n3NgrJOg")
+  atmosphereApi("maven.modrinth:moonlight:CO2fjXOk")
   atmosphereApi("maven.modrinth:emi-trades-reborn:VPRhN8yf")
   atmosphereApi("maven.modrinth:distanthorizons:9w34y8ai")
   atmosphereApi("maven.modrinth:better-clouds:UvRCtZxT")
@@ -220,6 +231,7 @@ dependencies {
   atmosphereApi("maven.modrinth:explorers-compass:hIJ2Ev1Q")
   atmosphereApi("maven.modrinth:accurate-block-placement-reborn:rA95AHFG")
   atmosphereApi("maven.modrinth:creativecore:JS0K93bG")
+  atmosphereApi("maven.modrinth:littletiles:c2SowFEz")
   atmosphereApi("maven.modrinth:itemphysic:rYw9JKpB")
   atmosphereApi("maven.modrinth:waystones:6Z6MQ6os")
   atmosphereApi("maven.modrinth:waystones-sable:Wot8Pf4C")
@@ -583,6 +595,15 @@ val reviewedEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
+val constructionEquipmentModelTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(vanillaEquipmentModelTest)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.ConstructionEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
 val heldEquipmentRenderingTest by
   tasks.registering(JavaExec::class) {
     group = "verification"
@@ -598,6 +619,24 @@ val utilityEquipmentModelTest by
     classpath = vanillaEquipmentModelTest.get().classpath
     mainClass = "dev.aeroscapes.aquatic.UtilityEquipmentModelTest"
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
+val weatheringTextureTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.weathering.WeatheringTextureTest"
+    systemProperty("java.awt.headless", "true")
+  }
+
+val orePresentationContractTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.atmosphere.OrePresentationContractTest"
+    systemProperty("java.awt.headless", "true")
   }
 
 val paragliderExhaustionTest by
@@ -658,7 +697,10 @@ tasks.check {
     equipmentArtworkTest,
     vanillaEquipmentModelTest,
     reviewedEquipmentModelTest,
+    constructionEquipmentModelTest,
     utilityEquipmentModelTest,
+    weatheringTextureTest,
+    orePresentationContractTest,
     heldEquipmentRenderingTest,
     rodModelContractTest,
     paragliderExhaustionTest,

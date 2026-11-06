@@ -44,6 +44,7 @@ public final class MovementRegression {
       verifyBargains(level, player);
       verifySprintingAndGliding(player);
       verifyOffhandHook(level, player);
+      HookMiningRegression.verify(level, player);
       saved = player.saveWithoutId(new CompoundTag());
     }
     try (var session =

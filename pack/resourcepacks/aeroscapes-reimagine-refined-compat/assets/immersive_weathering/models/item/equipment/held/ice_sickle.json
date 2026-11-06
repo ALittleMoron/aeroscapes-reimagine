@@ -1,0 +1,83 @@
+{
+  "textures": {
+    "layer0": "immersive_weathering:item/ice_sickle",
+    "particle": "#layer0"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        15,
+        90,
+        5
+      ],
+      "translation": [
+        1.25,
+        2.5,
+        0.5
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        15,
+        90,
+        5
+      ],
+      "translation": [
+        1.25,
+        2.5,
+        0.5
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "translation": [
+        0,
+        1.25,
+        1.5
+      ],
+      "scale": [
+        0.95,
+        0.95,
+        0.95
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "translation": [
+        0,
+        1.25,
+        1.5
+      ],
+      "scale": [
+        0.95,
+        0.95,
+        0.95
+      ]
+    }
+  },
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/utility_equipment/immersive_weathering_ice_sickle.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout"
+}

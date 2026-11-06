@@ -1,0 +1,29 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/handheld",
+    "textures": {
+      "layer0": "littletiles:item/paint_brush",
+      "layer1": "littletiles:item/paint_brush_overlay"
+    }
+  },
+  "textures": {
+    "layer0": "littletiles:item/paint_brush",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "littletiles:item/equipment/held/paint_brush"
+    },
+    "firstperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/paint_brush"
+    },
+    "thirdperson_righthand": {
+      "parent": "littletiles:item/equipment/held/paint_brush"
+    },
+    "thirdperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/paint_brush"
+    }
+  }
+}

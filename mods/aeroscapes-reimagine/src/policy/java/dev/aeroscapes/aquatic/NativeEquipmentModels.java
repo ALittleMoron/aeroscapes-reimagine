@@ -24,7 +24,8 @@ final class NativeEquipmentModels {
         "farmersdelight:golden_knife",
         "farmersdelight:diamond_knife",
         "farmersdelight:netherite_knife",
-        "wetland_whimsy:dagger");
+        "wetland_whimsy:dagger",
+        "immersive_weathering:ice_sickle");
     add(
         designs,
         EquipmentStyle.CORAL,
@@ -82,6 +83,7 @@ final class NativeEquipmentModels {
     add(designs, EquipmentStyle.GRAPPLE, "crittersandcompanions:grappling_hook");
     add(designs, EquipmentStyle.CLAW, "spawn:coastal_crab_claw");
     add(designs, EquipmentStyle.PAPER, "create:sand_paper", "create:red_sand_paper");
+    add(designs, EquipmentStyle.PAPER, "immersive_weathering:steel_wool");
     add(designs, EquipmentStyle.BOOK, "chipped:alchemy_book");
     add(designs, EquipmentStyle.MULTIMETER, "chipped:multimeter");
     add(designs, EquipmentStyle.NEEDLES, "chipped:needles");

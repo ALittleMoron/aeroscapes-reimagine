@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/handheld",
+    "textures": {
+      "layer0": "littletiles:item/saw"
+    }
+  },
+  "textures": {
+    "layer0": "littletiles:item/saw",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "littletiles:item/equipment/held/saw"
+    },
+    "firstperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/saw"
+    },
+    "thirdperson_righthand": {
+      "parent": "littletiles:item/equipment/held/saw"
+    },
+    "thirdperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/saw"
+    }
+  }
+}

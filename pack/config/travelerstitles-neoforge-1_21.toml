@@ -1,0 +1,10 @@
+["Biome Titles"]
+"Enable Biome Titles" = true
+"Blacklisted Biomes" = "[aeroscapes_reimagine:void]"
+"Only Show Biome Titles When Exposed To Skylight" = false
+
+["Dimension Titles"]
+"Enable Dimension Titles" = false
+
+["Waystone Titles"]
+"Enable Waystone Titles" = false

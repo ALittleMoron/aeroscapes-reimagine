@@ -99,6 +99,37 @@ final class EquipmentObjMesh {
       signed += a.x * b.y - b.x * a.y;
     }
     List<P> points = signed > 0 ? outline : outline.reversed();
+    List<int[]> triangles = triangulate(points);
+    double minX = points.stream().mapToDouble(P::x).min().orElseThrow(),
+        maxX = points.stream().mapToDouble(P::x).max().orElseThrow();
+    double minY = points.stream().mapToDouble(P::y).min().orElseThrow(),
+        maxY = points.stream().mapToDouble(P::y).max().orElseThrow();
+    for (int side : new int[] {-1, 1})
+      for (int[] triangle : triangles) {
+        P a = points.get(triangle[0]).add(new P(0, 0, side * depth / 2)),
+            b = points.get(triangle[1]).add(new P(0, 0, side * depth / 2)),
+            c = points.get(triangle[2]).add(new P(0, 0, side * depth / 2));
+        double[] ua = {(a.x - minX) / (maxX - minX), (maxY - a.y) / (maxY - minY)},
+            ub = {(b.x - minX) / (maxX - minX), (maxY - b.y) / (maxY - minY)},
+            uc = {(c.x - minX) / (maxX - minX), (maxY - c.y) / (maxY - minY)};
+        quad(front, new P[] {a, b, c, c}, new P(0, 0, side), new double[][] {ua, ub, uc, uc});
+      }
+    for (int index = 0; index < points.size(); index++) {
+      P a = points.get(index), b = points.get((index + 1) % points.size());
+      quad(
+          edge,
+          new P[] {
+            a.add(new P(0, 0, -depth / 2)),
+            b.add(new P(0, 0, -depth / 2)),
+            b.add(new P(0, 0, depth / 2)),
+            a.add(new P(0, 0, depth / 2))
+          },
+          new P(b.y - a.y, a.x - b.x, 0),
+          new double[][] {{0, 0}, {1, 0}, {1, 1}, {0, 1}});
+    }
+  }
+
+  private static List<int[]> triangulate(List<P> points) {
     List<Integer> remaining = new ArrayList<>();
     for (int index = 0; index < points.size(); index++) remaining.add(index);
     List<int[]> triangles = new ArrayList<>();
@@ -127,33 +158,7 @@ final class EquipmentObjMesh {
       if (!clipped) throw new IllegalArgumentException("Self-intersecting plate contour");
     }
     triangles.add(new int[] {remaining.get(0), remaining.get(1), remaining.get(2)});
-    double minX = points.stream().mapToDouble(P::x).min().orElseThrow(),
-        maxX = points.stream().mapToDouble(P::x).max().orElseThrow();
-    double minY = points.stream().mapToDouble(P::y).min().orElseThrow(),
-        maxY = points.stream().mapToDouble(P::y).max().orElseThrow();
-    for (int side : new int[] {-1, 1})
-      for (int[] triangle : triangles) {
-        P a = points.get(triangle[0]).add(new P(0, 0, side * depth / 2)),
-            b = points.get(triangle[1]).add(new P(0, 0, side * depth / 2)),
-            c = points.get(triangle[2]).add(new P(0, 0, side * depth / 2));
-        double[] ua = {(a.x - minX) / (maxX - minX), (maxY - a.y) / (maxY - minY)},
-            ub = {(b.x - minX) / (maxX - minX), (maxY - b.y) / (maxY - minY)},
-            uc = {(c.x - minX) / (maxX - minX), (maxY - c.y) / (maxY - minY)};
-        quad(front, new P[] {a, b, c, c}, new P(0, 0, side), new double[][] {ua, ub, uc, uc});
-      }
-    for (int index = 0; index < points.size(); index++) {
-      P a = points.get(index), b = points.get((index + 1) % points.size());
-      quad(
-          edge,
-          new P[] {
-            a.add(new P(0, 0, -depth / 2)),
-            b.add(new P(0, 0, -depth / 2)),
-            b.add(new P(0, 0, depth / 2)),
-            a.add(new P(0, 0, depth / 2))
-          },
-          new P(b.y - a.y, a.x - b.x, 0),
-          new double[][] {{0, 0}, {1, 0}, {1, 1}, {0, 1}});
-    }
+    return triangles;
   }
 
   private static double turn(P a, P b, P c) {

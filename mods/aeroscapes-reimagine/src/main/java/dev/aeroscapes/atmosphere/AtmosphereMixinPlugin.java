@@ -29,7 +29,43 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   static boolean shouldApplyForVersions(
       String mixinClassName, Function<String, String> versionLookup) {
     Map<String, String> versions;
-    if (mixinClassName.startsWith("dev.aeroscapes.mixin.travel.")) {
+    if (mixinClassName.endsWith("TooltipScrollBoundaryMixin")) {
+      versions = Map.of("smart_tooltip_scroll", "1.1.1+1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("MiscTranslationFallbackMixin")) {
+      versions = Map.of("moonlight", "1.21.1-3.0.18", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.weathering.")) {
+      versions =
+          Map.of(
+              "immersive_weathering", "1.0.4",
+              "moonlight", "1.21.1-3.0.18",
+              "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("EmiOresSyncMixin")) {
+      versions =
+          Map.of(
+              "emi_ores", "1.3+1.21.1+neoforge",
+              "create", "6.0.10",
+              "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.emi.")) {
+      versions =
+          Map.of(
+              "emi_ores", "1.3+1.21.1+neoforge",
+              "emi", "1.1.22+1.21.1+neoforge",
+              "create", "6.0.10",
+              "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.construction.LittleSable")) {
+      versions =
+          Map.of(
+              "littletiles", "1.6.0-pre236",
+              "creativecore", "2.13.52",
+              "sable", "2.0.6",
+              "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.construction.")) {
+      versions =
+          Map.of(
+              "littletiles", "1.6.0-pre236",
+              "creativecore", "2.13.52",
+              "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.travel.")) {
       versions =
           Map.of(
               "waystones", "21.1.46",

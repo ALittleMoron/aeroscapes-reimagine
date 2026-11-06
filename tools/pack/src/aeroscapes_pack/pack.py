@@ -54,6 +54,8 @@ RELEASE_EXCEPTIONS = frozenset(
         ("BaR4ijFC", "xaWwatoU", "beta"),
         ("curseforge:880630", "7858908", "beta"),
         ("curseforge:975460", "8787579", "beta"),
+        ("RCRxC1tD", "c2SowFEz", "beta"),
+        ("AtjxBimt", "n3NgrJOg", "beta"),
     }
 )
 COMPAT_DIRECTORY = "global_packs/required_data/aeroscapes_reimagine_compat"

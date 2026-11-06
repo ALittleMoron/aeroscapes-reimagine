@@ -1,3 +1,28 @@
+newmtl immersive_weathering_ice_sickle_blade
+Ka 0 0 0
+Kd 1 1 1
+map_Kd immersive_weathering:item/ice_sickle
+
+newmtl immersive_weathering_ice_sickle_collar
+Ka 0 0 0
+Kd 1 1 1
+map_Kd immersive_weathering:item/ice_sickle
+
+newmtl immersive_weathering_ice_sickle_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd immersive_weathering:item/ice_sickle
+
+newmtl immersive_weathering_ice_sickle_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd immersive_weathering:item/ice_sickle
+
+newmtl immersive_weathering_ice_sickle_native
+Ka 0 0 0
+Kd 1 1 1
+map_Kd immersive_weathering:item/ice_sickle
+
 newmtl supplementaries_wrench_body
 Ka 0 0 0
 Kd 1 1 1
@@ -107,6 +132,16 @@ newmtl galosphere_echo_bell_native
 Ka 0 0 0
 Kd 1 1 1
 map_Kd galosphere:item/echo_bell
+
+newmtl immersive_weathering_steel_wool_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd immersive_weathering:item/steel_wool
+
+newmtl immersive_weathering_steel_wool_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd immersive_weathering:item/steel_wool
 
 newmtl chipped_watering_can_body
 Ka 0 0 0

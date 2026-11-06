@@ -98,6 +98,23 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String miscellaneous = System.getProperty("aeroscapes.regression.miscellaneous");
+    if (miscellaneous != null) {
+      MiscContentRegression.verify(
+          level,
+          Path.of(miscellaneous),
+          Boolean.getBoolean("aeroscapes.regression.miscellaneousReload"));
+      LOGGER.info("Miscellaneous content regression passed");
+      return;
+    }
+    String construction = System.getProperty("aeroscapes.regression.construction");
+    if (construction != null) {
+      ConstructionRegression.start(
+          level,
+          Path.of(construction),
+          Boolean.getBoolean("aeroscapes.regression.constructionReload"));
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.removedHook")) {
       RemovedHookRegression.verify(level);
       LOGGER.info("Removed companion hook policy regression passed");

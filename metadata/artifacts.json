@@ -560,8 +560,8 @@
     "slug": "bigshot",
     "name": "Bigshot",
     "project_id": "vNU5pyXC",
-    "status": "deferred",
-    "reason": "Large screenshot tool not needed for gameplay."
+    "status": "excluded",
+    "reason": "Owner declined this option in the bounded miscellaneous-content selection; historical technical evidence is not an installation queue."
   },
   {
     "slug": "biome-replacer",
@@ -3015,8 +3015,8 @@
     "slug": "immersive-overlays",
     "name": "Immersive Overlays",
     "project_id": "PKoLkD98",
-    "status": "deferred",
-    "reason": "Avoid redundant visual overlays before performance measurement."
+    "status": "excluded",
+    "reason": "Owner declined this option in the bounded miscellaneous-content selection; historical technical evidence is not an installation queue."
   },
   {
     "slug": "immersive-winds",
@@ -3292,9 +3292,9 @@
         "dependency_type": "required"
       }
     ],
-    "status": "deferred",
+    "status": "excluded",
     "origin": "Aeroscapes 1.0.8",
-    "reason": "Actual Moonlight startup rejects the Fabric API compatibility path. Omit the two optional consumers and their libraries; keep native texture/cooking baseline."
+    "reason": "Owner declined this option in the bounded miscellaneous-content selection; historical technical evidence is not an installation queue."
   },
   {
     "slug": "konkrete",
@@ -4117,8 +4117,8 @@
     "slug": "orthocamera-unofficial-neoforge-port",
     "name": "OrthoCamera (Unofficial NeoForge Port)",
     "project_id": "twW3MtGA",
-    "status": "deferred",
-    "reason": "Screenshot tool not needed for gameplay."
+    "status": "excluded",
+    "reason": "Owner declined this option in the bounded miscellaneous-content selection; historical technical evidence is not an installation queue."
   },
   {
     "slug": "overweight-farming",
@@ -4751,8 +4751,8 @@
     "slug": "smooth-swapping",
     "name": "Smooth Swapping",
     "project_id": "ydZic5r4",
-    "status": "deferred",
-    "reason": "Beta cosmetic animation, deferred."
+    "status": "excluded",
+    "reason": "Owner declined this option in the bounded miscellaneous-content selection; historical technical evidence is not an installation queue."
   },
   {
     "slug": "snow-under-trees",
@@ -9958,5 +9958,193 @@
     "game_versions": [
       "1.21.1"
     ]
+  },
+  {
+    "slug": "littletiles",
+    "name": "LittleTiles",
+    "project_id": "RCRxC1tD",
+    "version_id": "c2SowFEz",
+    "version": "1.6.0-pre236",
+    "filename": "LittleTiles_BETA_v1.6.0-pre236_mc1.21.1.jar",
+    "sha512": "08ade18949229348a829bf2a9d188fcb68b99398f63a685253a451e147ddc0c47fbbe2aaecd2e27fa4273e2d1a3942e224f4cd00225ddf6a599aaa0b21303340",
+    "sha1": "6571f593f96ec729120f7b8ef1d3317e5738a0a7",
+    "file_size": 2862913,
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/CreativeMD/LittleTiles",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "OsZiaDHq",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected detailed construction and biome arrival titles; unchanged official provider files",
+    "exception": "Owner explicitly approved exact LittleTiles 1.6.0-pre236 beta after dependency, ship/rendering and maintenance disclosure; approval does not extend to later files.",
+    "artifact_audit": {
+      "descriptor_license": "LGPL-3.0-only",
+      "provider_license_label": "LGPL-3.0-only (Modrinth); CurseForge project label LGPL-2.1",
+      "source_comparison": "Official paired pre236 source archive compared with descriptor, registered tool/model/state graph and exact Sable/Iris external method signatures; no reproduced-build or gameplay acceptance claim.",
+      "source_archive_url": "https://cdn.modrinth.com/data/RCRxC1tD/versions/c2SowFEz/LittleTiles_BETA_SOURCE_v1.6.0-pre236_mc1.21.1.jar",
+      "source_archive_sha512": "f2537ffbd75eb039f85d59e0ad1f109d4fd431699411aa30ee3cc962f907acb690fd665a4241533180d31f36c6d0ea5ef5c092db550589ac7fcb884b05e56eba"
+    },
+    "dependency_note": "Both sides; CreativeCore>=2.13.52 already selected. Native Sodium0.8, Iris and Sable integrations retained; exact Sable2.0.6 and Iris1.8.14-beta.1 API signatures inspected. Native mass remains upstream WIP; shaderless shading, full-tile sublevels, doors, collision, recipes and save/reload require affected-side checks."
+  },
+  {
+    "slug": "travelers-titles",
+    "name": "Traveler's Titles",
+    "project_id": "JtifUr64",
+    "version_id": "2y01mBUy",
+    "version": "1.21.1-NeoForge-5.1.3",
+    "filename": "TravelersTitles-1.21.1-NeoForge-5.1.3.jar",
+    "sha512": "eed7ed02277e32f374da0999bbb24410c04543ca39e6e349ca9e441c468e218cf0cad59173f8b98c3f45140b24552efa3672ff48feb311ec01b19ab2f02b2e64",
+    "sha1": "166cba4d367c6dd103d1d5dcab7a31174bec799e",
+    "file_size": 235345,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/YUNG-GANG/Travelers-Titles",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Ua7DFN59",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected detailed construction and biome arrival titles; unchanged official provider files",
+    "artifact_audit": {
+      "descriptor_license": "LGPLv3",
+      "source_comparison": "Author 1.21.1 branch declares exact5.1.3; actual client config filename, full-ID biome blacklist, title/translation path and sky-exposure behavior confirmed in selected bytecode."
+    },
+    "dependency_note": "Client only; YUNG API>=1.21.1-NeoForge-5.1.2. Native full-ID blacklist hides only aeroscapes_reimagine:void. Sky-exposure filter disabled to retain lower-island and interior biome titles; dimension and Waystone titles disabled to keep this integration scoped to biome arrivals."
+  },
+  {
+    "slug": "yungs-api",
+    "name": "YUNG's API",
+    "project_id": "Ua7DFN59",
+    "version_id": "2prKITKh",
+    "version": "1.21.1-NeoForge-5.1.9",
+    "filename": "YungsApi-1.21.1-NeoForge-5.1.9.jar",
+    "sha512": "7e3cf0b429e8a1c51dca094c2d8eabf12245bb42cbcd8b6e3e54959f931bef93201b81a08d200b417059aaa438e8eb445c3978a09568597bfb588199b7775967",
+    "sha1": "2c4b740c8ad27bbcb2a21b85b64f011b809aed91",
+    "file_size": 413763,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/YUNG-GANG/YUNGs-API",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected detailed construction and biome arrival titles; unchanged official provider files",
+    "dependency_note": "Unchanged native API5.1.9 installed only in the client as the dependency of client-only Traveler Titles. No server feature consumes it in this pack; no additional dependency or bridge."
+  },
+  {
+    "slug": "emi-ores",
+    "name": "EMI Ores",
+    "project_id": "sG4TqDb8",
+    "version_id": "V2MXZKsX",
+    "version": "1.3+1.21.1+neoforge",
+    "filename": "emi_ores-1.3+1.21.1+neoforge.jar",
+    "sha512": "c5774be0eeda90253c4fa98aaf0006ecb50dbd62ef5027420385482cea21b3339abdfbe945ab1233101bac7f52663cd2860abde04941a818ac3da312d86fc4ee",
+    "sha1": "26e3f998295bae5178530d4bb217e824a2637121",
+    "file_size": 116663,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/Abbie5/emi-ores",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "fRiHVvU7",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected miscellaneous content integration; unchanged official Modrinth artifact",
+    "dependency_note": "Both sides; client requires existing EMI>=1.1.20. Display snapshot uses effective active biome placements, selector probabilities and eligible blackstone hosts; no worldgen changes. Native JSON-only settings preserved.",
+    "source_review": "Tag v1.3+1.21.1 / 41c353719f4f18c24cdf7ad70771b03b88b39bc1; distributed sender/payload ABI inspected. Source README separately attributes biome icons to Minecraft Wiki contributors under CC BY-NC-SA3.0; retain original JAR and attribution."
+  },
+  {
+    "slug": "immersive-weather-renewed",
+    "name": "Immersive Weathering: Renewed",
+    "project_id": "AtjxBimt",
+    "version_id": "n3NgrJOg",
+    "version": "V1.0.4-NeoForge",
+    "filename": "Immersive-weathering-V1.0.4-neoforge-beta.jar",
+    "sha512": "a2a7ebd8a0d101ec6c470ad6451b6fd86f526cd88f188cd6afe9673580be7264567be76f2d2ab19194c5332cbbe56eec2e67b359c34b610d65c9d4733aff9ad8",
+    "sha1": "011571c9eca3613ca2f4275da922eb3ec12061e1",
+    "file_size": 2283529,
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": "https://github.com/QanoriaPorts/Immersive-Weathering-Port-1.21.1/blob/main/LICENSE"
+    },
+    "source_url": "https://github.com/QanoriaPorts/Immersive-Weathering-Port-1.21.1",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected miscellaneous content integration; unchanged official Modrinth artifact",
+    "exception": "Owner explicitly permitted exact V1.0.4 beta / n3NgrJOg after technical checks; no permission for other experimental files.",
+    "dependency_note": "Both sides; embedded descriptor requires Moonlight>=1.21-2.29.33. Existing Moonlight3.0.18 exact145 member references resolved including inherited vanilla methods. No library update.",
+    "source_review": "Author-linked port repository currently unavailable; exact distributed bytecode/resources audited against available original author source for context, without claiming exact port source equivalence. Provider binary remains unchanged."
   }
 ]

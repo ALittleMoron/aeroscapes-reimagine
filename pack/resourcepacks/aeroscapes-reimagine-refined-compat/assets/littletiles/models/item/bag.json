@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "littletiles:item/bag"
+    }
+  },
+  "textures": {
+    "layer0": "littletiles:item/bag",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "littletiles:item/equipment/held/bag"
+    },
+    "firstperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/bag"
+    },
+    "thirdperson_righthand": {
+      "parent": "littletiles:item/equipment/held/bag"
+    },
+    "thirdperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/bag"
+    }
+  }
+}

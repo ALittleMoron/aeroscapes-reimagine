@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.construction",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "LittleCommandLanguageMixin",
+    "LittleGridMessageMixin",
+    "LittleSableShapeContextMixin",
+    "LittleSableCenterContextMixin",
+    "LittleSableTilePayloadMixin",
+    "LittleSableBodyPayloadMixin",
+    "LittleSableAssemblyPayloadMixin",
+    "LittleSableRapierContextMixin"
+  ],
+  "client": [
+    "LittleLiteralLanguageMixin",
+    "LittleSignalDelayLanguageMixin",
+    "LittleBedDirectionLanguageMixin",
+    "LittleMaterialLoreLanguageMixin",
+    "LittleStorageLanguageMixin",
+    "LittleKeyDefaultsMixin",
+    "CreativeCoreEnumLanguageMixin"
+  ],
+  "injectors": {"defaultRequire": 1}
+}

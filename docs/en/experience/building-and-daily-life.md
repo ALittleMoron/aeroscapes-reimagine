@@ -12,6 +12,12 @@ Building blocks, furniture, decorative details and kitchen equipment help furnis
 
 [Handcrafted](https://modrinth.com/mod/handcrafted) supplies a coordinated set of beds, nightstands, kitchen counters, cupboards and smaller household decorations. [Chipped](https://modrinth.com/mod/chipped) expands the surface patterns of familiar building materials. Its workbenches and handheld tools open a conversion menu for choosing a supported block variant; they serve a different purpose from furniture.
 
+[LittleTiles](https://modrinth.com/mod/littletiles) lets you shape small pieces of ordinary blocks into your own details and furniture. Unlike choosing an existing block pattern, you define the geometry yourself. Constructions can act as chairs, beds, ladders, storage or animated doors.
+
+Details assembled into [Sable](https://modrinth.com/mod/sable) moving structures contribute mass according to their material volume.
+
+Start with the Little Chisel for placement and the Little Hammer for removal. Both use iron and lapis lazuli; the Little Bag holds building materials and colors. The tool's hints show its current controls, selection and grid. **Configure Tool** opens its settings; **Toggle building mode** opens additional building controls. Both actions can be reassigned under **Options → Controls → LittleTiles**. The [upstream guide](https://github.com/CreativeMD/LittleTiles/wiki) explains shapes, blueprints, functional structures and signal-controlled animation.
+
 [wind chimes](https://modrinth.com/mod/windchime) adds bamboo, copper and iron chimes for homes and ship interiors. They sway and ring in the wind, react to interaction and redstone, and respond to acceleration and turns aboard Sable ships. Their recipes use ordinary sticks, string, buttons and the corresponding material.
 
 Some ordinary furniture recipes share ingredients with existing blocks. [Polymorph’s result selector](../quality-of-life/#recipes-and-information) lets players choose between matching recipes in supported crafting menus. Create mechanical crafters use their own recipe lookup.
@@ -21,6 +27,25 @@ Diagonal Fences, Diagonal Walls and Diagonal Windows extend the ways fences, wal
 Conversions to tall Chipped doors are available where the corresponding ordinary door exists in the included Chipped version.
 
 Create’s schematics and building tools support larger projects. [Engineering](../engineering/) describes how construction connects with moving machinery, while [convenience](../quality-of-life/) covers rearranging supported blocks and organizing supplies.
+
+## Materials that change over time
+
+[Immersive Weathering: Renewed](https://modrinth.com/mod/immersive-weather-renewed) adds moss, rust, cracked masonry, charred wood and other changes to supported materials. A home can acquire signs of its surroundings as you live there.
+
+The content also includes leaf piles and bark for supported tree types, new soils
+and their grassy variants, ivy and weeds, frost, thin ice, icicles, soot and
+fulgurite. Iron has rusted and waxed material families; masonry has mossy and
+cracked variants. These are building and environmental systems alongside the
+handheld tools, rather than a set of tools alone.
+
+Honeycomb or tallow protects supported iron from further weathering; steel wool removes wax and scrapes rust from supported stages. Protection and cleaning preserve the block's orientation and other properties. The mod's settings are available through **Mods → Immersive Weathering → Config**.
+
+Steel wool appears in the mod's creative tab and item search. Craft one from four
+iron nuggets, in any arrangement in the inventory crafting grid or at a crafting
+table. It is also one of the toolsmith's gifts to a player with Hero of the Village.
+Mortar and matching repair bricks restore supported cracked
+masonry. The flower crown is wearable, while icicles, azalea flowers and several
+moss items also have food uses.
 
 ## Food and household activities
 

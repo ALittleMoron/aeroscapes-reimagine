@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/handheld",
+    "textures": {
+      "layer0": "littletiles:item/wrench"
+    }
+  },
+  "textures": {
+    "layer0": "littletiles:item/wrench",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "littletiles:item/equipment/held/wrench"
+    },
+    "firstperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/wrench"
+    },
+    "thirdperson_righthand": {
+      "parent": "littletiles:item/equipment/held/wrench"
+    },
+    "thirdperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/wrench"
+    }
+  }
+}

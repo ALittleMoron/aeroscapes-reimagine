@@ -60,6 +60,12 @@ In blackstone terrain such as Mantle Caves, ore generation previously left deeps
 
 A compatibility repair also restores [Quark](https://quarkmod.net/)'s cave biome to island generation after it had been skipped by the biome source.
 
+## Finding ore information
+
+[EMI Ores](https://modrinth.com/mod/emi-ores) adds ore and geode generation pages to the recipe browser. The pack reads active biome placements, including lower-island ores and eligible blackstone variants, rather than using a separate vanilla height table. Search for an ore and open its generation category.
+
+The graph describes attempted placement heights. Biomes, suitable rock and surface conditions still matter; empty sky contains no deposits. Counts describe generation attempts, and the displayed item amount is a vein-size setting rather than a guaranteed yield. Hover over **?** for these limits. Layered stone deposits from [Create](https://modrinth.com/mod/create) and noise-generated iron and copper veins are outside these pages.
+
 ## How structure placement was repaired
 
 Structure mods expected continuous land: on floating islands, parts of dungeons lacked support and large complexes often hung outside the terrain. Placement was reworked to account for the size and support of the whole complex. The pack tries to fit it near the original starting point and rejects the attempt if no suitable site is available. Individual passages and entrances can emerge from slopes; intended aerial structures and open bridges are retained.

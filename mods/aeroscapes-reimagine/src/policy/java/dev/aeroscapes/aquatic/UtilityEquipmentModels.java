@@ -31,7 +31,9 @@ final class UtilityEquipmentModels {
                 "galosphere:echo_bell",
                 "galosphere:glow_flare",
                 "galosphere:rope_dart",
-                "waystones:warp_stone")
+                "waystones:warp_stone",
+                "immersive_weathering:ice_sickle",
+                "immersive_weathering:steel_wool")
             .contains(id);
   }
 
@@ -46,6 +48,20 @@ final class UtilityEquipmentModels {
     model.addProperty("render_type", "minecraft:cutout");
     model.getAsJsonObject("textures").addProperty("particle", "#layer0");
     JsonObject display = EquipmentSculpture.transforms(id, style, original);
+    if (id.equals("immersive_weathering:ice_sickle")) {
+      // The blade lies in XY, matching the pinned Refined pickaxe's functional axes.
+      display =
+          com.google.gson.JsonParser.parseString(
+                  """
+          {
+            "firstperson_righthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
+            "firstperson_lefthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
+            "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]},
+            "thirdperson_lefthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]}
+          }
+          """)
+              .getAsJsonObject();
+    }
     if (style == EquipmentStyle.WRENCH || style == EquipmentStyle.GLUE) {
       for (var hand : display.entrySet()) {
         var angles = hand.getValue().getAsJsonObject().getAsJsonArray("rotation");
@@ -115,6 +131,8 @@ final class UtilityEquipmentModels {
       else if (id.equals("galosphere:glow_flare")) flare(mesh);
       else if (id.equals("galosphere:rope_dart")) dart(mesh);
       else if (id.equals("waystones:warp_stone")) crystal(mesh);
+      else if (id.equals("immersive_weathering:ice_sickle")) iceSickle(mesh);
+      else if (id.equals("immersive_weathering:steel_wool")) steelWool(mesh);
       else tool(mesh, id);
       output.put(directory.resolve(name(id) + ".obj"), mesh.obj().getBytes(StandardCharsets.UTF_8));
     }
@@ -157,6 +175,17 @@ final class UtilityEquipmentModels {
     if (id.contains("monstrometer")) id = "galosphere:monstrometer";
     if (id.startsWith("sophisticatedcore:ender_linker")) id = "sophisticatedcore:ender_linker";
     return switch (id) {
+      case "immersive_weathering:ice_sickle" ->
+          Map.of(
+              "native", new double[] {0, 0, 16, 16},
+              "blade", new double[] {4, 2, 6, 4},
+              "edge", new double[] {4, 5, 7, 6},
+              "collar", new double[] {4, 5, 7, 6},
+              "grip", new double[] {2, 10, 4, 12});
+      case "immersive_weathering:steel_wool" ->
+          Map.of(
+              "body", new double[] {3, 5, 12, 9},
+              "edge", new double[] {4, 8, 7, 9});
       case "chipped:watering_can" ->
           Map.of(
               "body",
@@ -307,6 +336,117 @@ final class UtilityEquipmentModels {
               new double[] {0, 0, 16, 16});
       default -> throw new IllegalArgumentException("Missing utility skin: " + id);
     };
+  }
+
+  private static void iceSickle(EquipmentObjMesh mesh) {
+    sickleHandle(mesh);
+    mesh.group("ice_socket");
+    mesh.plate(
+        "collar",
+        "collar",
+        List.of(new P(6.6, 14, 8), new P(9.4, 14, 8), new P(9.4, 16.5, 8), new P(6.6, 16.5, 8)),
+        2.8);
+    mesh.group("ice_blade");
+    double[][] sections = {
+      {5.8, 15.9, 1.7, 1.3},
+      {8, 16.25, 2.5, 1.6},
+      {11, 15.8, 2.1, 1.4},
+      {13.8, 14.7, 1.6, 1.1},
+      {15.8, 12.8, .45, .5}
+    };
+    P[][] rings = new P[sections.length][4];
+    for (int ring = 0; ring < sections.length; ring++) {
+      double[] section = sections[ring];
+      double top = section[1] + section[2] / 2, bottom = section[1] - section[2] / 2;
+      double front = 8 + section[3] / 2, back = 8 - section[3] / 2;
+      rings[ring] =
+          new P[] {
+            new P(section[0], top, front),
+            new P(section[0], bottom, front),
+            new P(section[0], bottom, back),
+            new P(section[0], top, back)
+          };
+    }
+    for (int ring = 0; ring < rings.length - 1; ring++)
+      for (int side = 0; side < 4; side++) {
+        int next = (side + 1) % 4;
+        P a = rings[ring][side], b = rings[ring + 1][side];
+        P center = new P(sections[ring][0], sections[ring][1], 8);
+        mesh.quad(
+            side == 0 || side == 2 ? "blade" : "edge",
+            new P[] {a, b, rings[ring + 1][next], rings[ring][next]},
+            a.add(rings[ring][next]).scale(.5).add(center.scale(-1)),
+            new double[][] {{0, 0}, {1, 0}, {1, 1}, {0, 1}});
+      }
+    for (int end : new int[] {0, rings.length - 1})
+      mesh.quad(
+          "edge",
+          rings[end],
+          new P(end == 0 ? -1 : 1, 0, 0),
+          new double[][] {{0, 0}, {1, 0}, {1, 1}, {0, 1}});
+  }
+
+  private static void sickleHandle(EquipmentObjMesh mesh) {
+    mesh.group("wood_handle");
+    double[][] samples = {
+      {2, 14.7}, {2, 13.2}, {2.5, 12.2}, {3, 11.2}, {3.5, 10.2}, {4, 9.2}, {4.5, 8.2}
+    };
+    for (int ring = 0; ring < samples.length - 1; ring++) {
+      double lower = (14.7 - samples[ring][1]) / 6.5, upper = (14.7 - samples[ring + 1][1]) / 6.5;
+      double u = Math.floor((samples[ring][0] + samples[ring + 1][0]) / 2);
+      double v = Math.floor((samples[ring][1] + samples[ring + 1][1]) / 2);
+      for (int side = 0; side < 4; side++) {
+        int next = (side + 1) % 4;
+        mesh.quad(
+            "native",
+            new P[] {
+              sickleHandlePoint(lower, side),
+              sickleHandlePoint(upper, side),
+              sickleHandlePoint(upper, next),
+              sickleHandlePoint(lower, next)
+            },
+            sickleHandlePoint(0, side)
+                .add(sickleHandlePoint(0, next))
+                .scale(.5)
+                .add(new P(-8, 0, -8)),
+            new double[][] {
+              {(u + .1) / 16, (v + .9) / 16},
+              {(u + .1) / 16, (v + .1) / 16},
+              {(u + .9) / 16, (v + .1) / 16},
+              {(u + .9) / 16, (v + .9) / 16}
+            });
+      }
+    }
+    for (int end : new int[] {0, 1})
+      mesh.quad(
+          "grip",
+          new P[] {
+            sickleHandlePoint(end, 0), sickleHandlePoint(end, 1),
+            sickleHandlePoint(end, 2), sickleHandlePoint(end, 3)
+          },
+          new P(0, end == 0 ? -1 : 1, 0),
+          new double[][] {{0, 0}, {1, 0}, {1, 1}, {0, 1}});
+  }
+
+  private static P sickleHandlePoint(double along, int corner) {
+    return new P(corner == 0 || corner == 3 ? 7 : 9, 14.8 * along, corner < 2 ? 7 : 9);
+  }
+
+  private static void steelWool(EquipmentObjMesh mesh) {
+    mesh.group("pad");
+    mesh.plate(
+        "body",
+        "edge",
+        List.of(
+            new P(4.4, 6.2, 8),
+            new P(5.5, 5.3, 8),
+            new P(10.6, 5.3, 8),
+            new P(11.6, 6.2, 8),
+            new P(11.6, 9.8, 8),
+            new P(10.6, 10.7, 8),
+            new P(5.5, 10.7, 8),
+            new P(4.4, 9.8, 8)),
+        3);
   }
 
   private static void wateringCan(EquipmentObjMesh mesh) {

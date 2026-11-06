@@ -9105,5 +9105,360 @@
     "key": "painting.naturalist.bear_necessities.title",
     "expected": "Bear Necessities",
     "replacement": "Медвежьи нужды"
+  },
+  {
+    "language": "en_us",
+    "key": "emi_ores.veins_per_chunk",
+    "expected": "%s per chunk",
+    "replacement": "%s attempts per chunk"
+  },
+  {
+    "language": "en_us",
+    "key": "emi_ores.veins_per_chunk_range",
+    "expected": "%s - %s per chunk",
+    "replacement": "%s–%s attempts per chunk"
+  },
+  {
+    "language": "en_us",
+    "key": "emi_ores.rarity_chance",
+    "expected": "1 in %s chunks",
+    "replacement": "About 1 attempt in %s chunks"
+  },
+  {
+    "language": "ru_ru",
+    "key": "emi.category.emi_ores.geode",
+    "expected": "Генерация жеод",
+    "replacement": "Генерация геод"
+  },
+  {
+    "language": "ru_ru",
+    "key": "emi_ores.veins_per_chunk",
+    "expected": "%s в чанке",
+    "replacement": "%s попыток в чанке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "emi_ores.veins_per_chunk_range",
+    "expected": "%s — %s в чанке",
+    "replacement": "%s–%s попыток в чанке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "emi_ores.rarity_chance",
+    "expected": "1 в %s чанках",
+    "replacement": "Примерно 1 попытка в %s чанках"
+  },
+  {
+    "language": "ru_ru",
+    "key": "emi_ores.distribution.anchor.below_top",
+    "expected": "%s ниже дна",
+    "replacement": "%s ниже верхней границы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "itemGroup.immersive_weathering.immersive_weathering",
+    "expected": "Впечатляющее Выветривание",
+    "replacement": "Immersive Weathering"
+  },
+  {
+    "language": "ru_ru",
+    "key": "emi_ores.distribution.dimension",
+    "expected": "Applies to current dimension only (%s), which may not contain this feature",
+    "replacement": "Высоты только для текущего измерения (%s); эта генерация может в нём отсутствовать"
+  },
+  {
+    "language": "ru_ru",
+    "key": "emi_ores.distribution.shift.dimension",
+    "expected": "Hold SHIFT for current dimension's height values",
+    "replacement": "Удерживайте SHIFT для высот текущего измерения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "emi_ores.distribution.shift.relative",
+    "expected": "Hold SHIFT for relative height values",
+    "replacement": "Удерживайте SHIFT для относительных высот"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_cave",
+    "expected": "Is Cave",
+    "replacement": "Пещерные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_cold",
+    "expected": "Is Cold",
+    "replacement": "Холодные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_cold.overworld",
+    "expected": "Is Cold In Overworld",
+    "replacement": "Холодные (обычный мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_cold.nether",
+    "expected": "Is Cold In The Nether",
+    "replacement": "Холодные (Нижний мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_cold.end",
+    "expected": "Is Cold In The End",
+    "replacement": "Холодные (Край)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_coniferous",
+    "expected": "Is Coniferous",
+    "replacement": "Хвойные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_dense",
+    "expected": "Is Dense",
+    "replacement": "С густой растительностью"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_dense.overworld",
+    "expected": "Is Dense In Overworld",
+    "replacement": "С густой растительностью (обычный мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_dense.nether",
+    "expected": "Is Dense In The Nether",
+    "replacement": "С густой растительностью (Нижний мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_dense.end",
+    "expected": "Is Dense In The End",
+    "replacement": "С густой растительностью (Край)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_desert",
+    "expected": "Is Desert",
+    "replacement": "Пустынные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_dry",
+    "expected": "Is Dry",
+    "replacement": "Сухие"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_dry.overworld",
+    "expected": "Is Dry In Overworld",
+    "replacement": "Сухие (обычный мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_dry.nether",
+    "expected": "Is Dry In The Nether",
+    "replacement": "Сухие (Нижний мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_dry.end",
+    "expected": "Is Dry In The End",
+    "replacement": "Сухие (Край)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_hot",
+    "expected": "Is Hot",
+    "replacement": "Жаркие"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_hot.overworld",
+    "expected": "Is Hot In Overworld",
+    "replacement": "Жаркие (обычный мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_hot.nether",
+    "expected": "Is Hot In The Nether",
+    "replacement": "Жаркие (Нижний мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_hot.end",
+    "expected": "Is Hot In The End",
+    "replacement": "Жаркие (Край)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_lush",
+    "expected": "Is Lush",
+    "replacement": "Пышные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_mountain",
+    "expected": "Is Mountain",
+    "replacement": "Горные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_mushroom",
+    "expected": "Is Mushroom",
+    "replacement": "Грибные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_peak",
+    "expected": "Is Peak",
+    "replacement": "Горные вершины"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_plains",
+    "expected": "Is Plains",
+    "replacement": "Равнинные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_plateau",
+    "expected": "Is Plateau",
+    "replacement": "Плато"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_rare",
+    "expected": "Is Rare",
+    "replacement": "Редкие"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_sandy",
+    "expected": "Is Sandy",
+    "replacement": "Песчаные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_slope",
+    "expected": "Is Slope",
+    "replacement": "Горные склоны"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_snowy",
+    "expected": "Is Snowy",
+    "replacement": "Снежные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_sparse",
+    "expected": "Is Sparse",
+    "replacement": "С редкой растительностью"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_sparse.overworld",
+    "expected": "Is Sparse In Overworld",
+    "replacement": "С редкой растительностью (обычный мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_sparse.nether",
+    "expected": "Is Sparse In The Nether",
+    "replacement": "С редкой растительностью (Нижний мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_sparse.end",
+    "expected": "Is Sparse In The End",
+    "replacement": "С редкой растительностью (Край)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_spooky",
+    "expected": "Is Spooky",
+    "replacement": "Мрачные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_swamp",
+    "expected": "Is Swamp",
+    "replacement": "Болотные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_underground",
+    "expected": "Is Underground",
+    "replacement": "Подземные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_void",
+    "expected": "Is Void",
+    "replacement": "Пустотные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_wasteland",
+    "expected": "Is Wasteland",
+    "replacement": "Пустоши"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_water",
+    "expected": "Is Water",
+    "replacement": "Водные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_wet",
+    "expected": "Is Wet",
+    "replacement": "Влажные"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_wet.overworld",
+    "expected": "Is Wet In Overworld",
+    "replacement": "Влажные (обычный мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_wet.nether",
+    "expected": "Is Wet In The Nether",
+    "replacement": "Влажные (Нижний мир)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "tag.forge.is_wet.end",
+    "expected": "Is Wet In The End",
+    "replacement": "Влажные (Край)"
+  },
+  {
+    "key": "itemGroup.naturalist.tab",
+    "expected": "Естествовед",
+    "replacement": "Naturalist"
+  },
+  {
+    "key": "spawn.item_group",
+    "expected": "Спавн",
+    "replacement": "Spawn"
+  },
+  {
+    "key": "item.spawn.spawn",
+    "expected": "Спавн",
+    "replacement": "Spawn"
+  },
+  {
+    "key": "itemGroup.comforts",
+    "expected": "Удобства",
+    "replacement": "Comforts"
+  },
+  {
+    "key": "itemGroup.comforts.general",
+    "expected": "Удобства",
+    "replacement": "Comforts"
   }
 ]

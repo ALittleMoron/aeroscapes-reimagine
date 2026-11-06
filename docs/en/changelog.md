@@ -4,6 +4,17 @@ description: Version history.
 status: available
 ---
 
+## 0.3.5
+
+- Fix ore-page text overlap and geode slot backgrounds; restore generated leaf-pile textures and steel wool in creative search.
+- Give the ice sickle a solid angular blade, rectangular shaft and blocklike socket matching the existing 3D tools; let mouse-wheel input reach the inventory at tooltip scroll limits.
+- Add steel-wool crafting from four iron nuggets in the inventory or at a crafting table.
+- Add [EMI Ores](https://modrinth.com/mod/emi-ores) with active island-generation data, lower ores, blackstone variants and geode selector frequencies.
+- Add [Immersive Weathering: Renewed](https://modrinth.com/mod/immersive-weather-renewed) for changing building materials; restore iron waxing, safe unwaxing, entity drops and flower-crown textures in the port.
+- Add [LittleTiles](https://modrinth.com/mod/littletiles) for detailed construction, custom furniture and animated doors, retaining tile material mass on [Sable](https://modrinth.com/mod/sable) moving structures.
+- Show biome arrival names through [Traveler's Titles](https://modrinth.com/mod/travelers-titles), including lower islands; hide the open-sky biome between islands.
+- Remove the airborne mining-speed penalty while attached to [Yori3o's Grappling Hooks](https://modrinth.com/mod/yori3os-grappling-hooks).
+
 ## 0.3.4
 
 - Replace the square sun and moon with a round golden Sun and a cool blue cratered Moon, retaining all eight lunar phases.

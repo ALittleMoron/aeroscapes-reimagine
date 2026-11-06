@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld_rod",
+    "textures": {
+      "layer0": "immersive_weathering:item/ice_sickle"
+    }
+  },
+  "textures": {
+    "layer0": "immersive_weathering:item/ice_sickle",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "immersive_weathering:item/equipment/held/ice_sickle"
+    },
+    "firstperson_lefthand": {
+      "parent": "immersive_weathering:item/equipment/held/ice_sickle"
+    },
+    "thirdperson_righthand": {
+      "parent": "immersive_weathering:item/equipment/held/ice_sickle"
+    },
+    "thirdperson_lefthand": {
+      "parent": "immersive_weathering:item/equipment/held/ice_sickle"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/handheld",
+    "textures": {
+      "layer0": "littletiles:item/measure_tape"
+    }
+  },
+  "textures": {
+    "layer0": "littletiles:item/measure_tape",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "littletiles:item/equipment/held/measure_tape"
+    },
+    "firstperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/measure_tape"
+    },
+    "thirdperson_righthand": {
+      "parent": "littletiles:item/equipment/held/measure_tape"
+    },
+    "thirdperson_lefthand": {
+      "parent": "littletiles:item/equipment/held/measure_tape"
+    }
+  }
+}

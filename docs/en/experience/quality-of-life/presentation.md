@@ -6,6 +6,10 @@ status: available
 
 More detailed animations, environmental sound and small visual effects add to Minecraft’s standard presentation.
 
+## Biome names
+
+[Traveler's Titles](https://modrinth.com/mod/travelers-titles) briefly shows a biome's localized name when you enter it. Titles also work on lower islands and inside buildings. Recently visited biomes are remembered to limit repeated announcements. The open-sky biome between islands is omitted; rivers and other ordinary biomes keep their names. This display does not change the world's biome selection.
+
 ## Character and camera
 
 [Not Enough Animations](https://modrinth.com/project/MPCX6s5C) adds and improves third-person animations. 3D Skin Layers renders the outer skin layer with depth. First person uses the normal hand view: rendering the whole animated body could obstruct the view during flight.

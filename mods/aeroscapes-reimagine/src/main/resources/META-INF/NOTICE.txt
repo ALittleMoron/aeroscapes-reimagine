@@ -308,3 +308,52 @@ atmosphere and Refined compatibility resource packs. Rod child models reference
 the Refined Tools 3.0 parents for display transforms; no Refined cuboids or textures
 are copied. A guarded runtime adapter removes stowed tackle from known cast models.
 Upstream provider terms remain with their unchanged artifacts.
+
+Detailed construction and biome title integration
+------------------------------------------------
+LittleTiles 1.6.0-pre236: CreativeMD, N247S; LGPL-3.0-only in the exact
+distributed descriptor and official source. The CurseForge project-level
+LGPL-2.1 label differs; the unchanged Modrinth file is selected.
+https://modrinth.com/mod/littletiles/version/c2SowFEz
+https://github.com/CreativeMD/LittleTiles/tree/1.21
+Traveler's Titles 1.21.1-NeoForge-5.1.3 and YUNG's API 5.1.9:
+YUNGNICKYOUNG and contributors; LGPLv3. Original binaries and embedded notices
+remain unchanged. New functional EN/RU text and display adapters are authored
+for this pack. Source-derived labels retain LGPL-3.0 terms; the license is in
+META-INF/licenses/Construction-and-Titles-LGPL-3.0.txt.
+https://modrinth.com/mod/travelers-titles/version/2y01mBUy
+https://modrinth.com/mod/yungs-api/version/2prKITKh
+The source archive and localization-sources.json retain the exact-version
+comparison and language-resource hashes. No provider texture is extracted
+into the owned mod or separately rehosted.
+
+LittleTiles held models
+----------------------
+The eight hand-only tool/bag meshes are independently authored cuboid geometry
+with material UV fields from the unchanged installed LittleTiles sprites. They
+retain native blue handles, metal working parts, glove, tape and bag silhouettes.
+Original provider textures remain in the original LGPL-3.0-only JAR and are
+referenced at runtime. Native inventory models, CreativeCore GUI preview layers,
+brush tint, blueprint geometry previews and color-bottle fill states are retained.
+The mesh composition is AI-assisted deterministic vector work, not generated
+bitmap artwork; authored geometry is GPL-3.0-or-later.
+
+EMI Ores 1.3+1.21.1+neoforge: Abbie and contributors; LGPL-3.0-only.
+https://modrinth.com/mod/emi-ores/version/V2MXZKsX
+https://github.com/Abbie5/emi-ores/tree/41c353719f4f18c24cdf7ad70771b03b88b39bc1
+The unchanged provider JAR is referenced at its original download. Its source
+README separately attributes biome icon artwork to Minecraft Wiki contributors
+under CC BY-NC-SA 3.0. Independent display snapshots and translated tooltips
+are supplied by the owned mod; they do not alter world generation.
+
+Immersive Weathering: Renewed V1.0.4-NeoForge: QanoriaPorts; original authors
+Ordana, MehVahdJukaar, Keybounce and contributors.
+https://modrinth.com/mod/immersive-weather-renewed/version/n3NgrJOg
+API terms LGPL-3.0-only; the original JAR declares LGPL-3.0-or-later. The
+author-linked port source repository was unavailable at integration; exact
+distributed bytecode/resources were inspected without asserting source parity.
+The JAR is unchanged. Independent waxing data, loot-ID and armor-texture
+adapters, missing configuration captions and two held meshes live in the
+owned mod/source archive. Native textures are referenced, never copied.
+Adapted native labels retain their provider terms; the LGPL text accompanies
+the owned JAR in META-INF/licenses/Misc-content-LGPL-3.0.txt.
