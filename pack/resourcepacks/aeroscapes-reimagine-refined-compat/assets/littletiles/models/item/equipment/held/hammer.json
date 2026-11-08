@@ -1,494 +1,83 @@
 {
-  "parent": "minecraft:item/handheld",
-  "ambientocclusion": false,
   "textures": {
     "layer0": "littletiles:item/hammer",
     "particle": "#layer0"
   },
   "display": {
-    "thirdperson_righthand": {
-      "rotation": [
-        0.0,
-        90.0,
-        0.0
-      ],
-      "translation": [
-        0.0,
-        2.0,
-        0.0
-      ],
-      "scale": [
-        0.75,
-        0.75,
-        0.75
-      ]
-    },
     "firstperson_righthand": {
       "rotation": [
-        0.0,
-        -70.0,
-        10.0
+        15,
+        90,
+        5
       ],
       "translation": [
-        1.3,
-        2.0,
-        0.0
+        1.25,
+        2.5,
+        0.5
       ],
       "scale": [
-        0.65,
-        0.65,
-        0.65
-      ]
-    },
-    "thirdperson_lefthand": {
-      "rotation": [
-        0.0,
-        -90.0,
-        0.0
-      ],
-      "translation": [
-        0.0,
-        2.0,
-        0.0
-      ],
-      "scale": [
-        0.75,
-        0.75,
-        0.75
+        0.6,
+        0.6,
+        0.6
       ]
     },
     "firstperson_lefthand": {
       "rotation": [
-        0.0,
-        70.0,
-        -10.0
+        15,
+        90,
+        5
       ],
       "translation": [
-        1.3,
-        2.0,
-        0.0
+        1.25,
+        2.5,
+        0.5
       ],
       "scale": [
-        0.65,
-        0.65,
-        0.65
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "translation": [
+        0,
+        1.25,
+        1.5
+      ],
+      "scale": [
+        0.95,
+        0.95,
+        0.95
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        0
+      ],
+      "translation": [
+        0,
+        1.25,
+        1.5
+      ],
+      "scale": [
+        0.95,
+        0.95,
+        0.95
       ]
     }
   },
-  "elements": [
-    {
-      "name": "handle",
-      "from": [
-        7,
-        1,
-        7
-      ],
-      "to": [
-        9,
-        11,
-        9
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            5.15,
-            10.15,
-            6.85,
-            11.85
-          ],
-          "texture": "#layer0"
-        },
-        "south": {
-          "uv": [
-            5.15,
-            10.15,
-            6.85,
-            11.85
-          ],
-          "texture": "#layer0"
-        },
-        "east": {
-          "uv": [
-            5.15,
-            10.15,
-            6.85,
-            11.85
-          ],
-          "texture": "#layer0"
-        },
-        "west": {
-          "uv": [
-            5.15,
-            10.15,
-            6.85,
-            11.85
-          ],
-          "texture": "#layer0"
-        },
-        "up": {
-          "uv": [
-            5.15,
-            10.15,
-            6.85,
-            11.85
-          ],
-          "texture": "#layer0"
-        },
-        "down": {
-          "uv": [
-            5.15,
-            10.15,
-            6.85,
-            11.85
-          ],
-          "texture": "#layer0"
-        }
-      }
-    },
-    {
-      "name": "neck",
-      "from": [
-        6.5,
-        10.5,
-        6.5
-      ],
-      "to": [
-        9.5,
-        12.5,
-        9.5
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "south": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "east": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "west": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "up": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "down": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        }
-      }
-    },
-    {
-      "name": "head",
-      "from": [
-        3,
-        12,
-        6
-      ],
-      "to": [
-        11.5,
-        14.5,
-        10
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "south": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "east": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "west": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "up": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "down": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        }
-      }
-    },
-    {
-      "name": "striking_face",
-      "from": [
-        2.5,
-        11.7,
-        5.7
-      ],
-      "to": [
-        4,
-        14.8,
-        10.3
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "south": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "east": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "west": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "up": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "down": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        }
-      }
-    },
-    {
-      "name": "claw_upper",
-      "from": [
-        11.5,
-        12.5,
-        6
-      ],
-      "to": [
-        14,
-        14,
-        7.2
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "south": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "east": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "west": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "up": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "down": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        }
-      }
-    },
-    {
-      "name": "claw_lower",
-      "from": [
-        11.5,
-        12.5,
-        8.8
-      ],
-      "to": [
-        14,
-        14,
-        10
-      ],
-      "faces": {
-        "north": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "south": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "east": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "west": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "up": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        },
-        "down": {
-          "uv": [
-            12.15,
-            8.15,
-            13.85,
-            9.85
-          ],
-          "texture": "#layer0"
-        }
-      }
-    }
-  ]
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/utility_equipment/littletiles_hammer.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout"
 }

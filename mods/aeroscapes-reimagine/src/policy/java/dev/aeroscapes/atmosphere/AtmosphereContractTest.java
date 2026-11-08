@@ -75,6 +75,7 @@ public final class AtmosphereContractTest {
   }
 
   public static void main(String[] arguments) throws IOException {
+    sandpaperRenderer();
     bridgedPlacementVersionGate();
     oreInformationSideGate();
     miscellaneousTranslationFallbacks();
@@ -202,6 +203,34 @@ public final class AtmosphereContractTest {
     loadingOverlay();
     System.out.println(
         "Atmosphere: quiver composition, precipitation scope and native API contracts passed");
+  }
+
+  private static void sandpaperRenderer() throws IOException {
+    ClassNode renderer =
+        classpathClass("com/simibubi/create/content/equipment/sandPaper/SandPaperItemRenderer");
+    MethodNode render =
+        method(
+            renderer,
+            "render",
+            "(Lnet/minecraft/world/item/ItemStack;Lcom/simibubi/create/foundation/item/render/CustomRenderedItemModel;Lcom/simibubi/create/foundation/item/render/PartialItemModelRenderer;Lnet/minecraft/world/item/ItemDisplayContext;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;II)V");
+    long bodyCalls =
+        executable(render).stream()
+            .filter(
+                instruction ->
+                    instruction instanceof MethodInsnNode call
+                        && call.owner.equals("net/minecraft/client/renderer/entity/ItemRenderer")
+                        && call.name.equals("render")
+                        && call.desc.equals(
+                            "(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemDisplayContext;ZLcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;IILnet/minecraft/client/resources/model/BakedModel;)V"))
+            .count();
+    require(
+        bodyCalls == 1,
+        "The sandpaper adapter targets only the native body draw, retaining the polishing overlay");
+    Map<String, String> versions = Map.of("create", "6.0.10", "neoforge", "21.1.244");
+    require(
+        AtmosphereMixinPlugin.shouldApplyForVersions(
+            "dev.aeroscapes.mixin.atmosphere.SandpaperHeldModelMixin", versions::get),
+        "The sandpaper adapter uses the verified provider versions");
   }
 
   private static void bridgedPlacementVersionGate() {

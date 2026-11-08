@@ -20,16 +20,29 @@ public final class UtilityEquipmentModelTest {
           "naturalist:capture_net",
           "spawn:casting_net",
           "chipped:watering_can",
+          "chipped:alchemy_book",
+          "chipped:chisel",
+          "chipped:multimeter",
+          "chipped:needles",
+          "chipped:saw",
+          "littletiles:hammer",
+          "hybrid_aquatic:coral_hoe",
           "create:clipboard",
+          "create:sand_paper",
+          "create:red_sand_paper",
           "create:schematic_and_quill",
           "create:super_glue",
           "simulated:honey_glue",
+          "simulated:rope_coupling",
+          "create_aeronautics_throwable_rope_connector:throwable_rope_connector",
           "galosphere:echo_bell",
           "galosphere:glow_flare",
           "galosphere:monstrometer",
+          "galosphere:palladium_bomb",
           "galosphere:rope_dart",
           "galosphere:saltbound_tablet",
           "galosphere:spectre_flare",
+          "galosphere:spectre_bound_spyglass",
           "supplementaries:wrench",
           "toms_storage:wireless_terminal",
           "toms_storage:adv_wireless_terminal",
@@ -51,6 +64,10 @@ public final class UtilityEquipmentModelTest {
   public static void main(String[] arguments) throws IOException {
     if (arguments.length < 1 || arguments.length > 2)
       throw new IllegalArgumentException("Expected repository and optional baked preview");
+    net.neoforged.fml.loading.LoadingModList.of(
+        List.of(), List.of(), List.of(), List.of(), java.util.Map.of());
+    net.minecraft.SharedConstants.tryDetectVersion();
+    net.minecraft.server.Bootstrap.bootStrap();
     Path assets =
         Path.of(arguments[0])
             .resolve("pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets");
@@ -62,20 +79,37 @@ public final class UtilityEquipmentModelTest {
       var style = NativeEquipmentModels.designs().get(root);
       for (String id : states) {
         JsonObject model = read(assets, id);
+        boolean composite =
+            model.has("loader") && model.get("loader").getAsString().equals("neoforge:composite");
         List<Face> faces =
-            model.has("loader")
-                ? VanillaEquipmentModelTest.bakeObj(model, assets)
-                : VanillaEquipmentModelTest.bakeCuboids(model);
+            composite
+                ? VanillaEquipmentModelTest.bakeComposite(model, assets)
+                : model.has("loader")
+                    ? VanillaEquipmentModelTest.bakeObj(model, assets)
+                    : VanillaEquipmentModelTest.bakeCuboids(model);
         require(!faces.isEmpty(), "Visible utility model: " + id);
         VanillaEquipmentModelTest.noOverlaps(id, faces);
+        if (id.endsWith("copper_horn") || id.equals("waystones:warp_stone"))
+          VanillaEquipmentModelTest.closedSurface(id, faces);
         if (EquipmentSculpture.readable(style)
             || style == dev.aeroscapes.atmosphere.EquipmentStyle.WRENCH
             || style == dev.aeroscapes.atmosphere.EquipmentStyle.GLUE) readable(id, model);
-        if (UtilityEquipmentModels.supports(id)) skin(id);
-        if (id.equals(root)) preview.add(id, preview(model, faces));
+        if (UtilityEquipmentModels.supports(id) || GalosphereEquipmentModels.supports(id))
+          skin(assets, id);
+        if (CreateEquipmentModels.supports(id))
+          createSkin(
+              assets,
+              id,
+              composite
+                  ? VanillaEquipmentModelTest.bakeObj(
+                      model.getAsJsonObject("children").getAsJsonObject("rope"), assets)
+                  : faces);
+        if (id.equals(root) || GalosphereEquipmentModels.supports(id))
+          preview.add(id, preview(model, faces));
         count++;
       }
     }
+    clawStates(assets);
     for (String id : List.of("spawn:casting_net", "spawn:casting_net_full")) {
       var net = read(assets, id);
       var threads = VanillaEquipmentModelTest.bakeObj(net, assets, "mesh");
@@ -97,14 +131,41 @@ public final class UtilityEquipmentModelTest {
           "Both dark tool jaws attach to the wooden neck: " + jaw);
     JsonObject watering = read(assets, "chipped:watering_can");
     var rim = VanillaEquipmentModelTest.bakeObj(watering, assets, "rim");
-    require(!rim.isEmpty(), "A continuous annular watering-can rim exists");
+    require(!rim.isEmpty(), "The watering can has an open filling rim");
+    double[] vessel = bounds(VanillaEquipmentModelTest.bakeObj(watering, assets, "body"));
     for (Face face : rim)
       for (Vector3f point : face.vertices())
         require(
-            Math.hypot(point.x * 16 - 8, point.z * 16 - 8) <= 3.201,
-            "The watering rim has no radial fins");
+            point.x * 16 >= vessel[0] - .0001
+                && point.x * 16 <= vessel[3] + .0001
+                && point.z * 16 >= vessel[2] - .0001
+                && point.z * 16 <= vessel[5] + .0001,
+            "The filling rim stays on the vessel rather than adding radial fins");
+    for (Face face : VanillaEquipmentModelTest.bakeObj(watering, assets, "handle")) {
+      double[] handle = bounds(List.of(face));
+      if (handle[4] <= vessel[4] + 1)
+        require(
+            handle[3] <= vessel[0] + (vessel[3] - vessel[0]) * .25
+                || handle[0] >= vessel[3] - (vessel[3] - vessel[0]) * .25,
+            "The carry handle leaves the filling mouth clear of a lower crossbar");
+    }
+    JsonObject hoe = read(assets, "hybrid_aquatic:coral_hoe");
+    var shaft = VanillaEquipmentModelTest.bakeObj(hoe, assets, "shaft");
+    double[] shaftBounds = bounds(shaft);
+    require(
+        Math.abs(shaftBounds[3] - shaftBounds[0] - 2) < .0001
+            && Math.abs(shaftBounds[5] - shaftBounds[2] - 2) < .0001,
+        "The coral hoe retains the reference family's square shaft");
+    double[] blade = bounds(VanillaEquipmentModelTest.bakeObj(hoe, assets, "blade"));
+    require(
+        blade[5] - shaftBounds[5] > 6 && blade[3] - blade[0] > 4,
+        "The hoe has a broad working blade projecting from the shaft plane");
     connector(assets);
+    throwableConnector(assets);
+    clipboardStates(assets);
     iceSickle(assets);
+    spectreBottle(assets);
+    tabletGrip(assets);
     if (arguments.length == 2) Files.writeString(Path.of(arguments[1]), preview.toString());
     System.out.println(
         "Utility equipment: "
@@ -112,6 +173,30 @@ public final class UtilityEquipmentModelTest {
             + " roots, "
             + count
             + " native states baked; source skins, readable hand faces, non-overlapping surfaces and connector placement passed");
+  }
+
+  private static void clawStates(Path assets) throws IOException {
+    String root = "spawn:coastal_crab_claw";
+    String water = "spawn:entity/coastal_crab/bubble";
+    for (String suffix : List.of("", "_empty", "_shooting0", "_shooting1", "_shooting2")) {
+      String id = root + suffix;
+      List<Face> faces = VanillaEquipmentModelTest.bakeObj(read(assets, id), assets);
+      require(!faces.isEmpty(), "Visible claw in every native state: " + id);
+      VanillaEquipmentModelTest.noOverlaps(id, faces);
+      require(
+          faces.stream()
+              .anyMatch(
+                  face ->
+                      face.texture()
+                          .equals(
+                              root.replace(":", ":item/")
+                                  + (suffix.equals("_empty") ? suffix : ""))),
+          "The empty claw uses its native muted shell palette: " + id);
+      require(
+          faces.stream().anyMatch(face -> face.texture().equals(water))
+              == suffix.startsWith("_shooting"),
+          "The native bubble appears only while charging: " + id);
+    }
   }
 
   private static void iceSickle(Path assets) throws IOException {
@@ -301,24 +386,218 @@ public final class UtilityEquipmentModelTest {
             override.getAsJsonObject().get("model").getAsString().replace(":item/", ":"), states);
   }
 
-  private static void skin(String id) throws IOException {
+  private static void throwableConnector(Path assets) throws IOException {
+    var model =
+        read(assets, "create_aeronautics_throwable_rope_connector:throwable_rope_connector");
+    var nativeRoot =
+        JsonParser.parseString(
+                Files.readString(assets.resolve("simulated/models/item/rope_connector.json")))
+            .getAsJsonObject();
+    require(
+        model
+            .getAsJsonObject("children")
+            .getAsJsonObject("connector")
+            .get("parent")
+            .equals(nativeRoot.get("parent")),
+        "The throwable connector uses the very same provider hardware, UVs and materials");
+    require(
+        model.get("display").equals(nativeRoot.get("display")),
+        "Both connectors retain the same physical scale and hand pose");
+  }
+
+  private static void skin(Path assets, String id) throws IOException {
     String reference =
         NativeEquipmentModels.inherited(id).getAsJsonObject("textures").get("layer0").getAsString();
     if (id.contains("compass:")) reference = reference.replaceAll("_[0-9]{2}$", "_16");
-    var image = NativeEquipmentModels.image(reference);
-    double scale = image.getWidth() / 16.0;
-    for (var entry : UtilityEquipmentModels.regions(id).entrySet()) {
+    var image =
+        id.equals("chipped:saw")
+            ? javax.imageio.ImageIO.read(
+                assets
+                    .resolve("aeroscapes_reimagine/textures/item/utility_equipment/saw.png")
+                    .toFile())
+            : NativeEquipmentModels.image(reference);
+    if (image == null) throw new IOException("Unreadable material image for " + id);
+    var regions =
+        GalosphereEquipmentModels.supports(id)
+            ? GalosphereEquipmentModels.regions(id)
+            : UtilityEquipmentModels.regions(id);
+    for (var entry : regions.entrySet()) {
       if (entry.getKey().equals("native")) continue;
+      String materialTexture =
+          GalosphereEquipmentModels.materialTexture(id, entry.getKey(), reference);
+      var materialImage =
+          materialTexture.equals(reference) ? image : NativeEquipmentModels.image(materialTexture);
+      int frameHeight = Math.min(materialImage.getWidth(), materialImage.getHeight());
+      double xScale = materialImage.getWidth() / 16.0, yScale = frameHeight / 16.0;
       double[] region = entry.getValue();
-      for (int y = (int) (region[1] * scale); y < region[3] * scale; y++)
-        for (int x = (int) (region[0] * scale); x < region[2] * scale; x++)
-          require(
-              (image.getRGB(x, y) >>> 24) == 255,
-              "A physical material cannot cut holes in its opaque shell: "
-                  + id
-                  + "/"
-                  + entry.getKey());
+      for (int frame = 0; frame < materialImage.getHeight() / frameHeight; frame++)
+        for (int y = (int) (region[1] * yScale); y < region[3] * yScale; y++)
+          for (int x = (int) (region[0] * xScale); x < region[2] * xScale; x++)
+            require(
+                (materialImage.getRGB(x, y + frame * frameHeight) >>> 24) == 255,
+                "A physical material cannot cut holes in its opaque shell: "
+                    + id
+                    + "/"
+                    + entry.getKey());
     }
+  }
+
+  private static void spectreBottle(Path assets) throws IOException {
+    var model = read(assets, "galosphere:spectre_flare");
+    require(
+        model.get("loader").getAsString().equals("neoforge:composite"),
+        "The bottled spectre needs separate opaque and translucent item passes");
+    for (String child : List.of("body", "glass")) {
+      var faces =
+          VanillaEquipmentModelTest.bakeObj(
+              model.getAsJsonObject("children").getAsJsonObject(child), assets);
+      require(
+          !faces.isEmpty(), "The native OBJ baker loads the spectral bottle component: " + child);
+      if (child.equals("glass"))
+        VanillaEquipmentModelTest.closedSurface("galosphere:spectre_flare/glass", faces);
+    }
+    var sprites = singleAtlasSprites(assets);
+    var body =
+        VanillaEquipmentModelTest.bakeObjWithAtlas(
+            model.getAsJsonObject("children").getAsJsonObject("body"), assets, sprites.keySet());
+    require(
+        body.stream().noneMatch(face -> face.texture().equals("minecraft:missingno")),
+        "Bottled Spectre resolves actual atlas sprites instead of black missing-texture crops");
+    var location =
+        net.minecraft.resources.ResourceLocation.parse("galosphere:entity/spectre/spectre");
+    var resource = sprites.get(location);
+    require(resource != null, "The native single-file atlas source loads the Spectre texture");
+    java.awt.image.BufferedImage image;
+    try (var input = resource.open()) {
+      image = javax.imageio.ImageIO.read(input);
+    }
+    if (image == null) throw new IOException("Invalid Spectre atlas PNG");
+    boolean pale = false;
+    for (Face face : body) {
+      if (!face.texture().equals(location.toString())) continue;
+      double u = 0, v = 0;
+      for (var vertex : face.uv()) {
+        u += vertex.getAsJsonArray().get(0).getAsDouble() / 4;
+        v += vertex.getAsJsonArray().get(1).getAsDouble() / 4;
+      }
+      int color =
+          image.getRGB(
+              Math.clamp((int) (u * image.getWidth() / 16), 0, image.getWidth() - 1),
+              Math.clamp((int) (v * image.getHeight() / 16), 0, image.getHeight() - 1));
+      pale |= ((color >> 16) & 255) + ((color >> 8) & 255) + (color & 255) > 600;
+    }
+    require(
+        pale,
+        "The same baked Spectre UVs resolve its pale artwork through the registered atlas sprite");
+  }
+
+  @SuppressWarnings(
+      "deprecation") // Exercise native ItemTransform mirroring and the actual hand attachment.
+  private static void tabletGrip(Path assets) throws IOException {
+    for (String id :
+        List.of(
+            "galosphere:saltbound_tablet",
+            "galosphere:saltbound_tablet_using",
+            "galosphere:saltbound_tablet_cooldown")) {
+      JsonObject display = new JsonObject();
+      display.add("display", read(assets, id).get("display"));
+      var model =
+          net.minecraft.client.renderer.block.model.BlockModel.fromString(display.toString());
+      for (var context :
+          List.of(
+              net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_RIGHT_HAND,
+              net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_LEFT_HAND,
+              net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_RIGHT_HAND,
+              net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_LEFT_HAND)) {
+        boolean left = context.name().endsWith("LEFT_HAND");
+        float side = left ? -1 : 1;
+        var pose = new com.mojang.blaze3d.vertex.PoseStack();
+        pose.mulPose(com.mojang.math.Axis.XP.rotationDegrees(-90));
+        pose.mulPose(com.mojang.math.Axis.YP.rotationDegrees(180));
+        pose.translate(side / 16, .125, -.625);
+        model.getTransforms().getTransform(context).apply(left, pose);
+        var grip =
+            pose.last()
+                .pose()
+                .transformPosition(new Vector3f(left ? 5 : 8, 4.5f, 8).sub(8, 8, 8).div(16));
+        require(
+            grip.distance(new Vector3f(-side / 16, .5f, 0)) < .00001,
+            "Tablet uses the corrected right palm grip and preserves the accepted left grip: "
+                + id
+                + "/"
+                + context);
+      }
+    }
+  }
+
+  private static java.util.Map<
+          net.minecraft.resources.ResourceLocation, net.minecraft.server.packs.resources.Resource>
+      singleAtlasSprites(Path assets) throws IOException {
+    var resources =
+        new java.util.HashMap<
+            net.minecraft.resources.ResourceLocation,
+            net.minecraft.server.packs.resources.Resource>();
+    var manager =
+        (net.minecraft.server.packs.resources.ResourceManager)
+            java.lang.reflect.Proxy.newProxyInstance(
+                UtilityEquipmentModelTest.class.getClassLoader(),
+                new Class<?>[] {net.minecraft.server.packs.resources.ResourceManager.class},
+                (proxy, method, arguments) -> {
+                  if (!method.getName().equals("getResource")
+                      || arguments == null
+                      || !(arguments[0]
+                          instanceof net.minecraft.resources.ResourceLocation location))
+                    throw new UnsupportedOperationException(
+                        "Unexpected atlas resource operation: " + method.getName());
+                  byte[] bytes;
+                  try (var input =
+                      UtilityEquipmentModelTest.class.getResourceAsStream(
+                          "/assets/" + location.getNamespace() + "/" + location.getPath())) {
+                    if (input == null) return java.util.Optional.empty();
+                    bytes = input.readAllBytes();
+                  }
+                  // The native single-file source only opens bytes; this fixture has no pack
+                  // metadata consumer.
+                  return java.util.Optional.of(
+                      new net.minecraft.server.packs.resources.Resource(
+                          null, () -> new java.io.ByteArrayInputStream(bytes)));
+                });
+    var output =
+        new net.minecraft.client.renderer.texture.atlas.SpriteSource.Output() {
+          @Override
+          public void add(
+              net.minecraft.resources.ResourceLocation location,
+              net.minecraft.server.packs.resources.Resource resource) {
+            resources.put(location, resource);
+          }
+
+          @Override
+          public void add(
+              net.minecraft.resources.ResourceLocation location,
+              net.minecraft.client.renderer.texture.atlas.SpriteSource.SpriteSupplier supplier) {
+            throw new UnsupportedOperationException("Expected a native single-file resource");
+          }
+
+          @Override
+          public void removeAll(
+              java.util.function.Predicate<net.minecraft.resources.ResourceLocation> predicate) {
+            resources.keySet().removeIf(predicate);
+          }
+        };
+    var atlas =
+        JsonParser.parseString(Files.readString(assets.resolve("minecraft/atlases/blocks.json")))
+            .getAsJsonObject();
+    for (var entry : atlas.getAsJsonArray("sources")) {
+      var definition = entry.getAsJsonObject();
+      if (!definition.get("type").getAsString().equals("minecraft:single")) continue;
+      var source =
+          net.minecraft.client.renderer.texture.atlas.sources.SingleFile.CODEC
+              .codec()
+              .parse(com.mojang.serialization.JsonOps.INSTANCE, definition)
+              .getOrThrow();
+      source.run(manager, output);
+    }
+    return resources;
   }
 
   private static void readable(String id, JsonObject model) {
@@ -346,6 +625,70 @@ public final class UtilityEquipmentModelTest {
     }
   }
 
+  private static void createSkin(Path assets, String id, List<Face> faces) throws IOException {
+    var source =
+        NativeEquipmentModels.image(
+            NativeEquipmentModels.inherited(id)
+                .getAsJsonObject("textures")
+                .get("layer0")
+                .getAsString());
+    Set<Integer> palette = new LinkedHashSet<>();
+    for (int y = 0; y < source.getHeight(); y++)
+      for (int x = 0; x < source.getWidth(); x++)
+        if ((source.getRGB(x, y) >>> 24) == 255) palette.add(source.getRGB(x, y));
+    require(
+        palette.containsAll(sampledColors(assets, faces)),
+        "Physical faces sample opaque native-palette materials: " + id);
+  }
+
+  private static void clipboardStates(Path assets) throws IOException {
+    for (String id : List.of("create:clipboard_0", "create:clipboard_1", "create:clipboard_2")) {
+      var page = VanillaEquipmentModelTest.bakeObj(read(assets, id), assets, "page");
+      int colors = sampledColors(assets, page).size();
+      require(
+          id.endsWith("_0") ? colors == 1 : colors > 1,
+          "The empty and written clipboard pages remain visually distinct: " + id);
+      var quill = VanillaEquipmentModelTest.bakeObj(read(assets, id), assets, "quill");
+      require(
+          id.endsWith("_2") != quill.isEmpty(),
+          "The editing state alone displays the physical quill: " + id);
+    }
+  }
+
+  private static Set<Integer> sampledColors(Path assets, List<Face> faces) throws IOException {
+    Set<Integer> colors = new LinkedHashSet<>();
+    var textures = new java.util.HashMap<String, java.awt.image.BufferedImage>();
+    for (Face face : faces) {
+      var image = textures.get(face.texture());
+      if (image == null) {
+        image =
+            javax.imageio.ImageIO.read(
+                assets.resolve(face.texture().replace(":", "/textures/") + ".png").toFile());
+        if (image == null) throw new IOException("Unreadable baked texture: " + face.texture());
+        textures.put(face.texture(), image);
+      }
+      for (int row = 0; row <= 8; row++)
+        for (int column = 0; column <= 8; column++) {
+          double[] coordinates = new double[2];
+          double u = column / 8.0, v = row / 8.0;
+          double[] weights = {(1 - u) * (1 - v), u * (1 - v), u * v, (1 - u) * v};
+          for (int corner = 0; corner < 4; corner++)
+            for (int axis = 0; axis < 2; axis++)
+              coordinates[axis] +=
+                  weights[corner] * face.uv().get(corner).getAsJsonArray().get(axis).getAsDouble();
+          int
+              x =
+                  Math.clamp(
+                      (int) (coordinates[0] * image.getWidth() / 16), 0, image.getWidth() - 1),
+              y =
+                  Math.clamp(
+                      (int) (coordinates[1] * image.getHeight() / 16), 0, image.getHeight() - 1);
+          colors.add(image.getRGB(x, y));
+        }
+    }
+    return colors;
+  }
+
   private static JsonObject read(Path assets, String id) throws IOException {
     return JsonParser.parseString(
             Files.readString(
@@ -361,6 +704,7 @@ public final class UtilityEquipmentModelTest {
     for (Face face : faces) {
       JsonObject quad = new JsonObject();
       quad.addProperty("texture", face.texture());
+      quad.addProperty("alpha", face.alpha() / 255.0);
       JsonArray vertices = new JsonArray();
       for (Vector3f point : face.vertices())
         vertices.add(vector(point.x * 16, point.y * 16, point.z * 16));

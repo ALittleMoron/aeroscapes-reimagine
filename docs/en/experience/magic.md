@@ -14,7 +14,9 @@ By `1.0.0`, magic should be a substantial, varied activity alongside engineering
 
 Several traditions can coexist when they offer different ways to play. Combat, healing, summoning, rituals, nature magic, necromancy and household uses are possible directions. A useful domestic spell can matter without being a strong weapon, and a spellcaster can also use weapons and peaceful skills.
 
-Learning and casting should involve proportionate resources, preparation or limits. Mana, ingredients, cooldowns and rituals are possible tools; the combination remains open. Knowledge and investment should gradually expand what a character can do. Growing ingredients and preparing supplies can connect magic with [farming and cooking](../building-and-daily-life/food/).
+Learning and casting should involve proportionate resources, preparation or limits. Mana, ingredients, cooldowns and rituals are possible tools; the combination remains open. School mastery should progressively open deeper branch nodes, alternating new spells with passive improvements and other effects. Learning an ordinary spell node makes the spell available immediately with its usual casting equipment and costs. Growing ingredients and preparing supplies can connect magic with [farming and cooking](../building-and-daily-life/food/).
+
+Before `1.0.0`, learned spells from the pack’s magic systems will be available in the [shared ability panel](../character-and-combat/).
 
 ## Travel
 

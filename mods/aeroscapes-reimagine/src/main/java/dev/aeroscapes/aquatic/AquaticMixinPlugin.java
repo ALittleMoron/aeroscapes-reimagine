@@ -11,9 +11,6 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 public final class AquaticMixinPlugin implements IMixinConfigPlugin {
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-    if (mixinClassName.endsWith("RefinedRodCastMixin")
-        || mixinClassName.endsWith("BlockModelElementsAccess"))
-      return available("neoforge", "21.1.244");
     var mods = FMLLoader.getLoadingModList();
     String id = targetClassName.startsWith("com.li64.tide.") ? "tide" : "hybrid_aquatic";
     if (targetClassName.startsWith("dev.hybridlabs.hapi.")) id = "hapi";

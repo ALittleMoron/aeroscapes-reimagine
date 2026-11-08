@@ -595,12 +595,39 @@ val reviewedEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
+val knifeEquipmentModelTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(vanillaEquipmentModelTest)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.KnifeEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
 val constructionEquipmentModelTest by
   tasks.registering(JavaExec::class) {
     group = "verification"
     dependsOn(vanillaEquipmentModelTest)
     classpath = vanillaEquipmentModelTest.get().classpath
     mainClass = "dev.aeroscapes.aquatic.ConstructionEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
+val aquaticToolModelTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(vanillaEquipmentModelTest)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.AquaticToolModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
+val constructionPlacementTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(vanillaEquipmentModelTest)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.ConstructionPlacementTest"
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
@@ -663,17 +690,6 @@ val hookHangMathTest by
     mainClass = "dev.aeroscapes.movement.HookHangMathTest"
   }
 
-tasks.register<JavaExec>("refinedRodCastTest") {
-  group = "verification"
-  description = "Audits the pinned Refined archive supplied by -PrefinedRodArchive=<file>."
-  dependsOn(tasks.named(policy.classesTaskName))
-  classpath = policy.runtimeClasspath
-  mainClass = "dev.aeroscapes.aquatic.RefinedRodCastCleanupTest"
-  argumentProviders.add(
-    CommandLineArgumentProvider { listOf(providers.gradleProperty("refinedRodArchive").get()) }
-  )
-}
-
 tasks.register<JavaExec>("generateEquipmentModels") {
   group = "build"
   val minecraftResources =
@@ -697,7 +713,10 @@ tasks.check {
     equipmentArtworkTest,
     vanillaEquipmentModelTest,
     reviewedEquipmentModelTest,
+    knifeEquipmentModelTest,
     constructionEquipmentModelTest,
+    aquaticToolModelTest,
+    constructionPlacementTest,
     utilityEquipmentModelTest,
     weatheringTextureTest,
     orePresentationContractTest,

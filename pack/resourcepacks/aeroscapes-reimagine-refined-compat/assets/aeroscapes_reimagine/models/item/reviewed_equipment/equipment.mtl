@@ -1,3 +1,28 @@
+newmtl wetland_whimsy_dagger_blade
+Ka 0 0 0
+Kd 1 1 1
+map_Kd wetland_whimsy:item/dagger
+
+newmtl wetland_whimsy_dagger_bone
+Ka 0 0 0
+Kd 1 1 1
+map_Kd wetland_whimsy:item/filthy_bone
+
+newmtl wetland_whimsy_dagger_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd wetland_whimsy:item/dagger
+
+newmtl wetland_whimsy_dagger_guard
+Ka 0 0 0
+Kd 1 1 1
+map_Kd wetland_whimsy:item/dagger
+
+newmtl wetland_whimsy_dagger_pommel
+Ka 0 0 0
+Kd 1 1 1
+map_Kd wetland_whimsy:item/dagger
+
 newmtl quark_trowel_body
 Ka 0 0 0
 Kd 1 1 1
@@ -63,70 +88,545 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
 
-newmtl chipped_saw_body
+newmtl quark_pickarang_body
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_grip
+newmtl quark_pickarang_grip
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_edge
+newmtl quark_pickarang_edge
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_dark
+newmtl quark_pickarang_dark
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_rope
+newmtl quark_pickarang_rope
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_glass
+newmtl quark_pickarang_glass
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_paper
+newmtl quark_pickarang_paper
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_detail
+newmtl quark_pickarang_detail
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_green
+newmtl quark_pickarang_green
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_red
+newmtl quark_pickarang_red
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_gold
+newmtl quark_pickarang_gold
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_band
+newmtl quark_pickarang_band
 Ka 0 0 0
 Kd 1 1 1
-map_Kd chipped:item/equipment/painted/saw
+map_Kd quark:item/equipment/painted/pickarang
 
-newmtl chipped_saw_cloth
+newmtl quark_pickarang_cloth
 Ka 0 0 0
 Kd 1 1 1
 map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl quark_flamerang_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd quark:item/equipment/painted/flamerang
+
+newmtl quark_flamerang_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl betterarcheology_bomb_fuse
+Ka 0 0 0
+Kd 1 1 1
+map_Kd betterarcheology:item/bomb
+
+newmtl betterarcheology_bomb_iron
+Ka 0 0 0
+Kd 1 1 1
+map_Kd betterarcheology:item/bomb
+
+newmtl betterarcheology_bomb_socket
+Ka 0 0 0
+Kd 1 1 1
+map_Kd betterarcheology:item/bomb
+
+newmtl supplementaries_bomb_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl supplementaries_bomb_projectile_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb
+
+newmtl supplementaries_bomb_projectile_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl supplementaries_bomb_blue_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl supplementaries_bomb_blue_projectile_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_blue
+
+newmtl supplementaries_bomb_blue_projectile_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl supplementaries_bomb_spiky_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl supplementaries_bomb_spiky_projectile_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_detail
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_band
+Ka 0 0 0
+Kd 1 1 1
+map_Kd supplementaries:item/equipment/painted/bomb_spiky
+
+newmtl supplementaries_bomb_spiky_projectile_cloth
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/reviewed_equipment/brown_net
+
+newmtl wetland_whimsy_sludge_charge_mud
+Ka 0 0 0
+Kd 1 1 1
+map_Kd wetland_whimsy:item/sludge_charge
 
 newmtl tide_starlight_bow_body
 Ka 0 0 0
@@ -452,6 +952,106 @@ newmtl naturalist_capture_net_cloth
 Ka 0 0 0
 Kd 1 1 1
 map_Kd aeroscapes_reimagine:item/reviewed_equipment/white_net
+
+newmtl crittersandcompanions_grappling_hook_iron
+Ka 0 0 0
+Kd 1 1 1
+map_Kd crittersandcompanions:item/grappling_hook
+
+newmtl crittersandcompanions_grappling_hook_silk
+Ka 0 0 0
+Kd 1 1 1
+map_Kd crittersandcompanions:item/grappling_hook
+
+newmtl spawn_coastal_crab_claw_center
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_rim
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shell
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting0_center
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting0_rim
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting0_shell
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting0_bubble
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:entity/coastal_crab/bubble
+
+newmtl spawn_coastal_crab_claw_shooting1_center
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting1_rim
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting1_shell
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting1_bubble
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:entity/coastal_crab/bubble
+
+newmtl spawn_coastal_crab_claw_shooting2_center
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting2_rim
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting2_shell
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw
+
+newmtl spawn_coastal_crab_claw_shooting2_bubble
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:entity/coastal_crab/bubble
+
+newmtl spawn_coastal_crab_claw_empty_center
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw_empty
+
+newmtl spawn_coastal_crab_claw_empty_rim
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw_empty
+
+newmtl spawn_coastal_crab_claw_empty_shell
+Ka 0 0 0
+Kd 1 1 1
+map_Kd spawn:item/coastal_crab_claw_empty
 
 newmtl spawn_casting_net_body
 Ka 0 0 0

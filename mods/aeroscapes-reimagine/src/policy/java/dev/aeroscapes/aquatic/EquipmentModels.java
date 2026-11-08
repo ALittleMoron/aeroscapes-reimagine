@@ -134,6 +134,35 @@ public final class EquipmentModels {
         output,
         assets.resolve("nutritionalbalance/models/item/lunchbox_3d.json"),
         HeldItemModels.nativeModel("nutritionalbalance:lunchbox_3d").toString());
+    JsonObject lunchbox = HeldItemModels.nativeModel("nutritionalbalance:lunchbox");
+    JsonObject lunchboxDisplay = lunchbox.getAsJsonObject("display");
+    JsonObject heldDisplay =
+        JsonParser.parseString(
+                """
+                {
+                  "firstperson_righthand": {"rotation": [-14, 5, 5], "scale": [0.68, 0.68, 0.68]},
+                  "firstperson_lefthand": {"rotation": [-14, 5, 5], "scale": [0.68, 0.68, 0.68]},
+                  "thirdperson_righthand": {"rotation": [90, 0, 0], "scale": [0.72, 0.72, 0.72]},
+                  "thirdperson_lefthand": {"rotation": [90, 0, 0], "scale": [0.72, 0.72, 0.72]}
+                }
+                """)
+            .getAsJsonObject();
+    // The native renderer draws the box and selected food under this outer pose.
+    for (var hand : heldDisplay.entrySet()) {
+      JsonObject transform = new JsonObject();
+      transform.add(hand.getKey(), hand.getValue());
+      if (hand.getKey().startsWith("firstperson"))
+        HeldItemModels.anchorHeld(
+            transform, new org.joml.Vector3f(8, 2, 8), new org.joml.Vector3f(0, 1.5f, -1.25f));
+      else
+        HeldItemModels.anchorHeld(
+            transform, new org.joml.Vector3f(8, 14.275f, 8), new org.joml.Vector3f(0, -1, 2));
+      lunchboxDisplay.add(hand.getKey(), hand.getValue());
+    }
+    text(
+        output,
+        assets.resolve("nutritionalbalance/models/item/lunchbox.json"),
+        lunchbox.toString());
     text(
         output,
         assets.resolve("nutritionalbalance/models/item/equipment/held/lunchbox.json"),
@@ -167,11 +196,11 @@ public final class EquipmentModels {
     return png(recolored);
   }
 
-  static String rodDefinition(String name) {
+  static String rodDefinition(String namespace, String name) {
     List<String> cases = new ArrayList<>();
     cases.add(
         "{\"when\": [\"gui\", \"ground\", \"fixed\"], \"model\": "
-            + castModels("tide:item/" + name, "tide:item/" + name + "_cast")
+            + castModels(namespace + ":item/" + name, namespace + ":item/" + name + "_cast")
             + "}");
     for (String context :
         List.of(
@@ -185,15 +214,15 @@ public final class EquipmentModels {
               + context
               + "\"], \"model\": "
               + castModels(
-                  "tide:item/equipment/" + name + "_held" + suffix,
-                  "tide:item/equipment/" + name + "_cast_held" + suffix)
+                  namespace + ":item/equipment/" + name + "_held" + suffix,
+                  namespace + ":item/equipment/" + name + "_cast_held" + suffix)
               + "}");
     }
     return "{\n  \"model\": {\n    \"type\": \"minecraft:select\",\n"
         + "    \"property\": \"minecraft:display_context\",\n    \"cases\": [\n      "
         + String.join(",\n      ", cases)
         + "\n    ],\n    \"fallback\": "
-        + castModels("tide:item/" + name, "tide:item/" + name + "_cast")
+        + castModels(namespace + ":item/" + name, namespace + ":item/" + name + "_cast")
         + "\n  }\n}\n";
   }
 

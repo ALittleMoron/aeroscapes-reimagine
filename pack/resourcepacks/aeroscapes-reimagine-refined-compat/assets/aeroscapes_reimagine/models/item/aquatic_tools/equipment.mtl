@@ -1,0 +1,159 @@
+newmtl coral_axe_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_axe_surface
+
+newmtl coral_axe_head
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_axe_surface
+
+newmtl coral_axe_inner
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_axe_surface
+
+newmtl coral_axe_rib
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_axe_surface
+
+newmtl coral_axe_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_axe_surface
+
+newmtl coral_axe_socket
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_axe_surface
+
+newmtl coral_blade_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_blade_surface
+
+newmtl coral_blade_head
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_blade_surface
+
+newmtl coral_blade_inner
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_blade_surface
+
+newmtl coral_blade_rib
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_blade_surface
+
+newmtl coral_blade_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_blade_surface
+
+newmtl coral_blade_socket
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_blade_surface
+
+newmtl coral_pickaxe_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_pickaxe_surface
+
+newmtl coral_pickaxe_head
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_pickaxe_surface
+
+newmtl coral_pickaxe_inner
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_pickaxe_surface
+
+newmtl coral_pickaxe_rib
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_pickaxe_surface
+
+newmtl coral_pickaxe_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_pickaxe_surface
+
+newmtl coral_pickaxe_socket
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_pickaxe_surface
+
+newmtl coral_shovel_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_shovel_surface
+
+newmtl coral_shovel_head
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_shovel_surface
+
+newmtl coral_shovel_inner
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_shovel_surface
+
+newmtl coral_shovel_rib
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_shovel_surface
+
+newmtl coral_shovel_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_shovel_surface
+
+newmtl coral_shovel_socket
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_shovel_surface
+
+newmtl coral_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/coral_shaft
+
+newmtl shell_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/shell_surface
+
+newmtl shell_head
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/shell_surface
+
+newmtl shell_inner
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/shell_surface
+
+newmtl shell_rib
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/shell_surface
+
+newmtl shell_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/shell_surface
+
+newmtl shell_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/shell_shaft
+
+newmtl shell_socket
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/aquatic_tools/shell_surface

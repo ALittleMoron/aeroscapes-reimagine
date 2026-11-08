@@ -20,9 +20,13 @@ Classes and specializations should support mixed builds. A warrior who learns [m
 
 The initial classes are warrior, ranger, mage and rogue; profession is a separate choice. The initial professions are blacksmith, builder, farmer and cook.
 
-Subclasses are planned later, before `1.0.0`, offering more distinct specializations after the basic character system. Their exact roster remains to be defined. Characters will be able to learn several specializations of their class through skill mastery, without mandatory trials or NPC training. Learned specializations should work together, combining passive benefits with a few active techniques. Any limits on talent-point allocation remain to be determined.
+Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, at the same pace and cost regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
 
-Race, class and profession switching is not planned through `1.0.0`. Characters can learn other skills and combine directions without resetting those choices.
+Combat and magic branches will share a limited talent budget. Investing across branches will let players combine styles while leaving fewer points for advanced talents in any one specialty. Profession branches will share a separate, broader budget.
+
+Combat and peaceful spells, martial techniques and active racial abilities will share one panel with a limited set of slots and dedicated slot controls. Players will be able to clear and reassign slots even during combat. An on-screen display of assignments is under consideration. We are also considering sets players can save, edit, delete and switch between quickly.
+
+Talent redistribution is planned before `1.0.0`. It will free up the points in the affected branches and preserve earned skill progress and other allocations. Ordinary redistribution will carry a penalty. A rare item found in exploration chests will allow changes to race, main class or starting profession.
 
 ## Combat and camera
 

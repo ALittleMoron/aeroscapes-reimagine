@@ -1,12 +1,12 @@
 name = "Aeroscapes Reimagine"
 author = "Aeroscapes Reimagine contributors"
-version = "0.3.5"
+version = "0.3.6"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "136dfa30a67033c4fe5954348a3a55188c9d50e52b3168589e3db9f5aac30330"
+hash = "42d4e8c6680ad4186292ab04d9c3b36b9129b6a65fe555ebaf4a2043f474b9a1"
 
 [versions]
 minecraft = "1.21.1"

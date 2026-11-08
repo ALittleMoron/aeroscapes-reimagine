@@ -44,6 +44,7 @@ public final class EquipmentArtwork {
           case BOOK -> new double[] {1, 5, 4, 13};
           case ABACUS -> new double[] {1, 1, 15, 3};
           case BOOMERANG -> new double[] {3, 3, 7, 5};
+          case QUILL -> new double[] {6, 3, 13, 7};
           case BOW -> new double[] {0, 9, 5, 16};
           case CASTING_NET -> new double[] {10, 3, 15, 10};
           default -> new double[] {2, 2, 14, 14};
@@ -58,9 +59,11 @@ public final class EquipmentArtwork {
                 ? new double[] {8, 9, 15, 16}
                 : profile == EquipmentStyle.BOOMERANG
                     ? new double[] {8, 3, 10, 5}
-                    : profile == EquipmentStyle.ABACUS
-                        ? new double[] {10, 5, 13, 6}
-                        : new double[] {0, 8, 8, 16});
+                    : profile == EquipmentStyle.QUILL
+                        ? new double[] {2, 9, 4, 12}
+                        : profile == EquipmentStyle.ABACUS
+                            ? new double[] {10, 5, 13, 6}
+                            : new double[] {0, 8, 8, 16});
     if (profile == EquipmentStyle.LUNCHBOX) grip = body;
     if (profile == EquipmentStyle.BOW) grip = new int[] {0x4A321A, 0x6B4C24, 0x8D6A33};
     if (profile == EquipmentStyle.CAPTURE_NET) grip = new int[] {0x473A24, 0x655232, 0x8A724B};
@@ -100,6 +103,10 @@ public final class EquipmentArtwork {
           else if (profile == EquipmentStyle.SHELL && tile == 0) shade = (x + y / 3) % 3;
           else if (profile == EquipmentStyle.PAPER && tile == 0)
             shade = Math.floorMod(x * 13 + y * 7, 5) == 0 ? 0 : (x + y) % 4 == 0 ? 2 : 1;
+          else if ((profile == EquipmentStyle.BUBBLE
+                  || profile == EquipmentStyle.ALTIMETER
+                  || profile == EquipmentStyle.QUILL)
+              && (tile == 0 || tile == 2)) shade = x <= 3 && y <= 3 ? 2 : 1;
           else shade = x == 1 || x == 2 && y < 4 ? 2 : x == 7 || y == 7 ? 0 : 1;
           atlas.setRGB(
               tile % MATERIAL_COLUMNS * 16 + x,

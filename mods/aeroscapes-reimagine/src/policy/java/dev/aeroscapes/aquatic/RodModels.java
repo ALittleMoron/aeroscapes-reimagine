@@ -29,7 +29,7 @@ final class RodModels {
       EquipmentModels.text(
           output,
           assets.resolve("modefite_items_override/" + name + ".json"),
-          EquipmentModels.rodDefinition(name));
+          EquipmentModels.rodDefinition("tide", name));
       for (boolean cast : new boolean[] {false, true}) {
         for (String suffix : List.of("", "_left", "_fp", "_fp_left")) {
           String child = name + (cast ? "_cast_held" : "_held") + suffix;
@@ -42,6 +42,28 @@ final class RodModels {
       output.put(
           assets.resolve("textures/item/equipment/" + name + ".png"), material(style.getValue()));
     }
+    Path vanilla = assets.resolveSibling("minecraft");
+    EquipmentModels.text(
+        output,
+        vanilla.resolve("modefite_items_override/fishing_rod.json"),
+        EquipmentModels.rodDefinition("minecraft", "fishing_rod"));
+    for (boolean cast : new boolean[] {false, true})
+      for (String suffix : List.of("", "_left", "_fp", "_fp_left"))
+        EquipmentModels.text(
+            output,
+            vanilla.resolve(
+                "models/item/equipment/fishing_rod"
+                    + (cast ? "_cast_held" : "_held")
+                    + suffix
+                    + ".json"),
+            model("vanilla", cast, suffix));
+    output.put(
+        vanilla.resolve("textures/item/equipment/fishing_rod.png"),
+        material(
+            new int[] {
+              0x74542D, 0x604824, 0x92928F, 0xDDD9CD, 0x302219,
+              0x787878, 0xD2453F, 0x6B4D2C, 0xC2AC79, 0x74542D
+            }));
   }
 
   static Map<String, int[]> palettes() {
@@ -129,19 +151,24 @@ final class RodModels {
   }
 
   static String model(String style, boolean cast, String suffix) {
-    if (!palettes().containsKey(style)) throw new IllegalArgumentException("Unknown rod: " + style);
+    if (!style.equals("vanilla") && !palettes().containsKey(style))
+      throw new IllegalArgumentException("Unknown rod: " + style);
     boolean left = suffix.endsWith("_left");
     List<String> parts = new ArrayList<>();
     addShaft(parts, style, left);
     addReel(parts, style, left);
     addMotif(parts, style, left);
     if (!cast) addHangingTackle(parts, style, left);
+    if (!cast && style.equals("vanilla"))
+      part(parts, "stowed_clip", 7.15, 13.2, 11.15, 8.85, 13.7, 13.65, "grip", left);
     return "{\n  \"parent\": \"minecraft:item/rods/held_fishing_"
         + (cast ? "cast" : "rod")
         + suffix
-        + "\",\n  \"ambientocclusion\": false,\n  \"textures\": {\"particle\": \"tide:item/equipment/"
-        + style
-        + "_fishing_rod\"},\n  \"elements\": [\n    "
+        + "\",\n  \"ambientocclusion\": false,\n  \"textures\": {\"particle\": \""
+        + (style.equals("vanilla")
+            ? "minecraft:item/equipment/fishing_rod"
+            : "tide:item/equipment/" + style + "_fishing_rod")
+        + "\"},\n  \"elements\": [\n    "
         + String.join(",\n    ", parts)
         + "\n  ]\n}\n";
   }

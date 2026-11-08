@@ -100,6 +100,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("nutritionalbalance", "1.21.1-7.0.3", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("AltimeterHeldModelMixin")) {
       versions = Map.of("supplementaries", "1.21.1-3.6.8", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("SandpaperHeldModelMixin")) {
+      versions = Map.of("create", "6.0.10", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("CelestialSkyMixin")
         || mixinClassName.endsWith("LanguageCorrectionMixin")
         || mixinClassName.endsWith("NativeConfigurationLanguageMixin")) {
@@ -177,7 +179,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     } else if (mixinClassName.endsWith("LanternGripMixin")
         || mixinClassName.endsWith("PunchyMapMixin")) {
       versions = Map.of("punchy", "3.0");
-    } else if (mixinClassName.endsWith("RodCaptureTraceMixin")
+    } else if (mixinClassName.endsWith("HeldEquipmentGripMixin")
+        || mixinClassName.endsWith("RodCaptureTraceMixin")
         || mixinClassName.endsWith("RodLineTraceMixin")) {
       versions = Map.of("punchy", "3.0");
     } else if (mixinClassName.endsWith("SteeringOwnershipMixin")) {

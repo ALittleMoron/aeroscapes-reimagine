@@ -1,0 +1,659 @@
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl create_aeronautics_throwable_rope_connector_throwable_rope_connector_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector
+
+newmtl simulated_rope_coupling_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl simulated_rope_coupling_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_rope_coupling
+
+newmtl create_sand_paper_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_sand_paper_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_sand_paper
+
+newmtl create_red_sand_paper_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_red_sand_paper_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_red_sand_paper
+
+newmtl create_clipboard_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard
+
+newmtl create_clipboard_0_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_0_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_0
+
+newmtl create_clipboard_1_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_1_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_1
+
+newmtl create_clipboard_2_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_clipboard_2_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_clipboard_2
+
+newmtl create_schematic_and_quill_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_schematic_and_quill_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_schematic_and_quill
+
+newmtl create_super_glue_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl create_super_glue_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/create_super_glue
+
+newmtl simulated_honey_glue_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_feather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_rope
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_label
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_backing
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_grit
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue
+
+newmtl simulated_honey_glue_honey
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/create_equipment/simulated_honey_glue

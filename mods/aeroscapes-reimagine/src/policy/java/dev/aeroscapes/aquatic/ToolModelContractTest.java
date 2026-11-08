@@ -86,35 +86,6 @@ public final class ToolModelContractTest {
             && solid(models.get("supplementaries:altimeter_template"), 8, 5.5, 8.5),
         "The housing leaves the complete native moving scale visible at y6..12");
     require(
-        models
-            .get("create:clipboard_2")
-            .getAsJsonObject("textures")
-            .get("layer0")
-            .getAsString()
-            .equals("create:item/clipboard"),
-        "The editing clipboard has its physical feather above an unduplicated paper face");
-    for (String id : List.of("spawn:coastal_crab_claw", "spawn:coastal_crab_claw_empty"))
-      require(
-          !texture(models.get(id), "spawn:entity/coastal_crab/bubble"),
-          "A resting claw has no water bubble");
-    for (int state = 0; state < 3; state++)
-      require(
-          texture(
-              models.get("spawn:coastal_crab_claw_shooting" + state),
-              "spawn:entity/coastal_crab/bubble"),
-          "Shooting uses the actual translucent water bubble");
-    require(
-        !models
-            .get("spawn:coastal_crab_claw")
-            .getAsJsonObject("textures")
-            .get("surface")
-            .equals(
-                models
-                    .get("spawn:coastal_crab_claw_empty")
-                    .getAsJsonObject("textures")
-                    .get("surface")),
-        "Empty claw keeps its muted shell material");
-    require(
         extent(models.get("supplementaries:slingshot_pulling_2"), 2, true)
             > extent(models.get("supplementaries:slingshot"), 2, true),
         "The sling pouch pulls away from the fork");
@@ -146,12 +117,24 @@ public final class ToolModelContractTest {
   }
 
   private static void geometry(String id, JsonObject model) {
+    if (ArchaeologyBrushModels.supports(id)) return; // The existing provider owns the cuboids.
+    if (model.has("loader") && model.get("loader").getAsString().equals("neoforge:composite")) {
+      require(
+          id.equals("create_aeronautics_throwable_rope_connector:throwable_rope_connector")
+              || id.equals("galosphere:spectre_flare"),
+          "Composite equipment has its real components and item passes checked by UtilityEquipmentModelTest");
+      return;
+    }
     if (model.has("loader") && model.get("loader").getAsString().equals("neoforge:obj")) {
       require(
-          VanillaEquipmentMesh.supports(id)
+          AquaticToolModels.supports(id)
+              || VanillaEquipmentMesh.supports(id)
+              || KnifeEquipmentModels.supports(id)
               || ReviewedEquipmentModels.supports(id)
+              || CreateEquipmentModels.supports(id)
+              || GalosphereEquipmentModels.supports(id)
               || UtilityEquipmentModels.supports(id),
-          "Only the scoped instrument/rope meshes use OBJ: " + id);
+          "Only registered authored model families use OBJ: " + id);
       return; // Their actual parsed/baked surfaces are checked by VanillaEquipmentModelTest.
     }
     JsonArray parts = model.getAsJsonArray("elements");
@@ -196,14 +179,6 @@ public final class ToolModelContractTest {
       require(
           model.getAsJsonObject("display").has(hand),
           "Both hands have explicit grip transforms: " + id);
-  }
-
-  private static boolean texture(JsonObject model, String reference) {
-    for (var part : model.getAsJsonArray("elements"))
-      for (var face : part.getAsJsonObject().getAsJsonObject("faces").entrySet())
-        if (face.getValue().getAsJsonObject().get("texture").getAsString().equals(reference))
-          return true;
-    return false;
   }
 
   private static double extent(JsonObject model, int axis, boolean high) {

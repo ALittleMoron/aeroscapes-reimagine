@@ -53,6 +53,78 @@ final class EquipmentObjMesh {
     data.append("g ").append(name).append('\n');
   }
 
+  static P[] octagonalRing(double x, double y, double z, double width, double depth) {
+    P[] points = new P[8];
+    for (int side = 0; side < points.length; side++) {
+      double angle = side * Math.PI / 4;
+      points[side] = new P(x + width * Math.cos(angle), y, z + depth * Math.sin(angle));
+    }
+    return points;
+  }
+
+  void shell(String material, P[][] rings) {
+    int sides = rings[0].length;
+    for (int row = 1; row < rings.length; row++) {
+      P[] lower = rings[row - 1], upper = rings[row];
+      double bottomV = 1 - (row - 1.0) / (rings.length - 1);
+      double topV = 1 - row / (rings.length - 1.0);
+      for (int side = 0; side < sides; side++) {
+        int next = (side + 1) % sides;
+        P outward = lower[side].add(lower[next]).scale(.5).add(ringCenter(lower).scale(-1));
+        double u = (side % 4) / 4.0, nextU = u + .25;
+        quad(
+            material,
+            new P[] {lower[side], lower[next], upper[next], upper[next]},
+            outward,
+            new double[][] {{u, bottomV}, {nextU, bottomV}, {nextU, topV}, {nextU, topV}});
+        quad(
+            material,
+            new P[] {lower[side], upper[next], upper[side], upper[side]},
+            outward,
+            new double[][] {{u, bottomV}, {nextU, topV}, {u, topV}, {u, topV}});
+      }
+    }
+    for (int end : new int[] {0, rings.length - 1}) {
+      P[] rim = rings[end];
+      P center = ringCenter(rim);
+      int adjacent = end == 0 ? 1 : end - 1;
+      P outward = center.add(ringCenter(rings[adjacent]).scale(-1));
+      for (int side = 0; side < sides; side++) {
+        int next = (side + 1) % sides;
+        double angle = side * 2 * Math.PI / sides, nextAngle = next * 2 * Math.PI / sides;
+        double[] firstUv = {.5 + .5 * Math.cos(angle), .5 + .5 * Math.sin(angle)};
+        double[] nextUv = {.5 + .5 * Math.cos(nextAngle), .5 + .5 * Math.sin(nextAngle)};
+        quad(
+            material,
+            new P[] {center, rim[side], rim[next], rim[next]},
+            outward,
+            new double[][] {{.5, .5}, firstUv, nextUv, nextUv});
+      }
+    }
+  }
+
+  private static P ringCenter(P[] ring) {
+    return ring[0].add(ring[ring.length / 2]).scale(.5);
+  }
+
+  void box(String material, double x0, double y0, double z0, double x1, double y1, double z1) {
+    P a = new P(x0, y0, z0),
+        b = new P(x1, y0, z0),
+        c = new P(x1, y1, z0),
+        d = new P(x0, y1, z0),
+        e = new P(x0, y0, z1),
+        f = new P(x1, y0, z1),
+        g = new P(x1, y1, z1),
+        h = new P(x0, y1, z1);
+    double[][] uv = {{0, 1}, {1, 1}, {1, 0}, {0, 0}};
+    quad(material, new P[] {a, b, c, d}, new P(0, 0, -1), uv);
+    quad(material, new P[] {e, f, g, h}, new P(0, 0, 1), uv);
+    quad(material, new P[] {a, e, h, d}, new P(-1, 0, 0), uv);
+    quad(material, new P[] {b, f, g, c}, new P(1, 0, 0), uv);
+    quad(material, new P[] {d, c, g, h}, new P(0, 1, 0), uv);
+    quad(material, new P[] {a, b, f, e}, new P(0, -1, 0), uv);
+  }
+
   void beam(String material, P start, P end, double radius, int sides) {
     Vector3d axis = end.vector().sub(start.vector()).normalize();
     Vector3d across =

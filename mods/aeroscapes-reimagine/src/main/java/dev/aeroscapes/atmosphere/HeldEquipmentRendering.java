@@ -43,6 +43,16 @@ public final class HeldEquipmentRendering {
     return held(context) ? Minecraft.getInstance().getModelManager().getModel(LUNCHBOX) : original;
   }
 
+  public static BakedModel sandpaper(ItemDisplayContext context, BakedModel original) {
+    if (!held(context)) return original;
+    // Create renders the body with NONE after the outer hand transform already ran.
+    return original.applyTransform(
+        context,
+        new PoseStack(),
+        context == ItemDisplayContext.FIRST_PERSON_LEFT_HAND
+            || context == ItemDisplayContext.THIRD_PERSON_LEFT_HAND);
+  }
+
   public static BakedModel altimeter(ItemDisplayContext context, BakedModel original) {
     if (!held(context)) return original;
     return ALTIMETERS.computeIfAbsent(original, HeldEquipmentRendering::altimeter);

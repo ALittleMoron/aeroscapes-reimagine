@@ -37,8 +37,7 @@ final class EquipmentSculpture {
           BOOK,
           CLIPBOARD,
           SCHEMATIC,
-          TABLET,
-          SPECTRE_FLARE ->
+          TABLET ->
           true;
       default -> false;
     };
@@ -101,7 +100,8 @@ final class EquipmentSculpture {
       case KNIFE -> knife();
       case DIAL, DEPTH_METER, MONSTROMETER, WATCH, ENDER_EYE -> dial();
       case CLIMATE_GAUGE -> thermometer();
-      case MULTIMETER, TERMINAL, FISH_FINDER, PROJECTOR -> instrument();
+      case MULTIMETER, TERMINAL, FISH_FINDER -> instrument();
+      case PROJECTOR -> projector();
       case BOOK, CLIPBOARD, SCHEMATIC, TABLET, ALTIMETER -> document();
       case NEEDLES -> needles();
       case GLUE -> glue();
@@ -115,19 +115,17 @@ final class EquipmentSculpture {
       case CRYSTAL -> crystal();
       case LUNCHBOX -> lunchbox();
       case CORAL, SHELL -> aquaticTool();
-      case FISH -> nativeCutout(0, 0);
+      case FISH -> rectifiedSurface(0);
       case BRUSH -> brush();
       case HAMMER, SPADE, SAW, CHISEL, WRENCH -> workshop();
-      case BOOMERANG -> boomerang();
+      case BOOMERANG, CLAW, GRAPPLE, SLUDGE ->
+          throw new IllegalStateException("Missing held mesh for " + id);
       case DART -> dart();
       case BOMB -> bomb();
-      case SLUDGE -> sludge();
       case BOW, SLINGSHOT -> ranged();
-      case GRAPPLE -> grapple();
-      case CLAW -> claw();
       case PAPER -> paper();
       case ABACUS -> abacus();
-      case QUILL -> nativeCutout(0, 0);
+      case QUILL -> quill();
     }
   }
 
@@ -137,18 +135,13 @@ final class EquipmentSculpture {
 
   private void knife() throws IOException {
     grip(6.7);
-    boolean dagger = id.startsWith("wetland_whimsy:");
-    nativeCutout(10, 0);
-    if (dagger) {
-      hoop("body", 8, 1.1, 8, .8, .2, .5);
-      box("grip", 7, 6, 7.3, 9, 6.7, 8.7);
-    }
+    rectifiedSurface(10);
   }
 
   private void aquaticTool() throws IOException {
     grip(9.2);
     int head = parts.size();
-    nativeCutout(12, 0);
+    rectifiedSurface(12);
     if (id.endsWith("_hoe")) {
       double offset = profile == EquipmentStyle.CORAL ? Math.sqrt(.5) : Math.sqrt(2);
       for (int index = head; index < parts.size(); index++)
@@ -163,16 +156,25 @@ final class EquipmentSculpture {
   private void brush() throws IOException {
     grip(6.5);
     box("band", 6.9, 6, 7, 9.1, 7.4, 9);
-    nativeCutout(10.5, 0);
+    rectifiedSurface(10.5);
   }
 
   private void workshop() {
-    grip(profile == EquipmentStyle.HAMMER ? 11.7 : 9);
+    if (id.equals("quark:hammer")) {
+      box("grip", 7.1, .5, 7.1, 8.9, 15.3, 8.9);
+      box("body", 4.4, 11.7, 6.5, 11.6, 14.6, 9.5);
+      bevelBox("edge", 2.9, 11.4, 6.15, 4.5, 14.9, 9.85, .28);
+      bevelBox("edge", 11.5, 11.4, 6.15, 13.1, 14.9, 9.85, .28);
+      return;
+    }
+    if (profile != EquipmentStyle.HAMMER) grip(9);
     switch (profile) {
       case HAMMER -> {
-        bevelBox("body", 3.4, 11.5, 6.2, 12.2, 15, 9.8, .65);
-        bevelBox("edge", 2.4, 11.8, 6, 4, 14.7, 10, .45);
-        box("grip", 7.6, 14.8, 7.6, 8.4, 15.5, 8.4);
+        box("grip", 7.05, .6, 7.05, 8.95, 15.15, 8.95);
+        box("body", 5.65, 11.7, 6.45, 10.35, 14.7, 9.55);
+        bevelBox("edge", 10.15, 11.45, 6.1, 12.65, 14.95, 9.9, .32);
+        box("body", 4.4, 12.02, 6.85, 5.82, 14.38, 9.15);
+        bevelBox("edge", 3.65, 11.85, 6.65, 4.65, 14.55, 9.35, .21);
       }
       case SPADE -> {
         box("body", 7.4, 8.8, 7.5, 8.6, 11, 8.5);
@@ -219,14 +221,6 @@ final class EquipmentSculpture {
     }
   }
 
-  private void boomerang() {
-    rotated("body", 2, 10.5, 7.2, 10, 12.2, 8.8, "z", -22.5, 9.5, 10.5, 8);
-    rotated("body", 9, 3, 7.2, 10.7, 11.8, 8.8, "z", -22.5, 9.5, 10.5, 8);
-    rotated("edge", 2, 12, 7.55, 9.8, 12.6, 8.45, "z", -22.5, 9.5, 10.5, 8);
-    rotated("edge", 10.4, 3, 7.55, 11, 11.5, 8.45, "z", -22.5, 9.5, 10.5, 8);
-    rotated("grip", 8.4, 9.5, 7.1, 10.5, 11.6, 8.9, "z", -22.5, 9.5, 10.5, 8);
-  }
-
   private void dart() {
     for (int coil = 0; coil < 3; coil++) hoop("rope", 8, 5.2, 6.5 + coil, 2.3, .4, .7);
     cylinder("detail", 8, 8, .45, 7.1, 10);
@@ -243,50 +237,24 @@ final class EquipmentSculpture {
       for (int x : new int[] {5, 10})
         for (int y : new int[] {4, 9}) box("detail", x, y, 12.1, x + 1, y + 1, 12.6);
       box("detail", 5.5, 6.2, 12, 10.5, 8, 12.6);
-    } else if (id.startsWith("betterarcheology:")) {
-      box("grip", 5.2, 5, 11.8, 6.5, 7.5, 12.4);
-      box("grip", 9.5, 8.5, 11.5, 11, 9.5, 12.2);
-    } else if (id.contains("spiky")) {
-      for (int axis = 0; axis < 3; axis++)
-        for (int side : new int[] {-1, 1})
-          for (int step = 0; step < 4; step++) {
-            double[] center = {8, 7, 8};
-            center[axis] += side * (4.1 + step * .55);
-            double radius = .7 - step * .16;
-            box(
-                "body",
-                center[0] - radius,
-                center[1] - radius,
-                center[2] - radius,
-                center[0] + radius,
-                center[1] + radius,
-                center[2] + radius);
-          }
     }
-    if (id.endsWith("_projectile")) {
-      rotated("red", 9.4, 14.4, 7.4, 10.6, 15.6, 8.6, "z", 45, 10, 15, 8);
-    }
-  }
-
-  private void sludge() {
-    sphere("body", 8, 8.5, 8, 4.5, 4.8, 3.5);
-    sphere("body", 5.7, 8.5, 7, 2.7, 3, 2.5);
-    for (int drip = 0; drip < 4; drip++)
-      cylinder("body", 5 + drip * 1.9, 7.5, .5, 1.4 + drip % 3, 5);
-    box("edge", 6, 10.5, 10.1, 7.1, 11.2, 10.5);
   }
 
   private void ranged() {
     int draw = id.endsWith("_2") ? 3 : id.endsWith("_1") ? 2 : id.endsWith("_0") ? 1 : 0;
     if (profile == EquipmentStyle.SLINGSHOT) {
-      grip(8.5);
-      for (double y : new double[] {2.4, 3.4, 4.4}) ring("paper", 8, y, 8, 1.12, .3, .45);
-      rotated("body", 5.2, 7.5, 7.3, 6.8, 14, 8.7, "z", 22.5, 7, 8, 8);
-      rotated("body", 9.2, 7.5, 7.3, 10.8, 14, 8.7, "z", -22.5, 9, 8, 8);
-      sphere("body", 8, 8.4, 8, 2, 1.2, 1.0);
-      strand("rope", 4, 12.7, 8, 8, 11, 8 + draw, .2);
-      strand("rope", 12, 12.7, 8, 8, 11, 8 + draw, .2);
-      box("dark", 7.3, 10.5, 7.8 + draw, 8.7, 11.5, 8.3 + draw);
+      box("grip", 7.05, .8, 7.15, 8.95, 8.6, 8.85);
+      box("paper", 6.96, 1.9, 7.06, 9.04, 4.5, 8.94);
+      box("body", 6.45, 7.6, 7.05, 9.55, 9.35, 8.95);
+      for (int side : new int[] {-1, 1}) {
+        double x = 8 + side * 1.25;
+        rotated("body", x - .78, 7.7, 7.15, x + .78, 13.8, 8.85, "z", -side * 22.5, x, 8, 8);
+        rotated("paper", x - .84, 12.75, 7.08, x + .84, 13.48, 8.92, "z", -side * 22.5, x, 8, 8);
+        double anchorX = x + side * 5.1 * Math.sin(Math.PI / 8);
+        double anchorY = 8 + 5.1 * Math.cos(Math.PI / 8);
+        strand("rope", anchorX, anchorY, 8.55, 8 + side * .62, 12.25, 8.55 + draw, .29);
+      }
+      box("dark", 7.27, 11.88, 8.28 + draw, 8.73, 12.62, 8.86 + draw);
     } else {
       box("body", 7.2, 6, 7.2, 8.8, 10, 8.8);
       rotated("gold", 7.4, 9, 7.65, 8.6, 12.8, 8.35, "z", 22.5, 8, 9, 8);
@@ -308,126 +276,57 @@ final class EquipmentSculpture {
     }
   }
 
-  private void grapple() {
-    cylinder("body", 9.5, 8, .75, 4, 11);
-    hoop("dark", 9.5, 2.8, 8, 1.3, .35, .9);
-    rotated("body", 7.1, 10.5, 7.3, 9.9, 11.7, 8.7, "z", -22.5, 9.3, 11, 8);
-    rotated("body", 4.8, 10.5, 7.3, 7.5, 11.7, 8.7, "z", 22.5, 7, 11, 8);
-    rotated("body", 4.7, 8, 7.3, 5.9, 11.3, 8.7, "z", -22.5, 5.5, 10.5, 8);
-    rotated("edge", 5.3, 7.8, 7.5, 7.7, 8.55, 8.5, "z", 22.5, 5.7, 8.2, 8);
-  }
-
-  private void claw() {
-    sphere("body", 6, 7, 8, 2.7, 3.3, 2);
-    sphere("red", 5.3, 6.7, 8.8, 2.4, 2.8, 1.45);
-    boolean empty = id.endsWith("_empty");
-    int state = id.contains("shooting2") ? 2 : id.contains("shooting1") ? 1 : 0;
-    double gap = empty ? .4 : 1.4 + state * .55;
-    for (int side : new int[] {-1, 1}) {
-      double y = 7 + side * (gap + 1.1);
-      sphere("body", 9, y, 8, 3.1, side < 0 ? 1.2 : 1.6, 1.45);
-      rotated("body", 10.7, y - .45, 7.15, 13.3, y + .45, 8.85, "z", -side * 22.5, 11, y, 8);
-      box("paper", 7.6, y - side * .65 - .2, 8.9, 10.8, y - side * .65 + .2, 9.15);
-    }
-    if (id.contains("shooting")) {
-      double radius = .65 + state * .45;
-      JsonObject bubble = new JsonObject();
-      bubble.addProperty("name", "water_bubble");
-      bubble.add("from", vector(11 - radius, 7 - radius, 8 - radius));
-      bubble.add("to", vector(11 + radius, 7 + radius, 8 + radius));
-      JsonObject faces = new JsonObject();
-      for (String side : List.of("north", "south", "east", "west", "up", "down")) {
-        JsonObject face = new JsonObject();
-        face.addProperty("texture", "spawn:entity/coastal_crab/bubble");
-        face.add("uv", vector(4, 8, 8, 16));
-        faces.add(side, face);
-      }
-      bubble.add("faces", faces);
-      parts.add(bubble);
-    }
-  }
-
   private void paper() {
     box("body", 3.5, 3.5, 7.87, 12.5, 12.5, 8.13);
     rotated("body", 3.5, 11.4, 7.87, 6, 13.2, 8.13, "x", 22.5, 5, 11.5, 8);
   }
 
   private void abacus() {
-    box("body", 2, 2, 7, 3, 14, 9);
-    box("body", 13, 2, 7, 14, 14, 9);
-    box("body", 2, 2, 7, 14, 3, 9);
-    box("body", 2, 13, 7, 14, 14, 9);
+    box("body", 1.6, 3.4, 7.1, 3.1, 15, 8.9);
+    box("body", 12.9, 3.4, 7.1, 14.4, 15, 8.9);
+    box("body", 3.1, 3.4, 7.1, 12.9, 5.2, 8.9);
+    box("body", 3.1, 13.35, 7.1, 12.9, 15, 8.9);
     int count =
         id.endsWith("_unset")
             ? -1
             : id.contains("abacus_") ? Integer.parseInt(id.substring(id.lastIndexOf('_') + 1)) : 0;
     for (int row = 0; row < 2; row++) {
-      box("grip", 3, 5 + row * 5, 7.8, 13, 5.3 + row * 5, 8.2);
-      int moved = count < 0 ? 3 : row == 0 ? count % 7 : count / 7;
+      double y = 7.5 + row * 4;
+      box("grip", 3.05, y - .15, 7.83, 12.95, y + .15, 8.17);
+      int moved = row == 0 ? count % 7 : count / 7;
+      int[] unset = row == 0 ? new int[] {3, 4, 5, 8, 9, 12} : new int[] {4, 5, 7, 9, 10, 12};
       for (int bead = 0; bead < 6; bead++) {
-        double x = bead < 6 - moved ? 3.3 + bead * .85 : 12.5 - (5 - bead) * .85;
-        bevelBox("paper", x, 4.2 + row * 5, 7.1, x + .65, 6.2 + row * 5, 8.9, .18);
+        int slot = count < 0 ? unset[bead] : 3 + bead + (bead < 6 - moved ? 0 : 4);
+        double x = slot + .5;
+        box("paper", x - .38, y - .76, 7.35, x + .38, y + .76, 8.65);
+        box("paper", x - .29, y - .52, 7.18, x + .29, y + .52, 8.82);
       }
     }
   }
 
-  private void nativeCutout(double minimumAlong, int layer) throws IOException {
-    if (profile != EquipmentStyle.QUILL) {
-      rectifiedSurface(minimumAlong);
-      return;
+  private void quill() {
+    rotated("grip", 7.78, -1, 7.81, 8.22, 1.1, 8.19, "z", -45, 8, 8, 8);
+    rotated("paper", 7.67, .8, 7.74, 8.33, 5.8, 8.26, "z", -45, 8, 8, 8);
+    rotated("edge", 7.79, 5.5, 7.49, 8.21, 15.85, 8.51, "z", -45, 8, 8, 8);
+    rotated("body", 6.7, 4.9, 7.71, 7.97, 7.65, 8.22, "z", -45, 8, 8, 8);
+    rotated("body", 6.11, 7.6, 7.66, 7.94, 10.4, 8.29, "z", -45, 8, 8, 8);
+    rotated("body", 5.72, 10.36, 7.71, 7.94, 13.05, 8.26, "z", -45, 8, 8, 8);
+    rotated("body", 6.22, 13.01, 7.76, 7.95, 15.22, 8.23, "z", -45, 8, 8, 8);
+    rotated("body", 6.91, 15.16, 7.81, 8.28, 16.22, 8.19, "z", -45, 8, 8, 8);
+    rotated("body", 8.05, 5.9, 7.77, 9.35, 8.71, 8.27, "z", -45, 8, 8, 8);
+    rotated("body", 8.06, 8.64, 7.83, 10.35, 12.57, 8.37, "z", -45, 8, 8, 8);
+    rotated("body", 8.05, 12.52, 7.8, 9.44, 15.1, 8.29, "z", -45, 8, 8, 8);
+    if (!model.getAsJsonObject("textures").has("layer1")) return;
+    // The biome marker remains a separate native overlay with its own tint.
+    for (int layer : new int[] {0, 1}) {
+      double depth = .18 + layer * .02;
+      face(8, 1, 8 + depth, 14, 7, 8, 9, 14, 15, layer);
+      face(8, 1, 8 - depth, 14, 7, 8, 9, 14, 15, layer);
+      var faces = parts.get(parts.size() - 1).getAsJsonObject().getAsJsonObject("faces");
+      var north = faces.remove("south").getAsJsonObject();
+      north.add("uv", vector(14, 9, 8, 15));
+      faces.add("north", north);
     }
-    var textures = model.getAsJsonObject("textures");
-    String key = "layer" + layer;
-    if (!textures.has(key)) return;
-    String texture = textures.get(key).getAsString();
-    while (texture.startsWith("#")) texture = textures.get(texture.substring(1)).getAsString();
-    BufferedImage icon = NativeEquipmentModels.image(texture);
-    int width = icon.getWidth(), height = Math.min(width, icon.getHeight());
-    double unit = 16.0 / width;
-    for (int py = 0; py < height; py++)
-      for (int px = 0; px < width; px++) {
-        if (icon.getRGB(px, py) >>> 24 == 0) continue;
-        double x = (px + .5) * unit,
-            y = (py + .5) * unit,
-            along = (x + 16 - y) / Math.sqrt(2),
-            across = (x + y - 16) / Math.sqrt(2);
-        if (along < minimumAlong) continue;
-        double thickness =
-            switch (profile) {
-              case FISH ->
-                  along > 17 || along < 5 || across < -.8 || across > 3.1
-                      ? .35
-                      : .5 + 3.8 * Math.sqrt(Math.max(0, 1 - Math.pow((across - 1.2) / 2, 2)));
-              case CORAL -> 1.8;
-              case SHELL -> .8 + Math.max(0, 1.2 - Math.abs(across) * .15);
-              case BRUSH -> 1.7;
-              default -> profile == EquipmentStyle.QUILL ? .25 : .6;
-            };
-        JsonObject part = new JsonObject();
-        part.addProperty("name", "painted_profile_" + serial++);
-        part.add("from", vector(px * unit, 16 - (py + 1) * unit, 8 - thickness / 2 - layer * .015));
-        part.add("to", vector((px + 1) * unit, 16 - py * unit, 8 + thickness / 2 + layer * .015));
-        JsonObject rotation = new JsonObject();
-        rotation.addProperty("axis", "z");
-        rotation.addProperty("angle", 0);
-        rotation.add("origin", vector(8, 8, 8));
-        part.add("rotation", rotation);
-        JsonObject faces = new JsonObject();
-        for (String side : List.of("north", "south", "east", "west", "up", "down")) {
-          JsonObject face = new JsonObject();
-          face.addProperty("texture", "#" + key);
-          face.addProperty("tintindex", layer);
-          face.add(
-              "uv",
-              side.equals("north")
-                  ? vector((px + 1) * unit, py * unit, px * unit, (py + 1) * unit)
-                  : vector(px * unit, py * unit, (px + 1) * unit, (py + 1) * unit));
-          faces.add(side, face);
-        }
-        part.add("faces", faces);
-        parts.add(part);
-      }
-    if (profile == EquipmentStyle.QUILL && layer == 0) nativeCutout(minimumAlong, 1);
   }
 
   private void rectifiedSurface(double minimumAlong) throws IOException {
@@ -580,6 +479,10 @@ final class EquipmentSculpture {
   }
 
   private void dial() {
+    if (id.startsWith("legendarysurvivaloverhaul:thermometer")) {
+      temperatureDial();
+      return;
+    }
     if (profile == EquipmentStyle.DEPTH_METER) {
       box("body", 2.5, 4, 6.8, 13.5, 7.5, 9.2);
       box("body", 3.5, 7.5, 6.8, 12.5, 9.5, 9.2);
@@ -639,6 +542,17 @@ final class EquipmentSculpture {
             9.3);
       }
     }
+  }
+
+  private void temperatureDial() {
+    box("dark", 3.1, 2.85, 6.75, 12.9, 4.2, 9.8);
+    box("glass", 3.1, 4.2, 7, 12.9, 9.6, 9.6);
+    box("glass", 3.8, 9.6, 7, 12.2, 11.35, 9.6);
+    box("glass", 5.1, 11.35, 7, 10.9, 12.55, 9.6);
+    box("glass", 6.15, 12.55, 7.15, 9.85, 13.3, 9.5);
+    box("dark", 4.55, 4.75, 6.79, 11.45, 9.35, 7.02);
+    hoop("dark", 8, 8.64, 9.72, 4.55, .43, .34);
+    dialFace(8, 8.55, 9.6, 4);
   }
 
   private void dialFace(double x, double y, double z, double radius) {
@@ -709,20 +623,30 @@ final class EquipmentSculpture {
     } else if (profile == EquipmentStyle.FISH_FINDER) {
       box("dark", 4, 12.5, 7.3, 4.7, 16, 8.2);
       face(4.2, 4.2, 9.4, 11.8, 11.8, 5, 7, 11, 12, 0);
-    } else {
-      hoop("edge", 8, 8, 9.4, 3.6, .6, .5);
-      face(5.3, 5.3, 9.35, 10.7, 10.7, 5, 5, 11, 11, 0);
-      for (int x : new int[] {3, 12})
-        for (int y : new int[] {3, 12}) box("red", x, y, 9.2, x + 1, y + 1, 9.5);
     }
+  }
+
+  private void projector() {
+    box("dark", 3, 2.5, 6.35, 13, 13.5, 9.3);
+    box("body", 4.05, 3.55, 5.95, 11.95, 12.45, 6.35);
+    box("body", 3.45, 2.95, 9.3, 12.55, 13.05, 9.68);
+    hoop("dark", 8, 8, 9.9, 3.95, .88, .55);
+    hoop("edge", 8, 8, 10.27, 3.54, .53, .43);
+    face(5.25, 5.25, 10.09, 10.75, 10.75, 4, 4, 12, 12, 0);
+    box("red", 3.15, 3.65, 9.25, 4.1, 5.8, 9.83);
+    box("red", 11.9, 10.2, 9.25, 12.85, 12.35, 9.83);
   }
 
   private void document() {
     if (profile == EquipmentStyle.ALTIMETER) {
-      box("body", 4, 2, 6.6, 6, 14, 9.4);
-      box("body", 10, 2, 6.6, 12, 14, 9.4);
-      box("body", 6, 2, 6.6, 10, 6, 9.4);
-      box("body", 6, 12, 6.6, 10, 14, 9.4);
+      box("body", 4.35, 2.6, 6.5, 6, 13.4, 8.8);
+      box("body", 10, 2.6, 6.5, 11.65, 13.4, 8.8);
+      box("body", 6, 2.6, 6.5, 10, 6, 8.8);
+      box("body", 6, 12, 6.5, 10, 13.4, 8.8);
+      box("dark", 4.85, 1.95, 6.8, 11.15, 2.6, 8.5);
+      box("edge", 4.85, 13.4, 6.8, 11.15, 14.05, 8.5);
+      // The native height strip draws on both sides at z7.5 and z8.5.
+      box("dark", 5.98, 5.98, 7.94, 10.02, 12.02, 8.06);
     } else if (profile == EquipmentStyle.TABLET) {
       bevelBox("body", 3.5, 1.5, 7, 12.5, 14.5, 9, .7);
       face(4, 2.5, 9.05, 12, 13.5, 4, 3, 12, 13, 0);
@@ -776,11 +700,15 @@ final class EquipmentSculpture {
   }
 
   private void whistle() {
-    sphere("body", 8, 7.5, 8, 3.4, 2.8, 2.8);
-    bevelBox("body", 2.2, 6.5, 7, 5.5, 8.4, 9, .35);
-    box("dark", 2.1, 7, 7.3, 2.3, 7.7, 8.7);
-    hoop("paper", 12, 5, 8, 2.5, .25, .35);
-    box("paper", 10.4, 7, 7.8, 12.2, 7.5, 8.2);
+    bevelBox("body", 6.05, 5.1, 6.1, 10.8, 9.45, 9.9, .55);
+    box("body", 6.8, 9.45, 6.65, 10.15, 10.05, 9.35);
+    box("body", 2.45, 6.15, 6.6, 6.3, 6.67, 9.4);
+    box("edge", 2.45, 7.7, 6.6, 5.75, 8.23, 9.4);
+    box("body", 2.45, 6.67, 6.6, 6.05, 7.7, 7.08);
+    box("body", 2.45, 6.67, 8.92, 6.05, 7.7, 9.4);
+    box("dark", 5.75, 6.67, 7.08, 6.05, 7.7, 8.92);
+    box("detail", 10.5, 7.25, 7.65, 12.05, 7.7, 8.35);
+    hoop("paper", 12.05, 5.8, 8, 1.65, .23, .38);
   }
 
   private void rope() {
@@ -799,14 +727,19 @@ final class EquipmentSculpture {
   private void smallLoop() {
     box("body", 7.5, profile == EquipmentStyle.BUBBLE ? -1 : 1, 7.5, 8.5, 10, 8.5);
     if (profile == EquipmentStyle.KEY) {
-      bevelBox("body", 5.5, 10, 7.5, 6.4, 14.8, 8.5, .2);
-      bevelBox("body", 9.6, 10, 7.5, 10.5, 14.8, 8.5, .2);
-      box("body", 6.4, 10, 7.5, 9.6, 10.9, 8.5);
-      box("body", 6.4, 13.9, 7.5, 9.6, 14.8, 8.5);
+      box("body", 5.55, 9.8, 7.36, 10.45, 10.55, 8.64);
+      box("body", 5, 10.55, 7.27, 11, 11.65, 8.73);
+      box("body", 5, 11.65, 7.27, 7.12, 13.45, 8.73);
+      box("body", 8.88, 11.65, 7.27, 11, 13.45, 8.73);
+      box("body", 5, 13.45, 7.27, 11, 14.4, 8.73);
+      box("body", 5.55, 14.4, 7.36, 10.45, 15.15, 8.64);
       box("body", 8.4, 2, 7.5, 10.4, 3, 8.5);
       box("body", 8.4, 4, 7.5, 9.7, 5, 8.5);
       box("body", 8.4, 6, 7.5, 10.1, 7, 8.5);
-    } else hoop("body", 8, 12, 8, 3.1, .45, .6);
+    } else {
+      box("edge", 7.24, 8.1, 7.37, 8.76, 9.65, 8.63);
+      hoop("body", 8, 12, 8, 3.1, .68, .84);
+    }
   }
 
   private void spyglass() {
@@ -850,12 +783,13 @@ final class EquipmentSculpture {
     bevelBox("body", 3, 9, 5, 13, 10.1, 11, .7);
     bevelBox("body", 3.7, 10.1, 5, 12.3, 11, 11, .7);
     bevelBox("body", 4.5, 11, 5, 11.5, 11.6, 11, .7);
-    face(3.6, 2.6, 11.02, 12.4, 9.6, 3, 7, 13, 14, 0);
     for (int rib = 0; rib < 8; rib++)
       box("grip", 4.8 + rib * .9, 11.59, 5.2, 4.95 + rib * .9, 11.72, 10.8);
-    hoop("grip", 8, 12.2, 8, 2.5, .5, 1.1);
+    box("grip", 5.45, 11.52, 7.35, 6.4, 13.8, 8.65);
+    box("grip", 9.6, 11.52, 7.35, 10.55, 13.8, 8.65);
+    box("grip", 5.45, 13.8, 7.35, 10.55, 14.75, 8.65);
     for (int x : new int[] {5, 10}) {
-      box("detail", x, 7, 4.7, x + .8, 10, 5.05);
+      box("dark", x, 8.4, 4.7, x + .8, 9.8, 5.05);
       box("detail", x, 7, 10.95, x + .8, 10, 11.3);
     }
   }
@@ -1178,7 +1112,8 @@ final class EquipmentSculpture {
               Math.min(y2, y + 7.9),
               Math.min(z2, z + 7.9),
               null);
-          if (id.startsWith("exposure:interplanar_projector")) {
+          if (profile == EquipmentStyle.PROJECTOR
+              || id.startsWith("legendarysurvivaloverhaul:thermometer")) {
             // UV subdivisions inside the tall housing are not physical caps.
             JsonObject faces =
                 parts.get(parts.size() - 1).getAsJsonObject().getAsJsonObject("faces");
@@ -1221,7 +1156,9 @@ final class EquipmentSculpture {
       double y2,
       double z2,
       JsonObject rotation) {
-    int tile = MATERIALS.indexOf(material);
+    boolean temperatureDial = id.startsWith("legendarysurvivaloverhaul:thermometer");
+    boolean gaugeBase = temperatureDial && material.equals("dark");
+    int tile = MATERIALS.indexOf(gaugeBase ? "glass" : material);
     if (tile < 0) throw new IllegalArgumentException(material);
     JsonObject part = new JsonObject();
     part.addProperty("name", material + "_" + serial++);
@@ -1236,7 +1173,11 @@ final class EquipmentSculpture {
       double height = (side.equals("up") || side.equals("down")) ? z2 - z1 : y2 - y1;
       JsonObject face = new JsonObject();
       face.addProperty("texture", "#surface");
-      face.add("uv", vector(u, v, u + Math.min(2, width / 4), v + Math.min(2, height / 4)));
+      JsonArray uv = vector(u, v, u + Math.min(2, width / 4), v + Math.min(2, height / 4));
+      if (gaugeBase) uv = vector(u + .9, v + .9, u + .96, v + .96);
+      else if (profile == EquipmentStyle.PROJECTOR || temperatureDial)
+        uv = vector(u + .4, v + .4, u + .8, v + .8);
+      face.add("uv", uv);
       faces.add(side, face);
     }
     part.add("faces", faces);
@@ -1312,6 +1253,39 @@ final class EquipmentSculpture {
       for (var context : display.entrySet()) {
         JsonArray angles = context.getValue().getAsJsonObject().getAsJsonArray("rotation");
         angles.set(1, new com.google.gson.JsonPrimitive(angles.get(1).getAsDouble() + 180));
+      }
+    if (profile == EquipmentStyle.QUILL) {
+      display.add("thirdperson_righthand", transform(0, 0, 0, .7, 2.4, 1.33, .55));
+      display.add("thirdperson_lefthand", transform(0, 0, 0, -.38, 2.4, 1.33, .55));
+    }
+    if (id.startsWith("legendarysurvivaloverhaul:thermometer"))
+      HeldItemModels.resizeHeld(display, .78f, .78f, new org.joml.Vector3f(8, 3.5f, 8));
+    if (id.equals("handcrafted:hammer")
+        || id.startsWith("spawn:coastal_crab_claw")
+        || id.startsWith("spawn:casting_net")
+        || id.equals("wetland_whimsy:dagger")
+        || id.equals("betterarcheology:bomb")
+        || id.equals("wetland_whimsy:sludge_charge")
+        || id.equals("immersive_weathering:steel_wool"))
+      for (var hand : display.entrySet()) {
+        JsonArray offset = hand.getValue().getAsJsonObject().getAsJsonArray("translation");
+        double down =
+            switch (id) {
+              case "handcrafted:hammer" -> 0;
+              case "wetland_whimsy:dagger" -> 2.75;
+              case "spawn:casting_net", "spawn:casting_net_full" -> 2.25;
+              default -> 1;
+            };
+        offset.set(1, new com.google.gson.JsonPrimitive(offset.get(1).getAsDouble() - down));
+        if (id.equals("wetland_whimsy:dagger")) {
+          var rotation = hand.getValue().getAsJsonObject().getAsJsonArray("rotation");
+          rotation.set(1, new com.google.gson.JsonPrimitive(rotation.get(1).getAsDouble() * .67));
+        }
+        if (id.equals("handcrafted:hammer")) offset.set(2, new com.google.gson.JsonPrimitive(1.8));
+        if (id.equals("betterarcheology:bomb")
+            || id.equals("wetland_whimsy:sludge_charge")
+            || id.equals("immersive_weathering:steel_wool"))
+          offset.set(2, new com.google.gson.JsonPrimitive(1.25));
       }
     return display;
   }

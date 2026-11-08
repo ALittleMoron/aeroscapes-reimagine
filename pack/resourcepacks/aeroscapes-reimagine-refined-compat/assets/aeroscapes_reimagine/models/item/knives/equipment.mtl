@@ -1,0 +1,99 @@
+newmtl flint_blade
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/flint
+
+newmtl flint_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/flint
+
+newmtl flint_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/flint
+
+newmtl flint_bolster
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/flint
+
+newmtl iron_blade
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/iron
+
+newmtl iron_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/iron
+
+newmtl iron_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/iron
+
+newmtl iron_bolster
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/iron
+
+newmtl golden_blade
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/golden
+
+newmtl golden_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/golden
+
+newmtl golden_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/golden
+
+newmtl golden_bolster
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/golden
+
+newmtl diamond_blade
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/diamond
+
+newmtl diamond_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/diamond
+
+newmtl diamond_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/diamond
+
+newmtl diamond_bolster
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/diamond
+
+newmtl netherite_blade
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/netherite
+
+newmtl netherite_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/netherite
+
+newmtl netherite_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/netherite
+
+newmtl netherite_bolster
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/knives/netherite

@@ -1,6 +1,14 @@
 [
   {
     "targets": {
+      "LNytGWDc": "UjX6dr61",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Create 6.0.10's SandPaperItemRenderer draws its body with context NONE after applying the outer hand transform. SandpaperHeldModelMixin selects the corresponding held child on a disposable pose before that inner draw; GUI, ground and fixed keep the native icon. The native polishing item overlay and its transforms remain provider-owned. Exact provider bytecode and real CustomRenderedItemModel/SeparateTransformsModel regression checks guard this seam."
+  },
+  {
+    "targets": {
       "4HnO3el1": "OViKhK8K"
     },
     "files": [

@@ -26,8 +26,6 @@
     "TideHookAccess"
   ],
   "client": [
-    "BlockModelElementsAccess",
-    "RefinedRodCastMixin",
     "TideInfoPlacementMixin",
     "ModefiteTideCastMixin",
     "PunchyRodTypeMixin",

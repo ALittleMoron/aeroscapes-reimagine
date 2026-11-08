@@ -1119,11 +1119,11 @@ hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "ff577e2d13de9052068a7fa93a3cb0e86a99e8cefeb9136ec920c1dffd900163"
+hash = "918437cc1f26894b6cfb34ca4caf15553eb69d5b6e2f3ac4007fee9a3165f755"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "94852bd758d3bd82d60746bbfdd53ac6e8a9baec9550baa4e310a5036ab473d7"
+hash = "22a9afabe418389d670a97351433a9192b62069feedeeba96d30bbb72118fe1f"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1152,7 +1152,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "21cd3f9d531cd2e4f7fa1a91a266d93985af026af50696c795671ee68a16601c"
+hash = "970c7e669189cfd8a26d310a3118b99145c1ad6db977d7b2ea4baaab0d57abd9"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -2290,7 +2290,11 @@ hash = "2c4b98169d209c5377dbe5a7c4260174f7145730280eec85f6b10bd174b5cad0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/nutritionalbalance/models/item/equipment/held/lunchbox.json"
-hash = "47b9094c132137579040133239611517d694777920a741eee9407a9337a00aa1"
+hash = "d0a45be2e464879a46264c06e87dff14fb3773e41d675b1da6abbccab7fdddb2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/nutritionalbalance/models/item/lunchbox.json"
+hash = "4e5aa3a2c4e79f17a9a974ba60734b7d8c6fe0b2d9632f95cdfa741c26ce12c8"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/nutritionalbalance/models/item/lunchbox_3d.json"
@@ -2409,28 +2413,260 @@ file = "resourcepacks/aeroscapes-reimagine-atmosphere/pack.mcmeta"
 hash = "cdea174265b490f6b7988f67257716a028927501e1663505af016a672a4fe885"
 
 [[files]]
-file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/chipped_saw.obj"
-hash = "bfa46d51129dc16560928586a1527332a54ca1ba97aa5ffd77c500c07233ed2e"
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/coral_axe.obj"
+hash = "473fa610361acdf1066008010a783ab1249b54dceb035d905780de8788804cad"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/coral_blade.obj"
+hash = "e4bc54f512e22ec3016045635bed119a45f26bf7cfc2ac0d7624ec3480752b32"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/coral_pickaxe.obj"
+hash = "b8091b978dea6ab9755589763ac305d433dc1365a49f0253f3f68cbdb8827c0c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/coral_shovel.obj"
+hash = "1f9a1b617eaf4c2b16e3f7a3ba01986f7c401f727ac84848abb7b9133c35842b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/equipment.mtl"
+hash = "7542c491bbfa4d6f67de0cf23e120e40d9c5dd4c2361a5c2f41f3537dd415707"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/seashell_axe.obj"
+hash = "e796dc2efb3bc82a33e818472ba943562e72772b224797c8b813894d58deb394"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/seashell_hoe.obj"
+hash = "cc5cedc552b451321e7dea8a9c80fc429dd68e362672d5b127f518b9373a652f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/seashell_pickaxe.obj"
+hash = "60203ba92937e70999567a3eb185a012316047466e62b215c66913787311269e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/seashell_shovel.obj"
+hash = "d711b6a92a3a00d43de65055f33b8ee1b4bfa4cc1ffc9d0285709579f2ddc62f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/seashell_spear.obj"
+hash = "6850ba4ef2b4b71250e3f0ae4b0ac5582726843389591ce5563762f56cfb32a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/construction_equipment/bag.obj"
+hash = "0124f05c354ea19f6424b67f6947301afc32e98f9ff5569d16a6f42e61f7bf6f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/construction_equipment/equipment.mtl"
+hash = "baffd03335aff8ec18f29f85040923adac018ceb14ac81136e6f3d6f92ef61cd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/construction_equipment/measure_tape.obj"
+hash = "c528eccfd5526a81a7590b4396126ce77c8ad42066cb5cbc88d8888151c4021c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/construction_equipment/saw.obj"
+hash = "a4381427f67f2ee005ef89c8e6ed4f5574e0b8fd1a14b35a2d8efbba228d82e2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector.obj"
+hash = "3345b05220dd4d660dde7ca82fbb48fda8fb56f2ffd181f4912fca53dcbf2aaa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_clipboard.obj"
+hash = "e2c2905717e72cedf07f6c7dd7ff0457a34b411ffa7065649c535f42cf72625d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_clipboard_0.obj"
+hash = "5e75fbed4db64f02eb5047e113324a5b78c21b8f0e66c9c1f2be9a738911e6dd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_clipboard_1.obj"
+hash = "f7bf03f4ba106a2afa70c2bea02debc1772fbfbaa93c83722027e9b498d5d2a8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_clipboard_2.obj"
+hash = "6eeafc5760df49e1135971dcdc7201e32cfdc20fcf33154396bb2447d6dac37e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_red_sand_paper.obj"
+hash = "aba76eabfa11327fbfe754bdc06912c801b082da041f116953c19faaea5eeec1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_sand_paper.obj"
+hash = "0372d1d938dbe5d85cd3df480ca6c37ac9924c7926290a6b6f8326d4b4c3ecc0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_schematic_and_quill.obj"
+hash = "7e7d3dff048ad373d55740251a72856067803308289b90236104f76ae295866b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/create_super_glue.obj"
+hash = "44dd5178fc01e4f7b73c144369b50d36248e24a4bed9d90dc189061712435ee9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/equipment.mtl"
+hash = "70c9b1dd49dddcaea76d16856ee034d1c5e35f7137e96d63a394937c90e6e816"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/simulated_honey_glue.obj"
+hash = "2fe9a4c9a6ca41c4e32875eb2ae9311b64253acd8795ee2ee2e0089eed92c41a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/simulated_rope_coupling.obj"
+hash = "203f1e5a0df95b28c139d343aa57e562b612b055b56e4be46e0c3045bcf6e9a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/echo_bell.obj"
+hash = "4c2c3f2ba08fbf8675925c6efabaae8bd7a60794038d1fe6c586ffc84c34d269"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/equipment.mtl"
+hash = "f5a1cfd65bb6fa6e6dc2672677945852b718d291c5af86783cc2ecd24e2c0c8b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/glow_flare.obj"
+hash = "d4586a4964966e557e0b1606958cd1282f27f9966ce0b8b3038dc5187b76aa26"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/monstrometer.obj"
+hash = "97a87d7159e0e4827eb2c75b1d5a4c135150157d04696090e273eecf90dab3d8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/monstrometer_fueled.obj"
+hash = "c20f135db85b3072e75c6affe3d73231a1c5d8921aa185771afde2ef94dcfcd6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/palladium_bomb.obj"
+hash = "816a43f50af76e8b6b20f961356b3bc3d4b8e281db62b1d9f81c12dab921f97b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/saltbound_tablet.obj"
+hash = "175e651a516fa081c41a2fdacfedd81e612b81673cb653eaf456eeee20961b38"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/saltbound_tablet_cooldown.obj"
+hash = "4536547be86d8fcce6929b638f092aa88c62d2757868da8eff69be4caaa35348"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/saltbound_tablet_using.obj"
+hash = "9b36fc2080651b6e978471b96074dc16efd72ee8cdbf63ca9d24ab91573817d2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/spectre_bound_spyglass.obj"
+hash = "1b8608fcc354e8e2bb9765eb090496948b625c32ac6845e0f52e91f5432eaf92"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/spectre_flare.obj"
+hash = "a94f976ea9abca0056eed7513a24988697124a6d0cbec6146293d243f2153eb5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/spectre_flare_glass.obj"
+hash = "bb72e9829b54adb5f5179909444525b52618a0edcbf43f72c337a2c7325c8417"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/knives/diamond.obj"
+hash = "b2d7c8ad79e05924f2b80d60c7465ccb2c53245a476ee0daec2652eadeb05c8d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/knives/equipment.mtl"
+hash = "211167510d946afa006355b6926a552d94884a9a34ee9cfc6e26e71148208a85"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/knives/flint.obj"
+hash = "30905785fe3e40248b0a13c65fd01af70f30c0ad2c1506431ccd24802d37eea8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/knives/golden.obj"
+hash = "2f672e31c405bdd37a44fb34be764197771d31bbbf473f764cabe7472101f18d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/knives/iron.obj"
+hash = "221dd0bf864cc8284789b1e567466648e70d1bb8a830ecfaa5bc907e2a484e2d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/knives/netherite.obj"
+hash = "612cbb76ee89ca417750754df653d060c1690262dbb7ad89618eb3865e10698a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/betterarcheology_bomb.obj"
+hash = "241e6e4abb78be96cd22b3e7dff9683fa6a99e735274449115271024a9a773ab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/crittersandcompanions_grappling_hook.obj"
+hash = "5de8ea791f7892a0c8a83362997af6a974c10528ebf8d23557127bbd736750c0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/equipment.mtl"
-hash = "5730001027df27def2f749ef2394d209124f378b1d26ead4e79ec6764e29f3b4"
+hash = "37e734830a5ab7fba08035abf84fdd3586e0add73000e5fcaf32389947c3fe83"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/naturalist_capture_net.obj"
-hash = "1d5ec77e4d2aab25e936dfa4b8663c20140db0796d2f4d19c36c835a5d099f47"
+hash = "65e09f61e5929645e189979231f58627d762da72477af5423cc458fd63ff73f4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/quark_flamerang.obj"
+hash = "e09f69ca7454b969f8c078e2c45db7d80fb7d64995a7219908dc332386b91af8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/quark_pickarang.obj"
+hash = "ef81c4b2870c161fc34508294ea78cb2feb9a9849fb68e835ac712a46a4c9849"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/quark_trowel.obj"
-hash = "c8c0cbceda66ee7e265bb786dc02c2eda30965c99783ce55cfb976ee1eeca568"
+hash = "bc2927df8f7f59470315edd8d810ed861955dfb58d1c8d38ecc376f0d1a9c7d1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/spawn_casting_net.obj"
-hash = "fbb75dd4137e40f759ad22af35dcb131c32e4c8bdbda326b1ea3483f61b99e4c"
+hash = "32d28776a4b5206aa0d44c70eb75fca29c48f61b74af673ce4a1659e67db91de"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/spawn_casting_net_full.obj"
-hash = "12ee0fd7aa000ddc386bbed5d72029b4a0a20ecf94a0a17f0204df372e92da24"
+hash = "39baa1f4205965f1053ab038742252199a9a3d19285940ed4924f24e3ef884c3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/spawn_coastal_crab_claw.obj"
+hash = "6a4cff8a8ed681616d23c6cbbe38db6abe93b3af6dfa73874125ec8c84c76ac4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/spawn_coastal_crab_claw_empty.obj"
+hash = "c8fc02a7a586169aabd0779bff026db2a723a3bfac0e229314883caf52880f99"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/spawn_coastal_crab_claw_shooting0.obj"
+hash = "91de7139627005839b0c9d62602e0cbbcae1ac8d8dcbe781c26d4cba6f0d9bbd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/spawn_coastal_crab_claw_shooting1.obj"
+hash = "2f0a9f5aa8006bfc72c1d71621fd7406b02340ac40f090cd13d5f8bfba76f833"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/spawn_coastal_crab_claw_shooting2.obj"
+hash = "39829c3de86a33c53979d6f97a3a78f8207b7bcb689307bdfc3697d9c1529491"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/supplementaries_bomb.obj"
+hash = "124bd6fc4222b28e41dfb961fa0890a94bd8b02044f62ea148cf446ba2710ddc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/supplementaries_bomb_blue.obj"
+hash = "aa356b1c82d3e91ac9cc47f1a1e236cb4281888e44f00124d2fa4d3cc0ce2824"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/supplementaries_bomb_blue_projectile.obj"
+hash = "ebcfa46847c6e4dff318799a149ab0c11397f1c8897f48b80f38775f7b6b2e51"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/supplementaries_bomb_projectile.obj"
+hash = "b0e8e7e8fc7cf435400d6fb6fe312becae917257522df728e2cdd9fe9e6c2119"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/supplementaries_bomb_spiky.obj"
+hash = "601e0ca1eaf59cb1e652c34732909ff4fe4769b1de947caa64e62db1b35a46c1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/supplementaries_bomb_spiky_projectile.obj"
+hash = "2748249fb34634a18eef193eeb4b869324d3960a50a5b1293ce952550b493e07"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/tide_starlight_bow.obj"
@@ -2449,164 +2685,176 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reim
 hash = "11d51926818f8586eab23dcfdf566791b2e4c50087ef04a87dd2248f090fbb86"
 
 [[files]]
-file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/chipped_watering_can.obj"
-hash = "a60c68458f7105c5adae3bf25a0a2f8b7bf23c102bb71012c656b5712c3f9211"
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/wetland_whimsy_dagger.obj"
+hash = "78de01990234df5437f0c2cddda00461aad1cfc961074be59d71fe339ffbd82a"
 
 [[files]]
-file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/create_super_glue.obj"
-hash = "bdec0f38ad9cf5776e730ddb66f235f04d5b332c75b55f2d9ad5081ef122c89f"
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/reviewed_equipment/wetland_whimsy_sludge_charge.obj"
+hash = "7535f134e83ca6936a2b55191c8b645c94e3c73a9a2eb626646bcb796a331ce2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/chipped_alchemy_book.obj"
+hash = "e4de767810171ec5a0a71623f585f147eabfa187e792a63bdf65c6bb19e4761e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/chipped_chisel.obj"
+hash = "df855f63ed169574195223716a2cef7fff75d85f44b261390d7955cacf542063"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/chipped_multimeter.obj"
+hash = "3ca56793975024aa4c4cc04fdd72d21198e67939b783bd1fe89a60ac2dc34be3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/chipped_needles.obj"
+hash = "290f98f5d277d51856a2cade965b111aa4acfe0c5698a9902c949e4debe3dc24"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/chipped_saw.obj"
+hash = "fc935215bdae08fa40335fb0ab2f993309855516a1bccceb4f0c16a26e4df19b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/chipped_watering_can.obj"
+hash = "faf2b593e0006f963b359b294fb0b5be7b1f3a7cb8da7aaf9c0f7517c97cbdcf"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/equipment.mtl"
-hash = "4fe4cc8f7fed0188897f29d053320a407db455981a7b92f7f316d4a33063c832"
+hash = "6e603f964432c84061481f1e8b3da2e1f33e37ca5c6084573966debb7e63e27a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass.obj"
-hash = "68195fd2ab343c1635b0eab41467959d786c56326699ab711adbcacf956d65b3"
+hash = "498ef89667bd48725684ad71715360bdc1de6b5a3164a2bc2e4891198fc334b1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_00.obj"
-hash = "9d732572ca0a865a6aeca85526aa11ffccd4249102cd532d571cba930c421f41"
+hash = "442db509fbddc767f7cb0c59889207894d4a1fe1176ce0b1bc3cab87e4be953d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_01.obj"
-hash = "6e2ba5b2a4ca6efcbf9c501304199267ccf7f87d687cf9f2c8fdbf7738a43c88"
+hash = "99302868cf7d17971565b5682ccaead77357c2665b9bfb6ca545716a9c3bc423"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_02.obj"
-hash = "d49858ec80cd9a883de0e820734681e7343db85ef86e2dea225f76063db513b8"
+hash = "f7e779c7afdc4ca8bef6132b1c37bba7081eea0d9b3090e8de4e0bb73eb426d5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_03.obj"
-hash = "6fb5d9a3ba72866200dac55274dba9034b08c8349116fba86dbdd66f1ea9d206"
+hash = "fc9818eaf4d932387da083b7bbb14db8b897fd36065132e8237635e19b97f08b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_04.obj"
-hash = "b40208ddaa347900223c17c59b379745e6161adfc4a8abf6145a1fa41ef0d652"
+hash = "090c1b7c91fd1fe0f6d90a748321bddb28663d34cbefbde1bbf415c1b01754a6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_05.obj"
-hash = "63440012377f97b3548ff8188e34cc77a1b2e1ee9f857e565480fe8a83241cee"
+hash = "184c0975f1de4110881c4c63a2a43d63f8189f01dc75da4de2da4ce4ddf9eced"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_06.obj"
-hash = "9e3527923db4ea167e43d98aed3a9fb6a9a88011a63d08d81015f5871ea147c6"
+hash = "77a3b9132f828f42aafb54ca914d89b042cc3c98464b40e96ec21611d8648184"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_07.obj"
-hash = "fba80483bcfbdd5551c5884858454f3505394c5d273bace5163fee83ca8c30a3"
+hash = "50f15456f26746b942a8fcd63d53ad5e2d881a3733390a0d15d73c81e5d31ed4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_08.obj"
-hash = "be3557a392006b0881193f2e1ffa4f05e87cec7e18ae9b9c3872827a66e998df"
+hash = "244c131a0fd79d59e9a98412306975146c7aa3a949304160fd316f43e45edcf2"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_09.obj"
-hash = "8328358d598b667a8bfa13995732fdc6d42acfa8f29fe9b0d4221f4ba496821b"
+hash = "d08cf4cdd75f94d7e41ea4d5ce99b8adc1e2b68e6b1fbccea6698b13fa900899"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_10.obj"
-hash = "946bba3aa44be24d1acceb9a6d87312406b75faa7f7b010d9fe8568b7f5cae0f"
+hash = "6bf7abeec5e048bfb5b5cd1c1354a141817f7be8bc417d0fc07dd07d6d343eab"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_11.obj"
-hash = "ab1ab9419c0eb069b5b0054c80898d9a7afb3e4e6fd54d50d118b4f0b2228409"
+hash = "9ed3e0492529ee0957821b05b44b1e9ac345ef09548e0d2740ebf7815c6e3a7b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_12.obj"
-hash = "3db0014da153d118cc03d891dcba8536927fd41353cd41529202bc9729e20557"
+hash = "7ebaa2716b396309522e7beab42403952814d0968a39afc53a5b248199cc5d94"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_13.obj"
-hash = "709bbfd67b6891605620cb9fdc391e900b1b64a7342e60d07209b130dc3ef9d3"
+hash = "bf2ae93a551ed167f37cbb360563087a2c242e5b7c14ad74f7ee044c1f4948ff"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_14.obj"
-hash = "9455d2cd902951119c8bfdb9f2ee1b535b7e97d799f3c253055560433311774e"
+hash = "a88d5adc4d0951b79ddf963fac38d09e31b3ff6e0af81c3d9478ef3e187faf12"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_15.obj"
-hash = "0a9c32cd657a1b22a025f7c58fbd6bee9ed5a749dd308e9622ceeebe4b9011c0"
+hash = "806d63d05534e60b477e9cee0752e0c52c5274eaef333619e99627c75cb0417f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_17.obj"
-hash = "06f2fe43a32a3f205df055b2f15c168a22228d07e94345b9318cb54113861c26"
+hash = "a91543eaff86217b259884dd39bea3361ece5da0592c75307ae111d3c09216ea"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_18.obj"
-hash = "3840eaaf12d12b88ffe8b4b5d964d6369dc3a04d06188841e14da9fb8d281918"
+hash = "a292218b0b98c7af783b3ce13146d8c858cde4a4e08016087c05ae373d290739"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_19.obj"
-hash = "90510ecd9b4b3161cf2f343cbeee14406a4e383f46affb12452438443d2e48ca"
+hash = "3f08c694f1982f01129b6bb4b2323dd0ef23e6e965f4d10f5cad026995fd7f70"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_20.obj"
-hash = "29b1c57412499b4686fa411b3f284e8b0320af432639f89963b37afcaad4cef5"
+hash = "3934ae63bee9b41457a145f12a180515a667f6748db5fa136cf73b1c3c5f842d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_21.obj"
-hash = "78900e67c75a4c14dcccea3684b9a1f0f0c4bb0d5aabfd6e089a9e49b3a80adb"
+hash = "f76c80bd04384b5f70d6825bf5b301399b6790852e78e9f67f1b1b11d8e66cfe"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_22.obj"
-hash = "35b0a0ef11bf3038e50c3f6b2b5f0dfdd4d762125d7d499ecd721f32669c1315"
+hash = "7650642768d5a94465a1aa6edfa0bb1b03a932dbb3e6d986dbead4cc37e161c7"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_23.obj"
-hash = "d4af8e4691bf4e14253ff9ae598244d7ac8ae9b1e42624a15a1152dd8314e4f8"
+hash = "e69f1aa1ca12249963a0eaf0befb293a13c34783bee4ba9f0e8aae824e1c8020"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_24.obj"
-hash = "3655fcaacae90b1e3cc3ad8f8551ec578641b4ed57195f01768b524cd5f87b9a"
+hash = "f1b62f1d50e5b75f292a78d42c2d795f5f6f30b7b1c8d6b999f8a92543e5cc91"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_25.obj"
-hash = "73f99c1f3d692f372492f5ecf304b25a6c94d10a3f7a110a48b66f0b10e679aa"
+hash = "31125aefe6532f3d677e7310c7105245f797443308cae4bf0d3a3ab0c7023542"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_26.obj"
-hash = "63eae0b4c55bdd30199d91b7e2d1e4e3ef4ed20e8f77207f7903009c7e18e0ef"
+hash = "b5802289277e7530cd68250b67eda09fb97c361d990452bfdd51608ea1e59ffa"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_27.obj"
-hash = "313adb75195eeca877b6f1cf4a54f090eeda6df29ab3305d3890174d3d5adde5"
+hash = "72d2d3079e18ddcd09d0e9ca0e4b935192210d6fce9d3ffc189e96f21c1acada"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_28.obj"
-hash = "ba6d2d7242d0e1125585237c1b8e6f89241baeb4f42ba45cc14ab2847334c4aa"
+hash = "18c51774df39a05614190f351c8c53ec59524715e294c73bd7edf7ba9d204c20"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_29.obj"
-hash = "fce9015d34aa04bb5e60c3fcfc1147d624fdbfd8c01823b892b0c1fcfee95ff0"
+hash = "6809eb3b30c16e39e80518b3bfe6b23f6e0773fc271da64eb7b1a264d936ed1f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_30.obj"
-hash = "62cb5ea1e294ac255b5864b67916c50d4234618813993c9bd8fd0a6871b959f1"
+hash = "acd48b8f65eedb8f437b9868e9f23cf4c2488491b1b0f60875d95246c581da30"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/explorerscompass_explorerscompass_31.obj"
-hash = "0a0611647d1e587b6334c646b6feeda47e30d4a2ff89611339c523c442f4f1f1"
-
-[[files]]
-file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/galosphere_echo_bell.obj"
-hash = "9bf1590131bed862866bdb718f7e4f01e298d37e5be436140b910e86433f46cd"
-
-[[files]]
-file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/galosphere_glow_flare.obj"
-hash = "3f13379a5611f59069215c3278166a77820c154baf12ecd4a0f8fd2ce24f4c2a"
-
-[[files]]
-file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/galosphere_monstrometer.obj"
-hash = "2a4f4cba93858d4a7b417cc93707571a2ddd0dedd202608aeb0a27ae46ca5320"
-
-[[files]]
-file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/galosphere_monstrometer_fueled.obj"
-hash = "3858022c06c1109e97e4d10235640106f2c778c195a9f5a131842ed29aa4050f"
+hash = "61a885e355db62ceb9667a88fb093b7753535e2bd43549a394097f9a9350df45"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/galosphere_rope_dart.obj"
-hash = "e2d7a8c249ceb610823bc9bce76159bde1b7c665831daff85934b1c45d7bbb3b"
+hash = "39e060fb120aa38d1262783328ad6bb75bb9f53e171eea0ebf0bcd1b5099b5db"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/hybrid_aquatic_coral_hoe.obj"
+hash = "d30aff65731aa6b8b31ab28fcea6e0462ecdac938e94add5099ee13b2a762f3a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/immersive_weathering_ice_sickle.obj"
@@ -2614,139 +2862,139 @@ hash = "42561d5b4ad14beb847f2fc60fe32c05f8546f6e68a556917585dbeeb7af95f7"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/immersive_weathering_steel_wool.obj"
-hash = "f108ecbb20d28bb396d6cf41d7eaff51a47fe6516fa637a31fdbd8970dec7865"
+hash = "9f76dcfd71b1e59233855636f1c63e0659440fbc2ccc75c13811140c6787110d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/littletiles_hammer.obj"
+hash = "72a1c86596164283baf88222beb365a66d7db04c2e97350f5855e793fe26ee33"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass.obj"
-hash = "3089a216dbcf3dce7c70148d3d000ba1375e7e64554ae1918a6fd670cf40bce6"
+hash = "4cfaa58178779604eb44f38a71834985bba900c41016e31a0864630912f49a5f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_00.obj"
-hash = "24189a23f1f7ddbbf438ca380599b0eec425060005f18cf22e9280985d7ff9aa"
+hash = "4ad9018c42a6e294e6afb5d824eee126f7d447785e62110d89190bf068b9bbb2"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_01.obj"
-hash = "76c3b93ed4b681e6dd7db1542ecb9f6e90411dce4165b8be3bfcb5ef82cf9ca5"
+hash = "6fa6024a39814514348f5d178585162a1cf42c2d6b234ba5b524a1bdcbc43a8c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_02.obj"
-hash = "d0cb393f7193044291c7c66080daa6f21ab63afc4ba3107235ca87c813130477"
+hash = "78b748f3c7b4f280f2a5ed2f98f6b59f47f59ae33717735f5721d229ff4bacc3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_03.obj"
-hash = "137a0752109592c8ab94d2eacc2a42644ab0a97bceb8a2166a86ca8fc31701b6"
+hash = "be8599aaba6de1db6a266f64252427e24cdbfc2911d08808cd7fdd7ea8d5193d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_04.obj"
-hash = "d9c86a23d75957a9ec59db7c2cfd07649dab71dda72315c969fd607cd6e46de5"
+hash = "6a9988653cc5635c477defa3f6ead08b86be33e96ea1cf217fcb2476ccad67bd"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_05.obj"
-hash = "a09d9db9ee4c00adbc4518855f60d67bdbc931b0d4cd85821714d30b42a19669"
+hash = "10a4499e5432291eabb420b9141795f543e0e8f25f52e62a108fdac388ddc77e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_06.obj"
-hash = "5757e827cb98eabe963cefe558df3dc2b2dd0ef178c5d7960ac6d922bba0f82b"
+hash = "09f90047568899bd7776907dd269806c5ef316a90c067d4e43ea650222df5dcb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_07.obj"
-hash = "8ac96df5c111536601c6d076c933b03ec687dab4394a0026686a486c452e6ed0"
+hash = "91dc1b3d9bbde76414aba0a25514e5e47c99d7480924700d43472c2fc834e0bb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_08.obj"
-hash = "3ea6b7d8ae49a540ecde1cc5013bf6bcad83a2d188eaf7437f61d2662797e06e"
+hash = "f0db7b61b31f5019592919bef9bc8415fad5dd3fedbd9c92e42f737e62fa2fbe"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_09.obj"
-hash = "c71be38cd78d5e5aa95d3d9d72650b017bb742aa4a271d1cd888acca19562a42"
+hash = "6e3d193d23c02cc4b20e292467e89a916d09b18b10e61984c536408dbcb7396d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_10.obj"
-hash = "ac0a448d8b3d9ed59db97ec36524b3f4162b1794d2ebe9d19b35cf014fdd6e5b"
+hash = "11d52aa2ed968bdec14012c83cff40b6c55b255f92a878569525f30cf6de0696"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_11.obj"
-hash = "6d644748dbefa2066757414517ce6d6c5305e4418a0a2c99bddb652827912256"
+hash = "8ab957a0493d9fbc03706970e4c1f0924a3d549eb345307617f69b38eb1d4b00"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_12.obj"
-hash = "b2b6876081174728b348a8b62937f7c88d424ff377a7c915982f5f3f185a07d8"
+hash = "29aae888d707241be2b731f6d3d2ae8a72cdee47e2cfff62b119a6cffaa39ce5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_13.obj"
-hash = "6484bac578d4e7b989aebaf6b351ebef66082db326678083934e8dc3ed668f0d"
+hash = "5382f4674add2929edac38420c641968bc875684865674b688d908a6d5d72285"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_14.obj"
-hash = "350862924571836eb461628fbc7161b60879fb645493b487429edbc99454aac6"
+hash = "fce4b54acd5fa8be6f1b9c76be89c3b95b4d1159e23eae4daf949d8a7716f255"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_15.obj"
-hash = "a593ff2126f163f4141c0a1a3adf70623a5e30fbc46874441702990e288be312"
+hash = "007933712895c5a2a564272be2a79320d6a69dba8b64532887b32edb6929ff63"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_17.obj"
-hash = "bf1f9acaeec736b8557a715dd1f9f870bb67c3bfb8d2de9cf5f3c9e09563ebd3"
+hash = "e18534eb7df17ac62643c052dd7488adce2f68b3bd5b76406b59bd154a45114d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_18.obj"
-hash = "d5bef13128965de5adb6d73df38bed4641f7e3801b5408d0919ea18d6c4a824c"
+hash = "42980b25c5edf8e621538e70c6681bc383c8f5067b7b6f62e4dacef0c9f51e00"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_19.obj"
-hash = "436e634d8b0851f5f6ee50d0e08eccfce47dbbec7417604eea08ea8e0b8d14bb"
+hash = "1c7e2a6271898f0790d044f43e105208f2f1362a6b1e2fce5a6f151b25d551c0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_20.obj"
-hash = "f02d29dc5df6455a1e03f498fcd7f1205742663ea0e753a10c68256d4606851c"
+hash = "cfabee99358bc3fee583078ea9415c2f0799f41498f90c1e8bd9655fdd0cc4d4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_21.obj"
-hash = "f0fbcb3dadf3d5931ed8d468f4dc557585943c2332cb91e527d882c2f6ed8a96"
+hash = "410a190a9552535c0715e7e61d8a23e27feeb0182e16042ce818341d3cb284e3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_22.obj"
-hash = "5580ea684dc61bb54f52820a5e98abf6e355423e4020724673022f7b3426d106"
+hash = "635ff161fe1cf959c205131e230b28154a195de16cde22568a76d7d85cffa39b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_23.obj"
-hash = "e4fb571ee18744b8cd13f5325d7cf785b3205bb7b909862384e6ae35f4242f49"
+hash = "bca8f2cb61ba072ca5b523f96134736b33e3b5e81f7be36390aa4284ac7e4045"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_24.obj"
-hash = "75ea4c21728a4049cf11f826b489e23cce15d6266a5f88f40d500ea3a2046541"
+hash = "a23bb148c216f206aa849ca6f250ee5e2850fce983559b942b2427680d6ab325"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_25.obj"
-hash = "dc63884e35c52bf2609fb8b95f8b6362a15bd740a37cd8edf0b688372ace108d"
+hash = "d1e9e57db8e0c91b17122cef9634a6bb72b878d2d64d6e6706308fd1e2f3565a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_26.obj"
-hash = "c16e77cadfd60896b32b189270c7439495677c2eea0abfc695de2051ed7b970f"
+hash = "6a28910fe3e064008f128e1f15a19e296bfba0beaf9f751c7db9de149ec2ca37"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_27.obj"
-hash = "3d0504fbed4b06b2f90ac98bb23596de8aa0f3c63d5aceb1e829a7fa41eff59a"
+hash = "30220421f384cf73b7d3125c201e402e79a0269ae3a2082d52d87ba1c3c72806"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_28.obj"
-hash = "3daca5e9aef29ba5b17150bcd544f98340ab33e6037c873a14be057a29cf1319"
+hash = "acd6f7a43f31e4a31b970377e07db45330f3c45d01cb22406599b7f83831bed6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_29.obj"
-hash = "809b27c3de5e764e878d10919c4cec46da6ce755b57a38a039c136414f771f27"
+hash = "6f986ec9b02c517e1272a7c71e415b4433269820a72c74698c8167b25b1475de"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_30.obj"
-hash = "2be80270e7080e074fb1449efb167ac3e330e288e673cf7a1cfde8d32ccf3241"
+hash = "278a7c71f4f16b22d5ee3c69d47b3b4fbf2ef5540e0f731d6e9bd7666175345b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/naturescompass_naturescompass_31.obj"
-hash = "79d4c91b461a717679a906761d8627cec17dd5ffe98200ced5a8f4c599915dc3"
-
-[[files]]
-file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/simulated_honey_glue.obj"
-hash = "e30f71229ef9661952ed9c76c0042a4b5b74d8c4a491c553383a1274ddb640e8"
+hash = "3cd01c60c0bf4688a2ab453e4214eaaf523589c9ff680d305c0f24cf9896193d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/sophisticatedcore_ender_linker.obj"
@@ -2774,7 +3022,7 @@ hash = "f106a3c685fff052e8690dfc99f0e1662e8a4af83c1f929b970259198ea852ce"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/utility_equipment/waystones_warp_stone.obj"
-hash = "de1616eca86015079caed92e2d1c95838b6361fd2878b4a7449df193f7bcf66a"
+hash = "f7edb47e0b77ab0e793cc51cc3787dd4957385080dd64116f103c0979e544a7a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/vanilla_equipment/clock.obj"
@@ -3161,12 +3409,20 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reim
 hash = "b87778b29e690e8949a2d67612a69ef69615952a5834f23d06db59aa7b22d7fa"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/vanilla_equipment/copper_horn.obj"
+hash = "87b1b3c94ac29a7d1dcf64d81bc31b6e422645f3ef945c8a021624c695f0ad50"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/vanilla_equipment/equipment.mtl"
-hash = "9492878ad92bbddf256929734c383939c960f75465adbc76f4200a68d6b93f7f"
+hash = "56fae0cb00ccc0b85311d5315965511e334e980117263058af80024873f2356c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/vanilla_equipment/goat_horn.obj"
+hash = "fdf594b6c89428f07203d7d8111be844bba48c36532a2212e6c0399a5a8ed9c6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/vanilla_equipment/lead.obj"
-hash = "33b7388b1d389b5fab0110b439dc9b2868383203952544e8fd6f2c4d875f0843"
+hash = "bd46d6f78b46c62e23a98149226adeaa78b559454cb62df568324ff35294e0df"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/vanilla_equipment/recovery_compass.obj"
@@ -3297,12 +3553,148 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reim
 hash = "f21500a89c5ea35e5b5ae0870c7a8f41449a8399dfe192a44b29551a938616fd"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/vanilla_equipment/tooting_copper_horn.obj"
+hash = "87b1b3c94ac29a7d1dcf64d81bc31b6e422645f3ef945c8a021624c695f0ad50"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/vanilla_equipment/tooting_goat_horn.obj"
+hash = "fdf594b6c89428f07203d7d8111be844bba48c36532a2212e6c0399a5a8ed9c6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/aquatic_tools/coral_axe_surface.png"
+hash = "7e407b5f23483d4b39b8f5bc0ae7d1fbb8b7d3bc4ca39d2da49cff7f5b83a3f6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/aquatic_tools/coral_blade_surface.png"
+hash = "6e3709e3dc39d1901fb93ff2bec92158bac67693fd919f28d1c793f36aca8ce6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/aquatic_tools/coral_pickaxe_surface.png"
+hash = "98f6044231a3b50e4548cbbccc3faeb1d7c4706cf0d39a2880f160011e720128"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/aquatic_tools/coral_shaft.png"
+hash = "9b8e11a4c89f527ec46668a87f9ec4ebd4d16dab6892739de4a8d4350674eb77"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/aquatic_tools/coral_shovel_surface.png"
+hash = "bd8ce18a3a06002bf9bfd30621e222b9a3a684ba6381363d4481b6348b383af8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/aquatic_tools/shell_shaft.png"
+hash = "14281706266b86ffad359b42bf9272176ceb0378853e2d6439b0f383ef17b2c0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/aquatic_tools/shell_surface.png"
+hash = "f0643235387f1d0a1c411d18777e12732b3f2e86d4f6b190b1aca3a19cac0ba7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/brush_palettes/ferrule_diamond.png"
+hash = "df290e82a3175cd209b8769c57446f1eabc73733236113b81256c8630a6dfd4c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/brush_palettes/ferrule_iron.png"
+hash = "22e78c53bbf63869f9a3d566f073b5852e1a245a96fefa18e7e933c0ba6ee638"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/brush_palettes/ferrule_key.png"
+hash = "81b893155e26dc487d508f879f681f3083189e4ab2bd9bf0eadd017ac629fdda"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/brush_palettes/ferrule_netherite.png"
+hash = "536476a7e0aecb67ba10aecf00e8f55b9c64cd841c68a9db1d702a8632d928d9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/brush_palettes/grip_diamond.png"
+hash = "86d8cf4e78e7d4117b3365cea22040f61e2c05170819c0623112ca5ccd6d733c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/brush_palettes/grip_iron.png"
+hash = "dcb50cbc8e86b77600811373255bde60ee719753583a4e33298c870cf81cfac7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/brush_palettes/grip_key.png"
+hash = "eaa5f370cca6ab8d977b68892a51884f0a13ec9dd8e9c20855705f42f8c60066"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/brush_palettes/grip_netherite.png"
+hash = "ddfe6be2ae48527eb79341f4aea5852dcbc3bd1469767a08f0aa0f44db377807"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_aeronautics_throwable_rope_connector_throwable_rope_connector.png"
+hash = "9ff3c98ca319e4bbe79744a07210344200afe7e7c372823278ef30c42c5a01fb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_clipboard.png"
+hash = "4b32ce9b060c698492d99d7fd392b63feac6d9103fbcb5a10bc95c0b2e8dc547"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_clipboard_0.png"
+hash = "fe06cd7ca3d06b8ee9c8028f9bca79b50f5f162e3819381e521e065b634eb186"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_clipboard_1.png"
+hash = "4b32ce9b060c698492d99d7fd392b63feac6d9103fbcb5a10bc95c0b2e8dc547"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_clipboard_2.png"
+hash = "f8d24bbf0ea5544b81e0d9505ad838f83c814a805a9c654bfdaac551df3052f5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_red_sand_paper.png"
+hash = "debf89832f3a14c1e07d275a993b6b0b1e7a2d79a1f917a3fbbc97b697f9f056"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_sand_paper.png"
+hash = "07e0dd5035516c376e742c35224f9966d0a09675e71b14c20a2edfc62552e3a1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_schematic_and_quill.png"
+hash = "6623bd560fe1af54ecce17aa04d4ac826522336681f9de2aeb775ae17dfab131"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/create_super_glue.png"
+hash = "875dc22d05eeca088b977601ec1be5417727ffd3485ebcef4b96c0dd93935cc3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/simulated_honey_glue.png"
+hash = "c3606a697599d8a131f05201d77c7365f53d115db75e6c03317feaa4c0c4e447"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/create_equipment/simulated_rope_coupling.png"
+hash = "2054ead092d3c3c0a808daae41526f67bb6d3d45a51bed96d4e0f65a195b2bbd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/knives/diamond.png"
+hash = "a6b0722a49e76badbd2fea80363db66bdb6fd581e6b6137f6470f4550d16b582"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/knives/flint.png"
+hash = "e0ba40e8214ca5d47ef7bf8a64d6b77c3fe2fa25302052aab1c6b80b5e2a5a5a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/knives/golden.png"
+hash = "83e9676b724cd9ab01ef1b737c398e262bbc6461aad5d4924f378fc4b74a13c8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/knives/iron.png"
+hash = "1c918417a83ce6e70bc70ddd768cd8e7eef3bf8cb70497c0d93df3f5fd641a03"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/knives/netherite.png"
+hash = "d630ea31f8fad1548bf2e58ea949c22297e9f2cf67d2058ab32591d04d470cde"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/reviewed_equipment/brown_net.png"
 hash = "bcc9648d66e3fc035b5ac80508cb315339f501a683831b99e2147331289bd22c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/reviewed_equipment/white_net.png"
 hash = "4f326989d8e41a2bf4f326d77b014a98d3b658dc14ba389301077950c5fc8925"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/utility_equipment/saw.png"
+hash = "7f33f29964040d8bbf81322c8f9f3e9d393053e19d2a20b0d6cf81b4b1ae3c20"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/vanilla_equipment/copper_band.png"
@@ -3337,8 +3729,12 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reim
 hash = "62f4d13c1e7769a3673c874cf4cfb810b34405af8c68afd619c70ee053f8d227"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/vanilla_equipment/horn_inner.png"
+hash = "3beba50aaabecfbe7e97d6a4691e10c524dc4a5be40a29b984c1ad5bf321b330"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/vanilla_equipment/leather.png"
-hash = "5d99faea2ba5591b39fb9fc56196b398269ac1731667e50231a0391f58ba2a63"
+hash = "be1aab8348984b7cda9642469ed74b28fa45266d1414fc054183501cf10e8afd"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/vanilla_equipment/marks.png"
@@ -3394,55 +3790,55 @@ hash = "1752eaa168b689f41c0f9e1c95e2015fe1ac0458946e80ca7df4b3c79307931a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/bomb.json"
-hash = "2167fd6c8b7cc632f69b199bf249ca4d1a919fa6021270bf8484474b433392d0"
+hash = "426088210e09d3d293ab0cdbc38e62fbb60510ac1ed89cac239f8002de7fa9db"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/diamond_brush.json"
-hash = "b85ae285259c4d7d77ac27bdb966a79bc0ee0025c9e9812bb7666d53bbc5f1c7"
+hash = "92d091e3553dd34069288e7b2ac1cdb5bf2019655c01558c52758b0be80eccbc"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/diamond_brush_brushing_0.json"
-hash = "d5da96a2e9c75e7b0af04d5b640c838ecaee62d3b6b74d32333d842794033b53"
+hash = "1b9a7cdb5c5a2cfbc74a74dced381fe45cf6c39f0e526f6a29456b571eab2256"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/diamond_brush_brushing_1.json"
-hash = "b85ae285259c4d7d77ac27bdb966a79bc0ee0025c9e9812bb7666d53bbc5f1c7"
+hash = "4091a6632b615acccc77de7cc4f8f6fe0c9d98697b8defcee35d6f8aa2b4daf3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/diamond_brush_brushing_2.json"
-hash = "9e358811938f03665bb32c1d04929bfc6a0f1a31f19a0da224bd5f10fe4dd02b"
+hash = "2971962c668073249276306da5a8288a0d8eb57b1af6bc1e3d5e7274529949bc"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/iron_brush.json"
-hash = "e4fab8611aa645b645c59511d98a9626b34f96fecfc75889f7e3fbd0c6c2a370"
+hash = "a38a4580e2eba7491eda795a0f5017dc8ac50a320e4bf8cb88ee6e5ea6a0bc27"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/iron_brush_brushing_0.json"
-hash = "b48eb40ec9d4901552adcece97895c389ec4997eb8852d41e4eecb9c3ce16051"
+hash = "90bd9b529410a45467e03ca41d535c977ffea4cc6446179add713f1b341cc7b0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/iron_brush_brushing_1.json"
-hash = "e4fab8611aa645b645c59511d98a9626b34f96fecfc75889f7e3fbd0c6c2a370"
+hash = "ecf4d1474e737b48d72945f07e88f7469df4db1c3c94e398b7aa62ccb0382a4a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/iron_brush_brushing_2.json"
-hash = "4a79d2d931a3090eed18d2eedc3282e5cd0110e22e1371eb6ddf2a7a2dcb06b7"
+hash = "4012348dcdf18d56fa66d73d8e449b7868f1735ab48fa645198c0b9993c3e9ef"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/netherite_brush.json"
-hash = "4de3d48663c064248abca32c8a9f0c02acca64b8b289def356ad2291018b2777"
+hash = "71eeb4ed61610a0c671a21a3a7f445a1a655379b827b7455f0b7c9225bfd6ace"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/netherite_brush_brushing_0.json"
-hash = "2ab69fb7931891ed5e172175858ea7c1b61296bcefff0f2fefb127c542217cd5"
+hash = "a918fc9493331025aa62148136e0f39af5cfb984505a9fb873a1cc646d67387b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/netherite_brush_brushing_1.json"
-hash = "4de3d48663c064248abca32c8a9f0c02acca64b8b289def356ad2291018b2777"
+hash = "ce826b92000e007c9fb91d0ae964c980294b605893272e9b3306f4980c11935a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/netherite_brush_brushing_2.json"
-hash = "101acd7fa7b6c4446fc6f132a9bdb76d96e0aa0103a09f701cfdab6fcdff092d"
+hash = "4be86969b3fb37c3833b865ee7f5a309c7599d3f489c77eae4afa462dc4e364a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/iron_brush.json"
@@ -3486,27 +3882,27 @@ hash = "92ef735263376f6dfb7f900a70b9fff76072d8645308c35862c3e685bc8659c4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/equipment/held/alchemy_book.json"
-hash = "da6068bffa56714db0b833e5a12553625bfff94752863e01c0d5a1ec7e2d9bb6"
+hash = "59441340fe26039ac22d1e7ba2e42c1df133c76752dc5033308dbf59a1698865"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/equipment/held/chisel.json"
-hash = "3a9f4efa739586808374d57e5dbaa3fe8f250c4c4c6924b03a0c3d22fe79c163"
+hash = "c5d9da60cbb2168afbe5c3886f6e7278a315d0a2879443ae948a4fbac700511c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/equipment/held/multimeter.json"
-hash = "6823def3833d22c20de0833c2e10d258cb2a83911f1cf960de00e4d7b9ce97ad"
+hash = "4e8387ad0a0ecc2cee3e76acea01d87a4ebe92012d5ea7d9c0f4f1f6008d2a2b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/equipment/held/needles.json"
-hash = "0832d6b5c8fbc894808116b07ba9f5b02242b8e0140d955a3927bd2b78820249"
+hash = "0b2c72abc955f3b446fe80961d2cf64a37601761ae225859e9617f463544d275"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/equipment/held/saw.json"
-hash = "50c8223c5b9dc7c3a9de9e66bbc823ef207f08aa46753c0aa7a96a4bfa04f551"
+hash = "ca6d0fde4ebbdc0526a6a15e4c022b50a9f4596eeb4b5c52cb1fca3ca463e89b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/equipment/held/watering_can.json"
-hash = "0408d81a3b1e25d8bc3f51daf2ceee5e95364e9675fbd839a2b49ebc5ee64451"
+hash = "f84e4e3c5113cb7d3f87dc5050473efce7a46bc13ca37bb312f63bb7b94f1022"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/multimeter.json"
@@ -3542,35 +3938,35 @@ hash = "e4cd7d8719ea30538d0217e98322d7e882d92c0447e40e6e5eaee5833accaf25"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/equipment/held/clipboard.json"
-hash = "6e3751790efb74da1aad33385429ff3318f25ce06c66e38b8d9bab07db084562"
+hash = "f264027cd00578af27e76aaa5ab17aefe49747f9ec96de58b2737bcc80d273a9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/equipment/held/clipboard_0.json"
-hash = "95da29c10ac49019164eeba0507de3dc37cb9f0df0889557bae920a7b56709e4"
+hash = "9c3e7e13b494e9da51b32009b2d0f5341afa776e4ec6e520e9cce5c447a23586"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/equipment/held/clipboard_1.json"
-hash = "6e3751790efb74da1aad33385429ff3318f25ce06c66e38b8d9bab07db084562"
+hash = "726632d65f6b17a264d304621cfe7e9ccb08a7f490c4e8121565272af20e304a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/equipment/held/clipboard_2.json"
-hash = "5d7226a3d343e42d67c23a46b0dbb9dedcf078ba17fd73435e2cf8c034dd6fe9"
+hash = "102134b13d8114daca88ed1191ab57cc7b1eb426c11b7a5613799b26f0cbd88e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/equipment/held/red_sand_paper.json"
-hash = "17f93f58b8558661c1a16fa232b27b6d0f079e4025029fac87e4206aa703c613"
+hash = "6cb5827fe6dda50eaba37cad3c1a55bd3ab2a9931384964df0efa341654273a0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/equipment/held/sand_paper.json"
-hash = "b70007e3083ffc2411a0a331b1c6cde3318a0a8971832d7210a770eb77719596"
+hash = "a7b8e119efd57b52d465ff28a494c6581339b22bc1e31b1d4569e24b9090e41a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/equipment/held/schematic_and_quill.json"
-hash = "a8573face812d4ae10398bde1a3941d617812c65b222a635d6f4dfe921a1167e"
+hash = "3f99d01c9f3d027d3ba13e02ae85d390b88d3739a64a144495c807d1d3efb3b1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/equipment/held/super_glue.json"
-hash = "1d864620b80464b628922a8f23a423a0e5bac03bbef7a8259ec03d02a65311d2"
+hash = "1e3cfd66cb361c0f576ebd9039d044ffd1ce4e7fe73066d9eaa40d91f85beafe"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/red_sand_paper.json"
@@ -3590,7 +3986,7 @@ hash = "5d0f5c2b405e1b1657903f939d91e8d79ade34665f29e3f9a6287761beb8b0c6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create_aeronautics_throwable_rope_connector/models/item/equipment/held/throwable_rope_connector.json"
-hash = "4791aa235b706297cd8f556b32ffb26e29e90e8f8d97deabdc76c796a950527e"
+hash = "4792c0fcd584b307a8d2a8b0285e2c236b0b5f1754c73610ea1c01e6f90c12cb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create_aeronautics_throwable_rope_connector/models/item/throwable_rope_connector.json"
@@ -3598,7 +3994,7 @@ hash = "ccf6a47f236329974606a42652c69e95e470329913be91fb1e399959855e6d56"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/crittersandcompanions/models/item/equipment/held/grappling_hook.json"
-hash = "5b738c1ac2335bd9f8718298d4e0145ab10053b2f10b4725bc6984352888c21c"
+hash = "0a1ae6ba95953cf64d36ed2378b008bff2f4f2b04ea6815f0f08c06784f0cf65"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/crittersandcompanions/models/item/grappling_hook.json"
@@ -3606,131 +4002,131 @@ hash = "41fe878ec842417d2b908570a5e033bf9da68a9f12a2806705b26cafe244fdd1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass.json"
-hash = "b228381baa2a4f4f45fbefcbef014109129020596232ad2ff2c970f1a03063a1"
+hash = "e3af5b1bee25adc070f10622ea81c163b084997a54b0b7155e6328ede903492b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_00.json"
-hash = "6416793d4c020df44c6a1759d82ff2a7b6fdd307d389eaf478d09b7682aa4015"
+hash = "4ab4ed8b2b32a66e125c12f20505947a85568e5ac42cbfa6d8bbb25276ffb832"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_01.json"
-hash = "32bf6a1a8bd4649d87f1771e674a5e27b553ec7ee40c90757bdda0ba0f319b0c"
+hash = "c0076af6ba0cec45faac2dcf3d43ae5a308341999d6582f44a30bb9bc7ffcb4f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_02.json"
-hash = "3c8f5499d401c0915e4eabd7fc5e4c96e8c68761627d9209d4bf8214bf675920"
+hash = "f879e9e47c65fecdd82ea708e1d78a68d88cce2236fbd6d0afbb1e8c5c4b8ceb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_03.json"
-hash = "1ed143943d6ab9ea401087a15daa11dd770a23aea28ae99dbb50a0e51c995396"
+hash = "1a659fb0cae0fa100107b6a2474506c403953efbaf920e449d8592ecf8237692"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_04.json"
-hash = "7b81ed307178520eafa0cff3a82806ec3c43e3dbd2755cae2425b0948a2a1b6f"
+hash = "e7a16e2c17c62abca70d77930de9b7ee671bb14d122428e370e0f26c3ce2cf47"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_05.json"
-hash = "2f3b1f31e7f27b7f186f1e560d0945291fc5722865bf9b7c806b1259fdd75cf7"
+hash = "38b7e25e2ee3432edf1b82af051273a53cd1c0e25aa255622de08d46f36db7b6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_06.json"
-hash = "19eb20c868213c54eb4da1e7bbd7de287135a0f5354f57da7426cb4cb3b1fc67"
+hash = "a4d1783616f83415cb05c60b9b77fbfd0d2be302131d217a81c4866e77a7a27a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_07.json"
-hash = "57bfd7af1c760375415d62045a3ce8dc48536395ff27817c59a5ea9094efa7cc"
+hash = "74a438628ad16a560e590fa113c12970a6952d9538eab9941dae2b4365a37600"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_08.json"
-hash = "7c7d9cfc5acf9487096d2f0bc4ecfda8669e6c53fb37a731c57e34bf0eac8cc5"
+hash = "0aac55509342a20f39c62e1ebd25e3012e212281df5fcb1304275576ed58844b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_09.json"
-hash = "dd17ac3df3d4d15f6b92bb30fb10b9a45c61b288a4d269ba7dd04225845de4bf"
+hash = "2e60c8e284d7bc4ca671eaddae77e80805b7812cfab2ae490349d2e1c5032832"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_10.json"
-hash = "a958cab7498869255166ac96e482ba3a64ceebbb722f0009c659ac1f1fcfdafa"
+hash = "8ccd3193b770390a28230e563ca77dd912c73958327b7d903a11c8c31d845724"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_11.json"
-hash = "aa9783390072a9b0219f7ec02d749818517e29f638b369b9b8a53196ed5b1a33"
+hash = "7795c94a68f5784a03580d2d554b27a1ec57020b63cb27026a2633792f2b497f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_12.json"
-hash = "2bbd15c0267d54c233ef0deb3d6573f25fc621a4ac23d16877b1125fef7d7356"
+hash = "88aeea44ec718dcff25f9b80da8e3a04bdb4e6c6e9918fe400d7e27e7782b6fc"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_13.json"
-hash = "8f9864ac984261ad2b3380e898645040d5c479a4b5680fa4fff9329ece891782"
+hash = "55016c5d23f039e21385f3f4b6b908e60c82f3d6099e95869e9d042f01235fab"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_14.json"
-hash = "f7a6f83e1a83d1c87c0c71a15d60c96fcbd246fd1e2b5ca1b5aade5342119ea7"
+hash = "ada0a74132a0bcfb39916b34c02b79781754f4a4215f9a847549a98b305ae74b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_15.json"
-hash = "c946a196229e3896e742802ed87a405a13fe88d1fe6cf8e11cca534601038a39"
+hash = "46cc75afa31def8f9f2cafee31c89e9ffc3c19065fff986ec7f7f6bfbbf38846"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_17.json"
-hash = "0f673194104819a2efe4e2a12ca898395bc5ff2d9fcc781529dec3ca31dbf6b9"
+hash = "f2ebbda495fbd3d99cfe8f86af9bad0a113bd354c2c8f3224fd6fd4fe8caa980"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_18.json"
-hash = "33588bd3d7822694ccca8b2c81d0b9ccf99d67ed56b92e9273316c2aa44037eb"
+hash = "ccf7b7bf801b4ff20ab9478d8fb57182a82b49b4faa050735f4c39fc7a6ebf29"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_19.json"
-hash = "d4f89f72565d9f4a5ac94e0f66a76db54a5ea4fae5c261fe9b72a9de37196b0e"
+hash = "23eea31bec3fcc39f84d0d88facbce7bcab455a180220e849c21f9eff18f2116"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_20.json"
-hash = "e01eb537bd6dece93ceb4554f81d634a216c5ab8e62efed35fd241147e7086ab"
+hash = "e364f4f171dfbf8c298b3d97d5183e0da98db24fbf8f57025c4ba0ec5dde8242"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_21.json"
-hash = "a2f3b691db6003b816248428c7e5e3d93cab1100a1139e0ef87e73c10e796145"
+hash = "6dca8c687ab0feea55d3e553ce34135174da9748caa8937e6ba069ee7ffd24fe"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_22.json"
-hash = "b88098c23730a8778431ad1800f6cabb98edff56b23dfb7cc765fd4bab9af977"
+hash = "6a4b26f07f708f20ca2ebaefc3a7a32cf1445599d31c3bc6eeb6ee2dfc5e4d92"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_23.json"
-hash = "342e243f9bdd947a4815a54114c0a5bee288cd28a2278844b5fc826f73c747d9"
+hash = "f088491b12adf3860d7caea601de2b98d6a647caa25f933513dee39672e3d247"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_24.json"
-hash = "4e69c1ee2bb569eede135c9c8e3469ec5206a3be0d36b87a55f1ec6a6d5c745e"
+hash = "1fe75eae2698f59fe6337294588c0f27149178885d597570220b3d27ae6fac60"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_25.json"
-hash = "ae7936b3a99a7ab00c3bf86b06b58cf1fda53bc57a463f3f99650d1be79e3f8b"
+hash = "d9e5125ae0c3cb77cd71be2b4104ab2489e334b841add70e7559a99dcd66e8dd"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_26.json"
-hash = "0c13304eab84c34f0d24c429d53d5de16e0fb8c56e3c6ff6add4f341c3af089d"
+hash = "2c67a65c249e99b2ab00fc3c06e7f0d7fae3213db0e09b177677127ad30af0c4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_27.json"
-hash = "bde80b25a3642c00c6ec76e8623b9a519d0a559726381bc206fd87baf1631419"
+hash = "e0519b3b9c7fd0a4c6b2d13bcc211fc420499c3908fb6626f5415585e6215e6e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_28.json"
-hash = "6b22852957902b42c2de84f7bbd41cf532a03198d45b9ac4419ae449f8601f4d"
+hash = "a9ae756c51c61b8f954340fd202bb15871785e655267ff703500c164f8aceb96"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_29.json"
-hash = "250695b2e04682795118dee06175a3d0aaf969327b3c19e7b6cc1aaf7ac72deb"
+hash = "2cfc9813fcb51d7c5983568f42078f34ee3d738bb0d1ad96a839af49d315b581"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_30.json"
-hash = "7f8d93f88a2e96730771f7275f3901c5a9424e1a01ee7530ac0cf805107957ff"
+hash = "3eb22401a6d362b7f596b4c0ff7b3f9420854ba7c56542e48ab9797ba76a3823"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/equipment/held/explorerscompass_31.json"
-hash = "9ed1e3c1f8cb52f0bd0afff85aaff430ea1391e28e46c76e71a5465105ecc1e3"
+hash = "ed1f966978ab599b5bad5d184f997b986c6fe3ad38b8ddd2410913c31a9b0d61"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/explorerscompass/models/item/explorerscompass.json"
@@ -3862,11 +4258,11 @@ hash = "f7efd99e1b9142537a66c6771bf81763d77b09125f41c60ecba2f9aed58ed604"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/exposure/models/item/equipment/held/interplanar_projector.json"
-hash = "094859a0ea2268cb97423cc407fb3b002b0df638b05ddfe76d770f9e17251b6d"
+hash = "b31ce1d026f3e8b73ebf4098aa9120753c9650ed12aa1969d4bccd4aab5c5980"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/exposure/models/item/equipment/held/interplanar_projector_active.json"
-hash = "3f1fc2ef9f56b5ee5b17abf84f40d0bd53ea213610878aaeaab09a21ebf4236f"
+hash = "baabdfd69497f56a9ecb3ba32437b0995c19e21a6f6abce0e47b93ebfe5dd5b8"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/exposure/models/item/interplanar_projector.json"
@@ -3882,23 +4278,23 @@ hash = "bb3a1b6a58d3772c5210984487dcefaa69c16349962743bbff8e2bd821f2e920"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/farmersdelight/models/item/equipment/held/diamond_knife.json"
-hash = "f998312fce270236fb91918c7ca361e7bb715746db447521d18f7df2d8c50f69"
+hash = "da00e0567eb8b78a3f2213c8573cc7a9f9e5a04e7fb3d87b9ac8c118f7a6332f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/farmersdelight/models/item/equipment/held/flint_knife.json"
-hash = "63fb662b13ec596ac0175742b8415fcab07b5dc16ad711087787d34f3ca6597f"
+hash = "c48bed5035eebb05ea20a1591a7901e8d05ea8ff98f6ab353ea8a3b173eed712"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/farmersdelight/models/item/equipment/held/golden_knife.json"
-hash = "ed2b672543c856c1d0f71228f540512a46613649025ee0b4ed844c08ade4b1c6"
+hash = "9c0c681018e80cc99ad789699f6aeb7f555f89b0f8187d69b7a36c4efc14af84"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/farmersdelight/models/item/equipment/held/iron_knife.json"
-hash = "36982ce91bf9b9661845db38d3c67a9a51ebcaafa53c3eb6f7813ea0ea19045f"
+hash = "1b42b32370ff8d772304e8e3d529c006f9acfdbf23c5671eedffef81d1b46903"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/farmersdelight/models/item/equipment/held/netherite_knife.json"
-hash = "6e37fb0b1f54b0dc6f0ab6a435c6f017382806e14911370ebe85c89d270032ef"
+hash = "bd07fccfdc3f0ca1372bbbaa7e7ff584a8f4ba515b98047e4a2c17a340c75341"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/farmersdelight/models/item/flint_knife.json"
@@ -3922,47 +4318,47 @@ hash = "1af30872ee975d36fa6313ddf420e4e7a3ab3ad4bb16b4c5d53273fd0fb5ff37"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/echo_bell.json"
-hash = "137f8f0d85812a3da590209309e31cb2d74bab7a0c6925ad0d0b9b0f03a24d5a"
+hash = "5c81c4f01aec7458248d62b9fb2a069c13a80acac2cc5becd1374e986701caa5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/glow_flare.json"
-hash = "028d6b80aaa00ae7b2d42a1c5df2d38fa862dc98e03d3ca85052b502934f162e"
+hash = "ad97fd9cbaa50e61841413e3f39091d4c3e06c9f0479def5a585300b68814602"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/monstrometer.json"
-hash = "6be88b5b0a866e9ca5702b70e4d8fda81ff754714301c89c3daa92d3cd3a6b07"
+hash = "d6bbcaff7eb9218319d6a3470fabca7d2a2416411f29cf6d2958e78500632ffb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/monstrometer_fueled.json"
-hash = "712c23ac71a0cb12adf1790e7e128fd42ee6c1fcdece91604f549eaf06df8b3e"
+hash = "ee7310611073361ab2b96e35da6b5fa441e8200c2dde698373331f94be786f6d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/palladium_bomb.json"
-hash = "c7efb0d4ca9572014492f5a68b13392c9ea7575b5f8c51d5e657c287a424dd5c"
+hash = "e47e87729c7e27cdcd21a8a673f83acaf0f99a86b33d1d3a5fd02190a3ed4802"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/rope_dart.json"
-hash = "e4e814efe433719ca99af54b1d5268b6df9f446c455eb6e1cbd6116087220842"
+hash = "7d4f4ce140ba3e406b82a63244fc123c2a5df01b954d888d7303d45195e0f8f1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/saltbound_tablet.json"
-hash = "e5caed779f6eea1edd3bd88df691d4728480fc5b1142977a8fc36114d84a5c30"
+hash = "93cbd4d5f168292e193102dbb8ddb11f6e5682b6cfce290ca0987ea3fbebff44"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/saltbound_tablet_cooldown.json"
-hash = "6adaf52adc3b89d68c4d9037e04ec867943403e05bec94cc3125c31fdee0d0b2"
+hash = "d3dd985374d9b7a69c2e0c34201d550c2d943b0b84edf23cce74618aeac2f9ee"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/saltbound_tablet_using.json"
-hash = "c2f39617756f5d3f4d1cf370d7f70f3c39c614d232179546cad78dae40bf00c0"
+hash = "d6667210f564929ec8dddb4c4d8c7e8c70494ec0eb3a2d39e4466889fae505ef"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/spectre_bound_spyglass.json"
-hash = "8ec4c0f55899e281f9551aa18e1652da78157a19273b2ac620d879dbf318b94d"
+hash = "f1cb46f63557ee0fe8d5ac7fd23fd93824d12f60049c7e9069120e9b8fe826f5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/spectre_flare.json"
-hash = "b3437e39e21293167cd37d0b48b5b5d0e07cd06e2f25901287e468585d319c3c"
+hash = "93d96ae82c89e5778ae63de7e9e5b1c445ea57ee36f6c54392969458758c8d63"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/glow_flare.json"
@@ -4006,7 +4402,7 @@ hash = "5a94ade9820ac8842072930f21effbfe87f1c6b063822c2ad69e830d10b3cd86"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/handcrafted/models/item/equipment/held/hammer.json"
-hash = "7d17baec282cadb632c2c8bf06af5bad6e6f5cd78676804a6171f064ac5fe3b3"
+hash = "65cf02cf0c17eb9970622e868ee383cfede731aae590852e90ea8257a84c59ab"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/handcrafted/models/item/hammer.json"
@@ -4018,7 +4414,7 @@ hash = "849f23bc4576f00378850f8701859d41f1373653b88b5881b3ed7b1afdb3337d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hapi/models/item/equipment/creature_net_held.json"
-hash = "73e04ca109ca595b050a0b535da783e45ca4aaf8f845de0272e679abb860fcef"
+hash = "a3afaa0cb8b838aec06a9bee257c6a1ea314f28ae748c1cf35cd57dc6f0ca545"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/horseman/models/item/copper_horn.json"
@@ -4026,11 +4422,11 @@ hash = "40b9be1bf8447c1b7f639bb11ae85167b238bd85ef67eecb6f5dd7b6ba14a10b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/horseman/models/item/equipment/held/copper_horn.json"
-hash = "f34b2bbd4b66480351c014e3bdcb1fda6e9fe1ebda1455ae8ce47572005dd24e"
+hash = "db657778a6e6ddeb9fef98508081d70e00de0e7103a11f9b046183b045789f59"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/horseman/models/item/equipment/held/tooting_copper_horn.json"
-hash = "f983e944d076b0300ecd03e14f7da321bd2615e96efbe525f4e88385bb487de1"
+hash = "5de944b63635bb253fe3a866470aed349f2c0f4e2f69c9a157024efe1463fab3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/horseman/models/item/tooting_copper_horn.json"
@@ -4058,43 +4454,43 @@ hash = "ca1c75f1cf75ad95d5dcd56a7c86812383e3f5763f1e9be1a73056109a896d42"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/coral_axe.json"
-hash = "29e4a38d2a29b1c0d739287f1e15c1fc3a70086428c659c1dfb84351d4299109"
+hash = "17b455f68016886cc0e0c1396c02438d1f3aa2c962d1dd5f192d6dc018081f97"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/coral_blade.json"
-hash = "25a9acf7865efb2e1a70eee06f070ede11917a0582c8241a479bfc9568c3cf5f"
+hash = "870eb5ec07d6ec5ce76c540853d4c064c2d27601253447d8885b708b35e6cd7b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/coral_hoe.json"
-hash = "943f9cbe31f8b5be173b44f66ad6758af69cdc76aa93284496d4585d16da67d8"
+hash = "e6bafc7364d114ff03643533bc28e2bb5d2dcd3c13884a9780683e5399efcf25"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/coral_pickaxe.json"
-hash = "e3b9771d7525696341f0c760b06dc93af3bc300e6801e4937462281a3cb1a90a"
+hash = "72df5f6e6ffea1a45af3a4113ecbdecfdbe586106d214a9ebe7e2f8cadb77496"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/coral_shovel.json"
-hash = "b91751885ae09ad02d96013b3284b13ccbec8fa0a462cff219bbdd3af8a71a17"
+hash = "daa230810cc65abfda781da99524cb323736e8100f4f97d0a7995eff7b49dea1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/seashell_axe.json"
-hash = "c1cc66a4f41315f68c33ade43761aad46e25ec6b55c4980c32919a2ec646d025"
+hash = "37b29f21ca4cf897f71c3c41bddb75e40d33830a341354295d7c8dfd710f5564"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/seashell_hoe.json"
-hash = "ba16c94dc0712f9dbc73f80f36a4ca5268c06a9a048f0b350af319cf9544359b"
+hash = "cbab25941eb1bb0b97d62baf0379435c2c72046427a00d5e6bec01cbb9104f66"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/seashell_pickaxe.json"
-hash = "a1fb9ef64082e3731ee1c2f61c28f43e57a3b0d03eca2213ca64327de5b38a94"
+hash = "e8211946db49a786417d05d433509cd1824de99a9c1f89388215ef63157a32d0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/seashell_shovel.json"
-hash = "944057f512500592f892f958b45065e85c28c85122b4be9f13349fc61e43858c"
+hash = "6cf9ea335cf88742b88da958e39840ea5d56e277e3adbc952dfb479b2b7c7193"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/seashell_spear.json"
-hash = "e0b3b650b6b1e13f79098d598973c7d125db6214d43fb3203e58ad516795639e"
+hash = "15dad655cfd29b94454e31e7f77aac1f3d6262377b4060e327aa64bf6073ba4a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/seashell_axe.json"
@@ -4122,7 +4518,7 @@ hash = "27262b6e85bb8022405d18b5cc388a56dba0c3aa0af1ef7400538550dd31a6da"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/immersive_weathering/models/item/equipment/held/steel_wool.json"
-hash = "8592616d0baf25a0fe14a7a9dc29adbffaad00fa37157019fba07e574dc0df25"
+hash = "3306be9a534916ef6d4a9f73e8a062d2394c570a6a52d9d0010057f9bcd75c05"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/immersive_weathering/models/item/ice_sickle.json"
@@ -4134,127 +4530,127 @@ hash = "792ae73543c00c023b32230ff96b0115e5187c0712e34c0a4365986ace48f129"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer.json"
-hash = "bc41afd11dc42a3059e3cb59d792620bde8e969eb60b3eb81cb36095a7c34b30"
+hash = "0ba889ac84cc42d80de9285fe59899ab716f4c0d51d4754dafff1cf67b455325"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_00.json"
-hash = "bc41afd11dc42a3059e3cb59d792620bde8e969eb60b3eb81cb36095a7c34b30"
+hash = "0ba889ac84cc42d80de9285fe59899ab716f4c0d51d4754dafff1cf67b455325"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_01.json"
-hash = "0b3c16516b956851d5b41c1f501c660acc8431b4763e6cb31552a3ed5d2879cf"
+hash = "2d93e871e0ba28e2bb056ba4610ba177bca242a763db0011171da06767fa2828"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_02.json"
-hash = "4cd3c8d420c2eca081db4940bc0b75de0acde15ea801ef48cb7334368ab6a08b"
+hash = "878c3466eab1af9b3ad76e3a1a3863ad2d3470a4ed37b20ab612551e7602ef11"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_03.json"
-hash = "791e8d1524edd33ad7f44c454247dce5973899e38d3bdcbe23049abf29718000"
+hash = "d57c21cd51e38bc776730f30d5fc972b6113135bed0fadaf0634bc745463f7b1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_04.json"
-hash = "281cec0d24f755033370190ae8478551495298a7c95873c55442228d427f6730"
+hash = "b2b0b4008d51d0cd8bf20750e389726015cf60145a40070acdc24dd0d1b88a6a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_05.json"
-hash = "05b4a94cbb407aeb7ebcbf7ae718584952ea904ccf9c7054c45991779073b625"
+hash = "0028d2e69232a480fcfae37b9014a13cbed0c4bcaa6fa08e2fbea2a0441df259"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_06.json"
-hash = "d4ea24075a519c4a71cee018f3adfb7758bba2a02bcb0c489379bd0d90a52cef"
+hash = "2658c8bb1fc2bfec0f490db5638f04f905e1ab2b3c8a89367e1d7a70a0c35429"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_07.json"
-hash = "b4a5f1899cc4b104685b0844bdfa99d73f3ac7b2c7cde1106e42bbf6e808ade7"
+hash = "9193b53f45988463614ae1a6917cd83c55be8176eb588a0c9d76d2ae77af77e6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_08.json"
-hash = "99e3665cbd1c451315aaa919c89eeb23f23666bc63a82b36080d73f21c9fdb21"
+hash = "c787ef8a5c30ce527091ed0d0a18a8b4ea3700fe4cf443ecc1194ae26d16b0ee"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_09.json"
-hash = "00869a1725388de9395e96b99e4396e47ea932618e8be5994966ab98cb3a453d"
+hash = "3340c07af8d15d4fe49cdfde0ad738eb51ef3df37c4034e8aa82e610ae3a6ae4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_10.json"
-hash = "7869da340ce51b914db8c8fd62754e58b605b999c229ae2c369fd7ac9b337b62"
+hash = "7d23f8527116a19136b5f3941f28053cd96417903f6760e999080a55aa4f6fc8"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_11.json"
-hash = "80ef522aa5f11b7d948a4444b6ccb61cec349a3690202734ffcf8eee37d04477"
+hash = "c0cf4e8fbccf10c93ca8b270224d3b08f0447ba6c507bda3092ef11aea21bfef"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_12.json"
-hash = "6aee072217757cdd89d88b39bdca06dde88f45a4322969fb189dcfb04d678451"
+hash = "4529499b109e7bbc655f74fab07b8ce0556a95180e220626a15b236c1f30d203"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_13.json"
-hash = "145144a1acbf4e2073f77249e4069bb4514d09ccb06b807385520b1ae85fcb9d"
+hash = "ae040f2a7fe1a1c0ca5997421d8675827580ef8f8375c62bccd80b2118e0341d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_14.json"
-hash = "da84408f1f5bc0ae5e924c866b30cc49817f792767afe15f50a7d0cd54fcf742"
+hash = "cdd07106ee86d823daf6bc840043ebeb90c5fbefa6bc4e2d755fb208935ae320"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_15.json"
-hash = "840eed74fffb9977a729a8f655561163be22e75a7caacae66e2344658c31ccd1"
+hash = "73ee83452ce151873f3e27e05b95ab9fb5127a37e64f6b5424c0586135d87a02"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_16.json"
-hash = "387f8f564a75e23e3fb51e1966138756f3148b4a2e29e700904f7492eb3c0a93"
+hash = "9220e94c54eae423f38184aef590a45fc54d6ded23ecf8ad4fc6f874201d87a8"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_17.json"
-hash = "af1a27cef5a26f627b50d3f65c3745c022c9b538f807f04520d22d47aeb2ca8f"
+hash = "5beb137d5d29aeae713497c45f4f689f33cf2b2d3aae95e91027a80b69ffb68c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_18.json"
-hash = "32b1ad012cc781329996dec8a03ef10674988507a119bb3bb50d006c7cd2dd39"
+hash = "0aa1e08b334a38d2199fbb8ad0637184edf73be80d80135ec602f7f1f607da8b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_19.json"
-hash = "aadec3fc5e7397718f14d4b7bae49fee6ba91e93add938e8ae530f0ffaef6dd4"
+hash = "a65a469265b2abd50b29224fc91f1c4292ce33de4ab31ff4ebe306c58d49d0fa"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_20.json"
-hash = "4870094372dcdfefa225b45b8dab16ecf6483f8d6b4051a9ddfc4b94e7e29a34"
+hash = "d195c8d017da9823f7e7632e7b1b0b415ceb523fd7c5024d22326341245c142d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_21.json"
-hash = "d653e476d2adffdb8b0da3950d3893aa717aab1f1affc2348a27ecf98a5d8a99"
+hash = "48d288abf0da0cfcfd0e09725bb18652a069a1ab7c165442d1f9b0b8a6608921"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_22.json"
-hash = "98e353b2e3977ca619b5dbef807242da58b5b189be7ea971907f71f3e67b3704"
+hash = "21a7575aba7eed98a029d670c5a8f4d518bbc50e08525012243d5bbf48a3806f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_23.json"
-hash = "e523a5a57026c3a2bfa2408e9b0a5b5955d502ddd0b0c8ea8d53ee1f146f9cbd"
+hash = "7bc7012d8f1c5394535df30d59f0299f81825818380f2f64ce9a052773ed1a86"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_24.json"
-hash = "c689260aecf911189567a414db3cb02d96544b520b58a990120c5b4137765514"
+hash = "7e9826a0e72e94634c5e6c8333a39745fbc7afe25e67541901f9834d3cd70b94"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_25.json"
-hash = "4079f6cce3384867a37660672b75218ac2ef605ec0c6eb976323755860fcae0c"
+hash = "3e307882cd197885bfda088dee5168d93df8a0eac796d98862c90b4ebbe8c974"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_26.json"
-hash = "cd650ec119279aff50fe2514eb38b400e7b89f506b0d2fcd0499bf7950cae6ca"
+hash = "615bf31464d65516e0728ed0a1ecd228ee8b2834b85a5feeba854583ff46cc0e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_27.json"
-hash = "d2a8f6322e8a0cdfd0453b7d12dd6c413fd1e1a5b091a99c2062e8eb5f850fd3"
+hash = "02972d36ceff8e6b4370a1251de1ae043d5ef43ff2587756a489bc92befaa53e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_28.json"
-hash = "cddc886ca9deae4c0b6d685097df2c6bfa737ce2919a0017923a0a6da768ace4"
+hash = "759d8dbb34bc1bda66fcbdf03a0be4645415f677d72ee32213e82e8626edfdd0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_29.json"
-hash = "ca5c7d32f7186318f2d9935b1fc76d3b00878c86c0857411e01ad1d4a96ee8e2"
+hash = "6feeb819bb99764c27483c0b36da72b898c9e1c1ae0e45ebb2428b0d263bea02"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/thermometer.json"
@@ -4386,43 +4782,43 @@ hash = "b1f89e5c3f4d835f7a8c9ac3e5900e3c3961279bba81fae7695ae8f15fdbf263"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/chisel.json"
-hash = "88271a802d8e94726058231eb74131ce52d7f8b14fc88af7ce9c6a8b2dda294d"
+hash = "91e0000c9865bcf664ecd5258901f930b90cdb5a62564ca9b768ac9e7fe7da89"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/bag.json"
-hash = "62ccd71e5b4b9a5dce46f825ffe32afe206540f93dc1a04e9cac5b0a8839146d"
+hash = "92daa12c8ad758987ab08ab6e42ee48cad83f3396706aac58be9e685ed12c569"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/chisel.json"
-hash = "c72b0275cda5dc099052b6fb6f7973724d0f5419b607afa37defe1cb87c5b988"
+hash = "2912604cd6c0472c119cb57d5db55841cce14a8767c763b4a6cdaeb54dca2043"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/glove.json"
-hash = "b45e2b18445e950959eeeb609fdadb11df35f55aebd2dbf56b686611006dc3f9"
+hash = "d22156e82c95c1bf2b88d48a3ec7dbfa9d7e9cd4f524c10de61251a40c8c89f5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/hammer.json"
-hash = "7d94dc48b73d34f1cf722212819a618bf1d02c1999c6d600a5f47541a9e24925"
+hash = "c37d1613b451e3e82d2714dc6419deb33f5db0964e6de8d69d5fca9b13f1e690"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/measure_tape.json"
-hash = "d877b06c36354d120fb5556a6619525f8e5a41e36f539deca04c1b031c5f6aad"
+hash = "9172620f5bbffff057fc73605554ac0e22ac46b9c58755c394471876ff22aafd"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/paint_brush.json"
-hash = "fd990362ce822a7c626f6a642e26449cc19b85669a430e8a44e31407fe4ce4e0"
+hash = "b992192be4673929f2b504976dc8f6512c389874b1e9997339bd78464607d319"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/saw.json"
-hash = "eb3dcffeb15764c64b7543957884a9b3342f8c3b070d2a5ec6dc6d5ac0b899b3"
+hash = "15559807911fc772ad2aeed780fc90df61c2e71bdabece78742e724fb36f2858"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/equipment/held/wrench.json"
-hash = "662fea769e64c68066ed3742d4a5911d9ace0c9cedaffa8a2a1bb9e97d2f6ac9"
+hash = "723b86a4d57dfb46b95d7ce902d06c3961b440a700583b6859e58fa8602c30e1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/glove.json"
-hash = "40e610876229690bfcc99a047de6914cdd25bc72740e8aad00cfdeffc7324026"
+hash = "93f32f4f2483886d54d7843c5fb1278c9632217daef13818d29f0b8f38524bc1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/littletiles/models/item/hammer.json"
@@ -4446,7 +4842,15 @@ hash = "daef01bcbce5bc98388c5790a2728d9d1f9cf0407245355db53bd7c45db60d99"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/atlases/blocks.json"
-hash = "d56ce1957fcf08968b4e52835c3a48ee587d24918ab5b2a96a5c2f59ccea6f55"
+hash = "2e56bfebeaa1b978f1c00e0c50695713e8e0deafd6f1df9c3fb26736299160cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/modefite_items_override/brush.json"
+hash = "0b9fccdbd334bcafde32ca53da0993b4fee76ab978d6309c3c9617e6531a1d8c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/modefite_items_override/fishing_rod.json"
+hash = "7cafe1318d782c5eb62e5b4b012b310cd3a7386908725896151f1ebf750d0a95"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/modefite_items_override/trident.json"
@@ -4837,392 +5241,424 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/model
 hash = "a6362a0359b5be5e7e8ecafcb6c07e73203f0cb44fc6f8f3ac21848b3b919d59"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_cast_held.json"
+hash = "c314fc981021fe5d1859f27c3f385be7508d7206bba89fd104f011358dc6cf75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_cast_held_fp.json"
+hash = "7a2989fa969a2bcf02bfb9f654dc8db37a7794701cd74beaaaf73e395f624133"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_cast_held_fp_left.json"
+hash = "efb63b697f2cd7222c13ccd05faea49543ff0b7babb7652a680abd455fc0a1a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_cast_held_left.json"
+hash = "b734f527ba2d0795f3bf7d920647db1a7352e912bed0ad04f274d4ecb71c92e2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_held.json"
+hash = "9b3e72c3569e8783694071274248ef2e99ae6982c1baf00ece84bc1618e5611e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_held_fp.json"
+hash = "2fd123ff9b36e64c7bc34beebd60e86a3b25733e6cf433c96b60ac4116f9166b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_held_fp_left.json"
+hash = "548abcbf87341e61812166098e3caeed77c2e421e479456cce0d8558111ac43f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_held_left.json"
+hash = "079029669eaaa05fc2ebfb3f4e7dc738fb063576a46ee53c763ab09f27f3f4b6"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock.json"
-hash = "90f68771e58c5dc01163ab81ab5e00c5217a9dfe0bf403d03367e81372157521"
+hash = "a174fa7e97df2ffe7a5ed90baa2ec20dd248acdf072dad2dd3dc0c894bec4bd5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_01.json"
-hash = "08730cf9c2687297a15b35ac74fe0b78e69511473f22e5d3e7a615ea32f99419"
+hash = "d6564b091fff5c6e444fd8f67fde5b4ca875657d074c22861c6a07f96710a1a4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_02.json"
-hash = "132060ea290d330e0222fb0249f03f1d772afed1e52fc1056ef8e8003249a920"
+hash = "5ff3aff9ce7089866e47b2ef13b465b02b8b3cf8fafc89c4847411dbea677719"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_03.json"
-hash = "7c3bf49c160d626f1d13a2d0bcc1b990defb9bace7c7ff34454836b671cb4d2a"
+hash = "8ba50fded498823b524ada8912e100bf38d3af9c894e82302e9921f939d5bb29"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_04.json"
-hash = "ca2bdc747cbf0f0f4efa7f3ee89b2633d21841500e7a44529ce4bb0ccb968705"
+hash = "3ff3ffba9b064f6c7f078f90e85a797116a1eea524b87088f41557ee69948634"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_05.json"
-hash = "2560d7c366d919bbbd3622b2d7f9f16c0fef1889bc5cf937b5914c9d36ab92dd"
+hash = "a3ec308486c504affc711cbd9464a7ceb4d5cfbbfd159f17d5c3635f05c2d248"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_06.json"
-hash = "af96857f9165a9c1f585fe6c20e4c9435e08243fa5250d6cb2eff230bfd50295"
+hash = "725a76e23fa70ec2e1b20141365fdcb4ea414c424995c159326299779ce764b4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_07.json"
-hash = "792c011988d2ee6901adc59c496acfa3955f117769f49522417ed5f12b98974b"
+hash = "03c8c6ce7fbe784bc0fd449af1782d21791d8798ba03a7852e1cc6c8e57e5379"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_08.json"
-hash = "9744c510a539cbef25d92d34916a790dc5abe3bbd3a3b35bb20ca73ea898adfb"
+hash = "66fa12cf64a6890df4ab5ae2d68804908435a1dc50cd09792caea98d1f744016"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_09.json"
-hash = "1f0341a72147b35363c970d18b36391f0cc9edca688e04ea69662fa61780f535"
+hash = "f49acb16360010951fbe61ec4cfe8bfcf412076abc0d6fc3bf9e6986a123b63d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_10.json"
-hash = "0942f7eafc9d28f8b1a1a3db7e1512199a25f4e347f98f4bd6cca952a1414f94"
+hash = "21b24b0b8cbfdb66706ffda041413b0c55c1c77fd034384a48336e8f74cfc5ad"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_11.json"
-hash = "22a025ac584b4a711919806cb4987cb5cd5061d1ecd779a434010f82a2e07dc4"
+hash = "4c0431bf1d0b0c9b0848dc2c611b1a12c55371d317efebbde2820315bbd18c12"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_12.json"
-hash = "0161172ee5605aa5c9252603d0397cb0cee87ed086bbcc74d12fdba431ff6f96"
+hash = "022ea56c21a10851cc2c9479483bd69a5cb4bf1b8ec93ec6fb15157d225e005c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_13.json"
-hash = "1c7b4114aee8feb4acaf54adb0aca70aed00ef108b46b6f44f1b8bb2a8051010"
+hash = "e55086febfb7e3e2c44e1dfefd7c0f8deae9771bb2de724c84fef5d6beb83a61"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_14.json"
-hash = "eaac3dcf606b8ceeda4bdc67ef71c3eb806beb8d38acadb51a445314c76f1505"
+hash = "ed7483badb88583cc152064d9078318cc0a8573e1558901ae965c94bb3d4371d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_15.json"
-hash = "0672c3657a7e07ccfe3a4c8e9395c3b174da59c4aa6efd96ad361fdc147a95d1"
+hash = "acdc5c04dbf29702432943c002c5a3cc0900cadabefe8dfcea9d37a2e44676bb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_16.json"
-hash = "a2cfcfa7a9606d470c7cacb90c5bf7caa4b30b3fb9600421de2839764b4198ff"
+hash = "f3392d1d3039b7da99388f67128df694a8518fde2913049b4551b37da622e2c3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_17.json"
-hash = "3f0a631d6dcb5f4850d16fb6d89a82d5b69ed4073524dee49312f63b33eeea01"
+hash = "405478a4dc2e299aad7e554e634c756c79b5a828dd8b2250a8325da14726b56f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_18.json"
-hash = "a7878ebe7ededf2573be7a0e0300b93eff16e07514c18f6a66d4769c5f9ec01c"
+hash = "95c9b67e03fb5f65624cffa58953fc6f0bcac6da7302ef1ae20d82229e0046b9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_19.json"
-hash = "03096def3216ecbfb218046c8d3e29494c550d07b80578cd2a4e85c1802de1af"
+hash = "fc277bf1aa57e98debb30cfabc11dd1e13512ebab731904318d6d9d754026250"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_20.json"
-hash = "4e0f14d45bc0d461c07e82a99cd7194e701992145ee15a4fe78ba3b2e2e0a9c6"
+hash = "2a6285e81dbb5222103f2e325d40dbab270fc9ce3579f5fceaf473dfa1fa9ebe"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_21.json"
-hash = "2bf1c86cd97860bb553e81cc38119949b62ec460118d21276e79fdc6eeebab49"
+hash = "345f1bf98f27af9c376b8c61da8c791d2465d70e715904627a406d45ed5bbc64"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_22.json"
-hash = "32fbed0c9dd015237c2a112a33482bf38543d3f3591efe6b1efa3de87e792532"
+hash = "8f77df778759be6d1aa2f0587947f56348fa620ce48304f4509572353c341da8"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_23.json"
-hash = "e72dcfe535c88146bc5f7ba6f16e3b9d42970f08020df5f16c4097cf96a202b5"
+hash = "1b526351dd2cc2b68100a158e3e59e4f1a7176ecc7e66288be303a2c727a0a60"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_24.json"
-hash = "458d42bb609608f9d84d38ca5695f566dc149021334bd2a12367590f8cb05c46"
+hash = "fe73b40b5544ed25e243a9057345318a7999d354d3099c14166d2fbab2483cdb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_25.json"
-hash = "ef313f4d42fd77da1696c05bd33597df8b132fa96679a8b8acb9bca38180885b"
+hash = "766852cdfd68addbde4888210ba596b76388cbb2611adb77583402a5da4a43d5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_26.json"
-hash = "2ae4d456796430ed8ffc5a29cd46e5cd41ac864b6cc535a7ba26a1a1ed3e91ed"
+hash = "46f802ed5cb0e4dbb4f3f452f8c6e4c5fc06940cba097adac5b9f93448046506"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_27.json"
-hash = "37a1c9a1b83e8876c455ff1e2de9af4a138305b82756156bbccabbc1a1fa1724"
+hash = "037868bfc62097c9ed17546df8255d404d12d38a147478629251fd26e51f0bf5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_28.json"
-hash = "ceb44f433b7b94e0bdf0869ac0f3aedb5fc9e1160e1ecdc22835666c99db6848"
+hash = "962b21ac980ea0f8e2bcfb3b17c39845249dcf39008294c635a9b5612516e8d3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_29.json"
-hash = "026f6ed45f0ccf9954fa939a981242c18299072e67f8c256b1575f377bf023be"
+hash = "76325e4ea3071db9bbd7a2d03a26c628cfdbb63d76e79e3c0c22239446681fd2"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_30.json"
-hash = "c7409825e13188ecc977ea91dee08d2e58868e08a12602e0e0c77e7f8e401c53"
+hash = "2c170970012a7a81340b6d7302d839650e6c6d53a779824860a44b3cf7253a27"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_31.json"
-hash = "64c7b3a7b83f3d81aba937605f2826434f0079f8506a48a14ed35a880980fc94"
+hash = "6b800f347aca6aaec7de307141524117fc36e27123983b674343261c2f7f0d23"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_32.json"
-hash = "2c633e140a56fac97793bc67ec854a07043d36e29ce1a33b1290e54488f0786b"
+hash = "a2aed67e8703e05069e835099f83e6feefd912d72a1f633227f3f9d7bdcd56db"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_33.json"
-hash = "79b2cfac8e608e2deda65deb66883a6ffaf0ee37ebdcb883ca333d6dad015d4d"
+hash = "0d76ca71df6dd700fb6b1ed317c96402636832a18662989f801c2a9e50d9f60b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_34.json"
-hash = "5bd870cc4f315fedea851673902fa0705f63d9833301fc4b8ce84e729b3ee68c"
+hash = "1ec20dc4fcbfc1f8bd7ecccbb6ef2be906acf323ddcfca4bdfacffaf1f36f23c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_35.json"
-hash = "c5d7d093cf2734a747a8c47f3e5f1c9629ac5f55a411237f0f46f60086d05d64"
+hash = "5abb95e5cdb73689b6dceb61dbceac9476a8e601808be36c092661eaffa709e9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_36.json"
-hash = "ee0df6c7784163c92421ae9f0b82d37fe82362304545388982e95f6930cf38c2"
+hash = "d30718084768924b6d6a1f34d0807868cfc0eb8f91eb7854be90e7ef3f60c673"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_37.json"
-hash = "19b228b3de61384849e6fb454a06cb2172313282d54a110bbe69aa55f0923b5b"
+hash = "32f965c92e9f9710b816e6e3c736ed64211e4f23b6e649e9416813ad8cbb6e88"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_38.json"
-hash = "0d4d601d10094d303af208dd4a6f55d1a1b8b174a4e2537e214127e40194e827"
+hash = "b816c2d23700f9f0deb153244bb3b807752e8e61d5e2236fe7f5c6551f055d77"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_39.json"
-hash = "726bd2f5b7f905cc2fe6bad06ff224e327300b70323478f8b305994eb8bd2a95"
+hash = "75017e61e6ccaca925d6ca92c409cd8e529e2a456ebb04efedbd1f9f75ea798c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_40.json"
-hash = "11cd586c569f59d04c319b1d736f75724c0bd548f311103b9c60819b354efa04"
+hash = "d796f5c6caa85cc105eee8d590080f986dac919349ecfe9f37fa158fb3d9e541"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_41.json"
-hash = "0e2a1c28b977b9227a2dc5506323e2b2db70c9be1b0e30d2e7eb0d284944dd66"
+hash = "84355c32d1c6026f4e85141b020aadba50af07133c80a4e5691a578d18777b03"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_42.json"
-hash = "ecfcbf8bd5285846472e8661f198fd63092d9dcf9e55cf0e89d5065788231e72"
+hash = "7b3b66c5e0c75b4bc7796e4c6ecae442ac1fb9a3e84611957785762934dd2da0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_43.json"
-hash = "e5e9801d87a857d3f04cea3ba97283057f43563bc2a7964a42d92dd3eaf7b5fc"
+hash = "d2de692064e49ee6ffd3c4306ae40031354ba7f3c0b8b39cf3050a3936d1aa0c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_44.json"
-hash = "10011955080e43d8d27df3a464b544aec1725fb1d327e20d257979a84404724c"
+hash = "b07d8c55acf738b436c546a2c91619ed7cf7aa00001a3e888979bf3f1a4cee43"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_45.json"
-hash = "9324bd6ceee838b758a39c8c8ffe3618318af5175f0bf2487d1f220a5f2f2d4f"
+hash = "721b89d55d4d1995b37579a77e86fdb9b0b2841c8e44d0956966555144aca100"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_46.json"
-hash = "e9ea9598131dc0223668ce0bff061f1deffa482c479f27dc165c500af4fb9f48"
+hash = "e22b14f354b0a836bdc6c09077a2326118b1c85a50d4369b2db8b97c5e142761"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_47.json"
-hash = "5ec5d9e546b4f4a10df60f784af3240c6ee5dc15f74d9ab86c8c945bf68d5bcd"
+hash = "331defa800f83b0d2aaa63819651c9bce4de3870c7fd5fc05f98ff935e86af45"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_48.json"
-hash = "116b22b13d4c02a9d566542b1d7588fdfdd60eca52abcb4a620f950bc220285c"
+hash = "1bd638f0b9f7b75cdafd7bb183aab1a0489c1b4bde18e0449b9583323b324d72"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_49.json"
-hash = "2d43da96c7b0765416cf11b92bb5cc324a13ac1a98b487585fac3e4923f50a1d"
+hash = "3d08e1e0b36de2306af6000b98f90ff92fe679d726d433ced97582c05792159d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_50.json"
-hash = "945a75959e68ae1d384ca316870339773f7aa96faf7083534495b9d4e037d08f"
+hash = "252773c8188ac34f6572a00043ae0bda2d061132958536dbbaa95b0c8c0fbc69"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_51.json"
-hash = "2fbff6666d59ac265361cc26778e31c696b90124d524af9b72c0ce15bbedc5a6"
+hash = "c05b2707bcd66023bd3f10e01b6bfd8f9d6e4c93cc76068a35e8cb8055888736"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_52.json"
-hash = "5e16b1335e8661b27b8dcc260bc21f7f1c074781b419dec6df48559efb6b254b"
+hash = "81b5817a73bc1aa85d5fb66cc18a6c8780339315e91bf70628cabbbda86a3ae6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_53.json"
-hash = "5257c7fcf8a4850492a659a815c4ef95ccda7430e2a9029c12be6cb7494d0295"
+hash = "9651d42b7ea48ec992ed87ee1f8200b5fcc401cc1d8eb9a847a6cbe1135ed450"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_54.json"
-hash = "39b00d473e61bb9cec714e2703e0e204f72b75794a52d5182a0c228a5232be31"
+hash = "f40b89a4f6bf306123c3f46a4efc7d44e2e89e4ddd5ad9b9f790c8e9bf07a54d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_55.json"
-hash = "92b314b781993ceb6f9e10cbc0a38aa3267c5e6f5abfb948cd1fbd233fde4daf"
+hash = "ee344bac666f9f3984b2aaf1f244f9af4070120d841debc15c73a4caa99273a9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_56.json"
-hash = "aba4416e356e06d2ef085d60974d6faf7a87e87f310c9b21cc33297bce62c2c3"
+hash = "99b886d49ac773b52cac3ea0c540cc81e26f292a61df6170ac893cdf29cfa25e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_57.json"
-hash = "89b09610aa31bf2d69f9cca06c9f166cb170713f445302fb21095b20464febc7"
+hash = "e581963ac309e7ea892c5827e02ac7c865cbe428a73151e4951c30186f91180c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_58.json"
-hash = "73e007bea3b35922fee6c72626ef547810f79814d199f2968cd37be9f18277e7"
+hash = "0b0b26acd81348dbbec258d347a6a9ce48d4bce31cde4da2557803b5865a120b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_59.json"
-hash = "cf0aa62c9e7e25a6f7e6be7a3d8ab4db547feef077e3ed92d23a7ec10e204f9a"
+hash = "b1e3bee6582a46a0ccea1d62516590166c854b1e2a36c5ff54fea060e4af2e1c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_60.json"
-hash = "4a04ef371d3857c0e53da5a4c6c380450646951605ef4abd0990b5b952be15d5"
+hash = "46734f1f2d1946e95bac1324df2b4a0a7ee8d7887592c7bb56f68c5b80a41e7b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_61.json"
-hash = "7c63c45057dfbf077b44b481b4aca4e957f8f50204184d748f4f6bbd2e83fffe"
+hash = "51a4b281a5d62d7f23ecab27d233e1de50b3be90c0f8e74382a963e66d427182"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_62.json"
-hash = "04eec97fb76461958982e3bd7a664978395fca1574091907ee6aab8bd5f2189e"
+hash = "6bbbd92e6096787cc4a6e71873e049979bb61691338beaa93a79b0b51328945c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock_63.json"
-hash = "a42351c03c5f984a6ecf9a2725b3729c738e98aa2e7d3ee5f6ecb851318e3213"
+hash = "5cb468ea7d3dfeb2b8e65809ebc2546bcce970ec1f78db2d082ab4c0ef89b13f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass.json"
-hash = "ddb74c91f42edc3b9bcfe58d494f3ea2bea229de1420e7e7f347d3f7cff91833"
+hash = "1cb100582c0ffa597192718e61046111bc2f016c44900505a1ef7637f9729f25"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_00.json"
-hash = "f6010dd1aa5269e31eb341fd3f3321f571e18b14c0d8bba8ad97449702960981"
+hash = "221274a726ab15dda484cf6d50451a133e6e46ccee4f097ca34d303d3cfb8d48"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_01.json"
-hash = "7ad01347172f3ba64731d7d72b8f75d30f8c1b58ec01f632659f30d1dc27e2af"
+hash = "a32ca0f78a19dfc14473b4fd57b1a766b4e49be44ff8c0e6d0d204a77607d4af"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_02.json"
-hash = "49c6cf2a45181bf023682d3776d4232bea93d1c46be98abca94e256614573113"
+hash = "52d12d8c55602b71b97ced54442c0951e6aa3b36432da60ee245a988460952cd"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_03.json"
-hash = "963d24ce36afa25870f9b7fd6822aeb5b2fc0cb17d73a2bac79b197e697782af"
+hash = "59c4e581351f8be59445090f21d854892d93ac1d88765b9c7fbe53e6da101b49"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_04.json"
-hash = "60c3402dc9a6340e2b9ac58b9118667e7f1c2bdd1815818c9014399044b8e612"
+hash = "a88a308c0be380fc62fa1ddfe46b489f1798a15aa0ed970ed84f084a26493d77"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_05.json"
-hash = "6e472a556f5776ae36d87470e9641183a7fbaaafb06aca4cf67a2a75b2feb672"
+hash = "11c60e0f8700e0c9ebb000e3f953fc9024d416ca1777cd876d0e849827354a0f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_06.json"
-hash = "5ac648c0dd2ce27c9adbea4e970f8521d1655e0c2adb3be7dfd183a318e75847"
+hash = "6971f47a1c88797e6b5b36509e9264a442f9990db024c88292baf83f3cd3b699"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_07.json"
-hash = "20d8a3a07527f2055ac9f09057c084b933c0904c1bfc3db831418a007a6f31ca"
+hash = "54df78907210b98a6587db65a7647ef1d7697c67b25582293f65b95a0be21fde"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_08.json"
-hash = "2896f1b7411e9d7488f98bad1972dd13f988c2ceaa4b0778198008f67ab42c11"
+hash = "b998e092f6c7d02d82d2900b60f480c027003b18faacc91d4beb4f2c109780a7"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_09.json"
-hash = "780b117ad9932e862a4b72685fb1bcd037442a089468e8c7f9da0f742f6d19d1"
+hash = "8edf870edac24a0b01b3923fab18ab12f56eb0d78a6797978b634af32a382817"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_10.json"
-hash = "614df182d8440d44064301c67b9a238cb602f7a3ddd81b624dad1aed8545f905"
+hash = "dc2390a8d2de3be149aad61c8449b9f4edf9997ac8d493f187a5e3be03b6ec6f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_11.json"
-hash = "78a4f1766dd6957a275d38b038f8a7df3e9d0ce9c4936571e09d27387c35fc91"
+hash = "c37357f9e5e2c09dabfa58f464a8401fe8bdec286a9dc37183477e881207aeb3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_12.json"
-hash = "be3d9a690255d5edbe1bbf0fb876d8642af7ce0812ddd02f8fc2e980b04f9ce1"
+hash = "aca46baf5ece571a8681248f4dce32826165fd43bedc7ec86cbdfa3c747fc8aa"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_13.json"
-hash = "9a42765b948d11534de30b726bcd13b06829bca92a2bbf66792f34d2bf64b540"
+hash = "4459ce2ebb386fbe039687844525e49c638784d7306e8d3d72c7e2e8b0c6a985"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_14.json"
-hash = "c6bc13a6e6ab683d9a0ca245d45935f79abf7b092f5633e6dc4d84df8d616878"
+hash = "4bef17504e94a591982ba755e08d6c303bf7acff78301ae4e770fbb58190a341"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_15.json"
-hash = "da7181d541710b5ac73bd97e39b56f1cebb0fd9f65a204898c4c5c6d68d99b5a"
+hash = "e750b18faca9ec0c034480d052a3633abe598e46098e6dc478128ec925c72f08"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_17.json"
-hash = "c6dc33b802eb4c1c8d4884f5005f386fa0c44ccc5476ade28809e2b307b0b38e"
+hash = "c5f7f8e54d16b2f12111e6f2ed0f2fa13466f5174c9c863bd8ac4cf298b2319a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_18.json"
-hash = "7e4440734ad56e8ff833f96001711be84ec84c75fd8dbe96e5c904df8f056141"
+hash = "0f32dc44eaf38319bc9031237d713f0c15227a9961569c7e90428a77417a1553"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_19.json"
-hash = "51c825ffa198b5adde9333f51efde21ba99ecc119494a88cc74485401a19968f"
+hash = "03e5940ab4296a7073c6a79277d246eae89e44ff6af16d71ce746006a1dcc3fa"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_20.json"
-hash = "234df44e200b67c1aef8e6b1d6f32ebfc6a1aa6c72a99fe1c282347d4394b453"
+hash = "7e9b2147571fd09cc4ec8a0fa9d07661aa055037486997570591839bd386942f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_21.json"
-hash = "44fd30f8c19193d7f35919ed52e9ccc0e191ae756e2932102691626e727a106e"
+hash = "c02044f11659c0529eac8fc6cca4a65d2068522dea24afd9c6cd0d0e8e1f1cd3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_22.json"
-hash = "d8f00e011c69aa034b31db8aee23c134e441d448d33aee44e2d977d5aa4339fb"
+hash = "11a868684f89a753fc6828576bff59c0f9325b9ba4848e008384f82d57cdb582"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_23.json"
-hash = "aee676e2a684a2675d00c18e80e154de73ea774b2bc7b9725779f457df7138d3"
+hash = "964f1e2d7312627795af5683b76ee02bf199861c08353f02ca112dab7ad36f3e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_24.json"
-hash = "08d14b4ef329f86e4391d0badfa49365ebcdf88e9731701397ab170eb7bd015f"
+hash = "efe5e73f250b7b01afc03771df124e93b3c66ab53cba0f8cfee6e3391d805c51"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_25.json"
-hash = "885b114a08ffc3e905d5e4f40f767f7f0d2a83a4e4936e283f9b19ee080cba44"
+hash = "cc8dfd7feef87a16fd6f28e1d0138d12013629cc2ddf2d3ee2e773e3962d9186"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_26.json"
-hash = "1b439825219b2f3e73943bae3c9965c39a92d249db3ec08b8197a35c3569e242"
+hash = "cb5e5eed45eef11fa2b6b7aa04f461e14d2356b4b85d0daad4695cbebed30d18"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_27.json"
-hash = "c65287d54b5a8fa0f6cad2c1827ba739893b0b05bf047357d8bfc7e3e21f7f79"
+hash = "3637f15024bd4812229a11961dc185ed135c4bff9b7ffba05b000fb2baa6a941"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_28.json"
-hash = "3c8eb1b72505cfdcc10b0d13ebce9bed36f71eb94ac29bc18dd684a3494a3270"
+hash = "710b38ceb8c56cf3528b462a07f3a96b098ab58af02516f3ee3a42e92261741d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_29.json"
-hash = "c3c09d2802994751b74abea3654fd1848ad187b4e49697910e482ae3906e604f"
+hash = "913a6a5d16e7a18477417eca1c0cc4e6ecb636c27b764effadb9893e9d8c19ba"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_30.json"
-hash = "67275281c639b459dcfe51d8e80050715e7951c19243134ae7a213bbb6bb7648"
+hash = "798a8f63ed4403b725b623d7dbd1746bb9832960826fdc80a319ba9529f8c027"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/compass_31.json"
-hash = "bda9070a722174e6f05ecaaa93b4f7fe8037b360b3852284c3ae327b6f7898e8"
+hash = "00469fa7fcbc9988ad2371b5f8e9c6473450c9b1e03fea35b57b300ff17ee092"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/goat_horn.json"
-hash = "7f4d913a9cbfb4913c60db2bbb5a3f3a1b851bae078b19c55b8df4ccce0b346b"
+hash = "92480ccb78d41f0f23789a85d6ecba884adcf5e0682e0962f3253ea57a138cde"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/lead.json"
@@ -5230,135 +5666,151 @@ hash = "5af41a079510a51e94ddea76f790b14f99c5ce58ad164194df8862b9b0281137"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass.json"
-hash = "3041cfcc78b4760658c8fc2955407b1c240a748fbe12f07c6119c8fa081018bc"
+hash = "08af5351d7cf828fdcb288b023054bd106699d73c4c432d965eba7ac9032a276"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_00.json"
-hash = "e04936c598070d9ad04cc5e003af00e96b64e08976f0bb9d0a7d25f29a66acd0"
+hash = "cc040879ac7504a3907e166f5e3c3a4890a4983693a33d1c927aef81c5742d6f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_01.json"
-hash = "4d5936a900cb721227ca90ad23c92d17a1bde925bdc5c3d44f47055f72c3282e"
+hash = "61be420e7cd190b28c3c482d388cdb4d6e62ec5903ed7045a4c8fb89e0ffb5e0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_02.json"
-hash = "3e8d9c7c40adcef40f16fea47b8c772122bbe51819c85f6ca1cca01d9918fa0d"
+hash = "4d9b7c30e3b75233c94a534d6f072f5bd3898930f0554b16b8f379034b0a9cb4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_03.json"
-hash = "aa6a5f351c9cb9d81aa5eccde6bbad7aaef15730d21e71cd049f5f0e3f633e4e"
+hash = "0672fcb67835b35df96c83044ecd3917bbe55a867ff97c94369b0e45c39df818"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_04.json"
-hash = "4eab741b192ac19183b66abf4510ba94e242c177b24c1988c96f50686fe4f899"
+hash = "84152ddd299c84bb4b1d903c0e2714f28dc95de062129b7ecffc752466a86b32"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_05.json"
-hash = "59f90df49d19ac9adb0248f06d447811240daca55e6719d9d0a1b06c98939ab5"
+hash = "f6a63396c50664e124d10a996bb1151b60f569db462e4e43275137f8e32fca1e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_06.json"
-hash = "c2758eb38bed2a6bcbf76730add5e9600fe406c9180d8fd2f75e00515c4373ba"
+hash = "f0ff0f050daae173b58510f5ef84e3009ecb3028d6fe3380616b3c194945cb01"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_07.json"
-hash = "3231bbcc234991912e2bc7d0768197a1465b9cf694593724a01752c42689a1a0"
+hash = "05fd2869b60f5bae479dfdb1aaea812339eb702fea63bbe5a280ddebc8f64a64"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_08.json"
-hash = "ce0e22c1aa70a7b66d831ccac527f38f3b3d2740049e845ae890d3c3d83622db"
+hash = "65dd976aca56906d7941558909e127fb02e26ed3a3246703261fcc9ccd569684"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_09.json"
-hash = "bfc615734962863236d60625d5ba415ee214e00cbadba6249929d5ed0e80b531"
+hash = "7587daf801988090379556e772e11b3917f40a21e027d069791408d1e7679a76"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_10.json"
-hash = "d7253b0003b3b3ee727a9f7105b84171b65b89234fa577ca57224fa8913f3745"
+hash = "1ec1744dae16d0af5e9260c1cffebe5fac85454f0f082a0e7a96f09d0f081033"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_11.json"
-hash = "91ab7818960c6ffa1e8bd373f78c0a8f56bf25d55066ac370bb41cd38dd4ee90"
+hash = "748cadf30fafa363e8e74e4e7accbbf2912658f4fec880125633d27b721c784b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_12.json"
-hash = "f9dd411bfd20a50a19eaa2af308cf7814cc4a01b0e1f90f9719cd57513e645ad"
+hash = "c40cdc00a9da70b7b36340fcf25455a8b420fdf8139cbd6950f81ce381029c40"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_13.json"
-hash = "2485b9970ff4de7da4ebaae1d49b4d97443e1f69a482e9d3ec6b30445a63f062"
+hash = "fe066980d9444e75b8857377fe79ad3d5930de415eac2a6e00758e732a93b0d1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_14.json"
-hash = "f3aa1f5c98b356eadf3071e778635614dd10f55e98569a1eb1175d85c1bd03a4"
+hash = "c57554f867bde49d1ca9d97189cbe27028e11e0df03dbd61a50d51e2e4b7bb08"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_15.json"
-hash = "5d4f07d8169c797297f697d156cfcce3f884deef85e2b6450ec42987af4949b0"
+hash = "106bac4dffac4644119ee94d925fe1bc6fd4ffec3ed584ea0d8aaff971255797"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_17.json"
-hash = "d4971c5a77342bc0786625b5a6d9c12150a13eb8df49545f9e357f066551e842"
+hash = "7f2fbbeba4ac16cbb383748f154228aa382b272f49bb11472c9957f004b5a76a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_18.json"
-hash = "eb3bc688743986be11797b405a3a59641ff29fb9ad6f98aa1a9c571daecc0a6b"
+hash = "256a7d7585de2ed80bc76ba5b6bb9a5cd1c9021073bb3cfadee59a9a4bd33cb1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_19.json"
-hash = "112bc2973f937c7a4485b5cd84bc316d1694c01daa2d63e60179988b94b76440"
+hash = "62af5476ceb67a75a51ce4f58e1cba241c089fe0cf699f55b61044f67fa18d8f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_20.json"
-hash = "9bdda937a6e584fb6845fcf7da956409a529e849df0ebedbf7b5b6c05831db9f"
+hash = "2dac9bb0a2d0683c13f294a65a5fb3957674180bec8faa142b13b74246ca5bc5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_21.json"
-hash = "9b578d0b48f474a4be3a121976b92961aa6743094f378260c7f2d6c7935ff240"
+hash = "0b63f8c0f3d7bc05c0cd7b894ae645f5005247e6b5e60b1333a035686ef0ab26"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_22.json"
-hash = "e84fc2fbda53b54b1c5e98ae8c42c2f3696302f634fa70e22d3e732e9c6c933d"
+hash = "6426d61dc29279e1620b105b38363603d96ac53acf3c34034e83b6013810f48a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_23.json"
-hash = "86bda468a54cbd2ffd70c3e2fa984014b4247c18ce22b4587e2cc01fd74fbb35"
+hash = "684019695ce217cd08b2816684b1b2199f068d299aa944e56ce599b4c1bf2169"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_24.json"
-hash = "c7678b9956defa17b537d29b0c847a80af006d4d55db69cb9490bf20633bbb15"
+hash = "9ac9407d2527b839a502dde3b1c693ec108f477f181f5393a824ff9c04126336"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_25.json"
-hash = "217c0025f5e81d78ff66ceac4c5e385ccec9f6f82655865ba2092c53d34dcca9"
+hash = "5cc070da5ac20e1e6cf0400f9d140219ebe607f1215ec6734ac42ac650ffee49"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_26.json"
-hash = "bfb567ebad1f56fc6021621437bf00418f772093fc874bc79330fa2713e2b55d"
+hash = "d4fdaa0c4d64c42f157ae584d4a6a06c776b6ccb85d0fdee9e51da4474412b48"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_27.json"
-hash = "6881c423414e1054f4c7f37ec290ccf364d83b2e4e841e1d688834777d64780d"
+hash = "58b457f23fb6c167ad7ea3bb45fe282b598cd902b4eb51fbfe37277fa1b53265"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_28.json"
-hash = "79e7d5754c400d08e3596db9595a4c2d03c8e03792f110a5b8359ef223d19e76"
+hash = "de9f3dae18f94736b236139f698c689eaf1c7d22e32292202c77bd9b9cdadabd"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_29.json"
-hash = "15d831f80f3776b9262675250d127a1f5a26fe77def67b149a2f10dca0d48b56"
+hash = "75b3bcaa612ec8d7776114a742c9e4bca80e2a8f5aecb92ae4a8bb9cf74aaac5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_30.json"
-hash = "f5b3403476c472a8303504594c0298f444553be6b81ee57257a8d2b36c2b8960"
+hash = "794dca1dc0508be09343390e69dc0b449da5bc50ccc5038a19191ce671d8b714"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/recovery_compass_31.json"
-hash = "f13476fced9e5de500a9a93b24e9a623dd97a1ae2b5ab25756df55efd315db5c"
+hash = "9f519fc9bfdaac9e567a7610ec0ba7717f103091f8435b41bcc4e8eaedfccbce"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/tooting_goat_horn.json"
-hash = "428a605dcd3dc2fb55187bd3bf6152009ed30a551aedfd42a261004947cf237a"
+hash = "da0775ffacb999f4f7ecfaea553503ac9d1e0bfde83574e2c22f61666a5c3521"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held_brush.json"
+hash = "3988168f1684da9b01e184810c11241afa1c4fe67b30d646e6e39c2d1d6718c5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held_brush_0.json"
+hash = "0f3160db760c5e51781cc8049737d13664c43474be08fa2bcac55eb628c88b85"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held_brush_1.json"
+hash = "f96073b657b07c8204d75efd256e4d5bfa9d11a978888d9329dad88758864565"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held_brush_2.json"
+hash = "f5ecb03dc5ae9d97350e4d46ea4e7966dcc1fdb61575a35663140b5334b2f8ef"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/goat_horn.json"
@@ -5517,6 +5969,10 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/model
 hash = "ea162937a968e511936a22997b7ef1d08811ff8a1bdc63cf8f3b5ea8eb14f2a6"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/textures/item/equipment/fishing_rod.png"
+hash = "51e384f78b1bbe2a4b09fbb7fe1fa0544701eb6c020761b2d486432eeb90db15"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturalist/models/item/capture_net.json"
 hash = "7def53429ff1498be17e165be9508f90985ae4ffb7299fd9758218f11a018b91"
 
@@ -5526,7 +5982,7 @@ hash = "9c3f691a5a7243472a7f2a107815f2b826740680b4046b6520675fcba5e6ede1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturalist/models/item/equipment/held/whistle.json"
-hash = "29f1a88d8d348351596700053b2b77a1e2bdf75e893e1622d5f73a7344d38929"
+hash = "598cfa6e6f1611ce05e3fc00ebcb82d07b688cf0fbf958f1a13c769783ce1846"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturalist/models/item/whistle.json"
@@ -5534,131 +5990,131 @@ hash = "9663f556abb6a1aafadf1d24a7d5aa8afcabb3244ed824802c7cc19c036487f5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass.json"
-hash = "3b8796bbcde1619764c419ceecf5faf68784010af8c535012f758406baa432ea"
+hash = "5d71ddf9009a734ddc95d03d060a434e69193d35f045fa25888c9c587c796e52"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_00.json"
-hash = "2e8e890b3477d4b2a378677090f7f37331ec7e8c0dd1c09d0d76a2eb10e73ab0"
+hash = "e7abe07b3f8c97742f8e320d95a63c64c32822eb09babbc0bf3ab00c301f9d25"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_01.json"
-hash = "50a0e18c1e3d3390ba40cc2ed4091d582eecbfa5e26b947fb5df3bd1fc88317e"
+hash = "09ee2d99a51f95e3c0442304cd41cdabc7d5c76a1e4c680db47512fd2f0c8c1e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_02.json"
-hash = "65fd13f11941ca3eda44df0aef332edad248eac256c84c5c449fc080d6fb6db6"
+hash = "e1e14fb54182c4473a03a8f5415081e3656a4f58b6827ba93b39bc8d2fda174f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_03.json"
-hash = "1e08087f9f068ef2d9840ce818d83a5a568c21e9cac38aba396a409432a1e10c"
+hash = "86d64eed765b93583a249c37659d3cfbead3351f5ae00a36556ed1d48dc9be9b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_04.json"
-hash = "e4fd8900d0f6ebcd426e107fdadb51f854de71debadbad69c4171ede7623506a"
+hash = "83187d29331a6824bd2d3a58b2e7bdb271b689dd7382400ef1485b581563c1ec"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_05.json"
-hash = "cb7ad6374f6bb5cbff82356daff6f1350487d4a02dcb3594f6542a61073111b6"
+hash = "095c2e026abe86e8d24c9a141c264e1de182be2dd3738737c1d1e09564c8dcea"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_06.json"
-hash = "812f30d524b6baa7fadbc01278f0a8963eb5839abdd4708a6839768fe11686f0"
+hash = "0350e2bef575109f82bce24d6af584ef93dfee6336c7a426d161db5cd7cd1a65"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_07.json"
-hash = "cec743f0798333e985aaf8bcf2a6c66574c8de5d75c7a0a57b5abf80f92feae1"
+hash = "a7751d9842b5f43b34250f3dee2d446d91b10cce238b9af8b684f135a719b3e1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_08.json"
-hash = "dd5923f82738e65a5688567cb09524aaa32b223d05b605f6bc456e3f70034592"
+hash = "f73135cc2ff63599f1d6b2a6e20d822e66fc9b8996a2c1508b61e0868f11c8e5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_09.json"
-hash = "73a694ba85857e98c957c07d4b5b3c524432edcfdc51de19755136919b184f97"
+hash = "8b3f3707015a34011ee0bd2d2570d7a27dee8e50a09a66e4bcb859525227238f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_10.json"
-hash = "43f49db12f0deb4e5273322019f63e558765f261fee13b2e403c2e10eb8b9210"
+hash = "11add4e8f500c992fc2ed515b62f1a93b65f7d3504df75c4392ccb2ba140c3ab"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_11.json"
-hash = "988807266e4f687b314de0151e82ef79bb8d6ebe6420bcf3412bffd2276c8344"
+hash = "d1ce5957fedb926446d931eb71a0d838a0ccf6149db77b3db65dcec8daac3608"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_12.json"
-hash = "ff079119d0930d5cc1a1a40b51f93e7db6cb0c7dc7fa98e4cbc3cb34c7b481a5"
+hash = "34b1081eda3e807ed268ebda1ff823c145329258f1212d5b809f3cfea06eee5e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_13.json"
-hash = "8b73f79a3e7e6761594d39650620697fa30ed77cfbdef819ddba0863fb36ce3d"
+hash = "f9444ee97bd61210b6d72b4c6c485dc6b14c80fa1c9bc41ff1cc9db652fb1b7a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_14.json"
-hash = "85d1bcc73e0b00ef110e2277b3d04ae50814cc869c86122e637ef112f5e650dc"
+hash = "9908cca596377aaba67f6162f031692dfac3866c0841414aa6acbac3d5517cf1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_15.json"
-hash = "04ff09a733c60489f8f32b437b417b408bf79662b0a677df61c608cb265b90e6"
+hash = "e6222930a34182f60bbe4c106fcfa6b4864128ea3296b5488e1df7777d58264e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_17.json"
-hash = "d39cbc5bc91fae716499e657896a8f94798699388b49f12ddfa4c7053b152047"
+hash = "4198bd5ca1e782f57ab804f75ba9e7fe75d56b2214a5f9490810e4bd99194559"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_18.json"
-hash = "c579a329f3afa431e83d45dd9918ed4a360819f5382b6c0c21ad2a25b498f332"
+hash = "9e3bcf965732fd87f612dc4fd5bafc8b23d7e28b2cf0a0319388f93dce8ba7fc"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_19.json"
-hash = "eea5e5b548e662821cf4e5188a24f7bcbf2691b30810ecc2aa01ae6408383dcf"
+hash = "a52b54c6bdb5bb9fec62ac00919b38474948e42641421cbf338f25adc2220a83"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_20.json"
-hash = "c132d7ce8123ab0f43f860b929fb4a186b5364f9313d91935071ed32f640e7fc"
+hash = "0f4e5bb2cfade03811b33b94e900a67919b33839f0c00b4efeed47529aa1c4df"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_21.json"
-hash = "34fd428192180eb65ed4ce6c88a62d23c95629f494949dabdc55f2335ff14e36"
+hash = "56796d0c3bef13470783d7b12d866da5ca09da15e4f208151685652192e88152"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_22.json"
-hash = "ecca7a19169877550bd2a815bbe63a37bb2bcf7520ede3a87e91356441f3210c"
+hash = "85cfb9a4ad1321086a03b1b051a9d98f3bd7a75c2b79c32a6807d531f997135c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_23.json"
-hash = "0773c46701b123351dae0d6eb7521606da5142ae2f7f25e7a8d354c0b8583968"
+hash = "59312c75079d50ae346bb160f466f96b1206eae3093e093d72b6d207c4ab82af"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_24.json"
-hash = "93314124855a2e5e15009e736b3bd66104aa9b93e269523f3f175119c9405108"
+hash = "344e995adfc045dc5ada88729c234f9f3d4a718d6a6640cd0bd3cc1339d49268"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_25.json"
-hash = "f445a7cc422e505da17338799e640ed851e029003df3dcd5c3dc1c8484967d16"
+hash = "9db915bde8c24d06b544d012fc8ba0960b155cb30469cf34a769d8b8d5b28cf5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_26.json"
-hash = "fb24f1a75efe041ee5c165c3c5fce42a075fa9a6a8c4b7b0f3744131ee24a208"
+hash = "28e9cb50b806760cdc43946c7750dd26d0f61d3bba722838d18fa178e6a78205"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_27.json"
-hash = "4a326b36e888606235406822419a1acb619b2916fbee99459c6827af0096c34c"
+hash = "6318a3678a1a0316e58f0156b5cecb1ae3baef88f4653a4897e4ac892dbb44ba"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_28.json"
-hash = "89e9c4453ef42a329bc884f6016cad521cb9a2262a2e61cbbab317a5d605ffdb"
+hash = "8752b47ae413512224e521ea7c289ad300566149c865c11313ab14c67340cd16"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_29.json"
-hash = "db0b08a3a463240651510f25f6440b30e2fe5ed579545f65ce2471668cc77199"
+hash = "d612c07f69ecc27749aea76dd18f107af679b1421849fba62c79524ea274f1fb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_30.json"
-hash = "602066113a50c9cffb9fc53dbf9efde122304d39f98e2ce01a1115da5728be67"
+hash = "eee4dee0d974106737611e9af98ea3fc18ca9b12407c9c6ce6a6172a2534d9f9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/equipment/held/naturescompass_31.json"
-hash = "a39571390fe85db4305cc4c53b57e1075fbd363c187525c10f54d4aab72053c4"
+hash = "27286c5c0c2831f1af3d90c30a810ced96a0028dc8360f26a831d10be78da0c2"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/naturescompass/models/item/naturescompass.json"
@@ -5990,223 +6446,223 @@ hash = "310a8803409f2eac93d50dee2dc18888ccca2232e00cd355c45dfe352eb38601"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus.json"
-hash = "24df2904847311c90a207ddebba7cf169981189a548b214279c912838c5073f2"
+hash = "240dead60e25e8be80700ea7f747374e8bbf329a74fe259e82d69cd9eebdd1b9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_1.json"
-hash = "9af3d2bfd9888723a432c5e92d4bb8eaa64888f5868a61418c4ff5fc68416fd9"
+hash = "a5fcd39b881bdd3aa98505c711d07d835ea7daadcc06d5d5dda2c3d6b00c9e67"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_10.json"
-hash = "e3eea325712f0b44398a927717c4859502ccab1ffe5cdb7623fc0ec6f9ff526e"
+hash = "fa900990b1c8d8550282f20b557508a1d74b40b1b09a3b8dd5f8aadbf36082cb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_11.json"
-hash = "a2981a1f57d0d60594f8e4fd8d78b9d01decf31d9096fa3a6af92ea438a97b34"
+hash = "dc6c1b354d2b68c837f37df6b9ebeacc5348feb2d0b52c7c81395acd7be07e22"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_12.json"
-hash = "8e5730d238b08e78f865b211f0ad50e4ad34a68a6319c48f23fa38cd0d8ebb3d"
+hash = "b69c665e3cbb305fa9cbf6960143de5c6586f6ae047e4ff88bddcdc2b9579833"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_13.json"
-hash = "8140b3cb11b60bdb9aaf67cd0103ea746f82898daccea5c51bcc0199de5e742c"
+hash = "bdfcc12cf16c413e879ce956bb7adcca99b7496f030665b6681855feeca54fec"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_14.json"
-hash = "5dea5c76c83c6cb708626f990f2c762f57047ff8cebeddf52612412d4bae15b8"
+hash = "f621cdc99396ea46cf60102132a7ff640971bd66301e1e7133072e68abf17fc1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_15.json"
-hash = "08e88675ecb5986cf0b99c9e4429abb1c488427ede4f2881de55671a935a5343"
+hash = "991cc388dd2dbb743ae75eb154c6563b46292930c233b30531dd1c0701976a78"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_16.json"
-hash = "2f960b945a84414684e271673fc19754b7f399814ce9f1bada937a40fb8768f7"
+hash = "312119b642163c5f3ac8fbb4902041aa5fe47ab56c41b096d68698f6a78a51f9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_17.json"
-hash = "0de26511efbf107103da05a45730c0f3556e4f8947a5cef64621f974a8634875"
+hash = "f1fe820b8707a2b80dc9f6809b32248939d9055180df114e45ee03011a575ec4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_18.json"
-hash = "0370a9d079f68be31effeeda9cb8ef0cae59d1945516952d5d00564904020dca"
+hash = "4f900065a0ae52ec4254c62c03f9b3c2d42d46baa1be05e37f4144e755a90d99"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_19.json"
-hash = "514bf659224c4a3c799c5fbb0562ec6ccf4535e779a71806eacf7d598628b0e6"
+hash = "6183d5707bb9e606544a1b25fb341340a9dc16ca0397f5e13674b7113a0aafc8"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_2.json"
-hash = "12bd5a5d7bbfe17b83ec604c85bbf37b1b8f2e102c0e4a3fc51ac75ae5149dce"
+hash = "8bbe3f10e1c71743ebef4ab2fed8d32e1b0b8dd4c55df71cc5e0b429b66315b9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_20.json"
-hash = "43fc0da98fa6fd4287b83a48c7749ed6f81b4f178036e15eb197f3d9a38b0efd"
+hash = "18d678d34690cd6ee2b2adac94cdcc68a86c1286880096f56b9ed2cbb22b5d6c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_21.json"
-hash = "9b4a3ad79c4051f08a11b83261eff4728cc11db0b35b8b020432d05fe89fb79c"
+hash = "553a30c6e2b474a444f271774373e9232466c17715c2c89d9af75439deab3191"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_22.json"
-hash = "e031b8bc61bd3aaa0fadee56d3fcfdee33518a8c63b1af95d2008232917b174b"
+hash = "891fa00d4b431e9b2b2913d192ccafd91350d434a36b9aa6dbcc0566f546cc46"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_23.json"
-hash = "1d1f9d752e73274f3f179f7976925d7673929786dcb5961d3e22bd81dd0300ea"
+hash = "6329367e096eeaf11ee2f2307c5c1a2be697ec0bcad660285057d566919a6881"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_24.json"
-hash = "122315c2a2129ce701e1d3aa9705ccb8ce0c4198ba4cbe76e39b840af24c744e"
+hash = "4ba06ff11e8edb4dab67524f8cfda4c4e13395f3b3c956ab35347847a3e52ffa"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_25.json"
-hash = "5470c767fdc2376f66c71c3a47f7195a00c628a9e5c58d6e579c2ee74c2c0ceb"
+hash = "1808b9f7397f8b06ec64a531324c1617da4054c9014024f8fb813b1ede3a8a01"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_26.json"
-hash = "0ab46d6b7ec34d1c2b4ddf9de99d140f8905f38b752b694b43a5fc6e3bf078c8"
+hash = "cd177575765962570dbaed1fe53956db8c74b6c95246cc78c22cfe523061537c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_27.json"
-hash = "ebe0f7d4f902589ff6b948d3f6bfe6c80dfa2f1799e5f0b8f66a6c184ec41e2d"
+hash = "f0bd702af898c2fc23a5934024ccf02e8f66fdf4bf49cd6f34c61ef27ff9794b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_28.json"
-hash = "f40db64bd7eb487c69095ee394bc6a37a251581627a60d554c53429ad124b7d6"
+hash = "fed16d421220d4acffd47c336fe4028f97ed1db34cf717cd5819d96ed3bdcf34"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_29.json"
-hash = "051dc0fac47725956c2e0305bda10bc387054df1423fe9d2fee3262e068e5856"
+hash = "00519ffca77371074cf8c5b9f541eba9d6d7d63de7c28ba8c2f9e35e8bbbb32f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_3.json"
-hash = "34c55ea5e58f9bcb5c64f3a4a65d843e5216f661994a9a5da9451147f7a48f82"
+hash = "2db4fc5e0e147974c047c1884fb658d430cb3b2bff24f8cb108edb7fb3f44606"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_30.json"
-hash = "45fa69545e98d507f50e47c86fd750fed49d5c56ae085bb6cb07d78b1ebbf3b5"
+hash = "38ac9dd4315a8d49e257e11e6a48b7a9162c03a269e8b733b9197700a0c66e2b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_31.json"
-hash = "df6de1130ad6aaf143334f2f28f32781d27431d9a6002ddae678540f305568b9"
+hash = "f5a23dd7867a8eccdcf9f082048db224ad1b1bb22d4e80f5f755b9e0c39ec6db"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_32.json"
-hash = "c156637fe71f67b58631d9a8408588fe41d870afb6c9913c3ef5bc5e6bdf32bc"
+hash = "68a53ab2cc0f0f8aeeebc264e035065f8e051e5030b145088cce8efef495b618"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_33.json"
-hash = "36a6c984aed0760e90d30e985980b0a41c4c804ce2698559c8bfa1f9c74bac42"
+hash = "fce3622a0c627ada66b445ffc9dd93f460f96ab17f37672c82fecfe111c2525e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_34.json"
-hash = "41d427d7c83f531677f71dfbe48b448c651295ede58cca41e6f09949385e1f30"
+hash = "ee1f7f018164ab3e53a99dcbe5418a40cb9ff8c6a2204b167bc95a8f5594c85b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_35.json"
-hash = "d0ccb7b083984dab92a76d3a02f025ed73ecf397d3c5cb35c008315c108ba0ca"
+hash = "96c7c4c3407d4b123ec499fdb717375e8896174baf4a6fab3aeaf0dff5ea89a7"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_36.json"
-hash = "f92b1a054d2357a029754eb50dc69169a8478092889d1dd35cbb341f95fb84be"
+hash = "abf3f9af1d271177b3e7c5e01a639740ed15f057d1a9163a4106d40f95e7c449"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_37.json"
-hash = "7517a6618835f72067b862f339377ce22a598c7573e5229d62a13bb49b7f0096"
+hash = "e9c215372b28148a6d157b1e49628917c60bf0d4fbfc8f34bb501a9657930d8a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_38.json"
-hash = "43cf9f9b06f2bd6b9c16ce998b1f91a1fb3b40d3e52e9ba47a7aa08860f572c4"
+hash = "f1a5de472592b8820634527358b84b2f0be7b485d401668e6a3c742bac588d65"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_39.json"
-hash = "abbb29b0cdc7b48e2186a1e77dbff24aec6f8c01fefc1ea541c3aef955ba7827"
+hash = "5d01b1e689ea5db1cee5ed7e9c0186de166e1fe1b82a24d3188f7745b25c6e6b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_4.json"
-hash = "17cdc02af87cb3bb4163d587f77084c7aa1b681e431c8acb88a7eccd3f9dd3e1"
+hash = "efd140412dd24b5c6378e6c3dde317a6c4792af1c4d9550737e76f2cd2389426"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_40.json"
-hash = "e99a8afc4dde64ca3bebd70714b386d9bc46a6bc3e397ede0570a056d5743db1"
+hash = "f8719c31d50e5f4843c8fadb569245f1ef84e01546c0cef1837f2aa98cca09d0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_41.json"
-hash = "aa75d77057b5955c1b5e78aeaad49e17135b6363a5cbc162cb2e460fb7ce14a3"
+hash = "d4892564b4a0b90cdb579a42c9b84be5ba94dc0b101e4f774f5f5d36ecb724a2"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_42.json"
-hash = "0ab0e3a86379b9b19d3052ed64315e698316bf5ae3236ab74eea26850f2c1d61"
+hash = "fe5afb72a485480e29a3d27040b01cc4529b9cbf10f7d61fe18f4bacba32521c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_43.json"
-hash = "a2b81899e479d800225d7b9bc55aaeffdc990a9a5ec4e2dc35d6e0d5bf158d9c"
+hash = "5dedb54607270ed8e3fd6ffc13ce691ca32ba1c3aa59ba86e9456666a17da0ff"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_44.json"
-hash = "6d778ecbf3dc45f36418512ce074fa33261c5782e27e3bde191be4a566419961"
+hash = "c62126a3371b4782bab9d73eaa9b536de0f8b209c82d9bbd0c2032ee0c908070"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_45.json"
-hash = "8cfbac239dfb5b5eaa6cb051a10ea8d33fec8c13ff96ce7afbf99a80a92640f1"
+hash = "4d36d1e9bf5212e0a2caefe82ef7af2b6b9c34dd24ccc178b9da7eebd02c5375"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_46.json"
-hash = "c3281acd624bbfce466b093b4e01be3194474ada21e7ebb27c92ef1fd09b5060"
+hash = "0c3bdc131d2778fe4cdd15d1a53866d7c831484a406b69b4bb9b6b0a6eef70c0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_47.json"
-hash = "21709893196233b83d3f64ac482b543a191b193480e1b8bb259e62edf1841f81"
+hash = "81e7fd2cf9d9df8c4ee97691f6d0916ed0e10c52bc76d52f1cb750249a9b8547"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_48.json"
-hash = "9440ab75fb6c583a424e8459e39e0c1f9df86bb10f4c9777568967954d7a5b26"
+hash = "f60d87a4988a47431c19eb0e90c9ea9eec8e49532656fa51d4e9504ae271022f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_5.json"
-hash = "be219adcfc997b75f725c2134b124ae6fdedf0d4e96df971d9b2897326b011fe"
+hash = "9dcc96390eaef8e694c0a873f0344835aff47414e2a4c4dc16aa49b9d75620a9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_6.json"
-hash = "e72c047c8a1171bc3399cf228124cc4252297c1fd6f4bff147c29970f34f8ff0"
+hash = "30caa167eaaff2aba7d8fedfc697bbf050bb91f5b57f71a7ccda422ded0804e0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_7.json"
-hash = "38064bc8e63443e4bcbcf25325d55f430328a83c467205e45fc9c66c64347dbc"
+hash = "61dd8dc7e64e4382cef5c56ec5cf72c4f9e79ba103dd4a5a4b32a1e3a76a0f7b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_8.json"
-hash = "3d8d1546417155df1099ae9967cead35a475e2179f61615c26c841e0b913962e"
+hash = "df2a318c557306e1bbccf845dcabd4a99621607dc881065e601106633cec88aa"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_9.json"
-hash = "a3fd18faf5a90b502cdca6f5f1eae0a8801bebb9d8b71d19dbc4a79c1f44370d"
+hash = "ce10ca5b8d60d2415cce86b2865d72626f9986214c6a0f794fdc0b1a8d3d8932"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus_unset.json"
-hash = "cf2fd862e0a86edd81181e2e67ce890dcbc9a0d8e34e9fae31136448118dacfd"
+hash = "7b182f5e95fddefae843f541351eb60a34b8440cd7c0eadec4fe61f0228e825e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/flamerang.json"
-hash = "fcdf51e2794b404fd7f6eddcf3179fcafcac0dac07898f73e018709f15679c3c"
+hash = "4a15903ebcc02979ce761d73a13c5300295ca88b53496d685ae11b8415c56506"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/hammer.json"
-hash = "c1ae4649ea06bd8bde205654784656e9da2b61c607c203f02eb649fa0bdbf450"
+hash = "843d1d211130f8ffc8756869952ba68ad8913509e93d5e6618f5e78c0e838048"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/pathfinders_quill.json"
-hash = "12103f2caeebb6d5ae04adcea92ecec96c70d01884ab81723e678c93185471c4"
+hash = "3aab817cbed4185dc9fdb4b6bef2f84d116424f09a4ff593cf2d5dcb0fb660f0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/pathfinders_quill_with_biome.json"
-hash = "9990d7d2872bc235cc61d62d5a56b04a97e40f4496fb3bd4da31963a5140fe00"
+hash = "714750876564ff19d2dd994e08bc78600bc95b9f3674fd1583c07c5a8e86b846"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/pickarang.json"
-hash = "2b252c8fe80a053ec753a0828550c188aefa6c2c4f5f802b76da1071aee0d249"
+hash = "b5ef703d5478f9445718ded4f7483a2662a137e3ac71a181da0768c8f7634cad"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/trowel.json"
@@ -6238,11 +6694,11 @@ hash = "a6b9410c4a3f4e01f7cf9dd374a3d52805dece27740cda237ab49aac72ba3a0b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/simulated/models/item/equipment/held/honey_glue.json"
-hash = "266d3fa172c081d7ce1be9f7132c0b29be578f5376d36cbc23b10529286a026c"
+hash = "7a08a7ead03e5eceea3bda7b813b214502fdcb781a6459b978d4b94ce123fa73"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/simulated/models/item/equipment/held/rope_coupling.json"
-hash = "2c5fcf785dd30e47c1cec52e77939867dded7911ca57fa55837215f6955aa91e"
+hash = "2790818197e41aa7e56e2bd8c4ada5eef2f28d51175e67afb8cb05090ffb0021"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/simulated/models/item/honey_glue.json"
@@ -6318,31 +6774,31 @@ hash = "372cfa23867af1c27da574222e68e429648903f8af8f4643a9393a20f9a3d9c6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/casting_net.json"
-hash = "5b49142345429ef32b5edd61630dd73b4ea8848bddecb01dfa5777f908fae21b"
+hash = "92a6e7fd2233c7a34bef5305e7591d3856a120992f85cf0e98d0db63982812bc"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/casting_net_full.json"
-hash = "5f9e718042e6ab579b8990c067155a16478e82f7ba4e1ebeac95170a418b87cb"
+hash = "6e1ffa72716dd45afc178a9fe3055a0546522b3dcf180fb4a38899375d255c10"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/coastal_crab_claw.json"
-hash = "8bd5db387517d681b8ce35f4ae073ad257635c4dec2a0b11e8baab2ee0209e4e"
+hash = "9d135213840f3d046508144fa7c82966a6855227f50773efee97f2447df01692"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/coastal_crab_claw_empty.json"
-hash = "d200c509a723cc672a50f40ef0537bac67e60e13c662e7a2582697f161d53c09"
+hash = "8d7ab52b7207726b857429796a2832435761c53dba6c63711a782f9dfa2e0206"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/coastal_crab_claw_shooting0.json"
-hash = "d83af59b54c26338e3ab65ce2c59db7d9a1ff4f4ca948d62d712b51f5360da8c"
+hash = "5df0ef777e09c4fa639ba9ebc2229114db935b8702b6bcd5c1e98591923a1061"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/coastal_crab_claw_shooting1.json"
-hash = "b937ecd635e223aac199493bda46997adf81f0400106992c494397131abd98e8"
+hash = "be9f9f05efd14ee2e0b077a1f389ae41b44d1eb7addb2df8b2a607456eee2bb2"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/coastal_crab_claw_shooting2.json"
-hash = "748a1bc348fae07e6aa778886ce96084c633350f03ebf6b62c702525ec73d539"
+hash = "2353803e334cacbbea54ddd202d47a145fca9152554fd73ae4b7100d2a4ef0b8"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/altimeter_template.json"
@@ -6382,59 +6838,59 @@ hash = "3bcc0f6a9e86d2725e7490a5d558c1b8aef90291aa62200f373a3f94f1326765"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/altimeter_template.json"
-hash = "6b16f61aa2717206325fce04aaca39b442484d6d86178de52f5d4313b1a18fcf"
+hash = "e42d3e6227c9be69f8ecd4bf6579e6c848fc26a7a45c9b13247fa27e1793e82e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/bomb.json"
-hash = "f8535e0a745d407545b7e51d7eb61f1c3258fde055282e685e0a7685796f703e"
+hash = "70fd01f47ed00c69ab45ec9eeeafe9415bab4aab02cf3ee144c92dd1db09b9bb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/bomb_blue.json"
-hash = "8ca4e683fdc71f2d76f68eff78cd34aa62f114f9a2eef0d99f5d41867ab46368"
+hash = "7a9b13c35657b5fc223d8bad1d7728cf9bf78196aa1eddd3c63a474e7b9e2c2e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/bomb_blue_projectile.json"
-hash = "febae577562b6d761c4d666360bef1ff0e957b45e58f29424d5e1aa1fa455f3a"
+hash = "392605ef85852d2b1e4d52ef5e81e7b984272c4fe69764b5b4532762bf89cc3d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/bomb_projectile.json"
-hash = "fac184a275703e6068fb02e31fd26a5195c0cc2e9b9b51f9c9b13633c4db6ff0"
+hash = "b3e112558d59d14b71389d22f802ce8d51d64cb5fad0439ae04577199faf3c3f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/bomb_spiky.json"
-hash = "c61059aa153af9a1792c0a8d4f9447f46544ea896a61440a9a4e581cbc2da307"
+hash = "f6d78aaf13f78128999a3de922bfc9f6e2850eba04dd28572445fac3d34dd2bd"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/bomb_spiky_projectile.json"
-hash = "f952a6fde1a80689a118de6dfc0bca6498109950fcf6c09f4941cde8b0e441b8"
+hash = "f4b3bd097d2d828e39bc1593e57cdc3e624b9e29c0d31bc51d0db138a1d196bf"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/bubble_blower.json"
-hash = "958bbd5a86cdfbc1161ea83b6d83f691e65b703cac5dea956b06aea30ee6266e"
+hash = "a111127fe819f15e30aded62efc0a0c74c71ce45e5414f0c90b24f10e5359be0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/bubble_blower_using.json"
-hash = "014849d8be9cd903c0d01d999b2578f0e84d82154e049582178cf06f07940701"
+hash = "6fe7059ee52cd5c4b2f2e7fb2a5af5da39e2235fee0b4359d55bae1805f5a243"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/key.json"
-hash = "d23e0fe90466e8a7ebc9ebb854cc532db4e9c32d2a8b6aa835cf3425da6306bb"
+hash = "86019f876c96055ac66cf4fbb5fe1aa07eb3b45fbeab9c472a6884507ffd65a2"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/slingshot.json"
-hash = "d65817e4762119eaaddfc453b3f8d3ecaf5cc46a0393086a700cf94a4d4f2bf6"
+hash = "e07a15c006ec3493270fc830b57d0468fdaebf9fb46f4ed6b33e8945ff80381f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/slingshot_pulling_0.json"
-hash = "f673f000cd926b869646eada9dc0b3c2f51865cf19afbab2eced148b0b103554"
+hash = "79319f70ec1aaebb79bb27901186899c1f192e85eb6525fd955fe9ddd39b3180"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/slingshot_pulling_1.json"
-hash = "9b0680799e0b23b651217b935d6629c20f95f6ca3166562b48c5d3ad56ec241a"
+hash = "a3a32036750da1f6e2c9702095f63ee3f6cac104be49c5d267c4e76d2e58f44f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/slingshot_pulling_2.json"
-hash = "58f19ede1dd8ad039ad9c6f91a45a00642cc8bfdb714db151eb2962d2f1864ff"
+hash = "550b2ac368329742acc90319a644610ec35ab6e9fd90710e96c7f42c65ffed1b"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/equipment/held/wrench.json"
@@ -7126,11 +7582,11 @@ hash = "536e5d4d900936c49be84a8fb678588c1dc66b068944156fafa521b9f935afab"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/wetland_whimsy/models/item/equipment/held/dagger.json"
-hash = "91c5c99ef0244c153efd96d40fe8a5e212864ef951ce199a8fcef7c79c245817"
+hash = "a88ee1bae9b206e1534ae56b5aaa98e38b2d59138e455ab0d4d63bc622e5185f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/wetland_whimsy/models/item/equipment/held/sludge_charge.json"
-hash = "334d7ca83199414fa2ff30a511e94678d6f32bcef17e2f74697e78c59723c42a"
+hash = "13bc91518cbfd643247fe17a79a0f037c241c41abf162c5ee4f8e021eda79524"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/wetland_whimsy/models/item/sludge_charge.json"

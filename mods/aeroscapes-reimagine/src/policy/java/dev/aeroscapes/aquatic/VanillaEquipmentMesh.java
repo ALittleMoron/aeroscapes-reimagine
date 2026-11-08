@@ -16,16 +16,25 @@ final class VanillaEquipmentMesh {
   private static final String TEXTURES = "aeroscapes_reimagine:item/vanilla_equipment/";
   private static final Map<String, Integer> COLORS =
       Map.ofEntries(
-          Map.entry("dial", 0x262C2D), Map.entry("marks", 0xB6B3A1),
-          Map.entry("red", 0xBB3533), Map.entry("cyan", 0x23B3B8),
-          Map.entry("needle", 0xA9AFAD), Map.entry("day", 0x4265AA),
-          Map.entry("night", 0x1C2339), Map.entry("sun", 0xF2CA49),
-          Map.entry("moon", 0xC3C6C1), Map.entry("engraving", 0x765524));
+          Map.entry("dial", 0x262C2D),
+          Map.entry("marks", 0xB6B3A1),
+          Map.entry("red", 0xBB3533),
+          Map.entry("cyan", 0x23B3B8),
+          Map.entry("needle", 0xA9AFAD),
+          Map.entry("day", 0x4265AA),
+          Map.entry("night", 0x1C2339),
+          Map.entry("sun", 0xF2CA49),
+          Map.entry("moon", 0xC3C6C1),
+          Map.entry("engraving", 0x765524),
+          Map.entry("horn_inner", 0x47483F));
 
   private VanillaEquipmentMesh() {}
 
   static boolean supports(String id) {
-    return id.matches("minecraft:(clock(?:_[0-9]{2})?|(?:recovery_)?compass(?:_[0-9]{2})?|lead)");
+    return id.equals("horseman:copper_horn")
+        || id.equals("horseman:tooting_copper_horn")
+        || id.matches(
+            "minecraft:(clock(?:_[0-9]{2})?|(?:recovery_)?compass(?:_[0-9]{2})?|(?:tooting_)?goat_horn|lead)");
   }
 
   static JsonObject model(String id, JsonObject original) {
@@ -42,6 +51,10 @@ final class VanillaEquipmentMesh {
     for (String hand : List.of("firstperson", "thirdperson"))
       if (!display.has(hand + "_lefthand"))
         display.add(hand + "_lefthand", display.get(hand + "_righthand").deepCopy());
+    if (id.matches("minecraft:(clock(?:_[0-9]{2})?|(?:recovery_)?compass(?:_[0-9]{2})?)"))
+      HeldItemModels.resizeHeld(display, .42f, .42f, new org.joml.Vector3f(8, 3.17f, 8));
+    if (id.endsWith("goat_horn"))
+      HeldItemModels.resizeHeld(display, .8f, .8f, new org.joml.Vector3f(7, 3.2f, 8));
     return result;
   }
 
@@ -50,17 +63,20 @@ final class VanillaEquipmentMesh {
     Path directory = assets.resolve("aeroscapes_reimagine/models/item/vanilla_equipment");
     for (var entry : models.entrySet()) {
       if (!supports(entry.getKey())) continue;
-      String name = entry.getKey().substring("minecraft:".length());
+      String id = entry.getKey();
+      String name = id.substring(id.indexOf(':') + 1);
       EquipmentObjMesh mesh = new EquipmentObjMesh();
       if (name.equals("lead")) lead(mesh);
+      else if (name.endsWith("_horn")) horn(mesh, name.endsWith("copper_horn"));
       else
         instrument(
             mesh, name, entry.getValue().getAsJsonObject("textures").get("layer0").getAsString());
       output.put(directory.resolve(name + ".obj"), mesh.obj().getBytes(StandardCharsets.UTF_8));
     }
     StringBuilder materials = new StringBuilder();
-    List<String> names = new ArrayList<>(List.of("gold", "silver", "recovery", "leather"));
+    List<String> names = new ArrayList<>(List.of("gold", "silver", "recovery", "leather", "horn"));
     names.addAll(COLORS.keySet().stream().sorted().toList());
+    names.addAll(List.of("copper_horn", "copper_band"));
     for (String name : names)
       materials
           .append("newmtl ")
@@ -88,8 +104,8 @@ final class VanillaEquipmentMesh {
     BufferedImage rope = new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB);
     for (int y = 0; y < 16; y++)
       for (int x = 0; x < 16; x++) {
-        int strand = Math.floorMod(x + y / 2, 8);
-        int color = strand < 2 ? 0x80603E : strand < 5 ? 0xA17B50 : 0xB08A5B;
+        int strand = Math.floorMod(x + y / 4, 16);
+        int color = strand < 3 ? 0x8A6946 : strand < 10 ? 0xA17B50 : 0xAC8556;
         rope.setRGB(x, y, 0xFF000000 | color);
       }
     output.put(
@@ -113,7 +129,9 @@ final class VanillaEquipmentMesh {
   }
 
   static void compass(EquipmentObjMesh mesh, String nativeTexture) {
-    instrument(mesh, "compass", nativeTexture);
+    caseShell(mesh, "silver");
+    disc(mesh, "back", 8, 8, 4.12, 7.61, -1);
+    compassFace(mesh, pointerAngle(nativeTexture), false, 1);
   }
 
   static void caseShell(EquipmentObjMesh mesh, String metal) {
@@ -286,6 +304,63 @@ final class VanillaEquipmentMesh {
     return new P(8 + radius * Math.cos(angle), 8 + radius * Math.sin(angle), z);
   }
 
+  private static void horn(EquipmentObjMesh mesh, boolean copper) {
+    P[] curve = {
+      new P(4.8, 13, 8), new P(4.1, 10.8, 8), new P(4.0, 8.4, 8),
+      new P(4.5, 6.0, 8), new P(5.8, 4.2, 8), new P(7.8, 3.6, 8),
+      new P(9.8, 4.0, 8), new P(11.3, 5.3, 8), new P(12, 7.3, 8)
+    };
+    double[] radii = {1.95, 1.8, 1.6, 1.4, 1.2, 1.0, .8, .62, .45};
+    P[][][] rings = new P[2][curve.length][8];
+    for (int ring = 0; ring < curve.length; ring++) {
+      P tangent =
+          curve[Math.min(ring + 1, curve.length - 1)].add(curve[Math.max(0, ring - 1)].scale(-1));
+      double length = Math.hypot(tangent.x(), tangent.y());
+      P across = new P(-tangent.y() / length, tangent.x() / length, 0);
+      for (int wall = 0; wall < 2; wall++)
+        for (int side = 0; side < 8; side++) {
+          double angle = side * Math.PI / 4;
+          double radius = radii[ring] - (wall == 0 ? 0 : .24);
+          rings[wall][ring][side] =
+              curve[ring]
+                  .add(across.scale(radius * Math.cos(angle)))
+                  .add(new P(0, 0, radius * Math.sin(angle)));
+        }
+    }
+    for (int wall = 0; wall < 2; wall++)
+      for (int ring = 0; ring < curve.length - 1; ring++)
+        for (int side = 0; side < 8; side++) {
+          int next = (side + 1) % 8;
+          P a = rings[wall][ring][side], b = rings[wall][ring][next];
+          P outward = a.add(b).scale(.5).add(curve[ring].scale(-1));
+          mesh.quad(
+              wall == 1
+                  ? "horn_inner"
+                  : copper ? (ring == 0 ? "copper_band" : "copper_horn") : "horn",
+              new P[] {a, b, rings[wall][ring + 1][next], rings[wall][ring + 1][side]},
+              outward.scale(wall == 0 ? 1 : -1),
+              new double[][] {
+                {side / 8.0, ring / 8.0},
+                {(side + 1) / 8.0, ring / 8.0},
+                {(side + 1) / 8.0, (ring + 1) / 8.0},
+                {side / 8.0, (ring + 1) / 8.0}
+              });
+        }
+    for (int ring : new int[] {0, curve.length - 1}) {
+      P outward = curve[ring].add(curve[ring == 0 ? 1 : ring - 1].scale(-1));
+      for (int side = 0; side < 8; side++) {
+        int next = (side + 1) % 8;
+        mesh.quad(
+            copper ? (ring == 0 ? "copper_band" : "copper_horn") : "horn",
+            new P[] {
+              rings[0][ring][side], rings[0][ring][next], rings[1][ring][next], rings[1][ring][side]
+            },
+            outward,
+            new double[][] {{.1, .1}, {.2, .1}, {.2, .2}, {.1, .2}});
+      }
+    }
+  }
+
   private static void lead(EquipmentObjMesh mesh) {
     List<P> coil = new ArrayList<>();
     for (int step = 0; step <= 144; step++) {
@@ -300,7 +375,7 @@ final class VanillaEquipmentMesh {
             new P(8.2, 2.5, 9.0),
             new P(6.5, 2.8, 8.6),
             new P(5.8, 3.6, 8.5)));
-    mesh.tube("leather", coil, .40, 6, 2.6);
+    mesh.tube("leather", coil, .40, 6, 8);
     mesh.tube(
         "leather",
         List.of(
@@ -313,6 +388,6 @@ final class VanillaEquipmentMesh {
             new P(10.1, 9, 6)),
         .22,
         6,
-        2.6);
+        8);
   }
 }

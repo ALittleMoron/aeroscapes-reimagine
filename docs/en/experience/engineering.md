@@ -6,6 +6,8 @@ status: partial
 
 [Create](https://modrinth.com/project/LNytGWDc) and [Aeronautics](https://modrinth.com/project/oWaK0Q19) connect engineering with travel. A workshop processes materials and supplies a home; an aircraft carries materials and finished goods to another island. Players design the arrangement of machines and the shape of their vehicles.
 
+Engineering and aircraft construction will be open regardless of character training. Technical recipes will be available without spending profession talent points.
+
 ## Machines and production
 
 Engineering centers on Create’s moving parts, mechanical power and item handling. Farms, material processing, kitchens and transport routes give machinery different jobs. A factory can also be a building project, with its layout chosen for the place and the player’s interests.

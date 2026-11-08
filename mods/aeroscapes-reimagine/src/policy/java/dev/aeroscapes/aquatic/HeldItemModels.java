@@ -1,6 +1,7 @@
 package dev.aeroscapes.aquatic;
 
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import java.io.IOException;
@@ -10,10 +11,74 @@ import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import org.joml.Quaternionf;
+import org.joml.Vector3f;
 
 /** Native item states choose a model before NeoForge selects its display context. */
 final class HeldItemModels {
   private HeldItemModels() {}
+
+  static void anchorHeld(JsonObject display, Vector3f grip) {
+    anchorHeld(display, grip, new Vector3f());
+  }
+
+  static void anchorHeld(JsonObject display, Vector3f grip, Vector3f target) {
+    for (var entry : display.entrySet()) {
+      String context = entry.getKey();
+      if (!context.startsWith("firstperson_") && !context.startsWith("thirdperson_")) continue;
+      JsonObject transform = entry.getValue().getAsJsonObject();
+      float side = context.endsWith("lefthand") ? -1 : 1;
+      JsonArray scale = transform.getAsJsonArray("scale");
+      JsonArray rotation = transform.getAsJsonArray("rotation");
+      Vector3f offset = new Vector3f(grip).sub(8, 8, 8);
+      for (int axis = 0; axis < 3; axis++)
+        offset.setComponent(axis, offset.get(axis) * scale.get(axis).getAsFloat());
+      offset.rotate(
+          new Quaternionf()
+              .rotationXYZ(
+                  (float) Math.toRadians(rotation.get(0).getAsFloat()),
+                  (float) Math.toRadians(rotation.get(1).getAsFloat() * side),
+                  (float) Math.toRadians(rotation.get(2).getAsFloat() * side)));
+      JsonArray translation = new JsonArray();
+      translation.add(target.x - offset.x * side);
+      translation.add(target.y - offset.y);
+      translation.add(target.z - offset.z);
+      transform.add("translation", translation);
+    }
+  }
+
+  static void resizeHeld(
+      JsonObject display, float firstPersonScale, float thirdPersonScale, Vector3f grip) {
+    for (var entry : display.entrySet()) {
+      String context = entry.getKey();
+      if (!context.startsWith("firstperson_") && !context.startsWith("thirdperson_")) continue;
+      JsonObject transform = entry.getValue().getAsJsonObject();
+      float scale = context.startsWith("firstperson_") ? firstPersonScale : thirdPersonScale;
+      float side = context.endsWith("lefthand") ? -1 : 1;
+      JsonArray oldScale = transform.getAsJsonArray("scale");
+      JsonArray rotation = transform.getAsJsonArray("rotation");
+      Vector3f offset = new Vector3f(grip).sub(8, 8, 8);
+      for (int axis = 0; axis < 3; axis++)
+        offset.setComponent(
+            axis,
+            offset.get(axis) * ((oldScale == null ? 1 : oldScale.get(axis).getAsFloat()) - scale));
+      offset.rotate(
+          new Quaternionf()
+              .rotationXYZ(
+                  (float) Math.toRadians(rotation.get(0).getAsFloat()),
+                  (float) Math.toRadians(rotation.get(1).getAsFloat() * side),
+                  (float) Math.toRadians(rotation.get(2).getAsFloat() * side)));
+      offset.x *= side;
+      JsonArray translation = transform.getAsJsonArray("translation");
+      JsonArray moved = new JsonArray(), resized = new JsonArray();
+      for (int axis = 0; axis < 3; axis++) {
+        moved.add(translation.get(axis).getAsFloat() + offset.get(axis));
+        resized.add(scale);
+      }
+      transform.add("translation", moved);
+      transform.add("scale", resized);
+    }
+  }
 
   static void add(Path assets, Map<Path, byte[]> output, Map<String, JsonObject> meshes)
       throws IOException {

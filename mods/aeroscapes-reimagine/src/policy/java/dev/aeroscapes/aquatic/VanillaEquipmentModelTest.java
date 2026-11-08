@@ -46,6 +46,8 @@ public final class VanillaEquipmentModelTest {
         Path.of(arguments[0])
             .resolve("pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets");
     JsonObject previews = new JsonObject();
+    resizeAnchors();
+    brushGrip(assets, arguments.length == 2 ? previews : null);
     int tested = 0;
     for (var entry : NativeEquipmentModels.models().entrySet()) {
       String id = entry.getKey();
@@ -80,7 +82,7 @@ public final class VanillaEquipmentModelTest {
       }
       if (id.contains("compass")) compass(id, model, faces);
       if (id.contains("clock")) clock(id, model, faces);
-      if (id.equals("minecraft:lead")) closedRope(faces);
+      if (id.equals("minecraft:lead") || id.endsWith("goat_horn")) closedSurface(id, faces);
       if (List.of(
               "minecraft:clock",
               "minecraft:compass",
@@ -88,23 +90,7 @@ public final class VanillaEquipmentModelTest {
               "minecraft:goat_horn",
               "minecraft:lead")
           .contains(id)) {
-        JsonObject preview = new JsonObject();
-        preview.add("textures", model.get("textures").deepCopy());
-        preview.add("display", model.get("display").deepCopy());
-        JsonArray quads = new JsonArray();
-        for (Face face : faces) {
-          JsonObject quad = new JsonObject();
-          quad.addProperty("texture", face.texture);
-          JsonArray vertices = new JsonArray();
-          for (Vector3f vertex : face.vertices)
-            vertices.add(vector(vertex.x * 16, vertex.y * 16, vertex.z * 16));
-          quad.add("vertices", vertices);
-          quad.add("uv", face.uv);
-          quad.add("normal", vector(face.normal.x, face.normal.y, face.normal.z));
-          quads.add(quad);
-        }
-        preview.add("quads", quads);
-        previews.add(id, preview);
+        previews.add(id, preview(model, faces));
       }
       tested++;
     }
@@ -113,6 +99,187 @@ public final class VanillaEquipmentModelTest {
         "Vanilla equipment: "
             + tested
             + " native-parsed/baked states, atlas UVs, physical pointers and day/night phase passed");
+  }
+
+  static JsonObject preview(JsonObject model, List<Face> faces) {
+    JsonObject preview = new JsonObject();
+    preview.add("textures", model.get("textures").deepCopy());
+    preview.add("display", model.get("display").deepCopy());
+    JsonArray quads = new JsonArray();
+    for (Face face : faces) {
+      JsonObject quad = new JsonObject();
+      String texture = face.texture;
+      while (texture.startsWith("#"))
+        texture = model.getAsJsonObject("textures").get(texture.substring(1)).getAsString();
+      quad.addProperty("texture", texture);
+      JsonArray vertices = new JsonArray();
+      for (Vector3f vertex : face.vertices)
+        vertices.add(vector(vertex.x * 16, vertex.y * 16, vertex.z * 16));
+      quad.add("vertices", vertices);
+      quad.add("uv", face.uv);
+      quad.add("normal", vector(face.normal.x, face.normal.y, face.normal.z));
+      quads.add(quad);
+    }
+    preview.add("quads", quads);
+    return preview;
+  }
+
+  @SuppressWarnings("deprecation") // Verify the actual native hand transform application.
+  private static void brushGrip(Path assets, JsonObject previews) throws IOException {
+    for (String state : List.of("", "_0", "_1", "_2")) {
+      var model =
+          BlockModel.fromString(
+              Files.readString(
+                  assets.resolve("minecraft/models/item/equipment/held_brush" + state + ".json")));
+      if (previews != null
+          && VanillaEquipmentModelTest.class.getResource(
+                  "/assets/minecraft/models/item/held_brush" + state + ".json")
+              != null) {
+        JsonObject provider = HeldItemModels.nativeModel("minecraft:held_brush" + state);
+        provider.add(
+            "display",
+            JsonParser.parseString(
+                    Files.readString(
+                        assets.resolve(
+                            "minecraft/models/item/equipment/held_brush" + state + ".json")))
+                .getAsJsonObject()
+                .get("display"));
+        previews.add("minecraft:brush" + state, preview(provider, bakeCuboids(provider)));
+      }
+      palmGrip(
+          JsonParser.parseString(
+                  Files.readString(
+                      assets.resolve(
+                          "minecraft/models/item/equipment/held_brush" + state + ".json")))
+              .getAsJsonObject(),
+          new Vector3f(8, 1, 15.5f));
+      for (var context :
+          List.of(
+              net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_RIGHT_HAND,
+              net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_LEFT_HAND,
+              net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_RIGHT_HAND,
+              net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_LEFT_HAND)) {
+        boolean left = context.name().endsWith("LEFT_HAND");
+        var pose = new com.mojang.blaze3d.vertex.PoseStack();
+        model.getTransforms().getTransform(context).apply(left, pose);
+        Vector3f handle =
+            pose.last()
+                .pose()
+                .transformPosition(new Vector3f(0, -7, context.firstPerson() ? 7.5f : 5).div(16));
+        require(
+            handle.length() < .000001,
+            "The brush handle must meet the attachment origin in "
+                + context
+                + state
+                + ": "
+                + handle);
+      }
+    }
+  }
+
+  @SuppressWarnings("deprecation") // Compare with the native ModelPart and ItemTransform consumers.
+  private static void palmGrip(JsonObject source, Vector3f grip) throws IOException {
+    JsonArray frames;
+    try (var stream =
+        VanillaEquipmentModelTest.class.getResourceAsStream("/held-arm-frames.json")) {
+      if (stream == null) throw new IOException("Missing recorded arm frames");
+      frames =
+          JsonParser.parseReader(
+                  new java.io.InputStreamReader(stream, java.nio.charset.StandardCharsets.UTF_8))
+              .getAsJsonArray();
+    }
+    var handDisplay = new JsonObject();
+    handDisplay.add("display", source.get("display"));
+    var model = BlockModel.fromString(handDisplay.toString());
+    for (var frameData : frames) {
+      var frame = new org.joml.Matrix4f();
+      var rows = frameData.getAsJsonArray();
+      for (int row = 0; row < 4; row++)
+        for (int column = 0; column < 4; column++)
+          frame.set(column, row, rows.get(row).getAsJsonArray().get(column).getAsFloat());
+      var nativeArm = new net.minecraft.client.model.geom.ModelPart(List.of(), Map.of());
+      nativeArm.setPos(frame.m30(), frame.m31(), frame.m32());
+      nativeArm.xRot = (float) Math.atan2(frame.m12(), frame.m22());
+      nativeArm.yRot = (float) Math.asin(-frame.m02());
+      nativeArm.zRot = (float) Math.atan2(frame.m01(), frame.m00());
+      var root = new org.joml.Matrix4f().translate(.2f, -.3f, .1f).rotateXYZ(.2f, -.4f, .1f);
+      for (boolean slim : new boolean[] {false, true})
+        for (var context :
+            List.of(
+                net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_RIGHT_HAND,
+                net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_LEFT_HAND)) {
+          boolean left = context.name().endsWith("LEFT_HAND");
+          float side = left ? 1 : -1;
+          var skin = new com.mojang.blaze3d.vertex.PoseStack();
+          skin.mulPose(root);
+          if (slim) skin.translate(side * .5f / 16, 0, 0);
+          nativeArm.translateAndRotate(skin);
+          Vector3f palm =
+              skin.last()
+                  .pose()
+                  .transformPosition(new Vector3f(side * (slim ? .5f : 1f) / 16, .5f, 0));
+          var held = dev.aeroscapes.atmosphere.HeldEquipmentGrip.palm(root, frame, left, slim);
+          model.getTransforms().getTransform(context).apply(left, held);
+          Vector3f handle =
+              held.last().pose().transformPosition(new Vector3f(grip).sub(8, 8, 8).div(16));
+          require(
+              handle.distance(palm) < .00001,
+              "The rigid tool grip follows the native palm through recorded arm poses, including slim arms: "
+                  + handle
+                  + " vs "
+                  + palm);
+          var inHand = new org.joml.Matrix4f(skin.last().pose()).invert().mul(held.last().pose());
+          for (float x : new float[] {6, 10})
+            for (float y : new float[] {-1, 3})
+              for (float z : new float[] {8, 10}) {
+                Vector3f ferrule =
+                    inHand.transformPosition(new Vector3f(x, y, z).sub(8, 8, 8).div(16));
+                require(
+                    ferrule.z * 16 < -2.05,
+                    "The entire brush ferrule stays beyond the fist, leaving the wooden handle visible: "
+                        + ferrule);
+              }
+        }
+    }
+  }
+
+  @SuppressWarnings("deprecation") // Exercises the exact 1.21.1 ItemTransform application.
+  private static void resizeAnchors() throws IOException {
+    JsonObject original = NativeEquipmentModels.inherited("minecraft:compass");
+    JsonObject display = original.getAsJsonObject("display");
+    for (String hand : List.of("firstperson", "thirdperson"))
+      if (!display.has(hand + "_lefthand"))
+        display.add(hand + "_lefthand", display.get(hand + "_righthand").deepCopy());
+    JsonObject resized = original.deepCopy();
+    Vector3f grip = new Vector3f(9, 3.17f, 7);
+    HeldItemModels.resizeHeld(resized.getAsJsonObject("display"), .42f, .5f, grip);
+    var before = BlockModel.fromString(original.toString());
+    var after = BlockModel.fromString(resized.toString());
+    for (var context :
+        List.of(
+            net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_RIGHT_HAND,
+            net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_LEFT_HAND,
+            net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_RIGHT_HAND,
+            net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_LEFT_HAND)) {
+      boolean left =
+          context == net.minecraft.world.item.ItemDisplayContext.FIRST_PERSON_LEFT_HAND
+              || context == net.minecraft.world.item.ItemDisplayContext.THIRD_PERSON_LEFT_HAND;
+      var nativePose = new com.mojang.blaze3d.vertex.PoseStack();
+      var resizedPose = new com.mojang.blaze3d.vertex.PoseStack();
+      before.getTransforms().getTransform(context).apply(left, nativePose);
+      after.getTransforms().getTransform(context).apply(left, resizedPose);
+      Vector3f point = new Vector3f(grip).sub(8, 8, 8).div(16);
+      Vector3f anchor = nativePose.last().pose().transformPosition(new Vector3f(point));
+      Vector3f moved = resizedPose.last().pose().transformPosition(new Vector3f(point));
+      require(
+          anchor.distance(moved) < .000001, "Resizing preserves an off-centre grip in " + context);
+      Vector3f edge =
+          resizedPose.last().pose().transformPosition(new Vector3f(point).add(1f / 16, 0, 0));
+      float expected = context.firstPerson() ? .42f : .5f;
+      require(
+          Math.abs(edge.distance(moved) - expected / 16) < .000001,
+          "The native transform applies the requested physical scale in " + context);
+    }
   }
 
   private static void compass(String id, JsonObject model, List<Face> faces) {
@@ -180,13 +347,30 @@ public final class VanillaEquipmentModelTest {
   }
 
   static List<Face> bakeObj(JsonObject source, Path assets, String component) throws IOException {
+    return bakeObj(source, assets, component, Function.identity());
+  }
+
+  static List<Face> bakeObjWithAtlas(
+      JsonObject source, Path assets, java.util.Set<ResourceLocation> registered)
+      throws IOException {
+    return bakeObj(
+        source,
+        assets,
+        null,
+        texture ->
+            texture.getPath().startsWith("item/") || registered.contains(texture)
+                ? texture
+                : net.minecraft.client.renderer.texture.MissingTextureAtlasSprite.getLocation());
+  }
+
+  private static List<Face> bakeObj(
+      JsonObject source,
+      Path assets,
+      String component,
+      Function<ResourceLocation, ResourceLocation> resolveSprite)
+      throws IOException {
     ResourceLocation location = ResourceLocation.parse(source.get("model").getAsString());
-    Path obj = assets.resolve(location.getNamespace()).resolve(location.getPath());
-    var settings = new ObjModel.ModelSettings(location, false, true, false, false, null);
-    ObjModel parsed;
-    try (var material = Files.newInputStream(obj.resolveSibling("equipment.mtl"))) {
-      parsed = EquipmentObjFixture.parse(Files.readString(obj), material, settings);
-    }
+    ObjModel parsed = objGeometry(source, assets);
     var contextBuilder = StandaloneGeometryBakingContext.builder().withUseAmbientOcclusion(false);
     if (component != null) {
       var visible = new it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap<String>();
@@ -201,7 +385,9 @@ public final class VanillaEquipmentModelTest {
           parsed.bake(
               context,
               new NoChildModels(),
-              material -> sprites.computeIfAbsent(material.texture(), Sprite::new),
+              material ->
+                  sprites.computeIfAbsent(
+                      material.texture(), name -> new Sprite(resolveSprite.apply(name))),
               BlockModelRotation.X0_Y0,
               ItemOverrides.EMPTY);
       List<Face> result = new ArrayList<>();
@@ -243,6 +429,152 @@ public final class VanillaEquipmentModelTest {
     }
   }
 
+  private static ObjModel objGeometry(JsonObject source, Path assets) throws IOException {
+    ResourceLocation location = ResourceLocation.parse(source.get("model").getAsString());
+    Path obj = assets.resolve(location.getNamespace()).resolve(location.getPath());
+    var settings = new ObjModel.ModelSettings(location, false, true, false, false, null);
+    try (var material = Files.newInputStream(obj.resolveSibling("equipment.mtl"))) {
+      return EquipmentObjFixture.parse(Files.readString(obj), material, settings);
+    }
+  }
+
+  @SuppressWarnings(
+      "deprecation") // Exercise the pinned BlockModel/ElementsModel native cuboid bake.
+  static List<Face> bakeComposite(JsonObject source, Path assets) throws IOException {
+    List<BlockModel> nativeChildren = new ArrayList<>();
+    var gson =
+        new com.google.gson.GsonBuilder()
+            .registerTypeAdapter(
+                BlockModel.class,
+                (com.google.gson.JsonDeserializer<BlockModel>)
+                    (json, type, context) -> {
+                      JsonObject definition = json.getAsJsonObject().deepCopy();
+                      var loader = definition.remove("loader");
+                      BlockModel model = BlockModel.fromString(definition.toString());
+                      if (loader != null) {
+                        require(
+                            loader.getAsString().equals("neoforge:obj"),
+                            "Composite child uses the supported OBJ loader");
+                        try {
+                          model.customData.setCustomGeometry(objGeometry(definition, assets));
+                        } catch (IOException failure) {
+                          throw new com.google.gson.JsonParseException(
+                              "Cannot load composite OBJ child", failure);
+                        }
+                      } else nativeChildren.add(model);
+                      return model;
+                    })
+            .registerTypeAdapter(
+                net.neoforged.neoforge.client.model.CompositeModel.class,
+                (com.google.gson.JsonDeserializer<
+                        net.neoforged.neoforge.client.model.CompositeModel>)
+                    (json, type, context) ->
+                        net.neoforged.neoforge.client.model.CompositeModel.Loader.INSTANCE.read(
+                            json.getAsJsonObject(), context))
+            .create();
+    var geometry = gson.fromJson(source, net.neoforged.neoforge.client.model.CompositeModel.class);
+    var context =
+        StandaloneGeometryBakingContext.builder()
+            .build(
+                ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", "composite_fixture"));
+    geometry.resolveParents(
+        location -> {
+          try (var input =
+              VanillaEquipmentModelTest.class.getResourceAsStream(
+                  "/assets/"
+                      + location.getNamespace()
+                      + "/models/"
+                      + location.getPath()
+                      + ".json")) {
+            if (input == null)
+              throw new IOException("Missing native composite parent: " + location);
+            return BlockModel.fromString(
+                new String(input.readAllBytes(), java.nio.charset.StandardCharsets.UTF_8));
+          } catch (IOException failure) {
+            throw new com.google.gson.JsonParseException(
+                "Cannot resolve native composite parent", failure);
+          }
+        },
+        context);
+    // Use the same native cuboid baker without ModelBakery's live-client marker initialization.
+    for (BlockModel child : nativeChildren)
+      child.customData.setCustomGeometry(
+          new net.neoforged.neoforge.client.model.ElementsModel(child.getElements()));
+    Map<ResourceLocation, Sprite> sprites = new HashMap<>();
+    java.lang.reflect.Field renderTypes;
+    Object previousRenderTypes;
+    try {
+      Class<?> manager = net.neoforged.neoforge.client.NamedRenderTypeManager.class;
+      renderTypes = manager.getDeclaredField("RENDER_TYPES");
+      renderTypes.setAccessible(true);
+      previousRenderTypes = renderTypes.get(null);
+      var register = manager.getDeclaredMethod("preRegisterVanillaRenderTypes", Map.class);
+      register.setAccessible(true);
+      Map<ResourceLocation, net.neoforged.neoforge.client.RenderTypeGroup> vanilla =
+          new HashMap<>();
+      register.invoke(null, vanilla);
+      renderTypes.set(null, com.google.common.collect.ImmutableMap.copyOf(vanilla));
+    } catch (ReflectiveOperationException failure) {
+      throw new IOException(
+          "Cannot initialize the pinned native render types for offline baking", failure);
+    }
+    try {
+      BakedModel baked =
+          geometry.bake(
+              context,
+              new NoChildModels(),
+              material -> sprites.computeIfAbsent(material.texture(), Sprite::new),
+              BlockModelRotation.X0_Y0,
+              ItemOverrides.EMPTY);
+      if (source.getAsJsonObject("children").has("glass")) {
+        for (boolean fabulous : new boolean[] {false, true}) {
+          var itemPasses =
+              baked.getRenderPasses(net.minecraft.world.item.ItemStack.EMPTY, fabulous);
+          require(itemPasses.size() == 2, "Bottle renders opaque contents before its glass shell");
+          for (int index = 0; index < itemPasses.size(); index++) {
+            var pass = itemPasses.get(index);
+            var expected =
+                index == 0
+                    ? net.neoforged.neoforge.client.NeoForgeRenderTypes.ITEM_LAYERED_CUTOUT.get()
+                    : net.neoforged.neoforge.client.NeoForgeRenderTypes.ITEM_LAYERED_TRANSLUCENT
+                        .get();
+            require(
+                pass.getRenderTypes(net.minecraft.world.item.ItemStack.EMPTY, fabulous)
+                    .equals(List.of(expected)),
+                "Native item pass selects the actual cutout/translucent renderer");
+            var quads = pass.getQuads(null, null, RandomSource.create(0), ModelData.EMPTY, null);
+            require(!quads.isEmpty(), "Both contents and closed glass shell are visible");
+            for (BakedQuad quad : quads)
+              for (int vertex = 0; vertex < 4; vertex++) {
+                int alpha = quad.getVertices()[vertex * 8 + 3] >>> 24;
+                require(
+                    index == 0 ? alpha == 255 : alpha > 0 && alpha < 255,
+                    "Actual baked contents are opaque and every glass vertex has fractional alpha");
+              }
+          }
+        }
+      }
+      List<Face> faces = new ArrayList<>();
+      int passes = 0;
+      for (BakedModel pass :
+          baked.getRenderPasses(net.minecraft.world.item.ItemStack.EMPTY, false)) {
+        passes++;
+        for (BakedQuad quad :
+            pass.getQuads(null, null, RandomSource.create(0), ModelData.EMPTY, null))
+          faces.add(face(quad, quad.getSprite().contents().name().toString()));
+      }
+      require(passes == 2, "The item renderer receives both authored composite passes");
+      return faces;
+    } finally {
+      sprites.values().forEach(Sprite::close);
+      try {
+        renderTypes.set(null, previousRenderTypes);
+      } catch (IllegalAccessException failure) {
+        throw new IOException("Cannot restore the native render type fixture", failure);
+      }
+    }
+  }
+
   @SuppressWarnings(
       "deprecation") // The unchanged horn is a native cuboid model, not a custom loader.
   static List<Face> bakeCuboids(JsonObject source) {
@@ -268,7 +600,7 @@ public final class VanillaEquipmentModelTest {
     return result;
   }
 
-  private static Face face(BakedQuad quad, String texture) {
+  static Face face(BakedQuad quad, String texture) {
     int[] data = quad.getVertices();
     require(
         data.length == 32, "The pinned baker emits four vertices at its native eight-int stride");
@@ -283,15 +615,19 @@ public final class VanillaEquipmentModelTest {
               Float.intBitsToFloat(data[offset + 2])));
       uv.add(
           vector(
-              Float.intBitsToFloat(data[offset + 4]) * 512,
-              Float.intBitsToFloat(data[offset + 5]) * 512));
+              (Float.intBitsToFloat(data[offset + 4]) - quad.getSprite().getU0())
+                  * 16
+                  / (quad.getSprite().getU1() - quad.getSprite().getU0()),
+              (Float.intBitsToFloat(data[offset + 5]) - quad.getSprite().getV0())
+                  * 16
+                  / (quad.getSprite().getV1() - quad.getSprite().getV0())));
     }
     Vector3f normal =
         new Vector3f(vertices.get(1))
             .sub(vertices.getFirst())
             .cross(new Vector3f(vertices.get(2)).sub(vertices.getFirst()))
             .normalize();
-    return new Face(texture, vertices, normal, uv, quad.getTintIndex());
+    return new Face(texture, vertices, normal, uv, quad.getTintIndex(), data[3] >>> 24);
   }
 
   private static JsonArray vector(float... values) {
@@ -355,7 +691,7 @@ public final class VanillaEquipmentModelTest {
     return points;
   }
 
-  private static void closedRope(List<Face> faces) {
+  static void closedSurface(String id, List<Face> faces) {
     Map<String, int[]> edges = new HashMap<>();
     for (Face face : faces)
       for (int[] triangle : List.of(new int[] {0, 1, 2}, new int[] {0, 2, 3})) {
@@ -376,7 +712,9 @@ public final class VanillaEquipmentModelTest {
     for (var entry : edges.entrySet())
       require(
           entry.getValue()[0] == 2 && entry.getValue()[1] == 0,
-          "The rope has a closed consistently wound surface without folded triangles: "
+          "A closed consistently wound surface without folded triangles: "
+              + id
+              + " "
               + entry.getKey());
   }
 
@@ -405,9 +743,15 @@ public final class VanillaEquipmentModelTest {
     if (!condition) throw new AssertionError(message);
   }
 
-  record Face(String texture, List<Vector3f> vertices, Vector3f normal, JsonArray uv, int tint) {}
+  record Face(
+      String texture,
+      List<Vector3f> vertices,
+      Vector3f normal,
+      JsonArray uv,
+      int tint,
+      int alpha) {}
 
-  private static final class Sprite extends TextureAtlasSprite implements AutoCloseable {
+  static final class Sprite extends TextureAtlasSprite implements AutoCloseable {
     Sprite(ResourceLocation name) {
       super(
           name,
@@ -415,8 +759,8 @@ public final class VanillaEquipmentModelTest {
               name, new FrameSize(16, 16), new NativeImage(16, 16, false), ResourceMetadata.EMPTY),
           512,
           512,
-          0,
-          0);
+          32,
+          48);
     }
 
     @Override
@@ -425,7 +769,7 @@ public final class VanillaEquipmentModelTest {
     }
   }
 
-  private static final class NoChildModels implements ModelBaker {
+  static final class NoChildModels implements ModelBaker {
     @Override
     public UnbakedModel getModel(ResourceLocation location) {
       throw new AssertionError(location);

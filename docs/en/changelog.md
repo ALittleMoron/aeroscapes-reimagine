@@ -4,6 +4,10 @@ description: Version history.
 status: available
 ---
 
+## 0.3.6
+
+- Rework held equipment models for aquatic and building tools, workshop supplies, rope fittings, kitchen knives and cave equipment. Seat coral heads in their mounts, distinguish fan-shaped and spiral shells, and refine boomerangs, bombs and handheld instruments. Give excavation brushes a shared shape with tier-specific grips and ferrules. Add weighted hems to casting nets and bring the pouch into first-person view. Distinguish the crab claw’s empty and charged forms. Restore full paint-brush coloring, missing held-model textures and flat inventory icons. Preserve sandpaper's polishing effect. Refine the held models of navigation instruments and field equipment, including a hollow copper horn and a clearer projector lens. Hold the lunchbox upright from below in first person.
+
 ## 0.3.5
 
 - Fix ore-page text overlap and geode slot backgrounds; restore generated leaf-pile textures and steel wool in creative search.

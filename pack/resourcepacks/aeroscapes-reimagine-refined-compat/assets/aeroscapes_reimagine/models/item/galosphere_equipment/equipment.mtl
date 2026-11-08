@@ -1,0 +1,284 @@
+newmtl palladium_bomb_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/palladium_bomb
+
+newmtl palladium_bomb_dark
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/palladium_bomb
+
+newmtl palladium_bomb_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/palladium_bomb
+
+newmtl palladium_bomb_fuse
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/palladium_bomb
+
+newmtl palladium_bomb_light
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/palladium_bomb
+
+newmtl palladium_bomb_metal
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/palladium_bomb
+
+newmtl palladium_bomb_wrap
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/palladium_bomb
+
+newmtl echo_bell_band
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl echo_bell_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl echo_bell_dark
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl echo_bell_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl echo_bell_grip
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/echo_bell
+
+newmtl glow_flare_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl glow_flare_cap
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl glow_flare_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl glow_flare_fuse
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl glow_flare_light
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/glow_flare
+
+newmtl spectre_flare_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/spectre_flare
+
+newmtl spectre_flare_fuse
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/spectre_flare
+
+newmtl spectre_flare_glass
+Ka 0 0 0
+Kd 1 1 1 0.24
+map_Kd galosphere:item/spectre_flare
+
+newmtl spectre_flare_metal
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/spectre_flare
+
+newmtl spectre_flare_orange
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/spectre_flare
+
+newmtl spectre_flare_spectre_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:entity/spectre/spectre
+
+newmtl spectre_flare_spectre_eyes
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:entity/spectre/spectre
+
+newmtl spectre_flare_spectre_head
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:entity/spectre/spectre
+
+newmtl spectre_flare_spectre_wing
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:entity/spectre/spectre
+
+newmtl monstrometer_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl monstrometer_dark
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl monstrometer_face
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl monstrometer_metal
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/monstrometer
+
+newmtl monstrometer_fueled_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl monstrometer_fueled_dark
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl monstrometer_fueled_face
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl monstrometer_fueled_metal
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/monstrometer_fueled
+
+newmtl saltbound_tablet_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet
+
+newmtl saltbound_tablet_chip
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet
+
+newmtl saltbound_tablet_crack
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet
+
+newmtl saltbound_tablet_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet
+
+newmtl saltbound_tablet_light
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet
+
+newmtl saltbound_tablet_stone
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet
+
+newmtl saltbound_tablet_using_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_using
+
+newmtl saltbound_tablet_using_chip
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_using
+
+newmtl saltbound_tablet_using_crack
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_using
+
+newmtl saltbound_tablet_using_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_using
+
+newmtl saltbound_tablet_using_light
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_using
+
+newmtl saltbound_tablet_using_stone
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_using
+
+newmtl saltbound_tablet_cooldown_body
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_cooldown
+
+newmtl saltbound_tablet_cooldown_chip
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_cooldown
+
+newmtl saltbound_tablet_cooldown_crack
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_cooldown
+
+newmtl saltbound_tablet_cooldown_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_cooldown
+
+newmtl saltbound_tablet_cooldown_light
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_cooldown
+
+newmtl saltbound_tablet_cooldown_stone
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd galosphere:item/saltbound_tablet_cooldown
+
+newmtl spectre_bound_spyglass_dark
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd minecraft:item/spyglass
+
+newmtl spectre_bound_spyglass_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd minecraft:item/spyglass
+
+newmtl spectre_bound_spyglass_glass
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd minecraft:item/spyglass
+
+newmtl spectre_bound_spyglass_grip
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd minecraft:item/spyglass
+
+newmtl spectre_bound_spyglass_metal
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd minecraft:item/spyglass

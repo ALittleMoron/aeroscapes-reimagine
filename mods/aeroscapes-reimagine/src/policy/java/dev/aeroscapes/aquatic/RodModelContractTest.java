@@ -16,11 +16,15 @@ public final class RodModelContractTest {
 
   public static void main(String[] arguments) {
     int variants = 0;
-    for (String style : RodModels.palettes().keySet()) {
+    List<String> styles = new ArrayList<>(RodModels.palettes().keySet());
+    styles.add("vanilla");
+    for (String style : styles) {
       for (String suffix : List.of("", "_left", "_fp", "_fp_left")) {
         Map<String, JsonObject> idle = parts(RodModels.model(style, false, suffix));
         Map<String, JsonObject> cast = parts(RodModels.model(style, true, suffix));
-        require(idle.size() - cast.size() == 7, "Cast removes exactly the hanging tackle");
+        require(
+            idle.size() - cast.size() == (style.equals("vanilla") ? 8 : 7),
+            "Cast removes exactly the stowed tackle");
         for (var part : cast.entrySet()) {
           require(
               part.getValue().equals(idle.get(part.getKey())), "Retain the complete cast rod body");
@@ -42,6 +46,29 @@ public final class RodModelContractTest {
       }
       mirror(parts(RodModels.model(style, true, "")), parts(RodModels.model(style, true, "_left")));
     }
+    var definition =
+        JsonParser.parseString(EquipmentModels.rodDefinition("minecraft", "fishing_rod"))
+            .getAsJsonObject()
+            .getAsJsonObject("model");
+    for (var entry : definition.getAsJsonArray("cases")) {
+      var route = entry.getAsJsonObject();
+      String context = route.getAsJsonArray("when").get(0).getAsString();
+      var condition = route.getAsJsonObject("model");
+      require(
+          condition.get("property").getAsString().equals("minecraft:fishing_rod/cast"),
+          "The real cast predicate selects both held and inventory states");
+      if (!context.contains("hand")) continue;
+      String suffix =
+          (context.startsWith("firstperson") ? "_fp" : "")
+              + (context.endsWith("lefthand") ? "_left" : "");
+      require(
+          condition
+              .getAsJsonObject("on_true")
+              .get("model")
+              .getAsString()
+              .equals("minecraft:item/equipment/fishing_rod_cast_held" + suffix),
+          "Every hand selects the authored deployed geometry");
+    }
     System.out.println(
         "Rod meshes: "
             + variants
@@ -61,6 +88,7 @@ public final class RodModelContractTest {
 
   private static boolean stowed(String name) {
     return name.startsWith("hanging_")
+        || name.equals("stowed_clip")
         || name.startsWith("bobber_")
         || name.startsWith("hook_")
         || name.equals("tip_return");

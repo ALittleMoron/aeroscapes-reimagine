@@ -1,8 +1,7 @@
 {
   "textures": {
     "layer0": "chipped:item/saw",
-    "particle": "#layer0",
-    "surface": "chipped:item/equipment/painted/saw"
+    "particle": "#layer0"
   },
   "display": {
     "thirdperson_righthand": {
@@ -13,8 +12,8 @@
       ],
       "translation": [
         0.0,
-        2.0,
-        0.0
+        3.3000002,
+        -3.4500003
       ],
       "scale": [
         0.75,
@@ -29,9 +28,9 @@
         10.0
       ],
       "translation": [
-        1.3,
-        2.0,
-        0.0
+        1.1769626,
+        2.2973418,
+        3.2336783
       ],
       "scale": [
         0.65,
@@ -47,8 +46,8 @@
       ],
       "translation": [
         0.0,
-        2.0,
-        0.0
+        3.3000002,
+        -3.4500003
       ],
       "scale": [
         0.75,
@@ -63,9 +62,9 @@
         -10.0
       ],
       "translation": [
-        1.3,
-        2.0,
-        0.0
+        -1.1769623,
+        2.2973418,
+        3.2336788
       ],
       "scale": [
         0.65,
@@ -75,7 +74,7 @@
     }
   },
   "loader": "neoforge:obj",
-  "model": "aeroscapes_reimagine:models/item/reviewed_equipment/chipped_saw.obj",
+  "model": "aeroscapes_reimagine:models/item/utility_equipment/chipped_saw.obj",
   "automatic_culling": false,
   "emissive_ambient": false,
   "flip_v": false,

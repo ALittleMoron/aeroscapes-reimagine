@@ -49,8 +49,44 @@ public final class HeldEquipmentRenderingTest {
     require(
         HeldEquipmentRendering.altimeter(ItemDisplayContext.GUI, original) == original,
         "The GUI keeps its complete native instrument model");
+    sandpaper();
     System.out.println(
         "Held custom renderers: contexts, moving scales, render passes and transforms passed");
+  }
+
+  @SuppressWarnings("deprecation") // Reproduce the pinned 1.21.1 native renderer/model contract.
+  private static void sandpaper() {
+    BakedModel icon = fixture(List.of(quad()), new AtomicInteger());
+    BakedModel body = fixture(List.of(quad()), new AtomicInteger());
+    var perspectives =
+        com.google.common.collect.ImmutableMap.<ItemDisplayContext, BakedModel>builder();
+    for (var context : ItemDisplayContext.values())
+      if (HeldEquipmentRendering.held(context)) perspectives.put(context, body);
+    var separate =
+        new net.neoforged.neoforge.client.model.SeparateTransformsModel.Baked(
+            false,
+            true,
+            false,
+            null,
+            net.minecraft.client.renderer.block.model.ItemOverrides.EMPTY,
+            icon,
+            perspectives.build());
+    var nativeModel =
+        new com.simibubi.create.foundation.item.render.CustomRenderedItemModel(separate);
+    for (var context : ItemDisplayContext.values()) {
+      PoseStack outer = new PoseStack();
+      nativeModel.applyTransform(context, outer, false);
+      var matrix = new org.joml.Matrix4f(outer.last().pose());
+      BakedModel inner = HeldEquipmentRendering.sandpaper(context, nativeModel.getOriginalModel());
+      BakedModel rendered = inner.applyTransform(ItemDisplayContext.NONE, new PoseStack(), false);
+      require(
+          rendered == (HeldEquipmentRendering.held(context) ? body : icon),
+          "Create's inner NONE render selects the held sheet only in hands: " + context);
+      require(
+          outer.last().pose().equals(matrix),
+          "Body selection does not apply a second outer hand transform");
+      require(nativeModel.isCustomRenderer(), "Keep Create's polishing renderer and item overlay");
+    }
   }
 
   private static BakedQuad quad() {

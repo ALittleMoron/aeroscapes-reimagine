@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:item/handheld",
+  "parent": "minecraft:block/block",
   "ambientocclusion": false,
   "textures": {
     "layer0": "littletiles:item/glove",

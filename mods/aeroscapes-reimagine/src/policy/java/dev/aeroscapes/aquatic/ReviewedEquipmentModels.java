@@ -2,6 +2,7 @@ package dev.aeroscapes.aquatic;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import dev.aeroscapes.aquatic.EquipmentObjMesh.P;
 import dev.aeroscapes.atmosphere.EquipmentArtwork;
 import dev.aeroscapes.atmosphere.EquipmentStyle;
@@ -12,6 +13,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import org.joml.Vector3f;
 
 /** The reviewed nets, articulated celestial bow and pointed workshop blades. */
 final class ReviewedEquipmentModels {
@@ -23,8 +25,11 @@ final class ReviewedEquipmentModels {
     return id.equals("naturalist:capture_net")
         || id.startsWith("spawn:casting_net")
         || id.startsWith("tide:starlight_bow")
-        || id.equals("quark:trowel")
-        || id.equals("chipped:saw");
+        || FieldEquipmentMeshes.supports(id)
+        || id.equals("quark:pickarang")
+        || id.equals("quark:flamerang")
+        || id.startsWith("supplementaries:bomb")
+        || id.equals("quark:trowel");
   }
 
   static JsonObject model(String id, EquipmentStyle style, JsonObject original) {
@@ -37,11 +42,26 @@ final class ReviewedEquipmentModels {
     result.addProperty("ambientocclusion", false);
     result.addProperty("render_type", "minecraft:cutout");
     result.getAsJsonObject("textures").addProperty("particle", "#layer0");
-    result.add(
-        "display",
+    JsonObject display =
         id.startsWith("tide:starlight_bow")
             ? bowDisplay()
-            : EquipmentSculpture.transforms(id, style, original));
+            : EquipmentSculpture.transforms(id, style, original);
+    if (id.equals("spawn:casting_net") || id.equals("spawn:casting_net_full")) {
+      JsonObject firstPerson =
+          JsonParser.parseString(
+                  """
+          {
+            "firstperson_righthand": {"rotation": [60,150,30], "scale": [0.67,0.67,0.67]},
+            "firstperson_lefthand": {"rotation": [60,150,30], "scale": [0.67,0.67,0.67]}
+          }
+          """)
+              .getAsJsonObject();
+      // The gathered knot stays within the palm while the pouch extends forward into view.
+      HeldItemModels.anchorHeld(
+          firstPerson, new Vector3f(5.6f, 8.35f, 8), new Vector3f(0, 1.5f, 0));
+      for (var hand : firstPerson.entrySet()) display.add(hand.getKey(), hand.getValue());
+    }
+    result.add("display", display);
     return result;
   }
 
@@ -52,10 +72,16 @@ final class ReviewedEquipmentModels {
     for (String id : models.keySet()) {
       if (!supports(id)) continue;
       EquipmentObjMesh mesh = new EquipmentObjMesh();
+      if (FieldEquipmentMeshes.supports(id)) {
+        FieldEquipmentMeshes.build(mesh, id, models.get(id), materials);
+        output.put(
+            directory.resolve(name(id) + ".obj"), mesh.obj().getBytes(StandardCharsets.UTF_8));
+        continue;
+      }
       String root =
           id.startsWith("tide:")
               ? "tide:starlight_bow"
-              : id.startsWith("spawn:") ? "spawn:casting_net" : id;
+              : id.startsWith("spawn:") ? "spawn:casting_net" : id.replace("_projectile", "");
       for (String material : EquipmentArtwork.MATERIALS) {
         String key = name(id) + "_" + material;
         int tile = EquipmentArtwork.MATERIALS.indexOf(material);
@@ -78,8 +104,9 @@ final class ReviewedEquipmentModels {
       if (id.startsWith("naturalist:")) captureNet(mesh, id, cloth);
       else if (id.startsWith("spawn:")) castingNet(mesh, id, cloth);
       else if (id.startsWith("tide:")) bow(mesh, id);
-      else if (id.equals("quark:trowel")) trowel(mesh, id);
-      else saw(mesh, id);
+      else if (id.startsWith("supplementaries:bomb")) bomb(mesh, id);
+      else if (id.equals("quark:pickarang") || id.equals("quark:flamerang")) boomerang(mesh, id);
+      else trowel(mesh, id);
       output.put(directory.resolve(name(id) + ".obj"), mesh.obj().getBytes(StandardCharsets.UTF_8));
     }
     output.put(
@@ -111,7 +138,9 @@ final class ReviewedEquipmentModels {
 
   private static void captureNet(EquipmentObjMesh mesh, String id, String cloth) {
     mesh.group("handle");
-    mesh.beam(material(id, "grip"), new P(8, -2, 8), new P(8, 11.3, 8), .50, 8);
+    mesh.box(material(id, "grip"), 7.43, -2, 7.43, 8.57, 11.3, 8.57);
+    mesh.group("socket");
+    mesh.box(material(id, "body"), 7.23, 9.65, 7.25, 8.77, 11.12, 8.75);
     mesh.group("rim");
     for (int sector = 0; sector < 8; sector++) {
       double a = sector * Math.PI / 4, b = (sector + 1) * Math.PI / 4;
@@ -123,7 +152,7 @@ final class ReviewedEquipmentModels {
           4);
     }
     mesh.group("mesh");
-    weave(mesh, cloth, true);
+    weave(mesh, cloth, true, false);
   }
 
   private static P pouch(double t, double angle) {
@@ -133,50 +162,75 @@ final class ReviewedEquipmentModels {
   }
 
   private static void castingNet(EquipmentObjMesh mesh, String id, String cloth) {
+    boolean full = id.endsWith("_full");
     mesh.group("mesh");
-    weave(mesh, cloth, false);
+    weave(mesh, cloth, false, full);
+    mesh.group("weighted_hem");
+    List<P> hem = new ArrayList<>();
+    for (int sector = 0; sector <= 8; sector++) hem.add(fold(1, (sector % 8) * Math.PI / 4, full));
+    mesh.tube(cloth, hem, .19, 4, 2);
     mesh.group("weights");
     for (int sector = 0; sector < 8; sector++) {
-      P point = fold(1, (sector + .5) * Math.PI / 4);
+      P point = hem.get(sector);
       mesh.beam(
           material(id, "detail"),
-          point.add(new P(0, -.25, 0)),
-          point.add(new P(0, .25, 0)),
-          .23,
+          point.add(new P(0, -.42, 0)),
+          point.add(new P(0, .12, 0)),
+          .27,
           4);
     }
     mesh.group("cord");
-    mesh.beam(material(id, "body"), new P(8, 4.5, 8), new P(7.3, 2.8, 8), .18, 4);
-    mesh.beam(material(id, "body"), new P(7.3, 2.8, 8), new P(8.5, 1.6, 8), .18, 4);
-    if (id.endsWith("_full")) {
+    mesh.beam(cloth, new P(5.6, 7.8, 8), new P(5.6, 8.9, 8), .58, 8);
+    mesh.tube(
+        material(id, "body"),
+        List.of(
+            new P(5.6, 8.65, 8),
+            new P(4.5, 9.75, 8.4),
+            new P(3.35, 9.45, 8.8),
+            new P(3.14, 8.14, 8.9),
+            new P(3.65, 7.35, 8.57),
+            new P(5.5, 8.02, 8)),
+        .22,
+        5,
+        2);
+    if (full) {
       mesh.group("contents");
-      mesh.beam(material(id, "dark"), new P(8, 6, 8), new P(8, 12.2, 8), 1.6, 8);
+      mesh.shell(
+          material(id, "dark"),
+          new P[][] {
+            EquipmentObjMesh.octagonalRing(7.34, -1.2, 7.94, 1.02, .78),
+            EquipmentObjMesh.octagonalRing(7.2, .18, 7.91, 2.1, 1.55),
+            EquipmentObjMesh.octagonalRing(6.82, 2.94, 7.98, 2.17, 1.65),
+            EquipmentObjMesh.octagonalRing(6.48, 4.56, 8.04, 1.14, .91)
+          });
     }
   }
 
-  private static P fold(double t, double angle) {
-    double radius = .45 + 3 * t, crease = 1 + .15 * Math.cos(4 * angle);
+  private static P fold(double t, double angle, boolean full) {
+    double radius = .46 + (full ? 2.8 : 1.5) * Math.sin(Math.PI * t * .91) + 1.05 * t;
+    double crease = 1 + .12 * Math.cos(3 * angle);
     return new P(
-        8 + radius * Math.cos(angle) * crease,
-        4.5 + 9 * t + .45 * t * Math.sin(3 * angle),
-        8 + radius * .65 * Math.sin(angle) * crease);
+        5.6 + 1.85 * t + radius * Math.cos(angle) * crease,
+        8 - 10.45 * t + .55 * t * Math.sin(3 * angle),
+        8 + radius * .75 * Math.sin(angle) * crease);
   }
 
-  private static void weave(EquipmentObjMesh mesh, String material, boolean capture) {
-    for (int row = 0; row < 3; row++)
+  private static void weave(EquipmentObjMesh mesh, String material, boolean capture, boolean full) {
+    int rows = capture ? 3 : 4;
+    for (int row = 0; row < rows; row++)
       for (int sector = 0; sector < 8; sector++) {
         double phase = row % 2 == 0 ? 0 : .5, nextPhase = row % 2 == 0 ? .5 : 0;
-        double t0 = row / 3.0, t1 = (row + 1) / 3.0;
+        double t0 = row / (double) rows, t1 = (row + 1.0) / rows;
         P first =
             capture
                 ? pouch(t0, (sector + phase) * Math.PI / 4)
-                : fold(t0, (sector + phase) * Math.PI / 4);
+                : fold(t0, (sector + phase) * Math.PI / 4, full);
         P previous = null;
         for (int neighbor : new int[] {sector, sector + (row % 2 == 0 ? -1 : 1)}) {
           P end =
               capture
                   ? pouch(t1, (neighbor + nextPhase) * Math.PI / 4)
-                  : fold(t1, (neighbor + nextPhase) * Math.PI / 4);
+                  : fold(t1, (neighbor + nextPhase) * Math.PI / 4, full);
           if (previous == null || end.vector().distance(previous.vector()) > .0001)
             mesh.beam(material, first, end, .16, 4);
           previous = end;
@@ -232,9 +286,12 @@ final class ReviewedEquipmentModels {
 
   private static void trowel(EquipmentObjMesh mesh, String id) {
     mesh.group("grip");
-    mesh.beam(material(id, "grip"), new P(8, 1, 8), new P(8, 6.5, 8), .85, 8);
+    mesh.box(material(id, "grip"), 7.12, .65, 7.12, 8.88, 7.1, 8.88);
+    mesh.box(material(id, "edge"), 7.04, 6.6, 7.04, 8.96, 7.3, 8.96);
     mesh.group("neck");
-    mesh.beam(material(id, "body"), new P(8, 6.3, 8), new P(8, 10, 8.5), .3, 4);
+    P shoulder = new P(8, 8.2, 8.1);
+    mesh.beam(material(id, "body"), new P(8, 7, 8), shoulder, .39, 4);
+    mesh.beam(material(id, "body"), shoulder, new P(8, 10.55, 8.28), .36, 4);
     mesh.group("blade");
     List<P> outline =
         List.of(
@@ -273,69 +330,119 @@ final class ReviewedEquipmentModels {
     }
   }
 
-  private static void saw(EquipmentObjMesh mesh, String id) {
-    mesh.group("handle");
-    for (int index = 0; index < 8; index++) {
-      double a = index * Math.PI / 4, b = (index + 1) * Math.PI / 4;
-      mesh.beam(
-          material(id, "grip"),
-          new P(8 + 2 * Math.cos(a), 4.3 + 2.3 * Math.sin(a), 8),
-          new P(8 + 2 * Math.cos(b), 4.3 + 2.3 * Math.sin(b), 8),
-          .50,
-          4);
-    }
-    mesh.group("blade");
-    extrude(
-        mesh,
-        material(id, "body"),
-        List.of(new P(6.2, 6.4, 8), new P(10, 6.4, 8), new P(9.3, 16.5, 8), new P(6.2, 17, 8)),
-        .3);
-    mesh.group("teeth");
-    for (int index = 0; index < 8; index++) {
-      double y = 7.1 + index * 1.15;
-      extrude(
-          mesh,
-          material(id, "edge"),
-          List.of(new P(6.2, y, 8), new P(4.95, y + .7, 8), new P(6.2, y + 1.05, 8)),
-          .3);
-    }
-  }
-
   private static double[] bladeUv(P point) {
     return new double[] {(point.x() - 5.5) / 5, (17.5 - point.y()) / 8};
   }
 
-  private static void extrude(
-      EquipmentObjMesh mesh, String material, List<P> points, double depth) {
-    for (int side : new int[] {-1, 1})
-      for (int index = 1; index < points.size() - 1; index++) {
-        P a = points.getFirst().add(new P(0, 0, side * depth)),
-            b = points.get(index).add(new P(0, 0, side * depth)),
-            c = points.get(index + 1).add(new P(0, 0, side * depth));
-        mesh.quad(
-            material,
-            new P[] {a, b, c, c},
-            new P(0, 0, side),
-            new double[][] {{0, 0}, {1, 0}, {1, 1}, {1, 1}});
-      }
-    P center =
-        new P(
-            points.stream().mapToDouble(P::x).average().orElseThrow(),
-            points.stream().mapToDouble(P::y).average().orElseThrow(),
-            8);
-    for (int index = 0; index < points.size(); index++) {
-      P a = points.get(index), b = points.get((index + 1) % points.size());
-      mesh.quad(
-          material,
+  private static void boomerang(EquipmentObjMesh mesh, String id) {
+    mesh.group("wing");
+    // Outer edge, inner edge and half-thickness at each section from tip to tip.
+    double[][] sections = {
+      {2, 12.25, 2.6, 11.1, .27},
+      {4.15, 13.85, 4.55, 11.05, .68},
+      {7.4, 14, 7.5, 11, .81},
+      {12.35, 13.65, 10.05, 10.55, 1},
+      {13.65, 9.05, 10.82, 8.65, .83},
+      {13.35, 5.25, 10.95, 5.2, .66},
+      {12.6, 2.55, 11.05, 2.95, .29}
+    };
+    P[][] rings = new P[sections.length][];
+    for (int index = 0; index < sections.length; index++) {
+      double[] s = sections[index];
+      P outer = new P(s[0] - 4.2, s[1] - .45, 8);
+      P inner = new P(s[2] - 4.2, s[3] - .45, 8);
+      P middle = outer.add(inner).scale(.5);
+      rings[index] =
           new P[] {
-            a.add(new P(0, 0, depth)),
-            b.add(new P(0, 0, depth)),
-            b.add(new P(0, 0, -depth)),
-            a.add(new P(0, 0, -depth))
-          },
-          a.add(b).scale(.5).add(center.scale(-1)),
-          new double[][] {{0, 0}, {1, 0}, {1, 1}, {0, 1}});
+            outer, middle.add(new P(0, 0, s[4])), inner, middle.add(new P(0, 0, -s[4] * .65))
+          };
     }
+    for (int index = 0; index < rings.length - 1; index++) {
+      boolean tip = index < 2 || index >= 5;
+      for (int side = 0; side < 4; side++) {
+        int next = (side + 1) % 4;
+        String surface = tip ? (side == 0 ? "edge" : "body") : "grip";
+        P a = rings[index][side], b = rings[index][next];
+        P c = rings[index + 1][next], d = rings[index + 1][side];
+        P outward =
+            a.add(b)
+                .add(c)
+                .add(d)
+                .scale(.25)
+                .add(
+                    rings[index][0]
+                        .add(rings[index][2])
+                        .add(rings[index + 1][0])
+                        .add(rings[index + 1][2])
+                        .scale(-.25));
+        triangle(mesh, material(id, surface), a, b, c, outward);
+        triangle(mesh, material(id, surface), a, c, d, outward);
+      }
+    }
+    mesh.quad(material(id, "body"), rings[0], new P(-1, 0, 0), SURFACE_UV);
+    mesh.quad(material(id, "body"), rings[rings.length - 1], new P(0, -1, 0), SURFACE_UV);
+  }
+
+  private static final double[][] SURFACE_UV = {{.20, .55}, {.41, .55}, {.41, .91}, {.20, .91}};
+
+  private static void triangle(EquipmentObjMesh mesh, String surface, P a, P b, P c, P outward) {
+    mesh.quad(surface, new P[] {a, b, c, c}, outward, SURFACE_UV);
+  }
+
+  private static void bomb(EquipmentObjMesh mesh, String id) {
+    P center = new P(8, 7, 8);
+    double[] heights = {-4.15, -2.9, -1.15, 1.3, 3.1, 4.2};
+    double[] radii = {1.35, 3.15, 4.35, 4.22, 3.02, 1.45};
+    P[][] hull = new P[heights.length][8];
+    for (int ring = 0; ring < hull.length; ring++)
+      for (int side = 0; side < 8; side++) {
+        double angle = (side + .5) * Math.PI / 4;
+        hull[ring][side] =
+            center.add(
+                new P(radii[ring] * Math.cos(angle), heights[ring], radii[ring] * Math.sin(angle)));
+      }
+    mesh.group("shell");
+    String metal = material(id, "body");
+    for (int ring = 0; ring < hull.length - 1; ring++)
+      for (int side = 0; side < 8; side++) {
+        int next = (side + 1) % 8;
+        P[] face = {hull[ring][side], hull[ring][next], hull[ring + 1][next], hull[ring + 1][side]};
+        P middle = face[0].add(face[1]).add(face[2]).add(face[3]).scale(.25);
+        P outward = middle.add(center.scale(-1));
+        String surface =
+            ring < 2
+                ? "dark"
+                : ring >= 3 && (side == 1 || side == 2 || side == 6) ? "edge" : "body";
+        mesh.quad(material(id, surface), face, outward, SURFACE_UV);
+        if (id.contains("spiky") && (ring == 1 || ring == 3) && side % 2 == (ring == 1 ? 0 : 1)) {
+          P tip = middle.add(outward.scale(.43));
+          for (int edge = 0; edge < 4; edge++) {
+            P a = face[edge].scale(.44).add(middle.scale(.56)).add(outward.scale(-.11));
+            P b = face[(edge + 1) % 4].scale(.44).add(middle.scale(.56)).add(outward.scale(-.11));
+            triangle(mesh, metal, a, b, tip, outward);
+          }
+        }
+      }
+    for (int ring : new int[] {0, hull.length - 1}) {
+      P cap = center.add(new P(0, heights[ring], 0));
+      for (int side = 0; side < 8; side++)
+        triangle(
+            mesh,
+            metal,
+            cap,
+            hull[ring][side],
+            hull[ring][(side + 1) % 8],
+            new P(0, ring == 0 ? -1 : 1, 0));
+    }
+    mesh.group("fuse");
+    P socket = new P(8.73, 11.9, 8);
+    P bend = new P(9.25, 13.05, 8);
+    P end = new P(10.28, 13.6, 8);
+    mesh.beam(material(id, "edge"), new P(8.15, 10.62, 8), socket, 1.06, 8);
+    mesh.beam(material(id, "rope"), socket, bend, .29, 6);
+    mesh.beam(material(id, "rope"), bend, end, .27, 6);
+    if (id.endsWith("_projectile"))
+      mesh.beam(material(id, "gold"), end, new P(10.65, 13.8, 8), .53, 6);
   }
 
   private static JsonObject bowDisplay() {

@@ -445,10 +445,12 @@ META-INF/NOTICE.txt, META-INF/localization-sources.json and corresponding source
 
 Owned equipment artwork: original deterministic Java pixel materials, cuboid
 and OBJ models, GPL-3.0-or-later; generator source accompanies the owned mod.
-Tide rod models supply independent geometry while referencing Refined Tools 3.0
-parent display transforms. A guarded runtime adapter removes stowed tackle from
-known cast models. The independently authored celestial bow uses compatible hand
-transforms and grip/draw axes for that animation frame. No Refined Tools meshes
+Vanilla and Tide rod models supply independent geometry while referencing Refined Tools 3.0
+parent display transforms, with separate stowed and deployed tackle states.
+The independently authored celestial bow uses compatible hand
+transforms and grip/draw axes for that animation frame. Brush scale adapters inherit
+the original Refined Tools geometry and retain its four native use-cycle states.
+No Refined Tools meshes
 or textures are copied; provider licenses remain in force.
 
 Owned Sun and Moon artwork: original golden Sun and cool blue eight-phase Moon,

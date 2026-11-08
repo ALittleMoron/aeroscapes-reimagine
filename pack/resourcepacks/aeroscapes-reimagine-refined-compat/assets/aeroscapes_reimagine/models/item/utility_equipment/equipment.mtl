@@ -23,6 +23,131 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd immersive_weathering:item/ice_sickle
 
+newmtl hybrid_aquatic_coral_hoe_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd hybrid_aquatic:item/coral_hoe
+
+newmtl hybrid_aquatic_coral_hoe_collar
+Ka 0 0 0
+Kd 1 1 1
+map_Kd hybrid_aquatic:item/coral_hoe
+
+newmtl hybrid_aquatic_coral_hoe_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd hybrid_aquatic:item/coral_hoe
+
+newmtl hybrid_aquatic_coral_hoe_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd hybrid_aquatic:item/coral_hoe
+
+newmtl hybrid_aquatic_coral_hoe_shaft_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd hybrid_aquatic:item/coral_hoe
+
+newmtl hybrid_aquatic_coral_hoe_shaft_light
+Ka 0 0 0
+Kd 1 1 1
+map_Kd hybrid_aquatic:item/coral_hoe
+
+newmtl hybrid_aquatic_coral_hoe_shaft_side
+Ka 0 0 0
+Kd 1 1 1
+map_Kd hybrid_aquatic:item/coral_hoe
+
+newmtl littletiles_hammer_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/hammer
+
+newmtl littletiles_hammer_cap
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/hammer
+
+newmtl littletiles_hammer_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/hammer
+
+newmtl littletiles_hammer_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/hammer
+
+newmtl littletiles_hammer_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/hammer
+
+newmtl littletiles_hammer_shaft
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/hammer
+
+newmtl littletiles_hammer_shaft_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/hammer
+
+newmtl littletiles_hammer_shaft_light
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/hammer
+
+newmtl chipped_saw_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/utility_equipment/saw
+
+newmtl chipped_saw_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/utility_equipment/saw
+
+newmtl chipped_saw_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/utility_equipment/saw
+
+newmtl chipped_saw_grip_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/utility_equipment/saw
+
+newmtl chipped_saw_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/utility_equipment/saw
+
+newmtl chipped_chisel_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/chisel
+
+newmtl chipped_chisel_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/chisel
+
+newmtl chipped_chisel_grip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/chisel
+
+newmtl chipped_chisel_grip_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/chisel
+
+newmtl chipped_chisel_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/chisel
+
 newmtl supplementaries_wrench_body
 Ka 0 0 0
 Kd 1 1 1
@@ -108,30 +233,10 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd galosphere:item/rope_dart
 
-newmtl galosphere_echo_bell_body
+newmtl galosphere_rope_dart_stopper
 Ka 0 0 0
 Kd 1 1 1
-map_Kd galosphere:item/echo_bell
-
-newmtl galosphere_echo_bell_cavity
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/echo_bell
-
-newmtl galosphere_echo_bell_edge
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/echo_bell
-
-newmtl galosphere_echo_bell_grip
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/echo_bell
-
-newmtl galosphere_echo_bell_native
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/echo_bell
+map_Kd galosphere:item/rope_dart
 
 newmtl immersive_weathering_steel_wool_body
 Ka 0 0 0
@@ -142,6 +247,86 @@ newmtl immersive_weathering_steel_wool_edge
 Ka 0 0 0
 Kd 1 1 1
 map_Kd immersive_weathering:item/steel_wool
+
+newmtl chipped_alchemy_book_binding
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/alchemy_book
+
+newmtl chipped_alchemy_book_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/alchemy_book
+
+newmtl chipped_alchemy_book_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/alchemy_book
+
+newmtl chipped_alchemy_book_gem
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/alchemy_book
+
+newmtl chipped_alchemy_book_gem_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/alchemy_book
+
+newmtl chipped_alchemy_book_paper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/alchemy_book
+
+newmtl chipped_alchemy_book_spine
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/alchemy_book
+
+newmtl chipped_multimeter_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/multimeter
+
+newmtl chipped_multimeter_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/multimeter
+
+newmtl chipped_multimeter_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/multimeter
+
+newmtl chipped_multimeter_knob
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/multimeter
+
+newmtl chipped_multimeter_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/multimeter
+
+newmtl chipped_multimeter_screen
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/multimeter
+
+newmtl chipped_needles_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/needles
+
+newmtl chipped_needles_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/needles
+
+newmtl chipped_needles_shadow
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/needles
 
 newmtl chipped_watering_can_body
 Ka 0 0 0
@@ -158,60 +343,35 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd chipped:item/watering_can
 
+newmtl chipped_watering_can_handle
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/watering_can
+
+newmtl chipped_watering_can_handle_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/watering_can
+
+newmtl chipped_watering_can_inside
+Ka 0 0 0
+Kd 1 1 1
+map_Kd chipped:item/watering_can
+
 newmtl chipped_watering_can_native
 Ka 0 0 0
 Kd 1 1 1
 map_Kd chipped:item/watering_can
 
-newmtl create_super_glue_body
+newmtl chipped_watering_can_spout
 Ka 0 0 0
 Kd 1 1 1
-map_Kd create:item/super_glue
+map_Kd chipped:item/watering_can
 
-newmtl create_super_glue_collar
+newmtl explorerscompass_explorerscompass_back
 Ka 0 0 0
 Kd 1 1 1
-map_Kd create:item/super_glue
-
-newmtl create_super_glue_edge
-Ka 0 0 0
-Kd 1 1 1
-map_Kd create:item/super_glue
-
-newmtl create_super_glue_grip
-Ka 0 0 0
-Kd 1 1 1
-map_Kd create:item/super_glue
-
-newmtl create_super_glue_native
-Ka 0 0 0
-Kd 1 1 1
-map_Kd create:item/super_glue
-
-newmtl simulated_honey_glue_body
-Ka 0 0 0
-Kd 1 1 1
-map_Kd simulated:item/honey_glue
-
-newmtl simulated_honey_glue_collar
-Ka 0 0 0
-Kd 1 1 1
-map_Kd simulated:item/honey_glue
-
-newmtl simulated_honey_glue_edge
-Ka 0 0 0
-Kd 1 1 1
-map_Kd simulated:item/honey_glue
-
-newmtl simulated_honey_glue_grip
-Ka 0 0 0
-Kd 1 1 1
-map_Kd simulated:item/honey_glue
-
-newmtl simulated_honey_glue_native
-Ka 0 0 0
-Kd 1 1 1
-map_Kd simulated:item/honey_glue
+map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_body
 Ka 0 0 0
@@ -234,6 +394,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_17_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -263,6 +428,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_18_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_18_body
 Ka 0 0 0
 Kd 1 1 1
@@ -284,6 +454,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_18_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_19_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -313,6 +488,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_20_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_20_body
 Ka 0 0 0
 Kd 1 1 1
@@ -334,6 +514,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_20_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_21_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -363,6 +548,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_22_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_22_body
 Ka 0 0 0
 Kd 1 1 1
@@ -384,6 +574,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_22_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_23_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -413,6 +608,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_24_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_24_body
 Ka 0 0 0
 Kd 1 1 1
@@ -434,6 +634,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_24_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_25_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -463,6 +668,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_26_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_26_body
 Ka 0 0 0
 Kd 1 1 1
@@ -484,6 +694,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_26_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_27_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -513,6 +728,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_28_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_28_body
 Ka 0 0 0
 Kd 1 1 1
@@ -534,6 +754,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_28_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_29_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -563,6 +788,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_30_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_30_body
 Ka 0 0 0
 Kd 1 1 1
@@ -584,6 +814,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_30_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_31_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -613,6 +848,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_00_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_00_body
 Ka 0 0 0
 Kd 1 1 1
@@ -634,6 +874,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_00_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_01_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -663,6 +908,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_02_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_02_body
 Ka 0 0 0
 Kd 1 1 1
@@ -684,6 +934,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_02_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_03_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -713,6 +968,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_04_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_04_body
 Ka 0 0 0
 Kd 1 1 1
@@ -734,6 +994,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_04_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_05_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -763,6 +1028,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_06_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_06_body
 Ka 0 0 0
 Kd 1 1 1
@@ -784,6 +1054,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_06_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_07_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -813,6 +1088,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_08_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_08_body
 Ka 0 0 0
 Kd 1 1 1
@@ -834,6 +1114,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_08_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_09_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -863,6 +1148,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_10_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_10_body
 Ka 0 0 0
 Kd 1 1 1
@@ -884,6 +1174,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_10_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_11_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -913,6 +1208,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_12_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_12_body
 Ka 0 0 0
 Kd 1 1 1
@@ -934,6 +1234,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_12_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_13_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -963,6 +1268,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl explorerscompass_explorerscompass_14_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
 newmtl explorerscompass_explorerscompass_14_body
 Ka 0 0 0
 Kd 1 1 1
@@ -984,6 +1294,11 @@ Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
 newmtl explorerscompass_explorerscompass_14_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd explorerscompass:item/explorerscompass_16
+
+newmtl explorerscompass_explorerscompass_15_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
@@ -1013,6 +1328,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd explorerscompass:item/explorerscompass_16
 
+newmtl naturescompass_naturescompass_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1039,6 +1359,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_17_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1073,6 +1398,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_18_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_18_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1099,6 +1429,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_18_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_19_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1133,6 +1468,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_20_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_20_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1159,6 +1499,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_20_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_21_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1193,6 +1538,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_22_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_22_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1219,6 +1569,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_22_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_23_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1253,6 +1608,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_24_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_24_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1279,6 +1639,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_24_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_25_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1313,6 +1678,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_26_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_26_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1339,6 +1709,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_26_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_27_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1373,6 +1748,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_28_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_28_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1399,6 +1779,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_28_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_29_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1433,6 +1818,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_30_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_30_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1459,6 +1849,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_30_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_31_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1493,6 +1888,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_00_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_00_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1519,6 +1919,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_00_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_01_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1553,6 +1958,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_02_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_02_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1579,6 +1989,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_02_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_03_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1613,6 +2028,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_04_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_04_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1639,6 +2059,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_04_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_05_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1673,6 +2098,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_06_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_06_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1699,6 +2129,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_06_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_07_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1733,6 +2168,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_08_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_08_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1759,6 +2199,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_08_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_09_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1793,6 +2238,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_10_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_10_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1819,6 +2269,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_10_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_11_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1853,6 +2308,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_12_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_12_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1879,6 +2339,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_12_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_13_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1913,6 +2378,11 @@ Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
+newmtl naturescompass_naturescompass_14_back
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
 newmtl naturescompass_naturescompass_14_body
 Ka 0 0 0
 Kd 1 1 1
@@ -1939,6 +2409,11 @@ Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
 
 newmtl naturescompass_naturescompass_14_tip
+Ka 0 0 0
+Kd 1 1 1
+map_Kd naturescompass:item/naturescompass_16
+
+newmtl naturescompass_naturescompass_15_back
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
@@ -1972,76 +2447,6 @@ newmtl naturescompass_naturescompass_15_tip
 Ka 0 0 0
 Kd 1 1 1
 map_Kd naturescompass:item/naturescompass_16
-
-newmtl galosphere_glow_flare_body
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/glow_flare
-
-newmtl galosphere_glow_flare_edge
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/glow_flare
-
-newmtl galosphere_glow_flare_grip
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/glow_flare
-
-newmtl galosphere_glow_flare_native
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/glow_flare
-
-newmtl galosphere_monstrometer_body
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer
-
-newmtl galosphere_monstrometer_edge
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer
-
-newmtl galosphere_monstrometer_grip
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer
-
-newmtl galosphere_monstrometer_native
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer
-
-newmtl galosphere_monstrometer_pin
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer
-
-newmtl galosphere_monstrometer_fueled_body
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer_fueled
-
-newmtl galosphere_monstrometer_fueled_edge
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer_fueled
-
-newmtl galosphere_monstrometer_fueled_grip
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer_fueled
-
-newmtl galosphere_monstrometer_fueled_native
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer_fueled
-
-newmtl galosphere_monstrometer_fueled_pin
-Ka 0 0 0
-Kd 1 1 1
-map_Kd galosphere:item/monstrometer_fueled
 
 newmtl sophisticatedcore_ender_linker_body
 Ka 0 0 0

@@ -175,11 +175,28 @@ leaves changed replacement models alone. No provider cuboids or textures are
 copied. The original meshes and materials are composed by `EquipmentModels.java`
 and `RodModels.java`, with no generative image model. Additional functional tools,
 blades, ranged weapons, nets and brushes are composed by `ToolModels.java`; they
-reference native icon textures and retain native use-state predicates. The aquatic
-creature net inherits its provider's geometry and changes only held transforms.
-Their source and the
-original pixel materials are GPL-3.0-or-later; the upstream packs retain their
-own terms. The source is included in the corresponding-source archive. Run
+reference native icon textures and retain native use-state predicates. Workshop
+supplies use `CreateEquipmentModels.java` for physical parts and generated material
+fields in their native sprite palettes, without embedding the inventory artwork
+on the held surfaces. `AquaticToolModels.java`, `ShellToolMeshes.java` and
+`CoralToolMeshes.java` construct hollow shell valves, elongated shell bodies and
+item-specific coral working parts on square shafts. `CoralToolMaterials.java`
+and `ShellToolMaterials.java` compose their material fields deterministically
+from native palette samples. `ConstructionEquipmentModels.java` owns the pouch,
+tape measure, frame saw and physical brush/wrench children. It uses native
+material fields, including the brush's tintable bristle overlay, and maps neutral
+metal fields to the wrench's separate faces. `ConstructionIconModels.java`
+retains [CreativeCore](https://modrinth.com/mod/creativecore/version/JS0K93bG)'s native layer model at the
+root so its renderer can dispatch before selecting the nested hand model. Its
+first layer selects the native sprite outside hand contexts; its second layer
+retains the dynamic tile preview. Physical cuboid children use a block parent so
+the item sprite generator does not replace their geometry. The scoped palm-frame
+bridge also positions the pouch and paint brush in first person. The aquatic
+creature net inherits
+its provider's geometry and changes only held transforms. The authored source
+and independently composed pixel fields are GPL-3.0-or-later; referenced native
+artwork and upstream packs retain their own terms. The source is included in the
+corresponding-source archive. Run
 `./gradlew generateEquipmentModels` from the owned mod project in the full
 repository to regenerate the equipment resources; `equipmentModelsCheck` verifies
 their exact bytes through `check`.

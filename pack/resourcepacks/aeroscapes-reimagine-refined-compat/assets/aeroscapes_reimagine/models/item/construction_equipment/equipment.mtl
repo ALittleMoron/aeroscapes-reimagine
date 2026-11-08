@@ -1,0 +1,54 @@
+newmtl bag_badge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/bag
+
+newmtl bag_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/bag
+
+newmtl bag_cord
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/bag
+
+newmtl bag_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/bag
+
+newmtl measure_tape_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/measure_tape
+
+newmtl measure_tape_button
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/measure_tape
+
+newmtl measure_tape_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/measure_tape
+
+newmtl measure_tape_rim
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/measure_tape
+
+newmtl measure_tape_tape
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/measure_tape
+
+newmtl saw_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/saw
+
+newmtl saw_steel
+Ka 0 0 0
+Kd 1 1 1
+map_Kd littletiles:item/saw

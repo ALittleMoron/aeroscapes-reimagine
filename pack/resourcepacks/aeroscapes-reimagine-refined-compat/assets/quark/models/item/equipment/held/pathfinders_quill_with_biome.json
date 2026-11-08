@@ -9,20 +9,20 @@
   },
   "elements": [
     {
-      "name": "painted_profile_0",
+      "name": "grip_0",
       "from": [
-        9.0,
-        13.0,
-        7.875
+        7.78,
+        -1.0,
+        7.81
       ],
       "to": [
-        10.0,
-        14.0,
-        8.125
+        8.22,
+        1.1,
+        8.19
       ],
       "rotation": {
         "axis": "z",
-        "angle": 0,
+        "angle": -45.0,
         "origin": [
           8.0,
           8.0,
@@ -31,82 +31,76 @@
       },
       "faces": {
         "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            10.0,
             2.0,
-            9.0,
-            3.0
+            0.0,
+            2.1100000000000003,
+            0.525
           ]
         },
         "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            9.0,
             2.0,
-            10.0,
-            3.0
+            0.0,
+            2.1100000000000003,
+            0.525
           ]
         },
         "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            9.0,
             2.0,
-            10.0,
-            3.0
+            0.0,
+            2.0949999999999998,
+            0.525
           ]
         },
         "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            9.0,
             2.0,
-            10.0,
-            3.0
+            0.0,
+            2.0949999999999998,
+            0.525
           ]
         },
         "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            9.0,
             2.0,
-            10.0,
-            3.0
+            0.0,
+            2.1100000000000003,
+            0.09499999999999997
           ]
         },
         "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            9.0,
             2.0,
-            10.0,
-            3.0
+            0.0,
+            2.1100000000000003,
+            0.09499999999999997
           ]
         }
       }
     },
     {
-      "name": "painted_profile_1",
+      "name": "paper_1",
       "from": [
-        10.0,
-        13.0,
-        7.875
+        7.67,
+        0.8,
+        7.74
       ],
       "to": [
-        11.0,
-        14.0,
-        8.125
+        8.33,
+        5.8,
+        8.26
       ],
       "rotation": {
         "axis": "z",
-        "angle": 0,
+        "angle": -45.0,
         "origin": [
           8.0,
           8.0,
@@ -115,754 +109,76 @@
       },
       "faces": {
         "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            11.0,
-            2.0,
-            10.0,
-            3.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            2.0,
-            11.0,
-            3.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            2.0,
-            11.0,
-            3.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            2.0,
-            11.0,
-            3.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            2.0,
-            11.0,
-            3.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            2.0,
-            11.0,
-            3.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_2",
-      "from": [
-        11.0,
-        13.0,
-        7.875
-      ],
-      "to": [
-        12.0,
-        14.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            2.0,
-            11.0,
-            3.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            2.0,
-            12.0,
-            3.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            2.0,
-            12.0,
-            3.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            2.0,
-            12.0,
-            3.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            2.0,
-            12.0,
-            3.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            2.0,
-            12.0,
-            3.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_3",
-      "from": [
-        7.0,
-        12.0,
-        7.875
-      ],
-      "to": [
-        8.0,
-        13.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            3.0,
-            7.0,
-            4.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            3.0,
-            8.0,
-            4.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            3.0,
-            8.0,
-            4.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            3.0,
-            8.0,
-            4.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            3.0,
-            8.0,
-            4.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            3.0,
-            8.0,
-            4.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_4",
-      "from": [
-        8.0,
-        12.0,
-        7.875
-      ],
-      "to": [
-        9.0,
-        13.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            3.0,
-            8.0,
-            4.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            3.0,
-            9.0,
-            4.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            3.0,
-            9.0,
-            4.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            3.0,
-            9.0,
-            4.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            3.0,
-            9.0,
-            4.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            3.0,
-            9.0,
-            4.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_5",
-      "from": [
-        9.0,
-        12.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        13.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            3.0,
-            9.0,
-            4.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            3.0,
-            10.0,
-            4.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            3.0,
-            10.0,
-            4.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            3.0,
-            10.0,
-            4.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            3.0,
-            10.0,
-            4.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            3.0,
-            10.0,
-            4.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_6",
-      "from": [
-        10.0,
-        12.0,
-        7.875
-      ],
-      "to": [
-        11.0,
-        13.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            3.0,
-            10.0,
-            4.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            3.0,
-            11.0,
-            4.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            3.0,
-            11.0,
-            4.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            3.0,
-            11.0,
-            4.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            3.0,
-            11.0,
-            4.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            3.0,
-            11.0,
-            4.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_7",
-      "from": [
-        11.0,
-        12.0,
-        7.875
-      ],
-      "to": [
-        12.0,
-        13.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            3.0,
-            11.0,
-            4.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            3.0,
-            12.0,
-            4.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            3.0,
-            12.0,
-            4.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            3.0,
-            12.0,
-            4.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            3.0,
-            12.0,
-            4.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            3.0,
-            12.0,
-            4.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_8",
-      "from": [
-        12.0,
-        12.0,
-        7.875
-      ],
-      "to": [
-        13.0,
-        13.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            3.0,
-            12.0,
-            4.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            3.0,
-            13.0,
-            4.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            3.0,
-            13.0,
-            4.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            3.0,
-            13.0,
-            4.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            3.0,
-            13.0,
-            4.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            3.0,
-            13.0,
-            4.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_9",
-      "from": [
-        6.0,
-        11.0,
-        7.875
-      ],
-      "to": [
-        7.0,
-        12.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            4.0,
+            0.0,
             6.0,
-            5.0
+            0.16500000000000004,
+            7.25
           ]
         },
         "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
+            0.0,
             6.0,
-            4.0,
-            7.0,
-            5.0
+            0.16500000000000004,
+            7.25
           ]
         },
         "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
+            0.0,
             6.0,
-            4.0,
-            7.0,
-            5.0
+            0.1299999999999999,
+            7.25
           ]
         },
         "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
+            0.0,
             6.0,
-            4.0,
-            7.0,
-            5.0
+            0.1299999999999999,
+            7.25
           ]
         },
         "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
+            0.0,
             6.0,
-            4.0,
-            7.0,
-            5.0
+            0.16500000000000004,
+            6.13
           ]
         },
         "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
+            0.0,
             6.0,
-            4.0,
-            7.0,
-            5.0
+            0.16500000000000004,
+            6.13
           ]
         }
       }
     },
     {
-      "name": "painted_profile_10",
+      "name": "edge_2",
       "from": [
-        7.0,
-        11.0,
-        7.875
+        7.79,
+        5.5,
+        7.49
       ],
       "to": [
-        8.0,
-        12.0,
-        8.125
+        8.21,
+        15.85,
+        8.51
       ],
       "rotation": {
         "axis": "z",
-        "angle": 0,
+        "angle": -45.0,
         "origin": [
           8.0,
           8.0,
@@ -871,6447 +187,781 @@
       },
       "faces": {
         "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            8.0,
-            4.0,
-            7.0,
-            5.0
+            0.0,
+            2.0,
+            0.1050000000000002,
+            4.0
           ]
         },
         "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            7.0,
-            4.0,
-            8.0,
-            5.0
+            0.0,
+            2.0,
+            0.1050000000000002,
+            4.0
           ]
         },
         "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            7.0,
-            4.0,
-            8.0,
-            5.0
+            0.0,
+            2.0,
+            0.2549999999999999,
+            4.0
           ]
         },
         "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            7.0,
-            4.0,
-            8.0,
-            5.0
+            0.0,
+            2.0,
+            0.2549999999999999,
+            4.0
           ]
         },
         "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            7.0,
-            4.0,
-            8.0,
-            5.0
+            0.0,
+            2.0,
+            0.1050000000000002,
+            2.255
           ]
         },
         "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#surface",
           "uv": [
-            7.0,
-            4.0,
-            8.0,
-            5.0
+            0.0,
+            2.0,
+            0.1050000000000002,
+            2.255
           ]
         }
       }
     },
     {
-      "name": "painted_profile_11",
+      "name": "body_3",
+      "from": [
+        6.7,
+        4.9,
+        7.71
+      ],
+      "to": [
+        7.97,
+        7.65,
+        8.22
+      ],
+      "rotation": {
+        "axis": "z",
+        "angle": -45.0,
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3174999999999999,
+            0.6875
+          ]
+        },
+        "south": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3174999999999999,
+            0.6875
+          ]
+        },
+        "east": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.12750000000000017,
+            0.6875
+          ]
+        },
+        "west": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.12750000000000017,
+            0.6875
+          ]
+        },
+        "up": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3174999999999999,
+            0.12750000000000017
+          ]
+        },
+        "down": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3174999999999999,
+            0.12750000000000017
+          ]
+        }
+      }
+    },
+    {
+      "name": "body_4",
+      "from": [
+        6.11,
+        7.6,
+        7.66
+      ],
+      "to": [
+        7.94,
+        10.4,
+        8.29
+      ],
+      "rotation": {
+        "axis": "z",
+        "angle": -45.0,
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.4575,
+            0.7000000000000002
+          ]
+        },
+        "south": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.4575,
+            0.7000000000000002
+          ]
+        },
+        "east": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.15749999999999975,
+            0.7000000000000002
+          ]
+        },
+        "west": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.15749999999999975,
+            0.7000000000000002
+          ]
+        },
+        "up": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.4575,
+            0.15749999999999975
+          ]
+        },
+        "down": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.4575,
+            0.15749999999999975
+          ]
+        }
+      }
+    },
+    {
+      "name": "body_5",
+      "from": [
+        5.72,
+        10.36,
+        7.71
+      ],
+      "to": [
+        7.94,
+        13.05,
+        8.26
+      ],
+      "rotation": {
+        "axis": "z",
+        "angle": -45.0,
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.5550000000000002,
+            0.6725000000000003
+          ]
+        },
+        "south": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.5550000000000002,
+            0.6725000000000003
+          ]
+        },
+        "east": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.13749999999999996,
+            0.6725000000000003
+          ]
+        },
+        "west": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.13749999999999996,
+            0.6725000000000003
+          ]
+        },
+        "up": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.5550000000000002,
+            0.13749999999999996
+          ]
+        },
+        "down": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.5550000000000002,
+            0.13749999999999996
+          ]
+        }
+      }
+    },
+    {
+      "name": "body_6",
+      "from": [
+        6.22,
+        13.01,
+        7.76
+      ],
+      "to": [
+        7.95,
+        15.22,
+        8.23
+      ],
+      "rotation": {
+        "axis": "z",
+        "angle": -45.0,
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.4325000000000001,
+            0.5525000000000002
+          ]
+        },
+        "south": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.4325000000000001,
+            0.5525000000000002
+          ]
+        },
+        "east": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.11750000000000016,
+            0.5525000000000002
+          ]
+        },
+        "west": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.11750000000000016,
+            0.5525000000000002
+          ]
+        },
+        "up": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.4325000000000001,
+            0.11750000000000016
+          ]
+        },
+        "down": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.4325000000000001,
+            0.11750000000000016
+          ]
+        }
+      }
+    },
+    {
+      "name": "body_7",
+      "from": [
+        6.91,
+        15.16,
+        7.81
+      ],
+      "to": [
+        8.28,
+        16.22,
+        8.19
+      ],
+      "rotation": {
+        "axis": "z",
+        "angle": -45.0,
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3424999999999998,
+            0.2649999999999997
+          ]
+        },
+        "south": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3424999999999998,
+            0.2649999999999997
+          ]
+        },
+        "east": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.09499999999999997,
+            0.2649999999999997
+          ]
+        },
+        "west": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.09499999999999997,
+            0.2649999999999997
+          ]
+        },
+        "up": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3424999999999998,
+            0.09499999999999997
+          ]
+        },
+        "down": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3424999999999998,
+            0.09499999999999997
+          ]
+        }
+      }
+    },
+    {
+      "name": "body_8",
+      "from": [
+        8.05,
+        5.9,
+        7.77
+      ],
+      "to": [
+        9.35,
+        8.71,
+        8.27
+      ],
+      "rotation": {
+        "axis": "z",
+        "angle": -45.0,
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.32499999999999973,
+            0.7025000000000001
+          ]
+        },
+        "south": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.32499999999999973,
+            0.7025000000000001
+          ]
+        },
+        "east": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.125,
+            0.7025000000000001
+          ]
+        },
+        "west": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.125,
+            0.7025000000000001
+          ]
+        },
+        "up": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.32499999999999973,
+            0.125
+          ]
+        },
+        "down": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.32499999999999973,
+            0.125
+          ]
+        }
+      }
+    },
+    {
+      "name": "body_9",
+      "from": [
+        8.06,
+        8.64,
+        7.83
+      ],
+      "to": [
+        10.35,
+        12.57,
+        8.37
+      ],
+      "rotation": {
+        "axis": "z",
+        "angle": -45.0,
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.5724999999999998,
+            0.9824999999999999
+          ]
+        },
+        "south": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.5724999999999998,
+            0.9824999999999999
+          ]
+        },
+        "east": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.1349999999999998,
+            0.9824999999999999
+          ]
+        },
+        "west": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.1349999999999998,
+            0.9824999999999999
+          ]
+        },
+        "up": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.5724999999999998,
+            0.1349999999999998
+          ]
+        },
+        "down": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.5724999999999998,
+            0.1349999999999998
+          ]
+        }
+      }
+    },
+    {
+      "name": "body_10",
+      "from": [
+        8.05,
+        12.52,
+        7.8
+      ],
+      "to": [
+        9.44,
+        15.1,
+        8.29
+      ],
+      "rotation": {
+        "axis": "z",
+        "angle": -45.0,
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      },
+      "faces": {
+        "north": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3474999999999997,
+            0.645
+          ]
+        },
+        "south": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3474999999999997,
+            0.645
+          ]
+        },
+        "east": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.12249999999999983,
+            0.645
+          ]
+        },
+        "west": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.12249999999999983,
+            0.645
+          ]
+        },
+        "up": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3474999999999997,
+            0.12249999999999983
+          ]
+        },
+        "down": {
+          "texture": "#surface",
+          "uv": [
+            0.0,
+            0.0,
+            0.3474999999999997,
+            0.12249999999999983
+          ]
+        }
+      }
+    },
+    {
+      "name": "native_face_11",
       "from": [
         8.0,
-        11.0,
-        7.875
-      ],
-      "to": [
-        9.0,
-        12.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            4.0,
-            8.0,
-            5.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            4.0,
-            9.0,
-            5.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            4.0,
-            9.0,
-            5.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            4.0,
-            9.0,
-            5.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            4.0,
-            9.0,
-            5.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            4.0,
-            9.0,
-            5.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_12",
-      "from": [
-        9.0,
-        11.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        12.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            4.0,
-            9.0,
-            5.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            4.0,
-            10.0,
-            5.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            4.0,
-            10.0,
-            5.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            4.0,
-            10.0,
-            5.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            4.0,
-            10.0,
-            5.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            4.0,
-            10.0,
-            5.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_13",
-      "from": [
-        10.0,
-        11.0,
-        7.875
-      ],
-      "to": [
-        11.0,
-        12.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            4.0,
-            10.0,
-            5.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            4.0,
-            11.0,
-            5.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            4.0,
-            11.0,
-            5.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            4.0,
-            11.0,
-            5.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            4.0,
-            11.0,
-            5.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            4.0,
-            11.0,
-            5.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_14",
-      "from": [
-        11.0,
-        11.0,
-        7.875
-      ],
-      "to": [
-        12.0,
-        12.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            4.0,
-            11.0,
-            5.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            4.0,
-            12.0,
-            5.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            4.0,
-            12.0,
-            5.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            4.0,
-            12.0,
-            5.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            4.0,
-            12.0,
-            5.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            4.0,
-            12.0,
-            5.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_15",
-      "from": [
-        12.0,
-        11.0,
-        7.875
-      ],
-      "to": [
-        13.0,
-        12.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            4.0,
-            12.0,
-            5.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            4.0,
-            13.0,
-            5.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            4.0,
-            13.0,
-            5.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            4.0,
-            13.0,
-            5.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            4.0,
-            13.0,
-            5.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            4.0,
-            13.0,
-            5.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_16",
-      "from": [
-        13.0,
-        11.0,
-        7.875
-      ],
-      "to": [
-        14.0,
-        12.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            14.0,
-            4.0,
-            13.0,
-            5.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            4.0,
-            14.0,
-            5.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            4.0,
-            14.0,
-            5.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            4.0,
-            14.0,
-            5.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            4.0,
-            14.0,
-            5.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            4.0,
-            14.0,
-            5.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_17",
-      "from": [
-        5.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        6.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            5.0,
-            5.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            5.0,
-            6.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            5.0,
-            6.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            5.0,
-            6.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            5.0,
-            6.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            5.0,
-            6.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_18",
-      "from": [
-        6.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        7.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            5.0,
-            6.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            5.0,
-            7.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            5.0,
-            7.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            5.0,
-            7.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            5.0,
-            7.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            5.0,
-            7.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_19",
-      "from": [
-        7.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        8.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            5.0,
-            7.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            5.0,
-            8.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            5.0,
-            8.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            5.0,
-            8.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            5.0,
-            8.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            5.0,
-            8.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_20",
-      "from": [
-        8.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        9.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            5.0,
-            8.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            5.0,
-            9.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            5.0,
-            9.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            5.0,
-            9.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            5.0,
-            9.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            5.0,
-            9.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_21",
-      "from": [
-        9.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            5.0,
-            9.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            5.0,
-            10.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            5.0,
-            10.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            5.0,
-            10.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            5.0,
-            10.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            5.0,
-            10.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_22",
-      "from": [
-        10.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        11.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            5.0,
-            10.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            5.0,
-            11.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            5.0,
-            11.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            5.0,
-            11.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            5.0,
-            11.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            5.0,
-            11.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_23",
-      "from": [
-        11.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        12.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            5.0,
-            11.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            5.0,
-            12.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            5.0,
-            12.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            5.0,
-            12.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            5.0,
-            12.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            5.0,
-            12.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_24",
-      "from": [
-        12.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        13.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            5.0,
-            12.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            5.0,
-            13.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            5.0,
-            13.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            5.0,
-            13.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            5.0,
-            13.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            5.0,
-            13.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_25",
-      "from": [
-        13.0,
-        10.0,
-        7.875
-      ],
-      "to": [
-        14.0,
-        11.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            14.0,
-            5.0,
-            13.0,
-            6.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            5.0,
-            14.0,
-            6.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            5.0,
-            14.0,
-            6.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            5.0,
-            14.0,
-            6.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            5.0,
-            14.0,
-            6.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            5.0,
-            14.0,
-            6.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_26",
-      "from": [
-        4.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        5.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            6.0,
-            4.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            6.0,
-            5.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            6.0,
-            5.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            6.0,
-            5.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            6.0,
-            5.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            6.0,
-            5.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_27",
-      "from": [
-        5.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        6.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            6.0,
-            5.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            6.0,
-            6.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            6.0,
-            6.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            6.0,
-            6.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            6.0,
-            6.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            6.0,
-            6.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_28",
-      "from": [
-        6.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        7.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            6.0,
-            6.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            6.0,
-            7.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            6.0,
-            7.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            6.0,
-            7.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            6.0,
-            7.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            6.0,
-            7.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_29",
-      "from": [
-        7.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        8.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            6.0,
-            7.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            6.0,
-            8.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            6.0,
-            8.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            6.0,
-            8.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            6.0,
-            8.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            6.0,
-            8.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_30",
-      "from": [
-        8.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        9.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            6.0,
-            8.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            6.0,
-            9.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            6.0,
-            9.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            6.0,
-            9.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            6.0,
-            9.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            6.0,
-            9.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_31",
-      "from": [
-        9.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            6.0,
-            9.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            6.0,
-            10.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            6.0,
-            10.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            6.0,
-            10.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            6.0,
-            10.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            6.0,
-            10.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_32",
-      "from": [
-        10.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        11.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            6.0,
-            10.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            6.0,
-            11.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            6.0,
-            11.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            6.0,
-            11.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            6.0,
-            11.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            6.0,
-            11.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_33",
-      "from": [
-        11.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        12.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            6.0,
-            11.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            6.0,
-            12.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            6.0,
-            12.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            6.0,
-            12.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            6.0,
-            12.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            6.0,
-            12.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_34",
-      "from": [
-        12.0,
-        9.0,
-        7.875
-      ],
-      "to": [
-        13.0,
-        10.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            6.0,
-            12.0,
-            7.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            6.0,
-            13.0,
-            7.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            6.0,
-            13.0,
-            7.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            6.0,
-            13.0,
-            7.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            6.0,
-            13.0,
-            7.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            6.0,
-            13.0,
-            7.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_35",
-      "from": [
-        4.0,
-        8.0,
-        7.875
-      ],
-      "to": [
-        5.0,
-        9.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            7.0,
-            4.0,
-            8.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            7.0,
-            5.0,
-            8.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            7.0,
-            5.0,
-            8.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            7.0,
-            5.0,
-            8.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            7.0,
-            5.0,
-            8.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            7.0,
-            5.0,
-            8.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_36",
-      "from": [
-        5.0,
-        8.0,
-        7.875
-      ],
-      "to": [
-        6.0,
-        9.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            7.0,
-            5.0,
-            8.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            7.0,
-            6.0,
-            8.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            7.0,
-            6.0,
-            8.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            7.0,
-            6.0,
-            8.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            7.0,
-            6.0,
-            8.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            7.0,
-            6.0,
-            8.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_37",
-      "from": [
-        6.0,
-        8.0,
-        7.875
-      ],
-      "to": [
-        7.0,
-        9.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            7.0,
-            6.0,
-            8.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            7.0,
-            7.0,
-            8.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            7.0,
-            7.0,
-            8.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            7.0,
-            7.0,
-            8.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            7.0,
-            7.0,
-            8.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            7.0,
-            7.0,
-            8.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_38",
-      "from": [
-        7.0,
-        8.0,
-        7.875
-      ],
-      "to": [
-        8.0,
-        9.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            7.0,
-            7.0,
-            8.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            7.0,
-            8.0,
-            8.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            7.0,
-            8.0,
-            8.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            7.0,
-            8.0,
-            8.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            7.0,
-            8.0,
-            8.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            7.0,
-            8.0,
-            8.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_39",
-      "from": [
-        8.0,
-        8.0,
-        7.875
-      ],
-      "to": [
-        9.0,
-        9.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            7.0,
-            8.0,
-            8.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            7.0,
-            9.0,
-            8.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            7.0,
-            9.0,
-            8.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            7.0,
-            9.0,
-            8.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            7.0,
-            9.0,
-            8.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            7.0,
-            9.0,
-            8.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_40",
-      "from": [
-        9.0,
-        8.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        9.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            7.0,
-            9.0,
-            8.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            7.0,
-            10.0,
-            8.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            7.0,
-            10.0,
-            8.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            7.0,
-            10.0,
-            8.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            7.0,
-            10.0,
-            8.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            7.0,
-            10.0,
-            8.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_41",
-      "from": [
-        10.0,
-        8.0,
-        7.875
-      ],
-      "to": [
-        11.0,
-        9.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            7.0,
-            10.0,
-            8.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            7.0,
-            11.0,
-            8.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            7.0,
-            11.0,
-            8.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            7.0,
-            11.0,
-            8.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            7.0,
-            11.0,
-            8.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            7.0,
-            11.0,
-            8.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_42",
-      "from": [
-        3.0,
-        7.0,
-        7.875
-      ],
-      "to": [
-        4.0,
-        8.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            8.0,
-            3.0,
-            9.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            8.0,
-            4.0,
-            9.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            8.0,
-            4.0,
-            9.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            8.0,
-            4.0,
-            9.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            8.0,
-            4.0,
-            9.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            8.0,
-            4.0,
-            9.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_43",
-      "from": [
-        4.0,
-        7.0,
-        7.875
-      ],
-      "to": [
-        5.0,
-        8.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            8.0,
-            4.0,
-            9.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            8.0,
-            5.0,
-            9.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            8.0,
-            5.0,
-            9.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            8.0,
-            5.0,
-            9.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            8.0,
-            5.0,
-            9.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            8.0,
-            5.0,
-            9.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_44",
-      "from": [
-        5.0,
-        7.0,
-        7.875
-      ],
-      "to": [
-        6.0,
-        8.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            8.0,
-            5.0,
-            9.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            8.0,
-            6.0,
-            9.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            8.0,
-            6.0,
-            9.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            8.0,
-            6.0,
-            9.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            8.0,
-            6.0,
-            9.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            8.0,
-            6.0,
-            9.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_45",
-      "from": [
-        6.0,
-        7.0,
-        7.875
-      ],
-      "to": [
-        7.0,
-        8.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            8.0,
-            6.0,
-            9.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            8.0,
-            7.0,
-            9.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            8.0,
-            7.0,
-            9.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            8.0,
-            7.0,
-            9.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            8.0,
-            7.0,
-            9.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            8.0,
-            7.0,
-            9.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_46",
-      "from": [
-        7.0,
-        7.0,
-        7.875
-      ],
-      "to": [
-        8.0,
-        8.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            8.0,
-            7.0,
-            9.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            8.0,
-            8.0,
-            9.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            8.0,
-            8.0,
-            9.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            8.0,
-            8.0,
-            9.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            8.0,
-            8.0,
-            9.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            8.0,
-            8.0,
-            9.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_47",
-      "from": [
-        8.0,
-        7.0,
-        7.875
-      ],
-      "to": [
-        9.0,
-        8.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            8.0,
-            8.0,
-            9.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            8.0,
-            9.0,
-            9.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            8.0,
-            9.0,
-            9.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            8.0,
-            9.0,
-            9.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            8.0,
-            9.0,
-            9.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            8.0,
-            9.0,
-            9.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_48",
-      "from": [
-        3.0,
-        6.0,
-        7.875
-      ],
-      "to": [
-        4.0,
-        7.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            9.0,
-            3.0,
-            10.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            9.0,
-            4.0,
-            10.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            9.0,
-            4.0,
-            10.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            9.0,
-            4.0,
-            10.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            9.0,
-            4.0,
-            10.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            9.0,
-            4.0,
-            10.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_49",
-      "from": [
-        4.0,
-        6.0,
-        7.875
-      ],
-      "to": [
-        5.0,
-        7.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            9.0,
-            4.0,
-            10.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            9.0,
-            5.0,
-            10.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            9.0,
-            5.0,
-            10.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            9.0,
-            5.0,
-            10.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            9.0,
-            5.0,
-            10.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            9.0,
-            5.0,
-            10.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_50",
-      "from": [
-        5.0,
-        6.0,
-        7.875
-      ],
-      "to": [
-        6.0,
-        7.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            9.0,
-            5.0,
-            10.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            9.0,
-            6.0,
-            10.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            9.0,
-            6.0,
-            10.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            9.0,
-            6.0,
-            10.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            9.0,
-            6.0,
-            10.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            9.0,
-            6.0,
-            10.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_51",
-      "from": [
-        6.0,
-        6.0,
-        7.875
-      ],
-      "to": [
-        7.0,
-        7.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            7.0,
-            9.0,
-            6.0,
-            10.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            9.0,
-            7.0,
-            10.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            9.0,
-            7.0,
-            10.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            9.0,
-            7.0,
-            10.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            9.0,
-            7.0,
-            10.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            9.0,
-            7.0,
-            10.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_52",
-      "from": [
-        9.0,
-        6.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        7.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            9.0,
-            9.0,
-            10.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            9.0,
-            10.0,
-            10.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            9.0,
-            10.0,
-            10.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            9.0,
-            10.0,
-            10.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            9.0,
-            10.0,
-            10.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            9.0,
-            10.0,
-            10.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_53",
-      "from": [
-        10.0,
-        6.0,
-        7.875
-      ],
-      "to": [
-        11.0,
-        7.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            9.0,
-            10.0,
-            10.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            9.0,
-            11.0,
-            10.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            9.0,
-            11.0,
-            10.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            9.0,
-            11.0,
-            10.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            9.0,
-            11.0,
-            10.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            9.0,
-            11.0,
-            10.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_54",
-      "from": [
-        2.0,
-        5.0,
-        7.875
-      ],
-      "to": [
-        3.0,
-        6.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            10.0,
-            2.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            10.0,
-            3.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            10.0,
-            3.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            10.0,
-            3.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            10.0,
-            3.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            10.0,
-            3.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_55",
-      "from": [
-        3.0,
-        5.0,
-        7.875
-      ],
-      "to": [
-        4.0,
-        6.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            10.0,
-            3.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            10.0,
-            4.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            10.0,
-            4.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            10.0,
-            4.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            10.0,
-            4.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            10.0,
-            4.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_56",
-      "from": [
-        4.0,
-        5.0,
-        7.875
-      ],
-      "to": [
-        5.0,
-        6.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            10.0,
-            4.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            10.0,
-            5.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            10.0,
-            5.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            10.0,
-            5.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            10.0,
-            5.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            10.0,
-            5.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_57",
-      "from": [
-        5.0,
-        5.0,
-        7.875
-      ],
-      "to": [
-        6.0,
-        6.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            6.0,
-            10.0,
-            5.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            10.0,
-            6.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            10.0,
-            6.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            10.0,
-            6.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            10.0,
-            6.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            10.0,
-            6.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_58",
-      "from": [
-        8.0,
-        5.0,
-        7.875
-      ],
-      "to": [
-        9.0,
-        6.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            10.0,
-            8.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            10.0,
-            9.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            10.0,
-            9.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            10.0,
-            9.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            10.0,
-            9.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            10.0,
-            9.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_59",
-      "from": [
-        9.0,
-        5.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        6.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            10.0,
-            9.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            10.0,
-            10.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            10.0,
-            10.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            10.0,
-            10.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            10.0,
-            10.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            10.0,
-            10.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_60",
-      "from": [
-        11.0,
-        5.0,
-        7.875
-      ],
-      "to": [
-        12.0,
-        6.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            10.0,
-            11.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            10.0,
-            12.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            10.0,
-            12.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            10.0,
-            12.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            10.0,
-            12.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            10.0,
-            12.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_61",
-      "from": [
-        12.0,
-        5.0,
-        7.875
-      ],
-      "to": [
-        13.0,
-        6.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            10.0,
-            12.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            10.0,
-            13.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            10.0,
-            13.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            10.0,
-            13.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            10.0,
-            13.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            10.0,
-            13.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_62",
-      "from": [
-        2.0,
-        4.0,
-        7.875
-      ],
-      "to": [
-        3.0,
-        5.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            11.0,
-            2.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            11.0,
-            3.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            11.0,
-            3.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            11.0,
-            3.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            11.0,
-            3.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            11.0,
-            3.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_63",
-      "from": [
-        3.0,
-        4.0,
-        7.875
-      ],
-      "to": [
-        4.0,
-        5.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            11.0,
-            3.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            11.0,
-            4.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            11.0,
-            4.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            11.0,
-            4.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            11.0,
-            4.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            3.0,
-            11.0,
-            4.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_64",
-      "from": [
-        4.0,
-        4.0,
-        7.875
-      ],
-      "to": [
-        5.0,
-        5.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            5.0,
-            11.0,
-            4.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            11.0,
-            5.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            11.0,
-            5.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            11.0,
-            5.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            11.0,
-            5.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            4.0,
-            11.0,
-            5.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_65",
-      "from": [
-        8.0,
-        4.0,
-        7.875
-      ],
-      "to": [
-        9.0,
-        5.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            11.0,
-            8.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            11.0,
-            9.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            11.0,
-            9.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            11.0,
-            9.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            11.0,
-            9.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            8.0,
-            11.0,
-            9.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_66",
-      "from": [
-        10.0,
-        4.0,
-        7.875
-      ],
-      "to": [
-        11.0,
-        5.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            11.0,
-            10.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            11.0,
-            11.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            11.0,
-            11.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            11.0,
-            11.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            11.0,
-            11.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            11.0,
-            11.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_67",
-      "from": [
-        11.0,
-        4.0,
-        7.875
-      ],
-      "to": [
-        12.0,
-        5.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            11.0,
-            11.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            11.0,
-            12.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            11.0,
-            12.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            11.0,
-            12.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            11.0,
-            12.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            11.0,
-            12.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_68",
-      "from": [
-        13.0,
-        4.0,
-        7.875
-      ],
-      "to": [
-        14.0,
-        5.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            14.0,
-            11.0,
-            13.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            11.0,
-            14.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            11.0,
-            14.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            11.0,
-            14.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            11.0,
-            14.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            11.0,
-            14.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_69",
-      "from": [
         1.0,
-        3.0,
-        7.875
-      ],
-      "to": [
-        2.0,
-        4.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            12.0,
-            1.0,
-            13.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            12.0,
-            2.0,
-            13.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            12.0,
-            2.0,
-            13.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            12.0,
-            2.0,
-            13.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            12.0,
-            2.0,
-            13.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            12.0,
-            2.0,
-            13.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_70",
-      "from": [
-        9.0,
-        3.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        4.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            12.0,
-            9.0,
-            13.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            12.0,
-            10.0,
-            13.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            12.0,
-            10.0,
-            13.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            12.0,
-            10.0,
-            13.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            12.0,
-            10.0,
-            13.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            12.0,
-            10.0,
-            13.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_71",
-      "from": [
-        13.0,
-        3.0,
-        7.875
+        8.18
       ],
       "to": [
         14.0,
-        4.0,
-        8.125
+        7.0,
+        8.195
       ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
       "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            14.0,
-            12.0,
-            13.0,
-            13.0
-          ]
-        },
         "south": {
           "texture": "#layer0",
           "tintindex": 0,
           "uv": [
-            13.0,
-            12.0,
+            8.0,
+            9.0,
             14.0,
-            13.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            12.0,
-            14.0,
-            13.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            12.0,
-            14.0,
-            13.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            12.0,
-            14.0,
-            13.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            12.0,
-            14.0,
-            13.0
+            15.0
           ]
         }
       }
     },
     {
-      "name": "painted_profile_72",
+      "name": "native_face_12",
       "from": [
+        8.0,
         1.0,
-        2.0,
-        7.875
-      ],
-      "to": [
-        2.0,
-        3.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            2.0,
-            13.0,
-            1.0,
-            14.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            13.0,
-            2.0,
-            14.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            13.0,
-            2.0,
-            14.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            13.0,
-            2.0,
-            14.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            13.0,
-            2.0,
-            14.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            1.0,
-            13.0,
-            2.0,
-            14.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_73",
-      "from": [
-        9.0,
-        2.0,
-        7.875
-      ],
-      "to": [
-        10.0,
-        3.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            13.0,
-            9.0,
-            14.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            13.0,
-            10.0,
-            14.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            13.0,
-            10.0,
-            14.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            13.0,
-            10.0,
-            14.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            13.0,
-            10.0,
-            14.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            9.0,
-            13.0,
-            10.0,
-            14.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_74",
-      "from": [
-        13.0,
-        2.0,
-        7.875
+        7.82
       ],
       "to": [
         14.0,
-        3.0,
-        8.125
+        7.0,
+        7.835
       ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
       "faces": {
         "north": {
           "texture": "#layer0",
           "tintindex": 0,
           "uv": [
             14.0,
-            13.0,
-            13.0,
-            14.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            13.0,
-            14.0,
-            14.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            13.0,
-            14.0,
-            14.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            13.0,
-            14.0,
-            14.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            13.0,
-            14.0,
-            14.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            13.0,
-            14.0,
-            14.0
+            9.0,
+            8.0,
+            15.0
           ]
         }
       }
     },
     {
-      "name": "painted_profile_75",
+      "name": "native_face_13",
       "from": [
-        10.0,
+        8.0,
         1.0,
-        7.875
+        8.2
       ],
       "to": [
-        11.0,
-        2.0,
-        8.125
+        14.0,
+        7.0,
+        8.215
       ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
       "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            14.0,
-            10.0,
-            15.0
-          ]
-        },
         "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
+          "texture": "#layer1",
+          "tintindex": 1,
           "uv": [
-            10.0,
+            8.0,
+            9.0,
             14.0,
-            11.0,
-            15.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            14.0,
-            11.0,
-            15.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            14.0,
-            11.0,
-            15.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            14.0,
-            11.0,
-            15.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            10.0,
-            14.0,
-            11.0,
             15.0
           ]
         }
       }
     },
     {
-      "name": "painted_profile_76",
+      "name": "native_face_14",
       "from": [
-        11.0,
+        8.0,
         1.0,
-        7.875
+        7.8
       ],
       "to": [
-        12.0,
-        2.0,
-        8.125
+        14.0,
+        7.0,
+        7.8149999999999995
       ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            14.0,
-            11.0,
-            15.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            14.0,
-            12.0,
-            15.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            14.0,
-            12.0,
-            15.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            14.0,
-            12.0,
-            15.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            14.0,
-            12.0,
-            15.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            11.0,
-            14.0,
-            12.0,
-            15.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_77",
-      "from": [
-        12.0,
-        1.0,
-        7.875
-      ],
-      "to": [
-        13.0,
-        2.0,
-        8.125
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            13.0,
-            14.0,
-            12.0,
-            15.0
-          ]
-        },
-        "south": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            14.0,
-            13.0,
-            15.0
-          ]
-        },
-        "east": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            14.0,
-            13.0,
-            15.0
-          ]
-        },
-        "west": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            14.0,
-            13.0,
-            15.0
-          ]
-        },
-        "up": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            14.0,
-            13.0,
-            15.0
-          ]
-        },
-        "down": {
-          "texture": "#layer0",
-          "tintindex": 0,
-          "uv": [
-            12.0,
-            14.0,
-            13.0,
-            15.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_78",
-      "from": [
-        10.0,
-        5.0,
-        7.86
-      ],
-      "to": [
-        11.0,
-        6.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
       "faces": {
         "north": {
           "texture": "#layer1",
           "tintindex": 1,
           "uv": [
-            11.0,
-            10.0,
-            10.0,
-            11.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            10.0,
-            11.0,
-            11.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            10.0,
-            11.0,
-            11.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            10.0,
-            11.0,
-            11.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            10.0,
-            11.0,
-            11.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            10.0,
-            11.0,
-            11.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_79",
-      "from": [
-        9.0,
-        4.0,
-        7.86
-      ],
-      "to": [
-        10.0,
-        5.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            11.0,
+            14.0,
             9.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            9.0,
-            11.0,
-            10.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            9.0,
-            11.0,
-            10.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            9.0,
-            11.0,
-            10.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            9.0,
-            11.0,
-            10.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            9.0,
-            11.0,
-            10.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_80",
-      "from": [
-        12.0,
-        4.0,
-        7.86
-      ],
-      "to": [
-        13.0,
-        5.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            13.0,
-            11.0,
-            12.0,
-            12.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            11.0,
-            13.0,
-            12.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            11.0,
-            13.0,
-            12.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            11.0,
-            13.0,
-            12.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            11.0,
-            13.0,
-            12.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            11.0,
-            13.0,
-            12.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_81",
-      "from": [
-        10.0,
-        3.0,
-        7.86
-      ],
-      "to": [
-        11.0,
-        4.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            12.0,
-            10.0,
-            13.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            12.0,
-            11.0,
-            13.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            12.0,
-            11.0,
-            13.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            12.0,
-            11.0,
-            13.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            12.0,
-            11.0,
-            13.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            12.0,
-            11.0,
-            13.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_82",
-      "from": [
-        11.0,
-        3.0,
-        7.86
-      ],
-      "to": [
-        12.0,
-        4.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            12.0,
-            11.0,
-            13.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            12.0,
-            12.0,
-            13.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            12.0,
-            12.0,
-            13.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            12.0,
-            12.0,
-            13.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            12.0,
-            12.0,
-            13.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            12.0,
-            12.0,
-            13.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_83",
-      "from": [
-        12.0,
-        3.0,
-        7.86
-      ],
-      "to": [
-        13.0,
-        4.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            13.0,
-            12.0,
-            12.0,
-            13.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            12.0,
-            13.0,
-            13.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            12.0,
-            13.0,
-            13.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            12.0,
-            13.0,
-            13.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            12.0,
-            13.0,
-            13.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            12.0,
-            13.0,
-            13.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_84",
-      "from": [
-        10.0,
-        2.0,
-        7.86
-      ],
-      "to": [
-        11.0,
-        3.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            13.0,
-            10.0,
-            14.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            13.0,
-            11.0,
-            14.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            13.0,
-            11.0,
-            14.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            13.0,
-            11.0,
-            14.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            13.0,
-            11.0,
-            14.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            10.0,
-            13.0,
-            11.0,
-            14.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_85",
-      "from": [
-        11.0,
-        2.0,
-        7.86
-      ],
-      "to": [
-        12.0,
-        3.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            13.0,
-            11.0,
-            14.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            13.0,
-            12.0,
-            14.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            13.0,
-            12.0,
-            14.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            13.0,
-            12.0,
-            14.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            13.0,
-            12.0,
-            14.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            11.0,
-            13.0,
-            12.0,
-            14.0
-          ]
-        }
-      }
-    },
-    {
-      "name": "painted_profile_86",
-      "from": [
-        12.0,
-        2.0,
-        7.86
-      ],
-      "to": [
-        13.0,
-        3.0,
-        8.14
-      ],
-      "rotation": {
-        "axis": "z",
-        "angle": 0,
-        "origin": [
-          8.0,
-          8.0,
-          8.0
-        ]
-      },
-      "faces": {
-        "north": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            13.0,
-            13.0,
-            12.0,
-            14.0
-          ]
-        },
-        "south": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            13.0,
-            13.0,
-            14.0
-          ]
-        },
-        "east": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            13.0,
-            13.0,
-            14.0
-          ]
-        },
-        "west": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            13.0,
-            13.0,
-            14.0
-          ]
-        },
-        "up": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            13.0,
-            13.0,
-            14.0
-          ]
-        },
-        "down": {
-          "texture": "#layer1",
-          "tintindex": 1,
-          "uv": [
-            12.0,
-            13.0,
-            13.0,
-            14.0
+            8.0,
+            15.0
           ]
         }
       }
@@ -7320,14 +970,14 @@
   "display": {
     "thirdperson_righthand": {
       "rotation": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "translation": [
-        0,
-        3,
-        1
+        0.7,
+        2.4,
+        1.33
       ],
       "scale": [
         0.55,
@@ -7354,14 +1004,14 @@
     },
     "thirdperson_lefthand": {
       "rotation": [
-        0,
-        0,
-        0
+        0.0,
+        0.0,
+        0.0
       ],
       "translation": [
-        0,
-        3,
-        1
+        -0.38,
+        2.4,
+        1.33
       ],
       "scale": [
         0.55,

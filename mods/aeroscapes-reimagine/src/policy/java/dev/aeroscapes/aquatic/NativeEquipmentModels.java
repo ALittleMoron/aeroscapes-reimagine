@@ -50,7 +50,7 @@ final class NativeEquipmentModels {
         "betterarcheology:diamond_brush",
         "betterarcheology:netherite_brush",
         "sophisticatedstorage:paintbrush");
-    add(designs, EquipmentStyle.HAMMER, "handcrafted:hammer", "quark:hammer");
+    add(designs, EquipmentStyle.HAMMER, "handcrafted:hammer", "quark:hammer", "littletiles:hammer");
     add(designs, EquipmentStyle.SPADE, "quark:trowel");
     add(designs, EquipmentStyle.SAW, "chipped:saw");
     add(designs, EquipmentStyle.CHISEL, "chipped:chisel");
@@ -146,17 +146,25 @@ final class NativeEquipmentModels {
     Map<String, JsonObject> models = new LinkedHashMap<>();
     JsonArray textures = new JsonArray();
     for (var entry : designs().entrySet()) {
-      if (!VanillaEquipmentModels.supports(entry.getKey())
+      if (!AquaticToolModels.supports(entry.getKey())
+          && !VanillaEquipmentMesh.supports(entry.getKey())
+          && !KnifeEquipmentModels.supports(entry.getKey())
+          && !CreateEquipmentModels.supports(entry.getKey())
+          && !GalosphereEquipmentModels.supports(entry.getKey())
+          && !ArchaeologyBrushModels.supports(entry.getKey())
+          && !FieldEquipmentMeshes.supports(entry.getKey())
           && !UtilityEquipmentModels.supports(entry.getKey()))
         textures.add(EquipmentSculpture.spriteSource(entry.getKey(), entry.getValue()));
       addState(models, entry.getKey(), entry.getValue(), entry.getKey());
     }
-    textures.add(
-        EquipmentSculpture.spriteSource("spawn:coastal_crab_claw_empty", EquipmentStyle.CLAW));
     JsonObject bubble = new JsonObject();
     bubble.addProperty("type", "minecraft:single");
     bubble.addProperty("resource", "spawn:entity/coastal_crab/bubble");
     textures.add(bubble);
+    JsonObject spectre = new JsonObject();
+    spectre.addProperty("type", "minecraft:single");
+    spectre.addProperty("resource", "galosphere:entity/spectre/spectre");
+    textures.add(spectre);
     return new Generation(models, textures);
   }
 
@@ -166,14 +174,18 @@ final class NativeEquipmentModels {
     if (models.containsKey(id)) return;
     JsonObject original = HeldItemModels.nativeModel(id);
     models.put(id, sculpt(id, profile));
-    if (!VanillaEquipmentModels.supports(id) && !UtilityEquipmentModels.supports(id))
+    if (!AquaticToolModels.supports(id)
+        && !VanillaEquipmentMesh.supports(id)
+        && !KnifeEquipmentModels.supports(id)
+        && !CreateEquipmentModels.supports(id)
+        && !GalosphereEquipmentModels.supports(id)
+        && !ArchaeologyBrushModels.supports(id)
+        && !FieldEquipmentMeshes.supports(id)
+        && !UtilityEquipmentModels.supports(id))
       models
           .get(id)
           .getAsJsonObject("textures")
-          .addProperty(
-              "surface",
-              (id.endsWith("coastal_crab_claw_empty") ? id : root)
-                  .replace(":", ":item/equipment/painted/"));
+          .addProperty("surface", root.replace(":", ":item/equipment/painted/"));
     if (!original.has("overrides")) return;
     models.get(id).add("overrides", original.get("overrides").deepCopy());
     for (var entry : original.getAsJsonArray("overrides")) {
@@ -186,11 +198,17 @@ final class NativeEquipmentModels {
   record Generation(Map<String, JsonObject> models, JsonArray textures) {}
 
   static JsonObject sculpt(String id, EquipmentStyle profile) throws IOException {
+    if (ArchaeologyBrushModels.supports(id)) return ArchaeologyBrushModels.model(id);
+    if (AquaticToolModels.supports(id)) return AquaticToolModels.model(id, inherited(id));
+    if (GalosphereEquipmentModels.supports(id))
+      return GalosphereEquipmentModels.model(id, inherited(id));
+    if (KnifeEquipmentModels.supports(id)) return KnifeEquipmentModels.model(id, inherited(id));
+    if (CreateEquipmentModels.supports(id)) return CreateEquipmentModels.model(id, inherited(id));
     if (UtilityEquipmentModels.supports(id))
       return UtilityEquipmentModels.model(id, profile, inherited(id));
     if (ReviewedEquipmentModels.supports(id))
       return ReviewedEquipmentModels.model(id, profile, inherited(id));
-    if (VanillaEquipmentModels.supports(id)) return VanillaEquipmentModels.model(id, inherited(id));
+    if (VanillaEquipmentMesh.supports(id)) return VanillaEquipmentMesh.model(id, inherited(id));
     return EquipmentSculpture.model(id, profile, inherited(id));
   }
 

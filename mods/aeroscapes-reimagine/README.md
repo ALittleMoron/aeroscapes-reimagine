@@ -198,10 +198,9 @@ checks cast/idle meshes, mirrored reels, atlas coordinates and Punchy's actual
 tip detector; `hookCompatibilityTest` checks selective binding migration and
 the animated handle projection.
 
-For the four vanilla cast parents, `refinedRodCastTest` audits the exact provider
-archive through native geometry parsers. Run it with
-`./gradlew refinedRodCastTest -PrefinedRodArchive=/absolute/path/to/provider.zip`.
-It checks removal of only the stowed tackle, idempotence and replacement guards.
-The full item catalog is not converted: the current scope is held fishing rods,
-grappling equipment and the lunch box. Native glider emergency descent remains;
+The vanilla rod uses the same owned construction and explicit context/cast routes.
+Its idle tackle is clipped to the shaft; deployed meshes omit that tackle.
+`rodModelContractTest` checks both families, their cast routing and native line-tip detection.
+Selected equipment uses authored hand geometry while GUI, ground and fixed views
+retain the native presentation. Native glider emergency descent remains;
 client adapters reconcile its arm pose with the installed animation stack.

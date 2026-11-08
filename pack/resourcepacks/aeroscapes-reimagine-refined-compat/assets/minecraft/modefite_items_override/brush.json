@@ -1,0 +1,8 @@
+{"model":{"type":"minecraft:select","property":"minecraft:display_context",
+  "cases":[{"when":["gui","fixed","ground"],"model":{"type":"minecraft:model","model":"minecraft:item/brush"}}],
+  "fallback":{"type":"minecraft:range_dispatch","property":"minecraft:use_cycle","scale":0.1,"period":10.0,
+    "entries":[
+      {"threshold":0.25,"model":{"type":"minecraft:model","model":"minecraft:item/equipment/held_brush_0"}},
+      {"threshold":0.5,"model":{"type":"minecraft:model","model":"minecraft:item/equipment/held_brush_1"}},
+      {"threshold":0.75,"model":{"type":"minecraft:model","model":"minecraft:item/equipment/held_brush_2"}}],
+    "fallback":{"type":"minecraft:model","model":"minecraft:item/equipment/held_brush"}}}}
