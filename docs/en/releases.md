@@ -40,21 +40,17 @@ The main development stages are:
 | `0.4.0`   | Island exploration, local nature, discoveries and expedition preparation.                       |
 | `0.5.0`   | The first magic set, equipment quality and random reforging.                                    |
 | `0.6.0`   | Engineering expansion: material processing, fuel, foundry work, machine controls and artillery. |
+| `0.7.0`   | Characters: races, classes, professions and development through activities.                     |
+| `0.8.0`   | Island geography, resource distribution and expedition routes.                                  |
+| `0.9.0`   | Expanded equipment, mastery and later character specializations.                                |
+| `0.10.0`  | Detailed construction, seasons and peaceful daily life.                                         |
+| `0.11.0`  | New places, creatures and activities in the Nether.                                             |
+| `0.12.0`  | Everyday NPC errands with tracking and rewards.                                                 |
+| `0.13.0`  | New places, encounters and discoveries in the End.                                              |
+| `0.14.0`  | Growing settlements, resident life, relationships and supply.                                   |
+| `1.0.0`   | The pack's core systems work together.                                                          |
 
-The following directions are planned next, without new version numbers yet:
-
-| Order | Direction                                                                   |
-| ----- | --------------------------------------------------------------------------- |
-| 1     | Characters: races, classes, professions and development through activities. |
-| 2     | Island geography, resource distribution and expedition routes.              |
-| 3     | Expanded equipment, mastery and later character specializations.            |
-| 4     | Detailed construction, seasons and peaceful daily life.                     |
-| 5     | New places, creatures and activities in the Nether.                         |
-| 6     | Everyday NPC errands with tracking and rewards.                             |
-| 7     | New places, encounters and discoveries in the End.                          |
-| 8     | Growing settlements, resident life, relationships and supply.               |
-
-Races, classes and professions will arrive before subclasses. Subclasses are also planned before `1.0.0` and may receive a separate stage. Magic should offer worthwhile activities in both combat and daily life. The overall `1.0.0` goal is the agreed core working together.
+Races, classes and professions will arrive before subclasses. Subclasses are also planned before `1.0.0` and may receive a separate stage. Magic should offer worthwhile activities in both combat and daily life.
 
 The order and content can change as selections develop. Small patches build each stage; the final minor release records completion of the selected goal and may mainly contain fixes.
 

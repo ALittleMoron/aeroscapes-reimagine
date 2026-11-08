@@ -18,9 +18,11 @@ Races should differ through appearance, abilities, size, health and interactions
 
 Classes and specializations should support mixed builds. A warrior who learns [magic](../magic/) is a valid character. Specialists can excel while other skills remain useful. The preferred direction is development through use, with peaceful and combat activities improving related abilities; the actual progression system has not been selected.
 
-The initial classes are warrior, ranger, mage and rogue; profession is a separate choice. The initial professions are blacksmith, builder, farmer and cook.
+The initial classes are warrior, ranger, mage and rogue; profession is a separate choice. The initial professions are blacksmith, builder, farmer and cook. A class gives lasting traits that shape how the character fights. Classes, subclasses and professions speed up learning in their respective disciplines. Effective use of equipment depends on learned proficiency.
 
-Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, at the same pace and cost regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
+As players choose their race, class, profession and starting abilities, the character screen will show their combined starting attributes, traits and learning affinities. Players can expand the descriptions to see what each one changes in play. A starting subclass choice will become available when subclasses arrive.
+
+Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, with the same prerequisites and point costs regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
 
 Combat and magic branches will share a limited talent budget. Investing across branches will let players combine styles while leaving fewer points for advanced talents in any one specialty. Profession branches will share a separate, broader budget.
 

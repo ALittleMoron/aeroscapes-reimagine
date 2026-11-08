@@ -4,6 +4,10 @@ description: Version history.
 status: available
 ---
 
+## 0.4.0
+
+- Complete the island exploration stage, with its selected nature, discoveries and expedition preparation content delivered in earlier updates.
+
 ## 0.3.7
 
 - Observe planets and draw and name constellations through a spyglass with [Spyglass Astronomy for NeoForge](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853).
