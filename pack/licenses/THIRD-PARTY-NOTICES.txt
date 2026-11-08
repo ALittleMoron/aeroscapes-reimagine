@@ -2,6 +2,21 @@ Aeroscapes Reimagine 0.2.5 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 
+Spyglass Astronomy for NeoForge 1.0.20: Nettakrim and Polaris_Light, LGPL-3.0.
+https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853
+Corresponding source: https://github.com/GLDYM/Spyglass-Astronomy-Neoforge/tree/2240819876fb861cc81ddc771938537f2ce49a4e
+The original client JAR is unchanged and independently replaceable.
+License texts: Spyglass-Astronomy-upstream-LGPL-3.0.md and GPL-3.0.txt.
+
+Buzzier Bees 7.0.1: Team Abnormals, included unchanged under the Abnormals License.
+https://modrinth.com/mod/buzzier-bees/version/Y12rtT96
+https://github.com/team-abnormals/buzzier-bees/tree/d9d65cbaf969eb063e0f6f64cf1762f173f277eb
+
+Wakes Reforged 1.4.1: Leclowndu93150 and contributors, based on Wakes by Goby56.
+https://modrinth.com/mod/wakes-reforged/version/Z3Ic8n5N
+https://github.com/Leclowndu93150/Wakes/tree/f1cd96d90a71bc29fd01b8f4b471d801af98c1af
+The unchanged client JAR is published under GPLv3. Its internal descriptor says MIT.
+
 Exploration group 3 uses unchanged official artifacts on both sides:
 Naturalist 2.0.7: Starfish Studios; descriptor MIT, project API custom license.
 https://modrinth.com/mod/naturalist/version/9Yn8ig4c

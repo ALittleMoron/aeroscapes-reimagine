@@ -377,6 +377,10 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/autumnity/ta
 hash = "b833f58a85eb494e31962e4f7ef6890db6e87285499a341ef3ee09661ef0abe8"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/buzzier_bees/neoforge/biome_modifier/add_feature/remove_spawn/remove_animal/cow.json"
+hash = "99b969132018e9da1071065a8593ba9564928b1ed0aa5ae3ab45f9dac071f7d5"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/create/recipe/blasting/silver_ingot_compat_galosphere.json"
 hash = "21b11674b18c3fb0d8292095cf7c12bca82ef4054ec3f1cd8d1e0222d1655629"
 
@@ -1114,16 +1118,24 @@ file = "licenses/EMI-Trades-upstream-MIT.txt"
 hash = "5559875e9fba6781f64338e01f1918a0a2de92a945ddc0da4c660ce5041f7b10"
 
 [[files]]
+file = "licenses/GPL-3.0.txt"
+hash = "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
+
+[[files]]
 file = "licenses/Natures-Spirit-data-MIT.txt"
 hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
+file = "licenses/Spyglass-Astronomy-upstream-LGPL-3.0.md"
+hash = "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
+
+[[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "918437cc1f26894b6cfb34ca4caf15553eb69d5b6e2f3ac4007fee9a3165f755"
+hash = "9807537eded3dd65596b50694229361c2bb409040512c77a0f1bfaa267906995"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "22a9afabe418389d670a97351433a9192b62069feedeeba96d30bbb72118fe1f"
+hash = "c756e6a558cb5f0a79f86621feca39a42502803db72940f4674844df46dfb500"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1152,7 +1164,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "970c7e669189cfd8a26d310a3118b99145c1ad6db977d7b2ea4baaab0d57abd9"
+hash = "3d09f57269baac1b122043609f68c5d152ec5a213b10665fb4460d31e7dddb8a"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1252,6 +1264,11 @@ metafile = true
 [[files]]
 file = "mods/brewin-and-chewin.pw.toml"
 hash = "39871d3e50150fa7bd0b4cf8eb91708847387fe494754f1dcc320bf1090fb8a7"
+metafile = true
+
+[[files]]
+file = "mods/buzzier-bees.pw.toml"
+hash = "a3cc3df5be33bcc1d026874ea0722c673b0acf118489f235dc05b4c5981a1e51"
 metafile = true
 
 [[files]]
@@ -2075,6 +2092,11 @@ hash = "518a5f3b1f734e8370c4eb1e5863b571bcf9c629875f34ad5cac3d351f322945"
 metafile = true
 
 [[files]]
+file = "mods/spyglass-astronomy-neoforge.pw.toml"
+hash = "8ed8e6d6b0a8ca97d13f91f3f00599e118d2b510a0ffa8bcdb7caf686c833b00"
+metafile = true
+
+[[files]]
 file = "mods/spyglass-improvements.pw.toml"
 hash = "bdcc346e883d2a782581bc577be5ea6805139eeba3230dd67a6dfd68c0466a23"
 metafile = true
@@ -2147,6 +2169,11 @@ metafile = true
 [[files]]
 file = "mods/visuality-forge.pw.toml"
 hash = "68f9fa4a3299e7bff3dc4ef962d568d819ba8f14a5bfaeb2d1487e42fb16de8d"
+metafile = true
+
+[[files]]
+file = "mods/wakes-reforged.pw.toml"
+hash = "7d349fdee6f3482b8f15a913603a9a6fcdcb782c8927abb2061957ef77523b8d"
 metafile = true
 
 [[files]]

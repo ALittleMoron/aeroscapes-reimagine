@@ -64,6 +64,8 @@ The **Aeroscapes Reimagine atmosphere integration** resourcepack gives milk buck
 
 [Puddles & Floods](https://modrinth.com/mod/puddles-floods) adds temporary puddles on exposed flat ground during rain, including without shaders. Walking through them makes a small splash; they gradually disappear after the rain. Flooding and raised water levels are disabled. Drip puddles are also disabled because the shared particle hook can mistake Subtle Effects' villager sweat for water. The mod and its [Forgified Fabric API](https://modrinth.com/mod/forgified-fabric-api) dependency are client-only here: flowing water, broken cauldrons and melting snow do not create server-side puddles. Rain placement uses the top exposed surface in each column, so a higher island shelters the ground below it.
 
+[Wakes Reforged](https://modrinth.com/mod/wakes-reforged/version/Z3Ic8n5N) draws water trails from swimmers, boats and floating structures. The effect follows the water surface and fades behind the moving object.
+
 In the interface, Chat Animation animates chat, while Smooth Gui animates menu opening.
 
 [Sound Physics Remastered](https://modrinth.com/mod/sound-physics-remastered) adds reverberation and changes how obstacles muffle sounds. It processes acoustics alongside the existing environmental and interaction sounds. Sound-category volume controls remain available in Minecraft's sound settings.
@@ -76,9 +78,7 @@ Smooth Skies smooths the distant color gradient, and Clear Void removes the blac
 
 In [Complementary](https://modrinth.com/shader/complementary-reimagined), the **Reimagined** Sun/Moon Style uses these textures, with the shader's own brightness and colors. The **Unbound** styles draw their own sun and moon instead.
 
-Three small decorative planets add a pale, a softly banded and a reddish point to the night sky. They slowly shift against the stars as world days pass. Six brighter stars accompany the ordinary star field, while a northern guide star stays above north. The added lights fade with dawn, rain and the horizon and appear only in the Overworld.
-
-To hide the added planets and stars, set `celestialSky = false` in `config/aeroscapes_reimagine-client.toml` and restart the game.
+[Spyglass Astronomy for NeoForge](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853) supplies the interactive stars and planets. While looking through a spyglass, press **Pick Block** to cycle observation modes. In constellation mode, hold **Attack** and draw between stars. Use `/sga:name` to name the selected object and `/sga:info` to examine it.
 
 ## Rendering
 

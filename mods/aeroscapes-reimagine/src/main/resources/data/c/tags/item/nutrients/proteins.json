@@ -94,6 +94,10 @@
       "required": false
     },
     {
+      "id": "buzzier_bees:glazed_porkchop",
+      "required": false
+    },
+    {
       "id": "cratedelight:brown_mushroom_crate",
       "required": false
     },

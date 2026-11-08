@@ -1881,5 +1881,20 @@
     "literal_sites": "Exact target-specific selectors: blueprint create root1, signal changed delay2, bed Facing callback1, material collector lore1 and storage create capacity1. Signal operators and user-named signal components are outside these adapters. Policy reads compiled Mixin annotations and matches native Mixin selectors against exact executable classes and required invocation counts; the dedicated server supplies the actual common transformation witness.",
     "physics_integration": "Exact LittleTiles pre236, CreativeCore2.13.52, Sable2.0.6 and NeoForge21.1.244 guard. VoxelNeighborhoodState.isSolid/isFullBlock use the supplied BlockGetter and BlockPos only for BlockTile, with native three-argument collision lookup and Block.isShapeFullBlock over actual occupied collision volume. BlockTile constructor declares dynamicShape; Minecraft state cache is absent, while the explicit collision context also bypasses it. Native LT side metadata can mark NOCLIP faces filled, so it is not a physical fullness test. Native material-volume mass and empty-body cleanup remain authoritative. Sable collision-shape/dynamic-collider extension interfaces have no consumers in this executable; position-aware classifier adaptation is the narrow consumed boundary.",
     "physics_regression": "Real server recipe/payload checks, two simultaneous same-BlockState entities with empty/half/full/hollow/noncolliding payloads and a missing-BE boundary through native LevelAccelerator+MassTracker.build. Assembled pure LT/vanilla plank/vanilla slab/mixed bodies require masses0.25/0.5/0.25/0.75; native physical retention100fresh ticks plus20ticks after copied restart, preserving saved pose/velocity. Rendering, shader appearance and animated interaction remain separate behavior boundaries."
+  },
+  "observations_integration": {
+    "targets": {
+      "buzzier_bees": "7.0.1",
+      "spyglass_astronomy": "1.0.20",
+      "wakes": "1.4.1"
+    },
+    "resources": [
+      "assets/aeroscapes_reimagine_observations/lang/en_us.json",
+      "assets/aeroscapes_reimagine_observations/lang/ru_ru.json"
+    ],
+    "scope": "Independent mod summaries, native config fields and tooltips, Catnip display aliases, astronomy command feedback, bee effect description and honey bread advancement correction.",
+    "source_comparison": "Exact native descriptors, bundled EN/RU assets and active command, item, config and menu consumers. Buzzier Bees and the astronomy port already provide the primary English and Russian text.",
+    "exclusions": "Wakes Fabric-era GUI and YACL keys have no consumer in the NeoForge JAR. Default-off F3 profiler counters and Catnip unsupported list-type diagnostics retain technical text. Provider names, artist credits and parser/config identities retain their original spelling.",
+    "held_inventory": "The three bug bottles and angry-bee state are native flat transport vessels. No new tools or weapons are registered."
   }
 }

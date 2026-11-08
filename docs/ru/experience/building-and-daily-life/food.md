@@ -14,6 +14,8 @@ Nature’s Delight соединяет Farmer’s Delight с Nature’s Spirit. F
 
 Crate Delight добавляет ящики и мешки для продуктов. Crops Love Rain ускоряет рост культур во время дождя, поэтому погода тоже имеет практическое значение для фермерства.
 
+[Buzzier Bees](https://modrinth.com/mod/buzzier-bees/version/Y12rtT96) добавляет хлеб и яблоки с мёдом, а также глазированную свинину. На подсолнечных равнинах встречаются лютики и лютиковые коровы, а в некоторых лесах растёт клевер. Пчелу можно перенести к другому улью в стеклянной бутылочке.
+
 ## Кулинария с механизмами
 
 [Create: Food](https://modrinth.com/project/4HnO3el1) расширяет продукты, общие для Create и Farmer’s Delight. [Delightful Creators](https://modrinth.com/project/jmJ87gsb) связывает приготовление еды Farmer’s Delight с автоматизацией Create. Ratatouille даёт дополнительное оборудование для фермерства и обработки, включая печь, молотилку, оросительную и компостную башни.

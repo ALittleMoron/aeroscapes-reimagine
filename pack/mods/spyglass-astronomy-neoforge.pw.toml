@@ -1,0 +1,12 @@
+name = "Spyglass Astronomy Neoforge"
+filename = "spyglass-astronomy-neoforge-1.21.1-1.0.20.jar"
+side = "client"
+
+[download]
+url = "https://edge.forgecdn.net/files/8338/853/spyglass-astronomy-neoforge-1.21.1-1.0.20.jar"
+hash-format = "sha512"
+hash = "b5d09720bcd47356c9c83084a381ce0826105542e1a3fb379b206d5e01b170747dca3043c9477a3313cf352d404cd3fdf327ca21e397f31e5098d664d08456a1"
+
+[update.curseforge]
+project-id = 1591821
+file-id = 8338853

@@ -1,6 +1,15 @@
 [
   {
     "targets": {
+      "b7vOFSIp": "Y12rtT96"
+    },
+    "files": [
+      "data/buzzier_bees/neoforge/biome_modifier/add_feature/remove_spawn/remove_animal/cow.json"
+    ],
+    "reason": "Retain normal cows in sunflower plains while Buzzier Bees adds mooblooms and buttercups."
+  },
+  {
+    "targets": {
       "LNytGWDc": "UjX6dr61",
       "owned:aeroscapes_reimagine": "0.1.0"
     },

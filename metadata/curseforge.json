@@ -110,6 +110,21 @@
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
     },
     {
+      "slug": "buzzier-bees",
+      "primary_project_id": "b7vOFSIp",
+      "primary_sha512": "eac6e3ab7b25d23f6dd4676a35a68912e89ad03fe2cac1688065747a05bf04d08466fc9013131478ec0824600c6738b652dc269125c16a0d22e057d15c3fd2cf",
+      "status": "hosted",
+      "project_id": 355458,
+      "file_id": 6961149,
+      "filename": "buzzier_bees-1.21.1-7.0.1.jar",
+      "sha512": "eac6e3ab7b25d23f6dd4676a35a68912e89ad03fe2cac1688065747a05bf04d08466fc9013131478ec0824600c6738b652dc269125c16a0d22e057d15c3fd2cf",
+      "sha1": "4f81fb00557fa5bcca5fb732b02b7921b9e11731",
+      "file_size": 592651,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge CDN download is byte-identical to the exact Modrinth artifact."
+    },
+    {
       "slug": "c2me-neoforge",
       "primary_project_id": "COlSi5iR",
       "primary_sha512": "c7c485d856fa0118694ae8484e85a714db92ce7886195dbc355257d59d4254da2ce537ac18da8e05c9786c3a98f70cc5ffdfd089ad23b6822f854d72f3caa62d",
@@ -1416,6 +1431,21 @@
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
     },
     {
+      "slug": "spyglass-astronomy-neoforge",
+      "primary_project_id": "curseforge:1591821",
+      "primary_sha512": "b5d09720bcd47356c9c83084a381ce0826105542e1a3fb379b206d5e01b170747dca3043c9477a3313cf352d404cd3fdf327ca21e397f31e5098d664d08456a1",
+      "status": "hosted",
+      "project_id": 1591821,
+      "file_id": 8338853,
+      "filename": "spyglass-astronomy-neoforge-1.21.1-1.0.20.jar",
+      "sha512": "b5d09720bcd47356c9c83084a381ce0826105542e1a3fb379b206d5e01b170747dca3043c9477a3313cf352d404cd3fdf327ca21e397f31e5098d664d08456a1",
+      "sha1": "43a7dca6b4d215fbeceb908a2603127f8f9a0ccc",
+      "file_size": 131896,
+      "parity": "exact",
+      "review": {},
+      "verification": "Primary source is this exact official CurseForge native file; locally rehashed original CDN download."
+    },
+    {
       "slug": "spyglass-improvements",
       "primary_project_id": "Z6ykjRlM",
       "primary_sha512": "6b4933795f3fda0d8c042c35c8f95ce47db88f2ec06b15a6c803298e660a1cb18223ed5fcb96d15aeabde540abf050f3a19ca23ebad4d060afc8860174af937f",
@@ -1543,6 +1573,21 @@
       "parity": "exact",
       "review": {},
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
+    },
+    {
+      "slug": "wakes-reforged",
+      "primary_project_id": "E0SdeAoH",
+      "primary_sha512": "a3bc9480250b9a76ef53dec894f149b0528fd64ed81bcf7cd1570e4da022683eb7842e00e2aa84ae3235419684110da8bfa9d3ee57c2e21cc356dd47ba94406c",
+      "status": "hosted",
+      "project_id": 1223529,
+      "file_id": 8657118,
+      "filename": "wakes-1.21.1-NeoForge-1.4.1.jar",
+      "sha512": "a3bc9480250b9a76ef53dec894f149b0528fd64ed81bcf7cd1570e4da022683eb7842e00e2aa84ae3235419684110da8bfa9d3ee57c2e21cc356dd47ba94406c",
+      "sha1": "e55b63465e733b0faee50c9c336b82a5bca857a8",
+      "file_size": 222430,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge CDN download is byte-identical to the exact Modrinth artifact."
     },
     {
       "slug": "xaeros-minimap",

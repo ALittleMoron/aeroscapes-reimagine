@@ -50,6 +50,10 @@
       "required": false
     },
     {
+      "id": "buzzier_bees:honey_bread",
+      "required": false
+    },
+    {
       "id": "cratedelight:bread_bag",
       "required": false
     },

@@ -14,6 +14,8 @@ Nature’s Delight brings Farmer’s Delight together with Nature’s Spirit. Fu
 
 Crate Delight adds crates and bags for produce. Crops Love Rain makes crops grow faster in rain, so weather also has a practical place in farming.
 
+[Buzzier Bees](https://modrinth.com/mod/buzzier-bees/version/Y12rtT96) adds honey bread, honey apples and glazed porkchops. Buttercups and mooblooms appear in sunflower plains, with clovers in some forests. An empty glass bottle can carry a bee to another hive site.
+
 ## Cooking with machinery
 
 [Create: Food](https://modrinth.com/project/4HnO3el1) expands food content shared with Create and Farmer’s Delight. [Delightful Creators](https://modrinth.com/project/jmJ87gsb) connects Farmer’s Delight preparation with Create automation. Ratatouille supplies further farming and processing equipment, including an oven, thresher, irrigation tower and compost tower.

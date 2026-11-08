@@ -672,6 +672,44 @@
     "file_size": 1566859
   },
   {
+    "slug": "buzzier-bees",
+    "name": "Buzzier Bees",
+    "project_id": "b7vOFSIp",
+    "version_id": "Y12rtT96",
+    "version": "7.0.1",
+    "filename": "buzzier_bees-1.21.1-7.0.1.jar",
+    "sha512": "eac6e3ab7b25d23f6dd4676a35a68912e89ad03fe2cac1688065747a05bf04d08466fc9013131478ec0824600c6738b652dc269125c16a0d22e057d15c3fd2cf",
+    "sha1": "4f81fb00557fa5bcca5fb732b02b7921b9e11731",
+    "file_size": 592651,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-Abnormals-License",
+      "name": "",
+      "url": "https://github.com/team-abnormals/buzzier-bees/blob/d9d65cbaf969eb063e0f6f64cf1762f173f277eb/LICENSE.txt"
+    },
+    "source_url": "https://github.com/team-abnormals/buzzier-bees",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "VsM5EDoI",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "artifact_declared_license": "Abnormals License permits unchanged author-hosted files in modpacks with attribution.",
+    "native_route_note": "Both sides. Descriptor requires Blueprint 8.0.2 or newer and NeoForge 21.1.129 or newer.",
+    "status": "included",
+    "origin": "Owner-selected 0.3.7 atmosphere and beekeeping trial"
+  },
+  {
     "slug": "c2me-neoforge",
     "name": "Concurrent Chunk Management Engine (NeoForge)",
     "project_id": "COlSi5iR",
@@ -5096,6 +5134,44 @@
     "dependency_note": "Installed client-only for acoustics in singleplayer. Dedicated-server installation is optional for range broadcasting, not required for this route. Native audio/attenuation defaults retained."
   },
   {
+    "slug": "spyglass-astronomy-neoforge",
+    "name": "Spyglass Astronomy Neoforge",
+    "project_id": "curseforge:1591821",
+    "version_id": "8338853",
+    "version": "1.0.20",
+    "filename": "spyglass-astronomy-neoforge-1.21.1-1.0.20.jar",
+    "sha512": "b5d09720bcd47356c9c83084a381ce0826105542e1a3fb379b206d5e01b170747dca3043c9477a3313cf352d404cd3fdf327ca21e397f31e5098d664d08456a1",
+    "sha1": "43a7dca6b4d215fbeceb908a2603127f8f9a0ccc",
+    "file_size": 131896,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0",
+      "url": "https://github.com/GLDYM/Spyglass-Astronomy-Neoforge/blob/2240819876fb861cc81ddc771938537f2ce49a4e/LICENSE.md"
+    },
+    "source_url": "https://github.com/GLDYM/Spyglass-Astronomy-Neoforge/tree/2240819876fb861cc81ddc771938537f2ce49a4e",
+    "source": {
+      "type": "curseforge",
+      "project_id": 1591821,
+      "file_id": 8338853,
+      "url": "https://edge.forgecdn.net/files/8338/853/spyglass-astronomy-neoforge-1.21.1-1.0.20.jar"
+    },
+    "dependencies": [],
+    "distribution": "bundle",
+    "distribution_note": "Unchanged native client file. Packwiz places the CurseForge download in client-overrides for Modrinth. The original port and comparison source are attributed in the pack notices.",
+    "native_route_note": "Client-only. Native Minecraft 1.21.1 build uses NeoForge without a Fabric bridge.",
+    "status": "included",
+    "origin": "Owner-selected 0.3.7 atmosphere and beekeeping trial"
+  },
+  {
     "slug": "spyglass-improvements",
     "name": "Spyglass Improvements",
     "project_id": "Z6ykjRlM",
@@ -5526,6 +5602,56 @@
     "provider_dependencies": [],
     "status": "included",
     "origin": "Owner-selected Priority 4 visual effects; unchanged official Modrinth file"
+  },
+  {
+    "slug": "wakes-reforged",
+    "name": "Wakes Reforged",
+    "project_id": "E0SdeAoH",
+    "version_id": "Z3Ic8n5N",
+    "version": "1.4.1",
+    "filename": "wakes-1.21.1-NeoForge-1.4.1.jar",
+    "sha512": "a3bc9480250b9a76ef53dec894f149b0528fd64ed81bcf7cd1570e4da022683eb7842e00e2aa84ae3235419684110da8bfa9d3ee57c2e21cc356dd47ba94406c",
+    "sha1": "e55b63465e733b0faee50c9c336b82a5bca857a8",
+    "file_size": 222430,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/Leclowndu93150/Wakes/tree/f1cd96d90a71bc29fd01b8f4b471d801af98c1af",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "oWaK0Q19",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "T9PomCSv",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "artifact_declared_license": "The embedded descriptor says MIT. The official Modrinth and CurseForge projects declare GPLv3.",
+    "native_route_note": "Client-only in this pack. The exact JAR has a client entry point and client mixins, including local Sable wake effects.",
+    "status": "included",
+    "origin": "Owner-selected 0.3.7 atmosphere and beekeeping trial"
   },
   {
     "slug": "wall-jump-txf",

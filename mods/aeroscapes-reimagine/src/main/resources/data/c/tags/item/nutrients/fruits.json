@@ -38,6 +38,10 @@
       "required": false
     },
     {
+      "id": "buzzier_bees:honey_apple",
+      "required": false
+    },
+    {
       "id": "cratedelight:apple_crate",
       "required": false
     },

@@ -4,6 +4,12 @@ description: Version history.
 status: available
 ---
 
+## 0.3.7
+
+- Observe planets and draw and name constellations through a spyglass with [Spyglass Astronomy for NeoForge](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853).
+- Add the clovers, mooblooms, honey foods and honeycomb blocks of [Buzzier Bees](https://modrinth.com/mod/buzzier-bees/version/Y12rtT96), keeping ordinary cows in sunflower plains.
+- Add water trails and splashes from swimming, rowing and moving floating structures with [Wakes Reforged](https://modrinth.com/mod/wakes-reforged/version/Z3Ic8n5N).
+
 ## 0.3.6
 
 - Rework held equipment models for aquatic and building tools, workshop supplies, rope fittings, kitchen knives and cave equipment. Seat coral heads in their mounts, distinguish fan-shaped and spiral shells, and refine boomerangs, bombs and handheld instruments. Give excavation brushes a shared shape with tier-specific grips and ferrules. Add weighted hems to casting nets and bring the pouch into first-person view. Distinguish the crab claw’s empty and charged forms. Restore full paint-brush coloring, missing held-model textures and flat inventory icons. Preserve sandpaper's polishing effect. Refine the held models of navigation instruments and field equipment, including a hollow copper horn and a clearer projector lens. Hold the lunchbox upright from below in first person.

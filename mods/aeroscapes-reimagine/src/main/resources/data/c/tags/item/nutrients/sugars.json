@@ -34,6 +34,18 @@
       "required": false
     },
     {
+      "id": "buzzier_bees:glazed_porkchop",
+      "required": false
+    },
+    {
+      "id": "buzzier_bees:honey_apple",
+      "required": false
+    },
+    {
+      "id": "buzzier_bees:honey_bread",
+      "required": false
+    },
+    {
       "id": "cratedelight:cocoabeans_bag",
       "required": false
     },

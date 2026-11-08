@@ -6,6 +6,31 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Astronomy, beekeeping and wakes
+
+[Spyglass Astronomy for NeoForge 1.0.20](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853)
+is the unchanged client port. Its native compatibility check used the Fabric
+identifier for [Spyglass Improvements](https://modrinth.com/mod/spyglass-improvements).
+The owned client adapter supplies the NeoForge identifier so the port can use
+its existing tick-based drawing fallback. The interactive sky takes over from
+the pack's decorative planets and accent stars while the port is installed.
+The original Sun and Moon textures still come from the atmosphere resourcepack.
+
+[Buzzier Bees 7.0.1](https://modrinth.com/mod/buzzier-bees/version/Y12rtT96)
+uses the existing [Blueprint 8.0.8](https://modrinth.com/mod/blueprint/version/YSWV62mG)
+on both sides. Its flower placements and moobloom addition stay native. The
+pack replaces the single cow-removal biome modifier and assigns its three
+prepared foods to the applicable nutrition tags. Both honey apple results
+remain in the recipe registry and use the ordinary
+[Polymorph](https://modrinth.com/mod/polymorph) crafting selector when they match.
+
+[Wakes Reforged 1.4.1](https://modrinth.com/mod/wakes-reforged/version/Z3Ic8n5N)
+has a client entry point and client-only mixins, including the visual integration
+with [Sable 2.0.6](https://modrinth.com/mod/sable/version/fg9dTRz9). The pack
+installs it on the client. Its descriptor says MIT, while the official listings
+declare GPLv3. The Forge config has no active consumers for the obsolete
+MidnightConfig and YACL language keys in the JAR.
+
 ## Detailed construction and biome arrivals
 
 [LittleTiles pre236](https://modrinth.com/mod/littletiles/version/c2SowFEz) is an
