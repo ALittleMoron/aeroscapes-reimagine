@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "irons_spellbooks:item/ruined_book"
+    }
+  },
+  "textures": {
+    "layer0": "irons_spellbooks:item/ruined_book",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/ruined_book"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/ruined_book"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/ruined_book"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/ruined_book"
+    }
+  }
+}

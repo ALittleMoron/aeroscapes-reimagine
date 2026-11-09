@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "legendarysurvivaloverhaul:models/item/equipment/field/large_canteen/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "legendarysurvivaloverhaul:item/large_canteen"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -14.0,
+        -29.0,
+        5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        0.4913218,
+        0.61989856,
+        0.41654146
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -14.0,
+        -29.0,
+        -5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        0.01094082,
+        0.55547976,
+        0.15817153
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -14.0,
+        -29.0,
+        5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        0.4913218,
+        0.61989856,
+        0.41654146
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -14.0,
+        -29.0,
+        -5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        0.01094082,
+        0.55547976,
+        0.15817153
+      ]
+    }
+  }
+}

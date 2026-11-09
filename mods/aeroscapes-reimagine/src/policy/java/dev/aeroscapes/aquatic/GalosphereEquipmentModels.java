@@ -8,6 +8,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
+import java.util.function.UnaryOperator;
 import org.joml.Vector3f;
 
 /** Native cave equipment, with separate physical housings and stateful working surfaces. */
@@ -545,56 +546,61 @@ final class GalosphereEquipmentModels {
     mesh.group("collar");
     lathe(mesh, "orange", new double[][] {{6.8, 1.8}, {8.1, 1.8}}, false, true);
     lathe(mesh, "metal", new double[][] {{8.1, 1.85}, {8.6, 1.85}}, false, true);
+    spectre(mesh, UnaryOperator.identity(), 1);
+    fuse(mesh, new P(8, 1, 8), new P(8.6, .5, 8), new P(10, 1.2, 8), new P(10.8, 2.2, 8));
+  }
+
+  static void bottledSpectre(EquipmentObjMesh mesh, P base, double scale) {
+    P sourceBase = new P(8, 10.85, 8);
+    spectre(mesh, point -> point.add(sourceBase.scale(-1)).scale(scale).add(base), scale);
+  }
+
+  private static void spectre(EquipmentObjMesh mesh, UnaryOperator<P> place, double scale) {
     mesh.group("spectre_body");
-    box(mesh, "spectre_body", 7.25, 10.85, 7.4, 8.75, 12.2, 8.6);
+    P low = place.apply(new P(7.25, 10.85, 7.4));
+    P high = place.apply(new P(8.75, 12.2, 8.6));
+    box(mesh, "spectre_body", low.x(), low.y(), low.z(), high.x(), high.y(), high.z());
     mesh.group("spectre_head");
     P[] headFront = {
       new P(6.95, 12.2, 9.65), new P(9.05, 12.2, 9.65), new P(9.05, 14, 9.65), new P(6.95, 14, 9.65)
     };
+    P[] front = new P[4], back = new P[4];
+    for (int corner = 0; corner < 4; corner++) {
+      P p = headFront[corner];
+      front[corner] = place.apply(p);
+      back[corner] = place.apply(new P(p.x(), p.y(), 7.6));
+    }
     for (int side = 0; side < 4; side++) {
-      P a = headFront[side], b = headFront[(side + 1) % 4];
+      int next = (side + 1) % 4;
+      P a = front[side], b = front[next];
       surface(
           mesh,
           "spectre_body",
-          new P[] {a, a.add(new P(0, 0, -2.05)), b.add(new P(0, 0, -2.05)), b},
+          new P[] {a, back[side], back[next], b},
           new P(b.y() - a.y(), a.x() - b.x(), 0));
     }
     mesh.quad(
-        "spectre_body",
-        new P[] {
-          new P(6.95, 12.2, 7.6), new P(9.05, 12.2, 7.6), new P(9.05, 14, 7.6), new P(6.95, 14, 7.6)
-        },
-        new P(0, 0, -1),
-        new double[][] {{0, 1}, {1, 1}, {1, 0}, {0, 0}});
+        "spectre_body", back, new P(0, 0, -1), new double[][] {{0, 1}, {1, 1}, {1, 0}, {0, 0}});
     mesh.quad(
-        "spectre_head",
-        new P[] {
-          new P(6.95, 12.2, 9.65),
-          new P(9.05, 12.2, 9.65),
-          new P(9.05, 14, 9.65),
-          new P(6.95, 14, 9.65)
-        },
-        new P(0, 0, 1),
-        new double[][] {{0, 1}, {1, 1}, {1, 0}, {0, 0}});
+        "spectre_head", front, new P(0, 0, 1), new double[][] {{0, 1}, {1, 1}, {1, 0}, {0, 0}});
     mesh.group("spectre_wings");
     for (int side : new int[] {-1, 1}) {
       mesh.plate(
           "spectre_wing",
           "spectre_wing",
           List.of(
-              new P(8 + side * .65, 11.15, 7.9),
-              new P(8 + side * 2.1, 11.4, 7.65),
-              new P(8 + side * 2.05, 12.45, 7.5),
-              new P(8 + side * .6, 12, 7.9)),
-          .18);
+              place.apply(new P(8 + side * .65, 11.15, 7.9)),
+              place.apply(new P(8 + side * 2.1, 11.4, 7.65)),
+              place.apply(new P(8 + side * 2.05, 12.45, 7.5)),
+              place.apply(new P(8 + side * .6, 12, 7.9))),
+          .18 * scale);
       mesh.beam(
           "spectre_eyes",
-          new P(8 + side * .65, 13.6, 9.3),
-          new P(8 + side * .9, 14.15, 9.6),
-          .07,
+          place.apply(new P(8 + side * .65, 13.6, 9.3)),
+          place.apply(new P(8 + side * .9, 14.15, 9.6)),
+          .07 * scale,
           4);
     }
-    fuse(mesh, new P(8, 1, 8), new P(8.6, .5, 8), new P(10, 1.2, 8), new P(10.8, 2.2, 8));
   }
 
   private static void bottleGlass(EquipmentObjMesh mesh) {

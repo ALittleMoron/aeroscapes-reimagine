@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "comforts:item/sleeping_bag_red"
+    }
+  },
+  "textures": {
+    "layer0": "comforts:item/sleeping_bag_red",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "comforts:item/equipment/held/sleeping_bag_red"
+    },
+    "firstperson_lefthand": {
+      "parent": "comforts:item/equipment/held/sleeping_bag_red"
+    },
+    "thirdperson_righthand": {
+      "parent": "comforts:item/equipment/held/sleeping_bag_red"
+    },
+    "thirdperson_lefthand": {
+      "parent": "comforts:item/equipment/held/sleeping_bag_red"
+    }
+  }
+}

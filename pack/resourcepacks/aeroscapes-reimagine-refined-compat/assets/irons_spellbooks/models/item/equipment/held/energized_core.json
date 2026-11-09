@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/energized_core/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/energized_core"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -16.0,
+        -26.0,
+        8.0
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "translation": [
+        -0.2311125,
+        1.7276727,
+        -0.6126659
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -16.0,
+        -26.0,
+        8.0
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "translation": [
+        -0.2311125,
+        1.7276727,
+        -0.6126659
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -16.0,
+        -26.0,
+        8.0
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "translation": [
+        -0.2311125,
+        1.7276727,
+        -0.6126659
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -16.0,
+        -26.0,
+        8.0
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "translation": [
+        -0.2311125,
+        1.7276727,
+        -0.6126659
+      ]
+    }
+  }
+}

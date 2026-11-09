@@ -1,0 +1,34 @@
+newmtl grip
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/67b282bf-7d0a-3202-aad2-81d8addc87db
+
+newmtl pommel
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/12d746c8-634c-3d3b-9cc8-f17016c74f90
+
+newmtl guard
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/6feb6f76-d871-3c19-8ca4-bae9c9e0029a
+
+newmtl blade
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/06922c77-d974-3024-be56-a03ef1e5ba58
+
+newmtl bevel
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/ff2a04dd-1319-37ea-b259-a9baadfc597d
+
+newmtl dark
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/f1cfaf47-097a-388f-8057-979f338ed770
+
+newmtl socket
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/90000613-0e9a-3c8a-975c-7cb07d283c9d

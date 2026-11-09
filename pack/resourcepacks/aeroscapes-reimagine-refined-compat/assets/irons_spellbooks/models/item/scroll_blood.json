@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "irons_spellbooks:item/scroll_blood"
+    }
+  },
+  "textures": {
+    "layer0": "irons_spellbooks:item/scroll_blood",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/scroll_blood"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/scroll_blood"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/scroll_blood"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/scroll_blood"
+    }
+  }
+}

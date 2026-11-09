@@ -2,9 +2,11 @@ package dev.aeroscapes.aquatic;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import org.joml.Vector3d;
 
 /** Writes ordinary OBJ surfaces with transported rope sections and atlas-safe UV seams. */
@@ -35,6 +37,7 @@ final class EquipmentObjMesh {
 
   private int count;
   private final Map<String, double[]> regions = new HashMap<>();
+  private final Set<String> projectedFields = new HashSet<>();
   private final Map<String, String> materials = new HashMap<>();
 
   void material(String original, String replacement) {
@@ -43,6 +46,10 @@ final class EquipmentObjMesh {
 
   void region(String material, double u0, double v0, double u1, double v1) {
     regions.put(material, new double[] {u0, v0, u1, v1});
+  }
+
+  void projectedField(String material) {
+    projectedFields.add(material);
   }
 
   String obj() {
@@ -240,15 +247,23 @@ final class EquipmentObjMesh {
   void quad(String material, P[] points, P outward, double[][] uv) {
     material = materials.getOrDefault(material, material);
     P[] vertices = points.clone();
+    Vector3d normal =
+        vertices[1]
+            .vector()
+            .sub(vertices[0].vector())
+            .cross(vertices[2].vector().sub(vertices[0].vector()))
+            .normalize();
     double[][] mapping =
-        uv == null
-            ? new double[][] {
-              {points[0].x / 16, 1 - points[0].y / 16},
-              {points[1].x / 16, 1 - points[1].y / 16},
-              {points[2].x / 16, 1 - points[2].y / 16},
-              {points[3].x / 16, 1 - points[3].y / 16}
-            }
-            : uv.clone();
+        projectedFields.contains(material)
+            ? projectField(points, normal)
+            : uv == null
+                ? new double[][] {
+                  {points[0].x / 16, 1 - points[0].y / 16},
+                  {points[1].x / 16, 1 - points[1].y / 16},
+                  {points[2].x / 16, 1 - points[2].y / 16},
+                  {points[3].x / 16, 1 - points[3].y / 16}
+                }
+                : uv.clone();
     double[] region = regions.get(material);
     if (region != null)
       for (int index = 0; index < 4; index++)
@@ -257,12 +272,6 @@ final class EquipmentObjMesh {
               region[0] + mapping[index][0] * (region[2] - region[0]),
               region[1] + mapping[index][1] * (region[3] - region[1])
             };
-    Vector3d normal =
-        vertices[1]
-            .vector()
-            .sub(vertices[0].vector())
-            .cross(vertices[2].vector().sub(vertices[0].vector()))
-            .normalize();
     if (normal.dot(outward.vector()) < 0) {
       vertices = new P[] {points[2], points[1], points[0], points[3]};
       mapping = new double[][] {mapping[2], mapping[1], mapping[0], mapping[3]};
@@ -291,6 +300,24 @@ final class EquipmentObjMesh {
     }
     data.append('\n');
     count += 4;
+  }
+
+  private static double[][] projectField(P[] points, Vector3d normal) {
+    // All fields share model-space texel density; adjacent faces on the same plane share phase.
+    int axis = Math.abs(normal.x) > Math.abs(normal.z) ? 0 : 2;
+    if (Math.abs(normal.y) > Math.abs(normal.get(axis))) axis = 1;
+    double[][] uv = new double[4][2];
+    for (int index = 0; index < 4; index++) {
+      P point = points[index];
+      double u = axis == 0 ? point.z : point.x;
+      double v = axis == 1 ? point.z : -point.y;
+      double x = u + 16, y = v + 48;
+      if (x <= 0 || x >= 64 || y <= 0 || y >= 64)
+        throw new IllegalArgumentException("Surface exceeds equipment material field: " + point);
+      uv[index][0] = x / 64;
+      uv[index][1] = y / 64;
+    }
+    return uv;
   }
 
   private record Sweep(P point, Vector3d tangent, double length) {}

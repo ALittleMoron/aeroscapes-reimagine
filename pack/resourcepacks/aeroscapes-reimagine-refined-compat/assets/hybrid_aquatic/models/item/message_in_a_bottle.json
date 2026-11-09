@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "hybrid_aquatic:item/message_in_a_bottle"
+    }
+  },
+  "textures": {
+    "layer0": "hybrid_aquatic:item/message_in_a_bottle",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/message_in_a_bottle"
+    },
+    "firstperson_lefthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/message_in_a_bottle"
+    },
+    "thirdperson_righthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/message_in_a_bottle"
+    },
+    "thirdperson_lefthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/message_in_a_bottle"
+    }
+  }
+}

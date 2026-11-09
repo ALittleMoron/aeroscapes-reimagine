@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "legendarysurvivaloverhaul:item/healing/medkit"
+    }
+  },
+  "textures": {
+    "layer0": "legendarysurvivaloverhaul:item/healing/medkit",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/medkit"
+    },
+    "firstperson_lefthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/medkit"
+    },
+    "thirdperson_righthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/medkit"
+    },
+    "thirdperson_lefthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/medkit"
+    }
+  }
+}

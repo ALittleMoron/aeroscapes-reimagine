@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "legendarysurvivaloverhaul:item/large_canteen"
+    }
+  },
+  "textures": {
+    "layer0": "legendarysurvivaloverhaul:item/large_canteen",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/large_canteen"
+    },
+    "firstperson_lefthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/large_canteen"
+    },
+    "thirdperson_righthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/large_canteen"
+    },
+    "thirdperson_lefthand": {
+      "parent": "legendarysurvivaloverhaul:item/equipment/held/large_canteen"
+    }
+  },
+  "overrides": [
+    {
+      "model": "legendarysurvivaloverhaul:item/large_canteen_purified",
+      "predicate": {
+        "legendarysurvivaloverhaul:thirstenum": 0.3
+      }
+    }
+  ]
+}

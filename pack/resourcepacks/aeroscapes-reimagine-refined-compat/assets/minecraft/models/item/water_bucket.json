@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "minecraft:item/water_bucket"
+    }
+  },
+  "textures": {
+    "layer0": "minecraft:item/water_bucket",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "minecraft:item/equipment/held/water_bucket"
+    },
+    "firstperson_lefthand": {
+      "parent": "minecraft:item/equipment/held/water_bucket"
+    },
+    "thirdperson_righthand": {
+      "parent": "minecraft:item/equipment/held/water_bucket"
+    },
+    "thirdperson_lefthand": {
+      "parent": "minecraft:item/equipment/held/water_bucket"
+    }
+  }
+}

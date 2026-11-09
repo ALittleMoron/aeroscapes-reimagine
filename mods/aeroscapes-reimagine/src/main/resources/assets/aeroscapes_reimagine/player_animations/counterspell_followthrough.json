@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "name": "counterspell_followthrough",
+  "emote": {
+    "beginTick": 0,
+    "endTick": 7,
+    "stopTick": 9,
+    "isLoop": false,
+    "returnTick": 0,
+    "degrees": true,
+    "moves": [
+      { "tick": 0, "easing": "INOUTSINE", "rightArm": { "pitch": -83, "yaw": -6, "roll": 6 } },
+      { "tick": 2, "easing": "INOUTSINE", "rightArm": { "pitch": -88, "yaw": -4, "roll": 8 } },
+      { "tick": 4, "easing": "INOUTSINE", "rightArm": { "pitch": -56, "yaw": -10, "roll": 6 } },
+      { "tick": 7, "easing": "INOUTSINE", "rightArm": { "pitch": -5, "yaw": -2, "roll": 2 } }
+    ]
+  }
+}

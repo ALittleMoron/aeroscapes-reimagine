@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/dead_king_phylactery/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/dead_king_phylactery"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -9.0,
+        -29.0,
+        7.0
+      ],
+      "scale": [
+        0.57,
+        0.57,
+        0.57
+      ],
+      "translation": [
+        -0.16229656,
+        1.9177388,
+        -0.51359445
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -9.0,
+        -29.0,
+        7.0
+      ],
+      "scale": [
+        0.57,
+        0.57,
+        0.57
+      ],
+      "translation": [
+        -0.16229656,
+        1.9177388,
+        -0.51359445
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -9.0,
+        -29.0,
+        7.0
+      ],
+      "scale": [
+        0.57,
+        0.57,
+        0.57
+      ],
+      "translation": [
+        -0.16229656,
+        1.9177388,
+        -0.51359445
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -9.0,
+        -29.0,
+        7.0
+      ],
+      "scale": [
+        0.57,
+        0.57,
+        0.57
+      ],
+      "translation": [
+        -0.16229656,
+        1.9177388,
+        -0.51359445
+      ]
+    }
+  }
+}

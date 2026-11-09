@@ -1,7 +1,11 @@
 package dev.aeroscapes.atmosphere;
 
 import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.kosmx.playerAnim.core.data.KeyframeAnimation;
+import dev.kosmx.playerAnim.core.data.gson.AnimationJson;
+import io.redspace.ironsspellbooks.api.spells.CastSource;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -75,6 +79,7 @@ public final class AtmosphereContractTest {
   }
 
   public static void main(String[] arguments) throws IOException {
+    swordCastPresentation();
     sandpaperRenderer();
     bridgedPlacementVersionGate();
     oreInformationSideGate();
@@ -203,6 +208,47 @@ public final class AtmosphereContractTest {
     loadingOverlay();
     System.out.println(
         "Atmosphere: quiver composition, precipitation scope and native API contracts passed");
+  }
+
+  private static void swordCastPresentation() throws IOException {
+    var nativeCallback =
+        method(
+            provider("io/redspace/ironsspellbooks/player/ClientSpellCastHelper"),
+            "handleClientboundOnClientCast",
+            "(Ljava/lang/String;ILio/redspace/ironsspellbooks/api/spells/CastSource;Lio/redspace/ironsspellbooks/api/spells/ICastData;)V");
+    require(
+        (nativeCallback.access & Opcodes.ACC_STATIC) != 0,
+        "Sword cast packets dispatch statically");
+    var clips = new HashSet<net.minecraft.resources.ResourceLocation>();
+    for (String spell : List.of("echoing_strikes", "frostbite", "counterspell")) {
+      String id = "irons_spellbooks:" + spell;
+      require(
+          SwordCastPresentation.clip(id, CastSource.SCROLL) == null
+              && SwordCastPresentation.clip(id, CastSource.SPELLBOOK) == null,
+          "Scrolls and spellbooks retain their native cast motion: " + id);
+      var clip = SwordCastPresentation.clip(id, CastSource.SWORD);
+      require(clip != null, "Confirmed built-in weapon spell has a clip: " + id);
+      clips.add(clip);
+    }
+    require(clips.size() == 2, "Counterspell retains a distinct release motion");
+    for (var clip : clips) {
+      String path =
+          "/assets/" + clip.getNamespace() + "/player_animations/" + clip.getPath() + ".json";
+      try (var stream = AtmosphereContractTest.class.getResourceAsStream(path)) {
+        if (stream == null) throw new IOException("Missing cast animation: " + clip);
+        List<KeyframeAnimation> loaded =
+            AnimationJson.GSON.fromJson(
+                new InputStreamReader(stream, StandardCharsets.UTF_8),
+                new TypeToken<List<KeyframeAnimation>>() {}.getType());
+        var animation = loaded.getFirst();
+        require(
+            loaded.size() == 1
+                && !animation.isInfinite
+                && animation.getLength() >= 7
+                && animation.getPart("rightArm").pitch.getKeyFrames().size() >= 3,
+            "PlayerAnimator decodes a finite cast and recovery: " + clip);
+      }
+    }
   }
 
   private static void sandpaperRenderer() throws IOException {

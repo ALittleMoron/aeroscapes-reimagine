@@ -1,0 +1,14 @@
+newmtl parchment
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/c937d8f4-1370-3b70-a091-d348b70157d1
+
+newmtl rim
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/3a34eb53-211e-3a3d-83dd-aaef282e5848
+
+newmtl ink
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/eldritch_manuscript

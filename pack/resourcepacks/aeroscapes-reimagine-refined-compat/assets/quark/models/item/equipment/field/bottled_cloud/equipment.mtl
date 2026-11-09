@@ -1,0 +1,29 @@
+newmtl cork
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd quark:item/bottled_cloud
+
+newmtl content
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd quark:item/bottled_cloud
+
+newmtl detail
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd quark:item/bottled_cloud
+
+newmtl glass
+Ka 0 0 0
+Kd 1 1 1 0.24
+map_Kd quark:item/bottled_cloud
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 0.48
+map_Kd quark:item/bottled_cloud
+
+newmtl lip
+Ka 0 0 0
+Kd 1 1 1 0.53
+map_Kd quark:item/bottled_cloud

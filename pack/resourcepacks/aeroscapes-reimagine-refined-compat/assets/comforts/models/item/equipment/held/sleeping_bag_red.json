@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "comforts:models/item/equipment/field/sleeping_bag_red/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "comforts:item/sleeping_bag_red"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        9.0,
+        -20.0,
+        5.0
+      ],
+      "scale": [
+        0.83,
+        0.83,
+        0.83
+      ],
+      "translation": [
+        0.8436354,
+        -1.0923301,
+        -1.0654655
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        9.0,
+        -20.0,
+        -5.0
+      ],
+      "scale": [
+        0.83,
+        0.83,
+        0.83
+      ],
+      "translation": [
+        0.80284935,
+        -1.0900079,
+        -1.0801277
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        9.0,
+        -20.0,
+        5.0
+      ],
+      "scale": [
+        0.83,
+        0.83,
+        0.83
+      ],
+      "translation": [
+        0.8436354,
+        -1.0923301,
+        -1.0654655
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        9.0,
+        -20.0,
+        -5.0
+      ],
+      "scale": [
+        0.83,
+        0.83,
+        0.83
+      ],
+      "translation": [
+        0.80284935,
+        -1.0900079,
+        -1.0801277
+      ]
+    }
+  }
+}

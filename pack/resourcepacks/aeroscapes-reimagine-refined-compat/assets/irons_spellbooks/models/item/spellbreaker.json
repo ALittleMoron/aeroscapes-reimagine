@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "irons_spellbooks:item/template_large_sword",
+    "textures": {
+      "layer0": "irons_spellbooks:item/spellbreaker"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/handheld",
+      "textures": {
+        "layer0": "irons_spellbooks:item/spellbreaker_gui"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/spellbreaker"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/spellbreaker"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/spellbreaker"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/spellbreaker"
+    }
+  }
+}

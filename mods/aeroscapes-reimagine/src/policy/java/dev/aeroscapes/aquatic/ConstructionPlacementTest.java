@@ -146,8 +146,13 @@ public final class ConstructionPlacementTest {
         "Construction placement: scoped palm selection, native hand contact, selected Punchy contexts, forward tape and native net pouch direction passed");
   }
 
-  @SuppressWarnings("deprecation") // Apply the exact ItemTransform consumer used by ItemRenderer.
   private static JsonArray attachments(JsonObject source, String item, ToolKind kind)
+      throws IOException, ReflectiveOperationException {
+    return attachments(source, item, kind, 0);
+  }
+
+  @SuppressWarnings("deprecation") // Apply the exact ItemTransform consumer used by ItemRenderer.
+  static JsonArray attachments(JsonObject source, String item, ToolKind kind, float armOffsetY)
       throws IOException, ReflectiveOperationException {
     JsonArray frames;
     try (var stream =
@@ -175,7 +180,7 @@ public final class ConstructionPlacementTest {
               LayerDefinition.create(PlayerModel.createMesh(CubeDeformation.NONE, slim), 64, 64)
                   .bakeRoot();
           ModelPart arm = nativeRoot.getChild(left ? "left_arm" : "right_arm");
-          arm.setPos(frame.m30(), frame.m31(), frame.m32());
+          arm.setPos(frame.m30(), frame.m31() + armOffsetY * 16, frame.m32());
           arm.xRot = (float) Math.atan2(frame.m12(), frame.m22());
           arm.yRot = (float) Math.asin(-frame.m02());
           arm.zRot = (float) Math.atan2(frame.m01(), frame.m00());

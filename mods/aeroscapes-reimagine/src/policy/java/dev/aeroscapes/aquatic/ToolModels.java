@@ -42,6 +42,8 @@ final class ToolModels {
     AquaticToolModels.addResources(assets, output);
     ConstructionEquipmentModels.addResources(assets, output);
     HeldItemModels.add(assets, output, generated.models());
+    FieldEquipmentModels.addResources(assets, output);
+    IronHeldModels.addResources(assets, output);
     brushScale(assets, output);
     ArchaeologyBrushModels.addPalettes(assets, output, generated.textures());
     EquipmentModels.text(

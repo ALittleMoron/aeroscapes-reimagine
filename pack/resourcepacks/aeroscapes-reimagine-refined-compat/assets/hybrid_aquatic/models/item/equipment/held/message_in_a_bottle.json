@@ -1,0 +1,106 @@
+{
+  "loader": "neoforge:composite",
+  "children": {
+    "body": {
+      "loader": "neoforge:obj",
+      "model": "hybrid_aquatic:models/item/equipment/field/message_in_a_bottle/body.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:cutout",
+      "textures": {
+        "particle": "hybrid_aquatic:item/message_in_a_bottle"
+      }
+    },
+    "glass": {
+      "loader": "neoforge:obj",
+      "model": "hybrid_aquatic:models/item/equipment/field/message_in_a_bottle/glass.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:translucent",
+      "textures": {
+        "particle": "hybrid_aquatic:item/message_in_a_bottle"
+      }
+    }
+  },
+  "item_render_order": [
+    "body",
+    "glass"
+  ],
+  "textures": {
+    "particle": "hybrid_aquatic:item/message_in_a_bottle"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -24.0,
+        -22.0,
+        5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        0.03183393,
+        1.0088372,
+        -0.206182
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -24.0,
+        -22.0,
+        -5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        0.24537498,
+        1.0439286,
+        -0.12736452
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -24.0,
+        -22.0,
+        5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        0.03183393,
+        1.0088372,
+        -0.206182
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -24.0,
+        -22.0,
+        -5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        0.24537498,
+        1.0439286,
+        -0.12736452
+      ]
+    }
+  }
+}

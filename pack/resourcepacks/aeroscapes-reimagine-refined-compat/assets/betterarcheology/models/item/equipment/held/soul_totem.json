@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "betterarcheology:models/item/equipment/field/soul_totem/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "betterarcheology:item/soul_totem"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -9.0,
+        -24.0,
+        5.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        0.7198058,
+        0.9021337,
+        1.1915277
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -9.0,
+        -24.0,
+        -5.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        -0.7198058,
+        0.80186605,
+        0.5584626
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -9.0,
+        -24.0,
+        5.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        0.7198058,
+        0.9021337,
+        1.1915277
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -9.0,
+        -24.0,
+        -5.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        -0.7198058,
+        0.80186605,
+        0.5584626
+      ]
+    }
+  }
+}

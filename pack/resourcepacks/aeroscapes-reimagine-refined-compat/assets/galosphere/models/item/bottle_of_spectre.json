@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "galosphere:item/bottle_of_spectre"
+    }
+  },
+  "textures": {
+    "layer0": "galosphere:item/bottle_of_spectre",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "galosphere:item/equipment/held/bottle_of_spectre"
+    },
+    "firstperson_lefthand": {
+      "parent": "galosphere:item/equipment/held/bottle_of_spectre"
+    },
+    "thirdperson_righthand": {
+      "parent": "galosphere:item/equipment/held/bottle_of_spectre"
+    },
+    "thirdperson_lefthand": {
+      "parent": "galosphere:item/equipment/held/bottle_of_spectre"
+    }
+  }
+}

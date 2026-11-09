@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "name": "sword_spell_followthrough",
+  "emote": {
+    "beginTick": 0,
+    "endTick": 8,
+    "stopTick": 10,
+    "isLoop": false,
+    "returnTick": 0,
+    "degrees": true,
+    "moves": [
+      { "tick": 0, "easing": "INOUTSINE", "rightArm": { "pitch": -34, "yaw": -20, "roll": -8 } },
+      { "tick": 2, "easing": "INOUTSINE", "rightArm": { "pitch": -55, "yaw": -44, "roll": -18 } },
+      { "tick": 4, "easing": "INOUTSINE", "rightArm": { "pitch": -42, "yaw": -33, "roll": -13 } },
+      { "tick": 8, "easing": "INOUTSINE", "rightArm": { "pitch": -4, "yaw": -3, "roll": -2 } }
+    ]
+  }
+}

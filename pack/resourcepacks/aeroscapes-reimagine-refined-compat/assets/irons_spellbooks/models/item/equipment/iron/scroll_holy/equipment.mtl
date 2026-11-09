@@ -1,0 +1,14 @@
+newmtl parchment
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/af0df17b-603b-3ca5-afd8-2ed6bc89b0a1
+
+newmtl binding
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/scroll_holy
+
+newmtl ink
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/scroll_holy

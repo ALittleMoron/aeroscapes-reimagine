@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "irons_spellbooks:item/template_large_sword",
+    "textures": {
+      "layer0": "irons_spellbooks:item/magehunter"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/handheld",
+      "textures": {
+        "layer0": "irons_spellbooks:item/magehunter_gui"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/magehunter"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/magehunter"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/magehunter"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/magehunter"
+    }
+  }
+}

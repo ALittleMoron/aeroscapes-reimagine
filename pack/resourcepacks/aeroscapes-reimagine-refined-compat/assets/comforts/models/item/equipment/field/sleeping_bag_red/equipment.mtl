@@ -1,0 +1,24 @@
+newmtl cloth
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd comforts:item/sleeping_bag_red
+
+newmtl fold
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd comforts:item/sleeping_bag_red
+
+newmtl end
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd comforts:item/sleeping_bag_red
+
+newmtl strap
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd comforts:item/sleeping_bag_red
+
+newmtl buckle
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd comforts:item/sleeping_bag_red

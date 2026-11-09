@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "irons_spellbooks:item/furled_map"
+    }
+  },
+  "textures": {
+    "layer0": "irons_spellbooks:item/furled_map",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/furled_map"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/furled_map"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/furled_map"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/furled_map"
+    }
+  }
+}

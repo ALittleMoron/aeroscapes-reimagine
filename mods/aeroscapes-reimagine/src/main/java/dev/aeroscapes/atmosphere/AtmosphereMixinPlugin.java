@@ -116,6 +116,24 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("supplementaries", "1.21.1-3.6.8", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("SandpaperHeldModelMixin")) {
       versions = Map.of("create", "6.0.10", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("ScrollFallbackModelMixin")) {
+      versions = Map.of("irons_spellbooks", "1.21.1-3.16.3", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("SwordCastPresentationMixin")) {
+      versions = Map.of("irons_spellbooks", "1.21.1-3.16.3", "playeranimator", "2.0.4+1.21.1");
+    } else if (mixinClassName.endsWith("TinctureDrinkingRenderMixin")
+        || mixinClassName.endsWith("TinctureNativeDrinkingMixin")) {
+      versions =
+          Map.of(
+              "irons_spellbooks",
+              "1.21.1-3.16.3",
+              "notenoughanimations",
+              "1.12.2",
+              "entity_model_features",
+              "3.3.12",
+              "entity_texture_features",
+              "7.2.6",
+              "neoforge",
+              "21.1.244");
     } else if (mixinClassName.endsWith("CelestialSkyMixin")) {
       versions = Map.of("neoforge", "21.1.244");
       if (versionLookup.apply("spyglass_astronomy") != null) return false;

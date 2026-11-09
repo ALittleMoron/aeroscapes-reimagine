@@ -1,0 +1,29 @@
+newmtl cover
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/b5b08d82-3e0a-3cc7-8714-65ba0aa7f565
+
+newmtl leaves
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/ccfb6287-2a1d-3684-84fc-4e0275e13642
+
+newmtl spine
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/76b4edb3-3f4d-3ccb-b5a5-39db84c1f54d
+
+newmtl binding
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/archevoker_logbook
+
+newmtl title
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/archevoker_logbook
+
+newmtl ribbon
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/archevoker_logbook

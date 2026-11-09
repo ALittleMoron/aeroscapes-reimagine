@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "irons_spellbooks:item/twilight_gale_handheld"
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/handheld",
+      "textures": {
+        "layer0": "irons_spellbooks:item/twilight_gale_gui"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/twilight_gale"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/twilight_gale"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/twilight_gale"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/twilight_gale"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "throwing": 1
+      },
+      "model": "irons_spellbooks:item/twilight_gale_throwing"
+    }
+  ]
+}

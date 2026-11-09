@@ -1,0 +1,30 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "irons_spellbooks:item/energized_core",
+      "layer1": "irons_spellbooks:item/energized_core_energy"
+    }
+  },
+  "textures": {
+    "layer0": "irons_spellbooks:item/energized_core",
+    "layer1": "irons_spellbooks:item/energized_core_energy",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/energized_core"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/energized_core"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/energized_core"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/energized_core"
+    }
+  }
+}

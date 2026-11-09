@@ -1,0 +1,29 @@
+newmtl steel
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd minecraft:item/water_bucket
+
+newmtl inside
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd minecraft:item/water_bucket
+
+newmtl rim
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd minecraft:item/water_bucket
+
+newmtl handle
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd minecraft:item/water_bucket
+
+newmtl liquid
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd minecraft:item/water_bucket
+
+newmtl ripple
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd minecraft:item/water_bucket

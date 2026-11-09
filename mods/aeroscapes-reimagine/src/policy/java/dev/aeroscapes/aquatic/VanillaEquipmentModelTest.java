@@ -118,6 +118,7 @@ public final class VanillaEquipmentModelTest {
       quad.add("vertices", vertices);
       quad.add("uv", face.uv);
       quad.add("normal", vector(face.normal.x, face.normal.y, face.normal.z));
+      quad.addProperty("blockLight", net.minecraft.client.renderer.LightTexture.block(face.light));
       quads.add(quad);
     }
     preview.add("quads", quads);
@@ -371,7 +372,13 @@ public final class VanillaEquipmentModelTest {
       throws IOException {
     ResourceLocation location = ResourceLocation.parse(source.get("model").getAsString());
     ObjModel parsed = objGeometry(source, assets);
-    var contextBuilder = StandaloneGeometryBakingContext.builder().withUseAmbientOcclusion(false);
+    var definition = source.deepCopy();
+    definition.remove("loader");
+    var contextBuilder =
+        StandaloneGeometryBakingContext.builder(
+                BlockModel.fromString(definition.toString()).customData)
+            .withUseAmbientOcclusion(false)
+            .withRenderTypeHint(null);
     if (component != null) {
       var visible = new it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap<String>();
       for (String name : parsed.getConfigurableComponentNames())
@@ -432,7 +439,14 @@ public final class VanillaEquipmentModelTest {
   private static ObjModel objGeometry(JsonObject source, Path assets) throws IOException {
     ResourceLocation location = ResourceLocation.parse(source.get("model").getAsString());
     Path obj = assets.resolve(location.getNamespace()).resolve(location.getPath());
-    var settings = new ObjModel.ModelSettings(location, false, true, false, false, null);
+    var settings =
+        new ObjModel.ModelSettings(
+            location,
+            false,
+            true,
+            false,
+            source.has("emissive_ambient") && source.get("emissive_ambient").getAsBoolean(),
+            null);
     try (var material = Files.newInputStream(obj.resolveSibling("equipment.mtl"))) {
       return EquipmentObjFixture.parse(Files.readString(obj), material, settings);
     }
@@ -627,7 +641,7 @@ public final class VanillaEquipmentModelTest {
             .sub(vertices.getFirst())
             .cross(new Vector3f(vertices.get(2)).sub(vertices.getFirst()))
             .normalize();
-    return new Face(texture, vertices, normal, uv, quad.getTintIndex(), data[3] >>> 24);
+    return new Face(texture, vertices, normal, uv, quad.getTintIndex(), data[3] >>> 24, data[6]);
   }
 
   private static JsonArray vector(float... values) {
@@ -749,7 +763,8 @@ public final class VanillaEquipmentModelTest {
       Vector3f normal,
       JsonArray uv,
       int tint,
-      int alpha) {}
+      int alpha,
+      int light) {}
 
   static final class Sprite extends TextureAtlasSprite implements AutoCloseable {
     Sprite(ResourceLocation name) {

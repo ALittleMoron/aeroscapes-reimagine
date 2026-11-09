@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/eldritch_manuscript/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/eldritch_manuscript"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        -22.0,
+        -3.0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "translation": [
+        -1.920917,
+        3.65713,
+        -0.9170682
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -22.0,
+        -3.0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "translation": [
+        -1.2542592,
+        3.676272,
+        -0.64577234
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -18.0,
+        -4.0,
+        -3.0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "translation": [
+        -2.074728,
+        0.55432683,
+        -0.35795343
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -18.0,
+        -4.0,
+        -3.0
+      ],
+      "scale": [
+        0.8,
+        0.8,
+        0.8
+      ],
+      "translation": [
+        -1.3574657,
+        0.5339882,
+        -0.298608
+      ]
+    }
+  }
+}

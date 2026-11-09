@@ -1,0 +1,34 @@
+newmtl wood
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/mead
+
+newmtl inside
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/mead
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/mead
+
+newmtl band
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/mead
+
+newmtl seam
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/mead
+
+newmtl liquid
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/mead
+
+newmtl foam
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/mead

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "irons_spellbooks:item/compass/wayward_compass_05"
+    }
+  },
+  "textures": {
+    "layer0": "irons_spellbooks:item/compass/wayward_compass_05",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/compass/wayward_compass_05"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/compass/wayward_compass_05"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/compass/wayward_compass_05"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/compass/wayward_compass_05"
+    }
+  }
+}

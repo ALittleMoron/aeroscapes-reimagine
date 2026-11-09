@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/unchained_book/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/unchained_book"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        -22.0,
+        -3.0
+      ],
+      "scale": [
+        0.79,
+        0.79,
+        0.79
+      ],
+      "translation": [
+        -2.4647684,
+        3.5780306,
+        -1.0984313
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -22.0,
+        -3.0
+      ],
+      "scale": [
+        0.79,
+        0.79,
+        0.79
+      ],
+      "translation": [
+        -1.1700643,
+        3.6152058,
+        -0.5715525
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -23.0,
+        -4.0,
+        -3.0
+      ],
+      "scale": [
+        0.79,
+        0.79,
+        0.79
+      ],
+      "translation": [
+        -2.6518629,
+        0.4781409,
+        -0.4044094
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -23.0,
+        -4.0,
+        -3.0
+      ],
+      "scale": [
+        0.79,
+        0.79,
+        0.79
+      ],
+      "translation": [
+        -1.258881,
+        0.44883698,
+        -0.28615177
+      ]
+    }
+  }
+}

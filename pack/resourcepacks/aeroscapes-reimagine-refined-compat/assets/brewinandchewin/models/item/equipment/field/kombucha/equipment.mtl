@@ -1,0 +1,34 @@
+newmtl wood
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/kombucha
+
+newmtl inside
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/kombucha
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/kombucha
+
+newmtl band
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/kombucha
+
+newmtl seam
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/kombucha
+
+newmtl liquid
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/kombucha
+
+newmtl foam
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/kombucha

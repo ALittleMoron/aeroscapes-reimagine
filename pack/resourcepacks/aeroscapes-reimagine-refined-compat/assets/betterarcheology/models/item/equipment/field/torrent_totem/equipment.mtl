@@ -1,0 +1,24 @@
+newmtl gold
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/torrent_totem
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/torrent_totem
+
+newmtl fin
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/torrent_totem
+
+newmtl eye
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/torrent_totem
+
+newmtl eye_shadow
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/torrent_totem

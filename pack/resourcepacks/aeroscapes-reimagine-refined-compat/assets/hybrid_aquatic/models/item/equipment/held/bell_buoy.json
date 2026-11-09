@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "hybrid_aquatic:models/item/equipment/field/bell_buoy/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "hybrid_aquatic:item/bell_buoy"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -7.0,
+        -20.0,
+        5.0
+      ],
+      "scale": [
+        0.73,
+        0.73,
+        0.73
+      ],
+      "translation": [
+        0.292673,
+        0.64865386,
+        0.53245956
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -7.0,
+        -20.0,
+        -5.0
+      ],
+      "scale": [
+        0.73,
+        0.73,
+        0.73
+      ],
+      "translation": [
+        0.056871533,
+        0.63819456,
+        0.44727457
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -7.0,
+        -20.0,
+        5.0
+      ],
+      "scale": [
+        0.73,
+        0.73,
+        0.73
+      ],
+      "translation": [
+        0.292673,
+        0.64865386,
+        0.53245956
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -7.0,
+        -20.0,
+        -5.0
+      ],
+      "scale": [
+        0.73,
+        0.73,
+        0.73
+      ],
+      "translation": [
+        0.056871533,
+        0.63819456,
+        0.44727457
+      ]
+    }
+  }
+}

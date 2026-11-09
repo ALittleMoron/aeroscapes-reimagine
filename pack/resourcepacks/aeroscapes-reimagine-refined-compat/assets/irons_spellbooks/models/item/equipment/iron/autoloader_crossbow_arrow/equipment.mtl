@@ -1,0 +1,34 @@
+newmtl stock
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/b3d68d3a-69f1-353d-abd3-923bd092bbd6
+
+newmtl stock_edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/e3597b20-b3c6-3b4d-9223-904cb4332994
+
+newmtl iron
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/8279f9ed-09a6-3d32-a67c-7fd8785ea63f
+
+newmtl brass
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/1b404d56-6d8f-3111-8b74-facdbad32c86
+
+newmtl string
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/autoloader_crossbow_standby
+
+newmtl arrowhead
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/autoloader_crossbow_arrow
+
+newmtl arrowshaft
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/279b2397-00ce-3bdf-beed-6619ffb4316f

@@ -2231,7 +2231,7 @@ hash = "9807537eded3dd65596b50694229361c2bb409040512c77a0f1bfaa267906995"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "776372bc5e229d46013cab268f1fa5aeb5a1614a63e8481aaaffb8924e375ad0"
+hash = "072a5bb05db6832d522f5f4ac150002e347f3f96d8b99d6f315d70f6b5a95902"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -2260,7 +2260,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "f7cf7f42818ffe521d62cab1865ea44390cb0439bdb82cbc5f6f115d9cc38b8e"
+hash = "e6c47286b45b52c9ecf3157dccb6187b9118dc65949b91abd7b95e97e242e89e"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -4942,6 +4942,22 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheolog
 hash = "1752eaa168b689f41c0f9e1c95e2015fe1ac0458946e80ca7df4b3c79307931a"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/field/soul_totem/body.obj"
+hash = "b1103e0a91f33bbdd17aa8b8d16612631390f7bc7a7562221a5734781ca03581"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/field/soul_totem/equipment.mtl"
+hash = "b561226cc9afec1679a66fb883b1963ed46bbd100799321f2ae5d71213132f71"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/field/torrent_totem/body.obj"
+hash = "a5245e800ff5603a52d83f6786d47b9c77159285633b093f7912ed218368e0fe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/field/torrent_totem/equipment.mtl"
+hash = "567326b22b8ec66d6ba4af8a757808d4daf9be9bf188eb61c272ff84c01bf57c"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/bomb.json"
 hash = "426088210e09d3d293ab0cdbc38e62fbb60510ac1ed89cac239f8002de7fa9db"
 
@@ -4994,6 +5010,14 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheolog
 hash = "4be86969b3fb37c3833b865ee7f5a309c7599d3f489c77eae4afa462dc4e364a"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/soul_totem.json"
+hash = "ca882858c8212c8c142ca6c022a8480441b9a387b7a1e7e1f2bcb4ff201dd2c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/equipment/held/torrent_totem.json"
+hash = "ad16c663d51389cd307a5238d8ce2fe6d45c72d03ec4f2bb3f34adea9bb9d7bd"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/iron_brush.json"
 hash = "558bc05a686ecf9270e6fbb61da15c978d70ca1135cc580820b4823f8212ed45"
 
@@ -5024,6 +5048,62 @@ hash = "aaec2b78a32599e1593e1c3ad77d7b7bd30b16cee74a83cc66300ffa3f2d492a"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/netherite_brush_brushing_2.json"
 hash = "505bfb03c34a9718f5819c919c17f4f9c5f45251b8551737347e04fef57c58d2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/soul_totem.json"
+hash = "508444267b6e633365109077a52c55d5aeeabca82d7edbb8b2497c5bcd7f8518"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/betterarcheology/models/item/torrent_totem.json"
+hash = "5f10b7ef98e64cfed2570f5185225654dc493c2458aa465fccecd8aa72795e87"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/field/kombucha/body.obj"
+hash = "b19752cc43bc5eb1a1bf9d11d9e59702a1b8578206f0b61f87ae96315089cf5d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/field/kombucha/equipment.mtl"
+hash = "b2105e57a1340cea7e85313ee1432bc46e8c137b7f4484622e32cc9ce33d3d8b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/field/mead/body.obj"
+hash = "a2c0ab5096b83056f4bee98e60afdb5701b180bb182e9509b1e21e527de0b468"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/field/mead/equipment.mtl"
+hash = "8f29e4074ec91fe6728cd248e98d9910f334648ac181ac774d1d1d64712735c1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/field/tankard/body.obj"
+hash = "fd7e7be8ea7b5ef227a9b0e2344634f0327f6c2c043e33231552384de445afc0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/field/tankard/equipment.mtl"
+hash = "d2a29fb659292ae884f5455788d76c4199425f3174700c89d74ae8120f6aa0d2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/held/kombucha.json"
+hash = "f0dd2d051dbcfa0e65fdd8a48507bc3e52c896aaa2939d8705ade0795d32c510"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/held/mead.json"
+hash = "2373b2f79830b5321cdf80fd19f4a847a7262cb14c5b76f215e043187ffb666a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/equipment/held/tankard.json"
+hash = "4ca2a72ccb23bb297455d61fb7c867fd861dae2ab28fc40185c776092775eb55"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/kombucha.json"
+hash = "a26de49e921f2092ad169b150db7f63911a6977abdf97b039da70e0b1140502f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/mead.json"
+hash = "af0c163bbec142207280171235f958f79b1b0217cfcd80184b5788f32d31643e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/brewinandchewin/models/item/tankard.json"
+hash = "88043518d158dbf9784f79b927b40b2829a1ab578c145c4622edea2383599fca"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/alchemy_book.json"
@@ -5072,6 +5152,22 @@ hash = "50519c264018f551563f755aff88525119aceb0944f7ef8dc1760a3d39d8f321"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/chipped/models/item/watering_can.json"
 hash = "670a920c26dabaa1617e8fb75f5c7df639944512de6abf77ecd386f3aeff05dd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/comforts/models/item/equipment/field/sleeping_bag_red/body.obj"
+hash = "626c05087cf743c8ac9fcac43140b86092ad43df90f80c5fdc58a28d71942643"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/comforts/models/item/equipment/field/sleeping_bag_red/equipment.mtl"
+hash = "7a235236c7e03ca3ae2c2e92b0a33a5ea404cad6ad51faa0b6c006b2e457efe0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/comforts/models/item/equipment/held/sleeping_bag_red.json"
+hash = "150c7290f43a02737db37aa08e74b5e26af62e2385a114cebde234fcf3b1f3c9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/comforts/models/item/sleeping_bag_red.json"
+hash = "a50b5593e045cf5ddfbaac137b8274b7e58b144837e73af30e23e3e6a0a53204"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/create/models/item/clipboard.json"
@@ -5466,8 +5562,44 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/farmersdelight/
 hash = "25bf43f76a00bde10301d280cf2243cf88fa4ee66a6b968db3adc6cdc8681427"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/bottle_of_spectre.json"
+hash = "637b2c166906d8151fdcfc5da253bb2004c7562c188f543b0fa9f66bc24f383b"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/echo_bell.json"
 hash = "1af30872ee975d36fa6313ddf420e4e7a3ab3ad4bb16b4c5d53273fd0fb5ff37"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/field/bottle_of_spectre/body.obj"
+hash = "55e9c9bab51c33151432c41ea5bede31e32b35395fda02a7f55f6cb75be72bda"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/field/bottle_of_spectre/equipment.mtl"
+hash = "c1d9089c0df20cba4d9c6c35593eee908441070c3ba2e58674fc516a9ab2f008"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/field/bottle_of_spectre/glass.obj"
+hash = "481fd4abaf96e6045586d5e1f4d69d9896519110534b77b42fa998fbf41f9757"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/field/mining_pouch/body.obj"
+hash = "d9b0bc7529875d42f5980ce3a93955ed389107cc35a149ffe9ea3f578088bb9c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/field/mining_pouch/equipment.mtl"
+hash = "e342e5a1b0a661599d31c71e58ed0f746a14321f225764f2e0e731960511934a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/field/mining_pouch_filled/body.obj"
+hash = "d6b5d0a0248f55272d34f0c1aa8758e08d906c6b21b90ed951ce74ecd09fab31"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/field/mining_pouch_filled/equipment.mtl"
+hash = "b816796388a9953daafdbf0995943ec1211b030de2bfc7ddb26e96c23b7c6b57"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/bottle_of_spectre.json"
+hash = "9ab17b4e3a679c226b9f13a786a732fb331cd277c81f6e1fc91f77b319400096"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/echo_bell.json"
@@ -5476,6 +5608,14 @@ hash = "5c81c4f01aec7458248d62b9fb2a069c13a80acac2cc5becd1374e986701caa5"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/glow_flare.json"
 hash = "ad97fd9cbaa50e61841413e3f39091d4c3e06c9f0479def5a585300b68814602"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/mining_pouch.json"
+hash = "ac93f77f3a9bbd0899ddc602baa1d7d78ad3ba0e32826f686d823b6385346326"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/mining_pouch_filled.json"
+hash = "afa44d8336470df126493b0280d5ed77239cb310b3cf0ea423d4fc0c1f7364ee"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/equipment/held/monstrometer.json"
@@ -5516,6 +5656,14 @@ hash = "93d96ae82c89e5778ae63de7e9e5b1c445ea57ee36f6c54392969458758c8d63"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/glow_flare.json"
 hash = "14e5c45798bccdf22bb8a592e01a20a1b9c7efbed043e1369fc6adf0a85ec041"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/mining_pouch.json"
+hash = "01fe3ea6f1141a6b0b6a676143c91be2f5dd0500e35c64313cbbacad909be741"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/mining_pouch_filled.json"
+hash = "439deee0d861bc956aaf886ea42f14dc108077695074938c378af8fdd2c9e156"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/galosphere/models/item/monstrometer.json"
@@ -5586,6 +5734,10 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/horseman/models
 hash = "89c2ddb395a598738348ce58dabd869c33b7bccb8cb8243bd4660c194e35c2b0"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/bell_buoy.json"
+hash = "c9e862c34ba5fb413f0f7f8090adf228eeb35415654496bb354c38d2aa2c496f"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/coral_axe.json"
 hash = "598e2aec68492ad253ece8b872900768995e0d71e58468e30e1b610077bd49f2"
 
@@ -5604,6 +5756,30 @@ hash = "583f6b4582c907486f72100612b36c0e67a477392791545a3e3df4751cbeeb06"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/coral_shovel.json"
 hash = "ca1c75f1cf75ad95d5dcd56a7c86812383e3f5763f1e9be1a73056109a896d42"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/field/bell_buoy/body.obj"
+hash = "025a38150171dd385519bfee9d21ae87f80653a6f727f063fbc5bd304980c197"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/field/bell_buoy/equipment.mtl"
+hash = "626b08862446ce0573f7df6928204d4185d087579614d3c4ce67124d31e51441"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/field/message_in_a_bottle/body.obj"
+hash = "e6bea573c1827e256541d4aa1a895f5b07142b0cf1fb348c9e4c00adf983c33c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/field/message_in_a_bottle/equipment.mtl"
+hash = "3bd43cf67d8450e6eaa5509a8cf08569da5af6ce2f10bffc0c0eafe68c982100"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/field/message_in_a_bottle/glass.obj"
+hash = "0413d56d83d6912e630418851821a22331171be59e8098703305f363a674d5df"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/bell_buoy.json"
+hash = "3063b3dea88a2aa33fdd4cf5ec513b95ba4ed8f53eb363173782c1669d7434f8"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/coral_axe.json"
@@ -5626,6 +5802,10 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/
 hash = "daa230810cc65abfda781da99524cb323736e8100f4f97d0a7995eff7b49dea1"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/message_in_a_bottle.json"
+hash = "30cc1a44597dbd0493d9d8d9dcaae7c3a2cbb4c4fb9a35b9e122bf59dccf0cd2"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/seashell_axe.json"
 hash = "37b29f21ca4cf897f71c3c41bddb75e40d33830a341354295d7c8dfd710f5564"
 
@@ -5644,6 +5824,10 @@ hash = "6cf9ea335cf88742b88da958e39840ea5d56e277e3adbc952dfb479b2b7c7193"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/equipment/held/seashell_spear.json"
 hash = "15dad655cfd29b94454e31e7f77aac1f3d6262377b4060e327aa64bf6073ba4a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/message_in_a_bottle.json"
+hash = "dff3d8ff888df54e16ee1e297c1cd25a8de351d50ebfbc104fef08cf870cba41"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hybrid_aquatic/models/item/seashell_axe.json"
@@ -5680,6 +5864,1658 @@ hash = "9ffa24e9ce7651822eaeae38d64f25914b12e3a828b9192e488e8dc9be090b5c"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/immersive_weathering/models/item/steel_wool.json"
 hash = "792ae73543c00c023b32230ff96b0115e5187c0712e34c0a4365986ace48f129"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/amethyst_rapier.json"
+hash = "a8de97a8e2f142c8d276e1628f8e3a7ee32f5bfb7f13d500d31265762044999d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/archevoker_logbook_translated.json"
+hash = "d54711f7484a728ce3cffacafabb647ad838f3ad5fbb311cdec5ee4492089f99"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/archevoker_logbook_untranslated.json"
+hash = "f282579cdbefeaea08221503b7b09e5387c65d145bbb520c5bb31efc69c80c54"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow.json"
+hash = "ff990db1d4a02125161594f79e6dd4d4655f3fcba3d64bbe490ed241efae28f3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_arrow.json"
+hash = "66932fefec31a2c641e886906dc0697c5a452e5c84976afb15c8ee3675629991"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_firework.json"
+hash = "42ea719e13200921899d0af85725705b2869c11182e8be1d8071f9d35fc48175"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_pulling_0.json"
+hash = "f29c9be56c5c5920837b635caea86e0b6b78d7ebb01d974da57136da92eefd3c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_pulling_1.json"
+hash = "2ef6f4b018723bfeb1fa60f32589e10a10819530d57bc4daf54862d777cf8049"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_pulling_2.json"
+hash = "c9a03f2fa37cb5ff5259dd000ed8929b2d8d74161ee08a9ee797a4f6a0dffcd5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_pulling_3.json"
+hash = "9e9b960e9b57fecedceec1052ea849c500ed9c6af42ecb68ab0a1e64c9b9c47a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_pulling_4.json"
+hash = "d7d5f11934fb9d57c2bd8c1106e6aedfd4df97f54bbea105e3829a8d33e14f23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_pulling_5.json"
+hash = "91e285cf80144688642ed34cdf859b2b06e075a1ceb82da2d9e0a340cd5b951d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/autoloader_crossbow_pulling_6.json"
+hash = "dfa9dde1eb64c353329dd83ca7c3da4ff0b224e2c9786296ec3c73122191030d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/bone_key.json"
+hash = "11f5a2a00d69b9cf55cb4f79f97d79decc2426bb3e07dfd0dc0a9ea1c430b09d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/boreal_blade.json"
+hash = "b8055c0a45e529bcbc518d7f8d3836f7aa0d11b1094a03c48a78a00918cbc125"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/chronicle.json"
+hash = "21277f049e58b108c1423b8749d4f0fd9a72aed04a1c1d1192d23d24bcd013d7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/cinderous_soulcaller.json"
+hash = "c9c5130024d331b7b951094c7a02ad291b1356fe27bdeaa2b105cbd63206f0c3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_00.json"
+hash = "a01ea3fb2cce8fa883e60d0e906721cef3cf33c4cbc2dfc7bb4ce9e7c8b5c03a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_01.json"
+hash = "e5ca4d95dc272023d2ded4a9cd22cb7a7d33df3eeaef9fe16e4c523b358c2fd6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_02.json"
+hash = "6e2f872cbfbd80a1bdd0e4f38619c971be751156bf6aebfeb148834abb5184b1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_03.json"
+hash = "5ec2325c7585010284a5352db34600eb249159bc18c12d86a9707b0627c7f5bc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_04.json"
+hash = "e23fd451d4e0a122bcef3e20b8ec30f044d6daddf60a6e0d31647d0bab7a7b03"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_05.json"
+hash = "7ea31c60d6f36a6deca8a5f196cf3a59f30bc1bad61ca3615a0be71290554129"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_06.json"
+hash = "2283f468464e07ada3e43ade3c368ef1d577f337aeb0c9d41a6eaa9f33b5513b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_07.json"
+hash = "3cdebacf0f34c1d92f1ce79e3aa3030d94ea8a581fbd617b090aa1c7f12d7d94"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_08.json"
+hash = "e45414a514c20cdbdf5d6b11b42708b6fa9059bacc48178e4c06d3646364f4ea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_09.json"
+hash = "cb83856789170fab4d4e2613719daef3ed63cc1d4392701644bd9408f2d7cdec"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_10.json"
+hash = "c6e82cb0f93350a4dd577fffcf7e8c92fd78ea2c511f7e25b1db2d0c1140cdc7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_11.json"
+hash = "c26176b86cee73ce54470f5ec68b6c6bec8ac6a4748d4196ebccc1cee5e72a54"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_12.json"
+hash = "3e77a40e161623797300f9e9982e8870ade12d54af5d8a2104d8f265a5f9b24c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_13.json"
+hash = "9790a8f3b1307078c90fbcdcc63b31975e525f2b4d31e202b14f7e4cf3ed73f0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_14.json"
+hash = "17ef26c23c20ca008cd09bdf4efe2f8df581464acc6c4688f254c5ae386c6911"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_15.json"
+hash = "7fc4ba9e43aefcecf3bced6415cbca97460c9d57b419bcbf02d522ea001bd032"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_17.json"
+hash = "8ddec7761971de80fff978899303a873ee85e72b2f16ddcab5386d3cb402d089"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_18.json"
+hash = "ed379ef8788e1a29aec66c2b6443965fc049f81d36f236506a2b1a92e45889c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_19.json"
+hash = "a21ed96d3106cfd4630b01990ff77e1d40cbfffc8965606f045395389431fbc1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_20.json"
+hash = "ef17a6f0a97fd168d37a8c26212493455be5d06c61740f47a80da899bdea34e1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_21.json"
+hash = "a075a72bbf4e73937c5870fb72a4c57ecdf4ca457eb558fa5272b352e55f7a70"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_22.json"
+hash = "147708a87ab1f7ca970f93f9f7ad5c5009ab2ec178d3050e4c8f580875d781db"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_23.json"
+hash = "b7ccce859665a2725b043f70d6690fc60cb069b39a82c0223cf9cc834e9af27a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_24.json"
+hash = "a3467f4bfadee0c52d13795dd24a2a5e22730f5fc7b9f3eb108a56e8dcba50df"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_25.json"
+hash = "be1870476512813049a9eebe631448b5c3b79d78f0348fae67dc351b455054a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_26.json"
+hash = "d3be7dcbc32b6ae7124f460e381de223a8bb71d15185b23a0f20f32e173981bb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_27.json"
+hash = "3c47440f29ef2d6ead2ee8a18fb5914fe1189b7ba9715c0df61f2d2336564a21"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_28.json"
+hash = "bdcbee96f27e2f5d2c75749dd5085e6582c3176a20e820212d46a2a207d71f7f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_29.json"
+hash = "30fb5fa7616f9633c504cc238557552d29822bdc48545ac59a72b86f22946aa3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_30.json"
+hash = "1b2c272d2198ace17adc46a0a662d25ecd4a7c5efd8a9401fa9d69814cb580f5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/compass/wayward_compass_31.json"
+hash = "d474e7be6f8cffeb107f32444db8e1ba54bbc84d4ddbc47b4e76ea8b322bc8db"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/dead_king_phylactery.json"
+hash = "df8d1479cd26399fa54c08f455a12575a23dc6cf67b3a5baa501e385c43d2728"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/decrepit_key.json"
+hash = "ebd0344a742ef5a293d870cf94f9ee4a1ed5dd368da5da90d2b59480017f0df3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/decrepit_scythe.json"
+hash = "7101d89b285bf9763d8e22cc0549ef74c743dc03cb9a8cd25b8bf646b1364230"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/eldritch_manuscript.json"
+hash = "d3ac55ec56fb54d51ff0fc071955a8958f9aa53cb3cc8d16dae59729a6394922"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/energized_core.json"
+hash = "f07db529822a5bdb81f87dfb1a646fa83464d206de7270b4e7dc14c37d385ff2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/amethyst_rapier.json"
+hash = "51449983dbf721bafe2e27e421d65e9b64c6fe312c17ec168534eb7332f58b42"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/archevoker_logbook_translated.json"
+hash = "d137555d924267fd28138f7b1a98f960819bc303ddcd7d209907b9d61cd248f8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/archevoker_logbook_untranslated.json"
+hash = "573035b0c2a73cbe26bb2ecf1f33ecdf5490676bf92684897748950cc208044f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow.json"
+hash = "8dcd62996634da2cda274ea4fe68a4dda90f107897652ac50712a206a5977ce3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_arrow.json"
+hash = "807377c002e393e6d601a2c40ce58f6a1d08da1b163d328c62975424100622d8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_firework.json"
+hash = "a70ca82d7b0158298ca6c674e6edf03d7898f95397966f7513d0f27454b56196"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_pulling_0.json"
+hash = "0a6965e63b4bd05e22540c13ad01871cab03f248cbf1d4bf127d09cbf460859a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_pulling_1.json"
+hash = "5d61bd5c268c00295ede896a20e169fd3dfa66398500a6e3cb0190bd4155cbef"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_pulling_2.json"
+hash = "7ec98d11f8dc366544dd64795db8e82323a18f7aed1be6f13ee0c9bc464fdee2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_pulling_3.json"
+hash = "0d526a9d1f9f6646cde5a8e06fedc4739abd679a8e9077c837da914f91598886"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_pulling_4.json"
+hash = "959182ccc5fff751964566d4713367ab55f8c7b13c09ea73a87c04ba02c1a55b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_pulling_5.json"
+hash = "89da4de9b54d5e1d1dd82f2cdc05c2bc08f33e003eabd2db48b261a77b4d6e1a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/autoloader_crossbow_pulling_6.json"
+hash = "1f8b92758e7d60053c80a3b6d620bab1fbf08658c9d5a8eb476b7c35c48291b2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/bone_key.json"
+hash = "71480c9ea1c62a755f7d93b88073bd0fe63bfa2ba414559496b39b5b30dbafa9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/boreal_blade.json"
+hash = "cf887532689a0b204b606c86bf11bb194a22f4f0e2235a43f68a72d495aebff9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/chronicle.json"
+hash = "b0b930d60d4d3a4b940b2232e28d0f222beb3f714ac5745670fc1f9621774ddf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/cinderous_soulcaller.json"
+hash = "09649e7367d810ab7c83c80bc8a27c1b65203e732b4e073c77a7a2e987c68ac1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_00.json"
+hash = "b30ac834e5ca72b087e84a732b623b2fa367d78fc843b188f17fba29b2f0e989"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_01.json"
+hash = "01353e03ab11ee6e77235d156047a1cc54a5560addc3715afa40079d70b87cd6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_02.json"
+hash = "44e35d3a3ee03f87e2025fcca4cf93673044803e7b5db210552c98d9749eb7b0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_03.json"
+hash = "974b3b729e3d8f41c8aca8c884de088027906107bb235ed56fba030bf65e902e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_04.json"
+hash = "4c2341797dbb3704b2cd4965637bc0e9943d7b331b47ed0a90cda2580c7dc576"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_05.json"
+hash = "2ae663ea84c958c97a0ed03bc572af02f2776279ff1ae09d36c664dd564cd5d7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_06.json"
+hash = "c1b94ba68fa0c1b9a9c64c1f0d361736e9a1582cb383538539112606f5998f88"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_07.json"
+hash = "61816cc8e7ad276df23c745d40559bd40508823cffac332ce9ee45570392f8e3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_08.json"
+hash = "0f224c34478691800178cddb81c9396cfb75e55e8688b84c93d903d36ac3ee2e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_09.json"
+hash = "fcdfb6f02ea7d54adba939e5d54cb6d28d1a3a28461c827949444e700fbcc214"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_10.json"
+hash = "80d0039f0406cc694d44072d993ce58f05d806a3dd6d8dd6731cda5e414db9af"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_11.json"
+hash = "e53cfdbe9b854b513b47951609ee12d7a0c638c3f31418229a099dd5b6b0b119"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_12.json"
+hash = "4aff8582f8dab6678d4acb6d5503ba7897f1f200489f4844c109167d535cef7c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_13.json"
+hash = "3eb771ffb3e54b2fe863c7a9bbb1ca4656a19aa3bb1304613e92f8d9db33442c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_14.json"
+hash = "8402bc0123c227df80c2823eb49749bac43f9595c039a7a65cc7671cb0282a19"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_15.json"
+hash = "a7e57947f9dc00c68895e75ffb9fc5375249f7bbe3669c95800ead45f24b84b5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_17.json"
+hash = "39a6fc86d5491e53436fd27821f3ec1659e5faceab6de1b876c1123f01f2d673"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_18.json"
+hash = "7cb0531e0258d8d633f3c557257b6682a00e303a48bb92682cad5271cb9949cb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_19.json"
+hash = "d476b21b0bd6f2f43387876d402a1bd93fbe7209c315b6beaf9551a1ac341538"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_20.json"
+hash = "cc3d17225ed30c5c65bbc46333e03ad2c7e97ae1c04cb095f6f2ac4856a78290"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_21.json"
+hash = "213459ef30c2999547e1df562415e953ecd9b8e8da4ded0932fc687416533826"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_22.json"
+hash = "122a2504a09a51b6d1cda0e49fcde83a8d59aae9bb5a042adb4a72066b8dced1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_23.json"
+hash = "5ba2e3079942f6c29376c0ca702280a7b2d8a39433d5743fb1070aa6024db510"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_24.json"
+hash = "3ebda50761f846ae3d6d757981e941888c3fc15b92f044f318f8fe59e0d53a50"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_25.json"
+hash = "2d1a97115a5b2c1b376cb6af48b4b47eefc4e8c5ac5397db37198de76a7dd5ce"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_26.json"
+hash = "ca5d3a7cb069058dafcc01447c7f5bdb74a019e5b6f64bcf1673da5ef59df932"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_27.json"
+hash = "caa6920d5ec86bbdb6ee25b5e8c054f5a1795753f38714c63f196fcb873d9e55"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_28.json"
+hash = "28715bd97aaddb4daef4d0c742d6e9854917560c0f18e9b5b7ea291501f6ddaf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_29.json"
+hash = "f79e3506443ccf1f7f0afbff1604a0795e65da9e8d297f968434c9f1a7f83d51"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_30.json"
+hash = "ffb163ae0333c5e8a3c83576a5142c32fc91b943cf9d8c516a6c3c393196bd78"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/compass/wayward_compass_31.json"
+hash = "ade1793377c8ec956e19c53b467987bcb025cdd3b5ea495281d56b3aa644fc8d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/dead_king_phylactery.json"
+hash = "7b46778a6e53270eaf79f4d0b115f3c35cff0f9b46f6c44c805fd8754e4d7c90"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/decrepit_key.json"
+hash = "0a2c491268eead046469bd39f084300de0218b426ed3a89d7143f7c24137225e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/decrepit_scythe.json"
+hash = "d24c7851c206a112424298963d044d3773764e3682b1546c375f89ed8a1a92a2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/eldritch_manuscript.json"
+hash = "b5783cee8cf3e810cb98f9ec32b8f1b0525074d657c9e3eb5d05f49c7a871447"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/energized_core.json"
+hash = "09e66e9a943dd7360710e86d6264e09137d3068896a839e3261cb67fec9c60e6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/furled_map.json"
+hash = "575751ae39b23a1b7861db809450d99ffc19750712a3caac63080b04bfa3fce1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/furled_map_ancient.json"
+hash = "6beea18848e4bc12e4ddb2bbe5613d7e0580b2cf8987c7fbbba8fe3d47f3176c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/furled_map_citadel.json"
+hash = "de6d3faa2fbb9dc025dcde40277b9f0adbe1828fb6e1a540eeb6e0d8686f6c89"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/furled_map_ice_spider_den.json"
+hash = "4086d228b313f6745e5377a648b87feb6ad92159544f88e948883bdc4326a7fa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/hellrazor.json"
+hash = "5db197be253c31753eb61a5915aac7c6e2fd7f5b407c5ac4960a7c87372991f5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/hither_thither_wand.json"
+hash = "7184836afd29e0661f1ad1f050db508d14cf1cca4addbad674073f19cacaf6eb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/keeper_flamberge.json"
+hash = "5da01caee267016de6fdf11f5e7e6b872cadcef723415342d7a9503ef9e4992b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/legionnaire_flamberge.json"
+hash = "04877398461d87841389b95dcc5e510340948d6a7809db1015aa00b0807cca80"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/magehunter.json"
+hash = "a80e4fe851e7ae430306206e254cf5e1a100edbb330e1863ad848f141b33755f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/misery.json"
+hash = "7dbc6a8da269820ea40d3409d639ffc1668e7814fe10dbe216734b9f4ad59f63"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/netherward_tincture.json"
+hash = "5f575fd13795b958070e1965748092ac51edadcdd41591559f2a1fb045cfa8b1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/ruined_book.json"
+hash = "ab1986042f0d773657bb6182424cd75cb72b1b4c794794c15f4fb61153564a0d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll.json"
+hash = "f3e2f0a5fef4c7b485b3a678cdc43bfca0fee47988656da901cb040eda66710b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_blood.json"
+hash = "340184d689eb06933eb344525f6fa63364d613b7615aff83263d5455caace254"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_eldritch.json"
+hash = "bc3376dc3219cde0b9c3af85a5487207d27e113592ccb262193c3b4db46ebfd9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_ender.json"
+hash = "af4eec199da090d4ff8b1dc83beb14da3fc58c35151d2fc5c177bcc109854f8b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_evocation.json"
+hash = "e416fa4585d11aa00282f57723b3eaa9ca8292787cad5512f33ca14ffd625fb0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_fire.json"
+hash = "6c16f651fd965f367acbb01c158970203c14729b3954d09c92d387dae23d6e05"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_holy.json"
+hash = "4abd3b14dc6a187a8d4a25cab0cd2f5a11369368eb5a02850ac7e1f3a8d2795c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_ice.json"
+hash = "f7bf53f4f06aaa33b6b6c63de7ff1c4174e4acccf1c74433e50633174fe8a69b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_lightning.json"
+hash = "15db0f95cbafa971c5c525d20abc0106cddc760718def816b4a81661485a7af0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/scroll_nature.json"
+hash = "6a757a931b055fd5b8a46e492e68dfc20fd890c17f7e8b0a3a467f9abf49676b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/spellbreaker.json"
+hash = "eb1473ea3b02f0502f6f7cec0fcaf0f0d77a065ed2dc3f7389af9e6771ce6152"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/tincture_of_forgetfulness.json"
+hash = "7d142e0085f702040a4e050df438d92ad8dcf37522710ca36ad5a802cfabd34e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/twilight_gale.json"
+hash = "40fe01c376879e777bea5155a525a56912c8cd7013a1492926711ce3d8c948a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/twilight_gale_throwing.json"
+hash = "193959e6473ccbc9c44fb7d848a4f3d1e93c3b903d713267d23fc1b7115950ca"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/unchained_book.json"
+hash = "7203a561048df69e9611d9dc0ff426d2c9f8ecc5a57d79116a89b26faabb39c6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/held/wayward_compass.json"
+hash = "534f81c104e78b69345b2c17b64ffabc1ddde151242d09c43ebb3868a8cafe8b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/amethyst_rapier/cutout.obj"
+hash = "7f3ed1ea7e9d9d0fdc9362f24c0f6e3aaf6b15a0eab8a9de8d663fcfadde628d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/amethyst_rapier/equipment.mtl"
+hash = "7bd118b105feec11ebf69ec394346ef63fea1ab86db535e624e28fa82ee5f961"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/archevoker_logbook_translated/cutout.obj"
+hash = "da2127f5f9cda667615aa35e144d1171522981c96d417db1569d1c8d51e7a222"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/archevoker_logbook_translated/equipment.mtl"
+hash = "4830b6510d2362d30db6681446442b69aeae30405eb4b9d1051804b776e090e0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/archevoker_logbook_untranslated/cutout.obj"
+hash = "da2127f5f9cda667615aa35e144d1171522981c96d417db1569d1c8d51e7a222"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/archevoker_logbook_untranslated/equipment.mtl"
+hash = "4830b6510d2362d30db6681446442b69aeae30405eb4b9d1051804b776e090e0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow/cutout.obj"
+hash = "507f0918395731358a9d03ece4f02368aeebaf0ad7a5ec54cca77704e2f430c4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow/equipment.mtl"
+hash = "b1786ccf4d2ad27252ab9f6700c403eac64f476f52dff317818fc31b10c0eaf8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_arrow/cutout.obj"
+hash = "ef4858b2a7844ed0c255908724aa5cfe62fa5328a81d1ac98f1847638f64e9fd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_arrow/equipment.mtl"
+hash = "657a1bb2c6d9900a668055e84c7d16af94a88a1c1785021f369452aeffd2f0df"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_firework/cutout.obj"
+hash = "06139b4e516636906383250b18e7a804763ea41ced23e578c8319b2e76e96024"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_firework/equipment.mtl"
+hash = "6de18dde1026a2b7d974985b3c210c5da4e55eb9c9d2f3a65a7a08a6af8e0be3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_0/cutout.obj"
+hash = "90cb7cbf1c9f8de6c0132f4017aabfddd54533708ca178d9aaf9b0a27903095a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_0/equipment.mtl"
+hash = "b1786ccf4d2ad27252ab9f6700c403eac64f476f52dff317818fc31b10c0eaf8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_1/cutout.obj"
+hash = "58cd7784e1d1a38a8d8f3472c4d9d74e0667ecab9db945e27c2cc9fcbe0036fe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_1/equipment.mtl"
+hash = "b1786ccf4d2ad27252ab9f6700c403eac64f476f52dff317818fc31b10c0eaf8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_2/cutout.obj"
+hash = "0b387986797f2eb0012ba157d3ea17be36f2fb446c51694d8d666de84bdc458b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_2/equipment.mtl"
+hash = "b1786ccf4d2ad27252ab9f6700c403eac64f476f52dff317818fc31b10c0eaf8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_3/cutout.obj"
+hash = "5ea40295ede8859431baf5e5ee5d785fb637a362d1de0e24ae594a3e5b1d8270"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_3/equipment.mtl"
+hash = "b1786ccf4d2ad27252ab9f6700c403eac64f476f52dff317818fc31b10c0eaf8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_4/cutout.obj"
+hash = "5850fde3e1fbcf26f8c7690bfd712bc7e38ea96d6d2d78ef4d733b1701ad1a5a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_4/equipment.mtl"
+hash = "b1786ccf4d2ad27252ab9f6700c403eac64f476f52dff317818fc31b10c0eaf8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_5/cutout.obj"
+hash = "dc0c3908ae73bc7c8ee613cb1e41d028dde5620019c83eea1b9cfba1ccbfba89"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_5/equipment.mtl"
+hash = "b1786ccf4d2ad27252ab9f6700c403eac64f476f52dff317818fc31b10c0eaf8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_6/cutout.obj"
+hash = "2e04638e50a635509f8a4354e3613cab12fbd94142fb9faa232321344396766d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/autoloader_crossbow_pulling_6/equipment.mtl"
+hash = "b1786ccf4d2ad27252ab9f6700c403eac64f476f52dff317818fc31b10c0eaf8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/bone_key/cutout.obj"
+hash = "0bbb53a72c10b3ffbd0a66a0ca39774d5ba674bf4442729f59d1bb4552921ee2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/bone_key/equipment.mtl"
+hash = "58e0181d4a3ce01d4603c6e09d5b885fc5ca597287356f5f6c726009cb12f37a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/boreal_blade/cutout.obj"
+hash = "0667be9ca5b4d57e2acc75fe4b66356c6f84862245d759cd1468eaacbbb2c604"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/boreal_blade/equipment.mtl"
+hash = "b8d2d0a92930579b15c9538cab8d377e2c26aeb4bdf37e9d8b550ac257879195"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/chronicle/cutout.obj"
+hash = "ef3989219c69c5de3394fb16ade1964d1706e0fbc9383d45359c21e3392c067c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/chronicle/equipment.mtl"
+hash = "28ff8c7de0c9d0c72de191002a5fe49fca1a572e9fa251b0e4a45a47b0a7c006"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/cinderous_soulcaller/cutout.obj"
+hash = "f2274a5ae2255e97620d34b365f094a3e151e136409f3d061aab8df3f96ba718"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/cinderous_soulcaller/equipment.mtl"
+hash = "c42d09312595104099ee6af1abf1fe2d1352ff8501fb4d4a57197bc39cfadd2d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/dead_king_phylactery/cutout.obj"
+hash = "2db4b39d99134018fa52965e1bb49ebe697eb10aaec10ef27a606c0643c6b2c2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/dead_king_phylactery/equipment.mtl"
+hash = "8cb79239fc0cca89b3fd8db842e19e56c2de566304bdc8f0093422a42d0bc540"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/decrepit_key/cutout.obj"
+hash = "b4e876fe439da4645abc1cbe378110275e17f16d76dfb57ddfdba9eac6120db5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/decrepit_key/equipment.mtl"
+hash = "aa7c3af46086a1dc833acf4130630b96e5498e8db0863a5e2b265df8ed48e930"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/decrepit_scythe/cutout.obj"
+hash = "b8b3fd27204e6301c8ce1ac8a357b468b46d896ae05b0d201005b861fc535fc4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/decrepit_scythe/equipment.mtl"
+hash = "f173c6c396c0a161d31c4bad3884b6537ea47599779c215c8d8f9551ec7a949b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/eldritch_manuscript/cutout.obj"
+hash = "1c7dcdf84659b73ebd7295a63b4c0093106bab37d8c428c7a9faaee5f900b071"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/eldritch_manuscript/equipment.mtl"
+hash = "ff7f89a15870e11ac00ac7df7f9af24d46a2f24789bcd0284e3f249cb31afce7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/energized_core/cutout.obj"
+hash = "eee88a68236b28f475d74ac4689d4a563b92373c5a2514f597b417945e931609"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/energized_core/equipment.mtl"
+hash = "ae5f6111700f933283aef35a8f6132d49b2d3fb2e59cf6d9efa99ce4b3d1b17a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/furled_map/cutout.obj"
+hash = "353c17fa749878e8cef0f117e51ee82f0d24e3e5ca39dd16ab6d2093c627fe66"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/furled_map/equipment.mtl"
+hash = "180dcc7b886a834e324e0115748ef66795ece1c5374a97a9f62e770a3c484eed"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/furled_map_ancient/cutout.obj"
+hash = "353c17fa749878e8cef0f117e51ee82f0d24e3e5ca39dd16ab6d2093c627fe66"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/furled_map_ancient/equipment.mtl"
+hash = "e36321789e71e6d0312808981f83a75174162d6996d37fa8b28f8d950df70b51"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/furled_map_citadel/cutout.obj"
+hash = "353c17fa749878e8cef0f117e51ee82f0d24e3e5ca39dd16ab6d2093c627fe66"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/furled_map_citadel/equipment.mtl"
+hash = "e36321789e71e6d0312808981f83a75174162d6996d37fa8b28f8d950df70b51"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/furled_map_ice_spider_den/cutout.obj"
+hash = "353c17fa749878e8cef0f117e51ee82f0d24e3e5ca39dd16ab6d2093c627fe66"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/furled_map_ice_spider_den/equipment.mtl"
+hash = "180dcc7b886a834e324e0115748ef66795ece1c5374a97a9f62e770a3c484eed"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/hellrazor/cutout.obj"
+hash = "8bc3facec6d274ae6e26ef3bbda54bad0df0e929d452ff0ca5da069180e1f159"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/hellrazor/equipment.mtl"
+hash = "c3909ef51fc68de6bf177696479cf12718a6577ff8c6e0fdd3656ec85d008496"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/hither_thither_wand/cutout.obj"
+hash = "ebff8e8b301a826ca39526badad7f4dbfd6130431a269768213ccc80eb82916a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/hither_thither_wand/equipment.mtl"
+hash = "aac866575a92afe6786fd2c0e7440c5f15887c1bbc7cdec049c26f2e9f266856"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/keeper_flamberge/cutout.obj"
+hash = "21f2583c07563d65d18c62798463d0e01633d96c82640ba57026e370fbb90dfe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/keeper_flamberge/equipment.mtl"
+hash = "affd91074d19fc9651e0577c577a653a47069f0218793ff2cb1571c6d3548c98"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/legionnaire_flamberge/cutout.obj"
+hash = "c9038bbd1d08bb77d72fc92a762a63f9ce2904c38d14abf2c05552a9fae6473e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/legionnaire_flamberge/equipment.mtl"
+hash = "cc02d2c3a9fd129e2ea3de80de2a5274549ac42cb034968de67418509a0aa522"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/magehunter/cutout.obj"
+hash = "cb2197704a995a04bba653e747be9938d45490ddbca95f489bdaca83e1f2f251"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/magehunter/equipment.mtl"
+hash = "95be7d83e03dd98a31df67682f6d6e4964b8daca67241daac6c7622d262e2d2c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/misery/cutout.obj"
+hash = "979e58246919ba9d04c0126e369a33a41ae189891b90613f9e1a48f0ff238320"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/misery/equipment.mtl"
+hash = "663dccf9ba099f0c3d76804128ea30f23d78a17dfb20637051eab5ecb7b66d23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/netherward_tincture/cutout.obj"
+hash = "44c5c437a697f22fa4e248ca6342a3c483e35a061a3684b877fa9206e0e1ea7b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/netherward_tincture/equipment.mtl"
+hash = "d279eeb6b5f315690b7f85204584bcdeb6ad740d74cfb90f71f5939b19b9326e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/netherward_tincture/translucent.obj"
+hash = "81f6b34330dff6db652842d39159efe258eee98269cb18fc9adf5f0b17f9b895"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/ruined_book/cutout.obj"
+hash = "6d2c179ebbd4f51fd3948dd2d8a5fa2a5e910af69490df0e9f933a42e5c5ac09"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/ruined_book/equipment.mtl"
+hash = "5bece1994203be5813ea52758985e4b0992277584a45405058d571420d97b547"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll/equipment.mtl"
+hash = "a113b57115806ab41764b9fa3d7cb400b445f0ffe00d33ea1a51cb9683c740f6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_blood/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_blood/equipment.mtl"
+hash = "f24afd35abee0a7a2173f150c24feca442b46a5d64e509cfe6badfb6e15de21f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_eldritch/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_eldritch/equipment.mtl"
+hash = "e79b167e94f81ddbc96799998e7eff203c131e973d8fd835089255a4c4ea8994"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_ender/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_ender/equipment.mtl"
+hash = "49729b67c8581b3938cb3865d07b909d9eeb23789d275187413f1b906519f932"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_evocation/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_evocation/equipment.mtl"
+hash = "6d860f3bec49cba8d1fe66d14a151d9e686361dd036d0a8f41bc295657144ce9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_fire/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_fire/equipment.mtl"
+hash = "6d205dc7d473baf35e7de20cc16d346b852644cd6d647c3eddb3f65ac6bc9504"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_holy/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_holy/equipment.mtl"
+hash = "67e493d8d7944fab3a410a9a877315f245029a87a88a91dd2b1e1d45a2e9f555"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_ice/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_ice/equipment.mtl"
+hash = "270c51cd524dc5595f4feb06fac765640a39e0f0f0128a110c1d7c0c4e3005f0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_lightning/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_lightning/equipment.mtl"
+hash = "4344eabf2bc7e5df4fc21038c323bb09b4aa3c6f2e20992e97699bd856c0cf84"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_nature/cutout.obj"
+hash = "f961106e4a3df521b0c1668096c544f6197281456ac06be32c4a1c50dd9c8d75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/scroll_nature/equipment.mtl"
+hash = "03f26f0e7dd18767b6ee514eb4e5063127c585c661a4a2f8dba88ac1a1eb99a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/spellbreaker/cutout.obj"
+hash = "60cc9402078ed4634e96ad648822125c32d319f0084a5ddf9b9eb732f14a56da"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/spellbreaker/equipment.mtl"
+hash = "0224fa3d89cca5d597306d0e39b545b09b1721dee0783e65c15fe6635f32ea26"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/tincture_of_forgetfulness/cutout.obj"
+hash = "4ddaf0c0c89d9af2a6b9f936c6cc576e85ab96f6a06b2e7cc374562a29cd1e87"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/tincture_of_forgetfulness/equipment.mtl"
+hash = "f366e7a63195b88ac17793d31cd2a7fd427d4a57aed1e63fff76e5e672cf8121"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/tincture_of_forgetfulness/translucent.obj"
+hash = "8e6e1e218bf92e56cf5bea809d30e2bcfedc0963719f90bc05b9b05a58ecdf23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/twilight_gale/cutout.obj"
+hash = "bd8a017927a45102e0e2dbaed0058a3b0faa97266e4cfaf31f54cc8135da823e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/twilight_gale/equipment.mtl"
+hash = "61192bd7c09dd5e639c936f444d20d3fe2e8fbdd03edaf8bc952015d93849b8a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/twilight_gale_throwing/cutout.obj"
+hash = "bd8a017927a45102e0e2dbaed0058a3b0faa97266e4cfaf31f54cc8135da823e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/twilight_gale_throwing/equipment.mtl"
+hash = "61192bd7c09dd5e639c936f444d20d3fe2e8fbdd03edaf8bc952015d93849b8a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/unchained_book/cutout.obj"
+hash = "6ebeb97b167c00cc9ca83014794e7a6108c5cddb63d2cb8096132d045ef7cfe4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/unchained_book/equipment.mtl"
+hash = "5fb9efcb0f471061283fb59990767142deb03af0741676ce7afed348f7aa541e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/wayward_compass/cutout.obj"
+hash = "7859d5bb27b6e746754488ea0d01b9ced978fb4b2160b150ba83dd2a4a4505b9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/equipment/iron/wayward_compass/equipment.mtl"
+hash = "8ed2ecebb8db01754eddba9a75ac2c0795f84b850301d603173cf6be3e7c890d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/furled_map.json"
+hash = "e0dc6b6a54af25327dd4302b15217b40d52cc553662af1c1260e8e3294080fdf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/furled_map_ancient.json"
+hash = "cb8fab60370d8a4e3a923a88f004f3212580d17a04e0f0a6f3e473c942e377a9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/furled_map_citadel.json"
+hash = "7b5b66f4a3a7c6d43500b3287575d3758dedf721e4c0cf7820801ffa7a2a44ec"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/furled_map_ice_spider_den.json"
+hash = "241a6e2d3bf3387245580001ece03c607699b4b126723b103d82734c2458e273"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/hellrazor.json"
+hash = "1942e945b0f455392ec06b8316e5ff335d4091874ce2ad1ad69b329b148a6a30"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/hither_thither_wand.json"
+hash = "25fda9cc348329ca354d314af4216c5a478ac257fea97eb930dbfe571d43c616"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/keeper_flamberge.json"
+hash = "d02b69f333546402adef63fb7cb42981487c59451957b042ab7eb351fec8d8ca"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/legionnaire_flamberge.json"
+hash = "5c36ba624c8da70108adb7838d56d59970ad808c67146142208467f0d689f3fa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/magehunter.json"
+hash = "d29f18f801eac280e2826c3490da3756bcf665db4c407900d6a180218e3dcc3b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/misery.json"
+hash = "c36d1d88e361fb66ac92a4cd187c6c8de85b392186882e103497cce5690529cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/netherward_tincture.json"
+hash = "803505114fb3463845764dcd18ecc9bdcb6a1384995a1f4ef834686b0558396b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/ruined_book.json"
+hash = "9ca6039bebbbd4fbf2310de69be15ba28dd1b0b04460584c9216ee285f99ed88"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll.json"
+hash = "b65cec468217e2e3da08385ac27dc79923745552f02f31d593643324dd2754a3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_blood.json"
+hash = "390a3c0264e0d202db7a360258cfb69d2fa5140baa05e2d257dc920b2ef277db"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_eldritch.json"
+hash = "d5dc88ad7682ce1c294ff104a7f3cbdb3a18815f25b5e10756fd0bc116e1bb26"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_ender.json"
+hash = "74fb63d1e78bf2a795a47ade38ec827ff8e85a1d6e888282f512f034770fd83a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_evocation.json"
+hash = "6714601a4da32f6df4d1d248c062e25593335e219cc11544c751bc336322fc57"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_fire.json"
+hash = "574c164a1b59a98c6efb991e1464759f01bde0501d73a178ead449bd66f86161"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_holy.json"
+hash = "4f5c7972aff042cf6af3211fde869486bca2a7bd1318bbb5f3d73ff858953694"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_ice.json"
+hash = "2d433c0aeaf0f6d89272857282cf693ef4c970ff37fbff8b1abe564ca4a419a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_lightning.json"
+hash = "269dfd28f98109083353c2b376bb4a9472bb1e52a1a741d1b0375367bcea66d0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/scroll_nature.json"
+hash = "54ab7ce713140c6270be2bdf4c5b2741f9fb830920380172102af9c9da687071"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/spellbreaker.json"
+hash = "a05e744d7504b4e6b4b5ea498841963144d8e209e8a8d7ce13402bcbb6c685da"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/tincture_of_forgetfulness.json"
+hash = "5e5bd769d3bf10b959015d83de9694f4b614647fafcb4f00179ebbf4bac78d49"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/twilight_gale.json"
+hash = "4ae0e3da2042461ae9e40abb7f0c81f4800c9a477f879f11d2df3a65a189507f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/twilight_gale_throwing.json"
+hash = "611723c0b1446af16678b0e964a4504203e9c6b60da28a0091c3cae559122864"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/unchained_book.json"
+hash = "5064f6c6a628a164d018457ea201487f8ad18290fc83ccaf7fbb55ffc6efe466"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/models/item/wayward_compass.json"
+hash = "bbf6d04e8c406f6f281178893210660b6e1e1b10d50c30a7ee64a21f86155bdb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/06922c77-d974-3024-be56-a03ef1e5ba58.png"
+hash = "9db7930f6565cd651729a549b92326d34b07c894b871951b80f155cd4f2379ec"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/0bb2f28d-66ed-323f-a038-4122d1db8de8.png"
+hash = "8371060baad9fc47981349d9601cd0cfe2f77dfce59a981d7d212840dae1f82e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/0def97f5-02b3-3352-9443-08853a3926cc.png"
+hash = "f470a4cd2f5990ec1abc639f9f01e21c623f7f9496428c07baff20119a5f1056"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/0fb5b683-e38e-3113-8f7f-0160821e3cf3.png"
+hash = "40a9cd1d8ff2ae9bc90e2bd27e48dadffef78f549d359df4b040268d0673acfb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/11d7904e-7579-3594-af77-67df87096134.png"
+hash = "eea32526f85f16af6e91bc02468f7d862e792456a7fd1592c9210f58353d62de"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/128a10e7-6254-3736-a09f-1956d0e64a1d.png"
+hash = "b9c2d9a687b5ae66c3177341d4c259b828a50ba1a4b5f793ed7e2f8a9b4afd71"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/1290ae2c-0c1c-341b-837f-4dd03847e2a0.png"
+hash = "2bf5d9c1a0525980845f29e6db520676fb96ff20e815def0d750e4c25de89b08"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/12d1f889-c040-3408-b723-0dca3e4b552e.png"
+hash = "9d0586c503670cd8d8b8e48c9a9a58da045046eb0843cd4eb07bfc4c906fae33"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/12d746c8-634c-3d3b-9cc8-f17016c74f90.png"
+hash = "54aede77ef0cf17ad23c078fb50a124ff6294352e55bd6c3ccc850171a1a5a64"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/14dbb061-1183-3d5d-bf0d-1e892943e003.png"
+hash = "e2707316f23d3f00e48144aac2f04540f70394a960d9a4ea90181fa09a51986c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/1548038b-d2aa-3aa3-aa69-581c42399078.png"
+hash = "c81708035c3c14d6b5202de59897c1cee3103d0778f2e593157f2ebcda9aea28"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/16226345-4a8e-3a3d-b2d0-240d5209beba.png"
+hash = "b5200a8149228c152c6c13bb07e7506bf65b9a300c152e3fc234026769205ffc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/1b404d56-6d8f-3111-8b74-facdbad32c86.png"
+hash = "0f1b682b20355b73cfc42a78506b25283d21db06ff64e523903c80f5e54db1f5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/1d525476-c5d7-3466-90c8-260c1477ee3d.png"
+hash = "b4e040f8fce2d7f85df08093fe7be7f559d75c6dfe2045888e3536e3608289b0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/1e342539-ede2-3060-b6be-7f47e3b983e0.png"
+hash = "d673df55aaec7031ecdc42be9e0c810f110ad466faec6dcbf96cd5e62bc75471"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/1f19b34f-a2c0-3e18-815c-44be79bcdf3d.png"
+hash = "9eb2ee0c8870e63cbfb52d6e1e947b1c3610fc6afbfadee89b9173501a7fdfd8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/2162c35c-0e92-3e5f-9c68-43de0364d75f.png"
+hash = "76c7b726d597ff7f8593723d9d9dce77d3807f60312a6d7d99d5fe09d8f90dd5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/2162c35c-0e92-3e5f-9c68-43de0364d75f.png.mcmeta"
+hash = "92d177b24dc0ccdae1a8cf36c1a54ec3a940591179a64f48a80eb0578af19aa2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/25292f5f-1bfd-359b-b761-3a568fa3ca56.png"
+hash = "a59d11c0e10a4040c597a60dc143e2e472769b9459acff454efd700e114ef5ea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/279b2397-00ce-3bdf-beed-6619ffb4316f.png"
+hash = "d484266014b9d5fb2067309498f61cf585e4f7ac269bad04f1ec55f4ff34a570"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/27a3b9d6-5c1b-313e-9f1f-529dfe0f26f1.png"
+hash = "8336f6429fbd2ac8646aef729898037ffe474d0256f781c7aaadc08fecf6e218"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/2835ac24-b3ec-3b46-b196-ad26a7f764d9.png"
+hash = "a690c263fd4df9001004a571bd6310584e58bc454a47c15f5b07f41acfd4b561"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/2a32e07f-56ec-39a2-99fe-2d83d23c6de0.png"
+hash = "2c7343c45f15ffa3d65ff9c9f5ef3ee77fc6f6e285a6c57a841262c5a4eebbf2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/2a32e07f-56ec-39a2-99fe-2d83d23c6de0.png.mcmeta"
+hash = "eaf5de1e54d7f873ad4b49725157d04275ad41de0b4138eb4764a9906a5dbd34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/2bb7c798-924b-3d1d-bb2a-55e8eb105b62.png"
+hash = "101db5a8238bde7ef6e49a666867590994af6c3182144eebd77c92eb08e57899"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/2f10a5b3-4ff6-34d8-88a3-264601393e6d.png"
+hash = "ddd43cba720fea51e206096c2673b7c50af9085223b118bc73481d202cf7eaa9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/30f70ee2-ce78-3f88-b0b2-d583d0c6fb47.png"
+hash = "0656f4ec72d06b10990a1e879e07394ef64406131edfcd17053c69da8b982f58"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/360c7b5a-ea6c-3aa7-b0a0-a9fbd433bb93.png"
+hash = "1b678d80e8e374f3bb67a3fabe32bb4aad5f6f4c2be36db86aa365277400d780"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/37c43c4b-9a52-332f-809e-a03125094fd7.png"
+hash = "9f6c623926aaa984f0497cff855f9d80ac684f1b75c3757bc8254628fc8e8f58"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/3a34eb53-211e-3a3d-83dd-aaef282e5848.png"
+hash = "9b3934080e7c0665b37f50e95b634bf127fdc288b2cced60a1f57319df7afd6a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/3ccd4442-abbe-37f8-8f8f-2a973d92e568.png"
+hash = "d0a2cfaf1cbe2cbaa026f568c36cbb97176140d32785e1a92b1afe6f2bbde1db"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/3d0a22e0-bb1c-3b4e-a839-95a20aee434e.png"
+hash = "7c6de495c2a5c3873c113eaf77996d704ed3e537fb9b12fab2268350af7c5f5b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/3ecc212f-397a-3f72-ad01-1ca3376efce4.png"
+hash = "ac18f0c34ebb6428b8104a81391bc2e7167ce6c7378d13f02eb88d7472033be3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/40a0fe60-24cf-348b-afe0-e4784e04f2f7.png"
+hash = "7d54ed683af0834fbf47f0dcb88ce1983a4709b78a64449b2be733f624285c4b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/42a2b267-c98b-3b43-a490-44feacf9198c.png"
+hash = "3bf627fd6280dc74b104ce43767a8864025275a6c1a9c3b25cba80defe35fa3d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/43d29299-7587-3fe8-b9db-33ad882a50bb.png"
+hash = "0efe8568099a0a003136342bc88c457abbcee947b5b264e6a6a871af21bf45e4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/486dc5c4-e1c9-3a24-9160-4ed8d087f46d.png"
+hash = "a77ae0ed13cb1311e307cf8890d483fd6f27ee63cac733ec7845166d7d76eae9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/4b918ad7-3248-3739-bf67-726b4c7353bb.png"
+hash = "acda9de6e30eb44670adc31894b15fdd59f519786dda4c725f61e7a6142dfaca"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/4ded430b-bcb2-35e6-a513-e8f0b04def47.png"
+hash = "f0c3076693fbc57f2cfb16fc9509b9ecafb752f945d29a9645d9f47535f4f4d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/58ec6fa7-11e7-39c0-9ef2-79c904191e75.png"
+hash = "b40a61cda0f030f268c0a6818cc42d97576bed78558c62679f424de25012ac6e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/58ec6fa7-11e7-39c0-9ef2-79c904191e75.png.mcmeta"
+hash = "92d177b24dc0ccdae1a8cf36c1a54ec3a940591179a64f48a80eb0578af19aa2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/5b26acf9-96f8-36a0-a36e-0982bb21196e.png"
+hash = "5561f25a11747b15cf7a89b18330cb0b9d40a66a8a62c61911d191483450b726"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/5b4552ad-78c4-34f3-b7d7-42d837fc711d.png"
+hash = "8822910ac1681e782c0836867a5700a3281553af1bb16722cc972b395f7f5238"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/5ee6e1c1-0de1-3cca-9b09-440c87ee19f8.png"
+hash = "c6f1ccc68b5cd86c46c0f5f304001d39afdf8bd04b0362aab1c0afcb1db878b4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/647f47e1-0c26-392b-8740-fe3da22244de.png"
+hash = "bfd21423b33b4c67fa942e4b2c02ffcbaac790037da25e713fa6fd7a574e6e85"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/654b8df5-7c0d-315b-894c-1803eddcdc1e.png"
+hash = "7085f06f365416cc2a12db379e49bb48c4cfbad36235daeb259b6ace52c203fc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/67b282bf-7d0a-3202-aad2-81d8addc87db.png"
+hash = "0af9f983fe9d7ad8fba129531fe71c061167eb0210fecec9ee33cfb89bdc7164"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/6a1c24b3-7783-36cb-b7b3-4e6bfa863447.png"
+hash = "ec4dd2d0300fab9ac64907f4dd258158b08bd0b002432dae094cd27274be08bd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/6a93a59a-877b-32cf-b321-ca06b287e3ea.png"
+hash = "4b9cc62f24aae6fa87560f66a12b479eeda4567d600e4a42f213904b4247dbbe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/6feb6f76-d871-3c19-8ca4-bae9c9e0029a.png"
+hash = "c96a1074c0f3bfca6b47ee31306fa9eba800f04bb10418ab918883a9f17cd85b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/70372565-3657-3357-9930-f1cb3984b51a.png"
+hash = "ee0367e9f1721612c38c5be2fc6f1ac13f864659459a82bc88d782a97537a53e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/703a8d31-fd92-3fa4-ae25-c7ce4572e76d.png"
+hash = "8f1a323fa485207d492a540d30e694985e9dd440c741607ac84ffd3e59e19db1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/70d9679d-0770-3803-b97c-44c6aba76a29.png"
+hash = "3c625e55a3a81dd8eddd89cf2ffe3771ad95302476308d1dfcf061a6d9036866"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/723abf7e-0682-3229-a154-b9f7f1b97a27.png"
+hash = "b9fdd11f1445e84437813c2ba909df789787bf36e6a036e5e2b2e76a4fce3ff3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/723abf7e-0682-3229-a154-b9f7f1b97a27.png.mcmeta"
+hash = "eaf5de1e54d7f873ad4b49725157d04275ad41de0b4138eb4764a9906a5dbd34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/747864c7-3f5f-3767-99b2-3742fe98023c.png"
+hash = "a4ff9a8d358b2a4ab93793e7735b014878d82dbf6d5376297a7ac38a541301f4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/7602f901-bc9f-3dbc-8fe6-4073229c3ba1.png"
+hash = "6fbe135588f956d67fba4fc442302ee234fde5e4c918cf6a7f05ae2845149b14"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/76b4edb3-3f4d-3ccb-b5a5-39db84c1f54d.png"
+hash = "cb344767b7ed81bce24420b08384755744e949d20045f0b666d66f9cf09a63b9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/76e375df-3ede-39e2-a512-c0b101d782eb.png"
+hash = "696b89a21413deee34514f19b20b8208d1be4a819f10bc262327bec57c24b126"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/7870ea8d-fda0-3ba0-ad1b-14ca5f95a8e5.png"
+hash = "2661e370c3b702648d574a3f9b0e34173df3d0af6b9bd32b518b1b2ba28e8fe0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/7c85adcd-8b15-3573-91ca-80fb65fa756b.png"
+hash = "a51063422becfa1b7cd42b7d0dd728aaba62d072b9a63d51077a537521ddf788"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/7cfd7146-85fe-3c06-b91c-c4d388724473.png"
+hash = "586bae8f3604fc70abf211b5bbf6cfadc9a05839c55c65a8e7dc9409372cd988"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/7cfd7146-85fe-3c06-b91c-c4d388724473.png.mcmeta"
+hash = "eaf5de1e54d7f873ad4b49725157d04275ad41de0b4138eb4764a9906a5dbd34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/8279f9ed-09a6-3d32-a67c-7fd8785ea63f.png"
+hash = "25245c26e42d7ea359ea69b546097f675d73d64626cccd6d3d8b193ed41df52e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/86eae5c4-607d-311e-b3c2-aa4ee70e18ad.png"
+hash = "1e987ea6faf4d70272cde1ccbccbdc4159acae064a5d32226e796d9ed14de390"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/87556a0c-068f-3b41-8a7e-2b36370f1af4.png"
+hash = "1ae563086832e33ed3f9776b1e134b4c119a9feb98743c713940d5059e37f0f6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/8a23040b-3ac7-33d2-8456-155c1093f861.png"
+hash = "97dfb29ab853395b678a02133404f864c9b1cfd59748fc0564f145e5eb05bb34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/8adc3ef7-9da0-37d2-b11f-6f9e6dae245f.png"
+hash = "2ce97103d2a1f20eecf54737a520bd163a40a8943379e5d6f47283ba592c292a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/8dee19e6-697e-329d-a711-f801d8c799cd.png"
+hash = "7335c3b0cd4885c731178f0582d4dd5bfa641abbbb263d63df79809dabb516a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/8f148395-3169-3426-b63e-597b42a39a2d.png"
+hash = "71c4ed8753a52b41b6285bc2a8b6eeb100db44c1366978c63095314e3e93c9d1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/90000613-0e9a-3c8a-975c-7cb07d283c9d.png"
+hash = "bde87047a18f9a03bbb9611f50fa9db57ef5379f4787345e1cbc000f43d7c37a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/93a732c8-c489-3849-a105-b8ccb3d60a5d.png"
+hash = "6839e27721b94356877e0c37a9fd6a12683bf850a33cc21c57abcb9ac578853a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/93a732c8-c489-3849-a105-b8ccb3d60a5d.png.mcmeta"
+hash = "1eef320ad627f5267fba689c35eb26b7f2b8f534433efa6b312120eae651a168"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/974b5470-8769-307c-a10a-71410871fb4e.png"
+hash = "34ba4f43c3b1377f28e55f03b8fe26517d7dcaaa1108b8517f0c25686cdd1b99"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/982ecdf9-4b8d-3205-812a-58db357f471f.png"
+hash = "67152e8538faf86ed25a7120291ce9c87649aaaff7452633ca34db1f5ed303c3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/9b7fdaaf-ec37-3be6-a094-2be01c58d147.png"
+hash = "2c1fbf17f5bf9938a4b409fd57dd0c9b1966bd95d4c90790d90cea285245afc6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/9be260fb-1eee-36fb-b01a-38ccbbcf8107.png"
+hash = "cfcb1b42147652c1042e4a77d4e6ae163f143622da3d60bfadb5a0a3127f4674"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/9d25bd80-3365-3b3c-a98c-25d245cdf617.png"
+hash = "03cd0f1f7e44b54ff45bc71498d322aa227edd6d34c90fa7a3aba9ab7afba165"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/a0796dc0-54c8-3880-ba2d-62e12e6365ab.png"
+hash = "1ac69196e438ed97d31cf96c6abd07993258cbd35eebe7791ef3d8a32c62e456"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/a4080ad9-0edc-350b-9c01-8649220970ad.png"
+hash = "91fabbb63f6d9adec0b121ca3ca48902b7aef8651acc7aa11ffdb0f216e06135"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/a91bbdc8-7248-3fb7-928c-47ff318d0770.png"
+hash = "8338a43c912a24665b047c0db57369b4fe5bcdc3a8635c3af3bcea1c80bfbc72"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/a98d6669-fc32-36a4-bb09-ca2a4f44b69d.png"
+hash = "203512b3a2db4853da711a98e7244c8b11c6439c0768e2eb3c1e386c71fcbcab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/aa6b3b22-f151-3c78-950e-ac9374098f9c.png"
+hash = "123217eb12357081d286fd1c0090f1be579fe99d8c323a5cac8fe1b515058a61"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/af0df17b-603b-3ca5-afd8-2ed6bc89b0a1.png"
+hash = "5bcfee193a086bf98291db83ad4f887f68eb2b5b5cd30ed45a9fb9579e59de27"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b07a91ad-af96-3522-a7ec-24a8a2ba0974.png"
+hash = "b1357671c8fa0401364be47f5521046708411719a2c6a2bd70e763ea5ac87af6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b2c49d44-58ce-3373-938c-c6afcdc425b5.png"
+hash = "e22f9232fbd6485736255f59f7d366557c74b7a483a203c2a33558ea61ef67b7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b3773588-2325-324c-bee4-b39e0285e596.png"
+hash = "8bd2d26beb01f2ae642c8c8a7afae4ea7fa1010471676c1dc56214becf4f9b37"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b3773588-2325-324c-bee4-b39e0285e596.png.mcmeta"
+hash = "1eef320ad627f5267fba689c35eb26b7f2b8f534433efa6b312120eae651a168"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b3d68d3a-69f1-353d-abd3-923bd092bbd6.png"
+hash = "bd3d7ea595fe1c58f8532ce7f4d036378afdc9dcd790db4133b9db57fb8f1055"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b55a41dc-df3a-371a-84bf-2b1f4a3e5653.png"
+hash = "f98a846674295010e223fe9c013c5fb6c30b6994cfceb3b72c70999aa9a0350d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b5b08d82-3e0a-3cc7-8714-65ba0aa7f565.png"
+hash = "ec4093d2ed283c4d418b36235c3d960c86439b10562fe2e66e58d10da714cf4b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b641096b-bdb9-3398-96ad-7c16c31847d4.png"
+hash = "f0412043e9014564b434b9524670df2183e2dfa6edb7b612c823145c2e17fa41"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/b675cac1-7271-3213-a40b-750609e004dd.png"
+hash = "c81b7eccb6d8ccad7525a37f97120f3ecb723ea9e94bd99355b9f69712e330ca"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/bd20793f-d46c-3897-b64e-8b0dbe7e09ef.png"
+hash = "0b774432783e45219fdca1974fd1e3c32bd440e95a356d6b096798ebfe093a8a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/bdcf745b-633f-3294-9244-fb8b16971342.png"
+hash = "e4b535cc7203b047b70ac64b88741109ea0a5362f5ca208f4322ea78bd1e2724"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/c217b5cc-246b-377f-bc26-a40ed7bb39d2.png"
+hash = "356f25c366a955165992f582a0a089127815a1221c28707bfd6926bb5599b206"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/c5b8c54e-f4d3-3053-9dc4-4af0c3588abc.png"
+hash = "d8f7f9b0634a5bfbd8603dc47e1acf46ed2ae76e672249636c4a78e399f17022"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/c7bc4227-80c3-32a8-8e4d-fa35da5b1ffa.png"
+hash = "3f1afd51cda7d22c4017dcec275ce0827c37ab6c6c213450c4011772535dbaa9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/c84d8e16-2ce1-3887-b255-1e47671f8fe1.png"
+hash = "1d76dd426b139bd87982d4101b34c8ea5bbe3bfbd0b79f4be20d70c3267c0a80"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/c8704e67-9207-3ddf-a9a0-b60d2d6c9c75.png"
+hash = "1b1fc498570503772b7e7e01ba3697c27605418c41318af57da29f2f8ff83e8b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/c937d8f4-1370-3b70-a091-d348b70157d1.png"
+hash = "55ee35bfc298665c45b7d3e3f16c74ed5290bd1de5701c509266559b6aba0565"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/ccfb6287-2a1d-3684-84fc-4e0275e13642.png"
+hash = "f48447227ac1bab05d07c93ac61dfb401ac459d521907dda13807f2bd6058c9e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/cd9f99dc-cfe3-3b3b-a9b6-a2694234e9ab.png"
+hash = "475beb8b2e84936ce57969b03a47984e43b997aecaf74fa6b1dc69fa8c0a6306"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/d0a04fa2-b424-3570-9870-b3c27f859f1c.png"
+hash = "9f1d101113fa3bc8603e6812135b3cee1d8fcc398903b055e3fb3311eb00c9bc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/d0cdb6dd-1dde-3654-acdb-c1a325668f02.png"
+hash = "5ee68d362b75c284ad810c2d4426ff9b15c83bc96aca36f103043a6cb7999442"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/d0d4aaeb-45ab-3670-80d2-357d0692b5dd.png"
+hash = "78250b91a17221a3f31f3b69db09cd1a3e43e07c78df97f01b187ccb725e52b2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/d29174e9-8031-387b-8c99-3a2f2bda4769.png"
+hash = "845286bed6ef56a450e24a163aafb580e26cf219d52fba50749a01107f9427f7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/d906f967-4ba2-38ab-86f5-879b5cdef9b9.png"
+hash = "9194580fccf6fc4fc30f1598c0030be753f7ea5394bbb56a6af27c94953f7e63"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/db019c10-292a-3207-a4f4-715487b5e4d7.png"
+hash = "e6b9816a2ddc6633d97609d3ff304fc2e498ad9fb8183cd0123dc0a1dd4277a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/dbc2766c-217c-33a6-aeb8-b92b8005f734.png"
+hash = "67f37fedd43ebf7e982b8b987c61abb19cb4cd0c20faabbd326523ae2e95666d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/dd32a636-e6f9-3b78-a188-33278f17583e.png"
+hash = "7e1833386f5ad49624796678cf26ac77baa4f72da74c4e5c9bfe3ced75cba441"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/dded1cf2-e4f3-376c-b662-f4f4ca12ec61.png"
+hash = "2b596fe98cc69caa9bbcca93ff8d6f3fa20d7cbd7b8fadeb213342aa63f7134f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/de368474-4edc-378a-9b02-25f02815e975.png"
+hash = "6372381685d58fc317362c1682017004990a58c8bee433d86a44649b73f46ce2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/dfd7f5fb-f4db-38b0-8b16-32734fc8ef78.png"
+hash = "ea29dd490c6a3c25861b44c446d3df36d1a642e70661f25d1c859a6c0346a41f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/e13f848c-0f9e-33e7-813e-005f4761d516.png"
+hash = "f7debb911398a58c671d01532e0b593d69a3f44f0c045642324350965453d87f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/e3597b20-b3c6-3b4d-9223-904cb4332994.png"
+hash = "bd24d14c34f59680293fdf44bbf413793b0221f406d0541064d080a1a9c12ae3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/e48cc3c7-413f-3eb7-bab7-8749eb9a5b5a.png"
+hash = "fa36f042f55a83e4993a9db5d11e9313363fc7958e4d14533284781a0513142a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/e5d6e830-f058-351b-b28a-fe81110a5a95.png"
+hash = "bd53bda6f3836e390fc8dd54d43e6627714d1385eed52bb908daf9fa8578d0b5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/e7018816-776c-39c5-8215-d875c0b2dd2e.png"
+hash = "5b0b80015a6e6451f581e076d63bb1e13ca8bb45b948d25ecb3a900f8552cb0e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/e7306f66-6f26-3ac4-ad3a-75f6681a0e35.png"
+hash = "b4aafef341c8b90fd47e8f9e606f5953bc84bcdccef25c524c1fa39ffd9294f3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/e90c583d-494b-33ca-ae18-3120985acbce.png"
+hash = "9f1e2f3e14714c700e45621205e868d3faba3a20c58fd07b2c12d77799a422e1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/ec7e170b-adc4-3151-9c17-20af812d839c.png"
+hash = "f17b04e7a5ba6f613ab82b2f752384b0f6f452d18d905eb15ac78a09c92e767e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/edd91a68-cba9-32e2-83d0-8a653530283a.png"
+hash = "13ac00999ba8bfd9877ca576b5e1c00cc99844ad1ddbe9a5d2ea890ab7e40e29"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/ef512a49-bab2-31d0-b754-5945d26f798b.png"
+hash = "f416086024b0653c8b570a50d780b580e398c34fd0e925f0649190428c07c1dc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/f1cfaf47-097a-388f-8057-979f338ed770.png"
+hash = "b5f63d4e9655b30dc9d9fee2c4bf8743532868ee9bcc6eb287241a784982e50d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/f6655bdc-263b-345c-98a3-3d0c88b72a92.png"
+hash = "e2608a7d0d15b25f7278835df709f77cde7b1f5db1ef4b210f35f6a2df430897"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/f6f799cf-2811-38bb-a6d8-dfe8443f5bd1.png"
+hash = "a83078e466fb285ef9c2f29c63807cd5dfb7010af9e07af90a358b482361edfb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/fa3d249a-863e-3aa3-be44-51f509d7e096.png"
+hash = "f19d24aac8885b83c63615a9de1b62ad97b67085f2e401f7804944c59a8af1dc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/fbb424b9-4ac7-356a-80a9-a07e4faba596.png"
+hash = "6102be15d634bc89146f55dfd69c979cfe0773b5483741f80b783de19656467b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/fbb424b9-4ac7-356a-80a9-a07e4faba596.png.mcmeta"
+hash = "fa9389653bdb5634305241afb6e5c637b26f435339ce1f28f9938934608aeec0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/fefecbf8-2678-322b-9add-cc1e0c255c40.png"
+hash = "81bf8b3ddf51dc901e5b964bceaf40f5516d3727ce6410bb2a936e0ab0a67229"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/irons_spellbooks/textures/item/equipment/iron_fields/ff2a04dd-1319-37ea-b259-a9baadfc597d.png"
+hash = "acf647eaa1545ca05269a6a9d41c8f557937525d8ca99b5688e3974ecb7c5986"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/canteen.json"
+hash = "757024324cca3d602a297aa9aab7a74046dcdbccedc81875e79f1d02252d0125"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/canteen_purified.json"
+hash = "e5331e1cabcf341e7a694daa763d1e220d8d564440fd5f315c21fa5d90b8ffd9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/canteen/body.obj"
+hash = "7ba06c72b1c56bc17e5e3ea9384a90270aebcc4aeaff36a78b9c731f6dc88bba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/canteen/equipment.mtl"
+hash = "e147b09ba36af350beeb5905584bfc53b62878d14fc624737727f807c5f973c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/canteen_purified/body.obj"
+hash = "7ba06c72b1c56bc17e5e3ea9384a90270aebcc4aeaff36a78b9c731f6dc88bba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/canteen_purified/equipment.mtl"
+hash = "ee6e5d1aa993deeca2c33e5b5f10f8a06870290c74e8c79b1f8c25e531e0a856"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/large_canteen/body.obj"
+hash = "f7eb8224ec95577b3adb38e357d87adc7e5a9d8b4e1d1d52da69e8fdeb8cb146"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/large_canteen/equipment.mtl"
+hash = "2b8d58ba75fbc375f6d7cecdf214047955f2c8072e013ab68991f2d9998bb946"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/large_canteen_purified/body.obj"
+hash = "f7eb8224ec95577b3adb38e357d87adc7e5a9d8b4e1d1d52da69e8fdeb8cb146"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/large_canteen_purified/equipment.mtl"
+hash = "146f3fc087ec62242077032a2eaf9e5172d8b29257e55b2b6c6cc4208941a1e4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/medkit/body.obj"
+hash = "0df242b87f47c2faefbd42a1e213ee82cf21e2a26346747749ef8d0d622f61d4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/field/medkit/equipment.mtl"
+hash = "24557dae45f0440b21086d65138c7c26a516e3b147b10edcaab7e9ada636c25b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/canteen.json"
+hash = "2f395aef84bdcb0453ea14a1cfcf8050494339766c5e66e4fced58e0b8c8520d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/canteen_purified.json"
+hash = "7afc3be2074efba87ea3dfadabf34ee47381fa1353e83a8c4a97810932de0c96"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/large_canteen.json"
+hash = "b2ff157cc2eebccd81d28c546db1f0873dee7df953c93d1a0c0a8f35396e5831"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/large_canteen_purified.json"
+hash = "ee1658cffc3b302d7b7665e629a035639652a9375b24f4e653b23844c9b52287"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/medkit.json"
+hash = "65e6f9af1fca5a25e8e0d389d638d2aa6b4987a79d97945b99df036865ffbe83"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer.json"
@@ -5804,6 +7640,18 @@ hash = "759d8dbb34bc1bda66fcbdf03a0be4645415f677d72ee32213e82e8626edfdd0"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/equipment/held/thermometer/thermometer_29.json"
 hash = "6feeb819bb99764c27483c0b36da72b898c9e1c1ae0e45ebb2428b0d263bea02"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/large_canteen.json"
+hash = "277ca598ce37d3fc7b937177140d96fa09c194b4e4afc887c92886fc63bfd7f5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/large_canteen_purified.json"
+hash = "2ea843e792139f7d19b418805271a022299893ab7af5ded888ab46830805611b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/medkit.json"
+hash = "2b91193785e4d7c0df640d7d75c568b519681608ae7c8f0dde6d8ee387f5de62"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/legendarysurvivaloverhaul/models/item/thermometer.json"
@@ -6008,6 +7856,10 @@ hash = "7cafe1318d782c5eb62e5b4b012b310cd3a7386908725896151f1ebf750d0a95"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/modefite_items_override/trident.json"
 hash = "400531f2bc007c55a20d62d5b7deebedb2cb045eae96096c0d55f916c61fae7b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/bucket.json"
+hash = "8f6c3d334cfff57397530b86bcaeed7049739ef780b07b45de615cc1a054fa52"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/clock.json"
@@ -6394,6 +8246,30 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/model
 hash = "a6362a0359b5be5e7e8ecafcb6c07e73203f0cb44fc6f8f3ac21848b3b919d59"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/field/bucket/body.obj"
+hash = "7aee781404c4b85b611d3e5425b9972dd7894a6fcff27c8ed5a2b7c82651a84b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/field/bucket/equipment.mtl"
+hash = "c31453b0cd80c330c1bc891c7046f28a4f457590426ae110e00eae2b91932965"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/field/lava_bucket/body.obj"
+hash = "4fc83b43eaaf8be42c35cba57896d13d2cecd081f0e7ccb1fb4d618f3fc38c6d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/field/lava_bucket/equipment.mtl"
+hash = "c657514f52b00d3452fa427776e571546694e43688e037e5979950bf6fb180fc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/field/water_bucket/body.obj"
+hash = "be4e5d4519311a296e823d2aaa59dc3e476aad2698300ba901f8221a98c03269"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/field/water_bucket/equipment.mtl"
+hash = "f21e3fd24aea7bc50348f7f04e8d823166b3d640adf5b7d970aaa393f82c886b"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_cast_held.json"
 hash = "c314fc981021fe5d1859f27c3f385be7508d7206bba89fd104f011358dc6cf75"
 
@@ -6424,6 +8300,10 @@ hash = "548abcbf87341e61812166098e3caeed77c2e421e479456cce0d8558111ac43f"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/fishing_rod_held_left.json"
 hash = "079029669eaaa05fc2ebfb3f4e7dc738fb063576a46ee53c763ab09f27f3f4b6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/bucket.json"
+hash = "3ad20a1f458cbdfda916b31c03cf1f99a9591672ba71da7085765676bdd75650"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/clock.json"
@@ -6814,6 +8694,10 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/model
 hash = "92480ccb78d41f0f23789a85d6ecba884adcf5e0682e0962f3253ea57a138cde"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/lava_bucket.json"
+hash = "8476ef6a9c7ff3309cc937123d52de3d6fbcd584401c04f2051152f52ef98d25"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/lead.json"
 hash = "5af41a079510a51e94ddea76f790b14f99c5ce58ad164194df8862b9b0281137"
 
@@ -6950,6 +8834,10 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/model
 hash = "da0775ffacb999f4f7ecfaea553503ac9d1e0bfde83574e2c22f61666a5c3521"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held/water_bucket.json"
+hash = "a17927f8fa16ce1f8c63b327abf0fc39761af43d3707a1b1cafbb49d0b0fd93c"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/equipment/held_brush.json"
 hash = "3988168f1684da9b01e184810c11241afa1c4fe67b30d646e6e39c2d1d6718c5"
 
@@ -6972,6 +8860,10 @@ hash = "601d8fcd190c7273f14648db5da0710a9d60eb451bfe9cb053cdeb30b10b85d8"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/item.json"
 hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/lava_bucket.json"
+hash = "71f5353e61023bb56e5db294db091393cff2a7328f0ebfc4690d197795ef5c2f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/lead.json"
@@ -7120,6 +9012,18 @@ hash = "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/tooting_goat_horn.json"
 hash = "ea162937a968e511936a22997b7ef1d08811ff8a1bdc63cf8f3b5ea8eb14f2a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/water_bucket.json"
+hash = "3c4ad8d1d4037bd7f3afaac962f95ea9ee5e099d1482d8b5302fef6b4145e158"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/punchy/compat/aeroscapes_field_equipment.json"
+hash = "2ede0cce78463b7f70cef54bdb5c2e38ecbaf26cf0361a423e184877637f296a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/punchy/compat/aeroscapes_iron_equipment.json"
+hash = "fda6f2405c531dee594c33cd92cc74c4a6d3b97486255bb97ad71e77cd04bc35"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/textures/item/equipment/fishing_rod.png"
@@ -7598,6 +9502,38 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/it
 hash = "310a8803409f2eac93d50dee2dc18888ccca2232e00cd355c45dfe352eb38601"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/bottled_cloud.json"
+hash = "b39126bb6ab1cb3cf39ea09f87af52e427ef74a77c4942d50b3b07f6f2504b18"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/field/bottled_cloud/body.obj"
+hash = "0b01b69a86162c88bf1860c76fd232eb4fff6ebbb13b8af8f39a14d53ee977bd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/field/bottled_cloud/equipment.mtl"
+hash = "ead83db4144c46462d3996e92064a20654942a6656f248c91171a2a6c5943771"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/field/bottled_cloud/glass.obj"
+hash = "8573aed41aaaa5a247b84b2080a0f47426cb5dcb40a7397814de117a243bc747"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/field/seed_pouch/body.obj"
+hash = "c030d558f7ff7e896be5d1bb8b062c480c7e4e1d57bf861c7b57c33d6f55af7b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/field/seed_pouch/equipment.mtl"
+hash = "1b5485339d652e4fbe19ea7b18b238f88a56d169a1cd52a5eb634e233724e3fc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/field/seed_pouch_items/body.obj"
+hash = "afabf060ddf12ba29c16c049bb04e1efa9614dbf242ce42bda63aeaecfd8d488"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/field/seed_pouch_items/equipment.mtl"
+hash = "2cf6406ae54e64d152f9c7f779fdf9c9bb84a7d92aa3de4162e1982a918871e6"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/abacus.json"
 hash = "240dead60e25e8be80700ea7f747374e8bbf329a74fe259e82d69cd9eebdd1b9"
 
@@ -7798,6 +9734,10 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/it
 hash = "7b182f5e95fddefae843f541351eb60a34b8440cd7c0eadec4fe61f0228e825e"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/bottled_cloud.json"
+hash = "e87578b931e1a5eeaa9f9f41b4d6b4b2c813cba0003c84d124689026ae4d6da4"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/flamerang.json"
 hash = "4a15903ebcc02979ce761d73a13c5300295ca88b53496d685ae11b8415c56506"
 
@@ -7816,6 +9756,14 @@ hash = "714750876564ff19d2dd994e08bc78600bc95b9f3674fd1583c07c5a8e86b846"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/pickarang.json"
 hash = "b5ef703d5478f9445718ded4f7483a2662a137e3ac71a181da0768c8f7634cad"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/seed_pouch.json"
+hash = "34cee5a86fdf3d946b631a1defb369a1ed4236ef685f8f1805dabd1b133c0bce"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/seed_pouch_items.json"
+hash = "c56f84558486255d296a00b4e173784d02a1a979eca25891bd21951ef121f825"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/equipment/held/trowel.json"
@@ -7840,6 +9788,14 @@ hash = "89ff7d04d97cf7a6c819553f3303fb09f18fd6b090052de1d37f2d8d2293d9c4"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/pickarang.json"
 hash = "211048b4106bf54446c04b2a10129ce55cb6f6061bddff55c5728b55553ac49f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/seed_pouch.json"
+hash = "fef97beaad500a58f2d553b1b9a0a8ab19c265d468910e979077db339caf3ad4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/seed_pouch_items.json"
+hash = "e0a1733a6a4a024199c116bf57970870186f0a788eeef4ebe147289673590a2d"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/quark/models/item/trowel.json"
@@ -7926,6 +9882,18 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/it
 hash = "372cfa23867af1c27da574222e68e429648903f8af8f4643a9393a20f9a3d9c6"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/field/fly_bottle/body.obj"
+hash = "327a49f22d0fd14436788fc7105c8d44e0d5f9d7a590a2df8870f6d94b7e633a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/field/fly_bottle/equipment.mtl"
+hash = "ae506973687f2658460702dd31d6d288ae98bf57d420779cd393ef73e07ead09"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/field/fly_bottle/glass.obj"
+hash = "a78f2e66951979522bd8cd518c0db3571a60d0bf0dcd11eff039e90eaf8ee52b"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/casting_net.json"
 hash = "92a6e7fd2233c7a34bef5305e7591d3856a120992f85cf0e98d0db63982812bc"
 
@@ -7952,6 +9920,14 @@ hash = "be9f9f05efd14ee2e0b077a1f389ae41b44d1eb7addb2df8b2a607456eee2bb2"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/coastal_crab_claw_shooting2.json"
 hash = "2353803e334cacbbea54ddd202d47a145fca9152554fd73ae4b7100d2a4ef0b8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/equipment/held/fly_bottle.json"
+hash = "b00d55c67fda7ef59dda29f049b99a2a72b0b8c6e2e17711792d39e719ca979c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/spawn/models/item/fly_bottle.json"
+hash = "d55212bee93c453e002ff6c837e50b6113993f6cf456dcaa4463096f2dd927e7"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/altimeter_template.json"
@@ -8270,6 +10246,14 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/ite
 hash = "470422b5d1b10c197ff73615aa14901f4e0f8dbcf94d150767f2fc15005ed19b"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/field/fishing_journal/body.obj"
+hash = "642b00434aebc14d7a849132759fe0c72003a389ee88a77d8535e9b6db6ed5de"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/field/fishing_journal/equipment.mtl"
+hash = "a32629a0fe4db2b0d6ad0d86fabe1c5c4eb66970421e3cf38d26b63fb33cc9d1"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/golden_fishing_rod_cast_held.json"
 hash = "d7f9c1de7e60bf8e9583fdc348d3493a0b65a5b8aff33d6180e3dba4e5c1815b"
 
@@ -8320,6 +10304,10 @@ hash = "d05ad445dbd83d0062e76b019146d2ef93661b366a10771ceffb7132f3fbe5c5"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/held/fish_finder.json"
 hash = "08842c118e9611f86b70b7bcb152eb840adfe4beac58bb4040d45aababa89900"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/held/fishing_journal.json"
+hash = "e320ff8c007b2d2d79273c228e2718951fcdb6a3d9ea3ce39dc4bec7a12e2a55"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/equipment/held/pocket_watch.json"
@@ -8608,6 +10596,10 @@ hash = "955e6dd4c59c001507dd72db7988d904135a8401d1046dfd5b2d7f85beae503e"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/fish_finder.json"
 hash = "d61b83ca84d4840f102ae589be75e65d74b7c86ef84dcd6e7794aba92607ebd8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/fishing_journal.json"
+hash = "e21c4eda285d1d1830aaec7c160818b83b785db3ca5c3990ccd740e2c2835a42"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/models/item/pocket_watch.json"

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "tide:item/fishing_journal"
+    }
+  },
+  "textures": {
+    "layer0": "tide:item/fishing_journal",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "tide:item/equipment/held/fishing_journal"
+    },
+    "firstperson_lefthand": {
+      "parent": "tide:item/equipment/held/fishing_journal"
+    },
+    "thirdperson_righthand": {
+      "parent": "tide:item/equipment/held/fishing_journal"
+    },
+    "thirdperson_lefthand": {
+      "parent": "tide:item/equipment/held/fishing_journal"
+    }
+  }
+}

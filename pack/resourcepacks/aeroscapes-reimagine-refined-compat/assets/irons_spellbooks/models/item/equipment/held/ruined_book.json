@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/ruined_book/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/ruined_book"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        -22.0,
+        -3.0
+      ],
+      "scale": [
+        0.79,
+        0.79,
+        0.79
+      ],
+      "translation": [
+        -2.3292391,
+        3.5122802,
+        -1.0284749
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -22.0,
+        -3.0
+      ],
+      "scale": [
+        0.79,
+        0.79,
+        0.79
+      ],
+      "translation": [
+        -1.1881438,
+        3.545045,
+        -0.5641071
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -23.0,
+        -4.0,
+        -3.0
+      ],
+      "scale": [
+        0.79,
+        0.79,
+        0.79
+      ],
+      "translation": [
+        -2.506046,
+        0.40953556,
+        -0.36421108
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -23.0,
+        -4.0,
+        -3.0
+      ],
+      "scale": [
+        0.79,
+        0.79,
+        0.79
+      ],
+      "translation": [
+        -1.2783328,
+        0.38370836,
+        -0.259984
+      ]
+    }
+  }
+}

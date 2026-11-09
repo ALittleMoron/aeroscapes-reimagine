@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/scroll_nature/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/scroll_nature"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        -22.0,
+        -3.0
+      ],
+      "scale": [
+        0.81,
+        0.81,
+        0.81
+      ],
+      "translation": [
+        -2.7222764,
+        3.6309416,
+        -1.2517674
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -22.0,
+        -3.0
+      ],
+      "scale": [
+        0.81,
+        0.81,
+        0.81
+      ],
+      "translation": [
+        -1.364795,
+        3.6699195,
+        -0.6993414
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -18.0,
+        -4.0,
+        -3.0
+      ],
+      "scale": [
+        0.81,
+        0.81,
+        0.81
+      ],
+      "translation": [
+        -2.939716,
+        0.5748532,
+        -0.4370755
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -18.0,
+        -4.0,
+        -3.0
+      ],
+      "scale": [
+        0.81,
+        0.81,
+        0.81
+      ],
+      "translation": [
+        -1.4791915,
+        0.5334387,
+        -0.31623346
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+newmtl shell
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd legendarysurvivaloverhaul:item/healing/medkit
+
+newmtl lid
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd legendarysurvivaloverhaul:item/healing/medkit
+
+newmtl rim
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd legendarysurvivaloverhaul:item/healing/medkit
+
+newmtl red
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd legendarysurvivaloverhaul:item/healing/medkit

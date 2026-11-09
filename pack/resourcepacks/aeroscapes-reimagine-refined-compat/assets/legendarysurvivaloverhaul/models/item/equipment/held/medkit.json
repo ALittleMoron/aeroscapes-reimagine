@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "legendarysurvivaloverhaul:models/item/equipment/field/medkit/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "legendarysurvivaloverhaul:item/healing/medkit"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        21.0,
+        -18.0,
+        5.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.24079552,
+        -3.9297695,
+        0.23594546
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        21.0,
+        -18.0,
+        -5.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        -0.24079551,
+        -3.8736923,
+        0.08986032
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        21.0,
+        -18.0,
+        5.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.24079552,
+        -3.9297695,
+        0.23594546
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        21.0,
+        -18.0,
+        -5.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        -0.24079551,
+        -3.8736923,
+        0.08986032
+      ]
+    }
+  }
+}

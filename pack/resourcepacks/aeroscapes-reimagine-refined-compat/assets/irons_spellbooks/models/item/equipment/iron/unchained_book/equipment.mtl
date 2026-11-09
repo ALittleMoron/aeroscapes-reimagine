@@ -1,0 +1,29 @@
+newmtl cover
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/dfd7f5fb-f4db-38b0-8b16-32734fc8ef78
+
+newmtl leaves
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/f6f799cf-2811-38bb-a6d8-dfe8443f5bd1
+
+newmtl spine
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/e90c583d-494b-33ca-ae18-3120985acbce
+
+newmtl restraint
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/d0a04fa2-b424-3570-9870-b3c27f859f1c
+
+newmtl clasp
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/unchained_book
+
+newmtl rivet
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/unchained_book

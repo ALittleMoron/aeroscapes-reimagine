@@ -1,0 +1,14 @@
+newmtl shaft
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/43d29299-7587-3fe8-b9db-33ad882a50bb
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/aa6b3b22-f151-3c78-950e-ac9374098f9c
+
+newmtl skull
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/bone_key

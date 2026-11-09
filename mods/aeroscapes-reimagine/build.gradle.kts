@@ -91,6 +91,8 @@ repositories {
       includeModule("maven.modrinth", "supplementaries")
       includeModule("maven.modrinth", "handcrafted")
       includeModule("maven.modrinth", "chipped")
+      includeModule("maven.modrinth", "brewin-and-chewin")
+      includeModule("maven.modrinth", "comforts")
       includeModule("maven.modrinth", "galosphere")
       includeModule("maven.modrinth", "sophisticated-storage")
       includeModule("maven.modrinth", "create-aeronautics-throwable-rope-connector")
@@ -172,6 +174,8 @@ dependencies {
   equipmentAssets("maven.modrinth:supplementaries:Agn1kmUY")
   equipmentAssets("maven.modrinth:handcrafted:JfqnpP2Z")
   equipmentAssets("maven.modrinth:chipped:eqVowbGc")
+  equipmentAssets("maven.modrinth:brewin-and-chewin:CKLYp96Y")
+  equipmentAssets("maven.modrinth:comforts:3kpPjcTc")
   equipmentAssets("maven.modrinth:galosphere:Y3deS8Po")
   equipmentAssets("maven.modrinth:sophisticated-storage:wVZfDecJ")
   equipmentAssets("maven.modrinth:create-aeronautics-throwable-rope-connector:EDzeTV17")
@@ -657,6 +661,25 @@ val utilityEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
+val fieldEquipmentModelTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(equipmentModelsCheck)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.FieldEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
+val ironHeldModelTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(equipmentModelsCheck)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.IronHeldModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+    providers.gradleProperty("ironHeldPreview").orNull?.let { args(it) }
+  }
+
 val weatheringTextureTest by
   tasks.registering(JavaExec::class) {
     group = "verification"
@@ -735,6 +758,8 @@ tasks.check {
     aquaticToolModelTest,
     constructionPlacementTest,
     utilityEquipmentModelTest,
+    fieldEquipmentModelTest,
+    ironHeldModelTest,
     weatheringTextureTest,
     orePresentationContractTest,
     heldEquipmentRenderingTest,

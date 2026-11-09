@@ -1,0 +1,106 @@
+{
+  "loader": "neoforge:composite",
+  "children": {
+    "body": {
+      "loader": "neoforge:obj",
+      "model": "quark:models/item/equipment/field/bottled_cloud/body.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:cutout",
+      "textures": {
+        "particle": "quark:item/bottled_cloud"
+      }
+    },
+    "glass": {
+      "loader": "neoforge:obj",
+      "model": "quark:models/item/equipment/field/bottled_cloud/glass.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:translucent",
+      "textures": {
+        "particle": "quark:item/bottled_cloud"
+      }
+    }
+  },
+  "item_render_order": [
+    "body",
+    "glass"
+  ],
+  "textures": {
+    "particle": "quark:item/bottled_cloud"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -10.0,
+        -22.0,
+        5.0
+      ],
+      "scale": [
+        0.67,
+        0.67,
+        0.67
+      ],
+      "translation": [
+        0.028822623,
+        1.0484939,
+        0.44847172
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -10.0,
+        -22.0,
+        -5.0
+      ],
+      "scale": [
+        0.67,
+        0.67,
+        0.67
+      ],
+      "translation": [
+        0.22216381,
+        1.0620582,
+        0.5253999
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -10.0,
+        -22.0,
+        5.0
+      ],
+      "scale": [
+        0.67,
+        0.67,
+        0.67
+      ],
+      "translation": [
+        0.028822623,
+        1.0484939,
+        0.44847172
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -10.0,
+        -22.0,
+        -5.0
+      ],
+      "scale": [
+        0.67,
+        0.67,
+        0.67
+      ],
+      "translation": [
+        0.22216381,
+        1.0620582,
+        0.5253999
+      ]
+    }
+  }
+}

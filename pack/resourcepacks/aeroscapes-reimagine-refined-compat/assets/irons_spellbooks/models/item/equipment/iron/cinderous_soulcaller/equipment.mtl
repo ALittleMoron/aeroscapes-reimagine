@@ -1,0 +1,19 @@
+newmtl metal
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/fbb424b9-4ac7-356a-80a9-a07e4faba596
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/cinderous_soulcaller
+
+newmtl inside
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/cinderous_soulcaller
+
+newmtl cinder
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/cinderous_soulcaller

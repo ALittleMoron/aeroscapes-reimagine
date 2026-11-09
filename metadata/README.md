@@ -273,7 +273,10 @@ retains the dynamic tile preview. Physical cuboid children use a block parent so
 the item sprite generator does not replace their geometry. The scoped palm-frame
 bridge also positions the pouch and paint brush in first person. The aquatic
 creature net inherits
-its provider's geometry and changes only held transforms. The authored source
+its provider's geometry and changes only held transforms. Spellbreaker's held
+blade uses independently composed material fields sampled from the color palette
+of Galosphere 1.5.3's Allurite block; the provider's artwork is not embedded.
+The authored source
 and independently composed pixel fields are GPL-3.0-or-later; referenced native
 artwork and upstream packs retain their own terms. The source is included in the
 corresponding-source archive. Run

@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/autoloader_crossbow/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/autoloader_crossbow_standby"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -90.0,
+        0.0,
+        -10.0
+      ],
+      "scale": [
+        0.72,
+        0.72,
+        0.72
+      ],
+      "translation": [
+        0.0,
+        -1.5,
+        1.5
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -90.0,
+        0.0,
+        -10.0
+      ],
+      "scale": [
+        0.72,
+        0.72,
+        0.72
+      ],
+      "translation": [
+        0.0,
+        -1.5,
+        1.5
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -90.0,
+        0.0,
+        -15.0
+      ],
+      "scale": [
+        0.83,
+        0.83,
+        0.83
+      ],
+      "translation": [
+        0.0,
+        -1.5,
+        1.5
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -90.0,
+        0.0,
+        -15.0
+      ],
+      "scale": [
+        0.83,
+        0.83,
+        0.83
+      ],
+      "translation": [
+        0.0,
+        -1.5,
+        1.5
+      ]
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/cinderous_soulcaller/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/cinderous_soulcaller"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -75.0,
+        -26.0,
+        -60.0
+      ],
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ],
+      "translation": [
+        -0.8973926,
+        -0.57197,
+        0.44352597
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -75.0,
+        -26.0,
+        -60.0
+      ],
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ],
+      "translation": [
+        -0.8973926,
+        -0.57197,
+        0.44352597
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -75.0,
+        -26.0,
+        -60.0
+      ],
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ],
+      "translation": [
+        -0.8973926,
+        -0.57197,
+        0.44352597
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -75.0,
+        -26.0,
+        -60.0
+      ],
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ],
+      "translation": [
+        -0.8973926,
+        -0.57197,
+        0.44352597
+      ]
+    }
+  }
+}

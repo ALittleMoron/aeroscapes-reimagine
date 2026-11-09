@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "hybrid_aquatic:item/bell_buoy"
+    }
+  },
+  "textures": {
+    "layer0": "hybrid_aquatic:item/bell_buoy",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/bell_buoy"
+    },
+    "firstperson_lefthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/bell_buoy"
+    },
+    "thirdperson_righthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/bell_buoy"
+    },
+    "thirdperson_lefthand": {
+      "parent": "hybrid_aquatic:item/equipment/held/bell_buoy"
+    }
+  }
+}

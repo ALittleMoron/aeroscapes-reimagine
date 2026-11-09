@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/hither_thither_wand/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": true,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/hither_thither_wand"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        14.0,
+        -12.0,
+        9.0
+      ],
+      "scale": [
+        0.84,
+        0.84,
+        0.84
+      ],
+      "translation": [
+        0.05267456,
+        1.4909419,
+        0.3832727
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        14.0,
+        -12.0,
+        9.0
+      ],
+      "scale": [
+        0.84,
+        0.84,
+        0.84
+      ],
+      "translation": [
+        -0.51539505,
+        1.4309021,
+        0.24385966
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        14.0,
+        -12.0,
+        9.0
+      ],
+      "scale": [
+        0.84,
+        0.84,
+        0.84
+      ],
+      "translation": [
+        0.05267456,
+        1.4909419,
+        0.3832727
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        14.0,
+        -12.0,
+        9.0
+      ],
+      "scale": [
+        0.84,
+        0.84,
+        0.84
+      ],
+      "translation": [
+        -0.51539505,
+        1.4309021,
+        0.24385966
+      ]
+    }
+  }
+}

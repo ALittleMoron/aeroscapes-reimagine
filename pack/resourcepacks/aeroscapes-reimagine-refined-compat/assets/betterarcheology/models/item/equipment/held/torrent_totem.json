@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "betterarcheology:models/item/equipment/field/torrent_totem/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "betterarcheology:item/torrent_totem"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -7.0,
+        -25.0,
+        5.0
+      ],
+      "scale": [
+        0.71,
+        0.71,
+        0.71
+      ],
+      "translation": [
+        -0.9862882,
+        0.25524795,
+        0.55795044
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -7.0,
+        -25.0,
+        -5.0
+      ],
+      "scale": [
+        0.71,
+        0.71,
+        0.71
+      ],
+      "translation": [
+        0.98628825,
+        0.36734676,
+        1.4709218
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -7.0,
+        -25.0,
+        5.0
+      ],
+      "scale": [
+        0.71,
+        0.71,
+        0.71
+      ],
+      "translation": [
+        -0.9862882,
+        0.25524795,
+        0.55795044
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -7.0,
+        -25.0,
+        -5.0
+      ],
+      "scale": [
+        0.71,
+        0.71,
+        0.71
+      ],
+      "translation": [
+        0.98628825,
+        0.36734676,
+        1.4709218
+      ]
+    }
+  }
+}

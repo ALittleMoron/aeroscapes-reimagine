@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "brewinandchewin:models/item/equipment/field/mead/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "brewinandchewin:item/mead"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        17.0,
+        -30.0,
+        5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        -3.2483575,
+        -0.574792,
+        -0.5699868
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        17.0,
+        135.0,
+        -5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        -2.6522725,
+        -0.34766805,
+        -1.3128762
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        17.0,
+        -30.0,
+        5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        -3.2483575,
+        -0.574792,
+        -0.5699868
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        17.0,
+        135.0,
+        -5.0
+      ],
+      "scale": [
+        0.74,
+        0.74,
+        0.74
+      ],
+      "translation": [
+        -2.6522725,
+        -0.34766805,
+        -1.3128762
+      ]
+    }
+  }
+}

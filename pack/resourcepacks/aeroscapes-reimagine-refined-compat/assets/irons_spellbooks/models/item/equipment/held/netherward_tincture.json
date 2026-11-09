@@ -1,0 +1,106 @@
+{
+  "loader": "neoforge:composite",
+  "children": {
+    "body": {
+      "loader": "neoforge:obj",
+      "model": "irons_spellbooks:models/item/equipment/iron/netherward_tincture/cutout.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:cutout",
+      "textures": {
+        "particle": "irons_spellbooks:item/netherward_tincture"
+      }
+    },
+    "glass": {
+      "loader": "neoforge:obj",
+      "model": "irons_spellbooks:models/item/equipment/iron/netherward_tincture/translucent.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:translucent",
+      "textures": {
+        "particle": "irons_spellbooks:item/netherward_tincture"
+      }
+    }
+  },
+  "item_render_order": [
+    "body",
+    "glass"
+  ],
+  "textures": {
+    "particle": "irons_spellbooks:item/netherward_tincture"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -17.0,
+        -26.0,
+        26.0
+      ],
+      "scale": [
+        0.53,
+        0.53,
+        0.53
+      ],
+      "translation": [
+        -1.1371889,
+        2.0343397,
+        -0.6778177
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -17.0,
+        -26.0,
+        26.0
+      ],
+      "scale": [
+        0.53,
+        0.53,
+        0.53
+      ],
+      "translation": [
+        -1.1371889,
+        2.0343397,
+        -0.6778177
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -17.0,
+        -26.0,
+        26.0
+      ],
+      "scale": [
+        0.53,
+        0.53,
+        0.53
+      ],
+      "translation": [
+        -1.1371889,
+        2.0343397,
+        -0.6778177
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -17.0,
+        -26.0,
+        26.0
+      ],
+      "scale": [
+        0.53,
+        0.53,
+        0.53
+      ],
+      "translation": [
+        -1.1371889,
+        2.0343397,
+        -0.6778177
+      ]
+    }
+  }
+}

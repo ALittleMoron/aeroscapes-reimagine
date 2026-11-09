@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "betterarcheology:item/torrent_totem"
+    }
+  },
+  "textures": {
+    "layer0": "betterarcheology:item/torrent_totem",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "betterarcheology:item/equipment/held/torrent_totem"
+    },
+    "firstperson_lefthand": {
+      "parent": "betterarcheology:item/equipment/held/torrent_totem"
+    },
+    "thirdperson_righthand": {
+      "parent": "betterarcheology:item/equipment/held/torrent_totem"
+    },
+    "thirdperson_lefthand": {
+      "parent": "betterarcheology:item/equipment/held/torrent_totem"
+    }
+  }
+}

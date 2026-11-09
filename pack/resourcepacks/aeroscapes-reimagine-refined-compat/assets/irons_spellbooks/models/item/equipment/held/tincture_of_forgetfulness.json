@@ -1,0 +1,106 @@
+{
+  "loader": "neoforge:composite",
+  "children": {
+    "body": {
+      "loader": "neoforge:obj",
+      "model": "irons_spellbooks:models/item/equipment/iron/tincture_of_forgetfulness/cutout.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:cutout",
+      "textures": {
+        "particle": "irons_spellbooks:item/tincture_of_forgetfulness"
+      }
+    },
+    "glass": {
+      "loader": "neoforge:obj",
+      "model": "irons_spellbooks:models/item/equipment/iron/tincture_of_forgetfulness/translucent.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:translucent",
+      "textures": {
+        "particle": "irons_spellbooks:item/tincture_of_forgetfulness"
+      }
+    }
+  },
+  "item_render_order": [
+    "body",
+    "glass"
+  ],
+  "textures": {
+    "particle": "irons_spellbooks:item/tincture_of_forgetfulness"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -17.0,
+        -26.0,
+        26.0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "translation": [
+        -1.3127091,
+        2.1905992,
+        -0.4433908
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -17.0,
+        -26.0,
+        26.0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "translation": [
+        -1.3127091,
+        2.1905992,
+        -0.4433908
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -17.0,
+        -26.0,
+        26.0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "translation": [
+        -1.3127091,
+        2.1905992,
+        -0.4433908
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -17.0,
+        -26.0,
+        26.0
+      ],
+      "scale": [
+        0.55,
+        0.55,
+        0.55
+      ],
+      "translation": [
+        -1.3127091,
+        2.1905992,
+        -0.4433908
+      ]
+    }
+  }
+}

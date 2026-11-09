@@ -1,0 +1,19 @@
+newmtl leather
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd legendarysurvivaloverhaul:item/canteen_purified
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd legendarysurvivaloverhaul:item/canteen_purified
+
+newmtl binding
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd legendarysurvivaloverhaul:item/canteen_purified
+
+newmtl cap
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd legendarysurvivaloverhaul:item/canteen_purified

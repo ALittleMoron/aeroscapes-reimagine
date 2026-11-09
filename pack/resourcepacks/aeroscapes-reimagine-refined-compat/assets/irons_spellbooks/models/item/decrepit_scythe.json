@@ -1,0 +1,30 @@
+{
+  "parent": "minecraft:item/handheld",
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "irons_spellbooks:item/template_verylarge_sword",
+    "textures": {
+      "layer0": "irons_spellbooks:item/decrepit_scythe"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "minecraft:item/handheld",
+      "textures": {
+        "layer0": "irons_spellbooks:item/decrepit_scythe_gui"
+      }
+    },
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/decrepit_scythe"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/decrepit_scythe"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/decrepit_scythe"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/decrepit_scythe"
+    }
+  }
+}

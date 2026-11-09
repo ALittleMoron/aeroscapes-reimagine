@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "betterarcheology:item/soul_totem"
+    }
+  },
+  "textures": {
+    "layer0": "betterarcheology:item/soul_totem",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "betterarcheology:item/equipment/held/soul_totem"
+    },
+    "firstperson_lefthand": {
+      "parent": "betterarcheology:item/equipment/held/soul_totem"
+    },
+    "thirdperson_righthand": {
+      "parent": "betterarcheology:item/equipment/held/soul_totem"
+    },
+    "thirdperson_lefthand": {
+      "parent": "betterarcheology:item/equipment/held/soul_totem"
+    }
+  }
+}

@@ -4,6 +4,12 @@ description: Version history.
 status: available
 ---
 
+## 0.4.4
+
+- Add held 3D models for canteens, pouches, buckets, tankards, bottles and 31 Iron’s Spells weapons, books and other items. Keep the original inventory icons and item states.
+- Give the built-in spells on Amethyst Rapier, Boreal Blade and Spellbreaker a clearer hand motion. Show a brief first-person Echoing Strikes effect and keep the third-person drinking motion for Netherward Tincture.
+- Wrap Twilight Gale’s shaft in a softly glowing purple vine, use Allurite colors on Spellbreaker’s blade and add a faint glow to the Hither Thither Wand’s gem. Hold the Bone and Decrepit Keys with their teeth and heads in view.
+
 ## 0.4.3
 
 - Add epic equipment with two or three bonuses. Legendary gear combines comparable bonuses with a special effect. Choose the quality before rolling its variant so adding variants preserves the grade’s odds.

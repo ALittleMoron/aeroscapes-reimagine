@@ -1,0 +1,19 @@
+newmtl body
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd galosphere:item/mining_pouch_filled
+
+newmtl fold
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd galosphere:item/mining_pouch_filled
+
+newmtl binding
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd galosphere:item/mining_pouch_filled
+
+newmtl lip
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd galosphere:item/mining_pouch_filled

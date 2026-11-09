@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/crossbow",
+    "textures": {
+      "layer0": "irons_spellbooks:item/autoloader_crossbow_firework"
+    }
+  },
+  "textures": {
+    "layer0": "irons_spellbooks:item/autoloader_crossbow_firework",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/autoloader_crossbow_firework"
+    },
+    "firstperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/autoloader_crossbow_firework"
+    },
+    "thirdperson_righthand": {
+      "parent": "irons_spellbooks:item/equipment/held/autoloader_crossbow_firework"
+    },
+    "thirdperson_lefthand": {
+      "parent": "irons_spellbooks:item/equipment/held/autoloader_crossbow_firework"
+    }
+  }
+}

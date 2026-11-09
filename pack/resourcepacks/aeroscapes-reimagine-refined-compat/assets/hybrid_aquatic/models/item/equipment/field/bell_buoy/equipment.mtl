@@ -1,0 +1,24 @@
+newmtl float
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd hybrid_aquatic:item/bell_buoy
+
+newmtl seam
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd hybrid_aquatic:item/bell_buoy
+
+newmtl frame
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd hybrid_aquatic:item/bell_buoy
+
+newmtl bell
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd hybrid_aquatic:item/bell_buoy
+
+newmtl inside
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd hybrid_aquatic:item/bell_buoy

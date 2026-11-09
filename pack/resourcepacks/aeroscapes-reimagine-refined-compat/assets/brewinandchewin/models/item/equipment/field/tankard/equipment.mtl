@@ -1,0 +1,24 @@
+newmtl wood
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/tankard
+
+newmtl inside
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/tankard
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/tankard
+
+newmtl band
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/tankard
+
+newmtl seam
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd brewinandchewin:item/tankard

@@ -1,0 +1,24 @@
+newmtl cover
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/2a32e07f-56ec-39a2-99fe-2d83d23c6de0
+
+newmtl leaves
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/723abf7e-0682-3229-a154-b9f7f1b97a27
+
+newmtl spine
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/7cfd7146-85fe-3c06-b91c-c4d388724473
+
+newmtl sculk
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/ruined_book
+
+newmtl sculk_rim
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/ruined_book

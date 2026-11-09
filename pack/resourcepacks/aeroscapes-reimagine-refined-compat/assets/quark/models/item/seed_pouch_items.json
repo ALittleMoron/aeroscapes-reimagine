@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "quark:item/seed_pouch_items"
+    }
+  },
+  "textures": {
+    "layer0": "quark:item/seed_pouch_items",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "quark:item/equipment/held/seed_pouch_items"
+    },
+    "firstperson_lefthand": {
+      "parent": "quark:item/equipment/held/seed_pouch_items"
+    },
+    "thirdperson_righthand": {
+      "parent": "quark:item/equipment/held/seed_pouch_items"
+    },
+    "thirdperson_lefthand": {
+      "parent": "quark:item/equipment/held/seed_pouch_items"
+    }
+  }
+}

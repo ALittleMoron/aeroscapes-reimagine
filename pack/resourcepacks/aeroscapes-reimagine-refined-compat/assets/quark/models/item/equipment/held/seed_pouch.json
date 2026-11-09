@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "quark:models/item/equipment/field/seed_pouch/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "quark:item/seed_pouch"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        14.0,
+        -26.0,
+        5.0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "translation": [
+        0.25488946,
+        0.7484275,
+        1.2176566
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        14.0,
+        -26.0,
+        -5.0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "translation": [
+        0.20101663,
+        0.7547841,
+        1.1921616
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        14.0,
+        -26.0,
+        5.0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "translation": [
+        0.25488946,
+        0.7484275,
+        1.2176566
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        14.0,
+        -26.0,
+        -5.0
+      ],
+      "scale": [
+        0.65,
+        0.65,
+        0.65
+      ],
+      "translation": [
+        0.20101663,
+        0.7547841,
+        1.1921616
+      ]
+    }
+  }
+}

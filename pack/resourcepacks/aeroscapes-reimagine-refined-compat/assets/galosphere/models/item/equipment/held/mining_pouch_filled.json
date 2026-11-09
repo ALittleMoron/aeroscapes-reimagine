@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "galosphere:models/item/equipment/field/mining_pouch_filled/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "galosphere:item/mining_pouch_filled"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        14.0,
+        -26.0,
+        5.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        0.270575,
+        0.86833096,
+        1.2187432
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        14.0,
+        -26.0,
+        -5.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        0.21338686,
+        0.8750787,
+        1.1916792
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        14.0,
+        -26.0,
+        5.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        0.270575,
+        0.86833096,
+        1.2187432
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        14.0,
+        -26.0,
+        -5.0
+      ],
+      "scale": [
+        0.69,
+        0.69,
+        0.69
+      ],
+      "translation": [
+        0.21338686,
+        0.8750787,
+        1.1916792
+      ]
+    }
+  }
+}

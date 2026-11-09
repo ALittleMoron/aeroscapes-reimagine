@@ -1,0 +1,39 @@
+newmtl cork
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/netherward_tincture
+
+newmtl stopper
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/netherward_tincture
+
+newmtl glass
+Ka 0 0 0
+Kd 1 1 1 0.31
+map_Kd irons_spellbooks:item/netherward_tincture
+
+newmtl side_glass
+Ka 0 0 0
+Kd 1 1 1 0.37
+map_Kd irons_spellbooks:item/netherward_tincture
+
+newmtl base
+Ka 0 0 0
+Kd 1 1 1 0.46
+map_Kd irons_spellbooks:item/netherward_tincture
+
+newmtl lip
+Ka 0 0 0
+Kd 1 1 1 0.54
+map_Kd irons_spellbooks:item/netherward_tincture
+
+newmtl liquid
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/netherward_tincture
+
+newmtl meniscus
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/netherward_tincture

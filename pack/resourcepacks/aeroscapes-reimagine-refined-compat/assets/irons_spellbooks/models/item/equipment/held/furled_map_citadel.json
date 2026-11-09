@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/furled_map_citadel/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/furled_map_ancient"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        9.0,
+        -16.0
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "translation": [
+        0.040836535,
+        0.1396935,
+        -0.03630514
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        9.0,
+        -16.0
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "translation": [
+        0.040836535,
+        0.1396935,
+        -0.03630514
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -12.0,
+        9.0,
+        -16.0
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "translation": [
+        0.040836535,
+        0.1396935,
+        -0.03630514
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -12.0,
+        9.0,
+        -16.0
+      ],
+      "scale": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "translation": [
+        0.040836535,
+        0.1396935,
+        -0.03630514
+      ]
+    }
+  }
+}

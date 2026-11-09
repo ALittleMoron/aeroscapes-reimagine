@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "tide:models/item/equipment/field/fishing_journal/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "tide:item/fishing_journal"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -18.0,
+        -19.0,
+        -5.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        -1.040273,
+        0.46883893,
+        -0.3238212
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -18.0,
+        -19.0,
+        -5.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        -1.4566023,
+        0.4611776,
+        -0.47206283
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -18.0,
+        -19.0,
+        -5.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        -1.040273,
+        0.46883893,
+        -0.3238212
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -18.0,
+        -19.0,
+        -5.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        -1.4566023,
+        0.4611776,
+        -0.47206283
+      ]
+    }
+  }
+}

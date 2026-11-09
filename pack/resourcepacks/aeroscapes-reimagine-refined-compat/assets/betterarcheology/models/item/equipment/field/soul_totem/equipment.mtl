@@ -1,0 +1,24 @@
+newmtl gold
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/soul_totem
+
+newmtl shadow
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/soul_totem
+
+newmtl face
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/soul_totem
+
+newmtl eye
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/soul_totem
+
+newmtl mouth
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd betterarcheology:item/soul_totem

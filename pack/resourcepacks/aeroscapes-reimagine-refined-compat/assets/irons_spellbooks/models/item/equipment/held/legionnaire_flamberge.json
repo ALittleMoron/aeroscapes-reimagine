@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/legionnaire_flamberge/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/legionnaire_flamberge"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        0.0,
+        -90.0,
+        -20.0
+      ],
+      "scale": [
+        0.76,
+        0.76,
+        0.76
+      ],
+      "translation": [
+        0.0,
+        -1.5,
+        1.5
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0.0,
+        90.0,
+        20.0
+      ],
+      "scale": [
+        0.76,
+        0.76,
+        0.76
+      ],
+      "translation": [
+        0.0,
+        -1.5,
+        1.5
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0.0,
+        -90.0,
+        10.0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "translation": [
+        0.0,
+        -1.5,
+        1.5
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0.0,
+        90.0,
+        -10.0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "translation": [
+        0.0,
+        -1.5,
+        1.5
+      ]
+    }
+  }
+}

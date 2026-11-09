@@ -1,0 +1,39 @@
+newmtl shaft
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/654b8df5-7c0d-315b-894c-1803eddcdc1e
+
+newmtl pommel
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/5b4552ad-78c4-34f3-b7d7-42d837fc711d
+
+newmtl guard
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/2835ac24-b3ec-3b46-b196-ad26a7f764d9
+
+newmtl guard_edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/e7018816-776c-39c5-8215-d875c0b2dd2e
+
+newmtl vine
+Ka 0.35 0.35 0.35
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/70d9679d-0770-3803-b97c-44c6aba76a29
+
+newmtl blade
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/14dbb061-1183-3d5d-bf0d-1e892943e003
+
+newmtl bevel
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/c84d8e16-2ce1-3887-b255-1e47671f8fe1
+
+newmtl dark
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/c217b5cc-246b-377f-bc26-a40ed7bb39d2

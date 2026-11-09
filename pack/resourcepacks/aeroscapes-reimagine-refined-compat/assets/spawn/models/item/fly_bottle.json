@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "spawn:item/fly_bottle"
+    }
+  },
+  "textures": {
+    "layer0": "spawn:item/fly_bottle",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "spawn:item/equipment/held/fly_bottle"
+    },
+    "firstperson_lefthand": {
+      "parent": "spawn:item/equipment/held/fly_bottle"
+    },
+    "thirdperson_righthand": {
+      "parent": "spawn:item/equipment/held/fly_bottle"
+    },
+    "thirdperson_lefthand": {
+      "parent": "spawn:item/equipment/held/fly_bottle"
+    }
+  }
+}

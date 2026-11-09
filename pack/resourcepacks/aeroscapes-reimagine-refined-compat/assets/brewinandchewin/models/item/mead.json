@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "farmersdelight:item/mug",
+    "textures": {
+      "layer0": "brewinandchewin:item/mead"
+    }
+  },
+  "textures": {
+    "layer0": "brewinandchewin:item/mead",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "brewinandchewin:item/equipment/held/mead"
+    },
+    "firstperson_lefthand": {
+      "parent": "brewinandchewin:item/equipment/held/mead"
+    },
+    "thirdperson_righthand": {
+      "parent": "brewinandchewin:item/equipment/held/mead"
+    },
+    "thirdperson_lefthand": {
+      "parent": "brewinandchewin:item/equipment/held/mead"
+    }
+  }
+}

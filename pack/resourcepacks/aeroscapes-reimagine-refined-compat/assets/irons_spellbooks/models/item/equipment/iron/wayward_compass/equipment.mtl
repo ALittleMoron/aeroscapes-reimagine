@@ -1,0 +1,19 @@
+newmtl case
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/compass/wayward_compass_16
+
+newmtl steel
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/3d0a22e0-bb1c-3b4e-a839-95a20aee434e
+
+newmtl bezel
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/6a1c24b3-7783-36cb-b7b3-4e6bfa863447
+
+newmtl dial
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd #dial

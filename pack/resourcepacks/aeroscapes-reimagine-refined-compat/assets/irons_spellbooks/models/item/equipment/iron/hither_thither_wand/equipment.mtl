@@ -1,0 +1,14 @@
+newmtl wood
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/8f148395-3169-3426-b63e-597b42a39a2d
+
+newmtl gold
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/40a0fe60-24cf-348b-afe0-e4784e04f2f7
+
+newmtl crystal
+Ka 0.41666666 0.41666666 0.41666666
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/5b26acf9-96f8-36a0-a36e-0982bb21196e

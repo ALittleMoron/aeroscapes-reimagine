@@ -1,0 +1,29 @@
+newmtl cork
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd spawn:item/fly_bottle
+
+newmtl content
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd spawn:item/fly_bottle
+
+newmtl detail
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd spawn:item/fly_bottle
+
+newmtl glass
+Ka 0 0 0
+Kd 1 1 1 0.24
+map_Kd spawn:item/fly_bottle
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 0.48
+map_Kd spawn:item/fly_bottle
+
+newmtl lip
+Ka 0 0 0
+Kd 1 1 1 0.53
+map_Kd spawn:item/fly_bottle

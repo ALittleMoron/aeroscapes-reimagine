@@ -1,0 +1,14 @@
+newmtl bone
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/58ec6fa7-11e7-39c0-9ef2-79c904191e75
+
+newmtl shard
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/2162c35c-0e92-3e5f-9c68-43de0364d75f
+
+newmtl soul
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/dead_king_phylactery

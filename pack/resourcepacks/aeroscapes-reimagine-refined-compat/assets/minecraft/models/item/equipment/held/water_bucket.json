@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "minecraft:models/item/equipment/field/water_bucket/body.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "minecraft:item/water_bucket"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        18.0,
+        -16.0,
+        5.0
+      ],
+      "scale": [
+        0.77,
+        0.77,
+        0.77
+      ],
+      "translation": [
+        0.4031887,
+        -5.795269,
+        -0.17153132
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        18.0,
+        -16.0,
+        -5.0
+      ],
+      "scale": [
+        0.77,
+        0.77,
+        0.77
+      ],
+      "translation": [
+        -0.4031887,
+        -5.723816,
+        -0.3914392
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        18.0,
+        -16.0,
+        5.0
+      ],
+      "scale": [
+        0.77,
+        0.77,
+        0.77
+      ],
+      "translation": [
+        0.4031887,
+        -5.795269,
+        -0.17153132
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        18.0,
+        -16.0,
+        -5.0
+      ],
+      "scale": [
+        0.77,
+        0.77,
+        0.77
+      ],
+      "translation": [
+        -0.4031887,
+        -5.723816,
+        -0.3914392
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+newmtl copper
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/b3773588-2325-324c-bee4-b39e0285e596
+
+newmtl base
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/93a732c8-c489-3849-a105-b8ccb3d60a5d
+
+newmtl seam
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/energized_core
+
+newmtl arc
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/energized_core_energy

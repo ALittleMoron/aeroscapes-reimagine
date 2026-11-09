@@ -1,0 +1,24 @@
+newmtl parchment
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/486dc5c4-e1c9-3a24-9160-4ed8d087f46d
+
+newmtl seam
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/furled_map
+
+newmtl edge
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/furled_map
+
+newmtl inner
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/furled_map
+
+newmtl tie
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd irons_spellbooks:item/equipment/iron_fields/27a3b9d6-5c1b-313e-9f1f-529dfe0f26f1

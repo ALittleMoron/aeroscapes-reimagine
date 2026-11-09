@@ -1,0 +1,19 @@
+newmtl body
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd quark:item/seed_pouch
+
+newmtl fold
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd quark:item/seed_pouch
+
+newmtl binding
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd quark:item/seed_pouch
+
+newmtl lip
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd quark:item/seed_pouch

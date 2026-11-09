@@ -1,0 +1,24 @@
+newmtl cloth
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd tide:item/fishing_journal
+
+newmtl paper
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd tide:item/fishing_journal
+
+newmtl stamp
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd tide:item/fishing_journal
+
+newmtl stamp_dark
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd tide:item/fishing_journal
+
+newmtl wire
+Ka 0 0 0
+Kd 1 1 1 1.0
+map_Kd tide:item/fishing_journal

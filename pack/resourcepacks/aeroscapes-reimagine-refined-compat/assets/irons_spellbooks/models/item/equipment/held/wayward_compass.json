@@ -1,0 +1,83 @@
+{
+  "loader": "neoforge:obj",
+  "model": "irons_spellbooks:models/item/equipment/iron/wayward_compass/cutout.obj",
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "irons_spellbooks:item/compass/wayward_compass_16",
+    "dial": "irons_spellbooks:item/compass/wayward_compass_16"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -32.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "translation": [
+        -0.06677537,
+        1.5907034,
+        -0.7001199
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -32.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "translation": [
+        -0.06677537,
+        1.5907034,
+        -0.7001199
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -32.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "translation": [
+        -0.06677537,
+        1.5907034,
+        -0.7001199
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -32.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.86,
+        0.86,
+        0.86
+      ],
+      "translation": [
+        -0.06677537,
+        1.5907034,
+        -0.7001199
+      ]
+    }
+  }
+}
