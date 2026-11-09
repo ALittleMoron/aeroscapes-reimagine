@@ -10,72 +10,7 @@ permissions:
   contents: read
 jobs:
   check:
-    name: check / check
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38  # v6
-        with:
-          node-version-file: tools/docs/.node-version
-      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961  # v5
-        with:
-          distribution: 'zulu'
-          java-version: '21.0.13'
-      - name: Install pinned Corretto JDK 25
-        run: make ci-java
-      # setup-go v6.1.0
-      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c
-        with:
-          go-version: '1.27.3'
-          cache: false
-      # setup-uv v10.3.2
-      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
-        with:
-          version: '0.13.1'
-          enable-cache: true
-          cache-local-path: .cache/uv
-          cache-dependency-glob: tools/pack/uv.lock
-      - run: make sync verify
+    uses: ./.github/workflows/check.yml
   build:
-    name: build / build
     needs: check
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6
-        with:
-          persist-credentials: false
-      # setup-go v6.1.0
-      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c
-        with:
-          go-version: '1.27.3'
-          cache: false
-      # setup-uv v10.3.2
-      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
-        with:
-          version: '0.13.1'
-          enable-cache: true
-          cache-local-path: .cache/uv
-          cache-dependency-glob: tools/pack/uv.lock
-      - name: Build and verify export
-        run: make pack-sync build
-      - name: Check release version and integration title
-        if: >-
-          ${{ github.event_name == 'pull_request'
-              || github.ref == 'refs/heads/main' }}
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: make release-check
-      # upload-artifact v4.6.2 (immutable artifacts)
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        if: >-
-          ${{ success() && github.event_name == 'push'
-              && github.ref == 'refs/heads/main' }}
-        with:
-          name: release-${{ github.run_id }}-${{ github.run_attempt }}
-          path: dist/*.mrpack*
-          if-no-files-found: error
-          retention-days: 90
+    uses: ./.github/workflows/build.yml
