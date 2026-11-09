@@ -1,0 +1,16 @@
+{
+  "id": "aeroscapes_reimagine:ranged_ordinary",
+  "verifiers": [
+    {
+      "id": "minecraft:bow"
+    },
+    {
+      "id": "minecraft:crossbow"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

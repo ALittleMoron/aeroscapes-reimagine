@@ -1,0 +1,8 @@
+{
+  "items": [
+    "yo_hooks:gold_grappling_hook"
+  ],
+  "base": [
+    "minecraft:gold_ingot"
+  ]
+}

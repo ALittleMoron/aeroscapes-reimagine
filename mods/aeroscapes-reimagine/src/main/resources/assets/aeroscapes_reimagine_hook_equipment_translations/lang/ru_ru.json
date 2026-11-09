@@ -1,0 +1,7 @@
+{
+  "aeroscapes_reimagine.equipment.hook_reeling_speed": "Скорость подъёма и спуска: %s%%",
+  "aeroscapes_reimagine:hook_poor.label": "Плохое качество ·",
+  "aeroscapes_reimagine:hook_ordinary.label": "Обычное качество ·",
+  "aeroscapes_reimagine:hook_fine.label": "Хорошее качество ·",
+  "aeroscapes_reimagine:hook_exceptional.label": "Отличное качество ·"
+}

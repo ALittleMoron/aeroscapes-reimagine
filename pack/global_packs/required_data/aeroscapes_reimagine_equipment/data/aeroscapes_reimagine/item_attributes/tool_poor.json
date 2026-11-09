@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:tool_poor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/tool"
+    }
+  ],
+  "weight": 15,
+  "style": {
+    "color": "red"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.dig_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:tool_poor",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": -0.06
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

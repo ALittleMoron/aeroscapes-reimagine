@@ -59,6 +59,8 @@ Checks prove their own boundaries. Static compilation/style/policy tests do not 
 
 ## Change dependencies and source
 
+When adding or updating a mod, compare the exact JAR’s dependency ranges against the resolved client and server inventories. Include optional dependencies wherever they are installed. A dedicated-server boot cannot exercise client-only version constraints.
+
 New Python dev tools belong in the dev group through `uv add --project tools/pack --dev name==version`; explain their role/overlap and update the lock in the same change. Update only the dependency relevant to the task and run `make sync verify` afterward. npm dependency changes likewise update the owning exact manifest and lock together.
 
 Before accepting the first owned source in another language, choose and pin its real formatter and linter/type checker/compiler for the selected version, integrate it into `make verify` and CI, and run it. Do not add hypothetical unused toolchains. JSON/TOML and workflow YAML already have checks.

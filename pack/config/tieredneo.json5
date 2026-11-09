@@ -1,0 +1,9 @@
+{
+  "lootContainerModifier": true,
+  "entityItemModifier": false,
+  "craftingModifier": true,
+  "merchantModifier": false,
+  "reforgeModifier": 1.0,
+  "herosLevelsReforgeModifier": 0.0,
+  "luckReforgeModifier": 0.0
+}

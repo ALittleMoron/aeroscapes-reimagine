@@ -1618,7 +1618,7 @@
         "mafglib": "131 expected-value Russian corrections;148 remaining equalities classified:100 false-gated test/experimental,6 inactive generic,15 formatting only,8 conventional notation,19 unused resources without exact binary/dependant consumer.",
         "invmove": "43 ordinary RU corrections; native brand retained.13 exact literal/enum labels plus Recipe Book alias; display-only native enum-name provider preserves parser/default identities. Owned ModuleImpl uses EMI focus, storage text/modal focus, Tom popup guard, live mouse/Ponder scene resolution and configuration-toolkit pause policy. No beta compatibility addon.",
         "mod_menu": "Paired independent provider/library summaries, including compatibility stub identities. No provider/player changed translations replaced.",
-        "jei": "Exact beta19.39.0.372 owner-selected. Native EMI1.1.22 JEMI imports additional processing/cooking categories and suppresses the native GUI runtime plugin.150 independent missing RU/config labels and6 loading-progress components. Static API references resolved; owner graphical categories/transfers pending.",
+        "jei": "Exact beta19.39.0.372 owner-selected. Native EMI1.1.24 JEMI imports additional processing/cooking categories and suppresses the native GUI runtime plugin.150 independent missing RU/config labels and6 loading-progress components. Static API references resolved; owner graphical categories/transfers pending.",
         "advanced_loot_info": "620 independent RU keys; ACI67. Source4b2954e English maps exactly match distributed artifacts. JSON codec config retains loot categories and disables only tradeCategories; existing trade viewer keeps XP/max-use/enchantment pages. ALI random-offer count/price-multiplier trade details are deferred.26 math/technical equalities classified; unsupported custom condition/function diagnostics remain visible.",
         "workstations": "Native Puzzles/NeoForge labels, comments and113 exact literal labels/help;28 enum aliases scoped by declaring class, preserving existing FLAT/VANILLA aliases. Native FML4.0.42 global config/ defaults with existing world-local SERVER overrides. Missing RU asset keys supplied without replacing upstream dictionaries. Scoped compatibility preserves free standalone rename while retaining native custom/combined-operation prices. The enchanting point helper corrects float drift only at integer point boundaries, preserving genuinely fractional budgets; stale cached totalExperience cannot fund rerolls.",
         "horseman": "61 exact guarded corrections for displayed units/config comments/statistics;50 missing EN tooltips and6 RU counterparts. Full native feature set, including two default-false mechanics. Controlled swimming is owner of input action; passive duplicate disabled, existing HUD retained. Mining modifier scoped to horse-type mounts. Native owner/instrument aliases follow the current horse snapshot and recreated UUID, including remaining bindings after reassignment; old cargo and dead animals cannot be restored by another horn.",
@@ -1932,5 +1932,45 @@
     "source_comparison": "Exact native descriptors, bundled EN/RU assets and active command, item, config and menu consumers. Buzzier Bees and the astronomy port already provide the primary English and Russian text.",
     "exclusions": "Wakes Fabric-era GUI and YACL keys have no consumer in the NeoForge JAR. Default-off F3 profiler counters and Catnip unsupported list-type diagnostics retain technical text. Provider names, artist credits and parser/config identities retain their original spelling.",
     "held_inventory": "The three bug bottles and angry-bee state are native flat transport vessels. No new tools or weapons are registered."
+  },
+  "equipment_integration": {
+    "targets": {
+      "tieredneo": {
+        "version": "1.2.0+1.21.1",
+        "file": "https://modrinth.com/mod/heros-tiered/version/GY1XViBt",
+        "terms": "MIT"
+      },
+      "heroslib": {
+        "version": "1.1.2+1.21.1",
+        "file": "https://modrinth.com/mod/heros-lib/version/QtGWytnQ",
+        "terms": "MIT"
+      },
+      "yo_hooks": {
+        "version": "5.4.0",
+        "file": "https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf",
+        "terms": "MIT"
+      }
+    },
+    "resources": [
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_translations/lang/en_us.json",
+        "entries": 35
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_translations/lang/ru_ru.json",
+        "entries": 77
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_hook_equipment_translations/lang/en_us.json",
+        "entries": 5
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_hook_equipment_translations/lang/ru_ru.json",
+        "entries": 5
+      }
+    ],
+    "scope": "Authored labels for the equipment pools, Frost Strike effect, hook ascent/descent speed and catalyst slot. Mod Menu descriptions and Russian reforging, attribute, command and configuration text supplement the provider resources. Guarded English changes retain the brand title.",
+    "source_comparison": "Exact JAR language resources and client and common consumers. Cloth Auto Config supplies the annotated general and client option categories and tooltips; Hero's Lib registers no configuration screen. The rank display appends the item name after the translated tier ID plus .label. The translation uses the existing component substitutions for command arguments.",
+    "exclusions": "Original rank labels have no ordinary gameplay consumer in the curated pack. Hero's Lib adds no item catalog. Technical identifiers and original mod brands are preserved."
   }
 }

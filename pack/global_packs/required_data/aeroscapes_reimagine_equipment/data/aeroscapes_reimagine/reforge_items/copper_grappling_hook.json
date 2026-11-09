@@ -1,0 +1,8 @@
+{
+  "items": [
+    "yo_hooks:copper_grappling_hook"
+  ],
+  "base": [
+    "minecraft:copper_ingot"
+  ]
+}

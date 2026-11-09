@@ -4,6 +4,13 @@ description: История версий.
 status: available
 ---
 
+## 0.4.2
+
+- Добавлены четыре обычных ранга снаряжения и разные отличные варианты для мечей и инструментов. Легендарный «Морозный удар» выпадает при перековке и встречается на мечах в некоторых сундуках. [Hero’s Tiered](https://modrinth.com/mod/heros-tiered/version/GY1XViBt), [Hero’s Lib](https://modrinth.com/mod/heros-lib/version/QtGWytnQ).
+- Целое снаряжение можно перековать на наковальне за один основной материал и один лазурит. Каждая попытка заменяет ранг со всеми его свойствами и сохраняет чары. При возврате к ремонту снова видны предметы, оставленные в его слотах.
+- Добавлены ранги для всех пяти [крюков-кошек](https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf). Качество крюка влияет на скорость подъёма и спуска.
+- Обновлён [EMI](https://modrinth.com/mod/emi/version/5sIPA1To) для устранения конфликта с [Hero’s Lib](https://modrinth.com/mod/heros-lib/version/QtGWytnQ) при запуске клиента.
+
 ## 0.4.1
 
 - Добавлены [Iron’s Spells ’n Spellbooks](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb), [Iron’s Lib](https://modrinth.com/mod/irons-lib/version/sQyzhxuH), [Curios](https://modrinth.com/mod/curios/version/yohfFbgD) и [Player Animator](https://modrinth.com/mod/playeranimator/version/HJZB6bmA). В деревенских сундуках можно найти свитки «Магический снаряд» и «Исцеляющий круг» первого уровня и вписать их в медную книгу заклинаний.

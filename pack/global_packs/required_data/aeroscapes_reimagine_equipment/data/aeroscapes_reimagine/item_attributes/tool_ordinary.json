@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:tool_ordinary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/tool"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

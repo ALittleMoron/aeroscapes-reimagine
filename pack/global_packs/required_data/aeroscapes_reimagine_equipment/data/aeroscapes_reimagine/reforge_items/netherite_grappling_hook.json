@@ -1,0 +1,8 @@
+{
+  "items": [
+    "yo_hooks:netherite_grappling_hook"
+  ],
+  "base": [
+    "minecraft:netherite_ingot"
+  ]
+}

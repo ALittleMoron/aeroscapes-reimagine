@@ -632,17 +632,17 @@
     {
       "slug": "emi",
       "primary_project_id": "fRiHVvU7",
-      "primary_sha512": "6b4f2b93ccd40bbbf3d1f368a9d92b43777543c44243a76ed4010bd563a7f9658decdd58a3d79a3cdc04a288bf98e327a1cce93a5a9d2b8840306578fe633bca",
+      "primary_sha512": "f4c45ed686fe617311d6debadcb6ace5963e66f8cfe0cfed398231f081f87407070efc7a73c8b695d158f1d87a97180737b9107a46771e77df2bc9a7dc715ebd",
       "status": "hosted",
       "project_id": 580555,
-      "file_id": 6420931,
-      "filename": "emi-1.1.22+1.21.1+neoforge.jar",
-      "sha512": "6b4f2b93ccd40bbbf3d1f368a9d92b43777543c44243a76ed4010bd563a7f9658decdd58a3d79a3cdc04a288bf98e327a1cce93a5a9d2b8840306578fe633bca",
-      "sha1": "cbbd038194cd63249db185c53b1d50a1767f80a3",
-      "file_size": 1038248,
+      "file_id": 8081408,
+      "filename": "emi-1.1.24+1.21.1+neoforge.jar",
+      "sha512": "f4c45ed686fe617311d6debadcb6ace5963e66f8cfe0cfed398231f081f87407070efc7a73c8b695d158f1d87a97180737b9107a46771e77df2bc9a7dc715ebd",
+      "sha1": "3fd494b37027dfbc7f78414d7cbf251c9eb6738a",
+      "file_size": 1111538,
       "parity": "exact",
       "review": {},
-      "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
+      "verification": "Official CurseForge CDN archive matched the Modrinth SHA-512."
     },
     {
       "slug": "entityculling",
@@ -2422,6 +2422,36 @@
       "parity": "exact",
       "review": {},
       "verification": "Official CurseForge CDN file downloaded and hashed. Matches the Modrinth pin byte for byte."
+    },
+    {
+      "slug": "heros-tiered",
+      "primary_project_id": "5zxZztTC",
+      "primary_sha512": "501116529cc4e050b74efd7c486843639695e31f3f05e78561600d1403bbbfc27bfeb058171b28f70cd8691c1b838dd404ee7cb19772ad8f1f687547f8e7fb56",
+      "status": "hosted",
+      "project_id": 1581382,
+      "file_id": 9203840,
+      "filename": "tieredneo-1.2.0+1.21.1.jar",
+      "sha512": "501116529cc4e050b74efd7c486843639695e31f3f05e78561600d1403bbbfc27bfeb058171b28f70cd8691c1b838dd404ee7cb19772ad8f1f687547f8e7fb56",
+      "sha1": "6b150facc6c09a274349b3e71cb07e4a242c71b7",
+      "file_size": 223126,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge CDN archive matched the Modrinth SHA-512."
+    },
+    {
+      "slug": "heros-lib",
+      "primary_project_id": "KwXw0275",
+      "primary_sha512": "70094f47051051e3d32da6ace3a4081acd795745f8eb03b9587f42571bf965e88ebf0a884ef8baadcac32ce0b2488d628569ff9b24274fa971ab7cb5bea84540",
+      "status": "hosted",
+      "project_id": 1596189,
+      "file_id": 8743883,
+      "filename": "heroslib-1.1.2+1.21.1.jar",
+      "sha512": "70094f47051051e3d32da6ace3a4081acd795745f8eb03b9587f42571bf965e88ebf0a884ef8baadcac32ce0b2488d628569ff9b24274fa971ab7cb5bea84540",
+      "sha1": "9bdd1ced4653d017ddeab1f926280b6a2f9ebe26",
+      "file_size": 154700,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge CDN archive matched the Modrinth SHA-512."
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

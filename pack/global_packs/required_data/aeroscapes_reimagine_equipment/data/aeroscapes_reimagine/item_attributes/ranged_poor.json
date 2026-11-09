@@ -1,0 +1,28 @@
+{
+  "id": "aeroscapes_reimagine:ranged_poor",
+  "verifiers": [
+    {
+      "id": "minecraft:bow"
+    },
+    {
+      "id": "minecraft:crossbow"
+    }
+  ],
+  "weight": 15,
+  "style": {
+    "color": "red"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.range_attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ranged_poor",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": -0.08
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

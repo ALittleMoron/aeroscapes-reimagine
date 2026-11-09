@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:hook_fine",
+  "verifiers": [
+    {
+      "tag": "yo_hooks:hooks"
+    }
+  ],
+  "weight": 20,
+  "style": {
+    "color": "green"
+  },
+  "attributes": []
+}

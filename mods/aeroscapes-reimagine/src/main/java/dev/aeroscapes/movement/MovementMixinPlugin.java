@@ -14,7 +14,9 @@ public final class MovementMixinPlugin implements IMixinConfigPlugin {
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
     var mods = FMLLoader.getLoadingModList();
     Map<String, String> versions =
-        new HashMap<>(Map.of("paraglider", "21.1.5", "yo_hooks", "5.4.0", "neoforge", "21.1.244"));
+        new HashMap<>(Map.of("yo_hooks", "5.4.0", "neoforge", "21.1.244"));
+    if (mixinClassName.contains(".HookReforge")) versions.put("tieredneo", "1.2.0+1.21.1");
+    else versions.put("paraglider", "21.1.5");
     if (mixinClassName.contains("ForeignConfiguration")
         || mixinClassName.endsWith("CatnipConfigurationAccess"))
       versions.put("ponder", "1.0.82+mc1.21.1");
@@ -71,5 +73,8 @@ public final class MovementMixinPlugin implements IMixinConfigPlugin {
 
   @Override
   public void postApply(
-      String targetClassName, ClassNode targetClass, String mixinName, IMixinInfo info) {}
+      String targetClassName, ClassNode targetClass, String mixinName, IMixinInfo info) {
+    if (mixinName.endsWith(".HookReforgeTravelMixin"))
+      HookReforgeTravelTransformer.patch(targetClass);
+  }
 }

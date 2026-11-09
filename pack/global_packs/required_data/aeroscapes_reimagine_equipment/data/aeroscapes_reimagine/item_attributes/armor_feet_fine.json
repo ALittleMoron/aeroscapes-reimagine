@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_feet_fine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_feet"
+    }
+  ],
+  "weight": 20,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_fine",
+        "operation": "ADD_VALUE",
+        "amount": 0.5
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

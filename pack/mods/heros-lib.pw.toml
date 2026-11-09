@@ -1,0 +1,12 @@
+name = "Hero's Lib"
+filename = "heroslib-1.1.2+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/KwXw0275/versions/QtGWytnQ/heroslib-1.1.2%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "70094f47051051e3d32da6ace3a4081acd795745f8eb03b9587f42571bf965e88ebf0a884ef8baadcac32ce0b2488d628569ff9b24274fa971ab7cb5bea84540"
+
+[update.modrinth]
+mod-id = "KwXw0275"
+version = "QtGWytnQ"

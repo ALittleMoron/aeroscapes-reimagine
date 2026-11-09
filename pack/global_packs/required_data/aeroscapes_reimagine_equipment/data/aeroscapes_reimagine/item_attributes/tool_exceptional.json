@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:tool_exceptional",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/tool"
+    }
+  ],
+  "weight": 3,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.dig_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:tool_exceptional",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.20
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

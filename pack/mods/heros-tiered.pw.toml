@@ -1,0 +1,12 @@
+name = "Hero's Tiered"
+filename = "tieredneo-1.2.0+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/5zxZztTC/versions/GY1XViBt/tieredneo-1.2.0%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "501116529cc4e050b74efd7c486843639695e31f3f05e78561600d1403bbbfc27bfeb058171b28f70cd8691c1b838dd404ee7cb19772ad8f1f687547f8e7fb56"
+
+[update.modrinth]
+mod-id = "5zxZztTC"
+version = "GY1XViBt"

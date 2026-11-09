@@ -4,6 +4,13 @@ description: Version history.
 status: available
 ---
 
+## 0.4.2
+
+- Add four ordinary equipment ranks with distinct exceptional results for swords and tools. Find a legendary Frost Strike sword in selected chests or roll its rank at an anvil. [Hero’s Tiered](https://modrinth.com/mod/heros-tiered/version/GY1XViBt), [Hero’s Lib](https://modrinth.com/mod/heros-lib/version/QtGWytnQ).
+- Reforge undamaged gear on the anvil for one base material and one lapis lazuli. Each attempt replaces the full rank and keeps enchantments. Switching back restores the anvil’s stored repair inputs.
+- Add ranks to all five [grappling hooks](https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf). Their ranks affect ascent and descent speed.
+- Update [EMI](https://modrinth.com/mod/emi/version/5sIPA1To) to resolve the client startup conflict with [Hero’s Lib](https://modrinth.com/mod/heros-lib/version/QtGWytnQ).
+
 ## 0.4.1
 
 - Add [Iron’s Spells ’n Spellbooks](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb) with [Iron’s Lib](https://modrinth.com/mod/irons-lib/version/sQyzhxuH), [Curios](https://modrinth.com/mod/curios/version/yohfFbgD) and [Player Animator](https://modrinth.com/mod/playeranimator/version/HJZB6bmA). Find level-one Magic Missile and Healing Circle scrolls in village chests and inscribe them in a copper spell book.

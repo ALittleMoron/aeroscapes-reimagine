@@ -2469,10 +2469,10 @@
     "slug": "emi",
     "name": "EMI",
     "project_id": "fRiHVvU7",
-    "version_id": "ouSj7NfF",
-    "version": "1.1.22+1.21.1+neoforge",
-    "filename": "emi-1.1.22+1.21.1+neoforge.jar",
-    "sha512": "6b4f2b93ccd40bbbf3d1f368a9d92b43777543c44243a76ed4010bd563a7f9658decdd58a3d79a3cdc04a288bf98e327a1cce93a5a9d2b8840306578fe633bca",
+    "version_id": "5sIPA1To",
+    "version": "1.1.24+1.21.1+neoforge",
+    "filename": "emi-1.1.24+1.21.1+neoforge.jar",
+    "sha512": "f4c45ed686fe617311d6debadcb6ace5963e66f8cfe0cfed398231f081f87407070efc7a73c8b695d158f1d87a97180737b9107a46771e77df2bc9a7dc715ebd",
     "release_type": "release",
     "side": "client",
     "kind": "mod",
@@ -2491,8 +2491,9 @@
     "game_versions": [
       "1.21.1"
     ],
-    "sha1": "cbbd038194cd63249db185c53b1d50a1767f80a3",
-    "file_size": 1038248
+    "sha1": "3fd494b37027dfbc7f78414d7cbf251c9eb6738a",
+    "file_size": 1111538,
+    "change_reason": "Hero’s Lib 1.1.2 checks EMI [1.1.24,) when EMI is present on the client."
   },
   {
     "slug": "entity-model-features",
@@ -6272,7 +6273,7 @@
     "dependencies": [],
     "status": "included",
     "origin": "Owner-approved recipe-result selection, 2026-10-28; unchanged official stable NeoForge file",
-    "dependency_note": "Native descriptor requires Minecraft[1.21,1.22) and NeoForge>=21.0.67; no external libraries. Stable 1.1.0 selected instead of newer beta. Original source/binary EMI hooks match installed EMI1.1.22 descriptors. Ordinary player crafting selection does not control Create mechanical crafting or restore overwritten recipe IDs."
+    "dependency_note": "Native descriptor requires Minecraft[1.21,1.22) and NeoForge>=21.0.67; no external libraries. Stable 1.1.0 selected instead of newer beta. Original source/binary EMI hooks match installed EMI1.1.24 descriptors. Ordinary player crafting selection does not control Create mechanical crafting or restore overwritten recipe IDs."
   },
   {
     "slug": "handcrafted",
@@ -8219,7 +8220,7 @@
       "policy_url": "https://support.modrinth.com/en/articles/8797527-obtaining-modpack-permissions",
       "integration_decision": "metadata/README.md"
     },
-    "native_route_note": "Provider labels unchanged file as release2.0.0+neoforge/MIT; actual native descriptor retains internal version2.0.0+alpha.1 and All Rights Reserved. Preserve discrepancy; no new experimental provider file selected. Required EMI>=1.1.22+1.21.1 matches installed1.1.22. Uses vanilla/current-JVM trade maps, special renderers and sampled custom offers, not authoritative remote-server trade synchronization.",
+    "native_route_note": "Provider labels unchanged file as release2.0.0+neoforge/MIT; actual native descriptor retains internal version2.0.0+alpha.1 and All Rights Reserved. Preserve discrepancy; no new experimental provider file selected. Required EMI>=1.1.22+1.21.1 matches installed1.1.24. Uses vanilla/current-JVM trade maps, special renderers and sampled custom offers, not authoritative remote-server trade synchronization.",
     "embedded_license": "All Rights Reserved",
     "source_review": {
       "reference_repository": "https://github.com/Prismwork/EMITrades",
@@ -8353,7 +8354,7 @@
     ],
     "status": "included",
     "origin": "Owner-selected unambiguous QoL group 2 subset for 0.2.5",
-    "dependency_note": "Exact descriptor: Minecraft[1.21.1], NeoForge>=21.1.209, Create>=6.0.9, EMI>=1.1.22+1.21.1. Client only. ClipboardScreen.init/pages, ClipboardEntry.icon/itemAmount/checked, ItemEmiStack.render/getTooltip/getItemStack and EmiFavorites add/remove signatures match pinned Create6.0.10/EMI1.1.22. Imports all unchecked icon entries; replaces only its own tagged favorites, preserving ordinary favorites.",
+    "dependency_note": "Exact descriptor: Minecraft[1.21.1], NeoForge>=21.1.209, Create>=6.0.9, EMI>=1.1.22+1.21.1. Client only. ClipboardScreen.init/pages, ClipboardEntry.icon/itemAmount/checked, ItemEmiStack.render/getTooltip/getItemStack and EmiFavorites add/remove signatures match pinned Create6.0.10/EMI1.1.24. Imports all unchecked icon entries; replaces only its own tagged favorites, preserving ordinary favorites.",
     "artifact_audit": {
       "source_revision": "714e5678c79e581bb3627b6dd138b682e1d6a41c",
       "source_url": "https://github.com/LIUKRAST/EmiCreateSchematics/tree/714e5678c79e581bb3627b6dd138b682e1d6a41c",
@@ -8559,7 +8560,7 @@
     "status": "included",
     "origin": "Owner-selected second QoL group; unchanged official provider file",
     "exception": "Owner selected this exact beta file and its disclosed required library in the current QoL decisions; no permission for later experimental updates.",
-    "dependency_note": "Exact native descriptor requires NeoForge>=21.0.118-beta and Minecraft[1.21,1.21.1), accepted on1.21.1 by pinned FML4.0.42 VersionSupportMatrix mapping1.21.1 to1.21. Next19.42.0.379 requires NF>=21.1.238; later19.64.0.455 also requires unavailable MezzConfig. No extra JEMI/MezzConfig dependency for this version. Existing EMI1.1.22 suppresses native JEI GUI runtime plugin and imports categories/transfers. Static linkage checks passed for JEMI116 refs across41 owners and Create/FD69 refs across34 owners, including6 inherited methods.",
+    "dependency_note": "Exact native descriptor requires NeoForge>=21.0.118-beta and Minecraft[1.21,1.21.1), accepted on1.21.1 by pinned FML4.0.42 VersionSupportMatrix mapping1.21.1 to1.21. Next19.42.0.379 requires NF>=21.1.238; later19.64.0.455 also requires unavailable MezzConfig. No extra JEMI/MezzConfig dependency for this version. Existing EMI1.1.24 suppresses native JEI GUI runtime plugin and imports categories/transfers. Static linkage checks passed for JEMI116 refs across41 owners and Create/FD69 refs across34 owners, including6 inherited methods.",
     "artifact_audit": {
       "source_artifact_url": "https://maven.blamejared.com/mezz/jei/jei-1.21.1-neoforge/19.39.0.372/jei-1.21.1-neoforge-19.39.0.372-sources.jar",
       "source_revision": "Exact official Maven sources coordinate19.39.0.372; no embedded build commit",
@@ -10430,5 +10431,83 @@
     ],
     "sha1": "418fcd42e3a7844c9bdc71c9b6401fdb3894e0c4",
     "file_size": 410690
+  },
+  {
+    "slug": "heros-tiered",
+    "name": "Hero's Tiered",
+    "project_id": "5zxZztTC",
+    "version_id": "GY1XViBt",
+    "version": "1.2.0+1.21.1",
+    "filename": "tieredneo-1.2.0+1.21.1.jar",
+    "sha512": "501116529cc4e050b74efd7c486843639695e31f3f05e78561600d1403bbbfc27bfeb058171b28f70cd8691c1b838dd404ee7cb19772ad8f1f687547f8e7fb56",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/Herobrot/tieredneo/blob/1.21/LICENSE"
+    },
+    "source_url": "https://github.com/Herobrot/tieredneo",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "KwXw0275",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "0.4.2 equipment quality and reforging",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "6b150facc6c09a274349b3e71cb07e4a242c71b7",
+    "file_size": 223126
+  },
+  {
+    "slug": "heros-lib",
+    "name": "Hero's Lib",
+    "project_id": "KwXw0275",
+    "version_id": "QtGWytnQ",
+    "version": "1.1.2+1.21.1",
+    "filename": "heroslib-1.1.2+1.21.1.jar",
+    "sha512": "70094f47051051e3d32da6ace3a4081acd795745f8eb03b9587f42571bf965e88ebf0a884ef8baadcac32ce0b2488d628569ff9b24274fa971ab7cb5bea84540",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/Herobrot/heroslib",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "0.4.2 equipment quality and reforging",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "9bdd1ced4653d017ddeab1f926280b6a2f9ebe26",
+    "file_size": 154700
   }
 ]

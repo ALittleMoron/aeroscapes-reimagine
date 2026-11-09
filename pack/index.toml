@@ -209,6 +209,10 @@ file = "config/terrablender.toml"
 hash = "1eca390ee239e9d4be0f913be120323b4a87cb0f863169e3e7a0bfc72b8bd20c"
 
 [[files]]
+file = "config/tieredneo.json5"
+hash = "96a2d2cdc1efb6031f252ea6af8e89cd44e397f8058d3b1325d4a8e7aa775429"
+
+[[files]]
 file = "config/travelerstitles-neoforge-1_21.toml"
 hash = "a1d6f402fea443d7c6267555aa5e7eced8297fe31f4911979583d51c90e488fb"
 
@@ -729,6 +733,210 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/pack.mcmeta"
 hash = "98a2ed7fd3d2ba25a7e302baa1d0a9a188be502488d976fff6dc2fbdad285142"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_chest_exceptional.json"
+hash = "b9201c49c8dc43f524991ef3ddcd159914c101e512b671d3b23fc3479f27cb88"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_chest_fine.json"
+hash = "9f74c5ae49ec905331560a7217c4b06d6b82b575ba167aa6e41fb2f73fda7627"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_chest_ordinary.json"
+hash = "0a7ffa4168bbbb48c2418640bfeee1e6cfb225695e58e3d397e9fc7117fbc8d3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_chest_poor.json"
+hash = "463095661d84cd3d635c5bd34b2faf0f32261951cdb6407459e3453970a0ca8e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_feet_exceptional.json"
+hash = "3172b2b7a0283758c8aad830299328e3d5cbe8cb21f2f4203f3b0e2c39bb0fe8"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_feet_fine.json"
+hash = "27c340679312aa46f248d1542d7d248f81eae5ad6d94b0b239b1547d45256cbe"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_feet_ordinary.json"
+hash = "bbc8c51465f4a90f311805b2ff7df5012587409cc0d0e915854f927add541ee3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_feet_poor.json"
+hash = "e30083d168c691d747cc303b06bcbb5449d6afcd63ea18230f794650b04bde90"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_head_exceptional.json"
+hash = "f5f23cf74e2d6aa5b71c265fb7047be108a8e76699ec74a6f250f95099b96a24"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_head_fine.json"
+hash = "e3617e6f9b10ab0efd2ff197e8330e1509d3223eae8039f8020d7880af9cd1d2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_head_ordinary.json"
+hash = "307d3e91af96c5d405fa9351a73fb0737c2f38e92dc47714f6a0f9bacf568a23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_head_poor.json"
+hash = "a6b39e8345ffbec31914c81a47203f5821395bef7f3160714e1cd653eae34263"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_legs_exceptional.json"
+hash = "fc7d5cc842a70d3f36d1fe16acc893f06bb7822e017cdae80f9c3f24ab23f623"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_legs_fine.json"
+hash = "9de20145fadb788cd9c853a9623a12e45fcd96389cf7b660212dc32656c534f2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_legs_ordinary.json"
+hash = "5850d9b390e6b7ccfcf39ee1206d994495e214413c4f6c985e8b32ad1aeccccd"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_legs_poor.json"
+hash = "b19e3a3be51582cfbead6d78519bc5e2b193a3256cbf1c04463aca486b7e7533"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hook_exceptional.json"
+hash = "4bd835aa3646230eeb26821bf8d4adac16109ddb7f992f53c6d6354d1a108c77"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hook_fine.json"
+hash = "0732f3a1beb9d1238158c5962ac5b453fb6d9e2f02e0c4419b50e4aeab135184"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hook_ordinary.json"
+hash = "7fe5d884aef3c21064103c6b0668376dd956f4a8c4da266514e91979d3b5cad6"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hook_poor.json"
+hash = "fc3336005299eaa36f2e5f95ae7eac8ebd3f9617cc4bd8f58fda25ff1ba1eb1c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/melee_exceptional.json"
+hash = "f1d935db49b2c59d0ea0e21582d3f79d19b03d7b1d13416f3b973640e8131742"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/melee_exceptional_quick.json"
+hash = "0bc2dc664cb8af75457e226c760ef9d8ae52c40b40932a64dbfb78a6158e8fc3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/melee_fine.json"
+hash = "f4ffd2cedf657a46f6a08c1bbb08c5ec25b7e218634573d0532adbb5365fd640"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/melee_legendary_frost.json"
+hash = "4e0727f961f13cfeffbee68925a629af973516107896322c8244881b3fc40372"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/melee_ordinary.json"
+hash = "3b1466488fd14e4e2181682b4bfe325cd4da9257286222e83a9306fdc1634de7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/melee_poor.json"
+hash = "9f95525b9202a99228580ffcac51ec2a691af0f8c156b91c97423d503d3857a4"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ranged_exceptional.json"
+hash = "999a457d825e809e07127eb0ee5e9ede2b8472073dcf7b3bf9fdfbb16e301d5e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ranged_fine.json"
+hash = "e13171452c5acdf218535e59aabf32cdd35704d8f2eddd12df44a16043d23dd2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ranged_ordinary.json"
+hash = "96964731e5fd19b6b7c921eea5aecac1374f63b830127fbb34df4d11d5601e6c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ranged_poor.json"
+hash = "083bab9c5b1600e3f227dfe70114b0ea484ae802ec4ea0c03786428064cd180b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/tool_exceptional.json"
+hash = "7f43a6ff729bedcf51fe7692df6add0e0227b46923025d99a3bacd367898a781"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/tool_exceptional_reach.json"
+hash = "702ae535047c253f1916b05a3a9fed5a44fa0a00cb6692bf95005a2d130d6b0f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/tool_fine.json"
+hash = "e70992cb893e4b43cd4fde5ce2f525c133af0ab208f9982b0c3a7120b462f017"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/tool_ordinary.json"
+hash = "873d43a4b9d2677ef7f3278ef13cb84a0d0185da69907da606a9355ec0fd7a9e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/tool_poor.json"
+hash = "00ab834bbc57840f7910f4511771c14cc574fbf69c87441ad2fa757d8da9f35c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/loot_modifiers/legendary_frost_sword.json"
+hash = "f6909a8d73363d3a5fa103a3239c309506e05561250173776a39ef7f0547fdcd"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/loot_table/chests/legendary_frost_sword.json"
+hash = "93f0b46d44d168eb64c31fb2560adcc7d25c22cc1127743e5f2770a0977bf20c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/copper_grappling_hook.json"
+hash = "6030d5c751a8bb780969786fabf84c74c8fb759f7665fac2f99c949fc1d39dc0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/diamond_grappling_hook.json"
+hash = "dc77bf7aaa5eff3c21b4e2d03f3bbc7485bb50946b5198d426ca9e63a6fd2ab4"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/gold_grappling_hook.json"
+hash = "f7cca58c35688e8a0e15ef1f2cff7a11d44f0f5106f318168fc992fa694c6870"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/iron_grappling_hook.json"
+hash = "624da4bcc348b3e16e0ba37e2d59bc212fc7052a44a33ae09323fb3a7cfe5d77"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/netherite_grappling_hook.json"
+hash = "03a89c2ecc368cd6dd4b673723e55aa3109259ae20f9395cb04334cdd0661e6b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/armor_chest.json"
+hash = "8d55f5fe0348901a214bf904da340fc0530bfc4f57ca28b73449a9a74802067f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/armor_feet.json"
+hash = "6652c45cf117a9e97365f39359b1bf8c9ad879c3973658e87135128e09b5d724"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/armor_head.json"
+hash = "81e8a7ae4a1891613fd63635b374e4de77d19e926aab912473e0be02f45eb1c2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/armor_legs.json"
+hash = "05f04d5a0b8fa11a277d4d410790df0bf8c9b0675dbff6e8c70500d311315a31"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/melee.json"
+hash = "2cffccf7f5c5340b9b8769847c89f86ba1c770fe387852ac8a20c5e481d0960e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/tool.json"
+hash = "46086ed20fe032d72951544328ba33ea516c5977c716d5aaf16f2c8a5eb05cb5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/neoforge/loot_modifiers/global_loot_modifiers.json"
+hash = "c240dffdce55c90a37188d611ae731519d0f87c7782eeee904a71316f68753f2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/tieredneo/tags/item/reforge_addition.json"
+hash = "68a0f585a9efec4841548c77ef19a8406251141869ddfa9d1067cedf361cefa1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/pack.mcmeta"
+hash = "0348b0472106210f7602fff8ef88633bb30abe46addf5257935d543a9af19f89"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/advancement/recipes/tools/steel_wool.json"
 hash = "0d0566e0c6b8d67b8b9ed0ee688f8c838b9ed32322aa385e3087af72f020464a"
 
@@ -1163,7 +1371,7 @@ hash = "9807537eded3dd65596b50694229361c2bb409040512c77a0f1bfaa267906995"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "ae79fb0db766fbd2d6ae9d4f679d45176a484737ae0f48abd07ccd0232b5f406"
+hash = "7fdbed6f1f0b3f1d28e1c41e60c37dfb193a4bc90d5defca5c87b3db3d8bd8b0"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1192,7 +1400,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "619e4b76fcbe11af5e6846b574729fb2af37ea9ca93b16fb096720ca567064da"
+hash = "3ad0790db98bbc7a4fe255a1a46f38ca309abb17ac1245fc438ea81f5b40b484"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1566,7 +1774,7 @@ metafile = true
 
 [[files]]
 file = "mods/emi.pw.toml"
-hash = "ad8b8a9b149af6798e65c01a334bca7a6a65b1ddf9aff3f612df033c69f745f1"
+hash = "bf861613777d68cb47698538cbb2baf1158f6fb266974f762af9a7bb425d74f8"
 metafile = true
 
 [[files]]
@@ -1697,6 +1905,16 @@ metafile = true
 [[files]]
 file = "mods/handcrafted.pw.toml"
 hash = "2827236cdf28e1d20904bbfca49d4e276d24a2562fac81ba87fd23eb7b9ab477"
+metafile = true
+
+[[files]]
+file = "mods/heros-lib.pw.toml"
+hash = "5127d5b3e1cca61fe318077bc44df067c915c673cb461873d6d4433d0bb7597c"
+metafile = true
+
+[[files]]
+file = "mods/heros-tiered.pw.toml"
+hash = "6b7d790456f9b923b34fe5b46e70c5820677f1df5f20ae50e7414d230c435cd8"
 metafile = true
 
 [[files]]

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:armor_feet_ordinary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_feet"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:armor_legs_ordinary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_legs"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

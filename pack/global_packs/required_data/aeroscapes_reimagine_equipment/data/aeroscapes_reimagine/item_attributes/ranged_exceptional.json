@@ -1,0 +1,28 @@
+{
+  "id": "aeroscapes_reimagine:ranged_exceptional",
+  "verifiers": [
+    {
+      "id": "minecraft:bow"
+    },
+    {
+      "id": "minecraft:crossbow"
+    }
+  ],
+  "weight": 5,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.range_attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ranged_exceptional",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.1
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

@@ -13,7 +13,9 @@
     "CompassExplorerItemMixin",
     "CompassLegacyPacketMixin",
     "CompassNaturePriceMixin",
-    "CompassExplorerPriceMixin"
+    "CompassExplorerPriceMixin",
+    "LegendaryFrostStrikeMixin",
+    "ReforgeAnvilReturnMixin"
   ],
   "client": [
     "CompassNatureScreenMixin",
@@ -21,7 +23,8 @@
     "AccuratePlacementInteractionMixin",
     "AccuratePlacementEnumLanguageMixin",
     "EffectDescriptionPagesMixin",
-    "CreativeSearchMixin"
+    "CreativeSearchMixin",
+    "ReforgeCatalystHintMixin"
   ],
   "injectors": {
     "defaultRequire": 1

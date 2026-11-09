@@ -6,6 +6,33 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Equipment quality and reforging
+
+[Hero’s Tiered 1.2.0](https://modrinth.com/mod/heros-tiered/version/GY1XViBt) and
+[Hero’s Lib 1.1.2](https://modrinth.com/mod/heros-lib/version/QtGWytnQ) run on both
+sides with the existing [Cloth Config 15.0.140](https://modrinth.com/mod/cloth-config/version/izKINKFg).
+The official CurseForge CDN JARs match the Modrinth pins byte for byte. The
+library’s optional client integration requires
+[EMI 1.1.24](https://modrinth.com/mod/emi/version/5sIPA1To) when the recipe viewer
+is installed. The client rejects the previous 1.1.22 pin during mod loading.
+The required equipment datapack filters the provider’s default item attributes and
+defines the pack’s rank pools and catalyst. The owned mod redirects the
+return from reforging to the anvil block’s menu provider, which exposes the
+inputs held by [Easy Anvils 21.1.0](https://modrinth.com/mod/easy-anvils/version/fSQSKhdF).
+The provider JARs are distributed through their original channels.
+
+The legendary sword rank has zero initial-roll weight. The reforge selector
+adds one to its weight, and the selected chest tables can append an iron sword
+with the rank component already set. The owned effect reads the weapon of a
+successful charged primary hit and applies Slowness I without refreshing an
+existing Slowness effect.
+
+[Yori3o’s Grappling Hooks 5.4.0](https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf)
+defines native repair materials and already supports Unbreaking and Mending
+through the vanilla durability enchantment tag. Explicit mappings let the
+reforge menu recognize those materials. Hook rank scales native ascent and
+descent using the actual hook stack and leaves the native rope limits in place.
+
 ## First spells and casting animation
 
 [Iron’s Spells ’n Spellbooks 3.16.3](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb)

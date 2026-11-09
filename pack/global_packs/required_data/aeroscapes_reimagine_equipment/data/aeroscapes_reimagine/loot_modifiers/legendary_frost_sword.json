@@ -1,0 +1,23 @@
+{
+  "type": "irons_spellbooks:append_loot",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/simple_dungeon"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "minecraft:chests/abandoned_mineshaft"
+        },
+        {
+          "condition": "neoforge:loot_table_id",
+          "loot_table_id": "irons_spellbooks:chests/ice_spider_den/dungeon"
+        }
+      ]
+    }
+  ],
+  "key": "aeroscapes_reimagine:chests/legendary_frost_sword"
+}

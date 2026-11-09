@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_head_exceptional",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_head"
+    }
+  ],
+  "weight": 5,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_head_exceptional",
+        "operation": "ADD_VALUE",
+        "amount": 1.0
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    }
+  ]
+}

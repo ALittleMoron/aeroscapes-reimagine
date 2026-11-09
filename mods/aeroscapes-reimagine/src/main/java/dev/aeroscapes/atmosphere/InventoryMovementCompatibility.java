@@ -34,7 +34,7 @@ public final class InventoryMovementCompatibility extends ModuleImpl {
           for (var expected :
               Map.of(
                       "invmove", "0.9.3",
-                      "emi", "1.1.22+1.21.1+neoforge",
+                      "emi", "1.1.24+1.21.1+neoforge",
                       "mafglib", "0.4.3+mc1.21.1",
                       "cloth_config", "15.0.140",
                       "ponder", "1.0.82+mc1.21.1",

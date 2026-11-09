@@ -6,7 +6,10 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "ParagliderStatueBoundsMixin",
-    "HookMiningMixin"
+    "HookMiningMixin",
+    "HookReforgeClimbMixin",
+    "HookReforgeTravelMixin",
+    "HookReforgeTooltipMixin"
   ],
   "client": [
     "HookConfigurationLanguageMixin",

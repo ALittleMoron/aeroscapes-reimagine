@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:tool_exceptional_reach",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/tool"
+    }
+  ],
+  "weight": 2,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:player.block_interaction_range",
+      "modifier": {
+        "name": "aeroscapes_reimagine:tool_exceptional_reach",
+        "operation": "ADD_VALUE",
+        "amount": 0.75
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    },
+    {
+      "type": "tieredneo:generic.dig_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:tool_exceptional_reach",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.05
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

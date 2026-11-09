@@ -1,0 +1,8 @@
+{
+  "items": [
+    "yo_hooks:diamond_grappling_hook"
+  ],
+  "base": [
+    "minecraft:diamond"
+  ]
+}

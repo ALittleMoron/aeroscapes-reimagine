@@ -9616,5 +9616,59 @@
     "key": "potion.potency.10",
     "expected": "X",
     "replacement": "XI"
+  },
+  {
+    "language": "en_us",
+    "key": "commands.tieredneo.failed",
+    "expected": "Nothing changed. %s main hand is empty",
+    "replacement": "%s has an empty main hand."
+  },
+  {
+    "language": "en_us",
+    "key": "commands.tieredneo.tier",
+    "expected": "Tiered %s from %s",
+    "replacement": "Assigned a rank to %s held by %s."
+  },
+  {
+    "language": "en_us",
+    "key": "commands.tieredneo.tiering_failed",
+    "expected": "Nothing changed. %s from %s has no given tier",
+    "replacement": "The requested rank is unavailable for %s held by %s."
+  },
+  {
+    "language": "en_us",
+    "key": "commands.tieredneo.untier",
+    "expected": "Untiered %s from %s",
+    "replacement": "Removed the rank from %s held by %s."
+  },
+  {
+    "language": "en_us",
+    "key": "commands.tieredneo.untier_failed",
+    "expected": "Nothing changed. %s from %s has no tier",
+    "replacement": "%s held by %s has no rank."
+  },
+  {
+    "language": "en_us",
+    "key": "text.autoconfig.tieredneo.category.general",
+    "expected": "TieredNeo Settings",
+    "replacement": "General"
+  },
+  {
+    "language": "en_us",
+    "key": "text.autoconfig.tieredneo.option.xIconPosition",
+    "expected": "Icon X Position",
+    "replacement": "Horizontal reforging screen offset"
+  },
+  {
+    "language": "en_us",
+    "key": "text.autoconfig.tieredneo.option.yIconPosition",
+    "expected": "Icon Y Position",
+    "replacement": "Vertical reforging screen offset"
+  },
+  {
+    "language": "en_us",
+    "key": "text.autoconfig.tieredneo.title",
+    "expected": "TieredNeo Config",
+    "replacement": "Hero's Tiered Settings"
   }
 ]

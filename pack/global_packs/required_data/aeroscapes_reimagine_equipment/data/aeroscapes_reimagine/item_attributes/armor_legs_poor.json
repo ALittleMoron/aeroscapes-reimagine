@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_legs_poor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_legs"
+    }
+  ],
+  "weight": 15,
+  "style": {
+    "color": "red"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_poor",
+        "operation": "ADD_VALUE",
+        "amount": -0.5
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    }
+  ]
+}

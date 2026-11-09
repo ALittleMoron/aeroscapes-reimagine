@@ -1,10 +1,20 @@
 ---
 title: Character and combat
-description: Current character presentation and enchantments, with plans for races, classes and action combat.
+description: Equipment ranks, reforging, enchantments, and plans for character progression.
 status: partial
 ---
 
-The pack already includes additional character animations, detailed skin layers and equipment enchantments. Races, classes, character progression and the intended action-combat system are planned additions.
+Crafted and looted equipment can have a rank that changes a stat. The anvil can replace the entire rank while keeping ordinary enchantments. Races, classes, character progression and the intended action-combat system are planned additions.
+
+## Equipment quality and reforging
+
+Eligible gear can roll four ranks from poor to exceptional. Exceptional swords can favor either damage or attack recovery. Exceptional tools can favor mining speed or reach. Armor ranks change protection when worn in the intended slot. Bow and crossbow ranks affect arrows fired from the main hand. The Wandering Magician armor and Amethyst Rapier also receive ranks. [Hero’s Tiered](https://modrinth.com/mod/heros-tiered/version/GY1XViBt), [Iron’s Spells ’n Spellbooks](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb).
+
+The legendary **Frost Strike** rank has a 20% chance to apply Slowness I for two seconds on a charged melee hit. It leaves an existing Slowness effect alone. Reforge a sword for a chance at the rank, or find a sword with it in a dungeon, mineshaft or Ice Spider Den chest.
+
+Open the anvil’s **Reforging** tab. Put undamaged gear in the middle, one base material on the left and one lapis lazuli on the right. An iron pickaxe takes an iron ingot, a bow takes string and an Amethyst Rapier takes an amethyst shard. Clicking the button commits one random result immediately. The odds and price stay the same on each attempt with that item. A result can be worse or repeat the previous rank. Ordinary enchantments remain on the item.
+
+Grappling hooks take their own metal ingot or a diamond for the diamond hook. Their rank changes both ascent and descent speed. Unbreaking and Mending can be applied as usual and stay on the hook after reforging. [Yori3o’s Grappling Hooks](https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf).
 
 ## Enchantments and character rendering
 

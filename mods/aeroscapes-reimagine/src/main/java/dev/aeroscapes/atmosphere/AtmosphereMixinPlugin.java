@@ -49,7 +49,7 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions =
           Map.of(
               "emi_ores", "1.3+1.21.1+neoforge",
-              "emi", "1.1.22+1.21.1+neoforge",
+              "emi", "1.1.24+1.21.1+neoforge",
               "create", "6.0.10",
               "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.construction.LittleSable")) {
@@ -75,6 +75,10 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.backup.")) {
       versions = Map.of("simplebackups", "1.21-4.0.21", "sable", "2.0.6", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("LegendaryFrostStrikeMixin")
+        || mixinClassName.endsWith("ReforgeAnvilReturnMixin")
+        || mixinClassName.endsWith("ReforgeCatalystHintMixin")) {
+      versions = Map.of("tieredneo", "1.2.0+1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.Compass")) {
       versions =
           Map.of(
@@ -131,13 +135,13 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     } else if (mixinClassName.endsWith("DistantHorizonsChunkyStartupMixin")) {
       versions = Map.of("distanthorizons", "3.3.3", "chunky", "1.4.23");
     } else if (mixinClassName.endsWith("EffectDescriptionPagesMixin")) {
-      versions = Map.of("emiffect", "2.1.6+mc1.21.1", "emi", "1.1.22+1.21.1+neoforge");
+      versions = Map.of("emiffect", "2.1.6+mc1.21.1", "emi", "1.1.24+1.21.1+neoforge");
     } else if (mixinClassName.endsWith("CreativeSearchMixin")) {
       versions = Map.of("neoforge", "21.1.244");
     } else if (mixinClassName.contains("EmiTrades")) {
-      versions = Map.of("emitrades", "2.0.0+alpha.1", "emi", "1.1.22+1.21.1+neoforge");
+      versions = Map.of("emitrades", "2.0.0+alpha.1", "emi", "1.1.24+1.21.1+neoforge");
     } else if (mixinClassName.endsWith("EmiReloadStepLanguageMixin")) {
-      versions = Map.of("emi", "1.1.22+1.21.1+neoforge", "jei", "19.39.0.372");
+      versions = Map.of("emi", "1.1.24+1.21.1+neoforge", "jei", "19.39.0.372");
     } else if (mixinClassName.endsWith("HorseMountedMiningScopeMixin")
         || mixinClassName.endsWith("HorseRecallSnapshotMixin")) {
       versions = Map.of("horseman", "1.5.13");

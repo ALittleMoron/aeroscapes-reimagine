@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:melee_ordinary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/melee"
+    }
+  ],
+  "weight": 24,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

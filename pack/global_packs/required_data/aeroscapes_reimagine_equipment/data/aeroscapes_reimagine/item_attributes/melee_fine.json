@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:melee_fine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/melee"
+    }
+  ],
+  "weight": 8,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:melee_fine",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.06
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}
