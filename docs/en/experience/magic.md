@@ -1,25 +1,23 @@
 ---
 title: Magic
-description: Plans for learning spells, combining magical traditions and using magic in daily life and travel.
-status: planned
+description: Find a spell scroll, inscribe a copper spell book and cast your first spells.
+status: partial
 ---
 
-Dedicated magic systems are planned. The aim is to make finding, studying and experimenting with spells a way to develop a character, with [Otherworld D&D](https://www.curseforge.com/minecraft/modpacks/otherworld-dnd) as the main reference. The final magic lineup and progression rules are still being refined.
+[Iron’s Spells ’n Spellbooks](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb) adds spell scrolls, equipment and magical sites to explore. Village priest, temple and cartographer chests can contain a level-one Magic Missile or Healing Circle scroll.
 
-[Iron’s Spells ’n Spellbooks](https://www.curseforge.com/minecraft/mc-mods/irons-spells-n-spellbooks) is selected for ready-made spells and magical equipment. Programmable [Hex Casting](https://modrinth.com/mod/hex-casting) is planned before `1.0.0` if a suitable version passes verification. [Theurgy](https://www.curseforge.com/minecraft/mc-mods/theurgy) is provisionally selected for alchemy.
+## Your first spell
 
-By `1.0.0`, magic should be a substantial, varied activity alongside engineering. Ready-made spells come first; composing spells is also intended before that milestone if the selected systems and overall scope allow it. Deeper connections between magic and other areas belong to later development.
+Use a scroll in hand for one cast without spending mana. To cast repeatedly, make the copper spell book (called the Flimsy Journal in game) from two copper ingots, a piece of string and six paper. Craft an inscription table from a book, three wooden slabs and two wooden fences. Place the copper book and a common scroll on the table, then move the spell into a book slot.
 
-## Learning and using magic
+Equip the book in the spell book accessory slot. Tap the **middle mouse button** to cast the selected spell. Hold it to open the spell wheel, point at a spell, then release to select it. With the default bindings, **Ctrl + middle mouse button** picks a block in Survival. In Creative, middle-click picks the targeted block or entity. Aim at empty space for the magic gesture, or assign separate cast and spell wheel keys in Controls.
 
-Several traditions can coexist when they offer different ways to play. Combat, healing, summoning, rituals, nature magic, necromancy and household uses are possible directions. A useful domestic spell can matter without being a strong weapon, and a spellcaster can also use weapons and peaceful skills.
-
-Learning and casting should involve proportionate resources, preparation or limits. Mana, ingredients, cooldowns and rituals are possible tools; the combination remains open. School mastery should progressively open deeper branch nodes, alternating new spells with passive improvements and other effects. Learning an ordinary spell node makes the spell available immediately with its usual casting equipment and costs. Growing ingredients and preparing supplies can connect magic with [farming and cooking](../building-and-daily-life/food/).
-
-Before `1.0.0`, learned spells from the pack’s magic systems will be available in the [shared ability panel](../character-and-combat/).
+Casting from the book uses mana and has a cooldown. Magic Missile gives you a ranged attack. Healing Circle heals nearby allies and can be interrupted while you cast it.
 
 ## Travel
 
-Learned magic may offer useful ways to travel alongside [aircraft](../engineering/). Unlocks, reach and use costs remain to be chosen. Creative-like personal flight is excluded at every stage, including after mastery.
+Teleport covers short distances and has a base cooldown of 20 seconds when cast from a book. To return to your respawn point with Recall, first inscribe it in a spell book. Portal and Angel Wings are disabled. A paraglider lets you steer while descending, and [aircraft](../engineering/) can climb and carry supplies between islands.
 
-Strong spells and ingredient production can give a mage worthwhile projects of their own. Their effects should remain within useful limits after the supply of ingredients is automated; a large resource cost alone does not establish balance. Evaluate repeated use and combinations with other equipment while preserving reasons to build, explore and use other systems. Suitable magical alternatives do not require a compulsory ship milestone.
+## Further development
+
+School mastery, branching spell talents and a [shared ability panel](../character-and-combat/) are planned. Programmable [Hex Casting](https://modrinth.com/mod/hex-casting) is planned before `1.0.0` if a suitable version passes verification. [Theurgy](https://www.curseforge.com/minecraft/mc-mods/theurgy) is provisionally selected for alchemy.

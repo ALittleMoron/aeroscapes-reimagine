@@ -1,5 +1,7 @@
 {
   "biome.aeroscapes_reimagine.volcanic_island": "Вулканический остров",
+  "key.aeroscapes_reimagine.brush_sleeve": "Стряхнуть пыль с рукава",
+  "key.categories.aeroscapes_reimagine": "Aeroscapes Reimagine",
   "message.aeroscapes_reimagine.monitor.toggle": "Запрошено переключение панели мониторинга.",
   "message.aeroscapes_reimagine.monitor.record": "Запрошена запись длительностью %s с.",
   "message.aeroscapes_reimagine.monitor.stopped": "Запрошена остановка записи.",
@@ -334,5 +336,7 @@
   "block.aeroscapes_reimagine.blackstone_palladium_ore": "Палладиевая руда в черните",
   "block.aeroscapes_reimagine.blackstone_redstone_ore": "Редстоуновая руда в черните",
   "block.aeroscapes_reimagine.blackstone_zinc_ore": "Цинковая руда в черните",
-  "aeroscapes_reimagine.equipment.companion_hook_disabled": "Отключён в этой сборке."
+  "aeroscapes_reimagine.equipment.companion_hook_disabled": "Отключён в этой сборке.",
+  "message.aeroscapes_reimagine.spell_disabled": "Это заклинание отключено.",
+  "message.aeroscapes_reimagine.recall_requires_book": "Чтобы применить «Возвращение», впишите его в книгу заклинаний."
 }

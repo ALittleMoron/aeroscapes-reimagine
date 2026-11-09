@@ -10272,5 +10272,163 @@
     "exception": "Owner explicitly permitted exact V1.0.4 beta / n3NgrJOg after technical checks; no permission for other experimental files.",
     "dependency_note": "Both sides; embedded descriptor requires Moonlight>=1.21-2.29.33. Existing Moonlight3.0.18 exact145 member references resolved including inherited vanilla methods. No library update.",
     "source_review": "Author-linked port repository currently unavailable; exact distributed bytecode/resources audited against available original author source for context, without claiming exact port source equivalence. Provider binary remains unchanged."
+  },
+  {
+    "slug": "irons-spells-n-spellbooks",
+    "name": "Iron's Spells 'n Spellbooks",
+    "project_id": "s4OWxYQQ",
+    "version_id": "slKLosTb",
+    "version": "1.21.1-3.16.3",
+    "filename": "irons_spellbooks-1.21.1-3.16.3.jar",
+    "sha512": "fd782f98c6c59b193c4832f33775291d2a7e639e1e23dd47510bfb494d99d182bec1253566b9394f96c733a0d0108be34bd729614b82dc29e55e096fdeb96f5b",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://github.com/iron431/Irons-Spells-n-Spellbooks#readme"
+    },
+    "source_url": "https://github.com/iron431/Irons-Spells-n-Spellbooks",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "8BmcQJ2H",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "HJZB6bmA",
+        "project_id": "gedNE4y2",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "yohfFbgD",
+        "project_id": "vvuO3ImH",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "sQyzhxuH",
+        "project_id": "9nfaJPtX",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "0.4.1 magic integration",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "e8832385c01db56b9fcb19c48fcedc76a3a70d92",
+    "file_size": 13890045,
+    "source_review": "Compared the casting and config paths against author revision 9a88991f5ec6e4f076278a9c11dcaf1281980f20. The distributed starter recipes and priest-house/generic chest loot definitions match that revision after JSON parsing. The author terms permit modpack use and independently authored addons and datapacks; provider archives remain unchanged."
+  },
+  {
+    "slug": "playeranimator",
+    "name": "playerAnimator",
+    "project_id": "gedNE4y2",
+    "version_id": "HJZB6bmA",
+    "version": "2.0.4+1.21.1-forge",
+    "filename": "player-animation-lib-forge-2.0.4+1.21.1.jar",
+    "sha512": "fc00450fb6c95ec1779021bdc726122dacb5915c6baddaacc981cd221b01b8db35f2a0dfde5d6fa6766d877266dc82f58854f571ea53cc5c4d468b80e1548a5f",
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/KosmX/fabricPlayerAnimation",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "aRnIEV0F",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "0.4.1 magic integration",
+    "exception": "Owner authorized testing this exact 2.0.4 NeoForge beta for magic. Release acceptance requires casting, return to ordinary movement, and a separate pack-authored animation.",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "05be8ddcc78532b9a5520c718edc6c971cd0057c",
+    "file_size": 203149
+  },
+  {
+    "slug": "irons-lib",
+    "name": "Iron's Lib",
+    "project_id": "9nfaJPtX",
+    "version_id": "sQyzhxuH",
+    "version": "1.21.1-2.1.0",
+    "filename": "irons_lib-1.21.1-2.1.0.jar",
+    "sha512": "63f4c2575ac6e031e28d36f87a84d823ebfad389aee49f5315cdf3cfd47af3fa3b8f546af986e48dba72466a0d63c08158b885fc415497c237361ca57dc8e99b",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "8BmcQJ2H",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "0.4.1 magic integration",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "70fba64d12b6ff9553580e52101d989c89297797",
+    "file_size": 406284
+  },
+  {
+    "slug": "curios",
+    "name": "Curios API",
+    "project_id": "vvuO3ImH",
+    "version_id": "yohfFbgD",
+    "version": "9.5.1+1.21.1",
+    "filename": "curios-neoforge-9.5.1+1.21.1.jar",
+    "sha512": "5981a267686b744e7e3c227f78cbcd5267c14ac6979a28e814695f4589273998563147207fef4a5cdb7cdbdc39797cd95d9e4abadb55869f18e02a38d0654ae5",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LGPL-3.0-or-later",
+      "name": "GNU Lesser General Public License v3.0 or later",
+      "url": null
+    },
+    "source_url": "https://github.com/TheIllusiveC4/Curios",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.4.1 magic integration",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "418fcd42e3a7844c9bdc71c9b6401fdb3894e0c4",
+    "file_size": 410690
   }
 ]

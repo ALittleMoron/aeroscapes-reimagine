@@ -2354,6 +2354,74 @@
       "parity": "exact",
       "review": {},
       "verification": "Downloaded official CurseForge CDN file and rehashed SHA-512/SHA-1; bytes exactly match the selected Modrinth artifact."
+    },
+    {
+      "slug": "curios",
+      "primary_project_id": "vvuO3ImH",
+      "primary_sha512": "5981a267686b744e7e3c227f78cbcd5267c14ac6979a28e814695f4589273998563147207fef4a5cdb7cdbdc39797cd95d9e4abadb55869f18e02a38d0654ae5",
+      "status": "hosted",
+      "project_id": 309927,
+      "file_id": 6529130,
+      "filename": "curios-neoforge-9.5.1+1.21.1.jar",
+      "sha512": "5981a267686b744e7e3c227f78cbcd5267c14ac6979a28e814695f4589273998563147207fef4a5cdb7cdbdc39797cd95d9e4abadb55869f18e02a38d0654ae5",
+      "sha1": "418fcd42e3a7844c9bdc71c9b6401fdb3894e0c4",
+      "file_size": 410690,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge CDN file downloaded and hashed. Matches the Modrinth pin byte for byte."
+    },
+    {
+      "slug": "irons-lib",
+      "primary_project_id": "9nfaJPtX",
+      "primary_sha512": "63f4c2575ac6e031e28d36f87a84d823ebfad389aee49f5315cdf3cfd47af3fa3b8f546af986e48dba72466a0d63c08158b885fc415497c237361ca57dc8e99b",
+      "status": "hosted",
+      "project_id": 1492763,
+      "file_id": 8364894,
+      "filename": "irons_lib-1.21.1-2.1.0.jar",
+      "sha512": "63f4c2575ac6e031e28d36f87a84d823ebfad389aee49f5315cdf3cfd47af3fa3b8f546af986e48dba72466a0d63c08158b885fc415497c237361ca57dc8e99b",
+      "sha1": "70fba64d12b6ff9553580e52101d989c89297797",
+      "file_size": 406284,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge CDN file downloaded and hashed. Matches the Modrinth pin byte for byte."
+    },
+    {
+      "slug": "irons-spells-n-spellbooks",
+      "primary_project_id": "s4OWxYQQ",
+      "primary_sha512": "fd782f98c6c59b193c4832f33775291d2a7e639e1e23dd47510bfb494d99d182bec1253566b9394f96c733a0d0108be34bd729614b82dc29e55e096fdeb96f5b",
+      "status": "hosted",
+      "project_id": 855414,
+      "file_id": 8680204,
+      "filename": "irons_spellbooks-1.21.1-3.16.3.jar",
+      "sha512": "2fe112061ecbdf3fc85400404218dbca04fe14e775eb55c626c57274001253b54a2515f5dd4bd7f5672547afe850bc1fbd062b113bd3c96c3867af068da74a97",
+      "sha1": "017fd8140c477f9ae602cf95594f1c23bef1d6e3",
+      "file_size": 13890046,
+      "parity": "packaging",
+      "review": {
+        "added": [],
+        "removed": [],
+        "changed": [
+          "META-INF/MANIFEST.MF"
+        ],
+        "common_unchanged_count": 3997,
+        "note": "Only Implementation-Timestamp differs inside the manifest."
+      },
+      "verification": "Official CurseForge CDN file downloaded and hashed. Compared all decompressed entries with the Modrinth pin."
+    },
+    {
+      "slug": "playeranimator",
+      "primary_project_id": "gedNE4y2",
+      "primary_sha512": "fc00450fb6c95ec1779021bdc726122dacb5915c6baddaacc981cd221b01b8db35f2a0dfde5d6fa6766d877266dc82f58854f571ea53cc5c4d468b80e1548a5f",
+      "status": "hosted",
+      "project_id": 658587,
+      "file_id": 7389814,
+      "filename": "player-animation-lib-forge-2.0.4+1.21.1.jar",
+      "sha512": "fc00450fb6c95ec1779021bdc726122dacb5915c6baddaacc981cd221b01b8db35f2a0dfde5d6fa6766d877266dc82f58854f571ea53cc5c4d468b80e1548a5f",
+      "sha1": "05be8ddcc78532b9a5520c718edc6c971cd0057c",
+      "file_size": 203149,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge CDN file downloaded and hashed. Matches the Modrinth pin byte for byte."
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

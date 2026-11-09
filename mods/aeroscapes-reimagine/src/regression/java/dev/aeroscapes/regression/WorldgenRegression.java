@@ -98,6 +98,10 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    if (Boolean.getBoolean("aeroscapes.regression.magic")) {
+      MagicRegression.verify(level);
+      if (System.getProperty("aeroscapes.regression.groupTwo") == null) return;
+    }
     String miscellaneous = System.getProperty("aeroscapes.regression.miscellaneous");
     if (miscellaneous != null) {
       MiscContentRegression.verify(

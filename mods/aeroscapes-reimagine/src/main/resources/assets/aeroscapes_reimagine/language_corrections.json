@@ -9460,5 +9460,161 @@
     "key": "itemGroup.comforts.general",
     "expected": "Удобства",
     "replacement": "Comforts"
+  },
+  {
+    "language": "en_us",
+    "key": "itemGroup.irons_spellbooks.spell_equipment_tab",
+    "expected": "Iron's Spellbooks Equipment",
+    "replacement": "Iron's Spells 'n Spellbooks — Equipment"
+  },
+  {
+    "language": "ru_ru",
+    "key": "itemGroup.irons_spellbooks.spell_equipment_tab",
+    "expected": "Iron's Spellbooks: Снаряжение",
+    "replacement": "Iron's Spells 'n Spellbooks — Снаряжение"
+  },
+  {
+    "language": "en_us",
+    "key": "itemGroup.irons_spellbooks.spell_materials_tab",
+    "expected": "Iron's Spellbooks Materials",
+    "replacement": "Iron's Spells 'n Spellbooks — Materials"
+  },
+  {
+    "language": "ru_ru",
+    "key": "itemGroup.irons_spellbooks.spell_materials_tab",
+    "expected": "Iron's Spellbooks: Материалы",
+    "replacement": "Iron's Spells 'n Spellbooks — Материалы"
+  },
+  {
+    "language": "en_us",
+    "key": "itemGroup.irons_spellbooks.blocks_tab",
+    "expected": "Iron's Spellbooks Blocks",
+    "replacement": "Iron's Spells 'n Spellbooks — Blocks"
+  },
+  {
+    "language": "ru_ru",
+    "key": "itemGroup.irons_spellbooks.blocks_tab",
+    "expected": "Iron's Spellbooks: Блоки",
+    "replacement": "Iron's Spells 'n Spellbooks — Блоки"
+  },
+  {
+    "language": "en_us",
+    "key": "itemGroup.irons_spellbooks.spellbook_scrolls_tab",
+    "expected": "Iron's Spellbooks Scrolls",
+    "replacement": "Iron's Spells 'n Spellbooks — Scrolls"
+  },
+  {
+    "language": "ru_ru",
+    "key": "itemGroup.irons_spellbooks.spellbook_scrolls_tab",
+    "expected": "Iron's Spellbooks: Свитки",
+    "replacement": "Iron's Spells 'n Spellbooks — Свитки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "death.attack.blood_magic",
+    "expected": "%1$s магией крови 1",
+    "replacement": "%1$s погиб от магии крови %2$s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "death.attack.irons_spellbooks.sonic_boom",
+    "expected": "%1$s был стёрт звуковым выстрелом %2$s с помощью %3$s",
+    "replacement": "%1$s уничтожен звуковой волной %2$s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "death.attack.irons_spellbooks.divine_smite",
+    "expected": "%1$s подвергся небесной каре, исполненной %2$s с помощью %3$s",
+    "replacement": "%1$s пал от божественной кары %2$s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "death.attack.irons_spellbooks.thunder_step",
+    "expected": "%1$s был наэлектризован по пути к %2$s с помощью %3$s",
+    "replacement": "%1$s поражён молнией на пути %2$s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "death.attack.irons_spellbooks.void_tentacles.item",
+    "expected": "%3$s отправил %1$s в пустоту с помощью %2$s",
+    "replacement": "%2$s затянул %1$s в пустоту с помощью %3$s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "death.attack.irons_spellbooks.ascension.item",
+    "expected": "%1$s был вознесён в небеса %3$s с помощью %2$s",
+    "replacement": "%1$s вознесён в загробный мир %2$s с помощью %3$s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "death.attack.irons_spellbooks.chain_lightning.item",
+    "expected": "%1$s был наэлектризован до смерти благодаря %3$s %2$s",
+    "replacement": "%1$s погиб от цепной молнии %2$s, вызванной с помощью %3$s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "death.attack.irons_spellbooks.scorch.item",
+    "expected": "%1$s был сожжён %3$s с помощью %2$s",
+    "replacement": "%1$s сожжён %2$s с помощью %3$s"
+  },
+  {
+    "language": "en_us",
+    "key": "potion.potency.6",
+    "expected": "VI",
+    "replacement": "VII"
+  },
+  {
+    "language": "ru_ru",
+    "key": "potion.potency.6",
+    "expected": "VI",
+    "replacement": "VII"
+  },
+  {
+    "language": "en_us",
+    "key": "potion.potency.7",
+    "expected": "VII",
+    "replacement": "VIII"
+  },
+  {
+    "language": "ru_ru",
+    "key": "potion.potency.7",
+    "expected": "VII",
+    "replacement": "VIII"
+  },
+  {
+    "language": "en_us",
+    "key": "potion.potency.8",
+    "expected": "XIII",
+    "replacement": "IX"
+  },
+  {
+    "language": "ru_ru",
+    "key": "potion.potency.8",
+    "expected": "XIII",
+    "replacement": "IX"
+  },
+  {
+    "language": "en_us",
+    "key": "potion.potency.9",
+    "expected": "IX",
+    "replacement": "X"
+  },
+  {
+    "language": "ru_ru",
+    "key": "potion.potency.9",
+    "expected": "IX",
+    "replacement": "X"
+  },
+  {
+    "language": "en_us",
+    "key": "potion.potency.10",
+    "expected": "X",
+    "replacement": "XI"
+  },
+  {
+    "language": "ru_ru",
+    "key": "potion.potency.10",
+    "expected": "X",
+    "replacement": "XI"
   }
 ]

@@ -1,5 +1,7 @@
 {
   "biome.aeroscapes_reimagine.volcanic_island": "Volcanic Island",
+  "key.aeroscapes_reimagine.brush_sleeve": "Brush dust off sleeve",
+  "key.categories.aeroscapes_reimagine": "Aeroscapes Reimagine",
   "commands.aeroscapes_reimagine.locate.searching": "Searching for %s. You can keep playing; a new structure search replaces this one.",
   "commands.aeroscapes_reimagine.locate.cancelled": "Structure search cancelled (%s).",
   "commands.aeroscapes_reimagine.locate.replaced": "replaced by your new search",
@@ -307,5 +309,7 @@
   "block.aeroscapes_reimagine.blackstone_palladium_ore": "Blackstone Palladium Ore",
   "block.aeroscapes_reimagine.blackstone_redstone_ore": "Blackstone Redstone Ore",
   "block.aeroscapes_reimagine.blackstone_zinc_ore": "Blackstone Zinc Ore",
-  "aeroscapes_reimagine.equipment.companion_hook_disabled": "Disabled in this pack."
+  "aeroscapes_reimagine.equipment.companion_hook_disabled": "Disabled in this pack.",
+  "message.aeroscapes_reimagine.spell_disabled": "This spell is disabled.",
+  "message.aeroscapes_reimagine.recall_requires_book": "Inscribe Recall in a spell book to cast it."
 }

@@ -13,6 +13,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.Util;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.ListTag;
@@ -21,6 +22,8 @@ import net.minecraft.server.level.ChunkResult;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.TicketType;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.block.PointedDripstoneBlock;
+import net.minecraft.world.level.block.state.properties.DripstoneThickness;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.levelgen.structure.Structure;
@@ -30,6 +33,9 @@ import net.minecraft.world.level.levelgen.structure.placement.RandomSpreadStruct
 
 /** Natural selection, saved FULL assembly and native piece roundtrip witnesses. */
 final class NaturalStructureWitness {
+  private static final ResourceLocation ICICLE =
+      ResourceLocation.parse("immersive_weathering:icicle");
+
   private NaturalStructureWitness() {}
 
   static StructureStart find(ServerLevel level, ResourceLocation id) {
@@ -83,7 +89,7 @@ final class NaturalStructureWitness {
     return placements;
   }
 
-  private static Optional<Structure.GenerationStub> prefit(
+  static Optional<Structure.GenerationStub> prefit(
       ServerLevel level, Structure structure, ChunkPos origin) {
     var generator = level.getChunkSource().getGenerator();
     return structure.findValidGenerationPoint(
@@ -347,7 +353,15 @@ final class NaturalStructureWitness {
               || position.getY() < bounds.minY()
               || position.getY() > bounds.maxY() + 48) continue;
           var entity = chunk.getBlockEntity(position);
-          require(entity != null, "Missing saved structure block entity: " + position);
+          if (entity == null) {
+            var state = chunk.getBlockState(position);
+            // The provider's pending icicle entries produce entities only for downward tips.
+            if (BuiltInRegistries.BLOCK.getKey(state.getBlock()).equals(ICICLE)
+                && (state.getValue(PointedDripstoneBlock.TIP_DIRECTION) != Direction.DOWN
+                    || state.getValue(PointedDripstoneBlock.THICKNESS) != DripstoneThickness.TIP))
+              continue;
+            throw new IllegalStateException("Missing saved structure block entity: " + position);
+          }
           var tag = entity.saveWithFullMetadata(level.registryAccess());
           if (tag.contains("LootTable")) {
             loot.add(tag.getString("LootTable"));

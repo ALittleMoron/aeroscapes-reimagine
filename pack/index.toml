@@ -253,6 +253,10 @@ file = "config/xaerominimap.txt"
 hash = "8e8e267d50f65eaea7287d170546fa4a2f2a58c73a957bba99d6dc7ad3935f78"
 
 [[files]]
+file = "defaultconfigs/irons_spellbooks-server.toml"
+hash = "57b6ee87fec23218b6885acb9a9bc9e9cce775a03a25989aee42317ba968cbf5"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/NOTICE.txt"
 hash = "689a3c0f6190ed08069e6d556cb11d316a89309a6bca1a0c5aa277ce319904c5"
 
@@ -729,6 +733,14 @@ file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_re
 hash = "0d0566e0c6b8d67b8b9ed0ee688f8c838b9ed32322aa385e3087af72f020464a"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/loot_modifiers/starter_spell_scroll.json"
+hash = "e50d69abb57291e94b60ad1ddf90276c79720f923cb697521f3c2ea3b6aac77c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/loot_table/chests/starter_spell_scroll.json"
+hash = "05d72a6b0d1c76b898009168dff70f3254208e6e3ae24d65eebb7d351e1d2c4b"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/recipe/steel_wool.json"
 hash = "54099600758b7557a769230e42cfa629eb1c8cdbbf5c52be3866c7723c6e726e"
 
@@ -743,6 +755,18 @@ hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/crittersandcompanions/recipe/grappling_hook.json"
 hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/irons_spellbooks/irons_spellbooks_spell_config/angel_wing.json"
+hash = "53e446308879568ec3d2154715935a135ae6bc805ce5b4c111ccbef79a30c01f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/irons_spellbooks/irons_spellbooks_spell_config/portal.json"
+hash = "53e446308879568ec3d2154715935a135ae6bc805ce5b4c111ccbef79a30c01f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/irons_spellbooks/irons_spellbooks_spell_config/teleport.json"
+hash = "ba73c1942a6e06ffa37017c3ebdcf828fd7fac46d7a8962ec6ca965da447c3a2"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/loot_table/inject/chests/abandoned_mineshaft.json"
@@ -791,6 +815,10 @@ hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/legendarysurvivaloverhaul/recipe/tonic.json"
 hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/neoforge/loot_modifiers/global_loot_modifiers.json"
+hash = "e134f281be3e7eb0493ce350b1c70349971d7d3cbd6177f902e6a62a7286c802"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/toms_storage/recipe/adv_wireless_terminal.json"
@@ -1135,7 +1163,7 @@ hash = "9807537eded3dd65596b50694229361c2bb409040512c77a0f1bfaa267906995"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "c756e6a558cb5f0a79f86621feca39a42502803db72940f4674844df46dfb500"
+hash = "ae79fb0db766fbd2d6ae9d4f679d45176a484737ae0f48abd07ccd0232b5f406"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -1164,7 +1192,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "3d09f57269baac1b122043609f68c5d152ec5a213b10665fb4460d31e7dddb8a"
+hash = "619e4b76fcbe11af5e6846b574729fb2af37ea9ca93b16fb096720ca567064da"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -1439,6 +1467,11 @@ metafile = true
 [[files]]
 file = "mods/ct-overhaul-village.pw.toml"
 hash = "3882b0c275dae08b4eb1039910dd2f30815ec90a08be947df3d712d9db4f77a4"
+metafile = true
+
+[[files]]
+file = "mods/curios.pw.toml"
+hash = "0035495b2e145c17b6f7e4361c1bf29c1857feb2823149b8dcf8bedd11aba078"
 metafile = true
 
 [[files]]
@@ -1727,6 +1760,16 @@ hash = "7a8146b9e25966b5172fb584f6d6fdf2fde99588021020735abe461e6392522e"
 metafile = true
 
 [[files]]
+file = "mods/irons-lib.pw.toml"
+hash = "f87fc174dbb6a1eb7a6738e985b717bc33f2768352f2dc9d158e7a3969e68047"
+metafile = true
+
+[[files]]
+file = "mods/irons-spells-n-spellbooks.pw.toml"
+hash = "f645f2298ff58f91f09c0c3d2cce5402dfc64210055eacb40e6ed3f9727226c7"
+metafile = true
+
+[[files]]
 file = "mods/item-descriptions.pw.toml"
 hash = "6efcfcc1acf823af4e381f9bdca555f7ab7ac8cb116f45684046428ce3d33a67"
 metafile = true
@@ -1919,6 +1962,11 @@ metafile = true
 [[files]]
 file = "mods/pick-up-notifier.pw.toml"
 hash = "4bc5b108d883c55c181909842001cd9edf8a68830635f29efffe2d5d327d69a5"
+metafile = true
+
+[[files]]
+file = "mods/playeranimator.pw.toml"
+hash = "aeacb2e973f80f4837eadd14d4f85e73888664f8a55f1cb634a93c4b48cf5e73"
 metafile = true
 
 [[files]]
@@ -2233,7 +2281,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "7f6a0ffcf95cd92f497c79037733a13b3929115cab5705c1eafb014ea15aa5e3"
+hash = "fb00df532cb23734fb73359d7b14a4d96394508acb7a8b1cf1e74ffd91b86f2d"
 
 [[files]]
 file = "polytone_options.json"

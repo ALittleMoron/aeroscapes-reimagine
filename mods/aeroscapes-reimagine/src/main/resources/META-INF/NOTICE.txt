@@ -56,6 +56,12 @@ separately licensed selected upstream translations described below. Each
 selected dictionary retains its stated license; the Java code and unrelated
 resources remain GPL-3.0-or-later. Original provider JARs are unchanged.
 
+The magic language supplements contain independently authored functional text
+and short Russian summaries of journal and citadel entries. The original
+Iron's Spells 'n Spellbooks and Iron's Lib archives remain All Rights Reserved.
+Curios API retains LGPL-3.0-or-later and Player Animator retains MIT. Original
+captions recorded for guarded comparisons retain their provider terms.
+
 The wildlife, wetland, archaeology and aerial adapters read the exact unchanged
 Naturalist 2.0.7, Critters and Companions 2.7.0, Wetland Whimsy 2.1.0,
 Better Archeology 1.3.9, Creat Aeronautics Structures 1.0.0 and Sky Villages 1.0.6

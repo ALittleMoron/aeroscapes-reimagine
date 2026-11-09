@@ -19,3 +19,7 @@ key_key.shouldersurfing.swap_shoulder:key.keyboard.unknown
 key_key.punchy.inspect:key.keyboard.unknown
 key_key.yo_hooks.climb:key.keyboard.left.shift
 key_key.yo_hooks.climb_down:key.keyboard.left.control
+key_key.irons_spellbooks.spell_wheel:key.keyboard.unknown
+key_key.irons_spellbooks.spellbook_cast:key.keyboard.unknown
+key_key.irons_spellbooks.spell_bar_modifier:key.keyboard.unknown
+key_key.curios.open.desc:key.keyboard.unknown

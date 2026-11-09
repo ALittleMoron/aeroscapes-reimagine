@@ -56,6 +56,8 @@ RELEASE_EXCEPTIONS = frozenset(
         ("curseforge:975460", "8787579", "beta"),
         ("RCRxC1tD", "c2SowFEz", "beta"),
         ("AtjxBimt", "n3NgrJOg", "beta"),
+        # Client acceptance of casting and the custom gesture is pending.
+        ("gedNE4y2", "HJZB6bmA", "beta"),
     }
 )
 COMPAT_DIRECTORY = "global_packs/required_data/aeroscapes_reimagine_compat"

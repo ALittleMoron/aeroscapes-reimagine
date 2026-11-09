@@ -12,6 +12,7 @@ import java.util.ArrayDeque;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.levelgen.structure.StructureStart;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
@@ -42,6 +43,18 @@ final class GroupTwoGenerationRegression {
       checks.add(
           () -> {
             ResourceLocation id = ResourceLocation.parse(name.strip());
+            if (level.getSeed() == 1 && name.strip().equals("irons_spellbooks:evoker_fort")) {
+              var fort =
+                  level
+                      .registryAccess()
+                      .registryOrThrow(Registries.STRUCTURE)
+                      .getHolder(id)
+                      .orElseThrow()
+                      .value();
+              require(
+                  NaturalStructureWitness.prefit(level, fort, new ChunkPos(192, 189)).isEmpty(),
+                  "Evoker fort accepted its seed-one split across stacked islands");
+            }
             StructureStart start =
                 replay == null
                     ? NaturalStructureWitness.find(level, id)

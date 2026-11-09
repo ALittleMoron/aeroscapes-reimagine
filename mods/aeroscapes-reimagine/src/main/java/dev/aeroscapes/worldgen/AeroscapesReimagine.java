@@ -50,6 +50,7 @@ public final class AeroscapesReimagine {
     if (ModList.get().isLoaded("crittersandcompanions"))
       dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);
     if (ModList.get().isLoaded("spawn")) dev.aeroscapes.ecology.EcologyNetwork.register(modBus);
+    if (ModList.get().isLoaded("irons_spellbooks")) dev.aeroscapes.magic.SpellCastRules.register();
     if (ModList.get().isLoaded("waystones")) {
       dev.aeroscapes.travel.TravelIntegration.register(modBus);
     }

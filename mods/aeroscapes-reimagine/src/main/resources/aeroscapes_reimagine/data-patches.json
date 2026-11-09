@@ -7242,5 +7242,144 @@
         ]
       }
     ]
+  },
+  {
+    "id": "irons_spellbooks:worldgen/structure/catacombs.json",
+    "mod": "irons_spellbooks",
+    "source": "data/irons_spellbooks/worldgen/structure/catacombs.json",
+    "sha256": "661018e1952231ca21ddfe16a7fdf3454fc6fd5bd0c87c75c93bea0ce4924bb1",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "buried_complex"
+      }
+    ]
+  },
+  {
+    "id": "irons_spellbooks:worldgen/structure/evoker_fort.json",
+    "mod": "irons_spellbooks",
+    "source": "data/irons_spellbooks/worldgen/structure/evoker_fort.json",
+    "sha256": "5df9992dabcb8a46fc5910b0edf91f36fd7c516f4934f81e83111c657b0a9028",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "camp_surface"
+      }
+    ]
+  },
+  {
+    "id": "irons_spellbooks:worldgen/structure/ice_spider_den.json",
+    "mod": "irons_spellbooks",
+    "source": "data/irons_spellbooks/worldgen/structure/ice_spider_den.json",
+    "sha256": "6fd5fb067c56d4e1df42ce4435424dad56c21b1516bbb007e9bbbf2e9a519e2b",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_buried"
+      }
+    ]
+  },
+  {
+    "id": "irons_spellbooks:worldgen/structure/impaled_icebreaker.json",
+    "mod": "irons_spellbooks",
+    "source": "data/irons_spellbooks/worldgen/structure/impaled_icebreaker.json",
+    "sha256": "6108af2a6e9e4df5358576eaf3435f380430bf3ecf2f8e481e95a007acb6cac5",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "marine_surface"
+      }
+    ]
+  },
+  {
+    "id": "irons_spellbooks:worldgen/structure/mangrove_hut.json",
+    "mod": "irons_spellbooks",
+    "source": "data/irons_spellbooks/worldgen/structure/mangrove_hut.json",
+    "sha256": "b555d51df0657cc657cbdf7c9e129382044c9b84e8aa60d3784d3e1d5f6c07ea",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface_footprint"
+      }
+    ]
+  },
+  {
+    "id": "irons_spellbooks:worldgen/structure/mountain_tower.json",
+    "mod": "irons_spellbooks",
+    "source": "data/irons_spellbooks/worldgen/structure/mountain_tower.json",
+    "sha256": "a8d93e6a8ad0e29475f819533b65260e911a7432aa45f53b207cc1e8354fa45f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "surface_root_footprint"
+      }
+    ]
+  },
+  {
+    "id": "irons_spellbooks:worldgen/structure/pyromancer_tower.json",
+    "mod": "irons_spellbooks",
+    "source": "data/irons_spellbooks/worldgen/structure/pyromancer_tower.json",
+    "sha256": "59813b452f3d2d10afb15c7babd7ba735eecdada198b5d228eb84fd72e3e4d43",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "anchored_buried"
+      }
+    ]
   }
 ]

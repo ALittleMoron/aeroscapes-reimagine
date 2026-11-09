@@ -35,6 +35,8 @@ repositories {
       includeModule("maven.modrinth", "sable")
       includeModule("maven.modrinth", "particle-rain")
       includeModule("maven.modrinth", "punchy-fpa")
+      includeModule("maven.modrinth", "playeranimator")
+      includeModule("maven.modrinth", "irons-spells-n-spellbooks")
       includeModule("maven.modrinth", "entity-model-features")
       includeModule("maven.modrinth", "entitytexturefeatures")
       includeModule("maven.modrinth", "puzzle")
@@ -204,6 +206,8 @@ dependencies {
   compileOnly(files(sableApi))
   atmosphereApi("maven.modrinth:particle-rain:RxfaR4ud")
   atmosphereApi("maven.modrinth:punchy-fpa:83nCNSX4")
+  atmosphereApi("maven.modrinth:playeranimator:HJZB6bmA")
+  atmosphereApi("maven.modrinth:irons-spells-n-spellbooks:slKLosTb")
   atmosphereApi("maven.modrinth:entity-model-features:197m3VoU")
   atmosphereApi("maven.modrinth:entitytexturefeatures:lwNx1nD1")
   atmosphereApi("maven.modrinth:puzzle:bZNDTLHq")
@@ -690,6 +694,14 @@ val hookHangMathTest by
     mainClass = "dev.aeroscapes.movement.HookHangMathTest"
   }
 
+val spellMouseGestureTest by
+  tasks.registering(JavaExec::class) {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.SpellMouseGestureTest"
+  }
+
 tasks.register<JavaExec>("generateEquipmentModels") {
   group = "build"
   val minecraftResources =
@@ -725,6 +737,7 @@ tasks.check {
     paragliderExhaustionTest,
     seatedRiderAnimationTest,
     hookHangMathTest,
+    spellMouseGestureTest,
     policyTest,
     islandLayoutTest,
     exposedIslandSurfacesTest,

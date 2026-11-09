@@ -74,6 +74,12 @@
       "version_id": "zTMR6t3J",
       "filename": "betterarcheology-neoforge-1.21.1-1.3.9.jar",
       "sha512": "c539aac7eee3ec51d55e9c053d4ad29ee467c9ef6d1206a33a15b7ad5c7937f684453f856ed304b657e6baa8bcc63c6fd56090c46d2d6ff1dcefd0f854a943c2"
+    },
+    {
+      "project_id": "s4OWxYQQ",
+      "version_id": "slKLosTb",
+      "filename": "irons_spellbooks-1.21.1-3.16.3.jar",
+      "sha512": "fd782f98c6c59b193c4832f33775291d2a7e639e1e23dd47510bfb494d99d182bec1253566b9394f96c733a0d0108be34bd729614b82dc29e55e096fdeb96f5b"
     }
   ],
   "resources": [
@@ -3008,6 +3014,69 @@
       "source_sha256": "f22902ee5975a8ee97085814d401c72d959ceea4fc1a61bf9dae5f58e8f65578",
       "result_json_sha256": "625ad7466621d5dc16b57db3f1b22e96ae22e37ddd32b84b912e0bf03554f8fc",
       "reason": "Keep archaeological deposits and their brush loot out of ordinary soil replacement during decoration."
+    },
+    {
+      "id": "irons_spellbooks:worldgen/structure/catacombs.json",
+      "provider": "s4OWxYQQ",
+      "version": "slKLosTb",
+      "source": "data/irons_spellbooks/worldgen/structure/catacombs.json",
+      "source_sha256": "661018e1952231ca21ddfe16a7fdf3454fc6fd5bd0c87c75c93bea0ce4924bb1",
+      "result_json_sha256": "6d50d024424ea61d5e2f8f74989ef0858667a0eaa2c3eeb31833ac75527ff129",
+      "reason": "Fit the native underground assembly inside natural island terrain while preserving the Wayward Compass target."
+    },
+    {
+      "id": "irons_spellbooks:worldgen/structure/evoker_fort.json",
+      "provider": "s4OWxYQQ",
+      "version": "slKLosTb",
+      "source": "data/irons_spellbooks/worldgen/structure/evoker_fort.json",
+      "source_sha256": "5df9992dabcb8a46fc5910b0edf91f36fd7c516f4934f81e83111c657b0a9028",
+      "result_json_sha256": "c8b2c84b9610a9d88e34dd409539eb8733abc6ce9e11ebc4f0eea525c4de9a28",
+      "reason": "Keep the tower and projected camps on natural ground at compatible elevations."
+    },
+    {
+      "id": "irons_spellbooks:worldgen/structure/ice_spider_den.json",
+      "provider": "s4OWxYQQ",
+      "version": "slKLosTb",
+      "source": "data/irons_spellbooks/worldgen/structure/ice_spider_den.json",
+      "source_sha256": "6fd5fb067c56d4e1df42ce4435424dad56c21b1516bbb007e9bbbf2e9a519e2b",
+      "result_json_sha256": "679e40119ba84c4e10efd61ce56ce30eedba2c9621ce4d6f77e617d8265049d7",
+      "reason": "Keep the surface fort accessible and require natural burial for its basement, cavern and dungeon."
+    },
+    {
+      "id": "irons_spellbooks:worldgen/structure/impaled_icebreaker.json",
+      "provider": "s4OWxYQQ",
+      "version": "slKLosTb",
+      "source": "data/irons_spellbooks/worldgen/structure/impaled_icebreaker.json",
+      "source_sha256": "6108af2a6e9e4df5358576eaf3435f380430bf3ecf2f8e481e95a007acb6cac5",
+      "result_json_sha256": "b142a2898dbe4b81401d53a087a2b59a6019ab8c1a6b09bd2bab496441595e1b",
+      "reason": "Require a supported frozen shore or sufficient water beneath the hull in a physical basin."
+    },
+    {
+      "id": "irons_spellbooks:worldgen/structure/mangrove_hut.json",
+      "provider": "s4OWxYQQ",
+      "version": "slKLosTb",
+      "source": "data/irons_spellbooks/worldgen/structure/mangrove_hut.json",
+      "source_sha256": "b555d51df0657cc657cbdf7c9e129382044c9b84e8aa60d3784d3e1d5f6c07ea",
+      "result_json_sha256": "1816c5a38f04882fecfc5cca017ad4bfbea4269258932a1e8be1ad416fbf2208",
+      "reason": "Require natural ground beneath the stilted hut within its native swamp biomes."
+    },
+    {
+      "id": "irons_spellbooks:worldgen/structure/mountain_tower.json",
+      "provider": "s4OWxYQQ",
+      "version": "slKLosTb",
+      "source": "data/irons_spellbooks/worldgen/structure/mountain_tower.json",
+      "source_sha256": "a8d93e6a8ad0e29475f819533b65260e911a7432aa45f53b207cc1e8354fa45f",
+      "result_json_sha256": "3999b6bb2ce182b4adbaf948e5da362e4433ce6bb2c920a2cb27070fa62bd426",
+      "reason": "Keep the rotated tower footprint on natural ground with a bounded allowance for slopes."
+    },
+    {
+      "id": "irons_spellbooks:worldgen/structure/pyromancer_tower.json",
+      "provider": "s4OWxYQQ",
+      "version": "slKLosTb",
+      "source": "data/irons_spellbooks/worldgen/structure/pyromancer_tower.json",
+      "source_sha256": "59813b452f3d2d10afb15c7babd7ba735eecdada198b5d228eb84fd72e3e4d43",
+      "result_json_sha256": "0864d5c12888708c4793034add724e84ee30c3635f024b5d15470903e81de9e8",
+      "reason": "Keep the entrance near the natural surface and require burial for the attached underground rooms."
     }
   ]
 }

@@ -31,6 +31,7 @@ import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pieces.PiecesContainer;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
 import net.minecraft.world.level.levelgen.structure.pools.FeaturePoolElement;
+import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.StrongholdPieces;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -58,6 +59,7 @@ public final class SupportedStructure extends Structure {
     TEMPLATE_SURFACE,
     TEMPLATE_SEABED,
     GROUNDED_SURFACE,
+    CAMP_SURFACE,
     MARINE_SURFACE,
     CAVERN,
     ANCHORED_COMPLEX,
@@ -79,6 +81,7 @@ public final class SupportedStructure extends Structure {
   private static final DeferredHolder<StructureType<?>, StructureType<SupportedStructure>> TYPE =
       TYPES.register("supported", () -> () -> CODEC);
   private static final int SAMPLE_STEP = 4;
+  private static final int CAMP_RELIEF = 16;
   // The pinned surface definitions have start offsets <= 0, except coconut village's +1.
   private static final int SURFACE_START_ALLOWANCE = 1;
 
@@ -170,6 +173,13 @@ public final class SupportedStructure extends Structure {
       return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
     }
     if (embedsUnderground()) return fitAssembly(context, stub, builder, pieces, columns);
+    if (terrainCheck == TerrainCheck.CAMP_SURFACE) {
+      StructureTerrain terrain = new StructureTerrain(context);
+      if (!supportedSurfaceRoot(context, pieces.pieces().getFirst(), columns)
+          || !supportedSurfaceFootprint(pieces, 0, 0, 0, terrain)
+          || !supportedCamps(context, pieces, terrain)) return Optional.empty();
+      return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
+    }
     if (terrainCheck == TerrainCheck.GROUNDED_SURFACE)
       return fitSurface(context, stub, builder, pieces, columns, false);
     if (terrainCheck == TerrainCheck.ANCHORED_BURIED)
@@ -483,6 +493,42 @@ public final class SupportedStructure extends Structure {
           new GenerationStub(stub.position().offset(dx, dy, dz), Either.right(builder)));
     }
     return Optional.empty();
+  }
+
+  private static boolean supportedCamps(
+      GenerationContext context, PiecesContainer pieces, StructureTerrain terrain) {
+    var root = pieces.pieces().getFirst();
+    int rootFloor =
+        root.getBoundingBox().minY()
+            + (root instanceof PoolElementStructurePiece pool ? pool.getGroundLevelDelta() : 0);
+    // Moving the assembly would shift the rigid props independently of projected terrain.
+    for (var piece : pieces.pieces()) {
+      if (!(piece instanceof PoolElementStructurePiece camp)
+          || camp.getElement().getProjection() != StructureTemplatePool.Projection.TERRAIN_MATCHING)
+        continue;
+      BoundingBox bounds = camp.getBoundingBox();
+      int floor = bounds.minY() + camp.getGroundLevelDelta();
+      if (Math.abs(floor - rootFloor) > CAMP_RELIEF) return false;
+      for (int x = bounds.minX(); ; x = Math.min(x + SAMPLE_STEP, bounds.maxX())) {
+        for (int z = bounds.minZ(); ; z = Math.min(z + SAMPLE_STEP, bounds.maxZ())) {
+          int height =
+              context
+                  .chunkGenerator()
+                  .getBaseHeight(
+                      x,
+                      z,
+                      Heightmap.Types.WORLD_SURFACE_WG,
+                      context.heightAccessor(),
+                      context.randomState());
+          if (Math.abs(height - rootFloor) > CAMP_RELIEF
+              || Math.abs(height - floor) > CAMP_RELIEF
+              || !terrain.solid(x, height - 1, z)) return false;
+          if (z == bounds.maxZ()) break;
+        }
+        if (x == bounds.maxX()) break;
+      }
+    }
+    return true;
   }
 
   private static Optional<GenerationStub> fitAnchoredBuried(

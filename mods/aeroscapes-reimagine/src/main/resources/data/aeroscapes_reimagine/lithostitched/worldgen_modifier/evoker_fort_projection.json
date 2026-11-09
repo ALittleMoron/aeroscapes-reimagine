@@ -1,0 +1,17 @@
+{
+  "type": "lithostitched:set_pool_element_processors",
+  "template_pools": [
+    "irons_spellbooks:evoker_fort/halves_pool",
+    "irons_spellbooks:evoker_fort/north_camp_pool",
+    "irons_spellbooks:evoker_fort/south_camp_pool"
+  ],
+  "locations": [
+    "irons_spellbooks:evoker_fort/camp_north",
+    "irons_spellbooks:evoker_fort/camp_south",
+    "irons_spellbooks:evoker_fort/halves/medium_decorations",
+    "irons_spellbooks:evoker_fort/halves/small_decorations",
+    "irons_spellbooks:evoker_fort/halves/tree"
+  ],
+  "processor_list": "aeroscapes_reimagine:non_void_projection",
+  "append": true
+}

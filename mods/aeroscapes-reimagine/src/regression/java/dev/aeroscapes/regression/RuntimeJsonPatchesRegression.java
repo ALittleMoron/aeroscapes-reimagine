@@ -85,6 +85,7 @@ final class RuntimeJsonPatchesRegression {
         if (baseline != null
             && !id.startsWith("spawn:")
             && !id.startsWith("explorify:")
+            && !id.startsWith("irons_spellbooks:")
             && !id.startsWith("rocks:")) {
           JsonElement previous =
               JsonParser.parseString(Files.readString(Path.of(baseline, relative)));

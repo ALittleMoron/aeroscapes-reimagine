@@ -1882,6 +1882,42 @@
     "physics_integration": "Exact LittleTiles pre236, CreativeCore2.13.52, Sable2.0.6 and NeoForge21.1.244 guard. VoxelNeighborhoodState.isSolid/isFullBlock use the supplied BlockGetter and BlockPos only for BlockTile, with native three-argument collision lookup and Block.isShapeFullBlock over actual occupied collision volume. BlockTile constructor declares dynamicShape; Minecraft state cache is absent, while the explicit collision context also bypasses it. Native LT side metadata can mark NOCLIP faces filled, so it is not a physical fullness test. Native material-volume mass and empty-body cleanup remain authoritative. Sable collision-shape/dynamic-collider extension interfaces have no consumers in this executable; position-aware classifier adaptation is the narrow consumed boundary.",
     "physics_regression": "Real server recipe/payload checks, two simultaneous same-BlockState entities with empty/half/full/hollow/noncolliding payloads and a missing-BE boundary through native LevelAccelerator+MassTracker.build. Assembled pure LT/vanilla plank/vanilla slab/mixed bodies require masses0.25/0.5/0.25/0.75; native physical retention100fresh ticks plus20ticks after copied restart, preserving saved pose/velocity. Rendering, shader appearance and animated interaction remain separate behavior boundaries."
   },
+  "magic_integration": {
+    "targets": {
+      "irons_spellbooks": {
+        "version": "1.21.1-3.16.3",
+        "file": "https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb",
+        "terms": "All Rights Reserved"
+      },
+      "irons_lib": {
+        "version": "1.21.1-2.1.0",
+        "file": "https://modrinth.com/mod/irons-lib/version/sQyzhxuH",
+        "terms": "All Rights Reserved"
+      },
+      "curios": {
+        "version": "9.5.1+1.21.1",
+        "file": "https://modrinth.com/mod/curios/version/yohfFbgD",
+        "terms": "LGPL-3.0-or-later"
+      },
+      "playeranimator": {
+        "version": "2.0.4+1.21.1",
+        "file": "https://modrinth.com/mod/playeranimator/version/HJZB6bmA",
+        "terms": "MIT"
+      }
+    },
+    "resources": [
+      {
+        "resource": "assets/aeroscapes_reimagine_magic_translations/lang/en_us.json",
+        "entries": 176
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_magic_translations/lang/ru_ru.json",
+        "entries": 414
+      }
+    ],
+    "scope": "Independent labels, functional translations, mod-list summaries and short Russian summaries for the newly keyed Archevoker journal and Citadel Tome entries. Covers the native spell and item catalog, both Iron's Lib namespaces and Curios inventory controls. Guarded exact-value corrections preserve custom replacements.",
+    "source_comparison": "Compared the four distributed JARs, registered IDs, dynamic display keys and native NeoForge 21.1.244 config consumer. Iron's Spells has client and server ModConfigSpec screens, Curios has client, common and server screens. The existing enum display hook consumes declaring-class aliases. Per-spell Iron's Spells settings use datapack JSON. Iron's Lib and Player Animator register no config screens. The ruined book's intentionally ciphered and obfuscated story text bypasses language files."
+  },
   "observations_integration": {
     "targets": {
       "buzzier_bees": "7.0.1",

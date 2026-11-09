@@ -6,6 +6,34 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## First spells and casting animation
+
+[Iron’s Spells ’n Spellbooks 3.16.3](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb)
+uses [Iron’s Lib 2.1.0](https://modrinth.com/mod/irons-lib/version/sQyzhxuH),
+[Curios 9.5.1](https://modrinth.com/mod/curios/version/yohfFbgD),
+[Player Animator 2.0.4](https://modrinth.com/mod/playeranimator/version/HJZB6bmA)
+and the already pinned [GeckoLib 4.9.3](https://modrinth.com/mod/geckolib/version/Grwn5rUB)
+on both sides. Modrinth omits the spell mod's required dependency edges, so
+the lock records the requirements from its NeoForge descriptor. The two
+spell-mod downloads differ only in the manifest build timestamp. The three
+new libraries match across distribution channels byte for byte.
+
+Player Animator is an exact beta under client acceptance. The pack’s sleeve
+gesture uses a separate layer. The pinned [Entity Model Features](https://modrinth.com/mod/entity-model-features)
+pause API yields during casting and the gesture, when [Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fresh-animations-player-extension)
+would otherwise replace active player transforms. Both ordinary animation
+resumption and first-person casting require a client check.
+
+The pack retains the original magic archives and structure templates. Owned
+loot adds two level-one choices and the required datapack sets travel spell
+limits. The provider’s `enabled` value filters random acquisition but misses
+cast initiation from a pre-existing item. The owned server handler cancels
+those casts and caps the effective player teleport level after item bonuses.
+Recall requires inscription because a dimension transition resets the native
+casting state before its one-use scroll charge.
+Exact upstream structure resources are adapted through the existing virtual
+datapack.
+
 ## Astronomy, beekeeping and wakes
 
 [Spyglass Astronomy for NeoForge 1.0.20](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853)

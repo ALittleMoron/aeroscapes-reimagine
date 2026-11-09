@@ -33,7 +33,14 @@ final class ProjectionRegression {
           "nova_structures:remnant/medium_remnant_2",
           "nova_structures:remnant/village_road",
           "philipsruins:field_stone_ruins",
-          "philipsruins:pumpkin_ruins");
+          "philipsruins:pumpkin_ruins",
+          "explorify:dark_forest_settlement/path",
+          "explorify:farmstead/build",
+          "explorify:ruins/square",
+          "explorify:ruins/path",
+          "irons_spellbooks:evoker_fort/halves_pool",
+          "irons_spellbooks:evoker_fort/north_camp_pool",
+          "irons_spellbooks:evoker_fort/south_camp_pool");
   private static final String PROCESSOR = "aeroscapes_reimagine:non_void_projection";
 
   private ProjectionRegression() {}
@@ -59,7 +66,7 @@ final class ProjectionRegression {
       var encoded = StructureTemplatePool.DIRECT_CODEC.encodeStart(operations, pool).getOrThrow();
       checkElements(encoded, POOLS.contains(name), attachedTemplates);
     }
-    if (attachedTemplates.size() != 39) {
+    if (attachedTemplates.size() != 54) {
       throw new IllegalStateException("Incomplete live projection scope: " + attachedTemplates);
     }
     BlockPos spawn = level.getSharedSpawnPos();

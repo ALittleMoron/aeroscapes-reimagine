@@ -4,6 +4,12 @@ description: Version history.
 status: available
 ---
 
+## 0.4.1
+
+- Add [Iron’s Spells ’n Spellbooks](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb) with [Iron’s Lib](https://modrinth.com/mod/irons-lib/version/sQyzhxuH), [Curios](https://modrinth.com/mod/curios/version/yohfFbgD) and [Player Animator](https://modrinth.com/mod/playeranimator/version/HJZB6bmA). Find level-one Magic Missile and Healing Circle scrolls in village chests and inscribe them in a copper spell book.
+- Adapt magical structures in the Overworld to island terrain. Limit Teleport to level one with a 20-second book cooldown, require a spell book for Recall, and disable Portal and Angel Wings.
+- Tap the middle mouse button to cast or hold it to choose a spell. Preserve Creative picking and use Ctrl with the middle button to pick blocks in Survival.
+
 ## 0.4.0
 
 - Complete the island exploration stage, with its selected nature, discoveries and expedition preparation content delivered in earlier updates.
