@@ -24,13 +24,13 @@ public abstract class HookReforgeClimbMixin {
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private static float aeroscapes$ascentSpeed(
       float speed, @Local(argsOnly = true) Player player, @Local HookEntity hook) {
-    return speed * HookReforgeSpeed.multiplier(hook, player);
+    return speed * HookReforgeSpeed.multiplier(hook, player, true);
   }
 
   @ModifyConstant(method = "climb", constant = @Constant(doubleValue = 1.5), require = 1, allow = 1)
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private static double aeroscapes$descentSpeed(
       double speed, @Local(argsOnly = true) Player player, @Local HookEntity hook) {
-    return speed * HookReforgeSpeed.multiplier(hook, player);
+    return speed * HookReforgeSpeed.multiplier(hook, player, false);
   }
 }

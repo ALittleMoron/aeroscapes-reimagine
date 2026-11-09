@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:staff_epic_combat",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/staff"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:spell_power",
+      "modifier": {
+        "name": "aeroscapes_reimagine:staff_epic_combat",
+        "operation": "ADD_VALUE",
+        "amount": 0.06
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    },
+    {
+      "type": "irons_spellbooks:cast_time_reduction",
+      "modifier": {
+        "name": "aeroscapes_reimagine:staff_epic_combat",
+        "operation": "ADD_VALUE",
+        "amount": 0.06
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "aeroscapes_reimagine:ring_poor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ring"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_poor",
+        "operation": "ADD_VALUE",
+        "amount": -8
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

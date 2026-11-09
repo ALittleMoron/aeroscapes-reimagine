@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:slingshot_exceptional_draw",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/slingshot"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

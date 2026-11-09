@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:bow_exceptional_velocity",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/bow"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

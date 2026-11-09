@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:diving_head_legendary_air",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_head"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.oxygen_bonus",
+      "modifier": {
+        "name": "aeroscapes_reimagine:diving_head_legendary_air",
+        "operation": "ADD_VALUE",
+        "amount": 0.3
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    },
+    {
+      "type": "minecraft:player.submerged_mining_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:diving_head_legendary_air",
+        "operation": "ADD_VALUE",
+        "amount": 0.14
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    }
+  ]
+}

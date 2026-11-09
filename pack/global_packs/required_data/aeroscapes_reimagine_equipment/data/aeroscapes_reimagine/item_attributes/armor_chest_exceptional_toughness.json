@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_chest_exceptional_toughness",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_chest"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor_toughness",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_chest_exceptional_toughness",
+        "operation": "ADD_VALUE",
+        "amount": 1
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    }
+  ]
+}

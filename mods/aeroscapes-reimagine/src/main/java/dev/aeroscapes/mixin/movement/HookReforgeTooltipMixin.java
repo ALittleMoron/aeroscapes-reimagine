@@ -23,11 +23,19 @@ public abstract class HookReforgeTooltipMixin {
       List<Component> tooltip,
       TooltipFlag flag,
       CallbackInfo callback) {
-    int bonus = HookReforgeSpeed.bonusPercent(stack);
-    if (bonus == 0) return;
-    String amount = bonus > 0 ? "+" + bonus : Integer.toString(bonus);
-    tooltip.add(
-        Component.translatable("aeroscapes_reimagine.equipment.hook_reeling_speed", amount)
-            .withStyle(bonus > 0 ? ChatFormatting.BLUE : ChatFormatting.RED));
+    int up = HookReforgeSpeed.bonusPercent(stack, true);
+    int down = HookReforgeSpeed.bonusPercent(stack, false);
+    if (up == 0 && down == 0) return;
+    var line =
+        up == down
+            ? Component.translatable(
+                "aeroscapes_reimagine.equipment.hook_reeling_speed", signed(up))
+            : Component.translatable(
+                "aeroscapes_reimagine.equipment.hook_direction_speed", signed(up), signed(down));
+    tooltip.add(line.withStyle(up > 0 ? ChatFormatting.BLUE : ChatFormatting.RED));
+  }
+
+  private static String signed(int bonus) {
+    return bonus > 0 ? "+" + bonus : Integer.toString(bonus);
   }
 }

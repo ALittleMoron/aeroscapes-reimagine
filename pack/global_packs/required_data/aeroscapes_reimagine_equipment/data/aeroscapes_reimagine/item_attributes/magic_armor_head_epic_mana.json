@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:magic_armor_head_epic_mana",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/magic_armor_head"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:magic_armor_head_epic_mana",
+        "operation": "ADD_VALUE",
+        "amount": 12
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    },
+    {
+      "type": "irons_spellbooks:mana_regen",
+      "modifier": {
+        "name": "aeroscapes_reimagine:magic_armor_head_epic_mana",
+        "operation": "ADD_VALUE",
+        "amount": 0.08
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "aeroscapes_reimagine:ring_fine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ring"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_fine",
+        "operation": "ADD_VALUE",
+        "amount": 7
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

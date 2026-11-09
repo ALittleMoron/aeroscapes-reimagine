@@ -2,10 +2,7 @@
   "id": "aeroscapes_reimagine:ranged_fine",
   "verifiers": [
     {
-      "id": "minecraft:bow"
-    },
-    {
-      "id": "minecraft:crossbow"
+      "tag": "aeroscapes_reimagine:equipment_quality/ranged"
     }
   ],
   "weight": 20,

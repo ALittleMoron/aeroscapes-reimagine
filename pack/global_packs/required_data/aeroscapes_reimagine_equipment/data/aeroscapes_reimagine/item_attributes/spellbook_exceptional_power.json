@@ -1,0 +1,23 @@
+{
+  "id": "aeroscapes_reimagine:spellbook_exceptional_power",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/spellbook"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:spell_power",
+      "modifier": {
+        "name": "aeroscapes_reimagine:spellbook_exceptional_power",
+        "operation": "ADD_VALUE",
+        "amount": 0.06
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

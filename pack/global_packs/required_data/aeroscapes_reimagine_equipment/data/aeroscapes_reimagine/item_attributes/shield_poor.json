@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:shield_poor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/shield"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

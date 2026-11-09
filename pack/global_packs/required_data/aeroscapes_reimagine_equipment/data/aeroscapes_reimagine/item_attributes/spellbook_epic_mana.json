@@ -1,0 +1,32 @@
+{
+  "id": "aeroscapes_reimagine:spellbook_epic_mana",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/spellbook"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:spellbook_epic_mana",
+        "operation": "ADD_VALUE",
+        "amount": 12
+      },
+      "required_equipment_slots": []
+    },
+    {
+      "type": "irons_spellbooks:cast_time_reduction",
+      "modifier": {
+        "name": "aeroscapes_reimagine:spellbook_epic_mana",
+        "operation": "ADD_VALUE",
+        "amount": 0.05
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:staff_poor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/staff"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:spell_power",
+      "modifier": {
+        "name": "aeroscapes_reimagine:staff_poor",
+        "operation": "ADD_VALUE",
+        "amount": -0.06
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

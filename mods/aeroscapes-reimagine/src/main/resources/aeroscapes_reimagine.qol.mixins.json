@@ -15,7 +15,26 @@
     "CompassNaturePriceMixin",
     "CompassExplorerPriceMixin",
     "LegendaryFrostStrikeMixin",
-    "ReforgeAnvilReturnMixin"
+    "ReforgeAnvilReturnMixin",
+    "reforge.ReforgeGradeMixin",
+    "reforge.CuttingBoardReforgeMixin",
+    "reforge.CuttingBoardBatchReforgeMixin",
+    "reforge.GliderLandingReforgeMixin",
+    "reforge.GliderSteeringReforgeMixin",
+    "reforge.TideRodReforgeMixin",
+    "reforge.combat.ArrowVelocityDamageReforgeMixin",
+    "reforge.combat.CrossbowChargeReforgeMixin",
+    "reforge.combat.ProjectileLaunchReforgeMixin",
+    "reforge.combat.ShieldReforgeMixin",
+    "reforge.combat.SlingshotChargeReforgeMixin",
+    "reforge.combat.SlingshotImpactReforgeMixin",
+    "reforge.combat.TieredRangedReforgeMixin",
+    "reforge.combat.TideStarArrowVelocityReforgeMixin",
+    "reforge.combat.TridentLaunchReforgeMixin",
+    "reforge.tools.AreaToolActionsMixin",
+    "reforge.tools.NaturalBlockProvenanceMixin",
+    "reforge.tools.QuarkReaperMixin",
+    "reforge.tools.ShearsReforgeMixin"
   ],
   "client": [
     "CompassNatureScreenMixin",
@@ -24,7 +43,10 @@
     "AccuratePlacementEnumLanguageMixin",
     "EffectDescriptionPagesMixin",
     "CreativeSearchMixin",
-    "ReforgeCatalystHintMixin"
+    "ReforgeCatalystHintMixin",
+    "reforge.combat.BowPullReforgeMixin",
+    "reforge.combat.TideStarlightBowPullReforgeMixin",
+    "reforge.emi.ReforgeEmiRefreshMixin"
   ],
   "injectors": {
     "defaultRequire": 1

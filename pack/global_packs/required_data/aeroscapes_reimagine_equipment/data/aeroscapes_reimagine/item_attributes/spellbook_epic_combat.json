@@ -1,0 +1,32 @@
+{
+  "id": "aeroscapes_reimagine:spellbook_epic_combat",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/spellbook"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:spell_power",
+      "modifier": {
+        "name": "aeroscapes_reimagine:spellbook_epic_combat",
+        "operation": "ADD_VALUE",
+        "amount": 0.04
+      },
+      "required_equipment_slots": []
+    },
+    {
+      "type": "irons_spellbooks:cooldown_reduction",
+      "modifier": {
+        "name": "aeroscapes_reimagine:spellbook_epic_combat",
+        "operation": "ADD_VALUE",
+        "amount": 0.04
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

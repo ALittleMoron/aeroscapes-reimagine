@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_legs_exceptional_speed",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_legs"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.movement_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_exceptional_speed",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.05
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    }
+  ]
+}

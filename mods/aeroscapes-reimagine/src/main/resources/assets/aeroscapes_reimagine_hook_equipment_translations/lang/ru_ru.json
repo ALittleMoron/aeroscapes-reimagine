@@ -3,5 +3,6 @@
   "aeroscapes_reimagine:hook_poor.label": "Плохое качество ·",
   "aeroscapes_reimagine:hook_ordinary.label": "Обычное качество ·",
   "aeroscapes_reimagine:hook_fine.label": "Хорошее качество ·",
-  "aeroscapes_reimagine:hook_exceptional.label": "Отличное качество ·"
+  "aeroscapes_reimagine:hook_exceptional.label": "Отличное качество ·",
+  "aeroscapes_reimagine.equipment.hook_direction_speed": "Подъём %s%%, спуск %s%%"
 }

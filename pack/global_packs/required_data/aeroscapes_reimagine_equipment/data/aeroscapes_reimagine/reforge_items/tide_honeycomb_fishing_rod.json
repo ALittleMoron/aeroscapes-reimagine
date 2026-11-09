@@ -1,0 +1,8 @@
+{
+  "items": [
+    "tide:honeycomb_fishing_rod"
+  ],
+  "base": [
+    "minecraft:honeycomb"
+  ]
+}

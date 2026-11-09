@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:pyrium_staff"
+  ],
+  "base": [
+    "irons_spellbooks:pyrium_ingot"
+  ]
+}

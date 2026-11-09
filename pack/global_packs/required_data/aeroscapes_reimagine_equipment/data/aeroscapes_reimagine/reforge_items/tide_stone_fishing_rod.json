@@ -1,0 +1,8 @@
+{
+  "items": [
+    "tide:stone_fishing_rod"
+  ],
+  "base": [
+    "minecraft:cobblestone"
+  ]
+}

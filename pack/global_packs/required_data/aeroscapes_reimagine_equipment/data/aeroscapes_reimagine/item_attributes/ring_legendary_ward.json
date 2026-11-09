@@ -1,0 +1,32 @@
+{
+  "id": "aeroscapes_reimagine:ring_legendary_ward",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ring"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_legendary_ward",
+        "operation": "ADD_VALUE",
+        "amount": 12
+      },
+      "required_equipment_slots": []
+    },
+    {
+      "type": "irons_spellbooks:mana_regen",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_legendary_ward",
+        "operation": "ADD_VALUE",
+        "amount": 0.05
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

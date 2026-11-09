@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:lightning_rod"
+  ],
+  "base": [
+    "irons_spellbooks:energized_core"
+  ]
+}

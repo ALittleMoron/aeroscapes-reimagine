@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_feet_exceptional_safe_fall",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_feet"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.safe_fall_distance",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_exceptional_safe_fall",
+        "operation": "ADD_VALUE",
+        "amount": 1
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

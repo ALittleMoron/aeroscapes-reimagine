@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:knife_poor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/knife"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:knife_poor",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": -0.1
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

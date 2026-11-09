@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:mace_ordinary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/mace"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "white"
+  },
+  "attributes": []
+}

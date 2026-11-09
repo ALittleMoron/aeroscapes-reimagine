@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:diving_feet_exceptional_swim",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_feet"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.water_movement_efficiency",
+      "modifier": {
+        "name": "aeroscapes_reimagine:diving_feet_exceptional_swim",
+        "operation": "ADD_VALUE",
+        "amount": 0.18
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

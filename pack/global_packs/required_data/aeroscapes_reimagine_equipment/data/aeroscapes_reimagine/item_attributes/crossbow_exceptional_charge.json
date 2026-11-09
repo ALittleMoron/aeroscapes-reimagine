@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:crossbow_exceptional_charge",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/crossbow"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

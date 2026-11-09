@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:glider_fine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/glider"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "green"
+  },
+  "attributes": []
+}

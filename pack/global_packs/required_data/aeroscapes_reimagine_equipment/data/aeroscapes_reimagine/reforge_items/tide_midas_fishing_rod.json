@@ -1,0 +1,8 @@
+{
+  "items": [
+    "tide:midas_fishing_rod"
+  ],
+  "base": [
+    "minecraft:gold_block"
+  ]
+}

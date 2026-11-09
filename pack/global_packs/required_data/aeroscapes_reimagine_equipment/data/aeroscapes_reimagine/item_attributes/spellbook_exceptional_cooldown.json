@@ -1,0 +1,23 @@
+{
+  "id": "aeroscapes_reimagine:spellbook_exceptional_cooldown",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/spellbook"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:cooldown_reduction",
+      "modifier": {
+        "name": "aeroscapes_reimagine:spellbook_exceptional_cooldown",
+        "operation": "ADD_VALUE",
+        "amount": 0.06
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

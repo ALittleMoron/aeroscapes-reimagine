@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_feet_exceptional_fall",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_feet"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.fall_damage_multiplier",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_exceptional_fall",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": -0.15
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

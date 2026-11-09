@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:trident_poor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/trident"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.range_attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:trident_poor",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": -0.08
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

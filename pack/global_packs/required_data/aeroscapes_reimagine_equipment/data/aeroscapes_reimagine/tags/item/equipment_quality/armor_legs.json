@@ -6,6 +6,8 @@
     "minecraft:iron_leggings",
     "minecraft:leather_leggings",
     "minecraft:netherite_leggings",
-    "irons_spellbooks:wandering_magician_leggings"
+    "irons_spellbooks:wandering_magician_leggings",
+    "#aeroscapes_reimagine:equipment_quality/magic_armor_legs",
+    "#aeroscapes_reimagine:equipment_quality/diving_legs"
   ]
 }

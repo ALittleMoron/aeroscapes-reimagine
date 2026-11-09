@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:ice_staff"
+  ],
+  "base": [
+    "irons_spellbooks:permafrost_shard"
+  ]
+}

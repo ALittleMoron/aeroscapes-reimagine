@@ -3,10 +3,8 @@ package dev.aeroscapes.mixin;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.aeroscapes.equipment.FrostReforge;
+import dev.aeroscapes.equipment.combat.MeleeReforges;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -32,16 +30,17 @@ abstract class LegendaryFrostStrikeMixin {
       @Local ItemStack weapon,
       @Local(index = 6) float charge) {
     var player = (Player) (Object) this;
-    boolean frostWeapon =
-        !player.level().isClientSide() && charge > 0.9F && FrostReforge.matches(weapon);
-    boolean hit = original.call(target, source, damage);
-    if (hit
-        && frostWeapon
-        && target instanceof LivingEntity living
-        && living.isAlive()
-        && !living.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)
-        && player.getRandom().nextFloat() < 0.20F) {
-      living.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40), player);
+    if (player.level().isClientSide()
+        || weapon.isEmpty()
+        || !(target instanceof LivingEntity living)
+        || !living.isAlive()) {
+      return original.call(target, source, damage);
+    }
+    boolean charged = charge > 0.9F;
+    var strike = MeleeReforges.prepare(player, living, weapon, damage, charged);
+    boolean hit = original.call(target, source, strike.damage());
+    if (hit) {
+      MeleeReforges.onHit(player, living, weapon, strike, charged);
     }
     return hit;
   }

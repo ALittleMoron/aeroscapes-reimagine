@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:crossbow_exceptional_damage",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/crossbow"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.range_attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:crossbow_exceptional_damage",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.15
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

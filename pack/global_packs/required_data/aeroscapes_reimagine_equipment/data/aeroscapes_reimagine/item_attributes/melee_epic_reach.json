@@ -1,0 +1,47 @@
+{
+  "id": "aeroscapes_reimagine:melee_epic_reach",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/melee"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:melee_epic_reach",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.06
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    },
+    {
+      "type": "minecraft:generic.attack_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:melee_epic_reach",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.1
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    },
+    {
+      "type": "minecraft:player.entity_interaction_range",
+      "modifier": {
+        "name": "aeroscapes_reimagine:melee_epic_reach",
+        "operation": "ADD_VALUE",
+        "amount": 0.3
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

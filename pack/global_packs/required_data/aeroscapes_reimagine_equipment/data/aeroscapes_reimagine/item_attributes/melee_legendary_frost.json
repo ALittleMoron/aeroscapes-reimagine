@@ -20,6 +20,17 @@
       "required_equipment_slots": [
         "MAINHAND"
       ]
+    },
+    {
+      "type": "minecraft:generic.attack_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:melee_legendary_frost",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.08
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
     }
   ]
 }

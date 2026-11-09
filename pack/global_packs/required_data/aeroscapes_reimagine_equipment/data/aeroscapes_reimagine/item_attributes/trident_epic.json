@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:trident_epic",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/trident"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:trident_epic",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.1
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    },
+    {
+      "type": "tieredneo:generic.range_attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:trident_epic",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.12
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

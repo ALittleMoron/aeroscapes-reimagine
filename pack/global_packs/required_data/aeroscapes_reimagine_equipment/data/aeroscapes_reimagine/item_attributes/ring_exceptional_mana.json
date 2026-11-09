@@ -1,0 +1,23 @@
+{
+  "id": "aeroscapes_reimagine:ring_exceptional_mana",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ring"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_exceptional_mana",
+        "operation": "ADD_VALUE",
+        "amount": 15
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

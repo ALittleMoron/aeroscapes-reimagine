@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:copper_spell_book"
+  ],
+  "base": [
+    "minecraft:copper_ingot"
+  ]
+}

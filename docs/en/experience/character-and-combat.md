@@ -4,17 +4,19 @@ description: Equipment ranks, reforging, enchantments, and plans for character p
 status: partial
 ---
 
-Crafted and looted equipment can have a rank that changes a stat. The anvil can replace the entire rank while keeping ordinary enchantments. Races, classes, character progression and the intended action-combat system are planned additions.
+Crafted and looted gear can roll quality bonuses. The anvil can replace the entire rank while keeping ordinary enchantments. Races, classes, character progression and the intended action-combat system are planned additions.
 
 ## Equipment quality and reforging
 
-Eligible gear can roll four ranks from poor to exceptional. Exceptional swords can favor either damage or attack recovery. Exceptional tools can favor mining speed or reach. Armor ranks change protection when worn in the intended slot. Bow and crossbow ranks affect arrows fired from the main hand. The Wandering Magician armor and Amethyst Rapier also receive ranks. [Hero’s Tiered](https://modrinth.com/mod/heros-tiered/version/GY1XViBt), [Iron’s Spells ’n Spellbooks](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb).
+Quality ranges from poor to legendary. Excellent gear can specialize in one strong bonus, such as a pickaxe’s mining speed. Epic gear combines two or three bonuses. A legendary roll combines bonuses of that strength with a special effect. For example, a pickaxe can dig a 3×3 face, and a hoe can till a 3×3 bed. Sneak to use these tools on a single block.
 
-The legendary **Frost Strike** rank has a 20% chance to apply Slowness I for two seconds on a charged melee hit. It leaves an existing Slowness effect alone. Reforge a sword for a chance at the rank, or find a sword with it in a dungeon, mineshaft or Ice Spider Den chest.
+Reforging can produce legendary gear. Some legendary gear also appears in selected chests, including swords with **Frost Strike** in dungeons, mineshafts and Ice Spider Dens. A charged hit with that sword has a 20% chance to apply Slowness I for two seconds. Ordinary crafting can roll up to epic quality.
 
-Open the anvil’s **Reforging** tab. Put undamaged gear in the middle, one base material on the left and one lapis lazuli on the right. An iron pickaxe takes an iron ingot, a bow takes string and an Amethyst Rapier takes an amethyst shard. Clicking the button commits one random result immediately. The odds and price stay the same on each attempt with that item. A result can be worse or repeat the previous rank. Ordinary enchantments remain on the item.
+Open the anvil’s **Reforging** tab. Put undamaged gear in the middle, one base material on the left and one lapis lazuli on the right. Look up the gear in EMI and open **Reforging** to see the materials. An iron pickaxe takes an iron ingot, a Wandering Magician Hood takes leather and Artificer’s Cane takes a gold ingot. Each paid attempt commits the whole result immediately. The price and odds are fixed for that item. The new rank can be worse or repeat the previous one. Ordinary enchantments remain on the item.
 
-Grappling hooks take their own metal ingot or a diamond for the diamond hook. Their rank changes both ascent and descent speed. Unbreaking and Mending can be applied as usual and stay on the hook after reforging. [Yori3o’s Grappling Hooks](https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf).
+Ranked spell books and rings provide passive bonuses while equipped in their respective accessory slots. Reforging preserves the spells written in the book. Grappling hook ranks can favor ascent or descent. A legendary hook dampens sideways sway while you sneak on an anchored line.
+
+A pickaxe with **Extra Yield** can add one unit of an actual drop, including stone gathered with Silk Touch. This bonus applies to blocks with tracked natural provenance in newly generated terrain.
 
 ## Enchantments and character rendering
 

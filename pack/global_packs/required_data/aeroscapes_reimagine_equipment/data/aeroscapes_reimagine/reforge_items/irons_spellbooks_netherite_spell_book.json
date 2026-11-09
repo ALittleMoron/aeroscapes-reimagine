@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:netherite_spell_book"
+  ],
+  "base": [
+    "minecraft:netherite_ingot"
+  ]
+}

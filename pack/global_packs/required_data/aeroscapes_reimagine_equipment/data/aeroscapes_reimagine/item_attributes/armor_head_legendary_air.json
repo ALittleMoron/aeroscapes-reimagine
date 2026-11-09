@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:armor_head_legendary_air",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_head"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_head_legendary_air",
+        "operation": "ADD_VALUE",
+        "amount": 0.75
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    },
+    {
+      "type": "minecraft:generic.oxygen_bonus",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_head_legendary_air",
+        "operation": "ADD_VALUE",
+        "amount": 0.25
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    }
+  ]
+}

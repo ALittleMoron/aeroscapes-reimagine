@@ -1,0 +1,8 @@
+{
+  "items": [
+    "tide:echo_fishing_rod"
+  ],
+  "base": [
+    "minecraft:echo_shard"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "id": "aeroscapes_reimagine:ring_exceptional_regen",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ring"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:mana_regen",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_exceptional_regen",
+        "operation": "ADD_VALUE",
+        "amount": 0.05
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

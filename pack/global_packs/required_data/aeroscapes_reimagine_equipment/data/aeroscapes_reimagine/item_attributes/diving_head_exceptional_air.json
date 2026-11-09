@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:diving_head_exceptional_air",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_head"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.oxygen_bonus",
+      "modifier": {
+        "name": "aeroscapes_reimagine:diving_head_exceptional_air",
+        "operation": "ADD_VALUE",
+        "amount": 0.35
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    }
+  ]
+}

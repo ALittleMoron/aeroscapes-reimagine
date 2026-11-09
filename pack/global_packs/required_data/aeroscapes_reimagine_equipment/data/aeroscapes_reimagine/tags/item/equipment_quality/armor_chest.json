@@ -6,6 +6,8 @@
     "minecraft:iron_chestplate",
     "minecraft:leather_chestplate",
     "minecraft:netherite_chestplate",
-    "irons_spellbooks:wandering_magician_chestplate"
+    "irons_spellbooks:wandering_magician_chestplate",
+    "#aeroscapes_reimagine:equipment_quality/magic_armor_chest",
+    "#aeroscapes_reimagine:equipment_quality/diving_chest"
   ]
 }

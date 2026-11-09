@@ -1,0 +1,8 @@
+{
+  "items": [
+    "tide:iron_fishing_rod"
+  ],
+  "base": [
+    "minecraft:iron_ingot"
+  ]
+}

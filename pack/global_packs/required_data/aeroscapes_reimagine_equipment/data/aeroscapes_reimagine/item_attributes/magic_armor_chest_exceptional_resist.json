@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:magic_armor_chest_exceptional_resist",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/magic_armor_chest"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:spell_resist",
+      "modifier": {
+        "name": "aeroscapes_reimagine:magic_armor_chest_exceptional_resist",
+        "operation": "ADD_VALUE",
+        "amount": 0.08
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    }
+  ]
+}

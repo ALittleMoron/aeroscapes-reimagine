@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:iron_spell_book"
+  ],
+  "base": [
+    "minecraft:iron_ingot"
+  ]
+}

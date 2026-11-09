@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:hook_epic_descent",
+  "verifiers": [
+    {
+      "tag": "yo_hooks:hooks"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:knife_legendary_batch",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/knife"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:knife_legendary_batch",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.1
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

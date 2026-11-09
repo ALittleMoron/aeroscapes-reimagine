@@ -1,0 +1,9 @@
+{
+  "values": [
+    "irons_spellbooks:copper_spell_book",
+    "irons_spellbooks:iron_spell_book",
+    "irons_spellbooks:gold_spell_book",
+    "irons_spellbooks:diamond_spell_book",
+    "irons_spellbooks:netherite_spell_book"
+  ]
+}

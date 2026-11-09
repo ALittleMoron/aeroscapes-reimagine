@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:staff_exceptional_power",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/staff"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:spell_power",
+      "modifier": {
+        "name": "aeroscapes_reimagine:staff_exceptional_power",
+        "operation": "ADD_VALUE",
+        "amount": 0.08
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

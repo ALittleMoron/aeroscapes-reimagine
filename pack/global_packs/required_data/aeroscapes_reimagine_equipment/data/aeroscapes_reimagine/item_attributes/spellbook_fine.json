@@ -1,0 +1,23 @@
+{
+  "id": "aeroscapes_reimagine:spellbook_fine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/spellbook"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:spell_power",
+      "modifier": {
+        "name": "aeroscapes_reimagine:spellbook_fine",
+        "operation": "ADD_VALUE",
+        "amount": 0.03
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

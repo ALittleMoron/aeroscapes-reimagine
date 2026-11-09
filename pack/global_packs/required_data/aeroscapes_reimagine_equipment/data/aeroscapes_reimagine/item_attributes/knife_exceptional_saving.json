@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:knife_exceptional_saving",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/knife"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

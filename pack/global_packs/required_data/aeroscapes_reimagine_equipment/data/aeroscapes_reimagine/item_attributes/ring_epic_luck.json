@@ -1,0 +1,32 @@
+{
+  "id": "aeroscapes_reimagine:ring_epic_luck",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ring"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:spell_resist",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_epic_luck",
+        "operation": "ADD_VALUE",
+        "amount": 0.06
+      },
+      "required_equipment_slots": []
+    },
+    {
+      "type": "minecraft:generic.luck",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_epic_luck",
+        "operation": "ADD_VALUE",
+        "amount": 0.25
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

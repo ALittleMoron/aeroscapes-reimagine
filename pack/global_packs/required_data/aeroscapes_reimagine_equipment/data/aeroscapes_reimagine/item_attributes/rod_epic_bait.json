@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:rod_epic_bait",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/rod"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

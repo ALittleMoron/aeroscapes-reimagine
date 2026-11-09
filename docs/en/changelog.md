@@ -4,6 +4,13 @@ description: Version history.
 status: available
 ---
 
+## 0.4.3
+
+- Add epic equipment with two or three bonuses. Legendary gear combines comparable bonuses with a special effect. Choose the quality before rolling its variant so adding variants preserves the grade’s odds.
+- Expand reforging to shields, tridents, maces, magical gear, fishing rods, knives, shears, slingshots, paragliders and underwater gear. Add new profiles for bows, crossbows, armor, work tools and grappling hooks.
+- Add abilities such as 3×3 mining and tilling, an extra natural-block drop, charged melee finishers and mana recovery from spell kills.
+- Show the gear, base material and lapis lazuli in the Reforging category in EMI.
+
 ## 0.4.2
 
 - Add four ordinary equipment ranks with distinct exceptional results for swords and tools. Find a legendary Frost Strike sword in selected chests or roll its rank at an anvil. [Hero’s Tiered](https://modrinth.com/mod/heros-tiered/version/GY1XViBt), [Hero’s Lib](https://modrinth.com/mod/heros-lib/version/QtGWytnQ).

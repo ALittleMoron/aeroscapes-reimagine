@@ -1,0 +1,8 @@
+{
+  "items": [
+    "tide:blazing_fishing_rod"
+  ],
+  "base": [
+    "minecraft:blaze_rod"
+  ]
+}

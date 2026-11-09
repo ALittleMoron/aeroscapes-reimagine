@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:magic_armor_feet_epic_armor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/magic_armor_feet"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:magic_armor_feet_epic_armor",
+        "operation": "ADD_VALUE",
+        "amount": 12
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    },
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:magic_armor_feet_epic_armor",
+        "operation": "ADD_VALUE",
+        "amount": 0.75
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

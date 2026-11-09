@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_legs_exceptional_sneak",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/armor_legs"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:player.sneaking_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_exceptional_sneak",
+        "operation": "ADD_VALUE",
+        "amount": 0.12
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    }
+  ]
+}
