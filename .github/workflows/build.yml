@@ -11,18 +11,19 @@ jobs:
     permissions:
       contents: read
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803  # v6
+      # checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           persist-credentials: false
-      # setup-go v6.1.0
-      - uses: actions/setup-go@4dc6199c7b1a012772edbd06daecab0f50c9053c
+      # setup-go v7.0.0
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e
         with:
-          go-version: '1.27.3'
+          go-version: '1.27.4'
           cache: false
-      # setup-uv v10.3.2
-      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e
+      # setup-uv v10.3.3
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
         with:
-          version: '0.13.1'
+          version: '0.13.7'
           enable-cache: true
           cache-local-path: .cache/uv
           cache-dependency-glob: tools/pack/uv.lock
@@ -35,8 +36,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: make release-check
-      # upload-artifact v4.6.2 (immutable artifacts)
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      # upload-artifact v7.0.2 (immutable artifacts)
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
         if: >-
           ${{ success() && github.event_name == 'push'
               && github.ref == 'refs/heads/main' }}

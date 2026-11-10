@@ -83,6 +83,10 @@ The owned client adapter supplies the NeoForge identifier so the port can use
 its existing tick-based drawing fallback. The interactive sky takes over from
 the pack's decorative planets and accent stars while the port is installed.
 The original Sun and Moon textures still come from the atmosphere resourcepack.
+With Iris shaders active, the port draws its sky objects after the world color
+pass. The owned sky shader masks that pass using the current non-shadow
+Distant Horizons depth texture and the main target's terrain depth. Shaderless
+rendering already draws those objects before the terrain.
 
 [Buzzier Bees 7.0.1](https://modrinth.com/mod/buzzier-bees/version/Y12rtT96)
 uses the existing [Blueprint 8.0.8](https://modrinth.com/mod/blueprint/version/YSWV62mG)

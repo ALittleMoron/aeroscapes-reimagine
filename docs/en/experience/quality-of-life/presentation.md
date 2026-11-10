@@ -6,6 +6,10 @@ status: available
 
 More detailed animations, environmental sound and small visual effects add to Minecraft’s standard presentation.
 
+## Interface
+
+The **Aeroscapes Reimagine — Island Atlas** resource pack gives the main menu a chart of floating islands, with matching menus, inventories, workstations, reforging, the nutrition panel and the EMI recipe viewer. Modded containers such as Sophisticated Storage and the Tom’s Simple Storage terminals use lighter slate panels for their dark labels. The opening NeoForge window shows its own startup diagnostics until Minecraft can load the pack artwork. Turn off Island Atlas in **Options → Resource Packs** to use the standard artwork again.
+
 ## Biome names
 
 [Traveler's Titles](https://modrinth.com/mod/travelers-titles) briefly shows a biome's localized name when you enter it. Titles also work on lower islands and inside buildings. Recently visited biomes are remembered to limit repeated announcements. The open-sky biome between islands is omitted; rivers and other ordinary biomes keep their names. This display does not change the world's biome selection.
@@ -79,6 +83,8 @@ Smooth Skies smooths the distant color gradient, and Clear Void removes the blac
 In [Complementary](https://modrinth.com/shader/complementary-reimagined), the **Reimagined** Sun/Moon Style uses these textures, with the shader's own brightness and colors. The **Unbound** styles draw their own sun and moon instead.
 
 [Spyglass Astronomy for NeoForge](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853) supplies the interactive stars and planets. While looking through a spyglass, press **Pick Block** to cycle observation modes. In constellation mode, hold **Attack** and draw between stars. Use `/sga:name` to name the selected object and `/sga:info` to examine it.
+
+Distant islands and ridges can hide stars and constellation lines even when you look through the spyglass with shaders enabled.
 
 ## Rendering
 

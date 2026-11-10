@@ -4,7 +4,7 @@ plugins {
   java
   pmd
   id("net.neoforged.moddev") version "2.0.148"
-  id("com.diffplug.spotless") version "8.10.4"
+  id("com.diffplug.spotless") version "8.11.0"
 }
 
 group = "dev.aeroscapes"
@@ -102,18 +102,19 @@ repositories {
   }
 }
 
-val c2meApi by configurations.creating {
-  isCanBeConsumed = false
-  isTransitive = false
-}
+val c2meApi =
+  configurations.create("c2meApi") {
+    isCanBeConsumed = false
+    isTransitive = false
+  }
 val c2meApiDirectory = layout.buildDirectory.dir("c2me-api")
 val c2meApiEntries =
   listOf(
     "META-INF/jars/c2me-neoforge-base-*.jar",
     "META-INF/jars/c2me-neoforge-opts-dfc-*.jar",
   )
-val extractC2meApi by
-  tasks.registering(Sync::class) {
+val extractC2meApi =
+  tasks.register<Sync>("extractC2meApi") {
     from(c2meApi.map { zipTree(it) })
     inputs.property("nestedApiEntries", c2meApiEntries)
     include(c2meApiEntries)
@@ -122,17 +123,19 @@ val extractC2meApi by
     into(c2meApiDirectory)
   }
 
-val sableApi by configurations.creating {
-  isCanBeConsumed = false
-  isTransitive = false
-}
-val shipApi by configurations.creating {
-  isCanBeConsumed = false
-  isTransitive = false
-}
+val sableApi =
+  configurations.create("sableApi") {
+    isCanBeConsumed = false
+    isTransitive = false
+  }
+val shipApi =
+  configurations.create("shipApi") {
+    isCanBeConsumed = false
+    isTransitive = false
+  }
 val shipNestedApiDirectory = layout.buildDirectory.dir("ship-api")
-val extractShipApi by
-  tasks.registering(Sync::class) {
+val extractShipApi =
+  tasks.register<Sync>("extractShipApi") {
     from(shipApi.map { zipTree(it) })
     include(
       "META-INF/jarjar/dev.eriksonn.aeronautics.aeronautics-neoforge-1.21.1-1.3.2.jar",
@@ -144,21 +147,24 @@ val extractShipApi by
     includeEmptyDirs = false
     into(shipNestedApiDirectory)
   }
-val atmosphereApi by configurations.creating {
-  isCanBeConsumed = false
-  isTransitive = false
-}
-val explorationApi by configurations.creating {
-  isCanBeConsumed = false
-  isTransitive = false
-}
-val equipmentAssets by configurations.creating {
-  isCanBeConsumed = false
-  isTransitive = false
-}
+val atmosphereApi =
+  configurations.create("atmosphereApi") {
+    isCanBeConsumed = false
+    isTransitive = false
+  }
+val explorationApi =
+  configurations.create("explorationApi") {
+    isCanBeConsumed = false
+    isTransitive = false
+  }
+val equipmentAssets =
+  configurations.create("equipmentAssets") {
+    isCanBeConsumed = false
+    isTransitive = false
+  }
 val sableNestedApiDirectory = layout.buildDirectory.dir("sable-api")
-val extractSableApi by
-  tasks.registering(Sync::class) {
+val extractSableApi =
+  tasks.register<Sync>("extractSableApi") {
     from(sableApi.map { zipTree(it) })
     include(
       "META-INF/jarjar/veil-neoforge-1.21.1-4.3.2.jar",
@@ -258,40 +264,42 @@ dependencies {
   atmosphereApi("curse.maven:pandalib-975460:8787579")
   compileOnly(files(atmosphereApi))
   compileOnly(
-    files(fileTree(sableNestedApiDirectory) { include("*.jar") }).builtBy(extractSableApi)
+    files(fileTree(sableNestedApiDirectory) { include("*.jar") }).builtBy(extractSableApi),
   )
   c2meApi("maven.modrinth:c2me-neoforge:avwWYPbG")
   compileOnly(files(fileTree(c2meApiDirectory) { include("*.jar") }).builtBy(extractC2meApi))
 }
 
-val policy by sourceSets.creating {
-  compileClasspath =
-    sourceSets.main.get().output +
-      sourceSets.main.get().compileClasspath +
-      configurations[compileClasspathConfigurationName]
-  runtimeClasspath = output + compileClasspath
-}
+val policy =
+  sourceSets.create("policy") {
+    compileClasspath =
+      sourceSets.main.get().output +
+        sourceSets.main.get().compileClasspath +
+        configurations[compileClasspathConfigurationName]
+    runtimeClasspath = output + compileClasspath
+  }
 
 dependencies {
-  add(policy.implementationConfigurationName, "org.ow2.asm:asm-tree:9.8")
-  add(policy.implementationConfigurationName, "org.ow2.asm:asm-analysis:9.8")
+  add(policy.implementationConfigurationName, "org.ow2.asm:asm-tree:9.11.1")
+  add(policy.implementationConfigurationName, "org.ow2.asm:asm-analysis:9.11.1")
 }
 
-val regression by sourceSets.creating {
-  compileClasspath = sourceSets.main.get().compileClasspath + sourceSets.main.get().output
-  runtimeClasspath = output + compileClasspath
-}
+val regression =
+  sourceSets.create("regression") {
+    compileClasspath = sourceSets.main.get().compileClasspath + sourceSets.main.get().output
+    runtimeClasspath = output + compileClasspath
+  }
 
 spotless {
   java {
     target("src/**/*.java")
     googleJavaFormat("1.36.1")
   }
-  kotlinGradle { ktfmt("0.64").googleStyle() }
+  kotlinGradle { ktfmt("0.65").googleStyle() }
 }
 
 pmd {
-  toolVersion = "7.28.0"
+  toolVersion = "7.29.0"
   isConsoleOutput = true
   ruleSets = emptyList()
   ruleSetFiles = files("config/pmd.xml")
@@ -316,12 +324,12 @@ tasks.withType<org.gradle.api.plugins.quality.Pmd>().configureEach {
           .launcherFor {
             languageVersion = JavaLanguageVersion.of(25)
           }
-          .map { it.metadata.installationPath.file("lib/jrt-fs.jar") }
+          .map { it.metadata.installationPath.file("lib/jrt-fs.jar") },
       )
 }
 
-val policyTest by
-  tasks.registering(JavaExec::class) {
+val policyTest =
+  tasks.register<JavaExec>("policyTest") {
     group = "verification"
     description = "Checks island footprint policy without starting Minecraft."
     dependsOn(tasks.named(policy.classesTaskName))
@@ -329,8 +337,8 @@ val policyTest by
     mainClass = "dev.aeroscapes.worldgen.IslandFootprintTest"
   }
 
-val worldgenRegressionJar by
-  tasks.registering(Jar::class) {
+val worldgenRegressionJar =
+  tasks.register<Jar>("worldgenRegressionJar") {
     group = "verification"
     description = "Builds the server-only worldgen regression fixture; never shipped in the pack."
     dependsOn(tasks.named(regression.classesTaskName))
@@ -338,96 +346,96 @@ val worldgenRegressionJar by
     archiveBaseName = "aeroscapes-worldgen-regression"
   }
 
-val islandLayoutTest by
-  tasks.registering(JavaExec::class) {
+val islandLayoutTest =
+  tasks.register<JavaExec>("islandLayoutTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.worldgen.IslandLayoutTest"
   }
 
-val exposedIslandSurfacesTest by
-  tasks.registering(JavaExec::class) {
+val exposedIslandSurfacesTest =
+  tasks.register<JavaExec>("exposedIslandSurfacesTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.worldgen.ExposedIslandSurfacesTest"
   }
 
-val ecologyContractTest by
-  tasks.registering(JavaExec::class) {
+val ecologyContractTest =
+  tasks.register<JavaExec>("ecologyContractTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.ecology.EcologyContractTest"
   }
 
-val spawnTintTransformerTest by
-  tasks.registering(JavaExec::class) {
+val spawnTintTransformerTest =
+  tasks.register<JavaExec>("spawnTintTransformerTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.ecology.SpawnTintTransformerTest"
   }
 
-val templateStructureSupportTest by
-  tasks.registering(JavaExec::class) {
+val templateStructureSupportTest =
+  tasks.register<JavaExec>("templateStructureSupportTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.worldgen.TemplateStructureSupportTest"
   }
 
-val biomeTerrainMaskTest by
-  tasks.registering(JavaExec::class) {
+val biomeTerrainMaskTest =
+  tasks.register<JavaExec>("biomeTerrainMaskTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.worldgen.BiomeTerrainMaskTest"
   }
 
-val sableTraceBufferTest by
-  tasks.registering(JavaExec::class) {
+val sableTraceBufferTest =
+  tasks.register<JavaExec>("sableTraceBufferTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.diagnostics.SableTraceBufferTest"
   }
 
-val monitorControllerTest by
-  tasks.registering(JavaExec::class) {
+val monitorControllerTest =
+  tasks.register<JavaExec>("monitorControllerTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.monitor.MonitorControllerTest"
   }
 
-val frameIntervalStatsTest by
-  tasks.registering(JavaExec::class) {
+val frameIntervalStatsTest =
+  tasks.register<JavaExec>("frameIntervalStatsTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.diagnostics.FrameIntervalStatsTest"
   }
 
-val awaitTrackerTest by
-  tasks.registering(JavaExec::class) {
+val awaitTrackerTest =
+  tasks.register<JavaExec>("awaitTrackerTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.diagnostics.AwaitTrackerTest"
   }
 
-val shoulderCameraTransformerTest by
-  tasks.registering(JavaExec::class) {
+val shoulderCameraTransformerTest =
+  tasks.register<JavaExec>("shoulderCameraTransformerTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.camera.ShoulderCameraTransformerTest"
   }
 
-val atmosphereContractTest by
-  tasks.registering(JavaExec::class) {
+val atmosphereContractTest =
+  tasks.register<JavaExec>("atmosphereContractTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
@@ -444,8 +452,8 @@ val atmosphereContractTest by
     }
   }
 
-val punchyMapProfileTest by
-  tasks.registering(JavaExec::class) {
+val punchyMapProfileTest =
+  tasks.register<JavaExec>("punchyMapProfileTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
@@ -454,23 +462,23 @@ val punchyMapProfileTest by
       "aeroscapes.map.profile",
       layout.projectDirectory
         .file(
-          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/punchy/compat/aeroscapes_map.json"
+          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/punchy/compat/aeroscapes_map.json",
         )
         .asFile
         .absolutePath,
     )
   }
 
-val celestialLayoutTest by
-  tasks.registering(JavaExec::class) {
+val celestialLayoutTest =
+  tasks.register<JavaExec>("celestialLayoutTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.atmosphere.CelestialLayoutTest"
   }
 
-val tradeRecipeContractTest by
-  tasks.registering(JavaExec::class) {
+val tradeRecipeContractTest =
+  tasks.register<JavaExec>("tradeRecipeContractTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath =
@@ -478,21 +486,21 @@ val tradeRecipeContractTest by
         files(
           tasks
             .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
-            .flatMap { it.resourcesArtifact }
+            .flatMap { it.resourcesArtifact },
         )
     mainClass = "dev.aeroscapes.qualityoflife.TradeRecipeContractTest"
   }
 
-val managedBackupArchiveTest by
-  tasks.registering(JavaExec::class) {
+val managedBackupArchiveTest =
+  tasks.register<JavaExec>("managedBackupArchiveTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.backup.ManagedBackupArchiveTest"
   }
 
-val distantHorizonsBackupPolicyTest by
-  tasks.registering(JavaExec::class) {
+val distantHorizonsBackupPolicyTest =
+  tasks.register<JavaExec>("distantHorizonsBackupPolicyTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
@@ -509,20 +517,20 @@ tasks.register<JavaExec>("generateCelestialAtlas") {
     layout.projectDirectory
       .file("src/main/resources/assets/aeroscapes_reimagine/textures/environment/celestials.png")
       .asFile
-      .absolutePath
+      .absolutePath,
   )
 }
 
-val effectDescriptionPagesTest by
-  tasks.registering(JavaExec::class) {
+val effectDescriptionPagesTest =
+  tasks.register<JavaExec>("effectDescriptionPagesTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.atmosphere.EffectDescriptionPagesTest"
   }
 
-val equipmentModelsCheck by
-  tasks.registering(JavaExec::class) {
+val equipmentModelsCheck =
+  tasks.register<JavaExec>("equipmentModelsCheck") {
     group = "verification"
     val minecraftResources =
       tasks
@@ -535,8 +543,8 @@ val equipmentModelsCheck by
     systemProperty("java.awt.headless", "true")
   }
 
-val hookCompatibilityTest by
-  tasks.registering(JavaExec::class) {
+val hookCompatibilityTest =
+  tasks.register<JavaExec>("hookCompatibilityTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
@@ -544,21 +552,21 @@ val hookCompatibilityTest by
     args(
       layout.projectDirectory
         .dir(
-          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/equipment/held"
+          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/models/item/equipment/held",
         )
         .asFile
         .absolutePath,
       layout.projectDirectory
         .file(
-          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/textures/entity/hook_rope.png"
+          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/yo_hooks/textures/entity/hook_rope.png",
         )
         .asFile
         .absolutePath,
     )
   }
 
-val toolModelContractTest by
-  tasks.registering(JavaExec::class) {
+val toolModelContractTest =
+  tasks.register<JavaExec>("toolModelContractTest") {
     group = "verification"
     val minecraftResources =
       tasks
@@ -569,12 +577,12 @@ val toolModelContractTest by
     mainClass = "dev.aeroscapes.aquatic.ToolModelContractTest"
     classpath += files(minecraftResources) + files(equipmentAssets)
     argumentProviders.add(
-      CommandLineArgumentProvider { listOf(minecraftResources.get().asFile.absolutePath) }
+      CommandLineArgumentProvider { listOf(minecraftResources.get().asFile.absolutePath) },
     )
   }
 
-val equipmentArtworkTest by
-  tasks.registering(JavaExec::class) {
+val equipmentArtworkTest =
+  tasks.register<JavaExec>("equipmentArtworkTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
@@ -582,8 +590,8 @@ val equipmentArtworkTest by
     systemProperty("java.awt.headless", "true")
   }
 
-val vanillaEquipmentModelTest by
-  tasks.registering(JavaExec::class) {
+val vanillaEquipmentModelTest =
+  tasks.register<JavaExec>("vanillaEquipmentModelTest") {
     group = "verification"
     val minecraftResources =
       tasks
@@ -596,16 +604,16 @@ val vanillaEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
-val rodModelContractTest by
-  tasks.registering(JavaExec::class) {
+val rodModelContractTest =
+  tasks.register<JavaExec>("rodModelContractTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.aquatic.RodModelContractTest"
   }
 
-val reviewedEquipmentModelTest by
-  tasks.registering(JavaExec::class) {
+val reviewedEquipmentModelTest =
+  tasks.register<JavaExec>("reviewedEquipmentModelTest") {
     group = "verification"
     dependsOn(vanillaEquipmentModelTest)
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -613,8 +621,8 @@ val reviewedEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
-val knifeEquipmentModelTest by
-  tasks.registering(JavaExec::class) {
+val knifeEquipmentModelTest =
+  tasks.register<JavaExec>("knifeEquipmentModelTest") {
     group = "verification"
     dependsOn(vanillaEquipmentModelTest)
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -622,8 +630,8 @@ val knifeEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
-val constructionEquipmentModelTest by
-  tasks.registering(JavaExec::class) {
+val constructionEquipmentModelTest =
+  tasks.register<JavaExec>("constructionEquipmentModelTest") {
     group = "verification"
     dependsOn(vanillaEquipmentModelTest)
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -631,8 +639,8 @@ val constructionEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
-val aquaticToolModelTest by
-  tasks.registering(JavaExec::class) {
+val aquaticToolModelTest =
+  tasks.register<JavaExec>("aquaticToolModelTest") {
     group = "verification"
     dependsOn(vanillaEquipmentModelTest)
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -640,8 +648,8 @@ val aquaticToolModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
-val constructionPlacementTest by
-  tasks.registering(JavaExec::class) {
+val constructionPlacementTest =
+  tasks.register<JavaExec>("constructionPlacementTest") {
     group = "verification"
     dependsOn(vanillaEquipmentModelTest)
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -649,16 +657,16 @@ val constructionPlacementTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
-val heldEquipmentRenderingTest by
-  tasks.registering(JavaExec::class) {
+val heldEquipmentRenderingTest =
+  tasks.register<JavaExec>("heldEquipmentRenderingTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.atmosphere.HeldEquipmentRenderingTest"
   }
 
-val utilityEquipmentModelTest by
-  tasks.registering(JavaExec::class) {
+val utilityEquipmentModelTest =
+  tasks.register<JavaExec>("utilityEquipmentModelTest") {
     group = "verification"
     dependsOn(reviewedEquipmentModelTest)
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -666,8 +674,8 @@ val utilityEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
-val fieldEquipmentModelTest by
-  tasks.registering(JavaExec::class) {
+val fieldEquipmentModelTest =
+  tasks.register<JavaExec>("fieldEquipmentModelTest") {
     group = "verification"
     dependsOn(equipmentModelsCheck)
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -675,8 +683,8 @@ val fieldEquipmentModelTest by
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
-val ironHeldModelTest by
-  tasks.registering(JavaExec::class) {
+val ironHeldModelTest =
+  tasks.register<JavaExec>("ironHeldModelTest") {
     group = "verification"
     dependsOn(equipmentModelsCheck)
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -685,8 +693,8 @@ val ironHeldModelTest by
     providers.gradleProperty("ironHeldPreview").orNull?.let { args(it) }
   }
 
-val weatheringTextureTest by
-  tasks.registering(JavaExec::class) {
+val weatheringTextureTest =
+  tasks.register<JavaExec>("weatheringTextureTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -694,8 +702,8 @@ val weatheringTextureTest by
     systemProperty("java.awt.headless", "true")
   }
 
-val orePresentationContractTest by
-  tasks.registering(JavaExec::class) {
+val orePresentationContractTest =
+  tasks.register<JavaExec>("orePresentationContractTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = vanillaEquipmentModelTest.get().classpath
@@ -703,32 +711,32 @@ val orePresentationContractTest by
     systemProperty("java.awt.headless", "true")
   }
 
-val paragliderExhaustionTest by
-  tasks.registering(JavaExec::class) {
+val paragliderExhaustionTest =
+  tasks.register<JavaExec>("paragliderExhaustionTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.movement.ParagliderExhaustionTest"
   }
 
-val seatedRiderAnimationTest by
-  tasks.registering(JavaExec::class) {
+val seatedRiderAnimationTest =
+  tasks.register<JavaExec>("seatedRiderAnimationTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.fauna.SeatedRiderAnimationTest"
   }
 
-val hookHangMathTest by
-  tasks.registering(JavaExec::class) {
+val hookHangMathTest =
+  tasks.register<JavaExec>("hookHangMathTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.movement.HookHangMathTest"
   }
 
-val spellMouseGestureTest by
-  tasks.registering(JavaExec::class) {
+val spellMouseGestureTest =
+  tasks.register<JavaExec>("spellMouseGestureTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath

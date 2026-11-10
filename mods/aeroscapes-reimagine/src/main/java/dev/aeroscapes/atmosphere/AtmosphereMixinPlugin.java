@@ -165,6 +165,13 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       if (versionLookup.apply("spyglass_astronomy") != null) return false;
     } else if (mixinClassName.endsWith("SpyglassAstronomyMixin")) {
       versions = Map.of("spyglass_astronomy", "1.0.20", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("SpyglassAstronomyDepthMixin")) {
+      versions =
+          Map.of(
+              "spyglass_astronomy", "1.0.20",
+              "distanthorizons", "3.3.3",
+              "iris", "1.8.14-beta.1+mc1.21.1",
+              "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("LanguageCorrectionMixin")
         || mixinClassName.endsWith("NativeConfigurationLanguageMixin")) {
       versions = Map.of("neoforge", "21.1.244");
@@ -205,6 +212,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     } else if (mixinClassName.endsWith("HorseMountedMiningScopeMixin")
         || mixinClassName.endsWith("HorseRecallSnapshotMixin")) {
       versions = Map.of("horseman", "1.5.13");
+    } else if (mixinClassName.endsWith("EasyAnvilsFormattingGuideMixin")) {
+      versions = Map.of("easyanvils", "21.1.0", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("EasyAnvilsFreeRenameMixin")) {
       versions =
           Map.of(

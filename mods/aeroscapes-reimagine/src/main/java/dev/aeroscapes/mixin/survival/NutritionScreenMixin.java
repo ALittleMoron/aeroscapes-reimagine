@@ -1,5 +1,6 @@
 package dev.aeroscapes.mixin.survival;
 
+import dev.aeroscapes.interfaceart.InterfaceArt;
 import dev.aeroscapes.survival.NutritionPanel;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
@@ -37,7 +38,8 @@ public abstract class NutritionScreenMixin extends Screen {
     graphics.fill(0, 0, width, height, 0xa0202428);
     int left = Math.max(0, (width - 250) / 2);
     int top = Math.max(0, (height - 155) / 2);
-    graphics.fill(left, top, left + 250, top + 155, 0xff292d30);
+    int frameColor = InterfaceArt.available(InterfaceArt.ATLAS) ? 0xff111b29 : 0xff292d30;
+    graphics.fill(left, top, left + 250, top + 155, frameColor);
     NutritionPanel.render(graphics, left, top);
     callback.cancel();
   }

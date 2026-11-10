@@ -4,13 +4,13 @@ Use the root [Makefile](Makefile) from the repository root. Gameplay data belong
 
 ## Environment
 
-Python is 3.14, selected by [`tools/pack/.python-version`](tools/pack/.python-version). [`pyproject.toml`](tools/pack/pyproject.toml) owns Python dependencies and quality config; [`uv.lock`](tools/pack/uv.lock) pins packages and hashes. uv manages the ignored `tools/pack/.venv/`. Root Make sets `UV_CACHE_DIR`, `UV_PYTHON_INSTALL_DIR` and `UV_PYTHON_BIN_DIR` beneath `.cache/uv/`; no requirements-file or global Python-package workflow exists.
+Python 3.14.10 is selected by [`tools/pack/.python-version`](tools/pack/.python-version). [`pyproject.toml`](tools/pack/pyproject.toml) owns Python dependencies and quality config; [`uv.lock`](tools/pack/uv.lock) pins packages and hashes. uv manages the ignored `tools/pack/.venv/`. Root Make sets `UV_CACHE_DIR`, `UV_PYTHON_INSTALL_DIR` and `UV_PYTHON_BIN_DIR` beneath `.cache/uv/`; no requirements-file or global Python-package workflow exists.
 
 Builds require JDK 25 through `JAVA_HOME` and `JAVA_HOME_25_X64`, plus JDK 21 through `JAVA_HOME_21_X64` for NeoForge's Minecraft artifact tooling. Gradle discovers both explicit paths; a runtime JRE is insufficient. The owned mod retains Java 21 bytecode. [`toolchain.json`](toolchain.json) pins the pack runtime; CI verifies and extracts that Corretto archive directly because setup-java's Corretto provider accepts only a major version. CI configures both build JDKs. The owning Gradle wrapper, plugin/tool versions and dependency verification remain in [`mods/aeroscapes-reimagine/`](mods/aeroscapes-reimagine/). Compilation uses `-Xlint:all -Werror`; checks include Spotless, PMD and policy tests. Gradle dependencies are hash-verified and cache under `.cache/gradle/`.
 
-Documentation is a separate [`tools/docs/`](tools/docs/) Node project: Node 26.8.2, npm 11.19.1, Astro 7.4.2, Starlight 0.42.7, TypeScript 6.0.3, Prettier 3.9.10 with `prettier-plugin-astro` 1.1.2, and `@astrojs/check` 0.9.12. Owning manifests/lock are authoritative. Select an already installed pinned Node through `PATH` or mise; do not update global tools. Locked installation uses `npm ci --ignore-scripts`, with npm cache in `.cache/npm/`.
+Documentation is a separate [`tools/docs/`](tools/docs/) Node project: Node 26.13.0, npm 12.2.2, Astro 7.4.10, Starlight 0.42.10, TypeScript 6.0.3, Prettier 3.9.10 with `prettier-plugin-astro` 1.1.2, and `@astrojs/check` 0.9.12. Owning manifests/lock are authoritative. Select an already installed pinned Node through `PATH` or mise; do not update global tools. Locked installation uses `npm ci --ignore-scripts`, with npm cache in `.cache/npm/`.
 
-Go 1.27.3 runs the pinned actionlint module in [`tools/actions/`](tools/actions/) during `make verify`; its manifest and checksum lock own those tooling dependencies. Packwiz bootstrap/refresh/export also needs Go. Packwiz's commit and download installer hashes live in [`toolchain.json`](toolchain.json). `make verify` does not invoke Minecraft. Tool execution and headless checks target the current POSIX environment; Windows and extra Python versions are not supported claims.
+Go 1.27.4 runs the pinned actionlint module in [`tools/actions/`](tools/actions/) during `make verify`; its manifest and checksum lock own those tooling dependencies. Packwiz bootstrap/refresh/export also needs Go. Packwiz's commit and download installer hashes live in [`toolchain.json`](toolchain.json). `make verify` does not invoke Minecraft. Tool execution and headless checks target the current POSIX environment; Windows and extra Python versions are not supported claims.
 
 ## Supported commands
 
@@ -60,6 +60,12 @@ Checks prove their own boundaries. Static compilation/style/policy tests do not 
 ## Change dependencies and source
 
 When adding or updating a mod, compare the exact JAR’s dependency ranges against the resolved client and server inventories. Include optional dependencies wherever they are installed. A dedicated-server boot cannot exercise client-only version constraints.
+
+For interface themes, start from the pinned client inventory and trace the screens,
+provider-specific tabs and controls to the resources their renderers actually use.
+A shared panel can still leave a separate screen unthemed, and a mod can inherit
+vanilla text colors while using an overridden background. Check the drawn regions,
+labels and control states offline before identifying the gaps that require a live client.
 
 New Python dev tools belong in the dev group through `uv add --project tools/pack --dev name==version`; explain their role/overlap and update the lock in the same change. Update only the dependency relevant to the task and run `make sync verify` afterward. npm dependency changes likewise update the owning exact manifest and lock together.
 

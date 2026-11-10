@@ -5,11 +5,11 @@
   },
   "java": {
     "major": 25,
-    "tested_runtime": "Amazon Corretto 25.0.5.0.9; dedicated current-pack baseline verified",
+    "tested_runtime": "Amazon Corretto 25.0.5.0.10",
     "linux_x64_jdk": {
-      "url": "https://corretto.aws/downloads/resources/25.0.5.0.9/amazon-corretto-25.0.5.0.9-linux-x64.tar.gz",
-      "sha256": "64dc9d922aebf67d7d940e6f688bfeb737a21f37cb5da179b09069183a06e312",
-      "filename": "amazon-corretto-25.0.5.0.9-linux-x64.tar.gz"
+      "url": "https://corretto.aws/downloads/resources/25.0.5.0.10/amazon-corretto-25.0.5.0.10-linux-x64.tar.gz",
+      "sha256": "1d89b4194f20ee513f4dd9fc2aadd038de3c713c37fd444d77566b3da7b0ee65",
+      "filename": "amazon-corretto-25.0.5.0.10-linux-x64.tar.gz"
     }
   },
   "bootstrap": {

@@ -12,15 +12,15 @@ aeroscapes-pack = "aeroscapes_pack.cli:main"
 aeroscapes-smoke = "aeroscapes_pack.smoke:main"
 
 [build-system]
-requires = ["uv_build==0.13.5"]
+requires = ["uv_build==0.13.7"]
 build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
     "bandit==1.9.4",
-    "pytest==9.1.1",
-    "ruff==0.17.2",
-    "ty==0.0.91",
+    "pytest==9.2.0",
+    "ruff==0.17.4",
+    "ty==0.0.100",
     "vulture==2.16",
     "yamllint==1.38.0",
 ]

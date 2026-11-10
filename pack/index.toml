@@ -153,6 +153,10 @@ file = "config/naturescompass-common.toml"
 hash = "4563c0d566a53d2901bcbc1efe9a2f75e186ddcedfcf704a5d871ccd5ccfdc1e"
 
 [[files]]
+file = "config/nutritionalbalance-client.toml"
+hash = "a336e051a78abd55e308238b75ae9333f1c1b02f82cb0e326aface07ff79e068"
+
+[[files]]
 file = "config/nutritionalbalance-server.toml"
 hash = "aa1712deff25ae6005b95ee788e53edfb0364c937704fd7160bfdacb2aacd0fe"
 
@@ -3875,7 +3879,7 @@ hash = "660dcdb261bf62d8fee4afe8541e2d3c99aea7004b9e53ff236bbaac59206251"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "81b74e2956c27582dd28fc5945f232e765f5a63fe47b07b9c6f5bed336f6dc3e"
+hash = "27a6afbb58e2e9ae5938e5630903e2f767e38f070d81c0fdc199b78ddc46972c"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -3904,7 +3908,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "84f0335f9f867d9c1a2b4a30584132744f22c5563174ed5f0ca1e2fbb12ec33a"
+hash = "3ad280768c95325d5971e889db3ee63264c544e4f0bee827ed5383cf1a18612c"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -5013,7 +5017,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "fb00df532cb23734fb73359d7b14a4d96394508acb7a8b1cf1e74ffd91b86f2d"
+hash = "da3070a3e130f4192ee42e8cc3b8f54f5e8acfb3d56cb670df44efbe5a80ae69"
 
 [[files]]
 file = "polytone_options.json"
@@ -5080,8 +5084,16 @@ file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/polytone/
 hash = "7cada3221f0ad22653a398b7fa24d262cf8f190344628b829204f7f9f32feaba"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/punchy/animations/aeroscapes_short_blade.animation.json"
+hash = "7476748c7b3537409d6d71cf1b79680cc62867d08bdefddee665e9eeeaec9b61"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/punchy/compat/aeroscapes_map.json"
 hash = "bac3c5531e712b38f70475210956d2af3c13bf4640b92962025b113726e7949e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/punchy/compat/aeroscapes_melee.json"
+hash = "c40970be860e76f2249eca52f0b75b70577b3cdd6d3f0d750a86d6bd51ec5137"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/sounds/items/moo.json"
@@ -5218,6 +5230,1166 @@ hash = "3bc1336f3b4ff9bbc5d8e49fcebf5a60b6b996af33ae098b0a27119d880c7094"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-atmosphere/pack.mcmeta"
 hash = "cdea174265b490f6b7988f67257716a028927501e1663505af016a672a4fe885"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/README.md"
+hash = "43f882bbe4daea115ad0dfe59ab6e8cf8eeae4cd3f71c3339c0437585a3015d3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/atlas.svg"
+hash = "631e7357231e3a475fa5e6dfb5ee0e0bc45d9a1fadafcc625738cd1a91cb42a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/button.svg"
+hash = "7d17120be74530575f8f5486a5f58701177338eafb487949aec585399f2d1d55"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/button_disabled.svg"
+hash = "119e2572921aff6adcec89542ed6a699ec81dbda6bf515b2ad0f67dd550f41f1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/button_highlighted.svg"
+hash = "c27f67522e7f9ac4bfb56bcb9b03a3d68ab85e5629e91f6bddcd2f3145fefa26"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/anvil.svg"
+hash = "4401dd816e88854ffdc268d4c0f40e7435ec8e6e8cc3e3692e52490061aad7a8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/brewing_stand.svg"
+hash = "c1ca1c6b709f65fef075d05e3f31da9d7dcdf0111278daf9dca2eb5c68b4cadf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/cartography_table.svg"
+hash = "2cdf1cf0530551f1e369d4f22e35f00f073f8cdcd7809ce019d1f174bb43f403"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/crafter.svg"
+hash = "fde921251da0e48b6f072855615df227e28ae5ee36954c6a18391d0cef451eca"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/crafting_table.svg"
+hash = "27ddd15fc1c8c897f550e0cb378942a47775cc2dd36dffd8536de7e5f95c01d7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/dispenser.svg"
+hash = "0cfad26fe3e519306b6355798546920a49e5cd41f092f7bc3be7625aeb03ce7f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/furnace.svg"
+hash = "b2d2b46d0097d9b22ee3710af73b7da5625053d05f1ce74b5d28754c7f099967"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/generic_54.svg"
+hash = "4dc574762e1cefcef0d16368553067cfd46d6f0b7dd080168cf7b420c94599ae"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/grindstone.svg"
+hash = "89e8aa7df94e64aab581d8e0159b622a43c0f294e09299784e98a5b24d1dbe43"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/hopper.svg"
+hash = "f597f595eab3769e4476887aeb611e4b2f668648432d150ed00526753a83a5ed"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/inworld_menu_background.svg"
+hash = "9f43fbc0a3881a143c07678cd94ddb3c587962d80178a22eb407e72e3177eeac"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/inworld_menu_list_background.svg"
+hash = "9015f59d4385998dc42431ad00553981b67ca524ea76e43ddea7a184d74c190d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/menu_background.svg"
+hash = "c7593089ffe68067adbf4e1cc173bcac2a1b4a009352a7896efaff0bed4a0a64"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/menu_list_background.svg"
+hash = "a171db98adfb8da17c5351e8629549f821b23291bb4d67264e6a066e821b3fe3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/reforging_screen.svg"
+hash = "b02ff6bba98c3a40f5bab8a5c8e17e537392e5ef379247c0ea168695427fe4cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/scroller.svg"
+hash = "c09fc649acbddfdb20dc7a4db031c56f78c8428822f5f417a73bc1e7ab703066"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/scroller_disabled.svg"
+hash = "2112670a37d43b61a8d6da49e0fb6d63974f3d12b7cea95efec96e9a010a8175"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/shulker_box.svg"
+hash = "012ac274f97a238442951830fe20d716faac11f22009ff28a92a17cc0adc9587"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/smithing.svg"
+hash = "8634486be202744b061edc4f47c5890e5a2be4992a616b7850769e9d6ec2f570"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/tab_bottom_selected.svg"
+hash = "1dd367cdfe9d4bcafa03730ad428c2a92a304f3562710e3c72f7ffd55f74f725"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/tab_bottom_unselected.svg"
+hash = "80b9136377ffeeb1f58d60d6f5b37857bf17a397838fe7b6b513b11001997d7f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/tab_header_background.svg"
+hash = "b1580135098526a6ba7993e6d85e8b655b989a14edd52c8b577a0b75df6ef91f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/tab_inventory.svg"
+hash = "a06acfb1daed5959185f155cd73a2683591c8f53aaf62f9ae9e68293c0fe1755"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/tab_item_search.svg"
+hash = "2182631b700378f19c979340201ce5d473d24859517da04ab5b30b46986d1380"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/tab_items.svg"
+hash = "4bf3eda3b533cf1197c2a1a11d197bc6381700b61d5d0af0d120205c4a562d56"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/tab_top_selected.svg"
+hash = "2c32504ab7ca848117b5e2bf224a9174daa19fb01f60e79a571961c9b964e6cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/containers/tab_top_unselected.svg"
+hash = "1d30c43db7174b43607caa08b7373184b088515770d7432150b1904564620a65"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/emi.md"
+hash = "30e5cec8f771f61f0841acd3c840e497b0f61923e1dc9dd7bd2d77100522da0b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/README.md"
+hash = "0198306cf41bb1f3fa8bd0ee4306e2d8c9cb67be1be90ffb9a09459ac24bceef"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/book.svg"
+hash = "bda146b928f5fa7a699b58301773d475ad403627869edee95ae056be7e1aaf92"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/container/beacon.svg"
+hash = "7df789238e7504adcbbb6668f38c3e4819e748825b64f9351393f249b009283a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/container/enchanting_table.svg"
+hash = "6eefdd1d7c0e75c860d6d704bcb4884ff00a6e84e49889c60a09b80912bf8fbc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/container/gamemode_switcher.svg"
+hash = "4658b46cf153299d44684df62a68a31acab230063e94da12a3e37e18cbb8f53b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/container/horse.svg"
+hash = "b696e143e1c9d82b5ea70c15ec16931e9040b7b496f86aa51cc58910f235bd3d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/container/loom.svg"
+hash = "3e444b00f21c94bd5746075cc0ed34b1006c86c33f011cb0e237c6c1691d8541"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/container/stonecutter.svg"
+hash = "984db551f93dbd078d11622ddf1b48a6618654916e5d33b6ca8080edd310ea84"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/container/villager.svg"
+hash = "bce141a71531d7436e7ad0b8e70ac111b2a785315885a6acb244f3720f536a38"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/recipe_book.svg"
+hash = "82040b16b3e541590430d0b706208423a845dab066b2662958fc5270550acd00"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/beacon/button.svg"
+hash = "aeb1acf51d931e95dc451c6e141a44479df049bc5b52740f364f3535091438aa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/beacon/button_disabled.svg"
+hash = "98d10404cc7df2717e4e95eac7412caeb70fd4b31b57a1a681a553853d2308af"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/beacon/button_highlighted.svg"
+hash = "71b185aca894aa0371a3743de41721cd35f92ce4cbca8fb62a513a1a62ec4b8f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/beacon/button_selected.svg"
+hash = "7e7b8e605f091557dc8a55a2a29fc3d0759ed4a293bc2c42055582324f6e6a43"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/enchantment_slot.svg"
+hash = "5642fdb5748ff53d11f8531fb32733f7e7b79b0497418fb08852050ab47a402a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/enchantment_slot_disabled.svg"
+hash = "df1f8e588b4260704ea74da74ed328f1c34e89bc892c07c275369d783c638fc3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/enchantment_slot_highlighted.svg"
+hash = "7152bddd132c6fcf62f093f396f5cb42a0becb3e992c594fca395eae0a071515"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/level_1.svg"
+hash = "0a63a1860d2fb6b21c6154776b5c24189eba9f8dbf163645d1e6c50a7359e6d2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/level_1_disabled.svg"
+hash = "b363988d5aa00b55a1afdc2e2252ff8c8925613fa1889b32db0ef5bd81fc147e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/level_2.svg"
+hash = "336a0cd73934b11646543fec0c5bfe7fd6f96b06ac335ec3f9a4362d84fe31a8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/level_2_disabled.svg"
+hash = "21794326ed74a0e1fc9f2ef72721a6a2afcf10a49b24d1eb4bd33a969bcacc8d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/level_3.svg"
+hash = "705e06ce8c6027c420f42512f39c4bb126e300baa97b600f97a0235292dd7b99"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/enchanting_table/level_3_disabled.svg"
+hash = "d3f81afae8f8516110c0a8f7201aa14332b9b4fd70612ba47c2b1d77555d4f40"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/horse/armor_slot.svg"
+hash = "76bfab956fd23284d2cc7a0f8d11f36e79ad697d17623900239770ce90b4c477"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/horse/chest_slots.svg"
+hash = "de665dc3fb27fafc0d5ac50ed492266201eb48f0f93c6a48c32c5fc1a07660ee"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/horse/llama_armor_slot.svg"
+hash = "e962a648f61f22b2605a0a343e216e63b03d260911468d61422ec218156579d1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/horse/saddle_slot.svg"
+hash = "cba565bad4612f1b9528f83dd78533df45513695442d38c18a2ce7489c8c5f27"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/inventory/effect_background_large.svg"
+hash = "c1ad0b90d62a692eee74d01b9c58de3e429ac4b23dee7086e125262eb53739e6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/inventory/effect_background_small.svg"
+hash = "234e9a793172711ed450cb63d149d1d2614bdce47bf0a8ceadc8202e7cc50a0e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/loom/pattern.svg"
+hash = "07f6dacf6fd05de3139567deca33e604b47b96556bc7f8129d86190be062a7ba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/loom/pattern_highlighted.svg"
+hash = "ddcb965ef11a2df3b3e588174f0bc1192042b57d271a764adea7acd7b8d0b422"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/loom/pattern_selected.svg"
+hash = "b815606bad281fa1a793bbe16447a1c9da9ef99b3b45476c3f21efa1391710c1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/loom/scroller.svg"
+hash = "0ef73d90399bdb14e0b192006889b58cf7c3fd1f9aefc92a9b4518f8ad11355a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/loom/scroller_disabled.svg"
+hash = "93e85efa5807a561d06775e043e09f63b4a2d1640fe8023b8c67a16cd4a3817e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/stonecutter/recipe.svg"
+hash = "a8c8d1eca8271aad85e5b190cf78040ef0ec63a4b927cdfd0c5ef3e366c185d7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/stonecutter/recipe_highlighted.svg"
+hash = "a43e7e81016599fc2031cde600e384676c09037bf1575756af185ba9f6efcb2b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/stonecutter/recipe_selected.svg"
+hash = "68c1a383073f08264c521c09dbb1e3b9f8a51d32ff61980b50b76633ce67f6ae"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/stonecutter/scroller.svg"
+hash = "0ef73d90399bdb14e0b192006889b58cf7c3fd1f9aefc92a9b4518f8ad11355a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/stonecutter/scroller_disabled.svg"
+hash = "93e85efa5807a561d06775e043e09f63b4a2d1640fe8023b8c67a16cd4a3817e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/villager/experience_bar_background.svg"
+hash = "8c03c1f55e9ad2d37f2f05ec1960463e15e842240ec7c5a1942184c993eba1a5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/villager/experience_bar_current.svg"
+hash = "74a305e2d0ee95e180735ab40bf1ff996a5da6b2f7985d679f718b801eba51ba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/villager/experience_bar_result.svg"
+hash = "971a48c2afa52c485e88f456d266d89ba25310582b168f247f65a71a277eeee0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/villager/scroller.svg"
+hash = "fdba1c825b229dd9ac07fe490ed807b97cd83b214377fa38a404616a10ba34ba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/villager/scroller_disabled.svg"
+hash = "7074885fc9eb9a3a9527c97727d7cb6bbea7cb6581b18a555522dc4986e1035a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/villager/trade_arrow.svg"
+hash = "b74d6da64d0323556b7409f588ba0d264296ffcf7b370b55cd5aab042cbe2f11"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/gamemode_switcher/selection.svg"
+hash = "664088d1a81e63cb7914fc1d03277a6e2d399e89be4861004937440578759ac6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/gamemode_switcher/slot.svg"
+hash = "2670e7888bafb955ad1e583247f6e7c98e2dcb562cdceab4c14c9f36c9fa6bdd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/button.svg"
+hash = "eafbc72ba3f0c316af190bcd849806a707bab4e92ebbfa598cde27a1fa262ed9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/button_highlighted.svg"
+hash = "ffe1aae4687b52e9f5e041d710c8d4b3ec40abfba49dbf0605eaaeae78666b15"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/crafting_overlay.svg"
+hash = "49524f60d0aa81d2bc2915fa3002249b9cb9bf52f25aaa83b3a0820096e7eab6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/crafting_overlay_disabled.svg"
+hash = "4deece4bfec77fc1467d33fd49e1d45d804e587868344d24e5b48341e75e8144"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/crafting_overlay_disabled_highlighted.svg"
+hash = "34a45e66cf829255b73533f4cb4f8a296a3fbf12ed34ac3ee4f7ad7585a39a34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/crafting_overlay_highlighted.svg"
+hash = "34a45e66cf829255b73533f4cb4f8a296a3fbf12ed34ac3ee4f7ad7585a39a34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/filter_disabled.svg"
+hash = "e1dc74968860a7d38536e7a697d4b1270e704dbeca2bab8c8bab53dae9f1968a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/filter_disabled_highlighted.svg"
+hash = "aefe448a9acf2a494147f6a6e602b561c17f5b15917ba02951a9349280fad360"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/filter_enabled.svg"
+hash = "89c96d5e8d13662e6faa438f3df0dbde6b096b344429903682d3e10af261af18"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/filter_enabled_highlighted.svg"
+hash = "455e3f3bb15fca70e7f2fe44aedcd97000d83d846b7cafa95e9b4bfe13fe7c35"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/furnace_filter_disabled.svg"
+hash = "9924bd27f60df0d9088f6611fa5cbfdb5413bd0fe103712c5dcea3fdbae9d35c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/furnace_filter_disabled_highlighted.svg"
+hash = "b9c185842838a4152f500ea83ce92f70fe9c1f2021cd2fefac37cfe6828fb31a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/furnace_filter_enabled.svg"
+hash = "67489680e2e96f1133f56250ff6cb7196dfbe16a3310ef1bb0763b861feeadd5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/furnace_filter_enabled_highlighted.svg"
+hash = "26f02d51327407e2999d0f13a2160be96c31ad1f9fcdcf9b048d88f399d27be1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/furnace_overlay.svg"
+hash = "49524f60d0aa81d2bc2915fa3002249b9cb9bf52f25aaa83b3a0820096e7eab6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/furnace_overlay_disabled.svg"
+hash = "4deece4bfec77fc1467d33fd49e1d45d804e587868344d24e5b48341e75e8144"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/furnace_overlay_disabled_highlighted.svg"
+hash = "34a45e66cf829255b73533f4cb4f8a296a3fbf12ed34ac3ee4f7ad7585a39a34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/furnace_overlay_highlighted.svg"
+hash = "34a45e66cf829255b73533f4cb4f8a296a3fbf12ed34ac3ee4f7ad7585a39a34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/overlay_recipe.svg"
+hash = "6936e73d235668d13c6576c11d7991bb0f383a8ccfb02fd000e07e4931b78f16"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/page_backward.svg"
+hash = "3ca619eac18fe7913ded41be4ab2ec31bf65eda613caf164edabc10b7042ac42"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/page_backward_highlighted.svg"
+hash = "7e461e5a80b745187377ae9a3203eb870686cc2affd36fbffccc0610b745d21a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/page_forward.svg"
+hash = "9a8c399a2677072fda5f7b0b4adb3f995b35741d2505303a3a251460330b2e21"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/page_forward_highlighted.svg"
+hash = "4bd61f080c3967cd71ea79e660d4970f7dab235cd97c51433371812d25e30fba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/slot_craftable.svg"
+hash = "62c7574c962f74d6e033f865680ac34577da9ab61741608a6d954b91960fdc7b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/slot_many_craftable.svg"
+hash = "4d5a4d7ddf7560b7ce490ada015d686b2b46cfae1727ed8821e6cd4c9952524d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/slot_many_uncraftable.svg"
+hash = "e025d02403f9f195e855d74c675f293c5cfa1d28f069dd1c8fcb7902f15ab281"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/slot_uncraftable.svg"
+hash = "758bc524ecd65eeb691fcfd02e4e8341f2b1e45912a563e4a4b76fd3c9c202be"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/tab.svg"
+hash = "fba395cc2d85cf97bc077ab7652167e9f043307b46b67c77c93969a819a82205"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/recipe_book/tab_selected.svg"
+hash = "217b85dee19f90db303bd9a3afc55c3ce1ec83d36a716dcadf8a80b9f8420a8a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/widget/page_backward.svg"
+hash = "0d6e071c4f6e4f91dd83a1a8646f9fa754dcb959329b72437cc5bbebf25fb509"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/widget/page_backward_highlighted.svg"
+hash = "0871d67decaa9ffe06ac48e5be75390ae02974b8b54475bda9f9c5fadb1f6159"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/widget/page_forward.svg"
+hash = "a45020c7ae7c5702054214a2bfc23e78b3b621ce8f4755d866e8e1f459294abb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/widget/page_forward_highlighted.svg"
+hash = "e6b375867f6566a318a54fccac1dea5b46d8e738bdd4170d7ea7e6257d8a21d9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/inventory.svg"
+hash = "75915a5d521dad2f43d7ce613b7e369178743cc629a20556e497a08bf53f4d05"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/splash.svg"
+hash = "b89b7a5f19096668379926f4b5ae4216e7b67d2b7db836ab2ea20fd310070a92"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/toms-storage.md"
+hash = "0eebcdca64bec9bb693b493b55a4f5f6c7fe47fa50332b2e79f6788ca12c9448"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/toms_storage_widgets.svg"
+hash = "8a3dbaf56a2691dafb039010208947cd546bc43225210a546b1d5a2ca8aee4ff"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/wordmark.svg"
+hash = "83088bcd08b8029cbc353f400c203360350b86b181237fd7c7cde77ce2d67bbb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/atlas/panels.json"
+hash = "a5bda7d381653fff479c67b3f720c4a4ce008a84442c260501cea4a5fda46963"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/atlas.png"
+hash = "854ce73bcb7f97d59787bbcde6fb1940d8ba0a3e38ef73a8351f3af0679187ac"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/inventory.png"
+hash = "44ed68d45aacc40c47fa056c36fdce9dc2ad979e02dbac1c8df92b3ad14446fe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/splash.png"
+hash = "0388f6fa4569e319396cda667ff03a59e2334aeec846ddb29144d86835c56c9c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/wordmark.png"
+hash = "0dce9cb1960be4474e54999e77df191f9ed74864a06915d4dd2f21cc59fc5eb3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/emi/textures/gui/background.png"
+hash = "850c722e84d438b53742f15ef57b4d5914ed79af93790f64495382ed3d5ea785"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/emi/textures/gui/buttons.png"
+hash = "01e6a306f7dd5ca102bf3f4529b459f9c19aa7ea4cf166bff0d9d725d2b21912"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/emi/textures/gui/widgets.png"
+hash = "55b518d8ab030fc854dc3f12c562b842d7a8cc057aa283ea1a0e31f99843b75d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/book.png"
+hash = "7c51620887c425f63aa11b3ead41be5280c68c072013a2d27006a9985bb3ad5b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/anvil.png"
+hash = "40f6f2d30a7f9b1914aa7ae434de3dd87fa37f0f7bb215c0b7ccd0ce24cc908e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/beacon.png"
+hash = "e50297ba23876b36ef3456256c36bd052b13e22511ae29713d27a3b18c748420"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/blast_furnace.png"
+hash = "58c1d62baf91f53d98abb29d357ca52bb8ba30af035a6e268cc0e26768d84f37"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/brewing_stand.png"
+hash = "093b69318629742baf51dcee9b149c8657dabdb3ed58d9bb314398c57fe83abb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/cartography_table.png"
+hash = "5c3578aaaa693cbf38fd446c9d3ec2eb2d3536e0ddb9387928269947a35f3b6b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/crafter.png"
+hash = "1e7124c8e0e896cc40bb791a852ca7ff98548a4cef34469585c7649398a9009b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/crafting_table.png"
+hash = "30ea4a9647f26b925795b45198c54308f81fed3e2d020e74deb2410a248e18b4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/creative_inventory/tab_inventory.png"
+hash = "42936b14dcfceab7638f8d484c860908cdbbb553f022b6b97f9658c166cfdc04"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/creative_inventory/tab_item_search.png"
+hash = "637cedd7550829683c97ce069480ca394ad08d6325c2106318f21f253b3d94f7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/creative_inventory/tab_items.png"
+hash = "5df7608b82533ef6efc730a9288489c2c2e92d49f9df1fe90bbf4c6feae65f1e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/dispenser.png"
+hash = "e77529a1983d6fbd19cc2193958f417d6060be6ad849fe9aa4290c4706406068"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/enchanting_table.png"
+hash = "b32248f0847f065c0f70a14e22dd64579c33c8287652d1699583fae4eb26e249"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/furnace.png"
+hash = "58c1d62baf91f53d98abb29d357ca52bb8ba30af035a6e268cc0e26768d84f37"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/gamemode_switcher.png"
+hash = "65397e4384e3f3f1bc3f51c5d4cf68dbcfbb27c1e23afe135748f9d737f5e983"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/generic_54.png"
+hash = "ceed7f373f13e7c28985044c1392f7eab96c61ecdb2c8b154a04e36a7503e526"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/grindstone.png"
+hash = "1f2b6c6d6b263bc3445fdd135456d63d3bb3adb86555a8cf7e3bd7772387ded4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/hopper.png"
+hash = "39915bb78f0047356e3ecff8d68b088259cfce138986b32277897c6b2bbf2a87"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/horse.png"
+hash = "de34db886022eb6ca01f2b8e34158d2a0a105f372e9fdf632a41a604726d03ac"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/loom.png"
+hash = "2b69e6cc062c7d9cca2278f64639755884cea98f05659664f0e5bdc48e0023fe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/shulker_box.png"
+hash = "cdc8c24f7758e18d4692592f6b3baa4991731ef60fd756c8fa17ac56e6a613c8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/smithing.png"
+hash = "843d67d1e42063d22864f8b1ffc42fc92c15b91ddf68391eaeeba887a296ed56"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/smoker.png"
+hash = "58c1d62baf91f53d98abb29d357ca52bb8ba30af035a6e268cc0e26768d84f37"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/stonecutter.png"
+hash = "b617826baa2fd5fb46bbe4754868eb4f945b50381c8a2e73e151c642b31bfb4e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/container/villager.png"
+hash = "684b1e81ba6c69d0c14197ff623b773da5c5ab69c7c50e0c692072c6b258e09f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/inworld_menu_background.png"
+hash = "5cf4ffc321a1144df5917d1f9d640ab70a8c86f80979ebf90b91cf64e3304c3c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/inworld_menu_list_background.png"
+hash = "731160b47a892d445bd9755b6fdc4eed9d09ab8860d6aae1c370ec794458d81a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/menu_background.png"
+hash = "752b66074fd4e239956b62a6eb217a297c9c8006bb8bd04f7adef8c5f77b5ac3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/menu_list_background.png"
+hash = "3bff652ff6afa976bb6aaadb460404af4cb67aa7a57a983ea4b701823e8da10b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/recipe_book.png"
+hash = "c8c62d79c510d920f3c8d3e6031b060e139496fccebc57317efb5406d112549e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/beacon/button.png"
+hash = "8f1e2430f088d40f80db848601c5a2aeeef3ba9d7602febc5d1e9afd5080d2f7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/beacon/button_disabled.png"
+hash = "0c89b0f74d654f124fd82da13127197eb84d3f07630aa724cb93c33a50729f50"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/beacon/button_highlighted.png"
+hash = "5645e51957c3eda7f410f511541feb8ee1c354192bf1b82f9092cc94689ad364"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/beacon/button_selected.png"
+hash = "0cafb04fb9e88a49c4b429cc8a30d9f6c832873bb2de9b252c3f5f5acf57d722"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/scroller.png"
+hash = "bfb1f38ffc11731032b3ef2a06f5c9be42f96f1138c2dfee17122af0739f0983"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/scroller_disabled.png"
+hash = "303963484275c6c36b6b455390cf4a8d8d5fc189e9f450888cb8759bfed6e4ed"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_selected_1.png"
+hash = "68f6fe4ab01e517ea8fe9b424de3b750fdd1e9fd39d4c5e35ccb4f33b5ab3155"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_selected_2.png"
+hash = "68f6fe4ab01e517ea8fe9b424de3b750fdd1e9fd39d4c5e35ccb4f33b5ab3155"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_selected_3.png"
+hash = "68f6fe4ab01e517ea8fe9b424de3b750fdd1e9fd39d4c5e35ccb4f33b5ab3155"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_selected_4.png"
+hash = "68f6fe4ab01e517ea8fe9b424de3b750fdd1e9fd39d4c5e35ccb4f33b5ab3155"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_selected_5.png"
+hash = "68f6fe4ab01e517ea8fe9b424de3b750fdd1e9fd39d4c5e35ccb4f33b5ab3155"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_selected_6.png"
+hash = "68f6fe4ab01e517ea8fe9b424de3b750fdd1e9fd39d4c5e35ccb4f33b5ab3155"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_selected_7.png"
+hash = "68f6fe4ab01e517ea8fe9b424de3b750fdd1e9fd39d4c5e35ccb4f33b5ab3155"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_unselected_1.png"
+hash = "130e6f1b4688b15950134dd48ba90c597f072b3118479cb5c789ffcf802a2a45"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_unselected_2.png"
+hash = "130e6f1b4688b15950134dd48ba90c597f072b3118479cb5c789ffcf802a2a45"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_unselected_3.png"
+hash = "130e6f1b4688b15950134dd48ba90c597f072b3118479cb5c789ffcf802a2a45"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_unselected_4.png"
+hash = "130e6f1b4688b15950134dd48ba90c597f072b3118479cb5c789ffcf802a2a45"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_unselected_5.png"
+hash = "130e6f1b4688b15950134dd48ba90c597f072b3118479cb5c789ffcf802a2a45"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_unselected_6.png"
+hash = "130e6f1b4688b15950134dd48ba90c597f072b3118479cb5c789ffcf802a2a45"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_bottom_unselected_7.png"
+hash = "130e6f1b4688b15950134dd48ba90c597f072b3118479cb5c789ffcf802a2a45"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_1.png"
+hash = "2c4fba25a80fa0b0d9bde0fca92e7169c8335415c583b913355afd830f82810a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_2.png"
+hash = "2c4fba25a80fa0b0d9bde0fca92e7169c8335415c583b913355afd830f82810a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_3.png"
+hash = "2c4fba25a80fa0b0d9bde0fca92e7169c8335415c583b913355afd830f82810a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_4.png"
+hash = "2c4fba25a80fa0b0d9bde0fca92e7169c8335415c583b913355afd830f82810a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_5.png"
+hash = "2c4fba25a80fa0b0d9bde0fca92e7169c8335415c583b913355afd830f82810a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_6.png"
+hash = "2c4fba25a80fa0b0d9bde0fca92e7169c8335415c583b913355afd830f82810a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_selected_7.png"
+hash = "2c4fba25a80fa0b0d9bde0fca92e7169c8335415c583b913355afd830f82810a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_1.png"
+hash = "4e12b367fe379449c8b3d0152b6002a05590fe2e7edb48d2de880e085f3b907d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_2.png"
+hash = "4e12b367fe379449c8b3d0152b6002a05590fe2e7edb48d2de880e085f3b907d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_3.png"
+hash = "4e12b367fe379449c8b3d0152b6002a05590fe2e7edb48d2de880e085f3b907d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_4.png"
+hash = "4e12b367fe379449c8b3d0152b6002a05590fe2e7edb48d2de880e085f3b907d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_5.png"
+hash = "4e12b367fe379449c8b3d0152b6002a05590fe2e7edb48d2de880e085f3b907d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_6.png"
+hash = "4e12b367fe379449c8b3d0152b6002a05590fe2e7edb48d2de880e085f3b907d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/creative_inventory/tab_top_unselected_7.png"
+hash = "4e12b367fe379449c8b3d0152b6002a05590fe2e7edb48d2de880e085f3b907d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/enchantment_slot.png"
+hash = "766ed0d9b36aa0845539d32a4659fb924a9890bb2accd76074dac61f93803f65"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/enchantment_slot_disabled.png"
+hash = "70d5414a2866db4e5b831ca8ca5350f1b0410e4e43a501ed45755f489f28cfe1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/enchantment_slot_highlighted.png"
+hash = "3b90b80a778a560948de6cf1c4755bbed46e6b76503365ec457a6c35c19d0a23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/level_1.png"
+hash = "bb05ea464005d3eb3f65cefc70bf05ca2bbc91f083a03353bb4fdc463f73d93a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/level_1_disabled.png"
+hash = "2350bfd39a79f3c593c5a83d9eb5e3a6cfb8e09061d558dee1ca82fd90b1e70b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/level_2.png"
+hash = "d5e99b2c3509aa952b4bb6407ef4f9600d2a41c321da26821e58ba511579fe34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/level_2_disabled.png"
+hash = "7020f6eaece975ddc4d2d7c4635a5324f39bbbf5463ac02259dcbb927ee31b1b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/level_3.png"
+hash = "e5556913e24648055e5b91aa0f85c4e8bafb131f30a12c4f229e8674c22d92c2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/enchanting_table/level_3_disabled.png"
+hash = "ba1d0e990f7b0b0383f316d45c94ba9777cb185ae96b8a65e9aac2cb0f25086a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/horse/armor_slot.png"
+hash = "88b740262d40005c9beaa74dcb5cc30fe9e1617f56bff969279fa50882478802"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/horse/chest_slots.png"
+hash = "b27eef1af466706ffd75bbe4dafd239a1ad7286a3544a38e33dd403087d0e520"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/horse/llama_armor_slot.png"
+hash = "2d553eecb58162d5f69e3dbb80da755964b8c11866d11c676fbfee1db377c870"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/horse/saddle_slot.png"
+hash = "202ceae2f832e8a6374c1810dd178e771af1006f108e55ad8a3dd4b434216461"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/inventory/effect_background_large.png"
+hash = "ad115980a11c2df666a2bf0d93fd43132fc6f23e322f945c42bb2ad1fbfa5ba8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/inventory/effect_background_small.png"
+hash = "959de91db3a3870f13fdff86de580f27dd4e3e13ad187b6b786d2545cd32cb02"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/loom/pattern.png"
+hash = "a9b1e67578c05b43ce294d7d43578f2c9ba5e5a655a8ac394fba30ff126353cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/loom/pattern_highlighted.png"
+hash = "7e8fc2aed26ae7d3ccf10a62ba0fb6d7e7084153ea6476329a5af31d06400ef8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/loom/pattern_selected.png"
+hash = "7acc8deccb24d9a836eea46d1d04dae9a5a48a6cb94d502541798efa1cccbd54"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/loom/scroller.png"
+hash = "733988f3b45ee8b725f44cc03e2b111a7ad7883b2262b3f1016d97bc9afe1062"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/loom/scroller_disabled.png"
+hash = "9c940c6826b42d8f03daacacb36adf4e968076bd2ccda0b568bcec3b405d104c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/stonecutter/recipe.png"
+hash = "cf5c60cdfbafe17c53c7a0a307c8fefabbc6506e524eefb14f305532e2ac00ce"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/stonecutter/recipe_highlighted.png"
+hash = "3f607bbd3f3df16ba4cb5be4333fff03101153247325fb3edb82e87764c72610"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/stonecutter/recipe_selected.png"
+hash = "9d6b962b1c82dcc61c9e7bae29135410eb1ae1fa97884de22396ee7b86fb02c6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/stonecutter/scroller.png"
+hash = "733988f3b45ee8b725f44cc03e2b111a7ad7883b2262b3f1016d97bc9afe1062"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/stonecutter/scroller_disabled.png"
+hash = "9c940c6826b42d8f03daacacb36adf4e968076bd2ccda0b568bcec3b405d104c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/villager/experience_bar_background.png"
+hash = "5ce842802803f1ced6ca6c436e38bca9cb93a3559ad9b0a45a20914f70aaf2bf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/villager/experience_bar_current.png"
+hash = "680a6792427556a7e0b1cd23397fc19e09d8cd14ba1df2f184fc8900036a9d39"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/villager/experience_bar_result.png"
+hash = "6a43359b24497081e67becf63102f89248f77cfa842f5b808a79cd3e004a2800"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/villager/scroller.png"
+hash = "5ea2651bfb7a1c0fffc9e222821338021d2e38d14d982c60bbe37eafb56d0960"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/villager/scroller_disabled.png"
+hash = "4dec394eb36722d6610888c1c8d22e152ba39097bb4cec6700d91040bb7fc236"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/villager/trade_arrow.png"
+hash = "875e840276d920a4ab64ca7b9ad5e8437b2667672bddebec3067de6df49bff07"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/gamemode_switcher/selection.png"
+hash = "f389ac845e61b251cc8753f9b5cb3e1bc1ea41189957a177a7904af45e9a661b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/gamemode_switcher/slot.png"
+hash = "4ce57149aa2ea0ceddd4ebf6e257a2756aa5343e0f432e88ae1126893655a83b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/button.png"
+hash = "ef62339c0054477dd9e3e555001c60246eaddac53e006632574ac140a0c1784a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/button_highlighted.png"
+hash = "224955e32a0a6cf09620f62d5639e7c306cf6b2f97e3241f957a73d78e6d6cea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/crafting_overlay.png"
+hash = "8a13e1385da4ba0410487d2cc534a822ef5f9b013ebccdd8c2747363e84a2b53"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/crafting_overlay_disabled.png"
+hash = "ccce45ddf7806fc1190056eb1a2e2adb4d56127774a7e2e1c9fbbe489e0dd60d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/crafting_overlay_disabled_highlighted.png"
+hash = "a6f3aa9426bad4780b986fe44b87337ff6ce47349668d900d82325d25cad89f0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/crafting_overlay_highlighted.png"
+hash = "a6f3aa9426bad4780b986fe44b87337ff6ce47349668d900d82325d25cad89f0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/filter_disabled.png"
+hash = "4d1d4f5484a9e7dcf01fe976cdb89e5f4624350807f6c35e4a9acd2579825895"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/filter_disabled_highlighted.png"
+hash = "6dec145061bfb12f03e52144bde04333f17065859868a7142a51d1f87ececa10"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/filter_enabled.png"
+hash = "e1e70e1d942b85537ebcd451abf284f65903127dd702a6f20b00c1c8f1ab3898"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/filter_enabled_highlighted.png"
+hash = "c8e11c94f16237a9b5d9014672ee29c752378640aa638ad72487e99835bb6f6d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/furnace_filter_disabled.png"
+hash = "6b7b123775220a89b0cc338e3b91db15eb288a08400a85e9db023d4f89b930cd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/furnace_filter_disabled_highlighted.png"
+hash = "c6d65fc09efa2f9fb9e72b69498aa03a7a6c0ba425efd85b1d2fe55cd15953e8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/furnace_filter_enabled.png"
+hash = "189d2c23b57d1544b5add2fc4ecd2085753c3c48b0ef7ff4890c36bb37fa335e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/furnace_filter_enabled_highlighted.png"
+hash = "2343e83463fa7aa68ff5331aa2cd934f067872297fe426e6a47c6b9dc2c2932c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/furnace_overlay.png"
+hash = "8a13e1385da4ba0410487d2cc534a822ef5f9b013ebccdd8c2747363e84a2b53"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/furnace_overlay_disabled.png"
+hash = "ccce45ddf7806fc1190056eb1a2e2adb4d56127774a7e2e1c9fbbe489e0dd60d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/furnace_overlay_disabled_highlighted.png"
+hash = "a6f3aa9426bad4780b986fe44b87337ff6ce47349668d900d82325d25cad89f0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/furnace_overlay_highlighted.png"
+hash = "a6f3aa9426bad4780b986fe44b87337ff6ce47349668d900d82325d25cad89f0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/overlay_recipe.png"
+hash = "a21754f7b1c421269de3625ffcb1d201aee165f2cf5840d11415e1323623fbf7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/overlay_recipe.png.mcmeta"
+hash = "b6f19bc9a64588b558ca1123ec5e6d197249201ccd2eee7cbefef5e7f288aa9a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/page_backward.png"
+hash = "5b0fdb81ef94bce968631dfe1305c9ba972f517c3f90d78be50bfb25d64fd944"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/page_backward_highlighted.png"
+hash = "450873a3fd12da0001d2a7a139dfdb81ea86e48207a48ea557da5bd209b69810"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/page_forward.png"
+hash = "83b1f50187dbcc436915ac7d078de82bd7e28e69baf95a79c6b923831c06b578"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/page_forward_highlighted.png"
+hash = "24a06ee9ef9a8080c47e78ba7a32c51934b149b96bfcb03beddc6d5884069d64"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/slot_craftable.png"
+hash = "05ef568e1f64e17283ba1629c3bda39d833d45e5384ff4abf7e826f93095bfd3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/slot_many_craftable.png"
+hash = "f0e207fcdaea28f48885418b2f07108b98cafe99fd02b514fdbf57d194bdb71e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/slot_many_uncraftable.png"
+hash = "6de12c658e9e944e81b1cd07e0d2b675e78a6c4c8bb2518f411e3b6af1ab21bf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/slot_uncraftable.png"
+hash = "315afa3c44c32f14967c133f3d20f88a7d4823e48d428330eb55b176995712d7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/tab.png"
+hash = "72bcc6700805aa8e3cee71b13dc3977269231a975bfa70b5a49d2cc598ddce6a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/recipe_book/tab_selected.png"
+hash = "4236df43f0addc812069d3061d82f3e0f65893fe27700121908ef579d76ce1f8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/button.png"
+hash = "65719b80908d0814335250db531de26840511bfb8a38a2917ac80e3e6ba89b91"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/button.png.mcmeta"
+hash = "46d431c93a9c37ce0204108a54615d07233f62130bb0c2cec2ec49fd122699c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/button_disabled.png"
+hash = "07316e83e5d4a482f4bc0215e07f50b1ff4237bdc52bd1bd539027b094b6f536"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/button_disabled.png.mcmeta"
+hash = "46d431c93a9c37ce0204108a54615d07233f62130bb0c2cec2ec49fd122699c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/button_highlighted.png"
+hash = "575bbef87c54a4d4acf1969d9c49807bd3039aa6e1c05ab8d2a8bca1040a2829"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/button_highlighted.png.mcmeta"
+hash = "46d431c93a9c37ce0204108a54615d07233f62130bb0c2cec2ec49fd122699c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/page_backward.png"
+hash = "b22487b4b3088e83ade8f3520fa58a3245f6c269df11d38184fd59014085b0ad"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/page_backward_highlighted.png"
+hash = "080f7e3e8805e6b4a4f248da57924380b6759d09e5e9dd0ee0aed55d890df3f8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/page_forward.png"
+hash = "441de68e4039eeb63010e2991485e7767c7c02f6443f17cd863578ac48689556"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/widget/page_forward_highlighted.png"
+hash = "a90adb407d4a96e402159682b2e71491e9f6d261da3d31d77c2c7f009d975e07"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/tab_header_background.png"
+hash = "511849b2ed16550a66ad9ed993d1fa7ad0692b5e3caf3204bb19fa8f543556cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/tieredneo/textures/gui/reforging_screen.png"
+hash = "5113ed6254d41b0345148a302ed8148f801dbe969b723b6c473e5140fd973607"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/clear_button.png"
+hash = "f1e69ad98453d13b45b2b3f9bade279c4a5b6d15af94c1e24f24efa41d99d641"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/clear_button_disabled.png"
+hash = "80cb2183ea075d4626a918f09650ac57e7c9a194efef09879873541f039bbf7b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/clear_button_hovered.png"
+hash = "bddcc5e2b87def3d46cba7c948f126b7850aef0428dbbc956762d01ef9a188af"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/floating_slot.png"
+hash = "f01c940853147b678469f6012a115c54927374dba3bb9a58ee81120c6683ef3f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/slot_button.png"
+hash = "d9478bd74daeac0acf29dbae25057f16fde88b9d80100993a8884440ad1a075b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/slot_button.png.mcmeta"
+hash = "47002143015076de37ffd1e38a6645bb2c2372b66d1f3dfc04bae7eadab34ba0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/slot_button_disabled.png"
+hash = "2a771302ed705cb8b06dd98a02c05446168791b2e2af496a74166f3bb3b76bae"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/slot_button_disabled.png.mcmeta"
+hash = "47002143015076de37ffd1e38a6645bb2c2372b66d1f3dfc04bae7eadab34ba0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/slot_button_hovered.png"
+hash = "d508edaa3b518d974d83ff3148c64c81616356ebad33705bf216f48d83df396c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/slot_button_hovered.png.mcmeta"
+hash = "47002143015076de37ffd1e38a6645bb2c2372b66d1f3dfc04bae7eadab34ba0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button.png"
+hash = "b680504bd1e593809242a6812f2d61d62bce4a781f353265944d73ab62437e89"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button.png.mcmeta"
+hash = "c9c5fc7f5b340f1deacbca7fd4061fabe516fb53a1a81a3eae9d67e33e5a4ad6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button_disabled.png"
+hash = "cbc36223db60269dfb7e49bc1420cd82a329b1dc06a77879ef3bdd2edf573d6f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button_disabled.png.mcmeta"
+hash = "c9c5fc7f5b340f1deacbca7fd4061fabe516fb53a1a81a3eae9d67e33e5a4ad6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button_hovered.png"
+hash = "d10c5b902d2083e5d4da9ba0d2dbe833c9448b762741f83b953cf1072fe1a5a4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button_hovered.png.mcmeta"
+hash = "c9c5fc7f5b340f1deacbca7fd4061fabe516fb53a1a81a3eae9d67e33e5a4ad6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button_selected.png"
+hash = "f6f55c32d7f4d6c07ef20704b526f2875236c732b2bb4b6acc6454411ff83e86"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button_selected.png.mcmeta"
+hash = "c9c5fc7f5b340f1deacbca7fd4061fabe516fb53a1a81a3eae9d67e33e5a4ad6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button_selected_hovered.png"
+hash = "75ab134fb2a0e1f32f2752eb140f07c8c4c7c4517a930fc6ae9acb5c879d67ca"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_button_selected_hovered.png.mcmeta"
+hash = "c9c5fc7f5b340f1deacbca7fd4061fabe516fb53a1a81a3eae9d67e33e5a4ad6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_scroll.png"
+hash = "2fb993aaf868b5b51f8f4fc250347b582928e7baaa14aae3e336a52037965547"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_scroll_disabled.png"
+hash = "268cd78beaa0b4d682d4abe0e2cb75d41c446c4f08e42a1bebd565aa254d2d74"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/toms_storage/textures/gui/sprites/widget/small_scroll_hovered.png"
+hash = "0bb058113a84c987706c331eecc85bd7b6552cdddd73fc474709dc75a4e50725"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/licenses/EMI-MIT.txt"
+hash = "f6372ab044ca1d93648fd704e2151745a05684a97b371b62a26c652acff945af"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/pack.mcmeta"
+hash = "5a92896116bc4795d47cefb4fab0ed3331d25a98491a5017f61a0e320f4c9b09"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/coral_axe.obj"

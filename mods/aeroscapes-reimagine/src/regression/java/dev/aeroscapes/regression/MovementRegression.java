@@ -1,9 +1,12 @@
 package dev.aeroscapes.regression;
 
+import com.herobrot.tieredneo.api.ModifierUtils;
+import com.herobrot.tieredneo.api.TieredNeoAPI;
 import com.yori3o.yo_hooks.common.entity.HookEntity;
 import com.yori3o.yo_hooks.common.util.interfaces.PlayerWithHookData;
 import java.util.List;
 import java.util.UUID;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
@@ -44,6 +47,7 @@ public final class MovementRegression {
       verifyBargains(level, player);
       verifySprintingAndGliding(player);
       verifyOffhandHook(level, player);
+      verifyReforgedHook(level, player);
       HookMiningRegression.verify(level, player);
       saved = player.saveWithoutId(new CompoundTag());
     }
@@ -227,6 +231,65 @@ public final class MovementRegression {
       require(hook.isControlledBy(player), "Changing the main-hand mining tool released the hook");
     } finally {
       hook.discard();
+      player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
+    }
+  }
+
+  private static void verifyReforgedHook(ServerLevel level, ServerPlayer player) {
+    var original = new ItemStack(item("yo_hooks:iron_grappling_hook"));
+    var reach =
+        ResourceKey.create(Registries.ENCHANTMENT, ResourceLocation.parse("yo_hooks:long_reach"));
+    original.enchant(
+        level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT).getOrThrow(reach), 2);
+    var reforged = original.copy();
+    var profile =
+        ResourceLocation.parse("aeroscapes_reimagine:hook_legendary_stabilizer_with_first_catch");
+    ModifierUtils.applyTierToStack(reforged, profile, TieredNeoAPI.getTierAttribute(profile));
+
+    var data = (PlayerWithHookData) player;
+    var origin = BlockPos.containing(player.getEyePosition());
+    var anchor = origin.south();
+    var originalOriginBlock = level.getBlockState(origin);
+    var originalAnchorBlock = level.getBlockState(anchor);
+    float previousExhaustion = player.getFoodData().getExhaustionLevel();
+    try {
+      level.setBlock(origin, Blocks.AIR.defaultBlockState(), 3);
+      level.setBlock(anchor, Blocks.STONE.defaultBlockState(), 3);
+      float ordinaryCastCost = 0;
+      for (var stack : List.of(original, reforged)) {
+        boolean legendary = stack == reforged;
+        player.getFoodData().setExhaustion(0);
+        player.setItemInHand(InteractionHand.OFF_HAND, stack);
+        stack.getItem().use(level, player, InteractionHand.OFF_HAND);
+        var hook = data.yo_hooks$getHook();
+        require(hook != null && hook.isControlledBy(player), "Enchanted offhand hook cast failed");
+        require(
+            hook.getMaxRange() == 12 + 7 + (legendary ? 4 : 0),
+            "Long Reach II and the reforge must both contribute to the native hook's cast range");
+        float castCost = player.getFoodData().getExhaustionLevel();
+        if (legendary) {
+          require(
+              Math.abs(castCost - ordinaryCastCost * 0.75F) < 0.0001F,
+              "The legendary hook must reduce native cast hunger cost by 25 percent");
+        } else {
+          require(castCost > 0, "The ordinary hook did not apply native cast hunger cost");
+          ordinaryCastCost = castCost;
+        }
+        // Seed 2 puts the first wear roll inside the legendary saving chance.
+        player.getRandom().setSeed(2);
+        hook.setDeltaMovement(new Vec3(0, 0, 1));
+        hook.tick();
+        require(hook.isInBlock(), "The cast hook did not attach to the fixture block");
+        require(
+            stack.getDamageValue() == (legendary ? 0 : 1),
+            "The legendary hook did not avoid wear on the native attachment path");
+        hook.discard();
+      }
+    } finally {
+      if (data.yo_hooks$getHook() != null) data.yo_hooks$getHook().discard();
+      level.setBlock(origin, originalOriginBlock, 3);
+      level.setBlock(anchor, originalAnchorBlock, 3);
+      player.getFoodData().setExhaustion(previousExhaustion);
       player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
     }
   }

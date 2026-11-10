@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.interfaceart",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "InterfaceResourceReloadMixin",
+    "TitleArtworkMixin",
+    "LoadingArtworkMixin",
+    "NeoForgeLoadingArtworkMixin",
+    "WorldLoadingArtworkMixin",
+    "InventoryArtworkMixin",
+    "ContainerLabelArtworkMixin",
+    "CreativeLabelArtworkMixin",
+    "MerchantLabelArtworkMixin",
+    "PanelTexturePaletteMixin",
+    "EnchantmentOptionsArtworkMixin",
+    "CuriosInventoryArtworkMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

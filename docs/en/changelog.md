@@ -4,6 +4,16 @@ description: Version history.
 status: available
 ---
 
+## 5.0.0
+
+- Give Farmer’s Delight knives, the Wetland Whimsy dagger and the ice sickle a short first-person slash. Use a heavy strike for the skillet.
+- Hide Spyglass Astronomy stars, planets and constellation lines behind Distant Horizons terrain when shaders are active.
+- Give higher-quality grappling hooks more reach, less wear and lower hunger exhaustion when throwing, climbing and jumping off.
+- Move the anvil’s rename formatting guide beside the name field.
+- Add Island Atlas artwork for the main menu, loading screens, menus, inventories, workstations, reforging and the EMI recipe viewer. Extend the palette to modded container panels and controls.
+- Move the nutrition button clear of the inventory sorting controls.
+- Update the CI actions and the Java, Python, Go, and documentation toolchains.
+
 ## 0.4.6
 
 - Add Theurgy alchemy, including resource separation, recombination and transmutation. The Hermetica guides players through the apparatus and recipes.

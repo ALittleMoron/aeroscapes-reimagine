@@ -1,0 +1,4 @@
+[general.button]
+# The space between the player preview and crafting grid clears Inventory Profiles Next.
+nutrient_button_x = 77
+nutrient_button_y = 30

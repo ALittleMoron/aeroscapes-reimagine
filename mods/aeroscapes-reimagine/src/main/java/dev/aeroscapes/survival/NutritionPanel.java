@@ -3,6 +3,7 @@ package dev.aeroscapes.survival;
 import com.dannyandson.nutritionalbalance.Config;
 import com.dannyandson.nutritionalbalance.api.IPlayerNutrient;
 import com.dannyandson.nutritionalbalance.nutrients.PlayerNutritionData;
+import dev.aeroscapes.interfaceart.InterfaceArt;
 import java.math.BigDecimal;
 import java.util.Locale;
 import net.minecraft.client.Minecraft;
@@ -21,9 +22,14 @@ public final class NutritionPanel {
     Font font = client.font;
     var nutrition =
         PlayerNutritionData.getWorldNutritionData().getNutritionalBalancePlayer(client.player);
-    graphics.fill(left, top, left + 250, top + 121, 0xff292d30);
-    graphics.fill(left + 1, top + 1, left + 249, top + 120, 0xffd2cbb8);
-    graphics.fill(left + 1, top + 1, left + 249, top + 19, 0xff3a5754);
+    boolean atlas = InterfaceArt.available(InterfaceArt.ATLAS);
+    graphics.fill(left, top, left + 250, top + 121, atlas ? 0xff111b29 : 0xff292d30);
+    graphics.fill(left + 1, top + 1, left + 249, top + 120, atlas ? 0xffc1ccd7 : 0xffd2cbb8);
+    graphics.fill(left + 1, top + 1, left + 249, top + 19, atlas ? 0xff263548 : 0xff3a5754);
+    if (atlas) {
+      graphics.hLine(left + 225, left + 231, top + 10, 0xffc49b66);
+      graphics.vLine(left + 228, top + 7, top + 13, 0xffc49b66);
+    }
     graphics.drawCenteredString(
         font,
         Component.translatable("aeroscapes_reimagine.survival.nutrition"),

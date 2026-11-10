@@ -9,7 +9,8 @@
     "HookMiningMixin",
     "HookReforgeClimbMixin",
     "HookReforgeTravelMixin",
-    "HookReforgeTooltipMixin"
+    "HookReforgeItemMixin",
+    "HookReforgeWearMixin"
   ],
   "client": [
     "HookConfigurationLanguageMixin",

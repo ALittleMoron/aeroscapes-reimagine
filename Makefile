@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := verify
-.PHONY: sync pack-sync verify quality lint format typecheck security deadcode yaml workflows check test build refresh bootstrap companion companion-check source-archive docs-check docs-build docs-preview ci-java docs-sync smoke-ship release-check release-reconcile release-docs release-docs-current docs-format release-modrinth release-curseforge curseforge-check modrinth-profile-check
+.PHONY: sync pack-sync verify quality lint format typecheck security deadcode yaml workflows check test build refresh bootstrap companion companion-check source-archive docs-check docs-build docs-preview ci-java ci-npm docs-sync smoke-ship release-check release-reconcile release-docs release-docs-current docs-format release-modrinth release-curseforge curseforge-check modrinth-profile-check
 
 UV ?= uv
 NPM ?= npm
@@ -16,6 +16,9 @@ export JAVA_HOME
 
 ci-java:
 	tools/ci/install-java.sh
+
+ci-npm:
+	tools/ci/install-npm.sh
 
 docs-sync:
 	tools/ci/docs-sync.sh

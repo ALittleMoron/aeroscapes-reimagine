@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="960" height="240" viewBox="0 0 960 240">
+<rect x="0" y="0" width="960" height="240" rx="12" fill="#101722" stroke="none" opacity="1"/><rect x="6" y="6" width="948" height="228" rx="9" fill="#101722" stroke="#56647a" opacity="1"/><g transform="translate(82 22) scale(1.63)">
+<defs>
+  <linearGradient id="type" x2="0" y2="1"><stop stop-color="#fff2cf"/><stop offset="1" stop-color="#d9b373"/></linearGradient>
+</defs>
+<g fill="#e3ae61"><path d="M232 8 H214 M256 8 H274" fill="none" stroke="#e3ae61" stroke-opacity=".68"/></g>
+<path fill="#f2d19b" opacity="1" transform="translate(244 8)" d="M0 -8 L1.6 -1.6 L8 0 L1.6 1.6 L0 8 L-1.6 1.6 L-8 0 L-1.6 -1.6Z"/>
+<text x="244" y="73" text-anchor="middle" font-family="Liberation Serif" font-size="57" font-weight="700" letter-spacing="1.8" stroke="#101722" stroke-width="4" paint-order="stroke" fill="url(#type)">AEROSCAPES</text>
+<path d="M98 97 H154 M334 97 H390" stroke="#d9aa60" stroke-width="1.5"/>
+<text x="244" y="102" text-anchor="middle" font-family="Liberation Sans" font-size="17" font-weight="700" letter-spacing="5" fill="#fff2cf">REIMAGINE</text>
+</g>
+</svg>

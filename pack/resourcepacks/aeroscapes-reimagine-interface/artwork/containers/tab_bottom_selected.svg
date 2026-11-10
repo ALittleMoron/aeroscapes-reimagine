@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="26" height="32" viewBox="0 0 26 32">
+<defs>
+  <linearGradient id="navy" x2="0" y2="1"><stop stop-color="#29394e"/><stop offset="1" stop-color="#233245"/></linearGradient>
+  <path id="star" d="M0 -4 1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1Z" fill="#dbad6f"/>
+  <g id="slot"><rect x="-1" y="-1" width="18" height="18" fill="#556983"/><rect width="16" height="16" fill="#7b8da2"/></g>
+</defs>
+<g transform="translate(0 32) scale(1 -1)"><rect x="0" y="0" width="26" height="32" rx="3" fill="#111b29"/>
+<rect x="1" y="1" width="24" height="31" rx="2" fill="#263548"/>
+<path d="M2.5 31 V3.5 H23.5 V31" fill="none" stroke="#556983" opacity="0.82"/>
+<path d="M7 3.5 H19" fill="none" stroke="#dbad6f" opacity="0.95"/>
+</g></svg>

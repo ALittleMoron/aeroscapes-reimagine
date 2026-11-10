@@ -8,6 +8,7 @@
   "client": [
     "CelestialSkyMixin",
     "SpyglassAstronomyMixin",
+    "SpyglassAstronomyDepthMixin",
     "CatnipConfigLabelMixin",
     "CatnipConfigValueMixin",
     "CatnipConfigTitleMixin",
@@ -35,6 +36,7 @@
     "TomsPopupMenuAccess",
     "ForgematicaMessageMixin",
     "PuzzlesConfigurationLanguageMixin",
+    "EasyAnvilsFormattingGuideMixin",
     "PunchyEmfMixin",
     "PunchyMapMixin",
     "QuiverEmfMixin",

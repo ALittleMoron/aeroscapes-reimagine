@@ -1,0 +1,9 @@
+{
+  "pack": {
+    "pack_format": 34,
+    "description": {
+      "translate": "pack.aeroscapes_reimagine.island_atlas",
+      "fallback": "Aeroscapes Reimagine — Island Atlas"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="106" height="220" viewBox="0 0 106 220">
+  <g id="small_button" transform="translate(0 0)">
+    <rect x="0.5" y="0.5" width="105" height="15" fill="#1b283a" stroke="#566a84"/>
+    <path fill="none" d="M2 1.5H104" stroke="#a4b6c8" opacity=".24"/>
+  </g>
+  <g id="small_button_hovered" transform="translate(0 16)">
+    <rect x="0.5" y="0.5" width="105" height="15" fill="#2b4560" stroke="#dbad6f"/>
+    <path fill="none" d="M2 1.5H104" stroke="#a4b6c8" opacity=".24"/>
+  </g>
+  <g id="small_button_disabled" transform="translate(0 32)">
+    <rect x="0.5" y="0.5" width="105" height="15" fill="#252e3b" stroke="#465262"/>
+    <path fill="none" d="M2 1.5H104" stroke="#a4b6c8" opacity=".24"/>
+  </g>
+  <g id="small_button_selected" transform="translate(0 48)">
+    <rect x="0.5" y="0.5" width="105" height="15" fill="#263a52" stroke="#b98d51"/>
+    <path fill="none" d="M2 1.5H104" stroke="#a4b6c8" opacity=".24"/>
+  </g>
+  <g id="small_button_selected_hovered" transform="translate(0 64)">
+    <rect x="0.5" y="0.5" width="105" height="15" fill="#3a4d5f" stroke="#e9bc79"/>
+    <path fill="none" d="M2 1.5H104" stroke="#a4b6c8" opacity=".24"/>
+  </g>
+  <g id="slot_button" transform="translate(0 80)">
+    <rect x="0.5" y="0.5" width="15" height="15" fill="#869aaf" stroke="#536a85"/>
+    <path fill="none" d="M1.5 14V1.5H14" stroke="#172536" opacity=".23"/>
+  </g>
+  <g id="slot_button_hovered" transform="translate(0 96)">
+    <rect x="0.5" y="0.5" width="15" height="15" fill="#a8bbcb" stroke="#e9bc79"/>
+    <path fill="none" d="M1.5 14V1.5H14" stroke="#172536" opacity=".23"/>
+  </g>
+  <g id="slot_button_disabled" transform="translate(0 112)">
+    <rect x="0.5" y="0.5" width="15" height="15" fill="#667789" stroke="#485a70"/>
+    <path fill="none" d="M1.5 14V1.5H14" stroke="#172536" opacity=".23"/>
+  </g>
+  <g id="clear_button" transform="translate(0 128)">
+    <rect x="0.5" y="0.5" width="10" height="10" fill="#869aaf" stroke="#536a85"/>
+    <path fill="none" d="M3 3L8 8M8 3L3 8" stroke="#273647" stroke-width="1.25"/>
+  </g>
+  <g id="clear_button_hovered" transform="translate(0 139)">
+    <rect x="0.5" y="0.5" width="10" height="10" fill="#a8bbcb" stroke="#e9bc79"/>
+    <path fill="none" d="M3 3L8 8M8 3L3 8" stroke="#273647" stroke-width="1.25"/>
+  </g>
+  <g id="clear_button_disabled" transform="translate(0 150)">
+    <rect x="0.5" y="0.5" width="10" height="10" fill="#667789" stroke="#485a70"/>
+    <path fill="none" d="M3 3L8 8M8 3L3 8" stroke="#44546a" stroke-width="1.25"/>
+  </g>
+  <g id="small_scroll" transform="translate(0 161)">
+    <rect x="0.5" y="0.5" width="4" height="8" fill="#869aaf" stroke="#536a85"/>
+    <path fill="none" d="M2 2.5H3M2 4.5H3M2 6.5H3" stroke="#172536"/>
+  </g>
+  <g id="small_scroll_hovered" transform="translate(0 170)">
+    <rect x="0.5" y="0.5" width="4" height="8" fill="#a8bbcb" stroke="#e9bc79"/>
+    <path fill="none" d="M2 2.5H3M2 4.5H3M2 6.5H3" stroke="#172536"/>
+  </g>
+  <g id="small_scroll_disabled" transform="translate(0 179)">
+    <rect x="0.5" y="0.5" width="4" height="8" fill="#53677f" stroke="#465262"/>
+    <path fill="none" d="M2 2.5H3M2 4.5H3M2 6.5H3" stroke="#172536"/>
+  </g>
+  <g id="floating_slot" transform="translate(0 188)">
+    <rect x="0.5" y="0.5" width="31" height="31" fill="#263548" stroke="#7b8da2"/>
+    <rect x="6.5" y="6.5" width="19" height="19" fill="#7b8da2" stroke="#536a85"/>
+    <path fill="none" d="M2 2.5H7M25 2.5H30" stroke="#dbad6f"/>
+  </g>
+</svg>

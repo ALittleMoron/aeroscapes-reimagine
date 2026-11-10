@@ -21,12 +21,12 @@ not grant additional rights to the referenced projects.
 Use a POSIX system with a JDK 25 and a JDK 21. Gradle runs and compiles with JDK 25;
 NeoForge's Minecraft tooling additionally needs JDK 21. The mod produces Java 21
 bytecode. JRE installations alone are insufficient. The current pack runtime is
-Amazon Corretto 25.0.5.0.9. Network access is needed for the wrapper and verified
+Amazon Corretto 25.0.5.0.10. Network access is needed for the wrapper and verified
 build dependencies on the first build; no existing project cache is required.
 
-The wrapper pins Gradle 9.2.1 and its distribution checksum. The build pins
-NeoForge 21.1.244 for Minecraft 1.21.1, ModDev 2.0.148, Spotless 8.10.4,
-google-java-format 1.36.1, ktfmt 0.64 and PMD 7.28.0. Compile-only integration
+The wrapper pins Gradle 9.9.1 and its distribution checksum. The build pins
+NeoForge 21.1.244 for Minecraft 1.21.1, ModDev 2.0.148, Spotless 8.11.0,
+google-java-format 1.36.1, ktfmt 0.65 and PMD 7.29.0. Compile-only integration
 APIs are downloaded using the exact coordinates in `build.gradle.kts` and checked
 against `gradle/verification-metadata.xml`. These APIs are not bundled into the
 resulting JAR.

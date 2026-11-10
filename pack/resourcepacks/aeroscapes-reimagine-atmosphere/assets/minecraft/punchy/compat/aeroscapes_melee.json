@@ -1,0 +1,36 @@
+{
+  "customGroups": [
+    {
+      "name": "AEROSCAPES_SHORT_BLADES",
+      "items": [
+        "farmersdelight:flint_knife",
+        "farmersdelight:iron_knife",
+        "farmersdelight:golden_knife",
+        "farmersdelight:diamond_knife",
+        "farmersdelight:netherite_knife",
+        "wetland_whimsy:dagger",
+        "immersive_weathering:ice_sickle"
+      ]
+    }
+  ],
+  "item": {
+    "AEROSCAPES_SHORT_BLADES": {
+      "customAnimation": [
+        {
+          "type": "attack",
+          "var_1": "aeroscapes_short_blade_slash"
+        }
+      ]
+    }
+  },
+  "itemSpecific": {
+    "farmersdelight:skillet": {
+      "customAnimation": [
+        {
+          "type": "attack",
+          "var_1": "attack_mace"
+        }
+      ]
+    }
+  }
+}

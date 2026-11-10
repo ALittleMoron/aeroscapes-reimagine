@@ -4,7 +4,7 @@ Public Markdown/MDX lives in `docs/en/` and `docs/ru/`. This project builds both
 languages with Astro and Starlight. The content collection contains the public
 player documentation.
 
-Use Node 26.8.2 and its npm 11.19.1, pinned in `.node-version` and `package.json`.
+Use Node 26.13.0 and npm 12.2.2, pinned in `.node-version` and `package.json`.
 Select that runtime in your environment before using the root Makefile; installing
 or updating system-wide tools is not part of the build.
 

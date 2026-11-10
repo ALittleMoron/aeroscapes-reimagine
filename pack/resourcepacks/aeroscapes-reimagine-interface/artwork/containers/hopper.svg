@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" viewBox="0 0 256 256">
+<defs>
+  <linearGradient id="navy" x2="0" y2="1"><stop stop-color="#29394e"/><stop offset="1" stop-color="#233245"/></linearGradient>
+  <path id="star" d="M0 -4 1 -1 4 0 1 1 0 4 -1 1 -4 0 -1 -1Z" fill="#dbad6f"/>
+  <g id="slot"><rect x="-1" y="-1" width="18" height="18" fill="#556983"/><rect width="16" height="16" fill="#7b8da2"/></g>
+</defs>
+<rect x="0" y="0" width="176" height="133" rx="4" fill="#111b29"/>
+<rect x="1" y="1" width="174" height="131" rx="3" fill="url(#navy)"/>
+<rect x="2.5" y="2.5" width="171" height="128" rx="2" fill="none" stroke="#556983"/>
+<path d="M7 3.5 H26 M150 3.5 H169 M7 129.5 H26 M150 129.5 H169" fill="none" stroke="#dbad6f" opacity="0.62"/>
+<use xlink:href="#slot" x="44" y="20"/>
+<use xlink:href="#slot" x="62" y="20"/>
+<use xlink:href="#slot" x="80" y="20"/>
+<use xlink:href="#slot" x="98" y="20"/>
+<use xlink:href="#slot" x="116" y="20"/>
+<g transform="translate(17 23)" opacity=".47">
+<path d="M0 5 8 0 17 3" fill="none" stroke="#92a9c3" opacity="0.8"/>
+<use xlink:href="#star" x="8" y="0"/>
+<rect x="0" y="5" width="1" height="1" rx="0" fill="#dbad6f"/>
+<rect x="17" y="3" width="1" height="1" rx="0" fill="#dbad6f"/>
+</g>
+<use xlink:href="#slot" x="8" y="51"/>
+<use xlink:href="#slot" x="26" y="51"/>
+<use xlink:href="#slot" x="44" y="51"/>
+<use xlink:href="#slot" x="62" y="51"/>
+<use xlink:href="#slot" x="80" y="51"/>
+<use xlink:href="#slot" x="98" y="51"/>
+<use xlink:href="#slot" x="116" y="51"/>
+<use xlink:href="#slot" x="134" y="51"/>
+<use xlink:href="#slot" x="152" y="51"/>
+<use xlink:href="#slot" x="8" y="69"/>
+<use xlink:href="#slot" x="26" y="69"/>
+<use xlink:href="#slot" x="44" y="69"/>
+<use xlink:href="#slot" x="62" y="69"/>
+<use xlink:href="#slot" x="80" y="69"/>
+<use xlink:href="#slot" x="98" y="69"/>
+<use xlink:href="#slot" x="116" y="69"/>
+<use xlink:href="#slot" x="134" y="69"/>
+<use xlink:href="#slot" x="152" y="69"/>
+<use xlink:href="#slot" x="8" y="87"/>
+<use xlink:href="#slot" x="26" y="87"/>
+<use xlink:href="#slot" x="44" y="87"/>
+<use xlink:href="#slot" x="62" y="87"/>
+<use xlink:href="#slot" x="80" y="87"/>
+<use xlink:href="#slot" x="98" y="87"/>
+<use xlink:href="#slot" x="116" y="87"/>
+<use xlink:href="#slot" x="134" y="87"/>
+<use xlink:href="#slot" x="152" y="87"/>
+<use xlink:href="#slot" x="8" y="109"/>
+<use xlink:href="#slot" x="26" y="109"/>
+<use xlink:href="#slot" x="44" y="109"/>
+<use xlink:href="#slot" x="62" y="109"/>
+<use xlink:href="#slot" x="80" y="109"/>
+<use xlink:href="#slot" x="98" y="109"/>
+<use xlink:href="#slot" x="116" y="109"/>
+<use xlink:href="#slot" x="134" y="109"/>
+<use xlink:href="#slot" x="152" y="109"/>
+</svg>
