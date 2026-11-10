@@ -320,6 +320,19 @@ Prickle 21.1.11: Darkhax; LGPL-2.1-only.
 https://modrinth.com/project/aaRl8GiW/version/EE1FHDyD
 Smart Tooltip Scroll 1.1.1+1.21.1: Stalemated; MIT.
 https://modrinth.com/project/ZdbrmhGV/version/5yxY9Gl4
+Theurgy 1.79.0 and Modonomicon 1.123.0: Kli Kli (klikli-dev) and contributors.
+Original archives retain their terms and per-file notices. First-party code is
+MIT and the released mod descriptors identify CC BY 4.0 first-party resources.
+Reimagine's held models reference Theurgy's original item sprites at runtime.
+Reimagine adapts Theurgy's Hermetica and language resources under CC BY 4.0
+and supplies Russian text for the Modonomicon interface and configuration.
+Native source strings and adapted values are identified in the owned mod's
+language_corrections.json, with additional configuration labels in
+assets/aeroscapes_reimagine_theurgy_translations/lang/.
+https://github.com/klikli-dev/theurgy/tree/b04c107a2f2380f35dc31861820aab21d96323af
+https://github.com/klikli-dev/modonomicon/tree/7f9881be53512aa8529b4faead55fe153466d179
+https://creativecommons.org/licenses/by/4.0/
+
 Equipment Compare 1.3.13: Grend; CC-BY-NC-ND-4.0.
 https://modrinth.com/project/CYSUVOdj/version/efoMHHTh
 Legendary Tooltips 1.5.5: Grend; CC-BY-NC-ND-4.0.

@@ -178,6 +178,35 @@ final class ConstructionIconRenderingTest {
     return baker.bakeUncached(sprite, BlockModelRotation.X0_Y0, baker.getModelTextureGetter());
   }
 
+  @SuppressWarnings("deprecation") // Apply the same context selection as NeoForge's item renderer.
+  static void verifyHermetica(Path assets) throws IOException {
+    registerLoaders();
+    try (var baker = new IconBaker(assets)) {
+      var root =
+          baker.bake(
+              ResourceLocation.parse("theurgy:item/the_hermetica_icon"), BlockModelRotation.X0_Y0);
+      var held =
+          baker.bake(
+              ResourceLocation.parse("theurgy:item/equipment/held/the_hermetica_icon"),
+              BlockModelRotation.X0_Y0);
+      var icon =
+          baker.bakeUncached(
+              BlockModel.fromString(
+                  HeldItemModels.nativeModel(TheurgyHeldModels.HERMETICA_MODEL).toString()),
+              BlockModelRotation.X0_Y0,
+              baker.getModelTextureGetter());
+      require(!sameQuads(held, icon), "The Hermetica gains a bound volume in hands");
+      for (var context : ItemDisplayContext.values()) {
+        var selected =
+            root.applyTransform(context, new PoseStack(), context.name().endsWith("LEFT_HAND"));
+        var expected = context.name().endsWith("_HAND") ? held : icon;
+        require(
+            sameQuads(selected, expected),
+            "The Hermetica preserves its original flat presentation outside hands: " + context);
+      }
+    }
+  }
+
   private static boolean sameQuads(BakedModel actual, BakedModel expected) {
     var first = actual.getQuads(null, null, RandomSource.create(0), ModelData.EMPTY, null);
     var second = expected.getQuads(null, null, RandomSource.create(0), ModelData.EMPTY, null);

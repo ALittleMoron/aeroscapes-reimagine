@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/handheld",
+    "textures": {
+      "layer0": "theurgy:item/divination_rod_t3/divination_rod_searching"
+    }
+  },
+  "textures": {
+    "layer0": "theurgy:item/divination_rod_t3/divination_rod_searching",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "theurgy:item/equipment/held/divination_rod_t3/searching"
+    },
+    "firstperson_lefthand": {
+      "parent": "theurgy:item/equipment/held/divination_rod_t3/searching"
+    },
+    "thirdperson_righthand": {
+      "parent": "theurgy:item/equipment/held/divination_rod_t3/searching"
+    },
+    "thirdperson_lefthand": {
+      "parent": "theurgy:item/equipment/held/divination_rod_t3/searching"
+    }
+  }
+}

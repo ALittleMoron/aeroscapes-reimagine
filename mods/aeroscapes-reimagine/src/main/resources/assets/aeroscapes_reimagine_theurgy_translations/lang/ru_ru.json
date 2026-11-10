@@ -1,0 +1,14 @@
+{
+  "modonomicon.configuration.enableSmoothZoom.tooltip": "Плавно меняет масштаб при приближении и отдалении в разделе книги.",
+  "modonomicon.configuration.fontFallbackLocales.tooltip": "Для указанных языков книга использует шрифт Minecraft. Добавьте сюда код языка, если вместо букв отображаются квадраты.",
+  "modonomicon.configuration.storeLastOpenPageWhenClosingEntry.tooltip": "Запоминает страницу при выходе из статьи. При закрытии книги клавишей Esc страница сохраняется всегда.",
+  "theurgy.configuration.additionalTooltipHandlerNamespaces": "Дополнительные пространства имён",
+  "theurgy.configuration.additionalTooltipHandlerNamespaces.tooltip": "Добавляет подсказки предметам с серой из указанных пространств имён. Theurgy и KubeJS поддерживаются по умолчанию.",
+  "theurgy.configuration.enableItemHUD.tooltip": "Показывает сведения о предмете в руке, например о текущем режиме ртутного жезла.",
+  "theurgy.configuration.hudScale.tooltip": "Меняет размер текста, который появляется с инструментом в руке.",
+  "theurgy.configuration.renderSulfurSourceItem.tooltip": "Накладывает значок исходного предмета на банку с серой. Название предмета по-прежнему указывает источник.",
+  "theurgy.configuration.sulfurSourceToBlockMapping.tooltip": "Указывает, какой блок ищет жезл, изготовленный из данной серы. Формат: source=block или #sourcetag=#blocktag.",
+  "theurgy.configuration.tooltipHandler": "Подсказки для серы",
+  "theurgy.configuration.useSimpleWireRenderer": "Упрощённая отрисовка проводов",
+  "theurgy.configuration.useSimpleWireRenderer.tooltip": "Рисует провода простыми линиями. Это может помочь, если с шейдерами провода не видны."
+}

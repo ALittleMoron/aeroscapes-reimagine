@@ -1,0 +1,8 @@
+{
+  "items": [
+    "theurgy:mercurial_wand"
+  ],
+  "base": [
+    "theurgy:mercury_shard"
+  ]
+}

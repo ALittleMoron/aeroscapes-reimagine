@@ -68,6 +68,7 @@ repositories {
       includeModule("maven.modrinth", "accurate-block-placement-reborn")
       includeModule("maven.modrinth", "creativecore")
       includeModule("maven.modrinth", "littletiles")
+      includeModule("maven.modrinth", "theurgy")
       includeModule("maven.modrinth", "itemphysic")
       includeModule("maven.modrinth", "waystones")
       includeModule("maven.modrinth", "waystones-sable")
@@ -183,6 +184,7 @@ dependencies {
   compileOnly(ropeLauncherArtifact) { isTransitive = false }
   equipmentAssets("maven.modrinth:exposure:iBvaR6AK")
   equipmentAssets("maven.modrinth:littletiles:c2SowFEz")
+  equipmentAssets("maven.modrinth:theurgy:EBO0aQOY")
   explorationApi("maven.modrinth:hybrid-aquatic:jdOU7Pzu")
   explorationApi("maven.modrinth:hybrid-api:4HsWNhJz")
   explorationApi("maven.modrinth:geckolib:Grwn5rUB")

@@ -60,6 +60,27 @@ public final class FieldReforges {
     return quick ? nativeStep + 1 : nativeStep;
   }
 
+  public static int divinationDuration(ItemStack rod, int duration) {
+    float factor =
+        switch (ReforgeProfiles.path(rod)) {
+          case "divination_poor_slow" -> 1.20F;
+          case "divination_exceptional_quick" -> 0.80F;
+          case "divination_epic_quick", "divination_legendary_depth" -> 0.75F;
+          default -> 1.0F;
+        };
+    return factor == 1.0F ? duration : Math.max(1, Math.round(duration * factor));
+  }
+
+  public static int divinationWear(ItemStack rod, LivingEntity user) {
+    int chance =
+        switch (ReforgeProfiles.path(rod)) {
+          case "divination_fine_efficient" -> 15;
+          case "divination_epic_quick", "divination_legendary_depth" -> 25;
+          default -> 0;
+        };
+    return ToolReforges.modifyWear(user, 1, chance);
+  }
+
   @SubscribeEvent
   public static void fieldUseDuration(LivingEntityUseItemEvent.Start event) {
     int duration = event.getDuration();

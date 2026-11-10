@@ -1,0 +1,11 @@
+{
+  "items": [
+    "theurgy:divination_rod_t3",
+    "theurgy:amethyst_divination_rod",
+    "theurgy:sulfur_attuned_divination_rod_rare",
+    "theurgy:sulfur_attuned_divination_rod_precious"
+  ],
+  "base": [
+    "minecraft:amethyst_shard"
+  ]
+}

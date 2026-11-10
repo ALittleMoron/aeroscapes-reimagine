@@ -1,0 +1,7 @@
+{
+  "parent": "aeroscapes_reimagine:item/equipment/theurgy_divination_rod",
+  "textures": {
+    "surface": "theurgy:item/sulfur_attuned_divination_rod_abundant/divination_rod_4",
+    "particle": "#surface"
+  }
+}

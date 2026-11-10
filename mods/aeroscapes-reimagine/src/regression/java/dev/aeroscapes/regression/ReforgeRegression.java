@@ -245,9 +245,30 @@ final class ReforgeRegression {
           CustomData.of(charge).equals(claw.get(DataComponents.CUSTOM_DATA)),
           "Paid reforging preserves the claw's native reservoir and charging flag");
       verifyFieldStorage(player);
+      verifyTheurgy(player);
       verifySharedDefense(player);
       verifyPaidCasting(player);
     }
+  }
+
+  private static void verifyTheurgy(ServerPlayer player) {
+    var rod = registered("theurgy:divination_rod_t1");
+    verifyPool(rod, 1);
+    require(
+        TieredNeoAPI.getReforgeBaseItems(rod).contains(Items.GLASS),
+        "The glass divination rod accepts glass in the paid reforge menu");
+    var ordinary = ranked(rod, "divination_ordinary");
+    var slow = ranked(rod, "divination_poor_slow");
+    var fast = ranked(rod, "divination_legendary_depth");
+    int duration = ordinary.getUseDuration(player);
+    require(
+        slow.getUseDuration(player) > duration && fast.getUseDuration(player) < duration,
+        "Divination rank changes the native charge time");
+    var wand = registered("theurgy:mercurial_wand");
+    verifyPool(wand, 1);
+    require(
+        TieredNeoAPI.getReforgeBaseItems(wand).contains(registered("theurgy:mercury_shard")),
+        "The Mercurial Wand accepts a mercury shard in the paid reforge menu");
   }
 
   private static void verifyAutoloader(ServerPlayer player) {

@@ -1373,6 +1373,30 @@ file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscape
 hash = "5311f15702103a72d5dba6c921e5a08ff4a62315911e937d17b8646def99a668"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/divination_epic_quick.json"
+hash = "2368d5e342ed9255e615814f3ce9c3e1471a97fe1e7b3595d74968ae02572b55"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/divination_exceptional_quick.json"
+hash = "4be6e57c81acefeb23f73bd461e0e43a492e64f5c621b58727015157f938a3b6"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/divination_fine_efficient.json"
+hash = "970f4101ccffa023ef30b5d3ad3d4740c3135071c802e64546e328cdcc2447a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/divination_legendary_depth.json"
+hash = "8e8e0443a41c5eb1df6fcccc629f44dc0dedc4401f8d669515e7ca9423d44aa2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/divination_ordinary.json"
+hash = "59678b9c8ecbc502943acefc0abeb9f2ec3fb4526874f2b15e4a8e2d96a7a1ec"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/divination_poor_slow.json"
+hash = "317d216c034501526dd9913d82609a5caaedf046ea95b949118b82196a376789"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diving_feet_exceptional_swim.json"
 hash = "0e3992c9d8bd28913f1294a716ff9c6fbc5c18440b4a627aefe3d7bb4a818c03"
 
@@ -3077,6 +3101,26 @@ file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscape
 hash = "212829aca8d2ae2721e3ef3071d6b493ac7d7155361fd168b501a568a2d552b7"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/theurgy_divination_amethyst.json"
+hash = "76efa741f58d229f78004c873b20a1b0a2de2f7232745f29e28ea59780b5b18d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/theurgy_divination_blaze.json"
+hash = "29cc8b151b31ed845a3f8051037260f8d9e5a3895ebf7b01a86185c5c6f9cf85"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/theurgy_divination_glass.json"
+hash = "d53eef26812762418f1ce8cd620805dad2ee9c9b3f77e57b524a53ca2ff03116"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/theurgy_divination_gold.json"
+hash = "fed39159203419deab4dddb1a8f9ccf9a89bb020e81f286b2f98f3cf2a02f705"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/theurgy_mercurial_wand.json"
+hash = "ee4c3845c6905260feb5aef1e0228f351c696b27c95c6afae58eaa13a14510bf"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/tide_blazing_fishing_rod.json"
 hash = "75712a6fc9dd91e3ed908272a0c60293b40ccfeb969afa2fc9fa7f95712aad6a"
 
@@ -3178,7 +3222,7 @@ hash = "35c8f778518b036c078c969206a989efdb57aff698eab2ba8a085be0a9bf31cb"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/builder.json"
-hash = "329cc4d04484c143415f832552a0d063bfe3a5d3c45272fa6b399e3c98395a5e"
+hash = "38bcf66668f2dc91b4715bba281500d62085d63b916631d16ea9bd4f188bc0ee"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/builder_chisel.json"
@@ -3215,6 +3259,10 @@ hash = "e0602f6ad3b2f85672b5b5af17e7afc5060454aec230f4c4b2ac4395ed68f021"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/crossbow.json"
 hash = "1e2527c0e6f618f7be9c36ece2ca117971c412b4b322f56207cfc5eabfd06352"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/divination.json"
+hash = "3bbdf3359da4b08da82768588082851df3abcd381ed3c7c7f167ccd0c751862e"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/diving_chest.json"
@@ -3823,11 +3871,11 @@ hash = "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "9807537eded3dd65596b50694229361c2bb409040512c77a0f1bfaa267906995"
+hash = "660dcdb261bf62d8fee4afe8541e2d3c99aea7004b9e53ff236bbaac59206251"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "9c00f89539b11f0fa4f1ae0de79e3386b630d6edf1e78446d3c683e307f224e0"
+hash = "81b74e2956c27582dd28fc5945f232e765f5a63fe47b07b9c6f5bed336f6dc3e"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -3856,7 +3904,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "e62ddf7ead1ce30316a244f2e3abcb04907b351537c4fade63b2406f3c23172c"
+hash = "84f0335f9f867d9c1a2b4a30584132744f22c5563174ed5f0ca1e2fbb12ec33a"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -4539,6 +4587,11 @@ hash = "ff57b9cfb113ba06dc0ef22e382abd69816e76ccd6e5f78d5107fc569b2afb1d"
 metafile = true
 
 [[files]]
+file = "mods/modonomicon.pw.toml"
+hash = "956c97a6ffda9ea3cbdd9536918d330ebb49b53eb47b4e7c1e09805866fd94b4"
+metafile = true
+
+[[files]]
 file = "mods/moonlight.pw.toml"
 hash = "904d37e220401e36820f9d20645d2e1ec160871b1b50138c1a1c26a30446ccd4"
 metafile = true
@@ -4851,6 +4904,11 @@ metafile = true
 [[files]]
 file = "mods/terralith.pw.toml"
 hash = "0de40afcea63987a8c01a23ed0acaea781c1579abbe73b5181c81e54ffce905a"
+metafile = true
+
+[[files]]
+file = "mods/theurgy.pw.toml"
+hash = "8a97817775b548bbfde8bd5cde12e08f79096350cd874cc225e237e433cac58b"
 metafile = true
 
 [[files]]
@@ -5264,6 +5322,14 @@ hash = "2fe9a4c9a6ca41c4e32875eb2ae9311b64253acd8795ee2ee2e0089eed92c41a"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/simulated_rope_coupling.obj"
 hash = "203f1e5a0df95b28c139d343aa57e562b612b055b56e4be46e0c3045bcf6e9a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/equipment/theurgy_divination_rod.json"
+hash = "2b4da886de3f9e306dcad39a172819013632b37103a7bae385aef005f87e52d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/equipment/theurgy_mercurial_wand.json"
+hash = "f99f1afd210596495610c943ccc749b721a93d0de1b087a27cdfa0105b3bebd9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/galosphere_equipment/echo_bell.obj"
@@ -11644,6 +11710,742 @@ hash = "45d7ff4f7e8f1c0d3e1e198b630761ca9866547ed51ff6d6a2433348ef9dfa1f"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/supplementaries/models/item/wrench.json"
 hash = "08ade7240b2966483d7886d3885fd0a88ecb753fc3d5b542553e05085efe4db4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod.json"
+hash = "c785511be880f13572008da4fc5583d48a00ac8dc0de407fbc009bc82221e4a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/0.json"
+hash = "7d2e867ecac8f1811c793a292a4d2a6adb2b2421774dec021b31a94401779450"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/1.json"
+hash = "b2f750c867e7f07e037129bf9764b733d29abee5d1454b0124bac58484f37543"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/2.json"
+hash = "9037352b5f2149a13bc2e4118d4dfb7ef0959549e7f3af45c57a7e62af51d476"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/3.json"
+hash = "493748194fc3fad64e2bfc87c134878d0659bcc0e11891b562617d9fc4fe694f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/4.json"
+hash = "2cbef5b4a23d27db48f29ce664567025f54c3d6e96c6cb370f8a00b054986794"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/5.json"
+hash = "bd846ac1f453a33912df54bdb8957c2fa0994b3d7752f46bcc1d67f70ad5a806"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/6.json"
+hash = "64f4c9ba3ca3bdf9e43b114ae71a4d760e97e8e1ab2a19a56f55e5c0b623348e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/7.json"
+hash = "9f5193f5c1fa65c50a991bba9190804c9379b0ecf872b9669eeb30cfb77742aa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/amethyst_divination_rod/searching.json"
+hash = "f639b1b2f1eaf8271f38ab367848f3f7a019405bd1333735add336e6dae743e3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1.json"
+hash = "4a34f53e0a36f0f4a9100b9b284f38e1356d2156ab35d5544b79963541a904b9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/0.json"
+hash = "13ac46488a29dd4556d8b43d520d56ba0c10e1703d173b5517e8fc434b929766"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/1.json"
+hash = "c8cbd2ee4a037280f27c6e51aecd793ac2d41e93b0c53ecfd14338a3fbec5fdc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/2.json"
+hash = "167b472914fa130adc9872d4a26a30d535917fcc59c1dd855020e4c5fa313551"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/3.json"
+hash = "16254d9cfeb335ec84fd3a33b91f6c74c182f8bcc51b20eb4d847036bf1cc410"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/4.json"
+hash = "da44e4229a032fa38e9e5c2dd8a3522b743ed396e0d04cc09933b356af170543"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/5.json"
+hash = "127c3971fb8fb142537dc75a8a1c80276df0de7a2d3579bbba91d69fe1d07d3c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/6.json"
+hash = "09eebb9e9578de0b980b3500d4a64d4bd4527115bd6ab18168c694c3e4e58a9c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/7.json"
+hash = "6744bb3000a6c2c09f9e4750136725d3e9251f29a6ddf8bbf43e4bd267c174aa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t1/searching.json"
+hash = "cfa49660884e44d32d1e01d550d0891fd7e9ad4d0ce235a3ea30b97881c7a395"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2.json"
+hash = "aaf260117c1b023eae7d8c83600f0132252e2417e6c691227431d8389cb884fc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/0.json"
+hash = "9b706c583e43796242109c8a1bea20bbdd1ed41842c6bc7ee91fa424726b6831"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/1.json"
+hash = "ce85068986571cdbc7375ab2bb7ecb06ea1a946303df298c11b4646b948aa5c5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/2.json"
+hash = "5a5cef6f6d98f4d5fd113008f6574a92d32515eef82c5e484e8963eef28d05e4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/3.json"
+hash = "ce4ae860974b6c9610958e185f5bd933e83bc191302679aa64d14b0d07865403"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/4.json"
+hash = "10f2df8d9d915ec84dbdfc7382174f8a818249445b662ded1961b98d93230093"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/5.json"
+hash = "f5d15a6f39799997fd3e2f8400934f0bf45e2124d75f81ab558c4e67507675a8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/6.json"
+hash = "cd44444ae1334f3c019b8d7436787b4f90cbf88c2a1a36ca759ebb44cbc25af1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/7.json"
+hash = "544aa50fd3644bb67d9aab7dbc55d7c67e14e871578d9d9fa6ba3a7490a3c3b2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t2/searching.json"
+hash = "521713f8cc3a30813e7d6ffb9f78f31f03b49f2339938315f425d5fe59f94e5d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3.json"
+hash = "ba8ccd8aa4f25c4f0885482869b49f9ec12c74a006378a5a7a01d7edf4f7d35b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/0.json"
+hash = "f7a536b393fdb20ffee28f5473957b5696d655019658966e72b0f879368f652f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/1.json"
+hash = "782ef6a4c112d99320310866007b2b4411c722bb58a83b281118a8ac87f72d11"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/2.json"
+hash = "77e14d227fd7f89b1189b88b193b4af412e517156a4e873328c17323d09d1711"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/3.json"
+hash = "e855e81c05e4cee1778488abe0deef9c5b1f68ae7eef1c472ccfe251f884cff2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/4.json"
+hash = "c028404ece16ae70a1bdc08eecb8eb9d8743dc29839ad101d672bf519d40642c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/5.json"
+hash = "f1a7b28424e6f2d824198cdd89c7471edcd45b92ad69689ff3f1376e167d306f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/6.json"
+hash = "844ac3b9d4f2d91046d8efdb1b129cd56acbb0921fc2b5a588cc6a0b6aca77f2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/7.json"
+hash = "3f436606c4cc9eb175169a33d71f6e3c80bcd30caa0016ec8ac587abb51c4e31"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t3/searching.json"
+hash = "03e46603a9fdb135cda120ca96e668fdb538b00173fbca137c9dce7d0e1aadb1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4.json"
+hash = "be4ae12985824932308c265a7fe0b8cc1d2e6d74622cc79b4024279a4be68c85"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/0.json"
+hash = "d223814be245c3264e2af500ccbd1f85ab4322dd9e569c5a69884086473efac5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/1.json"
+hash = "eecc4384a82a72d789c982a7479c772d2f31ffdd77ba70806949d258c52c37bb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/2.json"
+hash = "d7cce053eeeada2c162be249b2a4b178cc05979e7f4bad355096737d2ac90e89"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/3.json"
+hash = "863733948c637d662a75353cc7dd4999954026f0abdaa3419a63818a2907eea4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/4.json"
+hash = "88079c06c0e59dbc910cbde24721e9384362185069f6f14fa60112c22c4a826d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/5.json"
+hash = "0c14bbfd66dc2ec614cddeeedcc6eb2069aa230a9bf5ab9ee2f5d07b74bb77b8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/6.json"
+hash = "2b5eb174e0714776e20fc72df824a74e90c74ad511fa9700b17558259e7dd3b2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/7.json"
+hash = "7bc4460b904ff81f1ee05dd00b6d996053df6ac69e057961c76af85d3e07be41"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/divination_rod_t4/searching.json"
+hash = "0fe5b5e3afd6b7fb0cc8e13059bb18d5d0b985489ef821f9c7e32a1aae50df29"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod.json"
+hash = "00bef4060e4688f32ce20d2cc5cf92da975329d48ad9e27a95c4ef6079185419"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/0.json"
+hash = "00bef4060e4688f32ce20d2cc5cf92da975329d48ad9e27a95c4ef6079185419"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/1.json"
+hash = "4702bc0302c129a73c619d91b48b9ada38f072c65dd50f0bb816f74f56263b1c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/2.json"
+hash = "2e27c58dab142220063eb0e51afb1112a99f51aa69388bed2172d1056b2b3d05"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/3.json"
+hash = "e88c392d5faf8f1303a5d6c553711f24937527e979b9e50faa7d11ca11efb1c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/4.json"
+hash = "af7035d40082cc2f92ac849ed39816993d39b3a9d1dd3962bfafddbda2405996"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/5.json"
+hash = "7fa03dbf59525c426bb920359400aab35ac10f305f76309e2b985c32375410a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/6.json"
+hash = "b866eae3d507d984d2dff889e11d393a2a80c39cb77de3e34ecc92a72cae14f7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/7.json"
+hash = "52df14e33cabdfc2fe3e1d66e51875de64beb91f6ee6182c3f744bdb574ded8c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/amethyst_divination_rod/searching.json"
+hash = "5349d437dd5220751ebaa75ab18ba6d86478db23fe10ddb0384f6285ce77d407"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1.json"
+hash = "639d05ac48383872c5f79a150f4bb40110eea0a8c13c0cbad392e04036d942b3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/0.json"
+hash = "639d05ac48383872c5f79a150f4bb40110eea0a8c13c0cbad392e04036d942b3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/1.json"
+hash = "2c47a82b2d8e3289e0a5a1668c4a686c1c01d129f80de0654346f4d50203333c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/2.json"
+hash = "fd02cdb2dc692f40d35657ef05c9c988cd27f48cbe7af66ac9ae85d8d6f69338"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/3.json"
+hash = "d93eb2966ce1b29efa8106a851f3a62d48215fff1dda4a261d34419cfac833df"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/4.json"
+hash = "f964900d915f67f96cb60ab680329560f684184f7fd35c6081276dad1645cd69"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/5.json"
+hash = "651196fe7cf62eed5a586455f4fd985487af69083999ccc264d152b9ee12cc99"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/6.json"
+hash = "fd2a3d8bd7b1e7f3f0ce834f751615997118adc0e0d218b5f63614aa1647f275"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/7.json"
+hash = "6770dba7a8134a682eb09491e9ffd0ba883b74e09d20e24bfe11f8b5fa7f7391"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t1/searching.json"
+hash = "e6a34edafa031bb3415e6fddd9c6103c3ae1a5c4d55d79c466b79b96146519fa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2.json"
+hash = "30e07f0a000cf0de2fc2373c4c309d022aa6f5154c2e64e5faded293f68d6711"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/0.json"
+hash = "30e07f0a000cf0de2fc2373c4c309d022aa6f5154c2e64e5faded293f68d6711"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/1.json"
+hash = "1421fd575f1c3fb84c5c93fe346bdaf3ed82c01335f6429c220d6957b7976a1e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/2.json"
+hash = "cc705cd9befc7f0343719532989f198e1e21112544c29557f80379d22157c6a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/3.json"
+hash = "9f5f6e1bdc659fc7074af2bda15664881a6ce7d250203bc20cd5ade6ed0d3a7f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/4.json"
+hash = "a23741debbb9c46cdb79491557cda6676cb824b1d1543e7b897005a04cecaedf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/5.json"
+hash = "77755115498271ae6c4505595d8bf9bedfaf986cc3878e7013da6a886f23e3d6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/6.json"
+hash = "67e72510fe18d5c5e0c30ba4f42342bf8b3cf077509be6795917510d3622e558"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/7.json"
+hash = "159bad850f76a10867c40ef7196e23b47501b47c431fb02b340fd15382a90a3b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t2/searching.json"
+hash = "51f2cb1eb0c5a1159367b6879991e90dcb9abdc3022188b632ed5270b6105d31"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3.json"
+hash = "345deb9d9de1d42f94a609fbc859161c3b085c03fffffe0bd2c7d3f81290f659"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/0.json"
+hash = "345deb9d9de1d42f94a609fbc859161c3b085c03fffffe0bd2c7d3f81290f659"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/1.json"
+hash = "dd4fc16d232c50b9434393d4cfc131215804d4ecc384ac9f45c8ed057ba7b36c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/2.json"
+hash = "2f2dc59e8726b2ffb9e2fc25fb5dc56ec4afdd78667dc3f87c64772942c65bdc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/3.json"
+hash = "1495c6ed8cf6d1036c00110e87dd7134ababbf0b5bae0afdc593f0bf12dfc173"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/4.json"
+hash = "c8d9ec960a50a836971cc58e31886f18e8842b66bd19fd616054746229fbfa75"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/5.json"
+hash = "b23b176f42ef0eddcfb713bb65a7e04bfca2a6e4dd22319daf8b3f4a4446b7b5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/6.json"
+hash = "a4a6b9fc51ceaa3a420517a75f7a8d0bf0380f409af2be0af779f590e2ba4120"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/7.json"
+hash = "858dff5cda11f7f714828dd883c864396f9e17d1164d166d57a9fe33be78b79b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t3/searching.json"
+hash = "0dd6d873f776e9b7f82049f4af7b8b8a6ab82aa2daf1914f6f0e971d8f90b4fe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4.json"
+hash = "84a9ff7cc6d752fe736787d502b7fb1035ec84cd593bed1e1a141a771255b600"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/0.json"
+hash = "84a9ff7cc6d752fe736787d502b7fb1035ec84cd593bed1e1a141a771255b600"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/1.json"
+hash = "dfddeb7b8064f44b96ce56b29c876735063dda29767e86abf0f5dd8636966d09"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/2.json"
+hash = "d760a31068d7dbed7f311c4dae92c215a2e7c12b85da1321cc5304e10c6cbcc8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/3.json"
+hash = "6a225528498b2d3d1acab7d8e40cc3efeb29bbcc190dba41e7dd4c9dedc9bfc0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/4.json"
+hash = "8a9e92d5c8bfe5e51919e671bb75fbae42ddd11c7eb9283b5adcc1d7e690fcfb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/5.json"
+hash = "bc698cea759fe504f9018e7fbc301d4ee58eee7be5644ce06b529aa60226bbe6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/6.json"
+hash = "44aebf17473e90a9c2e4b0a04f910e0e3ec1a0f0c065fc082f9d17bf9a44b28f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/7.json"
+hash = "1f2f29b848072af54337da17eda7133c42e1fa13ea8a96b3ed7ae10e6d0059bc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/divination_rod_t4/searching.json"
+hash = "c1fe3ce68250d0f5a165642e41008b9d801dd0212a2cfe9c9f583c134d75e257"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/mercurial_wand.json"
+hash = "6843a19e93fe3e9f1712746a434a885979288402343f0d74e0e1bdf0dbda07e2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant.json"
+hash = "0b26df048a88f8ea6b76fc65c12108a1eb44d1a40c5aac8cf2b503878d117b23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/0.json"
+hash = "0b26df048a88f8ea6b76fc65c12108a1eb44d1a40c5aac8cf2b503878d117b23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/1.json"
+hash = "46de284a7aa27f20488678182e991bf211dd4f87b7cbec5c7dd2a64bfcff9bba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/2.json"
+hash = "b8782a448eb9883fb6f33af144e7d52cb4d450f0db48407b97e70f9c9129b3a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/3.json"
+hash = "5f0b004d8b37dfdaaa4e5beabf9371a3c3ca760044663af8cecc1cf19d1c429a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/4.json"
+hash = "cb0f77b6a15944f40fb35d120e7b942b03ca4e66d30e6837fa25114feef4713d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/5.json"
+hash = "3945a048299bc010546d861e4cbc2716d5735404e2b8b29d8c3dcc6c1b70ca24"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/6.json"
+hash = "543cb779596495d79f6e57ead674e2253ba455a78b6f7479a7c6ba0d6c349943"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/7.json"
+hash = "493a83d2d61d308e618c90f599d8f1b3b21dc85bb1084f0c8b2091c445cbe8a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_abundant/searching.json"
+hash = "192216a52f077886d545aab4955059bff8d7797f048ed611772bfc3480c3bb93"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common.json"
+hash = "69b32d880d10eff86ae749a3027447247d6ab1b67e2d5227364fae0236a898e8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/0.json"
+hash = "69b32d880d10eff86ae749a3027447247d6ab1b67e2d5227364fae0236a898e8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/1.json"
+hash = "4c308f065dbcdf9e4f889f6cb7a83c25fe1a92f3f83ec9ca8f3c62492ce99448"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/2.json"
+hash = "2aae89fca9363e88daa5f1d6666363558105bbf940ad376adc58c8ac8773493d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/3.json"
+hash = "1942edc695cdce317f9b550db5f1eb98201d01ece2f0e0ce997fc02953e755d4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/4.json"
+hash = "acc88dfd4a3d250c04f7e6cc1607bbe21fd159f481999e4199c0e356ca88a97d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/5.json"
+hash = "a20efa6308e4177739eaf5e4e797bee98aa4f6aeec98953927c8efcb29176d87"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/6.json"
+hash = "e6ae92f165b2f96d58840f59c83097f6c4f350bc445a9fbbdbe0c178e4ddfcbd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/7.json"
+hash = "6985f33082be3794d0f7e0db02b7303a0e61bb0c37208e1b4b016467048cd1fb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_common/searching.json"
+hash = "c1129ba56c52ea599108f201f56a73d3b40bd95ec3337e8ccade69d74d14fe18"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious.json"
+hash = "95c8c031fbdd00531de6e9044c0eaeb04400b2e5004687fcaf27fd1f693a65c4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/0.json"
+hash = "95c8c031fbdd00531de6e9044c0eaeb04400b2e5004687fcaf27fd1f693a65c4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/1.json"
+hash = "ccf23f574e79fc3b6352e4b3a96178d49af2f6eee10b651315460405543dffdd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/2.json"
+hash = "97507b187ac00935aeefa6dbe6320a4999c33efb2d2386f72ad285ad92cf6ad9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/3.json"
+hash = "ea4e93dd801b17adc738d2704f4c8750195711b52841f438bfa5468226afb42c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/4.json"
+hash = "229123a02705ad91c02a1f6ab016308c6bc9dc38fef4c91d737c756c1470e4f7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/5.json"
+hash = "db49d2682bb95e2a4861adf282047b6f2f7792368a6f9a66e6956232c2e27cbc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/6.json"
+hash = "5ab2f2222e6bab395ddcc342e429da1971aaba382cc2f79258c249b7ab2f591e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/7.json"
+hash = "113c1e7ed831a111505404716968964316b950d70d1f744c33d1c3a8c80f6076"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_precious/searching.json"
+hash = "89b1eb572c98801ae6182a5036b46531a2b0b48a45defa65ce4073743b3dcdb2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare.json"
+hash = "664f0127ebc7a7c2ce372719f44b4a3e37b2b56db95a578f894a90ed24519351"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/0.json"
+hash = "664f0127ebc7a7c2ce372719f44b4a3e37b2b56db95a578f894a90ed24519351"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/1.json"
+hash = "d6a29de07affa1bffa3addb1b3cd79d715b5d01ed93fe38a586c13e9497baf1b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/2.json"
+hash = "3cff2116c4d28894f834e49c36fe2e27a456eb74a6c13085a4ec962cec908f3d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/3.json"
+hash = "b49e8278d1fe3bd94ecdb5f330d8a1babacccecf63e9835a69af947f968a84f9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/4.json"
+hash = "1688d92e49930b9de1d5d2bf7f541c5e1e50f1df190ac63b884263c53185a26c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/5.json"
+hash = "ffb29e9eeb1884b49780a252f9614cbca59545d366532dd74a865f18d6c73696"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/6.json"
+hash = "73a366d58ea738f012f4da686bfb5582721158889282518380bd79806d943789"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/7.json"
+hash = "ea405b257b983c096ffc8deda9657968832ba10563a482c1888daa98780e452c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/sulfur_attuned_divination_rod_rare/searching.json"
+hash = "d7e2892fc2d4af29a31ef5c1f19360281c7e84b541d8cdc386a839533dbc74c3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/equipment/held/the_hermetica_icon.json"
+hash = "00a8f42379b79905431c146be8c1fe779ff0ebee630249cde1bee405ee5e72e8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/mercurial_wand.json"
+hash = "c1e22fcd0eebef52d49473c28c99b63437d68e0cb30809c9fbc5e5dbe726ad9e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant.json"
+hash = "e4cbb26bffe83b9a921ea4ca909aff7561df2d0baf5c139ec4563ba6728a7a70"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/0.json"
+hash = "f1f9e01b40b46fdaa16a400ca46ef8533508b46d8b7ffc612ed35869cfa1542e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/1.json"
+hash = "378712dab19cee053231951df036f4250eb8a343ce7ab593a41b47458d52ea56"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/2.json"
+hash = "719776b4d2ba3daaeaf40378e9fe3faf68dbe3a8664efaa3a001e8431df5da5f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/3.json"
+hash = "d437b7ae9025558ee57a70b6b5b2c204197b5ab161694bd206be37afadbb3f9a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/4.json"
+hash = "0e7e91e2aa8b9815c542179eea07335f01623c4e71c5c323a4955ddca459686c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/5.json"
+hash = "8f9a67077fd3596653e193f1e03636ec804d6b2ea3c3e0b2919a0783c29765e5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/6.json"
+hash = "b8233e54b108278f8709c36bf77ab2d4e9778a006968069459945e32142f2358"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/7.json"
+hash = "9453d969093cef7cf51eec90f516a0d027242668e0b0df8a44b8a72200b0334b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_abundant/searching.json"
+hash = "57cc4baf112085f79041b0f55992f5e661c3702fd68b961a392cf68a107d6409"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common.json"
+hash = "380d6d8802c1fde26002b2975ae30544ea37a228e8266007eaa34acbf2da45a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/0.json"
+hash = "e1c391a8d2d29b2debc8e210a4d1deb0d4aa96c5cfe0233d9193742988e4a8ee"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/1.json"
+hash = "3e186e257c993fb4262651a752498c452a608f3698ad8a37e7e515daf3f45639"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/2.json"
+hash = "6b8822f7965a698fc470f277af53bf49d89da7e6f13e65d6543d2b166d89ef51"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/3.json"
+hash = "9539c8574b6c484f3e5d1ea81055d83d418ffbdd7b8923101846e9e8fb7c703c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/4.json"
+hash = "0ce40edfdd2749bd8587817a4fe4dc3cfcb13542f0cf19c6314277468a781492"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/5.json"
+hash = "dd18abd5c87d8255072d2a483e882932d40f6172da911643e73f1d2993586774"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/6.json"
+hash = "7a827b19f26fa4888bc5950f38d5e32778798f2f372583a4052c196ed9df0142"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/7.json"
+hash = "b5a5e043a72acb75a53bd68a32ddcac978ed4c5f1a06537e803d149510511bb8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_common/searching.json"
+hash = "a5097dc5c0be0f7e1824a6dc5b1868a4736efb8c55315ff6a19880e1bd0bde9e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious.json"
+hash = "8d7b019608b3fec476bd58eac72650047bd93f771641018107ab2241bd297544"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/0.json"
+hash = "f333366e61966c6a8ac1f1dddecb992ce301fea443753032aeef66c1274f1b93"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/1.json"
+hash = "67465b890164ba5541319285221fc1094e40ea7dba346fca56ead8cf021cb684"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/2.json"
+hash = "2353e599221a86cad31b7c534ca77b2a81f5c0dc8f98366a690056edd6904088"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/3.json"
+hash = "b2dda6f2b0ac120ffe491e2802dad1c0859afc7be27d0e769f43eaf26af6e026"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/4.json"
+hash = "879df8884469dc2b01f4262624bd3c741dc158156a821d92a2bd09c8f9f32f86"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/5.json"
+hash = "f40bf87f98de7536970832e5869bfb5c4e006ddee87fa53893f045f53f006370"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/6.json"
+hash = "b096ad5e9e79fca6e974de51367dc0895fd1ca00f6c69b2022dac1527200a9e5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/7.json"
+hash = "d768fa610106a7b78d76a79e27d10113252d632518e91e9afb1a5b00a12641fe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_precious/searching.json"
+hash = "085b6b517aec7cca93d500b8eef6f3d040b73badab950eaadfe6b4d63ed507a2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare.json"
+hash = "34a7531d8f200b32e32023acdb350a5bccf2763835513c25a0bfc9a5264d5f4a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/0.json"
+hash = "8eead4ddb47566a0a4a5aa400476d7cfe58f59734f7e51f5ebb47c7fe65081b1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/1.json"
+hash = "86aaa5231af0001bdd6c6d68c9b7f60553597ff7e9ca6f2c685f712fbc24c90e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/2.json"
+hash = "414393b915260cc2ca0af28ed27d3dcfb2cd76501fb0d19d81c83475a1f0950f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/3.json"
+hash = "7887aa1c3b39923bbf519bad7874e684c00b2e971ee3b6b5516cce0527da7036"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/4.json"
+hash = "1974242cc5eb3b82c6bcc1e097841671c005b225e4f66fbfe04987df50ac6497"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/5.json"
+hash = "dadf976e55538c90e8d2955fa1c513e7a184c9d66001adf4318bcd85ce615cb9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/6.json"
+hash = "68242bf9b568d1a6248061c7c290160aef09277d02a5b403e24fa35a62e59522"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/7.json"
+hash = "2ed8b35a2fa13bca7a2b2a406f3d4eb3c7b9c694cc2f9e4f41033a0c3c4f6c64"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/sulfur_attuned_divination_rod_rare/searching.json"
+hash = "e0d845d63efff4d17ec1d5129975dbd57eaa1965dc766e476c3852528f8f0d96"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/theurgy/models/item/the_hermetica_icon.json"
+hash = "8fe98154481c7dc347e92c262bbbba8fa2315b3e556bed6223f552aa53790f17"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/tide/modefite_items_override/blazing_fishing_rod.json"

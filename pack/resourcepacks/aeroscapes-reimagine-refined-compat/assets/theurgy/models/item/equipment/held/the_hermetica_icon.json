@@ -1,0 +1,650 @@
+{
+  "textures": {
+    "surface": "theurgy:item/the_hermetica",
+    "particle": "#surface"
+  },
+  "elements": [
+    {
+      "name": "back board",
+      "from": [
+        2.65,
+        1.95,
+        6.35
+      ],
+      "to": [
+        13.35,
+        14.05,
+        6.95
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "down": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        }
+      }
+    },
+    {
+      "name": "front board",
+      "from": [
+        2.65,
+        1.95,
+        9.05
+      ],
+      "to": [
+        13.35,
+        14.05,
+        9.65
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        },
+        "down": {
+          "uv": [
+            8.16,
+            2.16,
+            10.84,
+            3.84
+          ],
+          "texture": "#surface"
+        }
+      }
+    },
+    {
+      "name": "bound spine",
+      "from": [
+        2.25,
+        1.97,
+        6.56
+      ],
+      "to": [
+        3.6,
+        14.03,
+        9.45
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            8.16,
+            8.16,
+            9.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            8.16,
+            8.16,
+            9.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            8.16,
+            8.16,
+            9.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            8.16,
+            8.16,
+            9.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            8.16,
+            8.16,
+            9.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "down": {
+          "uv": [
+            8.16,
+            8.16,
+            9.84,
+            9.84
+          ],
+          "texture": "#surface"
+        }
+      }
+    },
+    {
+      "name": "text block",
+      "from": [
+        3.4,
+        2.38,
+        6.9
+      ],
+      "to": [
+        12.93,
+        13.62,
+        9.1
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            3.16,
+            9.16,
+            3.84,
+            11.84
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            3.16,
+            9.16,
+            3.84,
+            11.84
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            3.16,
+            9.16,
+            3.84,
+            11.84
+          ],
+          "texture": "#surface",
+          "rotation": 90
+        },
+        "west": {
+          "uv": [
+            3.16,
+            9.16,
+            3.84,
+            11.84
+          ],
+          "texture": "#surface",
+          "rotation": 90
+        },
+        "up": {
+          "uv": [
+            3.16,
+            9.16,
+            3.84,
+            11.84
+          ],
+          "texture": "#surface"
+        },
+        "down": {
+          "uv": [
+            3.16,
+            9.16,
+            3.84,
+            11.84
+          ],
+          "texture": "#surface"
+        }
+      }
+    },
+    {
+      "name": "red closure",
+      "from": [
+        12.0,
+        4.6,
+        6.22
+      ],
+      "to": [
+        13.48,
+        5.34,
+        9.79
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "down": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        }
+      }
+    },
+    {
+      "name": "red closure",
+      "from": [
+        12.0,
+        10.6,
+        6.22
+      ],
+      "to": [
+        13.48,
+        11.34,
+        9.79
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        },
+        "down": {
+          "uv": [
+            13.16,
+            8.16,
+            13.84,
+            9.84
+          ],
+          "texture": "#surface"
+        }
+      }
+    },
+    {
+      "name": "seal mount",
+      "from": [
+        6.1,
+        6.53,
+        9.59
+      ],
+      "to": [
+        9.9,
+        9.87,
+        9.9
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            7.16,
+            7.16,
+            9.84,
+            7.84
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            7.16,
+            7.16,
+            9.84,
+            7.84
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            7.16,
+            7.16,
+            9.84,
+            7.84
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            7.16,
+            7.16,
+            9.84,
+            7.84
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            7.16,
+            7.16,
+            9.84,
+            7.84
+          ],
+          "texture": "#surface"
+        },
+        "down": {
+          "uv": [
+            7.16,
+            7.16,
+            9.84,
+            7.84
+          ],
+          "texture": "#surface"
+        }
+      },
+      "rotation": {
+        "axis": "z",
+        "angle": 45.0,
+        "origin": [
+          8.0,
+          8.2,
+          9.65
+        ]
+      }
+    },
+    {
+      "name": "rose seal",
+      "from": [
+        6.76,
+        7.08,
+        9.82
+      ],
+      "to": [
+        9.24,
+        9.32,
+        10.11
+      ],
+      "faces": {
+        "north": {
+          "uv": [
+            7.16,
+            5.16,
+            9.84,
+            6.84
+          ],
+          "texture": "#surface"
+        },
+        "south": {
+          "uv": [
+            7.16,
+            5.16,
+            9.84,
+            6.84
+          ],
+          "texture": "#surface"
+        },
+        "east": {
+          "uv": [
+            7.16,
+            5.16,
+            9.84,
+            6.84
+          ],
+          "texture": "#surface"
+        },
+        "west": {
+          "uv": [
+            7.16,
+            5.16,
+            9.84,
+            6.84
+          ],
+          "texture": "#surface"
+        },
+        "up": {
+          "uv": [
+            7.16,
+            5.16,
+            9.84,
+            6.84
+          ],
+          "texture": "#surface"
+        },
+        "down": {
+          "uv": [
+            7.16,
+            5.16,
+            9.84,
+            6.84
+          ],
+          "texture": "#surface"
+        }
+      },
+      "rotation": {
+        "axis": "z",
+        "angle": 45.0,
+        "origin": [
+          8.0,
+          8.2,
+          9.9
+        ]
+      }
+    }
+  ],
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        26.0,
+        -36.0,
+        18.0
+      ],
+      "scale": [
+        0.61,
+        0.61,
+        0.61
+      ],
+      "translation": [
+        -2.763664,
+        2.966761,
+        -0.78702915
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        26.0,
+        -36.0,
+        18.0
+      ],
+      "scale": [
+        0.61,
+        0.61,
+        0.61
+      ],
+      "translation": [
+        -2.763664,
+        2.966761,
+        -0.78702915
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        26.0,
+        -36.0,
+        18.0
+      ],
+      "scale": [
+        0.61,
+        0.61,
+        0.61
+      ],
+      "translation": [
+        -2.7871313,
+        2.965764,
+        -0.8064853
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        26.0,
+        -36.0,
+        18.0
+      ],
+      "scale": [
+        0.61,
+        0.61,
+        0.61
+      ],
+      "translation": [
+        -2.7871313,
+        2.965764,
+        -0.8064853
+      ]
+    }
+  }
+}

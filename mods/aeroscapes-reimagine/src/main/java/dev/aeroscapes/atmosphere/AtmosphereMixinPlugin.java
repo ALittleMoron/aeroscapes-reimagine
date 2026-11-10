@@ -110,6 +110,7 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
         pins.put("creativecore", "2.13.52");
       }
       if (mixinClassName.contains("BuilderChipped")) pins.put("chipped", "4.0.2");
+      if (mixinClassName.contains("DivinationRodReforge")) pins.put("theurgy", "1.79.0");
       if (mixinClassName.contains("CuttingBoard")) pins.put("farmersdelight", "1.2.11a");
       if (mixinClassName.contains("Glider")) pins.put("paraglider", "21.1.5");
       if (mixinClassName.contains(".Tide")) pins.put("tide", "2.1.1");

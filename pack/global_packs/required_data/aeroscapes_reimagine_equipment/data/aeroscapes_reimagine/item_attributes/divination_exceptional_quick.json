@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:divination_exceptional_quick",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/divination"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

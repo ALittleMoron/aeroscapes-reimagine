@@ -61,6 +61,19 @@ casting state before its one-use scroll charge.
 Exact upstream structure resources are adapted through the existing virtual
 datapack.
 
+## Theurgy alchemy
+
+[Theurgy 1.79.0](https://modrinth.com/mod/theurgy/version/EBO0aQOY) and
+[Modonomicon 1.123.0](https://modrinth.com/mod/modonomicon/version/OKyLanIn)
+are installed on both sides. Theurgy requires Modonomicon and the existing
+GeckoLib 4.9.3. Its native EMI integration provides the alchemy recipes. The
+original CurseForge and Modrinth JARs match byte for byte.
+
+The held models use independently authored geometry and reference the original
+Theurgy sprites. Theurgy's pinned `REUSE.toml` and JAR metadata specify CC BY 4.0
+for its first-party resources. The README names CC BY-SA 4.0 but links to CC BY
+4.0. The original archive also contains files with separate notices.
+
 ## Astronomy, beekeeping and wakes
 
 [Spyglass Astronomy for NeoForge 1.0.20](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853)

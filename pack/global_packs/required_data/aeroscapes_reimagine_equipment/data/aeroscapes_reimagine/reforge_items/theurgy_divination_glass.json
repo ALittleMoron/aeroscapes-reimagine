@@ -1,0 +1,10 @@
+{
+  "items": [
+    "theurgy:divination_rod_t1",
+    "theurgy:sulfur_attuned_divination_rod_abundant",
+    "theurgy:sulfur_attuned_divination_rod_common"
+  ],
+  "base": [
+    "minecraft:glass"
+  ]
+}

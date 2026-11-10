@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:divination_legendary_depth",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/divination"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

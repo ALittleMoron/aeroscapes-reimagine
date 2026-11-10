@@ -940,6 +940,23 @@ public final class AtmosphereContractTest {
                     "entity.corpse.corpse", "Труп",
                     "advancement.exposure.exposure.title", "Разрезая время светом")),
         "mod brands retain their names while ordinary nouns and advancement titles stay localized");
+    var theurgyNames =
+        Map.of(
+            "itemGroup.theurgy", "Теургия",
+            "key.theurgy.category", "Теургия",
+            "theurgy.emi.header", "Теургия",
+            "config.jade.plugin_theurgy.mercury_flux", "Теургия ртуть Флюс",
+            "book.theurgy.the_hermetica.name", "Герметика");
+    require(
+        LanguageCorrections.apply(theurgyNames, russian)
+            .equals(
+                Map.of(
+                    "itemGroup.theurgy", "Theurgy",
+                    "key.theurgy.category", "Theurgy",
+                    "theurgy.emi.header", "Theurgy",
+                    "config.jade.plugin_theurgy.mercury_flux", "Theurgy — ртутный поток",
+                    "book.theurgy.the_hermetica.name", "Герметика")),
+        "Theurgy retains its mod name and the book retains its localized title");
     require(
         LanguageCorrections.apply(
                 Map.of("itemGroup.cratedelight", "Custom resource-pack title"), russian)

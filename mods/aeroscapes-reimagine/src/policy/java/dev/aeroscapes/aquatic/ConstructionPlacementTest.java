@@ -141,9 +141,38 @@ public final class ConstructionPlacementTest {
       preview.addProperty("nativeToolKind", entry.getValue().name());
       previews.add("hybrid_aquatic:" + item, preview);
     }
+    theurgyModels(assets, previews);
     if (arguments.length == 2) Files.writeString(Path.of(arguments[1]), previews.toString());
     System.out.println(
         "Construction placement: scoped palm selection, native hand contact, selected Punchy contexts, forward tape and native net pouch direction passed");
+  }
+
+  private static void theurgyModels(Path assets, JsonObject previews)
+      throws IOException, ReflectiveOperationException {
+    for (String rod : TheurgyHeldModels.RODS) {
+      theurgyModel(assets, previews, rod, rod + "/0");
+      theurgyModel(assets, previews, rod, rod + "/searching");
+    }
+    theurgyModel(assets, previews, "mercurial_wand", "mercurial_wand");
+    ConstructionIconRenderingTest.verifyHermetica(assets);
+    theurgyModel(assets, previews, "the_hermetica_icon", "the_hermetica_icon");
+  }
+
+  private static void theurgyModel(Path assets, JsonObject previews, String item, String state)
+      throws IOException, ReflectiveOperationException {
+    JsonObject child =
+        read(assets.resolve("theurgy/models/item/equipment/held/" + state + ".json"));
+    JsonObject model = child;
+    if (child.has("parent")) {
+      String geometry = child.get("parent").getAsString().replace(":", "/models/");
+      model = read(assets.resolve(geometry + ".json"));
+      model.add("textures", child.get("textures"));
+    }
+    var faces = physicalCuboids(model, assets, state);
+    require(!faces.isEmpty(), "Theurgy held state has volume: " + state);
+    JsonObject preview = VanillaEquipmentModelTest.preview(model, faces);
+    preview.add("attachments", attachments(model, item, ToolKind.INGREDIENT));
+    previews.add("theurgy:" + state, preview);
   }
 
   private static JsonArray attachments(JsonObject source, String item, ToolKind kind)

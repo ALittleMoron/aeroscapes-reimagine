@@ -1,0 +1,14 @@
+{
+  "modonomicon.configuration.enableSmoothZoom.tooltip": "Animates zooming in and out on book category screens.",
+  "modonomicon.configuration.fontFallbackLocales.tooltip": "Adds languages that should use the Minecraft font when reading the book.",
+  "modonomicon.configuration.storeLastOpenPageWhenClosingEntry.tooltip": "Remembers the page when leaving an entry. Closing the book with Esc always remembers the page.",
+  "theurgy.configuration.additionalTooltipHandlerNamespaces": "Additional namespaces",
+  "theurgy.configuration.additionalTooltipHandlerNamespaces.tooltip": "Adds sulfur tooltips for sulfur items from the listed namespaces. Theurgy and KubeJS are included by default.",
+  "theurgy.configuration.enableItemHUD.tooltip": "Shows status information for held items such as the mercurial wand.",
+  "theurgy.configuration.hudScale.tooltip": "Changes the size of the status text for held items.",
+  "theurgy.configuration.renderSulfurSourceItem.tooltip": "Overlays the source item icon on its sulfur jar. The item name still shows the source when the icon is hidden.",
+  "theurgy.configuration.sulfurSourceToBlockMapping.tooltip": "Maps the sulfur source to the block a crafted rod should find. Use source=block or #sourcetag=#blocktag.",
+  "theurgy.configuration.tooltipHandler": "Sulfur tooltips",
+  "theurgy.configuration.useSimpleWireRenderer": "Simple wire rendering",
+  "theurgy.configuration.useSimpleWireRenderer.tooltip": "Uses simple lines for wires. This can make them visible with some shaders."
+}

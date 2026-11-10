@@ -4,6 +4,12 @@ description: Version history.
 status: available
 ---
 
+## 0.4.6
+
+- Add Theurgy alchemy, including resource separation, recombination and transmutation. The Hermetica guides players through the apparatus and recipes.
+- Give The Hermetica, divination rods and the Mercurial Wand 3D models in hand. Divination crystals retain their search and distance feedback.
+- Add reforging for divination rods and the Mercurial Wand, with their materials and possible results in EMI.
+
 ## 0.4.5
 
 - Add reforge variants for hand tools, fishing rods, weapons and shields. Existing variants remain available.

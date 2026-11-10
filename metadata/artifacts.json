@@ -10509,5 +10509,105 @@
     ],
     "sha1": "9bdd1ced4653d017ddeab1f926280b6a2f9ebe26",
     "file_size": 154700
+  },
+  {
+    "slug": "modonomicon",
+    "name": "Modonomicon",
+    "project_id": "692GClaE",
+    "version_id": "OKyLanIn",
+    "version": "1.21.1-1.123.0",
+    "filename": "modonomicon-1.21.1-neoforge-1.123.0.jar",
+    "sha512": "e9569d3ba39caefb4776a1d9d99d2045f2e6ca4ca26a7e609aa99d0d8e9c696a0c8e9d68df0e9a2b41dc513de8f36e5ea91f8f26db781b8279b2a6a96f95291e",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT AND CC-BY-4.0",
+      "name": "MIT License, Creative Commons Attribution 4.0 International",
+      "url": "https://github.com/klikli-dev/modonomicon#licensing"
+    },
+    "embedded_license": "MIT AND CC-BY-4.0",
+    "source_url": "https://github.com/klikli-dev/modonomicon",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "0.4.6 Theurgy alchemy",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "3971a5ade2595bfcb8a93f4baa2e6e834691e3cf",
+    "file_size": 2430324,
+    "artifact_audit": {
+      "source_revision": "7f9881be53512aa8529b4faead55fe153466d179",
+      "source_comparison": "52 overlapping assets/data resources match the official sources JAR. NeoForge descriptor declares 1.123.0; the manifest implementation version is 1.110.0. Nested CommonMark 0.31.0 modules retain their original notices."
+    }
+  },
+  {
+    "slug": "theurgy",
+    "name": "Theurgy",
+    "project_id": "uOVMgoil",
+    "version_id": "EBO0aQOY",
+    "version": "1.21.1-neoforge-1.79.0",
+    "filename": "theurgy-1.21.1-neoforge-1.79.0.jar",
+    "sha512": "2e92aa0a3462d400feed398d4a675f9492dab3613ad698f24fcbcce34b565a079a7362fb637c4e268dbb71be5d11fc6630758f149ecccc8d6603f2e9d96f0569",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/klikli-dev/theurgy#licensing"
+    },
+    "embedded_license": "MIT AND CC-BY-4.0",
+    "source_url": "https://github.com/klikli-dev/theurgy",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "692GClaE",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "8BmcQJ2H",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "nvQzSEkH",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "0.4.6 Theurgy alchemy",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "a4e4707a5396b15d1d51eaf44fb4765114adfb26",
+    "file_size": 5323910,
+    "artifact_audit": {
+      "source_revision": "b04c107a2f2380f35dc31861820aab21d96323af",
+      "source_comparison": "2,789 overlapping assets/data resources match the official sources JAR. REUSE.toml and the NeoForge descriptor identify CC-BY-4.0 resources; the source README’s prose says CC-BY-SA-4.0 but links to CC-BY-4.0. Per-file exceptions apply."
+    }
   }
 ]

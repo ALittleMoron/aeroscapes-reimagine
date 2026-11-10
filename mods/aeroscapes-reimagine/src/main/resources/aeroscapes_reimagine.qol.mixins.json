@@ -46,6 +46,7 @@
     "reforge.field.BrushWearReforgeMixin",
     "reforge.field.BuilderWrenchWearMixin",
     "reforge.field.CastingNetReforgeMixin",
+    "reforge.field.DivinationRodReforgeMixin",
     "reforge.field.ExposureCameraReforgeMixin",
     "reforge.field.ExtendoAxisReforgeMixin",
     "reforge.field.ExtendoCostReforgeMixin",

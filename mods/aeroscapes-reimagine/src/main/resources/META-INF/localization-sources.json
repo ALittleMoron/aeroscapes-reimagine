@@ -1918,6 +1918,37 @@
     "scope": "Independent labels, functional translations, mod-list summaries and short Russian summaries for the newly keyed Archevoker journal and Citadel Tome entries. Covers the native spell and item catalog, both Iron's Lib namespaces and Curios inventory controls. Guarded exact-value corrections preserve custom replacements.",
     "source_comparison": "Compared the four distributed JARs, registered IDs, dynamic display keys and native NeoForge 21.1.244 config consumer. Iron's Spells has client and server ModConfigSpec screens, Curios has client, common and server screens. The existing enum display hook consumes declaring-class aliases. Per-spell Iron's Spells settings use datapack JSON. Iron's Lib and Player Animator register no config screens. The ruined book's intentionally ciphered and obfuscated story text bypasses language files."
   },
+  "theurgy_integration": {
+    "targets": {
+      "theurgy": {
+        "version": "1.21.1-neoforge-1.79.0",
+        "file": "https://modrinth.com/mod/theurgy/version/EBO0aQOY",
+        "terms": "MIT for code, CC-BY-4.0 for language assets under the exact release REUSE.toml"
+      },
+      "modonomicon": {
+        "version": "1.21.1-neoforge-1.123.0",
+        "file": "https://modrinth.com/mod/modonomicon/version/OKyLanIn",
+        "terms": "MIT AND CC-BY-4.0 per exact release mod metadata"
+      }
+    },
+    "resources": [
+      {
+        "resource": "assets/aeroscapes_reimagine_theurgy_translations/lang/en_us.json",
+        "entries": 12
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_theurgy_translations/lang/ru_ru.json",
+        "entries": 12
+      }
+    ],
+    "guarded_corrections": {
+      "resource": "assets/aeroscapes_reimagine/language_corrections.json",
+      "en_us": 13,
+      "ru_ru": 1484
+    },
+    "scope": "Existing Theurgy and Modonomicon strings have exact-value guards after namespace merging. Russian corrections repair all 132 Hermetica strings with malformed item, entry, category or external links, repair Cyrillic format placeholders in derivative names and tooltips, and update apparatus, rod, wand, logistics, EMI and shared book-interface text. Theurgy retains its official name in the creative tab, keybindings, EMI, Jade and the book tooltip. Both languages show the corresponding water and lava descriptions in EMI. Independent English and Russian labels and tooltips cover config fields on the standard NeoForge screens. The exact original provider values serve as guards to preserve third-party replacements.",
+    "source_comparison": "Compared the pinned binary and source JARs, native Russian and English resource values, book entry and item destinations, derivative tooltip argument counts, both client configuration classes and the native NeoForge configuration key and tooltip consumer. Modonomicon demo content has no book definitions in its production JAR."
+  },
   "observations_integration": {
     "targets": {
       "buzzier_bees": "7.0.1",
@@ -1994,11 +2025,11 @@
       },
       {
         "resource": "assets/aeroscapes_reimagine_equipment_expansion_field/lang/en_us.json",
-        "entries": 154
+        "entries": 168
       },
       {
         "resource": "assets/aeroscapes_reimagine_equipment_expansion_field/lang/ru_ru.json",
-        "entries": 154
+        "entries": 168
       },
       {
         "resource": "assets/aeroscapes_reimagine_equipment_expansion_weapons/lang/en_us.json",

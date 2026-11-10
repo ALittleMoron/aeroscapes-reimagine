@@ -1,0 +1,7 @@
+{
+  "parent": "aeroscapes_reimagine:item/equipment/theurgy_mercurial_wand",
+  "textures": {
+    "surface": "theurgy:item/mercurial_wand",
+    "particle": "#surface"
+  }
+}

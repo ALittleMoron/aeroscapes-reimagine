@@ -2,6 +2,7 @@
   "values": [
     "handcrafted:hammer",
     "create:wrench",
-    "supplementaries:wrench"
+    "supplementaries:wrench",
+    "theurgy:mercurial_wand"
   ]
 }

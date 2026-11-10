@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "theurgy:item/the_hermetica"
+    }
+  },
+  "textures": {
+    "layer0": "theurgy:item/the_hermetica",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "theurgy:item/equipment/held/the_hermetica_icon"
+    },
+    "firstperson_lefthand": {
+      "parent": "theurgy:item/equipment/held/the_hermetica_icon"
+    },
+    "thirdperson_righthand": {
+      "parent": "theurgy:item/equipment/held/the_hermetica_icon"
+    },
+    "thirdperson_lefthand": {
+      "parent": "theurgy:item/equipment/held/the_hermetica_icon"
+    }
+  }
+}

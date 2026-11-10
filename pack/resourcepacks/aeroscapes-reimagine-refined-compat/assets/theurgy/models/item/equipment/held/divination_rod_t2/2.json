@@ -1,0 +1,7 @@
+{
+  "parent": "aeroscapes_reimagine:item/equipment/theurgy_divination_rod",
+  "textures": {
+    "surface": "theurgy:item/divination_rod_t2/divination_rod_2",
+    "particle": "#surface"
+  }
+}
