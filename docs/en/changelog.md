@@ -4,6 +4,16 @@ description: Version history.
 status: available
 ---
 
+## 0.4.5
+
+- Add reforge variants for hand tools, fishing rods, weapons and shields. Existing variants remain available.
+- Extend reforging to the autoloader crossbow and other weapons, armor, spellcasting gear, travel equipment, and field tools. Keep their built-in spells, ammunition and stored contents.
+- Fix the duplicate first-person rope launcher while retaining Punchy's hand animation. The legendary reforge marks the estimated impact while crouching.
+- Explain how to obtain, fill and turn in the Galosphere mining pouch in EMI.
+- Show the possible results for each item by grade in EMI, with grade chances, effect tooltips and a distinct Reforging icon.
+- Necromancers killed by a player have a 1% chance to drop Misery.
+- Fix an intermittent startup crash when Distant Horizons initializes alongside Better Clouds.
+
 ## 0.4.4
 
 - Add held 3D models for canteens, pouches, buckets, tankards, bottles and 31 Iron’s Spells weapons, books and other items. Keep the original inventory icons and item states.

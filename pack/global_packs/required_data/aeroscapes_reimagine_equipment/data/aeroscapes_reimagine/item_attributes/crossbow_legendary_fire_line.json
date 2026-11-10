@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:crossbow_legendary_fire_line",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/crossbow"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.range_attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:crossbow_legendary_fire_line",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.1
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

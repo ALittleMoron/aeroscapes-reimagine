@@ -1,0 +1,8 @@
+{
+  "items": [
+    "quark:seed_pouch"
+  ],
+  "base": [
+    "minecraft:leather"
+  ]
+}

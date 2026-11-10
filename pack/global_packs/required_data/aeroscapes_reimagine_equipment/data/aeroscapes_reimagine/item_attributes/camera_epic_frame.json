@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:camera_epic_frame",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/camera"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

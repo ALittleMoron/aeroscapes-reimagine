@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:medkit_poor_stiff",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/medkit"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "dark_gray"
+  },
+  "attributes": []
+}

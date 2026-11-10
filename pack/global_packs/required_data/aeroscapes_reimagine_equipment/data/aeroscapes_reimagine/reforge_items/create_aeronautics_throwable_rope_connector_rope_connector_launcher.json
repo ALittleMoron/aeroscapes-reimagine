@@ -1,0 +1,8 @@
+{
+  "items": [
+    "create_aeronautics_throwable_rope_connector:rope_connector_launcher"
+  ],
+  "base": [
+    "create:andesite_alloy"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:seed_pouch_ordinary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/seed_pouch"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "white"
+  },
+  "attributes": []
+}

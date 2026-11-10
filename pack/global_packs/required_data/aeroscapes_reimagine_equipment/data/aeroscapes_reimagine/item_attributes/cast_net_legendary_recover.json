@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:cast_net_legendary_recover",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/cast_net"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

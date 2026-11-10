@@ -1,0 +1,10 @@
+{
+  "items": [
+    "create:copper_diving_helmet",
+    "create:copper_backtank",
+    "create:copper_diving_boots"
+  ],
+  "base": [
+    "minecraft:copper_ingot"
+  ]
+}

@@ -1,11 +1,6 @@
 {
   "values": [
-    "minecraft:chainmail_leggings",
-    "minecraft:diamond_leggings",
-    "minecraft:golden_leggings",
-    "minecraft:iron_leggings",
-    "minecraft:leather_leggings",
-    "minecraft:netherite_leggings",
+    "#aeroscapes_reimagine:equipment_quality/plain_armor_legs",
     "irons_spellbooks:wandering_magician_leggings",
     "#aeroscapes_reimagine:equipment_quality/magic_armor_legs",
     "#aeroscapes_reimagine:equipment_quality/diving_legs"

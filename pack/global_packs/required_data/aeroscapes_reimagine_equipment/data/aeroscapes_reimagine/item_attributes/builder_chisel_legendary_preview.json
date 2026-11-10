@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:builder_chisel_legendary_preview",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/builder_chisel"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:rotten_spell_book"
+  ],
+  "base": [
+    "irons_spellbooks:ruined_book"
+  ]
+}

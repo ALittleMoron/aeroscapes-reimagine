@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:pickarang_legendary_rebound",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/pickarang"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

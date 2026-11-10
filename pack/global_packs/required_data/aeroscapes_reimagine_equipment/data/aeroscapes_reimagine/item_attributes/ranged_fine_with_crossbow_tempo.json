@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:ranged_fine_with_crossbow_tempo",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/crossbow"
+    }
+  ],
+  "weight": 20,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.range_attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ranged_fine_with_crossbow_tempo",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.06
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

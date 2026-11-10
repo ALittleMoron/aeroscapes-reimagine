@@ -1,0 +1,8 @@
+{
+  "items": [
+    "create:cardboard_sword"
+  ],
+  "base": [
+    "create:cardboard"
+  ]
+}

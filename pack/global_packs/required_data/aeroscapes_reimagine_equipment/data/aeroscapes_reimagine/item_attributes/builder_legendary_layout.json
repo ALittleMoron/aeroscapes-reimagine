@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:builder_legendary_layout",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/builder"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

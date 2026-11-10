@@ -1,0 +1,8 @@
+{
+  "items": [
+    "spawn:casting_net"
+  ],
+  "base": [
+    "minecraft:string"
+  ]
+}

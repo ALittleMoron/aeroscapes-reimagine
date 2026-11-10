@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:brush_legendary_memory",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/brush"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

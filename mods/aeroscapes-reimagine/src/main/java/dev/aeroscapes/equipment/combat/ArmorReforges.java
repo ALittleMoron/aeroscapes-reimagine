@@ -83,7 +83,8 @@ public final class ArmorReforges {
       int cooldown) {
     if (damage >= threshold
         && ReforgeProfiles.has(player.getItemBySlot(slot), rank)
-        && !CombatReforgeState.active(player, rank)) {
+        && !CombatReforgeState.active(player, rank)
+        && ArmorSpecialties.spendDefense(player)) {
       event.setNewDamage(damage * multiplier);
       CombatReforgeState.activate(player, rank, cooldown);
     }

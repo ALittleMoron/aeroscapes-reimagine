@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:cast_net_epic_aim",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/cast_net"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

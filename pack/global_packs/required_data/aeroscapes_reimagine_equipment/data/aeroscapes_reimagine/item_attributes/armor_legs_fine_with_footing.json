@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:armor_legs_fine_with_footing",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/plain_armor_legs"
+    }
+  ],
+  "weight": 20,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_fine_with_footing",
+        "operation": "ADD_VALUE",
+        "amount": 0.5
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    },
+    {
+      "type": "minecraft:generic.movement_efficiency",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_fine_with_footing",
+        "operation": "ADD_VALUE",
+        "amount": 0.1
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    }
+  ]
+}

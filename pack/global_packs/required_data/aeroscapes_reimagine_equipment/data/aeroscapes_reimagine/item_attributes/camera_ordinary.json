@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:camera_ordinary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/camera"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "white"
+  },
+  "attributes": []
+}

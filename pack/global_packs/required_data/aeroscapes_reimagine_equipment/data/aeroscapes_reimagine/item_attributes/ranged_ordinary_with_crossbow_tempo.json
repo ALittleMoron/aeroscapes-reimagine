@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:ranged_ordinary_with_crossbow_tempo",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/crossbow"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

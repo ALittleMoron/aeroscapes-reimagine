@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:swim_necklace_legendary_anchor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/swim_necklace"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

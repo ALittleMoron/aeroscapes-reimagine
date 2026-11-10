@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_feet_poor_with_ice_slip",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/plain_armor_feet"
+    }
+  ],
+  "weight": 15,
+  "style": {
+    "color": "red"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_poor_with_ice_slip",
+        "operation": "ADD_VALUE",
+        "amount": -0.5
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

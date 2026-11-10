@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:armor_feet_poor_with_water_drag",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_feet"
+    }
+  ],
+  "weight": 15,
+  "style": {
+    "color": "red"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_poor_with_water_drag",
+        "operation": "ADD_VALUE",
+        "amount": -0.5
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    },
+    {
+      "type": "neoforge:swim_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_poor_with_water_drag",
+        "operation": "ADD_VALUE",
+        "amount": -0.08
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

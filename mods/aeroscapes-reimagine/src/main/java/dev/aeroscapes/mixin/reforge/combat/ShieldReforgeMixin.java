@@ -20,4 +20,17 @@ abstract class ShieldReforgeMixin {
   private int aeroscapes$shieldWear(int damage) {
     return ShieldReforges.wear((Player) (Object) this, damage);
   }
+
+  @ModifyArg(
+      method = "disableShield",
+      at =
+          @At(
+              value = "INVOKE",
+              target =
+                  "Lnet/minecraft/world/item/ItemCooldowns;addCooldown(Lnet/minecraft/world/item/Item;I)V"),
+      index = 1)
+  @SuppressWarnings("PMD.UnusedPrivateMethod")
+  private int aeroscapes$disabledTime(int ticks) {
+    return ShieldReforges.disabledTicks(((Player) (Object) this).getUseItem(), ticks);
+  }
 }

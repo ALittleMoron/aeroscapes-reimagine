@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:seed_pouch_poor_stiff",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/seed_pouch"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "dark_gray"
+  },
+  "attributes": []
+}

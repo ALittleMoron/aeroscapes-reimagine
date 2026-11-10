@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:trident_ordinary_with_tempo",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/trident"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "white"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:trident_ordinary_with_tempo",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.02
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

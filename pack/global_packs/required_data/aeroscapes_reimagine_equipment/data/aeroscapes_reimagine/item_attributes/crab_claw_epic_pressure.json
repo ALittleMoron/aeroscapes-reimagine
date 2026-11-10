@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:crab_claw_epic_pressure",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/crab_claw"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

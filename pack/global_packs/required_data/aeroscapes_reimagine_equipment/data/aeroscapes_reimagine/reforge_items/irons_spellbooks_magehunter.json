@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:magehunter"
+  ],
+  "base": [
+    "irons_spellbooks:arcane_ingot"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:slingshot_legendary_ricochet",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/slingshot"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

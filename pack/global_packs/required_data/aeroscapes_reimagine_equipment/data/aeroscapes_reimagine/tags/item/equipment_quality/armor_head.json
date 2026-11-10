@@ -1,12 +1,6 @@
 {
   "values": [
-    "minecraft:chainmail_helmet",
-    "minecraft:diamond_helmet",
-    "minecraft:golden_helmet",
-    "minecraft:iron_helmet",
-    "minecraft:leather_helmet",
-    "minecraft:netherite_helmet",
-    "minecraft:turtle_helmet",
+    "#aeroscapes_reimagine:equipment_quality/plain_armor_head",
     "irons_spellbooks:wandering_magician_helmet",
     "#aeroscapes_reimagine:equipment_quality/magic_armor_head",
     "#aeroscapes_reimagine:equipment_quality/diving_head"

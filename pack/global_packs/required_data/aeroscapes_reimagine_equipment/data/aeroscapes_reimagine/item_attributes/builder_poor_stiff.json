@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:builder_poor_stiff",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/builder"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "red"
+  },
+  "attributes": []
+}

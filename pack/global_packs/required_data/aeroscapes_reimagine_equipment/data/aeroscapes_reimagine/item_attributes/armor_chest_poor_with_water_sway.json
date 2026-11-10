@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_chest_poor_with_water_sway",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_chest"
+    }
+  ],
+  "weight": 15,
+  "style": {
+    "color": "red"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_chest_poor_with_water_sway",
+        "operation": "ADD_VALUE",
+        "amount": -0.5
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    }
+  ]
+}

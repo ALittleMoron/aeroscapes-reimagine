@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:rope_launcher_fine_align",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/rope_launcher"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "green"
+  },
+  "attributes": []
+}

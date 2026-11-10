@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:pickarang_poor_drag",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/pickarang"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

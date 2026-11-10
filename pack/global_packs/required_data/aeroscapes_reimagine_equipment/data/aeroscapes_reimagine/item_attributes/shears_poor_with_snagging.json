@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:shears_poor_with_snagging",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/shears"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.dig_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:shears_poor_with_snagging",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": -0.1
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

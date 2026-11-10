@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:canteen_epic_ready",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/canteen"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

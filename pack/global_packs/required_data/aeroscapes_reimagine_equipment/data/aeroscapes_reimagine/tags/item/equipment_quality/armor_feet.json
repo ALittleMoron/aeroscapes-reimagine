@@ -1,11 +1,6 @@
 {
   "values": [
-    "minecraft:chainmail_boots",
-    "minecraft:diamond_boots",
-    "minecraft:golden_boots",
-    "minecraft:iron_boots",
-    "minecraft:leather_boots",
-    "minecraft:netherite_boots",
+    "#aeroscapes_reimagine:equipment_quality/plain_armor_feet",
     "irons_spellbooks:wandering_magician_boots",
     "#aeroscapes_reimagine:equipment_quality/magic_armor_feet",
     "#aeroscapes_reimagine:equipment_quality/diving_feet"

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:swim_necklace_poor_drag",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/swim_necklace"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "dark_gray"
+  },
+  "attributes": []
+}

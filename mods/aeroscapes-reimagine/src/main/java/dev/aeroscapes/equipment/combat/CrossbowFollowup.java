@@ -33,9 +33,22 @@ public final class CrossbowFollowup {
   }
 
   public static int chargeDuration(ItemStack stack, LivingEntity user, int duration) {
-    return switch (ReforgeProfiles.path(stack)) {
+    String rank = ReforgeProfiles.path(stack);
+    return switch (rank) {
+      case "ranged_poor_with_crossbow_drag" -> RangedReforges.scaleTicks(duration, 1.16F);
+      case "ranged_ordinary_with_crossbow_tempo" -> RangedReforges.scaleTicks(duration, 0.96F);
+      case "ranged_fine_with_crossbow_tempo" -> RangedReforges.scaleTicks(duration, 0.92F);
+      case "crossbow_epic_with_trajectory" -> RangedReforges.scaleTicks(duration, 0.85F);
+      default -> baseChargeDuration(stack, user, duration, ReforgeProfiles.basePath(rank));
+    };
+  }
+
+  private static int baseChargeDuration(
+      ItemStack stack, LivingEntity user, int duration, String rank) {
+    return switch (rank) {
       case "crossbow_exceptional_charge" -> RangedReforges.scaleTicks(duration, 0.88F);
-      case "crossbow_epic" -> RangedReforges.scaleTicks(duration, 0.90F);
+      case "crossbow_epic", "crossbow_legendary_fire_line" ->
+          RangedReforges.scaleTicks(duration, 0.90F);
       case RANK -> {
         String flag = user.isUsingItem() && user.getUseItem() == stack ? CHARGING : READY;
         yield RangedReforges.scaleTicks(
@@ -46,9 +59,17 @@ public final class CrossbowFollowup {
   }
 
   public static void onChargeCompleted(LivingEntity user, ItemStack weapon) {
+    consumeFollowup(user, weapon, CHARGING);
+  }
+
+  public static void onAutoChargeCompleted(LivingEntity user, ItemStack weapon) {
+    consumeFollowup(user, weapon, READY);
+  }
+
+  private static void consumeFollowup(LivingEntity user, ItemStack weapon, String flag) {
     if (user instanceof ServerPlayer player
-        && ReforgeProfiles.has(weapon, RANK)
-        && CombatReforgeState.flag(player, CHARGING)) {
+        && RANK.equals(ReforgeProfiles.basePath(weapon))
+        && CombatReforgeState.flag(player, flag)) {
       CombatReforgeState.clear(player, CHARGING);
       CombatReforgeState.setFlag(player, READY, false);
       sync(player);
@@ -57,7 +78,7 @@ public final class CrossbowFollowup {
 
   @SubscribeEvent
   public static void startCharge(LivingEntityUseItemEvent.Start event) {
-    if (ReforgeProfiles.has(event.getItem(), RANK)) {
+    if (RANK.equals(ReforgeProfiles.basePath(event.getItem()))) {
       var user = event.getEntity();
       CombatReforgeState.setFlag(user, CHARGING, CombatReforgeState.flag(user, READY));
     }

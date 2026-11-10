@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:tool_ordinary_with_tilling_tine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/hoe"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

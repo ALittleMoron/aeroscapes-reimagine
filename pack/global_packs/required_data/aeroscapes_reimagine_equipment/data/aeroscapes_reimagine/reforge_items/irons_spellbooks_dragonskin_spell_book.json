@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:dragonskin_spell_book"
+  ],
+  "base": [
+    "irons_spellbooks:dragonskin"
+  ]
+}

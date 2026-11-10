@@ -84,7 +84,32 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
           new java.util.HashMap<>(Map.of("tieredneo", "1.2.0+1.21.1", "neoforge", "21.1.244"));
       if (mixinClassName.contains("ReforgeEmiRefresh")) pins.put("emi", "1.1.24+1.21.1+neoforge");
       if (mixinClassName.contains("Slingshot")) pins.put("supplementaries", "1.21.1-3.6.8");
-      if (mixinClassName.contains("QuarkReaper")) pins.put("quark", "4.1-477");
+      if (mixinClassName.contains("AutoloaderCharge")
+          || mixinClassName.contains(".reforge.magic.")) {
+        pins.put("irons_spellbooks", "1.21.1-3.16.3");
+      }
+      if (mixinClassName.contains("QuarkReaper")
+          || mixinClassName.contains("Pickarang")
+          || mixinClassName.contains("SeedPouch")
+          || mixinClassName.contains("TrowelReforge")) pins.put("quark", "4.1-477");
+      if (mixinClassName.contains("CardboardSword")
+          || mixinClassName.contains("PotatoCannon")
+          || mixinClassName.contains("ExtendoCost")
+          || mixinClassName.contains("CreateDivingAir")) pins.put("create", "6.0.10");
+      if (mixinClassName.contains("CrabClaw") || mixinClassName.contains("CastingNet"))
+        pins.put("spawn", "4.0.8-1.21.1");
+      if (mixinClassName.contains("NaturalistNet")) pins.put("naturalist", "2.0.7");
+      if (mixinClassName.contains("HapiNet")) pins.put("hapi", "1.1.3");
+      if (mixinClassName.contains("RopeLauncher"))
+        pins.put("create_aeronautics_throwable_rope_connector", "0.4.3");
+      if (mixinClassName.contains("ExposureCamera")) pins.put("exposure", "1.9.19");
+      if (mixinClassName.contains("BuilderWrenchWear")) pins.put("supplementaries", "1.21.1-3.6.8");
+      if (mixinClassName.contains("BuilderShaper")
+          || mixinClassName.contains("BuilderInspection")) {
+        pins.put("littletiles", "1.6.0-pre236");
+        pins.put("creativecore", "2.13.52");
+      }
+      if (mixinClassName.contains("BuilderChipped")) pins.put("chipped", "4.0.2");
       if (mixinClassName.contains("CuttingBoard")) pins.put("farmersdelight", "1.2.11a");
       if (mixinClassName.contains("Glider")) pins.put("paraglider", "21.1.5");
       if (mixinClassName.contains(".Tide")) pins.put("tide", "2.1.1");
@@ -152,6 +177,12 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
         || mixinClassName.endsWith("DistantHorizonsCompatibilityChatMixin")
         || mixinClassName.endsWith("DistantHorizonsLightMaterialMixin")) {
       versions = Map.of("distanthorizons", "3.3.3");
+    } else if (mixinClassName.endsWith("DistantHorizonsClientSetupMixin")) {
+      versions =
+          Map.of(
+              "distanthorizons", "3.3.3",
+              "betterclouds", "1.13.11+1.21.1-neoforge",
+              "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("BetterCloudsMessageDefaultMixin")) {
       versions = Map.of("betterclouds", "1.13.11+1.21.1-neoforge");
     } else if (mixinClassName.endsWith("BetterCloudsCoverageMixin")) {
@@ -212,6 +243,13 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "7.2.6");
     } else if (mixinClassName.endsWith("FastRodCaptureMixin")) {
       versions = Map.of("punchy", "3.0", "flerovium", "1.1.2");
+    } else if (mixinClassName.endsWith("RopeLauncherFirstPersonMixin")) {
+      versions =
+          Map.of(
+              "punchy", "3.0",
+              "create", "6.0.10",
+              "create_aeronautics_throwable_rope_connector", "0.4.3",
+              "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("LanternGripMixin")
         || mixinClassName.endsWith("PunchyMapMixin")) {
       versions = Map.of("punchy", "3.0");

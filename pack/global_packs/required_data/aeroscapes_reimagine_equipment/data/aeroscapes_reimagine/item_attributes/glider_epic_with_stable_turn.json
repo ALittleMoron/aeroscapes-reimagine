@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:glider_epic_with_stable_turn",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/glider"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

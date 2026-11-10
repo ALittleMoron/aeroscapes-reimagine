@@ -15,15 +15,18 @@ public final class ReforgeDescriptions {
   @SubscribeEvent
   public static void tooltip(ItemTooltipEvent event) {
     String profile = ReforgeProfiles.path(event.getItemStack());
-    if (profile.isEmpty()) return;
-    if (profile.startsWith("magic_armor_") && profile.endsWith("_legendary_ward"))
-      profile = "magic_armor_legendary_ward";
-    String key =
-        "aeroscapes_reimagine.equipment."
-            + (profile.equals("melee_legendary_frost") ? "frost" : profile)
-            + ".description";
-    if (Language.getInstance().has(key)) {
-      event.getToolTip().add(Component.translatable(key).withStyle(ChatFormatting.GRAY));
-    }
+    if (profile.isEmpty() || appendDescription(event, profile)) return;
+    String base = ReforgeProfiles.basePath(profile);
+    if (base.startsWith("magic_armor_") && base.endsWith("_legendary_ward"))
+      base = "magic_armor_legendary_ward";
+    if (base.equals("melee_legendary_frost")) base = "frost";
+    if (!base.equals(profile)) appendDescription(event, base);
+  }
+
+  private static boolean appendDescription(ItemTooltipEvent event, String profile) {
+    String key = "aeroscapes_reimagine.equipment." + profile + ".description";
+    if (!Language.getInstance().has(key)) return false;
+    event.getToolTip().add(Component.translatable(key).withStyle(ChatFormatting.GRAY));
+    return true;
   }
 }

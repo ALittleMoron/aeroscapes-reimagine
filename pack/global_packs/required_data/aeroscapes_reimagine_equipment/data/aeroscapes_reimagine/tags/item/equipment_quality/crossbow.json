@@ -1,5 +1,6 @@
 {
   "values": [
-    "minecraft:crossbow"
+    "minecraft:crossbow",
+    "irons_spellbooks:autoloader_crossbow"
   ]
 }

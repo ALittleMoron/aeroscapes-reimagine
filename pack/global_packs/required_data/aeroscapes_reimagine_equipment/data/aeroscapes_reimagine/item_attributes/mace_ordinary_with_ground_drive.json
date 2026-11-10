@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:mace_ordinary_with_ground_drive",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/mace"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "white"
+  },
+  "attributes": []
+}

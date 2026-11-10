@@ -1,10 +1,13 @@
 package dev.aeroscapes.equipment;
 
+import com.herobrot.tieredneo.api.PotentialAttribute;
 import com.herobrot.tieredneo.api.TieredItemTags;
 import com.herobrot.tieredneo.api.TieredNeoAPI;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -26,24 +29,43 @@ public final class ReforgeProfiles {
     return id != null && NAMESPACE.equals(id.getNamespace()) ? id.getPath() : "";
   }
 
-  public static boolean isEligible(Item item) {
-    return ModList.get().isLoaded("tieredneo")
-        && !item.getDefaultInstance().is(TieredItemTags.MODIFIER_RESTRICTED)
-        && TieredNeoAPI.getTierAttributes().values().stream()
-            .anyMatch(profile -> profile.getWeight() >= 0 && profile.isValid(item));
+  public static String basePath(ItemStack stack) {
+    return basePath(path(stack));
   }
 
-  public static ResourceLocation roll(Item item, boolean paid) {
-    var choices = new EnumMap<Quality, List<ResourceLocation>>(Quality.class);
+  public static String basePath(String path) {
+    int separator = path.indexOf("_with_");
+    return separator < 0 ? path : path.substring(0, separator);
+  }
+
+  public static List<PaidGrade> paidGrades(Item item) {
+    if (item.getDefaultInstance().is(TieredItemTags.MODIFIER_RESTRICTED)) return List.of();
+    return choices(item, true).entrySet().stream()
+        .map(
+            entry ->
+                new PaidGrade(
+                    entry.getKey().name().toLowerCase(Locale.ROOT),
+                    entry.getKey().weight(true),
+                    entry.getValue().stream().sorted(Comparator.comparing(Outcome::id)).toList()))
+        .toList();
+  }
+
+  private static EnumMap<Quality, List<Outcome>> choices(Item item, boolean paid) {
+    var choices = new EnumMap<Quality, List<Outcome>>(Quality.class);
     for (var entry : TieredNeoAPI.getTierAttributes().entrySet()) {
       var id = entry.getKey();
       var profile = entry.getValue();
       if (!NAMESPACE.equals(id.getNamespace()) || !profile.isValid(item)) continue;
-      var quality = Quality.fromPath(id.getPath());
+      var quality = Quality.fromPath(basePath(id.getPath()));
       if (quality == null || profile.getWeight() < (paid ? 0 : 1) || quality.weight(paid) == 0)
         continue;
-      choices.computeIfAbsent(quality, key -> new ArrayList<>()).add(id);
+      choices.computeIfAbsent(quality, key -> new ArrayList<>()).add(new Outcome(id, profile));
     }
+    return choices;
+  }
+
+  public static ResourceLocation roll(Item item, boolean paid) {
+    var choices = choices(item, paid);
     if (choices.isEmpty()) return null;
 
     int total = choices.keySet().stream().mapToInt(quality -> quality.weight(paid)).sum();
@@ -53,11 +75,15 @@ public final class ReforgeProfiles {
       ticket -= entry.getKey().weight(paid);
       if (ticket < 0) {
         var profiles = entry.getValue();
-        return profiles.get(random.nextInt(profiles.size()));
+        return profiles.get(random.nextInt(profiles.size())).id();
       }
     }
     throw new IllegalStateException("Invalid equipment quality weights");
   }
+
+  public record PaidGrade(String key, int weight, List<Outcome> outcomes) {}
+
+  public record Outcome(ResourceLocation id, PotentialAttribute profile) {}
 
   private enum Quality {
     POOR(12, 15),

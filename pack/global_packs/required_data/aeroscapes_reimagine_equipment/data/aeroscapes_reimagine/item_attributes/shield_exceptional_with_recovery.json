@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:shield_exceptional_with_recovery",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/shield"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

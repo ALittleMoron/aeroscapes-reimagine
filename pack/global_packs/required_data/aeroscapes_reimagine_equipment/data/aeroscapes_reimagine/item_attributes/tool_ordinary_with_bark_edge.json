@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:tool_ordinary_with_bark_edge",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/axe"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:armor_chest_fine_with_spell_lining",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/magic_armor_chest"
+    }
+  ],
+  "weight": 20,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_chest_fine_with_spell_lining",
+        "operation": "ADD_VALUE",
+        "amount": 0.5
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    },
+    {
+      "type": "irons_spellbooks:spell_resist",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_chest_fine_with_spell_lining",
+        "operation": "ADD_VALUE",
+        "amount": 0.035
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    }
+  ]
+}

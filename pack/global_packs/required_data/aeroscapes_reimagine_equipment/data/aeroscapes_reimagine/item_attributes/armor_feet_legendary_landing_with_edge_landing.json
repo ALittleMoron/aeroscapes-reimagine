@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:armor_feet_legendary_landing_with_edge_landing",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/plain_armor_feet"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.safe_fall_distance",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_legendary_landing_with_edge_landing",
+        "operation": "ADD_VALUE",
+        "amount": 1
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    },
+    {
+      "type": "minecraft:generic.fall_damage_multiplier",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_legendary_landing_with_edge_landing",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": -0.12
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

@@ -6,8 +6,23 @@
     "minecraft:netherite_sword",
     "minecraft:stone_sword",
     "minecraft:wooden_sword",
-    "irons_spellbooks:amethyst_rapier",
+    "farmersdelight:skillet",
     "hybrid_aquatic:coral_blade",
-    "hybrid_aquatic:seashell_spear"
+    "hybrid_aquatic:seashell_spear",
+    "immersive_weathering:ice_sickle",
+    "irons_spellbooks:amethyst_rapier",
+    "irons_spellbooks:boreal_blade",
+    "irons_spellbooks:decrepit_scythe",
+    "irons_spellbooks:hellrazor",
+    "irons_spellbooks:keeper_flamberge",
+    "irons_spellbooks:legionnaire_flamberge",
+    "irons_spellbooks:magehunter",
+    "irons_spellbooks:misery",
+    "irons_spellbooks:spellbreaker",
+    "irons_spellbooks:twilight_gale",
+    "tide:blazing_swordfish",
+    "tide:sailfish",
+    "tide:swordfish",
+    "wetland_whimsy:dagger"
   ]
 }

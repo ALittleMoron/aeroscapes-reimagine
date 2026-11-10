@@ -1,0 +1,8 @@
+{
+  "items": [
+    "hapi:creature_net"
+  ],
+  "base": [
+    "minecraft:string"
+  ]
+}

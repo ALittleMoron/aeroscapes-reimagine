@@ -1,6 +1,7 @@
 package dev.aeroscapes.equipment.combat;
 
 import dev.aeroscapes.equipment.ReforgeProfiles;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -24,7 +25,7 @@ public final class MeleeReforges {
 
   public static Strike prepare(
       Player player, LivingEntity target, ItemStack weapon, float damage, boolean charged) {
-    var rank = ReforgeProfiles.path(weapon);
+    var rank = ReforgeProfiles.basePath(weapon);
     boolean execute =
         charged
             && "melee_legendary_execute".equals(rank)
@@ -37,7 +38,7 @@ public final class MeleeReforges {
       bonus +=
           switch (rank) {
             case "mace_exceptional_ground" -> 0.12F;
-            case "mace_epic", "mace_legendary_brace" -> 0.08F;
+            case "mace_epic", "mace_legendary_brace", "mace_legendary_breach" -> 0.08F;
             default -> 0.0F;
           };
     }
@@ -56,7 +57,7 @@ public final class MeleeReforges {
       CombatReforgeState.clear(player, RIPOSTE);
     }
 
-    switch (ReforgeProfiles.path(weapon)) {
+    switch (ReforgeProfiles.basePath(weapon)) {
       case "melee_legendary_frost" -> {
         if (charged
             && target.isAlive()
@@ -85,6 +86,67 @@ public final class MeleeReforges {
       }
       default -> {}
     }
+  }
+
+  public static void onDamagingHit(
+      ServerPlayer player, LivingEntity target, ItemStack weapon, boolean charged) {
+    if (!hostile(player, target)) {
+      return;
+    }
+    switch (ReforgeProfiles.path(weapon)) {
+      case "melee_legendary_circle_guard" -> {
+        if (charged && !CombatReforgeState.active(player, "melee_circle_guard")) {
+          var previous = StackCombatWindows.get(player, weapon);
+          if (previous == null) {
+            StackCombatWindows.start(player, weapon, 60, target.getUUID());
+          } else if (!target.getUUID().equals(previous.firstTarget())) {
+            StackCombatWindows.start(player, weapon, 40, null);
+            CombatReforgeState.activate(player, "melee_circle_guard", 160);
+          }
+        }
+      }
+      case "mace_legendary_breach" -> {
+        if (MaceItem.canSmashAttack(player)
+            && target.isAlive()
+            && !CombatReforgeState.active(player, "mace_breach")
+            && target.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40), player)) {
+          CombatReforgeState.activate(player, "mace_breach", 120);
+        }
+      }
+      default -> {}
+    }
+  }
+
+  public static float attackKnockback(
+      Player attacker, LivingEntity target, ItemStack weapon, float original, boolean charged) {
+    if (!(attacker instanceof ServerPlayer player) || !charged) {
+      return original;
+    }
+    float bonus =
+        switch (ReforgeProfiles.path(weapon)) {
+          case "melee_exceptional_with_drive" -> 0.45F;
+          case "mace_ordinary_with_ground_drive" -> player.onGround() ? 0.10F : 0.0F;
+          case "mace_fine_with_ground_drive" -> player.onGround() ? 0.20F : 0.0F;
+          case "mace_exceptional_ground_with_ground_drive" -> player.onGround() ? 0.35F : 0.0F;
+          case "mace_epic_with_ground_drive" -> player.onGround() ? 0.55F : 0.0F;
+          case "trident_legendary_return_thrust" ->
+              hostile(player, target) && StackCombatWindows.consume(player, weapon) ? 0.85F : 0.0F;
+          default -> 0.0F;
+        };
+    return original + bonus;
+  }
+
+  static boolean guarding(ServerPlayer player) {
+    ItemStack weapon = player.getMainHandItem();
+    if (!ReforgeProfiles.has(weapon, "melee_legendary_circle_guard")) {
+      return false;
+    }
+    var window = StackCombatWindows.get(player, weapon);
+    return window != null && window.firstTarget() == null;
+  }
+
+  static boolean hostile(Player player, LivingEntity target) {
+    return target instanceof Enemy && !player.isAlliedTo(target);
   }
 
   static void armRiposte(Player player) {

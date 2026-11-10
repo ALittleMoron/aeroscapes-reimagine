@@ -1,0 +1,8 @@
+{
+  "items": [
+    "minecraft:leather_horse_armor"
+  ],
+  "base": [
+    "minecraft:leather"
+  ]
+}

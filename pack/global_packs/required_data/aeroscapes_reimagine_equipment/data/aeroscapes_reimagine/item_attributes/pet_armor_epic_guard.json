@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:pet_armor_epic_guard",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/pet_armor"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

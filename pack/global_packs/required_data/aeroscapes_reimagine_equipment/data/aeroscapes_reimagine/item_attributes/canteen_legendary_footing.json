@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:canteen_legendary_footing",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/canteen"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

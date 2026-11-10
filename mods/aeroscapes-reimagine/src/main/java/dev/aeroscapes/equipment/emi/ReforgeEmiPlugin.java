@@ -3,6 +3,7 @@ package dev.aeroscapes.equipment.emi;
 import com.herobrot.tieredneo.api.TieredItemTags;
 import com.herobrot.tieredneo.api.TieredNeoAPI;
 import dev.aeroscapes.equipment.ReforgeProfiles;
+import dev.aeroscapes.equipment.ReforgeProfiles.PaidGrade;
 import dev.emi.emi.api.EmiEntrypoint;
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
@@ -25,6 +26,8 @@ import net.neoforged.fml.ModList;
 @EmiEntrypoint
 public final class ReforgeEmiPlugin implements EmiPlugin {
   private static final String NAMESPACE = "aeroscapes_reimagine";
+  private static final ResourceLocation CATEGORY_ICON =
+      ResourceLocation.fromNamespaceAndPath(NAMESPACE, "textures/gui/emi/reforging.png");
 
   @Override
   public void register(EmiRegistry registry) {
@@ -34,21 +37,24 @@ public final class ReforgeEmiPlugin implements EmiPlugin {
 
     var anvil = EmiStack.of(Blocks.ANVIL);
     var category =
-        new EmiRecipeCategory(ResourceLocation.fromNamespaceAndPath(NAMESPACE, "reforging"), anvil);
+        new EmiRecipeCategory(
+            ResourceLocation.fromNamespaceAndPath(NAMESPACE, "reforging"),
+            new EmiTexture(CATEGORY_ICON, 0, 0, 16, 16, 16, 16, 16, 16));
     registry.addCategory(category);
     registry.addWorkstation(category, anvil);
     registry.addWorkstation(category, EmiStack.of(Blocks.CHIPPED_ANVIL));
     registry.addWorkstation(category, EmiStack.of(Blocks.DAMAGED_ANVIL));
 
     for (Item item : BuiltInRegistries.ITEM) {
-      if (!ReforgeProfiles.isEligible(item)) continue;
+      var grades = ReforgeProfiles.paidGrades(item);
+      if (grades.isEmpty()) continue;
       var material = material(item);
       if (material.isEmpty()) continue;
       var id = BuiltInRegistries.ITEM.getKey(item);
       var recipeId =
           ResourceLocation.fromNamespaceAndPath(
               NAMESPACE, "/reforging/" + id.getNamespace() + "/" + id.getPath());
-      registry.addRecipe(new ReforgeRecipe(category, recipeId, item, material, catalyst));
+      registry.addRecipe(new ReforgeRecipe(category, recipeId, item, material, catalyst, grades));
     }
   }
 
@@ -64,13 +70,19 @@ public final class ReforgeEmiPlugin implements EmiPlugin {
   }
 
   private static final class ReforgeRecipe extends BasicEmiRecipe {
+    private final Item item;
+    private final List<PaidGrade> grades;
+
     private ReforgeRecipe(
         EmiRecipeCategory category,
         ResourceLocation id,
         Item item,
         EmiIngredient material,
-        EmiIngredient catalyst) {
-      super(category, id, 112, 18);
+        EmiIngredient catalyst,
+        List<PaidGrade> grades) {
+      super(category, id, ReforgeCatalogWidget.WIDTH, ReforgeCatalogWidget.HEIGHT);
+      this.item = item;
+      this.grades = grades;
       inputs = List.of(material, EmiStack.of(item), catalyst);
       outputs = List.of(EmiStack.of(item));
     }
@@ -87,15 +99,17 @@ public final class ReforgeEmiPlugin implements EmiPlugin {
 
     @Override
     public void addWidgets(WidgetHolder widgets) {
+      int left = (widgets.getWidth() - 112) / 2;
       for (int index = 0; index < inputs.size(); index++) {
-        widgets.addSlot(inputs.get(index), index * 18, 0);
+        widgets.addSlot(inputs.get(index), left + index * 18, 0);
       }
-      widgets.addTexture(EmiTexture.EMPTY_ARROW, 62, 1);
+      widgets.addTexture(EmiTexture.EMPTY_ARROW, left + 62, 1);
       widgets
-          .addSlot(outputs.getFirst(), 94, 0)
+          .addSlot(outputs.getFirst(), left + 94, 0)
           .recipeContext(this)
           .appendTooltip(
               Component.translatable("aeroscapes_reimagine.equipment.reforge.random_result"));
+      widgets.add(new ReforgeCatalogWidget(item, grades));
     }
   }
 }

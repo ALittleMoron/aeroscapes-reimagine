@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:canteen_exceptional_mobile",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/canteen"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

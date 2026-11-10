@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:brush_epic_sand",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/brush"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

@@ -47,6 +47,7 @@ public final class AreaToolActions {
       case "pick_legendary_tunnel" -> MiningPattern.TUNNEL;
       case "pick_legendary_vein" -> MiningPattern.VEIN;
       case "shovel_legendary_excavator" -> MiningPattern.EXCAVATION;
+      case "shovel_legendary_grader" -> MiningPattern.GRADING;
       case "shears_legendary_gardener" -> MiningPattern.GARDEN;
       default -> null;
     };
@@ -54,7 +55,13 @@ public final class AreaToolActions {
 
   public static @Nullable UsePattern usePattern(
       ServerPlayer player, ItemStack stack, InteractionHand hand) {
-    if (!canUseAreaTool(player) || hand != InteractionHand.MAIN_HAND) return null;
+    if (!canUseAreaTool(player)) return null;
+    if (hand == InteractionHand.OFF_HAND) {
+      return ReforgeProfiles.has(player.getMainHandItem(), "hoe_legendary_row_sower")
+              && isSeed(stack)
+          ? UsePattern.SOW_ROW
+          : null;
+    }
     return switch (ReforgeProfiles.path(stack)) {
       case "shovel_legendary_path" -> UsePattern.PATH;
       case "axe_legendary_bark" -> UsePattern.BARK;
@@ -95,6 +102,11 @@ public final class AreaToolActions {
     var mining = new MiningAction(gameMode, player, level, tool, pattern, maximumHardness);
     if (pattern == MiningPattern.VEIN) {
       mineVein(mining, origin, center);
+    } else if (pattern == MiningPattern.GRADING) {
+      Direction side = player.getDirection().getClockWise();
+      mining.breakTarget(origin.relative(side), center.getBlock());
+      if (stillHolding(player, tool))
+        mining.breakTarget(origin.relative(side.getOpposite()), center.getBlock());
     } else {
       Direction.Axis axis = hit.getDirection().getAxis();
       Direction first = axis == Direction.Axis.X ? Direction.SOUTH : Direction.EAST;
@@ -144,6 +156,7 @@ public final class AreaToolActions {
     if (!canInteract(player, level, origin)) return original.get();
     BlockState center = level.getBlockState(origin);
     if (pattern == UsePattern.SOW) return sow(gameMode, player, level, hit, original);
+    if (pattern == UsePattern.SOW_ROW) return sowRow(gameMode, player, level, tool, hit, original);
 
     BlockState expected = preview(player, hand, hit, center, pattern);
     InteractionResult result = original.get();
@@ -162,7 +175,41 @@ public final class AreaToolActions {
               Direction.fromAxisAndDirection(
                   center.getValue(BlockStateProperties.AXIS), Direction.AxisDirection.POSITIVE));
       case TILL -> use.square(origin);
-      case SOW -> {}
+      case SOW, SOW_ROW -> {}
+    }
+    return result;
+  }
+
+  private static InteractionResult sowRow(
+      ServerPlayerGameMode gameMode,
+      ServerPlayer player,
+      ServerLevel level,
+      ItemStack seeds,
+      BlockHitResult hit,
+      Supplier<InteractionResult> original) {
+    BlockPos origin = hit.getBlockPos();
+    if (hit.getDirection() != Direction.UP
+        || !isPlantable(level, origin)
+        || !canInteract(player, level, origin.above())) return original.get();
+    ItemStack hoe = player.getMainHandItem();
+    var seed = (BlockItem) seeds.getItem();
+    InteractionResult result = original.get();
+    if (!result.consumesAction() || !level.getBlockState(origin.above()).is(seed.getBlock()))
+      return result;
+    var use =
+        new ToolUse(
+            gameMode,
+            player,
+            level,
+            InteractionHand.OFF_HAND,
+            seeds,
+            UsePattern.SOW_ROW,
+            Direction.UP);
+    Direction forward = player.getDirection();
+    for (int offset = 1; offset < 5 && stillHolding(player, hoe); offset++) {
+      BlockPos next = origin.relative(forward, offset);
+      if (!use.apply(next).consumesAction()
+          || !level.getBlockState(next.above()).is(seed.getBlock())) break;
     }
     return result;
   }
@@ -268,6 +315,7 @@ public final class AreaToolActions {
     TUNNEL,
     VEIN,
     EXCAVATION,
+    GRADING,
     GARDEN;
 
     private boolean accepts(BlockState state) {
@@ -275,6 +323,7 @@ public final class AreaToolActions {
         case TUNNEL -> state.is(BlockTags.MINEABLE_WITH_PICKAXE);
         case VEIN -> state.is(Tags.Blocks.ORES) && state.is(BlockTags.MINEABLE_WITH_PICKAXE);
         case EXCAVATION -> state.is(BlockTags.MINEABLE_WITH_SHOVEL);
+        case GRADING -> ToolReforges.isLooseGround(state);
         case GARDEN -> state.is(BlockTags.LEAVES) || state.is(Blocks.VINE);
       };
     }
@@ -284,7 +333,8 @@ public final class AreaToolActions {
     PATH(ItemAbilities.SHOVEL_FLATTEN),
     BARK(ItemAbilities.AXE_STRIP),
     TILL(ItemAbilities.HOE_TILL),
-    SOW(null);
+    SOW(null),
+    SOW_ROW(null);
 
     private final @Nullable ItemAbility ability;
 
@@ -337,7 +387,7 @@ public final class AreaToolActions {
           || player.getItemInHand(hand) != stack
           || !canInteract(player, level, pos)) return InteractionResult.PASS;
       var hit = new BlockHitResult(Vec3.atCenterOf(pos).relative(face, 0.5), face, pos, false);
-      if (pattern == UsePattern.SOW) {
+      if (pattern == UsePattern.SOW || pattern == UsePattern.SOW_ROW) {
         if (!isPlantable(level, pos) || !canInteract(player, level, pos.above()))
           return InteractionResult.PASS;
       } else {

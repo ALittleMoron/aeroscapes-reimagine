@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:blaze_spell_book"
+  ],
+  "base": [
+    "irons_spellbooks:cinder_essence"
+  ]
+}

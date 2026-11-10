@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_chest_fine_with_water_brace",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_chest"
+    }
+  ],
+  "weight": 20,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_chest_fine_with_water_brace",
+        "operation": "ADD_VALUE",
+        "amount": 0.5
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    }
+  ]
+}

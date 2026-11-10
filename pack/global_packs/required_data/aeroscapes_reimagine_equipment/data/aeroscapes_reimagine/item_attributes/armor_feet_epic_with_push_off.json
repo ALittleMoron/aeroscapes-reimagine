@@ -1,0 +1,47 @@
+{
+  "id": "aeroscapes_reimagine:armor_feet_epic_with_push_off",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_feet"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.safe_fall_distance",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_epic_with_push_off",
+        "operation": "ADD_VALUE",
+        "amount": 1
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    },
+    {
+      "type": "minecraft:generic.fall_damage_multiplier",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_epic_with_push_off",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": -0.12
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    },
+    {
+      "type": "minecraft:generic.water_movement_efficiency",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_feet_epic_with_push_off",
+        "operation": "ADD_VALUE",
+        "amount": 0.12
+      },
+      "required_equipment_slots": [
+        "FEET"
+      ]
+    }
+  ]
+}

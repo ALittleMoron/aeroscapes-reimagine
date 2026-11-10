@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:builder_epic_repeat",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/builder"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

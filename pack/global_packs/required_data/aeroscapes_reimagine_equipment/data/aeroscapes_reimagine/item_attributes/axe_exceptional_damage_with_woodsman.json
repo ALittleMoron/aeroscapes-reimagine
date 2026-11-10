@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:axe_exceptional_damage_with_woodsman",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/axe"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_damage",
+      "modifier": {
+        "name": "aeroscapes_reimagine:axe_exceptional_damage_with_woodsman",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.15
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

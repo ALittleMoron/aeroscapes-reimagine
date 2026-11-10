@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_head_fine_with_visor",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/plain_armor_head"
+    }
+  ],
+  "weight": 20,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_head_fine_with_visor",
+        "operation": "ADD_VALUE",
+        "amount": 0.5
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    }
+  ]
+}

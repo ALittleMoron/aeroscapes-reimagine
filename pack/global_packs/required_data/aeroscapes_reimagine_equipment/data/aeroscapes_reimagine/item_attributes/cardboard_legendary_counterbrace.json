@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:cardboard_legendary_counterbrace",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/cardboard"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

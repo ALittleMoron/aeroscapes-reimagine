@@ -1,6 +1,7 @@
 package dev.aeroscapes.equipment.magic;
 
 import dev.aeroscapes.equipment.ReforgeProfiles;
+import dev.aeroscapes.equipment.combat.ArmorSpecialties;
 import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
 import io.redspace.ironsspellbooks.api.events.SpellPreCastEvent;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
@@ -16,6 +17,7 @@ import java.util.Set;
 import java.util.WeakHashMap;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.monster.Enemy;
@@ -34,6 +36,7 @@ public final class MagicReforges {
   private static final String STAFF = "staff_legendary_fourth";
   private static final String BOOK = "spellbook_legendary_refund";
   private static final String RING = "ring_legendary_ward";
+  private static final String RETURN_WARD = "magic_armor_chest_legendary_ward_with_return_ward";
   private static final int STAFF_COOLDOWN = 240;
   private static final int REFUND_COOLDOWN = 240;
   private static final int REFUND_WINDOW = 240;
@@ -120,6 +123,8 @@ public final class MagicReforges {
     bus.addListener(EventPriority.LOWEST, MagicReforges::refundOnKill);
     bus.addListener(EventPriority.LOWEST, MagicReforges::absorbHit);
     bus.addListener(MagicReforges::tick);
+    bus.addListener(MagicReforges::readyReturnWard);
+    MagicSpecialties.register();
     bus.addListener(CurioReforgeAttributes::append);
   }
 
@@ -159,6 +164,10 @@ public final class MagicReforges {
     applyStaffDiscount(event, player, state, prepared, now);
     String bookSlot = magic.getCastingEquipmentSlot();
     var book = castBook(player, bookSlot);
+    ItemStack matchedStaff =
+        player.getMainHandItem() == prepared.mainHand() ? prepared.mainHand() : ItemStack.EMPTY;
+    ItemStack matchedBook = book == prepared.bookAt(bookSlot) ? book : ItemStack.EMPTY;
+    MagicSpecialties.paidCast(event, player, matchedStaff, matchedBook, bookSlot);
     if (ReforgeProfiles.has(book, BOOK) && book == prepared.bookAt(bookSlot)) {
       state.refunds.put(spell, new PendingRefund(book, bookSlot, now + REFUND_WINDOW));
     } else {
@@ -169,6 +178,7 @@ public final class MagicReforges {
       state.wardArmor = wardArmor(player);
       state.wardRing = wardRing(player);
       if (!state.wardArmor.isEmpty() || !state.wardRing.isEmpty()) {
+        state.wardSpellOnly = false;
         state.wardUntil = now + WARD_WINDOW;
         state.wardReadyAt = now + WARD_COOLDOWN;
       }
@@ -179,9 +189,7 @@ public final class MagicReforges {
       SpellOnCastEvent event, ServerPlayer player, State state, PreparedCast prepared, int now) {
     var staff = player.getMainHandItem();
     if (staff != prepared.mainHand() || !ReforgeProfiles.has(staff, STAFF)) return;
-    String namespace = "irons_spellbooks:";
-    if (!event.getSpellId().startsWith(namespace)
-        || !OFFENSIVE_SPELLS.contains(event.getSpellId().substring(namespace.length()))) return;
+    if (!offensive(event.getSpellId())) return;
     if (state.staff != staff) {
       state.staff = staff;
       state.staffCharges = 0;
@@ -194,6 +202,12 @@ public final class MagicReforges {
       state.staffCharges = 0;
       state.staffReadyAt = now + STAFF_COOLDOWN;
     }
+  }
+
+  static boolean offensive(String spell) {
+    String namespace = "irons_spellbooks:";
+    return spell.startsWith(namespace)
+        && OFFENSIVE_SPELLS.contains(spell.substring(namespace.length()));
   }
 
   private static void refundOnKill(LivingDeathEvent event) {
@@ -221,15 +235,42 @@ public final class MagicReforges {
         || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return;
     var state = STATES.get(player);
     if (state == null || player.tickCount >= state.wardUntil) return;
+    boolean spellDamage = isSpellDamage(event.getSource());
     boolean ringWorks =
-        (event.getSource() instanceof SpellDamageSource
-                || event.getSource().is(Tags.DamageTypes.IS_MAGIC))
-            && !state.wardRing.isEmpty()
-            && wardRing(player) == state.wardRing;
-    if (ringWorks || (!state.wardArmor.isEmpty() && wardArmor(player) == state.wardArmor)) {
+        spellDamage && !state.wardRing.isEmpty() && wardRing(player) == state.wardRing;
+    boolean armorWorks = (!state.wardSpellOnly || spellDamage) && wardArmorActive(player, state);
+    if ((ringWorks || armorWorks) && ArmorSpecialties.spendDefense(player)) {
       event.setNewDamage(event.getNewDamage() * 0.75F);
       state.wardUntil = 0;
     }
+  }
+
+  private static void readyReturnWard(LivingDamageEvent.Post event) {
+    if (!(event.getEntity() instanceof ServerPlayer player)
+        || !player.isAlive()
+        || event.getNewDamage() <= 0.0F
+        || !isSpellDamage(event.getSource())) return;
+    var chest = player.getItemBySlot(EquipmentSlot.CHEST);
+    if (!ReforgeProfiles.has(chest, RETURN_WARD)) return;
+    var state = STATES.computeIfAbsent(player, ignored -> new State());
+    int now = player.tickCount;
+    if (now < state.wardReadyAt) return;
+    state.wardArmor = chest;
+    state.wardRing = ItemStack.EMPTY;
+    state.wardSpellOnly = true;
+    state.wardUntil = now + 80;
+    state.wardReadyAt = now + WARD_COOLDOWN;
+  }
+
+  private static boolean isSpellDamage(DamageSource source) {
+    return source instanceof SpellDamageSource || source.is(Tags.DamageTypes.IS_MAGIC);
+  }
+
+  private static boolean wardArmorActive(ServerPlayer player, State state) {
+    if (state.wardArmor.isEmpty()) return false;
+    if (!state.wardSpellOnly) return wardArmor(player) == state.wardArmor;
+    var chest = player.getItemBySlot(EquipmentSlot.CHEST);
+    return chest == state.wardArmor && ReforgeProfiles.has(chest, RETURN_WARD);
   }
 
   private static void tick(PlayerTickEvent.Post event) {
@@ -245,7 +286,7 @@ public final class MagicReforges {
       state.wardArmor = ItemStack.EMPTY;
       state.wardRing = ItemStack.EMPTY;
     } else {
-      if (!state.wardArmor.isEmpty() && wardArmor(player) != state.wardArmor) {
+      if (!wardArmorActive(player, state)) {
         state.wardArmor = ItemStack.EMPTY;
       }
       if (!state.wardRing.isEmpty() && wardRing(player) != state.wardRing) {
@@ -277,7 +318,7 @@ public final class MagicReforges {
     return stack == null ? ItemStack.EMPTY : stack;
   }
 
-  private static ItemStack castBook(ServerPlayer player, String slot) {
+  static ItemStack castBook(ServerPlayer player, String slot) {
     if (Curios.SPELLBOOK_SLOT.equals(slot)) return slottedBook(player);
     if (EquipmentSlot.MAINHAND.getName().equals(slot)) return player.getMainHandItem();
     if (EquipmentSlot.OFFHAND.getName().equals(slot)) return player.getOffhandItem();
@@ -293,6 +334,7 @@ public final class MagicReforges {
     private int staffCharges;
     private int staffReadyAt;
     private int refundReadyAt;
+    private boolean wardSpellOnly;
     private int wardUntil;
     private int wardReadyAt;
   }

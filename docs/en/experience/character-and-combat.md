@@ -12,9 +12,19 @@ Quality ranges from poor to legendary. Excellent gear can specialize in one stro
 
 Reforging can produce legendary gear. Some legendary gear also appears in selected chests, including swords with **Frost Strike** in dungeons, mineshafts and Ice Spider Dens. A charged hit with that sword has a 20% chance to apply Slowness I for two seconds. Ordinary crafting can roll up to epic quality.
 
-Open the anvil’s **Reforging** tab. Put undamaged gear in the middle, one base material on the left and one lapis lazuli on the right. Look up the gear in EMI and open **Reforging** to see the materials. An iron pickaxe takes an iron ingot, a Wandering Magician Hood takes leather and Artificer’s Cane takes a gold ingot. Each paid attempt commits the whole result immediately. The price and odds are fixed for that item. The new rank can be worse or repeat the previous one. Ordinary enchantments remain on the item.
+Open the anvil’s **Reforging** tab. Put undamaged gear in the middle, one base material on the left and one lapis lazuli on the right. An iron pickaxe takes an iron ingot, a Wandering Magician Hood takes leather and Artificer’s Cane takes a gold ingot. Each paid attempt commits the whole result immediately. The price and odds are fixed for that item. The new rank can be worse or repeat the previous one. Ordinary enchantments remain on the item.
+
+To compare possible results, open the item in EMI and select **Reforging**. The card shows the materials and the chance of each available rank. Select a rank and hover over a result for its bonuses and any conditions. For example, a good pickaxe can keep its mining-speed bonus and also save wear when mining stone.
+
+The autoloader crossbow takes an iron ingot. Its charge bonuses affect automatic loading: click to start, sneak and click to cancel, and fire to start loading the next bolt if you still have ammunition. Reforging keeps an already loaded bolt. Reforged weapons with built-in spells keep their spells and levels.
 
 Ranked spell books and rings provide passive bonuses while equipped in their respective accessory slots. Reforging preserves the spells written in the book. Grappling hook ranks can favor ascent or descent. A legendary hook dampens sideways sway while you sneak on an anchored line.
+
+Armor bonuses depend on the slot and situation. A helmet can prepare protection against a second projectile hit, while diving gear can save air or help you push off the bottom. Triggered armor and magic protection share a limit. Some staffs improve eligible paid casts, and a paraglider can hold its course better through a turn.
+
+Field gear has its own results. A brush can retain progress when you pause an excavation. A seed pouch can plant a row from its stored seeds and stops at an obstacle. Reforging preserves the contents of the pouch, the water in a canteen and the film and attachments in a camera.
+
+The legendary handheld rope launcher marks its estimated impact on a solid surface. Crouch in first person with a throwable rope connector in the opposite hand to see the marker.
 
 A pickaxe with **Extra Yield** can add one unit of an actual drop, including stone gathered with Silk Touch. This bonus applies to blocks with tracked natural provenance in newly generated terrain.
 

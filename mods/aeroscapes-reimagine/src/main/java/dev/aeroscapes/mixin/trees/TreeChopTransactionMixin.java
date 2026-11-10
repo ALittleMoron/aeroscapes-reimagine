@@ -3,9 +3,12 @@ package dev.aeroscapes.mixin.trees;
 import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import dev.aeroscapes.equipment.ReforgeProfiles;
+import dev.aeroscapes.equipment.tools.ToolReforges;
 import dev.aeroscapes.trees.TreeTransactions;
 import ht.treechop.api.ChopData;
 import ht.treechop.api.ChopDataImmutable;
+import ht.treechop.common.block.ChoppedLogBlock;
 import ht.treechop.common.chop.ChopResult;
 import ht.treechop.common.chop.ChopUtil;
 import ht.treechop.common.platform.Platform;
@@ -14,6 +17,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.event.level.BlockEvent;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -32,13 +36,38 @@ public abstract class TreeChopTransactionMixin {
       boolean leaves,
       Operation<Boolean> original) {
     if (TreeTransactions.onShip(level, position)) return false;
+    boolean cut;
+    boolean continued;
     TreeTransactions.begin(level, player, position);
     try {
       boolean result = original.call(player, level, position, state, tool, trigger, chops, leaves);
-      return TreeTransactions.finalRequested() || result;
+      boolean finalCut = TreeTransactions.finalRequested();
+      continued = result && !finalCut;
+      cut = finalCut || result;
     } finally {
       TreeTransactions.end();
     }
+    if (continued
+        && trigger instanceof BlockEvent.BreakEvent event
+        && !event.isCanceled()
+        && state.getBlock() instanceof ChoppedLogBlock
+        && ToolReforges.isSurvivalPlayer(player)
+        && player.getMainHandItem() == tool
+        && ReforgeProfiles.has(tool, "axe_legendary_feller")
+        && level.mayInteract(player, position)
+        && player.canInteractWithBlock(position, 0.0)
+        && player.getRandom().nextFloat() < 0.25F) {
+      BlockState next = level.getBlockState(position);
+      if (next.getBlock() instanceof ChoppedLogBlock) {
+        TreeTransactions.beginBonus(level, player, event);
+        try {
+          original.call(player, level, position, next, tool, trigger, 1, leaves);
+        } finally {
+          TreeTransactions.end();
+        }
+      }
+    }
+    return cut;
   }
 
   @WrapOperation(
@@ -59,6 +88,7 @@ public abstract class TreeChopTransactionMixin {
       Object trigger,
       Operation<Boolean> original) {
     boolean accepted = original.call(platform, player, level, position, state, data, trigger);
+    if (accepted && TreeTransactions.isBonusChop() && data.getNumChops() > 1) data.setNumChops(1);
     return accepted && TreeTransactions.capture(data);
   }
 

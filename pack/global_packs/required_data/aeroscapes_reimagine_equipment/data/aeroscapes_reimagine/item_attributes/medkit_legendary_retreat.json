@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:medkit_legendary_retreat",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/medkit"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

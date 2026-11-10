@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:trident_exceptional_velocity_with_tempo",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/trident"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

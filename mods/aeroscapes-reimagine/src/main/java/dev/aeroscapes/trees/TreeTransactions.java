@@ -4,6 +4,7 @@ import dev.pandasystems.fallingtrees.api.TreeData;
 import dev.pandasystems.fallingtrees.api.TreeHandler;
 import dev.ryanhcode.sable.Sable;
 import ht.treechop.api.ChopData;
+import ht.treechop.api.ChopEvent;
 import ht.treechop.common.block.ChoppedLogBlock;
 import ht.treechop.common.chop.ChopUtil;
 import java.util.ArrayList;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.neoforged.neoforge.event.level.BlockEvent;
 
 /** One server-thread chop transaction, including native Panda and final-break charges. */
 public final class TreeTransactions {
@@ -39,6 +41,30 @@ public final class TreeTransactions {
 
   public static void end() {
     CURRENT.remove();
+  }
+
+  public static void beginBonus(
+      ServerLevel level, ServerPlayer player, BlockEvent.BreakEvent trigger) {
+    begin(level, player, trigger.getPos());
+    CURRENT.get().bonusTrigger = trigger;
+  }
+
+  public static boolean consumeBonusPermission(ChopEvent.StartChopEvent event) {
+    Transaction transaction = CURRENT.get();
+    if (transaction == null
+        || transaction.bonusTrigger == null
+        || transaction.bonusPermitUsed
+        || transaction.bonusTrigger != event.getTrigger()
+        || transaction.level != event.getLevel()
+        || transaction.player != event.getPlayer()
+        || !transaction.position.equals(event.getChoppedBlockPos())) return false;
+    transaction.bonusPermitUsed = true;
+    return true;
+  }
+
+  public static boolean isBonusChop() {
+    Transaction transaction = CURRENT.get();
+    return transaction != null && transaction.bonusTrigger != null;
   }
 
   public static boolean onShip(ServerLevel level, BlockPos position) {
@@ -266,6 +292,8 @@ public final class TreeTransactions {
     private int logCount;
     private boolean finalRequested;
     private boolean completed;
+    private BlockEvent.BreakEvent bonusTrigger;
+    private boolean bonusPermitUsed;
     private TreeData prepared;
 
     private Transaction(ServerLevel level, ServerPlayer player, BlockPos position) {

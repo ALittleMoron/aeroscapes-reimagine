@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:armor_chest_exceptional_with_water_guard",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_chest"
+    }
+  ],
+  "weight": 5,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_chest_exceptional_with_water_guard",
+        "operation": "ADD_VALUE",
+        "amount": 1.0
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    }
+  ]
+}

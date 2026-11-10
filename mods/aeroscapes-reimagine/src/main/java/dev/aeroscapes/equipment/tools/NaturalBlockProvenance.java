@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.SectionPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
@@ -82,7 +83,7 @@ public final class NaturalBlockProvenance {
     return changes != null && !changes.get(localIndex(chunk, pos));
   }
 
-  static boolean isOnShip(ServerLevel level, BlockPos pos) {
+  static boolean isOnShip(Level level, BlockPos pos) {
     return !SABLE_VERSION.isEmpty()
         && (!"2.0.6".equals(SABLE_VERSION) || SablePlots.contains(level, pos));
   }
@@ -93,7 +94,7 @@ public final class NaturalBlockProvenance {
   }
 
   private static final class SablePlots {
-    private static boolean contains(ServerLevel level, BlockPos pos) {
+    private static boolean contains(Level level, BlockPos pos) {
       return Sable.HELPER.getContaining(level, pos) != null;
     }
   }

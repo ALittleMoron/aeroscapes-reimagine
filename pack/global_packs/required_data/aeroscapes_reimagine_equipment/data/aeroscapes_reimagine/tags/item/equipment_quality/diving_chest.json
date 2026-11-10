@@ -2,6 +2,10 @@
   "values": [
     "hybrid_aquatic:diving_suit",
     "hybrid_aquatic:reinforced_diving_suit",
-    "hybrid_aquatic:glowing_diving_suit"
+    "hybrid_aquatic:glowing_diving_suit",
+    "create:copper_backtank",
+    "create:netherite_backtank",
+    "hybrid_aquatic:nautilus_pauldrons",
+    "hybrid_aquatic:turtle_chestplate"
   ]
 }

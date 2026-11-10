@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:shield_legendary_intercept",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/shield"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

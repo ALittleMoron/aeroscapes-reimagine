@@ -1,0 +1,8 @@
+{
+  "items": [
+    "create:potato_cannon"
+  ],
+  "base": [
+    "create:andesite_alloy"
+  ]
+}

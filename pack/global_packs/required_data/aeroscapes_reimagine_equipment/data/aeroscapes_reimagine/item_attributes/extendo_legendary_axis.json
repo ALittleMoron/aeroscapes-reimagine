@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:extendo_legendary_axis",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/extendo"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

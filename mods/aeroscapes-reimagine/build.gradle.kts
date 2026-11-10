@@ -178,7 +178,9 @@ dependencies {
   equipmentAssets("maven.modrinth:comforts:3kpPjcTc")
   equipmentAssets("maven.modrinth:galosphere:Y3deS8Po")
   equipmentAssets("maven.modrinth:sophisticated-storage:wVZfDecJ")
-  equipmentAssets("maven.modrinth:create-aeronautics-throwable-rope-connector:EDzeTV17")
+  val ropeLauncherArtifact = "maven.modrinth:create-aeronautics-throwable-rope-connector:EDzeTV17"
+  equipmentAssets(ropeLauncherArtifact)
+  compileOnly(ropeLauncherArtifact) { isTransitive = false }
   equipmentAssets("maven.modrinth:exposure:iBvaR6AK")
   equipmentAssets("maven.modrinth:littletiles:c2SowFEz")
   explorationApi("maven.modrinth:hybrid-aquatic:jdOU7Pzu")
@@ -433,6 +435,7 @@ val atmosphereContractTest by
         "aeroscapes.atmosphere.apis",
         (atmosphereApi.files +
             sableApi.files +
+            shipApi.files +
             fileTree(shipNestedApiDirectory) { include("*.jar") }.files)
           .joinToString(File.pathSeparator),
       )

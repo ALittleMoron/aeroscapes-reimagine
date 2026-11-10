@@ -1,0 +1,14 @@
+{
+  "values": [
+    "minecraft:chainmail_chestplate",
+    "minecraft:diamond_chestplate",
+    "minecraft:golden_chestplate",
+    "minecraft:iron_chestplate",
+    "minecraft:leather_chestplate",
+    "minecraft:netherite_chestplate",
+    "create:cardboard_chestplate",
+    "galosphere:sterling_chestplate",
+    "legendarysurvivaloverhaul:desert_chestplate",
+    "legendarysurvivaloverhaul:snow_chestplate"
+  ]
+}

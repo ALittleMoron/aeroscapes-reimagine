@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:magic_armor_legs_exceptional_mana_with_long_step",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/magic_armor_legs"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:magic_armor_legs_exceptional_mana_with_long_step",
+        "operation": "ADD_VALUE",
+        "amount": 20
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    }
+  ]
+}

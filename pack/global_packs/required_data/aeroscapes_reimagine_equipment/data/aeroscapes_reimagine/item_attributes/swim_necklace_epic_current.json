@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:swim_necklace_epic_current",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/swim_necklace"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

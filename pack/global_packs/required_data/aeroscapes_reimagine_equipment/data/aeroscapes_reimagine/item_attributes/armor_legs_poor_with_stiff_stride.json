@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:armor_legs_poor_with_stiff_stride",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/plain_armor_legs"
+    }
+  ],
+  "weight": 15,
+  "style": {
+    "color": "red"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_poor_with_stiff_stride",
+        "operation": "ADD_VALUE",
+        "amount": -0.5
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    },
+    {
+      "type": "minecraft:player.sneaking_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_poor_with_stiff_stride",
+        "operation": "ADD_VALUE",
+        "amount": -0.035
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:hoe_epic_with_tilling_tine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/hoe"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:player.block_interaction_range",
+      "modifier": {
+        "name": "aeroscapes_reimagine:hoe_epic_with_tilling_tine",
+        "operation": "ADD_VALUE",
+        "amount": 0.5
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    },
+    {
+      "type": "tieredneo:generic.dig_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:hoe_epic_with_tilling_tine",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.15
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

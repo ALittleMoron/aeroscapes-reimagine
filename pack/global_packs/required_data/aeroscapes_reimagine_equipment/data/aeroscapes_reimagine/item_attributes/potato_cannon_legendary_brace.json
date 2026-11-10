@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:potato_cannon_legendary_brace",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/potato_cannon"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:builder_chisel_epic_setup",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/builder_chisel"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

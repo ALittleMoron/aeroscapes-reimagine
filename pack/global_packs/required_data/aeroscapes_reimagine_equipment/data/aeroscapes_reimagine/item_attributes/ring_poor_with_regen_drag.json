@@ -1,0 +1,32 @@
+{
+  "id": "aeroscapes_reimagine:ring_poor_with_regen_drag",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ring"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_poor_with_regen_drag",
+        "operation": "ADD_VALUE",
+        "amount": -8
+      },
+      "required_equipment_slots": []
+    },
+    {
+      "type": "irons_spellbooks:mana_regen",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_poor_with_regen_drag",
+        "operation": "ADD_VALUE",
+        "amount": -0.06
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}

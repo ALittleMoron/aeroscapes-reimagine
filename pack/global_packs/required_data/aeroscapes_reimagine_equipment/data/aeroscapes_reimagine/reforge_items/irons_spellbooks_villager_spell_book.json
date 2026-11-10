@@ -1,0 +1,8 @@
+{
+  "items": [
+    "irons_spellbooks:villager_spell_book"
+  ],
+  "base": [
+    "irons_spellbooks:magic_cloth"
+  ]
+}

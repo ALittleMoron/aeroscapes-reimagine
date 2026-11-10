@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:spyglass_legendary_deck",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/spyglass"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

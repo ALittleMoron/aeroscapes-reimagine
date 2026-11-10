@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:crab_claw_legendary_deliberate",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/crab_claw"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:trowel_legendary_preview",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/trowel"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

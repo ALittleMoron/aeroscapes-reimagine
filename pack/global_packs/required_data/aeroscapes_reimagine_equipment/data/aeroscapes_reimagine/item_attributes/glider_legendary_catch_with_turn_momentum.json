@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:glider_legendary_catch_with_turn_momentum",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/glider"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

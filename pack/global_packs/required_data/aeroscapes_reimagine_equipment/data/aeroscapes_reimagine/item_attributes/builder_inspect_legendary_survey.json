@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:builder_inspect_legendary_survey",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/builder_inspect"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

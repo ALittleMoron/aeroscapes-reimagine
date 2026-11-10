@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:hook_poor_with_sway",
+  "verifiers": [
+    {
+      "tag": "yo_hooks:hooks"
+    }
+  ],
+  "weight": 15,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

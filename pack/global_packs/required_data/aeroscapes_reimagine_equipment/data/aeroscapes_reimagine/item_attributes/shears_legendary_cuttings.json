@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:shears_legendary_cuttings",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/shears"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": [
+    {
+      "type": "tieredneo:generic.dig_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:shears_legendary_cuttings",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.12
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    },
+    {
+      "type": "minecraft:player.block_interaction_range",
+      "modifier": {
+        "name": "aeroscapes_reimagine:shears_legendary_cuttings",
+        "operation": "ADD_VALUE",
+        "amount": 0.5
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

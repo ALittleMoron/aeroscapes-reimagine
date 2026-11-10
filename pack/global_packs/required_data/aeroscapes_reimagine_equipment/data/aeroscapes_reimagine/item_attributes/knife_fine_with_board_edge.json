@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:knife_fine_with_board_edge",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/knife"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "green"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:knife_fine_with_board_edge",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.08
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

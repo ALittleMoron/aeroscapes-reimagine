@@ -1,0 +1,8 @@
+{
+  "items": [
+    "exposure:camera"
+  ],
+  "base": [
+    "minecraft:iron_ingot"
+  ]
+}

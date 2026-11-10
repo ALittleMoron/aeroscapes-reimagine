@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:camera_legendary_deck",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/camera"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

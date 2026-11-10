@@ -1,0 +1,8 @@
+{
+  "items": [
+    "create:wrench"
+  ],
+  "base": [
+    "create:golden_sheet"
+  ]
+}

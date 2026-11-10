@@ -1,0 +1,36 @@
+{
+  "id": "aeroscapes_reimagine:armor_chest_legendary_cushion_with_renewed_guard",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/plain_armor_chest"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_chest_legendary_cushion_with_renewed_guard",
+        "operation": "ADD_VALUE",
+        "amount": 1
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    },
+    {
+      "type": "minecraft:generic.armor_toughness",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_chest_legendary_cushion_with_renewed_guard",
+        "operation": "ADD_VALUE",
+        "amount": 1
+      },
+      "required_equipment_slots": [
+        "CHEST"
+      ]
+    }
+  ]
+}

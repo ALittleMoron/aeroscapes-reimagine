@@ -1,8 +1,8 @@
 package dev.aeroscapes.mixin.reforge.emi;
 
+import com.herobrot.tieredneo.network.payload.AttributeSyncPayload;
 import com.herobrot.tieredneo.network.payload.ReforgeItemSyncPayload;
-import dev.emi.emi.runtime.EmiReloadManager;
-import net.minecraft.client.Minecraft;
+import dev.aeroscapes.equipment.emi.ReforgeEmiReload;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -12,8 +12,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 abstract class ReforgeEmiRefreshMixin {
   @Inject(method = "lambda$handleReforgeItemSync$2", at = @At("RETURN"))
   @SuppressWarnings("PMD.UnusedPrivateMethod")
-  private static void aeroscapes$refreshRecipes(
+  private static void aeroscapes$materialsUpdated(
       ReforgeItemSyncPayload payload, CallbackInfo callback) {
-    if (Minecraft.getInstance().level != null) EmiReloadManager.reload();
+    ReforgeEmiReload.invalidate();
+  }
+
+  @Inject(method = "lambda$handleAttributeSync$3", at = @At("RETURN"))
+  @SuppressWarnings("PMD.UnusedPrivateMethod")
+  private static void aeroscapes$attributesUpdated(
+      AttributeSyncPayload payload, CallbackInfo callback) {
+    ReforgeEmiReload.invalidate();
   }
 }

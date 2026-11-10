@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:potato_cannon_fine_aim",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/potato_cannon"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "green"
+  },
+  "attributes": []
+}

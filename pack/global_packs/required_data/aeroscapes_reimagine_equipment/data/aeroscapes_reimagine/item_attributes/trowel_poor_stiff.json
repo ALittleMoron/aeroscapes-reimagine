@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:trowel_poor_stiff",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/trowel"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "dark_gray"
+  },
+  "attributes": []
+}

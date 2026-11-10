@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:rod_legendary_salvager",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/rod"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

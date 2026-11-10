@@ -1,0 +1,47 @@
+{
+  "id": "aeroscapes_reimagine:diving_head_epic_with_air_economy",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diving_head"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.oxygen_bonus",
+      "modifier": {
+        "name": "aeroscapes_reimagine:diving_head_epic_with_air_economy",
+        "operation": "ADD_VALUE",
+        "amount": 0.3
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    },
+    {
+      "type": "minecraft:player.submerged_mining_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:diving_head_epic_with_air_economy",
+        "operation": "ADD_VALUE",
+        "amount": 0.14
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    },
+    {
+      "type": "minecraft:generic.oxygen_bonus",
+      "modifier": {
+        "name": "aeroscapes_reimagine:diving_head_epic_with_air_economy/specialty",
+        "operation": "ADD_VALUE",
+        "amount": 0.18
+      },
+      "required_equipment_slots": [
+        "HEAD"
+      ]
+    }
+  ]
+}

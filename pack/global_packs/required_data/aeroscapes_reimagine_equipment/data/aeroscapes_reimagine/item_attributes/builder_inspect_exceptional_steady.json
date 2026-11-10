@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:builder_inspect_exceptional_steady",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/builder_inspect"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

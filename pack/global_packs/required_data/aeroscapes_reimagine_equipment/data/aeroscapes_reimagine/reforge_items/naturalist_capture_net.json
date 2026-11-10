@@ -1,0 +1,8 @@
+{
+  "items": [
+    "naturalist:capture_net"
+  ],
+  "base": [
+    "minecraft:string"
+  ]
+}

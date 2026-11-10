@@ -1,0 +1,47 @@
+{
+  "id": "aeroscapes_reimagine:armor_legs_epic_with_terrain",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/plain_armor_legs"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.armor",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_epic_with_terrain",
+        "operation": "ADD_VALUE",
+        "amount": 0.75
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    },
+    {
+      "type": "minecraft:generic.movement_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_epic_with_terrain",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.04
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    },
+    {
+      "type": "minecraft:generic.movement_efficiency",
+      "modifier": {
+        "name": "aeroscapes_reimagine:armor_legs_epic_with_terrain",
+        "operation": "ADD_VALUE",
+        "amount": 0.28
+      },
+      "required_equipment_slots": [
+        "LEGS"
+      ]
+    }
+  ]
+}

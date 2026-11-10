@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:pet_armor_poor_loose",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/pet_armor"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "dark_gray"
+  },
+  "attributes": []
+}

@@ -1,0 +1,25 @@
+{
+  "id": "aeroscapes_reimagine:knife_exceptional_speed_with_filleting",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/knife"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": [
+    {
+      "type": "minecraft:generic.attack_speed",
+      "modifier": {
+        "name": "aeroscapes_reimagine:knife_exceptional_speed_with_filleting",
+        "operation": "ADD_MULTIPLIED_TOTAL",
+        "amount": 0.18
+      },
+      "required_equipment_slots": [
+        "MAINHAND"
+      ]
+    }
+  ]
+}

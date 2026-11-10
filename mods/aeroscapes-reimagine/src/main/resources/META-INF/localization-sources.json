@@ -1954,19 +1954,59 @@
     "resources": [
       {
         "resource": "assets/aeroscapes_reimagine_equipment_translations/lang/en_us.json",
-        "entries": 35
+        "entries": 432
       },
       {
         "resource": "assets/aeroscapes_reimagine_equipment_translations/lang/ru_ru.json",
-        "entries": 77
+        "entries": 474
       },
       {
         "resource": "assets/aeroscapes_reimagine_hook_equipment_translations/lang/en_us.json",
-        "entries": 5
+        "entries": 6
       },
       {
         "resource": "assets/aeroscapes_reimagine_hook_equipment_translations/lang/ru_ru.json",
-        "entries": 5
+        "entries": 6
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_reforge_emi/lang/en_us.json",
+        "entries": 73
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_reforge_emi/lang/ru_ru.json",
+        "entries": 73
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_expansion_armor/lang/en_us.json",
+        "entries": 153
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_expansion_armor/lang/ru_ru.json",
+        "entries": 153
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_expansion_builders/lang/en_us.json",
+        "entries": 55
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_expansion_builders/lang/ru_ru.json",
+        "entries": 55
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_expansion_field/lang/en_us.json",
+        "entries": 154
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_expansion_field/lang/ru_ru.json",
+        "entries": 154
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_expansion_weapons/lang/en_us.json",
+        "entries": 44
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_equipment_expansion_weapons/lang/ru_ru.json",
+        "entries": 44
       }
     ],
     "scope": "Authored labels for the equipment pools, Frost Strike effect, hook ascent/descent speed and catalyst slot. Mod Menu descriptions and Russian reforging, attribute, command and configuration text supplement the provider resources. Guarded English changes retain the brand title.",

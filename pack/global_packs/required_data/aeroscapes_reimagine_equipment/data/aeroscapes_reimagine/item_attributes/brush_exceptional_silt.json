@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:brush_exceptional_silt",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/brush"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

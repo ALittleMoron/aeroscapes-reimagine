@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:cardboard_poor_soft",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/cardboard"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

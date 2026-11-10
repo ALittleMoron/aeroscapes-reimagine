@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:shield_epic_with_anchored",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/shield"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

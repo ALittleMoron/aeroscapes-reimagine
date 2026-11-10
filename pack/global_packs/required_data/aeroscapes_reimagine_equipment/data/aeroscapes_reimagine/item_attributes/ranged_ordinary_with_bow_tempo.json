@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:ranged_ordinary_with_bow_tempo",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/bow"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

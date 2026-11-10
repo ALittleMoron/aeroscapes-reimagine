@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:spyglass_poor_sway",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/spyglass"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "dark_gray"
+  },
+  "attributes": []
+}

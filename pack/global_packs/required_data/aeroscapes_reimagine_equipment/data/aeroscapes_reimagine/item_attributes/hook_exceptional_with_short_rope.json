@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:hook_exceptional_with_short_rope",
+  "verifiers": [
+    {
+      "tag": "yo_hooks:hooks"
+    }
+  ],
+  "weight": 5,
+  "style": {
+    "color": "aqua"
+  },
+  "attributes": []
+}

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:shears_ordinary_with_leaf_edge",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/shears"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "white"
+  },
+  "attributes": []
+}

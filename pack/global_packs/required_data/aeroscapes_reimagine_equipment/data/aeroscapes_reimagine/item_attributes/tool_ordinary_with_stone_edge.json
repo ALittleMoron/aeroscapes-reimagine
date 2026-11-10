@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:tool_ordinary_with_stone_edge",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/pick"
+    }
+  ],
+  "weight": 60,
+  "style": {
+    "color": "gray"
+  },
+  "attributes": []
+}

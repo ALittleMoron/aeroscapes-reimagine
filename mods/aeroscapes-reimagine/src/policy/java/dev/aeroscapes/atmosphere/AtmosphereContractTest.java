@@ -86,6 +86,7 @@ public final class AtmosphereContractTest {
     miscellaneousTranslationFallbacks();
     constructionShapeVersionGate();
     quiverComposition();
+    ropeLauncherFirstPersonBoundary();
     fastRodRenderers();
     lanternGrip();
     rainImpactBiome();
@@ -101,6 +102,7 @@ public final class AtmosphereContractTest {
     creativeSearchContract();
     schematicMessages();
     distantSceneryCompatibility();
+    distantHorizonsClientSetupBoundary();
     IcebergConfigBridgeTest.verify();
     AdvancementCriterionTranslationsTest.verify();
     ClassNode attachment = provider("punchy/client/render/FishingLineAttachment");
@@ -1421,6 +1423,74 @@ public final class AtmosphereContractTest {
                           && !call.name.equals("last")),
           "entry pose stays unchanged before vertices");
     }
+  }
+
+  private static void ropeLauncherFirstPersonBoundary() throws IOException {
+    String mixin = "dev.aeroscapes.mixin.atmosphere.RopeLauncherFirstPersonMixin";
+    Map<String, String> client =
+        Map.of(
+            "punchy", "3.0",
+            "create", "6.0.10",
+            "create_aeronautics_throwable_rope_connector", "0.4.3",
+            "neoforge", "21.1.244");
+    require(
+        AtmosphereMixinPlugin.shouldApplyForVersions(mixin, client::get),
+        "the installed Punchy and rope launcher use the scoped hand callback");
+    require(
+        !AtmosphereMixinPlugin.shouldApplyForVersions(
+            mixin, mod -> mod.equals("punchy") ? null : client.get(mod)),
+        "the rope launcher keeps the native handler when Punchy is absent");
+
+    String event = "net/neoforged/neoforge/client/event/RenderHandEvent";
+    MethodNode callback =
+        method(
+            provider("com/simibubi/create/content/equipment/zapper/ShootableGadgetRenderHandler"),
+            "onRenderPlayerHand",
+            "(L" + event + ";)V");
+    require(
+        executable(callback).stream()
+            .anyMatch(
+                instruction ->
+                    instruction instanceof MethodInsnNode call
+                        && call.owner.equals(event)
+                        && call.name.equals("setCanceled")
+                        && call.desc.equals("(Z)V")),
+        "Create draws and consumes the first-person event before the vanilla hand pass");
+  }
+
+  private static void distantHorizonsClientSetupBoundary() throws IOException {
+    String mixin = "dev.aeroscapes.mixin.atmosphere.DistantHorizonsClientSetupMixin";
+    Map<String, String> client =
+        Map.of(
+            "distanthorizons", "3.3.3",
+            "betterclouds", "1.13.11+1.21.1-neoforge",
+            "neoforge", "21.1.244");
+    require(
+        AtmosphereMixinPlugin.shouldApplyForVersions(mixin, client::get),
+        "the pinned client uses the deferred DH initialization");
+    require(
+        !AtmosphereMixinPlugin.shouldApplyForVersions(
+            mixin, mod -> mod.equals("betterclouds") ? null : client.get(mod)),
+        "DH alone retains its native startup");
+
+    String entrypoint = "com/seibel/distanthorizons/neoforge/NeoforgeMain";
+    MethodNode clientSetup =
+        method(
+            provider(entrypoint),
+            "lambda$new$0",
+            "(Lnet/neoforged/bus/api/IEventBus;Lnet/neoforged/fml/event/lifecycle/FMLClientSetupEvent;)V");
+    require(
+        executable(clientSetup).stream()
+                .filter(
+                    instruction ->
+                        instruction instanceof MethodInsnNode call
+                            && call.getOpcode() == Opcodes.INVOKEVIRTUAL
+                            && call.owner.equals(entrypoint)
+                            && call.name.equals("onInitializeClient")
+                            && call.desc.equals("()V"))
+                .count()
+            == 1,
+        "DH calls its client initializer once from the parallel lifecycle event");
   }
 
   private static void distantSceneryCompatibility() throws IOException {

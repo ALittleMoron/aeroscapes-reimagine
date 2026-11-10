@@ -1,0 +1,32 @@
+{
+  "id": "aeroscapes_reimagine:ring_epic_mana_with_battle_reserve",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ring"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": [
+    {
+      "type": "irons_spellbooks:max_mana",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_epic_mana_with_battle_reserve",
+        "operation": "ADD_VALUE",
+        "amount": 12
+      },
+      "required_equipment_slots": []
+    },
+    {
+      "type": "irons_spellbooks:mana_regen",
+      "modifier": {
+        "name": "aeroscapes_reimagine:ring_epic_mana_with_battle_reserve",
+        "operation": "ADD_VALUE",
+        "amount": 0.05
+      },
+      "required_equipment_slots": []
+    }
+  ]
+}
