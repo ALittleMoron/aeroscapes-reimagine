@@ -55,17 +55,13 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.CommonHooks;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.damagesource.DamageContainer;
-import net.neoforged.neoforge.common.util.FakePlayerFactory;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
@@ -252,126 +248,6 @@ final class ReforgeRegression {
       verifyTheurgy(player);
       verifySharedDefense(player);
       verifyPaidCasting(player);
-      verifyEngineering(player);
-    }
-  }
-
-  private static void verifyEngineering(ServerPlayer player) {
-    verifyEngineeringGear(
-        player,
-        registered("createbigcannons:ram_rod").getDefaultInstance(),
-        registered("create:piston_extension_pole"),
-        "cannon_loading");
-    verifyEngineeringGear(
-        player,
-        registered("createbigcannons:worm").getDefaultInstance(),
-        Items.IRON_INGOT,
-        "cannon_loading");
-    verifyEngineeringGear(
-        player,
-        registered("createbigcannons:cannon_welder").getDefaultInstance(),
-        registered("create:brass_sheet"),
-        "cannon_welding");
-    verifyEngineeringGear(
-        player,
-        registered("createbigcannons:block_armor_inspection_tool").getDefaultInstance(),
-        Items.IRON_INGOT,
-        "cannon_inspection");
-    verifyEngineeringGear(
-        player,
-        registered("createbigcannons:gas_mask").getDefaultInstance(),
-        Items.LEATHER,
-        "gas_mask");
-    verifySwitchLinkPearl(player);
-  }
-
-  private static void verifyEngineeringGear(
-      ServerPlayer player, ItemStack stack, Item material, String family) {
-    var item = stack.getItem();
-    verifyPool(item, 1);
-    require(
-        TieredNeoAPI.getReforgeBaseItems(item).equals(List.of(material)),
-        item + " accepts its engineering reforge material");
-    for (var grade : ReforgeProfiles.paidGrades(item)) {
-      require(
-          grade.outcomes().size() == 1
-              && grade.outcomes().getFirst().id().equals(profile(family + "_" + grade.key())),
-          item + " offers its " + grade.key() + " engineering effect");
-    }
-    paidReforge(player, stack);
-  }
-
-  private static void verifySwitchLinkPearl(ServerPlayer player) {
-    var level = player.serverLevel();
-    var position = player.blockPosition();
-    int x = position.getX();
-    int z = position.getZ();
-    var surface = Heightmap.Types.WORLD_SURFACE;
-    int y = Math.max(level.getHeight(surface, x, z), level.getHeight(surface, x + 2, z)) + 2;
-    var source = new BlockPos(x, y, z);
-    var target = source.east(2);
-    var positions = List.of(source, target, source.below(), target.below());
-    require(positions.stream().allMatch(level::isEmptyBlock), "Switch fixture has space");
-    var lever =
-        BuiltInRegistries.BLOCK
-            .get(ResourceLocation.parse("rsgauges:industrial_lever"))
-            .defaultBlockState()
-            .setValue(BlockStateProperties.FACING, Direction.UP);
-    var pearlItem = registered("rsgauges:switchlink_pearl");
-    var dropArea = new AABB(source).inflate(1);
-    var installer = FakePlayerFactory.getMinecraft(level);
-    var previous = installer.getMainHandItem();
-    try {
-      level.setBlockAndUpdate(source.below(), Blocks.STONE.defaultBlockState());
-      level.setBlockAndUpdate(target.below(), Blocks.STONE.defaultBlockState());
-      require(
-          level.setBlockAndUpdate(source, lever) && level.setBlockAndUpdate(target, lever),
-          "Place supported RSGauges switches");
-      installer.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.ENDER_PEARL));
-      level.getBlockState(target).attack(level, target, installer);
-      var linked = installer.getMainHandItem();
-      var binding = linked.get(DataComponents.CUSTOM_DATA);
-      require(
-          linked.is(pearlItem) && binding != null, "RSGauges binds an actual Switch Link Pearl");
-      verifyEngineeringGear(player, linked, Items.ENDER_PEARL, "switchlink_pearl");
-      var grade = TieredNeoAPI.getTierId(linked);
-      require(
-          binding.equals(linked.get(DataComponents.CUSTOM_DATA)), "Reforge keeps native link data");
-
-      level.getBlockState(source).attack(level, source, installer);
-      require(
-          installer.getMainHandItem().isEmpty(), "The source consumes exactly one linked pearl");
-      var installed = level.getBlockEntity(source);
-      require(installed != null, "Source switch has a block entity");
-      var registries = level.registryAccess();
-      var restored =
-          BlockEntity.loadStatic(
-              source,
-              level.getBlockState(source),
-              installed.saveWithFullMetadata(registries),
-              registries);
-      require(restored != null, "Source switch deserializes a fresh block entity");
-      level.setBlockEntity(restored);
-      require(level.removeBlock(source, false), "Removing the reloaded source ejects the link");
-
-      var drops =
-          level.getEntitiesOfClass(ItemEntity.class, dropArea, e -> e.getItem().is(pearlItem));
-      require(
-          drops.size() == 1 && drops.getFirst().getItem().getCount() == 1,
-          "Exactly one pearl is returned after save and reload");
-      var recovered = drops.getFirst().getItem();
-      require(grade.equals(TieredNeoAPI.getTierId(recovered)), "The ejected pearl keeps its grade");
-      var expectedLink = binding.copyTag();
-      expectedLink.remove("cdtime");
-      require(
-          CustomData.of(expectedLink).equals(recovered.get(DataComponents.CUSTOM_DATA)),
-          "The ejected pearl retains its target and link mode");
-    } finally {
-      installer.setItemInHand(InteractionHand.MAIN_HAND, previous);
-      positions.forEach(pos -> level.removeBlock(pos, false));
-      level
-          .getEntitiesOfClass(ItemEntity.class, dropArea, e -> e.getItem().is(pearlItem))
-          .forEach(Entity::discard);
     }
   }
 

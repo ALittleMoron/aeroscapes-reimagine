@@ -763,48 +763,5 @@
     },
     "files": [],
     "reason": "Naturalist renders seated passengers directly through EntityRenderer, bypassing the dispatcher that mounts ETF/EMF state. Mount the actual passenger state around only that nested call and restore the outer state in finally, so FA Player uses the rider vehicle and movement instead of the elephant. Keep native seats and independent walking/first-person rendering."
-  },
-  {
-    "targets": {
-      "Vg5TIO6d": "Xe7EqzfQ"
-    },
-    "files": [
-      "data/create_connected/loot_table/blocks/dye_depot_amber_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_aqua_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_beige_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_coral_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_forest_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_ginger_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_indigo_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_maroon_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_mint_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_navy_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_olive_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_rose_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_slate_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_tan_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_teal_fan_dyeing_catalyst.json",
-      "data/create_connected/loot_table/blocks/dye_depot_verdant_fan_dyeing_catalyst.json"
-    ],
-    "reason": "Gate the sixteen native Dye Depot catalyst self-drop tables on the optional mod and the registered item. Preserve native drops when their items are available."
-  },
-  {
-    "targets": {
-      "eIFO05HM": "lrkeW7DD"
-    },
-    "files": [
-      "data/rsgauges/loot_table/blocks/industrial_blinking_led.json",
-      "data/rsgauges/loot_table/blocks/orange_sensitiveglass.json"
-    ],
-    "reason": "The native orange sensitive glass and industrial blinking LED loot tables reference unregistered items. Gate only those tables on their item registration, keeping any enabled variant’s original drops."
-  },
-  {
-    "targets": {
-      "eIFO05HM": "lrkeW7DD",
-      "GWp4jCJj": "bOiDu0LS",
-      "owned:aeroscapes_reimagine": "0.1.0"
-    },
-    "files": [],
-    "reason": "Pin the RSGauges native manual link range, saved link and HUD paths and CBC manual loading, successful weld, gas exposure and client inspection calls used by equipment quality and Island Atlas."
   }
 ]

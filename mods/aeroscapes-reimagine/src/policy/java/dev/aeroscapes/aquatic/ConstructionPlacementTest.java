@@ -142,39 +142,9 @@ public final class ConstructionPlacementTest {
       previews.add("hybrid_aquatic:" + item, preview);
     }
     theurgyModels(assets, previews);
-    engineeringModels(assets, previews);
     if (arguments.length == 2) Files.writeString(Path.of(arguments[1]), previews.toString());
     System.out.println(
         "Construction placement: scoped palm selection, native hand contact, selected Punchy contexts, forward tape and native net pouch direction passed");
-  }
-
-  private static void engineeringModels(Path assets, JsonObject previews)
-      throws IOException, ReflectiveOperationException {
-    for (String id :
-        List.of(
-            "createbigcannons:block_armor_inspection_tool",
-            "createbigcannons:gas_mask",
-            "rsgauges:switchlink_pearl")) {
-      String[] parts = id.split(":", 2);
-      String name = parts[1];
-      Path models = assets.resolve(parts[0] + "/models/item");
-      JsonObject root = read(models.resolve(name + ".json"));
-      JsonObject base = root.getAsJsonObject("base");
-      require(
-          base.get("parent").getAsString().equals("minecraft:item/generated")
-              && base.getAsJsonObject("textures")
-                  .get("layer0")
-                  .getAsString()
-                  .equals(parts[0] + ":item/" + name),
-          "Native inventory icon: " + id);
-      JsonObject model = read(models.resolve("equipment/held/" + name + ".json"));
-      var faces = VanillaEquipmentModelTest.bakeObj(model, assets);
-      require(!faces.isEmpty(), "Visible engineering equipment: " + id);
-      VanillaEquipmentModelTest.noOverlaps(id, faces);
-      JsonObject preview = VanillaEquipmentModelTest.preview(model, faces);
-      preview.add("attachments", attachments(model, name, ToolKind.INGREDIENT));
-      previews.add(id, preview);
-    }
   }
 
   private static void theurgyModels(Path assets, JsonObject previews)

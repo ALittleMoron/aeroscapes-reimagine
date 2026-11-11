@@ -2482,57 +2482,6 @@
       "parity": "exact",
       "review": {},
       "verification": "Independently downloaded original ForgeCDN file matches the primary Modrinth artifact byte for byte."
-    },
-    {
-      "slug": "rsgauges-unofficial-fix",
-      "primary_project_id": "eIFO05HM",
-      "primary_sha512": "049ffdd474661faa58c0dd7e6c3b242b3274a99cf8cff8426f8b07018d546407934a5dfd7d515544771c10f9c1d651a116381ffea972ddc5ab3f12d6d19505c3",
-      "status": "blocked",
-      "reason": "The selected Unofficial Fix has no reviewed CurseForge file. The similarly named port is a separate provider."
-    },
-    {
-      "slug": "create-liquid-fuel",
-      "primary_project_id": "sH9tXU9f",
-      "primary_sha512": "3925e0f7e7b883d719c12c2cdd409fa954fbd53cbb63295764fdf06d57f63553b5dd99f94ae69b071a2aa17fb5bff53817e3394191d8933f7916220861e1bc76",
-      "status": "blocked",
-      "reason": "The corresponding CurseForge file 8812977 differs in META-INF/MANIFEST.MF from the exact Modrinth pin."
-    },
-    {
-      "slug": "create-big-cannons",
-      "primary_project_id": "GWp4jCJj",
-      "primary_sha512": "24f414dfbb973a0f4d9c9b2aa059edc7bed4d23b4f39eb1f7d23a1d6b437e3b5d64cca6e4b85ff7eb2815743fa711d54ad652bffe96d1eb1234544716006440d",
-      "status": "hosted",
-      "project_id": 646668,
-      "file_id": 8303106,
-      "filename": "createbigcannons-5.11.7+mc.1.21.1.jar",
-      "sha512": "24f414dfbb973a0f4d9c9b2aa059edc7bed4d23b4f39eb1f7d23a1d6b437e3b5d64cca6e4b85ff7eb2815743fa711d54ad652bffe96d1eb1234544716006440d",
-      "sha1": "c90ee0b2142e2c58d233e150cb3a24c7cb07eb2d",
-      "file_size": 3771506,
-      "parity": "exact",
-      "review": {},
-      "verification": "Official CurseForge file and official Modrinth file compared byte-for-byte by archive SHA-256."
-    },
-    {
-      "slug": "create-connected",
-      "primary_project_id": "Vg5TIO6d",
-      "primary_sha512": "485675693980a266611669857fa9cd348e2a29140b87bf0a8ab3e13c3591422cceaa36b7a2eb90084d35ec1868c8eec9f924383bb4dada2dddcb72e9f09361b0",
-      "status": "blocked",
-      "reason": "The corresponding CurseForge file 8777573 differs in META-INF/MANIFEST.MF from the exact Modrinth pin."
-    },
-    {
-      "slug": "rpl",
-      "primary_project_id": "B3pb093D",
-      "primary_sha512": "6d64c84505a5a8fbb96d106603065465c5a2314ec09636900c5c1a31014c12fa68f1a41e758313cbf0d6f95d9a1f53bd67339020f7d8db0e184c23f66aee0330",
-      "status": "hosted",
-      "project_id": 1279407,
-      "file_id": 7587771,
-      "filename": "ritchiesprojectilelib-2.1.2+mc.1.21.1-neoforge.jar",
-      "sha512": "6d64c84505a5a8fbb96d106603065465c5a2314ec09636900c5c1a31014c12fa68f1a41e758313cbf0d6f95d9a1f53bd67339020f7d8db0e184c23f66aee0330",
-      "sha1": "ec2e4996f8bee8714173e603e379fef8a6901765",
-      "file_size": 76369,
-      "parity": "exact",
-      "review": {},
-      "verification": "Official CurseForge file and official Modrinth file compared byte-for-byte by archive SHA-256."
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

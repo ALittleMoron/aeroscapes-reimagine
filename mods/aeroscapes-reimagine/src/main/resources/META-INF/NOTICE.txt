@@ -161,16 +161,6 @@ constraints retain their meaning; provider code and UI artwork are not copied.
 The localization inventory identifies the pinned inputs and their distinct terms;
 licensing of this mod does not relicense original provider resources.
 
-Create Big Cannons 5.11.7 and Ritchie's Projectile Library 2.1.2 configuration
-captions and tooltips are translated from the installed definitions.
-The resource also supplies missing Russian names for the cannon forces in Sable
-and corrects the creative tab and keybinding labels. Code and localization
-origins are MIT. Their terms and copyright notices are retained in
-META-INF/licenses/Create-Big-Cannons-5.11.7-MIT.md and
-META-INF/licenses/Ritchies-Projectile-Library-2.1.2-MIT.txt.
-https://modrinth.com/mod/create-big-cannons/version/bOiDu0LS
-https://modrinth.com/mod/rpl/version/hZ6B2Z0x
-
 Blackstone ore models compose installed Minecraft, Create and Galosphere texture
 pixels locally during the client atlas load. Their original artwork is not
 bundled or relicensed. No provider PNGs are distributed by this mod. The zinc ore

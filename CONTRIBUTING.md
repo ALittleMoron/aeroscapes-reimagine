@@ -176,6 +176,14 @@ integration; publication recovery does not select another milestone. The major m
 `2.0.0` need the owner's corresponding scope decision. Preparing a release does
 not itself authorize a commit or push.
 
+CI rejects a new major version that skips the preceding published stable major.
+For example, `5.0.0` requires a stable `4.x` release. The transition from `0.x`
+to `1.0.0` is technically valid; the agreed core must still be complete and
+accepted before the owner selects that milestone. When a requested release
+number contradicts the accepted roadmap or current stage, explain the conflict
+and confirm the intended target before applying or publishing it. A literal
+version number alone does not establish milestone completion.
+
 Set the target in `pack/pack.toml` before exporting. Use one matching section in
 each changelog, headed only by the number, such as `## 0.1.1`, without a release
 status suffix. When the current changes are promoted to a stage milestone before

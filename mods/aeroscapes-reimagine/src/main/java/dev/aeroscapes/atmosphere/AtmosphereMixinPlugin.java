@@ -82,11 +82,6 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.reforge.")) {
       var pins =
           new java.util.HashMap<>(Map.of("tieredneo", "1.2.0+1.21.1", "neoforge", "21.1.244"));
-      if (mixinClassName.startsWith("dev.aeroscapes.mixin.reforge.engineering.")) {
-        if (mixinClassName.contains("SwitchLink") || mixinClassName.contains("GaugesLink"))
-          pins.put("rsgauges", "1.0.0");
-        else pins.put("createbigcannons", "5.11.7");
-      }
       if (mixinClassName.contains("ReforgeEmiRefresh")) pins.put("emi", "1.1.24+1.21.1+neoforge");
       if (mixinClassName.contains("Slingshot")) pins.put("supplementaries", "1.21.1-3.6.8");
       if (mixinClassName.contains("AutoloaderCharge")

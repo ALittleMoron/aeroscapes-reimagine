@@ -97,6 +97,12 @@ def release_decision(version: str, published: tuple[str, ...], matches: bool | N
         return "skip"
     if matches is not None:
         raise PackError(f"Unexpected existing content for unpublished version {version}")
+    previous_major = max((version_key(item)[0] for item in published if "-" not in item), default=0)
+    if key[0] > previous_major + 1:
+        raise PackError(
+            f"New major version {key[0]} requires a published stable release "
+            f"of major version {key[0] - 1}; latest stable major is {previous_major}"
+        )
     if published and key <= max(version_key(item) for item in published):
         raise PackError(f"New version {version} must be higher than every published version")
     return "create"

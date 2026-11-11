@@ -12,14 +12,6 @@ The engineering group uses Create for mechanical work and Aeronautics for aircra
 
 [Bits ’n’ Bobs](https://modrinth.com/project/T8bvmqVZ) adds mechanical and decorative pieces in the same style. Tile variants, chairs, lamps, girders and larger displays help furnish the spaces around the machinery. The workshop can therefore share its materials and details with a station, factory or ship interior.
 
-[Create: Connected](https://modrinth.com/mod/create-connected) adds compact transmissions, kinetic batteries and horizontal tanks and vaults. A battery stores spare mechanical power and feeds it back into the network as demand rises. [Create: Liquid Fuel](https://modrinth.com/mod/create-liquid-fuel/version/rLn2bDVE) lets you pump lava into an ordinary Blaze Burner for heated recipes and boilers. Superheated recipes still require a Blaze Cake.
-
-[RSGauges Unofficial Fix](https://modrinth.com/mod/rsgauges-unofficial-fix) makes redstone circuits easier to read and operate. Gauges show the signal strength, while timers, switches and detectors can control alarms or machinery.
-
-## Artillery
-
-[Create Big Cannons](https://modrinth.com/mod/create-big-cannons) lets players cast and machine cannon parts, assemble them on a mount, and load them with a ram rod or a mechanical loader. Choose the projectile and fuze for the target. Artillery can break terrain and destroy items caught in a blast. Projectiles can temporarily load chunks during flight.
-
 ## Food production
 
 The cooking additions let a farm and kitchen join the workshop's supply network: machinery processes ingredients, while transport carries prepared food to storage or a loading point. [Cooking and farming](../../building-and-daily-life/food/) explains the roles of these mods.

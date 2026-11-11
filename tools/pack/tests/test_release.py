@@ -75,6 +75,31 @@ def test_release_decision_rejects_reused_version_changes_and_downgrades() -> Non
         release_decision("0.2.0-test.1", ("0.2.0",), None)
 
 
+@pytest.mark.parametrize(
+    ("version", "published"),
+    [
+        ("5.0.0", ("0.4.6",)),
+        ("5.1.0", ("0.4.6",)),
+        ("2.0.0", ()),
+        ("2.0.0-alpha", ("1.0.0-beta",)),
+    ],
+)
+def test_release_rejects_skipped_major_versions(version: str, published: tuple[str, ...]) -> None:
+    from aeroscapes_pack.release import release_decision
+
+    with pytest.raises(PackError, match="major"):
+        release_decision(version, published, None)
+
+
+def test_release_allows_the_next_major_after_a_stable_predecessor() -> None:
+    from aeroscapes_pack.release import release_decision
+
+    assert release_decision("1.0.0", ("0.4.6",), None) == "create"
+    assert release_decision("5.0.0", ("4.0.0",), None) == "create"
+    with pytest.raises(PackError, match="major"):
+        release_decision("5.0.0", ("3.9.9", "4.0.0-beta"), None)
+
+
 def test_release_recovers_draft_without_replacing_verified_asset(tmp_path: Path) -> None:
     from aeroscapes_pack.github_release import Release, publish_release
 
