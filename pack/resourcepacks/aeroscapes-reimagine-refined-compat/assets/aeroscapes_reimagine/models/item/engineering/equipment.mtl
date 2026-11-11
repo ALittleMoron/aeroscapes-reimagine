@@ -1,0 +1,47 @@
+newmtl steel
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl dark_steel
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl iron_edge
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl copper
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl copper_edge
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl porcelain
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl pointer
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl rubber
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl leather
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl lens
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl brass
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl brass_edge
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl jewel
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl jewel_edge
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl garnet
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials
+
+newmtl violet
+map_Kd aeroscapes_reimagine:item/engineering/handheld_materials

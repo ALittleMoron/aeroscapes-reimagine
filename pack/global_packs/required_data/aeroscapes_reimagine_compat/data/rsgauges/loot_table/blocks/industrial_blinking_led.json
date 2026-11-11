@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:item_exists",
+      "item": "rsgauges:industrial_blinking_led"
+    }
+  ],
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "rsgauges:industrial_blinking_led"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

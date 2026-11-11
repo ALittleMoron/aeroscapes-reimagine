@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:gas_mask_exceptional",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/gas_mask"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "blue"
+  },
+  "attributes": []
+}

@@ -10609,5 +10609,213 @@
       "source_revision": "b04c107a2f2380f35dc31861820aab21d96323af",
       "source_comparison": "2,789 overlapping assets/data resources match the official sources JAR. REUSE.toml and the NeoForge descriptor identify CC-BY-4.0 resources; the source README’s prose says CC-BY-SA-4.0 but links to CC-BY-4.0. Per-file exceptions apply."
     }
+  },
+  {
+    "slug": "rsgauges-unofficial-fix",
+    "name": "RSGauges Unofficial Fix",
+    "project_id": "eIFO05HM",
+    "version_id": "lrkeW7DD",
+    "version": "1.0.0",
+    "filename": "rsgauges-1.0.0.jar",
+    "sha512": "049ffdd474661faa58c0dd7e6c3b242b3274a99cf8cff8426f8b07018d546407934a5dfd7d515544771c10f9c1d651a116381ffea972ddc5ab3f12d6d19505c3",
+    "sha1": "b8024529204975a42075fd803b5bf1db131d33fe",
+    "file_size": 1229170,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/kgbcupcake/RSGauges-Unofficial--Fix",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected 5.1.0 engineering addition; unchanged official Modrinth file.",
+    "provider_environment": {
+      "client": "required",
+      "server": "required"
+    },
+    "embedded_license": "MIT",
+    "native_route_note": "NeoForge [21,), Minecraft [1.21.1,). The Modrinth release page exposes the author-linked CDN artifact while the v2 version and project endpoints return HTTP 404. File identity is pinned to the downloaded bytes."
+  },
+  {
+    "slug": "create-liquid-fuel",
+    "name": "Create: Liquid Fuel",
+    "project_id": "sH9tXU9f",
+    "version_id": "rLn2bDVE",
+    "version": "3.0.0-1.21.1",
+    "filename": "createliquidfuel-3.0.0-1.21.1.jar",
+    "sha512": "3925e0f7e7b883d719c12c2cdd409fa954fbd53cbb63295764fdf06d57f63553b5dd99f94ae69b071a2aa17fb5bff53817e3394191d8933f7916220861e1bc76",
+    "sha1": "c061215a48f76d909675894aab165f1261267ab2",
+    "file_size": 21815,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/Forsteri123/CreateLiquidFuel",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected 5.1.0 engineering addition; unchanged official Modrinth file.",
+    "provider_environment": {
+      "client": "unsupported",
+      "server": "required"
+    },
+    "embedded_license": "MIT",
+    "native_route_note": "NeoForge [21.1.160,), Minecraft [1.21.1,), Create [6.0.4,). The Create dependency comes from the JAR descriptor. Modrinth reports ARR and server-side support. Install in both distributions so the physical client can host an integrated server. This file has no client art or registries."
+  },
+  {
+    "slug": "create-big-cannons",
+    "name": "Create Big Cannons",
+    "project_id": "GWp4jCJj",
+    "version_id": "bOiDu0LS",
+    "version": "5.11.7",
+    "filename": "createbigcannons-5.11.7+mc.1.21.1.jar",
+    "sha512": "24f414dfbb973a0f4d9c9b2aa059edc7bed4d23b4f39eb1f7d23a1d6b437e3b5d64cca6e4b85ff7eb2815743fa711d54ad652bffe96d1eb1234544716006440d",
+    "sha1": "c90ee0b2142e2c58d233e150cb3a24c7cb07eb2d",
+    "file_size": 3771506,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-Create-Big-Cannons-License",
+      "name": "",
+      "url": "https://github.com/Cannoneers-of-Create/CreateBigCannons/blob/0b3e23456f38bac359112d82d6aad1b5430c04d1/LICENSE.md"
+    },
+    "source_url": "https://github.com/Cannoneers-of-Create/CreateBigCannons",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "B3pb093D",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected 5.1.0 engineering addition; unchanged official Modrinth file.",
+    "provider_environment": {
+      "client": "required",
+      "server": "required"
+    },
+    "embedded_license": "MIT and CC BY-NC-SA (see github for details)",
+    "native_route_note": "Minecraft [1.21.1], Create [6.0.7,6.1.0), Ritchie’s Projectile Library [2.1.2,). Optional Sable [2.0.0,), Simulated, Aeronautics and Offroad [1.3.0,) and Curios [9.2.0,). The bare NeoForge value 21.1.228 is accepted as a recommended version by the pinned loader’s Maven range parser."
+  },
+  {
+    "slug": "create-connected",
+    "name": "Create: Connected",
+    "project_id": "Vg5TIO6d",
+    "version_id": "Xe7EqzfQ",
+    "version": "1.3.3-mc1.21.1",
+    "filename": "create_connected-1.3.3-mc1.21.1.jar",
+    "sha512": "485675693980a266611669857fa9cd348e2a29140b87bf0a8ab3e13c3591422cceaa36b7a2eb90084d35ec1868c8eec9f924383bb4dada2dddcb72e9f09361b0",
+    "sha1": "96ae45fa44cd7028a31b9613cb672009e811b145",
+    "file_size": 6786783,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "AGPL-3.0-or-later",
+      "name": "GNU Affero General Public License v3.0 or later",
+      "url": "https://github.com/hlysine/create_connected/blob/main/LICENSE"
+    },
+    "source_url": "https://github.com/hlysine/create_connected",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected 5.1.0 engineering addition; unchanged official Modrinth file.",
+    "provider_environment": {
+      "client": "required",
+      "server": "required"
+    },
+    "embedded_license": "GNU Affero General Public License v3.0",
+    "native_route_note": "NeoForge [21.1.200,), Minecraft [1.21.1,1.22), Create [6.0.10,). Optional JEI is already installed."
+  },
+  {
+    "slug": "rpl",
+    "name": "Ritchie's Projectile Library",
+    "project_id": "B3pb093D",
+    "version_id": "hZ6B2Z0x",
+    "version": "2.1.2",
+    "filename": "ritchiesprojectilelib-2.1.2+mc.1.21.1-neoforge.jar",
+    "sha512": "6d64c84505a5a8fbb96d106603065465c5a2314ec09636900c5c1a31014c12fa68f1a41e758313cbf0d6f95d9a1f53bd67339020f7d8db0e184c23f66aee0330",
+    "sha1": "ec2e4996f8bee8714173e603e379fef8a6901765",
+    "file_size": 76369,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/Wagers-of-Industrial-Warfare/RitchiesProjectileLib",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Required dependency of the owner-selected Create Big Cannons; unchanged official Modrinth file.",
+    "provider_environment": {
+      "client": "required",
+      "server": "required"
+    },
+    "embedded_license": "MIT License",
+    "native_route_note": "Required projectile library for Create Big Cannons. NeoForge [21.1.206,), Minecraft 1.21.1."
   }
 ]

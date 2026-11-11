@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:cannon_loading_legendary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/cannon_loading"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

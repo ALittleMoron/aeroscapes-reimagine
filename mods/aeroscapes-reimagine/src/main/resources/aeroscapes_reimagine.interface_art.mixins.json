@@ -15,7 +15,8 @@
     "MerchantLabelArtworkMixin",
     "PanelTexturePaletteMixin",
     "EnchantmentOptionsArtworkMixin",
-    "CuriosInventoryArtworkMixin"
+    "CuriosInventoryArtworkMixin",
+    "GaugesOverlayArtworkMixin"
   ],
   "injectors": {
     "defaultRequire": 1

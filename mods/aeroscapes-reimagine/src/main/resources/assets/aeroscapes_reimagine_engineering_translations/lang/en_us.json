@@ -1,0 +1,23 @@
+{
+  "aeroscapes_reimagine.config.literal.c51c497b36f4904db1b08c7b5a7ba3c6dc01a7366e0ff142b4d20dc59fd84256": "Create: Connected",
+  "aeroscapes_reimagine.config.literal.d3812ca06c87b1410063635d567c78881b5a021526b795d8a1c2dbe9174be804": "RSGauges Unofficial Fix",
+  "create_connected.configuration.title": "Create: Connected Config",
+  "item.rsgauges.switchlink_pearl.help": "Click a switch with an Ender Pearl\n to link it. With the Switch Link Pearl\n in your main hand, sneak and use it\n to activate that switch remotely.\n Use it on another switch to link the\n two. Click the target with the pearl\n to cycle the link modes. A source can\n hold more than one pearl. The pearl\n makes a sound if it cannot activate\n its target or link to a switch.",
+  "itemGroup.tabrsgauges": "RSGauges Unofficial Fix",
+  "rsgauges.config.title": "RSGauges Unofficial Fix Config",
+  "rsgauges.configuration.General": "General",
+  "rsgauges.configuration.autoswitch_linear_update_interval": "Linear detector update interval",
+  "rsgauges.configuration.autoswitch_volumetric_update_interval": "Volumetric detector update interval",
+  "rsgauges.configuration.comparator_switch_update_interval": "Comparator switch update interval",
+  "rsgauges.configuration.config_left_click_timeout": "Double-click configuration timeout",
+  "rsgauges.configuration.gauge_update_interval": "Gauge update interval",
+  "rsgauges.configuration.max_switch_linking_distance": "Maximum link distance",
+  "rsgauges.configuration.optOuts": "Disabled blocks",
+  "rsgauges.configuration.title": "RSGauges Unofficial Fix Config",
+  "rsgauges.configuration.without_pulsetime_config": "Disable pulse time configuration",
+  "rsgauges.configuration.without_rightclick_item_switchconfig": "Disable right-click configuration with items",
+  "rsgauges.configuration.without_sculk_triggering": "Disable sculk sensor triggering",
+  "rsgauges.configuration.without_switch_linking": "Disable wireless linking",
+  "rsgauges.configuration.without_switch_nooutput": "Disable the no-output option",
+  "rsgauges.switchlinking.source_assign.error_failed": "The pearl cannot link to this switch"
+}

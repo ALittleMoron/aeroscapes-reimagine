@@ -13,6 +13,19 @@ public abstract class CatnipConfigTitleMixin {
       at =
           @At(
               value = "FIELD",
+              target = "Lnet/createmod/catnip/config/ui/ConfigScreen;modID:Ljava/lang/String;"))
+  @SuppressWarnings("PMD.UnusedPrivateMethod")
+  private String aeroscapes$displayModName(String source) {
+    return source == null
+        ? null
+        : ConfigLiteralTranslations.translate(source, Language.getInstance()::getOrDefault);
+  }
+
+  @ModifyExpressionValue(
+      method = "renderWindow",
+      at =
+          @At(
+              value = "FIELD",
               target =
                   "Lnet/createmod/catnip/config/ui/SubMenuConfigScreen;title:Ljava/lang/String;"))
   @SuppressWarnings(

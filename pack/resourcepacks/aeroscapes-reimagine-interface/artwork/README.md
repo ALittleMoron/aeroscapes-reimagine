@@ -38,3 +38,8 @@ time, leaving alpha and colored states intact. Chipped’s workbench and the Iro
 transmog table also have verified replacements for their painted panel fills. Keep the light panel surface where the
 provider draws dark text. When updating an entry, verify the actual screen’s asset path,
 all cropped regions, dynamic states, label contrast and the new provider file digest.
+
+The 256 × 256 SVGs under `engineering/` preserve the texture layouts of Create Big Cannons
+5.11.7 and Create: Connected 1.3.3. Render them with `rsvg-convert` into the matching
+provider paths. Preserve the selector strips, ammo slot coordinates, pulse sequencer rows
+and transparent center of the gas mask. The fixed cannon mount uses Create’s shared value screen.
