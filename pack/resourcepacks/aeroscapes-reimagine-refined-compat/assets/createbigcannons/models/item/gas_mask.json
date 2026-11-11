@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createbigcannons:item/gas_mask"
+    }
+  },
+  "textures": {
+    "layer0": "createbigcannons:item/gas_mask",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "createbigcannons:item/equipment/held/gas_mask"
+    },
+    "firstperson_lefthand": {
+      "parent": "createbigcannons:item/equipment/held/gas_mask"
+    },
+    "thirdperson_righthand": {
+      "parent": "createbigcannons:item/equipment/held/gas_mask"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createbigcannons:item/equipment/held/gas_mask"
+    }
+  }
+}

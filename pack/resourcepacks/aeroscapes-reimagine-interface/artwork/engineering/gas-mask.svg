@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="edge" x2="0" y2="1">
+      <stop stop-color="#111b29"/>
+      <stop offset="1" stop-color="#111b29" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft-edge" x="-20%" y="-100%" width="140%" height="300%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+  <g fill="#111b29" filter="url(#soft-edge)">
+    <path d="M-20-30H276V36C230 34 209 15 171 18L128 26 85 18C47 15 26 34-20 36Z"/>
+    <path d="M-20 286H276V218C230 223 213 243 175 241L128 225 81 241C43 243 26 223-20 218Z"/>
+  </g>
+  <path d="M0 0H256V13C205 12 180 3 153 9L128 14 103 9C76 3 51 12 0 13Z" fill="url(#edge)"/>
+  <path d="M0 256H256V245C205 244 180 253 153 247L128 242 103 247C76 253 51 244 0 245Z" fill="#111b29"/>
+  <path d="M3 9C33 8 52 3 72 3M184 3C204 3 223 8 253 9M5 248C29 250 46 255 66 255M190 255C210 255 227 250 251 248"
+        stroke="#dbad6f" stroke-opacity=".38" fill="none"/>
+</svg>

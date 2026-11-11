@@ -158,6 +158,13 @@
       "sha256": "6abd1d2635d5af1ca08d99acdc9e5ddca208e1944996a9abc68c89c4d5eb6b78"
     },
     {
+      "resource": "assets/aeroscapes_reimagine_cbc_translations/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Create Big Cannons and Ritchie's Projectile Library configuration and localization inputs are MIT. See configuration_inputs and NOTICE.txt.",
+      "entries": 226,
+      "sha256": "32214d33474500c1cd2b8e4162e54a0c704cdf11ad728580fcdfc6492e8af47f"
+    },
+    {
       "resource": "assets/aeroscapes_reimagine_client_translations/lang/ru_ru.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",
@@ -437,6 +444,27 @@
     },
     "literal_keys": "aeroscapes_reimagine.config.literal. + lowercase SHA-256 of exact UTF-8 display source",
     "fallback": "Original English source; full-block context before display-line fallback. Native metadata heading translations preserve arbitrary runtime suffix values. Config values, identities and parser input are unchanged.",
+    "cannon_integration": {
+      "coverage": "Create Big Cannons client and server configuration, Ritchie's Projectile Library server configuration through Catnip's foreign-mod selector, cannon force labels in Sable, creative tab and keybindings. Group comments used only in TOML and formatting-only language entries retain native text.",
+      "providers": [
+        {
+          "provider_project": "GWp4jCJj",
+          "provider_version": "bOiDu0LS",
+          "filename": "createbigcannons-5.11.7+mc.1.21.1.jar",
+          "source_url": "https://github.com/Cannoneers-of-Create/CreateBigCannons/tree/46a5d2ae9a53c1dc195919500e13f26ba812f2db",
+          "license": "MIT for code and localization",
+          "license_file": "META-INF/licenses/Create-Big-Cannons-5.11.7-MIT.md"
+        },
+        {
+          "provider_project": "B3pb093D",
+          "provider_version": "hZ6B2Z0x",
+          "filename": "ritchiesprojectilelib-2.1.2+mc.1.21.1-neoforge.jar",
+          "source_url": "https://github.com/Wagers-of-Industrial-Warfare/RitchiesProjectileLib",
+          "license": "MIT",
+          "license_file": "META-INF/licenses/Ritchies-Projectile-Library-2.1.2-MIT.txt"
+        }
+      ]
+    },
     "crops_love_rain_aliases": {
       "cropsloverain.configuration.chance_description": "cropsloverain.configuration.rain_growth_speed.tooltip",
       "cropsloverain.configuration.chance_description_individual": "cropsloverain.configuration.use_individual_speeds.tooltip"
@@ -1963,6 +1991,27 @@
     "source_comparison": "Exact native descriptors, bundled EN/RU assets and active command, item, config and menu consumers. Buzzier Bees and the astronomy port already provide the primary English and Russian text.",
     "exclusions": "Wakes Fabric-era GUI and YACL keys have no consumer in the NeoForge JAR. Default-off F3 profiler counters and Catnip unsupported list-type diagnostics retain technical text. Provider names, artist credits and parser/config identities retain their original spelling.",
     "held_inventory": "The three bug bottles and angry-bee state are native flat transport vessels. No new tools or weapons are registered."
+  },
+  "engineering_gauges_connected": {
+    "targets": {
+      "create_connected": {
+        "file": "https://modrinth.com/mod/create-connected/version/Xe7EqzfQ",
+        "source_reference": "https://github.com/hlysine/create_connected/tree/c9eb83823253feb27d62f06d24fb0440bdb11f7e",
+        "license_file": "META-INF/licenses/Create-Connected-upstream-AGPL-3.0.txt",
+        "scope": "Missing Russian catalog, tooltip, Ponder and battery labels, corrected control captions, native configuration names and Catnip display aliases. Existing provider block and item names are reused for corresponding configuration entries."
+      },
+      "rsgauges": {
+        "file": "https://modrinth.com/mod/rsgauges-unofficial-fix/version/lrkeW7DD",
+        "source_reference": "https://github.com/kgbcupcake/RSGauges-Unofficial--Fix",
+        "license_file": "META-INF/licenses/RSGauges-original-MIT.txt",
+        "scope": "Display name, pearl help, overlay feedback, configuration names and comments. The exact JAR declares MIT; the port source was unavailable."
+      }
+    },
+    "resources": [
+      "assets/aeroscapes_reimagine_engineering_translations/lang/en_us.json",
+      "assets/aeroscapes_reimagine_engineering_translations/lang/ru_ru.json"
+    ],
+    "source_comparison": "Exact JAR language assets, menu and overlay bytecode, and loaded common/server config definitions. Catnip option list diagnostics and configuration identities retain technical values. Its two branded breadcrumbs resolve through the existing literal alias mechanism."
   },
   "equipment_integration": {
     "targets": {

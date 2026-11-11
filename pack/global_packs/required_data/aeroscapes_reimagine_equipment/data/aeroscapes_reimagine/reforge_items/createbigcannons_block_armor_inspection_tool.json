@@ -1,0 +1,8 @@
+{
+  "items": [
+    "createbigcannons:block_armor_inspection_tool"
+  ],
+  "base": [
+    "minecraft:iron_ingot"
+  ]
+}

@@ -1,0 +1,35 @@
+Aeroscapes Reimagine — Create: Connected and RSGauges Unofficial Fix adaptations
+
+Create: Connected 1.3.3, Lysine and contributors. The pinned JAR is unchanged.
+Official file: https://modrinth.com/mod/create-connected/version/Xe7EqzfQ
+Source reference: https://github.com/hlysine/create_connected/tree/c9eb83823253feb27d62f06d24fb0440bdb11f7e
+Terms: GNU AGPL v3 with the author's additional terms. The complete upstream
+text is in the Aeroscapes Reimagine mod's META-INF/licenses directory under
+Create-Connected-upstream-AGPL-3.0.txt.
+
+Aeroscapes Reimagine adds conditions to the sixteen original Dye Depot catalyst
+self-drop tables so NeoForge reads them only when Dye Depot and the target item
+are present. The editable JSON is shipped in the required compatibility data
+pack under data/create_connected/loot_table/blocks/. Create: Connected's
+Russian names for the affected components are reused in its configuration
+labels. New Russian text fills the pinned provider's missing gameplay strings
+and localizes configuration labels, comments and units. Localization source
+and the upstream notice accompany the Aeroscapes Reimagine mod source archive.
+
+RSGauges Unofficial Fix 1.0.0, kgbcupcake. The pinned JAR is unchanged and
+credits wilechaote and Waffle919185 for the original mod and MCFabikDE for the
+1.21.1 port. The file declares MIT.
+Official file: https://modrinth.com/mod/rsgauges-unofficial-fix/version/lrkeW7DD
+Author-linked port source: https://github.com/kgbcupcake/RSGauges-Unofficial--Fix
+Original project: https://github.com/stfwi/rsgauges/
+The original MIT copyright and permission notice is in the Aeroscapes Reimagine
+mod's META-INF/licenses/RSGauges-original-MIT.txt. The port's linked repository
+was unavailable during the comparison. Its published artifact supplied the
+exact resources and credit information.
+
+Aeroscapes Reimagine adds item existence conditions to the two original
+self-drop tables for orange_sensitiveglass and industrial_blinking_led, whose
+items are absent in the pinned pack. Editable JSON ships in the required
+compatibility data pack under data/rsgauges/loot_table/blocks/. The owned
+mod supplies adjusted English and Russian item help, configuration text and
+an independently authored palette for the status overlay.

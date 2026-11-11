@@ -4,6 +4,16 @@ description: Version history.
 status: available
 ---
 
+## 0.5.1
+
+- Add RSGauges Unofficial Fix for redstone gauges, switches, timers and sensors.
+- Pump lava into Create’s Blaze Burners with Create: Liquid Fuel.
+- Build and operate artillery with Create Big Cannons. Projectiles can temporarily load nearby chunks during flight.
+- Add Create: Connected for compact transmissions, kinetic energy storage and more flexible fluid and item handling.
+- Give the armor inspection tool, gas mask and Switch Link Pearl 3D models in hand.
+- Add reforging for the ram rod, worm, cannon welder, armor inspection tool, gas mask and Switch Link Pearl. See materials, odds and effects in EMI.
+- Extend Island Atlas artwork to artillery controls, the gas-mask overlay, redstone configuration and the sequenced pulse generator.
+
 ## 0.5.0
 
 - CI rejects releases that skip a published stable major version.

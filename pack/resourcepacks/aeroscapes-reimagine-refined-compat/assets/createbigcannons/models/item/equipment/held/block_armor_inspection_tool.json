@@ -1,0 +1,82 @@
+{
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/engineering/block_armor_inspection_tool.obj",
+  "automatic_culling": false,
+  "ambientocclusion": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "createbigcannons:item/block_armor_inspection_tool"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        10,
+        155,
+        -32
+      ],
+      "translation": [
+        -0.095,
+        3.643,
+        0.833
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        10,
+        155,
+        -32
+      ],
+      "translation": [
+        -0.095,
+        3.643,
+        0.833
+      ],
+      "scale": [
+        0.6,
+        0.6,
+        0.6
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        5,
+        160,
+        -24
+      ],
+      "translation": [
+        -0.9,
+        2.173,
+        0.861
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        5,
+        160,
+        -24
+      ],
+      "translation": [
+        -0.9,
+        2.173,
+        0.861
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ]
+    }
+  }
+}

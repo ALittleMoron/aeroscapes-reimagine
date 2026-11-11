@@ -6,6 +6,36 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Engineering additions in 0.5.1
+
+[RSGauges Unofficial Fix 1.0.0](https://modrinth.com/mod/rsgauges-unofficial-fix/version/1.0.0)
+is pinned to the CDN file linked by the author’s Modrinth release page. The
+version and project API lookups returned HTTP 404 while the linked JAR was
+available. Record the SHA-512 and SHA-1 of those bytes before replacing this pin.
+The similarly named CurseForge port has different content and a different author.
+
+[Create: Liquid Fuel 3.0.0](https://modrinth.com/mod/create-liquid-fuel/version/rLn2bDVE)
+is present in the client distribution for the integrated server. The Modrinth
+project lists ARR and the JAR declares MIT. The unchanged archive supplies lava
+as ordinary fuel through a NeoForge fluid data map. Entries for absent mods stay
+conditional. The archive adds no items, screens or models.
+
+[Create Big Cannons 5.11.7](https://modrinth.com/mod/create-big-cannons/version/bOiDu0LS)
+and [Ritchie’s Projectile Library 2.1.2](https://modrinth.com/mod/rpl/version/hZ6B2Z0x)
+match their official CurseForge downloads. CBC’s license separates MIT code and
+localization from its CC BY-NC-SA 4.0 handmade artwork. The authored Island Atlas
+panels and handheld meshes reference native icon locations and use original
+texture and mesh data. The CBC server config enables projectile chunk tickets
+and disables smoke chunk tickets.
+
+[Create: Connected 1.3.3](https://modrinth.com/mod/create-connected/version/Xe7EqzfQ)
+uses the pack’s existing Create and optional JEI pins. Connected and Liquid Fuel
+each have an official CurseForge download whose sole archive-entry difference
+from the selected Modrinth file is the manifest. The CurseForge mapping records
+the resulting byte-parity limits. The required compatibility datapack gates
+unregistered Connected and RSGauges block drops so the game can decode the
+available tables. It preserves the original drop rules when their items exist.
+
 ## Equipment quality and reforging
 
 [Hero’s Tiered 1.2.0](https://modrinth.com/mod/heros-tiered/version/GY1XViBt) and

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <g id="steel" transform="translate(0 0)">
+    <path fill="#586068" d="M0 0h8v8H0z"/>
+    <path fill="#626c73" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#505963" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="dark_steel" transform="translate(8 0)">
+    <path fill="#3e4149" d="M0 0h8v8H0z"/>
+    <path fill="#4b4d53" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#34373e" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="iron_edge" transform="translate(16 0)">
+    <path fill="#848a8b" d="M0 0h8v8H0z"/>
+    <path fill="#9ca3a3" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#767e7f" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="copper" transform="translate(24 0)">
+    <path fill="#985c40" d="M0 0h8v8H0z"/>
+    <path fill="#a36b4a" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#8a4f39" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="copper_edge" transform="translate(0 8)">
+    <path fill="#be8354" d="M0 0h8v8H0z"/>
+    <path fill="#cb9363" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#af7549" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="porcelain" transform="translate(8 8)">
+    <path fill="#ede2cd" d="M0 0h8v8H0z"/>
+    <path fill="#f2e9d6" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#e3d5bd" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="pointer" transform="translate(16 8)">
+    <path fill="#963936" d="M0 0h8v8H0z"/>
+    <path fill="#ab463c" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#823431" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="rubber" transform="translate(24 8)">
+    <path fill="#292b30" d="M0 0h8v8H0z"/>
+    <path fill="#34353c" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#25272d" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="leather" transform="translate(0 16)">
+    <path fill="#3a393b" d="M0 0h8v8H0z"/>
+    <path fill="#454045" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#322f34" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="lens" transform="translate(8 16)">
+    <path fill="#83aeb6" d="M0 0h8v8H0z"/>
+    <path fill="#a2c2c6" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#6f9aa5" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="brass" transform="translate(16 16)">
+    <path fill="#a58732" d="M0 0h8v8H0z"/>
+    <path fill="#bb9d44" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#97792e" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="brass_edge" transform="translate(24 16)">
+    <path fill="#c4a751" d="M0 0h8v8H0z"/>
+    <path fill="#d1b961" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#b39843" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="jewel" transform="translate(0 24)">
+    <path fill="#365134" d="M0 0h8v8H0z"/>
+    <path fill="#536f3e" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#2b402c" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="jewel_edge" transform="translate(8 24)">
+    <path fill="#597943" d="M0 0h8v8H0z"/>
+    <path fill="#708c50" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#466638" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="garnet" transform="translate(16 24)">
+    <path fill="#863e33" d="M0 0h8v8H0z"/>
+    <path fill="#a75244" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#75322e" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+  <g id="violet" transform="translate(24 24)">
+    <path fill="#443b69" d="M0 0h8v8H0z"/>
+    <path fill="#5b4a80" d="M1 1h2v1H1zM4 4h3v1H4z"/>
+    <path fill="#393259" d="M5 1h2v1H5zM2 5h2v1H2z"/>
+  </g>
+</svg>

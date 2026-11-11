@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <g id="slot">
+      <rect x="-1" y="-1" width="18" height="18" rx="1" fill="#111b29"/>
+      <rect width="16" height="16" fill="#7b8da2"/>
+      <path d="M0 15.5H16" stroke="#aebdcd"/>
+    </g>
+  </defs>
+  <path d="M3 0H187L190 3V58L199 68 190 78V80L187 83H3L0 80V3Z" fill="#111b29"/>
+  <path d="M4 1H186L189 4V59L198 68 189 77V79L186 82H4L1 79V4Z" fill="#776886"/>
+  <path d="M4 3H186V15H4Z" fill="#e5cde2"/>
+  <path d="M3 17H187V53H3Z" fill="#393548"/>
+  <path d="M3 56H159V79H4L3 78Z M162 56H186V60L194 68 186 76V79H162Z" fill="#34465b"/>
+  <path d="M6 15.5H24M165 15.5H183M6 56.5H21M138 56.5H156" stroke="#dbad6f"/>
+  <path d="M5 78.5H157" stroke="#45566c"/>
+  <use href="#slot" x="32" y="26"/>
+  <use href="#slot" x="59" y="26"/>
+  <rect x="86" y="30" width="49" height="8" rx="2" fill="#111b29"/>
+  <rect x="87" y="31" width="47" height="6" rx="1" fill="#5c4768"/>
+  <path d="M94.5 32V36m8-4v4m8-4v4m8-4v4m8-4v4" stroke="#bca4c8"/>
+  <g transform="translate(199 0)">
+    <path d="M0 0H9V8L4.5 14 0 8Z" fill="#111b29"/>
+    <path d="M1 1H8V7L4.5 12 1 7Z" fill="#c3a7d2"/>
+    <path d="M2 2H7" stroke="#e5cde2"/>
+  </g>
+</svg>

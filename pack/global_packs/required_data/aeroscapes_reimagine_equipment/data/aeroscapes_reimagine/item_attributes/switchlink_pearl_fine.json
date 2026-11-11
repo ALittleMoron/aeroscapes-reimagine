@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:switchlink_pearl_fine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/switchlink_pearl"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "green"
+  },
+  "attributes": []
+}
