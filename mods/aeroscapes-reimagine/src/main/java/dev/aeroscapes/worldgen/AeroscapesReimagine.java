@@ -46,6 +46,7 @@ public final class AeroscapesReimagine {
   private static final int VANILLA_SPAWN_RADIUS = 10;
 
   public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
+    dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);
     container.registerConfig(ModConfig.Type.CLIENT, CelestialConfig.SPEC);
     if (ModList.get().isLoaded("crittersandcompanions"))
       dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);

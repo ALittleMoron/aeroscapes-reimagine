@@ -312,5 +312,6 @@
   "block.aeroscapes_reimagine.blackstone_zinc_ore": "Blackstone Zinc Ore",
   "aeroscapes_reimagine.equipment.companion_hook_disabled": "Disabled in this pack.",
   "message.aeroscapes_reimagine.spell_disabled": "This spell is disabled.",
-  "message.aeroscapes_reimagine.recall_requires_book": "Inscribe Recall in a spell book to cast it."
+  "message.aeroscapes_reimagine.recall_requires_book": "Inscribe Recall in a spell book to cast it.",
+  "item.aeroscapes_reimagine.steel_sheet": "Steel Sheet"
 }

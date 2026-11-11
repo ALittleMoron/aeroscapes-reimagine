@@ -2533,6 +2533,36 @@
       "parity": "exact",
       "review": {},
       "verification": "Official CurseForge file and official Modrinth file compared byte-for-byte by archive SHA-256."
+    },
+    {
+      "slug": "create-metallurgy",
+      "primary_project_id": "Soft45xC",
+      "primary_sha512": "e052bddbeb39b68c1482cfe2ebf9919db17d40d71e9f46f96375d82ec876dc0abb4e15b2c14cd1a9e7636d7f80166b2ec336507df7fcc452fd871cc4873ef881",
+      "status": "hosted",
+      "project_id": 1007404,
+      "file_id": 8128243,
+      "filename": "createmetallurgy-1.0.3-1.21.1.jar",
+      "sha512": "e052bddbeb39b68c1482cfe2ebf9919db17d40d71e9f46f96375d82ec876dc0abb4e15b2c14cd1a9e7636d7f80166b2ec336507df7fcc452fd871cc4873ef881",
+      "sha1": "ece75dfa1eb907bce3ace729c0144df0b2451673",
+      "file_size": 2035560,
+      "parity": "exact",
+      "review": {},
+      "verification": "The downloaded official CurseForge8128243 archive is byte-identical to official Modrinth4RhIMmaJ; both locally rehashed against the Modrinth API SHA-512/SHA-1."
+    },
+    {
+      "slug": "vintage-improvements-ssw",
+      "primary_project_id": "curseforge:1255448",
+      "primary_sha512": "6b03c3705605861b89dd4823a784df354c68766a8c02a0d69e43e35b02a89b9ffbd50d2720c600684357d165677b563fa81226f3e99398081606d5206b841c06",
+      "status": "hosted",
+      "project_id": 1255448,
+      "file_id": 8941692,
+      "filename": "vintageimprovements-1.21.1-0.0.0.8.jar",
+      "sha512": "6b03c3705605861b89dd4823a784df354c68766a8c02a0d69e43e35b02a89b9ffbd50d2720c600684357d165677b563fa81226f3e99398081606d5206b841c06",
+      "sha1": "c3b4146c766ca7d096bc0a8b3278688c1dcd582b",
+      "file_size": 1445275,
+      "parity": "exact",
+      "review": {},
+      "verification": "Primary pin is the locally rehashed unchanged official CurseForge8941692 download; corresponding-source proof and both licensing declarations are in artifacts.json and the distributed source package."
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

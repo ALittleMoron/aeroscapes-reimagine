@@ -10817,5 +10817,102 @@
     },
     "embedded_license": "MIT License",
     "native_route_note": "Required projectile library for Create Big Cannons. NeoForge [21.1.206,), Minecraft 1.21.1."
+  },
+  {
+    "slug": "create-metallurgy",
+    "name": "Create: Metallurgy",
+    "project_id": "Soft45xC",
+    "version_id": "4RhIMmaJ",
+    "version": "1.0.3-1.21.1",
+    "filename": "createmetallurgy-1.0.3-1.21.1.jar",
+    "sha512": "e052bddbeb39b68c1482cfe2ebf9919db17d40d71e9f46f96375d82ec876dc0abb4e15b2c14cd1a9e7636d7f80166b2ec336507df7fcc452fd871cc4873ef881",
+    "sha1": "ece75dfa1eb907bce3ace729c0144df0b2451673",
+    "file_size": 2035560,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/Lucreeper74/Create-Metallurgy/blob/mc1.21.1/dev/LICENSE"
+    },
+    "source_url": "https://github.com/Lucreeper74/Create-Metallurgy",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected 0.5.2 foundry addition; unchanged official Modrinth and CurseForge file.",
+    "embedded_license": "The MIT License (MIT)",
+    "native_route_note": "Minecraft[1.21.1], NeoForge[21.1.219,), Create[6.0.9,6.1.0); client optional JEI[19.27.0.336,) and Jade[15.10.5+neoforge,) are satisfied by the existing pins. The version API references another Create6.0.10 build; the actual descriptor range accepts the unchanged selected Create pin."
+  },
+  {
+    "slug": "vintage-improvements-ssw",
+    "name": "Vintage Improvements — SSW Edition",
+    "project_id": "curseforge:1255448",
+    "version_id": "8941692",
+    "version": "1.21.1-0.0.0.8",
+    "filename": "vintageimprovements-1.21.1-0.0.0.8.jar",
+    "sha512": "6b03c3705605861b89dd4823a784df354c68766a8c02a0d69e43e35b02a89b9ffbd50d2720c600684357d165677b563fa81226f3e99398081606d5206b841c06",
+    "sha1": "c3b4146c766ca7d096bc0a8b3278688c1dcd582b",
+    "file_size": 1445275,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-2.1-only",
+      "name": "Publisher LGPL-2.1 declaration; descriptor/source also declare MIT",
+      "url": "https://www.curseforge.com/minecraft/mc-mods/vintage-improvenents-ssw-edition"
+    },
+    "source_url": "https://github.com/SSWTLZZ69/Create-Vintage-Improvements",
+    "source": {
+      "type": "curseforge",
+      "project_id": 1255448,
+      "file_id": 8941692,
+      "url": "https://edge.forgecdn.net/files/8941/692/vintageimprovements-1.21.1-0.0.0.8.jar"
+    },
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected 0.5.2 mechanical workshop; unchanged official CurseForge artifact.",
+    "distribution": "bundle",
+    "embedded_license": "MIT",
+    "distribution_note": "Keep both published declarations and fulfill both: unchanged replaceable binary, complete corresponding source with original attribution and MIT/LGPL-2.1 texts alongside it. No claim that publisher corrected its LGPL metadata or that descriptor overrides it. Forge/FML source LICENSE boilerplate is preserved and scoped separately.",
+    "artifact_audit": {
+      "source_revision": "1a7e49e501e15d0ed4620cc501f9b5fa6c0fc703",
+      "source_comparison": "Clean isolated upstream Gradle build produced all221 classes byte-identical to this official binary, with no missing/extra classes. All source-native resources match bytes, line-ending-normalized bytes or JSON semantics;10 binary-only editable generated JSON resources accompany complete corresponding source.",
+      "corresponding_source": "pack/licenses/vintage-ssw-0.0.0.8-corresponding-source.zip",
+      "corresponding_source_sha256": "15178ff04e59a7b8ceb11de6954e5fd7f8435e75f5f641fe352c3a9df2c828e4",
+      "notice": "pack/licenses/Vintage-SSW-NOTICE.txt"
+    },
+    "native_route_note": "Minecraft[1.21.1], NeoForge[21.1.228,), Create[6.0.10,6.1.0), all BOTH; existing exact pins satisfy these ranges. No unrelated dependency update."
   }
 ]

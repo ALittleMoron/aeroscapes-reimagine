@@ -491,6 +491,20 @@ val tradeRecipeContractTest =
     mainClass = "dev.aeroscapes.qualityoflife.TradeRecipeContractTest"
   }
 
+val ladleAssemblyOutputsTest =
+  tasks.register<JavaExec>("ladleAssemblyOutputsTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath =
+      policy.runtimeClasspath +
+        files(
+          tasks
+            .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
+            .flatMap { it.resourcesArtifact },
+        )
+    mainClass = "dev.aeroscapes.engineering.LadleAssemblyOutputsTest"
+  }
+
 val managedBackupArchiveTest =
   tasks.register<JavaExec>("managedBackupArchiveTest") {
     group = "verification"
@@ -797,6 +811,7 @@ tasks.check {
     punchyMapProfileTest,
     celestialLayoutTest,
     tradeRecipeContractTest,
+    ladleAssemblyOutputsTest,
     managedBackupArchiveTest,
     distantHorizonsBackupPolicyTest,
     worldgenRegressionJar,

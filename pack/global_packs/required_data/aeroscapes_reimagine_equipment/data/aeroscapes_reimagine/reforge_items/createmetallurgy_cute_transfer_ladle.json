@@ -1,0 +1,9 @@
+{
+  "items": [
+    "createmetallurgy:cute_transfer_ladle"
+  ],
+  "base": [
+    "createmetallurgy:steel_ingot",
+    "createbigcannons:steel_ingot"
+  ]
+}

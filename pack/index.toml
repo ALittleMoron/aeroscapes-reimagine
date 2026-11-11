@@ -297,6 +297,50 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_r
 hash = "10a05264d18b01d176c898329507702a2deb164c4be4e05eb292b93f538db5cc"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crafting/bronze_wire.json"
+hash = "63e092fc1ad9434d3558d806af0dae1d99c5a9ad5e57a6c72959da2efba43874"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crafting/netherite_wire.json"
+hash = "82ba9a4c32449e830ae71dcbeeaba5fe9d3c40f86bd8cb8cca5c34564133fe06"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crafting/steel_wire.json"
+hash = "06a61f485cb26657e38d38e9bd345119294c058af4f39145183143c32391f5d8"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crafting/zinc_wire.json"
+hash = "13810409275769c50957162022abe8f01d21337b3c24f16652309da3e19fc6b1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crushing/asurine.json"
+hash = "117420da69d536f98fb455dbedaefbc806eb68e2800c3b2d90090770c7cf4526"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crushing/asurine_recycling.json"
+hash = "5307daaa943adb2155785bb88bcf6ebfa9fd5ce2fc0214bf981afd4fc36bd9c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crushing/crimsite.json"
+hash = "16298de86579c65dd90eff4d14ff3f82529d2bebe745afa6d11804c738e13403"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crushing/crimsite_recycling.json"
+hash = "9a12a1094bcbf96e80174769bd8f653e9f5dfb5c70d623884b0d9f8eef3825f0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crushing/tuff.json"
+hash = "bb72d35abfb77591716654fdeb8450c8340e7f21a934b64d81950a30bd9a78ce"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/crushing/tuff_recycling.json"
+hash = "26173505952d3dadd41b5147b08e54dfa93c87791425a243f33cb60a1d3c74a5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/pressing/steel_sheet.json"
+hash = "be4cf3fbf3218dbbae29151a841d373dfbf6c75d95f956f0bfb89166eb97382c"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_conduit_ruin.json"
 hash = "618064bb87f39ccfb9b0219d95b7de51bf78bf4cd1ee24011a4b5a5e4fb489e2"
 
@@ -395,6 +439,90 @@ hash = "b833f58a85eb494e31962e4f7ef6890db6e87285499a341ef3ee09661ef0abe8"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/buzzier_bees/neoforge/biome_modifier/add_feature/remove_spawn/remove_animal/cow.json"
 hash = "99b969132018e9da1071065a8593ba9564928b1ed0aa5ae3ab45f9dac071f7d5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/fluid/molten_bronze.json"
+hash = "be059eef3407dd6e9e6f093228aaba0db26c986dbc0e63d119146d056f8fe621"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/fluid/molten_steel.json"
+hash = "367b36c807b05a8e5636bb7e45a331d3082143de6aac168cd0eace4216021564"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/black.json"
+hash = "3ce670b49b7034763baa14ea169def3844cc6bba5adb33a794e1a29575221e53"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/blue.json"
+hash = "e0e3111fd8a3952dde565facf80cfeac26a33f2ed424e80f8ca00beb301dd443"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/brown.json"
+hash = "2de71132e2d9c95fd484da6b8da08c1a31d5f16d3920afdb5e8605620e72fbbc"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/colorless.json"
+hash = "9bd889baa63c2208cb4490d5ad5b4c64b842a414d1f082665947f104e2aa8fc0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/cyan.json"
+hash = "7fb3b6a251d522ba4ee1434028c326926dc41b89364561fa332e0600bd30cc09"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/gray.json"
+hash = "858657ea0ee850d5abdc9e2db7f65a61f9abdf7c7066fd04fc450616b30e2bbe"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/green.json"
+hash = "2f252110353e9839965da81ee66803cf257a7211246685cc47cd5db612b1e919"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/light_blue.json"
+hash = "f3241339d86ae776aaafa83d653283cdac4297daa82b5869a1c8ba961dfd3f45"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/light_gray.json"
+hash = "3ad54a356ba81678329f4a90b1eed746198bd7c9ca848fd488bf2c3d70b52da3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/lime.json"
+hash = "ea2453cd91c22fc7bec855911cefe5ecd0513cd45f1c2a3eac4f5d79808bdd27"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/magenta.json"
+hash = "672370595c441f5bde27855dec36792ae7e4033d321a9050975a7a5ff5611e40"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/orange.json"
+hash = "264c718d81b0deecd83f4b4cfa7ff29abbe1bb7c01ab5cb8014f62947dc1f1bb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/pink.json"
+hash = "cd7aac1d33949212222a49b75845bc2e3f67b0e7e1289110ea54d2eb54bb3fd6"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/purple.json"
+hash = "c69b976610a003f236cd1310e9ab9cbd29161b7fec95e8594ff5f88fa51eb2fc"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/red.json"
+hash = "fd66ddcec3afd721c0ed9fabfec5faf6d885e967bb18200c39c1dbb9a1f2045e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/white.json"
+hash = "17f4b39ef37f5dce4ce99b7d59955cd7b7c71db32e2a74cef492ba2133426fdd"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/glass/yellow.json"
+hash = "514b5cece07bc62b61db90c09437f49de90c1cab765969d219d06ea56bfe9642"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/plates.json"
+hash = "7239eb45fae8c90b84097b1dbc331b82ee403406ab752773d2edf7b2e83d6180"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/c/tags/item/plates/steel.json"
+hash = "a5fc205668d1732eefe8268b6e854f3f524270f561dce638a14b68e797ccc9ab"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/create/recipe/blasting/silver_ingot_compat_galosphere.json"
@@ -810,7 +938,7 @@ hash = "e1004013da9f23ca0b161d6d1eccbbd34f81e79e9b992f108f1562872b0fac03"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/pack.mcmeta"
-hash = "98a2ed7fd3d2ba25a7e302baa1d0a9a188be502488d976fff6dc2fbdad285142"
+hash = "f740ace6486baf3dfa8757a0a87fd8250583f35fb13ac6c713940d3c1e5248a6"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_chest_epic.json"
@@ -1819,6 +1947,30 @@ hash = "0940996a83e9b2343e33abab44c644df3d8ed65e14536f37ae2528d6b6187fa6"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/knife_poor_with_dragging_edge.json"
 hash = "d822fa001f0d4b391e794d5817f8e6a9aeed937c2dfd9497335ecf880332c642"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ladle_epic.json"
+hash = "121252bc2db265b6ab5580f5e8fbc2abc6b2692550f1dbca3192a62ca2e74ec1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ladle_exceptional.json"
+hash = "15602d305fcc2704134b5b9fe58949aed941b08fe8537ff0de701340184cc29f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ladle_fine.json"
+hash = "b6d75b9674cef3f3c0851db22ebce4ed8250f97f37cee89f75689bf1c87d4ae4"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ladle_legendary.json"
+hash = "9524d2ec99a9f0419ab6a107b20af83632bb809978c20f3be8d286b022eff458"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ladle_ordinary.json"
+hash = "e033d234aea9c02d6cf7a7167d0220b966d26ac45633441e521a333de06cd72e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/ladle_poor.json"
+hash = "d2ac663144582666fdbeba697ceb979291c635e28ff31dc156bb56303fc657d8"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/mace_epic.json"
@@ -3017,6 +3169,30 @@ file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscape
 hash = "e20a76d5d4a1d1b65f926fe1fba395ad7985c642c03082255eb7ec7ddafedb11"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createmetallurgy_cute_transfer_ladle.json"
+hash = "55b1cffdd6ffbcc01ae7287bd34484ed79eca436979c39e9f8e102e95097dc9a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createmetallurgy_ghast_transfer_ladle.json"
+hash = "7a9d03ca7b5cc5bba6db89417ebbd6f60847d64135b435700268246c35f79222"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createmetallurgy_old_transfer_ladle.json"
+hash = "cf50f5bdffdf7a4f9c3626fba7d97e592d37152b71b68b3b9e7a1cc6a410a58b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createmetallurgy_restingphantom_transfer_ladle.json"
+hash = "8effc2ab632c250f9b222865c7fdd376574ae7aac1633d6bb2c3bb3f788ff5be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createmetallurgy_strider_transfer_ladle.json"
+hash = "d4e41be814d94959a9affda572819f64b077c9b3616b2f4c4878ca9bdba8e308"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createmetallurgy_the_cooler_transfer_ladle.json"
+hash = "ad21658d078b5fc80ee8cecaf1dee84324096c385b8209ba92da64ba09b74609"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/crittersandcompanions_pearl_necklace_1.json"
 hash = "1198c81b3d1ff78d55da8f877b5565f8bd7395d1ca53e75a20b40f9a5b50a240"
 
@@ -3539,6 +3715,10 @@ hash = "a8a6cdd490dc8c95d0143dbce5ced38d226d29b0d79e4f489c9ad2268332598b"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/knife.json"
 hash = "75ae8ed5a635d0147f0de33efeea0606fff3c04f03fcf16586e5b4b944b06701"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/ladle.json"
+hash = "1938302b343e116cd14c89a7cecf569fb7ac73f2d01cfcf258fde42e1917716b"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/mace.json"
@@ -4098,6 +4278,10 @@ hash = "557e31cbed9a4ed87a526edb270724404f378c6d2a32eb54955d81bead862620"
 metafile = true
 
 [[files]]
+file = "licenses/Create-Metallurgy-MIT.txt"
+hash = "24daada2d05acf6c059549bffc1bbe348b16d0eef10c1f8fce0d7819a9ccf97f"
+
+[[files]]
 file = "licenses/EMI-Trades-upstream-MIT.txt"
 hash = "5559875e9fba6781f64338e01f1918a0a2de92a945ddc0da4c660ce5041f7b10"
 
@@ -4119,11 +4303,27 @@ hash = "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "660dcdb261bf62d8fee4afe8541e2d3c99aea7004b9e53ff236bbaac59206251"
+hash = "6fdca3360c43439d6b616c15837e8983bd7a794172037ba761882c4654901b04"
+
+[[files]]
+file = "licenses/Vintage-SSW-LGPL-2.1.txt"
+hash = "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
+
+[[files]]
+file = "licenses/Vintage-SSW-MIT.txt"
+hash = "543732fcbc5f68f16fb825fec81e614e7eec224ae97d9d044c3116520c015c52"
+
+[[files]]
+file = "licenses/Vintage-SSW-NOTICE.txt"
+hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "b314274b79a362cdbae4d9bab7a27a6c28f81703e46d2f6083610e48d8f61771"
+hash = "bd9092bcf7e47e14c688ad13bbfec8b27badfd83a2488483ee5849aae78bec15"
+
+[[files]]
+file = "licenses/vintage-ssw-0.0.0.8-corresponding-source.zip"
+hash = "15178ff04e59a7b8ceb11de6954e5fd7f8435e75f5f641fe352c3a9df2c828e4"
 
 [[files]]
 file = "mods/3dskinlayers.pw.toml"
@@ -4152,7 +4352,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "adb1ef4809950b730fa6ab6fbbdb6688212dfb01930641d90da19d619141d3be"
+hash = "9934a3f6049c03e78d9790eb84110dcf9137ed4468cf32bb798d66476590de5e"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -4412,6 +4612,11 @@ metafile = true
 [[files]]
 file = "mods/create-liquid-fuel.pw.toml"
 hash = "a44f1b488796eb85a9e564002f376bbe877b74195a09298f8350456532b4f57a"
+metafile = true
+
+[[files]]
+file = "mods/create-metallurgy.pw.toml"
+hash = "ca60966a44176a823e1a04f729bb252d76684d30cd851060a7ef6d95b6055099"
 metafile = true
 
 [[files]]
@@ -5215,6 +5420,11 @@ hash = "8c7b25807fb0de0c0e982046030b0bc4e5e99043ea6fe05d056ee87a1c7be083"
 metafile = true
 
 [[files]]
+file = "mods/vintage-improvements-ssw.pw.toml"
+hash = "89e578ccfa81ce8b0c7c1871232a094157d58d5ee99bd79be586f2de8e6f7a7e"
+metafile = true
+
+[[files]]
 file = "mods/visual-workbench.pw.toml"
 hash = "0abaf4ca962cf3b75f69588ecb101327712be61750f1878685576c39d2ed5336"
 metafile = true
@@ -5998,7 +6208,7 @@ hash = "83088bcd08b8029cbc353f400c203360350b86b181237fd7c7cde77ce2d67bbb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/atlas/panels.json"
-hash = "a5bda7d381653fff479c67b3f720c4a4ce008a84442c260501cea4a5fda46963"
+hash = "fb0edf88b532fc7792430ee2641b9c6771c3b6b77c1ad02190afbb667deb8b30"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/atlas.png"

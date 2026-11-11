@@ -1,4 +1,4 @@
-Aeroscapes Reimagine 0.2.5 — third-party notices
+Aeroscapes Reimagine 0.5.2 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 
@@ -526,3 +526,22 @@ adapters, missing configuration captions and two held meshes live in the
 owned mod/source archive. Native textures are referenced, never copied.
 Adapted native labels retain their provider terms; the LGPL text accompanies
 the owned JAR in META-INF/licenses/Misc-content-LGPL-3.0.txt.
+
+Mechanical workshop and foundry in 0.5.2:
+Vintage Improvements — SSW Edition 1.21.1-0.0.0.8: Negodya1, SSWTLZZ69 and contributors.
+https://www.curseforge.com/minecraft/mc-mods/vintage-improvenents-ssw-edition/files/8941692
+Publisher LGPL-2.1 and descriptor/source MIT declarations are both preserved.
+The original JAR remains unchanged and replaceable. Full corresponding source,
+original attribution, both license texts and exact 221-class rebuild proof are
+supplied in vintage-ssw-0.0.0.8-corresponding-source.zip and Vintage-SSW-NOTICE.txt.
+No additional restrictions on modification or reverse engineering are imposed.
+Create: Metallurgy 1.0.3: Luc_Creeper74 and contributors; MIT.
+https://modrinth.com/mod/create-metallurgy/version/4RhIMmaJ
+The unchanged official Modrinth and CurseForge 8128243 files are byte-identical.
+Full copyright and permission text: Create-Metallurgy-MIT.txt.
+Independent common-material recipes, missing text and guarded display corrections
+are supplied by this pack. The original native ladle models and fluid renderer
+remain unchanged; the owned adapter reduces manual-opening burn risk only.
+The steel-sheet icon uses AI-assisted deterministic pixel composition.
+Its model and registration accompany the owned
+source archive under the owned project's license.

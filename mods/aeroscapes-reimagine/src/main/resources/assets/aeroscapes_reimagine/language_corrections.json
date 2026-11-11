@@ -17168,5 +17168,170 @@
     "key": "book.theurgy.the_hermetica.getting_started.credits.intro.text",
     "expected": "Как любой мод, тергия была бы невозможна без помощи большого сообщества. Я хотел бы поблагодарить всех моддеров, художников, пакетов и игроков, которые внесли свой вклад в сообщество Minecraft Modding.",
     "replacement": "Theurgy появился благодаря поддержке большого сообщества. Спасибо всем разработчикам модов, художникам, авторам сборок и игрокам, которые внесли вклад в моддинг Minecraft."
+  },
+  {
+    "key": "itemGroup.vintageimprovements",
+    "expected": "Create: Винтажные Улучшения",
+    "replacement": "Create: Vintage Improvements"
+  },
+  {
+    "key": "vintageimprovements.jei.text.fragile",
+    "expected": "Хрупкое. Ингредиент будет ничтожен при обработке на неправильной скорости",
+    "replacement": "Хрупкий материал. При неверной скорости ингредиент будет уничтожен"
+  },
+  {
+    "key": "vintageimprovements.ponder.belt_grinder_processing.text_4",
+    "expected": "Есть три скорости: Низкая (16 об/мин или меньше), Средняя (от 16 до 64 об/мин) и Высокая",
+    "replacement": "Есть три скорости: низкая (до 16 об/мин включительно), средняя (от 16 до 64 об/мин) и высокая (свыше 64 об/мин)"
+  },
+  {
+    "key": "vintageimprovements.ponder.vibrating_table.text_2",
+    "expected": "Также вибрационный стол может распаковывать некоторые блоки компактного хранения",
+    "replacement": "Вибростол может распаковывать обратимые рецепты уплотнения 4 к 1 и 9 к 1"
+  },
+  {
+    "key": "createmetallurgy.gui.ladle_filter.filled_amount_hint",
+    "expected": "Прокрутите вниз до 0, чтобы выключить",
+    "replacement": "Прокрутите ниже 0, чтобы отключить условие"
+  },
+  {
+    "key": "block.createmetallurgy.purple_light_bulb",
+    "expected": "Purple Лампа накаливания",
+    "replacement": "Фиолетовая лампочка накаливания"
+  },
+  {
+    "key": "createmetallurgy.crucible.capacity",
+    "expected": "Осталось жидкости",
+    "replacement": "Свободная вместимость"
+  },
+  {
+    "key": "createmetallurgy.foundry.cooling",
+    "expected": "Холодно!",
+    "replacement": "Остывание!"
+  },
+  {
+    "key": "createmetallurgy.display_source.foundry.for_foundry_status",
+    "expected": "Информация о статусе литейного создания",
+    "replacement": "для состояния литейной"
+  },
+  {
+    "key": "createmetallurgy.ponder.casting_blocks.text_4",
+    "expected": "Если вы используете воронки вместо ручной загрузки...",
+    "replacement": "Форму можно закрепить с помощью переключателя режима блокировки"
+  },
+  {
+    "key": "createmetallurgy.ponder.casting_blocks.text_5",
+    "expected": "...вам может понадобиться латунная воронка, чтобы не извлекать формы",
+    "replacement": "Если вы используете воронки, оставив форму незакреплённой..."
+  },
+  {
+    "key": "createmetallurgy.ponder.casting_blocks.text_6",
+    "expected": "...вам может понадобиться латунная воронка, чтобы не извлекать формы",
+    "replacement": "...может понадобиться латунная воронка, чтобы не извлекать формы"
+  },
+  {
+    "key": "createmetallurgy.ponder.foundry.text_1",
+    "expected": "Промышленные чаши также могут использоваться как литейные установки...",
+    "replacement": "Промышленные тигли также могут работать как увеличенные литейные чаши"
+  },
+  {
+    "key": "createmetallurgy.ponder.foundry.text_2",
+    "expected": "...вы можете удалить их в любое время с помощью гаечного ключа",
+    "replacement": "С помощью гаечного ключа можно в любой момент добавлять и снимать навесные приборы, например указатели"
+  },
+  {
+    "key": "createmetallurgy.ponder.foundry.text_4",
+    "expected": "...литейная установка может быть до 5×5 блоков в ширину для достижения максимальной температуры",
+    "replacement": "...для достижения максимальной температуры основание тигля должно иметь размер 5×5 блоков"
+  },
+  {
+    "key": "createmetallurgy.ponder.foundry.text_8",
+    "expected": "Предметы можно передавать через любую сторону, как в предметных хранилищах",
+    "replacement": "Предметы можно передавать с любой стороны, как в предметном хранилище, а жидкости — как в резервуаре"
+  },
+  {
+    "key": "advancement.createmetallurgy.industrial_crucible.desc",
+    "expected": "Создайте Литейную чашу.",
+    "replacement": "Получите промышленный тигель"
+  },
+  {
+    "key": "advancement.createmetallurgy.casting_blocks.desc",
+    "expected": "Создайте Отливочную чашу и Отливочный стол",
+    "replacement": "Создайте отливочную чашу или отливочный стол"
+  },
+  {
+    "key": "item.createmetallurgy.raw_tungsten",
+    "expected": "Сырой вольфрам",
+    "replacement": "Необработанный вольфрамит"
+  },
+  {
+    "key": "item.createmetallurgy.crushed_raw_tungsten",
+    "expected": "Дроблёный рудный Вольфрам",
+    "replacement": "Дроблёный вольфрамит"
+  },
+  {
+    "key": "item.createmetallurgy.dirty_tungsten_dust",
+    "expected": "Грязная вольфрамовая пыль",
+    "replacement": "Грязная вольфрамитовая пыль"
+  },
+  {
+    "key": "item.createmetallurgy.tungsten_dust",
+    "expected": "Вольфрамовая пыль",
+    "replacement": "Вольфрамитовая пыль"
+  },
+  {
+    "key": "block.createmetallurgy.raw_wolframite_block",
+    "expected": "Блок сырого Вольфрама",
+    "replacement": "Блок необработанного вольфрамита"
+  },
+  {
+    "key": "block.createmetallurgy.wolframite_ore",
+    "expected": "Вольфрамовая руда",
+    "replacement": "Вольфрамитовая руда"
+  },
+  {
+    "key": "advancement.createmetallurgy.ladle.desc",
+    "expected": "Создайте Переносной Черпак",
+    "replacement": "Изготовьте переносной литейный ковш"
+  },
+  {
+    "key": "block.createmetallurgy.labeling_station.tooltip.behaviour1",
+    "expected": "_Сдержит_ входящие черпаки.",
+    "replacement": "_Удерживает_ входящие ковши."
+  },
+  {
+    "key": "block.createmetallurgy.labeling_station.tooltip.behaviour2",
+    "expected": "_Запишет_ все _адреса_, начинающиеся с _«#»_, из планшета на черпак. Если планшет _пустует, стерает_ все адреса.",
+    "replacement": "_Записывает_ на ковш все _адреса_ из планшета, начинающиеся с _«#»_. Если планшет _пуст_, стирает все адреса."
+  },
+  {
+    "key": "block.createmetallurgy.labeling_station.tooltip.summary",
+    "expected": "_В разработке_. Все ещё не можешь отследить свою логистику? Любимая инженерами, она используется для _маркировки_ входящих черпаков.",
+    "replacement": "_В разработке_. Станция используется для _маркировки_ входящих литейных ковшей."
+  },
+  {
+    "key": "entity.createmetallurgy.ladle",
+    "expected": "Черпак",
+    "replacement": "Литейный ковш"
+  },
+  {
+    "key": "item.createmetallurgy.incomplete_ladle_frame",
+    "expected": "Незавершённый черпак",
+    "replacement": "Незавершённый литейный ковш"
+  },
+  {
+    "key": "item.createmetallurgy.ladle",
+    "expected": "Переносной черпак",
+    "replacement": "Переносной литейный ковш"
+  },
+  {
+    "key": "item.createmetallurgy.ladle_filter",
+    "expected": "Фильтр черпаков",
+    "replacement": "Фильтр литейных ковшей"
+  },
+  {
+    "key": "item.createmetallurgy.rare_ladle",
+    "expected": "Редкий Переносной черпак",
+    "replacement": "Редкий переносной литейный ковш"
   }
 ]

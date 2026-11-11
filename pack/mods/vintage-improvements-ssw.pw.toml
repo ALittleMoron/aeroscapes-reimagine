@@ -1,0 +1,12 @@
+name = "Vintage Improvements — SSW Edition"
+filename = "vintageimprovements-1.21.1-0.0.0.8.jar"
+side = "both"
+
+[download]
+url = "https://edge.forgecdn.net/files/8941/692/vintageimprovements-1.21.1-0.0.0.8.jar"
+hash-format = "sha512"
+hash = "6b03c3705605861b89dd4823a784df354c68766a8c02a0d69e43e35b02a89b9ffbd50d2720c600684357d165677b563fa81226f3e99398081606d5206b841c06"
+
+[update.curseforge]
+project-id = 1255448
+file-id = 8941692

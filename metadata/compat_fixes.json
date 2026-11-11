@@ -262,7 +262,7 @@
     "files": [
       "data/minecraft/worldgen/placed_feature/amethyst_geode.json"
     ],
-    "reason": "Extend only the native Terralith amethyst-geode placement upper height from 120 to 384 to include Aero island bulk (commonly Y=150–220). Preserve the original lower height, rarity 18, random offsets, Terralith mega-geode selector, surface burial filter, biome guard and configured geodes. Natural traces previously showed 18 attempted vanilla geodes all starting in raw air; this finite evidence is not a claim of global impossibility.",
+    "reason": "Extend only the native Terralith amethyst-geode placement upper height from 120 to 384 to include Aero island bulk (commonly Y=150\u2013220). Preserve the original lower height, rarity 18, random offsets, Terralith mega-geode selector, surface burial filter, biome guard and configured geodes. Natural traces previously showed 18 attempted vanilla geodes all starting in raw air; this finite evidence is not a claim of global impossibility.",
     "source_targets": {
       "tGVwBATM": "bzJ2edxy"
     }
@@ -439,7 +439,7 @@
       "data/natures_spirit/worldgen/placed_feature/ores/ore_redstone.json",
       "data/natures_spirit/worldgen/placed_feature/ores/ore_redstone_lower.json"
     ],
-    "reason": "Keep the previous effective absolute ore-height ranges for Nature’s Spirit2.2.5 and Galosphere1.5.3 when extending the Overworld; relative anchors use the old generation floor-64 and noise ceiling303. Separate lower ore placements supply added terrain."
+    "reason": "Keep the previous effective absolute ore-height ranges for Nature\u2019s Spirit2.2.5 and Galosphere1.5.3 when extending the Overworld; relative anchors use the old generation floor-64 and noise ceiling303. Separate lower ore placements supply added terrain."
   },
   {
     "targets": {
@@ -796,7 +796,7 @@
       "data/rsgauges/loot_table/blocks/industrial_blinking_led.json",
       "data/rsgauges/loot_table/blocks/orange_sensitiveglass.json"
     ],
-    "reason": "The native orange sensitive glass and industrial blinking LED loot tables reference unregistered items. Gate only those tables on their item registration, keeping any enabled variant’s original drops."
+    "reason": "The native orange sensitive glass and industrial blinking LED loot tables reference unregistered items. Gate only those tables on their item registration, keeping any enabled variant\u2019s original drops."
   },
   {
     "targets": {
@@ -806,5 +806,96 @@
     },
     "files": [],
     "reason": "Pin the RSGauges native manual link range, saved link and HUD paths and CBC manual loading, successful weld, gas exposure and client inspection calls used by equipment quality and Island Atlas."
+  },
+  {
+    "targets": {
+      "Soft45xC": "4RhIMmaJ",
+      "GWp4jCJj": "bOiDu0LS",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/recipe/pressing/steel_sheet.json",
+      "data/c/tags/item/plates/steel.json",
+      "data/c/tags/item/plates.json",
+      "data/c/tags/fluid/molten_steel.json",
+      "data/c/tags/fluid/molten_bronze.json"
+    ],
+    "reason": "One shared steel sheet at90mB per ingot/plate enables native Metallurgy plate casting and remelting. Existing CBC steel ingots share the tag. Both providers use90mB per ingot; shared molten steel/bronze tags admit Metallurgy fluids to CBC tagged casting. Preserve separate30mB CBC spring wire and concrete Metallurgy fluid recipes."
+  },
+  {
+    "targets": {
+      "curseforge:1255448": "8941692",
+      "Soft45xC": "4RhIMmaJ",
+      "LNytGWDc": "UjX6dr61",
+      "GWp4jCJj": "bOiDu0LS"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/recipe/crafting/steel_wire.json",
+      "data/aeroscapes_reimagine/recipe/crafting/zinc_wire.json",
+      "data/aeroscapes_reimagine/recipe/crafting/netherite_wire.json",
+      "data/aeroscapes_reimagine/recipe/crafting/bronze_wire.json",
+      "data/aeroscapes_reimagine/recipe/crushing/asurine.json",
+      "data/aeroscapes_reimagine/recipe/crushing/asurine_recycling.json",
+      "data/aeroscapes_reimagine/recipe/crushing/crimsite.json",
+      "data/aeroscapes_reimagine/recipe/crushing/crimsite_recycling.json",
+      "data/aeroscapes_reimagine/recipe/crushing/tuff.json",
+      "data/aeroscapes_reimagine/recipe/crushing/tuff_recycling.json"
+    ],
+    "reason": "Filter the original four rod-to-wire recipes and provide two wires per two rods (45mB each), closing the active steel/zinc/netherite/bronze metal multiplication loops. Filter obsolete-format Vintage Create overrides; project recipes preserve Create6.0.10 base crushing yields plus native10% sulfur/vanadium byproducts. Also filter the owner-removed diamond-to-emerald and cobblestone-to-gravel test recipes. Keep the selected stationary laser and CBC coiling integration. Original binaries remain unchanged."
+  },
+  {
+    "targets": {
+      "Soft45xC": "4RhIMmaJ",
+      "LNytGWDc": "UjX6dr61",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "LadleHandlingReforgeMixin reduces only the owner-selected manual burn probability. The same exact-version adapter returns native success on the server immediately before FluidFX.getFluidParticle: native1.0.3 calls this client-linked helper before its isClientSide check, crashing on ClientLevel during filled-ladle opening. Native ignition, drain up to1000mB and bucket use run before this injection. Client particles and unchanged4000mB item/entity capabilities remain native. The dedicated native-opening regression reproduces the failure and protects this boundary."
+  },
+  {
+    "targets": {
+      "curseforge:1255448": "8941692",
+      "Soft45xC": "4RhIMmaJ",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Existing hash-guarded Island Atlas panel recoloring now admits native recipe_card.png (Vintage lathe and recipe-card screens) and ladle_filter.png (Metallurgy custom filter screen). Preserve UVs, native icons/colors and changed user resources; no provider artwork is copied. Original textures and reuse terms remain in unchanged provider JARs and distributed notices/source."
+  },
+  {
+    "targets": {
+      "curseforge:1255448": "8941692",
+      "LNytGWDc": "UjX6dr61"
+    },
+    "files": [
+      "data/c/tags/item/glass/colorless.json",
+      "data/c/tags/item/glass/black.json",
+      "data/c/tags/item/glass/blue.json",
+      "data/c/tags/item/glass/brown.json",
+      "data/c/tags/item/glass/cyan.json",
+      "data/c/tags/item/glass/gray.json",
+      "data/c/tags/item/glass/green.json",
+      "data/c/tags/item/glass/light_blue.json",
+      "data/c/tags/item/glass/light_gray.json",
+      "data/c/tags/item/glass/lime.json",
+      "data/c/tags/item/glass/magenta.json",
+      "data/c/tags/item/glass/orange.json",
+      "data/c/tags/item/glass/pink.json",
+      "data/c/tags/item/glass/purple.json",
+      "data/c/tags/item/glass/red.json",
+      "data/c/tags/item/glass/white.json",
+      "data/c/tags/item/glass/yellow.json"
+    ],
+    "reason": "Restore missing legacy c:glass/<color> item tags used by17 native Vintage SSW laser recipes. Alias colorless to NeoForge21.1.244 c:glass_blocks/colorless; each dyed tag contains the installed matching stained-glass block, the same current set as glass_blocks intersected with dyed/<color>. Create6.0.10 ProcessingRecipe codec treats an ingredient with a type field as fluid, so NeoForge intersection ingredients do not decode here. Keep31 original laser recipes, costs and six-pane outputs unchanged; provider binaries remain unchanged. The same red-glass tag restores the native mechanical-crafting route to laser_item, a plain component consumed by the stationary laser recipe."
+  },
+  {
+    "targets": {
+      "Soft45xC": "4RhIMmaJ",
+      "LNytGWDc": "UjX6dr61",
+      "fRiHVvU7": "5sIPA1To",
+      "u6dRKJwZ": "zHNxmOqp",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Create6.0.10 Sequential Assembly exposes only its first weighted result to JEI. JEMI1.1.24 consequently indexes only the ghast ladle, while native Metallurgy1.0.3 produces six distinct item styles. Client-only LadleAssemblyEmiMixin adds the actual missing resultPool stacks only for createmetallurgy:sequenced_assembly/ladle after JEMI constructs that recipe. Preserve native primary output, ingredients, sequence, counts and weights; disable the recipe tree for mutually exclusive outcomes, matching JEMI alternative-output behavior. EMI default item identity retains lookup for filled/graded stacks. Original provider binaries and JEI layout remain unchanged."
   }
 ]

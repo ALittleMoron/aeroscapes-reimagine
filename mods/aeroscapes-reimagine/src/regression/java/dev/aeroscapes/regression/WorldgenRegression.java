@@ -98,6 +98,11 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    if (Boolean.getBoolean("aeroscapes.regression.foundry")) {
+      FoundryRegression.verify(level);
+      LOGGER.info("Foundry material conservation regression passed");
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.reforging")) {
       ReforgeRegression.verify(level);
       LOGGER.info("Reforge pool regression passed");

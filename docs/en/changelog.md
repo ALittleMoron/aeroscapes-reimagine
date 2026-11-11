@@ -4,6 +4,18 @@ description: Version history.
 status: available
 ---
 
+## 0.5.2
+
+- Added the mechanical workshop from Vintage Improvements — SSW Edition: bending, polishing, spring coiling, helve hammer, centrifuge, vibrating table and stationary processing laser.
+- Added Create: Metallurgy with melting, alloying, graphite molds and casting, including steel, tungsten and obdurium production.
+- Added shared steel sheets and compatible foundry steel and bronze tags; repaired rod-to-wire recycling loops for steel, zinc, netherite and bronze.
+- Removed the diamond-to-emerald joke and the cobblestone-to-gravel lathe test recipe; repaired sulfur and vanadium crushing routes.
+- Added steel-based ladle reforging that reduces manual-opening burn risk while preserving fluid capacity and contents.
+- Fixed a server crash when opening a filled ladle to pour fluid.
+- Extended Island Atlas styling to the lathe, recipe-card and ladle-filter screens.
+- Restored glass inputs for crafting the stationary laser and cutting clear and stained glass.
+- Fixed EMI recipe lookup for all six ladle styles, including filled and reforged ladles.
+
 ## 0.5.1
 
 - Add RSGauges Unofficial Fix for redstone gauges, switches, timers and sensors.

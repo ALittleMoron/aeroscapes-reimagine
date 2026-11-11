@@ -2092,5 +2092,23 @@
     "scope": "Authored labels for the equipment pools, Frost Strike effect, hook ascent/descent speed and catalyst slot. Mod Menu descriptions and Russian reforging, attribute, command and configuration text supplement the provider resources. Guarded English changes retain the brand title.",
     "source_comparison": "Exact JAR language resources and client and common consumers. Cloth Auto Config supplies the annotated general and client option categories and tooltips; Hero's Lib registers no configuration screen. The rank display appends the item name after the translated tier ID plus .label. The translation uses the existing component substitutions for command arguments.",
     "exclusions": "Original rank labels have no ordinary gameplay consumer in the curated pack. Hero's Lib adds no item catalog. Technical identifiers and original mod brands are preserved."
+  },
+  "workshop_foundry": {
+    "targets": {
+      "vintageimprovements": "1.21.1-0.0.0.8 / CF8941692",
+      "createmetallurgy": "1.0.3 / MR4RhIMmaJ"
+    },
+    "scope": "Independent missing English/Russian fallbacks, exact-expected provider corrections, native Catnip client/common/server configuration labels/comments, native Ponder/goggles and ladle filter labels. Runtime values and changed user translations retain the existing fallback/guard priority. Mod names keep original spelling.",
+    "resources": [
+      "assets/aeroscapes_reimagine/misc_translations/en_us.json",
+      "assets/aeroscapes_reimagine/misc_translations/ru_ru.json",
+      "assets/aeroscapes_reimagine_engineering_translations/lang/en_us.json",
+      "assets/aeroscapes_reimagine_engineering_translations/lang/ru_ru.json",
+      "assets/aeroscapes_reimagine/language_corrections.json"
+    ],
+    "source_comparison": "Exact distributed language dictionaries, config registrations/consumers and dynamic hardcoded labels were inspected. Vintage config captions follow installed Ponder1.0.82/CommonsLang3.14 humanization; shared existing aliases are reused. Metallurgy has no registered config spec; LadleFilterScreen uses native Create/CM language paths.",
+    "exclusions": "Curving diagrams, intentionally empty Ponder line, arrows/hearts/comparator syntax and original attribution; inactive datagen/log/parser strings. No active untranslated prose excluded.",
+    "terms": "Vintage declarations and corresponding source are preserved in pack/licenses/Vintage-SSW-NOTICE.txt; adapted wording accompanies full corresponding source of the owned mod. Metallurgy declares MIT.",
+    "equipment": "Vintage parts are machine components, card is paper and copper sulfate consumable fertilizer. Six obtainable Metallurgy ladles retain native volumetric models and fluid renderer; their safe-handling reforge is owner-selected. No new weapon/armor/tool/guidebook model."
   }
 }

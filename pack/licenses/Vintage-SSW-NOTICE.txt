@@ -1,0 +1,54 @@
+Vintage Improvements — SSW Edition 1.21.1-0.0.0.8
+Original author: Negodya1. Port maintainer: SSWTLZZ69. Other contributors retain
+their upstream attribution. Original source CREDITS.txt and LICENSE.txt remain
+unchanged in this package.
+
+Official file:
+https://www.curseforge.com/minecraft/mc-mods/vintage-improvenents-ssw-edition/files/8941692
+SHA-256: 91e6f43d8b4e30d8ff8da16f999c4ff9c879f9f9d4da331c696d6cf1b3f5922c
+
+Corresponding source revision:
+https://github.com/SSWTLZZ69/Create-Vintage-Improvements/tree/1a7e49e501e15d0ed4620cc501f9b5fa6c0fc703
+Unmodified source archive SHA-256:
+05816fd28ecf26eb17d8743013de39a3a9352b7120aff97a18253c8c5a1782e0
+
+Licensing declarations
+The port publisher's CurseForge project declares LGPL version 2.1. The
+distributed mod descriptor and source gradle.properties declare MIT, as do
+the original author's official CurseForge and Modrinth projects. The inherited
+source LICENSE.txt is a Forge/FML notice and expressly distinguishes ordinary
+mods from Forge's own LGPL scope. It is not treated as a new relicensing notice.
+
+This distribution preserves both declarations and follows the obligations of
+both: the original JAR remains unchanged and replaceable, full corresponding
+source accompanies it, upstream notices remain intact, and the MIT and LGPL-2.1
+texts are supplied in LICENSES/. No assertion is made that the publisher
+corrected its metadata or that one declaration overrides the other. No extra
+restriction on modification or reverse engineering for debugging is added.
+
+Source coverage
+A clean JDK 21 rebuild using the unmodified Gradle wrapper and build scripts
+produced all 221 classes byte-for-byte identical to the official JAR, with no
+missing or additional class. The archive as a whole differs because of the
+build-time manifest, line endings/JSON formatting and generated resources.
+The complete upstream source tree, build scripts and wrapper are included.
+Ten additional plain JSON resources present only in the distributed JAR are
+included unmodified under src/generated/resources/ so that their editable
+source is supplied too. These additions are identified in SOURCE-PROVENANCE.json.
+The packaged source is not a claim that the original JAR was modified.
+
+Rebuild
+Use a JDK 21 installation and run sh gradlew --no-daemon jar in the source root.
+The wrapper/build downloads its pinned build dependencies; neither runClient
+nor runServer is necessary. The build used Gradle 8.14.3, NeoForge 21.1.228,
+Create 6.0.10-280 and Azul JDK 21.0.13. Deprecated API/Gradle warnings were
+emitted, but the build completed successfully. These upstream warnings were
+not suppressed or repaired in the corresponding source.
+
+Declaration sources
+https://www.curseforge.com/minecraft/mc-mods/vintage-improvenents-ssw-edition
+https://github.com/SSWTLZZ69/Create-Vintage-Improvements/blob/1a7e49e501e15d0ed4620cc501f9b5fa6c0fc703/gradle.properties
+https://www.curseforge.com/minecraft/mc-mods/create-vintage-improvements
+https://modrinth.com/mod/create-vintage-improvements
+https://opensource.org/license/mit
+https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt

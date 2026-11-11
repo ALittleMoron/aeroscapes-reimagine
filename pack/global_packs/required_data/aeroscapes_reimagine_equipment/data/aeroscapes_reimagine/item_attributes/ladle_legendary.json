@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:ladle_legendary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/ladle"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

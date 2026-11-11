@@ -46,6 +46,7 @@
     "reforge.engineering.CannonWelderReforgeMixin",
     "reforge.engineering.GasMaskExposureMixin",
     "reforge.engineering.GaugesLinkConfigAccess",
+    "reforge.engineering.LadleHandlingReforgeMixin",
     "reforge.engineering.SwitchLinkGradePersistenceMixin",
     "reforge.engineering.SwitchLinkPearlReforgeMixin",
     "reforge.field.BrushProgressReforgeMixin",
@@ -79,6 +80,7 @@
     "reforge.tools.VanillaRodReforgeMixin"
   ],
   "client": [
+    "engineering.LadleAssemblyEmiMixin",
     "CompassNatureScreenMixin",
     "CompassExplorerScreenMixin",
     "AccuratePlacementInteractionMixin",

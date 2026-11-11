@@ -339,5 +339,6 @@
   "block.aeroscapes_reimagine.blackstone_zinc_ore": "Цинковая руда в черните",
   "aeroscapes_reimagine.equipment.companion_hook_disabled": "Отключён в этой сборке.",
   "message.aeroscapes_reimagine.spell_disabled": "Это заклинание отключено.",
-  "message.aeroscapes_reimagine.recall_requires_book": "Чтобы применить «Возвращение», впишите его в книгу заклинаний."
+  "message.aeroscapes_reimagine.recall_requires_book": "Чтобы применить «Возвращение», впишите его в книгу заклинаний.",
+  "item.aeroscapes_reimagine.steel_sheet": "Стальная пластина"
 }

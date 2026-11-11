@@ -12,6 +12,54 @@
       {
         "namespace": "gyro",
         "path": "physics_block_properties/joystick\\.json"
+      },
+      {
+        "namespace": "vintageimprovements",
+        "path": "recipe/curving/diamond\\.json"
+      },
+      {
+        "namespace": "vintageimprovements",
+        "path": "recipe/turning/test_single_output_no_gui\\.json"
+      },
+      {
+        "namespace": "vintageimprovements",
+        "path": "recipe/craft/steel_wire\\.json"
+      },
+      {
+        "namespace": "vintageimprovements",
+        "path": "recipe/craft/zinc_wire\\.json"
+      },
+      {
+        "namespace": "vintageimprovements",
+        "path": "recipe/craft/netherite_wire\\.json"
+      },
+      {
+        "namespace": "vintageimprovements",
+        "path": "recipe/craft/bronze_wire\\.json"
+      },
+      {
+        "namespace": "create",
+        "path": "recipe/crushing/asurine\\.json"
+      },
+      {
+        "namespace": "create",
+        "path": "recipe/crushing/asurine_recycling\\.json"
+      },
+      {
+        "namespace": "create",
+        "path": "recipe/crushing/crimsite\\.json"
+      },
+      {
+        "namespace": "create",
+        "path": "recipe/crushing/crimsite_recycling\\.json"
+      },
+      {
+        "namespace": "create",
+        "path": "recipe/crushing/tuff\\.json"
+      },
+      {
+        "namespace": "create",
+        "path": "recipe/crushing/tuff_recycling\\.json"
       }
     ]
   }

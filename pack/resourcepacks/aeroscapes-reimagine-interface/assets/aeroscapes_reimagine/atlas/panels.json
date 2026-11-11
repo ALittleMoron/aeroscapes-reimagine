@@ -35,6 +35,7 @@
   "create:textures/gui/toolbox.png": "a9f5289f107597e351d7b1eee98159c15edf005b64459a7b63ebaa7f92db46f8",
   "createfood:textures/gui/cloth_sack.png": "c5975617cbf55cbe58124186e367a266a56428c54cda211dc0ed42bd47d1fa10",
   "createfood:textures/gui/ration_box.png": "422049096c9289b81127fa3fd71cbfbf1c33e951925578b74a4ad8f01b32dec7",
+  "createmetallurgy:textures/gui/ladle_filter.png": "def5edfd545b29de4c3bde5530cd6b3e8bfab164b1fc97a866dffcdcd08f2dfd",
   "crittersandcompanions:textures/gui/roly_poly_chest.png": "1c65a365a5092e3b35660e87c4ac56500b6d4f68d32d829ba8fbf21f77647095",
   "curios:textures/gui/curios/inventory.png": "0c81cd9620dc29121afa8a5f961fe9425d868af2333286009e3ea312d8dacd23",
   "easyanvils:textures/gui/edit_name_tag.png": "41d958e31e8dd22b133e54ecc42818c38a9ff84405a5e0583e92613a1b14ef33",
@@ -103,5 +104,6 @@
   "toms_storage:textures/gui/side_scrollbar.png": "00ddf3df86468396dd23e1d3d88838f2636a99cfa0f4faad26698b5c74b43a86",
   "toms_storage:textures/gui/storage_terminal.png": "2d373bfed9e1afd93395f628b8955c02b08beb7b21b94a619d67a4f10aabfe8b",
   "toms_storage:textures/gui/tag_filter.png": "284a2f691fac0c03a0cca1e77e659548edc1f47e365d3b200f93f8953cfeb59b",
+  "vintageimprovements:textures/gui/recipe_card.png": "41d6bdfa4bc0b805f7228ec6adf100e3119b583a7d8479e2dc5e94155c4edcd1",
   "waystones:textures/gui/menu/waystone_modifiers.png": "f40ff8762ab9876f804b388c265e1cf29880931294504228a4e9f6f2fbdc4a1f"
 }

@@ -45,6 +45,14 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "emi_ores", "1.3+1.21.1+neoforge",
               "create", "6.0.10",
               "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("LadleAssemblyEmiMixin")) {
+      versions =
+          Map.of(
+              "createmetallurgy", "1.0.3",
+              "create", "6.0.10",
+              "emi", "1.1.24+1.21.1+neoforge",
+              "jei", "19.39.0.372",
+              "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.emi.")) {
       versions =
           Map.of(
@@ -83,7 +91,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       var pins =
           new java.util.HashMap<>(Map.of("tieredneo", "1.2.0+1.21.1", "neoforge", "21.1.244"));
       if (mixinClassName.startsWith("dev.aeroscapes.mixin.reforge.engineering.")) {
-        if (mixinClassName.contains("SwitchLink") || mixinClassName.contains("GaugesLink"))
+        if (mixinClassName.contains("LadleHandling")) pins.put("createmetallurgy", "1.0.3");
+        else if (mixinClassName.contains("SwitchLink") || mixinClassName.contains("GaugesLink"))
           pins.put("rsgauges", "1.0.0");
         else pins.put("createbigcannons", "5.11.7");
       }

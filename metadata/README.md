@@ -6,6 +6,40 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Mechanical workshop and foundry in 0.5.2
+
+[Vintage Improvements — SSW Edition 0.0.0.8](https://www.curseforge.com/minecraft/mc-mods/vintage-improvenents-ssw-edition/files/8941692)
+is the unchanged official CurseForge file. The publisher declares LGPL-2.1;
+the descriptor and source declare MIT. The inherited source `LICENSE.txt`
+is a Forge/FML notice and does not resolve that difference. The pack preserves
+both declarations and satisfies both sets of conditions: its replaceable JAR,
+complete corresponding source, original attribution and both license texts
+travel together. This does not assert that the publisher corrected its page
+or that one declaration overrides the other.
+
+A clean build of source commit
+[`1a7e49e`](https://github.com/SSWTLZZ69/Create-Vintage-Improvements/tree/1a7e49e501e15d0ed4620cc501f9b5fa6c0fc703)
+reproduced all 221 compiled classes byte for byte with no missing or additional
+classes. The distributed source package also includes ten editable generated
+JSON resources absent from that Git snapshot. Its provenance and rebuild
+instructions accompany `pack/licenses/Vintage-SSW-NOTICE.txt` and
+`pack/licenses/vintage-ssw-0.0.0.8-corresponding-source.zip`.
+
+[Create: Metallurgy 1.0.3](https://modrinth.com/mod/create-metallurgy/version/4RhIMmaJ)
+is byte-identical to official CurseForge file 8128243. Both platforms and its
+descriptor declare MIT. Existing Create, JEI and Jade pins meet the actual
+required and installed optional dependency ranges. No platform upgrade is needed.
+
+The required compatibility datapack filters the two removed Vintage recipes,
+four multiplying wire recipes and six obsolete-format crushing overrides.
+Project recipes preserve common material costs and sulfur/vanadium byproducts.
+The seventeen native glass laser recipes receive the port's missing glass input
+tags from the installed matching materials, retaining their costs and outputs.
+Steel sheets are independently authored material items. CBC spring wire and
+Theurgy copper wire retain their separate costs and do not join generic wire
+melting tags. Ladles retain native meshes and full-stack fluid storage; the
+owned safe-handling adapter only suppresses selected native ignition events.
+
 ## Engineering additions in 0.5.1
 
 [RSGauges Unofficial Fix 1.0.0](https://modrinth.com/mod/rsgauges-unofficial-fix/version/1.0.0)
