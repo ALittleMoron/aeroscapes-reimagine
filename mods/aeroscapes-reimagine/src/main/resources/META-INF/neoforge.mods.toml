@@ -12,6 +12,18 @@ description = "Owned island generation, natural spawning and adapted native stru
 config = "aeroscapes_reimagine.mixins.json"
 
 [[mixins]]
+config = "aeroscapes_reimagine.oil.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.fuel.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.diesel_equipment.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.diesel_interface.mixins.json"
+
+[[mixins]]
 config = "aeroscapes_reimagine.ore_information.mixins.json"
 
 [[mixins]]

@@ -1,0 +1,1919 @@
+newmtl hammer_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/hammer
+
+newmtl hammer_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/hammer
+
+newmtl hammer_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/hammer
+
+newmtl hammer_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/hammer
+
+newmtl hammer_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/hammer
+
+newmtl hammer_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/hammer
+
+newmtl hammer_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/hammer
+
+newmtl hammer_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/hammer
+
+newmtl wire_cutters_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters
+
+newmtl wire_cutters_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters
+
+newmtl wire_cutters_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters
+
+newmtl wire_cutters_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters
+
+newmtl wire_cutters_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters
+
+newmtl wire_cutters_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters
+
+newmtl wire_cutters_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters
+
+newmtl wire_cutters_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters
+
+newmtl wire_cutters_cut_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters_cut
+
+newmtl wire_cutters_cut_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters_cut
+
+newmtl wire_cutters_cut_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters_cut
+
+newmtl wire_cutters_cut_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters_cut
+
+newmtl wire_cutters_cut_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters_cut
+
+newmtl wire_cutters_cut_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters_cut
+
+newmtl wire_cutters_cut_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters_cut
+
+newmtl wire_cutters_cut_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/wire_cutters_cut
+
+newmtl oil_scanner_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner
+
+newmtl oil_scanner_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner
+
+newmtl oil_scanner_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner
+
+newmtl oil_scanner_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner
+
+newmtl oil_scanner_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner
+
+newmtl oil_scanner_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner
+
+newmtl oil_scanner_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner
+
+newmtl oil_scanner_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner
+
+newmtl oil_scanner_none_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_none
+
+newmtl oil_scanner_none_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_none
+
+newmtl oil_scanner_none_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_none
+
+newmtl oil_scanner_none_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_none
+
+newmtl oil_scanner_none_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_none
+
+newmtl oil_scanner_none_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_none
+
+newmtl oil_scanner_none_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_none
+
+newmtl oil_scanner_none_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_none
+
+newmtl oil_scanner_medium_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_medium
+
+newmtl oil_scanner_medium_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_medium
+
+newmtl oil_scanner_medium_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_medium
+
+newmtl oil_scanner_medium_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_medium
+
+newmtl oil_scanner_medium_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_medium
+
+newmtl oil_scanner_medium_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_medium
+
+newmtl oil_scanner_medium_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_medium
+
+newmtl oil_scanner_medium_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_medium
+
+newmtl oil_scanner_high_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_high
+
+newmtl oil_scanner_high_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_high
+
+newmtl oil_scanner_high_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_high
+
+newmtl oil_scanner_high_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_high
+
+newmtl oil_scanner_high_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_high
+
+newmtl oil_scanner_high_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_high
+
+newmtl oil_scanner_high_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_high
+
+newmtl oil_scanner_high_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/oil_scanner_high
+
+newmtl track_layers_bag_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag
+
+newmtl track_layers_bag_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag
+
+newmtl track_layers_bag_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag
+
+newmtl track_layers_bag_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag
+
+newmtl track_layers_bag_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag
+
+newmtl track_layers_bag_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag
+
+newmtl track_layers_bag_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag
+
+newmtl track_layers_bag_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag
+
+newmtl track_layers_bag_filled_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag_filled
+
+newmtl track_layers_bag_filled_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag_filled
+
+newmtl track_layers_bag_filled_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag_filled
+
+newmtl track_layers_bag_filled_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag_filled
+
+newmtl track_layers_bag_filled_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag_filled
+
+newmtl track_layers_bag_filled_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag_filled
+
+newmtl track_layers_bag_filled_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag_filled
+
+newmtl track_layers_bag_filled_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/track_layers_bag_filled
+
+newmtl lighter_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter
+
+newmtl lighter_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter
+
+newmtl lighter_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter
+
+newmtl lighter_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter
+
+newmtl lighter_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter
+
+newmtl lighter_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter
+
+newmtl lighter_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter
+
+newmtl lighter_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter
+
+newmtl lighter_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_open
+
+newmtl lighter_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_open
+
+newmtl lighter_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_open
+
+newmtl lighter_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_open
+
+newmtl lighter_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_open
+
+newmtl lighter_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_open
+
+newmtl lighter_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_open
+
+newmtl lighter_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_open
+
+newmtl lighter_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_ignited
+
+newmtl lighter_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_ignited
+
+newmtl lighter_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_ignited
+
+newmtl lighter_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_ignited
+
+newmtl lighter_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_ignited
+
+newmtl lighter_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_ignited
+
+newmtl lighter_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_ignited
+
+newmtl lighter_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_ignited
+
+newmtl lighter_sussy_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy
+
+newmtl lighter_sussy_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy
+
+newmtl lighter_sussy_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy
+
+newmtl lighter_sussy_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy
+
+newmtl lighter_sussy_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy
+
+newmtl lighter_sussy_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy
+
+newmtl lighter_sussy_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy
+
+newmtl lighter_sussy_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy
+
+newmtl lighter_sussy_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_open
+
+newmtl lighter_sussy_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_open
+
+newmtl lighter_sussy_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_open
+
+newmtl lighter_sussy_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_open
+
+newmtl lighter_sussy_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_open
+
+newmtl lighter_sussy_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_open
+
+newmtl lighter_sussy_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_open
+
+newmtl lighter_sussy_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_open
+
+newmtl lighter_sussy_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_ignited
+
+newmtl lighter_sussy_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_ignited
+
+newmtl lighter_sussy_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_ignited
+
+newmtl lighter_sussy_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_ignited
+
+newmtl lighter_sussy_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_ignited
+
+newmtl lighter_sussy_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_ignited
+
+newmtl lighter_sussy_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_ignited
+
+newmtl lighter_sussy_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_sussy_ignited
+
+newmtl lighter_fire_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire
+
+newmtl lighter_fire_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire
+
+newmtl lighter_fire_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire
+
+newmtl lighter_fire_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire
+
+newmtl lighter_fire_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire
+
+newmtl lighter_fire_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire
+
+newmtl lighter_fire_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire
+
+newmtl lighter_fire_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire
+
+newmtl lighter_fire_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_open
+
+newmtl lighter_fire_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_open
+
+newmtl lighter_fire_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_open
+
+newmtl lighter_fire_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_open
+
+newmtl lighter_fire_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_open
+
+newmtl lighter_fire_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_open
+
+newmtl lighter_fire_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_open
+
+newmtl lighter_fire_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_open
+
+newmtl lighter_fire_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_ignited
+
+newmtl lighter_fire_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_ignited
+
+newmtl lighter_fire_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_ignited
+
+newmtl lighter_fire_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_ignited
+
+newmtl lighter_fire_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_ignited
+
+newmtl lighter_fire_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_ignited
+
+newmtl lighter_fire_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_ignited
+
+newmtl lighter_fire_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_fire_ignited
+
+newmtl lighter_heavier_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier
+
+newmtl lighter_heavier_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier
+
+newmtl lighter_heavier_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier
+
+newmtl lighter_heavier_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier
+
+newmtl lighter_heavier_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier
+
+newmtl lighter_heavier_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier
+
+newmtl lighter_heavier_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier
+
+newmtl lighter_heavier_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier
+
+newmtl lighter_heavier_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_open
+
+newmtl lighter_heavier_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_open
+
+newmtl lighter_heavier_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_open
+
+newmtl lighter_heavier_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_open
+
+newmtl lighter_heavier_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_open
+
+newmtl lighter_heavier_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_open
+
+newmtl lighter_heavier_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_open
+
+newmtl lighter_heavier_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_open
+
+newmtl lighter_heavier_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_ignited
+
+newmtl lighter_heavier_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_ignited
+
+newmtl lighter_heavier_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_ignited
+
+newmtl lighter_heavier_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_ignited
+
+newmtl lighter_heavier_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_ignited
+
+newmtl lighter_heavier_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_ignited
+
+newmtl lighter_heavier_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_ignited
+
+newmtl lighter_heavier_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_heavier_ignited
+
+newmtl lighter_willows_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows
+
+newmtl lighter_willows_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows
+
+newmtl lighter_willows_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows
+
+newmtl lighter_willows_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows
+
+newmtl lighter_willows_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows
+
+newmtl lighter_willows_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows
+
+newmtl lighter_willows_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows
+
+newmtl lighter_willows_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows
+
+newmtl lighter_willows_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_open
+
+newmtl lighter_willows_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_open
+
+newmtl lighter_willows_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_open
+
+newmtl lighter_willows_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_open
+
+newmtl lighter_willows_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_open
+
+newmtl lighter_willows_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_open
+
+newmtl lighter_willows_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_open
+
+newmtl lighter_willows_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_open
+
+newmtl lighter_willows_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_ignited
+
+newmtl lighter_willows_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_ignited
+
+newmtl lighter_willows_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_ignited
+
+newmtl lighter_willows_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_ignited
+
+newmtl lighter_willows_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_ignited
+
+newmtl lighter_willows_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_ignited
+
+newmtl lighter_willows_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_ignited
+
+newmtl lighter_willows_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_willows_ignited
+
+newmtl lighter_soul_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul
+
+newmtl lighter_soul_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul
+
+newmtl lighter_soul_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul
+
+newmtl lighter_soul_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul
+
+newmtl lighter_soul_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul
+
+newmtl lighter_soul_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul
+
+newmtl lighter_soul_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul
+
+newmtl lighter_soul_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul
+
+newmtl lighter_soul_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_open
+
+newmtl lighter_soul_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_open
+
+newmtl lighter_soul_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_open
+
+newmtl lighter_soul_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_open
+
+newmtl lighter_soul_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_open
+
+newmtl lighter_soul_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_open
+
+newmtl lighter_soul_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_open
+
+newmtl lighter_soul_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_open
+
+newmtl lighter_soul_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_ignited
+
+newmtl lighter_soul_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_ignited
+
+newmtl lighter_soul_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_ignited
+
+newmtl lighter_soul_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_ignited
+
+newmtl lighter_soul_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_ignited
+
+newmtl lighter_soul_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_ignited
+
+newmtl lighter_soul_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_ignited
+
+newmtl lighter_soul_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_soul_ignited
+
+newmtl lighter_creeper_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper
+
+newmtl lighter_creeper_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper
+
+newmtl lighter_creeper_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper
+
+newmtl lighter_creeper_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper
+
+newmtl lighter_creeper_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper
+
+newmtl lighter_creeper_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper
+
+newmtl lighter_creeper_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper
+
+newmtl lighter_creeper_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper
+
+newmtl lighter_creeper_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_open
+
+newmtl lighter_creeper_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_open
+
+newmtl lighter_creeper_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_open
+
+newmtl lighter_creeper_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_open
+
+newmtl lighter_creeper_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_open
+
+newmtl lighter_creeper_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_open
+
+newmtl lighter_creeper_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_open
+
+newmtl lighter_creeper_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_open
+
+newmtl lighter_creeper_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_ignited
+
+newmtl lighter_creeper_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_ignited
+
+newmtl lighter_creeper_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_ignited
+
+newmtl lighter_creeper_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_ignited
+
+newmtl lighter_creeper_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_ignited
+
+newmtl lighter_creeper_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_ignited
+
+newmtl lighter_creeper_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_ignited
+
+newmtl lighter_creeper_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_creeper_ignited
+
+newmtl lighter_titanium_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium
+
+newmtl lighter_titanium_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium
+
+newmtl lighter_titanium_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium
+
+newmtl lighter_titanium_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium
+
+newmtl lighter_titanium_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium
+
+newmtl lighter_titanium_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium
+
+newmtl lighter_titanium_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium
+
+newmtl lighter_titanium_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium
+
+newmtl lighter_titanium_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_open
+
+newmtl lighter_titanium_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_open
+
+newmtl lighter_titanium_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_open
+
+newmtl lighter_titanium_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_open
+
+newmtl lighter_titanium_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_open
+
+newmtl lighter_titanium_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_open
+
+newmtl lighter_titanium_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_open
+
+newmtl lighter_titanium_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_open
+
+newmtl lighter_titanium_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_ignited
+
+newmtl lighter_titanium_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_ignited
+
+newmtl lighter_titanium_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_ignited
+
+newmtl lighter_titanium_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_ignited
+
+newmtl lighter_titanium_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_ignited
+
+newmtl lighter_titanium_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_ignited
+
+newmtl lighter_titanium_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_ignited
+
+newmtl lighter_titanium_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_titanium_ignited
+
+newmtl lighter_arc_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc
+
+newmtl lighter_arc_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc
+
+newmtl lighter_arc_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc
+
+newmtl lighter_arc_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc
+
+newmtl lighter_arc_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc
+
+newmtl lighter_arc_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc
+
+newmtl lighter_arc_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc
+
+newmtl lighter_arc_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc
+
+newmtl lighter_arc_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_open
+
+newmtl lighter_arc_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_open
+
+newmtl lighter_arc_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_open
+
+newmtl lighter_arc_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_open
+
+newmtl lighter_arc_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_open
+
+newmtl lighter_arc_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_open
+
+newmtl lighter_arc_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_open
+
+newmtl lighter_arc_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_open
+
+newmtl lighter_arc_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_ignited
+
+newmtl lighter_arc_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_ignited
+
+newmtl lighter_arc_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_ignited
+
+newmtl lighter_arc_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_ignited
+
+newmtl lighter_arc_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_ignited
+
+newmtl lighter_arc_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_ignited
+
+newmtl lighter_arc_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_ignited
+
+newmtl lighter_arc_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_arc_ignited
+
+newmtl lighter_glass_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass
+
+newmtl lighter_glass_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass
+
+newmtl lighter_glass_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass
+
+newmtl lighter_glass_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass
+
+newmtl lighter_glass_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass
+
+newmtl lighter_glass_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass
+
+newmtl lighter_glass_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass
+
+newmtl lighter_glass_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass
+
+newmtl lighter_glass_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_open
+
+newmtl lighter_glass_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_open
+
+newmtl lighter_glass_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_open
+
+newmtl lighter_glass_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_open
+
+newmtl lighter_glass_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_open
+
+newmtl lighter_glass_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_open
+
+newmtl lighter_glass_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_open
+
+newmtl lighter_glass_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_open
+
+newmtl lighter_glass_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_ignited
+
+newmtl lighter_glass_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_ignited
+
+newmtl lighter_glass_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_ignited
+
+newmtl lighter_glass_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_ignited
+
+newmtl lighter_glass_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_ignited
+
+newmtl lighter_glass_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_ignited
+
+newmtl lighter_glass_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_ignited
+
+newmtl lighter_glass_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_glass_ignited
+
+newmtl lighter_diamond_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond
+
+newmtl lighter_diamond_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond
+
+newmtl lighter_diamond_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond
+
+newmtl lighter_diamond_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond
+
+newmtl lighter_diamond_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond
+
+newmtl lighter_diamond_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond
+
+newmtl lighter_diamond_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond
+
+newmtl lighter_diamond_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond
+
+newmtl lighter_diamond_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_open
+
+newmtl lighter_diamond_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_open
+
+newmtl lighter_diamond_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_open
+
+newmtl lighter_diamond_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_open
+
+newmtl lighter_diamond_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_open
+
+newmtl lighter_diamond_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_open
+
+newmtl lighter_diamond_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_open
+
+newmtl lighter_diamond_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_open
+
+newmtl lighter_diamond_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_ignited
+
+newmtl lighter_diamond_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_ignited
+
+newmtl lighter_diamond_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_ignited
+
+newmtl lighter_diamond_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_ignited
+
+newmtl lighter_diamond_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_ignited
+
+newmtl lighter_diamond_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_ignited
+
+newmtl lighter_diamond_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_ignited
+
+newmtl lighter_diamond_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_diamond_ignited
+
+newmtl lighter_dragon_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon
+
+newmtl lighter_dragon_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon
+
+newmtl lighter_dragon_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon
+
+newmtl lighter_dragon_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon
+
+newmtl lighter_dragon_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon
+
+newmtl lighter_dragon_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon
+
+newmtl lighter_dragon_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon
+
+newmtl lighter_dragon_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon
+
+newmtl lighter_dragon_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_open
+
+newmtl lighter_dragon_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_open
+
+newmtl lighter_dragon_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_open
+
+newmtl lighter_dragon_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_open
+
+newmtl lighter_dragon_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_open
+
+newmtl lighter_dragon_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_open
+
+newmtl lighter_dragon_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_open
+
+newmtl lighter_dragon_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_open
+
+newmtl lighter_dragon_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_ignited
+
+newmtl lighter_dragon_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_ignited
+
+newmtl lighter_dragon_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_ignited
+
+newmtl lighter_dragon_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_ignited
+
+newmtl lighter_dragon_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_ignited
+
+newmtl lighter_dragon_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_ignited
+
+newmtl lighter_dragon_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_ignited
+
+newmtl lighter_dragon_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_dragon_ignited
+
+newmtl lighter_obsidian_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian
+
+newmtl lighter_obsidian_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian
+
+newmtl lighter_obsidian_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian
+
+newmtl lighter_obsidian_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian
+
+newmtl lighter_obsidian_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian
+
+newmtl lighter_obsidian_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian
+
+newmtl lighter_obsidian_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian
+
+newmtl lighter_obsidian_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian
+
+newmtl lighter_obsidian_open_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_open
+
+newmtl lighter_obsidian_open_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_open
+
+newmtl lighter_obsidian_open_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_open
+
+newmtl lighter_obsidian_open_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_open
+
+newmtl lighter_obsidian_open_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_open
+
+newmtl lighter_obsidian_open_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_open
+
+newmtl lighter_obsidian_open_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_open
+
+newmtl lighter_obsidian_open_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_open
+
+newmtl lighter_obsidian_ignited_body
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_ignited
+
+newmtl lighter_obsidian_ignited_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_ignited
+
+newmtl lighter_obsidian_ignited_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_ignited
+
+newmtl lighter_obsidian_ignited_metal
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_ignited
+
+newmtl lighter_obsidian_ignited_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_ignited
+
+newmtl lighter_obsidian_ignited_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_ignited
+
+newmtl lighter_obsidian_ignited_lid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_ignited
+
+newmtl lighter_obsidian_ignited_flame
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/diesel_equipment/lighter_obsidian_ignited

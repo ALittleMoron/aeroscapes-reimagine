@@ -2,6 +2,9 @@
   "sources": [
     {
       "type": "aeroscapes_reimagine:blackstone_ores"
+    },
+    {
+      "type": "aeroscapes_reimagine:oil_rocks"
     }
   ]
 }

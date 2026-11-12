@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:diesel_spray_legendary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diesel_spray"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

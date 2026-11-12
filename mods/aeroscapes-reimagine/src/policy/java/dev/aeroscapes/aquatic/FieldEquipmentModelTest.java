@@ -123,7 +123,7 @@ public final class FieldEquipmentModelTest {
     }
   }
 
-  private static void inNeutralFrame(String id, List<Face> faces, JsonArray attachments) {
+  static void inNeutralFrame(String id, List<Face> faces, JsonArray attachments) {
     double vertical = Math.tan(Math.toRadians(35)), horizontal = vertical * 16 / 9;
     for (var attachment : attachments) {
       JsonArray rows = attachment.getAsJsonObject().getAsJsonArray("item");

@@ -1,0 +1,8 @@
+{
+  "items": [
+    "createdieselgenerators:oil_scanner"
+  ],
+  "base": [
+    "minecraft:iron_ingot"
+  ]
+}

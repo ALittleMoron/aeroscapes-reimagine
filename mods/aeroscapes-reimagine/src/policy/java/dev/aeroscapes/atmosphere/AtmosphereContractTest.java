@@ -79,6 +79,7 @@ public final class AtmosphereContractTest {
   }
 
   public static void main(String[] arguments) throws IOException {
+    dieselVersionGates();
     swordCastPresentation();
     sandpaperRenderer();
     bridgedPlacementVersionGate();
@@ -210,6 +211,32 @@ public final class AtmosphereContractTest {
     loadingOverlay();
     System.out.println(
         "Atmosphere: quiver composition, precipitation scope and native API contracts passed");
+  }
+
+  private static void dieselVersionGates() {
+    // These are the complete versions in the pinned JAR descriptors, including Minecraft suffixes.
+    Map<String, String> versions =
+        Map.of(
+            "createdieselgenerators",
+            "1.21.1-1.3.15",
+            "createliquidfuel",
+            "3.0.0-1.21.1",
+            "create",
+            "6.0.10",
+            "tieredneo",
+            "1.2.0+1.21.1",
+            "neoforge",
+            "21.1.244");
+    for (String name :
+        List.of(
+            "dev.aeroscapes.mixin.engineering.FiniteOilMixin",
+            "dev.aeroscapes.mixin.engineering.fuel.BurnerContainerMixin",
+            "dev.aeroscapes.mixin.reforge.engineering.DieselScannerReforgeMixin",
+            "dev.aeroscapes.mixin.atmosphere.DieselHeldModelMixin")) {
+      require(
+          AtmosphereMixinPlugin.shouldApplyForVersions(name, versions::get),
+          "Pinned complete runtime versions enable the Diesel adapter: " + name);
+    }
   }
 
   private static void swordCastPresentation() throws IOException {

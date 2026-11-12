@@ -1,0 +1,14 @@
+{
+  "type": "createdieselgenerators:wire_cutting",
+  "ingredients": [
+    {
+      "tag": "c:plates/netherite"
+    }
+  ],
+  "results": [
+    {
+      "id": "vintageimprovements:netherite_wire",
+      "count": 2
+    }
+  ]
+}

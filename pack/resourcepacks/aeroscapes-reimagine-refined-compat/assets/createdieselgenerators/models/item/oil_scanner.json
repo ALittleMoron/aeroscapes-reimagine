@@ -1,0 +1,54 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createdieselgenerators:item/oil_scanner_rotating"
+    }
+  },
+  "textures": {
+    "layer0": "createdieselgenerators:item/oil_scanner_rotating",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/oil_scanner"
+    },
+    "firstperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/oil_scanner"
+    },
+    "thirdperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/oil_scanner"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/oil_scanner"
+    }
+  },
+  "overrides": [
+    {
+      "model": "createdieselgenerators:item/oil_scanner",
+      "predicate": {
+        "createdieselgenerators:oil_scanner_state": 0.0
+      }
+    },
+    {
+      "model": "createdieselgenerators:item/oil_scanner_none",
+      "predicate": {
+        "createdieselgenerators:oil_scanner_state": 1.0
+      }
+    },
+    {
+      "model": "createdieselgenerators:item/oil_scanner_medium",
+      "predicate": {
+        "createdieselgenerators:oil_scanner_state": 2.0
+      }
+    },
+    {
+      "model": "createdieselgenerators:item/oil_scanner_high",
+      "predicate": {
+        "createdieselgenerators:oil_scanner_state": 3.0
+      }
+    }
+  ]
+}

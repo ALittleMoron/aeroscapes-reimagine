@@ -47,6 +47,7 @@ public final class AeroscapesReimagine {
 
   public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
     dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);
+    dev.aeroscapes.engineering.OilFields.register(modBus);
     container.registerConfig(ModConfig.Type.CLIENT, CelestialConfig.SPEC);
     if (ModList.get().isLoaded("crittersandcompanions"))
       dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);

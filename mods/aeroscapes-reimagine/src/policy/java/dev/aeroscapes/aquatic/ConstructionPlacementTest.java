@@ -77,7 +77,8 @@ public final class ConstructionPlacementTest {
             "littletiles:wrench",
             "littletiles:measure_tape",
             "littletiles:glove",
-            "hapi:creature_net"))
+            "hapi:creature_net",
+            "createdieselgenerators:track_layers_bag"))
       require(
           !HeldEquipmentGrip.usesPalm(ResourceLocation.parse(id)),
           "Unselected attachment retained: " + id);

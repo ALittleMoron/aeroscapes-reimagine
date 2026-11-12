@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": "aeroscapes_reimagine:oil_field",
+  "step": "underground_ores"
+}

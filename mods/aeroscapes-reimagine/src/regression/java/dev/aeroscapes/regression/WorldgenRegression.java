@@ -98,6 +98,29 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    if (Boolean.getBoolean("aeroscapes.regression.oilOldFull"))
+      OilControlsRegression.verifyOldFull(level);
+    String oilControls = System.getProperty("aeroscapes.regression.oilControls");
+    if (oilControls != null) {
+      if (Boolean.getBoolean("aeroscapes.regression.oilControlsReload"))
+        OilControlsRegression.verifyReload(level, Path.of(oilControls));
+      else OilControlsRegression.verify(level, Path.of(oilControls));
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.diesel")) {
+      DieselProductionRegression.verify(level);
+      DieselInterfaceRegression.verify(level);
+      FuelRegression.verify(level);
+      DieselEquipmentRegression.verify(level);
+      LOGGER.info("Diesel fuel and equipment regression passed");
+      return;
+    }
+    String oil = System.getProperty("aeroscapes.regression.oil");
+    if (oil != null) {
+      OilRegression.verify(
+          level, Path.of(oil), Boolean.getBoolean("aeroscapes.regression.oilReload"));
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.foundry")) {
       FoundryRegression.verify(level);
       LOGGER.info("Foundry material conservation regression passed");

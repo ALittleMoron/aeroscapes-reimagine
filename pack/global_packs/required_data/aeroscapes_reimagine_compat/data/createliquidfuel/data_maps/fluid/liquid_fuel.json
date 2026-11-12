@@ -1,0 +1,9 @@
+{
+  "values": {
+    "createdieselgenerators:plant_oil": {"burnTime": 10, "superHeat": false, "amountConsumedPerTick": 1},
+    "createdieselgenerators:ethanol": {"burnTime": 12, "superHeat": false, "amountConsumedPerTick": 1},
+    "createdieselgenerators:biodiesel": {"burnTime": 20, "superHeat": false, "amountConsumedPerTick": 1},
+    "createdieselgenerators:diesel": {"burnTime": 30, "superHeat": false, "amountConsumedPerTick": 1},
+    "createdieselgenerators:gasoline": {"burnTime": 24, "superHeat": false, "amountConsumedPerTick": 1}
+  }
+}

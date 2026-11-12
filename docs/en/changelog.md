@@ -4,6 +4,16 @@ description: Version history.
 status: available
 ---
 
+## 0.5.3
+
+- Added Create: Diesel Generators with crop fuels, oil refining and compact, modular and huge engines.
+- Added oil-bearing rock matching its host stone on island undersides and finite shared chunk reserves of 48–96 buckets, with scanner readings tied to the remaining oil. The rock can be mined without drops.
+- Added explicit plant oil, ethanol, biodiesel, diesel and gasoline rules for Liquid Fuel; fixed container returns, partial transfers and paid heat accounting.
+- Fixed fuel use for short sprayer bursts, turret shots, empty lighters and stopped modular engines.
+- Added hammer, wire-cutter, sprayer and scanner reforging, plus balanced manual sheet-to-wire recipes.
+- Added held 3D equipment models while preserving native states and lighter variants.
+- Fixed the entity filter sample transfer.
+
 ## 0.5.2
 
 - Added the mechanical workshop from Vintage Improvements — SSW Edition: bending, polishing, spring coiling, helve hammer, centrifuge, vibrating table and stationary processing laser.

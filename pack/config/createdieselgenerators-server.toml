@@ -1,0 +1,6 @@
+["Server Configs"."Diesel Engines"]
+"Engines filled with a bucket" = true
+
+["Server Configs"."Oil Config"]
+"Oil chunk threshold" = 48000
+"Infinite oil chunk threshold" = 96000

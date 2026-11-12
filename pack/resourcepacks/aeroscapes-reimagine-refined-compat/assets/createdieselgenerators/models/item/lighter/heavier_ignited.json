@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createdieselgenerators:item/lighter/heavier_ignited"
+    }
+  },
+  "textures": {
+    "layer0": "createdieselgenerators:item/lighter/heavier_ignited",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/heavier_ignited"
+    },
+    "firstperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/heavier_ignited"
+    },
+    "thirdperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/heavier_ignited"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/heavier_ignited"
+    }
+  }
+}

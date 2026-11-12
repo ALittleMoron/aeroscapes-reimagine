@@ -1,0 +1,14 @@
+{
+  "type": "createdieselgenerators:wire_cutting",
+  "ingredients": [
+    {
+      "tag": "c:plates/zinc"
+    }
+  ],
+  "results": [
+    {
+      "id": "vintageimprovements:zinc_wire",
+      "count": 2
+    }
+  ]
+}

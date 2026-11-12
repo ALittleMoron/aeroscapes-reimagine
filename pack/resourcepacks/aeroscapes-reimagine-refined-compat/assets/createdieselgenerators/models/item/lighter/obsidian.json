@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createdieselgenerators:item/lighter/obsidian"
+    }
+  },
+  "textures": {
+    "layer0": "createdieselgenerators:item/lighter/obsidian",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/obsidian"
+    },
+    "firstperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/obsidian"
+    },
+    "thirdperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/obsidian"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/obsidian"
+    }
+  }
+}

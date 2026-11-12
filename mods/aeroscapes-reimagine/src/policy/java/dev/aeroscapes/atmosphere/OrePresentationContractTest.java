@@ -26,6 +26,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.PackResources;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.util.FastColor;
 
 /** Exercises native glyph advances and tooltip targets without starting a client. */
 public final class OrePresentationContractTest {
@@ -40,8 +41,42 @@ public final class OrePresentationContractTest {
       providers.forEach(GlyphProvider::close);
     }
     nativeTooltipBoundaries();
+    oilRockColors();
     System.out.println(
         "Ore presentation: native EN/RU font bounds and tooltip boundary bubbling passed");
+  }
+
+  private static void oilRockColors() throws IOException {
+    try (var stream =
+        OrePresentationContractTest.class.getResourceAsStream(
+            "/assets/aeroscapes_reimagine/textures/block/oil_stain.png")) {
+      if (stream == null) throw new IOException("Missing oil stain mask");
+      var mask = javax.imageio.ImageIO.read(stream);
+      if (mask == null) throw new IOException("Invalid oil stain mask");
+      int unchanged = 0;
+      int marked = 0;
+      for (int y = 0; y < mask.getHeight(); y++)
+        for (int x = 0; x < mask.getWidth(); x++) {
+          int stain = FastColor.ABGR32.fromArgb32(mask.getRGB(x, y));
+          for (int stone : new int[] {0xFF253C9A, 0xFFC6BEB3, 0xFF1B1D25}) {
+            int actual = OilRockSprites.blend(stone, stain);
+            require(FastColor.ABGR32.alpha(actual) == 255, "Oil-bearing rock stays opaque");
+            if (FastColor.ABGR32.alpha(stain) == 0) {
+              require(actual == stone, "Unstained pixels preserve the exact host color");
+            } else {
+              require(actual != stone, "Oil stains remain visible on distinct native palettes");
+            }
+          }
+          if (FastColor.ABGR32.alpha(stain) == 0) unchanged++;
+          else marked++;
+        }
+      require(
+          unchanged > mask.getWidth() * mask.getHeight() * .7 && marked > 0,
+          "The native rock remains the background around isolated oil stains");
+      require(
+          OilRockSprites.blend(0xFF253C9A, 0xFF0B121F) == 0xFF0B121F,
+          "Opaque stain channels retain their order");
+    }
   }
 
   private static void frequencyBounds(Font font) {

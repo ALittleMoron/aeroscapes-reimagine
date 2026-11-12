@@ -12,9 +12,11 @@ The engineering group uses Create for mechanical work and Aeronautics for aircra
 
 [Bits ’n’ Bobs](https://modrinth.com/project/T8bvmqVZ) adds mechanical and decorative pieces in the same style. Tile variants, chairs, lamps, girders and larger displays help furnish the spaces around the machinery. The workshop can therefore share its materials and details with a station, factory or ship interior.
 
-[Create: Connected](https://modrinth.com/mod/create-connected) adds compact transmissions, kinetic batteries and horizontal tanks and vaults. A battery stores spare mechanical power and feeds it back into the network as demand rises. [Create: Liquid Fuel](https://modrinth.com/mod/create-liquid-fuel/version/rLn2bDVE) lets you pump lava into an ordinary Blaze Burner for heated recipes and boilers. Superheated recipes still require a Blaze Cake.
+[Create: Connected](https://modrinth.com/mod/create-connected) adds compact transmissions, kinetic batteries and horizontal tanks and vaults. A battery stores spare mechanical power and feeds it back into the network as demand rises.
 
 [RSGauges Unofficial Fix](https://modrinth.com/mod/rsgauges-unofficial-fix) makes redstone circuits easier to read and operate. Gauges show the signal strength, while timers, switches and detectors can control alarms or machinery.
+
+[Create: Diesel Generators](https://modrinth.com/mod/create-diesel-generators/version/UoPH8lO1) adds crop-based fuels, finite oil wells, refining and compact, modular and huge engines. [Create: Liquid Fuel](https://modrinth.com/mod/create-liquid-fuel/version/rLn2bDVE) feeds these fuels and lava into ordinary Blaze Burners. [Engines, fuel and oil](../fuel/) explains production, prospecting, field lifetimes and heat.
 
 ## Mechanical processing and foundry
 

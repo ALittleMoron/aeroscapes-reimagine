@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createdieselgenerators:item/lighter/dragon_open"
+    }
+  },
+  "textures": {
+    "layer0": "createdieselgenerators:item/lighter/dragon_open",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/dragon_open"
+    },
+    "firstperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/dragon_open"
+    },
+    "thirdperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/dragon_open"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/lighter/dragon_open"
+    }
+  }
+}

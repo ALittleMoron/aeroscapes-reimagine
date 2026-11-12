@@ -1,0 +1,14 @@
+{
+  "type": "createdieselgenerators:wire_cutting",
+  "ingredients": [
+    {
+      "tag": "c:plates/steel"
+    }
+  ],
+  "results": [
+    {
+      "id": "vintageimprovements:steel_wire",
+      "count": 2
+    }
+  ]
+}

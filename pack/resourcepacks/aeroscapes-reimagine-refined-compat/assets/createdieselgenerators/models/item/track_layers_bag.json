@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createdieselgenerators:item/track_layers_bag"
+    }
+  },
+  "textures": {
+    "layer0": "createdieselgenerators:item/track_layers_bag",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/track_layers_bag"
+    },
+    "firstperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/track_layers_bag"
+    },
+    "thirdperson_righthand": {
+      "parent": "createdieselgenerators:item/equipment/held/track_layers_bag"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createdieselgenerators:item/equipment/held/track_layers_bag"
+    }
+  },
+  "overrides": [
+    {
+      "model": "createdieselgenerators:item/track_layers_bag_filled",
+      "predicate": {
+        "createdieselgenerators:tracks": 0.01
+      }
+    }
+  ]
+}

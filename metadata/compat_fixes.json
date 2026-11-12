@@ -63,12 +63,13 @@
     "targets": {
       "VsM5EDoI": "YSWV62mG",
       "JcEFpckH": "9P9dNVUn",
-      "T9PomCSv": "fg9dTRz9"
+      "T9PomCSv": "fg9dTRz9",
+      "ZM3tt6p1": "UoPH8lO1"
     },
     "files": [
       "pack.mcmeta"
     ],
-    "reason": "Filter Blueprint's invalid example data map and Gyro 1.2.2's obsolete physics_block_properties/joystick.json. Gyro's selector names the unregistered gyro:removed_block_placeholder; no registered block uses it, and Sable 2.0.6 correctly rejects it. Re-evaluate on target updates or before adding Blueprint biome-slice contributors."
+    "reason": "Filter Blueprint's invalid example data map and Gyro 1.2.2's obsolete physics_block_properties/joystick.json. Gyro's selector names the unregistered gyro:removed_block_placeholder; no registered block uses it, and Sable 2.0.6 correctly rejects it. Re-evaluate on target updates or before adding Blueprint biome-slice contributors. Diesel Generators 1.3.15 also ships an unguarded andesite-girder-strut loot table while its item is registered only with absent Strut Your Stuff; filter that inactive loot resource."
   },
   {
     "targets": {
@@ -262,7 +263,7 @@
     "files": [
       "data/minecraft/worldgen/placed_feature/amethyst_geode.json"
     ],
-    "reason": "Extend only the native Terralith amethyst-geode placement upper height from 120 to 384 to include Aero island bulk (commonly Y=150\u2013220). Preserve the original lower height, rarity 18, random offsets, Terralith mega-geode selector, surface burial filter, biome guard and configured geodes. Natural traces previously showed 18 attempted vanilla geodes all starting in raw air; this finite evidence is not a claim of global impossibility.",
+    "reason": "Extend only the native Terralith amethyst-geode placement upper height from 120 to 384 to include Aero island bulk (commonly Y=150–220). Preserve the original lower height, rarity 18, random offsets, Terralith mega-geode selector, surface burial filter, biome guard and configured geodes. Natural traces previously showed 18 attempted vanilla geodes all starting in raw air; this finite evidence is not a claim of global impossibility.",
     "source_targets": {
       "tGVwBATM": "bzJ2edxy"
     }
@@ -439,7 +440,7 @@
       "data/natures_spirit/worldgen/placed_feature/ores/ore_redstone.json",
       "data/natures_spirit/worldgen/placed_feature/ores/ore_redstone_lower.json"
     ],
-    "reason": "Keep the previous effective absolute ore-height ranges for Nature\u2019s Spirit2.2.5 and Galosphere1.5.3 when extending the Overworld; relative anchors use the old generation floor-64 and noise ceiling303. Separate lower ore placements supply added terrain."
+    "reason": "Keep the previous effective absolute ore-height ranges for Nature’s Spirit2.2.5 and Galosphere1.5.3 when extending the Overworld; relative anchors use the old generation floor-64 and noise ceiling303. Separate lower ore placements supply added terrain."
   },
   {
     "targets": {
@@ -796,7 +797,7 @@
       "data/rsgauges/loot_table/blocks/industrial_blinking_led.json",
       "data/rsgauges/loot_table/blocks/orange_sensitiveglass.json"
     ],
-    "reason": "The native orange sensitive glass and industrial blinking LED loot tables reference unregistered items. Gate only those tables on their item registration, keeping any enabled variant\u2019s original drops."
+    "reason": "The native orange sensitive glass and industrial blinking LED loot tables reference unregistered items. Gate only those tables on their item registration, keeping any enabled variant’s original drops."
   },
   {
     "targets": {
@@ -897,5 +898,23 @@
     },
     "files": [],
     "reason": "Create6.0.10 Sequential Assembly exposes only its first weighted result to JEI. JEMI1.1.24 consequently indexes only the ghast ladle, while native Metallurgy1.0.3 produces six distinct item styles. Client-only LadleAssemblyEmiMixin adds the actual missing resultPool stacks only for createmetallurgy:sequenced_assembly/ladle after JEMI constructs that recipe. Preserve native primary output, ingredients, sequence, counts and weights; disable the recipe tree for mutually exclusive outcomes, matching JEMI alternative-output behavior. EMI default item identity retains lookup for filled/graded stacks. Original provider binaries and JEI layout remain unchanged."
+  },
+  {
+    "targets": {
+      "ZM3tt6p1": "UoPH8lO1",
+      "sH9tXU9f": "rLn2bDVE",
+      "LNytGWDc": "UjX6dr61",
+      "owned:aeroscapes_reimagine": "0.1.0",
+      "curseforge:1255448": "8941692"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/recipe/wire_cutting/bronze_wire.json",
+      "data/aeroscapes_reimagine/recipe/wire_cutting/netherite_wire.json",
+      "data/aeroscapes_reimagine/recipe/wire_cutting/steel_wire.json",
+      "data/aeroscapes_reimagine/recipe/wire_cutting/zinc_wire.json",
+      "data/createliquidfuel/data_maps/fluid/liquid_fuel.json",
+      "data/minecraft/tags/block/mineable/pickaxe.json"
+    ],
+    "reason": "FiniteOilMixin initializes native shared chunk reserves only at actual island oil markers, caches explicit zero and bypasses native infinite sentinels. The normal-only Liquid Fuel bridge pays exact fluid quanta, preserves Blaze Cake superheat and returns real bucket/canister residuals through native Create insertion. Engine transfers reject indivisible partial buckets; disabled modular engines stop spending fuel. Sprayers and turrets persist each successful shot debit instead of delayed periodic charges; empty lighters cannot ignite blocks. The entity-filter sample clears its actual ghost slot and uses translated labels; oil display links read the shared reserve. Exact provider APIs, fuel data and regression fixtures own the detailed contracts."
   }
 ]

@@ -10914,5 +10914,53 @@
       "notice": "pack/licenses/Vintage-SSW-NOTICE.txt"
     },
     "native_route_note": "Minecraft[1.21.1], NeoForge[21.1.228,), Create[6.0.10,6.1.0), all BOTH; existing exact pins satisfy these ranges. No unrelated dependency update."
+  },
+  {
+    "slug": "create-diesel-generators",
+    "name": "Create: Diesel Generators",
+    "project_id": "ZM3tt6p1",
+    "version_id": "UoPH8lO1",
+    "version": "1.21.1-1.3.15",
+    "filename": "createdieselgenerators-1.21.1-1.3.15.jar",
+    "sha512": "1507ebcd07d3185aac3ae6ce768b4d6bab16cb6f39776d25a850c8133a4dc5826b8ddbeca112d76afc64deaa37ec177cac4237c6c34621c4b65e73d83f8ab43f",
+    "sha1": "7f751dabfa83c141c1d13025cd16f06553ba459b",
+    "file_size": 3154746,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/george8188625/Create-Diesel-Generators",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      },
+      {
+        "version_id": "Nrn7hYca",
+        "project_id": "sHO3MhQx",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected 0.5.3 Diesel Generators integration; unchanged official Modrinth file.",
+    "provider_environment": {
+      "client": "required",
+      "server": "required"
+    },
+    "embedded_license": "MIT (descriptor); complete notice retained separately from author-linked source.",
+    "native_route_note": "NeoForge [21.1.174,), Minecraft [1.21.1], Create [6.0.7,6.1.0). Optional Strut Your Stuff [1.3.0,) is absent; its girder strut is conditional. Source revision 79ce136730871b6f3f7b55d3cc748ff2bec2ad12; EN/RU resources match the distributed JAR byte-for-byte."
   }
 ]

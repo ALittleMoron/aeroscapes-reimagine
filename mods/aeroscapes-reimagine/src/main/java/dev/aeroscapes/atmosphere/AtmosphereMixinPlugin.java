@@ -83,6 +83,17 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.backup.")) {
       versions = Map.of("simplebackups", "1.21-4.0.21", "sable", "2.0.6", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.engineering.")) {
+      versions =
+          Map.of(
+              "createdieselgenerators",
+              "1.21.1-1.3.15",
+              "createliquidfuel",
+              "3.0.0-1.21.1",
+              "create",
+              "6.0.10",
+              "neoforge",
+              "21.1.244");
     } else if (mixinClassName.endsWith("LegendaryFrostStrikeMixin")
         || mixinClassName.endsWith("ReforgeAnvilReturnMixin")
         || mixinClassName.endsWith("ReforgeCatalystHintMixin")) {
@@ -91,7 +102,10 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       var pins =
           new java.util.HashMap<>(Map.of("tieredneo", "1.2.0+1.21.1", "neoforge", "21.1.244"));
       if (mixinClassName.startsWith("dev.aeroscapes.mixin.reforge.engineering.")) {
-        if (mixinClassName.contains("LadleHandling")) pins.put("createmetallurgy", "1.0.3");
+        if (mixinClassName.contains("Diesel")) {
+          pins.put("createdieselgenerators", "1.21.1-1.3.15");
+          pins.put("create", "6.0.10");
+        } else if (mixinClassName.contains("LadleHandling")) pins.put("createmetallurgy", "1.0.3");
         else if (mixinClassName.contains("SwitchLink") || mixinClassName.contains("GaugesLink"))
           pins.put("rsgauges", "1.0.0");
         else pins.put("createbigcannons", "5.11.7");
@@ -156,6 +170,15 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("supplementaries", "1.21.1-3.6.8", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("SandpaperHeldModelMixin")) {
       versions = Map.of("create", "6.0.10", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("DieselHeldModelMixin")) {
+      versions =
+          Map.of(
+              "createdieselgenerators",
+              "1.21.1-1.3.15",
+              "create",
+              "6.0.10",
+              "neoforge",
+              "21.1.244");
     } else if (mixinClassName.endsWith("ScrollFallbackModelMixin")) {
       versions = Map.of("irons_spellbooks", "1.21.1-3.16.3", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("SwordCastPresentationMixin")) {

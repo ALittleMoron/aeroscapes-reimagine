@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "aeroscapes_reimagine:block/oil_jasper",
+    "end": "aeroscapes_reimagine:block/oil_jasper"
+  }
+}

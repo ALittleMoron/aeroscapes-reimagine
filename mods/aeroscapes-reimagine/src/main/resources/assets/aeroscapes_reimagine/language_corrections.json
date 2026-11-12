@@ -17333,5 +17333,143 @@
     "key": "item.createmetallurgy.rare_ladle",
     "expected": "Редкий Переносной черпак",
     "replacement": "Редкий переносной литейный ковш"
+  },
+  {
+    "language": "en_us",
+    "key": "fluid.createdieselgenerators.light_blue_cement",
+    "expected": "Light_blue Concrete",
+    "replacement": "Light Blue Concrete"
+  },
+  {
+    "language": "en_us",
+    "key": "fluid.createdieselgenerators.light_gray_cement",
+    "expected": "Light_gray Concrete",
+    "replacement": "Light Gray Concrete"
+  },
+  {
+    "language": "en_us",
+    "key": "createdieselgenerators.gui.entity_filter.allow_list_conjunctive.description",
+    "expected": "Items pass only if they have ALL of the selected attributes.",
+    "replacement": "Entities pass only if they have ALL of the selected attributes."
+  },
+  {
+    "language": "en_us",
+    "key": "createdieselgenerators.gui.entity_filter.allow_list_disjunctive.description",
+    "expected": "Items pass if they have any of the selected attributes.",
+    "replacement": "Entities pass if they have any of the selected attributes."
+  },
+  {
+    "language": "en_us",
+    "key": "createdieselgenerators.gui.entity_filter.deny_list.description",
+    "expected": "Items pass if they do NOT have any of the selected attributes.",
+    "replacement": "Entities pass if they do NOT have any of the selected attributes."
+  },
+  {
+    "language": "ru_ru",
+    "key": "itemGroup.cdg_creative_tab",
+    "expected": "Create: Дизельные генераторы",
+    "replacement": "Create: Diesel Generators"
+  },
+  {
+    "language": "ru_ru",
+    "key": "createdieselgenerators.generic.unit.mbps",
+    "expected": "мВ/с",
+    "replacement": "мВд/с"
+  },
+  {
+    "language": "ru_ru",
+    "key": "createdieselgenerators.tooltip.fuelBurnRate",
+    "expected": "Скорость сгорания: %1$s мВ/с",
+    "replacement": "Расход: %1$s мВд/с"
+  },
+  {
+    "language": "ru_ru",
+    "key": "createdieselgenerators.tooltip.fuelStress",
+    "expected": "Нагрузка: %1$s су",
+    "replacement": "Нагрузочная способность: %1$s ен"
+  },
+  {
+    "language": "ru_ru",
+    "key": "createdieselgenerators.tooltip.holdForFuelStats",
+    "expected": "Удерживайте [%1$s] для статистики топлива",
+    "replacement": "Удерживайте [%1$s], чтобы увидеть свойства топлива"
+  },
+  {
+    "language": "ru_ru",
+    "key": "createdieselgenerators.ponder.oil_chunk.header",
+    "expected": "Поиск нефтяного куска",
+    "replacement": "Поиск нефтяного месторождения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.createdieselgenerators.track_layers_bag",
+    "expected": "Сумка для слоев треков",
+    "replacement": "Сумка путеукладчика"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluid.createdieselgenerators.lime_cement",
+    "expected": "Лаймовий бетон",
+    "replacement": "Лаймовый бетон"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.createdieselgenerators.canister.tooltip.summary",
+    "expected": "Хранит _жидкости_ для вас. Не теряет свои _содержимое_ при _подборе_.",
+    "replacement": "Хранит _жидкости_ и сохраняет _содержимое_ при _подборе_."
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.createdieselgenerators.chemical_sprayer.tooltip.summary",
+    "expected": "Заполните любым _жидкостью_ с помощью _насадки_ и распыляйте на своих _друзей_ или _врагов_!",
+    "replacement": "Залейте любую _жидкость_ через _носик_, чтобы распылять её на _друзей_ или _врагов_!"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.createdieselgenerators.chemical_sprayer_lighter.tooltip.summary",
+    "expected": "Заполните любым _жидкостью_ с помощью _насадки_ и распыляйте на своих _друзей_ или _врагов_!",
+    "replacement": "Залейте любую _жидкость_ через _носик_, чтобы распылять её на _друзей_ или _врагов_!"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.createdieselgenerators.chemical_turret.tooltip.summary",
+    "expected": "Заполните любрй _жидкостью_ с помощью _насадки_ и распыляйте на своих _друзей_ или _врагов_!",
+    "replacement": "Залейте любую _жидкость_, чтобы распылять её на _друзей_ или _врагов_!"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.createdieselgenerators.lighter.tooltip.summary",
+    "expected": "_Зажигалка_. Заполните _жидким топливом_ с помощью _насадки_ для использования.",
+    "replacement": "_Зажигалка_. Перед использованием залейте _жидкое топливо_ через _носик_."
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.createdieselgenerators.light_blue_cement_bucket",
+    "expected": "Ведро с светло-синим бетоном",
+    "replacement": "Ведро со светло-синим бетоном"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.createdieselgenerators.light_gray_cement_bucket",
+    "expected": "Ведро с светло-серым бетоном",
+    "replacement": "Ведро со светло-серым бетоном"
+  },
+  {
+    "language": "ru_ru",
+    "key": "createdieselgenerators.gui.entity_filter.allow_list_conjunctive.description",
+    "expected": "Элементы проходят только если у них есть ВСЕ выбранные атрибуты.",
+    "replacement": "Сущности проходят фильтр, только если обладают ВСЕМИ выбранными признаками."
+  },
+  {
+    "language": "ru_ru",
+    "key": "createdieselgenerators.gui.entity_filter.allow_list_disjunctive.description",
+    "expected": "Элементы проходят, если у них есть любой из выбранных атрибутов.",
+    "replacement": "Сущности проходят фильтр, если обладают хотя бы одним выбранным признаком."
+  },
+  {
+    "language": "ru_ru",
+    "key": "createdieselgenerators.gui.entity_filter.deny_list.description",
+    "expected": "Элементы проходят, если у них НЕТ ни одного из выбранных атрибутов.",
+    "replacement": "Сущности проходят фильтр, если НЕ обладают ни одним из выбранных признаков."
   }
 ]

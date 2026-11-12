@@ -1,0 +1,14 @@
+{
+  "type": "createdieselgenerators:wire_cutting",
+  "ingredients": [
+    {
+      "tag": "c:plates/bronze"
+    }
+  ],
+  "results": [
+    {
+      "id": "vintageimprovements:bronze_wire",
+      "count": 2
+    }
+  ]
+}

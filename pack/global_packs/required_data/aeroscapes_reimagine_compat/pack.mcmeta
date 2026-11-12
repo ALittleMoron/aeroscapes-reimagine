@@ -60,6 +60,10 @@
       {
         "namespace": "create",
         "path": "recipe/crushing/tuff_recycling\\.json"
+      },
+      {
+        "namespace": "createdieselgenerators",
+        "path": "loot_table/blocks/andesite_girder_strut\\.json"
       }
     ]
   }

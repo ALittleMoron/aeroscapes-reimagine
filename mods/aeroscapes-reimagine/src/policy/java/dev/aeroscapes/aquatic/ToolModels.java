@@ -41,6 +41,7 @@ final class ToolModels {
     KnifeEquipmentModels.addResources(assets, output);
     AquaticToolModels.addResources(assets, output);
     ConstructionEquipmentModels.addResources(assets, output);
+    DieselEquipmentModels.addResources(assets, output);
     HeldItemModels.add(assets, output, generated.models());
     FieldEquipmentModels.addResources(assets, output);
     IronHeldModels.addResources(assets, output);

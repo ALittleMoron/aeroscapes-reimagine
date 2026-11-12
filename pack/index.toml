@@ -45,6 +45,10 @@ file = "config/createbigcannons-server.toml"
 hash = "9f8ab305a12b7480f14086cb3ff399977325e2529c64d94f97611aa9d28d3531"
 
 [[files]]
+file = "config/createdieselgenerators-server.toml"
+hash = "90eaa9829b6c88790773d3a456ea447e8857be68f4ab15d95598171d6ae3e35c"
+
+[[files]]
 file = "config/easyanvils-server.toml"
 hash = "ce96bd0887fe77b5ec1b9fd86dabd5992ae19a85dfeea37cbaad2f5d64d84cfe"
 
@@ -341,6 +345,22 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_r
 hash = "be4cf3fbf3218dbbae29151a841d373dfbf6c75d95f956f0bfb89166eb97382c"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/wire_cutting/bronze_wire.json"
+hash = "c723d83562ea4645cf947240f1f8e0f90ad7496d1f19c15092a40154454180fc"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/wire_cutting/netherite_wire.json"
+hash = "31e5b8d37e96a398d7febba05a587fbc37016aea628ae00c8dd0e6de5268f41a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/wire_cutting/steel_wire.json"
+hash = "5e105798130c83179db6bbcc9f12eae40a6ca37d5d00b9381612919a0889dfbf"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/recipe/wire_cutting/zinc_wire.json"
+hash = "a7feef92d89bb283ddd4a1fc9b30d5897647ef0b56753d51f1429c7cfcd0c748"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/aeroscapes_reimagine/tags/worldgen/biome/has_structure/coastal_conduit_ruin.json"
 hash = "618064bb87f39ccfb9b0219d95b7de51bf78bf4cd1ee24011a4b5a5e4fb489e2"
 
@@ -621,6 +641,10 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/createfood/r
 hash = "9a9d03fe3467c0f4bf41054ac899f352a1cc1c12029025b3d281388acbda8433"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/createliquidfuel/data_maps/fluid/liquid_fuel.json"
+hash = "7e2e12edd96d1b36d087d682994e8946f0b478cfa866fb3f369ae79b0ca894a3"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/ctov/worldgen/template_pool/village/bounty/swamp.json"
 hash = "1844ad6c29ae59afbea9955b21640b6808a48c1aad756f8a7e59c00ea935108e"
 
@@ -687,6 +711,10 @@ hash = "dd0baa3e655153c3d4fd103da2e3c3e56e54beb15b8f25f121ebf08c819913b8"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/dimension/overworld.json"
 hash = "07cb4d08e420d75260ca2a564fb2e0ee2922d290446a2db0ac7e4029143961f0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/tags/block/mineable/pickaxe.json"
+hash = "7aef85d6dcd95508edec9f48a861729587262aeb706fed77efccab5ce44bf9cf"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/placed_feature/amethyst_geode.json"
@@ -938,7 +966,7 @@ hash = "e1004013da9f23ca0b161d6d1eccbbd34f81e79e9b992f108f1562872b0fac03"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/pack.mcmeta"
-hash = "f740ace6486baf3dfa8757a0a87fd8250583f35fb13ac6c713940d3c1e5248a6"
+hash = "18b7eb2e8abfbe86b80cbd91c3f3c4f8c734c0dcbe7aee02149259f89682cae8"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_chest_epic.json"
@@ -1651,6 +1679,78 @@ hash = "aeea2b22dcdebd35e5a22f2c0eb27437ec649352a7da6513c0266e6fe425fae4"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/crossbow_legendary_followup.json"
 hash = "5311f15702103a72d5dba6c921e5a08ff4a62315911e937d17b8646def99a668"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_processing_epic.json"
+hash = "10a36cc4ea663575ab25986fafef63591021bcfa1efef74a0eeece54e681a03e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_processing_exceptional.json"
+hash = "621155d194ff63b30e89a71890fa14ed3755f84cf44699f3920242fab421024d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_processing_fine.json"
+hash = "6d4fa7090d865fb8a20483dba622e4ad4b1410081c4cb9fc77b912fa2632cd96"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_processing_legendary.json"
+hash = "501f2aca8cc6a1dfed3fcddef6c4ced09f9f82f9bbc0e458a935c42a710fd21b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_processing_ordinary.json"
+hash = "348adc84dde0d50d612523298893ca6a6a16b22d87b64db09655fdbc131d401c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_processing_poor.json"
+hash = "2ddf2907b6d18fad4660e1036b8887c95df8edeb0dea4ed1441423c812da9c5f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_scan_epic.json"
+hash = "640a86ad4305456dbfc67f6d543e80c2eafe59f8307a2b8fb4d2c5d283026f44"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_scan_exceptional.json"
+hash = "2d34e05915e6094157070dcf9deddf44f87a197eaffef04fe5eb3172d8cb2cc0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_scan_fine.json"
+hash = "d47ea02f65037428b8d69c725aaa13b31b3825abed8e3cfe8bfe0e0e3e224de5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_scan_legendary.json"
+hash = "bb3e682c6d5fa1e641b3361dc44a6a3be9453cf7838348af594b0462af1590e2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_scan_ordinary.json"
+hash = "cceb7b94707fd0f9498c47a941fc4ebb95a23e6965b43856c3408bbc0375c3d5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_scan_poor.json"
+hash = "8f88ebad8f35ff9bec32d7e518063e0aacb2472f8f10ce46390bb251a75acad7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_spray_epic.json"
+hash = "66db042c767d6c3d3094f5d2cb08d9c83fadd3c7595db4cab91b41bac618c94f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_spray_exceptional.json"
+hash = "c5e2b743bb264c50d8fddc4cd50c5e8e1515cca984f256938578342e2e33731f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_spray_fine.json"
+hash = "814e6a9a33cd9291d07f20d184a846298d7fb4bb889f4c90bc035f8863859da1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_spray_legendary.json"
+hash = "1b1cef6ed48d9234f6c288ae3005d86a087326165041d41d3014df903e3130f5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_spray_ordinary.json"
+hash = "dfc0a73c3388ece34e9cc95b50a250260e44ec02a7586956802d3e30689ad192"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/diesel_spray_poor.json"
+hash = "34409a9a47f9cd219857142f9c74aa46101f91053451b78bee65af8bd74f2d3c"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/divination_epic_quick.json"
@@ -3169,6 +3269,26 @@ file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscape
 hash = "e20a76d5d4a1d1b65f926fe1fba395ad7985c642c03082255eb7ec7ddafedb11"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createdieselgenerators_chemical_sprayer.json"
+hash = "4c444ca8cc042a20a7472e14dc99d17c08e351e6cc190dfce107d9f3b010dfdb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createdieselgenerators_chemical_sprayer_lighter.json"
+hash = "e7431ce6b33889993dc0bcbbbaa27d364fffde5b71567d99d7b254c2137b4aed"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createdieselgenerators_hammer.json"
+hash = "0698e91c6f2c0296ffd18d7f7da6a323873f07a24c1d928227a092bba3f1920b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createdieselgenerators_oil_scanner.json"
+hash = "4f3d480d21b447f129a910825192b6ffebd984a1a2c667989e26985c6b5e20c6"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createdieselgenerators_wire_cutters.json"
+hash = "73fa5b31edc2c06eabad5329b13d663de334ad6b909f3b375412438531501282"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/createmetallurgy_cute_transfer_ladle.json"
 hash = "55b1cffdd6ffbcc01ae7287bd34484ed79eca436979c39e9f8e102e95097dc9a"
 
@@ -3671,6 +3791,18 @@ hash = "e0602f6ad3b2f85672b5b5af17e7afc5060454aec230f4c4b2ac4395ed68f021"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/crossbow.json"
 hash = "1e2527c0e6f618f7be9c36ece2ca117971c412b4b322f56207cfc5eabfd06352"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/diesel_processing.json"
+hash = "882fed083d6a58e2f6b2674bb1407d0c4365e730a4836f156af29d8f816286d8"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/diesel_scan.json"
+hash = "3d777a4681ea9dc1b6a6ec0b59ef0b198c6f30a481eefd42ecc08933ca18dd5d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/diesel_spray.json"
+hash = "6b46d8b7281fc3faf28a5a6e049c622db9e0ea6d9626d597febc742b21d1a4d1"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/divination.json"
@@ -4278,6 +4410,10 @@ hash = "557e31cbed9a4ed87a526edb270724404f378c6d2a32eb54955d81bead862620"
 metafile = true
 
 [[files]]
+file = "licenses/Create-Diesel-Generators-MIT.txt"
+hash = "db6e77f93f2379cffd9f11e008d347a0633b17d719cb4ecd2e9fa8a8ab6d4bae"
+
+[[files]]
 file = "licenses/Create-Metallurgy-MIT.txt"
 hash = "24daada2d05acf6c059549bffc1bbe348b16d0eef10c1f8fce0d7819a9ccf97f"
 
@@ -4303,7 +4439,7 @@ hash = "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "6fdca3360c43439d6b616c15837e8983bd7a794172037ba761882c4654901b04"
+hash = "ba7630ee09361ef691c478afb9b4c2f5865bc3001da32ef4308d4696d122eb25"
 
 [[files]]
 file = "licenses/Vintage-SSW-LGPL-2.1.txt"
@@ -4319,7 +4455,7 @@ hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "bd9092bcf7e47e14c688ad13bbfec8b27badfd83a2488483ee5849aae78bec15"
+hash = "60d84beeba690cfce671782f89c7070e74cecfb7645a950cebb854ee7afc0b2d"
 
 [[files]]
 file = "licenses/vintage-ssw-0.0.0.8-corresponding-source.zip"
@@ -4352,7 +4488,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "9934a3f6049c03e78d9790eb84110dcf9137ed4468cf32bb798d66476590de5e"
+hash = "adb86fbbc82ce3322e372dd25ac31fcc7949f0891168085029e057977890ce95"
 
 [[files]]
 file = "mods/allurement.pw.toml"
@@ -4602,6 +4738,11 @@ metafile = true
 [[files]]
 file = "mods/create-connected.pw.toml"
 hash = "4cd88d6d9a61e9fac5606902c06a30f2de440e34f9367d7e73909d20318c7da1"
+metafile = true
+
+[[files]]
+file = "mods/create-diesel-generators.pw.toml"
+hash = "83daa2782ba5839114dcb795829790040ddbd83292a220a4e8ccd6be5d017e10"
 metafile = true
 
 [[files]]
@@ -6208,7 +6349,7 @@ hash = "83088bcd08b8029cbc353f400c203360350b86b181237fd7c7cde77ce2d67bbb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/atlas/panels.json"
-hash = "fb0edf88b532fc7792430ee2641b9c6771c3b6b77c1ad02190afbb667deb8b30"
+hash = "67260016e85cb9a933f9fa5261ca1c4ef0babb943800ad7ea1a77cbc48a5fe0e"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/atlas.png"
@@ -7021,6 +7162,202 @@ hash = "2fe9a4c9a6ca41c4e32875eb2ae9311b64253acd8795ee2ee2e0089eed92c41a"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/create_equipment/simulated_rope_coupling.obj"
 hash = "203f1e5a0df95b28c139d343aa57e562b612b055b56e4be46e0c3045bcf6e9a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/equipment.mtl"
+hash = "35a1c82402f83c36ad42c9013cda76e178f452f95bcee435dccb9e355ce82f70"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/hammer.obj"
+hash = "60b17ef80852953f39bd414186b41b677e22b3cfdb56cfc2d2890e9279b402e7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter.obj"
+hash = "ea06d8e12defc08b2b4c1f80152089c7b1d0e5d44fd7b7c2681d2d794ed83efa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_arc.obj"
+hash = "aefdfd03907ae44018b2e48e60e84bbec2cd8a213d0d8b51895f5d01e13b0e97"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_arc_ignited.obj"
+hash = "4b5cb89bfee05a157559505f23c1f8dc18bbe52490c982b0fad25392cd43d29c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_arc_open.obj"
+hash = "14692ba6d4d78cbf1c688b47ffca6d4fa933de72ca6d9b68c374a9960bbf81fe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_creeper.obj"
+hash = "87e7cb96e86a9ce1803906c960ede7ae380716b4c1793a43defa958af61e2c26"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_creeper_ignited.obj"
+hash = "8403b5719154ade8d19a94e10aee2cb20b22a282c57e57dd575d2716654467dc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_creeper_open.obj"
+hash = "e72989e638ae3f4c7bc2f218c1520c0a683622abbf348847d9f0f6fccb29f370"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_diamond.obj"
+hash = "1996bc995e3eb33948da5332c37bf2a11d742c0ff9a9c0f775d2917c08bb2c65"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_diamond_ignited.obj"
+hash = "f269cbaa0e75f96814cacbd07a59023ae15608d67ee1f8eee6a6b886c206f22b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_diamond_open.obj"
+hash = "94f3ce6c8b91ab5a690a186c91d4c8dbf2599687fe6f70ba3192eebb287769ce"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_dragon.obj"
+hash = "077ac35f073887ed08ea9697da9b218b095dcfb52a53e485e14d7926c4f5ed2d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_dragon_ignited.obj"
+hash = "1e665dead2b0a22e6d6a1667252446b981cf7882bda825698b7197b697dce679"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_dragon_open.obj"
+hash = "f3face29959a4f3e1eecf50110862e552230e771f4ea16e57397100c9fd5a531"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_fire.obj"
+hash = "e207503d2f6ec3b5100944e43fd4e7e574a3aae249f42155b7c4f1d78354debc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_fire_ignited.obj"
+hash = "6fc6edc30c57124c5b43167fd864e0dd5dd133a61452b7a4c7705da03defd0ab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_fire_open.obj"
+hash = "9782840f477dee65567d029776fb798f9d7a0f53b60c474bffe20ca8df250d2a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_glass.obj"
+hash = "3e0a9a5d7bdb934d16c6ec50ec883b63949ba6a4f11e03bd785eb6d1b866cc2f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_glass_ignited.obj"
+hash = "2b4859be2a24189cadb6a85d00d611fae746446a8121ad132655e683e3ac0c09"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_glass_open.obj"
+hash = "fe548801bdeb399a372a9e7c5e4a528b6d70a386f380e01b763e99f98899de6c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_heavier.obj"
+hash = "3c15939eb52c8f914225664a2078ad2947451db231a9217fb33d38ca53ed8d8c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_heavier_ignited.obj"
+hash = "58076546a524a4a572e4b3d302084945b7af8d78132790cb447eeed1cc42ecb4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_heavier_open.obj"
+hash = "d0c8a94b3b67849e7bd2a9cc371a47eace061f058443ec89b82462eafe21a3d4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_ignited.obj"
+hash = "de7ed5d2647493372deeb1a194c665c186fb44c5850c6b206f8614cab94401b4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_obsidian.obj"
+hash = "3e77b806354bc8b435483f0d7390efb96c12dcae7b357ee8f4c7f0d453f96caf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_obsidian_ignited.obj"
+hash = "400364e04ba05d850b1de02d736ab807823a76e39ab5adfa3b98327800baeee6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_obsidian_open.obj"
+hash = "595ae974b9e8a22b54ee499b992e37eda2020d8518cb2920bcce86ea152338f3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_open.obj"
+hash = "24b5d957d899b045639c0a1c10d54b37dfceea968c6f4173b45e20cfee11c0ef"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_soul.obj"
+hash = "730e2b5d33a3ea653ce6d57b62a25cbd74adbb8caed0fe284dbfd5207eff030f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_soul_ignited.obj"
+hash = "01d3444862b90435af1e8556323c8f4050d3d8e856b0779337861402523935e4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_soul_open.obj"
+hash = "1b5ccb5334ba366b0bb33586b6c9b47ea8de85d06a1f037dfdac6b5e883913eb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_sussy.obj"
+hash = "ea1111a5345c44b90f3ac6d011cf05b2b69988fb373799ece6fd189efa91cd7a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_sussy_ignited.obj"
+hash = "34c7fdd03f53caa602addc988b164d7f2ece257aab072ab293eac8c143c49a6b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_sussy_open.obj"
+hash = "ead7a9650b0d838c7e7d3ac9837dd3ddb6ba46852017f250f941768e5ab8816b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_titanium.obj"
+hash = "0eaba34c629416825f6e7aca768d33627e9deb91bc51a880e97bb63e604e3f8f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_titanium_ignited.obj"
+hash = "492ad7cd02d2912abc5a12b32fa10320d1ac64e145de417c82ba81299b729775"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_titanium_open.obj"
+hash = "224032b63b274881869f8e407c0c9211c5256dc894c227f9e9c906230e0495a4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_willows.obj"
+hash = "7ad078b20f98e221958da44d6b0f501f8c3a75c44bbeec2560e1107ea5ca5b3b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_willows_ignited.obj"
+hash = "bec5f070b74652287e7d4ffaddab867430f0b82d27ba688c8bb9c8f515dbaa3e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/lighter_willows_open.obj"
+hash = "938e31c2cbae795987d8fc8f3c4bc05ef8f7d93807b31238223ede10aab6e58d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/oil_scanner.obj"
+hash = "957db70e30cb4e267131dd4ae4fc8c6809964d035c2b51abe994f0edb25db6a1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/oil_scanner_high.obj"
+hash = "f4562faf4a26add3d0fe88ccd43bd7e65103ea11aa0d9584418776fe0b6d46e6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/oil_scanner_medium.obj"
+hash = "b43884919c3e95f41b41e3d44a33ae9d53bf8d615afb4a5b07d00a722f49eee1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/oil_scanner_none.obj"
+hash = "12b0ce5950066f59e9a1d6ec36b0c258f9f68916a0954fdcfc571619f131c3a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/track_layers_bag.obj"
+hash = "ab2d36ecd1a6cc9f2ddaeb9941fee9d200d66a70907963d044b7d9214aa60225"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/track_layers_bag_filled.obj"
+hash = "a7165ef7cc898bcf8d142bcddd36af6137d03859df97a96ad6f89e82b18d0c84"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/wire_cutters.obj"
+hash = "0c4739d200c6a6348220df6d6d9a4a235fac87eacc6f0cf8039d76ab89d4d304"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/diesel_equipment/wire_cutters_cut.obj"
+hash = "fc6ec2660bdf530791b4e345c2386a1a0e9076d97493fb1aaadb672a9bf8c81c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/engineering/block_armor_inspection_tool.obj"
@@ -8195,6 +8532,254 @@ file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reim
 hash = "2054ead092d3c3c0a808daae41526f67bb6d3d45a51bed96d4e0f65a195b2bbd"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/hammer.png"
+hash = "04d3cb57e844bac6403a336b323433a577c71377ee29cf4479c5c5859b7f412f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter.png"
+hash = "f5aa25e0db0d236a64d11f5561a46cb4cf0a1fe06a3019b593cb70077c47a972"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_arc.png"
+hash = "10a68f493a0df30e40a40ce44f4a7c628b6674096bb9726c5c68e972cd42ba12"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_arc_ignited.png"
+hash = "5324fcf4dca6c0526635b541b3230a43c511595d0439ffc81500189f26a4221c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_arc_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_arc_open.png"
+hash = "ddd049dff1a1eefa81f27e91bdd30673eaef12d064f138d752f6b19668f80227"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_creeper.png"
+hash = "19cab4b4ee0dfab40d2ea7de28442c13b711dc4888c5da0ac0c580e8fe74c4b2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_creeper_ignited.png"
+hash = "fa0e56c9cdb4ea6c7ce860c29d4293e16826fa847434860f1664e2f47039fa6c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_creeper_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_creeper_open.png"
+hash = "013af2a12b77f78111bad588892475f413182b1b63681b252ad1bc3a36dd8b39"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_diamond.png"
+hash = "abab8ab1db9107def4f5d3f794a429f3ebd8c768c5acb8af6c702862fa06eef8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_diamond_ignited.png"
+hash = "a4c7eac1399dba7b896581ab2b93a412b569a21c6374f1ce35b29692b6cd2e86"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_diamond_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_diamond_open.png"
+hash = "c17de23237fa511fdf2ee50f983a1ac386a513bd4f967b7dd4977bdb1e8ad49b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_dragon.png"
+hash = "f9d250f0a1bad569cefc7577753c5134d15e5e8b4812a91bc3b6174f0c2c0e48"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_dragon_ignited.png"
+hash = "ac2df2278a048ec9fd97aad3653b791d6f34e7f1d50f128b0263e481950482aa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_dragon_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_dragon_open.png"
+hash = "1909a28f8a9bf4f702613e25a461e55197acd4fd6dae75d6bbba07f74488998e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_fire.png"
+hash = "06c192e0358284ead7d72334574463866dd004e5283e2d4b671b77bc45d4cc60"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_fire_ignited.png"
+hash = "dda2602346c82ecab4c46919076b7d71a90155b10aa9267c24e35afbe3d74603"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_fire_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_fire_open.png"
+hash = "d49863013943dd9366c9c6234abe6c536b3e1c5b648e9bd7dfec844489437407"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_glass.png"
+hash = "4487fabc51b73349c1e13778afceb016e224db3ffe395869def3400f1093913b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_glass_ignited.png"
+hash = "31c46255efa24d6a5669b0ecb8ce3b2da124d7af7414d0057248afe94f15f269"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_glass_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_glass_open.png"
+hash = "f626621d06405003a25f62edbddaeea318e001398adc066350f35a4eb3fde2c2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_heavier.png"
+hash = "1b693ad4bb6658bb155727e99889156815e17cde9f68d4aba79cc45e6dcdf9a3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_heavier_ignited.png"
+hash = "225746e5a96cc720ad25b69be61c167b14c7c5a3b1828c20eb094c884736a246"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_heavier_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_heavier_open.png"
+hash = "1b693ad4bb6658bb155727e99889156815e17cde9f68d4aba79cc45e6dcdf9a3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_ignited.png"
+hash = "8d3ce427cc1dc717963a7bd792703bf875083d5ff28bec427556dc10fc4ae3cb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_obsidian.png"
+hash = "f8921bc924f88b480a4b5adbe40981bb6ac76656d41d39d8565233d7776b53d0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_obsidian_ignited.png"
+hash = "5d3649307f2fbcf1591f7a74945c5cb27849309649028c37de6aa8c456ede52e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_obsidian_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_obsidian_open.png"
+hash = "7d2e5601c6ae96a9a3cb068f06644e8861ef8910ee1aac88e3eaac8e997e59c4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_open.png"
+hash = "fafc159512a8c05394e7895af511c2323d4f41daad6e6d63e326270148b8e059"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_soul.png"
+hash = "348e7977eb3019a04a0b2d4f2f2516d63fe43d2707210523949fec652ab1a872"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_soul_ignited.png"
+hash = "9adc44e4a5285e85a8d1a2f5d0c816806319094c2a61e054be17013f650815ad"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_soul_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_soul_open.png"
+hash = "fd4ce58fe868e6d8c9f054134830110485f15f3f5470f598f2d887ecf0754e33"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_sussy.png"
+hash = "18889194c257dc155d8922b2a835c245b81c20e4cf75338fbe9e15683b4fb1d8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_sussy_ignited.png"
+hash = "fb1da171067b61676499ea48938d0c4158fe938ff0bfa100b39a62a00883b849"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_sussy_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_sussy_open.png"
+hash = "e361f1849b62939099c15bab246d712530ef5bcefe61b781275b337107c0e1f7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_titanium.png"
+hash = "90007fb282f0b7cb98be940496d512ac23f0c17906cf78914e4f0a7b26bec731"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_titanium_ignited.png"
+hash = "7d56af95dc87c182410dd1f7acc2d9eca7f79282b7dea72f64ae47fa4e11330a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_titanium_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_titanium_open.png"
+hash = "90007fb282f0b7cb98be940496d512ac23f0c17906cf78914e4f0a7b26bec731"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_willows.png"
+hash = "e8592269fa7eaf95e7f6fbf8c18cb46567b9dc5bda8890eb0117af322c736ae2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_willows_ignited.png"
+hash = "ff8f15c302c79a04dbda66a59efca3c27a6489bedb462a2314c0ee3963321c73"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_willows_ignited.png.mcmeta"
+hash = "b2d28b33dc686090c08c7817edfbd6fc3c29e0c8fdd5ffc590ea195d46a6560e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/lighter_willows_open.png"
+hash = "8a3054925f14ee863c1bb15ed0f9469cd14bf3a6c48e6d99a3687f8f80dc7718"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/oil_scanner.png"
+hash = "506b08551a672ab554a481c929e8c00fe7fd3dfdd0413f9c7e1a1ee988174bd2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/oil_scanner.png.mcmeta"
+hash = "c67023a3d3913d384240781011baadbacd8c3f8f73fdc25006c2a3f44b689511"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/oil_scanner_high.png"
+hash = "02fd6ce8ff8cd2fe9edbcdc964aaf117544ed12d0b42ff6a41e311c0b50aac15"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/oil_scanner_medium.png"
+hash = "f9ba43162e1ba5450a3ff7da4a490b920a1351baa12f1814ae539f3c21ace5b6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/oil_scanner_none.png"
+hash = "60a91dc51ce3185c336884ae15d99026a0d6f63154f5b9fa8bf4b9faf372b9d3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/track_layers_bag.png"
+hash = "e4848875b72ddafa9fa2e4992ebdc33568d3f456fe9c26e12a62ded18b8bfd4f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/track_layers_bag_filled.png"
+hash = "6325a66be22f97f1e289af14b22edf5d139a46e7165eebbcc81956b5e230c1bd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/wire_cutters.png"
+hash = "b391c884ebb46703310c0b52d651a08dc469d8525d7dea6748eb2412d8b2d6be"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/diesel_equipment/wire_cutters_cut.png"
+hash = "c9e1e9b8199b3f6da711d6f6a588e82a4ef6e145e6da6c9c8d047d9e2efb415f"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/textures/item/engineering/handheld_materials.png"
 hash = "9e4acfd5a26a4e5964c79a92b1bbee1dc10d8f596189287263dd66a6125c2734"
 
@@ -8637,6 +9222,390 @@ hash = "7c0443a8b632d72ec7d91691c3550991667c786cabcd54cb80972f3a9d6acb30"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createbigcannons/models/item/gas_mask.json"
 hash = "cc772b768a5a321bce49ed36e7ebcc9819ab5ebce93db158d506043f5a390797"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/hammer.json"
+hash = "f590c6cd05174394b760408b758a2052e53251db4afc0a507a511304ef9e6045"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter.json"
+hash = "70d1a78f34db8601cc58a0542292d9960113b0beb79786f6dd8e13b1b20a7f76"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/arc.json"
+hash = "0bc9112b26dc4581a1c3aee03208030b3672d7cfc10aedefda6b5379bb140806"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/arc_ignited.json"
+hash = "daaf199ad3d280e03f18a578f28adfa2b516838bddf9293b38bff24d2ff9aa23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/arc_open.json"
+hash = "618d5d3a8cdba7a7d509727d30b88717eec12916366a088d7d5a14026da81785"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/creeper.json"
+hash = "60eb933d5871b9ae49da55ab32b2e0ee8841f690c0340d651462fec7fbc8a6ea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/creeper_ignited.json"
+hash = "b12421a1ee3910cd92e1b34626b969745c25afa02dec03468efdb564f13bcfc0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/creeper_open.json"
+hash = "fb129c6acf84d61c53af985ca07284d5b2a6ea0a05da2e5cdae398587b1df0ed"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/diamond.json"
+hash = "c7224cad07acdbe6d305490e6f9727930800cda6167f14706888ef5fdcbc363f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/diamond_ignited.json"
+hash = "a34b9d7ab392cecec552ad169b18331d13f152ee12e1fc93360386a276d9dbfb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/diamond_open.json"
+hash = "fb9d410efad0108807272e9bd9dfbaea9de1608bcf2223efd03e0e948dc01127"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/dragon.json"
+hash = "300fbad7d56c6601b996a30e6acbe27bdf9dbaf6b4a94ceba6d69997ecb7dcef"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/dragon_ignited.json"
+hash = "c32dc37191fbbe714ed5da51b13caaf84fd59cc3ef87f4f8915743549cde5f0c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/dragon_open.json"
+hash = "f6b43245a806715e9f10761a0d998494326522da215513c7e0f32ae306c67cb2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/fire.json"
+hash = "9334b5ba2564c727b94120f5fc6a8c85e6ab5c7f79d765bea78ac60cd0554d57"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/fire_ignited.json"
+hash = "ba17f949e9f11e2646d8ba5b4ce329b9e734243628b92ff8f3997a40cf49e281"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/fire_open.json"
+hash = "149789c503047a425e7eaea0d16b9bd8924d588347524783e980253e404063ff"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/glass.json"
+hash = "9a5640c3b0bdf2808d5786d043b0e694aaac136ba0e7106c85a905dd6090e7f2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/glass_ignited.json"
+hash = "d7e82263d3f560038201cb9e362b7869dff119a817b1530a0dc5bce9f69126a2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/glass_open.json"
+hash = "e1169aba9214bf93d989f0e77954668b292777c422729c86eb26cd2caaaeceb8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/heavier.json"
+hash = "4fe3f3a2e803cfcb304b5d55619537041f0917baf74992954a6c8d1340c867e9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/heavier_ignited.json"
+hash = "00d0614425376416064b1313cb42a5de9aa0d50562bbd0091b6bd2199ba99d5e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/heavier_open.json"
+hash = "8e2a147aabe0bfd62772a74b1d7fc83d93abc35b334e17f00e966ede96775762"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/obsidian.json"
+hash = "5c45c172972f6a769cf8dcd226d171654280dda7195fc2a6bb86ed7eccc9765e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/obsidian_ignited.json"
+hash = "b3cedb0f6d1dda0ab23f2f49a7fe27cfe63c927182cc951f8bdb4220703e142e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/obsidian_open.json"
+hash = "3ebefe3de08596c5ad6e93626df5ac290a781f17101a333e22c560a14364ea04"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/soul.json"
+hash = "5de959fcb2681c7865694e1c1193a85e8cc97dce00967707ce55be91d2c265b7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/soul_ignited.json"
+hash = "71de88f7a454affeb2b548d15747b825fba9a07693bc3002886a527b95bf05b4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/soul_open.json"
+hash = "58f598242348bcb6f9bdfa545e4000306bd52a36513a5d95651555d83cc8463a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/sussy.json"
+hash = "326e227cc3127e52c898462386b90a053bf356eb129f2144c30835335891821a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/sussy_ignited.json"
+hash = "24739ba145b50b6f44875768a154f20c068b69fbc18a534d8b901b68ae79c237"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/sussy_open.json"
+hash = "ef6d3304b8f33438929dc4f61a54fcafc0c6ed2840ec2a6aa2512486b7d25f61"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/titanium.json"
+hash = "d92228fd6f7f399e8e2668895bc60cd14db7d8723f7fbd199fdf55eb12436338"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/titanium_ignited.json"
+hash = "1d4d5561f362c707eb3d47c5743b316dabb5ad0572de82cdfd62e72791624716"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/titanium_open.json"
+hash = "89fc798b28df7221ee623ba3611dae0bd4b29764a8db4686a2897335b0a2c7e9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/willows.json"
+hash = "59cadef328d99b64d61a324789fd5b053bae6b5115c3f0ae153c234ac8215ff1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/willows_ignited.json"
+hash = "c0c5a9a708e7fd13cdfd6edc0afa6b481a466967a6225d37552e1551e783c1bd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter/willows_open.json"
+hash = "51b3acd7e133ca5ba1f0348ca4c0498343c7f4c54d111b6cd8fc9f0fc8cfc2af"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter_ignited.json"
+hash = "797727198a4bb41e5c2d6fcf5e5a6edfe772c0a26aec62a976b4a52d9dc0d6aa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/lighter_open.json"
+hash = "7781f883de62a6d8b4a5cc0da80c723d70dae4b1cef64b6d7d7b63df9ebc4d9d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/oil_scanner.json"
+hash = "71ae25e3e3502ea37a8085121191532d2a6e2ed728e93c6f85c7c8e6d8188df1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/oil_scanner_high.json"
+hash = "7fe2aa476ec0b20d7ea4810eaca74de87a992613fd7fb42aa26caf16371ee1c1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/oil_scanner_medium.json"
+hash = "1663b9f971a5fa6f94c4f18acdebf1f104428c2da90e313f16411b7df334101a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/oil_scanner_none.json"
+hash = "871643925ba3ef6aa67a5d1264acaf4af2c8d3bb8492b179e3431860e8b16ed7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/track_layers_bag.json"
+hash = "35c785125ce52b2472927fd7df3a13dcd3c46f810d7fc7bc215d9412a5cf1059"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/track_layers_bag_filled.json"
+hash = "032d3387c94f034ec0dec20d145bf95a1144b757252f5d5ba43b87276f9e346a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/wire_cutters.json"
+hash = "141db023caa0c97ff397d7e1abc9f2a8c9509df262cc67df038c96b7e7285718"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/equipment/held/wire_cutters_cut.json"
+hash = "5cf993adf56bb79f5cd4b54d2aee202cb7b2a8f0d1d463bc60606d997342f832"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/hammer.json"
+hash = "b72300384befbdeb5cb67890e68e623f02b639b5723d1e281a558dad86b307c6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter.json"
+hash = "2fb6079c355710bf26d0b02cefc42f722a79b9d1fc3eab6beb51fc7e3d5e4d6c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/arc.json"
+hash = "cc04005ea7ebd86e0c101047c20b332d401e5c9a44f8763a1a3c8bb47d1a5cc7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/arc_ignited.json"
+hash = "ef719749242b540b9e532c8e12a756e5cc7d000476ec46b703a8783341cc7238"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/arc_open.json"
+hash = "9607d21ba658880ddce79f12e734364143ae23df16e916b538c9683af6d544b7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/creeper.json"
+hash = "5871c13fef7c5c0a28cdaf0dd93324a478ac1ab6af02c53e2eab3b109edecaff"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/creeper_ignited.json"
+hash = "a8c19367111b2085a5bfbe8c689e84654cb51cd48d6ba4918d02d053817a54c6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/creeper_open.json"
+hash = "c0c48a1a43c7abc31b21086b27c1cedc17625cf666c1bf5dfc72c55cb0e5461c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/diamond.json"
+hash = "2cc3385dc2e66a421dc6a70877f290b720a298bd381cb1e350245a7dcaffdf00"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/diamond_ignited.json"
+hash = "b997dca6baebdee20872de98e9ac298b181abfb961664e1cc60c57f3bfb75888"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/diamond_open.json"
+hash = "45a2f36081d833ed30bf7ada781808a0c75d6255b60ed37f4b6764fda1d8e259"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/dragon.json"
+hash = "b3d14f330eec18659a9a2a404369b5b0032242098dc1d1079391033b583b0b15"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/dragon_ignited.json"
+hash = "3c422fe8129f029b4d6144bc69d49d6e91a19a3eccda4cb817350d0a4e4373b9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/dragon_open.json"
+hash = "4c89ade5a91a7802902092e157ff283b6813e34633417fb1b75aea480ed67bba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/fire.json"
+hash = "0311692bf59a5ea304b58f0e9a36a85a2dcc8e443079ba46224813fe09946126"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/fire_ignited.json"
+hash = "4e314ed985c0ccaa43a71b994287079443967b659b28290d2ad6b7bb8f831880"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/fire_open.json"
+hash = "ac38ccf86546cf7e663a4bc923e411ba47e169fcb5434e3d91c4f73828a718c4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/glass.json"
+hash = "2ab6d5295c08acf575d027f0724d9a62fec3245ee4a37ecfc2f2fd1d56dd9fd7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/glass_ignited.json"
+hash = "07174162c28e3d5c390e9687abd2c5adc4e29fce8a64322814eb869ffdf737c5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/glass_open.json"
+hash = "d0171a8ccc81117693f19ae2039bb91f2e6a78158b8898747385ece349e5ead4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/heavier.json"
+hash = "c97d3ded394dc36f34ee42154a02386d896c7d187f6ddc8cd90f6a5cbda5c7e8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/heavier_ignited.json"
+hash = "c09b01f9de8d45718d8e0c4e6c6c58d325343116846c6e51f2c08f801a2317b6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/heavier_open.json"
+hash = "fa3ce15828374fcd8eabd299aa4a47fc64b022d98c89ad58170fe262fd18861c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/obsidian.json"
+hash = "939c198cd091b686aca3b2dc84f5275f53c4e88a3972bca85c014619abb89d50"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/obsidian_ignited.json"
+hash = "9fdf473c2b6d154b986d24aea4ef4075222653e68c5db4c36d9e70499016895f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/obsidian_open.json"
+hash = "acf2aa23c570934727ab731cc787f0485ff75458bf6a4a88114014b3ca4df8bf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/soul.json"
+hash = "ed317fc46a32206038a2f542a0038ec18f5382bca73d12809f933f171b3082d3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/soul_ignited.json"
+hash = "bc932a7aa7a285c171ade1e9aff522eac4db8a71ee994c7e8c35cd659f5760d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/soul_open.json"
+hash = "31300072cceb002d833e4fa7ca07ef791d6ce1fa266cfcc719d84959f31d4f0e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/sussy.json"
+hash = "2311f379073e4b1c2ec814e88e3b892cdea6a732344e8f30d97b6fa0668098d9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/sussy_ignited.json"
+hash = "1bc096114943d814d45b797e342dbe39de6b819bbf57c6b1fd397309a68e4add"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/sussy_open.json"
+hash = "76575b8c827003b2eb7857972940a568c9cc0e14a67c515684783882c58b97f2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/titanium.json"
+hash = "52b3fa6ead98d283f87ac69ee1fca133828b394680d6b116a585b5d27d7717c5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/titanium_ignited.json"
+hash = "79543d8469ea73e2830558c3590b0b7356b690c219c62214eb12d76f4a1c1079"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/titanium_open.json"
+hash = "5a27dcec98339080fcbef64fa9896be85643d7966d5b4b007aa9d87b3a1a8ad9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/willows.json"
+hash = "38923dd18f05a5d29a6ce703377833957f40992654a05628d8a091c18921e751"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/willows_ignited.json"
+hash = "b193d57bbafb7612c09141c5c04c4bf68e4f0628e741c03fae3102cf3b90e9fb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter/willows_open.json"
+hash = "2d7bbc108a23d3a244286aed831e1d740b9924e7b4b34a8ddc049bf894063e59"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter_ignited.json"
+hash = "e46455d7942572575a19e92c440f26173449c5fa49ac111b275fd2fe1baa3c82"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/lighter_open.json"
+hash = "cc43fe84966d65176886940eff4494c31a3be9c887d244ab39ce462a8b44e103"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/oil_scanner.json"
+hash = "71e081683476453a3f87b0fe51bee2eb75fe1050c6914d45799073391457ee45"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/oil_scanner_high.json"
+hash = "f674c9cbefffa7744b13f948a4ba29def2c7a54fd943f2300438ccdd1cc89f24"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/oil_scanner_medium.json"
+hash = "81f5a157cfca16d9cdffa182221df22fbdc41a0ff9b83085dc12827072509659"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/oil_scanner_none.json"
+hash = "78c13177d691847671c2b42d92909a2a9817af0b0ebcb82c72cb3dfbf949b85e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/track_layers_bag.json"
+hash = "4da5a2ca6c12ce37cc364a0b66151a2a4a0d720c39e94bdfd26bf78fd2401f28"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/track_layers_bag_filled.json"
+hash = "3c3e052285147cfe602558dc65e18c1d6f199c22633d912f78b875bd5969ef13"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/wire_cutters.json"
+hash = "16091a26252d4f63144a620ddfec84fd00aba232c423a1fc39a26d1efdc39234"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/createdieselgenerators/models/item/wire_cutters_cut.json"
+hash = "bf45cbff5d88cae6727fe1bb0a1b9c268da8b5441c538b35c30ab613c7c4c42a"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/crittersandcompanions/models/item/equipment/held/grappling_hook.json"
@@ -12413,6 +13382,10 @@ hash = "ea162937a968e511936a22997b7ef1d08811ff8a1bdc63cf8f3b5ea8eb14f2a6"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/models/item/water_bucket.json"
 hash = "3c4ad8d1d4037bd7f3afaac962f95ea9ee5e099d1482d8b5302fef6b4145e158"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/punchy/compat/aeroscapes_diesel_equipment.json"
+hash = "c0f1c609d687977b2caacce741cfc02c48bb7680a248c582c63a408150378d26"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/minecraft/punchy/compat/aeroscapes_field_equipment.json"

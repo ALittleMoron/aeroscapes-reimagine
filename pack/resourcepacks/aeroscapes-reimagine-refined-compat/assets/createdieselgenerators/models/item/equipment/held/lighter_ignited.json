@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/diesel_equipment/lighter_ignited.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "aeroscapes_reimagine:item/diesel_equipment/lighter_ignited"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.27,
+        0.27,
+        0.27
+      ],
+      "translation": [
+        0.0,
+        0.6200001,
+        1.0
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.27,
+        0.27,
+        0.27
+      ],
+      "translation": [
+        0.0,
+        0.6200001,
+        1.0
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.27,
+        0.27,
+        0.27
+      ],
+      "translation": [
+        0.0,
+        0.6200001,
+        1.0
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        0.27,
+        0.27,
+        0.27
+      ],
+      "translation": [
+        0.0,
+        0.6200001,
+        1.0
+      ]
+    }
+  }
+}

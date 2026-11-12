@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:diesel_spray_epic",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/diesel_spray"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

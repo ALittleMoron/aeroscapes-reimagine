@@ -1,0 +1,40 @@
+{
+  "variants": {
+    "host=stone": {
+      "model": "aeroscapes_reimagine:block/oil_stone"
+    },
+    "host=granite": {
+      "model": "aeroscapes_reimagine:block/oil_granite"
+    },
+    "host=diorite": {
+      "model": "aeroscapes_reimagine:block/oil_diorite"
+    },
+    "host=andesite": {
+      "model": "aeroscapes_reimagine:block/oil_andesite"
+    },
+    "host=deepslate": {
+      "model": "aeroscapes_reimagine:block/oil_deepslate"
+    },
+    "host=tuff": {
+      "model": "aeroscapes_reimagine:block/oil_tuff"
+    },
+    "host=blackstone": {
+      "model": "aeroscapes_reimagine:block/oil_blackstone"
+    },
+    "host=jasper": {
+      "model": "aeroscapes_reimagine:block/oil_jasper"
+    },
+    "host=limestone": {
+      "model": "aeroscapes_reimagine:block/oil_limestone"
+    },
+    "host=shale": {
+      "model": "aeroscapes_reimagine:block/oil_shale"
+    },
+    "host=travertine": {
+      "model": "aeroscapes_reimagine:block/oil_travertine"
+    },
+    "host=chert": {
+      "model": "aeroscapes_reimagine:block/oil_chert"
+    }
+  }
+}

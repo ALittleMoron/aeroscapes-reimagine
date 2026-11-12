@@ -52,6 +52,8 @@ repositories {
       includeModule("maven.modrinth", "emi-trades-reborn")
       includeModule("maven.modrinth", "create-aeronautics")
       includeModule("maven.modrinth", "create")
+      includeModule("maven.modrinth", "create-diesel-generators")
+      includeModule("maven.modrinth", "create-liquid-fuel")
       includeModule("maven.modrinth", "distanthorizons")
       includeModule("maven.modrinth", "better-clouds")
       includeModule("maven.modrinth", "invmove")
@@ -177,6 +179,8 @@ val extractSableApi =
   }
 
 dependencies {
+  compileOnly("maven.modrinth:create-diesel-generators:UoPH8lO1") { isTransitive = false }
+  compileOnly("maven.modrinth:create-liquid-fuel:rLn2bDVE") { isTransitive = false }
   equipmentAssets("maven.modrinth:quark:qcDWHGnS")
   equipmentAssets("maven.modrinth:supplementaries:Agn1kmUY")
   equipmentAssets("maven.modrinth:handcrafted:JfqnpP2Z")
@@ -707,6 +711,16 @@ val ironHeldModelTest =
     providers.gradleProperty("ironHeldPreview").orNull?.let { args(it) }
   }
 
+val dieselEquipmentModelTest =
+  tasks.register<JavaExec>("dieselEquipmentModelTest") {
+    group = "verification"
+    dependsOn(equipmentModelsCheck)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.DieselEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+    providers.gradleProperty("dieselPreview").orNull?.let { args(it) }
+  }
+
 val weatheringTextureTest =
   tasks.register<JavaExec>("weatheringTextureTest") {
     group = "verification"
@@ -787,6 +801,7 @@ tasks.check {
     utilityEquipmentModelTest,
     fieldEquipmentModelTest,
     ironHeldModelTest,
+    dieselEquipmentModelTest,
     weatheringTextureTest,
     orePresentationContractTest,
     heldEquipmentRenderingTest,
