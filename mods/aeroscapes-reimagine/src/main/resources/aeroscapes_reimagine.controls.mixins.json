@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.engineering.controls",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ScrollOptionLabelMixin"
+  ],
+  "client": [
+    "ExpressionScreenLanguageMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin"
+}

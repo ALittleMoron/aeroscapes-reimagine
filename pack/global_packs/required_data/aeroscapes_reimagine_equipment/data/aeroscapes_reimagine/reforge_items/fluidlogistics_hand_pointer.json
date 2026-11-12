@@ -1,0 +1,8 @@
+{
+  "items": [
+    "fluidlogistics:hand_pointer"
+  ],
+  "base": [
+    "create:brass_ingot"
+  ]
+}

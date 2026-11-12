@@ -18,6 +18,8 @@ The engineering group uses Create for mechanical work and Aeronautics for aircra
 
 [Create: Diesel Generators](https://modrinth.com/mod/create-diesel-generators/version/UoPH8lO1) adds crop-based fuels, finite oil wells, refining and compact, modular and huge engines. [Create: Liquid Fuel](https://modrinth.com/mod/create-liquid-fuel/version/rLn2bDVE) feeds these fuels and lava into ordinary Blaze Burners. [Engines, fuel and oil](../fuel/) explains production, prospecting, field lifetimes and heat.
 
+Create: Steam Powered adds a separate liquid-steam plant, Create: Extra Gauges supplies optional counters and conditions, and Create: FluidLogistics delivers fluid orders through Create logistics. [Steam, controls and fluid delivery](../steam-and-fluids/) explains the equipment, material tiers and finite-fuel storage rules.
+
 ## Mechanical processing and foundry
 
 [Vintage Improvements — SSW Edition](https://www.curseforge.com/minecraft/mc-mods/vintage-improvenents-ssw-edition) adds bending, belt grinding, spring coiling, a helve hammer, a centrifuge and a vibrating table. They form parts, polish surfaces, separate mixtures and unpack suitable reversible recipes. Its stationary processing laser remains available. The diamond-to-emerald joke and the lathe's cobblestone-to-gravel test recipe are removed.

@@ -54,6 +54,10 @@ repositories {
       includeModule("maven.modrinth", "create")
       includeModule("maven.modrinth", "create-diesel-generators")
       includeModule("maven.modrinth", "create-liquid-fuel")
+      includeModule("maven.modrinth", "create-steam-powered")
+      includeModule("maven.modrinth", "createfluidlogistic")
+      includeModule("maven.modrinth", "extra-gauges")
+      includeModule("maven.modrinth", "deployer")
       includeModule("maven.modrinth", "distanthorizons")
       includeModule("maven.modrinth", "better-clouds")
       includeModule("maven.modrinth", "invmove")
@@ -181,6 +185,10 @@ val extractSableApi =
 dependencies {
   compileOnly("maven.modrinth:create-diesel-generators:UoPH8lO1") { isTransitive = false }
   compileOnly("maven.modrinth:create-liquid-fuel:rLn2bDVE") { isTransitive = false }
+  compileOnly("maven.modrinth:create-steam-powered:w3zLn2Kv") { isTransitive = false }
+  compileOnly("maven.modrinth:createfluidlogistic:HiLD5edv") { isTransitive = false }
+  compileOnly("maven.modrinth:extra-gauges:xtIBXji9") { isTransitive = false }
+  compileOnly("maven.modrinth:deployer:ltYnbVvP") { isTransitive = false }
   equipmentAssets("maven.modrinth:quark:qcDWHGnS")
   equipmentAssets("maven.modrinth:supplementaries:Agn1kmUY")
   equipmentAssets("maven.modrinth:handcrafted:JfqnpP2Z")

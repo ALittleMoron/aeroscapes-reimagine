@@ -3,6 +3,7 @@
     "handcrafted:hammer",
     "create:wrench",
     "supplementaries:wrench",
-    "theurgy:mercurial_wand"
+    "theurgy:mercurial_wand",
+    "fluidlogistics:hand_pointer"
   ]
 }

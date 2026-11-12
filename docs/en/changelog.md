@@ -4,6 +4,17 @@ description: Version history.
 status: available
 ---
 
+## 0.5.4
+
+- Added Steam Powered boilers, liquid steam storage and transfer, and three engine/flywheel tiers using brass, iron and foundry steel.
+- Fixed full boiler output from weak positive external heat; pinned steam output, engine consumption and fuel conversion settings.
+- Fixed spent steam returning after chunk reload, including engines drawing directly from a boiler across a chunk boundary.
+- Made produced steam usable by native fluid orders and prevented canisters from losing steam when an engine lacks space for a full refill.
+- Added Extra Gauges and its Deployer API for optional counters, conditions and factory control alongside RSGauges panels.
+- Added FluidLogistics native fluid packages, packagers, unpackagers and order delivery for the pack's registered fluids.
+- Restricted Infinite Fluid Tanks to water and lava, preserving finite oil and fuel supplies.
+- Added brass-based Hand Pointer reforging using existing building-tool effects.
+
 ## 0.5.3
 
 - Added Create: Diesel Generators with crop fuels, oil refining and compact, modular and huge engines.

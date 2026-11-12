@@ -98,6 +98,24 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String steamSave = System.getProperty("aeroscapes.regression.steamSave");
+    if (steamSave != null) {
+      require(
+          steamSave.equals("prepare") || steamSave.equals("reload"),
+          "Known steam persistence phase");
+      SteamEnergyRegression.verifyPersistence(level, steamSave.equals("reload"));
+      LOGGER.info("Steam disk persistence regression passed: {}", steamSave);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.steamFluid")) {
+      FoundryRegression.verify(level);
+      FuelRegression.verify(level);
+      SteamEnergyRegression.verify(level);
+      FluidLogisticsRegression.verify(level);
+      GaugesRegression.run(level, level.getSharedSpawnPos().offset(24, 32, 24));
+      LOGGER.info("Steam energy and fluid logistics regression passed");
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.oilOldFull"))
       OilControlsRegression.verifyOldFull(level);
     String oilControls = System.getProperty("aeroscapes.regression.oilControls");

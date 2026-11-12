@@ -17471,5 +17471,1367 @@
     "key": "createdieselgenerators.gui.entity_filter.deny_list.description",
     "expected": "Элементы проходят, если у них НЕТ ни одного из выбранных атрибутов.",
     "replacement": "Сущности проходят фильтр, если НЕ обладают ни одним из выбранных признаков."
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.display_collector",
+    "expected": "Коллектор отображения",
+    "replacement": "Сборщик данных дисплея"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.linked_button",
+    "expected": "Linked Button",
+    "replacement": "Связанная кнопка"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.linked_lever",
+    "expected": "Linked Lever",
+    "replacement": "Связанный рычаг"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.redstone_port",
+    "expected": "Redstone Port",
+    "replacement": "Редстоуновый порт"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.redstone_port.tooltip.behaviour1",
+    "expected": "Switches from input to output and viceversa",
+    "replacement": "Переключает порт между вводом и выводом"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.redstone_port.tooltip.condition1",
+    "expected": "When Wrenched",
+    "replacement": "При использовании гаечного ключа"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.rose_quartz_port",
+    "expected": "Rose Quartz Port",
+    "replacement": "Порт из розового кварца"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.rose_quartz_port.tooltip.behaviour1",
+    "expected": "Switches from input to output and viceversa",
+    "replacement": "Переключает порт между вводом и выводом"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.extra_gauges.rose_quartz_port.tooltip.condition1",
+    "expected": "When Wrenched",
+    "replacement": "При использовании гаечного ключа"
+  },
+  {
+    "language": "ru_ru",
+    "key": "comparator_gauge.info.line_1",
+    "expected": "Visualize inputs outside with a wrench,",
+    "replacement": "Наведите гаечный ключ на внешние входы,"
+  },
+  {
+    "language": "ru_ru",
+    "key": "comparator_gauge.info.line_2",
+    "expected": "then drag them on one side of the equation",
+    "replacement": "затем перетащите их на нужную сторону сравнения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "comparator_gauge.info.title",
+    "expected": "Drag'n drop",
+    "replacement": "Перетаскивание входов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "comparator_gauge.mode.advanced",
+    "expected": "ADVANCES (Let's you control which inputs are compared to which)",
+    "replacement": "РАСШИРЕННЫЙ (выбор сравниваемых входов)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "comparator_gauge.mode.different",
+    "expected": "Вход отличается от константы",
+    "replacement": "Вход не равен константе"
+  },
+  {
+    "language": "ru_ru",
+    "key": "comparator_gauge.mode.static",
+    "expected": "STATIC (Compares a static value to sum of inputs)",
+    "replacement": "ПОСТОЯННЫЙ (сравнение суммы входов с константой)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.display_collector.success",
+    "expected": "Успешно привязано к позиции источника",
+    "replacement": "Привязка к источнику установлена"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.logistics.comparator_value",
+    "expected": "Выберите сравниваемую константу",
+    "replacement": "Выберите режим сравнения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.logistics.counter_threshold",
+    "expected": "Выберите пороговое значение",
+    "replacement": "Выберите порог счётчика"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.logistics.filter.shift_click_to_replace",
+    "expected": "Sneak-Click with item to replace",
+    "replacement": "Присядьте и нажмите с предметом, чтобы заменить фильтр"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.logistics.filter.shift_click_to_set",
+    "expected": "Sneak-Click with item to set",
+    "replacement": "Присядьте и нажмите с предметом, чтобы задать фильтр"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.string_panel.input_in_rewrite_mode",
+    "expected": "Input gauge cannot be in rewrite mode",
+    "replacement": "Входной датчик не может работать в режиме перезаписи"
+  },
+  {
+    "language": "ru_ru",
+    "key": "expression_gauge.info.line_1",
+    "expected": "Each connection coming into the gauge",
+    "replacement": "Каждое входящее соединение получает"
+  },
+  {
+    "language": "ru_ru",
+    "key": "expression_gauge.info.line_2",
+    "expected": "is a unique number you can use for your equations.",
+    "replacement": "свою переменную для использования в выражениях."
+  },
+  {
+    "language": "ru_ru",
+    "key": "expression_gauge.info.line_3",
+    "expected": "Hover a connection with a wrench to see what variable you're looking at",
+    "replacement": "Наведите гаечный ключ на соединение, чтобы узнать имя переменной"
+  },
+  {
+    "language": "ru_ru",
+    "key": "expression_gauge.info.title",
+    "expected": "What are variables?",
+    "replacement": "Что такое переменные?"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.counter_panel.no_limit",
+    "expected": "No limit",
+    "replacement": "Без ограничения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.gui.factory_panel.crafting_input_tip_1",
+    "expected": "механические сборщики (%s блоков в ширину)",
+    "replacement": "механические сборщики (ширина: %s блоков)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.gui.filter_panel.eject",
+    "expected": "Eject filter",
+    "replacement": "Извлечь фильтр"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.gui.string_panel.join",
+    "expected": "Объединение:",
+    "replacement": "Разделитель:"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.gui.variable_connection.info_header",
+    "expected": "Selected connection",
+    "replacement": "Выбранное соединение"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.gui.variable_connection.name",
+    "expected": "Variable:",
+    "replacement": "Переменная:"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges:linked_button.tooltip.summary",
+    "expected": "Works like a redstone link but includes a lever. Connects to gauges and send an update instantly",
+    "replacement": "Работает как редстоуновый передатчик с кнопкой. Подключается к датчикам и мгновенно передаёт обновление"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges:linked_lever.tooltip.summary",
+    "expected": "Works like a redstone link but includes a lever. Connects to gauges and send an update instantly",
+    "replacement": "Работает как редстоуновый передатчик с рычагом. Подключается к датчикам и мгновенно передаёт обновление"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges:redstone_port.tooltip.summary",
+    "expected": "Connects real-world redstone to gauges (only ON/OFF)",
+    "replacement": "Соединяет обычный редстоун с датчиками (только включено/выключено)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges:rose_quartz_port.tooltip.summary",
+    "expected": "Connects real-world redstone to gauges (Number connection, 0-15)",
+    "replacement": "Соединяет обычный редстоун с датчиками (числовое соединение, 0–15)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "filter_panel.active",
+    "expected": "Filter panel active",
+    "replacement": "Датчик фильтра активен"
+  },
+  {
+    "language": "ru_ru",
+    "key": "filter_panel.no_filter",
+    "expected": "No filter selected",
+    "replacement": "Фильтр не выбран"
+  },
+  {
+    "language": "ru_ru",
+    "key": "integer_gauge.mode.add",
+    "expected": "Сложение (суммирует все входы)",
+    "replacement": "СЛОЖЕНИЕ (сумма всех входов)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "integer_gauge.mode.memory",
+    "expected": "MEMORY (Saves sum of inputs if redstone is off)",
+    "replacement": "ПАМЯТЬ (сохраняет сумму входов при выключенном редстоуне)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "integer_gauge.mode.multiply",
+    "expected": "Умножение (перемножает все входы)",
+    "replacement": "УМНОЖЕНИЕ (произведение всех входов)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "integer_gauge.mode.subtract",
+    "expected": "Вычитание (суммирует все входы, но даёт отрицательный результат)",
+    "replacement": "ВЫЧИТАНИЕ (сумма всех входов с обратным знаком)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.extra_gauges.comparator_gauge",
+    "expected": "Компараторный фабричный датчик",
+    "replacement": "Фабричный датчик сравнения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.extra_gauges.counter_gauge",
+    "expected": "Счётный фабричный датчик",
+    "replacement": "Фабричный счётчик"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.extra_gauges.expression_gauge",
+    "expected": "Expression Gauge",
+    "replacement": "Фабричный датчик выражений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.extra_gauges.filter_gauge",
+    "expected": "Filter Gauge",
+    "replacement": "Фабричный датчик фильтра"
+  },
+  {
+    "language": "ru_ru",
+    "key": "logic_gauge.gate.and",
+    "expected": "И (AND; активируется, если все входы активны)",
+    "replacement": "И (активен, если все входы активны)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "logic_gauge.gate.nand",
+    "expected": "НЕ И (NAND; активируется, если любой вход неактивен)",
+    "replacement": "И-НЕ (активен, если хотя бы один вход неактивен)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "logic_gauge.gate.nor",
+    "expected": "НЕ ИЛИ (NOR; активируется, если все входы неактивны)",
+    "replacement": "ИЛИ-НЕ (активен, если все входы неактивны)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "logic_gauge.gate.or",
+    "expected": "ИЛИ (OR; активируется, если любой вход активен)",
+    "replacement": "ИЛИ (активен, если хотя бы один вход активен)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "logic_gauge.gate.xnor",
+    "expected": "Исключающее ИЛИ с инверсией (XNOR; активируется при чётном количестве активных входов)",
+    "replacement": "ИСКЛЮЧАЮЩЕЕ ИЛИ-НЕ (активно чётное число входов)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "logic_gauge.gate.xor",
+    "expected": "Исключающее ИЛИ (XOR; активируется при нечётном количестве активных входов)",
+    "replacement": "ИСКЛЮЧАЮЩЕЕ ИЛИ (активно нечётное число входов)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.header",
+    "expected": "Использованием компараторных фабричных датчиков для преобразования чисел в логические значения",
+    "replacement": "Сравнение чисел фабричным датчиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_1",
+    "expected": "Компараторные датчики служат мостом между §9числами §rи §cредстоуном §r(§cвкл/выкл§r)",
+    "replacement": "Сначала подключите к датчику сравнения числовые входы..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_2",
+    "expected": "Удерживая ПКМ, можно задать константное число...",
+    "replacement": "...затем откройте меню и задайте константу и оператор сравнения."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_3",
+    "expected": "...а затем это число §9сравнивается §rс §9входами §rс помощью §9оператора §r(в этом примере §6>§r)",
+    "replacement": "Датчик проверит, выполняется ли условие..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_4",
+    "expected": "Если ввести §66§r, а константа равна §98§r, то 6 не больше 8, поэтому результат §cложь§r",
+    "replacement": "...и выдаст редстоуновый сигнал."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_5",
+    "expected": "Однако если изменить на §610§r, условие выполняется, и §cредстоуновый передатчик §rактивируется",
+    "replacement": "Удерживайте правую кнопку мыши, чтобы включить расширенный режим."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_6",
+    "expected": "When connecting multiple connections, each one will have a name.",
+    "replacement": "При подключении нескольких соединений каждое получает своё имя."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_7",
+    "expected": "You can check the name by holding a wrench on the connection",
+    "replacement": "Наведите гаечный ключ на соединение, чтобы увидеть его имя."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_8",
+    "expected": "The two connections are now available in a new GUI.",
+    "replacement": "Теперь оба соединения доступны в новом интерфейсе."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.comparator_gauge.text_9",
+    "expected": "You can drag'n drop the connections on each side of the operator...",
+    "replacement": "Перетащите соединения на нужные стороны оператора сравнения..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.header",
+    "expected": "Использованием счётных фабричных датчиков для подсчёта редстоун-импульсов",
+    "replacement": "Подсчёт импульсов фабричным счётчиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.text_1",
+    "expected": "Редстоуновый передатчик должен быть настроен так для §cмгновенного §cобновления §cпри §cнажатии§r",
+    "replacement": "Фабричный счётчик подсчитывает редстоуновые импульсы."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.text_2",
+    "expected": "Счётные датчики подсчитывают редстоун-импульсы, так как вы не можете",
+    "replacement": "Он запомнит число импульсов за вас."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.text_3",
+    "expected": "Количество импульсов хранится как §9число§r",
+    "replacement": "Каждый входящий редстоуновый импульс..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.text_4",
+    "expected": "Удерживая ПКМ, можно изменить §9порог §9счётчика§r",
+    "replacement": "...увеличивает счётчик на 1."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.text_5",
+    "expected": "Как только порог будет достигнут (в этом примере он равен 3), счётный датчик выдаст §cредстоун-сигнал§r",
+    "replacement": "Удерживайте правую кнопку мыши, чтобы задать порог..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.text_6",
+    "expected": "Следующее срабатывание сбросит счётчик в 0",
+    "replacement": "...когда счётчик достигнет этого порога..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.text_7",
+    "expected": "...the gauge will transmit redstone.",
+    "replacement": "...он выдаст редстоуновый сигнал."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.counter_gauge.text_8",
+    "expected": "Counter gauge will also output the current count to panels reading numbers",
+    "replacement": "Счётчик также передаёт текущее значение датчикам с числовыми входами."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.display_collector.header",
+    "expected": "Использованием сборщика отображения для получения источников отображения",
+    "replacement": "Получение текста сборщиком данных дисплея"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.display_collector.text_1",
+    "expected": "Сборщики отображения могут отправлять информацию в строковые датчики",
+    "replacement": "Сборщик данных дисплея передаёт текстовые данные датчикам."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.display_collector.text_2",
+    "expected": "Сначала кликните ПКМ по источнику...",
+    "replacement": "Нажмите на источник, из которого нужно считывать текст..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.display_collector.text_3",
+    "expected": "...затем установите на доску...",
+    "replacement": "...и установите сборщик данных дисплея."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.display_collector.text_4",
+    "expected": "...и соедините со строковым датчиком",
+    "replacement": "Откройте датчик и подключите его к сборщику."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.display_collector.text_5",
+    "expected": "Откройте меню для запуска обновления",
+    "replacement": "Откройте меню сборщика: после этого он начнёт передавать текст датчикам."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expanded_factory_recipes.header",
+    "expected": "Созданием предметов на крупных механических сборщиках",
+    "replacement": "Создание предметов на крупных механических сборщиках"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expanded_factory_recipes.text_1",
+    "expected": "§9Дополнительные §9датчики §rтеперь поддерживают создание крупных рецептов с помощью фабричных датчиков",
+    "replacement": "§9Create: Extra Gauges §rподдерживает крупные рецепты в фабричных датчиках."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expanded_factory_recipes.text_2",
+    "expected": "Для этого требуются крупные установки механических сборщиков",
+    "replacement": "Для крупных рецептов нужны более крупные установки механических сборщиков."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expanded_factory_recipes.text_3",
+    "expected": "Но мелкие рецепты также могут использоваться на крупных установках, увеличив ширину на §eпанели управления§r",
+    "replacement": "Небольшие рецепты тоже можно разместить на крупной установке, увеличив §9ширину §rв §eинтерфейсе§r."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expanded_factory_recipes.text_4",
+    "expected": "Не беспокойтесь о высоте вашей установки — главное, чтобы она соответствовала минимальной высоте рецепта!",
+    "replacement": "Высота установки должна быть не меньше минимальной высоты рецепта."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.header",
+    "expected": "Calculate expressions with the Expression gauge",
+    "replacement": "Вычисления с датчиком выражений"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.text_1",
+    "expected": "Complex expressions can be evaluated with an expression gauge",
+    "replacement": "Датчик выражений вычисляет сложные математические выражения."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.text_2",
+    "expected": "Open the menu and click [+] to add a connection...",
+    "replacement": "Откройте меню и нажмите [+], чтобы добавить соединение..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.text_3",
+    "expected": "...then press on the panel you want to get data from.",
+    "replacement": "...затем нажмите на датчик, из которого хотите получать данные."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.text_4",
+    "expected": "Some other panels can instead read data from your gauge.",
+    "replacement": "Некоторые другие датчики могут, наоборот, считывать данные из вашего датчика."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.text_5",
+    "expected": "Each connection flowing in the expression gauge will have it's own name...",
+    "replacement": "Каждое входящее соединение датчика выражений получает своё имя..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.text_6",
+    "expected": "Set-up a mathematical expression inside the gauge...",
+    "replacement": "Введите математическое выражение..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.text_8",
+    "expected": "When a redstone connection points to an expression gauge...",
+    "replacement": "Если редстоуновое соединение направлено на датчик выражений..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.expression_gauge.text_9",
+    "expected": "...the output will immediately be cancelled, and 0 is returned",
+    "replacement": "...вывод будет сразу отключён и вернёт 0."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.header",
+    "expected": "Simplify recipes with the Filter gauge",
+    "replacement": "Упрощение рецептов датчиком фильтра"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.text_1",
+    "expected": "Filter gauges can be used as input for factory gauges...",
+    "replacement": "Датчики фильтра можно подключать ко входам фабричных датчиков..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.text_2",
+    "expected": "...to find multiple candidates for a recipe.",
+    "replacement": "...чтобы находить несколько подходящих ингредиентов для рецепта."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.text_3",
+    "expected": "Add a filter with all the items that can be used in your recipe...",
+    "replacement": "Добавьте фильтр со всеми предметами, подходящими для рецепта..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.text_4",
+    "expected": "...and put at least 1 item matching the filter in your network",
+    "replacement": "...и поместите в сеть хотя бы один предмет, соответствующий фильтру."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.text_5",
+    "expected": "You can now connect the factory gauge, open the menu and setup the recipe.",
+    "replacement": "Теперь подключите фабричный датчик, откройте его меню и настройте рецепт."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.text_6",
+    "expected": "When 8 oak planks are missing...",
+    "replacement": "Если в сети не хватает 8 дубовых досок..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.text_7",
+    "expected": "...it will try to look up for other items matching the filter...",
+    "replacement": "...датчик попробует найти другие предметы, соответствующие фильтру..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.filter_gauge.text_8",
+    "expected": "...and update the recipe.",
+    "replacement": "...и обновит рецепт."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.header",
+    "expected": "Использованием целочисленных фабричных датчиков для передачи чисел",
+    "replacement": "Передача чисел целочисленным датчиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_1",
+    "expected": "Целочисленные датчики могут передавать числа через объекты, прикреплённые к стене",
+    "replacement": "Целочисленные датчики передают §7целые числа§r по своим соединениям..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_2",
+    "expected": "§9Рычаги §rи §9редстоуновые передатчики сигналов §rвыдают 15 при активации...",
+    "replacement": "...нажмите на целочисленную панель, чтобы открыть меню..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_3",
+    "expected": "...§9аналоговые §9рычаги §rвыдают сигнал между 0 и 15 в зависимости от положения...",
+    "replacement": "...нажмите [+], чтобы добавить соединение..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_4",
+    "expected": "...а §9целочисленные §9селекторы §rпозволяют вводить гораздо большие числа",
+    "replacement": "...и выберите другой датчик."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_5",
+    "expected": "§eПримечание: §rрычаги §cне §cотправляют §cобновление §cмгновенно§r, в отличие от редстоуновых передатчиков и §9целочисленных §9селекторов",
+    "replacement": "Чтобы удалить соединение, нажмите на него левой кнопкой мыши с гаечным ключом."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_6",
+    "expected": "Посмотрим, что произойдёт при подключении двух целочисленных фабричных датчиков...",
+    "replacement": "Одни блоки передают целые числа датчикам, другие считывают их."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_7",
+    "expected": "Датчик, имеющий §92 §9входа§r, будет выводить §6сумму§r этих значений. (Больше не 15+7)",
+    "replacement": "Кнопка [+] в меню также позволяет подключаться к таким блокам..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_8",
+    "expected": "Удерживая ПКМ, можно изменить операцию на §6вычитание §rили §6умножение§r",
+    "replacement": "...направление стрелки определяется выходом."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_9",
+    "expected": "By holding right-click, you can change the operation...",
+    "replacement": "Удерживайте правую кнопку мыши, чтобы сменить операцию..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_10",
+    "expected": "...and when numbers starts flowing in the gauge...",
+    "replacement": "...а когда на входы датчика начнут поступать числа..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_11",
+    "expected": "All operations are calculated on integers, so the result will not have any decimal part",
+    "replacement": "Все операции выполняются над целыми числами, поэтому результат не имеет дробной части."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_12",
+    "expected": "A special operation, memory, will be covered in the next ponder",
+    "replacement": "Особая операция памяти рассматривается в следующем уроке."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_13",
+    "expected": "When a redstone connection points to an int gauge...",
+    "replacement": "Если редстоуновое соединение направлено на целочисленный датчик..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge.text_14",
+    "expected": "...the output will immediately be cancelled, and 0 is returned",
+    "replacement": "...вывод будет сразу отключён и вернёт 0."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge_memory.header",
+    "expected": "Memorize numbers with the integer gauge",
+    "replacement": "Запоминание чисел целочисленным датчиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge_memory.text_1",
+    "expected": "Int gauges have a special memory operation",
+    "replacement": "У целочисленных датчиков есть особая операция памяти."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge_memory.text_2",
+    "expected": "When the number flowing into the gauge changes, the gauge instantly memorizes it...",
+    "replacement": "Когда число на входе меняется, датчик сразу его запоминает..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge_memory.text_3",
+    "expected": "...but when redstone is flowing inside the gauge...",
+    "replacement": "...но пока на датчик подаётся редстоуновый сигнал..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge_memory.text_4",
+    "expected": "...any change is not updated, and the gauge will now store the number forever...",
+    "replacement": "...изменения больше не записываются, и датчик сохраняет прежнее число..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.integer_gauge_memory.text_5",
+    "expected": "...until unlocked again.",
+    "replacement": "...пока блокировка не будет снята."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.header",
+    "expected": "Использованием логических фабричных датчиков для передачи редстоун-сигналов",
+    "replacement": "Передача сигналов логическим датчиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_1",
+    "expected": "Логические датчики могут передавать редстоун через несколько объектов, прикреплённых к стене",
+    "replacement": "Логические датчики передают редстоуновые сигналы по своим соединениям..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_2",
+    "expected": "В качестве входов можно использовать §9рычаги§r, §9аналоговые §9рычаги§r, §9редстоуновые передатчики §9в §9режиме §9приёма§r и §6другие §6 фабричные датчики",
+    "replacement": "...нажмите на логическую панель, чтобы открыть меню..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_3",
+    "expected": "В качестве выходов — §9редстоуновые передатчики §9в §9режиме §9передачи§r и §6другие §6фабричные датчики",
+    "replacement": "...нажмите [+], чтобы добавить соединение..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_4",
+    "expected": "§eПримечание: §rрычаги и аналоговые рычаги §cне §cотправляют §cобновление §cмгновенно§r, в отличие от редстоуновых передатчиков",
+    "replacement": "...и выберите другой датчик."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_5",
+    "expected": "Слишком просто? Посмотрим, что произойдёт при §6дополнительных §6входах",
+    "replacement": "Чтобы удалить соединение, нажмите на него левой кнопкой мыши с гаечным ключом."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_6",
+    "expected": "Фабричный датчик, который по умолчанию находится в режиме §6ИЛИ§r, активируется когда один ИЛИ другой рычаг включён",
+    "replacement": "Одни блоки передают редстоуновый сигнал датчикам, другие принимают его."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_7",
+    "expected": "Удерживая ПКМ, можно изменить тип вентиля, например на §6И",
+    "replacement": "Кнопка [+] в меню также позволяет подключаться к таким блокам..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_8",
+    "expected": "Теперь в режиме §6И§r фабричный датчик активируется только когда оба рычага включены",
+    "replacement": "...направление стрелки определяется выходом."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_9",
+    "expected": "Наконец, с помощью передатчика информации можно показать миру текущее значение логического фабричного датчика!",
+    "replacement": "Удерживайте правую кнопку мыши, чтобы сменить логический вентиль..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_10",
+    "expected": "...and when redstone starts flowing in the gauge...",
+    "replacement": "...а когда на входы датчика начнут поступать сигналы..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.logic_gauge.text_11",
+    "expected": "...it decides whether to output redstone or not.",
+    "replacement": "...он решит, выдавать ли редстоуновый сигнал."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.passive_gauge.header",
+    "expected": "Использованием пассивных фабричных датчиков для оптимизации автоматических рецептов",
+    "replacement": "Пассивные датчики в автоматическом производстве"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.passive_gauge.text_1",
+    "expected": "Пассивные датчики работают так же, как §9фабричныеr...",
+    "replacement": "Пассивные датчики работают подобно §9фабричным §9датчикам§r..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.passive_gauge.text_2",
+    "expected": "...но вам не нужно задавать §9количество §rпредметов для создания",
+    "replacement": "...но задавать §9количество §rизготавливаемых предметов не нужно."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.passive_gauge.text_4",
+    "expected": "...пассивный датчик будет поддерживать в хранилище §9точное §9количество§r",
+    "replacement": "...пассивный датчик старается поддерживать на складе §9нужное §9количество§r."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.passive_gauge.text_5",
+    "expected": "Как только начнётся создание первого рецепта, пассивный датчик автоматически §cостанавливается§r",
+    "replacement": "Как только запускается изготовление по первому рецепту, пассивный датчик автоматически §cостанавливается§r."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.header",
+    "expected": "Использованием строковых фабричных датчиков для обработки текстовых значений",
+    "replacement": "Обработка текста строковым датчиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_1",
+    "expected": "Строковые датчики могут передавать §9текст §rчерез объекты, прикреплённые к стене",
+    "replacement": "Строковые датчики передают текст по своим соединениям."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_2",
+    "expected": "§bПривет!",
+    "replacement": "Откройте меню и нажмите [+]..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_3",
+    "expected": "При наличии нескольких входов они будут §9объединены в один текст",
+    "replacement": "...затем нажмите на источник, из которого хотите считывать текст."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_4",
+    "expected": "§eПримечание: §rпорядок входов не гарантируется",
+    "replacement": "Другие датчики тоже могут передавать текст."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_5",
+    "expected": "ПКМ открывает §9экран §9настроек",
+    "replacement": "✖ Ложь"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_6",
+    "expected": "После изменения §eтекста §eобъединения §rна §9\",\"§r вывод изменится",
+    "replacement": "0"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_7",
+    "expected": "Текст также может обрабатываться с помощью двух других текстовых полей",
+    "replacement": "Откройте меню и задайте разделитель..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_8",
+    "expected": "Датчик будет искать §cсоответствия с регулярным выражением§r...",
+    "replacement": "...датчик объединит все входы в одну строку."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_9",
+    "expected": "...и заменять их на §aтекст §aзамены§r",
+    "replacement": "Задайте регулярное выражение и текст замены..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_10",
+    "expected": "§cДом §r—> §aБаза",
+    "replacement": "...датчик найдёт текст, соответствующий регулярному выражению..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_11",
+    "expected": "...and replace every occurrence with the replacement.",
+    "replacement": "...и заменит все совпадения заданным текстом."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_12",
+    "expected": "String gauge can also export redstone and number data...",
+    "replacement": "Строковый датчик также передаёт редстоуновые сигналы и числа..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_13",
+    "expected": "When the text is similar to a number, it will automatically be converted.",
+    "replacement": "Если текст похож на число, он автоматически преобразуется в число."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge.text_14",
+    "expected": "Same goes for redstone.",
+    "replacement": "Так же работает преобразование в редстоуновый сигнал."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge_rewrite.header",
+    "expected": "Using string gauges to rewrite package addresses",
+    "replacement": "Перезапись адресов посылок строковым датчиком"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge_rewrite.text_1",
+    "expected": "When a string gauge is attached to a repackager...",
+    "replacement": "Когда строковый датчик установлен на переупаковщике..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge_rewrite.text_2",
+    "expected": "...it will go in rewrite mode.",
+    "replacement": "...он переходит в режим перезаписи."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge_rewrite.text_3",
+    "expected": "Open the string gauge menu, setup a regex and a replacement...",
+    "replacement": "Откройте меню датчика и задайте регулярное выражение и текст замены..."
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge_rewrite.text_4",
+    "expected": "§cHello!",
+    "replacement": "§cПривет!"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge_rewrite.text_5",
+    "expected": "§aHi!",
+    "replacement": "§aЗдравствуй!"
+  },
+  {
+    "language": "ru_ru",
+    "key": "extra_gauges.ponder.string_gauge_rewrite.text_6",
+    "expected": "When powered, the gauge will now change the address in outgoing packages",
+    "replacement": "При подаче сигнала датчик изменит адрес исходящих посылок."
+  },
+  {
+    "language": "ru_ru",
+    "key": "stock_inventory_type.items",
+    "expected": "Items",
+    "replacement": "Предметы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "stock_inventory_type.unfinished_order",
+    "expected": "Unfinished order",
+    "replacement": "Незавершённый заказ"
+  },
+  {
+    "language": "ru_ru",
+    "key": "stock_inventory_type.unfinished_order_line_1",
+    "expected": "All unfinished orders will be sent",
+    "replacement": "Все незавершённые заказы будут отправлены"
+  },
+  {
+    "language": "ru_ru",
+    "key": "stock_inventory_type.unfinished_order_line_2",
+    "expected": "simultaneously when clicking send",
+    "replacement": "одновременно при нажатии кнопки отправки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "deployer.gui.factory_panel.not_affecting_recipe_tip_0",
+    "expected": "This gauge won't affect",
+    "replacement": "Этот датчик не влияет"
+  },
+  {
+    "language": "ru_ru",
+    "key": "deployer.gui.factory_panel.not_affecting_recipe_tip_1",
+    "expected": "the recipe",
+    "replacement": "на рецепт"
+  },
+  {
+    "language": "ru_ru",
+    "key": "deployer.factory_panel.transferring_switch",
+    "expected": "Now transferring %s",
+    "replacement": "Теперь передаётся: %s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "deployer.factory_panel.transferring",
+    "expected": "Transferring %s",
+    "replacement": "Передаётся: %s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "deployer.factory_panel.no_connection_available",
+    "expected": "No connection available for these panels",
+    "replacement": "Между этими панелями нет доступного соединения"
+  },
+  {
+    "language": "ru_ru",
+    "key": "panel_connection.deployer.stock_connection",
+    "expected": "Orders",
+    "replacement": "Заказы"
+  },
+  {
+    "language": "ru_ru",
+    "key": "panel_connection.deployer.redstone",
+    "expected": "Redstone",
+    "replacement": "Редстоун"
+  },
+  {
+    "language": "ru_ru",
+    "key": "panel_connection.deployer.numbers",
+    "expected": "Numbers",
+    "replacement": "Числа"
+  },
+  {
+    "language": "ru_ru",
+    "key": "panel_connection.deployer.string",
+    "expected": "Strings",
+    "replacement": "Строки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "panel_connection.deployer.display",
+    "expected": "Display Data",
+    "replacement": "Данные дисплея"
+  },
+  {
+    "language": "ru_ru",
+    "key": "deployer.panel.panels_connected",
+    "expected": "Panels connected",
+    "replacement": "Панели соединены"
+  },
+  {
+    "language": "en_us",
+    "key": "block.fluidlogistics.infinite_fluid_tank.tooltip.summary",
+    "expected": "Stores _%s_ of one fluid to provide an infinite supply.",
+    "replacement": "Stores _%s_ of a permitted fluid to provide an infinite supply. Oil and petroleum fuels remain finite."
+  },
+  {
+    "language": "en_us",
+    "key": "fluidlogistics.configuration.infiniteFluidTankAllowedFluids.tooltip",
+    "expected": "FOLLOW_CREATE = follow Create's bottomless fluid setting",
+    "replacement": "Select which fluids may be supplied infinitely. FOLLOW_CREATE uses Create's settings. Pack rules exclude oil and petroleum fuels."
+  },
+  {
+    "language": "en_us",
+    "key": "fluidlogistics.configuration.infiniteFluidTankCapacity",
+    "expected": "Infinite Tank Capacity",
+    "replacement": "Infinite Supply Threshold"
+  },
+  {
+    "language": "en_us",
+    "key": "fluidlogistics.configuration.infiniteFluidTankCapacity.tooltip",
+    "expected": "Capacity of Infinite Tanks (in B/buckets). -1 = follow Create's bottomless fluid capacity setting",
+    "replacement": "Fluid required to start infinite supply, in buckets. -1 uses Create's threshold."
+  },
+  {
+    "language": "en_us",
+    "key": "fluidlogistics.configuration.section.fluidlogistics.common.toml",
+    "expected": "Fluid Logistics Configuration",
+    "replacement": "Common settings"
+  },
+  {
+    "language": "en_us",
+    "key": "fluidlogistics.configuration.section.fluidlogistics.common.toml.title",
+    "expected": "Fluid Logistics Configuration",
+    "replacement": "%s: common settings"
+  },
+  {
+    "language": "en_us",
+    "key": "fluidlogistics.configuration.title",
+    "expected": "Fluid Logistics Configuration",
+    "replacement": "%s configuration"
+  },
+  {
+    "language": "en_us",
+    "key": "fluidlogistics.ponder.snow_golem_freezer/fueling.text_1",
+    "expected": "Snow Golem Freezers can provide a cooling source for items processed in a Basin",
+    "replacement": "Snow Golem Freezers cool contents processed in a Copper Basin."
+  },
+  {
+    "language": "en_us",
+    "key": "gui.fluidlogistics.creative_banner.title",
+    "expected": "Fluid Logistics",
+    "replacement": "Create: FluidLogistics"
+  },
+  {
+    "language": "en_us",
+    "key": "itemGroup.fluidlogistics.fluidlogistics_tab",
+    "expected": "Create: Fluid Logistics",
+    "replacement": "Create: FluidLogistics"
+  },
+  {
+    "language": "en_us",
+    "key": "resourcepack.fluidlogistics.cu_again_for_fluidlogistics",
+    "expected": "Legacy Copper Textures for Fluid Logistics",
+    "replacement": "Legacy Copper Textures for Create: FluidLogistics"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.fluidlogistics.copper_frogport",
+    "expected": "Квакопорт (Медь)",
+    "replacement": "Медный квакопорт"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.fluidlogistics.fluid_hatch.tooltip.behaviour2",
+    "expected": "Сначала _наполняет_ твой _резервуар для жидкостей_ в руке из основного _резервуара_. Если его нельзя наполнить, вместо этого содержимая жидкость _сливается_ в _основной резервуар_.",
+    "replacement": "Сначала _наполняет_ _ёмкость в руке_ из _бака_. Если наполнить её невозможно, _сливает_ жидкость из неё в _бак_."
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.fluidlogistics.fluid_hatch.tooltip.summary",
+    "expected": "_Позволяет легко_ взаимодействовать твоему _резервуару_ с _резервуарами для жидкостей_.",
+    "replacement": "_Упрощает_ переливание жидкостей между _баком_ и _ёмкостями в руке_."
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.fluidlogistics.horizontal_multi_fluid_tank",
+    "expected": "Горизонтальный мультижидкостный резервуар",
+    "replacement": "Горизонтальный бак для нескольких жидкостей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.fluidlogistics.infinite_fluid_tank",
+    "expected": "Бесконечный жидкостный бак",
+    "replacement": "Бак бесконечной подачи жидкости"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.fluidlogistics.infinite_fluid_tank.tooltip.summary",
+    "expected": "Заполните бак _%s_ жидкости, чтобы получить её бесконечный запас.",
+    "replacement": "Хранит _%s_ разрешённой жидкости для бесконечной подачи. Нефть и нефтяное топливо остаются конечными."
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.fluidlogistics.multi_fluid_access_port",
+    "expected": "Порт мультижидкостного доступа",
+    "replacement": "Порт доступа к нескольким жидкостям"
+  },
+  {
+    "language": "ru_ru",
+    "key": "block.fluidlogistics.multi_fluid_tank",
+    "expected": "Мультижидкостный резервуар",
+    "replacement": "Бак для нескольких жидкостей"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.fluidlogistics.gauge.promise_limit",
+    "expected": "Лимит заказанной жидкости",
+    "replacement": "Предел ожидаемой поставки жидкости"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.fluidlogistics.gauge.promise_limit.none",
+    "expected": "Нет лимита на заказанную жидкость",
+    "replacement": "Объём ожидаемых поставок не ограничен"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.fluidlogistics.gauge.promised_fluid",
+    "expected": "Обещанная жидкость",
+    "replacement": "Жидкость в ожидаемых поставках"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.goggles.no_address",
+    "expected": "Нет типа",
+    "replacement": "Нет"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.gui.stock_keeper.package_adress",
+    "expected": "Адрес отправления",
+    "replacement": "Адрес посылки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.item_attributes.is_fluid_no_nbt",
+    "expected": "является %1$s (без КОМПОНЕНТОВ)",
+    "replacement": "является %1$s (без компонентов)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "create.item_attributes.is_fluid_no_nbt.inverted",
+    "expected": "не является %1$s (без КОМПОНЕНТОВ)",
+    "replacement": "не является %1$s (без компонентов)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.faucetFluidContainerMode",
+    "expected": "Жидкостный режим крана",
+    "replacement": "Доступ крана к жидкостным ёмкостям"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.fluidPackageCapacity.tooltip",
+    "expected": "Максимальное количество жидкости в жидкостной посылке (в mB)",
+    "replacement": "Максимальный объём жидкости в посылке, в мВд."
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.handPointerMaxArms",
+    "expected": "Лимит редактирования партиями Механических рук для Указателя",
+    "replacement": "Одновременная настройка механических рук"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.handPointerMaxFrogports",
+    "expected": "Лимит редактирования партиями Квакопортов для Указателя",
+    "replacement": "Одновременная настройка квакопортов"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.handPointerMaxMailboxes",
+    "expected": "Лимит редактирования партиями Почтовых ящиков для Указателя",
+    "replacement": "Одновременная настройка почтовых ящиков"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.infiniteFluidTankAllowedFluids",
+    "expected": "Допустимые жидкости для бесконечного резервуара",
+    "replacement": "Жидкости для бесконечной подачи"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.infiniteFluidTankAllowedFluids.tooltip",
+    "expected": "FOLLOW_CREATE = следовать параметру конфигурации неисчерпываемых жидкостей мода Create",
+    "replacement": "Выбор жидкостей, для которых разрешена бесконечная подача. FOLLOW_CREATE использует настройки Create. Нефть и нефтяное топливо исключены правилами сборки."
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.infiniteFluidTankCapacity",
+    "expected": "Вместимость Бесконечного резервуара",
+    "replacement": "Порог бесконечной подачи"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.infiniteFluidTankCapacity.tooltip",
+    "expected": "Вместимость бесконечного резервуара (в B/вёдрах). -1 = следовать параметру конфигурации неисчерпываемых жидкостей мода Create",
+    "replacement": "Объём жидкости для запуска бесконечной подачи, в вёдрах. Значение -1 использует порог Create."
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.section.featureToggles",
+    "expected": "Переключатели функций",
+    "replacement": "Доступное содержимое"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.section.fluidlogistics.common.toml",
+    "expected": "Настройки жидкостной логистики",
+    "replacement": "Общие настройки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.section.fluidlogistics.common.toml.title",
+    "expected": "Настройки жидкостной логистики",
+    "replacement": "%s: общие настройки"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.configuration.title",
+    "expected": "Настройки жидкостной логистики",
+    "replacement": "Настройки %s"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.display_source.flow_rate",
+    "expected": "Расход в трубах (mB/t)",
+    "replacement": "Расход в трубах (мВд/т)"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.ponder.fluid_packager/fluid_packager_address.header",
+    "expected": "Направление Банок для жидкостей по адресу",
+    "replacement": "Доставка жидкостных посылок по адресам"
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.ponder.fluid_packager/fluid_packager_address.text_10",
+    "expected": "Жидкостные посылки уничтожаются механическими пилами",
+    "replacement": "Механическая пила уничтожает жидкостную посылку без выпадения предметов."
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.ponder.multi_fluid_tank_sizes.text_4",
+    "expected": "С помощью гаечного ключа можно создать окно в резервуаре",
+    "replacement": "Гаечный ключ переключает отображение окон бака."
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.ponder.multi_fluid_tank_storage.text_5",
+    "expected": "Чаши, Осушители предметов и Дозаторы позволяют автоматизировать работу с резервуарами для жидкостей",
+    "replacement": "Чаши, осушители предметов и дозаторы автоматизируют наполнение и опорожнение ёмкостей."
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.ponder.fluid_pump/pump_speed.text_5",
+    "expected": "Убедитесь, что все они находятся в одном направлении",
+    "replacement": "Направьте все помпы в одну сторону."
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.ponder.oscillating_steam_engine/setup.text_9",
+    "expected": "С каждым добавленным уровнем мощности, каждый дополнительный двигатель сможет работать на полную мощность",
+    "replacement": "Каждый дополнительный уровень мощности позволяет ещё одному двигателю работать на полную мощность."
+  },
+  {
+    "language": "ru_ru",
+    "key": "fluidlogistics.ponder.snow_golem_freezer/fueling.text_1",
+    "expected": "Морозильные камеры со снежными големами охлаждают предметы, обрабатывающиеся в чаше",
+    "replacement": "Морозильная камера со снежным големом охлаждает содержимое медной чаши."
+  },
+  {
+    "language": "ru_ru",
+    "key": "gui.fluidlogistics.creative_banner.title",
+    "expected": "Жидкостная логистика",
+    "replacement": "Create: FluidLogistics"
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.fluidlogistics.empty_fluid_schematic.tooltip.summary",
+    "expected": "Используется на _схематичном столе_.",
+    "replacement": "Записывается на _столе для схем_."
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.fluidlogistics.fluid_schematic.tooltip.behaviour1",
+    "expected": "Может быть позиционирована с помощью инструментов на экране.",
+    "replacement": "Положение задаётся инструментами на экране."
+  },
+  {
+    "language": "ru_ru",
+    "key": "item.fluidlogistics.fluid_schematic.tooltip.condition1",
+    "expected": "ПКМ с предметом",
+    "replacement": "Когда предмет в руке"
+  },
+  {
+    "language": "ru_ru",
+    "key": "itemGroup.fluidlogistics.fluidlogistics_tab",
+    "expected": "Create: Fluid Logistics",
+    "replacement": "Create: FluidLogistics"
+  },
+  {
+    "language": "ru_ru",
+    "key": "resourcepack.fluidlogistics.cu_again_for_fluidlogistics",
+    "expected": "Старые медные текстуры для Fluid Logistics",
+    "replacement": "Прежние медные текстуры для Create: FluidLogistics"
   }
 ]

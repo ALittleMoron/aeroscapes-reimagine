@@ -916,5 +916,27 @@
       "data/minecraft/tags/block/mineable/pickaxe.json"
     ],
     "reason": "FiniteOilMixin initializes native shared chunk reserves only at actual island oil markers, caches explicit zero and bypasses native infinite sentinels. The normal-only Liquid Fuel bridge pays exact fluid quanta, preserves Blaze Cake superheat and returns real bucket/canister residuals through native Create insertion. Engine transfers reject indivisible partial buckets; disabled modular engines stop spending fuel. Sprayers and turrets persist each successful shot debit instead of delayed periodic charges; empty lighters cannot ignite blocks. The entity-filter sample clears its actual ghost slot and uses translated labels; oil display links read the shared reserve. Exact provider APIs, fuel data and regression fixtures own the detailed contracts."
+  },
+  {
+    "targets": {
+      "g4AWLVIr": "HiLD5edv",
+      "LNytGWDc": "UjX6dr61"
+    },
+    "files": [
+      "data/create/tags/fluid/bottomless/allow.json"
+    ],
+    "reason": "0.5.4 explicitly pins bottomless allow to native water and lava. FluidLogistics ALLOW_BY_TAG prevents oil, derived fuels, molten metals and paid steam from becoming inexhaustible; ordinary tanks and native packages retain those fluids."
+  },
+  {
+    "targets": {
+      "J7eSzkL7": "w3zLn2Kv",
+      "6YJgomwt": "xtIBXji9",
+      "OZhUIuou": "ltYnbVvP",
+      "g4AWLVIr": "HiLD5edv",
+      "LNytGWDc": "UjX6dr61",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "0.5.4 adapters cap Steam Powered external API heat instead of raising weak heat to full output and persist successful engine steam debits on the actual tank owner, including direct boilers across chunk boundaries. Boiler production and direct engine canister fills use source steam: native flowing steam cannot be drained by FluidLogistics source-fluid order keys. Boiler/engine NBT reads preserve stored steam volume/components while normalizing its identity; native canister interaction requires space for the complete 1000 mB before consuming the item. Other adapters localize verified Deployer and expression-screen literal labels/errors and FluidLogistics performance units, and route successful Hand Pointer configuration through existing building-tool reforge effects. Binary-specific targets, guarded language corrections and native transaction/heat/control regressions remain owned by the companion source."
   }
 ]

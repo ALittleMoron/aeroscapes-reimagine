@@ -1,0 +1,4 @@
+[blockProperties]
+fluidPackageCapacity = 10000
+infiniteFluidTankCapacity = -1
+infiniteFluidTankAllowedFluids = "ALLOW_BY_TAG"

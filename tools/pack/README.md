@@ -174,17 +174,18 @@ client ZIP once all dependencies have a permitted path:
 uv run --locked --project tools/pack python -m aeroscapes_pack.curseforge_pack --output /absolute/path/pack.zip
 ```
 
-[`metadata/curseforge.json`](../../metadata/curseforge.json) binds every selected
-dependency to its primary SHA-512. There are 98 hosted candidates matching the
-primary SHA-1 and seven reviewed platform variants whose differences are archive
-metadata or generated package names; these have separate exact hashes. They do
-not change the current Modrinth pack.
+[`metadata/curseforge.json`](../../metadata/curseforge.json) records reviewed
+file bindings and blockers. A complete mapping must cover every selected
+dependency and match its primary SHA-512. Hosted files retain their verified
+hashes; reviewed platform variants keep separate hashes and explanations.
+These records do not change the Modrinth pack.
 
-Four files remain blocked: Flywheel, No Void Structures, Custom Biome Saplings
-(Terralith), and XP From Crops. Obtain exact hosted alternatives or confirmed
-CurseForge non-hosted approval and redistribution rights; do not omit them or
-substitute same-name files. The NeoForge manifest uses `neoforge-21.1.230`; live
-CurseForge import/validation remains unverified.
+The disabled channel still has missing mappings and blocked files. The check
+reports the current boundary; same-name substitutions or omitted dependencies
+cannot establish readiness. Obtain exact hosted alternatives or confirmed
+CurseForge non-hosted approval and redistribution rights. The loader ID must
+match the pinned source platform. Live CurseForge import/validation remains
+unverified.
 
 `release-curseforge` checks published immutable GitHub assets against their exact
 source and prepares the channel archive. It deliberately has **no upload POST**:

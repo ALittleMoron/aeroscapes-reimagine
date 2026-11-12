@@ -10962,5 +10962,188 @@
     },
     "embedded_license": "MIT (descriptor); complete notice retained separately from author-linked source.",
     "native_route_note": "NeoForge [21.1.174,), Minecraft [1.21.1], Create [6.0.7,6.1.0). Optional Strut Your Stuff [1.3.0,) is absent; its girder strut is conditional. Source revision 79ce136730871b6f3f7b55d3cc748ff2bec2ad12; EN/RU resources match the distributed JAR byte-for-byte."
+  },
+  {
+    "slug": "create-steam-powered",
+    "name": "Create: Steam Powered",
+    "project_id": "J7eSzkL7",
+    "version_id": "w3zLn2Kv",
+    "version": "3.2.1",
+    "filename": "steampowered-1.21.1-3.2.1.jar",
+    "sha512": "9bcc8156f6cca2b30a65d189c5641465b3f3680a7a282a7d81ccac39b0ca54b29ce525f9a16e26411e24025b6cff13fb3747cca66d5defad4c4871c7129cacb1",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "GPL-3.0-or-later",
+      "name": "GNU General Public License v3.0 or later",
+      "url": null
+    },
+    "source_url": "https://git.tilera.org/Anvilcraft/SteamPowered",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.5.4 steam energy integration",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "e7525107aac659e6a096b6055d9e1e910eaf9695",
+    "file_size": 302335,
+    "change_reason": "Native liquid-steam boilers, engines, flywheels and steam containers; early brass/iron recipes and foundry-backed steel.",
+    "artifact_audit": {
+      "descriptor_license": "GPLv3",
+      "source_commit": "c3614a9885ad7ccfa113d226248d9260d243747a",
+      "source_comparison": "All24recipes and the heat/engine accounting paths compared with exact binary resources and bytecode; no full binary rebuild claimed.",
+      "corresponding_source": "pack/licenses/steampowered-3.2.1-corresponding-source.zip",
+      "source_sha256": "84869202f60c11ae312f75060f40b2fbf4e867c948515e63a29784b3b6044d2d"
+    }
+  },
+  {
+    "slug": "extra-gauges",
+    "name": "Create: Extra Gauges",
+    "project_id": "6YJgomwt",
+    "version_id": "xtIBXji9",
+    "version": "2.1.3",
+    "filename": "extra_gauges-2.1.3.jar",
+    "sha512": "3b6cc0b6ef0d22284e2456e9dfe39fa1eca6adf6d93268237edc6a121c75295ecc8d76997ffb52cc06d433624cd9161da144a67b3fb61973e35ce6ff8b212085",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/LIUKRAST/CreateExtraGauges/blob/master/LICENCE"
+    },
+    "source_url": "https://github.com/LIUKRAST/CreateExtraGauges",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "OZhUIuou",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Selected for steam, control and fluid logistics in 0.5.4",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "c82761ebd4459869fd8eacf7da9ca2c3aa1e54f8",
+    "file_size": 1064396,
+    "artifact_audit": {
+      "descriptor_license": "MIT",
+      "source_commit": "2ab2d0e594ea0b345e09ba51144f5ec180beb6ea",
+      "source_comparison": "Release-tag JSON94/94 matches exact JAR; actual binary interfaces own adapters. Later same-version master has unpublished methods and is not the release source.",
+      "embedded_licenses": {
+        "exp4j0.4.8": "Apache-2.0, declared by its embedded Maven POM; full license supplied in pack/licenses/Apache-2.0.txt."
+      }
+    }
+  },
+  {
+    "slug": "deployer",
+    "name": "Create: Deployer API",
+    "project_id": "OZhUIuou",
+    "version_id": "ltYnbVvP",
+    "version": "0.1.3",
+    "filename": "deployer-0.1.3.jar",
+    "sha512": "cc861ddf24ac456fcc1e7b53af06771a32b0f1b733877a98ea48140481f983d8f008118a22ccb4c78570a41ca208a298412873d87f9e54dacd8c4af6db0f9f64",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/LIUKRAST/Deployer",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "D6daOdv9",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "QMGO17gm",
+        "file_name": null,
+        "dependency_type": "incompatible"
+      },
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Selected for steam, control and fluid logistics in 0.5.4",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "e3a39672f10f2d141ef87e69fd1615042c4985d3",
+    "file_size": 2022337,
+    "artifact_audit": {
+      "descriptor_license": "MIT",
+      "source_commit": "0600f46eb4d10281ee7bcd1daec02d3a015b3e9a",
+      "source_comparison": "Release-tag JSON18/18 and active config/UI methods match the exact JAR. Author metadata declares MIT; TEMPLATE_LICENSE.txt applies to NeoForged template files only.",
+      "embedded_licenses": {
+        "compat_manager1.0.7": "MIT, author declaration at675b9a29f986be43e253afeeafb7fbe0e73ea076; LiukRast and SWZO. No author copyright year notice supplied."
+      }
+    }
+  },
+  {
+    "slug": "createfluidlogistic",
+    "name": "Create: FluidLogistics",
+    "project_id": "g4AWLVIr",
+    "version_id": "HiLD5edv",
+    "version": "1.3.2-mc1.21.1",
+    "filename": "fluidlogistics-1.3.2-mc1.21.1.jar",
+    "sha512": "b84875391bb101e3fed73dabb4f64be002fcd7034c4717d5e8e1e35d24f292c233bcec2281867df65d09dd051561f8c4a604f0890628ba870eaafbd14a63d286",
+    "sha1": "61e26886381404a443c5b7bcc5b0b293f3d434ac",
+    "file_size": 2813250,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "url": null
+    },
+    "source_url": "https://github.com/yision1/CreateFluidLogistic",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "LNytGWDc",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Selected for 0.5.4 native fluid order delivery",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "artifact_audit": {
+      "descriptor_license": "BSD-3-Clause",
+      "source_commit": "0ff8994e844d5710c31b522c3d3d104158769d01",
+      "source_comparison": "All487Java files and599ordinary resources match paired official sources.jar; original descriptor-template expansion also matches. Full original build files included; no binary rebuild claimed.",
+      "corresponding_source": "pack/licenses/fluidlogistics-1.3.2-corresponding-source.zip",
+      "source_sha256": "ee52f286c51f0015c5a29bf5d645cee33c4a686d00ca3f532818fba420d8cd99",
+      "embedded_licenses": {
+        "DragonsPlus ports": "ItemFluidCapabilityTransfer, ItemFilling, FillingRecipeTransfer, FluidHatchBlock and FluidHatchBlockEntity carry LGPL-3.0-or-later headers; full source/build files and license texts retained."
+      }
+    }
   }
 ]

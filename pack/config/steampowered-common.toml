@@ -1,0 +1,33 @@
+[steam]
+HuPerFuelTick = 24
+steamPerWater = 12.0
+
+[boiler]
+bronzeBoilerHu = 120
+castIronBoilerHu = 240
+steelBoilerHu = 480
+
+[burner]
+bronzeBurnerHu = 120
+castIronBurnerHu = 240
+steelBurnerHu = 480
+
+[burnerEfficiency]
+bronzeBurnerEfficiency = 0.8
+castIronBurnerEfficiency = 0.9
+steelBurnerEfficiency = 1.0
+
+[flywheel.bronze_flywheel]
+bronzeFlywheelCapacity = 512
+bronzeFlywheelSpeed = 32
+bronzeFlywheelSteamConsumptionPerTick = 12
+
+[flywheel.cast_iron_flywheel]
+castIronFlywheelCapacity = 1024
+castIronFlywheelSpeed = 32
+castIronFlywheelSteamConsumptionPerTick = 24
+
+[flywheel.steel_flywheel]
+steelFlywheelCapacity = 2048
+steelFlywheelSpeed = 32
+steelFlywheelSteamConsumptionPerTick = 48

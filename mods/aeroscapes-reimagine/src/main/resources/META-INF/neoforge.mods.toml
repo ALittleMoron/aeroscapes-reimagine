@@ -86,6 +86,15 @@ config = "aeroscapes_reimagine.construction.mixins.json"
 [[mixins]]
 config = "aeroscapes_reimagine.interface_art.mixins.json"
 
+[[mixins]]
+config = "aeroscapes_reimagine.steam.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.controls.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.fluid_logistics.mixins.json"
+
 [[dependencies.aeroscapes_reimagine]]
 modId = "neoforge"
 type = "required"

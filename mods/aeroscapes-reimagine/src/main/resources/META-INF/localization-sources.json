@@ -2110,5 +2110,25 @@
     "exclusions": "Curving diagrams, intentionally empty Ponder line, arrows/hearts/comparator syntax and original attribution; inactive datagen/log/parser strings. No active untranslated prose excluded.",
     "terms": "Vintage declarations and corresponding source are preserved in pack/licenses/Vintage-SSW-NOTICE.txt; adapted wording accompanies full corresponding source of the owned mod. Metallurgy declares MIT.",
     "equipment": "Vintage parts are machine components, card is paper and copper sulfate consumable fertilizer. Six obtainable Metallurgy ladles retain native volumetric models and fluid renderer; their safe-handling reforge is owner-selected. No new weapon/armor/tool/guidebook model."
+  },
+  "steam_controls_logistics": {
+    "targets": {
+      "steampowered": "3.2.1 / w3zLn2Kv",
+      "extra_gauges": "2.1.3 / xtIBXji9",
+      "deployer": "0.1.3 / ltYnbVvP",
+      "fluidlogistics": "1.3.2 / HiLD5edv"
+    },
+    "scope": "Independent missing-key English/Russian supplements; expected-value corrections for verified native Ponder, mod brands and interfaces. Native NeoForge/Catnip config labels, comments, dynamic enums, units and expression errors preserve values and user overrides. Corresponding source and licenses are distributed in pack/licenses.",
+    "resources": [
+      {
+        "resource": "assets/aeroscapes_reimagine_steam_control_translations/lang/en_us.json",
+        "entries": 151
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_steam_control_translations/lang/ru_ru.json",
+        "entries": 250
+      }
+    ],
+    "exclusions": "Boolean True/False and String Gauge example expressions are native string data consumed by regular expressions; mB/B/KB are shared rendering/parser syntax. Hidden generated fluid proxy resource pack is internal. Steam sheet/ingot translation leftovers do not register material items. Source-only unreleased Integer Selector advanced row, Counter threshold row and Deployer value-edit-box keys are absent from the pinned binaries."
   }
 }

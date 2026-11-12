@@ -83,6 +83,21 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.backup.")) {
       versions = Map.of("simplebackups", "1.21-4.0.21", "sable", "2.0.6", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.engineering.logistics.")) {
+      versions = Map.of("fluidlogistics", "1.3.2", "create", "6.0.10", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.engineering.controls.")) {
+      versions =
+          Map.of(
+              "extra_gauges",
+              "2.1.3",
+              "deployer",
+              "0.1.3",
+              "create",
+              "6.0.10",
+              "neoforge",
+              "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.engineering.steam.")) {
+      versions = Map.of("steampowered", "3.2.1", "create", "6.0.10", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.engineering.")) {
       versions =
           Map.of(

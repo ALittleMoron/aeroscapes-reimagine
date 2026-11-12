@@ -6,6 +6,46 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Steam, controls and fluid logistics in 0.5.4
+
+[Steam Powered 3.2.1](https://modrinth.com/mod/create-steam-powered/version/w3zLn2Kv),
+[Extra Gauges 2.1.3](https://modrinth.com/mod/extra-gauges/version/xtIBXji9),
+[Deployer API 0.1.3](https://modrinth.com/mod/deployer/version/ltYnbVvP) and
+[FluidLogistics 1.3.2](https://modrinth.com/mod/createfluidlogistic/version/HiLD5edv)
+are unchanged official files installed on both sides. Their actual descriptors
+fit the existing Minecraft, NeoForge, Create and installed optional dependencies.
+Deployer's embedded Compat Manager remains embedded rather than separately installed.
+
+Steam Powered's complete author source at
+[`c3614a98`](https://git.tilera.org/Anvilcraft/SteamPowered/src/commit/c3614a9885ad7ccfa113d226248d9260d243747a)
+is distributed in `pack/licenses/steampowered-3.2.1-corresponding-source.zip`.
+Its recipes and the heat calculation were compared with the actual JAR; full
+build reproducibility is not asserted. The owned adapter changes only the
+external-heater lower-bound mistake to an upper bound. A second adapter marks
+the actual engine or direct boiler tank owner changed after a steam debit, so
+spent reserves persist across chunk saves and reloads. Native material tags
+already accept brass, ordinary iron and the existing foundry steel.
+
+Extra Gauges and Deployer declare MIT. Their immutable release sources are
+[`2ab2d0e5`](https://github.com/LIUKRAST/CreateExtraGauges/tree/2ab2d0e594ea0b345e09ba51144f5ec180beb6ea)
+and [`0600f46e`](https://github.com/LIUKRAST/Deployer/tree/0600f46eb4d10281ee7bcd1daec02d3a015b3e9a).
+Current development sources have different interfaces despite retaining the
+same version, so release-tag sources and actual bytecode own compatibility.
+Deployer's source template license concerns NeoForged's template; it does not
+supply an additional project copyright notice.
+
+FluidLogistics declares BSD-3-Clause, but its paired source retains five
+LGPL-3.0-or-later DragonsPlus port headers. The pack preserves both declarations,
+attribution, license texts and the complete corresponding source at
+[`0ff8994e`](https://github.com/yision1/CreateFluidLogistics/tree/0ff8994e844d5710c31b522c3d3d104158769d01),
+including its original compilation scripts. All 487 Java files and 599 ordinary
+resources match the paired official source JAR; descriptor template expansion
+also matches. This does not establish binary rebuild reproducibility.
+Its native fluid packagers, Unpackager, order keys and integer-mB transactions
+handle registered fluids without per-fluid replacement machines. The native
+`ALLOW_BY_TAG` option and explicitly pinned water/lava bottomless tag prevent
+industrial fluids from entering Infinite Fluid Tanks.
+
 ## Mechanical workshop and foundry in 0.5.2
 
 [Vintage Improvements — SSW Edition 0.0.0.8](https://www.curseforge.com/minecraft/mc-mods/vintage-improvenents-ssw-edition/files/8941692)
