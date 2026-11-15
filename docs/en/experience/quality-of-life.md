@@ -76,6 +76,8 @@ If an anvil or enchanting table in an existing world no longer opens after addin
 
 Xaero’s World Map, Minimap and personal waypoints help record the landscape and mark places to revisit. Creature radar is disabled. In survival without cheats, waypoint teleportation is unavailable; a marker helps navigation while the journey remains part of play.
 
+Both maps start with Xaero's native terrain display. In the Overworld, **Alt + Home** optionally enables a 64-block vertical window following your height, so a higher island does not always cover the ground below. **Alt + Page Up / Page Down** moves the selected window by 16 blocks. **Alt + Home** returns a fixed window to following your height; from automatic mode it switches to Xaero's native overview, and back again. The full map has matching buttons and a height-range label. The minimap's **Map layer** information row can be reordered or hidden in its native information-display settings. Reassign the shortcuts under **Options → Controls → Map layers**. Separate heights use Xaero's native layer caches; unexplored or unloaded terrain cannot immediately appear in a newly selected layer.
+
 Spyglass Improvements adds adjustable zoom, quick access and spyglass overlays.
 
 [Nature’s Compass](https://modrinth.com/mod/natures-compass) locates biomes, and [Explorer’s Compass](https://modrinth.com/mod/explorers-compass) locates structures. Both search for free within 5,000 blocks of the search origin. Extended search requires one available experience level to start, reaches 10,000 blocks and charges it only when a result beyond 5,000 blocks is found. Failed or cancelled searches are free. A search that reaches its sample limit is incomplete; a biome result can also miss small patches and does not guarantee a dry landing place.
@@ -95,6 +97,8 @@ Backups are ZIP files in `simplebackups`, beside the instance's `config` and `mo
 ## Building from schematics
 
 [Forgematica](https://modrinth.com/mod/forgematica), with [MaFgLib](https://modrinth.com/mod/mafglib), supplies schematic projections, material lists and a verifier that compares a plan with placed blocks. Open its menu with Right Alt, load a schematic and create a placement; Right Alt + L opens its material list. These shortcuts leave the world map's M key available.
+
+Area-selection outlines start hidden, so an unused selection does not leave a box at the world origin. Enable `enableAreaSelectionBoxesRendering` under **Visuals** when you need to see selection boundaries.
 
 The starting configuration keeps ordinary block reach and leaves Easy Place disabled. Gather the listed materials and place blocks yourself. Projections use world coordinates; alignment with moving ships is not established.
 
@@ -117,3 +121,7 @@ The starting configuration keeps ordinary block reach and leaves Easy Place disa
 Controlling adds search to the keybinding menu, helping players find the controls supplied by different mods.
 
 [Graphics, sound and animation](presentation/) covers character rendering, atmosphere and the included shader choices.
+
+## Physical route marks
+
+[Chalk](https://modrinth.com/mod/chalk-mod) lets you mark block faces with arrows, dots and unlocked symbols. Craft chalk from calcite or Nature’s Spirit chalk powder; unpack a white chalk block into four powders to make four separate sticks. Collect the powder by brushing calcite buds or clusters. Pointing near an edge chooses the arrow direction, while the centre draws a dot. Crouch-use to select a special symbol. Glowstone dust or a glow ink sac lights a mark, and the chalk box stores colours and glowing material. These marks are physical signs along the route and remain separate from map waypoints.

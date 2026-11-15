@@ -1,0 +1,13 @@
+{
+  "key.categories.aeroscapes_navigation": "Слои карты Aeroscapes",
+  "key.aeroscapes_navigation.up": "Поднять слой на обеих картах",
+  "key.aeroscapes_navigation.down": "Опустить слой на обеих картах",
+  "key.aeroscapes_navigation.follow": "Следовать за игроком / обычная карта",
+  "gui.aeroscapes_navigation.info": "Слой карты",
+  "gui.aeroscapes_navigation.follow": "Карта: авто Y %s…%s",
+  "gui.aeroscapes_navigation.manual": "Карта: слой Y %s…%s",
+  "gui.aeroscapes_navigation.native": "Карта: обычный вид",
+  "gui.aeroscapes_navigation.lower": "Показать местность на 16 блоков ниже на обеих картах",
+  "gui.aeroscapes_navigation.higher": "Показать местность на 16 блоков выше на обеих картах",
+  "gui.aeroscapes_navigation.help": "Обе карты показывают местность в этом диапазоне высот, в том числе острова под другими островами. −/+ выбирают фиксированный слой; эта кнопка включает слежение за вашей высотой или возвращает обычный вид Xaero's World Map и Xaero's Minimap. На карту попадает только исследованная, загруженная местность; после смены слоя дождитесь обновления. Клавиши можно изменить в разделе «Управление → Слои карты Aeroscapes»."
+}

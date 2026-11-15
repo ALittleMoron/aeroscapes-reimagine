@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "animalhusbandry:models/item/aeroscapes_farming/animal_medicine.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "particle": "agricraft:item/aeroscapes_farming/materials"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        0.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        3.332,
+        0.0
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        3.332,
+        0.0
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        3.332,
+        0.0
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        3.332,
+        0.0
+      ]
+    }
+  }
+}

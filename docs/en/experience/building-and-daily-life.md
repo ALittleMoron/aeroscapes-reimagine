@@ -28,6 +28,10 @@ Conversions to tall Chipped doors are available where the corresponding ordinary
 
 Create’s schematics and building tools support larger projects. [Engineering](../engineering/) describes how construction connects with moving machinery, while [convenience](../quality-of-life/) covers rearranging supported blocks and organizing supplies.
 
+## Painting
+
+[Joy of Painting](https://modrinth.com/mod/joy-of-painting) lets you draw your own pictures with a palette and canvases in four sizes, including transparent glass canvases. The palette, easel and blank or painted canvases have volume in hand, with native paint colors and picture data retained. Craft a palette from a brush and planks, fill its colors with vanilla dyes in a crafting grid, and make an easel and blank canvas; EMI shows the recipes. Paintings retain their pixels, title and author when stored or placed. Signed originals can be copied with a matching blank canvas while keeping the original, so a cabin, home or gallery can share the same work.
+
 ## Materials that change over time
 
 [Immersive Weathering: Renewed](https://modrinth.com/mod/immersive-weather-renewed) adds moss, rust, cracked masonry, charred wood and other changes to supported materials. A home can acquire signs of its surroundings as you live there.
@@ -56,6 +60,8 @@ Comforts adds portable sleeping bags and hammocks without changing the player’
 ## Photography and music
 
 [Exposure](https://modrinth.com/mod/exposure) adds film photography for recording journeys and decorating a home. Load film into a camera, take photographs through its viewfinder, then develop the film and print photographs at a lightroom. The resulting photographs can be displayed in the world.
+
+The **Sky Photo Journal** advancement tab opens with your first camera and records photographs of encounters in the sky: each of the thirteen sky whale forms, merchant and pillager airships and balloons, and a sky village. A shot counts when it is taken with the subject in frame; each entry gives a little experience, and completing every whale gives more. Preview whales from the viewing commands do not count.
 
 [Immersive Melodies](https://modrinth.com/mod/immersive-melodies) adds musical instruments with a choice of melodies and manual playing. They provide a household or camp activity alongside the existing background ambience. By default, playing an instrument interrupts the game's background music.
 

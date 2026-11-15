@@ -1,0 +1,80 @@
+{
+  "loader": "neoforge:obj",
+  "model": "xercapaint:models/item/aeroscapes_painting/item_easel.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "xercapaint:item/aeroscapes_painting/materials"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.38046408,
+        -3.7187326,
+        -0.6611918
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.38046408,
+        -3.7187326,
+        -0.6611918
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -12.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.38046408,
+        -3.7187326,
+        -0.6611918
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.38046408,
+        -3.7187326,
+        -0.6611918
+      ]
+    }
+  }
+}

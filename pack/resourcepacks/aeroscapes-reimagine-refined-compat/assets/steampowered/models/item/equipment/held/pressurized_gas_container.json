@@ -1,0 +1,106 @@
+{
+  "loader": "neoforge:composite",
+  "children": {
+    "frame": {
+      "loader": "neoforge:obj",
+      "model": "aeroscapes_reimagine:models/item/steam_containers/frame.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:cutout",
+      "textures": {
+        "particle": "aeroscapes_reimagine:item/steam_containers/materials"
+      }
+    },
+    "glass": {
+      "loader": "neoforge:obj",
+      "model": "aeroscapes_reimagine:models/item/steam_containers/glass.obj",
+      "automatic_culling": false,
+      "emissive_ambient": false,
+      "flip_v": false,
+      "ambientocclusion": false,
+      "render_type": "minecraft:translucent",
+      "textures": {
+        "particle": "aeroscapes_reimagine:item/steam_containers/materials"
+      }
+    }
+  },
+  "item_render_order": [
+    "frame",
+    "glass"
+  ],
+  "textures": {
+    "particle": "aeroscapes_reimagine:item/steam_containers/materials"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -8.0,
+        -20.0,
+        0.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.4070039,
+        3.5130348,
+        -0.93548894
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -8.0,
+        -20.0,
+        0.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.4070039,
+        3.5130348,
+        -0.93548894
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -8.0,
+        -20.0,
+        0.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.4070039,
+        3.5130348,
+        -0.93548894
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -8.0,
+        -20.0,
+        0.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.4070039,
+        3.5130348,
+        -0.93548894
+      ]
+    }
+  }
+}

@@ -18833,5 +18833,70 @@
     "key": "resourcepack.fluidlogistics.cu_again_for_fluidlogistics",
     "expected": "Старые медные текстуры для Fluid Logistics",
     "replacement": "Прежние медные текстуры для Create: FluidLogistics"
+  },
+  {
+    "language": "ru_ru",
+    "key": "steampowered.ponder.steam_engine.text_2",
+    "expected": "Создаваемая вращательная сила обладает очень большой нагрузочной способностью",
+    "replacement": "Двигатель можно присоединить прямо к работающему котлу, но его мощность будет снижена."
+  },
+  {
+    "language": "ru_ru",
+    "key": "steampowered.ponder.steam_engine.text_3",
+    "expected": "Использование паровых двигателей, изготовленных из стали или чугуна, повысит эффективность и генерируемую мощность маховика",
+    "replacement": "Создаваемое вращение обеспечивает большую механическую мощность."
+  },
+  {
+    "language": "ru_ru",
+    "key": "steampowered.ponder.steam_engine.text_4",
+    "expected": "Однако, для достижения более высоких уровней двигателя требуется большее количество пара, бойлер и камера сгорания должны соответствовать этому уровню.",
+    "replacement": "Подавайте пар насосами, чтобы получить полную мощность."
+  },
+  {
+    "language": "ru_ru",
+    "key": "steampowered.ponder.flywheel.text_2",
+    "expected": "Создаваемая вращательная сила обладает очень большой нагрузочной способностью",
+    "replacement": "Двигатель можно присоединить прямо к работающему котлу, но его мощность будет снижена."
+  },
+  {
+    "language": "ru_ru",
+    "key": "steampowered.ponder.flywheel.text_3",
+    "expected": "Использование маховиков, изготовленных из стали или чугуна, повысит эффективность и генерируемую мощность маховика",
+    "replacement": "Создаваемое вращение обеспечивает большую механическую мощность."
+  },
+  {
+    "language": "ru_ru",
+    "key": "steampowered.ponder.flywheel.text_4",
+    "expected": "Однако, для достижения более высоких уровней маховика требуется большее количество пара, бойлер и камера сгорания должны соответствовать этому уровню.",
+    "replacement": "Подавайте пар насосами, чтобы получить полную мощность."
+  },
+  {
+    "language": "en_us",
+    "key": "itemGroup.xercapaint.paint_tab",
+    "expected": "Paint",
+    "replacement": "Joy of Painting"
+  },
+  {
+    "key": "itemGroup.xercapaint.paint_tab",
+    "expected": "Картина",
+    "replacement": "Joy of Painting"
+  },
+  {
+    "language": "en_us",
+    "key": "tooltip.animalhusbandry.bonus.slower_hunger",
+    "expected": " - Slower Hunger Drain",
+    "replacement": " - Slower Exhaustion Buildup"
+  },
+  {
+    "language": "en_us",
+    "key": "trait.animalhusbandry.mud_roller.desc1",
+    "expected": "• Standing on mud or dirt cleans the animal",
+    "replacement": "• Standing on mud cleans the animal"
+  },
+  {
+    "language": "en_us",
+    "key": "trait.animalhusbandry.iron_stomach.desc1",
+    "expected": "• Can safely eat any organic block/item",
+    "replacement": "• Can eat leaves, flowers and saplings"
   }
 ]

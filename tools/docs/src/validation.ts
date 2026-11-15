@@ -5,6 +5,24 @@ import { parse, type DefaultTreeAdapterMap } from "parse5";
 export interface PublicPage {
   id: string;
   data: { status?: unknown };
+  body?: string;
+}
+
+/** Mermaid diagrams with labels removed, so paired pages can be compared. */
+export function diagramStructure(body: string): string[] {
+  return Array.from(body.matchAll(/```mermaid\r?\n([\s\S]*?)```/g), (match) =>
+    (match[1] ?? "")
+      .split(/\r?\n/)
+      .map((line) =>
+        line
+          .replace(/\|"[^"]*"\|/g, "")
+          .replace(/\["[^"]*"\]/g, "")
+          .replace(/\s+/g, " ")
+          .trim(),
+      )
+      .filter((line) => line.length > 0)
+      .join("\n"),
+  );
 }
 
 export function validatePagePairs(pages: readonly PublicPage[]): void {
@@ -21,6 +39,10 @@ export function validatePagePairs(pages: readonly PublicPage[]): void {
       throw new Error(
         `Different implementation status: ${page.id}, ${partnerId}`,
       );
+    const diagrams = diagramStructure(page.body ?? "");
+    const partnerDiagrams = diagramStructure(partner.body ?? "");
+    if (JSON.stringify(diagrams) !== JSON.stringify(partnerDiagrams))
+      throw new Error(`Different diagram structure: ${page.id}, ${partnerId}`);
   }
 }
 

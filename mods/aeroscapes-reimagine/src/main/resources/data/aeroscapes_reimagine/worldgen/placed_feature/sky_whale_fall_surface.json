@@ -1,0 +1,9 @@
+{
+  "feature": "aeroscapes_reimagine:sky_whale_fall_surface",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 8
+    }
+  ]
+}

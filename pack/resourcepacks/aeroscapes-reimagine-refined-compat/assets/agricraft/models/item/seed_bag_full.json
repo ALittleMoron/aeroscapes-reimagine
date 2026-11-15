@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "agricraft:item/seed_bag_full"
+    }
+  },
+  "textures": {
+    "layer0": "agricraft:item/seed_bag_full",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "agricraft:item/equipment/held/seed_bag_full"
+    },
+    "firstperson_lefthand": {
+      "parent": "agricraft:item/equipment/held/seed_bag_full"
+    },
+    "thirdperson_righthand": {
+      "parent": "agricraft:item/equipment/held/seed_bag_full"
+    },
+    "thirdperson_lefthand": {
+      "parent": "agricraft:item/equipment/held/seed_bag_full"
+    }
+  }
+}

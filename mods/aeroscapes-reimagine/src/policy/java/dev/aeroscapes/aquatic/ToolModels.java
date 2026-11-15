@@ -46,11 +46,20 @@ final class ToolModels {
     FieldEquipmentModels.addResources(assets, output);
     IronHeldModels.addResources(assets, output);
     TheurgyHeldModels.addResources(assets, output);
+    EngineeringBucketModels.addResources(assets, output);
+    SteamContainerModels.addResources(assets, output);
+    CannonWormModels.addResources(assets, output);
+    FarmingEquipmentModels.addResources(assets, output);
+    PaintingEquipmentModels.addResources(assets, output);
     brushScale(assets, output);
     ArchaeologyBrushModels.addPalettes(assets, output, generated.textures());
     EquipmentModels.text(
         output, assets.resolve("simulated/models/item/rope_connector.json"), ROPE_CONNECTOR);
     JsonObject atlas = new JsonObject();
+    var highlight = new JsonObject();
+    highlight.addProperty("type", "minecraft:single");
+    highlight.addProperty("resource", "aeroscapes_reimagine:item/bucket_highlight");
+    generated.textures().add(highlight);
     atlas.add("sources", generated.textures());
     EquipmentModels.text(output, assets.resolve("minecraft/atlases/blocks.json"), atlas.toString());
     JsonObject net =

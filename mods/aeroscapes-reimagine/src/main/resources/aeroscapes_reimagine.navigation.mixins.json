@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.navigation",
+  "plugin": "dev.aeroscapes.navigation.NavigationMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "WorldMapLayersMixin",
+    "MinimapLayersMixin",
+    "MinimapLayerInfoMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

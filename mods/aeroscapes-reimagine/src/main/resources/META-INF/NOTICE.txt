@@ -373,3 +373,35 @@ adapters, missing configuration captions and two held meshes live in the
 owned mod/source archive. Native textures are referenced, never copied.
 Adapted native labels retain their provider terms; the LGPL text accompanies
 the owned JAR in META-INF/licenses/Misc-content-LGPL-3.0.txt.
+
+Animal Husbandry and AgriCraft compatibility:
+Independent loaded-time care, radar restrictions, trough capability, seed-recipe
+safety and preflight code targets the exact pinned unchanged provider binaries.
+English/Russian supplements cover active missing text and recognized literal UI.
+Fowl Play1.2.3 by aqario and contributors supplies the original adult and baby
+white-chicken32x32 textures used for sixteen deterministic genetic color/pattern
+variants. Native UVs and animation remain unchanged. Its MIT license is retained
+in META-INF/licenses/Fowl-Play-MIT.txt. No AH x Fresh Animations artwork is
+incorporated into this owned mod.
+
+Sky Whales ecological artwork:
+Dacite Dev LLC's Sky Whales0.1.9 (official Modrinth bDTUgqZ5) declares BSD-3-Clause.
+The thirteen derived surfaces/models preserve its rig/body and adapt materials
+and bounded decoration. Deterministic Java composition: SkyWhaleArtwork.java;
+no generative image model is used. The provider supplies no separate copyright
+line/year; publisher credit is retained without inventing one. BSD terms are in
+META-INF/licenses/Sky-Whales-BSD-3-Clause.txt. Exact input/output hashes and
+provenance are in metadata/sky_art_integration.json beside the pack sources.
+Independent hand models for AgriCraft and Animal Husbandry retain their native
+state graphs and original provider icons, except the independently drawn
+greenhouse-monitor icon. Provider archives remain unchanged.
+
+Joy of Painting held supplies:
+Xerca / Ercan Serteli's Joy of Painting 1.21.1-2.0.1 is GPL-3.0-or-later.
+PaintingEquipmentModels.java adapts the native EaselModel construction for a held
+mesh and retains the native palette outline, paint positions and color states.
+The generated meshes and material fields retain GPL-3.0-or-later terms. Native
+canvas geometry and live pictures still use the original provider renderer.
+Exact source: ercanserteli/xercamods commit
+d88bf6577846c505cd142ffd77eec04a11eb276d. The pack supplies that corresponding
+source separately and the owned generator in aeroscapes-reimagine-source.zip.

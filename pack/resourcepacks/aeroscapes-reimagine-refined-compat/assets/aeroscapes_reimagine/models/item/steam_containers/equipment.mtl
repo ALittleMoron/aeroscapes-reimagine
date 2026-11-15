@@ -1,0 +1,30 @@
+newmtl copper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/steam_containers/materials
+
+newmtl copper_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/steam_containers/materials
+
+newmtl copper_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/steam_containers/materials
+
+newmtl glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/steam_containers/materials
+
+newmtl glass_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/steam_containers/materials
+
+newmtl steam
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/steam_containers/materials
+

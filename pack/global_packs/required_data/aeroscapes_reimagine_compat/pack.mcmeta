@@ -64,6 +64,10 @@
       {
         "namespace": "createdieselgenerators",
         "path": "loot_table/blocks/andesite_girder_strut\\.json"
+      },
+      {
+        "namespace": "agricraft",
+        "path": "agricraft/(plants|mutations)/.*"
       }
     ]
   }

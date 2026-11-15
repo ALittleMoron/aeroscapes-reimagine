@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.agriculture",
+  "plugin": "dev.aeroscapes.agriculture.AgricultureMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["MagnifyingHelmetRecipeMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

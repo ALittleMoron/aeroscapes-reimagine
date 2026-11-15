@@ -1,0 +1,95 @@
+newmtl palette_face
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl palette_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl easel
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_0
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_1
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_2
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_3
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_4
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_5
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_6
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_7
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_8
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_9
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_10
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_11
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_12
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_13
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_14
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+
+newmtl paint_15
+Ka 0 0 0
+Kd 1 1 1
+map_Kd xercapaint:item/aeroscapes_painting/materials
+

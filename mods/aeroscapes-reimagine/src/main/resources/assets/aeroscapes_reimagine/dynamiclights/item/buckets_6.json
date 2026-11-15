@@ -1,0 +1,20 @@
+{
+  "match": {
+    "items": [
+      "tide:abyss_angler_bucket",
+      "tide:anglerfish_bucket",
+      "tide:blue_neonfish_bucket",
+      "tide:chasm_eel_bucket",
+      "tide:deep_blue_bucket",
+      "tide:dragon_fish_bucket",
+      "tide:dutchman_sock_bucket",
+      "tide:mantyvern_bucket",
+      "tide:nephrosilu_bucket",
+      "tide:shadow_shark_bucket",
+      "tide:vengeance_bucket",
+      "tide:voidseeker_bucket"
+    ]
+  },
+  "luminance": 6,
+  "water_sensitive": false
+}

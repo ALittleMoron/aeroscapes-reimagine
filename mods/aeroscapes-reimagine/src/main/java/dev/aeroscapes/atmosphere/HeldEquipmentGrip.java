@@ -11,6 +11,7 @@ public final class HeldEquipmentGrip {
   private HeldEquipmentGrip() {}
 
   public static boolean usesPalm(ResourceLocation id) {
+    if (!ItemModelResources.enabled()) return false;
     return switch (id.getNamespace()) {
       case "minecraft" -> id.getPath().equals("brush");
       case "littletiles" -> id.getPath().equals("paint_brush") || id.getPath().equals("bag");

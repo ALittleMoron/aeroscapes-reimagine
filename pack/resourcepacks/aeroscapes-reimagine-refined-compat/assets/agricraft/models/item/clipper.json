@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "agricraft:item/clipper"
+    }
+  },
+  "textures": {
+    "layer0": "agricraft:item/clipper",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "agricraft:item/equipment/held/clipper"
+    },
+    "firstperson_lefthand": {
+      "parent": "agricraft:item/equipment/held/clipper"
+    },
+    "thirdperson_righthand": {
+      "parent": "agricraft:item/equipment/held/clipper"
+    },
+    "thirdperson_lefthand": {
+      "parent": "agricraft:item/equipment/held/clipper"
+    }
+  }
+}

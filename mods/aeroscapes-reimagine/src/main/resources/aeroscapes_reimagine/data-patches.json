@@ -7381,5 +7381,916 @@
         "terrain_check": "anchored_buried"
       }
     ]
+  },
+  {
+    "id": "farmersdelight:recipe/fried_egg.json",
+    "mod": "farmersdelight",
+    "source": "data/farmersdelight/recipe/fried_egg.json",
+    "sha256": "3e6bf943929de8e7a4e80035a0be3b3d91d390ed89d356f56fb7b12d781ee1f5",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredient"
+        ],
+        "value": {
+          "tag": "aeroscapes_reimagine:raw_eggs"
+        }
+      }
+    ]
+  },
+  {
+    "id": "farmersdelight:advancement/recipes/food/fried_egg.json",
+    "mod": "farmersdelight",
+    "source": "data/farmersdelight/advancement/recipes/food/fried_egg.json",
+    "sha256": "fd02c2db3e1e34f5d1ad8dce83324cd04326752f1ec552c48bfae7badc0e93c7",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "criteria",
+          "fried_egg",
+          "conditions",
+          "items",
+          0
+        ],
+        "value": {
+          "items": "#aeroscapes_reimagine:raw_eggs"
+        }
+      }
+    ]
+  },
+  {
+    "id": "farmersdelight:recipe/fried_egg_from_smoking.json",
+    "mod": "farmersdelight",
+    "source": "data/farmersdelight/recipe/fried_egg_from_smoking.json",
+    "sha256": "ab3f71122f02a944e01c68b8dcc82a9fa81f625ef222ac3405a52f5a26ad0978",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredient"
+        ],
+        "value": {
+          "tag": "aeroscapes_reimagine:raw_eggs"
+        }
+      }
+    ]
+  },
+  {
+    "id": "farmersdelight:advancement/recipes/food/fried_egg_from_smoking.json",
+    "mod": "farmersdelight",
+    "source": "data/farmersdelight/advancement/recipes/food/fried_egg_from_smoking.json",
+    "sha256": "fa9ea927b9477f2239aaf1164d4571cd6b3eca47d7d36ce5a6bf260c37ec8052",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "criteria",
+          "fried_egg",
+          "conditions",
+          "items",
+          0
+        ],
+        "value": {
+          "items": "#aeroscapes_reimagine:raw_eggs"
+        }
+      }
+    ]
+  },
+  {
+    "id": "farmersdelight:recipe/fried_egg_from_campfire_cooking.json",
+    "mod": "farmersdelight",
+    "source": "data/farmersdelight/recipe/fried_egg_from_campfire_cooking.json",
+    "sha256": "ccb748779bc288f0b2874063209d521ec987aa65f58be2c8a589ea4b62c182c8",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredient"
+        ],
+        "value": {
+          "tag": "aeroscapes_reimagine:raw_eggs"
+        }
+      }
+    ]
+  },
+  {
+    "id": "farmersdelight:advancement/recipes/food/fried_egg_from_campfire_cooking.json",
+    "mod": "farmersdelight",
+    "source": "data/farmersdelight/advancement/recipes/food/fried_egg_from_campfire_cooking.json",
+    "sha256": "ff47c25b4ab3c92a5620f7f487da860ce5c177c382d6136c941a55da26a0de8e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "criteria",
+          "fried_egg",
+          "conditions",
+          "items",
+          0
+        ],
+        "value": {
+          "items": "#aeroscapes_reimagine:raw_eggs"
+        }
+      }
+    ]
+  },
+  {
+    "id": "animalhusbandry:recipe/fried_egg.json",
+    "mod": "animalhusbandry",
+    "source": "data/animalhusbandry/recipe/fried_egg.json",
+    "sha256": "4686ddad4bc157d5f54f71a9ad8fbbda106436c075f044fa664060784b2d0cc3",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "naturalist:recipe/cooked_egg.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/recipe/cooked_egg.json",
+    "sha256": "08b05dbd8e1b11bb5463b708dd14967e65d784a500cfe32ca28c994315b44651",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "naturalist:recipe/cooked_egg_from_smoking.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/recipe/cooked_egg_from_smoking.json",
+    "sha256": "a23872b3a48ee7fdef68cb13c7b273d6ff8aead900a9fad8ad79809b5720ad4f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "naturalist:recipe/cooked_egg_from_campfire_cooking.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/recipe/cooked_egg_from_campfire_cooking.json",
+    "sha256": "8ec460450786518fc0b5275b144fd9977d5bcd0e41261266d5ec1cb3f5ff1b43",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:recipe/cooked_egg_from_smelting.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/recipe/cooked_egg_from_smelting.json",
+    "sha256": "6357feed95668452cd59694c7d52b372b231f6835e9b830c7150600e6bf0f314",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:recipe/cooked_egg_from_smoking.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/recipe/cooked_egg_from_smoking.json",
+    "sha256": "3e10ec0fa67fbc83f4d01f81186265f80a0a4f3e3f91a33e6c23d2a59e6647f3",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:recipe/cooked_egg_from_campfire_cooking.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/recipe/cooked_egg_from_campfire_cooking.json",
+    "sha256": "e134e8949d50580cb0f4557e63bd33ff90ad6d8f48cfe86d0d9ec8428362300d",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "naturalist:advancement/recipes/food/cooked_egg.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/advancement/recipes/food/cooked_egg.json",
+    "sha256": "11d4bee5c072321dcd9bbe6b229175546591bc99ba6a645b9da37c422bc4e6c6",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "criteria",
+          "has_eggs",
+          "conditions",
+          "items",
+          0
+        ],
+        "value": {
+          "items": "#aeroscapes_reimagine:raw_eggs"
+        }
+      },
+      {
+        "op": "set",
+        "path": [
+          "criteria",
+          "has_the_recipe",
+          "conditions",
+          "recipe"
+        ],
+        "value": "farmersdelight:fried_egg"
+      },
+      {
+        "op": "set",
+        "path": [
+          "rewards",
+          "recipes"
+        ],
+        "value": [
+          "farmersdelight:fried_egg",
+          "farmersdelight:fried_egg_from_smoking",
+          "farmersdelight:fried_egg_from_campfire_cooking"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:advancement/recipes/food/cooked_egg_from_smelting.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/advancement/recipes/food/cooked_egg_from_smelting.json",
+    "sha256": "6f5a9f30389401fca87bbf83534faffb50f8d44944ac6928336ef5fa3b978e59",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "criteria",
+          "has_the_recipe",
+          "conditions",
+          "recipe"
+        ],
+        "value": "farmersdelight:fried_egg"
+      },
+      {
+        "op": "set",
+        "path": [
+          "rewards",
+          "recipes"
+        ],
+        "value": [
+          "farmersdelight:fried_egg"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:advancement/recipes/food/cooked_egg_from_smoking.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/advancement/recipes/food/cooked_egg_from_smoking.json",
+    "sha256": "ef6ec26b9813244ed6f49ee52634907163ac32b21fc23be4b553daa7546afc6a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "criteria",
+          "has_the_recipe",
+          "conditions",
+          "recipe"
+        ],
+        "value": "farmersdelight:fried_egg_from_smoking"
+      },
+      {
+        "op": "set",
+        "path": [
+          "rewards",
+          "recipes"
+        ],
+        "value": [
+          "farmersdelight:fried_egg_from_smoking"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:advancement/recipes/food/cooked_egg_from_campfire_cooking.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/advancement/recipes/food/cooked_egg_from_campfire_cooking.json",
+    "sha256": "978b0b6b44438d62bce4b5492859bfc393adbc2cec09ac174fbebefaf63c695e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "criteria",
+          "has_the_recipe",
+          "conditions",
+          "recipe"
+        ],
+        "value": "farmersdelight:fried_egg_from_campfire_cooking"
+      },
+      {
+        "op": "set",
+        "path": [
+          "rewards",
+          "recipes"
+        ],
+        "value": [
+          "farmersdelight:fried_egg_from_campfire_cooking"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/mixing/noodle_soup.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/mixing/noodle_soup.json",
+    "sha256": "227f37725fa06b200e10d17293e9f9e124d794c68592d9ea4178ef35f57d2463",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          1
+        ],
+        "value": {
+          "tag": "c:foods/cooked_egg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/sequenced_assembly/bacon_and_eggs.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/sequenced_assembly/bacon_and_eggs.json",
+    "sha256": "ddf4ee14baef5463126b5032bc1a96ebbbb036ec5a8be126c293a4a5984a51ec",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "sequence",
+          1,
+          "ingredients",
+          1
+        ],
+        "value": {
+          "tag": "c:foods/cooked_egg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/sequenced_assembly/egg_sandwich.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/sequenced_assembly/egg_sandwich.json",
+    "sha256": "d604db0d6207772af73af4ddde8a329bcb7721304bbe08a1746915afbfd8a596",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "sequence",
+          0,
+          "ingredients",
+          1
+        ],
+        "value": {
+          "tag": "c:foods/cooked_egg"
+        }
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/cutting/pumpkin_pie_slice.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/cutting/pumpkin_pie_slice.json",
+    "sha256": "fec3877c41a1d32a5a8dda6bdd7291a5b8e00bea220a71ccf019c804bd3a0724",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/cutting/raw_pasta.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/cutting/raw_pasta.json",
+    "sha256": "be41e54b030628f7a70a31b6d429d83501fee722f57fd0d362e7b61efd08537e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/create/mixing/pumpkin_custard_fluid_from_mixing_heated.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/create/mixing/pumpkin_custard_fluid_from_mixing_heated.json",
+    "sha256": "6d82c6d688dfeee7e8c42de625bdc12a483131acb05f87aad891bed33a7c0b4f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          3
+        ],
+        "value": {
+          "tag": "c:pumpkin"
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/create/compacting/raw_chorus_fruit_cookie_from_compacting.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/create/compacting/raw_chorus_fruit_cookie_from_compacting.json",
+    "sha256": "f99ded6de86df3e3b07565ea5c75fdfff5d367529539597f29618c8f77d864ab",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          0
+        ],
+        "value": {
+          "tag": "c:chorus_fruit"
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/minecraft/crafting/raw_chorus_fruit_cookie_from_dough_crafting.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/minecraft/crafting/raw_chorus_fruit_cookie_from_dough_crafting.json",
+    "sha256": "ff89bb58f4d20a79ca70a8b222d681fff87052efec7e1d65d6058307756522a7",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          1
+        ],
+        "value": {
+          "tag": "c:chorus_fruit"
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/minecraft/crafting/raw_chorus_fruit_cookie_from_egg_crafting.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/minecraft/crafting/raw_chorus_fruit_cookie_from_egg_crafting.json",
+    "sha256": "70f8407648d7a4f0d5901a9a8f4ad6645656a22ed0ee578cfe82f87ff13b074e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          3
+        ],
+        "value": {
+          "tag": "c:chorus_fruit"
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/minecraft/crafting/raw_chorus_fruit_cookie_from_wheat_crafting.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/minecraft/crafting/raw_chorus_fruit_cookie_from_wheat_crafting.json",
+    "sha256": "82e6c32e148f11dca9624d71485f39640fd4b5cc173fd70f860a84c8cd4b70ac",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          3
+        ],
+        "value": {
+          "tag": "c:chorus_fruit"
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/create/mixing/mashed_potatoes_bowl_cheese_from_mixing_heated_milk.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/create/mixing/mashed_potatoes_bowl_cheese_from_mixing_heated_milk.json",
+    "sha256": "5de4db053def26ab6c79d8c7dd1405f078b53209dbd3a2f7ed14f9e3e4618db1",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          3
+        ],
+        "value": {
+          "tag": "c:cheeses"
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/farmersdelight/cooking/mashed_potatoes_bowl_cheese_from_cooking.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/farmersdelight/cooking/mashed_potatoes_bowl_cheese_from_cooking.json",
+    "sha256": "286db3fd89bd4bd222f53401d40209555a6f43f25405d86bdf8e363b98f56210",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          3
+        ],
+        "value": {
+          "tag": "c:cheeses"
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/create/compacting/cream_cheese_from_compacting_cream_cheese.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/create/compacting/cream_cheese_from_compacting_cream_cheese.json",
+    "sha256": "2530ef2ce9854a75ed1f2c3bbed79fa8d104b9c04a3f5489419d441120ee4eea",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          0,
+          "amount"
+        ],
+        "value": 1000
+      },
+      {
+        "op": "set",
+        "path": [
+          "results",
+          0,
+          "count"
+        ],
+        "value": 3
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/create/emptying/egg_fluid_from_emptying.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/create/emptying/egg_fluid_from_emptying.json",
+    "sha256": "e38b469eb02332e89ff6358b1a8e653144e7861674690cdb9c2ca3ea90beee28",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/farmersdelight/cutting/graham_cracker_crumbs_from_cutting_alt.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/farmersdelight/cutting/graham_cracker_crumbs_from_cutting_alt.json",
+    "sha256": "aeb08ca52e6c6ba983b8cfd9c35f8e0c0bfa56faafa0b74d502f2dd495659c42",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/farmersdelight/cutting/chocolate_graham_cracker_crumbs_from_cutting_alt.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/farmersdelight/cutting/chocolate_graham_cracker_crumbs_from_cutting_alt.json",
+    "sha256": "79da2cb00116098ff17bda7677dbb1102c14e6685a62ac851e01869bc08866b6",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/minecraft/smelting/cacao_nibs_from_smelting.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/minecraft/smelting/cacao_nibs_from_smelting.json",
+    "sha256": "3e25919a798d5ac6d339be6926f5c9c214e17875355363d1e97f6e6efe94d7fd",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/minecraft/smoking/cacao_nibs_from_smoking.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/minecraft/smoking/cacao_nibs_from_smoking.json",
+    "sha256": "91b71da4305134bdd165ac7c208228aebb9e13c85ea3b4b07a77f3443a7dcb84",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "createfood:recipe/minecraft/campfire_cooking/cacao_nibs_from_campfire_cooking.json",
+    "mod": "createfood",
+    "source": "data/createfood/recipe/minecraft/campfire_cooking/cacao_nibs_from_campfire_cooking.json",
+    "sha256": "a25daa329590c5f0d97350f199a702a2f349a220814d87a12bbc6e323ac5cb25",
+    "edits": [
+      {
+        "op": "set",
+        "path": [],
+        "value": {
+          "neoforge:conditions": [
+            {
+              "type": "neoforge:false"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "create:recipe/haunting/soul_sand.json",
+    "mod": "create",
+    "source": "data/create/recipe/haunting/soul_sand.json",
+    "sha256": "4dca415ee7fefa69f81051d38fac2204f22df5f14e3ece7365386e1a4844741a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          0
+        ],
+        "value": {
+          "tag": "aeroscapes_reimagine:hauntable_sands"
+        }
+      }
+    ]
+  },
+  {
+    "id": "create:recipe/splashing/stained_glass_pane.json",
+    "mod": "create",
+    "source": "data/create/recipe/splashing/stained_glass_pane.json",
+    "sha256": "304ed60367103c964b8da4af24b76351e3d95a3b219f190ea89cfa399d295c66",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          0
+        ],
+        "value": {
+          "tag": "aeroscapes_reimagine:washable_glass_panes"
+        }
+      }
+    ]
+  },
+  {
+    "id": "createdieselgenerators:recipe/crushing/wood_chip_boats.json",
+    "mod": "createdieselgenerators",
+    "source": "data/createdieselgenerators/recipe/crushing/wood_chip_boats.json",
+    "sha256": "2071a10f98394487349be75ec522b16cd1d5f67931271eafc18ed0ff1bf3ceb6",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "ingredients",
+          0
+        ],
+        "value": {
+          "tag": "aeroscapes_reimagine:recyclable_boats_without_chests"
+        }
+      }
+    ]
+  },
+  {
+    "id": "fluidlogistics:recipe/package_list_filter.json",
+    "mod": "fluidlogistics",
+    "source": "data/fluidlogistics/recipe/package_list_filter.json",
+    "sha256": "7e975f81987c9e7b4ee38f17ba37de4d3e1e4c6772ea19a716c2a72519d6851f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pattern"
+        ],
+        "value": [
+          "C",
+          "W",
+          "C"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "create_connected:recipe/crafting/kinetics/item_silo.json",
+    "mod": "create_connected",
+    "source": "data/create_connected/recipe/crafting/kinetics/item_silo.json",
+    "sha256": "df9961d5741da6373d479adb11a58f8d25a9db6c80b221a51198ad791eabf5c5",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pattern"
+        ],
+        "value": [
+          "BC",
+          " B"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/emptying/hot_cocoa.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/emptying/hot_cocoa.json",
+    "sha256": "aa94c1195d6fcdf2f0edee73912820e4d13c6b2b8c2827ce0a7def139db2c117",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "results",
+          1,
+          "amount"
+        ],
+        "value": 250
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/emptying/glow_berry_custard.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/emptying/glow_berry_custard.json",
+    "sha256": "3bd6c3915def6d7d71bf542acea57c4e05d472191174b36e587ada25fafa071e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "results",
+          1,
+          "amount"
+        ],
+        "value": 250
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/emptying/melon_juice.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/emptying/melon_juice.json",
+    "sha256": "a8622c35de320420ca97748d7ac3a053296ac23d273bbe3cb6bf4b787007b5f5",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "results",
+          1,
+          "amount"
+        ],
+        "value": 250
+      }
+    ]
+  },
+  {
+    "id": "delightfulcreators:recipe/emptying/apple_cider.json",
+    "mod": "delightfulcreators",
+    "source": "data/delightfulcreators/recipe/emptying/apple_cider.json",
+    "sha256": "41f89487ec8fac1ed0a6e7b755be4721ecdaf207af60c9c79615744a830e331c",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "results",
+          1,
+          "amount"
+        ],
+        "value": 250
+      }
+    ]
+  },
+  {
+    "id": "celestia:advancement/look_up.json",
+    "mod": "celestia",
+    "source": "data/celestia/advancement/look_up.json",
+    "sha256": "c274e39870d6bfeded582a27b2d1b7939770532fee6a92d8c0323bcafc83604e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "display",
+          "background"
+        ],
+        "value": "minecraft:textures/gui/advancements/backgrounds/adventure.png"
+      }
+    ]
   }
 ]

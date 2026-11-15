@@ -1,0 +1,1266 @@
+{
+  "format_version": "1.8.0",
+  "animations": {
+    "animation.sky_whale.idle": {
+      "loop": true,
+      "animation_length": 32.0,
+      "bones": {
+        "body": {
+          "rotation": {
+            "0.000": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.950": {
+              "vector": [
+                "1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "1.900": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "2.850": {
+              "vector": [
+                "-1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "3.800": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "4.750": {
+              "vector": [
+                "1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "5.700": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "6.650": {
+              "vector": [
+                "-1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "7.600": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "8.550": {
+              "vector": [
+                "1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "9.500": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "10.450": {
+              "vector": [
+                "-1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "11.400": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "14.000": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "14.950": {
+              "vector": [
+                "1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "15.900": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "16.850": {
+              "vector": [
+                "-1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "17.800": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "18.750": {
+              "vector": [
+                "1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "19.700": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "20.650": {
+              "vector": [
+                "-1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "21.600": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.550": {
+              "vector": [
+                "1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "23.500": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "24.450": {
+              "vector": [
+                "-1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "25.400": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "26.350": {
+              "vector": [
+                "1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "27.300": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "28.250": {
+              "vector": [
+                "-1.200 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "29.200": {
+              "vector": [
+                "0.000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)) + math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "32.000": {
+              "vector": [
+                "math.clamp(-query.vertical_speed * 15, -1.2, 1.2)",
+                0,
+                "math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5) + 0.8 * math.sin(query.anim_time * 360 / 32.0)"
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.000": {
+              "vector": [
+                "-0.7 * math.sin(query.anim_time * 360 / 4.0)",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "29.300": {
+              "vector": [
+                "-0.7 * math.sin(query.anim_time * 360 / 4.0)",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "30.575": {
+              "vector": [
+                "-0.7 * math.sin(query.anim_time * 360 / 4.0)",
+                4,
+                1.2
+              ],
+              "easing": "easeInOutSine"
+            },
+            "31.850": {
+              "vector": [
+                "-0.7 * math.sin(query.anim_time * 360 / 4.0)",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "32.000": {
+              "vector": [
+                "-0.7 * math.sin(query.anim_time * 360 / 4.0)",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.000": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.950": {
+              "vector": [
+                "18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "1.900": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "2.850": {
+              "vector": [
+                "-18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "3.800": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "4.750": {
+              "vector": [
+                "18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "5.700": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "6.650": {
+              "vector": [
+                "-18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "7.600": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "8.550": {
+              "vector": [
+                "18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "9.500": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "10.450": {
+              "vector": [
+                "-18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "11.400": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "14.000": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "14.950": {
+              "vector": [
+                "18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "15.900": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "16.850": {
+              "vector": [
+                "-18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "17.800": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "18.750": {
+              "vector": [
+                "18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "19.700": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "20.650": {
+              "vector": [
+                "-18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "21.600": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.550": {
+              "vector": [
+                "18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "23.500": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "24.450": {
+              "vector": [
+                "-18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "25.400": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "26.350": {
+              "vector": [
+                "18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "27.300": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "28.250": {
+              "vector": [
+                "-18.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "29.200": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "32.000": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "tail_flukes": {
+          "rotation": {
+            "0.000": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "0.532": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "1.482": {
+              "vector": [
+                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "2.432": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "3.382": {
+              "vector": [
+                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "4.332": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "5.282": {
+              "vector": [
+                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "6.232": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "7.182": {
+              "vector": [
+                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "8.132": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "9.082": {
+              "vector": [
+                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "10.032": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "10.982": {
+              "vector": [
+                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "11.932": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "14.532": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "15.482": {
+              "vector": [
+                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "16.432": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "17.382": {
+              "vector": [
+                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "18.332": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "19.282": {
+              "vector": [
+                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "20.232": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "21.182": {
+              "vector": [
+                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.132": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "23.082": {
+              "vector": [
+                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "24.032": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "24.982": {
+              "vector": [
+                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "25.932": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "26.882": {
+              "vector": [
+                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "27.832": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "28.782": {
+              "vector": [
+                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "29.732": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            },
+            "32.000": {
+              "vector": [
+                0,
+                0,
+                0
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "pectoral_fin_left": {
+          "rotation": {
+            "0.000": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 25)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 0)",
+                "-12.000 + -5 * math.sin(query.anim_time * 360 / 8.0 + 0) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "11.700": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 25)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 0)",
+                "-12.000 + -5 * math.sin(query.anim_time * 360 / 8.0 + 0) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "12.700": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 25)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 0)",
+                "-21.000 + -5 * math.sin(query.anim_time * 360 / 8.0 + 0) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "13.700": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 25)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 0)",
+                "-12.000 + -5 * math.sin(query.anim_time * 360 / 8.0 + 0) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "32.000": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 25)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 0)",
+                "-12.000 + -5 * math.sin(query.anim_time * 360 / 8.0 + 0) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "pectoral_fin_right": {
+          "rotation": {
+            "0.000": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 80)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 40)",
+                "12.000 + 5 * math.sin(query.anim_time * 360 / 8.0 + 65) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "11.700": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 80)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 40)",
+                "12.000 + 5 * math.sin(query.anim_time * 360 / 8.0 + 65) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "12.700": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 80)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 40)",
+                "13.980 + 5 * math.sin(query.anim_time * 360 / 8.0 + 65) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "13.700": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 80)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 40)",
+                "12.000 + 5 * math.sin(query.anim_time * 360 / 8.0 + 65) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            },
+            "32.000": {
+              "vector": [
+                "3 * math.sin(query.anim_time * 360 / 8.0 + 80)",
+                "2.5 * math.sin(query.anim_time * 360 / 10.666666666666666 + 40)",
+                "12.000 + 5 * math.sin(query.anim_time * 360 / 8.0 + 65) + (math.clamp(math.atan2(math.sin(query.yaw_speed), math.cos(query.yaw_speed)) * 1.1, -6.5, 6.5)) * 0.45"
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "flipper_tip_left": {
+          "rotation": [
+            "2.4 * math.sin(query.anim_time * 360 / 8.0 + 20)",
+            0,
+            "6 * math.sin(query.anim_time * 360 / 8.0 + 0)"
+          ]
+        },
+        "flora_left": {
+          "rotation": [
+            "1.4 * math.sin(query.anim_time * 360 / 16.0 + 0)",
+            0,
+            "1.4 * math.sin(query.anim_time * 360 / 32.0 + 0)"
+          ]
+        },
+        "eyelid_left": {
+          "scale": {
+            "0.000": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "6.840": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "6.960": {
+              "vector": [
+                1,
+                1,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "7.060": {
+              "vector": [
+                1,
+                1,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "7.240": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "21.980": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.100": {
+              "vector": [
+                1,
+                1,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.200": {
+              "vector": [
+                1,
+                1,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.380": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "32.000": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        },
+        "flipper_tip_right": {
+          "rotation": [
+            "2.4 * math.sin(query.anim_time * 360 / 8.0 + 75)",
+            0,
+            "6 * math.sin(query.anim_time * 360 / 8.0 + 55)"
+          ]
+        },
+        "flora_right": {
+          "rotation": [
+            "1.4 * math.sin(query.anim_time * 360 / 16.0 + 55)",
+            0,
+            "1.4 * math.sin(query.anim_time * 360 / 32.0 + 55)"
+          ]
+        },
+        "eyelid_right": {
+          "scale": {
+            "0.000": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "6.865": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "6.985": {
+              "vector": [
+                1,
+                1,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "7.085": {
+              "vector": [
+                1,
+                1,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "7.265": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.005": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.125": {
+              "vector": [
+                1,
+                1,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.225": {
+              "vector": [
+                1,
+                1,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "22.405": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            },
+            "32.000": {
+              "vector": [
+                1,
+                0,
+                1
+              ],
+              "easing": "easeInOutSine"
+            }
+          }
+        }
+      }
+    },
+    "animation.sky_whale.attack": {
+      "animation_length": 2.4,
+      "bones": {
+        "lower_jaw": {
+          "rotation": {
+            "0.2": [
+              0,
+              0,
+              0
+            ],
+            "0.5": [
+              25,
+              0,
+              0
+            ],
+            "2.2": [
+              35,
+              0,
+              0
+            ],
+            "2.4": [
+              0,
+              0,
+              0
+            ]
+          },
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.5": [
+              1,
+              1.4,
+              1
+            ],
+            "2.1": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "head": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.5": [
+              -17.5,
+              0,
+              0
+            ],
+            "2.1": [
+              -2.5,
+              0,
+              0
+            ]
+          },
+          "scale": {
+            "0.0": [
+              1,
+              1,
+              1
+            ],
+            "0.5": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "tail": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.4": [
+              0,
+              12.5,
+              0
+            ],
+            "1.6": [
+              0,
+              -27.5,
+              0
+            ],
+            "1.9": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "tail_flukes": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.4": [
+              9.30122,
+              10.92137,
+              0
+            ],
+            "1.6": [
+              10.66871,
+              -30.99389,
+              -7.31816
+            ],
+            "1.9": [
+              9.13412,
+              -1.41849,
+              -2.00535
+            ]
+          }
+        },
+        "pectoral_fin_left": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.4": [
+              0,
+              0,
+              42.5
+            ],
+            "2.1": [
+              0,
+              0,
+              0
+            ]
+          }
+        },
+        "pectoral_fin_right": {
+          "rotation": {
+            "0.0": [
+              0,
+              0,
+              0
+            ],
+            "0.4": [
+              0,
+              0,
+              -37.5
+            ],
+            "2.1": [
+              0,
+              0,
+              0
+            ]
+          }
+        }
+      }
+    }
+  }
+}

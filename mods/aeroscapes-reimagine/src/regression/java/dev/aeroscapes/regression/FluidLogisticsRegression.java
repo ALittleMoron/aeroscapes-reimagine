@@ -5,6 +5,7 @@ import com.simibubi.create.content.fluids.tank.FluidTankBlockEntity;
 import com.simibubi.create.content.fluids.transfer.FluidManipulationBehaviour.BottomlessFluidMode;
 import com.simibubi.create.content.logistics.BigItemStack;
 import com.simibubi.create.content.logistics.box.PackageItem;
+import com.simibubi.create.content.logistics.item.filter.attribute.attributes.InTagAttribute;
 import com.simibubi.create.content.logistics.packager.PackagerBlock;
 import com.simibubi.create.content.logistics.packagerLink.LogisticallyLinkedBehaviour;
 import com.simibubi.create.content.logistics.packagerLink.LogisticsManager;
@@ -39,6 +40,7 @@ import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
 import net.neoforged.neoforge.capabilities.Capabilities;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.fluids.FluidStack;
 import net.neoforged.neoforge.fluids.capability.IFluidHandler;
 
@@ -146,7 +148,7 @@ public final class FluidLogisticsRegression {
       }
       producedSteam(
           level, origin.south(16), sourceTank, destinationTank, packager, receiver, network);
-      containers();
+      containers(level);
       partialReceiver(level, sourceTank, packager, receiver, destinationTank);
       engineDelivery(level, sourceTank, packager, receiver, origin.south(4).east());
       unpackager(level, origin.south(8));
@@ -206,13 +208,23 @@ public final class FluidLogisticsRegression {
         "Actual boiler steam passes native order, packing and delivery without volume loss");
   }
 
-  private static void containers() {
+  private static void containers(ServerLevel level) {
+    var bucketFilter = new InTagAttribute(Tags.Items.BUCKETS);
+    var missingBuckets =
+        BuiltInRegistries.ITEM.stream()
+            .filter(dev.aeroscapes.atmosphere.BucketPresentation::physical)
+            .filter(item -> !bucketFilter.appliesTo(new ItemStack(item), level))
+            .map(BuiltInRegistries.ITEM::getKey)
+            .toList();
+    require(
+        missingBuckets.isEmpty(), "All registered buckets support tag filters: " + missingBuckets);
     var diesel = fluid("createdieselgenerators:diesel");
     var copper =
         new ItemStack(
             BuiltInRegistries.ITEM.get(ResourceLocation.parse("fluidlogistics:copper_bucket")));
     var bucket = copper.getCapability(Capabilities.FluidHandler.ITEM);
     require(bucket != null && bucket.getTankCapacity(0) == 5000, "Native copper bucket capacity");
+    require(copper.is(Tags.Items.BUCKETS), "Copper bucket supports general bucket filters");
     require(
         bucket.fill(new FluidStack(diesel, 137), IFluidHandler.FluidAction.SIMULATE) == 137
             && bucket.getFluidInTank(0).isEmpty(),
@@ -222,6 +234,11 @@ public final class FluidLogisticsRegression {
             && bucket.drain(50, IFluidHandler.FluidAction.EXECUTE).getAmount() == 50
             && bucket.getFluidInTank(0).getAmount() == 87,
         "Copper bucket retains exact partial volume");
+    require(
+        !copper.is(Tags.Items.BUCKETS_EMPTY)
+            && !copper.is(Tags.Items.BUCKETS_WATER)
+            && !copper.is(Tags.Items.BUCKETS_LAVA),
+        "Component-backed copper bucket does not claim a static fluid-specific bucket tag");
     var cargo = FluidPackageContentHelper.createCanonicalPackage(new FluidStack(diesel, 1137));
     var packaged = cargo.getCapability(Capabilities.FluidHandler.ITEM);
     require(

@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "animalhusbandry:item/animal_medicine"
+    }
+  },
+  "textures": {
+    "layer0": "animalhusbandry:item/animal_medicine",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "animalhusbandry:item/equipment/held/animal_medicine"
+    },
+    "firstperson_lefthand": {
+      "parent": "animalhusbandry:item/equipment/held/animal_medicine"
+    },
+    "thirdperson_righthand": {
+      "parent": "animalhusbandry:item/equipment/held/animal_medicine"
+    },
+    "thirdperson_lefthand": {
+      "parent": "animalhusbandry:item/equipment/held/animal_medicine"
+    }
+  }
+}

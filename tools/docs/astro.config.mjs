@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import mermaid from "astro-mermaid";
 
 export default defineConfig({
   site: process.env.DOCS_SITE ?? "http://localhost:4321",
@@ -12,6 +13,8 @@ export default defineConfig({
     },
   },
   integrations: [
+    // Must precede Starlight so diagrams are not highlighted as code.
+    mermaid({ theme: "default", autoTheme: true }),
     starlight({
       title: "Aeroscapes Reimagine",
       defaultLocale: "en",
@@ -55,6 +58,7 @@ export default defineConfig({
           label: "The experience",
           translations: { ru: "Игровые направления" },
           items: [
+            { slug: "experience/systems" },
             {
               label: "World and exploration",
               translations: { ru: "Мир и исследование" },

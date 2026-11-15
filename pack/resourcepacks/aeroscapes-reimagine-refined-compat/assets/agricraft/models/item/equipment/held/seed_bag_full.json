@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "agricraft:models/item/aeroscapes_farming/seed_bag_full.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "particle": "agricraft:item/aeroscapes_farming/materials"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        3.5917583,
+        -0.7634518
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        3.5917583,
+        -0.7634518
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        3.5917583,
+        -0.7634518
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        3.5917583,
+        -0.7634518
+      ]
+    }
+  }
+}

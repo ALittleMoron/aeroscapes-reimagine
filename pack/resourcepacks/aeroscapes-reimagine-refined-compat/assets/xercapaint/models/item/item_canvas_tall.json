@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "xercapaint:item/item_canvas_tall"
+    }
+  },
+  "textures": {
+    "layer0": "xercapaint:item/item_canvas_tall",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "xercapaint:item/equipment/held/item_canvas_tall"
+    },
+    "firstperson_lefthand": {
+      "parent": "xercapaint:item/equipment/held/item_canvas_tall"
+    },
+    "thirdperson_righthand": {
+      "parent": "xercapaint:item/equipment/held/item_canvas_tall"
+    },
+    "thirdperson_lefthand": {
+      "parent": "xercapaint:item/equipment/held/item_canvas_tall"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "xercapaint:drawn": 1
+      },
+      "model": "xercapaint:item/item_canvas_tall_drawn"
+    }
+  ]
+}

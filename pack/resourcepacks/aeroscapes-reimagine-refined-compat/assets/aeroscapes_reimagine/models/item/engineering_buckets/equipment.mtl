@@ -1,0 +1,39 @@
+newmtl steel
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #body
+
+newmtl inside
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #body
+
+newmtl rim
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #body
+
+newmtl handle
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #body
+
+newmtl copper
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #body
+
+newmtl copper_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #body
+
+newmtl copper_base
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #body
+
+newmtl fluid
+Ka 0 0 0
+Kd 1 1 1
+map_Kd #fluid

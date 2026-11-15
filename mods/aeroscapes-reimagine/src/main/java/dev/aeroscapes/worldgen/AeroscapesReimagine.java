@@ -1,7 +1,7 @@
 package dev.aeroscapes.worldgen;
 
 import com.mojang.logging.LogUtils;
-import dev.aeroscapes.atmosphere.CelestialConfig;
+import dev.aeroscapes.atmosphere.PresentationConfig;
 import dev.aeroscapes.worldgen.c2me.C2meIslandCompiler;
 import dev.aeroscapes.worldgen.feature.IslandFeatures;
 import java.util.HashMap;
@@ -47,8 +47,11 @@ public final class AeroscapesReimagine {
 
   public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
     dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);
+    if (ModList.get().isLoaded("animalhusbandry"))
+      dev.aeroscapes.husbandry.TroughAutomation.register(modBus);
     dev.aeroscapes.engineering.OilFields.register(modBus);
-    container.registerConfig(ModConfig.Type.CLIENT, CelestialConfig.SPEC);
+    dev.aeroscapes.sky.SkyWhaleFalls.register(modBus);
+    container.registerConfig(ModConfig.Type.CLIENT, PresentationConfig.SPEC);
     if (ModList.get().isLoaded("crittersandcompanions"))
       dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);
     if (ModList.get().isLoaded("spawn")) dev.aeroscapes.ecology.EcologyNetwork.register(modBus);

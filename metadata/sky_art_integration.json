@@ -1,0 +1,270 @@
+{
+  "artifacts": [
+    {
+      "slug": "joy-of-painting",
+      "name": "Joy of Painting",
+      "project_id": "YOs4tZea",
+      "version_id": "73U02HbA",
+      "version": "1.21.1-2.0.1",
+      "filename": "xercapaint-neoforge-1.21.1-2.0.1.jar",
+      "sha512": "a79e8f5af0a744492a09e1be417a76f4d4a03786b80d9b9fad298480c09a443a2a1ac54826d42fa8d6b5d1c4b4edc8dc227ba2aa642e7ffb3993bbfbf99c971a",
+      "sha1": "24674a7c3ed5ad152878a5f9b1d9a358fbbc2576",
+      "file_size": 438395,
+      "release_type": "release",
+      "side": "both",
+      "kind": "mod",
+      "loaders": [
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.21.1"
+      ],
+      "license": {
+        "id": "GPL-3.0-or-later",
+        "name": "GNU General Public License v3.0 or later",
+        "url": null
+      },
+      "source_url": "https://github.com/ercanserteli/xercamods",
+      "dependencies": [],
+      "status": "included",
+      "origin": "Owner-selected sky fauna and painting; unchanged official Modrinth file"
+    },
+    {
+      "slug": "sky-whales",
+      "name": "Sky Whales",
+      "project_id": "IielEDnJ",
+      "version_id": "bDTUgqZ5",
+      "version": "0.1.9",
+      "filename": "skywhales-0.1.9.jar",
+      "sha512": "ebecabc1ddb97acce6742ea62730e59dcd878fb68997086c766df7b50cba790216b22fac4b675ae7e1251af4092fde9f1bccb302b302489c3ec51584c09e9342",
+      "sha1": "e257a373d8659b625dffe817b1967aee907c7919",
+      "file_size": 671684,
+      "release_type": "release",
+      "side": "both",
+      "kind": "mod",
+      "loaders": [
+        "neoforge"
+      ],
+      "game_versions": [
+        "1.21.1"
+      ],
+      "license": {
+        "id": "BSD-3-Clause",
+        "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+        "url": null
+      },
+      "source_url": null,
+      "dependencies": [
+        {
+          "version_id": null,
+          "project_id": "8BmcQJ2H",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "LNytGWDc",
+          "file_name": null,
+          "dependency_type": "required"
+        },
+        {
+          "version_id": null,
+          "project_id": "T9PomCSv",
+          "file_name": null,
+          "dependency_type": "required"
+        }
+      ],
+      "status": "included",
+      "origin": "Owner-selected sky fauna and painting; unchanged official Modrinth file"
+    }
+  ],
+  "sky_whales": {
+    "artifact_source": "Exact selected artifact bytecode; publisher provides no source repository URL",
+    "native_dependencies": {
+      "minecraft": "[1.21.1]",
+      "neoforge": "[21.1.230,)",
+      "create": "[6.0,)",
+      "sable": "[1.2,)",
+      "geckolib": "[4.8,)",
+      "aeronautics_optional": "[1.2,)",
+      "spelunkery_optional": "[0,)"
+    },
+    "effective_dependencies": {
+      "minecraft": "1.21.1",
+      "neoforge": "21.1.244",
+      "create": "6.0.10",
+      "sable": "2.0.6",
+      "geckolib": "4.9.3",
+      "aeronautics": "1.3.2",
+      "spelunkery": "absent"
+    },
+    "registration_inventory": {
+      "items": [
+        "skywhales:whale_bone_block",
+        "skywhales:cracked_whale_bone_block",
+        "skywhales:whale_meat_block",
+        "skywhales:raw_whale_meat",
+        "skywhales:cooked_whale_meat",
+        "skywhales:whale_bone_dust"
+      ],
+      "entities": [
+        "skywhales:sky_whale"
+      ],
+      "equipment": []
+    },
+    "spawn_policy": {
+      "dimension": "minecraft:overworld",
+      "eligibility": "Overworld non-spectator players above islands, loaded inter-layer gaps and void. Four forward-cone placement attempts must clear every multipart bounding box and all intersecting chunks must already be loaded.",
+      "interval_ticks": 1200,
+      "chance_per_eligible_attempt": 0.35,
+      "maximum_nearby": 1,
+      "counting_radius": 192,
+      "horizontal_distance": [
+        56,
+        72
+      ],
+      "height_above_player": [
+        12,
+        24
+      ],
+      "distance_despawn": 128,
+      "persistent": false,
+      "interpretation": "At20TPS, opportunities are60seconds apart with native35%chance before placement. Encounters are probabilistic, not a measured waiting-time guarantee. Distant ticking whales leave only after120seconds; returning near resets the counter, normal chunk unload saves/pauses it without loading tickets.",
+      "multipart_clearance": "After native yaw selection, check the main AABB and every actual multipart AABB using pinned native offsets, plus all per-bone authored geometry bounds with the full hierarchical swimming/sonic envelope at that yaw. Require all intersected chunks already loaded; no chunk generation or loading tickets. Native physics parts remain unchanged.",
+      "despawn_grace_ticks": 2400
+    },
+    "carcass_safety": {
+      "native_defect": "SkyWhale.tickDeath passes ordinary entity coordinates to WhaleCorpseSpawner; spawnCorpse writes native body blocks into ServerLevel before SubLevelAssemblyHelper relocates them. Occupied death-site blocks and their block entities are overwritten and then removed.",
+      "owned_adapter": "Allocate a temporary Sable sublevel, author the original body in its reserved plot, then use the original containing-sublevel assembly and remove the empty staging plot. No ordinary-world search or terrain changes.",
+      "native_lifetime_ticks": 24000,
+      "native_expiry_protection_radius": 64,
+      "permanent_removal": "Forget tracker UUID on Sable REMOVED only; preserve it on UNLOADED",
+      "rollback": "Removing Sky Whales from an existing save discards its entity/block/item registry data; retain the previous full pack and a separate save backup. Adding this integration does not rewrite terrain definitions."
+    },
+    "native_economy": {
+      "bone_harvest": "Intact whale bone drops cracked bone plus 1-2 bones without Silk Touch; Silk Touch retains intact block. Cracked bone ordinarily drops 2-3 bones and may drop bonemeal; Silk Touch retains cracked block.",
+      "processing": "Both intact and cracked whale bones mill/crush into 2 dust plus 50% chance of a third.",
+      "lift_routes": [
+        "One whale-bone dust crafts one aeronautics:end_stone_powder",
+        "Heated mixing: four dust + two zinc nuggets + 500mB water yields 500mB aeronautics:levitite_blend"
+      ],
+      "food": "Meat blocks drop 1-2 raw whale meat (or whole block with Silk Touch). Raw meat: 6 nutrition, saturation modifier0.8. Cooked:10 nutrition, modifier1.2, native5-second Slow Falling. Both join c:nutrients/proteins and the relevant raw/cooked meat food tags.",
+      "policy": "Native costs, yields, lift values and existing Aeronautics alternatives preserved."
+    },
+    "sonic_attack": "Native reactive aggression after a survival player hurts the whale.40-tick telegraph,64-block beam,120-tick cooldown. Difficulty-scaled radius1 MOB explosion respects native mob-griefing behavior; living targets receive knockback,3-second SlownessII and Nausea. Ship interactions and comfort require owner client acceptance.",
+    "license_limits": "Project and JAR declare BSD-3-Clause; neither includes a full copyright/license notice or source URL. Publisher attribution and this limitation remain in Sky-Whales-NOTICE.txt. Owned ecological artwork/geometry adapt pinned native assets under the declared license, with provenance and deterministic generator retained; provider JAR stays byte-identical.",
+    "ecological_forms": {
+      "forms": [
+        "stone",
+        "moss",
+        "rooted",
+        "fungal",
+        "granite",
+        "chalk",
+        "dripstone",
+        "basalt",
+        "lava",
+        "sandstone",
+        "reef",
+        "snow",
+        "cloud"
+      ],
+      "selection": "WhaleHabitats uses loaded terrain/biomes with lava-lake priority, upper snow/cloud bands and a safe stone fallback. Nether and End forms are selected future work only.",
+      "persistence": "String ID saved through native entity NBT and integer field synchronized through native SynchedEntityData; movement never rerolls a form.",
+      "materials": "Recognizable installed block materials at16texels/world block; schema2 explicitly assigns every cube and optional face override a role or slot, with full-sprite sampling for plants. WhaleTextureComposer uses cube-local world phase and pinned GeckoLib4.9.3 face orientation; relative authored eye anchors use the integrated stencil without a donor patch.",
+      "runtime": "WhaleBlockTextures prepares all13CPU images on reload workers and registers replacements on apply; render-time lookup performs no decode/composition. FML4.0.43 runtime and4.0.45 compile consumer both infer MOD routing from IModBusEvent; Dist.CLIENT isolates registration. Only exactSky0.1.9 enables this listener.",
+      "animation": "Three owned mineral/cloud/reef idle swimming families are selected through the existing typed model adapter. Native controllers and exact native attack clip remain; strokes, delayed flukes, bounded glides, independent fins/tips, head gestures, blink and entity-backed wrapped yaw banking are authored. Physical flight speed/AI remain native. Block materials such as lava/magma/prismarine still sample their first square frame.",
+      "distributed_assets": {
+        "layout": {
+          "path": "mods/aeroscapes-reimagine/src/main/resources/assets/aeroscapes_reimagine/whales/material_layout.json",
+          "sha256": "72e6bdc366c2bf277bf2bffcddaf96f1ee89dea510cabde6dd7fe79db236b163"
+        },
+        "geometry_sha256": {
+          "basalt.geo.json": "c989e465131a7f2ac628f5cb4d378a052abd81225eac101d3f8859438a632252",
+          "chalk.geo.json": "ae897dd879624342da8e0abf1f591d87438f1ad6827cca6d942b7760dabc71ad",
+          "cloud.geo.json": "51909a914df27229beceada19e9d97e9938e9818812f6d70030d6ec5fd16e932",
+          "dripstone.geo.json": "971848640d823315d8519baa3fba9e4719a0041f368c94015c52fbc3d54f25b5",
+          "fungal.geo.json": "0985678d6349dc908bb9755a4d5a98ecb05c85be694b3b54215b6a34659f173b",
+          "granite.geo.json": "733aa91d070c4f7eed7f3de48d28f640185397187bcd98201ed11c9da8fb0c54",
+          "lava.geo.json": "d677f1cc25d96ec933c8a9d4b1ba5cd67b15432c1c8cd7149adae26699f0fc3e",
+          "moss.geo.json": "28cdb7639c7332c1e3de5bdd9932d4624b677a07402345f337cbb191f6f56f51",
+          "reef.geo.json": "c4862776329a1943ed4084b8362bfdb3b62090e3a9043c6ae2833cccc6f220f9",
+          "rooted.geo.json": "2ce9d0d4ce1fb85308fcd18dd902295b71fee2f2eff8504f715adb7fc407f776",
+          "sandstone.geo.json": "8e80908d2f2963d987a1797fd5af1878ec158e4479c5b630c2b5cf829ed57381",
+          "snow.geo.json": "6495d0a9a2b31728c38966de91f0a88770e3b343037ff2823ee029addcad0990",
+          "stone.geo.json": "49f725ff4303d5f56aa2b4b75418799592da403a4f118f189595b58e3d619ece"
+        },
+        "animation_sha256": {
+          "cloud.animation.json": "46ab1fecced942bbb718ce3e7f6eb787c1949deb527f0fa415ef9673e8cdcc39",
+          "mineral.animation.json": "72acdaf4aa082733c2ec983ec201bd2c3310fd44fedacf83cae1b6059088f024",
+          "reef.animation.json": "9abe0344eefd4fad1f18a504c67b7db0ef25a73e55fa6d807de9aec5754e7a59"
+        }
+      },
+      "game_texture_distribution": "No Minecraft or Nature’s Spirit whale-atlas PNG derivatives are distributed. Surfaces are composed locally from the player’s installed resources; generated proof atlases remain private technical evidence.",
+      "geometry": "Each form has independent authored body proportions, pectoral/fluke shapes and biome habitat assemblies. Native combat bones/pivots remain compatible; common eyelids, fin tips and flora bones extend the rig. Full-atlas face packing replaces native UV/body immutability. Generated per-bone hierarchical rotation/scale envelopes supplement natural-spawn clearance; native collision parts remain unchanged. Entity culling unions the complete animated envelope with the native box at the current yaw, preventing larger fins and habitats from disappearing at the screen edge.",
+      "preview": "Permission2 Overworld command /aeroscapes_whales show <variety> creates one stationary protected owned preview32blocks ahead8above the player; next cycles13forms at the same position, replacing the preview without death when changing animation family to reset GeckoLib's cached clip, clear discards it without death/carcass. Loaded clearance and owner reference checks prevent forced chunks or removal of natural/other-player whales. Previews retain native ambient calls and unmute older saved previews; only marked preview entities use volume3 for a48-block native event range, while natural whales retain volume1. NoAI does not suppress the native ambient timer; Friendly Creatures controls playback.",
+      "motion_references": [
+        "https://oceantoday.noaa.gov/whaleanatomy/",
+        "https://stellwagen.noaa.gov/visit/whalewatching/whale-behaviors.html"
+      ],
+      "habitat_geometry": "Rooted trees sample actual back support, with short surface roots and an independently authored one-block hollow oak log. Granite uses disjoint anatomy/geode lining to prevent exposed coincident faces. Chalk replaces repeated nodules with asymmetric erosion, strata, calcite ledges and sparse flowers. Dripstone roots embed in same-bone anatomy, including the sonic-animated lower jaw. Lava surfaces use installed lava_still/lava_flow in the crater and back channels, sampling the first square frame through the existing compositor.",
+      "hollow_log_reference": {
+        "project": "https://modrinth.com/mod/quark/version/qcDWHGnS",
+        "version": "4.1-477",
+        "reference": "Inspected assets/quark/models/block/hollow_log.json and hollow_log_horizontal.json: outer16x16x16,2-unit walls,12-unit aperture. Independently authored geometry uses these block dimensions and installed Minecraft oak_log/oak_log_top/stripped_oak_log textures; no Quark model or artwork copied."
+      }
+    }
+  },
+  "joy_of_painting": {
+    "native_dependencies": {
+      "minecraft": "[1.21.1]",
+      "neoforge": "[21.1.242,)"
+    },
+    "source": {
+      "url": "https://github.com/ercanserteli/xercamods/tree/d88bf6577846c505cd142ffd77eec04a11eb276d",
+      "commit": "d88bf6577846c505cd142ffd77eec04a11eb276d",
+      "archive": "pack/licenses/joy-of-painting-1.21.1-2.0.1-corresponding-source.zip",
+      "sha512": "2fee025f954983e8672583bd931d8dbc19f6606237826229b976e77ca39a77cad8e43a2c7a515872fb64439a03b94040748912a1e70d1ac82f169f8c87365d24",
+      "matching_jar_asset_and_data_files": 129,
+      "rebuild": "Full byte-identical rebuild not asserted; exact native APIs and persistence/crafting code audited against artifact bytecode."
+    },
+    "registration_inventory": {
+      "items": [
+        "xercapaint:item_palette",
+        "xercapaint:item_easel",
+        "xercapaint:item_canvas",
+        "xercapaint:item_canvas_large",
+        "xercapaint:item_canvas_long",
+        "xercapaint:item_canvas_tall",
+        "xercapaint:item_canvas_glass",
+        "xercapaint:item_canvas_glass_large",
+        "xercapaint:item_canvas_glass_long",
+        "xercapaint:item_canvas_glass_tall"
+      ],
+      "entities": [
+        "xercapaint:canvas",
+        "xercapaint:easel"
+      ]
+    },
+    "survival": "Brush plus three planks crafts a palette. Four sticks craft an easel. Eight sticks around paper craft a small canvas; a glass pane replaces paper for a glass canvas. Blank canvas combinations yield wide/tall/large variants. Vanilla dyes fill each of sixteen basic palette slots through a native crafting recipe. Signed originals produce first and second generation copies while returning the original and consuming a same-size/material blank canvas.",
+    "persistence": "Canvas item components preserve native ID/version, pixels, side pixels/activation, title, author, generation and material/type. Placed entities embed pixels in NBT; easels serialize the full item stack. Artwork remains user data in the save/item, not only an external image cache.",
+    "reforge_audit": "Palette, blank/painted canvases and easel are art supplies/decor, with no armor, damage, durability, use-time, reach or existing tool-family action to modify. No invented reforge pool. Native music instruments are an existing analogous exclusion; artistic quality effects require a separate concrete owner choice.",
+    "held_inventory": "Ten registered roots: palette and easel use authored held geometry; eight blank canvas hand models select the provider's existing volumetric empty-canvas renderer. Native drawn models, dynamic painting pixels, glass, painted sides and non-hand icons remain provider-owned. Palette retains seventeen states, including the native final color replacement at the same paint position. Artist palette dimensions are calibrated to the complete native PlayerModel/ItemInHandLayer ITEM pose and pinned Punchy consumer; no imagined scale factor or fitted thumbnail establishes scale.",
+    "localization": "All45 native English keys and40 provider Russian keys audited. Five missing Russian glass/material entries supplemented; native tab labels corrected from Paint/Картина to Joy of Painting while preserving modified user translations. No config screen or configuration file is registered by the exact mod. Six sound events are editing-interface effects, played as UI sounds, not world warnings; no decorative subtitle flood added.",
+    "ship_boundary": "Canvas is a custom HangingEntity and easel an Entity. Sable attachment, moving-deck interaction, ship unload/rejoin, render transforms and saved painted content require the owner to test the exact client.",
+    "held_cases": {
+      "primary": 34,
+      "painted_side_cases": 8,
+      "breakdown": "17 palette states, one easel, four sizes × ordinary/glass × blank/drawn. Additional painted-edge cases cover all eight canvas roots. No separate registered brush or paint tubes."
+    }
+  },
+  "focused_regression": "SkyArtRegression.verify(ServerLevel) exercises actual recipes/components/entities, physical native whale death with a protected chest, native Sable serialization and lifetime bookkeeping. Run status belongs to the final task evidence, not this static audit.",
+  "owner_acceptance_pending": [
+    "Observe rare natural whales during eligible Overworld travel and confirm varied Overworld habitats and no automatic whales in other dimensions",
+    "Observe reactive sonic telegraph/attack near a moving ship, native mob-griefing setting, captions, shaders and comfort",
+    "Hunt, harvest and process native meat/bones through food/nutrition and both lift routes",
+    "Paint/sign/copy each chosen canvas type, place it on wall/floor/ceiling and easel, then save/rejoin",
+    "Paint and display canvas/easel on moving ship; assemble, move, unload/reload/rejoin with artwork intact",
+    "Review English/Russian art tools, glass canvases, creative tabs, help/import messages and Sky Whales config labels/comments"
+  ]
+}

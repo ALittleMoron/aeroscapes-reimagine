@@ -1,0 +1,26 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.husbandry",
+  "plugin": "dev.aeroscapes.husbandry.HusbandryMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AnimalCareClockMixin",
+    "HusbandryOwnersMixin",
+    "HusbandryDeedRadarMixin",
+    "HusbandryHighlightMixin",
+    "HusbandryBrushMixin",
+    "HusbandryTroughMixin",
+    "HusbandryTroughInteractionMixin",
+    "HusbandryItemLanguageMixin",
+    "HusbandryMergedLanguageMixin"
+  ],
+  "client": [
+    "HusbandryLedgerLocatorMixin",
+    "FowlGeneticAppearanceMixin",
+    "HusbandryLedgerLanguageMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,4 +1,4 @@
-Aeroscapes Reimagine 0.5.4 — third-party notices
+Aeroscapes Reimagine 0.6.0 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 
@@ -47,6 +47,21 @@ Wakes Reforged 1.4.1: Leclowndu93150 and contributors, based on Wakes by Goby56.
 https://modrinth.com/mod/wakes-reforged/version/Z3Ic8n5N
 https://github.com/Leclowndu93150/Wakes/tree/f1cd96d90a71bc29fd01b8f4b471d801af98c1af
 The unchanged client JAR is published under GPLv3. Its internal descriptor says MIT.
+
+Sky liveliness in 0.6.0 uses unchanged official files:
+Celestia: Shooting Stars 1.2.4: RafaPolinesio315; MIT (project page and descriptor).
+The JAR's own LICENSE_Celestia text is CC0 1.0 Universal; both declarations are kept.
+https://modrinth.com/mod/celestia-sky/version/1FDmpHXg
+A narrow runtime correction points its root advancement background at the 1.21.1
+texture path; the original file is not redistributed.
+Auroras 1.6.2: Verph; BSD-2-Clause (descriptor "BSD 2"). Client only.
+https://modrinth.com/mod/auroras/version/L0KPECkM
+Aeronautics Wind Sound 1.0.1: MoloX; MIT (descriptor). Client only.
+https://modrinth.com/mod/aeronautics-wind-sound/version/9p7pjRKb
+The owned whale-fall layout follows the spine, rib sweep, skull and tail arrangement
+of Sky Whales' carcass (BSD-3-Clause); its license text accompanies the owned mod.
+Birds around whales draw Atmospheric Fauna's installed swift sprites at runtime;
+no artwork is copied.
 
 Exploration group 3 uses unchanged official artifacts on both sides:
 Naturalist 2.0.7: Starfish Studios; descriptor MIT, project API custom license.
@@ -583,3 +598,27 @@ Exact file: https://modrinth.com/mod/create-diesel-generators/version/UoPH8lO1
 License: Create-Diesel-Generators-MIT.txt. Native artwork is reused under that license
 for state-preserving held equipment; authored mesh composition uses deterministic Java tooling.
 Oil-bearing rock texture is original deterministic pixel composition for this pack.
+
+Engineering held containers and cannon worm in 0.6.0:
+Independent vessel, glass-canister and extracting-head geometry is composed by
+the owned Java generators EngineeringBucketModels, SteamContainerModels and
+CannonWormModels. Metal/fluid palettes retain colors from the pinned native
+Minecraft, FluidLogistics, Steam Powered, Diesel Generators, Vintage Improvements,
+Metallurgy and Big Cannons artwork under their notices above. The CBC native
+non-hand worm model remains embedded unchanged and its derived artwork retains
+the recorded CC BY-NC-SA 4.0 terms. Native icons, block models and gameplay remain
+provider-owned. The copper vessel's hand adapter uses the actual contained fluid
+texture, tint, amount, luminosity and gas state at runtime. Editable generators,
+adapter source and required resource inputs accompany the owned source archive.
+No generative image model or third-party photograph supplies these pack assets.
+The shared held vessel also serves the remaining physical bucket families.
+Their fluid, solid and captured-creature artwork stays in the original pinned
+providers and is resolved at runtime rather than copied into this resource pack.
+Content masks select native item-art materials for independently constructed
+surfaces and food relief; fluid motion and steam geometry are independently authored.
+Native entity models, textures and saved appearance variants are rendered through
+their existing providers. The held vessel and its presentation adapters are
+independently authored.
+
+Selected household and navigation additions
+See Household-and-navigation-NOTICE.txt for exact official files and scoped terms.

@@ -1,0 +1,12 @@
+name = "Animal Husbandry"
+filename = "AnimalHusbandry-neoforge-0.6.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/HWb14TvI/versions/Evazn2xm/AnimalHusbandry-neoforge-0.6.0.jar"
+hash-format = "sha512"
+hash = "1a8ed2bd449b6cf8141f538f0b73451ac5b88fb07bf0c1fe4b3085e36526c6265f721c6c26a25d9d1f0edb9d9d3e83b16826876798c83a90f100ed72a67923a2"
+
+[update.modrinth]
+mod-id = "HWb14TvI"
+version = "Evazn2xm"

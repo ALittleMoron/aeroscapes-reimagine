@@ -1,0 +1,18 @@
+{
+  "values": [
+    "hybrid_birds:duck_egg",
+    "hybrid_birds:goose_egg",
+    "hybrid_birds:guinea_fowl_egg",
+    "hybrid_birds:peacock_egg",
+    "hybrid_birds:swan_egg",
+    "hybrid_birds:turkey_egg",
+    "minecraft:egg",
+    "naturalist:alligator_egg",
+    "naturalist:duck_egg",
+    "naturalist:ostrich_egg",
+    "naturalist:tortoise_egg",
+    "spawn:booby_egg",
+    "spawn:iguana_egg",
+    "spawn:marine_iguana_egg"
+  ]
+}

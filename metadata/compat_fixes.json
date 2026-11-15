@@ -938,5 +938,107 @@
     },
     "files": [],
     "reason": "0.5.4 adapters cap Steam Powered external API heat instead of raising weak heat to full output and persist successful engine steam debits on the actual tank owner, including direct boilers across chunk boundaries. Boiler production and direct engine canister fills use source steam: native flowing steam cannot be drained by FluidLogistics source-fluid order keys. Boiler/engine NBT reads preserve stored steam volume/components while normalizing its identity; native canister interaction requires space for the complete 1000 mB before consuming the item. Other adapters localize verified Deployer and expression-screen literal labels/errors and FluidLogistics performance units, and route successful Hand Pointer configuration through existing building-tool reforge effects. Binary-specific targets, guarded language corrections and native transaction/heat/control regressions remain owned by the companion source."
+  },
+  {
+    "targets": {
+      "eIFO05HM": "lrkeW7DD"
+    },
+    "files": [
+      "data/rsgauges/tags/block/clay_like.json",
+      "data/rsgauges/tags/block/glass_like.json",
+      "data/rsgauges/tags/block/logs.json",
+      "data/rsgauges/tags/block/ores.json",
+      "data/rsgauges/tags/block/planks.json",
+      "data/rsgauges/tags/block/plants.json",
+      "data/rsgauges/tags/block/saplings.json",
+      "data/rsgauges/tags/block/slabs.json",
+      "data/rsgauges/tags/block/soils.json",
+      "data/rsgauges/tags/block/stone_like.json",
+      "data/rsgauges/tags/block/water_like.json",
+      "data/rsgauges/tags/block/wooden.json",
+      "data/rsgauges/tags/item/buttons.json",
+      "data/rsgauges/tags/item/pressure_plates.json"
+    ],
+    "reason": "RSGauges 1.0.0 stores its two ingredient and twelve observer-category tags under obsolete plural directories. Restore their native memberships under Minecraft 1.21.1 singular item/block paths, using the current c:glass_blocks, c:glass_panes and c:ores block tags instead of obsolete forge references. This restores sixteen control recipes and observer material/category matching without changing recipes or category semantics."
+  },
+  {
+    "targets": {
+      "jmJ87gsb": "yibngMI7"
+    },
+    "files": [
+      "data/c/tags/item/bale.json"
+    ],
+    "reason": "Delightful Creators 1.2 defines c:bale only under obsolete tags/items. Restore its exact hay/rice bale membership under tags/item so the native horse-feed sequenced assembly accepts its intended starting ingredient. Do not migrate unrelated legacy soup-as-water data."
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/c/tags/item/buckets.json"
+    ],
+    "reason": "Add 313 missing physical bucket registrations (including solid cheese and Quark slime vessels) to c:buckets so native Create Attribute Filters match engineering, food and creature buckets. The runtime census excludes Naturalist bare CaughtEntityItem creatures and includes Spawn physical buckets from the separate TealLib class. Copper already supplies the broad tag and must not receive static empty/water/lava membership for its component-based contents."
+  },
+  {
+    "targets": {
+      "g4AWLVIr": "HiLD5edv",
+      "owned:aeroscapes_reimagine": "0.1.0",
+      "yBW8D80W": "ksaGCvSu"
+    },
+    "files": [],
+    "reason": "Client-only CopperBucketHeldModelMixin wraps the native 1.3.2 override result after state resolution. Before native icon retexturing it selects a SeparateTransformsModel GUI child, preventing native isGui3d rejection of these wrappers while preserving their actual hand volume and rejection of genuinely volumetric icons. GUI/ground/fixed and missing-template fallback retain the native result; hand-only CopperBucketHeldRendering combines authored vessel and actual component fluid quads with native tint index 1, still-sprite atlas UVs, quantity-dependent tapered fill, luminosity and grip-centered gas inversion. No fluid gameplay, content components or ordinary bucket identities change. EngineeringContainerModelTest bakes all 55 authored container/worm roots and native fallbacks; CopperBucketHeldRenderingTest covers state routing, volume/UV/normal/light and gas grip/render-pass contracts. LambDynamicLights4.8.11 resources add world light for luminous fixed bucket contents; the exact runtime item-light return hook adds component-sensitive copper light and Spawn angler bulb light according to restored health (the native bucket loader ignores live-entity Air). Empty copper remains dark and native stronger light/settings remain effective. Native-shaped vapor rises at exposed mouth sides with controlled alpha; central under-fist glyphs and decorative liquid ripple arcs were rejected by the owner."
+  },
+  {
+    "targets": {
+      "owned:aeroscapes_reimagine": "0.1.0",
+      "yBW8D80W": "ksaGCvSu"
+    },
+    "files": [],
+    "reason": "BucketHeldModelMixin selects the shared volumetric vessel after native state resolution and before the exact NeoForge21.1.244 camera transform. Physical classification covers all338 pinned bucket roots plus conditional Spawn octopus states; bare Naturalist creatures and non-bucket capture containers retain provider presentation. BucketContentRendering uses masked native item-art materials, raised food/solid surfaces, animated liquids and native-frame steam. Chocolate and levitite retain their native animated fluid surfaces. Emissive fills use the standard entityTranslucentEmissive shader recognized by Iris1.8.14-beta.1; the NeoForge custom unlit shader is skipped with allowUnknownShaders=false. Preserve shader preferences. Copper retains its actual5L amount, fluid tint/light and gas inversion. Isolated native creatures preserve saved variants and provider illumination without spawning or ticking; duck, seal, crab and octopus float in half water and Quark slime uses half slime. Scoped Punchy3.0 offsets preserve explicit user profiles. Blazing swordfish alone uses a low side-facing pose beside the grip and the first active native swim tick for cached sizing (Tide2.1.1 suppresses joint phase offsets at exactly age zero); its complete animated mesh is checked against the fist, sleeves, bail and tapered vessel. Registry/tag regression and client-free camera, material, animation, native-consumer and placement tests cover these boundaries; actual client/shader acceptance is separate."
+  },
+  {
+    "targets": {
+      "HWb14TvI": "Evazn2xm",
+      "curseforge:1616052": "9559254",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "Exact-version owned husbandry and agriculture adapters preserve native care, prevent unloaded-time neglect catch-up, block server animal locating, retain Fowl Play genetic appearance, conserve trough water, add grooming/angora quality, and reject extra ingredients in magnifying-helmet recipes. Required AgriCraft resource-plant filtering, ordinary farming/grass defaults, Create harvesting and food tags are audited in metadata/household_integration.json with artifact and asset provenance. Native gameplay and states remain; useful AgriCraft/AH handhelds gain scoped hand models and the greenhouse-monitor icon is redesigned. No seasonal restrictions or graphics-stack changes are introduced."
+  },
+  {
+    "targets": {
+      "YWGP4Y1d": "Cw4mfhCD",
+      "WBvnqHfV": "MGjl80vc"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/recipe/chalk_powder_from_block.json",
+      "data/aeroscapes_reimagine/recipe/chalk_from_powder.json"
+    ],
+    "reason": "Nature’s Spirit white chalk block unpacks to four powders, reversing its native four-powder compression. One powder yields one nonstackable Chalk stick. Calcite route remains; no damaged chalk input, colored-block bleaching or reverse Chalk-stick conversion."
+  },
+  {
+    "targets": {
+      "F8BQNPWX": "9Yn8ig4c",
+      "R2OftAxM": "rOESN0jP",
+      "HWb14TvI": "Evazn2xm",
+      "txgXquyE": "JjW0y3WF",
+      "jmJ87gsb": "yibngMI7",
+      "4HnO3el1": "OViKhK8K",
+      "LNytGWDc": "UjX6dr61",
+      "ZM3tt6p1": "UoPH8lO1",
+      "g4AWLVIr": "HiLD5edv",
+      "Vg5TIO6d": "Xe7EqzfQ",
+      "rex9wwpz": "OgmUYgeL",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/tags/item/raw_eggs.json",
+      "data/aeroscapes_reimagine/recipe/cutting/cacao_nibs.json",
+      "data/aeroscapes_reimagine/recipe/milling/cacao_nibs.json",
+      "data/aeroscapes_reimagine/tags/item/hauntable_sands.json",
+      "data/aeroscapes_reimagine/tags/item/washable_glass_panes.json",
+      "data/aeroscapes_reimagine/tags/item/recyclable_boats_without_chests.json"
+    ],
+    "reason": "Exact-version recipe integration: one FD cooked-egg result from fourteen physical eggs, excluding egg powder; legacy cooked IDs remain valid kitchen ingredients without recreating obsolete outputs. Hash-guarded field edits redirect recipe awards, disable the erroneous DC dough-to-pie producer while preserving native CreateFood whole-pie cutting and saved DC-slice recombination; repair copied food ingredients, batch 1000mB cream cheese into three portions, assign distinct cocoa/drain/board routes, separate broad Create processing tags from specific materials/chest boats, and separate the vertical package-filter and L-shaped item-silo patterns at unchanged material cost, preserving the native vertical item-vault and horizontal oil-barrel patterns. Preserve Polymorph/manual alternatives and native basin output filters; no fluid identities or cheese-wheel ratios merge. Runtime edits and provider hashes are inventoried in metadata/runtime_data_patches.json. Delightful Creators hot cocoa, glow-berry custard, melon juice and apple cider now empty to250mB, matching their unchanged native250mB bottle filling;333mB soup routes remain unchanged."
   }
 ]

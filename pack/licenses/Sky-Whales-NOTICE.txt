@@ -1,0 +1,30 @@
+Sky Whales 0.1.9 (mod ID skywhales)
+Publisher and embedded author: Dacite Dev LLC
+Official project: https://modrinth.com/mod/sky-whales
+Exact file: https://modrinth.com/mod/sky-whales/version/bDTUgqZ5
+
+The official Modrinth project and the selected JAR's NeoForge descriptor declare
+BSD-3-Clause. The unchanged official JAR is downloaded from its original channel.
+No full license/copyright file or source-repository URL is supplied in this exact
+JAR or its project metadata. These limitations are retained in the artifact audit;
+no copyright year or unpublished source correspondence is asserted.
+
+Native sounds, blocks and processing remain in that unchanged artifact.
+Thirteen ecological surfaces and models adapt its texture/geometry under the
+declared BSD-3-Clause license. Native combat bones, pivots and animation names
+remain compatible; body shapes, attached habitats and idle swimming differ.
+Three owned swimming animation resources retain the exact native sonic-attack
+clip, adapted under the same declared license. Native controllers select these
+resources through the owned model adapter; no provider JAR is modified.
+SkyWhaleArtwork.java generates the rig adaptations and material layout.
+WhaleTextureComposer.java composes surfaces locally from installed block textures
+at resource reload, with original integrated eyes. No Minecraft or Nature’s Spirit
+texture-atlas derivatives are bundled. The AI-assisted deterministic Java sources
+accompany the pack; regenerate models/layout with ./gradlew generateSkyWhaleArtwork.
+Publisher attribution above is retained without inventing a copyright year.
+BSD terms are reproduced in Sky-Whales-BSD-3-Clause.txt; no endorsement is implied. Independent owned adapters confine automatic appearance
+to the Overworld, stage the native physical carcass in Sable's reserved storage
+instead of overwriting blocks at the death site, and remove corpse age records
+when a body is permanently deleted. The native time limit and resource economy
+remain unchanged. Supplementary English/Russian configuration and Russian content
+labels are independently authored by Aeroscapes Reimagine.

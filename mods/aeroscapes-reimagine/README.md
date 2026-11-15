@@ -204,3 +204,44 @@ Its idle tackle is clipped to the shaft; deployed meshes omit that tackle.
 Selected equipment uses authored hand geometry while GUI, ground and fixed views
 retain the native presentation. Native glider emergency descent remains;
 client adapters reconcile its arm pose with the installed animation stack.
+
+`PaintingEquipmentModels` supplies the palette's seventeen held states and the
+easel mesh. Blank canvas hand models select Joy of Painting's existing volumetric
+fallback; drawn pictures remain with its native renderer. `paintingEquipmentModelTest`
+checks native state colors, camera dispatch and blank/drawn canvas geometry.
+Palette scale is calibrated against the full native player and the installed
+Punchy consumer, including the native held-arm pose and player root scale.
+
+### Whale artwork generation
+
+`./gradlew generateSkyWhaleArtwork` regenerates thirteen GeckoLib models and their
+block-material layouts from the exact pinned Sky Whales artifact on the policy
+classpath. Its SHA-512 is checked; native combat bones and pivots remain compatible
+while each form has its own body proportions and attached habitat.
+The client composes surfaces from the installed block textures during resource
+reload, retaining their sixteen-texel block scale. Minecraft and Nature’s Spirit
+texture derivatives are not bundled in the owned mod.
+
+Schema 2 assigns every cube and optional face override an explicit block material,
+with full-sprite sampling for plants and relative eye anchors. The layout contains
+per-bone extents covering the hierarchy and swimming/attack envelope. Natural
+placement checks these at the chosen yaw alongside the native collision parts,
+without loading chunks or changing the creature's physics.
+
+`skyWhaleArtworkTest` checks rig compatibility, authored shapes, generated layout and shared pixel
+compositor as part of `check`; directional fixtures follow the pinned GeckoLib UV
+corners. `skyWhaleAnimationTest` plays the three owned swimming families through
+the pinned native controllers and GeckoLib processor, including stationary motion,
+turning, blinking and the original sonic attack. It requires no Minecraft client
+launch. Optional
+offline previews use verified game assets; they establish static art inspection,
+while only the owner operates Minecraft for live animation and shader acceptance.
+
+### Recipe compatibility fixture
+
+On a disposable dedicated server with the diagnostic JAR, enable
+`-Daeroscapes.regression.recipeCompatibility=true`. The fixture exercises loaded
+cooking, cutting, basin processing, ingredients, fluid/container conservation
+and selected automation alternatives, then checks decorated whale placement.
+Wait for `Recipe and decorated whale clearance regression passed` before the
+normal save-and-stop check. This diagnostic JAR is never distributed in the pack.

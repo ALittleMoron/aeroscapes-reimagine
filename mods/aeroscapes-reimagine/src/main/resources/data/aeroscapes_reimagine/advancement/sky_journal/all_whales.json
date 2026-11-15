@@ -1,0 +1,374 @@
+{
+  "parent": "aeroscapes_reimagine:sky_journal/sky_whale",
+  "display": {
+    "icon": {
+      "id": "exposure:album"
+    },
+    "title": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.all_whales.title"
+    },
+    "description": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.all_whales.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "stone": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"stone\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "moss": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"moss\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "rooted": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"rooted\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "fungal": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"fungal\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "granite": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"granite\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "chalk": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"chalk\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "dripstone": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"dripstone\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "basalt": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"basalt\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "lava": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"lava\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "sandstone": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"sandstone\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "reef": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"reef\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "snow": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"snow\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    },
+    "cloud": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"cloud\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 200
+  }
+}

@@ -31,11 +31,18 @@ for internal links. The default project prefix is `/aeroscapes-reimagine/`.
 `DOCS_SITE` and `DOCS_BASE` set the deployment origin and prefix.
 
 Every gameplay direction is a collapsible sidebar group with an Overview entry,
-including directions that currently have only that page. World generation
+including directions that currently have only that page. The single
+`experience/systems` page above them maps the connections between directions. World generation
 lives under `experience/world/`; the Releases group contains the release guide,
 changelog and installation. Compatibility, inventory and credits remain separate
 references. Keep paired pages consistent in facts,
 implementation status and practical instructions; use natural wording in each language.
+
+Diagrams are Mermaid `flowchart TB` blocks in ordinary fenced code, so GitHub
+shows them in the repository and `astro-mermaid` renders them on the site in the
+browser. Paired pages keep identical node IDs and arrows; only quoted node and
+arrow labels differ, and the content loader rejects a structural mismatch. Use
+solid arrows for working connections and dashed arrows (`-.->`) for planned ones.
 
 `src/styles/custom.css` owns the site palette, typography and page styling.
 The selected Night Sky and Gold palette uses slate-blue surfaces and warm gold

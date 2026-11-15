@@ -1,0 +1,109 @@
+{
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/cannon_worm/worm.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "minecraft:block/oak_log"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        -45,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        2
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -45,
+        45,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        2
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        -90,
+        45,
+        0
+      ],
+      "translation": [
+        4,
+        -6,
+        -7
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -90,
+        45,
+        0
+      ],
+      "translation": [
+        4,
+        -6,
+        -7
+      ]
+    },
+    "ground": {
+      "rotation": [
+        80,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        1,
+        0
+      ]
+    },
+    "gui": {
+      "rotation": [
+        120,
+        0,
+        -30
+      ],
+      "translation": [
+        -0.75,
+        0.75,
+        0
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "head": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "translation": [
+        0,
+        13,
+        7
+      ]
+    },
+    "fixed": {
+      "scale": [
+        0.35,
+        0.35,
+        0.35
+      ]
+    }
+  }
+}

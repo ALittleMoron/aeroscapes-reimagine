@@ -228,6 +228,7 @@ public final class ConstructionPlacementTest {
     boolean castingNet = item.equals("casting_net") || item.equals("casting_net_full");
     boolean lunchbox = item.equals("lunchbox");
     boolean palm = castingNet || lunchbox || item.equals("paint_brush") || item.equals("bag");
+    Map<String, Matrix4f> classicItemPoses = new LinkedHashMap<>();
     for (boolean left : new boolean[] {false, true})
       for (boolean slim : new boolean[] {false, true})
         for (int index = 0; index < frames.size(); index++) {
@@ -245,6 +246,9 @@ public final class ConstructionPlacementTest {
           arm.yRot = (float) Math.asin(-frame.m02());
           arm.zRot = (float) Math.atan2(frame.m01(), frame.m00());
           Matrix4f entryRoot = new Matrix4f().rotateZ((float) Math.PI);
+          PoseStack explicitArm = new PoseStack();
+          explicitArm.mulPose(entryRoot);
+          arm.translateAndRotate(explicitArm);
           PoseStack skin = new PoseStack();
           skin.mulPose(entryRoot);
           if (slim) skin.translate((left ? 1 : -1) * .5f / 16, 0, 0);
@@ -260,8 +264,16 @@ public final class ConstructionPlacementTest {
           PoseStack held =
               palm
                   ? HeldEquipmentGrip.palm(entryRoot, frame, left, slim)
-                  : neutralPunchy(skin.last().pose(), left, kind);
+                  : neutralPunchy(explicitArm.last().pose(), left, kind);
           model.getTransforms().getTransform(context).apply(left, held);
+          if (!palm) {
+            String key = left + "/" + index;
+            if (!slim) classicItemPoses.put(key, new Matrix4f(held.last().pose()));
+            else
+              require(
+                  held.last().pose().equals(classicItemPoses.get(key), .000001f),
+                  "Punchy's explicit item attachment cancels the vanilla slim offset; only the arm mesh shifts");
+          }
           Matrix4f relative = new Matrix4f(skin.last().pose()).invert().mul(held.last().pose());
           if (item.equals("seashell_hoe"))
             require(

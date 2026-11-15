@@ -29,7 +29,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   static boolean shouldApplyForVersions(
       String mixinClassName, Function<String, String> versionLookup) {
     Map<String, String> versions;
-    if (mixinClassName.endsWith("TooltipScrollBoundaryMixin")) {
+    if (mixinClassName.startsWith("dev.aeroscapes.mixin.sky.")) {
+      versions = Map.of("skywhales", "0.1.9", "sable", "2.0.6", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("TooltipScrollBoundaryMixin")) {
       versions = Map.of("smart_tooltip_scroll", "1.1.1+1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("MiscTranslationFallbackMixin")) {
       versions = Map.of("moonlight", "1.21.1-3.0.18", "neoforge", "21.1.244");
@@ -194,6 +196,17 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "6.0.10",
               "neoforge",
               "21.1.244");
+    } else if (mixinClassName.endsWith("CopperBucketHeldModelMixin")) {
+      versions = Map.of("fluidlogistics", "1.3.2", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("BucketContentLightMixin")) {
+      versions =
+          Map.of(
+              "lambdynlights_runtime",
+              "4.8.11+1.21.1",
+              "fluidlogistics",
+              "1.3.2",
+              "neoforge",
+              "21.1.244");
     } else if (mixinClassName.endsWith("ScrollFallbackModelMixin")) {
       versions = Map.of("irons_spellbooks", "1.21.1-3.16.3", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("SwordCastPresentationMixin")) {
@@ -212,6 +225,12 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "7.2.6",
               "neoforge",
               "21.1.244");
+    } else if (mixinClassName.endsWith("SoundCaptionMixin")) {
+      versions = Map.of("irons_spellbooks", "1.21.1-3.16.3", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("ItemModelResourcesMixin")) {
+      versions = Map.of("neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("AuroraShaderOwnershipMixin")) {
+      versions = Map.of("auroras", "1.6.2", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("CelestialSkyMixin")) {
       versions = Map.of("neoforge", "21.1.244");
       if (versionLookup.apply("spyglass_astronomy") != null) return false;
@@ -303,6 +322,12 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "3.3.12",
               "entity_texture_features",
               "7.2.6");
+    } else if (mixinClassName.endsWith("BucketArmGripMixin")) {
+      versions = Map.of("punchy", "3.0", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("BucketHeldModelMixin")
+        || mixinClassName.endsWith("MobBucketTypeAccess")
+        || mixinClassName.endsWith("BucketPreviewEntityAccess")) {
+      versions = Map.of("neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("FastRodCaptureMixin")) {
       versions = Map.of("punchy", "3.0", "flerovium", "1.1.2");
     } else if (mixinClassName.endsWith("RopeLauncherFirstPersonMixin")) {

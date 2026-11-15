@@ -25,7 +25,7 @@ public final class CelestialRenderer {
 
   public static void render(
       ClientLevel level, Matrix4f modelView, float partialTick, Camera camera) {
-    if (!CelestialConfig.CELESTIAL_SKY.get()
+    if (!PresentationConfig.CELESTIAL_SKY.get()
         || level == null
         || !level.dimension().equals(Level.OVERWORLD)
         || camera.getFluidInCamera() != FogType.NONE) return;

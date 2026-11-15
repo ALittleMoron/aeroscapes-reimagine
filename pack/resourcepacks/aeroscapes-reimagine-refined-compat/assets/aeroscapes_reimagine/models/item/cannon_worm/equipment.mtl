@@ -1,0 +1,14 @@
+newmtl worm_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd minecraft:block/oak_log
+
+newmtl worm_end
+Ka 0 0 0
+Kd 1 1 1
+map_Kd create:block/axis_top
+
+newmtl worm_iron
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/cannon_worm/iron

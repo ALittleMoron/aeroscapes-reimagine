@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "animalhusbandry:models/item/aeroscapes_farming/fertility_potion.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "particle": "agricraft:item/aeroscapes_farming/materials"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        2.7935896,
+        -0.5937958
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        2.7935896,
+        -0.5937958
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        2.7935896,
+        -0.5937958
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        2.7935896,
+        -0.5937958
+      ]
+    }
+  }
+}

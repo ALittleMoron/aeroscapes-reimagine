@@ -33,3 +33,8 @@ items are absent in the pinned pack. Editable JSON ships in the required
 compatibility data pack under data/rsgauges/loot_table/blocks/. The owned
 mod supplies adjusted English and Russian item help, configuration text and
 an independently authored palette for the status overlay.
+
+The required compatibility data pack also restores the port's two ingredient
+and twelve observer-category tags from obsolete plural directories to Minecraft
+1.21.1 item/block paths. References to Forge glass and ore tags use their current
+common c: equivalents. Original memberships and recipes are preserved.

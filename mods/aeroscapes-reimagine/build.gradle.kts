@@ -53,6 +53,8 @@ repositories {
       includeModule("maven.modrinth", "create-aeronautics")
       includeModule("maven.modrinth", "create")
       includeModule("maven.modrinth", "create-diesel-generators")
+      includeModule("maven.modrinth", "GWp4jCJj")
+      includeModule("maven.modrinth", "Soft45xC")
       includeModule("maven.modrinth", "create-liquid-fuel")
       includeModule("maven.modrinth", "create-steam-powered")
       includeModule("maven.modrinth", "createfluidlogistic")
@@ -104,6 +106,11 @@ repositories {
       includeModule("maven.modrinth", "sophisticated-storage")
       includeModule("maven.modrinth", "create-aeronautics-throwable-rope-connector")
       includeModule("maven.modrinth", "exposure")
+      includeModule("maven.modrinth", "sky-whales")
+      includeModule("maven.modrinth", "joy-of-painting")
+      includeModule("maven.modrinth", "xaeros-minimap")
+      includeModule("maven.modrinth", "xaeros-world-map")
+      includeModule("maven.modrinth", "animalhusbandry")
     }
   }
 }
@@ -153,6 +160,22 @@ val extractShipApi =
     includeEmptyDirs = false
     into(shipNestedApiDirectory)
   }
+val navigationApi =
+  configurations.create("navigationApi") {
+    isCanBeConsumed = false
+    isTransitive = false
+  }
+val navigationApiDirectory = layout.buildDirectory.dir("navigation-api")
+val extractNavigationApi =
+  tasks.register<Sync>("extractNavigationApi") {
+    from(navigationApi.map { zipTree(it) })
+    include("META-INF/jarjar/xaerolib-neoforge-1.21.1-1.7.3.jar")
+    eachFile { path = name }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    includeEmptyDirs = false
+    into(navigationApiDirectory)
+  }
+
 val atmosphereApi =
   configurations.create("atmosphereApi") {
     isCanBeConsumed = false
@@ -183,6 +206,16 @@ val extractSableApi =
   }
 
 dependencies {
+  compileOnly("maven.modrinth:animalhusbandry:Evazn2xm") { isTransitive = false }
+  compileOnly("curse.maven:agricraft-rereloaded-1616052:9559254") { isTransitive = false }
+  compileOnly("maven.modrinth:sky-whales:bDTUgqZ5") { isTransitive = false }
+  compileOnly("maven.modrinth:joy-of-painting:73U02HbA") { isTransitive = false }
+  navigationApi("maven.modrinth:xaeros-minimap:irjR7dHk")
+  navigationApi("maven.modrinth:xaeros-world-map:SnQ4SoDe")
+  compileOnly(files(navigationApi))
+  compileOnly(
+    files(fileTree(navigationApiDirectory) { include("*.jar") }).builtBy(extractNavigationApi),
+  )
   compileOnly("maven.modrinth:create-diesel-generators:UoPH8lO1") { isTransitive = false }
   compileOnly("maven.modrinth:create-liquid-fuel:rLn2bDVE") { isTransitive = false }
   compileOnly("maven.modrinth:create-steam-powered:w3zLn2Kv") { isTransitive = false }
@@ -203,6 +236,9 @@ dependencies {
   equipmentAssets("maven.modrinth:exposure:iBvaR6AK")
   equipmentAssets("maven.modrinth:littletiles:c2SowFEz")
   equipmentAssets("maven.modrinth:theurgy:EBO0aQOY")
+  equipmentAssets("maven.modrinth:GWp4jCJj:bOiDu0LS")
+  equipmentAssets("maven.modrinth:Soft45xC:4RhIMmaJ")
+  equipmentAssets("curse.maven:vintage-improvements-ssw-1255448:8941692")
   explorationApi("maven.modrinth:hybrid-aquatic:jdOU7Pzu")
   explorationApi("maven.modrinth:hybrid-api:4HsWNhJz")
   explorationApi("maven.modrinth:geckolib:Grwn5rUB")
@@ -481,6 +517,44 @@ val punchyMapProfileTest =
     )
   }
 
+val preflightReadingsTest =
+  tasks.register<JavaExec>("preflightReadingsTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.preflight.PreflightReadingsTest"
+  }
+
+val mapLayerSelectionTest =
+  tasks.register<JavaExec>("mapLayerSelectionTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath =
+      policy.runtimeClasspath +
+        files(
+          tasks
+            .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
+            .flatMap { it.resourcesArtifact },
+        )
+    mainClass = "dev.aeroscapes.navigation.MapLayerSelectionTest"
+  }
+
+val soundCaptionsTest =
+  tasks.register<JavaExec>("soundCaptionsTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.atmosphere.SoundCaptionsTest"
+  }
+
+val itemModelResourcesTest =
+  tasks.register<JavaExec>("itemModelResourcesTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.atmosphere.ItemModelResourcesTest"
+  }
+
 val celestialLayoutTest =
   tasks.register<JavaExec>("celestialLayoutTest") {
     group = "verification"
@@ -683,6 +757,63 @@ val constructionPlacementTest =
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
+val farmingEquipmentModelTest =
+  tasks.register<JavaExec>("farmingEquipmentModelTest") {
+    group = "verification"
+    dependsOn(vanillaEquipmentModelTest)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.FarmingEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+    providers.gradleProperty("farmingEquipmentPreview").orNull?.let { args(it) }
+  }
+
+val paintingEquipmentModelTest =
+  tasks.register<JavaExec>("paintingEquipmentModelTest") {
+    group = "verification"
+    dependsOn(vanillaEquipmentModelTest)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.PaintingEquipmentModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+    providers.gradleProperty("paintingEquipmentPreview").orNull?.let { args(it) }
+  }
+
+val generateSkyWhaleArtwork =
+  tasks.register<JavaExec>("generateSkyWhaleArtwork") {
+    group = "generation"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.sky.SkyWhaleArtwork"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
+val skyWhaleArtworkTest =
+  tasks.register<JavaExec>("skyWhaleArtworkTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.sky.SkyWhaleArtworkTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
+val skyWhaleAnimationTest =
+  tasks.register<JavaExec>("skyWhaleAnimationTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.sky.SkyWhaleAnimationTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+    providers.gradleProperty("whaleAnimationEvidence").orNull?.let { args(it) }
+  }
+
+val skyLifeContractTest =
+  tasks.register<JavaExec>("skyLifeContractTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.sky.SkyLifeContractTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
 val heldEquipmentRenderingTest =
   tasks.register<JavaExec>("heldEquipmentRenderingTest") {
     group = "verification"
@@ -707,6 +838,48 @@ val fieldEquipmentModelTest =
     classpath = vanillaEquipmentModelTest.get().classpath
     mainClass = "dev.aeroscapes.aquatic.FieldEquipmentModelTest"
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
+val engineeringContainerModelTest =
+  tasks.register<JavaExec>("engineeringContainerModelTest") {
+    group = "verification"
+    dependsOn(equipmentModelsCheck)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.EngineeringContainerModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+    providers.gradleProperty("engineeringContainerPreview").orNull?.let { args(it) }
+  }
+
+val copperBucketHeldRenderingTest =
+  tasks.register<JavaExec>("copperBucketHeldRenderingTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.atmosphere.CopperBucketHeldRenderingTest"
+  }
+
+val allBucketHeldRenderingTest =
+  tasks.register<JavaExec>("allBucketHeldRenderingTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.atmosphere.AllBucketHeldRenderingTest"
+  }
+
+val bucketContentRenderingTest =
+  tasks.register<JavaExec>("bucketContentRenderingTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.atmosphere.BucketContentRenderingTest"
+  }
+
+val bucketCreaturePresentationTest =
+  tasks.register<JavaExec>("bucketCreaturePresentationTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.atmosphere.BucketCreaturePresentationTest"
   }
 
 val ironHeldModelTest =
@@ -794,9 +967,15 @@ tasks.register<JavaExec>("generateEquipmentModels") {
 
 tasks.check {
   dependsOn(
+    preflightReadingsTest,
     tasks.spotlessCheck,
     effectDescriptionPagesTest,
     equipmentModelsCheck,
+    engineeringContainerModelTest,
+    copperBucketHeldRenderingTest,
+    allBucketHeldRenderingTest,
+    bucketContentRenderingTest,
+    bucketCreaturePresentationTest,
     hookCompatibilityTest,
     toolModelContractTest,
     equipmentArtworkTest,
@@ -806,6 +985,11 @@ tasks.check {
     constructionEquipmentModelTest,
     aquaticToolModelTest,
     constructionPlacementTest,
+    farmingEquipmentModelTest,
+    paintingEquipmentModelTest,
+    skyWhaleArtworkTest,
+    skyWhaleAnimationTest,
+    skyLifeContractTest,
     utilityEquipmentModelTest,
     fieldEquipmentModelTest,
     ironHeldModelTest,
@@ -833,6 +1017,9 @@ tasks.check {
     atmosphereContractTest,
     punchyMapProfileTest,
     celestialLayoutTest,
+    itemModelResourcesTest,
+    soundCaptionsTest,
+    mapLayerSelectionTest,
     tradeRecipeContractTest,
     ladleAssemblyOutputsTest,
     managedBackupArchiveTest,

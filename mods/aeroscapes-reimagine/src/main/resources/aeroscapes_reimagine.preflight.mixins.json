@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.preflight",
+  "plugin": "dev.aeroscapes.preflight.PreflightMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BalloonLeakMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

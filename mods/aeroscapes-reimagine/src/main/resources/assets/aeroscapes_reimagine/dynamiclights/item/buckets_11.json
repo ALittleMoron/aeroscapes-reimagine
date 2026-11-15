@@ -1,0 +1,9 @@
+{
+  "match": {
+    "items": [
+      "supplementaries:lumisene_bucket"
+    ]
+  },
+  "luminance": 11,
+  "water_sensitive": false
+}

@@ -1,0 +1,50 @@
+{
+  "parent": "aeroscapes_reimagine:sky_journal/sky_whale",
+  "display": {
+    "icon": {
+      "id": "minecraft:basalt"
+    },
+    "title": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.whale_basalt.title"
+    },
+    "description": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.whale_basalt.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "whale": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale",
+                "nbt": "{AeroscapesWhaleVariety:\"basalt\"}"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 20
+  }
+}

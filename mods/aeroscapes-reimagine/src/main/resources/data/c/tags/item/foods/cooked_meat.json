@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "skywhales:cooked_whale_meat",
+      "required": false
+    },
+    "animalhusbandry:cooked_chevon",
+    "animalhusbandry:cooked_golden_beef"
+  ]
+}

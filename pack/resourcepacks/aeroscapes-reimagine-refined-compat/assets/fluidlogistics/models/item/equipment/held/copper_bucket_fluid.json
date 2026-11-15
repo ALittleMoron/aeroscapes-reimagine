@@ -1,0 +1,1 @@
+{"loader":"neoforge:obj","model":"aeroscapes_reimagine:models/item/engineering_buckets/fill.obj","automatic_culling":false,"flip_v":false,"ambientocclusion":false,"render_type":"minecraft:cutout","textures":{"particle":"fluidlogistics:item/copper_bucket","fluid":"minecraft:block/water_still"}}

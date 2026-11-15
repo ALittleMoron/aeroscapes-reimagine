@@ -1,0 +1,115 @@
+newmtl wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl wood_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl iron
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl iron_edge
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl leather
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl red_wood
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl cord
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl pages
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl indigo
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl ochre
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl bristles
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl green
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl soil
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl pink
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl red
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl blue
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl glass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl glass_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl glass_pink
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl medicine
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl white
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl iron_dark
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+
+newmtl gold
+Ka 0 0 0
+Kd 1 1 1
+map_Kd agricraft:item/aeroscapes_farming/materials
+

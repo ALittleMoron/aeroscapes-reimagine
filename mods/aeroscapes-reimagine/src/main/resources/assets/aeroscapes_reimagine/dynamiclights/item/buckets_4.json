@@ -1,0 +1,9 @@
+{
+  "match": {
+    "items": [
+      "tide:pentapus_bucket"
+    ]
+  },
+  "luminance": 4,
+  "water_sensitive": false
+}

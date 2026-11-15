@@ -1,0 +1,26 @@
+{
+  "match": {
+    "items": [
+      "createbigcannons:molten_bronze_bucket",
+      "createbigcannons:molten_cast_iron_bucket",
+      "createbigcannons:molten_nethersteel_bucket",
+      "createbigcannons:molten_steel_bucket",
+      "tide:ash_perch_bucket",
+      "tide:blazing_swordfish_bucket",
+      "tide:crimson_fangjaw_bucket",
+      "tide:ember_koi_bucket",
+      "tide:glowfish_bucket",
+      "tide:inferno_guppy_bucket",
+      "tide:luminescent_jellyfish_bucket",
+      "tide:magma_mackerel_bucket",
+      "tide:obsidian_pike_bucket",
+      "tide:soulscale_bucket",
+      "tide:sun_emblem_bucket",
+      "tide:volcano_tuna_bucket",
+      "tide:warped_guppy_bucket",
+      "tide:witherfin_bucket"
+    ]
+  },
+  "luminance": 15,
+  "water_sensitive": false
+}

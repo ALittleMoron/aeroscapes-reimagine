@@ -4280,6 +4280,14 @@
     {
       "id": "wetland_whimsy:popcorn_crawfish",
       "required": false
-    }
+    },
+    "skywhales:raw_whale_meat",
+    "skywhales:cooked_whale_meat",
+    "animalhusbandry:fried_egg",
+    "animalhusbandry:raw_chevon",
+    "animalhusbandry:cooked_chevon",
+    "animalhusbandry:cheese_slice",
+    "animalhusbandry:golden_beef",
+    "animalhusbandry:cooked_golden_beef"
   ]
 }

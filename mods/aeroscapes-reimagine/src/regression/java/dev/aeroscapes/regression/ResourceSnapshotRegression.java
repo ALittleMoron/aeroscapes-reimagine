@@ -37,7 +37,7 @@ final class ResourceSnapshotRegression {
       var templateIds =
           readFixture("/template-repairs.json").getAsJsonObject().getAsJsonArray("templates");
       require(
-          jsonIds.size() == 256 && templateIds.size() == 925, "Incomplete snapshot fixture IDs");
+          jsonIds.size() == 383 && templateIds.size() == 925, "Incomplete snapshot fixture IDs");
       JsonObject json = new JsonObject();
       JsonObject registries = new JsonObject();
       for (String id : new TreeSet<>(jsonIds.keySet())) {
@@ -67,7 +67,7 @@ final class ResourceSnapshotRegression {
       Files.createDirectories(path.getParent());
       Files.writeString(path, new GsonBuilder().setPrettyPrinting().create().toJson(result) + "\n");
       System.out.println(
-          "Resource snapshot regression passed: resources=256 templates=925 registries="
+          "Resource snapshot regression passed: resources=383 templates=925 registries="
               + registries.size());
     } catch (IOException exception) {
       throw new IllegalStateException("Resource snapshot regression failed", exception);

@@ -29,6 +29,7 @@ public final class HeldEquipmentRendering {
   private HeldEquipmentRendering() {}
 
   public static boolean held(ItemDisplayContext context) {
+    if (!ItemModelResources.enabled()) return false;
     return switch (context) {
       case FIRST_PERSON_LEFT_HAND,
           FIRST_PERSON_RIGHT_HAND,
@@ -110,6 +111,7 @@ public final class HeldEquipmentRendering {
 
   @SubscribeEvent
   public static void register(ModelEvent.RegisterAdditional event) {
+    if (!ItemModelResources.enabled()) return;
     event.register(LUNCHBOX);
     event.register(ALTIMETER);
   }

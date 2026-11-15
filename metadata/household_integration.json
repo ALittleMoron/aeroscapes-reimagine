@@ -1,0 +1,176 @@
+{
+  "purpose": "Owner-selected household, preflight and whale integration; existing graphics stack and platform pins retained.",
+  "artifacts": [
+    {
+      "slug": "agricraft-rereloaded",
+      "version": "4.0.27",
+      "version_id": "9559254",
+      "sha512": "6b39a76894b185fb687b1d68136286831f11e8a30f7311bc5b6a771895c3c641279b713cc909a319a953c9304ddc79aa48b4cf07ca939462bdb78bc7aab698cb",
+      "source_url": "https://github.com/Vivoxti/AgriCraft-ReReloaded"
+    },
+    {
+      "slug": "animal-husbandry-fresh-animations",
+      "version": "1.1",
+      "version_id": "9143629",
+      "sha512": "64ea291f413c677ba840ba10148fecb170b5303e53c8184005db34d2de5ba66394fa2df5f149b5e30f296fac688598ca2501810b1ac4239355319c18d312ec1a",
+      "source_url": null
+    },
+    {
+      "slug": "animalhusbandry",
+      "version": "0.6.0",
+      "version_id": "Evazn2xm",
+      "sha512": "1a8ed2bd449b6cf8141f538f0b73451ac5b88fb07bf0c1fe4b3085e36526c6265f721c6c26a25d9d1f0edb9d9d3e83b16826876798c83a90f100ed72a67923a2",
+      "source_url": null
+    },
+    {
+      "slug": "chalk-mod",
+      "version": "2.0.3",
+      "version_id": "Cw4mfhCD",
+      "sha512": "3c11b7080d97ed9040797d1d3461b37e118e27aca0c6a179a60d0ec86e8613d4b905bcbb921ef916a985a969d84f014681b63ea77dc5bead508fd5901605d4c5",
+      "source_url": "https://github.com/mortuusars/Chalk"
+    },
+    {
+      "slug": "fowlplay",
+      "version": "1.2.3+1.21.1-neoforge",
+      "version_id": "kZyPjCmU",
+      "sha512": "69d78df0c54cf77cc8dde61a51ccd6e3b9eebda5f07fd8ed7d4d8fe72f9d7f2d51c025a1c5a7b3f7eeeddc75515ea6ba5c15cf878c111016fbde00581c30dd84",
+      "source_url": "https://github.com/aqariio/Fowl-Play"
+    }
+  ],
+  "decisions": {
+    "native_held_art": "Owner requests volumetric hand models for AgriCraft and Animal Husbandry useful handhelds, retaining native state graphs and ordinary icons except a redesigned greenhouse-monitor icon. Fowl genetics appearance remains a required compatibility adapter.",
+    "grooming_quality": "Owner chose effectiveness. Native grooming fully resets dirt, so only happiness gains scale with quality; wear stays native.",
+    "agricraft_tools": "Owner chose native clippers, rakes and trowel without reforging. Informational/storage utilities retain native behavior.",
+    "reserve": [
+      {
+        "name": "Wild Graft",
+        "url": "https://www.curseforge.com/minecraft/mc-mods/wild-graft"
+      },
+      {
+        "name": "Field Guide",
+        "url": "https://modrinth.com/mod/field-guide"
+      }
+    ],
+    "seasons": "Ecliptic Seasons is selected future work, currently absent; no seasonal restrictions or speculative adapter added.",
+    "maps": "Native Xaero terrain display on new selection; FOLLOW/MANUAL controls retained. Native Xaero preferences are not overwritten.",
+    "ah_fresh_animations": "Owner explicitly authorizes use of AH x FA1.1. Original provider ARR terms and file provenance remain unchanged; owner approval does not assert upstream relicensing.",
+    "whale_dimensions": "Develop thirteen Overworld ecological forms now. Nether and End whales are owner-selected future work during those dimension updates, with no current spawn there.",
+    "held_native_identity": "Latest owner review narrows corrections to three aspects: frontal horned bull-skull ledger emblem; tidy greenhouse-monitor case/face junction with graphs retained; inward brush bristles (right hand leftwards, left hand rightwards). Do not apply broad reinterpretations from the agent audit to accepted or unreviewed items.",
+    "whale_materials": "Owner explicitly requires the actual recognizable Minecraft block materials, consistent block-scale16texels/worldblock detail, and integrated mob eyes. Rejected coarse invented moss/basalt patterns and pasted gray native eye rectangles. Compose from installed block textures at runtime; no bundled Minecraft/NStexture derivatives.",
+    "held_owner_review": {
+      "accepted_appearance": [
+        "Shown magnifier appearance (no further redesign requested for either magnifier).",
+        "Shown AgriCraft seed-bag appearance; unshown states are not individually accepted.",
+        "animalhusbandry:fertility_potion",
+        "animalhusbandry:animal_medicine"
+      ],
+      "accepted_aspects": {
+        "animalhusbandry:brush": "Shape accepted; correct the holding direction only.",
+        "agricraft:greenhouse_monitor": "Graphs/scales and general form accepted; refine outer case/face assembly only."
+      },
+      "selected_corrections": {
+        "animalhusbandry:farm_ledger": "Frontal bull skull with horns, not a profile animal face.",
+        "animalhusbandry:brush": "Bristles point inward in each hand, retaining accepted mesh.",
+        "agricraft:greenhouse_monitor": "Integrated, tidy case/readout junction, retaining approved graphs."
+      },
+      "other_items": "Unreviewed by owner; retain current forms. Agent correspondence audit does not override scoped acceptance.",
+      "limits": "Appearance decisions do not establish live client, animation, controls or shader acceptance."
+    }
+  },
+  "integration": {
+    "agricraft_filter": {
+      "namespace": "agricraft",
+      "path": "agricraft/(plants|mutations)/.*",
+      "counts": "18 native resource plants and18 mutations; retain vanilla/FD food and decorative definitions."
+    },
+    "troughs": "Fill-only water capability conserves native bucket=16drinks in fractional internal units; food transfer remains separate; partial buckets cannot yield free water.",
+    "cheese": "Only AH slices join c:cheeses. Do not put AH block into shared cheese_block recipes that assume a different portion yield.",
+    "preflight": "Read-only snapshots of actual tracked connected bodies, pressure-adjusted support mass, gas and inspectable Create Simulated fuel. No cargo-inventory mass or flight range claim.",
+    "whales": "Thirteen saved/synced ecological forms chosen by actual loaded habitat. Four bounded forward placements, 56–72 default distance, complete multipart clearance, Overworld only. Ordinary chunk unload saves whales; beyond128 default distance they leave only after2400 continuously distant ticking calls, reset on return. No forced chunks or blanket persistent flags.",
+    "grooming": "Six paid qualities use existing fixed probabilities; legendary has natural weight0 and remains available in paid reforging. Native full cleanliness reset and durability preserved, happiness scales .75/1/1.25/1.5/2/2.5.",
+    "eggs": "Keep both native AH/FD egg smelting recipes; AH fried eggs join FD c:foods/cooked_egg and Create Food cooked_eggs, powderable_eggs and egg_burrito_ingredients so either furnace result remains useful in shared food recipes.",
+    "whale_travel_coordinates": "Exact Sable2.0.6 normalizes player passengers to world coordinates at positionRider/rideTick TAIL; Create seats may retain plot coordinates, minecraft:player does not. Native player XYZ/AABB therefore remain correct aboard a vessel. SimulationDistance6 remains; complete candidate chunk checks precede placement.",
+    "chalk": "White_chalk block unpacks to four chalk_powder, matching native four-powder compression; one powder yields one nonstackable chalk:chalk. Native calcite route remains. No damaged Chalk input or colored-block dye stripping. Native powder comes from brushing calcite buds/clusters."
+  },
+  "fowl_assets": {
+    "author": "aqario and contributors",
+    "license": "MIT",
+    "source_url": "https://github.com/aqariio/Fowl-Play",
+    "input_sha512": "69d78df0c54cf77cc8dde61a51ccd6e3b9eebda5f07fd8ed7d4d8fe72f9d7f2d51c025a1c5a7b3f7eeeddc75515ea6ba5c15cf878c111016fbde00581c30dd84",
+    "originals": [
+      "assets/fowlplay/textures/entity/chicken/white_chicken.png",
+      "assets/fowlplay/textures/entity/chicken/baby_white_chicken.png"
+    ],
+    "method": "Deterministic palette replacement and speckles retain native32x32 UV layout; adult and baby variants cover four AH colors and two patterns.",
+    "original_sha256": {
+      "assets/fowlplay/textures/entity/chicken/white_chicken.png": "e8c3d6149a747f6373ce9624c0a7254d21bc3729310a624847c571365589205a",
+      "assets/fowlplay/textures/entity/chicken/baby_white_chicken.png": "e20ba2001345c99ee675ec8defa795b80ef740ce5d6ef43843d0a3e9000e6f11"
+    },
+    "derived_sha256": {
+      "baby_black_solid.png": "e7af98f3deebe63a7f4f6786fb1e78f6c7a3bb56371b0049969c07c62f17a0e0",
+      "baby_black_speckled.png": "19f2e2bc2e3112545d884191741ac50c3b6e852d5ba6b2a0f813173e8c7876e6",
+      "baby_brown_solid.png": "7fc49526a3c2958497b8af4456bd2a33399c354b448efe0805dc13998c4a30c5",
+      "baby_brown_speckled.png": "bf893ced524cb714897426184700132c2f01d0cccd28f5a4ba24ce7a167ce14b",
+      "baby_golden_solid.png": "bb8aa58700e9ed62b72b390c3371fd21f6f0bc60c2176c4c4ea0c3d600a43ccd",
+      "baby_golden_speckled.png": "8c416707bb101350819c5cd38dc5c35d237d8b3fb819441729c52f874e690ab1",
+      "baby_white_solid.png": "e087c753bab39a68524d6326f2c28ff8397c8dfc15af51fc14b836698ab6a5bf",
+      "baby_white_speckled.png": "798a7f7a442963e34c54c4975f3c61731cc50b47f05d20b5cf9cce447e9b0dfc",
+      "black_solid.png": "c49f23678d866cbcd0701388462f728135de46b0900855c87265753bc69376e8",
+      "black_speckled.png": "07a5a5423b72479c4bb6e4b67332635ba3ee348f5434ae7729411d342c73c964",
+      "brown_solid.png": "fbb93cc605bbb8e700daf44d33c9e645731990469cccef2406133d5d472f95b1",
+      "brown_speckled.png": "dcbb7363c669c8fcbf61ce3f5c25d61ab571994f1dc0e3324a890cefb74ca8cd",
+      "golden_solid.png": "9d5ac3746a2cb219cd7f922e4963b0d3d0ffe206dd70eb8a7627b2e3c7ba3262",
+      "golden_speckled.png": "8153459386b3446ba7600a1fa97a5427cf917cb794a7c7aa841d20f16960f3ab",
+      "white_solid.png": "14085bebabf34631044fe242ecbb7df9fb3842ca8e90d4fc81d77374f2ec2ce4",
+      "white_speckled.png": "e5d7360c110a4058203d57afe364063a0866dedf1bf2e9437e46378abfb8494a"
+    }
+  },
+  "handheld_audit": {
+    "chalk": {
+      "retained_native": [
+        "chalk",
+        "chalk_box",
+        "chalk_box_glowing"
+      ],
+      "states": "Core chalk tint and16 deprecated colour aliases; box glow predicate and selected chalk overlay remain native.",
+      "classification": "Generated sprites deliberately retained; no model redesign selected.",
+      "reforging": "Owner explicitly chose native chalk and chalk box without reforging or added quality effects."
+    },
+    "animalhusbandry": {
+      "retained_native": [
+        "angora_hood",
+        "angora_sweater",
+        "angora_leg_warmers",
+        "angora_slippers"
+      ],
+      "classification": "Five useful handhelds gain original volumetric hand models, ordinary icons and worn armor stay native. Care/consumable functions unchanged.",
+      "reforging": "Brush has owner-selected grooming family; angora gear uses plain_armor byslot and angora_yarn. Ledger/magnifier informational items remain native.",
+      "held_3d": [
+        "brush",
+        "magnifying_glass",
+        "farm_ledger",
+        "animal_medicine",
+        "fertility_potion"
+      ]
+    },
+    "agricraft": {
+      "retained_native": [
+        "channel_valve",
+        "seed_analyzer"
+      ],
+      "classification": "Eight useful roots/eleven states gain volumetric hand models. Native ordinary icon/state routes remain, except independently authored greenhouse-monitor icon, which also persists when hand3D is disabled. Valve/analyzer native placed geometry retained.",
+      "states": "trowel_plant predicate agricraft:plant=1; seed_bag_empty/full at agricraft:seed_bag=.5/1 preserved.",
+      "reforging": "Owner keeps four gardening tools without reforging; this is independent of their new visual volume. Information/storage and consumable crop sticks retain native gameplay. Magnified helmets retain existing armor family.",
+      "held_3d": [
+        "journal",
+        "clipper",
+        "magnifying_glass",
+        "wooden_rake",
+        "iron_rake",
+        "trowel",
+        "seed_bag",
+        "greenhouse_monitor"
+      ]
+    }
+  }
+}

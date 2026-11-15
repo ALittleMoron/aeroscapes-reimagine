@@ -1,0 +1,9 @@
+{
+  "version": "1.6.2",
+  "shouldAutoUpdate": false,
+  "allowedDimensions": [
+    "minecraft:overworld"
+  ],
+  "allowedBiomes": [],
+  "aboveHeadPosition": true
+}

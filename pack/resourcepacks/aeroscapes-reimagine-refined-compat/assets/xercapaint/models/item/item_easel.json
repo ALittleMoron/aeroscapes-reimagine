@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "xercapaint:item/item_easel"
+    }
+  },
+  "textures": {
+    "layer0": "xercapaint:item/item_easel",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "xercapaint:item/equipment/held/item_easel"
+    },
+    "firstperson_lefthand": {
+      "parent": "xercapaint:item/equipment/held/item_easel"
+    },
+    "thirdperson_righthand": {
+      "parent": "xercapaint:item/equipment/held/item_easel"
+    },
+    "thirdperson_lefthand": {
+      "parent": "xercapaint:item/equipment/held/item_easel"
+    }
+  }
+}

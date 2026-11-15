@@ -98,6 +98,53 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String whaleFall = System.getProperty("aeroscapes.regression.whaleFall");
+    if (whaleFall != null) {
+      try {
+        SkyWhaleFallRegression.verify(
+            level,
+            Integer.getInteger("aeroscapes.regression.whaleFallRadius", 20),
+            Path.of(whaleFall));
+      } catch (java.io.IOException failure) {
+        throw new IllegalStateException("Whale-fall report failed", failure);
+      }
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.whaleVisuals")) {
+      SkyArtRegression.verifySpawnClearance(level);
+      try {
+        WhalePreviewRegression.verify(level);
+      } catch (com.mojang.brigadier.exceptions.CommandSyntaxException failure) {
+        throw new IllegalStateException("Whale preview commands failed", failure);
+      }
+      LOGGER.info("Whale anatomy clearance and preview commands regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.recipeCompatibility")) {
+      RecipeCompatibilityRegression.verify(level);
+      SkyArtRegression.verifySpawnClearance(level);
+      LOGGER.info("Recipe and decorated whale clearance regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.household")) {
+      HouseholdRegression.verify(level);
+      LOGGER.info("Household and whale encounter regression passed");
+      return;
+    }
+    String hostileBenchmark = System.getProperty("aeroscapes.regression.hostile");
+    if (hostileBenchmark != null) {
+      HostilePerformanceRegression.start(level, hostileBenchmark);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.skyArt")) {
+      try {
+        SkyArtRegression.verify(level);
+      } catch (ReflectiveOperationException failure) {
+        throw new IllegalStateException("Cannot verify sky fauna and painting", failure);
+      }
+      LOGGER.info("Sky fauna and painting regression passed");
+      return;
+    }
     String steamSave = System.getProperty("aeroscapes.regression.steamSave");
     if (steamSave != null) {
       require(
@@ -108,6 +155,7 @@ public final class WorldgenRegression {
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.steamFluid")) {
+      TagCompatibilityRegression.verify(level);
       FoundryRegression.verify(level);
       FuelRegression.verify(level);
       SteamEnergyRegression.verify(level);

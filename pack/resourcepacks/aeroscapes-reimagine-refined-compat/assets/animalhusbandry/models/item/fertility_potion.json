@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "animalhusbandry:item/fertility_potion"
+    }
+  },
+  "textures": {
+    "layer0": "animalhusbandry:item/fertility_potion",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "animalhusbandry:item/equipment/held/fertility_potion"
+    },
+    "firstperson_lefthand": {
+      "parent": "animalhusbandry:item/equipment/held/fertility_potion"
+    },
+    "thirdperson_righthand": {
+      "parent": "animalhusbandry:item/equipment/held/fertility_potion"
+    },
+    "thirdperson_lefthand": {
+      "parent": "animalhusbandry:item/equipment/held/fertility_potion"
+    }
+  }
+}

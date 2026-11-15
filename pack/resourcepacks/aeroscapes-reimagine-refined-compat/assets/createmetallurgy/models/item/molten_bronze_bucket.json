@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "createmetallurgy:item/molten_bronze_bucket"
+    }
+  },
+  "textures": {
+    "layer0": "createmetallurgy:item/molten_bronze_bucket",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "createmetallurgy:item/equipment/held/molten_bronze_bucket"
+    },
+    "firstperson_lefthand": {
+      "parent": "createmetallurgy:item/equipment/held/molten_bronze_bucket"
+    },
+    "thirdperson_righthand": {
+      "parent": "createmetallurgy:item/equipment/held/molten_bronze_bucket"
+    },
+    "thirdperson_lefthand": {
+      "parent": "createmetallurgy:item/equipment/held/molten_bronze_bucket"
+    }
+  }
+}

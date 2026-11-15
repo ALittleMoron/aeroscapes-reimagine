@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.sky",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["WhaleCarcassStorageMixin", "WhaleOverworldSpawningMixin", "WhaleLifecycleMixin", "WhaleVarietyMixin", "WhaleCompanionMixin"],
+  "client": ["WhaleVarietyModelMixin"],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

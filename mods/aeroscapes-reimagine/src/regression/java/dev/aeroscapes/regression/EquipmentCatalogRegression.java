@@ -60,11 +60,23 @@ public final class EquipmentCatalogRegression {
     JsonArray items = new JsonArray();
     JsonArray customCandidates = new JsonArray();
     JsonObject registeredClasses = new JsonObject();
+    JsonArray buckets = new JsonArray();
     for (var id : BuiltInRegistries.ITEM.keySet().stream().sorted().toList()) {
       Item item = BuiltInRegistries.ITEM.get(id);
       if (item == null) throw new IllegalStateException("Missing registered item " + id);
       ItemStack stack = new ItemStack(item);
       String className = item.getClass().getName();
+      boolean physicalBucket = dev.aeroscapes.atmosphere.BucketPresentation.physical(item);
+      if (id.getPath().endsWith("bucket")
+          && !(item instanceof com.crispytwig.naturalist.world.item.CaughtEntityItem)
+          && !physicalBucket)
+        throw new IllegalStateException(
+            "Unclassified physical bucket: " + id + " (" + className + ")");
+      if (physicalBucket) {
+        if (!stack.is(net.neoforged.neoforge.common.Tags.Items.BUCKETS))
+          throw new IllegalStateException("Physical bucket missing filter tag: " + id);
+        buckets.add(id.toString());
+      }
       JsonArray members = registeredClasses.getAsJsonArray(className);
       if (members == null) {
         members = new JsonArray();
@@ -85,6 +97,31 @@ public final class EquipmentCatalogRegression {
     report.add("equipment", items);
     report.add("unclassified_custom_candidates", customCandidates);
     report.add("all_registered_item_classes", registeredClasses);
+    report.add("physical_buckets", buckets);
+    var octopus =
+        BuiltInRegistries.ITEM.get(
+            net.minecraft.resources.ResourceLocation.parse("spawn:captured_octopus"));
+    for (var container :
+        java.util.List.of(
+            net.minecraft.world.item.Items.BUCKET,
+            net.minecraft.world.item.Items.WATER_BUCKET,
+            net.minecraft.world.item.Items.GLASS_BOTTLE,
+            net.minecraft.world.item.Items.BOWL)) {
+      var captured = new ItemStack(octopus);
+      var data = new net.minecraft.nbt.CompoundTag();
+      data.put("Item", new ItemStack(container).save(level.registryAccess()));
+      captured.set(
+          DataComponents.BUCKET_ENTITY_DATA,
+          net.minecraft.world.item.component.CustomData.of(data));
+      boolean bucket =
+          container == net.minecraft.world.item.Items.BUCKET
+              || container == net.minecraft.world.item.Items.WATER_BUCKET;
+      if (dev.aeroscapes.atmosphere.BucketPresentation.physical(captured, level.registryAccess())
+          != bucket)
+        throw new IllegalStateException("Captured octopus container routing: " + container);
+    }
+    report.addProperty(
+        "captured_octopus_bucket_states", "empty bucket and water bucket; bottle/bowl retained");
     report.addProperty("registered_items", BuiltInRegistries.ITEM.size());
     try {
       Files.createDirectories(output.toAbsolutePath().getParent());

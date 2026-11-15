@@ -1,0 +1,9 @@
+{
+  "match": {
+    "items": [
+      "createmetallurgy:molten_slag_bucket"
+    ]
+  },
+  "luminance": 12,
+  "water_sensitive": false
+}

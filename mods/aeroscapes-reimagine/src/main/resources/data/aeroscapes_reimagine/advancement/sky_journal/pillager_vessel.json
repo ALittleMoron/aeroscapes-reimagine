@@ -1,0 +1,45 @@
+{
+  "parent": "aeroscapes_reimagine:sky_journal/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:crossbow"
+    },
+    "title": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.pillager_vessel.title"
+    },
+    "description": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.pillager_vessel.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "balloon": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "location_in_frame": {
+          "structures": "cr_aero_structures:pillager_airballoon"
+        }
+      }
+    },
+    "airship": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "location_in_frame": {
+          "structures": "cr_aero_structures:pillager_airship"
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "balloon",
+      "airship"
+    ]
+  ],
+  "rewards": {
+    "experience": 20
+  }
+}

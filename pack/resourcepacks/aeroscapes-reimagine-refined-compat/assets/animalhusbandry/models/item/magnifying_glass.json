@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "animalhusbandry:item/magnifying_glass"
+    }
+  },
+  "textures": {
+    "layer0": "animalhusbandry:item/magnifying_glass",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "animalhusbandry:item/equipment/held/magnifying_glass"
+    },
+    "firstperson_lefthand": {
+      "parent": "animalhusbandry:item/equipment/held/magnifying_glass"
+    },
+    "thirdperson_righthand": {
+      "parent": "animalhusbandry:item/equipment/held/magnifying_glass"
+    },
+    "thirdperson_lefthand": {
+      "parent": "animalhusbandry:item/equipment/held/magnifying_glass"
+    }
+  }
+}

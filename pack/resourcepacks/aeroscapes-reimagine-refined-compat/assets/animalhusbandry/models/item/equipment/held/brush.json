@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "animalhusbandry:models/item/aeroscapes_farming/brush.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "particle": "agricraft:item/aeroscapes_farming/materials"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        168.0,
+        -12.0,
+        -90.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        -0.41082227,
+        0.01815548,
+        0.085414745
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        168.0,
+        -12.0,
+        -90.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        -0.41082227,
+        0.01815548,
+        0.085414745
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        168.0,
+        -12.0,
+        -90.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        -0.41082227,
+        0.01815548,
+        0.085414745
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        168.0,
+        -12.0,
+        -90.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        -0.41082227,
+        0.01815548,
+        0.085414745
+      ]
+    }
+  }
+}

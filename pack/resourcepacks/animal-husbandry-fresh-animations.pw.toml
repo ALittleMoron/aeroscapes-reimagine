@@ -1,0 +1,12 @@
+name = "Animal Husbandry x Fresh Animations"
+filename = "AH x FA 1.1.zip"
+side = "client"
+
+[download]
+url = "https://mediafilez.forgecdn.net/files/9143/629/AH%20x%20FA%201.1.zip"
+hash-format = "sha512"
+hash = "64ea291f413c677ba840ba10148fecb170b5303e53c8184005db34d2de5ba66394fa2df5f149b5e30f296fac688598ca2501810b1ac4239355319c18d312ec1a"
+
+[update.curseforge]
+project-id = 1617697
+file-id = 9143629

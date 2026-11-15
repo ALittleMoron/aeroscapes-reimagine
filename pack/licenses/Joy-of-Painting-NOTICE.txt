@@ -1,0 +1,31 @@
+Joy of Painting 1.21.1-2.0.1 (mod ID xercapaint)
+Author: xerca / Ercan Serteli
+
+The owned PaintingEquipmentModels.java adapts the native easel construction and
+palette artwork/state layout into held geometry under GPL-3.0-or-later. The
+provider JAR and its canvas renderer are unchanged. The owned generator's source
+is supplied in aeroscapes-reimagine-source.zip alongside the provider source below.
+Official project: https://modrinth.com/mod/joy-of-painting
+Exact file: https://modrinth.com/mod/joy-of-painting/version/73U02HbA
+
+The original official JAR is distributed without modification. Its descriptor
+states GPL-3.0; the official project metadata specifies GPL-3.0-or-later.
+The original GPLv3 text accompanies this notice as Joy-of-Painting-GPL-3.0.txt.
+
+Complete author source and original compilation scripts from the author-linked
+NeoForge 1.21.1 repository are supplied in:
+  joy-of-painting-1.21.1-2.0.1-corresponding-source.zip
+Snapshot: d88bf6577846c505cd142ffd77eec04a11eb276d
+https://github.com/ercanserteli/xercamods/tree/d88bf6577846c505cd142ffd77eec04a11eb276d
+
+The archive preserves the complete original multi-project source tree, root and
+module Gradle scripts, wrappers, resources, tests and original license. The
+XercaPaintMod module identifies itself as 1.21.1-2.0.1. All 129 assets/data files
+in the distributed JAR match this snapshot byte for byte. The native component,
+canvas/easel persistence, recipe and renderer interfaces were compared with the
+actual artifact bytecode. A byte-identical full rebuild has not been asserted.
+Use the author's root Gradle project and :XercaPaintMod:jar task to rebuild.
+
+The pack's independent supplementary translations repair missing Russian labels
+and retain the official mod title. Native artwork, sounds, painting data and
+state-dependent canvas rendering remain provided by the unchanged JAR.

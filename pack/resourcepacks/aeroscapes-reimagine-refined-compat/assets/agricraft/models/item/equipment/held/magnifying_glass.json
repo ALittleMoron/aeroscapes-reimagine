@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "agricraft:models/item/aeroscapes_farming/magnifying_glass.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:translucent",
+  "textures": {
+    "particle": "agricraft:item/aeroscapes_farming/materials"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        2.3279915,
+        -0.49482986
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        2.3279915,
+        -0.49482986
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        2.3279915,
+        -0.49482986
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -12.0,
+        -12.0,
+        0.0
+      ],
+      "scale": [
+        0.68,
+        0.68,
+        0.68
+      ],
+      "translation": [
+        0.0,
+        2.3279915,
+        -0.49482986
+      ]
+    }
+  }
+}

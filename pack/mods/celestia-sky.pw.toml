@@ -1,0 +1,12 @@
+name = "Celestia: Shooting Stars"
+filename = "celestia-neoforge-1.21.1-1.2.4.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/wNm4ZRCd/versions/1FDmpHXg/celestia-neoforge-1.21.1-1.2.4.jar"
+hash-format = "sha512"
+hash = "ba5d80fa5ceb71a7255c94be2e4b306b2b3f9f45a331cf94885ed7764d092091e2a867538c66bc929bab8f091fbbff4257c4d22db20748fbff2430fd721aa864"
+
+[update.modrinth]
+mod-id = "wNm4ZRCd"
+version = "1FDmpHXg"

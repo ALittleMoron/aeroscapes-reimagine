@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "animalhusbandry:item/brush"
+    }
+  },
+  "textures": {
+    "layer0": "animalhusbandry:item/brush",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "animalhusbandry:item/equipment/held/brush"
+    },
+    "firstperson_lefthand": {
+      "parent": "animalhusbandry:item/equipment/held/brush"
+    },
+    "thirdperson_righthand": {
+      "parent": "animalhusbandry:item/equipment/held/brush"
+    },
+    "thirdperson_lefthand": {
+      "parent": "animalhusbandry:item/equipment/held/brush"
+    }
+  }
+}

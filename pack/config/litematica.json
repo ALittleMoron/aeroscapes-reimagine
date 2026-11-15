@@ -55,5 +55,8 @@
     "toolEnabledToggle": {
       "keys": "RIGHT_ALT,T"
     }
+  },
+  "Visuals": {
+    "enableAreaSelectionBoxesRendering": false
   }
 }

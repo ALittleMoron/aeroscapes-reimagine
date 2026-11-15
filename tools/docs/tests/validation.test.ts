@@ -3,7 +3,11 @@ import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { test } from "node:test";
-import { validateBuiltLinks, validatePagePairs } from "../src/validation.ts";
+import {
+  diagramStructure,
+  validateBuiltLinks,
+  validatePagePairs,
+} from "../src/validation.ts";
 
 test("a missing language or different availability blocks publication", () => {
   const english = { id: "en/experience/world", data: { status: "partial" } };
@@ -51,5 +55,37 @@ test("built links resolve relative routes, UTF-8 fragments and project prefixes"
   await assert.rejects(
     validateBuiltLinks(directory, "/pack/"),
     /outside site base/,
+  );
+});
+
+test("paired diagrams may differ only in their labels", () => {
+  const english = [
+    "```mermaid",
+    "flowchart LR",
+    '  farm["Farming"]',
+    '  eng["Engineering"]',
+    '  farm -->|"crops become fuel"| eng',
+    "```",
+  ].join("\n");
+  const russian = english
+    .replace('"Farming"', '"Фермы"')
+    .replace('"Engineering"', '"Инженерия"')
+    .replace('"crops become fuel"', '"урожай становится топливом"');
+  assert.deepEqual(diagramStructure(english), diagramStructure(russian));
+  assert.deepEqual(diagramStructure(english), [
+    "flowchart LR\nfarm\neng\nfarm --> eng",
+  ]);
+  const page = (id: string, body: string) => ({
+    id,
+    data: { status: "partial" },
+    body,
+  });
+  assert.doesNotThrow(() =>
+    validatePagePairs([page("en/map", english), page("ru/map", russian)]),
+  );
+  const changed = russian.replace("farm -->", "farm -.->");
+  assert.throws(
+    () => validatePagePairs([page("en/map", english), page("ru/map", changed)]),
+    /Different diagram structure/,
   );
 });

@@ -1624,6 +1624,7 @@
     {
       "id": "wetland_whimsy:pennywort_salad",
       "required": false
-    }
+    },
+    "animalhusbandry:truffle"
   ]
 }

@@ -1,0 +1,10189 @@
+{
+  "profiles": {
+    "aeronautics:levitite_blend_bucket": {
+      "sprite": "aeronautics:item/levitite_blend_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          13,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "create:chocolate_bucket": {
+      "sprite": "create:item/chocolate_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "create:honey_bucket": {
+      "sprite": "create:item/honey_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createbigcannons:molten_bronze_bucket": {
+      "sprite": "createbigcannons:item/molten_bronze_bucket",
+      "kind": "molten",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 15,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createbigcannons:molten_cast_iron_bucket": {
+      "sprite": "createbigcannons:item/molten_cast_iron_bucket",
+      "kind": "molten",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 15,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createbigcannons:molten_nethersteel_bucket": {
+      "sprite": "createbigcannons:item/molten_nethersteel_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 15,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createbigcannons:molten_steel_bucket": {
+      "sprite": "createbigcannons:item/molten_steel_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          5,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 15,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:biodiesel_bucket": {
+      "sprite": "createdieselgenerators:item/biodiesel_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          10,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:black_cement_bucket": {
+      "sprite": "createdieselgenerators:item/black_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          10,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:blue_cement_bucket": {
+      "sprite": "createdieselgenerators:item/blue_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:brown_cement_bucket": {
+      "sprite": "createdieselgenerators:item/brown_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:crude_oil_bucket": {
+      "sprite": "createdieselgenerators:item/crude_oil_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          4,
+          6
+        ],
+        [
+          5,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:cyan_cement_bucket": {
+      "sprite": "createdieselgenerators:item/cyan_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:diesel_bucket": {
+      "sprite": "createdieselgenerators:item/diesel_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          10,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:ethanol_bucket": {
+      "sprite": "createdieselgenerators:item/ethanol_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          10,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:gasoline_bucket": {
+      "sprite": "createdieselgenerators:item/gasoline_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          10,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:gray_cement_bucket": {
+      "sprite": "createdieselgenerators:item/gray_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          6,
+          6,
+          8,
+          7
+        ],
+        [
+          9,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:green_cement_bucket": {
+      "sprite": "createdieselgenerators:item/green_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:light_blue_cement_bucket": {
+      "sprite": "createdieselgenerators:item/light_blue_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:light_gray_cement_bucket": {
+      "sprite": "createdieselgenerators:item/light_gray_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:lime_cement_bucket": {
+      "sprite": "createdieselgenerators:item/lime_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:magenta_cement_bucket": {
+      "sprite": "createdieselgenerators:item/magenta_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:orange_cement_bucket": {
+      "sprite": "createdieselgenerators:item/orange_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:pink_cement_bucket": {
+      "sprite": "createdieselgenerators:item/pink_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:plant_oil_bucket": {
+      "sprite": "createdieselgenerators:item/plant_oil_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          10,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:purple_cement_bucket": {
+      "sprite": "createdieselgenerators:item/purple_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:red_cement_bucket": {
+      "sprite": "createdieselgenerators:item/red_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:white_cement_bucket": {
+      "sprite": "createdieselgenerators:item/white_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createdieselgenerators:yellow_cement_bucket": {
+      "sprite": "createdieselgenerators:item/yellow_cement_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:apple_cream_frosting_bucket": {
+      "sprite": "createfood:item/apple_cream_frosting_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:apple_custard_bucket": {
+      "sprite": "createfood:item/apple_custard_bucket",
+      "kind": "garnish",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          9,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:apple_ice_cream_bucket": {
+      "sprite": "createfood:item/apple_ice_cream_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          5,
+          8
+        ],
+        [
+          7,
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          8,
+          9,
+          9
+        ],
+        [
+          8,
+          9,
+          9,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:apple_jam_bucket": {
+      "sprite": "createfood:item/apple_jam_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:apple_juice_bucket": {
+      "sprite": "createfood:item/apple_juice_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:apple_milkshake_bucket": {
+      "sprite": "createfood:item/apple_milkshake_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:apple_pie_filling_bucket": {
+      "sprite": "createfood:item/apple_pie_filling_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          8,
+          6,
+          10,
+          7
+        ],
+        [
+          5,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          10,
+          8
+        ],
+        [
+          8,
+          8,
+          10,
+          9
+        ],
+        [
+          9,
+          9,
+          10,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:berry_cream_frosting_bucket": {
+      "sprite": "createfood:item/berry_cream_frosting_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:berry_custard_bucket": {
+      "sprite": "createfood:item/berry_custard_bucket",
+      "kind": "garnish",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          0,
+          12,
+          1
+        ],
+        [
+          7,
+          1,
+          13,
+          2
+        ],
+        [
+          5,
+          2,
+          14,
+          3
+        ],
+        [
+          3,
+          3,
+          14,
+          4
+        ],
+        [
+          3,
+          4,
+          14,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          9,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:berry_ice_cream_bucket": {
+      "sprite": "createfood:item/berry_ice_cream_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          5,
+          8
+        ],
+        [
+          7,
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          8,
+          9,
+          9
+        ],
+        [
+          8,
+          9,
+          9,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:berry_jam_bucket": {
+      "sprite": "createfood:item/berry_jam_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:berry_juice_bucket": {
+      "sprite": "createfood:item/berry_juice_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:berry_milkshake_bucket": {
+      "sprite": "createfood:item/berry_milkshake_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:berry_pie_filling_bucket": {
+      "sprite": "createfood:item/berry_pie_filling_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          8,
+          6,
+          10,
+          7
+        ],
+        [
+          5,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          10,
+          8
+        ],
+        [
+          8,
+          8,
+          10,
+          9
+        ],
+        [
+          9,
+          9,
+          10,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:black_gelatin_mix_bucket": {
+      "sprite": "createfood:item/black_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:blackstrap_molasses_bucket": {
+      "sprite": "createfood:item/blackstrap_molasses_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:blue_gelatin_mix_bucket": {
+      "sprite": "createfood:item/blue_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:bread_pudding_bucket": {
+      "sprite": "createfood:item/bread_pudding_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          8,
+          6,
+          10,
+          7
+        ],
+        [
+          8,
+          7,
+          10,
+          8
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:brown_gelatin_mix_bucket": {
+      "sprite": "createfood:item/brown_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:butterscotch_bucket": {
+      "sprite": "createfood:item/butterscotch_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:butterscotch_fudge_bucket": {
+      "sprite": "createfood:item/butterscotch_fudge_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:cacao_butter_bucket": {
+      "sprite": "createfood:item/cacao_butter_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:cacao_mass_bucket": {
+      "sprite": "createfood:item/cacao_mass_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:cane_syrup_bucket": {
+      "sprite": "createfood:item/cane_syrup_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:caramel_bucket": {
+      "sprite": "createfood:item/caramel_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:caramel_fudge_bucket": {
+      "sprite": "createfood:item/caramel_fudge_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:cheesecake_filling_bucket": {
+      "sprite": "createfood:item/cheesecake_filling_bucket",
+      "kind": "mound",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          5,
+          7,
+          7,
+          8
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chocolate_cream_frosting_bucket": {
+      "sprite": "createfood:item/chocolate_cream_frosting_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chocolate_custard_bucket": {
+      "sprite": "createfood:item/chocolate_custard_bucket",
+      "kind": "garnish",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          9,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chocolate_fudge_bucket": {
+      "sprite": "createfood:item/chocolate_fudge_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chocolate_ice_cream_bucket": {
+      "sprite": "createfood:item/chocolate_ice_cream_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          5,
+          8
+        ],
+        [
+          7,
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          8,
+          9,
+          9
+        ],
+        [
+          8,
+          9,
+          9,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chocolate_milk_bucket": {
+      "sprite": "createfood:item/chocolate_milk_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chocolate_milkshake_bucket": {
+      "sprite": "createfood:item/chocolate_milkshake_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chorus_fruit_cream_frosting_bucket": {
+      "sprite": "createfood:item/chorus_fruit_cream_frosting_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chorus_fruit_custard_bucket": {
+      "sprite": "createfood:item/chorus_fruit_custard_bucket",
+      "kind": "garnish",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          9,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chorus_fruit_ice_cream_bucket": {
+      "sprite": "createfood:item/chorus_fruit_ice_cream_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          5,
+          8
+        ],
+        [
+          7,
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          8,
+          9,
+          9
+        ],
+        [
+          8,
+          9,
+          9,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chorus_fruit_jam_bucket": {
+      "sprite": "createfood:item/chorus_fruit_jam_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chorus_fruit_juice_bucket": {
+      "sprite": "createfood:item/chorus_fruit_juice_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chorus_fruit_milkshake_bucket": {
+      "sprite": "createfood:item/chorus_fruit_milkshake_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:chorus_fruit_pie_filling_bucket": {
+      "sprite": "createfood:item/chorus_fruit_pie_filling_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          8,
+          6,
+          10,
+          7
+        ],
+        [
+          5,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          10,
+          8
+        ],
+        [
+          8,
+          8,
+          10,
+          9
+        ],
+        [
+          9,
+          9,
+          10,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:coffee_toffee_bucket": {
+      "sprite": "createfood:item/coffee_toffee_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:coffee_toffee_fudge_bucket": {
+      "sprite": "createfood:item/coffee_toffee_fudge_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:condensed_milk_bucket": {
+      "sprite": "createfood:item/condensed_milk_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:cream_cheese_bucket": {
+      "sprite": "createfood:item/cream_cheese_bucket",
+      "kind": "mound",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          9,
+          7,
+          11,
+          8
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:cream_frosting_bucket": {
+      "sprite": "createfood:item/cream_frosting_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:cream_pie_filling_bucket": {
+      "sprite": "createfood:item/cream_pie_filling_bucket",
+      "kind": "mound",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          6,
+          0,
+          10,
+          1
+        ],
+        [
+          5,
+          1,
+          11,
+          2
+        ],
+        [
+          4,
+          2,
+          12,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          5,
+          7,
+          6,
+          8
+        ],
+        [
+          9,
+          7,
+          11,
+          8
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:custard_bucket": {
+      "sprite": "createfood:item/custard_bucket",
+      "kind": "garnish",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          9,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:cyan_gelatin_mix_bucket": {
+      "sprite": "createfood:item/cyan_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:dark_chocolate_bucket": {
+      "sprite": "createfood:item/dark_chocolate_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:dark_chocolate_fudge_bucket": {
+      "sprite": "createfood:item/dark_chocolate_fudge_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:egg_bucket": {
+      "sprite": "createfood:item/egg_bucket",
+      "kind": "garnish",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          6,
+          1,
+          9,
+          2
+        ],
+        [
+          4,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:egg_whites_bucket": {
+      "sprite": "createfood:item/egg_whites_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          6,
+          2,
+          10,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:fish_chowder_bucket": {
+      "sprite": "createfood:item/fish_chowder_bucket",
+      "kind": "chunks",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          8,
+          6,
+          10,
+          7
+        ],
+        [
+          9,
+          7,
+          10,
+          8
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:fruit_smoothie_bucket": {
+      "sprite": "createfood:item/fruit_smoothie_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          2,
+          10,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:gelatin_mix_bucket": {
+      "sprite": "createfood:item/gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:glow_berry_cream_frosting_bucket": {
+      "sprite": "createfood:item/glow_berry_cream_frosting_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:glow_berry_ice_cream_bucket": {
+      "sprite": "createfood:item/glow_berry_ice_cream_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          5,
+          8
+        ],
+        [
+          7,
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          8,
+          9,
+          9
+        ],
+        [
+          8,
+          9,
+          9,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:glow_berry_jam_bucket": {
+      "sprite": "createfood:item/glow_berry_jam_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:glow_berry_juice_bucket": {
+      "sprite": "createfood:item/glow_berry_juice_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:glow_berry_milkshake_bucket": {
+      "sprite": "createfood:item/glow_berry_milkshake_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:glow_berry_pie_filling_bucket": {
+      "sprite": "createfood:item/glow_berry_pie_filling_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          8,
+          6,
+          10,
+          7
+        ],
+        [
+          5,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          10,
+          8
+        ],
+        [
+          8,
+          8,
+          10,
+          9
+        ],
+        [
+          9,
+          9,
+          10,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:gray_gelatin_mix_bucket": {
+      "sprite": "createfood:item/gray_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:green_gelatin_mix_bucket": {
+      "sprite": "createfood:item/green_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:heavy_cream_bucket": {
+      "sprite": "createfood:item/heavy_cream_bucket",
+      "kind": "viscous",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          4,
+          6
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          10,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:hot_chocolate_bucket": {
+      "sprite": "createfood:item/hot_chocolate_bucket",
+      "kind": "steam",
+      "rect": [
+        5,
+        3,
+        7,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          7,
+          5
+        ],
+        [
+          9,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [
+        [
+          [
+            7,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            8,
+            1,
+            9,
+            2
+          ],
+          [
+            9,
+            2,
+            10,
+            3
+          ],
+          [
+            8,
+            3,
+            10,
+            4
+          ],
+          [
+            7,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            1,
+            6,
+            2
+          ],
+          [
+            6,
+            2,
+            8,
+            3
+          ],
+          [
+            8,
+            3,
+            9,
+            4
+          ],
+          [
+            8,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            6,
+            0,
+            7,
+            1
+          ],
+          [
+            5,
+            1,
+            6,
+            2
+          ],
+          [
+            5,
+            2,
+            7,
+            3
+          ],
+          [
+            6,
+            3,
+            8,
+            4
+          ]
+        ],
+        [
+          [
+            7,
+            0,
+            8,
+            1
+          ],
+          [
+            6,
+            1,
+            7,
+            2
+          ],
+          [
+            6,
+            2,
+            7,
+            3
+          ],
+          [
+            6,
+            4,
+            8,
+            5
+          ]
+        ]
+      ],
+      "frame_ticks": 6
+    },
+    "createfood:hot_dark_chocolate_bucket": {
+      "sprite": "createfood:item/hot_dark_chocolate_bucket",
+      "kind": "steam",
+      "rect": [
+        5,
+        3,
+        7,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          7,
+          5
+        ],
+        [
+          9,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [
+        [
+          [
+            7,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            8,
+            1,
+            9,
+            2
+          ],
+          [
+            9,
+            2,
+            10,
+            3
+          ],
+          [
+            8,
+            3,
+            10,
+            4
+          ],
+          [
+            7,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            1,
+            6,
+            2
+          ],
+          [
+            6,
+            2,
+            8,
+            3
+          ],
+          [
+            8,
+            3,
+            9,
+            4
+          ],
+          [
+            8,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            6,
+            0,
+            7,
+            1
+          ],
+          [
+            5,
+            1,
+            6,
+            2
+          ],
+          [
+            5,
+            2,
+            7,
+            3
+          ],
+          [
+            6,
+            3,
+            8,
+            4
+          ]
+        ],
+        [
+          [
+            7,
+            0,
+            8,
+            1
+          ],
+          [
+            6,
+            1,
+            7,
+            2
+          ],
+          [
+            6,
+            2,
+            7,
+            3
+          ],
+          [
+            6,
+            4,
+            8,
+            5
+          ]
+        ]
+      ],
+      "frame_ticks": 6
+    },
+    "createfood:hot_white_chocolate_bucket": {
+      "sprite": "createfood:item/hot_white_chocolate_bucket",
+      "kind": "steam",
+      "rect": [
+        5,
+        3,
+        7,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          7,
+          5
+        ],
+        [
+          9,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [
+        [
+          [
+            7,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            8,
+            1,
+            9,
+            2
+          ],
+          [
+            9,
+            2,
+            10,
+            3
+          ],
+          [
+            8,
+            3,
+            10,
+            4
+          ],
+          [
+            7,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            5,
+            1,
+            6,
+            2
+          ],
+          [
+            6,
+            2,
+            8,
+            3
+          ],
+          [
+            8,
+            3,
+            9,
+            4
+          ],
+          [
+            8,
+            4,
+            9,
+            5
+          ]
+        ],
+        [
+          [
+            6,
+            0,
+            7,
+            1
+          ],
+          [
+            5,
+            1,
+            6,
+            2
+          ],
+          [
+            5,
+            2,
+            7,
+            3
+          ],
+          [
+            6,
+            3,
+            8,
+            4
+          ]
+        ],
+        [
+          [
+            7,
+            0,
+            8,
+            1
+          ],
+          [
+            6,
+            1,
+            7,
+            2
+          ],
+          [
+            6,
+            2,
+            7,
+            3
+          ],
+          [
+            6,
+            4,
+            8,
+            5
+          ]
+        ]
+      ],
+      "frame_ticks": 6
+    },
+    "createfood:ice_cream_bucket": {
+      "sprite": "createfood:item/ice_cream_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          5,
+          8
+        ],
+        [
+          7,
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          8,
+          9,
+          9
+        ],
+        [
+          8,
+          9,
+          9,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:kelp_soup_bucket": {
+      "sprite": "createfood:item/kelp_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          9,
+          0,
+          11,
+          1
+        ],
+        [
+          8,
+          1,
+          13,
+          2
+        ],
+        [
+          6,
+          2,
+          14,
+          3
+        ],
+        [
+          3,
+          3,
+          14,
+          4
+        ],
+        [
+          2,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          3,
+          7,
+          7,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          4,
+          8,
+          6,
+          9
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:leather_soup_bucket": {
+      "sprite": "createfood:item/leather_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          3,
+          7,
+          7,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          4,
+          8,
+          6,
+          9
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:light_blue_gelatin_mix_bucket": {
+      "sprite": "createfood:item/light_blue_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:light_gray_gelatin_mix_bucket": {
+      "sprite": "createfood:item/light_gray_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:lime_gelatin_mix_bucket": {
+      "sprite": "createfood:item/lime_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:liquid_cheese_bucket": {
+      "sprite": "createfood:item/liquid_cheese_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:magenta_gelatin_mix_bucket": {
+      "sprite": "createfood:item/magenta_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:melon_cream_frosting_bucket": {
+      "sprite": "createfood:item/melon_cream_frosting_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:melon_custard_bucket": {
+      "sprite": "createfood:item/melon_custard_bucket",
+      "kind": "garnish",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          9,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:melon_ice_cream_bucket": {
+      "sprite": "createfood:item/melon_ice_cream_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          5,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          5,
+          8
+        ],
+        [
+          7,
+          7,
+          9,
+          8
+        ],
+        [
+          7,
+          8,
+          9,
+          9
+        ],
+        [
+          8,
+          9,
+          9,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:melon_jam_bucket": {
+      "sprite": "createfood:item/melon_jam_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:melon_milkshake_bucket": {
+      "sprite": "createfood:item/melon_milkshake_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:meringue_bucket": {
+      "sprite": "createfood:item/meringue_bucket",
+      "kind": "mound",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          5,
+          7,
+          6,
+          8
+        ],
+        [
+          9,
+          7,
+          11,
+          8
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:milkshake_bucket": {
+      "sprite": "createfood:item/milkshake_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          7,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:molasses_bucket": {
+      "sprite": "createfood:item/molasses_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:mushroom_cream_soup_bucket": {
+      "sprite": "createfood:item/mushroom_cream_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          6,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          3,
+          7,
+          12,
+          8
+        ],
+        [
+          4,
+          8,
+          6,
+          9
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:mutton_stew_bucket": {
+      "sprite": "createfood:item/mutton_stew_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          3,
+          7,
+          7,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          4,
+          8,
+          6,
+          9
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:orange_gelatin_mix_bucket": {
+      "sprite": "createfood:item/orange_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:pink_gelatin_mix_bucket": {
+      "sprite": "createfood:item/pink_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:pork_stew_bucket": {
+      "sprite": "createfood:item/pork_stew_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          3,
+          7,
+          7,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          4,
+          8,
+          6,
+          9
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:potato_cream_soup_bucket": {
+      "sprite": "createfood:item/potato_cream_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          3,
+          7,
+          7,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          4,
+          8,
+          6,
+          9
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:pumpkin_custard_bucket": {
+      "sprite": "createfood:item/pumpkin_custard_bucket",
+      "kind": "garnish",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          1,
+          10,
+          2
+        ],
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          9,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:pumpkin_pie_filling_bucket": {
+      "sprite": "createfood:item/pumpkin_pie_filling_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          5,
+          6,
+          12,
+          7
+        ],
+        [
+          5,
+          7,
+          6,
+          8
+        ],
+        [
+          7,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:pumpkin_puree_bucket": {
+      "sprite": "createfood:item/pumpkin_puree_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          5,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:purple_gelatin_mix_bucket": {
+      "sprite": "createfood:item/purple_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:red_gelatin_mix_bucket": {
+      "sprite": "createfood:item/red_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:rice_pudding_bucket": {
+      "sprite": "createfood:item/rice_pudding_bucket",
+      "kind": "mound",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          8,
+          6,
+          10,
+          7
+        ],
+        [
+          8,
+          7,
+          10,
+          8
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:slime_bucket": {
+      "sprite": "createfood:item/slime_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:sour_cream_bucket": {
+      "sprite": "createfood:item/sour_cream_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          2,
+          10,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:squid_ink_bucket": {
+      "sprite": "createfood:item/squid_ink_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          6,
+          6,
+          7,
+          7
+        ],
+        [
+          8,
+          6,
+          10,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:sugar_cane_juice_bucket": {
+      "sprite": "createfood:item/sugar_cane_juice_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:taco_sauce_bucket": {
+      "sprite": "createfood:item/taco_sauce_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:toffee_bucket": {
+      "sprite": "createfood:item/toffee_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:toffee_fudge_bucket": {
+      "sprite": "createfood:item/toffee_fudge_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:tomato_cream_soup_bucket": {
+      "sprite": "createfood:item/tomato_cream_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          3,
+          7,
+          7,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          4,
+          8,
+          6,
+          9
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:ube_cream_frosting_bucket": {
+      "sprite": "createfood:item/ube_cream_frosting_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:vegetable_oil_bucket": {
+      "sprite": "createfood:item/vegetable_oil_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:vinegar_bucket": {
+      "sprite": "createfood:item/vinegar_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:waffle_batter_bucket": {
+      "sprite": "createfood:item/waffle_batter_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          6,
+          2,
+          10,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          13,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:white_chocolate_bucket": {
+      "sprite": "createfood:item/white_chocolate_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:white_chocolate_fudge_bucket": {
+      "sprite": "createfood:item/white_chocolate_fudge_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          4,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:yellow_gelatin_mix_bucket": {
+      "sprite": "createfood:item/yellow_gelatin_mix_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createfood:yogurt_bucket": {
+      "sprite": "createfood:item/yogurt_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          7,
+          2,
+          10,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          4,
+          6,
+          9,
+          7
+        ],
+        [
+          11,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_aluminum_bucket": {
+      "sprite": "createmetallurgy:item/molten_aluminum_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_brass_bucket": {
+      "sprite": "createmetallurgy:item/molten_brass_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_bronze_bucket": {
+      "sprite": "createmetallurgy:item/molten_bronze_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_constantan_bucket": {
+      "sprite": "createmetallurgy:item/molten_constantan_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_copper_bucket": {
+      "sprite": "createmetallurgy:item/molten_copper_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_electrum_bucket": {
+      "sprite": "createmetallurgy:item/molten_electrum_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_gold_bucket": {
+      "sprite": "createmetallurgy:item/molten_gold_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_invar_bucket": {
+      "sprite": "createmetallurgy:item/molten_invar_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_iron_bucket": {
+      "sprite": "createmetallurgy:item/molten_iron_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_lead_bucket": {
+      "sprite": "createmetallurgy:item/molten_lead_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_lithium_bucket": {
+      "sprite": "createmetallurgy:item/molten_lithium_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_necromium_bucket": {
+      "sprite": "createmetallurgy:item/molten_necromium_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_netherite_bucket": {
+      "sprite": "createmetallurgy:item/molten_netherite_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_nickel_bucket": {
+      "sprite": "createmetallurgy:item/molten_nickel_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_obdurium_bucket": {
+      "sprite": "createmetallurgy:item/molten_obdurium_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_osmium_bucket": {
+      "sprite": "createmetallurgy:item/molten_osmium_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_silver_bucket": {
+      "sprite": "createmetallurgy:item/molten_silver_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_slag_bucket": {
+      "sprite": "createmetallurgy:item/molten_slag_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 12,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_steel_bucket": {
+      "sprite": "createmetallurgy:item/molten_steel_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_tin_bucket": {
+      "sprite": "createmetallurgy:item/molten_tin_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_tungsten_bucket": {
+      "sprite": "createmetallurgy:item/molten_tungsten_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_void_steel_bucket": {
+      "sprite": "createmetallurgy:item/molten_void_steel_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "createmetallurgy:molten_zinc_bucket": {
+      "sprite": "createmetallurgy:item/molten_zinc_bucket",
+      "kind": "molten",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:apple_cider_bucket": {
+      "sprite": "delightfulcreators:item/apple_cider_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:baked_cod_stew_bucket": {
+      "sprite": "delightfulcreators:item/baked_cod_stew_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:beef_stew_bucket": {
+      "sprite": "delightfulcreators:item/beef_stew_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          9,
+          0,
+          11,
+          1
+        ],
+        [
+          8,
+          1,
+          12,
+          2
+        ],
+        [
+          8,
+          2,
+          12,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:beetroot_soup_bucket": {
+      "sprite": "delightfulcreators:item/beetroot_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:bone_broth_bucket": {
+      "sprite": "delightfulcreators:item/bone_broth_bucket",
+      "kind": "garnish",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          9,
+          0,
+          11,
+          1
+        ],
+        [
+          8,
+          1,
+          12,
+          2
+        ],
+        [
+          8,
+          2,
+          12,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:chicken_soup_bucket": {
+      "sprite": "delightfulcreators:item/chicken_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:cooked_rice_bucket": {
+      "sprite": "delightfulcreators:item/cooked_rice_bucket",
+      "kind": "mound",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:dog_food_bucket": {
+      "sprite": "delightfulcreators:item/dog_food_bucket",
+      "kind": "garnish",
+      "rect": [
+        3,
+        3,
+        13,
+        6
+      ],
+      "mask": [
+        [
+          6,
+          0,
+          9,
+          1
+        ],
+        [
+          11,
+          0,
+          13,
+          1
+        ],
+        [
+          4,
+          1,
+          14,
+          2
+        ],
+        [
+          3,
+          2,
+          14,
+          3
+        ],
+        [
+          3,
+          3,
+          14,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:fish_stew_bucket": {
+      "sprite": "delightfulcreators:item/fish_stew_bucket",
+      "kind": "garnish",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          0,
+          10,
+          1
+        ],
+        [
+          8,
+          1,
+          11,
+          2
+        ],
+        [
+          8,
+          2,
+          12,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:glow_berry_custard_bucket": {
+      "sprite": "delightfulcreators:item/glow_berry_custard_bucket",
+      "kind": "garnish",
+      "rect": [
+        4,
+        3,
+        14,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          1,
+          12,
+          2
+        ],
+        [
+          7,
+          2,
+          13,
+          3
+        ],
+        [
+          4,
+          3,
+          14,
+          4
+        ],
+        [
+          3,
+          4,
+          14,
+          5
+        ],
+        [
+          3,
+          5,
+          14,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:hot_cocoa_bucket": {
+      "sprite": "delightfulcreators:item/hot_cocoa_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:melon_juice_bucket": {
+      "sprite": "delightfulcreators:item/melon_juice_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:mushroom_stew_bucket": {
+      "sprite": "delightfulcreators:item/mushroom_stew_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:noodle_soup_bucket": {
+      "sprite": "delightfulcreators:item/noodle_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:pumpkin_soup_bucket": {
+      "sprite": "delightfulcreators:item/pumpkin_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:rabbit_stew_bucket": {
+      "sprite": "delightfulcreators:item/rabbit_stew_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          8,
+          1,
+          10,
+          2
+        ],
+        [
+          6,
+          2,
+          10,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:ratatouille_bucket": {
+      "sprite": "delightfulcreators:item/ratatouille_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:tomato_sauce_bucket": {
+      "sprite": "delightfulcreators:item/tomato_sauce_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "delightfulcreators:vegetable_soup_bucket": {
+      "sprite": "delightfulcreators:item/vegetable_soup_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          2,
+          6,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "hybrid_aquatic:brine_bucket": {
+      "sprite": "hybrid_aquatic:item/brine_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "minecraft:lava_bucket": {
+      "sprite": "minecraft:item/lava_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "minecraft:milk_bucket": {
+      "sprite": "minecraft:item/milk_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "minecraft:powder_snow_bucket": {
+      "sprite": "minecraft:item/powder_snow_bucket",
+      "kind": "solid",
+      "rect": [
+        3,
+        3,
+        13,
+        5
+      ],
+      "mask": [
+        [
+          6,
+          0,
+          10,
+          1
+        ],
+        [
+          5,
+          1,
+          11,
+          2
+        ],
+        [
+          4,
+          2,
+          12,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          9,
+          6,
+          10,
+          7
+        ],
+        [
+          9,
+          7,
+          10,
+          8
+        ],
+        [
+          11,
+          7,
+          12,
+          8
+        ],
+        [
+          9,
+          9,
+          10,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "minecraft:water_bucket": {
+      "sprite": "minecraft:item/water_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "natures_spirit:cheese_bucket": {
+      "sprite": "natures_spirit:item/cheese_bucket",
+      "kind": "solid",
+      "rect": [
+        2,
+        3,
+        14,
+        5
+      ],
+      "mask": [
+        [
+          6,
+          0,
+          12,
+          1
+        ],
+        [
+          4,
+          1,
+          13,
+          2
+        ],
+        [
+          3,
+          2,
+          14,
+          3
+        ],
+        [
+          2,
+          3,
+          14,
+          4
+        ],
+        [
+          2,
+          4,
+          14,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          8,
+          6,
+          12,
+          7
+        ],
+        [
+          10,
+          7,
+          11,
+          8
+        ],
+        [
+          10,
+          8,
+          11,
+          9
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "ratatouille:bio_gas_bucket": {
+      "sprite": "ratatouille:item/bio_gas_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        9,
+        11,
+        13
+      ],
+      "mask": [
+        [
+          4,
+          9,
+          12,
+          10
+        ],
+        [
+          3,
+          10,
+          13,
+          11
+        ],
+        [
+          3,
+          11,
+          13,
+          12
+        ],
+        [
+          4,
+          12,
+          12,
+          13
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "ratatouille:cake_batter_bucket": {
+      "sprite": "ratatouille:item/cake_batter_bucket",
+      "kind": "viscous",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "ratatouille:cocoa_liquor_bucket": {
+      "sprite": "ratatouille:item/cocoa_liquor_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "ratatouille:compost_residue_fluid_bucket": {
+      "sprite": "ratatouille:item/compost_residue_fluid_bucket",
+      "kind": "suspension",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          9,
+          7
+        ],
+        [
+          10,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "ratatouille:compost_tea_bucket": {
+      "sprite": "ratatouille:item/compost_tea_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "ratatouille:egg_yolk_bucket": {
+      "sprite": "ratatouille:item/egg_yolk_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "ratatouille:melon_juice_fluid_bucket": {
+      "sprite": "ratatouille:item/melon_juice_fluid_bucket",
+      "kind": "smooth",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "ratatouille:mince_meat_bucket": {
+      "sprite": "ratatouille:item/mince_meat_bucket",
+      "kind": "chunks",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          3,
+          5,
+          13,
+          6
+        ],
+        [
+          3,
+          6,
+          12,
+          7
+        ],
+        [
+          4,
+          7,
+          6,
+          8
+        ],
+        [
+          8,
+          7,
+          12,
+          8
+        ],
+        [
+          8,
+          8,
+          12,
+          9
+        ],
+        [
+          9,
+          9,
+          11,
+          10
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "sophisticatedcore:xp_bucket": {
+      "sprite": "sophisticatedcore:block/xp_still",
+      "kind": "smooth",
+      "rect": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "mask": [],
+      "steam": [],
+      "tint": -1,
+      "light": 10,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "steampowered:steam_bucket": {
+      "sprite": "steampowered:item/steam_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          3,
+          11,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          6,
+          6,
+          10,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "supplementaries:lumisene_bucket": {
+      "sprite": "supplementaries:item/lumisene_bucket",
+      "kind": "iridescent",
+      "rect": [
+        4,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          5,
+          2,
+          11,
+          3
+        ],
+        [
+          3,
+          3,
+          13,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          4,
+          5,
+          12,
+          6
+        ],
+        [
+          5,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 11,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "theurgy:sal_ammoniac_bucket": {
+      "sprite": "theurgy:block/sal_ammoniac/still",
+      "kind": "smooth",
+      "rect": [
+        0,
+        0,
+        16,
+        16
+      ],
+      "mask": [],
+      "steam": [],
+      "tint": -65281,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "vintageimprovements:sulfuric_acid_bucket": {
+      "sprite": "vintageimprovements:item/sulfuric_acid_bucket",
+      "kind": "smooth",
+      "rect": [
+        5,
+        3,
+        12,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          3,
+          4,
+          13,
+          5
+        ],
+        [
+          5,
+          5,
+          12,
+          6
+        ],
+        [
+          10,
+          6,
+          12,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    },
+    "quark:slime_in_a_bucket": {
+      "sprite": "quark:item/slime_in_a_bucket",
+      "kind": "gel",
+      "rect": [
+        5,
+        3,
+        11,
+        6
+      ],
+      "mask": [
+        [
+          4,
+          2,
+          12,
+          3
+        ],
+        [
+          4,
+          3,
+          12,
+          4
+        ],
+        [
+          4,
+          4,
+          12,
+          5
+        ],
+        [
+          5,
+          5,
+          11,
+          6
+        ],
+        [
+          5,
+          6,
+          6,
+          7
+        ],
+        [
+          8,
+          6,
+          11,
+          7
+        ]
+      ],
+      "steam": [],
+      "tint": -1,
+      "light": 0,
+      "steam_frames": [],
+      "frame_ticks": 1
+    }
+  }
+}

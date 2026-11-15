@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "aeroscapes_reimagine:sky_whale_fall_surface",
+    "aeroscapes_reimagine:sky_whale_fall_underside"
+  ],
+  "step": "surface_structures"
+}

@@ -1,0 +1,9 @@
+{
+  "conditions": {
+    "block": "rocks:geyser",
+    "properties": {
+      "active": "true"
+    }
+  },
+  "height": 8
+}

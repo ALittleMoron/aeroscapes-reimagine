@@ -1,0 +1,10 @@
+{
+  "rconfig:version": 0,
+  "core": {
+    "converts_seed_only_in_analyzer": true,
+    "allow_grass_drop_resets": false
+  },
+  "compat": {
+    "create_harvester_reverts_growth": false
+  }
+}

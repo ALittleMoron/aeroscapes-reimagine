@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [{"item": "natures_spirit:chalk_powder"}],
+  "result": {"id": "chalk:chalk", "count": 1}
+}

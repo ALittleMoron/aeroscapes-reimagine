@@ -1,0 +1,49 @@
+{
+  "parent": "aeroscapes_reimagine:sky_journal/root",
+  "display": {
+    "icon": {
+      "id": "skywhales:whale_bone_block"
+    },
+    "title": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.sky_whale.title"
+    },
+    "description": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.sky_whale.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "whale": {
+      "trigger": "exposure:frame_exposed",
+      "conditions": {
+        "entities_in_frame": [
+          [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "skywhales:sky_whale"
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "nbt": "{Tags:[\"aeroscapes_reimagine.whale_preview\"]}"
+                }
+              }
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 20
+  }
+}

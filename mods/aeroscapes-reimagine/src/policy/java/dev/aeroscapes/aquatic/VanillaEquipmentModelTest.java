@@ -544,14 +544,16 @@ public final class VanillaEquipmentModelTest {
         for (boolean fabulous : new boolean[] {false, true}) {
           var itemPasses =
               baked.getRenderPasses(net.minecraft.world.item.ItemStack.EMPTY, fabulous);
-          require(itemPasses.size() == 2, "Bottle renders opaque contents before its glass shell");
+          require(
+              itemPasses.size() == source.getAsJsonObject("children").size(),
+              "Composite renders its contents before the final glass shell");
           for (int index = 0; index < itemPasses.size(); index++) {
             var pass = itemPasses.get(index);
             var expected =
-                index == 0
-                    ? net.neoforged.neoforge.client.NeoForgeRenderTypes.ITEM_LAYERED_CUTOUT.get()
-                    : net.neoforged.neoforge.client.NeoForgeRenderTypes.ITEM_LAYERED_TRANSLUCENT
-                        .get();
+                index == itemPasses.size() - 1
+                    ? net.neoforged.neoforge.client.NeoForgeRenderTypes.ITEM_LAYERED_TRANSLUCENT
+                        .get()
+                    : net.neoforged.neoforge.client.NeoForgeRenderTypes.ITEM_LAYERED_CUTOUT.get();
             require(
                 pass.getRenderTypes(net.minecraft.world.item.ItemStack.EMPTY, fabulous)
                     .equals(List.of(expected)),
@@ -561,9 +563,30 @@ public final class VanillaEquipmentModelTest {
             for (BakedQuad quad : quads)
               for (int vertex = 0; vertex < 4; vertex++) {
                 int alpha = quad.getVertices()[vertex * 8 + 3] >>> 24;
+                var texture = quad.getSprite().contents().name();
+                Path owned =
+                    assets.resolve(
+                        texture.getNamespace() + "/textures/" + texture.getPath() + ".png");
+                var image =
+                    Files.isRegularFile(owned)
+                        ? javax.imageio.ImageIO.read(owned.toFile())
+                        : NativeEquipmentModels.image(texture.toString());
+                require(image != null, "Readable composite material: " + texture);
+                var coordinate = face(quad, texture.toString()).uv.get(vertex).getAsJsonArray();
+                int x =
+                    Math.clamp(
+                        (int) (coordinate.get(0).getAsFloat() / 16 * image.getWidth()),
+                        0,
+                        image.getWidth() - 1);
+                int y =
+                    Math.clamp(
+                        (int) (coordinate.get(1).getAsFloat() / 16 * image.getHeight()),
+                        0,
+                        image.getHeight() - 1);
+                alpha = alpha * (image.getRGB(x, y) >>> 24) / 255;
                 require(
-                    index == 0 ? alpha == 255 : alpha > 0 && alpha < 255,
-                    "Actual baked contents are opaque and every glass vertex has fractional alpha");
+                    index == itemPasses.size() - 1 ? alpha > 0 && alpha < 255 : alpha == 255,
+                    "Contents are opaque and glass has fractional material or texture alpha");
               }
           }
         }
@@ -577,7 +600,9 @@ public final class VanillaEquipmentModelTest {
             pass.getQuads(null, null, RandomSource.create(0), ModelData.EMPTY, null))
           faces.add(face(quad, quad.getSprite().contents().name().toString()));
       }
-      require(passes == 2, "The item renderer receives both authored composite passes");
+      require(
+          passes == source.getAsJsonObject("children").size(),
+          "The item renderer receives every authored composite pass");
       return faces;
     } finally {
       sprites.values().forEach(Sprite::close);

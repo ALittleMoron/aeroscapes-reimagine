@@ -6,6 +6,8 @@ status: available
 
 More detailed animations, environmental sound and small visual effects add to Minecraft’s standard presentation.
 
+Enable **Options → Accessibility Settings → Show Subtitles** for directional captions of nearby sounds. The pack supplies missing English and Russian captions for important Iron's Spells casting, attacks and impacts, including boss warnings. Music and editing-interface ticks are excluded; resource packs retain their own captions where provided.
+
 ## Interface
 
 The **Aeroscapes Reimagine — Island Atlas** resource pack gives the main menu a chart of floating islands, with matching menus, inventories, workstations, reforging, the nutrition panel and the EMI recipe viewer. Modded containers such as Sophisticated Storage and the Tom’s Simple Storage terminals use lighter slate panels for their dark labels. The opening NeoForge window shows its own startup diagnostics until Minecraft can load the pack artwork. Turn off Island Atlas in **Options → Resource Packs** to use the standard artwork again.
@@ -22,7 +24,9 @@ The **Aeroscapes Reimagine — Island Atlas** resource pack gives the main menu 
 
 [Punchy](https://modrinth.com/mod/punchy-fpa) handles first-person hands, with different movements for mining, chopping, digging and using items. The initial profile disables authored camera motion, extra walking/sprinting/falling movements and decorative overlays/particles. Inspection starts unbound and can be assigned in **Options → Controls**; Punchy's settings are available through **F8**. Combat rules remain unchanged.
 
-[Refined Tools](https://modrinth.com/resourcepack/refined-tools) gives supported vanilla tools and other held items more detailed three-dimensional models, while tools keep flat inventory icons. Modefite and Puzzle provide its model support on this Minecraft version. Keep the **Aeroscapes Reimagine — Refined Tools compatibility** resourcepack enabled with Refined Tools; disable both together. It supplies missing model parents, the held-trident rendering route and additional models for selected modded equipment. These additional models appear in hands; inventory icons retain the original textures and active states.
+[Refined Tools](https://modrinth.com/resourcepack/refined-tools) gives supported vanilla tools and other held items more detailed three-dimensional models, while tools keep flat inventory icons. Modefite and Puzzle provide its model support on this Minecraft version. The **Aeroscapes Reimagine — Refined Tools compatibility** resource pack supplies missing model parents, the held-trident rendering route and additional models for modded equipment. Inventory icons retain their original textures and active states, except for the greenhouse monitor’s redesigned face. AgriCraft gardening tools and Animal Husbandry care equipment have volumetric hand models; the monitor’s new icon also remains when hand models are disabled.
+
+3D item models are enabled by default. To return to the original models, open **Mods → Aeroscapes Reimagine → Config → Client presentation**, turn off **3D held-item models** and save. This switches all added item models together and reloads resources without restarting the game; leave both resource packs selected. Item states and hand animations remain active. Native block forms and special item rendering, such as the vanilla trident, retain their original volume.
 
 [Shoulder Surfing](https://modrinth.com/mod/shoulder-surfing-reloaded) places the third-person camera slightly to the side, using the framing of Otherworld D&D. The ordinary perspective key (**F5** by default) still switches views. Movement follows the normal player direction, the camera inherits the player's field of view, and first person remains available. Shoulder switching can be assigned in **Options → Controls**.
 
@@ -70,6 +74,8 @@ The **Aeroscapes Reimagine atmosphere integration** resourcepack gives milk buck
 
 [Wakes Reforged](https://modrinth.com/mod/wakes-reforged/version/Z3Ic8n5N) draws water trails from swimmers, boats and floating structures. The effect follows the water surface and fades behind the moving object.
 
+[Aeronautics Wind Sound](https://modrinth.com/mod/aeronautics-wind-sound) adds the rush of oncoming wind while you are aboard a moving ship. It grows louder with the ship's speed and quieter when something shelters you ahead. It uses the **Ambient/Environment** volume control.
+
 In the interface, Chat Animation animates chat, while Smooth Gui animates menu opening.
 
 [Sound Physics Remastered](https://modrinth.com/mod/sound-physics-remastered) adds reverberation and changes how obstacles muffle sounds. It processes acoustics alongside the existing environmental and interaction sounds. Sound-category volume controls remain available in Minecraft's sound settings.
@@ -85,6 +91,10 @@ In [Complementary](https://modrinth.com/shader/complementary-reimagined), the **
 [Spyglass Astronomy for NeoForge](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853) supplies the interactive stars and planets. While looking through a spyglass, press **Pick Block** to cycle observation modes. In constellation mode, hold **Attack** and draw between stars. Use `/sga:name` to name the selected object and `/sga:info` to examine it.
 
 Distant islands and ridges can hide stars and constellation lines even when you look through the spyglass with shaders enabled.
+
+[Celestia](https://modrinth.com/mod/celestia-sky) sends shooting stars across every night and, from time to time, meteor showers from one point in the sky. When a star passes near the centre of your view you make a wish and, once per night, receive **Luck I** for a minute.
+
+On some nights an aurora spreads overhead. Without shaders, [Auroras](https://modrinth.com/mod/auroras) draws it: the aurora follows changing "solar activity", so several nights in a row may have it or lack it. MakeUp has no aurora of its own, so Auroras draws it there too. Complementary draws its own aurora on full-moon nights and in snowy regions, and the Auroras display is hidden so the sky never shows two.
 
 ## Rendering
 

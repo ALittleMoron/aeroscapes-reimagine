@@ -1,0 +1,32 @@
+{
+  "match": {
+    "items": [
+      "createmetallurgy:molten_aluminum_bucket",
+      "createmetallurgy:molten_brass_bucket",
+      "createmetallurgy:molten_bronze_bucket",
+      "createmetallurgy:molten_constantan_bucket",
+      "createmetallurgy:molten_copper_bucket",
+      "createmetallurgy:molten_electrum_bucket",
+      "createmetallurgy:molten_gold_bucket",
+      "createmetallurgy:molten_invar_bucket",
+      "createmetallurgy:molten_iron_bucket",
+      "createmetallurgy:molten_lead_bucket",
+      "createmetallurgy:molten_lithium_bucket",
+      "createmetallurgy:molten_necromium_bucket",
+      "createmetallurgy:molten_netherite_bucket",
+      "createmetallurgy:molten_nickel_bucket",
+      "createmetallurgy:molten_obdurium_bucket",
+      "createmetallurgy:molten_osmium_bucket",
+      "createmetallurgy:molten_silver_bucket",
+      "createmetallurgy:molten_steel_bucket",
+      "createmetallurgy:molten_tin_bucket",
+      "createmetallurgy:molten_tungsten_bucket",
+      "createmetallurgy:molten_void_steel_bucket",
+      "createmetallurgy:molten_zinc_bucket",
+      "sophisticatedcore:xp_bucket",
+      "tide:incandescent_larva_bucket"
+    ]
+  },
+  "luminance": 10,
+  "water_sensitive": false
+}

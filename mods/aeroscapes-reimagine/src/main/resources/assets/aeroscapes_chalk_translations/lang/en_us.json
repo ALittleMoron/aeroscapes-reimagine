@@ -1,0 +1,20 @@
+{
+  "chalk.configuration.glowing_mark_particles": "Glowing Mark Particles",
+  "aeroscapes_reimagine.config.literal.878dab33104266450b25d4b5afe512c1124eeac2da9022887333f6f8476b9510": "Defines how groups will be sorted in symbol selection overlay.",
+  "aeroscapes_reimagine.config.literal.b25f0ace4f2f69ec86ec28df4eff18d05517a9fdb90ce7a4fd1ec771263029f6": "Undefined groups will be sorted alphabetically and placed after defined ones.",
+  "aeroscapes_reimagine.config.literal.cd1c17f0d3bca895ea629959bb924ed66440213edcd5622d5602b344a9abeed4": "Contents of the Chalk Box will be shown in item's tooltip.",
+  "aeroscapes_reimagine.config.literal.dae6a464b085d6562fb482a191e8aa4b6b2e5bf949712347172c01bdcf4482d1": "Information about using Chalk Box will be shown in the item's tooltip.",
+  "aeroscapes_reimagine.config.literal.3e5118ff5d835fcb5ff2c873c117396505cde49f526d2b40a7d21ed793d5eb6e": "If enabled, Chalks (and Chalk Boxes) will generate in Dungeons, Abandoned Mineshafts, Villages (Planes and Savanna), Cartographer village houses",
+  "aeroscapes_reimagine.config.literal.9197453e11531898b478f0c6309f20bfbe91204e37f002d18251352026843eec": "Glowing marks will occasionally emit sparkling particles. Default: true",
+  "aeroscapes_reimagine.config.literal.8205d5e1038d58a5b425005e8c938878cead2e05cb0ba4a85051a9d6ac0794b5": "Defines which color a specific dye would have when applied to a chalk item.",
+  "aeroscapes_reimagine.config.literal.e05a1861ad21ecf78d7db2ddb86e18a98454c226a987aa0cea688c037e22199c": "Colored chalks will be added to creative menu and JEI",
+  "aeroscapes_reimagine.config.literal.fdcb2e0ec71fbc9c6868edf2d4aef7464b92d1bc36f4e344a8c02a16d48a06f9": "Colored chalks will be named after a dye color if only a single dye was used to color it.",
+  "aeroscapes_reimagine.config.literal.70d8f0dc81a10b35477e6a8fa19a75f6eeb273e134791c72b59db181fba9227d": "Durability bar of selected chalk will be shown on a chalk box.",
+  "aeroscapes_reimagine.config.literal.b48491c045f5826d7be38aafd555f012146b82833281d8e4a7ec31bc01a686a7": "Controls whether glowing should be enabled in Chalk Box.",
+  "aeroscapes_reimagine.config.literal.11abb78a984d4a89e12faf4763041db0a5e91182a2f1a8ca41cde1e23d98cd97": "If disabled - you will not be able to draw glowing marks with chalk box.",
+  "aeroscapes_reimagine.config.literal.fd7a1b7fcb4112c1476d1cfb069c2b3f445b5811c250fd3f3cc8a0d984906848": "How many glowing uses one glowing item will give.",
+  "aeroscapes_reimagine.config.literal.42b4153d757cd5a984bbca5937e1f0f6cb8a60adb98cd6a976e5d5d9564df941": "Some mark symbols need to be unlocked by completing specific advancements.",
+  "aeroscapes_reimagine.config.literal.ac9c8540a4c8065cebc9ea40f9937a2241d450bc3c8caac3dcbdcd2a5f77db4b": "Setting this to 'false' will bypass the unlocking feature, making all symbols always available.",
+  "aeroscapes_reimagine.config.literal.5903cfe99cf4a90afb380dfdd46ede6fae090073b8c12945e709e3bd65aaf7bb": "When a symbol is unlocked, message will be shown in the chat.",
+  "aeroscapes_reimagine.config.literal.fe61870b868239b13b02cf51e0d7ddde7a48059d0b0d060193fb0309e66df77a": "Global toggle for the 'glowing' feature. Disabling this setting will prevent creation of new glowing marks. Existing marks will remain."
+}

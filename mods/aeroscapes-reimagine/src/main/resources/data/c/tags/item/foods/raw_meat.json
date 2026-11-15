@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "skywhales:raw_whale_meat",
+      "required": false
+    },
+    "animalhusbandry:raw_chevon",
+    "animalhusbandry:golden_beef"
+  ]
+}

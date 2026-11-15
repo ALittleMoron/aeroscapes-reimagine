@@ -1,0 +1,80 @@
+{
+  "loader": "neoforge:obj",
+  "model": "xercapaint:models/item/aeroscapes_painting/item_palette12.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "textures": {
+    "particle": "xercapaint:item/aeroscapes_painting/materials"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        25.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.52,
+        0.52,
+        0.52
+      ],
+      "translation": [
+        0.8036502,
+        2.0469866,
+        1.0522318
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        25.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.52,
+        0.52,
+        0.52
+      ],
+      "translation": [
+        -0.8036502,
+        2.2289977,
+        0.66190785
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        25.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.52,
+        0.52,
+        0.52
+      ],
+      "translation": [
+        0.8036502,
+        2.0469866,
+        1.0522318
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        25.0,
+        -15.0,
+        0.0
+      ],
+      "scale": [
+        0.52,
+        0.52,
+        0.52
+      ],
+      "translation": [
+        -0.8036502,
+        2.2289977,
+        0.66190785
+      ]
+    }
+  }
+}

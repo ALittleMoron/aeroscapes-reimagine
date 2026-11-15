@@ -22,11 +22,17 @@ The included additions provide gyroscopic stabilization and rope connectors for 
 
 A home aboard ship is part of the intended experience. The range of storage, kitchen equipment and machinery usable while moving is still being established; not every stationary machine can be assumed to work on a vessel.
 
+## Before departure
+
+Assign **Open preflight information** under **Options → Controls → Aeroscapes Reimagine: flight**, then open it while aboard an assembled vessel. Refresh reads the current mass, connected bodies, pressure-adjusted balloon support, gas fill and leaks from the server. Values become stale after five seconds; refresh after changing the vessel or its surroundings.
+
+The support margin compares balloon-supported mass with the assembled construction's tracked mass. It does not promise that every item in a chest adds weight, and propellers can provide lift outside this calculation. Fuel rows cover the directly inspectable portable engines of Create Simulated; other engines, incoming fuel and remaining flight distance are not estimated. A sufficient balloon margin alone is not an all-clear for departure.
+
 ## Travel choices
 
 The first useful aircraft should make island travel easier after the effort of building it. Experimenting with a vessel should lead to more comfortable journeys, more capable expeditions, cargo transport and life aboard, supporting the player's other projects. Bridges and player-built routes remain options; learned [magic](../magic/) may provide fitting alternatives through its own progression. There is no compulsory transport sequence.
 
-[Paragliders](https://www.curseforge.com/minecraft/mc-mods/paragliders) provides a handheld glider for controlled descent, with native stamina and updrafts from fire and campfires. Spirit Orbs earned through exploration can be exchanged at Goddess Statues for health or stamina improvements. Horned Statues allow those improvements to be traded between the two kinds. The mod's statues, elixirs and glider customization remain available; ordinary sprinting and swimming do not consume gliding stamina and remain available when that reserve is empty.
+[Paragliders](https://www.curseforge.com/minecraft/mc-mods/paragliders) provides a handheld glider for controlled descent, with native stamina and updrafts from fire and campfires. Geysers in cold lands wake when a player flies close and give a short lift, lower than a campfire's. Spirit Orbs earned through exploration can be exchanged at Goddess Statues for health or stamina improvements. Horned Statues allow those improvements to be traded between the two kinds. The mod's statues, elixirs and glider customization remain available; ordinary sprinting and swimming do not consume gliding stamina and remain available when that reserve is empty.
 
 To gain an upgrade, keep at least four **Spirit Orbs** in your inventory, approach a **Goddess Statue** and right-click the statue without sneaking. Select the health or stamina trade in the list. Four orbs are consumed and the upgrade applies directly; there are no payment slots to fill or output item to collect. At a **Horned Statue**, sell an acquired upgrade for one essence and five emeralds, then buy either type for one essence and six emeralds. Reallocating one upgrade therefore costs one additional emerald.
 

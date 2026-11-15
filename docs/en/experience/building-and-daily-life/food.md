@@ -16,7 +16,23 @@ Crate Delight adds crates and bags for produce. Crops Love Rain makes crops grow
 
 [Buzzier Bees](https://modrinth.com/mod/buzzier-bees/version/Y12rtT96) adds honey bread, honey apples and glazed porkchops. Buttercups and mooblooms appear in sunflower plains, with clovers in some forests. An empty glass bottle can carry a bee to another hive site.
 
+## Crop breeding
+
+[AgriCraft ReReloaded](https://www.curseforge.com/minecraft/mc-mods/agricraft-rereloaded) adds crop sticks, seed analysis, inherited dominant and recessive traits, mutations, soil requirements and irrigation. Ordinary seeds still plant ordinary crops. To begin breeding, crouch-use an ordinary seed on an empty seed analyzer to convert it, then grow the analyzed seed on crop sticks. Cross sticks between parents produce children for further analysis and selection. The journal records discoveries; EMI shows the equipment recipes.
+
+The selection includes familiar food crops and decorative plants, including Farmer's Delight cabbage, onions, rice and tomatoes. Resource-producing AgriCraft plants are excluded. Create harvesters use the crop's genetic products and regrowth, leaving immature crops and empty sticks intact. Rakes, clippers and the trowel retain their native functions without reforging. The current pack has no seasonal growth restrictions.
+
+## Livestock care and inheritance
+
+[Animal Husbandry](https://modrinth.com/mod/animalhusbandry) adds sexes, inherited traits and appearance, ancestry, gestation and care for vanilla cows, sheep, pigs, chickens, goats and rabbits. These rules do not automatically extend to every creature added by other mods. Feed, water and groom domesticated animals; reachable troughs and brushing posts support routine care. The farm ledger retains animal statistics and genealogy, while location highlighting and deed-based searching are disabled.
+
+Care time advances while the animal is loaded and an owner is online, including in another dimension. Sleep advances that active day; returning to an unloaded herd does not apply several absent days of neglect at once. Quality on a brush improves its happiness gain; ordinary brushing already fully cleans the animal. Angora clothing uses the normal armor reforging families. Its native powder-snow protection does not establish protection against every temperature source.
+
+Troughs accept suitable food through item transfer and water through Create pipes. A bucket represents sixteen drinking uses; food and water need separate troughs. Partial piped water cannot be withdrawn as a full bucket. Crouch-use an empty bucket to spill a partial remainder before switching the trough to food or refilling it by hand. Cooking physical raw eggs produces Farmer's Delight fried eggs in a furnace, smoker or campfire. Cooked eggs from existing stocks remain usable in shared egg recipes; egg powder is not a raw egg for these cooking routes. Animal Husbandry cheese slices participate in shared cheese recipes and nutrition, while Brewin' and Chewin's fermentation remains a separate route.
+
 ## Cooking with machinery
+
+The two melon-juice processing chains remain available. Select the desired fluid with the basin's output filter: fill a FluidLogistics copper bucket with that juice and use it as the filter sample.
 
 [Create: Food](https://modrinth.com/project/4HnO3el1) expands food content shared with Create and Farmer’s Delight. [Delightful Creators](https://modrinth.com/project/jmJ87gsb) connects Farmer’s Delight preparation with Create automation. Ratatouille supplies further farming and processing equipment, including an oven, thresher, irrigation tower and compost tower.
 
@@ -36,4 +52,4 @@ Heat, cold and wetness make suitable clothing, shelter and heat sources useful. 
 
 Varied ingredient sources, cooking in batches and carrying clean water help establish dependable routines. Machinery can reduce repeated kitchen work, leaving time for building and journeys.
 
-Seasons remain optional. Before seasonal crop limits are chosen, every required food group and drinking water need a practical supply route throughout the year, including for a new character starting in winter. Stored harvests, alternative crops and protected growing areas are possible ways to provide that access. Food or water shortages combined with penalties must not create a cycle that makes obtaining food or water progressively harder. Exact seasonal rules, integration and balance remain unselected.
+[Ecliptic Seasons](https://modrinth.com/mod/ecliptic-seasons) is selected for the planned seasonal system. Outdoor crop suitability and protected growing areas should give farms different preparation through the year. Seasonal restrictions are not active in the current pack; AgriCraft crop sticks do not yet follow that calendar.

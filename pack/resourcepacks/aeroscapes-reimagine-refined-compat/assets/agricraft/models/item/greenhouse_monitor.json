@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "agricraft:item/greenhouse_monitor"
+    }
+  },
+  "textures": {
+    "layer0": "agricraft:item/greenhouse_monitor",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "agricraft:item/equipment/held/greenhouse_monitor"
+    },
+    "firstperson_lefthand": {
+      "parent": "agricraft:item/equipment/held/greenhouse_monitor"
+    },
+    "thirdperson_righthand": {
+      "parent": "agricraft:item/equipment/held/greenhouse_monitor"
+    },
+    "thirdperson_lefthand": {
+      "parent": "agricraft:item/equipment/held/greenhouse_monitor"
+    }
+  }
+}

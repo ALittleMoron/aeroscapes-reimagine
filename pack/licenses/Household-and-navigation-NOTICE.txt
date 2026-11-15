@@ -1,0 +1,33 @@
+Aeroscapes Reimagine: selected household and navigation additions
+
+Chalk2.0.3 by mortuusars: MIT. Unchanged official Modrinth Cw4mfhCD.
+https://modrinth.com/mod/chalk-mod/version/Cw4mfhCD
+Independent supplementary Russian strings cover missing native text and configuration
+comments. The native artwork and all item tint/state models remain unchanged.
+
+Animal Husbandry0.6.0 by AthisWorkshop: All Rights Reserved. Unchanged official
+Modrinth Evazn2xm, downloaded separately by the pack installer; no modified JAR
+is distributed. Independent owned integrations provide loaded-time care accounting,
+radar restrictions, tool quality, trough capabilities and localization.
+https://modrinth.com/mod/animalhusbandry/version/Evazn2xm
+
+Animal Husbandry x Fresh Animations1.1 by RiftLabs: All Rights Reserved.
+Official CurseForge project1617697 file9143629, installed unchanged for owner-local testing. The pinned packwiz Modrinth
+exporter bundles CurseForge-only files; a public redistribution grant is NOT
+established. Do not publish a bundled copy until permission or an allowed
+author-provided external host is verified. No derivative is distributed.
+https://www.curseforge.com/minecraft/texture-packs/animal-husbandry-x-fresh-animations/files/9143629
+
+AgriCraft ReReloaded4.0.27 by InfinityRaider, Ketheroth, coredex-source and
+contributors (publisher Vivoxtl): MIT. Unchanged official CurseForge project1616052
+file9559254. Native art and item models are retained. Independent translations,
+configuration and a required data filter retain food/decorative breeding while
+excluding the native resource-producing plant and mutation definitions.
+https://www.curseforge.com/minecraft/mc-mods/agricraft-rereloaded/files/9559254
+https://github.com/Vivoxti/AgriCraft-ReReloaded
+
+Fowl Play1.2.3 by aqario and contributors: MIT. Original adult white and baby
+white32x32 textures are the only upstream inputs to the sixteen independent
+color/pattern compatibility variants. Native UV layouts and renderer animation
+remain unchanged. Original license accompanies this notice in Fowl-Play-MIT.txt.
+https://modrinth.com/mod/fowl-play

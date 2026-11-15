@@ -1,6 +1,7 @@
 # Starting profile: LOW from this exact shader release; hardware validation pending.
 CLOUD_STYLE_DEFINE=50
 ANISOTROPIC_FILTER=0
+AURORA_CONDITION=4
 BLOCK_REFLECT_QUALITY=1
 CLOUD_QUALITY=2
 COLORED_LIGHTING=0

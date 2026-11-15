@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "steampowered:item/pressurized_steam_container"
+    }
+  },
+  "textures": {
+    "layer0": "steampowered:item/pressurized_steam_container",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "steampowered:item/equipment/held/pressurized_steam_container"
+    },
+    "firstperson_lefthand": {
+      "parent": "steampowered:item/equipment/held/pressurized_steam_container"
+    },
+    "thirdperson_righthand": {
+      "parent": "steampowered:item/equipment/held/pressurized_steam_container"
+    },
+    "thirdperson_lefthand": {
+      "parent": "steampowered:item/equipment/held/pressurized_steam_container"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:grooming_legendary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/grooming"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

@@ -1,0 +1,17 @@
+[spawning]
+spawnEnabled = true
+spawnIntervalTicks = 1200
+spawnChance = 0.35
+maxNearbyWhales = 1
+nearbyWhaleRadius = 192
+restrictToOceanBiome = false
+spawnOverVoid = true
+spawnHeightMin = 12
+spawnHeightMax = 24
+spawnDistanceMin = 56
+spawnDistanceMax = 72
+
+[despawn]
+despawnEnabled = true
+immediateDespawnDistance = 128
+forcePersistent = false

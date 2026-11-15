@@ -550,12 +550,15 @@ public final class UtilityEquipmentModelTest {
                     throw new UnsupportedOperationException(
                         "Unexpected atlas resource operation: " + method.getName());
                   byte[] bytes;
-                  try (var input =
-                      UtilityEquipmentModelTest.class.getResourceAsStream(
-                          "/assets/" + location.getNamespace() + "/" + location.getPath())) {
-                    if (input == null) return java.util.Optional.empty();
-                    bytes = input.readAllBytes();
-                  }
+                  var owned = assets.resolve(location.getNamespace()).resolve(location.getPath());
+                  if (Files.isRegularFile(owned)) bytes = Files.readAllBytes(owned);
+                  else
+                    try (var input =
+                        UtilityEquipmentModelTest.class.getResourceAsStream(
+                            "/assets/" + location.getNamespace() + "/" + location.getPath())) {
+                      if (input == null) return java.util.Optional.empty();
+                      bytes = input.readAllBytes();
+                    }
                   // The native single-file source only opens bytes; this fixture has no pack
                   // metadata consumer.
                   return java.util.Optional.of(

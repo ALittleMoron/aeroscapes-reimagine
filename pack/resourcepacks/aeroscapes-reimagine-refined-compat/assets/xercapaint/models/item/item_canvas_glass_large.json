@@ -1,0 +1,36 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "xercapaint:item/item_canvas_glass_large"
+    }
+  },
+  "textures": {
+    "layer0": "xercapaint:item/item_canvas_glass_large",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "xercapaint:item/equipment/held/item_canvas_glass_large"
+    },
+    "firstperson_lefthand": {
+      "parent": "xercapaint:item/equipment/held/item_canvas_glass_large"
+    },
+    "thirdperson_righthand": {
+      "parent": "xercapaint:item/equipment/held/item_canvas_glass_large"
+    },
+    "thirdperson_lefthand": {
+      "parent": "xercapaint:item/equipment/held/item_canvas_glass_large"
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "xercapaint:drawn": 1
+      },
+      "model": "xercapaint:item/item_canvas_large_drawn"
+    }
+  ]
+}

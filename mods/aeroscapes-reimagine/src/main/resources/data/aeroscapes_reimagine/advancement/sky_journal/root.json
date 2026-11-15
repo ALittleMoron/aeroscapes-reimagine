@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "exposure:camera"
+    },
+    "title": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.root.title"
+    },
+    "description": {
+      "translate": "advancements.aeroscapes_reimagine.sky_journal.root.description"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false,
+    "background": "minecraft:textures/block/light_blue_concrete_powder.png"
+  },
+  "criteria": {
+    "camera": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "exposure:camera"
+          }
+        ]
+      }
+    }
+  }
+}

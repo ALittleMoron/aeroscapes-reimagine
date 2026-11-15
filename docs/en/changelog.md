@@ -4,6 +4,41 @@ description: Version history.
 status: available
 ---
 
+## 0.6.0
+
+- Added Chalk for physical route marks and illuminated signs, including Nature’s Spirit powder and white chalk block recipes.
+- Added Animal Husbandry care, inherited livestock traits and lineage, with Fowl Play appearance compatibility, trough automation and location searching disabled.
+- Added AgriCraft ReReloaded food and decorative crop breeding, with native Farmer's Delight produce and Create harvesting; excluded resource plants.
+- Added a preflight screen for current ship mass, balloon support, gas and inspectable fuel.
+- Added thirteen ecological Sky Whales forms, with actual block textures, integrated eyes and habitat-dependent encounters, including lava lakes; distant whales have a departure grace period and survive ordinary chunk unloading. Physical carcasses supply meat and bones without overwriting existing blocks.
+- Gave whale forms distinct bodies and habitats, with tail strokes, gliding and fin gestures; added commands to preview all thirteen forms without searching.
+- Grounded the rooted whale's trees and resized its hollow log, removed overlapping granite geode surfaces, varied chalk erosion and vegetation, attached dripstone formations to the moving anatomy and added exposed lava. Restored native calls in whale previews.
+- Gave every whale form a lighter belly and jaw with throat grooves, larger pectoral fins, broad tail flukes and patches of related blocks on the flanks.
+- Removed flickering overlapping surfaces from all thirteen whale forms.
+- Lined the granite whale's geode with amethyst and added fossil ribs to sandstone, flowering azalea to rooted and grey rain-cloud undersides to cloud whales.
+- Whale calls now carry about 96 blocks, the same for natural whales and previews.
+- Over open void, the island the player stands on now decides a whale's form; high islands keep their own forms instead of always producing snowy whales.
+- Added Joy of Painting for player-painted canvases, glass pictures and easels, with a full-size held artist's palette.
+- Hid Forgematica area-selection outlines by default.
+- Unified cooking of physical raw eggs into Farmer's Delight fried eggs, retaining shared uses for previously cooked eggs.
+- Corrected conflicting food-processing recipes, copied ingredients and fluid duplication through cream cheese and bottled drinks.
+- Gave the item silo and package-list filter distinct crafting layouts at unchanged material costs.
+- Added synchronized height-layer selection to both Xaero maps; native Xaero display is the default, with optional automatic following and manual controls.
+- Added English and Russian captions for important spell, attack and impact sounds from Iron's Spells.
+- Added a documentation page with diagrams of how the pack's systems connect, marking planned connections separately.
+- Added a shared client switch for the pack's 3D held-item models, enabled by default; disabling it restores original models after a resource reload.
+- The engineering stage brings together mechanical workshops, foundry processing, fuels, steam power, fluid delivery, controls and artillery.
+- Restored missing RSGauges button and pressure-plate ingredients and observer block categories.
+- Restored hay and rice bales as inputs for the automated horse-feed recipe.
+- Added missing bucket grouping for 313 containers, restoring their use with Create tag filters.
+- Extended held 3D models to all bucket families, steam canisters, the cannon worm and AgriCraft/Animal Husbandry equipment and Joy of Painting supplies; bucket contents retain animated liquids, food, steam, lighting and captured creatures. Redesigned the greenhouse monitor’s icon and held form.
+- Added whale waters, regions of sky with twice the whale encounters at the same overall rate, rare pods of two or three whales, whales that briefly escort a ship, and swifts circling whales.
+- Added whale falls: skeletons on islands and set into island undersides, with a modest share of whale bone.
+- Added the Sky Photo Journal advancement tab for photographs of every whale form, airships and a sky village.
+- Added Celestia for shooting stars, meteor showers and wishes, Auroras for an aurora without shaders and with MakeUp and Aeronautics Wind Sound for wind on a moving ship; Complementary's aurora now appears at full moon or in snowy regions.
+- Awakened geysers give paragliders a short updraft.
+- Fixed the Celestia advancement tab background.
+
 ## 0.5.4
 
 - Added Steam Powered boilers, liquid steam storage and transfer, and three engine/flywheel tiers using brass, iron and foundry steel.

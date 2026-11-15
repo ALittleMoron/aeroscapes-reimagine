@@ -1,0 +1,13 @@
+{
+  "key.categories.aeroscapes_navigation": "Aeroscapes map layers",
+  "key.aeroscapes_navigation.up": "Raise map layer (both maps)",
+  "key.aeroscapes_navigation.down": "Lower map layer (both maps)",
+  "key.aeroscapes_navigation.follow": "Follow player / native map view",
+  "gui.aeroscapes_navigation.info": "Map layer",
+  "gui.aeroscapes_navigation.follow": "Map: auto Y %s…%s",
+  "gui.aeroscapes_navigation.manual": "Map: fixed Y %s…%s",
+  "gui.aeroscapes_navigation.native": "Map: native view",
+  "gui.aeroscapes_navigation.lower": "Show terrain 16 blocks lower on both maps",
+  "gui.aeroscapes_navigation.higher": "Show terrain 16 blocks higher on both maps",
+  "gui.aeroscapes_navigation.help": "Both maps show terrain within this height range, including islands below other islands. −/+ select a fixed layer; click this button to follow your height or restore Xaero's native view. Only explored, loaded terrain can be mapped; wait for the map to refresh after switching. Keys are configurable in Controls → Aeroscapes map layers."
+}
