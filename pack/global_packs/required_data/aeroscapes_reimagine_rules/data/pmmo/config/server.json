@@ -1,0 +1,138 @@
+{
+  "xp_gains": {
+    "reuse_penalty": 0.0,
+    "perks_plus_config": false,
+    "player_actions": {},
+    "damage": {
+      "DEAL_DAMAGE": {
+        "#minecraft:is_projectile": {
+          "archery": 1
+        },
+        "minecraft:player_attack": {
+          "combat": 1
+        }
+      }
+    }
+  },
+  "party": {
+    "party_range": 50,
+    "party_bonus": {}
+  },
+  "mob_scaling": {
+    "use_exponential_formula": true,
+    "per_level": 1.0,
+    "power_base": 1.104088404342588,
+    "ratios": {
+      "minecraft:generic.max_health": {
+        "combat": 0.001
+      },
+      "minecraft:generic.movement_speed": {
+        "combat": 1e-06
+      },
+      "minecraft:generic.attack_damage": {
+        "combat": 0.0001
+      }
+    },
+    "enabled": false,
+    "scaling_aoe": 150,
+    "base_level": 0,
+    "boss_scaling": 1.1
+  },
+  "vein_miner": {
+    "default_consume": 1,
+    "charge_modifier": 1.0,
+    "blacklist": [
+      "silentgear:saw"
+    ],
+    "enabled": false,
+    "require_settings": false
+  },
+  "general": {
+    "creative_reach": 50.0,
+    "salvage_block": "minecraft:smithing_table",
+    "treasure_enabled": false,
+    "brewing_tracked": false
+  },
+  "levels": {
+    "xp_min": 200,
+    "xp_base": 1.025,
+    "per_level": 1.1,
+    "global_modifier": 1.0,
+    "skill_modifiers": {},
+    "max_level": 50,
+    "static_levels": [
+      100,
+      120,
+      140,
+      160,
+      180,
+      200,
+      220,
+      240,
+      260,
+      280,
+      300,
+      320,
+      340,
+      360,
+      380,
+      400,
+      420,
+      440,
+      460,
+      480,
+      500,
+      520,
+      540,
+      560,
+      580,
+      600,
+      620,
+      640,
+      660,
+      680,
+      700,
+      720,
+      740,
+      760,
+      780,
+      800,
+      820,
+      840,
+      860,
+      880,
+      900,
+      920,
+      940,
+      960,
+      980,
+      1000,
+      1020,
+      1040,
+      1060,
+      1080,
+      1100
+    ],
+    "loss_on_death": 0.0,
+    "lose_only_excess": true
+  },
+  "requirements": {
+    "requirement_enabled": {
+      "USE_ENCHANTMENT": false,
+      "BREED": false,
+      "INTERACT": false,
+      "KILL": false,
+      "TOOL": false,
+      "WEAPON": false,
+      "PLACE": false,
+      "USE": false,
+      "TAME": false,
+      "TRAVEL": false,
+      "BREAK": false,
+      "RIDE": false,
+      "ENTITY_INTERACT": false,
+      "WEAR": false
+    }
+  },
+  "type": "SERVER"
+}

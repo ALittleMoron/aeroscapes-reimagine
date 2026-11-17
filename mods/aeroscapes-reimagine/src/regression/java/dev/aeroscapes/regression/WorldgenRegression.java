@@ -197,6 +197,11 @@ public final class WorldgenRegression {
       LOGGER.info("Reforge pool regression passed");
       return;
     }
+    if (Boolean.getBoolean("aeroscapes.regression.progression")) {
+      ProgressionRegression.verify(level);
+      LOGGER.info("Progression bridge regression passed");
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.magic")) {
       MagicRegression.verify(level);
       if (System.getProperty("aeroscapes.regression.groupTwo") == null) return;

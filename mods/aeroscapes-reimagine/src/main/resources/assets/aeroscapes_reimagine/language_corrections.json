@@ -18898,5 +18898,293 @@
     "key": "trait.animalhusbandry.iron_stomach.desc1",
     "expected": "• Can safely eat any organic block/item",
     "replacement": "• Can eat leaves, flowers and saplings"
+  },
+  {
+    "language": "en_us",
+    "key": "pmmo.archery",
+    "expected": "Archery",
+    "replacement": "Ranged"
+  },
+  {
+    "language": "en_us",
+    "key": "pmmo.combat",
+    "expected": "Combat",
+    "replacement": "Melee"
+  },
+  {
+    "language": "en_us",
+    "key": "pmmo.mining",
+    "expected": "Mining",
+    "replacement": "Gathering"
+  },
+  {
+    "key": "ftbquests.reward.pmmo.levelreward.amount",
+    "expected": "Level Reward",
+    "replacement": "Награда уровнями"
+  },
+  {
+    "key": "ftbquests.reward.pmmo.levelreward.skill",
+    "expected": "Skill",
+    "replacement": "Навык"
+  },
+  {
+    "key": "ftbquests.reward.pmmo.xpreward.amount",
+    "expected": "Xp Reward",
+    "replacement": "Награда опытом"
+  },
+  {
+    "key": "ftbquests.reward.pmmo.xpreward.skill",
+    "expected": "Skill",
+    "replacement": "Навык"
+  },
+  {
+    "key": "ftbquests.task.pmmo.skill",
+    "expected": "Level %s in %s",
+    "replacement": "Уровень %s в навыке «%s»"
+  },
+  {
+    "key": "ftbquests.task.pmmo.skill.requiredLevel",
+    "expected": "Required Level",
+    "replacement": "Нужный уровень"
+  },
+  {
+    "key": "ftbquests.task.pmmo.skill.skill",
+    "expected": "Skill",
+    "replacement": "Навык"
+  },
+  {
+    "key": "pmmo.afking",
+    "expected": "Afking",
+    "replacement": "Бездействие"
+  },
+  {
+    "key": "pmmo.air",
+    "expected": "Air",
+    "replacement": "Воздух"
+  },
+  {
+    "key": "pmmo.alchemy",
+    "expected": "Alchemy",
+    "replacement": "Алхимия"
+  },
+  {
+    "key": "pmmo.arcane_magic",
+    "expected": "Arcane Magic",
+    "replacement": "Тайная магия"
+  },
+  {
+    "key": "pmmo.archery",
+    "expected": "Стрельба из лука",
+    "replacement": "Стрельба"
+  },
+  {
+    "key": "pmmo.astral_magic",
+    "expected": "Astral Magic",
+    "replacement": "Астральная магия"
+  },
+  {
+    "key": "pmmo.blood_magic",
+    "expected": "Blood Magic",
+    "replacement": "Магия крови"
+  },
+  {
+    "key": "pmmo.combat",
+    "expected": "Бой",
+    "replacement": "Ближний бой"
+  },
+  {
+    "key": "pmmo.construction",
+    "expected": "Construction",
+    "replacement": "Сооружение"
+  },
+  {
+    "key": "pmmo.cooking",
+    "expected": "Cooking",
+    "replacement": "Кулинария"
+  },
+  {
+    "key": "pmmo.crafting",
+    "expected": "Создание предметов",
+    "replacement": "Изготовление"
+  },
+  {
+    "key": "pmmo.damage",
+    "expected": "Damage",
+    "replacement": "Урон"
+  },
+  {
+    "key": "pmmo.earth",
+    "expected": "Earth",
+    "replacement": "Земля"
+  },
+  {
+    "key": "pmmo.elemental",
+    "expected": "Elemental",
+    "replacement": "Стихии"
+  },
+  {
+    "key": "pmmo.evil_magic",
+    "expected": "Evil Magic",
+    "replacement": "Тёмная магия"
+  },
+  {
+    "key": "pmmo.exploration",
+    "expected": "Exploration",
+    "replacement": "Исследование"
+  },
+  {
+    "key": "pmmo.farming",
+    "expected": "Фермерство",
+    "replacement": "Земледелие"
+  },
+  {
+    "key": "pmmo.fire",
+    "expected": "Fire",
+    "replacement": "Огонь"
+  },
+  {
+    "key": "pmmo.firemaking",
+    "expected": "Firemaking",
+    "replacement": "Разведение огня"
+  },
+  {
+    "key": "pmmo.good_magic",
+    "expected": "Good Magic",
+    "replacement": "Светлая магия"
+  },
+  {
+    "key": "pmmo.invention",
+    "expected": "Invention",
+    "replacement": "Изобретательство"
+  },
+  {
+    "key": "pmmo.leatherworking",
+    "expected": "Leatherworking",
+    "replacement": "Кожевенное дело"
+  },
+  {
+    "key": "pmmo.lightning",
+    "expected": "Lightning",
+    "replacement": "Молния"
+  },
+  {
+    "key": "pmmo.magic",
+    "expected": "Колдовство",
+    "replacement": "Магия"
+  },
+  {
+    "key": "pmmo.mining",
+    "expected": "Копание",
+    "replacement": "Добыча"
+  },
+  {
+    "key": "pmmo.prayer",
+    "expected": "Prayer",
+    "replacement": "Молитва"
+  },
+  {
+    "key": "pmmo.runecrafting",
+    "expected": "Runecrafting",
+    "replacement": "Рунное дело"
+  },
+  {
+    "key": "pmmo.sailing",
+    "expected": "Sailing",
+    "replacement": "Мореходство"
+  },
+  {
+    "key": "pmmo.speed",
+    "expected": "Speed",
+    "replacement": "Скорость"
+  },
+  {
+    "key": "pmmo.summoning",
+    "expected": "Summoning",
+    "replacement": "Призыв"
+  },
+  {
+    "key": "pmmo.thaumatic",
+    "expected": "Thaumatic",
+    "replacement": "Тауматургия"
+  },
+  {
+    "key": "pmmo.trading",
+    "expected": "Trading",
+    "replacement": "Торговля"
+  },
+  {
+    "key": "pmmo.void",
+    "expected": "Void",
+    "replacement": "Пустота"
+  },
+  {
+    "key": "pmmo.water",
+    "expected": "Water",
+    "replacement": "Вода"
+  },
+  {
+    "language": "en_us",
+    "key": "text.puffish_skills.skills",
+    "expected": "Skills",
+    "replacement": "Talents"
+  },
+  {
+    "language": "en_us",
+    "key": "key.puffish_skills.open",
+    "expected": "Open Skill Tree",
+    "replacement": "Open Talents"
+  },
+  {
+    "language": "en_us",
+    "key": "chat.puffish_skills.new_point",
+    "expected": "You have a new skill point. Press %s to open your skill tree.",
+    "replacement": "You have a new talent point. Open the inventory and click Talents."
+  },
+  {
+    "language": "en_us",
+    "key": "gamerule.puffish_skills:announceNewPoints",
+    "expected": "Announce new skill points",
+    "replacement": "Announce new talent points"
+  },
+  {
+    "language": "en_us",
+    "key": "toast.puffish_skills.missing_config.description",
+    "expected": "No skill trees provided, make sure to add one.",
+    "replacement": "No talent trees provided, make sure to add one."
+  },
+  {
+    "key": "text.puffish_skills.skills",
+    "expected": "Навыки",
+    "replacement": "Таланты"
+  },
+  {
+    "key": "key.puffish_skills.open",
+    "expected": "Открыть дерево навыков",
+    "replacement": "Открыть таланты"
+  },
+  {
+    "key": "chat.puffish_skills.new_point",
+    "expected": "Вы получили новое очко навыка. Нажатие %s — открыть Дерево навыков.",
+    "replacement": "Получено очко таланта. Откройте инвентарь и нажмите «Таланты»."
+  },
+  {
+    "key": "gamerule.puffish_skills:announceNewPoints",
+    "expected": "Известить о новых очках навыков",
+    "replacement": "Сообщать о новых очках талантов"
+  },
+  {
+    "key": "toast.puffish_skills.missing_config.description",
+    "expected": "Дерево навыков не предоставлено. Убедитесь, что добавили.",
+    "replacement": "Нет ни одного древа талантов. Добавьте его в набор данных."
+  },
+  {
+    "key": "command.puffish_skills.open.success.single",
+    "expected": "Открыт экран навыков для %s",
+    "replacement": "Открыт экран талантов для %s"
+  },
+  {
+    "key": "command.puffish_skills.open.success.multiple",
+    "expected": "Открыт экран навыкой для %s игроков.",
+    "replacement": "Открыт экран талантов для %s игроков"
   }
 ]

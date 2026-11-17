@@ -1,0 +1,118 @@
+{
+  "skills": {
+    "magic": {
+      "maxLevel": 50,
+      "icon": "minecraft:textures/particle/enchanted_hit.png",
+      "iconSize": 8,
+      "useTotalLevels": false,
+      "color": 10463487,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "combat": {
+      "maxLevel": 50,
+      "icon": "minecraft:textures/mob_effect/strength.png",
+      "iconSize": 18,
+      "useTotalLevels": false,
+      "color": 15303775,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "building": {
+      "maxLevel": 50,
+      "icon": "pmmo:textures/skills/building.png",
+      "iconSize": 32,
+      "useTotalLevels": false,
+      "color": 8373184,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "smithing": {
+      "maxLevel": 50,
+      "icon": "pmmo:textures/skills/smithing.png",
+      "iconSize": 32,
+      "useTotalLevels": false,
+      "color": 12504795,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "farming": {
+      "maxLevel": 50,
+      "icon": "minecraft:textures/item/wheat.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 9422186,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "cooking": {
+      "maxLevel": 50,
+      "icon": "minecraft:textures/item/cooked_mutton.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 15245930,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "mining": {
+      "maxLevel": 50,
+      "icon": "minecraft:textures/mob_effect/haste.png",
+      "iconSize": 18,
+      "useTotalLevels": false,
+      "color": 9611715,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "crafting": {
+      "maxLevel": 50,
+      "icon": "pmmo:textures/skills/crafting.png",
+      "iconSize": 32,
+      "useTotalLevels": false,
+      "color": 14396783,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "archery": {
+      "maxLevel": 50,
+      "icon": "minecraft:textures/item/bow.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 15319172,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    }
+  },
+  "types": {
+    "combat": {
+      "order": 0,
+      "skills": [
+        "combat",
+        "archery",
+        "magic"
+      ],
+      "color": 14921313
+    },
+    "profession": {
+      "order": 1,
+      "skills": [
+        "mining",
+        "farming",
+        "crafting",
+        "smithing",
+        "building",
+        "cooking"
+      ],
+      "color": 8097186
+    }
+  },
+  "type": "SKILLS"
+}

@@ -1,10 +1,22 @@
 ---
 title: Character and combat
-description: Equipment ranks, reforging, enchantments, and plans for character progression.
+description: Practice skills, talent trees, equipment ranks, reforging and plans for races and classes.
 status: partial
 ---
 
-Crafted and looted gear can roll quality bonuses. The anvil can replace the entire rank while keeping ordinary enchantments. Races, classes, character progression and the intended action-combat system are planned additions.
+Skills grow as you use them and earn points for two talent budgets. Crafted and looted gear can roll quality bonuses, and the anvil can replace the entire rank while keeping ordinary enchantments. Races, classes, professions and the intended action-combat system are planned additions.
+
+## Skills and talents
+
+[Project MMO](https://modrinth.com/mod/project-mmo) tracks nine skills that grow through your own work: Melee, Ranged and Magic for combat, and Gathering, Crafting, Smithing, Building, Farming and Cooking for peaceful activities. Each skill reaches level 50, and every level takes a little more practice than the previous one. Death keeps all levels. Skills never forbid using an item, block or tool.
+
+Hits with melee weapons train Melee, projectiles train Ranged and every spell cast trains Magic. Mining stone, cutting wood and digging train Gathering. Crafting trains Crafting, while crafting food trains Cooking instead. Taking finished items out of a furnace trains Cooking for food and Smithing for everything else, such as metal or glass; a furnace fed by hoppers trains nobody. Placing blocks trains Building, and growing crops, breeding animals and fishing train Farming. Ordinary mobs, mob farms where you land the blows and repeated cheap crafts always give some experience, without daily limits.
+
+Every five levels of an individual skill give one talent point: Melee level 4 gives none, level 5 gives one and level 10 gives two. Melee, Ranged and Magic fill one shared **combat budget**; the six peaceful skills fill a separate **profession budget**. Open the inventory and press **Talents**, below the nutrients button. Combat, Magic and Professions have separate named pages; spending a point on Magic also reduces the points available on Combat. Select a node to read its effect and price, then press **Learn**. Drag the tree to move, use the wheel to zoom, or press **Center** to fit the whole page. Search highlights matching talents; Enter selects and centers the next match. Some talents exclude each other, such as Onslaught and Firm footing. Dashed links mark these alternatives, and the details name the other choice. Every character can open every branch. Closing Talents or Nutrients returns to the ordinary inventory.
+
+To check your levels, open the inventory and click the **Skills** button with gold bars, above the nutrients button between your character and the crafting grid: a panel attached to the left side of the inventory, where the recipe book also opens, lists combat and profession skills with their progress and a search field; scroll it with the mouse wheel or drag its scrollbar, and press the button again to hide it. The Skills, Nutrients and Talents buttons are also available with the accessory slots open. Skills and accessories replace each other; closing one leaves the other closed. **P** opens the Project MMO glossary for the player, the block or the creature you look at. The level list on the game screen is hidden by default so it does not cover the minimap; assign _Toggle Skill List_ in Controls to show it.
+
+The first pages are small: melee and protection under Combat, a separate Magic page and a gathering branch under Professions. Class, profession and ranged branches will arrive with classes and professions.
 
 ## Equipment quality and reforging
 
@@ -40,15 +52,15 @@ A pickaxe with **Extra Yield** can add one unit of an actual drop, including sto
 
 Races should differ through appearance, abilities, size, health and interactions with the world. Humans, dwarves, goblins and elves are selected for the first roster before `1.0.0`; that roster may be refined as the pack develops. Advantages and disadvantages should be understandable before selection. Races that grant unrestricted flight from the start will be excluded or adapted so their movement abilities preserve the challenge of crossing islands. Other meaningful advantages and disadvantages remain welcome.
 
-Classes and specializations should support mixed builds. A warrior who learns [magic](../magic/) is a valid character. Specialists can excel while other skills remain useful. The preferred direction is development through use, with peaceful and combat activities improving related abilities; the actual progression system has not been selected.
+Classes and specializations should support mixed builds. A warrior who learns [magic](../magic/) is a valid character. Specialists can excel while other skills remain useful. Peaceful and combat activities improve related skills, as described under [skills and talents](#skills-and-talents).
 
-The initial classes are warrior, ranger, mage and rogue; profession is a separate choice. The initial professions are blacksmith, builder, farmer and cook. A class gives lasting traits that shape how the character fights. Classes, subclasses and professions speed up learning in their respective disciplines. Effective use of equipment depends on learned proficiency.
+The initial classes are warrior, ranger, mage and rogue; profession is a separate choice. The initial professions are blacksmith, builder, farmer and cook. A class gives lasting traits that shape how the character fights. Classes, subclasses and professions speed up learning in their respective disciplines. Effective use of equipment will depend on learned proficiency.
 
 As players choose their race, class, profession and starting abilities, the character screen will show their combined starting attributes, traits and learning affinities. Players can expand the descriptions to see what each one changes in play. A starting subclass choice will become available when subclasses arrive.
 
 Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, with the same prerequisites and point costs regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
 
-Combat and magic branches will share a limited talent budget. Investing across branches will let players combine styles while leaving fewer points for advanced talents in any one specialty. Profession branches will share a separate, broader budget.
+Combat and magic branches share the combat talent points, so investing across branches combines styles while leaving fewer points for advanced talents in any one specialty. Profession branches share the separate profession talent points; as more professions arrive, these points will not be enough to complete every profession.
 
 Combat and peaceful spells, martial techniques and active racial abilities will share one panel with a limited set of slots and dedicated slot controls. Players will be able to clear and reassign slots even during combat. An on-screen display of assignments is under consideration. We are also considering sets players can save, edit, delete and switch between quickly.
 

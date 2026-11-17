@@ -4,6 +4,19 @@ description: Version history.
 status: available
 ---
 
+## 0.6.1
+
+- Added Project MMO practice skills: Melee, Ranged, Magic, Gathering, Crafting, Smithing, Building, Farming and Cooking grow through personal work up to level 50, without item restrictions or level loss on death.
+- Added Pufferfish's Skills combat and profession talent trees with first melee, protection, magic and gathering branches; every five skill levels give one talent point.
+- Crafting food and taking cooked food from a furnace train Cooking, taking other smelted items trains Smithing and every spell cast trains Magic.
+- A Skills button in the inventory opens a scrollable panel beside it in place of the recipe book that groups combat and profession skills and moves EMI's sidebar aside; the on-screen level list is hidden by default, Project MMO keys appear in Controls, and the panel, its button, the nutrients button, talent tabs and talent frames use the Island Atlas style.
+- Talent navigation separates Combat, Magic and Professions, centers each page, supports search, zoom and panning, and shows talent details before learning; Combat and Magic retain one shared budget.
+- Inventory skills have wheel scrolling and a draggable scrollbar; skills, nutrient and talent buttons also appear with Curios, which keeps sorting below the crafting grid and replaces the skills panel. Talent opening and shader toggling have no default key.
+- Inventory buttons are smaller and stay above the offhand slot, with the same nutrient icon on both inventory screens; closing talents or nutrients returns to the inventory. Talent and preflight content stays sharp when menu blur is enabled.
+- Project MMO admin level and XP edits now persist for new and existing characters and update talent points immediately; the open skills panel refreshes after XP packets.
+- Connector and Forgified Fabric API now also run on the server.
+- Export checks accept the pinned both-side talent mod and validate its Fabric dependencies on both client and server.
+
 ## 0.6.0
 
 - Added Chalk for physical route marks and illuminated signs, including Nature’s Spirit powder and white chalk block recipes.

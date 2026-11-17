@@ -405,3 +405,18 @@ canvas geometry and live pictures still use the original provider renderer.
 Exact source: ercanserteli/xercamods commit
 d88bf6577846c505cd142ffd77eec04a11eb276d. The pack supplies that corresponding
 source separately and the owned generator in aeroscapes-reimagine-source.zip.
+
+Character progression:
+Project MMO 2.10.47 (harmonised, official Modrinth 9lu4zNd1) and Pufferfish's
+Skills 0.19.2 (Puffish, official Modrinth ppOVyisF) remain unchanged provider
+archives. Missing English/Russian text and the key registration, point bridge,
+EMI exclusion, inventory widgets and talent navigation are independently authored.
+The talent screen consumes the provider client data and native purchase packets;
+its renderer does not copy the provider screen. The NeoForge 0.19.2 artifact
+(official Modrinth 8tfcI2wU) supplies compile-only Mojang-mapped API signatures;
+it is not installed or redistributed in the pack. Guarded
+expected provider text in language_corrections.json retains its provider's terms.
+The talent backgrounds, node frames and inventory buttons are original pixel artwork composed
+deterministically for this project without copied game pixels or a generative
+image model. Editable sources: META-INF/artwork/skills/*.svg; their RGBA PNGs
+are the textures under textures/gui/skills/ and textures/gui/sprites/skills/.

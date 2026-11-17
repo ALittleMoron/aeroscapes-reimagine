@@ -1,0 +1,6 @@
+{
+  "top.theillusivec4.curios.client.gui.CuriosScreen": {
+    "playerSideOnly": true,
+    "ignoreCraftingGrid": true
+  }
+}

@@ -426,9 +426,9 @@
   ],
   "guarded_corrections": {
     "resource": "assets/aeroscapes_reimagine/language_corrections.json",
-    "rules": 1754,
+    "rules": 3636,
     "selection": "Selected Russian by default, or explicit English per rule, with exact normalized source-value match; other locales and changed provider/user text unchanged. Native creative-tab, menu, keybinding and root-advancement mod titles retain provider branding; ordinary gameplay nouns and non-root advancement titles remain localized.",
-    "sha256": "ec4369bada54c02df49d4e4b99b5bf752bb0538d246aaf25e1cf19b6fa5cf0df"
+    "sha256": "202c3f9608a5ae98ed13e98f1f317d8dbfdf77143102071deed430f61e4f2efe"
   },
   "configuration_inputs": {
     "minecraft": "1.21.1",
@@ -2130,5 +2130,28 @@
       }
     ],
     "exclusions": "Boolean True/False and String Gauge example expressions are native string data consumed by regular expressions; mB/B/KB are shared rendering/parser syntax. Hidden generated fluid proxy resource pack is internal. Steam sheet/ingot translation leftovers do not register material items. Source-only unreleased Integer Selector advanced row, Counter threshold row and Deployer value-edit-box keys are absent from the pinned binaries."
+  },
+  "character_progression": {
+    "targets": {
+      "pmmo": "2.10.47 / MR 9lu4zNd1",
+      "puffish_skills": "0.19.2 / MR ppOVyisF"
+    },
+    "scope": "Independent missing English/Russian strings for Project MMO and Pufferfish's Skills, pack skill and talent labels, and guarded exact-value corrections where the pack renames provider text: Project MMO's partial Russian skill names and the English Melee, Ranged and Gathering names, and Pufferfish's skill-tree wording, which this pack calls talents. Keybinding category titles keep provider branding.",
+    "resources": [
+      {
+        "resource": "assets/aeroscapes_reimagine_progression_translations/lang/en_us.json",
+        "entries": 36,
+        "sha256": "8f69c267f3138c0b351933af8caee2cc5b70cde88226ff79d75cd9e8a63350ae"
+      },
+      {
+        "resource": "assets/aeroscapes_reimagine_progression_translations/lang/ru_ru.json",
+        "entries": 403,
+        "sha256": "e6d12cec0b0d2fd21b8efad6733c70591e74de57a1606d6d536c6a6abc09fea5"
+      },
+      "assets/aeroscapes_reimagine/language_corrections.json"
+    ],
+    "source_comparison": "Compared the pinned JARs' native English and Russian dictionaries, keybinding registration, side-panel and skill-type rendering and the Pufferfish screen and chat consumers.",
+    "exclusions": "Inactive FTB Quests reward labels (FTB Quests is not installed) and the Project MMO keybinding category brand.",
+    "terms": "Project MMO permits use in free modpacks linking its page; Pufferfish's Skills configuration and translations are MIT. Guarded expected text retains provider terms."
   }
 }

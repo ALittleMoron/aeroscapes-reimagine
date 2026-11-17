@@ -1,6 +1,7 @@
 package dev.aeroscapes.mixin.survival;
 
 import dev.aeroscapes.interfaceart.InterfaceArt;
+import dev.aeroscapes.inventory.InventoryNavigation;
 import dev.aeroscapes.survival.NutritionPanel;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
@@ -16,11 +17,16 @@ public abstract class NutritionScreenMixin extends Screen {
     super(title);
   }
 
-  @Inject(method = "render", at = @At("HEAD"))
+  @Override
+  public void onClose() {
+    InventoryNavigation.openInventory();
+  }
+
+  @Inject(method = "close", at = @At("HEAD"), cancellable = true)
   @SuppressWarnings("PMD.UnusedPrivateMethod")
-  private void aeroscapes$renderPanel(
-      GuiGraphics graphics, int mouseX, int mouseY, float partialTicks, CallbackInfo callback) {
-    renderBackground(graphics, mouseX, mouseY, partialTicks);
+  private void aeroscapes$returnToInventory(CallbackInfo callback) {
+    onClose();
+    callback.cancel();
   }
 
   @Inject(method = "render", at = @At("TAIL"))

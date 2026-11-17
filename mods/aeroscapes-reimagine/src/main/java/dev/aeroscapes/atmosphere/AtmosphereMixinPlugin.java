@@ -350,6 +350,12 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("sable", "2.0.6");
     } else if (mixinClassName.endsWith("PuzzleLoadingOverlayMixin")) {
       versions = Map.of("puzzle", "2.3.0", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("SkillsScreenAccessor")) {
+      versions = Map.of("puffish_skills", "0.19.2", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("ProjectMmoAdminDataMixin")) {
+      versions = Map.of("pmmo", "2.10.47", "puffish_skills", "0.19.2", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.")) {
+      versions = Map.of("pmmo", "2.10.47", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PrecipitationParticleMixin")) {
       versions = Map.of("particlerain", "4.0.2", "sable", "2.0.6");
     } else {

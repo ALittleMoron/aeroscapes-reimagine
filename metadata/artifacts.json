@@ -2287,7 +2287,7 @@
     "sha1": "15e652d3628b1bcb644b93576fcab154496f770a",
     "file_size": 4573244,
     "release_type": "beta",
-    "side": "client",
+    "side": "both",
     "kind": "mod",
     "loaders": [
       "neoforge"
@@ -2338,7 +2338,7 @@
     "sha1": "8ea07df55b26c8343d06df77936505a23e0d2140",
     "file_size": 86284,
     "release_type": "release",
-    "side": "client",
+    "side": "both",
     "kind": "mod",
     "loaders": [
       "neoforge"
@@ -5311,7 +5311,7 @@
     "sha1": "0788e3e4e736c138a7c151b651bec26713f6cfe4",
     "file_size": 5613327,
     "release_type": "release",
-    "side": "client",
+    "side": "both",
     "kind": "mod",
     "loaders": [
       "neoforge"
@@ -11506,5 +11506,88 @@
     "native_route_note": "Client-only looping wind for a player riding a moving Sable sublevel. Uses Sable 2.0.6 EntityMovementExtension, ClientSubLevel poses and companion Pose3dc methods, all present in the pinned files. No mixins, no text.",
     "status": "included",
     "origin": "Owner-approved 0.6.0 sky liveliness; unchanged official Modrinth file"
+  },
+  {
+    "slug": "project-mmo",
+    "name": "Project MMO",
+    "project_id": "KFQYC1Uy",
+    "version_id": "9lu4zNd1",
+    "version": "2.10.47",
+    "filename": "pmmo-1.21.1-2.10.47.jar",
+    "sha512": "c5f4c0000bcdb847b36dfe11fc48bfb17bff3696f2be7f44f03a8ed09490c3dd06864eb914321251f65a79059bac4be47a800c427e8bab5e92a949399693c067",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://github.com/Caltinor/Project-MMO-2.0#readme"
+    },
+    "source_url": "https://github.com/Caltinor/Project-MMO-2.0",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.6.1 character progression",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "f3ce94787a9ab22dd95f67ec7bb7c4139040465f",
+    "file_size": 2000305,
+    "source_review": "The author README permits use in free modpacks that link the project page. The descriptor requires only NeoForge [21.1.0,) and Minecraft [1.21.1,1.22). Configuration is supplied through its native data/pmmo/config datapack route."
+  },
+  {
+    "slug": "skills",
+    "name": "Pufferfish's Skills",
+    "project_id": "hqQqvaa4",
+    "version_id": "ppOVyisF",
+    "version": "0.19.2",
+    "filename": "puffish_skills-0.19.2-1.21-fabric.jar",
+    "sha512": "002ffac59b74b7d38f22e016b7c467903be46d651c8867271a1cea5ca2a03252be448d88d94333b2a775acea983ca3cf21326b7c880523cc8ae9e16c05b575d2",
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "fabric"
+    ],
+    "license": {
+      "id": "LicenseRef-Custom",
+      "name": "",
+      "url": "https://github.com/pufmat/skillsmod/wiki/License"
+    },
+    "source_url": "https://github.com/pufmat/skillsmod",
+    "status": "included",
+    "origin": "0.6.1 character progression",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "074ebb4b6fcbf05b8fbade6ec56d6fafb8bda7ca",
+    "file_size": 643801,
+    "source_review": "Owner-selected Fabric beta loaded through Sinytra Connector on both sides: the NeoForge 0.19.2 JAR and upstream source declare Minecraft [1.21,1.21.1). The author license permits modpack use and addons but not rehosting; code is All Rights Reserved and configuration and translations are MIT.",
+    "exception": "Owner selected this exact Fabric beta file through Connector on both sides for the 0.7.0 talent tree (2026-11-16); no permission for later experimental updates.",
+    "provider_dependencies": [
+      {
+        "version_id": null,
+        "project_id": "P7dR8mSH",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "dependencies": [
+      {
+        "project_id": "u58R1TMW",
+        "version_id": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "Aqlf1Shp",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "dependency_note": "Exact Fabric file on both sides uses the existing Connector 2.0.0-beta.17, Connector Extras 1.12.1 and Forgified Fabric API 0.116.15+2.3.4, now installed on the server too. Descriptor requires fabricloader >=0.15.11, fabric-api and Minecraft ~1.21."
   }
 ]

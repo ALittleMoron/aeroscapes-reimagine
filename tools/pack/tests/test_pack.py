@@ -716,8 +716,64 @@ def test_fabric_mod_requires_bridge_and_api_on_client(
 def test_fabric_metadata_cannot_bypass_client_bridge(
     source: SourcePack, artifact: Artifact
 ) -> None:
-    with pytest.raises(PackError, match="without its client bridge"):
+    with pytest.raises(PackError, match="without its Connector bridge"):
         audit_metadata(source, (replace(artifact, loaders=("fabric",)),))
+
+
+def test_selected_talent_jar_checks_both_side_fabric_dependencies(
+    tmp_path: Path, artifact: Artifact, source: SourcePack
+) -> None:
+    buffer = io.BytesIO()
+    with zipfile.ZipFile(buffer, "w") as archive:
+        archive.writestr(
+            "fabric.mod.json",
+            json.dumps(
+                {
+                    "id": "puffish_skills",
+                    "environment": "*",
+                    "depends": {"fabricloader": ">=0.15", "fabric-api": "*"},
+                }
+            ),
+        )
+    tree_path = tmp_path / "tree.jar"
+    tree_path.write_bytes(buffer.getvalue())
+    tree = replace(
+        artifact,
+        filename=tree_path.name,
+        sha512=digest(tree_path, "sha512"),
+        project_id="hqQqvaa4",
+        version_id="ppOVyisF",
+        loaders=("fabric",),
+        side="both",
+    )
+    dependencies = []
+    for name, content in {
+        "bridge.jar": make_jar('[[mods]]\nmodId = "connector"\n'),
+        "api.jar": make_jar('[[mods]]\nmodId = "fabric_api"\nprovides = ["fabric-api"]\n'),
+    }.items():
+        path = tmp_path / name
+        path.write_bytes(content)
+        dependencies.append(
+            replace(artifact, filename=name, sha512=digest(path, "sha512"), side="both")
+        )
+    assert audit_jars(tmp_path, (tree, *dependencies), {}, manifest=source.manifest) == {
+        "client": 5,
+        "server": 5,
+    }
+    with pytest.raises(PackError, match="server.*fabricloader"):
+        audit_jars(
+            tmp_path,
+            (tree, *(replace(item, side="client") for item in dependencies)),
+            {},
+            manifest=source.manifest,
+        )
+    with pytest.raises(PackError, match="reviewed.*side"):
+        audit_jars(
+            tmp_path,
+            (replace(tree, version_id="unreviewed"), *dependencies),
+            {},
+            manifest=source.manifest,
+        )
 
 
 def test_selected_placement_bridge_rejects_unreviewed_versions_and_server_install(
@@ -752,10 +808,52 @@ def test_selected_placement_bridge_rejects_unreviewed_versions_and_server_instal
         replace(placement, version_id="unreviewed"),
         replace(placement, side="both"),
     ):
-        with pytest.raises(PackError, match="without its client bridge"):
+        with pytest.raises(PackError, match="without its Connector bridge"):
             check(changed, bridge)
-    with pytest.raises(PackError, match="without its client bridge"):
+    with pytest.raises(PackError, match="without its Connector bridge"):
         check(placement, replace(bridge, side="server"))
+
+
+def test_server_side_talent_tree_requires_both_side_bridge(
+    artifact: Artifact, source: SourcePack
+) -> None:
+    tree = replace(
+        artifact,
+        project_id="hqQqvaa4",
+        version_id="ppOVyisF",
+        loaders=("fabric",),
+        side="both",
+        release_type="beta",
+        exception="Owner selected this exact beta file.",
+    )
+    bridge = replace(
+        artifact,
+        project_id="u58R1TMW",
+        version_id="IITF0PRC",
+        release_type="beta",
+        exception="Owner selected this exact bridge.",
+        side="both",
+    )
+    api = replace(artifact, project_id="Aqlf1Shp", version_id="native-api", side="both")
+    original = next(iter(source.dependencies.values()))
+
+    def check(*artifacts: Artifact) -> None:
+        dependencies = {
+            item.project_id: replace(
+                original,
+                project_id=item.project_id,
+                version_id=item.version_id,
+                side=item.side,
+            )
+            for item in artifacts
+        }
+        audit_metadata(replace(source, dependencies=dependencies), artifacts)
+
+    check(tree, bridge, api)
+    with pytest.raises(PackError, match="without its Connector bridge"):
+        check(tree, replace(bridge, side="client"), api)
+    with pytest.raises(PackError, match="without its Connector bridge"):
+        check(replace(tree, side="client"), bridge, api)
 
 
 def test_bundled_library_satisfies_dependency(

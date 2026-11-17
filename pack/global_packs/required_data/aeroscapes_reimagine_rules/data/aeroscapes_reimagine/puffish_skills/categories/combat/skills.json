@@ -1,0 +1,60 @@
+{
+  "melee_strike": {
+    "x": -96,
+    "y": -64,
+    "definition": "melee_strike",
+    "root": true
+  },
+  "melee_onslaught": {
+    "x": -140,
+    "y": 0,
+    "definition": "melee_onslaught"
+  },
+  "melee_footing": {
+    "x": -52,
+    "y": 0,
+    "definition": "melee_footing"
+  },
+  "melee_veteran": {
+    "x": -96,
+    "y": 64,
+    "definition": "melee_veteran"
+  },
+  "guard_armor": {
+    "x": 96,
+    "y": -64,
+    "definition": "guard_armor",
+    "root": true
+  },
+  "guard_vitality": {
+    "x": 52,
+    "y": 0,
+    "definition": "guard_vitality"
+  },
+  "guard_toughness": {
+    "x": 140,
+    "y": 0,
+    "definition": "guard_toughness"
+  },
+  "magic_reserve": {
+    "x": 0,
+    "y": -64,
+    "definition": "magic_reserve",
+    "root": true
+  },
+  "magic_flow": {
+    "x": -48,
+    "y": 0,
+    "definition": "magic_flow"
+  },
+  "magic_focus": {
+    "x": 48,
+    "y": 0,
+    "definition": "magic_focus"
+  },
+  "magic_power": {
+    "x": 0,
+    "y": 64,
+    "definition": "magic_power"
+  }
+}

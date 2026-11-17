@@ -1,0 +1,62 @@
+{
+  "normal": {
+    "bidirectional": [
+      [
+        "melee_strike",
+        "melee_onslaught"
+      ],
+      [
+        "melee_strike",
+        "melee_footing"
+      ],
+      [
+        "melee_onslaught",
+        "melee_veteran"
+      ],
+      [
+        "melee_footing",
+        "melee_veteran"
+      ],
+      [
+        "guard_armor",
+        "guard_vitality"
+      ],
+      [
+        "guard_armor",
+        "guard_toughness"
+      ],
+      [
+        "magic_reserve",
+        "magic_flow"
+      ],
+      [
+        "magic_reserve",
+        "magic_focus"
+      ],
+      [
+        "magic_flow",
+        "magic_power"
+      ],
+      [
+        "magic_focus",
+        "magic_power"
+      ]
+    ]
+  },
+  "exclusive": {
+    "bidirectional": [
+      [
+        "melee_onslaught",
+        "melee_footing"
+      ],
+      [
+        "guard_vitality",
+        "guard_toughness"
+      ],
+      [
+        "magic_flow",
+        "magic_focus"
+      ]
+    ]
+  }
+}

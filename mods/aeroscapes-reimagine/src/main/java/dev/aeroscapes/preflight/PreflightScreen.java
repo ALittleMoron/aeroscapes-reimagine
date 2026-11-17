@@ -77,8 +77,8 @@ public final class PreflightScreen extends Screen {
   }
 
   @Override
-  public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
-    renderBackground(graphics, mouseX, mouseY, partialTick);
+  public void renderBackground(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
+    super.renderBackground(graphics, mouseX, mouseY, partialTick);
     int left = Math.max(12, width / 2 - 210), right = Math.min(width - 12, width / 2 + 210);
     graphics.drawCenteredString(font, title, width / 2, 14, 0xffffff);
     List<FormattedCharSequence> lines = new ArrayList<>();
@@ -96,7 +96,6 @@ public final class PreflightScreen extends Screen {
       y += 11;
     }
     graphics.disableScissor();
-    super.render(graphics, mouseX, mouseY, partialTick);
   }
 
   @Override

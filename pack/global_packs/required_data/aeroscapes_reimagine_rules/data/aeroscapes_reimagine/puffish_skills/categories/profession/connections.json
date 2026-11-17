@@ -1,0 +1,22 @@
+{
+  "normal": {
+    "bidirectional": [
+      [
+        "mining_efficiency",
+        "mining_speed"
+      ],
+      [
+        "mining_efficiency",
+        "mining_fortune"
+      ]
+    ]
+  },
+  "exclusive": {
+    "bidirectional": [
+      [
+        "mining_speed",
+        "mining_fortune"
+      ]
+    ]
+  }
+}

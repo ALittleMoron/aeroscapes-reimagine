@@ -5,7 +5,9 @@ import dev.aeroscapes.testship.TestShipNetwork;
 import dev.ryanhcode.sable.network.packets.tcp.ClientboundFinalizeSubLevelPacket;
 import dev.ryanhcode.sable.network.packets.tcp.ClientboundStartTrackingSubLevelPacket;
 import io.netty.channel.embedded.EmbeddedChannel;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import javax.annotation.Nullable;
@@ -113,6 +115,12 @@ final class TestShipPlayerSession implements AutoCloseable {
     return connection.completedParts.containsAll(check.members());
   }
 
+  @Nullable
+  net.puffish.skillsmod.server.network.packets.out.PointsUpdateOutPacket talentPoints(
+      String category) {
+    return connection.talentPoints.get(category);
+  }
+
   void tick() {
     require(
         !closed && player.serverLevel().getServer().isSameThread(),
@@ -164,6 +172,9 @@ final class TestShipPlayerSession implements AutoCloseable {
   }
 
   private static final class RecordingConnection extends Connection {
+    private final Map<
+            String, net.puffish.skillsmod.server.network.packets.out.PointsUpdateOutPacket>
+        talentPoints = new HashMap<>();
     @Nullable private ClientboundPlayerPositionPacket teleport;
     @Nullable private Long keepAlive;
     @Nullable private TestShipNetwork.Check boardingCheck;
@@ -184,6 +195,21 @@ final class TestShipPlayerSession implements AutoCloseable {
       if (packet instanceof ClientboundKeepAlivePacket challenge) keepAlive = challenge.getId();
       if (packet instanceof ClientboundCustomPayloadPacket payload
           && payload.payload() instanceof TestShipNetwork.Check check) boardingCheck = check;
+      if (packet instanceof ClientboundCustomPayloadPacket payload
+          && payload.payload().type().id().toString().equals("puffish_skills:points_update")) {
+        try {
+          // The pinned Fabric transport wraps the common OutPacket in InOutPayload.
+          Object out =
+              payload.payload().getClass().getMethod("outPacket").invoke(payload.payload());
+          if (out
+              instanceof
+              net.puffish.skillsmod.server.network.packets.out.PointsUpdateOutPacket points)
+            talentPoints.put(points.categoryId().toString(), points);
+          else throw new IllegalStateException("Unexpected talent point payload " + out);
+        } catch (ReflectiveOperationException exception) {
+          throw new IllegalStateException("Cannot inspect the pinned Fabric transport", exception);
+        }
+      }
       if (packet instanceof ClientboundBundlePacket bundle) {
         UUID started = null;
         for (var child : bundle.subPackets()) {

@@ -43,3 +43,8 @@ The 256 × 256 SVGs under `engineering/` preserve the texture layouts of Create 
 5.11.7 and Create: Connected 1.3.3. Render them with `rsvg-convert` into the matching
 provider paths. Preserve the selector strips, ammo slot coordinates, pulse sequencer rows
 and transparent center of the gas mask. The fixed cannon mount uses Create’s shared value screen.
+
+The two 123 × 24 row sprites under `progression/` render into
+`assets/pmmo/textures/gui/sprites/` for Project MMO's inventory skills panel. Their
+outline, ring and fill follow the panel index recolor of `player_stats.png`, which
+turns the provider's dark grays into Atlas navy.

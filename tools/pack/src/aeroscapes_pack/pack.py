@@ -58,8 +58,17 @@ RELEASE_EXCEPTIONS = frozenset(
         ("AtjxBimt", "n3NgrJOg", "beta"),
         # Client acceptance of casting and the custom gesture is pending.
         ("gedNE4y2", "HJZB6bmA", "beta"),
+        # Owner-selected talent tree; the NeoForge file excludes Minecraft 1.21.1.
+        ("hqQqvaa4", "ppOVyisF", "beta"),
     }
 )
+# Fabric mods loaded through Connector, with the side they are installed on.
+BRIDGED_FABRIC_MODS = {
+    ("Effrh3ze", "9It7IoUE"): "client",
+    ("yd14I2wN", "m4E3YdvX"): "client",
+    ("kzwxhsjp", "rA95AHFG"): "client",
+    ("hqQqvaa4", "ppOVyisF"): "both",
+}
 COMPAT_DIRECTORY = "global_packs/required_data/aeroscapes_reimagine_compat"
 
 
@@ -192,22 +201,19 @@ def audit_metadata(source: SourcePack, artifacts: tuple[Artifact, ...]) -> None:
         if artifact.kind == "mod" and "neoforge" not in artifact.loaders:
             bridge = included.get("u58R1TMW")
             api = included.get("Aqlf1Shp")
+            expected_side = BRIDGED_FABRIC_MODS.get((artifact.project_id, artifact.version_id))
+            bridge_sides = {"both"} if expected_side == "both" else {"client", "both"}
             if (
                 "fabric" not in artifact.loaders
-                or (artifact.project_id, artifact.version_id)
-                not in {
-                    ("Effrh3ze", "9It7IoUE"),
-                    ("yd14I2wN", "m4E3YdvX"),
-                    ("kzwxhsjp", "rA95AHFG"),
-                }
-                or artifact.side != "client"
+                or expected_side is None
+                or artifact.side != expected_side
                 or bridge is None
                 or bridge.version_id != "IITF0PRC"
-                or bridge.side not in {"client", "both"}
+                or bridge.side not in bridge_sides
                 or api is None
-                or api.side not in {"client", "both"}
+                or api.side not in bridge_sides
             ):
-                raise PackError(f"Fabric mod without its client bridge: {dependency.name}")
+                raise PackError(f"Fabric mod without its Connector bridge: {dependency.name}")
         if source.manifest.minecraft not in artifact.game_versions:
             raise PackError(f"Unsupported Minecraft version: {dependency.name}")
         validate_requirements(artifact, included, dependency.name)

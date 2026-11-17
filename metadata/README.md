@@ -6,6 +6,30 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Character progression in 0.6.1
+
+[Project MMO 2.10.47](https://modrinth.com/mod/project-mmo/version/9lu4zNd1) is the
+unchanged official NeoForge file on both sides. Its author README permits use in
+free modpacks that link the project page. Pack configuration uses the native
+`data/pmmo/config` datapack route in `aeroscapes_reimagine_rules`; the owned mod
+compiles against the same verified JAR only for its API.
+
+[Pufferfish's Skills 0.19.2](https://modrinth.com/mod/skills/version/ppOVyisF) is
+the unchanged official Fabric file, loaded on both sides through the existing
+Connector, Connector Extras and Forgified Fabric API files, which now also run on
+the server. The NeoForge 0.19.2 JAR and its source declare Minecraft
+`[1.21,1.21.1)`. The author license permits modpack use and addons but not
+rehosting; code is All Rights Reserved and configuration and translations are MIT.
+Category data lives in `aeroscapes_reimagine_rules`. Russian strings missing from
+both providers are supplied by the owned mod; provider strings that the pack
+renames, such as Pufferfish's "skill tree" (talents here) and Project MMO's partial
+Russian skill names, use guarded exact-value corrections. Project MMO 2.10.47
+creates eight key mappings without registering them, so the owned client code
+registers them and the pack defaults unbind the vein-mining and toggle keys. The
+talent frames ship in the owned mod; Island Atlas adds tab sprites, Project MMO row
+sprites and hash-audited recolors of `pmmo:textures/gui/player_stats.png` and
+Nutritional Balance's inventory button, which the owned skills button sits above.
+
 ## Steam, controls and fluid logistics in 0.5.4
 
 [Steam Powered 3.2.1](https://modrinth.com/mod/create-steam-powered/version/w3zLn2Kv),

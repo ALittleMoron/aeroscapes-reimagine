@@ -121,6 +121,10 @@ file = "config/immediatelyfast.json"
 hash = "395c825d4473fc6fc7c983cd99b880bf911c005ede578dc3f5ae3b758ce5976e"
 
 [[files]]
+file = "config/inventoryprofilesnext/integrationHints/aeroscapes.json"
+hash = "49af89b6d92c2ea812e6ee699727bc282a222f52373796f85099ed7f4644047d"
+
+[[files]]
 file = "config/inventoryprofilesnext/inventoryprofiles.json"
 hash = "20fac53472eedb689fee861ca234d8363f0a435422ca57b25f8e9aa05af2309e"
 
@@ -187,6 +191,10 @@ hash = "37e1fec6dec64bf22d238d68deef6ebeec7fd93f9b91176c9966af8a529f4e97"
 [[files]]
 file = "config/particlerain/particles.json"
 hash = "b1b0ce817959e926f3a6664e86ce933df6f54cbecfeaca8146963303efc3036b"
+
+[[files]]
+file = "config/pmmo-client.toml"
+hash = "c09921a7414a762fb4a88972f7e09e06bb6e63b48aad0cc6d230633a2176cebb"
 
 [[files]]
 file = "config/puddleflood.json"
@@ -4181,6 +4189,42 @@ file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_re
 hash = "05d72a6b0d1c76b898009168dff70f3254208e6e3ae24d65eebb7d351e1d2c4b"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/category.json"
+hash = "014f6b1c7c4aaf6c3ccf683a0f5afab4f5fa50f06f9a541fdd222b7b8fa8a6bc"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/connections.json"
+hash = "27c8cd191f616780abc25601bdc0d7de4e7bd9c09479e641c1b0b45176c0f66e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/definitions.json"
+hash = "fffdd5298dbdcdc36b5c368d648d8d38c98e99f7af4e5638aecae7f4dba515a6"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/skills.json"
+hash = "6f2d908a23b79871862ab51a19ae7b92627c99755412f5c85fd5f2bdee54af76"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/profession/category.json"
+hash = "a992767909ab9d792e2764a4ee4ab3d408fb422fd0f27e529bb90e4d89650774"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/profession/connections.json"
+hash = "145dc03eb641071f78e61bbfdda4072e95253c2c5a99af2c9fd99461ce79ab9c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/profession/definitions.json"
+hash = "8efdd7a67a42a1e49300a72f1e97f2dcad57dcbfd7deb6fbc4c40cab382f258d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/profession/skills.json"
+hash = "502c648f6158057aa93d7f57f9e03cfb5a9d00d72cf30c96ae0a72286eb7d767"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/config.json"
+hash = "460404db980fb45622bee575689d3fc1ea6b8323d7f68883135f2f0552db27b7"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/recipe/steel_wool.json"
 hash = "54099600758b7557a769230e42cfa629eb1c8cdbbf5c52be3866c7723c6e726e"
 
@@ -4259,6 +4303,26 @@ hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/neoforge/loot_modifiers/global_loot_modifiers.json"
 hash = "e134f281be3e7eb0493ce350b1c70349971d7d3cbd6177f902e6a62a7286c802"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/anticheese.json"
+hash = "2435a48e3f1bf12d9b0b153bf3514765badaa799ea04c92c37424f85e1ad6d68"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/autovalues.json"
+hash = "5884d119ed9310aeccb14d402433076c784f4e412c5f374837bcb2a4761a40e0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/perks.json"
+hash = "0d7bd348e264b8f5b04dd5ad04d5775c56eb10211bff275c00aacc3e6aefb1cd"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/server.json"
+hash = "33aeed8f9f8bc2513570960ed3d4c436d8cd39635940ac4491a2866e1de37cd3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/skills.json"
+hash = "d7c927d0ae183ff671472b61e96e093b31bb5b2dbd6638d67c56aff3f1ecb411"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/toms_storage/recipe/adv_wireless_terminal.json"
@@ -4675,7 +4739,7 @@ hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "8c69207c67a58f8fec5b0b21ea8f573a84f3ece93a2399b81dd8aaff87003650"
+hash = "23ff7f36dd110d310ef614446586b7f14c489affd4503329eef4a652b922ccdd"
 
 [[files]]
 file = "licenses/fluidlogistics-1.3.2-corresponding-source.zip"
@@ -4725,7 +4789,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "477d8942b9b4b08a5c2cd7257247d5c3921fb9979d72ea9266eceecbbd111723"
+hash = "a7126ec5cd0e56f7237740c2dd284749b7babb4df9362fd268f79c0d14788fef"
 
 [[files]]
 file = "mods/agricraft-rereloaded.pw.toml"
@@ -4929,12 +4993,12 @@ metafile = true
 
 [[files]]
 file = "mods/connector-extras.pw.toml"
-hash = "519e8baba4e236bf00140d862a6c33008d99ce31e62713eebc2f24033ba646c0"
+hash = "803f79cb437d7ba6927a0e7cd1341d6adfbd705a1924a6bfc28be1367a0fc821"
 metafile = true
 
 [[files]]
 file = "mods/connector.pw.toml"
-hash = "f7d25a79f373eb49f102beacf3fc6c5a30cccd0d2dc30c1cbcfaefeca57d4959"
+hash = "126080c09c4fbd8c1afc9ada2fd9511efe0f61ceeefd02d32e782e918fa29550"
 metafile = true
 
 [[files]]
@@ -5254,7 +5318,7 @@ metafile = true
 
 [[files]]
 file = "mods/forgified-fabric-api.pw.toml"
-hash = "abb947d0a57ecfe3787bed75b787ff7a1f1506f54a9e97eed08370116c0f5ac2"
+hash = "f8ae3e8ca3b81fffab4994d92e468ec77c92fbc056fdfe39ab3a6e4267a81725"
 metafile = true
 
 [[files]]
@@ -5613,8 +5677,18 @@ hash = "534b0b42e57e90ed94ab40a059e9506dab3a98d918dd8baa3c15f66256b01636"
 metafile = true
 
 [[files]]
+file = "mods/project-mmo.pw.toml"
+hash = "cbeac8370bff5a500b5651667596b9420c06167989fd6eca582f2e6bcbe0a114"
+metafile = true
+
+[[files]]
 file = "mods/puddles-floods.pw.toml"
 hash = "05735af06d0797f1790e36623071975b4602765be90a0b5095e7bf5bc5ef8834"
+metafile = true
+
+[[files]]
+file = "mods/pufferfish-skills.pw.toml"
+hash = "086fa9d7694f9690cc3f29d8e9e9201a6f936751002418595650df5f16ecc642"
 metafile = true
 
 [[files]]
@@ -5929,7 +6003,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "d00cec906484798e1f7c597484cd54164260d960ad0ad52d0c1708a11bbab981"
+hash = "49873c63b991d24f1b8e80c0cceec5bfb5ccb7bd4a49c37e132b987fb27dfe75"
 
 [[files]]
 file = "polytone_options.json"
@@ -6149,7 +6223,7 @@ hash = "cdea174265b490f6b7988f67257716a028927501e1663505af016a672a4fe885"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/README.md"
-hash = "51b90d8166e62a61a02186d5a01752490412f476c40d222ef587bc86e7877041"
+hash = "aa1319fdfe334a117c825c896320aee5544856491a517b1e3719cdea7ac5720f"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/atlas.svg"
@@ -6305,7 +6379,7 @@ hash = "e619cc74fd005d8ba7c11155bb68fc2c0e6cf1a0352a09cafbd1ae1e6434d6f4"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/README.md"
-hash = "0198306cf41bb1f3fa8bd0ee4306e2d8c9cb67be1be90ffb9a09459ac24bceef"
+hash = "20521533b79033017247f696978d817045edfd06046554b1b20020d25426d5b9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/book.svg"
@@ -6342,6 +6416,22 @@ hash = "bce141a71531d7436e7ad0b8e70ac111b2a785315885a6acb244f3720f536a38"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/recipe_book.svg"
 hash = "82040b16b3e541590430d0b706208423a845dab066b2662958fc5270550acd00"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/advancements/tab_above_left.svg"
+hash = "9b13722b2ce63b2dad1ef4668f664f3e0fb6f313bc38e89c34c04c6adeb3b3ac"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/advancements/tab_above_left_selected.svg"
+hash = "289aeba84d95687bef46fa846ce82f287241322cada9e4f9c42a7f119bb88b3a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/advancements/tab_above_middle.svg"
+hash = "592a18630c2b45a038e51f2e39e13dcec89bc8fc4b8047fad360aacc00d53705"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/advancements/tab_above_middle_selected.svg"
+hash = "7aee4971f5a89fc915c7dde72de32a4abeec23899160b791dffd4e4f02652f3c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/extended/sprites/container/beacon/button.svg"
@@ -6628,6 +6718,14 @@ file = "resourcepacks/aeroscapes-reimagine-interface/artwork/inventory.svg"
 hash = "75915a5d521dad2f43d7ce613b7e369178743cc629a20556e497a08bf53f4d05"
 
 [[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/progression/stat_background.svg"
+hash = "cf6dd1d3de7e48c5db5db42f8ae9296c72f0d97e009db3602ed8eec368272a4f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/artwork/progression/stat_background_highlighted.svg"
+hash = "88bbeada94da748487e1f2d2e1f18b2f17dc55a6b6d6dbdb7493729639a30fde"
+
+[[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/splash.svg"
 hash = "b89b7a5f19096668379926f4b5ae4216e7b67d2b7db836ab2ea20fd310070a92"
 
@@ -6645,7 +6743,7 @@ hash = "83088bcd08b8029cbc353f400c203360350b86b181237fd7c7cde77ce2d67bbb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/atlas/panels.json"
-hash = "67260016e85cb9a933f9fa5261ca1c4ef0babb943800ad7ea1a77cbc48a5fe0e"
+hash = "850ef9b252f590f8c451969077577bcc9aa87c3bb3c0d78ecb9caa6b0b25ee52"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/atlas.png"
@@ -6814,6 +6912,22 @@ hash = "3bff652ff6afa976bb6aaadb460404af4cb67aa7a57a983ea4b701823e8da10b"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/recipe_book.png"
 hash = "c8c62d79c510d920f3c8d3e6031b060e139496fccebc57317efb5406d112549e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/advancements/tab_above_left.png"
+hash = "7573e4a44569c64812c9ab6c7b24e4e6fefdb02bea60190a362916b136009f2b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/advancements/tab_above_left_selected.png"
+hash = "a0869b2ff53ff9354ea0eb247251686186d4f6a7ca99a1ed1219f4fa0059137b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/advancements/tab_above_middle.png"
+hash = "894397955a66c5f5e9e5a07b3e02909556e1299a6b574973d67349060c24e45c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/advancements/tab_above_middle_selected.png"
+hash = "222bfd537105d11e0a558ab39818708f304ba41064690be5cb63355d8686b664"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/sprites/container/beacon/button.png"
@@ -7246,6 +7360,14 @@ hash = "a90adb407d4a96e402159682b2e71491e9f6d261da3d31d77c2c7f009d975e07"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/minecraft/textures/gui/tab_header_background.png"
 hash = "511849b2ed16550a66ad9ed993d1fa7ad0692b5e3caf3204bb19fa8f543556cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/pmmo/textures/gui/sprites/stat_background.png"
+hash = "666c26a9a88d7f535c4d3967054a2adadb843ccd875241b61b44f38f982f8441"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-interface/assets/pmmo/textures/gui/sprites/stat_background_highlighted.png"
+hash = "1c909586c22f9575cb0d798d347183d54cf404980bc7e2aeea34e600580663b5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/tieredneo/textures/gui/reforging_screen.png"

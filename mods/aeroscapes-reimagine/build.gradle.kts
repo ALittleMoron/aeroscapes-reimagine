@@ -37,6 +37,8 @@ repositories {
       includeModule("maven.modrinth", "punchy-fpa")
       includeModule("maven.modrinth", "playeranimator")
       includeModule("maven.modrinth", "irons-spells-n-spellbooks")
+      includeModule("maven.modrinth", "project-mmo")
+      includeModule("maven.modrinth", "skills")
       includeModule("maven.modrinth", "curios")
       includeModule("maven.modrinth", "entity-model-features")
       includeModule("maven.modrinth", "entitytexturefeatures")
@@ -209,6 +211,9 @@ dependencies {
   compileOnly("maven.modrinth:animalhusbandry:Evazn2xm") { isTransitive = false }
   compileOnly("curse.maven:agricraft-rereloaded-1616052:9559254") { isTransitive = false }
   compileOnly("maven.modrinth:sky-whales:bDTUgqZ5") { isTransitive = false }
+  compileOnly("maven.modrinth:project-mmo:9lu4zNd1") { isTransitive = false }
+  // Compile-only Mojang-mapped API. Runtime remains the pinned Fabric file via Connector.
+  compileOnly("maven.modrinth:skills:8tfcI2wU") { isTransitive = false }
   compileOnly("maven.modrinth:joy-of-painting:73U02HbA") { isTransitive = false }
   navigationApi("maven.modrinth:xaeros-minimap:irjR7dHk")
   navigationApi("maven.modrinth:xaeros-world-map:SnQ4SoDe")
@@ -375,6 +380,14 @@ tasks.withType<org.gradle.api.plugins.quality.Pmd>().configureEach {
           .map { it.metadata.installationPath.file("lib/jrt-fs.jar") },
       )
 }
+
+val progressionViewTest =
+  tasks.register<JavaExec>("progressionViewTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.progression.ProgressionViewTest"
+  }
 
 val policyTest =
   tasks.register<JavaExec>("policyTest") {
@@ -1002,6 +1015,7 @@ tasks.check {
     seatedRiderAnimationTest,
     hookHangMathTest,
     spellMouseGestureTest,
+    progressionViewTest,
     policyTest,
     islandLayoutTest,
     exposedIslandSurfacesTest,

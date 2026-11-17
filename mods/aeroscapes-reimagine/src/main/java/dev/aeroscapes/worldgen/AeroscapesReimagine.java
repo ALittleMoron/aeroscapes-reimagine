@@ -56,6 +56,11 @@ public final class AeroscapesReimagine {
       dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);
     if (ModList.get().isLoaded("spawn")) dev.aeroscapes.ecology.EcologyNetwork.register(modBus);
     if (ModList.get().isLoaded("irons_spellbooks")) dev.aeroscapes.magic.SpellCastRules.register();
+    if (ModList.get().isLoaded("pmmo") && ModList.get().isLoaded("puffish_skills")) {
+      dev.aeroscapes.progression.ProgressionBridge.register();
+      if (ModList.get().isLoaded("irons_spellbooks"))
+        dev.aeroscapes.progression.SpellPractice.register();
+    }
     if (ModList.get().isLoaded("tieredneo")) {
       dev.aeroscapes.equipment.tools.ToolReforges.register(modBus);
       if (ModList.get().isLoaded("irons_spellbooks") && ModList.get().isLoaded("curios"))

@@ -24,3 +24,16 @@ key_key.irons_spellbooks.spell_wheel:key.keyboard.unknown
 key_key.irons_spellbooks.spellbook_cast:key.keyboard.unknown
 key_key.irons_spellbooks.spell_bar_modifier:key.keyboard.unknown
 key_key.curios.open.desc:key.keyboard.unknown
+key_key.puffish_skills.open:key.keyboard.unknown
+key_iris.keybind.reload:key.keyboard.unknown
+key_quark.keybind.variant_selector:key.keyboard.unknown
+key_key.socialInteractions:key.keyboard.unknown
+key_key.pmmo.openMenu:key.keyboard.p
+key_key.pmmo.showList:key.keyboard.unknown
+key_key.pmmo.toggle_brkspd:key.keyboard.unknown
+key_key.pmmo.vein:key.keyboard.unknown
+key_key.pmmo.showVein:key.keyboard.unknown
+key_key.pmmo.addVein:key.keyboard.unknown
+key_key.pmmo.subVein:key.keyboard.unknown
+key_key.pmmo.cyclevein:key.keyboard.unknown
+key_iris.keybind.toggleShaders:key.keyboard.unknown
