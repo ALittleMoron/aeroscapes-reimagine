@@ -16,6 +16,7 @@ status: available
 - Project MMO admin level and XP edits now persist for new and existing characters and update talent points immediately; the open skills panel refreshes after XP packets.
 - Connector and Forgified Fabric API now also run on the server.
 - Export checks accept the pinned both-side talent mod and validate its Fabric dependencies on both client and server.
+- Refreshed verified build metadata for the pinned Create Aeronautics: Throwable Rope Connector.
 
 ## 0.6.0
 
