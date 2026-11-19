@@ -1,5 +1,8 @@
 package dev.aeroscapes.progression.client;
 
+import dev.aeroscapes.magic.MagicPracticeProgress;
+import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.mixin.progression.InventoryLayoutAccess;
 import harmonised.pmmo.client.gui.glossary.components.parts.PlayerSkillWidget;
 import harmonised.pmmo.config.Config;
@@ -21,10 +24,13 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.narration.NarratedElementType;
 import net.minecraft.client.gui.narration.NarrationElementOutput;
 import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.minecraft.client.gui.screens.inventory.tooltip.DefaultTooltipPositioner;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.FormattedCharSequence;
 import net.neoforged.fml.LogicalSide;
 
-/** Inventory-local viewport retaining the provider's level and progress display. */
+/** Inventory-local practice levels, with real magic credit over the provider's other skill rows. */
 public final class InventorySkillsPanel extends AbstractWidget {
   public static final int PANEL_WIDTH = 130;
   private final InventoryScreen screen;
@@ -82,6 +88,7 @@ public final class InventorySkillsPanel extends AbstractWidget {
         .filter(entry -> entry.getValue().getShowInList() && placed.add(entry.getKey()))
         .forEach(entry -> remaining.add(new Row(entry.getKey(), entry.getValue())));
     if (!remaining.isEmpty()) groups.add(new Group(Component.empty(), 0xff92a9c3, remaining));
+    AbilityClient.request();
     update();
   }
 
@@ -162,6 +169,7 @@ public final class InventorySkillsPanel extends AbstractWidget {
     scroll.resize(contentHeight, bodyHeight());
     graphics.enableScissor(getX() + 5, bodyTop(), getRight() - 10, bodyTop() + bodyHeight());
     int y = bodyTop() - (int) scroll.offset();
+    List<Component> magicTooltip = List.of();
     for (Group group : groups) {
       var rows = matching(group);
       if (rows.isEmpty()) continue;
@@ -176,13 +184,21 @@ public final class InventorySkillsPanel extends AbstractWidget {
           false);
       y += 14;
       for (Row row : rows) {
-        row.widget().setPosition(getX() + 10, y);
         boolean hovered =
             mouseY >= bodyTop()
                 && mouseY < bodyTop() + bodyHeight()
-                && row.widget().isMouseOver(mouseX, mouseY);
-        row.widget().setFocused(hovered);
-        row.widget().render(graphics, mouseX, mouseY, partialTick);
+                && mouseX >= getX() + 10
+                && mouseX < getRight() - 13
+                && mouseY >= y
+                && mouseY < y + 24;
+        if (row.skill().equals("magic")) {
+          drawMagic(graphics, row.data, y, hovered);
+          if (hovered) magicTooltip = magicTooltip();
+        } else {
+          row.widget().setPosition(getX() + 10, y);
+          row.widget().setFocused(hovered);
+          row.widget().render(graphics, mouseX, mouseY, partialTick);
+        }
         y += 25;
       }
       y += 4;
@@ -195,6 +211,109 @@ public final class InventorySkillsPanel extends AbstractWidget {
       graphics.fill(
           track, top, track + 3, top + scroll.thumbSize(), dragging ? 0xffe9c084 : 0xff92a9c3);
     }
+    if (!magicTooltip.isEmpty()) {
+      var lines = new ArrayList<FormattedCharSequence>();
+      for (Component line : magicTooltip)
+        lines.addAll(Minecraft.getInstance().font.split(line, Math.min(220, screen.width - 24)));
+      graphics.renderTooltip(
+          Minecraft.getInstance().font, lines, DefaultTooltipPositioner.INSTANCE, mouseX, mouseY);
+    }
+  }
+
+  private static Component magicText(String key, Object... arguments) {
+    return Component.translatable("aeroscapes_reimagine.progression.magic." + key, arguments);
+  }
+
+  private void drawMagic(GuiGraphics graphics, SkillData data, int y, boolean hovered) {
+    var font = Minecraft.getInstance().font;
+    var snapshot = AbilityClient.snapshot();
+    int x = getX() + 10, rowWidth = PANEL_WIDTH - 23;
+    int color = 0xff000000 | data.getColor();
+    graphics.blitSprite(
+        ResourceLocation.parse("pmmo:stat_background" + (hovered ? "_highlighted" : "")),
+        x,
+        y,
+        rowWidth,
+        24);
+    int iconSize = data.getIconSize();
+    graphics.blit(
+        data.getIcon(), x + 3, y + 3, 18, 18, 0, 0, iconSize, iconSize, iconSize, iconSize);
+    String level = AbilityClient.hasSnapshot() ? String.valueOf(snapshot.practiceLevel()) : "…";
+    graphics.pose().pushPose();
+    graphics.pose().translate(x + 24, y + 5, 0);
+    graphics.pose().scale(0.85f, 0.85f, 1);
+    graphics.drawString(
+        font,
+        font.plainSubstrByWidth(
+            LangProvider.skill("magic").getString(),
+            (int) ((rowWidth - 35 - font.width(level)) / 0.85)),
+        0,
+        0,
+        color,
+        false);
+    graphics.pose().popPose();
+    graphics.drawString(font, level, x + rowWidth - 7 - font.width(level), y + 5, color, false);
+    long baseline =
+        snapshot.practiceLevel() < 50
+            ? MagicPracticeProgress.minimumXp(snapshot.practiceLevel())
+            : MagicPracticeProgress.xpForPoints(
+                MagicPracticeProgress.points(snapshot.practiceXp(), MagicTalents.pointCap()));
+    long goal =
+        snapshot.practiceLevel() < 50
+            ? MagicPracticeProgress.minimumXp(snapshot.practiceLevel() + 1) - baseline
+            : Math.max(0, snapshot.nextTalentXp() - baseline);
+    long earned = Math.max(0, snapshot.practiceXp() - baseline);
+    if (hovered) {
+      Component progress;
+      if (!AbilityClient.hasSnapshot()) progress = magicText("waiting");
+      else if (snapshot.practiceLevel() < 50)
+        progress =
+            magicText("row_next_level", Math.max(0, goal - earned), snapshot.practiceLevel() + 1);
+      else if (snapshot.nextTalentXp() > 0)
+        progress =
+            magicText(
+                "row_next_talent", Math.max(0, snapshot.nextTalentXp() - snapshot.practiceXp()));
+      else progress = magicText("row_capped");
+      graphics.pose().pushPose();
+      graphics.pose().translate(x + 24, y + 14, 0);
+      graphics.pose().scale(0.6f, 0.6f, 1);
+      graphics.drawString(
+          font,
+          font.plainSubstrByWidth(progress.getString(), (int) ((rowWidth - 27) / 0.6)),
+          0,
+          0,
+          color,
+          false);
+      graphics.pose().popPose();
+    } else {
+      int barWidth = rowWidth - 27;
+      double fraction = goal > 0 ? Math.clamp((double) earned / goal, 0, 1) : 1;
+      graphics.fill(x + 24, y + 15, x + 24 + barWidth, y + 20, 0xff111b29);
+      graphics.fill(x + 24, y + 15, x + 24 + (int) (barWidth * fraction), y + 20, color);
+    }
+  }
+
+  private List<Component> magicTooltip() {
+    if (!AbilityClient.hasSnapshot()) return List.of(magicText("waiting"));
+    var snapshot = AbilityClient.snapshot();
+    var tooltip = new ArrayList<Component>();
+    tooltip.add(magicText("level", snapshot.practiceLevel()));
+    tooltip.add(magicText("total_xp", snapshot.practiceXp()));
+    if (snapshot.practiceLevel() < 50)
+      tooltip.add(
+          magicText(
+              "next_level",
+              Math.max(
+                  0,
+                  MagicPracticeProgress.minimumXp(snapshot.practiceLevel() + 1)
+                      - snapshot.practiceXp()),
+              snapshot.practiceLevel() + 1));
+    else tooltip.add(magicText("practice_cap"));
+    tooltip.add(
+        snapshot.nextTalentXp() > 0
+            ? magicText("next_talent", Math.max(0, snapshot.nextTalentXp() - snapshot.practiceXp()))
+            : magicText("talent_cap"));
+    return tooltip;
   }
 
   @Override

@@ -4,6 +4,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.progression.ProgressionBridge;
 import harmonised.pmmo.commands.CmdNodeAdmin;
 import harmonised.pmmo.core.IDataStorage;
@@ -44,21 +45,33 @@ abstract class ProjectMmoAdminDataMixin {
       boolean set,
       CallbackInfoReturnable<Integer> result)
       throws CommandSyntaxException {
-    aeroscapes$syncTargets(context);
+    aeroscapes$syncTargets(
+        context, "magic".equals(context.getArgument("Skill Name", String.class)));
   }
 
-  @Inject(
-      method = {"adminClear", "adminClearSkill"},
-      at = @At("RETURN"))
+  @Inject(method = "adminClear", at = @At("RETURN"))
   @SuppressWarnings("PMD.UnusedPrivateMethod") // Native clear commands have a different signature.
   private static void aeroscapes$clearTalents(
       CommandContext<CommandSourceStack> context, CallbackInfoReturnable<Integer> result)
       throws CommandSyntaxException {
-    aeroscapes$syncTargets(context);
+    aeroscapes$syncTargets(context, true);
   }
 
-  private static void aeroscapes$syncTargets(CommandContext<CommandSourceStack> context)
+  @Inject(method = "adminClearSkill", at = @At("RETURN"))
+  @SuppressWarnings("PMD.UnusedPrivateMethod")
+  private static void aeroscapes$clearSkillTalents(
+      CommandContext<CommandSourceStack> context, CallbackInfoReturnable<Integer> result)
       throws CommandSyntaxException {
-    for (var player : EntityArgument.getPlayers(context, "Target")) ProgressionBridge.sync(player);
+    aeroscapes$syncTargets(
+        context, "magic".equals(context.getArgument("Skill Name", String.class)));
+  }
+
+  private static void aeroscapes$syncTargets(
+      CommandContext<CommandSourceStack> context, boolean magicChanged)
+      throws CommandSyntaxException {
+    for (var player : EntityArgument.getPlayers(context, "Target")) {
+      if (magicChanged) MagicPractice.adminEdited(player);
+      ProgressionBridge.sync(player);
+    }
   }
 }

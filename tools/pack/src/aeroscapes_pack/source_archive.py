@@ -32,8 +32,11 @@ PACK_INPUTS = (
     "pack/licenses/THIRD-PARTY-NOTICES.txt",
 )
 PACK_INPUT_TREES = (
+    "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/"
+    "aeroscapes_reimagine/puffish_skills",
     "pack/resourcepacks/aeroscapes-reimagine-atmosphere",
     "pack/resourcepacks/aeroscapes-reimagine-refined-compat",
+    "pack/shaderpacks",
 )
 
 

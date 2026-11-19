@@ -1,6 +1,9 @@
 package dev.aeroscapes.progression;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import dev.aeroscapes.magic.MagicPractice;
+import dev.aeroscapes.magic.MagicPracticeProgress;
+import dev.aeroscapes.magic.MagicTalents;
 import harmonised.pmmo.api.APIUtils;
 import harmonised.pmmo.api.enums.EventType;
 import harmonised.pmmo.api.enums.ObjectType;
@@ -25,10 +28,11 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
  * once-per-second comparison catches every route instead of a perk.
  */
 public final class ProgressionBridge {
-  public static final List<String> COMBAT_SKILLS = List.of("combat", "archery", "magic");
+  public static final List<String> COMBAT_SKILLS = List.of("combat", "archery");
   public static final List<String> PROFESSION_SKILLS =
       List.of("mining", "crafting", "smithing", "building", "farming", "cooking");
   public static final int LEVELS_PER_POINT = 5;
+  public static final int PROFESSION_POINT_CAP = 2;
   public static final String COMBAT_CATEGORY = "aeroscapes_reimagine:combat";
   public static final String PROFESSION_CATEGORY = "aeroscapes_reimagine:profession";
   static final String POINT_SOURCE = "aeroscapes_reimagine:skill_levels";
@@ -39,6 +43,7 @@ public final class ProgressionBridge {
   private ProgressionBridge() {}
 
   public static void register() {
+    MagicPractice.register();
     NeoForge.EVENT_BUS.addListener(ProgressionBridge::syncOnLogin);
     NeoForge.EVENT_BUS.addListener(ProgressionBridge::refreshAfterPractice);
     NeoForge.EVENT_BUS.addListener(ProgressionBridge::awardSmelting);
@@ -48,7 +53,7 @@ public final class ProgressionBridge {
   public static int points(Map<String, Long> levels, List<String> skills) {
     int total = 0;
     for (String skill : skills) {
-      total += (int) (levels.getOrDefault(skill, 0L) / LEVELS_PER_POINT);
+      total += Math.clamp(levels.getOrDefault(skill, 0L), 0, 50) / LEVELS_PER_POINT;
     }
     return total;
   }
@@ -66,8 +71,24 @@ public final class ProgressionBridge {
   }
 
   private static Earned earned(ServerPlayer player) {
+    long magicCredit = MagicPractice.credit(player);
     Map<String, Long> levels = APIUtils.getAllLevels(player);
-    return new Earned(points(levels, COMBAT_SKILLS), points(levels, PROFESSION_SKILLS));
+    return new Earned(
+        combatPoints(levels, magicCredit),
+        Math.min(PROFESSION_POINT_CAP, points(levels, PROFESSION_SKILLS)));
+  }
+
+  private static int combatPoints(Map<String, Long> levels, long magicCredit) {
+    int cap = MagicTalents.pointCap();
+    return Math.min(
+        cap, MagicPracticeProgress.points(magicCredit, cap) + points(levels, COMBAT_SKILLS));
+  }
+
+  public static long nextCombatPointXp(ServerPlayer player, long magicCredit) {
+    int cap = MagicTalents.pointCap();
+    return combatPoints(APIUtils.getAllLevels(player), magicCredit) >= cap
+        ? 0
+        : MagicPracticeProgress.nextPointXp(magicCredit, cap);
   }
 
   public static int storedPoints(ServerPlayer player, String category)

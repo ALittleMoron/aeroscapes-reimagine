@@ -416,7 +416,13 @@ its renderer does not copy the provider screen. The NeoForge 0.19.2 artifact
 (official Modrinth 8tfcI2wU) supplies compile-only Mojang-mapped API signatures;
 it is not installed or redistributed in the pack. Guarded
 expected provider text in language_corrections.json retains its provider's terms.
-The talent backgrounds, node frames and inventory buttons are original pixel artwork composed
-deterministically for this project without copied game pixels or a generative
-image model. Editable sources: META-INF/artwork/skills/*.svg; their RGBA PNGs
-are the textures under textures/gui/skills/ and textures/gui/sprites/skills/.
+The talent backgrounds, node frames, inventory buttons and talent illustrations
+are original GPL-3.0-or-later pixel artwork. AI-assisted deterministic vector
+composition produced the talent illustrations. The editable 16 by 16 paintings
+are named groups in META-INF/artwork/skills/talent-icons.svg. To render a tile,
+run rsvg-convert --export-id NAME talent-icons.svg --output NAME.png and place
+it under assets/aeroscapes_reimagine/textures/gui/skills/talents/. Dedicated
+spell nodes display Iron's original icons from its installed archive. No
+provider pixels are included in the talent illustrations.
+The other interface sources are in META-INF/artwork/skills/*.svg. Their PNGs
+are under textures/gui/skills/ and textures/gui/sprites/skills/.

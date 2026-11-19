@@ -8292,5 +8292,1359 @@
         "value": "minecraft:textures/gui/advancements/backgrounds/adventure.png"
       }
     ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/basking_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/basking_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/bull_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/bull_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/dugong.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/dugong.json",
+    "sha256": "8f7cbf3f731b119bcc66246119ffce60fd2a7c84d46f21ae7c3015415578dd94",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/fangtooth.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/fangtooth.json",
+    "sha256": "ab5b4ddbe700e5c5079360c6c6fd436c7b2d0c24d1f74f8db52d4a8e5ad60c7f",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/frilled_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/frilled_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/goblin_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/goblin_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/great_white_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/great_white_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/hammerhead_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/hammerhead_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/hatchetfish.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/hatchetfish.json",
+    "sha256": "ab5b4ddbe700e5c5079360c6c6fd436c7b2d0c24d1f74f8db52d4a8e5ad60c7f",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/hound_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/hound_shark.json",
+    "sha256": "131e1a19930b696096b737b090672f9f53a8812e72efe88c5927e0c12f3dd695",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/karkinos.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/karkinos.json",
+    "sha256": "2df99af96eb80b34ad184bda522cf6a8369317b21ed708a8441636adaef62854",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/lantern_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/lantern_shark.json",
+    "sha256": "131e1a19930b696096b737b090672f9f53a8812e72efe88c5927e0c12f3dd695",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/manatee.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/manatee.json",
+    "sha256": "8f7cbf3f731b119bcc66246119ffce60fd2a7c84d46f21ae7c3015415578dd94",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/sand_tiger_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/sand_tiger_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/shell_beast.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/shell_beast.json",
+    "sha256": "e0fb0762a2f040326a6309834c8bd9b886b4747892336d9789996a7cb05e2488",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/shiner.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/shiner.json",
+    "sha256": "ab5b4ddbe700e5c5079360c6c6fd436c7b2d0c24d1f74f8db52d4a8e5ad60c7f",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/sixgill_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/sixgill_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/sleeper_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/sleeper_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/thresher_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/thresher_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/viperfish.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/viperfish.json",
+    "sha256": "ab5b4ddbe700e5c5079360c6c6fd436c7b2d0c24d1f74f8db52d4a8e5ad60c7f",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_aquatic:loot_table/entities/whale_shark.json",
+    "mod": "hybrid_aquatic",
+    "source": "data/hybrid_aquatic/loot_table/entities/whale_shark.json",
+    "sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/albatross.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/albatross.json",
+    "sha256": "671ce2369367d6248e4c24fcc9af74653f21a9af546fd4aaada2779c5b4eca24",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/duck.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/duck.json",
+    "sha256": "2684806be1e603c5ff5891a1cc42af463da24f709d4fe73b00c17b22c28316c4",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions"
+        ],
+        "value": [
+          {
+            "function": "minecraft:furnace_smelt",
+            "conditions": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "flags": {
+                    "is_on_fire": true
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/goose.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/goose.json",
+    "sha256": "79be5c63027c7773f8760b4f10461567f7a64d4083bd6307c858cd7255acf923",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions"
+        ],
+        "value": [
+          {
+            "function": "minecraft:furnace_smelt",
+            "conditions": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "flags": {
+                    "is_on_fire": true
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/guinea_fowl.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/guinea_fowl.json",
+    "sha256": "6c9e08eed161a87be26e6a7195a96911d4d74bde6b0cb3efd7f1d6bc2c82850f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions"
+        ],
+        "value": [
+          {
+            "function": "minecraft:furnace_smelt",
+            "conditions": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "flags": {
+                    "is_on_fire": true
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/pelican.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/pelican.json",
+    "sha256": "671ce2369367d6248e4c24fcc9af74653f21a9af546fd4aaada2779c5b4eca24",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/puffin.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/puffin.json",
+    "sha256": "212a6aed251acc51251e13a3e08340169383fea0f1a0717b76461d7bcf874b2b",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions"
+        ],
+        "value": [
+          {
+            "function": "minecraft:furnace_smelt",
+            "conditions": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "flags": {
+                    "is_on_fire": true
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/rooster.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/rooster.json",
+    "sha256": "6c9e08eed161a87be26e6a7195a96911d4d74bde6b0cb3efd7f1d6bc2c82850f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions"
+        ],
+        "value": [
+          {
+            "function": "minecraft:furnace_smelt",
+            "conditions": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "flags": {
+                    "is_on_fire": true
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/seagull.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/seagull.json",
+    "sha256": "671ce2369367d6248e4c24fcc9af74653f21a9af546fd4aaada2779c5b4eca24",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "hybrid_birds:loot_table/entities/turkey.json",
+    "mod": "hybrid_birds",
+    "source": "data/hybrid_birds/loot_table/entities/turkey.json",
+    "sha256": "85bdb8f6c80683e280672d5dd3710d8d954b3af91a8ca0e07f916f16452ee933",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions"
+        ],
+        "value": [
+          {
+            "function": "minecraft:furnace_smelt",
+            "conditions": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "flags": {
+                    "is_on_fire": true
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "minecraft:loot_table/entities/tropical_fish.json",
+    "mod": "tide",
+    "source": "data/minecraft/loot_table/entities/tropical_fish.json",
+    "sha256": "82568fd0d6f2862e5b00b1a0cbf214f5ecfcef35fd792a25ba2184a9d878098e",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "naturalist:loot_table/entities/elephant.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/loot_table/entities/elephant.json",
+    "sha256": "9797971450aa56ad1fb8e0ead5a84599d86d878d7012e4549c2b94665dd5d4d3",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "1",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "naturalist:loot_table/entities/rhino.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/loot_table/entities/rhino.json",
+    "sha256": "d45604d9a2944c11cd44c94856b7f5f09a84cf765c63ba98c49df028118aaebf",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "1",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "naturalist:loot_table/entities/whale.json",
+    "mod": "naturalist",
+    "source": "data/naturalist/loot_table/entities/whale.json",
+    "sha256": "8ad23a996dd5339f7670ea9a5a55dcb96cd0a8d1f0bcc76b7ac2d82cb7fbd508",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "1",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "op": "insert",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "2",
+          "functions",
+          "0"
+        ],
+        "value": {
+          "function": "minecraft:furnace_smelt",
+          "conditions": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_fire": true
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "immersive_weathering:loot_table/injects/hoglin_tallow.json",
+    "mod": "immersive_weathering",
+    "source": "data/immersive_weathering/loot_table/injects/hoglin_tallow.json",
+    "sha256": "170a1f5133f04fff34898acee2211d68467cb8eb5219134221466de448602faf",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "functions",
+          "0",
+          "conditions",
+          "0",
+          "terms"
+        ],
+        "value": [
+          {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "tags": [
+                {
+                  "id": "aeroscapes_reimagine:fire_loot",
+                  "expected": false
+                }
+              ]
+            }
+          },
+          {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "source_entity": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:flame",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "source_entity": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:fire_aspect",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "immersive_weathering:loot_table/injects/pig_tallow.json",
+    "mod": "immersive_weathering",
+    "source": "data/immersive_weathering/loot_table/injects/pig_tallow.json",
+    "sha256": "653d3d2db16ccfa92d657a3fac54908bbf550c7c9ace358b0a14674b02a68616",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "pools",
+          "0",
+          "entries",
+          "0",
+          "conditions",
+          "0",
+          "terms"
+        ],
+        "value": [
+          {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "tags": [
+                {
+                  "id": "aeroscapes_reimagine:fire_loot",
+                  "expected": false
+                }
+              ]
+            }
+          },
+          {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "source_entity": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:flame",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "source_entity": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:fire_aspect",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "supplementaries:loot_modifiers/ash_from_burning_mobs.json",
+    "mod": "supplementaries",
+    "source": "data/supplementaries/loot_modifiers/ash_from_burning_mobs.json",
+    "sha256": "cf77890d25902b0cc1f26269c405bfc05003ef63b25f5b66e380fef08c93e1be",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "conditions",
+          "0",
+          "predicate"
+        ],
+        "value": {
+          "tags": [
+            {
+              "id": "aeroscapes_reimagine:fire_loot",
+              "expected": true
+            }
+          ]
+        }
+      }
+    ]
   }
 ]

@@ -1,11 +1,19 @@
 package dev.aeroscapes.progression.client;
 
 import dev.aeroscapes.inventory.InventoryNavigation;
+import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.mixin.progression.SkillsScreenAccessor;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -33,15 +41,21 @@ public final class TalentScreen extends Screen {
   private static final int TEXT = 0xffd6e0eb;
   private static final int MUTED = 0xff92a9c3;
   private static final int GOLD = 0xffe9c084;
+  private static final int ROUTE = 0xff75dfda;
   private final ClientSkillScreenData data;
   private final TreeViewport camera = new TreeViewport();
   private final ScrollViewport detailsScroll = new ScrollViewport();
   private final List<Button> tabs = new ArrayList<>();
+  private final Set<String> searchMatches = new HashSet<>();
   private Page page = Page.COMBAT;
   private String selected;
   private EditBox search;
   private Button learn;
   private ClientCategoryData fittedCategory;
+  private Map<String, MagicTalentPath.Node> magicGraph = Map.of();
+  private String pathGoal;
+  private Set<String> pathOwned = Set.of();
+  private MagicTalentPath path;
   private boolean dragging;
   private double pressX;
   private double pressY;
@@ -68,6 +82,7 @@ public final class TalentScreen extends Screen {
 
   @Override
   protected void init() {
+    AbilityClient.request();
     tabs.clear();
     search = null;
     if (width < 320 || height < 220) {
@@ -96,6 +111,7 @@ public final class TalentScreen extends Screen {
     }
     search = new EditBox(font, 20, 68, Math.max(34, canvasWidth() - 74), 16, text("search"));
     search.setHint(text("search"));
+    search.setResponder(this::updateSearch);
     addRenderableWidget(search);
     addRenderableWidget(
         Button.builder(text("fit"), button -> fit())
@@ -142,14 +158,6 @@ public final class TalentScreen extends Screen {
     return width - 176;
   }
 
-  private int nodeX(ClientSkillConfig node) {
-    return 16 + canvasWidth() / 2 + (int) Math.round(camera.x(node.x()));
-  }
-
-  private int nodeY(ClientSkillConfig node) {
-    return 94 + canvasHeight() / 2 + (int) Math.round(camera.y(node.y()));
-  }
-
   private boolean inside(double x, double y) {
     return x >= 16 && x < 16 + canvasWidth() && y >= 94 && y < 94 + canvasHeight();
   }
@@ -164,6 +172,87 @@ public final class TalentScreen extends Screen {
         nodes.stream().mapToInt(ClientSkillConfig::y).max().orElse(0),
         canvasWidth(),
         canvasHeight());
+  }
+
+  private void showMagicRoot(ClientCategoryData category) {
+    var root = nodes().stream().filter(ClientSkillConfig::isRoot).findFirst().orElse(null);
+    if (root == null) return;
+    var config = category.getConfig();
+    int reachX = 0, reachY = 0;
+    for (String id : config.skillNormalNeighbors().getOrDefault(root.id(), List.of())) {
+      var entry = config.skills().get(id);
+      if (entry != null && page.accepts(id)) {
+        reachX = Math.max(reachX, Math.abs(entry.x() - root.x()));
+        reachY = Math.max(reachY, Math.abs(entry.y() - root.y()));
+      }
+    }
+    camera.showRoot(root.x(), root.y(), reachX, reachY, canvasWidth(), canvasHeight());
+  }
+
+  private void updateSearch(String value) {
+    searchMatches.clear();
+    String query = value.strip().toLowerCase(Locale.ROOT);
+    var category = category();
+    if (query.isEmpty() || category == null) return;
+    for (var node : nodes()) {
+      var title = category.getConfig().getDefinitionById(node.definitionId()).orElseThrow().title();
+      if (title.getString().toLowerCase(Locale.ROOT).contains(query)) searchMatches.add(node.id());
+    }
+    if (page == Page.MAGIC) {
+      for (var spell : SpellKnowledge.spells()) {
+        var route = MagicTalents.spell(spell.getSpellId());
+        if (route != null
+            && spell
+                .getDisplayName(minecraft.player)
+                .getString()
+                .toLowerCase(Locale.ROOT)
+                .contains(query)) {
+          searchMatches.add(route.node());
+        }
+      }
+    }
+  }
+
+  private void loadMagicGraph(ClientCategoryData category) {
+    pathGoal = null;
+    path = null;
+    if (page != Page.MAGIC || category == null) {
+      magicGraph = Map.of();
+      return;
+    }
+    var graph = new HashMap<String, MagicTalentPath.Node>();
+    var config = category.getConfig();
+    for (var node : nodes()) {
+      var definition = config.getDefinitionById(node.definitionId()).orElseThrow();
+      graph.put(
+          node.id(),
+          new MagicTalentPath.Node(
+              definition.cost(),
+              MagicTalents.requiredLevel(node.id()),
+              node.isRoot(),
+              List.copyOf(config.skillNormalNeighborsReversed().getOrDefault(node.id(), List.of())),
+              MagicTalents.priorMasteries(node.id())));
+    }
+    magicGraph = graph;
+  }
+
+  private void updatePath(ClientCategoryData category) {
+    if (selected == null || magicGraph.isEmpty() || category == null) {
+      pathGoal = null;
+      path = null;
+      return;
+    }
+    var owned = new HashSet<String>();
+    for (String id : magicGraph.keySet()) {
+      if (category.getSkillState(category.getConfig().skills().get(id)) == Skill.State.UNLOCKED) {
+        owned.add(id);
+      }
+    }
+    if (!Objects.equals(pathGoal, selected) || !pathOwned.equals(owned)) {
+      pathGoal = selected;
+      pathOwned = owned;
+      path = MagicTalentPath.find(magicGraph, owned, selected);
+    }
   }
 
   @Override
@@ -181,7 +270,15 @@ public final class TalentScreen extends Screen {
     if (category != fittedCategory) {
       fittedCategory = category;
       fit();
+      if (page == Page.MAGIC && category != null) {
+        var node = selected == null ? null : category.getConfig().skills().get(selected);
+        if (node == null) showMagicRoot(category);
+        else camera.focus(node.x(), node.y());
+      }
+      updateSearch(search.getValue());
+      loadMagicGraph(category);
     }
+    updatePath(category);
     if (category != null) {
       var points = text("points", category.getPointsLeft());
       graphics.drawString(font, points, width - 45 - font.width(points), 19, GOLD, false);
@@ -197,10 +294,17 @@ public final class TalentScreen extends Screen {
     AtlasProgressionWidgets.panel(graphics, inspectorX(), 94, 156, height - 126);
     graphics.enableScissor(20, 98, 12 + canvasWidth(), 90 + canvasHeight());
     if (category != null) {
+      var hoveredNode = inside(mouseX, mouseY) ? nodeAt(mouseX, mouseY) : null;
+      graphics.pose().pushPose();
+      graphics
+          .pose()
+          .translate(
+              16 + canvasWidth() / 2.0 + camera.x(0), 94 + canvasHeight() / 2.0 + camera.y(0), 0);
+      graphics.pose().scale((float) camera.scale(), (float) camera.scale(), 1);
       drawConnections(graphics, category, category.getConfig().normalConnections(), false);
       drawConnections(graphics, category, category.getConfig().exclusiveConnections(), true);
-      var hoveredNode = inside(mouseX, mouseY) ? nodeAt(mouseX, mouseY) : null;
       for (var node : nodes()) drawNode(graphics, category, node, node == hoveredNode);
+      graphics.pose().popPose();
     }
     graphics.disableScissor();
     drawDetails(graphics, category);
@@ -223,7 +327,9 @@ public final class TalentScreen extends Screen {
                   var tooltip = new ArrayList<Component>();
                   tooltip.add(definition.title());
                   tooltip.add(definition.description().copy().withStyle(ChatFormatting.GRAY));
-                  tooltip.add(stateText(category.getSkillState(hovered)));
+                  if (MagicTalents.nodes().contains(hovered.id()))
+                    tooltip.add(magicRequirement(hovered));
+                  tooltip.add(stateText(category, hovered));
                   graphics.renderComponentTooltip(font, tooltip, mouseX, mouseY);
                 });
     }
@@ -239,15 +345,25 @@ public final class TalentScreen extends Screen {
       var b = category.getConfig().skills().get(edge.skillBId());
       if (a == null || b == null || !page.accepts(a.id()) || !page.accepts(b.id())) continue;
       boolean unlocked =
-          category.getSkillState(a) == Skill.State.UNLOCKED
-              && category.getSkillState(b) == Skill.State.UNLOCKED;
+          state(category, a) == Skill.State.UNLOCKED && state(category, b) == Skill.State.UNLOCKED;
       int color = exclusive ? 0xffbd806d : unlocked ? GOLD : 0xff627b96;
-      line(graphics, nodeX(a), nodeY(a), nodeX(b), nodeY(b), color, exclusive);
+      boolean onPath =
+          !exclusive
+              && path != null
+              && path.edges().contains(new MagicTalentPath.Edge(a.id(), b.id()));
+      line(graphics, a.x(), a.y(), b.x(), b.y(), onPath ? ROUTE : color, exclusive, onPath);
     }
   }
 
   private static void line(
-      GuiGraphics graphics, int x1, int y1, int x2, int y2, int color, boolean dashed) {
+      GuiGraphics graphics,
+      int x1,
+      int y1,
+      int x2,
+      int y2,
+      int color,
+      boolean dashed,
+      boolean onPath) {
     int length = (int) Math.round(Math.hypot(x2 - x1, y2 - y1));
     graphics.pose().pushPose();
     graphics.pose().translate(x1, y1, 0);
@@ -258,8 +374,8 @@ public final class TalentScreen extends Screen {
         graphics.fill(step, 0, Math.min(length, step + 4), 1, color);
       }
     } else {
-      graphics.fill(0, -1, length, 2, 0xff111b29);
-      graphics.fill(0, 0, length, 1, color);
+      graphics.fill(0, onPath ? -2 : -1, length, onPath ? 3 : 2, 0xff111b29);
+      graphics.fill(0, onPath ? -1 : 0, length, onPath ? 2 : 1, color);
     }
     graphics.pose().popPose();
   }
@@ -268,19 +384,15 @@ public final class TalentScreen extends Screen {
       GuiGraphics graphics, ClientCategoryData category, ClientSkillConfig node, boolean hovered) {
     var definition = category.getConfig().getDefinitionById(node.definitionId()).orElse(null);
     if (definition == null) return;
-    int x = nodeX(node), y = nodeY(node);
-    int radius = Math.max(9, (int) (14 * camera.scale()));
-    Skill.State state = category.getSkillState(node);
-    boolean match =
-        !search.getValue().isBlank()
-            && definition
-                .title()
-                .getString()
-                .toLowerCase(Locale.ROOT)
-                .contains(search.getValue().toLowerCase(Locale.ROOT));
-    if (node.id().equals(selected) || match) {
-      graphics.fill(x - radius - 3, y - radius - 3, x + radius + 3, y + radius + 3, GOLD);
-      graphics.fill(x - radius - 2, y - radius - 2, x + radius + 2, y + radius + 2, 0xff111b29);
+    int x = node.x(), y = node.y();
+    int radius = TreeViewport.NODE_RADIUS;
+    Skill.State state = state(category, node);
+    boolean onPath = path != null && path.unpaid().contains(node.id());
+    if (node.id().equals(selected) || searchMatches.contains(node.id()) || onPath) {
+      int outer = TreeViewport.NODE_OUTER_RADIUS;
+      int color = onPath && !node.id().equals(selected) ? ROUTE : GOLD;
+      graphics.fill(x - outer, y - outer, x + outer, y + outer, color);
+      graphics.fill(x - outer + 1, y - outer + 1, x + outer - 1, y + outer - 1, 0xff111b29);
     }
     ResourceLocation frame =
         ResourceLocation.parse(
@@ -289,8 +401,7 @@ public final class TalentScreen extends Screen {
                 + ".png");
     graphics.blit(frame, x - radius, y - radius, radius * 2, radius * 2, 0, 0, 26, 26, 26, 26);
     graphics.pose().pushPose();
-    graphics.pose().translate(x - 8 * camera.scale(), y - 8 * camera.scale(), 0);
-    graphics.pose().scale((float) camera.scale(), (float) camera.scale(), 1);
+    graphics.pose().translate(x - 8, y - 8, 0);
     if (definition.icon() instanceof ClientIconConfig.ItemIconConfig item)
       graphics.renderItem(item.item(), 0, 0);
     else if (definition.icon() instanceof ClientIconConfig.TextureIconConfig texture)
@@ -308,14 +419,92 @@ public final class TalentScreen extends Screen {
                   net.minecraft.core.registries.BuiltInRegistries.MOB_EFFECT.wrapAsHolder(
                       effect.effect())));
     graphics.pose().popPose();
-    if (state == Skill.State.UNLOCKED)
-      graphics.drawString(font, "✓", x + radius - 5, y + radius - 7, GOLD, false);
+    if (state == Skill.State.UNLOCKED) {
+      graphics.pose().pushPose();
+      graphics.pose().translate(0, 0, 200);
+      graphics.drawString(font, "✓", x + 4, y + 3, GOLD, false);
+      graphics.pose().popPose();
+    }
     if (hovered)
       graphics.renderOutline(x - radius - 1, y - radius - 1, radius * 2 + 2, radius * 2 + 2, GOLD);
   }
 
-  private Component stateText(Skill.State state) {
-    return text("state." + state.name().toLowerCase(Locale.ROOT));
+  private Skill.State state(ClientCategoryData category, ClientSkillConfig node) {
+    Skill.State nativeState = category.getSkillState(node);
+    return nativeState != Skill.State.UNLOCKED
+            && (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel()
+                || missingPriorMastery(category, node) != null)
+        ? Skill.State.LOCKED
+        : nativeState;
+  }
+
+  private static String missingPriorMastery(ClientCategoryData category, ClientSkillConfig node) {
+    return MagicTalents.missingPriorMastery(
+        node.id(),
+        id -> {
+          var prior = category.getConfig().skills().get(id);
+          return prior != null && category.getSkillState(prior) == Skill.State.UNLOCKED;
+        });
+  }
+
+  private Component stateText(ClientCategoryData category, ClientSkillConfig node) {
+    Skill.State nativeState = category.getSkillState(node);
+    if (nativeState != Skill.State.UNLOCKED) {
+      if (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel())
+        return text("magic.level_locked");
+      String missing = missingPriorMastery(category, node);
+      if (missing != null) return SpellKnowledge.requiredMasteryMessage(missing);
+    }
+    return text("state." + nativeState.name().toLowerCase(Locale.ROOT));
+  }
+
+  private Component magicRequirement(ClientSkillConfig node) {
+    if (!AbilityClient.hasSnapshot())
+      return text("magic.required_level", MagicTalents.requiredLevel(node.id()));
+    return text(
+        "magic.requirement",
+        AbilityClient.snapshot().practiceLevel(),
+        MagicTalents.requiredLevel(node.id()));
+  }
+
+  private int magicProgress(GuiGraphics graphics, int x, int y) {
+    if (!AbilityClient.hasSnapshot())
+      return paragraph(graphics, text("magic.waiting"), x, y, MUTED);
+    var snapshot = AbilityClient.snapshot();
+    y = paragraph(graphics, text("magic.level", snapshot.practiceLevel()), x, y, GOLD);
+    y = paragraph(graphics, text("magic.total_xp", snapshot.practiceXp()), x, y + 3, MUTED);
+    return paragraph(
+        graphics,
+        snapshot.nextTalentXp() > 0
+            ? text(
+                "magic.next_talent", Math.max(0, snapshot.nextTalentXp() - snapshot.practiceXp()))
+            : text("magic.talent_cap"),
+        x,
+        y + 3,
+        MUTED);
+  }
+
+  private int pathDetails(GuiGraphics graphics, ClientCategoryData category, int x, int y) {
+    if (path == null) return paragraph(graphics, text("magic.path_unavailable"), x, y, MUTED);
+    if (path.unpaid().isEmpty()) return y;
+    y =
+        paragraph(
+            graphics,
+            text(
+                "magic.path_points",
+                path.cost(),
+                Math.max(0, path.cost() - category.getPointsLeft())),
+            x,
+            y,
+            ROUTE);
+    var requirement =
+        AbilityClient.hasSnapshot()
+            ? text(
+                "magic.path_practice",
+                path.practice(),
+                Math.max(0, path.practice() - AbilityClient.snapshot().practiceLevel()))
+            : text("magic.required_level", path.practice());
+    return paragraph(graphics, requirement, x, y + 3, MUTED);
   }
 
   private void drawDetails(GuiGraphics graphics, ClientCategoryData category) {
@@ -325,27 +514,37 @@ public final class TalentScreen extends Screen {
       return;
     }
     var node = selected == null ? null : category.getConfig().skills().get(selected);
-    if (node == null) {
-      graphics.drawWordWrap(font, text("select"), inspectorX() + 9, 105, 138, TEXT);
-      return;
-    }
-    var definition = category.getConfig().getDefinitionById(node.definitionId()).orElse(null);
-    if (definition == null) return;
     int x = inspectorX() + 9, y = 105 - (int) detailsScroll.offset();
     graphics.enableScissor(x, 105, x + 138, height - 65);
-    y = paragraph(graphics, definition.title(), x, y, GOLD);
-    y = paragraph(graphics, definition.description(), x, y + 4, TEXT);
-    y = paragraph(graphics, text("cost", definition.cost()), x, y + 6, MUTED);
-    y = paragraph(graphics, stateText(category.getSkillState(node)), x, y + 3, MUTED);
-    var exclusions =
-        category.getConfig().skillExclusiveNeighbors().getOrDefault(node.id(), List.of());
-    for (String id : exclusions) {
-      var other = category.getConfig().skills().get(id);
-      if (other != null) {
-        var otherDefinition =
-            category.getConfig().getDefinitionById(other.definitionId()).orElse(null);
-        if (otherDefinition == null) continue;
-        y = paragraph(graphics, text("excludes", otherDefinition.title()), x, y + 6, 0xffd49a83);
+    if (node == null) {
+      if (page == Page.MAGIC) {
+        y = magicProgress(graphics, x, y);
+        y = paragraph(graphics, text("magic.explanation"), x, y + 7, TEXT);
+      }
+      y = paragraph(graphics, text("select"), x, y + (page == Page.MAGIC ? 7 : 0), TEXT);
+    } else {
+      var definition = category.getConfig().getDefinitionById(node.definitionId()).orElse(null);
+      if (definition != null) {
+        y = paragraph(graphics, definition.title(), x, y, GOLD);
+        if (page == Page.MAGIC) y = pathDetails(graphics, category, x, y + 4);
+        y = paragraph(graphics, definition.description(), x, y + 4, TEXT);
+        y = paragraph(graphics, text("cost", definition.cost()), x, y + 6, MUTED);
+        y = paragraph(graphics, stateText(category, node), x, y + 3, MUTED);
+        if (page == Page.MAGIC) y = magicProgress(graphics, x, y + 8);
+        var exclusions =
+            category.getConfig().skillExclusiveNeighbors().getOrDefault(node.id(), List.of());
+        for (String id : exclusions) {
+          var other = category.getConfig().skills().get(id);
+          if (other != null) {
+            var otherDefinition =
+                category.getConfig().getDefinitionById(other.definitionId()).orElse(null);
+            if (otherDefinition == null) continue;
+            y =
+                paragraph(
+                    graphics, text("excludes", otherDefinition.title()), x, y + 6, 0xffd49a83);
+          }
+        }
+        learn.active = state(category, node) == Skill.State.AFFORDABLE;
       }
     }
     graphics.disableScissor();
@@ -355,7 +554,6 @@ public final class TalentScreen extends Screen {
       graphics.fill(width - 26, 105, width - 23, height - 65, 0xff111b29);
       graphics.fill(width - 26, top, width - 23, top + detailsScroll.thumbSize(), MUTED);
     }
-    learn.active = category.getSkillState(node) == Skill.State.AFFORDABLE;
   }
 
   private int paragraph(GuiGraphics graphics, Component component, int x, int y, int color) {
@@ -369,15 +567,18 @@ public final class TalentScreen extends Screen {
   private void purchase() {
     var category = category();
     if (category == null || selected == null || !learn.active) return;
+    var node = category.getConfig().skills().get(selected);
+    if (node == null || state(category, node) != Skill.State.AFFORDABLE) return;
     SkillsClientMod.getInstance()
         .getPacketSender()
         .send(new SkillClickOutPacket(category.getConfig().id(), selected));
   }
 
   private ClientSkillConfig nodeAt(double x, double y) {
-    int radius = Math.max(9, (int) (14 * camera.scale()));
+    double offsetX = x - 16 - canvasWidth() / 2.0;
+    double offsetY = y - 94 - canvasHeight() / 2.0;
     return nodes().reversed().stream()
-        .filter(node -> Math.abs(nodeX(node) - x) <= radius && Math.abs(nodeY(node) - y) <= radius)
+        .filter(node -> camera.hits(node.x(), node.y(), offsetX, offsetY))
         .findFirst()
         .orElse(null);
   }
@@ -475,16 +676,7 @@ public final class TalentScreen extends Screen {
       if (category != null) {
         var matches =
             nodes().stream()
-                .filter(
-                    node ->
-                        category
-                            .getConfig()
-                            .getDefinitionById(node.definitionId())
-                            .orElseThrow()
-                            .title()
-                            .getString()
-                            .toLowerCase(Locale.ROOT)
-                            .contains(search.getValue().toLowerCase(Locale.ROOT)))
+                .filter(node -> search.getValue().isBlank() || searchMatches.contains(node.id()))
                 .toList();
         if (!matches.isEmpty()) {
           int current = -1;
@@ -493,7 +685,7 @@ public final class TalentScreen extends Screen {
           }
           var node = matches.get((current + 1) % matches.size());
           selected = node.id();
-          camera.center(node.x(), node.y());
+          camera.focus(node.x(), node.y());
           detailsScroll.reset();
         }
       }

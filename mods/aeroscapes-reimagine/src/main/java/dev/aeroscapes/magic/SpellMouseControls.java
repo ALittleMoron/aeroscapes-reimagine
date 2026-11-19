@@ -2,14 +2,13 @@ package dev.aeroscapes.magic;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import com.yori3o.yo_hooks.common.util.interfaces.PlayerWithHookData;
+import dev.aeroscapes.magic.client.AbilityClient;
+import dev.aeroscapes.magic.client.AbilityWheel;
 import dev.ryanhcode.sable.mixinhelpers.camera.new_camera_types.SableCameraTypes;
 import dev.simulated_team.simulated.SimulatedClient;
 import dev.simulated_team.simulated.util.hold_interaction.HoldInteractionManager;
-import io.redspace.ironsspellbooks.api.spells.SpellData;
-import io.redspace.ironsspellbooks.gui.overlays.SpellWheelOverlay;
-import io.redspace.ironsspellbooks.network.casting.CastPacket;
-import io.redspace.ironsspellbooks.player.ClientMagicData;
 import net.minecraft.Util;
+import net.minecraft.client.KeyMapping;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -24,13 +23,24 @@ import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.RenderFrameEvent;
 import net.neoforged.neoforge.client.event.ScreenEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
 import org.lwjgl.glfw.GLFW;
 import team.creative.littletiles.api.common.tool.ILittleTool;
 
 @EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
 public final class SpellMouseControls {
   private SpellMouseControls() {}
+
+  public static boolean canUseAbilityInput() {
+    var game = Minecraft.getInstance();
+    return Input.canUse(game) && (game.mouseHandler.isMouseGrabbed() || AbilityWheel.active());
+  }
+
+  public static boolean canUseAbilityBinding(KeyMapping binding) {
+    return Input.press == null
+        && canUseAbilityInput()
+        && !(binding.getKey().equals(Input.MIDDLE_BUTTON)
+            && (Screen.hasControlDown() || Input.creativePickOwnsButton(Minecraft.getInstance())));
+  }
 
   @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
   public static void mouseButton(InputEvent.MouseButton.Pre event) {
@@ -63,7 +73,7 @@ public final class SpellMouseControls {
     private static final SpellMouseGesture GESTURE = new SpellMouseGesture();
     private static Press press;
 
-    private record Press(LocalPlayer player, ClientLevel level, SpellData selected) {}
+    private record Press(LocalPlayer player, ClientLevel level, String selected) {}
 
     private static void button(Minecraft game, InputEvent.MouseButton.Pre event) {
       if (event.getAction() == GLFW.GLFW_RELEASE && press != null) {
@@ -71,15 +81,14 @@ public final class SpellMouseControls {
           cancel(game, true);
           return;
         }
-        SpellData initial = press.selected();
+        String initial = press.selected();
         press = null;
         event.setCanceled(true);
         switch (GESTURE.release(Util.getMillis())) {
           case CAST -> {
-            if (initial != SpellData.EMPTY && initial.equals(selectedSpell()))
-              PacketDistributor.sendToServer(new CastPacket());
+            if (!initial.isEmpty() && initial.equals(selectedSpell())) AbilityClient.cast();
           }
-          case SELECT -> SpellWheelOverlay.instance.close();
+          case SELECT -> AbilityWheel.release();
           case NONE -> {}
         }
         return;
@@ -88,10 +97,9 @@ public final class SpellMouseControls {
           || event.getAction() != GLFW.GLFW_PRESS
           || press != null
           || !game.mouseHandler.isMouseGrabbed()
-          || !canUse(game)
+          || !canUseMiddle(game)
           || creativePickOwnsButton(game)
-          || SpellWheelOverlay.instance.active
-          || ClientMagicData.getSpellSelectionManager().getSpellCount() == 0
+          || AbilityWheel.active()
           || anotherBindingOwnsButton(game)) return;
       press = new Press(game.player, game.level, selectedSpell());
       GESTURE.press(Util.getMillis());
@@ -108,24 +116,24 @@ public final class SpellMouseControls {
           && !game.options.hideGui
           && GLFW.glfwGetMouseButton(game.getWindow().getWindow(), GLFW.GLFW_MOUSE_BUTTON_MIDDLE)
               == GLFW.GLFW_PRESS) {
-        SpellWheelOverlay.instance.open();
-        if (SpellWheelOverlay.instance.active) GESTURE.wheelOpened();
+        AbilityWheel.open();
+        if (AbilityWheel.active()) GESTURE.wheelOpened();
       }
     }
 
-    private static SpellData selectedSpell() {
-      return ClientMagicData.getSpellSelectionManager().getSelectedSpellData();
+    private static String selectedSpell() {
+      return AbilityClient.slot(AbilityClient.snapshot().selected());
     }
 
     private static boolean canContinue(Minecraft game) {
       return game.player == press.player()
           && game.level == press.level()
-          && canUse(game)
+          && canUseMiddle(game)
           && (GESTURE.ownsWheel()
-              ? SpellWheelOverlay.instance.active
+              ? AbilityWheel.active()
                   && !game.options.hideGui
                   && !game.mouseHandler.isMouseGrabbed()
-              : game.mouseHandler.isMouseGrabbed() && !SpellWheelOverlay.instance.active);
+              : game.mouseHandler.isMouseGrabbed() && !AbilityWheel.active());
     }
 
     private static boolean canUse(Minecraft game) {
@@ -140,8 +148,11 @@ public final class SpellMouseControls {
           && !player.isSpectator()
           && !player.isPassenger()
           && !player.isUsingItem()
-          && !Screen.hasControlDown()
           && !toolOwnsInput(game, player);
+    }
+
+    private static boolean canUseMiddle(Minecraft game) {
+      return canUse(game) && !Screen.hasControlDown();
     }
 
     private static boolean creativePickOwnsButton(Minecraft game) {
@@ -180,18 +191,11 @@ public final class SpellMouseControls {
     }
 
     private static void cancel(Minecraft game, boolean restoreMouse) {
-      boolean owned = GESTURE.ownsWheel() && SpellWheelOverlay.instance.active;
+      boolean owned = GESTURE.ownsWheel() && AbilityWheel.active();
       press = null;
       GESTURE.cancel();
       if (!owned) return;
-      // The native close commits the selection and may dismiss an opening screen.
-      SpellWheelOverlay.instance.active = false;
-      if (restoreMouse
-          && game.isWindowActive()
-          && game.player != null
-          && game.level != null
-          && game.screen == null
-          && game.getOverlay() == null) game.mouseHandler.grabMouse();
+      AbilityWheel.cancel(restoreMouse);
     }
   }
 }

@@ -1,0 +1,6 @@
+{
+  "puffish_skills.aeroscapes_reimagine.combat.school_depth.title": "%1$s: mastery %2$s/5",
+  "puffish_skills.aeroscapes_reimagine.combat.school_depth.description": "Scrolls can raise this school's spells to %s%% of each spell's maximum rank, rounded up. Learn individual spell nodes to gain spells.",
+  "puffish_skills.aeroscapes_reimagine.combat.spell.description": "Grants rank 1. Requires %1$s mastery %2$s/5. Study higher-rank scrolls within your school limit. Maximum rank: %3$s. Prepare the spell and equip a spellbook to cast.",
+  "puffish_skills.aeroscapes_reimagine.combat.spell.discovery_description": "Grants rank 1. First use %4$s to discover this spell. Requires %1$s mastery %2$s/5. Study higher-rank scrolls within your school limit. Maximum rank: %3$s. Prepare the spell and equip a spellbook to cast."
+}

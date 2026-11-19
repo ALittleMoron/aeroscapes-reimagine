@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.magic",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "mixins": [
+    "SpellKnowledgeMixin",
+    "ScrollLevelMixin",
+    "ScrollCompletionMixin",
+    "MagicPowerMixin",
+    "MagicCastTimeMixin",
+    "MagicManaMixin",
+    "PaidSpellTalentMixin",
+    "MagicChannelManaMixin",
+    "FireballAreaMixin",
+    "BlizzardAreaMixin",
+    "SpellFireLootMixin",
+    "BookFocusTooltipMixin",
+    "InscriptionStudyMixin",
+    "travel.PortalSpellAccess",
+    "travel.PocketDimensionManagerAccess",
+    "travel.AngelWingsSpellMixin",
+    "travel.PortalSpellMixin",
+    "travel.PortalEntityMixin",
+    "travel.PortalManagerMixin"
+  ],
+  "client": [ "NativeAbilityControlsMixin", "SpellTooltipCostsMixin" ],
+  "injectors": { "defaultRequire": 1 }
+}

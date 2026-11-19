@@ -4,19 +4,38 @@ description: Practice skills, talent trees, equipment ranks, reforging and plans
 status: partial
 ---
 
-Skills grow as you use them and earn points for two talent budgets. Crafted and looted gear can roll quality bonuses, and the anvil can replace the entire rank while keeping ordinary enchantments. Races, classes, professions and the intended action-combat system are planned additions.
+Skills grow as you use them and earn points for two talent budgets. Learned spells share eight personal preparation slots. Crafted and looted gear can roll quality bonuses, and the anvil can replace the entire rank while keeping ordinary enchantments. Races, classes, professions and the intended action-combat system are planned additions.
 
 ## Skills and talents
 
 [Project MMO](https://modrinth.com/mod/project-mmo) tracks nine skills that grow through your own work: Melee, Ranged and Magic for combat, and Gathering, Crafting, Smithing, Building, Farming and Cooking for peaceful activities. Each skill reaches level 50, and every level takes a little more practice than the previous one. Death keeps all levels. Skills never forbid using an item, block or tool.
 
-Hits with melee weapons train Melee, projectiles train Ranged and every spell cast trains Magic. Mining stone, cutting wood and digging train Gathering. Crafting trains Crafting, while crafting food trains Cooking instead. Taking finished items out of a furnace trains Cooking for food and Smithing for everything else, such as metal or glass; a furnace fed by hoppers trains nobody. Placing blocks trains Building, and growing crops, breeding animals and fishing train Farming. Ordinary mobs, mob farms where you land the blows and repeated cheap crafts always give some experience, without daily limits.
+Hits with melee weapons train Melee and projectiles train Ranged. Magic practice credits each native casting pulse with half its actual mana cost after discounts, rounded down with a minimum of one XP. Scroll pulses use their original mana cost even though the scroll is consumed instead of mana; a free recast gives one XP. Continuous spells train while you channel them. Ordinary repeated or safe practice stays positive, without fatigue, daily limits or source caps.
 
-Every five levels of an individual skill give one talent point: Melee level 4 gives none, level 5 gives one and level 10 gives two. Melee, Ranged and Magic fill one shared **combat budget**; the six peaceful skills fill a separate **profession budget**. Open the inventory and press **Talents**, below the nutrients button. Combat, Magic and Professions have separate named pages; spending a point on Magic also reduces the points available on Combat. Select a node to read its effect and price, then press **Learn**. Drag the tree to move, use the wheel to zoom, or press **Center** to fit the whole page. Search highlights matching talents; Enter selects and centers the next match. Some talents exclude each other, such as Onslaught and Firm footing. Dashed links mark these alternatives, and the details name the other choice. Every character can open every branch. Closing Talents or Nutrients returns to the ordinary inventory.
+Mining stone, cutting wood and digging train Gathering. Crafting trains Crafting, while crafting food trains Cooking instead. Taking finished items out of a furnace trains Cooking for food and Smithing for everything else, such as metal or glass; a furnace fed by hoppers trains nobody. Placing blocks trains Building, and growing crops, breeding animals and fishing train Farming. Ordinary mobs, mob farms where you land the blows and repeated cheap crafts always give some experience.
+
+Melee, Ranged and Magic fill one shared **combat budget**, capped at 136 points for the current catalogue. Melee and Ranged still give one point per five skill levels. Magic gives one starting point, then earns points from accumulated practice independently of its level milestones:
+
+| Credited magic XP | Interval between points | Total magic-earned points at the end of the stage |
+| ----------------- | ----------------------: | ------------------------------------------------: |
+| 0 to 500          |                  100 XP |                   6, including the starting point |
+| 500 to 5,000      |                  500 XP |                                                15 |
+| 5,000 to 20,000   |                1,500 XP |                                                25 |
+| Above 20,000      |                3,000 XP |                                 136 at 353,000 XP |
+
+Magic practice continues earning points at the same rate after level 50. It can fund all 131 magic talents and five compatible physical talents. The six peaceful skills earn one point per five levels in a separate profession pool. Its current cap is two points. The first buys the gathering root, and the second buys either speed or fortune. Skill levels are retained after reaching the cap.
+
+Magic levels now follow their own practice curve; the other skills keep their previous curves. Mastery readiness and point rewards use the same credited magic XP. For example, Magic level 15 requires 4,301 XP, level 30 requires 21,101, level 45 requires 57,701 and level 50 requires 72,701. Reaching a mastery level opens its prerequisite, while buying the talent still costs a point.
+
+Open the inventory and press **Talents**, below the nutrients button. Combat, Magic and Professions have separate named pages; spending a point on Magic also reduces the points available on Combat. Select a node to read its effect and price, then press **Learn**. Drag the tree to move, use the wheel to zoom, or press **Center** to fit the whole page. Search highlights matching talents; Enter selects and centers the next match. Some talents exclude each other, such as Onslaught and Firm footing. Dashed links mark these alternatives, and the details name the other choice. Every character can open every branch. Closing Talents or Nutrients returns to the ordinary inventory.
 
 To check your levels, open the inventory and click the **Skills** button with gold bars, above the nutrients button between your character and the crafting grid: a panel attached to the left side of the inventory, where the recipe book also opens, lists combat and profession skills with their progress and a search field; scroll it with the mouse wheel or drag its scrollbar, and press the button again to hide it. The Skills, Nutrients and Talents buttons are also available with the accessory slots open. Skills and accessories replace each other; closing one leaves the other closed. **P** opens the Project MMO glossary for the player, the block or the creature you look at. The level list on the game screen is hidden by default so it does not cover the minimap; assign _Toggle Skill List_ in Controls to show it.
 
-The first pages are small: melee and protection under Combat, a separate Magic page and a gathering branch under Professions. Class, profession and ranged branches will arrive with classes and professions.
+Combat currently offers melee and protection, while Professions has a gathering branch. Magic is one tree with a common introductory repertoire and four functional directions covering all 111 spells. Its mastery gates depend on Magic practice, while ordinary bundles, individual spell unlocks and useful passive branches share 131 one-point nodes. The [magic guide](../magic/) explains learning, scroll ranks and special discoveries. Class, profession and ranged branches will arrive with classes and professions.
+
+## Prepared abilities
+
+Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells in eight shared slots, including during combat. Passive talents do not use these slots. Tap the middle mouse button to cast the selected spell, or hold it and release over a slot in the wheel to select that slot. Casting needs an equipped spell book focus and keeps the spell's costs and cooldown. The [magic guide](../magic/#your-first-spell) covers controls, books and scroll study. Personal ranks and preparation survive death, relogging and dimension changes.
 
 ## Equipment quality and reforging
 
@@ -30,7 +49,7 @@ To compare possible results, open the item in EMI and select **Reforging**. The 
 
 The autoloader crossbow takes an iron ingot. Its charge bonuses affect automatic loading: click to start, sneak and click to cancel, and fire to start loading the next bolt if you still have ammunition. Reforging keeps an already loaded bolt. Reforged weapons with built-in spells keep their spells and levels.
 
-Ranked spell books and rings provide passive bonuses while equipped in their respective accessory slots. Reforging preserves the spells written in the book.
+Ranked spell books and rings provide passive bonuses while equipped in their respective accessory slots. Books keep their quality and reforging bonuses as casting focuses; learned spells belong to the character, and changing books does not grant or remove that knowledge.
 
 Fine and higher grappling hooks reach farther, can avoid wear when they catch a block, and use less hunger when you cast, reel up, or jump off the line. The extra range stacks with Long Reach. Some ranks also favor ascent or descent. A legendary hook can dampen sideways sway while you sneak on an anchored line.
 
@@ -60,9 +79,9 @@ As players choose their race, class, profession and starting abilities, the char
 
 Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, with the same prerequisites and point costs regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
 
-Combat and magic branches share the combat talent points, so investing across branches combines styles while leaving fewer points for advanced talents in any one specialty. Profession branches share the separate profession talent points; as more professions arrive, these points will not be enough to complete every profession.
+Future classes and subclasses will share the combat pool with magic. Professions share their own pool. Each pool’s cap will grow with the cost of the largest compatible set of talents it can buy.
 
-Combat and peaceful spells, martial techniques and active racial abilities will share one panel with a limited set of slots and dedicated slot controls. Players will be able to clear and reassign slots even during combat. An on-screen display of assignments is under consideration. We are also considering sets players can save, edit, delete and switch between quickly.
+The existing eight-slot preparation panel will also hold martial techniques and active racial abilities as they arrive, alongside combat and peaceful spells. Saved sets that players can edit, delete and switch between quickly remain under consideration.
 
 Talent redistribution is planned before `1.0.0`. It will free up the points in the affected branches and preserve earned skill progress and other allocations. Ordinary redistribution will carry a penalty. A rare item found in exploration chests will allow changes to race, main class or starting profession.
 

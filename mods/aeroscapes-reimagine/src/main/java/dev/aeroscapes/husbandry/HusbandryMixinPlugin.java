@@ -53,6 +53,9 @@ public final class HusbandryMixinPlugin implements IMixinConfigPlugin {
 
   @Override
   public void postApply(String target, ClassNode node, String mixin, IMixinInfo info) {
+    if (mixin.endsWith("HusbandryMergedLanguageMixin")
+        && node.name.equals("net/minecraft/world/entity/LivingEntity"))
+      HusbandryLootTransformer.patch(node);
     if (!mixin.endsWith("AnimalCareClockMixin") && !mixin.endsWith("HusbandryMergedLanguageMixin"))
       return;
     // All mixins for this target have completed their merge and injection passes.

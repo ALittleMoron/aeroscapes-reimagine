@@ -29,7 +29,16 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   static boolean shouldApplyForVersions(
       String mixinClassName, Function<String, String> versionLookup) {
     Map<String, String> versions;
-    if (mixinClassName.startsWith("dev.aeroscapes.mixin.sky.")) {
+    if (mixinClassName.startsWith("dev.aeroscapes.mixin.magic.")) {
+      versions =
+          Map.of(
+              "irons_spellbooks",
+              "1.21.1-3.16.3",
+              "puffish_skills",
+              "0.19.2",
+              "neoforge",
+              "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.sky.")) {
       versions = Map.of("skywhales", "0.1.9", "sable", "2.0.6", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("TooltipScrollBoundaryMixin")) {
       versions = Map.of("smart_tooltip_scroll", "1.1.1+1.21.1", "neoforge", "21.1.244");
@@ -352,7 +361,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("puzzle", "2.3.0", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("SkillsScreenAccessor")) {
       versions = Map.of("puffish_skills", "0.19.2", "neoforge", "21.1.244");
-    } else if (mixinClassName.endsWith("ProjectMmoAdminDataMixin")) {
+    } else if (mixinClassName.endsWith("ProjectMmoAdminDataMixin")
+        || mixinClassName.endsWith("MagicTalentGateMixin")) {
       versions = Map.of("pmmo", "2.10.47", "puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.")) {
       versions = Map.of("pmmo", "2.10.47", "neoforge", "21.1.244");

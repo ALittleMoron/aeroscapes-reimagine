@@ -4,6 +4,33 @@ description: Version history.
 status: available
 ---
 
+## 0.6.2
+
+- Mastery paths now have one to three upgrades per stretch. Selecting a talent highlights the route and shows its remaining point and practice requirements.
+- Guardian Aid refunds mana for healing a protected ally. Binding Pact refunds mana when your summon damages a target held by your roots.
+- Each point cap matches its most expensive compatible allocation. Combat and magic share 136 points, and professions have two.
+- Added original icons for combat, magic and profession talents. The magic page opens at its root and spell search finds the mastery that teaches a bundled spell.
+- Corrected the next-point display when weapon and magic practice together fill the combat budget.
+- Fixed an Animal Husbandry cow-loot crash and cooked direct beef and golden beef rewards on burning or lethal magical-fire deaths.
+- Interrupted scroll channels consume one scroll if they have already produced an effect.
+- The preparation catalogue defaults to learned spells, with a toggle for the full list, explicit unavailable states and assignment-rejection messages.
+- Reduced the prepared-spell HUD to an icon and name at the bottom left; the empty-slot message disappears after five seconds.
+- Fixed overlapping talent frames and inaccurate selection when zooming out; centering now fits the complete tree.
+- Fire spells now trigger cooked death drops even on a lethal first hit. Added missing cooking to 34 creature loot tables and repaired fire-source and enchantment conditions for ash and tallow.
+- Rebuilt magic as one 131-node tree with four functional directions: eight starter spells, 33 later bundled spells and 70 individual unlocks cover all 111 spells, with useful improvements between mastery gates.
+- Added an independent magic practice curve and staged point rewards up to the shared 136-point combat cap; magic practice alone can fund the complete tree and continues earning points after level 50.
+- Magic XP now follows actual discounted mana paid per casting pulse, original mana cost for scroll pulses and one XP for a free recast, without repetition fatigue or source caps.
+- Added eight shared preparation slots with manual assignment, clearing and rearrangement from the inventory and Curios, a selection wheel and optional unbound cast, wheel and slot-selection keys.
+- Learned spells start at rank 1; inscription-table study consumes one higher-rank scroll only when it improves personal knowledge within the direction's mastery limit. Too-high permanent study remains rejected intact, without downranking or stored future ranks.
+- Consumable scrolls need no personal talent, mastery, rank, knowledge, discovery, focus or preparation; their native source, targeting and travel restrictions remain, and they do not teach permanent knowledge.
+- Refunded former magic-tree allocations once while preserving physical and profession talents, saved personal spell ranks and preparation; permanent use requires relearning the new unlocks.
+- Enabled Recall scrolls and fixed one-scroll consumption when a successful dimension-changing cast clears its native casting state.
+- Spell books are required equipped focuses that keep their bonuses while personal preparation replaces book capacity. Knowledge and slots persist through death, relogging and dimension changes; earlier book inscriptions do not grant personal knowledge or talent points.
+- Kept native Eldritch Manuscript discovery requirements alongside the seven Eldritch spell nodes.
+- Enabled Angel Wings as temporary elytra-style flight, capped at 50 seconds after bonuses with at least 120 seconds between activations.
+- Enabled temporary Portal pairs within one dimension and 128 blocks, lasting 20, 40 or 60 seconds by rank with a 60-second cap and at least 180 seconds between completed pairs; disabled the Portal spell's permanent frame links.
+- Included the shader settings and combat talent data required by quality checks in the owned mod's source archive so it can build outside the repository.
+
 ## 0.6.1
 
 - Added Project MMO practice skills: Melee, Ranged, Magic, Gathering, Crafting, Smithing, Building, Farming and Cooking grow through personal work up to level 50, without item restrictions or level loss on death.

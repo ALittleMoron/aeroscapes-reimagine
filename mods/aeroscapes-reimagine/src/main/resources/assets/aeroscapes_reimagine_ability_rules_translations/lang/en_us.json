@@ -1,0 +1,21 @@
+{
+  "aeroscapes_reimagine.abilities.reason.disabled": "This spell is unavailable in this pack.",
+  "aeroscapes_reimagine.abilities.reason.state": "You cannot cast while dead or spectating.",
+  "aeroscapes_reimagine.abilities.reason.unlearned": "Learn this spell's talent node first.",
+  "aeroscapes_reimagine.abilities.reason.mastery": "Your mastery of this direction does not support this spell level yet.",
+  "aeroscapes_reimagine.abilities.reason.discovery": "Discover this spell with an Eldritch Manuscript first.",
+  "aeroscapes_reimagine.abilities.reason.focus": "Equip a spellbook in the spellbook accessory slot.",
+  "aeroscapes_reimagine.abilities.reason.unprepared": "Prepare this spell in your ability panel first.",
+  "aeroscapes_reimagine.abilities.reason.cooldown": "This ability is still recharging.",
+  "aeroscapes_reimagine.abilities.reason.mana": "You need more mana for this spell.",
+  "aeroscapes_reimagine.abilities.reason.empty": "Select a prepared ability first.",
+  "aeroscapes_reimagine.abilities.reason.scroll": "Hold the actual scroll until its cast finishes.",
+  "aeroscapes_reimagine.abilities.reason.no_improvement": "You already know this spell at the same or a higher level. The scroll is kept.",
+  "aeroscapes_reimagine.abilities.studied": "Studied %1$s, level %2$s.",
+  "aeroscapes_reimagine.abilities.scroll_hint": "Cast once without talent requirements, or improve an unlocked spell at an inscription table. Native scroll restrictions still apply.",
+  "aeroscapes_reimagine.abilities.book_hint": "A focus for the eight abilities you prepare in your inventory.",
+  "message.aeroscapes_reimagine.travel_cooldown": "This travel spell is still recharging. Changing equipment or using a scroll cannot reset it.",
+  "message.aeroscapes_reimagine.portal_frame_disabled": "Portal creates temporary local pairs. Permanent portal frames are disabled.",
+  "message.aeroscapes_reimagine.portal_missing_endpoint": "The first portal has expired or is no longer loaded. Place a new pair after its preparation ends.",
+  "message.aeroscapes_reimagine.portal_local_only": "Place both portals in the same dimension, no more than 128 blocks apart."
+}

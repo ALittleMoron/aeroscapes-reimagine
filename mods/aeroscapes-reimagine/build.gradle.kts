@@ -965,6 +965,78 @@ val spellMouseGestureTest =
     mainClass = "dev.aeroscapes.magic.SpellMouseGestureTest"
   }
 
+val preparationTest =
+  tasks.register<JavaExec>("preparationTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.PreparationTest"
+  }
+
+val abilityWheelGeometryTest =
+  tasks.register<JavaExec>("abilityWheelGeometryTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.client.AbilityWheelGeometryTest"
+  }
+
+val travelMagicPolicyTest =
+  tasks.register<JavaExec>("travelMagicPolicyTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.travel.TravelMagicPolicyTest"
+  }
+
+val abilityInputPressesTest =
+  tasks.register<JavaExec>("abilityInputPressesTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.client.AbilityInputPressesTest"
+  }
+
+val abilityHudSelectionTest =
+  tasks.register<JavaExec>("abilityHudSelectionTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.client.AbilityHudSelectionTest"
+  }
+
+val abilityCatalogueTest =
+  tasks.register<JavaExec>("abilityCatalogueTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.client.AbilityCatalogueTest"
+  }
+
+val husbandryLootTransformerTest =
+  tasks.register<JavaExec>("husbandryLootTransformerTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.husbandry.HusbandryLootTransformerTest"
+  }
+
+val magicTalentsTest =
+  tasks.register<JavaExec>("magicTalentsTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.MagicTalentsTest"
+  }
+
+val magicPracticeProgressTest =
+  tasks.register<JavaExec>("magicPracticeProgressTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.magic.MagicPracticeProgressTest"
+  }
+
 tasks.register<JavaExec>("generateEquipmentModels") {
   group = "build"
   val minecraftResources =
@@ -1015,6 +1087,15 @@ tasks.check {
     seatedRiderAnimationTest,
     hookHangMathTest,
     spellMouseGestureTest,
+    preparationTest,
+    abilityWheelGeometryTest,
+    abilityInputPressesTest,
+    abilityHudSelectionTest,
+    abilityCatalogueTest,
+    magicTalentsTest,
+    husbandryLootTransformerTest,
+    magicPracticeProgressTest,
+    travelMagicPolicyTest,
     progressionViewTest,
     policyTest,
     islandLayoutTest,

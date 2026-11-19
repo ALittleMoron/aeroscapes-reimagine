@@ -30,6 +30,11 @@ ROD_TEXTURE = (
     "pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets/"
     "tide/textures/item/equipment/stone_fishing_rod.png"
 )
+SHADER_PIN = "pack/shaderpacks/example.pw.toml"
+MAGIC_GRAPH = (
+    "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/"
+    "aeroscapes_reimagine/puffish_skills/categories/combat/skills.json"
+)
 
 
 @pytest.fixture
@@ -58,6 +63,8 @@ def source_project(tmp_path: Path) -> Project:
         MAP_PROFILE: b'{"itemSpecific":{}}',
         HOOK_HANDLE: b'{"elements":[]}',
         ROD_TEXTURE: b"owned pixels",
+        SHADER_PIN: b'filename = "example.zip"\n',
+        MAGIC_GRAPH: b'{"magic_mastery_1":{}}',
         "pack/resourcepacks/unrelated-provider.zip": b"not an owned build input",
         "metadata/worldgen_adoption.json": json.dumps({"jar": "mods/owned.jar"}).encode(),
         "metadata/runtime_data_patches.json": b'{"patches":[]}',
@@ -96,6 +103,7 @@ def test_source_archive_is_deterministic_and_contains_editable_build_inputs(
         )
         assert archive.read("metadata/runtime_data_patches.json") == b'{"patches":[]}'
         assert archive.read("metadata/native_template_upgrades.json") == b'{"templates":[]}'
+        assert archive.read(MAGIC_GRAPH) == b'{"magic_mastery_1":{}}'
         assert not any(
             "secret" in name or name.endswith(("owned.jar", "unrelated-provider.zip"))
             for name in archive.namelist()
@@ -134,6 +142,7 @@ def test_extracted_sources_preserve_pack_inputs_at_the_build_relative_paths(
     assert (refined / "tide/textures/item/equipment/stone_fishing_rod.png").read_bytes() == (
         b"owned pixels"
     )
+    assert (mod_project / "../.." / SHADER_PIN).read_bytes() == b'filename = "example.zip"\n'
     manifest = json.loads((destination / "SOURCE-MANIFEST.json").read_bytes())
     for name, checksum in manifest["files"].items():
         assert hashlib.sha256((destination / name).read_bytes()).hexdigest() == checksum
@@ -147,6 +156,8 @@ def test_extracted_sources_preserve_pack_inputs_at_the_build_relative_paths(
         "pack/licenses/THIRD-PARTY-NOTICES.txt",
         MAP_PROFILE,
         ROD_TEXTURE,
+        SHADER_PIN,
+        MAGIC_GRAPH,
         "binary",
         "archive",
         "missing",

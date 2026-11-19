@@ -1,0 +1,242 @@
+[
+  {
+    "table": "hybrid_aquatic:entities/basking_shark",
+    "entity": "hybrid_aquatic:basking_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/bull_shark",
+    "entity": "hybrid_aquatic:bull_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/dugong",
+    "entity": "hybrid_aquatic:dugong",
+    "cooking": {
+      "hybrid_aquatic:sirenian_beef": "hybrid_aquatic:sirenian_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/fangtooth",
+    "entity": "hybrid_aquatic:fangtooth",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_meat": "hybrid_aquatic:cooked_fish_meat"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/frilled_shark",
+    "entity": "hybrid_aquatic:frilled_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/goblin_shark",
+    "entity": "hybrid_aquatic:goblin_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/great_white_shark",
+    "entity": "hybrid_aquatic:great_white_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/hammerhead_shark",
+    "entity": "hybrid_aquatic:hammerhead_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/hatchetfish",
+    "entity": "hybrid_aquatic:hatchetfish",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_meat": "hybrid_aquatic:cooked_fish_meat"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/hound_shark",
+    "entity": "hybrid_aquatic:hound_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_meat": "hybrid_aquatic:cooked_fish_meat"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/karkinos",
+    "entity": "hybrid_aquatic:karkinos",
+    "cooking": {
+      "hybrid_aquatic:raw_crab": "hybrid_aquatic:cooked_crab"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/lantern_shark",
+    "entity": "hybrid_aquatic:lantern_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_meat": "hybrid_aquatic:cooked_fish_meat"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/manatee",
+    "entity": "hybrid_aquatic:manatee",
+    "cooking": {
+      "hybrid_aquatic:sirenian_beef": "hybrid_aquatic:sirenian_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/sand_tiger_shark",
+    "entity": "hybrid_aquatic:sand_tiger_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/shell_beast",
+    "entity": "hybrid_aquatic:shell_beast",
+    "cooking": {
+      "hybrid_aquatic:raw_tentacle": "hybrid_aquatic:cooked_tentacle"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/shiner",
+    "entity": "hybrid_aquatic:shiner",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_meat": "hybrid_aquatic:cooked_fish_meat"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/sixgill_shark",
+    "entity": "hybrid_aquatic:sixgill_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/sleeper_shark",
+    "entity": "hybrid_aquatic:sleeper_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/thresher_shark",
+    "entity": "hybrid_aquatic:thresher_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/viperfish",
+    "entity": "hybrid_aquatic:viperfish",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_meat": "hybrid_aquatic:cooked_fish_meat"
+    }
+  },
+  {
+    "table": "hybrid_aquatic:entities/whale_shark",
+    "entity": "hybrid_aquatic:whale_shark",
+    "cooking": {
+      "hybrid_aquatic:raw_fish_steak": "hybrid_aquatic:cooked_fish_steak"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/albatross",
+    "entity": "hybrid_birds:albatross",
+    "cooking": {
+      "minecraft:cod": "minecraft:cooked_cod"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/duck",
+    "entity": "hybrid_birds:duck",
+    "cooking": {
+      "hybrid_birds:duck": "hybrid_birds:cooked_duck"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/goose",
+    "entity": "hybrid_birds:goose",
+    "cooking": {
+      "hybrid_birds:goose": "hybrid_birds:cooked_goose"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/guinea_fowl",
+    "entity": "hybrid_birds:guinea_fowl",
+    "cooking": {
+      "minecraft:chicken": "minecraft:cooked_chicken"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/pelican",
+    "entity": "hybrid_birds:pelican",
+    "cooking": {
+      "minecraft:cod": "minecraft:cooked_cod"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/puffin",
+    "entity": "hybrid_birds:puffin",
+    "cooking": {
+      "hybrid_birds:puffin": "hybrid_birds:cooked_puffin"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/rooster",
+    "entity": "hybrid_birds:rooster",
+    "cooking": {
+      "minecraft:chicken": "minecraft:cooked_chicken"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/seagull",
+    "entity": "hybrid_birds:seagull",
+    "cooking": {
+      "minecraft:cod": "minecraft:cooked_cod"
+    }
+  },
+  {
+    "table": "hybrid_birds:entities/turkey",
+    "entity": "hybrid_birds:turkey",
+    "cooking": {
+      "hybrid_birds:turkey": "hybrid_birds:cooked_turkey"
+    }
+  },
+  {
+    "table": "minecraft:entities/tropical_fish",
+    "entity": "minecraft:tropical_fish",
+    "cooking": {
+      "minecraft:tropical_fish": "createfood:cooked_tropical_fish"
+    }
+  },
+  {
+    "table": "naturalist:entities/elephant",
+    "entity": "naturalist:elephant",
+    "cooking": {
+      "naturalist:bushmeat": "naturalist:cooked_bushmeat"
+    }
+  },
+  {
+    "table": "naturalist:entities/rhino",
+    "entity": "naturalist:rhino",
+    "cooking": {
+      "naturalist:bushmeat": "naturalist:cooked_bushmeat"
+    }
+  },
+  {
+    "table": "naturalist:entities/whale",
+    "entity": "naturalist:whale",
+    "cooking": {
+      "minecraft:cod": "minecraft:cooked_cod",
+      "minecraft:salmon": "minecraft:cooked_salmon",
+      "minecraft:tropical_fish": "createfood:cooked_tropical_fish"
+    }
+  }
+]

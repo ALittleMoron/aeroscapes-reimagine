@@ -140,6 +140,30 @@
       "version_id": "1FDmpHXg",
       "filename": "celestia-neoforge-1.21.1-1.2.4.jar",
       "sha512": "ba5d80fa5ceb71a7255c94be2e4b306b2b3f9f45a331cf94885ed7764d092091e2a867538c66bc929bab8f091fbbff4257c4d22db20748fbff2430fd721aa864"
+    },
+    {
+      "project_id": "HH4FjUqN",
+      "version_id": "jdOU7Pzu",
+      "filename": "hybrid_aquatic-neoforge-1.21.1-1.7.4.jar",
+      "sha512": "c71f952db5416b019007c71175c151c443a1724acce20e1a0ed7be9e4c88a68061b5cf18d57625414941928e5a21ac1f141ca922cc45ff627ecad9039e5f2a2b"
+    },
+    {
+      "project_id": "die1AF7i",
+      "version_id": "1ki6UyqV",
+      "filename": "tide-neoforge-1.21.1-2.1.1.jar",
+      "sha512": "a6ee50e7b1a31e3d12641827ada1816da08c6185ca6447a23c7f90bf4964c022c8dafd8d9df865b4c2368365b21114d326bd5eabde1c76392123d3e9b4b6111f"
+    },
+    {
+      "project_id": "AtjxBimt",
+      "version_id": "n3NgrJOg",
+      "filename": "Immersive-weathering-V1.0.4-neoforge-beta.jar",
+      "sha512": "a2a7ebd8a0d101ec6c470ad6451b6fd86f526cd88f188cd6afe9673580be7264567be76f2d2ab19194c5332cbbe56eec2e67b359c34b610d65c9d4733aff9ad8"
+    },
+    {
+      "project_id": "fFEIiSDQ",
+      "version_id": "Agn1kmUY",
+      "filename": "supplementaries-neoforge-1.21.1-3.6.8.jar",
+      "sha512": "5636533508d2ea9192b304760a254999e258458f7cd4609793083137df4243aa6e990009866b4aa79129853c0829606115f14fbe69005d99d9139b3d3a555c28"
     }
   ],
   "resources": [
@@ -3505,6 +3529,302 @@
       "source": "data/celestia/advancement/look_up.json",
       "source_sha256": "c274e39870d6bfeded582a27b2d1b7939770532fee6a92d8c0323bcafc83604e",
       "result_json_sha256": "4040917eba407a853ed5c52ea48bf22aca7b7ea3a00724e642092ce29e72d8e2"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/basking_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/basking_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/bull_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/bull_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/dugong.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/dugong.json",
+      "source_sha256": "8f7cbf3f731b119bcc66246119ffce60fd2a7c84d46f21ae7c3015415578dd94",
+      "result_json_sha256": "8b3a8e36a7d61b9b7b89722e76283fafc77368de93eed9bdd8ee0cc22d09e9bf"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/fangtooth.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/fangtooth.json",
+      "source_sha256": "ab5b4ddbe700e5c5079360c6c6fd436c7b2d0c24d1f74f8db52d4a8e5ad60c7f",
+      "result_json_sha256": "05a44127eb03fb2a7e4048b7527d13e6fa2171ad255ef9a3e6c27cd6691cf752"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/frilled_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/frilled_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/goblin_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/goblin_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/great_white_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/great_white_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/hammerhead_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/hammerhead_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/hatchetfish.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/hatchetfish.json",
+      "source_sha256": "ab5b4ddbe700e5c5079360c6c6fd436c7b2d0c24d1f74f8db52d4a8e5ad60c7f",
+      "result_json_sha256": "05a44127eb03fb2a7e4048b7527d13e6fa2171ad255ef9a3e6c27cd6691cf752"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/hound_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/hound_shark.json",
+      "source_sha256": "131e1a19930b696096b737b090672f9f53a8812e72efe88c5927e0c12f3dd695",
+      "result_json_sha256": "f9117b3c4b53b5ededbbc519f9846d9ee44af3e4388fd3a1653d84db4b99ee3d"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/karkinos.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/karkinos.json",
+      "source_sha256": "2df99af96eb80b34ad184bda522cf6a8369317b21ed708a8441636adaef62854",
+      "result_json_sha256": "248d3fc00a172481d8b6f78047f6331fea3219ebd686137d9e65bd1a757598d5"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/lantern_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/lantern_shark.json",
+      "source_sha256": "131e1a19930b696096b737b090672f9f53a8812e72efe88c5927e0c12f3dd695",
+      "result_json_sha256": "f9117b3c4b53b5ededbbc519f9846d9ee44af3e4388fd3a1653d84db4b99ee3d"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/manatee.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/manatee.json",
+      "source_sha256": "8f7cbf3f731b119bcc66246119ffce60fd2a7c84d46f21ae7c3015415578dd94",
+      "result_json_sha256": "8b3a8e36a7d61b9b7b89722e76283fafc77368de93eed9bdd8ee0cc22d09e9bf"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/sand_tiger_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/sand_tiger_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/shell_beast.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/shell_beast.json",
+      "source_sha256": "e0fb0762a2f040326a6309834c8bd9b886b4747892336d9789996a7cb05e2488",
+      "result_json_sha256": "1e6182b9d905fc11cbc7814e74bb19eb245da7bc2a90f820b7d81a58c5465ade"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/shiner.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/shiner.json",
+      "source_sha256": "ab5b4ddbe700e5c5079360c6c6fd436c7b2d0c24d1f74f8db52d4a8e5ad60c7f",
+      "result_json_sha256": "05a44127eb03fb2a7e4048b7527d13e6fa2171ad255ef9a3e6c27cd6691cf752"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/sixgill_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/sixgill_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/sleeper_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/sleeper_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/thresher_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/thresher_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/viperfish.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/viperfish.json",
+      "source_sha256": "ab5b4ddbe700e5c5079360c6c6fd436c7b2d0c24d1f74f8db52d4a8e5ad60c7f",
+      "result_json_sha256": "05a44127eb03fb2a7e4048b7527d13e6fa2171ad255ef9a3e6c27cd6691cf752"
+    },
+    {
+      "id": "hybrid_aquatic:loot_table/entities/whale_shark.json",
+      "provider": "HH4FjUqN",
+      "version": "jdOU7Pzu",
+      "source": "data/hybrid_aquatic/loot_table/entities/whale_shark.json",
+      "source_sha256": "6f5794802a87aaf6a9fd461dba8ae1c4df40386eb0e87027e6fe7aeb00ed45ae",
+      "result_json_sha256": "8976a2706c7e63da73a3794207504163272da2a7cec6df516f4e49baf06d84a6"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/albatross.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/albatross.json",
+      "source_sha256": "671ce2369367d6248e4c24fcc9af74653f21a9af546fd4aaada2779c5b4eca24",
+      "result_json_sha256": "523e06dec28ae71374de082685a2853fcefa924d4c19d0c63bd6f627ef75f73e"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/duck.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/duck.json",
+      "source_sha256": "2684806be1e603c5ff5891a1cc42af463da24f709d4fe73b00c17b22c28316c4",
+      "result_json_sha256": "5e2cd6b41abd43d58c96f2743ded67deb59b79dae74fb3ac2270c8c4c84bb542"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/goose.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/goose.json",
+      "source_sha256": "79be5c63027c7773f8760b4f10461567f7a64d4083bd6307c858cd7255acf923",
+      "result_json_sha256": "84de51fc235f6e903331cc86a15f2758596ad7c739da705c2de34f98c5e6323c"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/guinea_fowl.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/guinea_fowl.json",
+      "source_sha256": "6c9e08eed161a87be26e6a7195a96911d4d74bde6b0cb3efd7f1d6bc2c82850f",
+      "result_json_sha256": "9945061a8476e4551adff8bf98072bd69186a5eb4e58b455a845dc6d1a0cf4e4"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/pelican.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/pelican.json",
+      "source_sha256": "671ce2369367d6248e4c24fcc9af74653f21a9af546fd4aaada2779c5b4eca24",
+      "result_json_sha256": "523e06dec28ae71374de082685a2853fcefa924d4c19d0c63bd6f627ef75f73e"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/puffin.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/puffin.json",
+      "source_sha256": "212a6aed251acc51251e13a3e08340169383fea0f1a0717b76461d7bcf874b2b",
+      "result_json_sha256": "9617a81ac3ccf90e6e5a30d87973dea3c66c4d10f9580c6bb46a4588208482b5"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/rooster.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/rooster.json",
+      "source_sha256": "6c9e08eed161a87be26e6a7195a96911d4d74bde6b0cb3efd7f1d6bc2c82850f",
+      "result_json_sha256": "9945061a8476e4551adff8bf98072bd69186a5eb4e58b455a845dc6d1a0cf4e4"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/seagull.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/seagull.json",
+      "source_sha256": "671ce2369367d6248e4c24fcc9af74653f21a9af546fd4aaada2779c5b4eca24",
+      "result_json_sha256": "523e06dec28ae71374de082685a2853fcefa924d4c19d0c63bd6f627ef75f73e"
+    },
+    {
+      "id": "hybrid_birds:loot_table/entities/turkey.json",
+      "provider": "txgXquyE",
+      "version": "JjW0y3WF",
+      "source": "data/hybrid_birds/loot_table/entities/turkey.json",
+      "source_sha256": "85bdb8f6c80683e280672d5dd3710d8d954b3af91a8ca0e07f916f16452ee933",
+      "result_json_sha256": "e8e0db8309f4fb55467a35bad9219e96217ceb0b88f37e7e064ab39052eda548"
+    },
+    {
+      "id": "minecraft:loot_table/entities/tropical_fish.json",
+      "provider": "die1AF7i",
+      "version": "1ki6UyqV",
+      "source": "data/minecraft/loot_table/entities/tropical_fish.json",
+      "source_sha256": "82568fd0d6f2862e5b00b1a0cbf214f5ecfcef35fd792a25ba2184a9d878098e",
+      "result_json_sha256": "fe07669eae11098fdf9a2d0ac3b2c7ba2ad690c098c0929d8dce34d640feb3cd"
+    },
+    {
+      "id": "naturalist:loot_table/entities/elephant.json",
+      "provider": "F8BQNPWX",
+      "version": "9Yn8ig4c",
+      "source": "data/naturalist/loot_table/entities/elephant.json",
+      "source_sha256": "9797971450aa56ad1fb8e0ead5a84599d86d878d7012e4549c2b94665dd5d4d3",
+      "result_json_sha256": "2131e992da8553e2fa02d983900d345a96408ede36cc74af373931500b836ef1"
+    },
+    {
+      "id": "naturalist:loot_table/entities/rhino.json",
+      "provider": "F8BQNPWX",
+      "version": "9Yn8ig4c",
+      "source": "data/naturalist/loot_table/entities/rhino.json",
+      "source_sha256": "d45604d9a2944c11cd44c94856b7f5f09a84cf765c63ba98c49df028118aaebf",
+      "result_json_sha256": "f1f17182b0aa8329f872ca7e1df17cecd0ecef5a61f3071c57102b6293d94f79"
+    },
+    {
+      "id": "naturalist:loot_table/entities/whale.json",
+      "provider": "F8BQNPWX",
+      "version": "9Yn8ig4c",
+      "source": "data/naturalist/loot_table/entities/whale.json",
+      "source_sha256": "8ad23a996dd5339f7670ea9a5a55dcb96cd0a8d1f0bcc76b7ac2d82cb7fbd508",
+      "result_json_sha256": "679b3412d3488a5f96e9c19a57757564de52a83804a068d74b87f622c7c83b68"
+    },
+    {
+      "id": "immersive_weathering:loot_table/injects/hoglin_tallow.json",
+      "provider": "AtjxBimt",
+      "version": "n3NgrJOg",
+      "source": "data/immersive_weathering/loot_table/injects/hoglin_tallow.json",
+      "source_sha256": "170a1f5133f04fff34898acee2211d68467cb8eb5219134221466de448602faf",
+      "result_json_sha256": "735059e7aebb417c9eeeae43392184a78a7a30d793db0a8a2ae60bfc4b5d4a05"
+    },
+    {
+      "id": "immersive_weathering:loot_table/injects/pig_tallow.json",
+      "provider": "AtjxBimt",
+      "version": "n3NgrJOg",
+      "source": "data/immersive_weathering/loot_table/injects/pig_tallow.json",
+      "source_sha256": "653d3d2db16ccfa92d657a3fac54908bbf550c7c9ace358b0a14674b02a68616",
+      "result_json_sha256": "90f4b6c4781ac03d3f9f076610600b6c69b7010cf9bf6a56342111cb2f266773"
+    },
+    {
+      "id": "supplementaries:loot_modifiers/ash_from_burning_mobs.json",
+      "provider": "fFEIiSDQ",
+      "version": "Agn1kmUY",
+      "source": "data/supplementaries/loot_modifiers/ash_from_burning_mobs.json",
+      "source_sha256": "cf77890d25902b0cc1f26269c405bfc05003ef63b25f5b66e380fef08c93e1be",
+      "result_json_sha256": "fc44fcfdd76f839ff16041f6dd73ee57f2a290d38ce7a041da6c7c917e42a6f4"
     }
   ]
 }

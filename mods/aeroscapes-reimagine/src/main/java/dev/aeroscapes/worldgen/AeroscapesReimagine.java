@@ -55,7 +55,17 @@ public final class AeroscapesReimagine {
     if (ModList.get().isLoaded("crittersandcompanions"))
       dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);
     if (ModList.get().isLoaded("spawn")) dev.aeroscapes.ecology.EcologyNetwork.register(modBus);
-    if (ModList.get().isLoaded("irons_spellbooks")) dev.aeroscapes.magic.SpellCastRules.register();
+    if (ModList.get().isLoaded("irons_spellbooks")) {
+      dev.aeroscapes.magic.SpellCastRules.register();
+      if (ModList.get().isLoaded("puffish_skills")) {
+        dev.aeroscapes.magic.PreparedAbilities.register();
+        dev.aeroscapes.magic.MagicBonuses.register();
+        dev.aeroscapes.magic.GuardianAid.register();
+        dev.aeroscapes.magic.BindingPact.register();
+        dev.aeroscapes.magic.travel.TravelMagic.register();
+        modBus.addListener(dev.aeroscapes.magic.AbilityNetwork::register);
+      }
+    }
     if (ModList.get().isLoaded("pmmo") && ModList.get().isLoaded("puffish_skills")) {
       dev.aeroscapes.progression.ProgressionBridge.register();
       if (ModList.get().isLoaded("irons_spellbooks"))

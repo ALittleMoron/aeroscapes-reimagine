@@ -1,0 +1,21 @@
+{
+  "aeroscapes_reimagine.abilities.reason.disabled": "Это заклинание недоступно в сборке.",
+  "aeroscapes_reimagine.abilities.reason.state": "Нельзя применять заклинания после смерти или в режиме наблюдения.",
+  "aeroscapes_reimagine.abilities.reason.unlearned": "Сначала изучите узел этого заклинания в древе талантов.",
+  "aeroscapes_reimagine.abilities.reason.mastery": "Вашего мастерства этого направления пока недостаточно для такого уровня заклинания.",
+  "aeroscapes_reimagine.abilities.reason.discovery": "Сначала откройте это заклинание с помощью Мистического манускрипта.",
+  "aeroscapes_reimagine.abilities.reason.focus": "Экипируйте книгу заклинаний в предназначенную для неё ячейку аксессуара.",
+  "aeroscapes_reimagine.abilities.reason.unprepared": "Сначала подготовьте это заклинание в панели способностей.",
+  "aeroscapes_reimagine.abilities.reason.cooldown": "Эта способность ещё перезаряжается.",
+  "aeroscapes_reimagine.abilities.reason.mana": "Для этого заклинания не хватает маны.",
+  "aeroscapes_reimagine.abilities.reason.empty": "Сначала выберите подготовленную способность.",
+  "aeroscapes_reimagine.abilities.reason.scroll": "Держите сам свиток в руке до завершения применения.",
+  "aeroscapes_reimagine.abilities.reason.no_improvement": "Вы уже знаете это заклинание на таком же или более высоком уровне. Свиток сохранён.",
+  "aeroscapes_reimagine.abilities.studied": "Изучено: %1$s, уровень %2$s.",
+  "aeroscapes_reimagine.abilities.scroll_hint": "Примените один раз без требований к талантам или улучшите открытое заклинание на начертательном столе. Штатные ограничения свитков сохраняются.",
+  "aeroscapes_reimagine.abilities.book_hint": "Фокус для восьми способностей, подготовленных в инвентаре.",
+  "message.aeroscapes_reimagine.travel_cooldown": "Это заклинание перемещения ещё перезаряжается. Смена снаряжения и свитки не сбрасывают отсчёт.",
+  "message.aeroscapes_reimagine.portal_frame_disabled": "«Портал» создаёт временную местную пару. Постоянные портальные рамки отключены.",
+  "message.aeroscapes_reimagine.portal_missing_endpoint": "Первый портал исчез или больше не загружен. Дождитесь окончания подготовки и создайте новую пару.",
+  "message.aeroscapes_reimagine.portal_local_only": "Разместите оба портала в одном измерении, не дальше 128 блоков друг от друга."
+}

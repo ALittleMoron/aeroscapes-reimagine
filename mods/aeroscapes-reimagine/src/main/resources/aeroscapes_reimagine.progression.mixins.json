@@ -13,6 +13,7 @@
   },
   "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
   "mixins": [
-    "ProjectMmoAdminDataMixin"
+    "ProjectMmoAdminDataMixin",
+    "MagicTalentGateMixin"
   ]
 }

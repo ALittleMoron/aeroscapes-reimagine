@@ -7,9 +7,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_efficiency.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:iron_pickaxe"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mining_efficiency.png"
       }
     },
     "frame": {
@@ -42,9 +42,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_speed.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:golden_pickaxe"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mining_speed.png"
       }
     },
     "frame": {
@@ -77,9 +77,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_fortune.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:emerald"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mining_fortune.png"
       }
     },
     "frame": {

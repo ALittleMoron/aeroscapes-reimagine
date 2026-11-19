@@ -1,4 +1,4 @@
 {
-  "irons_spellbooks:enabled": false,
-  "irons_spellbooks:allow_crafting": false
+  "irons_spellbooks:enabled": true,
+  "irons_spellbooks:allow_crafting": true
 }

@@ -1,0 +1,1678 @@
+{
+  "pointCap": 136,
+  "nodes": [
+    {
+      "id": "magic_mastery_1",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "",
+      "effects": {}
+    },
+    {
+      "id": "magic_reserve_1",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_max_mana": 30
+      }
+    },
+    {
+      "id": "magic_reserve_2",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_max_mana": 30
+      }
+    },
+    {
+      "id": "magic_reserve_3",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_max_mana": 30
+      }
+    },
+    {
+      "id": "magic_recovery_1",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_mana_regen": 0.08
+      }
+    },
+    {
+      "id": "magic_recovery_2",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_mana_regen": 0.08
+      }
+    },
+    {
+      "id": "magic_recovery_3",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_mana_regen": 0.08
+      }
+    },
+    {
+      "id": "magic_rhythm_1",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_cooldown": 0.03
+      }
+    },
+    {
+      "id": "magic_rhythm_2",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_cooldown": 0.03
+      }
+    },
+    {
+      "id": "magic_rhythm_3",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_cooldown": 0.03
+      }
+    },
+    {
+      "id": "magic_fluency_1",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_cast_speed": 0.03
+      }
+    },
+    {
+      "id": "magic_fluency_2",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_cast_speed": 0.03
+      }
+    },
+    {
+      "id": "magic_fluency_3",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "",
+      "effects": {
+        "native_cast_speed": 0.03
+      }
+    },
+    {
+      "id": "magic_destruction_power",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {
+        "power": 0.05
+      }
+    },
+    {
+      "id": "magic_destruction_mastery_2",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_destruction_mana",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {
+        "mana": 0.04
+      }
+    },
+    {
+      "id": "magic_destruction_mastery_3",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_destruction_cooldown",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {
+        "cooldown": 0.04
+      }
+    },
+    {
+      "id": "magic_destruction_mastery_4",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_destruction_cast_speed",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {
+        "cast_speed": 0.04
+      }
+    },
+    {
+      "id": "magic_destruction_mastery_5",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_restoration_power",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "power": 0.05
+      }
+    },
+    {
+      "id": "magic_restoration_mastery_2",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_restoration_mana",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "mana": 0.04
+      }
+    },
+    {
+      "id": "magic_restoration_mastery_3",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_restoration_cooldown",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "cooldown": 0.04
+      }
+    },
+    {
+      "id": "magic_restoration_mastery_4",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_restoration_cast_speed",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "cast_speed": 0.04
+      }
+    },
+    {
+      "id": "magic_restoration_mastery_5",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_conjuration_power",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {
+        "power": 0.05
+      }
+    },
+    {
+      "id": "magic_conjuration_mastery_2",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_conjuration_mana",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {
+        "mana": 0.04
+      }
+    },
+    {
+      "id": "magic_conjuration_mastery_3",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_conjuration_cooldown",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {
+        "cooldown": 0.04
+      }
+    },
+    {
+      "id": "magic_conjuration_mastery_4",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_conjuration_cast_speed",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {
+        "cast_speed": 0.04
+      }
+    },
+    {
+      "id": "magic_conjuration_mastery_5",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_transformation_power",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {
+        "power": 0.05
+      }
+    },
+    {
+      "id": "magic_transformation_mastery_2",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_transformation_mana",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {
+        "mana": 0.04
+      }
+    },
+    {
+      "id": "magic_transformation_mastery_3",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_transformation_cooldown",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {
+        "cooldown": 0.04
+      }
+    },
+    {
+      "id": "magic_transformation_mastery_4",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_transformation_cast_speed",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {
+        "cast_speed": 0.04
+      }
+    },
+    {
+      "id": "magic_transformation_mastery_5",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_magic_arrow",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_snowball",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_poison_arrow",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_lob_creeper",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_fireball",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_heat_surge",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_scorch",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_guiding_bolt",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_frostwave",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_shockwave",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_poison_splash",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_acupuncture",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_echoing_strikes",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_shadow_slash",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_arrow_volley",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_fang_swirl",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_magma_bomb",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_wall_of_fire",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_ice_block",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_chain_lightning",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_lightning_bolt",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_devour",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_ray_of_siphoning",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_starfall",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_chain_creeper",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_blaze_storm",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_flaming_barrage",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_sunbeam",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_blizzard",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_volt_strike",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_earthquake",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_black_hole",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_raise_hell",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_thunderstorm",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_sculk_tentacles",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_sonic_boom",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_eldritch_blast",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_cleanse",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_evasion",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_haste",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_charge",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_heartstop",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_ice_tomb",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_gluttony",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_greater_heal",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_abyssal_shroud",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_spider_aspect",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_raise_dead",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_summon_swords",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_arcane_shackle",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_summon_vex",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_firefly_swarm",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_scapegoat",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_sacrifice",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_gravity_fissure",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_summon_polar_bear",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_frostbite",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_telekinesis",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_summon_ender_chest",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_blood_step",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_spectral_hammer",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_frost_step",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_invisibility",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_recall",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_touch_dig",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_angel_wing",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_ascension",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_portal",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_planar_sight",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_pocket_dimension",
+      "requiredLevel": 45,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {}
+    },
+    {
+      "id": "magic_destruction_blast_geometry",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {
+        "fireball_area": 1
+      }
+    },
+    {
+      "id": "magic_destruction_winter_front",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {
+        "blizzard_area": 0.15
+      }
+    },
+    {
+      "id": "magic_destruction_brittle_targets",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {
+        "frozen_bonus": 0.1
+      }
+    },
+    {
+      "id": "magic_destruction_venom_opening",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {
+        "poison_bonus": 0.1
+      }
+    },
+    {
+      "id": "magic_restoration_gentle_power",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "power": 0.08
+      }
+    },
+    {
+      "id": "magic_restoration_careful_aid",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "mana": 0.06
+      }
+    },
+    {
+      "id": "magic_restoration_lasting_readiness",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "cooldown": 0.06
+      }
+    },
+    {
+      "id": "magic_restoration_swift_response",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "cast_speed": 0.06
+      }
+    },
+    {
+      "id": "magic_conjuration_commanding_presence",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {
+        "power": 0.1
+      }
+    },
+    {
+      "id": "magic_conjuration_efficient_command",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {
+        "mana": 0.08
+      }
+    },
+    {
+      "id": "magic_conjuration_renewed_command",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {
+        "cooldown": 0.1
+      }
+    },
+    {
+      "id": "magic_transformation_light_passage",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {
+        "mana": 0.08
+      }
+    },
+    {
+      "id": "magic_transformation_familiar_routes",
+      "requiredLevel": 15,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {
+        "cooldown": 0.1
+      }
+    },
+    {
+      "id": "magic_transformation_quick_changes",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "transformation",
+      "effects": {
+        "cast_speed": 0.1
+      }
+    },
+    {
+      "id": "magic_restoration_guardian_aid",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {
+        "guardian_refund": 0.25
+      }
+    },
+    {
+      "id": "magic_conjuration_binding_pact",
+      "requiredLevel": 30,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {
+        "binding_refund": 0.2
+      }
+    }
+  ],
+  "spells": [
+    {
+      "id": "irons_spellbooks:abyssal_shroud",
+      "direction": "restoration",
+      "node": "magic_spell_abyssal_shroud",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:acid_orb",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_2",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:acupuncture",
+      "direction": "destruction",
+      "node": "magic_spell_acupuncture",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:angel_wing",
+      "direction": "transformation",
+      "node": "magic_spell_angel_wing",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:arcane_shackle",
+      "direction": "conjuration",
+      "node": "magic_spell_arcane_shackle",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:arrow_volley",
+      "direction": "destruction",
+      "node": "magic_spell_arrow_volley",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:ascension",
+      "direction": "transformation",
+      "node": "magic_spell_ascension",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:ball_lightning",
+      "direction": "destruction",
+      "node": "magic_mastery_1",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:black_hole",
+      "direction": "destruction",
+      "node": "magic_spell_black_hole",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:blaze_storm",
+      "direction": "destruction",
+      "node": "magic_spell_blaze_storm",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:blessing_of_life",
+      "direction": "restoration",
+      "node": "magic_restoration_mastery_2",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:blight",
+      "direction": "conjuration",
+      "node": "magic_conjuration_mastery_5",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:blizzard",
+      "direction": "destruction",
+      "node": "magic_spell_blizzard",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:blood_needles",
+      "direction": "destruction",
+      "node": "magic_mastery_1",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:blood_slash",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_2",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:blood_step",
+      "direction": "transformation",
+      "node": "magic_spell_blood_step",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:burning_dash",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_4",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:chain_creeper",
+      "direction": "destruction",
+      "node": "magic_spell_chain_creeper",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:chain_lightning",
+      "direction": "destruction",
+      "node": "magic_spell_chain_lightning",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:charge",
+      "direction": "restoration",
+      "node": "magic_spell_charge",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:cleanse",
+      "direction": "restoration",
+      "node": "magic_spell_cleanse",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:cloud_of_regeneration",
+      "direction": "restoration",
+      "node": "magic_restoration_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:cone_of_cold",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_4",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:counterspell",
+      "direction": "restoration",
+      "node": "magic_restoration_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:devour",
+      "direction": "destruction",
+      "node": "magic_spell_devour",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:divine_smite",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:dragon_breath",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_5",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:earthquake",
+      "direction": "destruction",
+      "node": "magic_spell_earthquake",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:echoing_strikes",
+      "direction": "destruction",
+      "node": "magic_spell_echoing_strikes",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:eldritch_blast",
+      "direction": "destruction",
+      "node": "magic_spell_eldritch_blast",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:electrocute",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_4",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:evasion",
+      "direction": "restoration",
+      "node": "magic_spell_evasion",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:fang_strike",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:fang_swirl",
+      "direction": "destruction",
+      "node": "magic_spell_fang_swirl",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:fang_ward",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:fire_arrow",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_2",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:fire_breath",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_4",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:fireball",
+      "direction": "destruction",
+      "node": "magic_spell_fireball",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:firebolt",
+      "direction": "destruction",
+      "node": "magic_mastery_1",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:firecracker",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_2",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:firefly_swarm",
+      "direction": "conjuration",
+      "node": "magic_spell_firefly_swarm",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:flaming_barrage",
+      "direction": "destruction",
+      "node": "magic_spell_flaming_barrage",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:flaming_strike",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_5",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:fortify",
+      "direction": "restoration",
+      "node": "magic_restoration_mastery_4",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:frost_step",
+      "direction": "transformation",
+      "node": "magic_spell_frost_step",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:frostbite",
+      "direction": "conjuration",
+      "node": "magic_spell_frostbite",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:frostwave",
+      "direction": "destruction",
+      "node": "magic_spell_frostwave",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:gluttony",
+      "direction": "restoration",
+      "node": "magic_spell_gluttony",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:gravity_fissure",
+      "direction": "conjuration",
+      "node": "magic_spell_gravity_fissure",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:greater_heal",
+      "direction": "restoration",
+      "node": "magic_spell_greater_heal",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:guiding_bolt",
+      "direction": "destruction",
+      "node": "magic_spell_guiding_bolt",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:gust",
+      "direction": "conjuration",
+      "node": "magic_conjuration_mastery_2",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:haste",
+      "direction": "restoration",
+      "node": "magic_spell_haste",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:heal",
+      "direction": "restoration",
+      "node": "magic_mastery_1",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:healing_circle",
+      "direction": "restoration",
+      "node": "magic_restoration_mastery_5",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:heartstop",
+      "direction": "restoration",
+      "node": "magic_spell_heartstop",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:heat_surge",
+      "direction": "destruction",
+      "node": "magic_spell_heat_surge",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:ice_block",
+      "direction": "destruction",
+      "node": "magic_spell_ice_block",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:ice_spikes",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:ice_tomb",
+      "direction": "restoration",
+      "node": "magic_spell_ice_tomb",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:icicle",
+      "direction": "destruction",
+      "node": "magic_mastery_1",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:invisibility",
+      "direction": "transformation",
+      "node": "magic_spell_invisibility",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:lightning_bolt",
+      "direction": "destruction",
+      "node": "magic_spell_lightning_bolt",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:lightning_lance",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:lob_creeper",
+      "direction": "destruction",
+      "node": "magic_spell_lob_creeper",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:magic_arrow",
+      "direction": "destruction",
+      "node": "magic_spell_magic_arrow",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:magic_missile",
+      "direction": "destruction",
+      "node": "magic_mastery_1",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:magma_bomb",
+      "direction": "destruction",
+      "node": "magic_spell_magma_bomb",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:oakskin",
+      "direction": "restoration",
+      "node": "magic_mastery_1",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:planar_sight",
+      "direction": "transformation",
+      "node": "magic_spell_planar_sight",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:pocket_dimension",
+      "direction": "transformation",
+      "node": "magic_spell_pocket_dimension",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:poison_arrow",
+      "direction": "destruction",
+      "node": "magic_spell_poison_arrow",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:poison_breath",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_4",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:poison_splash",
+      "direction": "destruction",
+      "node": "magic_spell_poison_splash",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:portal",
+      "direction": "transformation",
+      "node": "magic_spell_portal",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:raise_dead",
+      "direction": "conjuration",
+      "node": "magic_spell_raise_dead",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:raise_hell",
+      "direction": "destruction",
+      "node": "magic_spell_raise_hell",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:ray_of_frost",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_4",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:ray_of_siphoning",
+      "direction": "destruction",
+      "node": "magic_spell_ray_of_siphoning",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:recall",
+      "direction": "transformation",
+      "node": "magic_spell_recall",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:root",
+      "direction": "conjuration",
+      "node": "magic_conjuration_mastery_4",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:sacrifice",
+      "direction": "conjuration",
+      "node": "magic_spell_sacrifice",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:scapegoat",
+      "direction": "conjuration",
+      "node": "magic_spell_scapegoat",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:scorch",
+      "direction": "destruction",
+      "node": "magic_spell_scorch",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:sculk_tentacles",
+      "direction": "destruction",
+      "node": "magic_spell_sculk_tentacles",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:shadow_slash",
+      "direction": "destruction",
+      "node": "magic_spell_shadow_slash",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:shield",
+      "direction": "restoration",
+      "node": "magic_mastery_1",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:shockwave",
+      "direction": "destruction",
+      "node": "magic_spell_shockwave",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:slow",
+      "direction": "conjuration",
+      "node": "magic_conjuration_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:snowball",
+      "direction": "destruction",
+      "node": "magic_spell_snowball",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:sonic_boom",
+      "direction": "destruction",
+      "node": "magic_spell_sonic_boom",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:spectral_hammer",
+      "direction": "transformation",
+      "node": "magic_spell_spectral_hammer",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:spider_aspect",
+      "direction": "conjuration",
+      "node": "magic_spell_spider_aspect",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:starfall",
+      "direction": "destruction",
+      "node": "magic_spell_starfall",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:stomp",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:summon_ender_chest",
+      "direction": "transformation",
+      "node": "magic_spell_summon_ender_chest",
+      "tier": 1
+    },
+    {
+      "id": "irons_spellbooks:summon_horse",
+      "direction": "transformation",
+      "node": "magic_transformation_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:summon_polar_bear",
+      "direction": "conjuration",
+      "node": "magic_spell_summon_polar_bear",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:summon_swords",
+      "direction": "conjuration",
+      "node": "magic_spell_summon_swords",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:summon_vex",
+      "direction": "conjuration",
+      "node": "magic_spell_summon_vex",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:sunbeam",
+      "direction": "destruction",
+      "node": "magic_spell_sunbeam",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:telekinesis",
+      "direction": "conjuration",
+      "node": "magic_spell_telekinesis",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:teleport",
+      "direction": "transformation",
+      "node": "magic_transformation_mastery_2",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:throw",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_2",
+      "tier": 2
+    },
+    {
+      "id": "irons_spellbooks:thunderstorm",
+      "direction": "destruction",
+      "node": "magic_spell_thunderstorm",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:touch_dig",
+      "direction": "transformation",
+      "node": "magic_spell_touch_dig",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:volt_strike",
+      "direction": "destruction",
+      "node": "magic_spell_volt_strike",
+      "tier": 4
+    },
+    {
+      "id": "irons_spellbooks:wall_of_fire",
+      "direction": "destruction",
+      "node": "magic_spell_wall_of_fire",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:wisp",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_3",
+      "tier": 3
+    },
+    {
+      "id": "irons_spellbooks:wither_skull",
+      "direction": "destruction",
+      "node": "magic_destruction_mastery_5",
+      "tier": 5
+    },
+    {
+      "id": "irons_spellbooks:wololo",
+      "direction": "transformation",
+      "node": "magic_transformation_mastery_4",
+      "tier": 4
+    }
+  ]
+}

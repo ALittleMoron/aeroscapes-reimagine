@@ -1,6 +1,9 @@
 package dev.aeroscapes.regression;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import dev.aeroscapes.magic.MagicPractice;
+import dev.aeroscapes.magic.MagicPracticeProgress;
+import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.progression.SpellPractice;
 import harmonised.pmmo.api.APIUtils;
@@ -73,7 +76,8 @@ final class ProgressionRegression {
 
   private static void verifyListed(ServerPlayer player, TestShipPlayerSession session) {
     ProgressionBridge.sync(player);
-    requirePoints(player, 0, 0, "A new character starts without earned points");
+    requirePoints(
+        player, 1, 0, "The initial magic repertoire is affordable without unrelated practice");
     verifyAdminCommands(player, session);
 
     APIUtils.setLevel("combat", player, 12);
@@ -81,10 +85,10 @@ final class ProgressionRegression {
     APIUtils.setLevel("mining", player, 10);
     APIUtils.setLevel("cooking", player, 4);
     ProgressionBridge.sync(player);
-    requirePoints(player, 3, 2, "Every five levels of a discipline earn one point");
-    requireClientPoints(session, 3, 2);
+    requirePoints(player, 8, 2, "Magic practice has its own finite reward milestones");
+    requireClientPoints(session, 8, 2);
     ProgressionBridge.sync(player);
-    requirePoints(player, 3, 2, "Repeated synchronization does not duplicate points");
+    requirePoints(player, 8, 2, "Repeated synchronization does not duplicate points");
 
     APIUtils.setLevel("archery", player, 14);
     for (int step = 0; step < 20 && APIUtils.getLevel("archery", player) < 15; step++) {
@@ -92,11 +96,12 @@ final class ProgressionRegression {
     }
     require(APIUtils.getLevel("archery", player) == 15, "Practice reaches the next level");
     tick(player);
-    requirePoints(player, 6, 2, "A level-up through practice refreshes points by itself");
+    requirePoints(player, 11, 2, "A level-up through practice refreshes points by itself");
     // Project MMO's admin commands change levels without posting a level-up event.
     APIUtils.setLevel("farming", player, 10);
     tick(player);
-    requirePoints(player, 6, 4, "A level change without a level-up event still refreshes points");
+    requirePoints(
+        player, 11, 2, "Profession practice above the catalogue maximum grants no excess points");
 
     try {
       player
@@ -112,8 +117,9 @@ final class ProgressionRegression {
       throw new IllegalStateException("Cannot reproduce replaced point-source data", exception);
     }
     tick(player);
-    requirePoints(player, 6, 4, "Stored points reconcile even when earned levels have not changed");
-    requireClientPoints(session, 6, 4);
+    requirePoints(
+        player, 11, 2, "Stored points reconcile even when earned levels have not changed");
+    requireClientPoints(session, 11, 2);
     verifyTalentInvestment(player, session);
 
     long smithing = APIUtils.getXp("smithing", player);
@@ -143,8 +149,12 @@ final class ProgressionRegression {
         "Each cast trains magic, even from a free scroll");
     for (String skill : Config.skills().skills().keySet()) APIUtils.setLevel(skill, player, 50);
     tick(player);
-    requirePoints(player, 30, 60, "All nine disciplines feed their finite pool at the level cap");
-    requireClientPoints(session, 30, 60);
+    requirePoints(
+        player,
+        62,
+        2,
+        "Mastering all six practices funds exactly the compatible profession purchases");
+    requireClientPoints(session, 62, 2);
   }
 
   private static void verifyAdminCommands(ServerPlayer player, TestShipPlayerSession session) {
@@ -160,13 +170,15 @@ final class ProgressionRegression {
         restored.getLevel("combat", player.getUUID()) == 9,
         "The real native save/read codec preserves the commanded level");
     requirePoints(
-        player, 1, 0, "Admin commands update points before a paused inventory can stop ticks");
+        player, 2, 0, "Admin commands update points before a paused inventory can stop ticks");
     command(player, "pmmo admin @s set magic level 9");
-    requirePoints(player, 2, 0, "A second skill shares the same combat source");
+    require(
+        MagicPractice.level(player) == 9,
+        "A native administrative magic edit updates the owned readiness");
+    requirePoints(player, combatPoints(player), 0, "Magic shares the same combat source");
     for (int amount : List.of(2000, 20000)) {
       command(player, "pmmo admin @s add combat xp " + amount);
-      int expected =
-          (int) (APIUtils.getLevel("combat", player) / 5 + APIUtils.getLevel("magic", player) / 5);
+      int expected = combatPoints(player);
       requirePoints(player, expected, 0, "The owner's XP command updates the server and talents");
       var packet = session.talentPoints(ProgressionBridge.COMBAT_CATEGORY);
       require(packet != null && packet.earnedPoints() == expected, "Admin points reach the client");
@@ -176,9 +188,19 @@ final class ProgressionRegression {
     require(APIUtils.getXp("combat", player) == 123, "The set-XP command stores its native value");
     command(player, "pmmo admin @s set combat level 9");
     command(player, "pmmo admin @s clear combat");
-    requirePoints(player, 1, 0, "Clearing one skill preserves the other contribution");
+    requirePoints(player, combatPoints(player), 0, "Clearing one skill preserves magic practice");
     command(player, "pmmo admin @s clear");
-    requirePoints(player, 0, 0, "Clearing practice immediately reconciles both sources");
+    requirePoints(player, 1, 0, "Clearing practice retains only the initial repertoire point");
+    require(MagicPractice.credit(player) == 0, "Native clear also clears owned magic practice");
+  }
+
+  private static int combatPoints(ServerPlayer player) {
+    int physical =
+        (int) (APIUtils.getLevel("combat", player) / 5 + APIUtils.getLevel("archery", player) / 5);
+    return Math.min(
+        MagicTalents.pointCap(),
+        MagicPracticeProgress.points(MagicPractice.credit(player), MagicTalents.pointCap())
+            + physical);
   }
 
   private static void command(ServerPlayer player, String text) {
@@ -201,25 +223,29 @@ final class ProgressionRegression {
     var provider = SkillsMod.getInstance();
     var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
     provider.tryUnlockSkill(player, combat, "melee_strike", false);
-    provider.tryUnlockSkill(player, combat, "magic_reserve", false);
+    provider.tryUnlockSkill(player, combat, "magic_mastery_1", false);
     var update = session.talentPoints(ProgressionBridge.COMBAT_CATEGORY);
     require(
-        update != null && update.earnedPoints() == 6 && update.spentPoints() == 2,
+        update != null && update.earnedPoints() == 11 && update.spentPoints() == 2,
         "Melee and magic purchases spend the same pool and update the client");
-    provider.tryUnlockSkill(player, combat, "magic_flow", false);
-    provider.tryUnlockSkill(player, combat, "magic_focus", false);
+    provider.tryUnlockSkill(player, combat, "magic_recovery_1", false);
+    provider.tryUnlockSkill(player, combat, "magic_rhythm_1", false);
     require(
-        provider.getSkillState(player, combat, "magic_focus").orElseThrow() == Skill.State.EXCLUDED,
-        "The existing exclusive alternative stays unavailable after its sibling is learned");
+        provider.getSkillState(player, combat, "magic_recovery_1").orElseThrow()
+                == Skill.State.UNLOCKED
+            && provider.getSkillState(player, combat, "magic_rhythm_1").orElseThrow()
+                == Skill.State.UNLOCKED,
+        "Resource recovery and casting rhythm are compatible separate investments");
     CompoundTag saved = new CompoundTag();
     provider.exportPlayerData(player, saved);
     provider.importPlayerData(player, saved);
     provider.onPlayerDeath(player);
     tick(player);
     require(
-        provider.getSkillState(player, combat, "magic_flow").orElseThrow() == Skill.State.UNLOCKED,
+        provider.getSkillState(player, combat, "magic_recovery_1").orElseThrow()
+            == Skill.State.UNLOCKED,
         "Native save/import and death retain learned talents");
-    requirePoints(player, 6, 4, "Reload and death preserve the earned point sources");
+    requirePoints(player, 11, 2, "Reload and death preserve the earned point sources");
   }
 
   private static void tick(ServerPlayer player) {
@@ -240,7 +266,7 @@ final class ProgressionRegression {
   }
 
   @SuppressWarnings("unchecked")
-  private static void listPlayer(ServerLevel level, ServerPlayer player, boolean listed) {
+  static void listPlayer(ServerLevel level, ServerPlayer player, boolean listed) {
     try {
       PlayerList list = level.getServer().getPlayerList();
       Field players = PlayerList.class.getDeclaredField("players");

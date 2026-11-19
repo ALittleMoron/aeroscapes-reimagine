@@ -30,13 +30,15 @@ flowchart TB
   world -->|"found equipment"| equip
   eng -->|"tools and gear"| equip
   magic -->|"staves, spell books, rings"| equip
+  magic -->|"prepared combat spells"| char
+  char -->|"magic talents and spell learning"| magic
+  magic -->|"temporary wings and local portals"| travel
   travel -->|"gliders and hooks"| equip
   equip -->|"better weapons and armor"| char
 
   food -.->|"stamina for sprinting, swimming, hooks, vines"| travel
   magic -.->|"help with machines"| eng
   eng -.->|"supplies for magic"| magic
-  magic -.->|"combat abilities"| char
 ```
 
 Engineering sits at the centre: it powers flight, farming and kitchens and draws fuel from both crops and oil. Equipment from every direction can be reforged at an anvil, as [character and combat](../character-and-combat/) explains. Building and the [convenience features](../quality-of-life/) support all of these without depending on them.

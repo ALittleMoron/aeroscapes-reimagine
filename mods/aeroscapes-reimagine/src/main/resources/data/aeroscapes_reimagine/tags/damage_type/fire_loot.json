@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:is_fire",
+    "irons_spellbooks:fire_magic",
+    "irons_spellbooks:fire_field"
+  ]
+}

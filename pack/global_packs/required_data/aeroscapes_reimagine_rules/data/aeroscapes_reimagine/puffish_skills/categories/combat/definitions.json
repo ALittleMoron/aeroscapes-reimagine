@@ -7,9 +7,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.combat.melee_strike.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:iron_sword"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/melee_strike.png"
       }
     },
     "frame": {
@@ -42,9 +42,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.combat.melee_onslaught.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:golden_sword"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/melee_onslaught.png"
       }
     },
     "frame": {
@@ -77,9 +77,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.combat.melee_footing.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:shield"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/melee_footing.png"
       }
     },
     "frame": {
@@ -112,9 +112,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.combat.melee_veteran.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:diamond_sword"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/melee_veteran.png"
       }
     },
     "frame": {
@@ -147,9 +147,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.combat.guard_armor.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:iron_chestplate"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/guard_armor.png"
       }
     },
     "frame": {
@@ -182,9 +182,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.combat.guard_vitality.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:golden_apple"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/guard_vitality.png"
       }
     },
     "frame": {
@@ -217,9 +217,9 @@
       "translate": "puffish_skills.aeroscapes_reimagine.combat.guard_toughness.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:diamond_chestplate"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/guard_toughness.png"
       }
     },
     "frame": {
@@ -244,17 +244,43 @@
     ],
     "cost": 1
   },
-  "magic_reserve": {
+  "magic_mastery_1": {
     "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_reserve.title"
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_mastery_1.title"
     },
     "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_reserve.description"
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_mastery_1.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "irons_spellbooks:copper_spell_book"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/first_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_reserve_1": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_reserve_1.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_reserve_1.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mana_reserve.png"
       }
     },
     "frame": {
@@ -272,24 +298,94 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "irons_spellbooks:max_mana",
-          "value": 20,
+          "value": 30,
           "operation": "addition"
         }
       }
     ],
     "cost": 1
   },
-  "magic_flow": {
+  "magic_reserve_2": {
     "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_flow.title"
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_reserve_2.title"
     },
     "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_flow.description"
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_reserve_2.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:lapis_lazuli"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mana_reserve.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "irons_spellbooks:max_mana",
+          "value": 30,
+          "operation": "addition"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "magic_reserve_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_reserve_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_reserve_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mana_reserve.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "irons_spellbooks:max_mana",
+          "value": 30,
+          "operation": "addition"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "magic_recovery_1": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_recovery_1.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_recovery_1.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mana_recovery.png"
       }
     },
     "frame": {
@@ -307,24 +403,94 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "irons_spellbooks:mana_regen",
-          "value": 0.1,
+          "value": 0.08,
           "operation": "multiply_base"
         }
       }
     ],
     "cost": 1
   },
-  "magic_focus": {
+  "magic_recovery_2": {
     "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_focus.title"
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_recovery_2.title"
     },
     "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_focus.description"
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_recovery_2.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:clock"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mana_recovery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "irons_spellbooks:mana_regen",
+          "value": 0.08,
+          "operation": "multiply_base"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "magic_recovery_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_recovery_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_recovery_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mana_recovery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "irons_spellbooks:mana_regen",
+          "value": 0.08,
+          "operation": "multiply_base"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "magic_rhythm_1": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_rhythm_1.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_rhythm_1.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/spell_rhythm.png"
       }
     },
     "frame": {
@@ -342,24 +508,24 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "irons_spellbooks:cooldown_reduction",
-          "value": 0.05,
+          "value": 0.03,
           "operation": "addition"
         }
       }
     ],
     "cost": 1
   },
-  "magic_power": {
+  "magic_rhythm_2": {
     "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_power.title"
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_rhythm_2.title"
     },
     "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_power.description"
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_rhythm_2.description"
     },
     "icon": {
-      "type": "item",
+      "type": "texture",
       "data": {
-        "item": "minecraft:amethyst_shard"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/spell_rhythm.png"
       }
     },
     "frame": {
@@ -376,12 +542,3220 @@
       {
         "type": "puffish_skills:attribute",
         "data": {
-          "attribute": "irons_spellbooks:spell_power",
-          "value": 0.05,
-          "operation": "multiply_base"
+          "attribute": "irons_spellbooks:cooldown_reduction",
+          "value": 0.03,
+          "operation": "addition"
         }
       }
     ],
+    "cost": 1
+  },
+  "magic_rhythm_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_rhythm_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_rhythm_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/spell_rhythm.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "irons_spellbooks:cooldown_reduction",
+          "value": 0.03,
+          "operation": "addition"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "magic_fluency_1": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_fluency_1.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_fluency_1.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/fluent_casting.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "irons_spellbooks:cast_time_reduction",
+          "value": 0.03,
+          "operation": "addition"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "magic_fluency_2": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_fluency_2.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_fluency_2.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/fluent_casting.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "irons_spellbooks:cast_time_reduction",
+          "value": 0.03,
+          "operation": "addition"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "magic_fluency_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_fluency_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_fluency_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/fluent_casting.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "irons_spellbooks:cast_time_reduction",
+          "value": 0.03,
+          "operation": "addition"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "magic_destruction_power": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_power.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_power.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/destruction_power.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_mastery_2": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mastery_2.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mastery_2.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/destruction_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_mana": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mana.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mana.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/destruction_mana.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_mastery_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mastery_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mastery_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/destruction_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_cooldown": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_cooldown.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_cooldown.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/destruction_cooldown.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_mastery_4": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mastery_4.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mastery_4.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/destruction_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_cast_speed": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_cast_speed.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_cast_speed.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/destruction_cast_speed.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_mastery_5": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mastery_5.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_mastery_5.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/destruction_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_power": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_power.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_power.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_power.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_mastery_2": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mastery_2.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mastery_2.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_mana": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mana.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mana.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_mana.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_mastery_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mastery_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mastery_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_cooldown": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_cooldown.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_cooldown.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_cooldown.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_mastery_4": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mastery_4.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mastery_4.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_cast_speed": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_cast_speed.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_cast_speed.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_cast_speed.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_mastery_5": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mastery_5.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_mastery_5.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_power": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_power.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_power.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_power.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_mastery_2": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mastery_2.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mastery_2.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_mana": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mana.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mana.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_mana.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_mastery_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mastery_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mastery_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_cooldown": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_cooldown.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_cooldown.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_cooldown.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_mastery_4": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mastery_4.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mastery_4.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_cast_speed": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_cast_speed.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_cast_speed.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_cast_speed.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_mastery_5": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mastery_5.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_mastery_5.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_power": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_power.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_power.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_power.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_mastery_2": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mastery_2.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mastery_2.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_mana": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mana.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mana.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_mana.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_mastery_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mastery_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mastery_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_cooldown": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_cooldown.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_cooldown.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_cooldown.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_mastery_4": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mastery_4.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mastery_4.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_cast_speed": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_cast_speed.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_cast_speed.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_cast_speed.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_mastery_5": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mastery_5.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_mastery_5.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_mastery.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_magic_arrow": {
+    "title": {
+      "translate": "spell.irons_spellbooks.magic_arrow"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_magic_arrow.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/magic_arrow.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_snowball": {
+    "title": {
+      "translate": "spell.irons_spellbooks.snowball"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_snowball.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/snowball.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_poison_arrow": {
+    "title": {
+      "translate": "spell.irons_spellbooks.poison_arrow"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_poison_arrow.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/poison_arrow.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_lob_creeper": {
+    "title": {
+      "translate": "spell.irons_spellbooks.lob_creeper"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_lob_creeper.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/lob_creeper.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_fireball": {
+    "title": {
+      "translate": "spell.irons_spellbooks.fireball"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_fireball.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/fireball.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_heat_surge": {
+    "title": {
+      "translate": "spell.irons_spellbooks.heat_surge"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_heat_surge.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/heat_surge.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_scorch": {
+    "title": {
+      "translate": "spell.irons_spellbooks.scorch"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_scorch.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/scorch.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_guiding_bolt": {
+    "title": {
+      "translate": "spell.irons_spellbooks.guiding_bolt"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_guiding_bolt.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/guiding_bolt.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_frostwave": {
+    "title": {
+      "translate": "spell.irons_spellbooks.frostwave"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_frostwave.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/frostwave.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_shockwave": {
+    "title": {
+      "translate": "spell.irons_spellbooks.shockwave"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_shockwave.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/shockwave.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_poison_splash": {
+    "title": {
+      "translate": "spell.irons_spellbooks.poison_splash"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_poison_splash.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/poison_splash.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_acupuncture": {
+    "title": {
+      "translate": "spell.irons_spellbooks.acupuncture"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_acupuncture.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/acupuncture.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_echoing_strikes": {
+    "title": {
+      "translate": "spell.irons_spellbooks.echoing_strikes"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_echoing_strikes.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/echoing_strikes.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_shadow_slash": {
+    "title": {
+      "translate": "spell.irons_spellbooks.shadow_slash"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_shadow_slash.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/shadow_slash.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_arrow_volley": {
+    "title": {
+      "translate": "spell.irons_spellbooks.arrow_volley"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_arrow_volley.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/arrow_volley.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_fang_swirl": {
+    "title": {
+      "translate": "spell.irons_spellbooks.fang_swirl"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_fang_swirl.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/fang_swirl.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_magma_bomb": {
+    "title": {
+      "translate": "spell.irons_spellbooks.magma_bomb"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_magma_bomb.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/magma_bomb.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_wall_of_fire": {
+    "title": {
+      "translate": "spell.irons_spellbooks.wall_of_fire"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_wall_of_fire.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/wall_of_fire.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_ice_block": {
+    "title": {
+      "translate": "spell.irons_spellbooks.ice_block"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_ice_block.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/ice_block.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_chain_lightning": {
+    "title": {
+      "translate": "spell.irons_spellbooks.chain_lightning"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_chain_lightning.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/chain_lightning.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_lightning_bolt": {
+    "title": {
+      "translate": "spell.irons_spellbooks.lightning_bolt"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_lightning_bolt.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/lightning_bolt.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_devour": {
+    "title": {
+      "translate": "spell.irons_spellbooks.devour"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_devour.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/devour.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_ray_of_siphoning": {
+    "title": {
+      "translate": "spell.irons_spellbooks.ray_of_siphoning"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_ray_of_siphoning.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/ray_of_siphoning.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_starfall": {
+    "title": {
+      "translate": "spell.irons_spellbooks.starfall"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_starfall.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/starfall.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_chain_creeper": {
+    "title": {
+      "translate": "spell.irons_spellbooks.chain_creeper"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_chain_creeper.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/chain_creeper.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_blaze_storm": {
+    "title": {
+      "translate": "spell.irons_spellbooks.blaze_storm"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_blaze_storm.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/blaze_storm.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_flaming_barrage": {
+    "title": {
+      "translate": "spell.irons_spellbooks.flaming_barrage"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_flaming_barrage.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/flaming_barrage.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_sunbeam": {
+    "title": {
+      "translate": "spell.irons_spellbooks.sunbeam"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_sunbeam.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/sunbeam.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_blizzard": {
+    "title": {
+      "translate": "spell.irons_spellbooks.blizzard"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_blizzard.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/blizzard.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_volt_strike": {
+    "title": {
+      "translate": "spell.irons_spellbooks.volt_strike"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_volt_strike.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/volt_strike.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_earthquake": {
+    "title": {
+      "translate": "spell.irons_spellbooks.earthquake"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_earthquake.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/earthquake.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_black_hole": {
+    "title": {
+      "translate": "spell.irons_spellbooks.black_hole"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_black_hole.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/black_hole.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_raise_hell": {
+    "title": {
+      "translate": "spell.irons_spellbooks.raise_hell"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_raise_hell.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/raise_hell.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_thunderstorm": {
+    "title": {
+      "translate": "spell.irons_spellbooks.thunderstorm"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_thunderstorm.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/thunderstorm.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_sculk_tentacles": {
+    "title": {
+      "translate": "spell.irons_spellbooks.sculk_tentacles"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_sculk_tentacles.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/sculk_tentacles.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_sonic_boom": {
+    "title": {
+      "translate": "spell.irons_spellbooks.sonic_boom"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_sonic_boom.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/sonic_boom.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_eldritch_blast": {
+    "title": {
+      "translate": "spell.irons_spellbooks.eldritch_blast"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_eldritch_blast.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/eldritch_blast.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_cleanse": {
+    "title": {
+      "translate": "spell.irons_spellbooks.cleanse"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_cleanse.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/cleanse.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_evasion": {
+    "title": {
+      "translate": "spell.irons_spellbooks.evasion"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_evasion.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/evasion.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_haste": {
+    "title": {
+      "translate": "spell.irons_spellbooks.haste"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_haste.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/haste.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_charge": {
+    "title": {
+      "translate": "spell.irons_spellbooks.charge"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_charge.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/charge.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_heartstop": {
+    "title": {
+      "translate": "spell.irons_spellbooks.heartstop"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_heartstop.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/heartstop.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_ice_tomb": {
+    "title": {
+      "translate": "spell.irons_spellbooks.ice_tomb"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_ice_tomb.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/ice_tomb.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_gluttony": {
+    "title": {
+      "translate": "spell.irons_spellbooks.gluttony"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_gluttony.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/gluttony.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_greater_heal": {
+    "title": {
+      "translate": "spell.irons_spellbooks.greater_heal"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_greater_heal.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/greater_heal.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_abyssal_shroud": {
+    "title": {
+      "translate": "spell.irons_spellbooks.abyssal_shroud"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_abyssal_shroud.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/abyssal_shroud.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_spider_aspect": {
+    "title": {
+      "translate": "spell.irons_spellbooks.spider_aspect"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_spider_aspect.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/spider_aspect.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_raise_dead": {
+    "title": {
+      "translate": "spell.irons_spellbooks.raise_dead"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_raise_dead.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/raise_dead.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_summon_swords": {
+    "title": {
+      "translate": "spell.irons_spellbooks.summon_swords"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_summon_swords.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/summon_swords.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_arcane_shackle": {
+    "title": {
+      "translate": "spell.irons_spellbooks.arcane_shackle"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_arcane_shackle.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/arcane_shackle.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_summon_vex": {
+    "title": {
+      "translate": "spell.irons_spellbooks.summon_vex"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_summon_vex.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/summon_vex.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_firefly_swarm": {
+    "title": {
+      "translate": "spell.irons_spellbooks.firefly_swarm"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_firefly_swarm.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/firefly_swarm.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_scapegoat": {
+    "title": {
+      "translate": "spell.irons_spellbooks.scapegoat"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_scapegoat.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/scapegoat.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_sacrifice": {
+    "title": {
+      "translate": "spell.irons_spellbooks.sacrifice"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_sacrifice.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/sacrifice.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_gravity_fissure": {
+    "title": {
+      "translate": "spell.irons_spellbooks.gravity_fissure"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_gravity_fissure.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/gravity_fissure.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_summon_polar_bear": {
+    "title": {
+      "translate": "spell.irons_spellbooks.summon_polar_bear"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_summon_polar_bear.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/summon_polar_bear.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_frostbite": {
+    "title": {
+      "translate": "spell.irons_spellbooks.frostbite"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_frostbite.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/frostbite.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_telekinesis": {
+    "title": {
+      "translate": "spell.irons_spellbooks.telekinesis"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_telekinesis.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/telekinesis.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_summon_ender_chest": {
+    "title": {
+      "translate": "spell.irons_spellbooks.summon_ender_chest"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_summon_ender_chest.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/summon_ender_chest.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_blood_step": {
+    "title": {
+      "translate": "spell.irons_spellbooks.blood_step"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_blood_step.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/blood_step.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_spectral_hammer": {
+    "title": {
+      "translate": "spell.irons_spellbooks.spectral_hammer"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_spectral_hammer.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/spectral_hammer.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_frost_step": {
+    "title": {
+      "translate": "spell.irons_spellbooks.frost_step"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_frost_step.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/frost_step.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_invisibility": {
+    "title": {
+      "translate": "spell.irons_spellbooks.invisibility"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_invisibility.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/invisibility.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_recall": {
+    "title": {
+      "translate": "spell.irons_spellbooks.recall"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_recall.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/recall.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_touch_dig": {
+    "title": {
+      "translate": "spell.irons_spellbooks.touch_dig"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_touch_dig.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/touch_dig.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_angel_wing": {
+    "title": {
+      "translate": "spell.irons_spellbooks.angel_wing"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_angel_wing.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/angel_wing.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_ascension": {
+    "title": {
+      "translate": "spell.irons_spellbooks.ascension"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_ascension.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/ascension.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_portal": {
+    "title": {
+      "translate": "spell.irons_spellbooks.portal"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_portal.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/portal.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_planar_sight": {
+    "title": {
+      "translate": "spell.irons_spellbooks.planar_sight"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_planar_sight.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/planar_sight.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_spell_pocket_dimension": {
+    "title": {
+      "translate": "spell.irons_spellbooks.pocket_dimension"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_spell_pocket_dimension.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "irons_spellbooks:textures/gui/spell_icons/pocket_dimension.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_blast_geometry": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_blast_geometry.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_blast_geometry.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/blast_geometry.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_winter_front": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_winter_front.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_winter_front.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/winter_front.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_brittle_targets": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_brittle_targets.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_brittle_targets.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/brittle_targets.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_destruction_venom_opening": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_venom_opening.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_destruction_venom_opening.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/venom_opening.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_gentle_power": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_gentle_power.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_gentle_power.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_power.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_careful_aid": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_careful_aid.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_careful_aid.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_mana.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_lasting_readiness": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_lasting_readiness.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_lasting_readiness.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_cooldown.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_swift_response": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_swift_response.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_swift_response.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/restoration_cast_speed.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_commanding_presence": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_commanding_presence.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_commanding_presence.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_power.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_efficient_command": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_efficient_command.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_efficient_command.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_mana.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_renewed_command": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_renewed_command.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_renewed_command.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/conjuration_cooldown.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_light_passage": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_light_passage.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_light_passage.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_mana.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_familiar_routes": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_familiar_routes.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_familiar_routes.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_cooldown.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_transformation_quick_changes": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_quick_changes.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_transformation_quick_changes.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/transformation_cast_speed.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_restoration_guardian_aid": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_guardian_aid.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_restoration_guardian_aid.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/guardian_aid.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "magic_conjuration_binding_pact": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_binding_pact.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.magic_conjuration_binding_pact.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/binding_pact.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
     "cost": 1
   }
 }

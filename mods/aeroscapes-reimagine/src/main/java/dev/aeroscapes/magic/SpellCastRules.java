@@ -3,7 +3,6 @@ package dev.aeroscapes.magic;
 import io.redspace.ironsspellbooks.api.events.ModifySpellLevelEvent;
 import io.redspace.ironsspellbooks.api.events.SpellPreCastEvent;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
-import io.redspace.ironsspellbooks.api.spells.CastSource;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.bus.api.EventPriority;
@@ -30,10 +29,6 @@ public final class SpellCastRules {
     // Native selection and loot check enabled, but an existing spell container can still cast.
     if (!spell.isEnabled()) {
       message = "message.aeroscapes_reimagine.spell_disabled";
-    } else if (spell == SpellRegistry.RECALL_SPELL.get()
-        && event.getCastSource() == CastSource.SCROLL) {
-      // A dimension change clears the native cast state before the scroll is charged.
-      message = "message.aeroscapes_reimagine.recall_requires_book";
     } else {
       return;
     }

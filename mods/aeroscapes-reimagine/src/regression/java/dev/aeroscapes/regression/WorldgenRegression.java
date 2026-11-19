@@ -197,6 +197,23 @@ public final class WorldgenRegression {
       LOGGER.info("Reforge pool regression passed");
       return;
     }
+    String magicMigration = System.getProperty("aeroscapes.regression.magicMigration");
+    if (magicMigration != null) {
+      MagicMigrationRegression.start(level, magicMigration);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.magicRebalance")) {
+      MagicRebalanceRegression.start(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.abilities")) {
+      AbilitiesRegression.start(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.fireLoot")) {
+      FireLootRegression.start(level);
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.progression")) {
       ProgressionRegression.verify(level);
       LOGGER.info("Progression bridge regression passed");

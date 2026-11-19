@@ -42,6 +42,7 @@ final class RuntimeJsonPatchesRegression {
               "tags",
               "enchantment",
               "loot_table",
+              "loot_modifiers",
               "neoforge",
               "recipe")) {
         listed.putAll(
