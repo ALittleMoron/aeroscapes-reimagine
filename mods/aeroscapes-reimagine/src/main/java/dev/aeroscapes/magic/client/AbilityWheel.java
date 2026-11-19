@@ -122,7 +122,7 @@ public final class AbilityWheel {
       Component state =
           cooldown > 0
               ? AbilityClient.text("cooldown", (cooldown + 19) / 20)
-              : entry.usable() ? AbilityClient.text("ready") : AbilityClient.reason(entry);
+              : AbilityClient.reason(entry);
       graphics.drawCenteredString(game.font, state, centerX, centerY + 99, AbilityWidgets.TEXT);
     }
   }

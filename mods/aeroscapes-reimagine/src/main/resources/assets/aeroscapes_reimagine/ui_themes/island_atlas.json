@@ -1,0 +1,14 @@
+{
+  "flat": true,
+  "panel_color": "0xff1b2b3d",
+  "overlay_color": "0xc8111b29",
+  "name_color": "0xffd6e0eb",
+  "description_color": "0xffd6e0eb",
+  "power_name_color": "0xffe9c084",
+  "power_description_color": "0xffd6e0eb",
+  "header_color": "0xffe9c084",
+  "border_color": "0xff627b96",
+  "muted_color": "0xff92a9c3",
+  "accent_color": "0xffe9c084",
+  "font": "minecraft:default"
+}

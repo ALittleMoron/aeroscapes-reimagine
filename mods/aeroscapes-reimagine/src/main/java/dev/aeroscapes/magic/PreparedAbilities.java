@@ -1,6 +1,8 @@
 package dev.aeroscapes.magic;
 
+import dev.aeroscapes.magic.travel.AmuletStep;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.races.RaceIdentity;
 import io.redspace.ironsspellbooks.api.events.SpellCooldownAddedEvent;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
@@ -14,12 +16,16 @@ import io.redspace.ironsspellbooks.compat.Curios;
 import io.redspace.ironsspellbooks.gui.inscription_table.InscriptionTableMenu;
 import io.redspace.ironsspellbooks.item.Scroll;
 import io.redspace.ironsspellbooks.item.SpellBook;
+import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
+import net.minecraft.ChatFormatting;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.Tag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.EventPriority;
@@ -28,6 +34,7 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
+import top.theillusivec4.curios.api.event.CurioChangeEvent;
 
 public final class PreparedAbilities {
   private PreparedAbilities() {}
@@ -40,6 +47,7 @@ public final class PreparedAbilities {
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::dimension);
     NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, PreparedAbilities::cooldown);
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::tooltip);
+    NeoForge.EVENT_BUS.addListener(PreparedAbilities::amuletChanged);
   }
 
   public static Preparation preparation(ServerPlayer player) {
@@ -48,8 +56,14 @@ public final class PreparedAbilities {
     var slots = new ArrayList<String>();
     for (int index = 0; index < Preparation.SLOT_COUNT; index++) {
       String id = index < values.size() ? values.getString(index) : "";
-      if (!id.isEmpty() && (SpellKnowledge.spell(id) == SpellRegistry.none() || slots.contains(id)))
-        id = "";
+      if (!id.isEmpty()) {
+        var innate = InnateAbility.byId(id);
+        boolean valid =
+            innate == null
+                ? AmuletStep.ID.equals(id) || SpellKnowledge.spell(id) != SpellRegistry.none()
+                : RaceIdentity.race(player) == innate.race;
+        if (!valid || slots.contains(id)) id = "";
+      }
       slots.add(id);
     }
     int selected = Math.clamp(stored.getInt("selected"), 0, Preparation.SLOT_COUNT - 1);
@@ -66,7 +80,12 @@ public final class PreparedAbilities {
 
   public static void edit(ServerPlayer player, int slot, String id) {
     if (slot < 0 || slot >= Preparation.SLOT_COUNT || id.length() > 128) return;
-    if (!id.isEmpty()) {
+    var innate = InnateAbility.byId(id);
+    if (AmuletStep.ID.equals(id)) {
+      if (!AmuletStep.available(player)) return;
+    } else if (innate != null) {
+      if (RaceIdentity.race(player) != innate.race) return;
+    } else if (!id.isEmpty()) {
       AbstractSpell spell = SpellKnowledge.spell(id);
       if (spell == SpellRegistry.none()) return;
       String reason =
@@ -77,7 +96,10 @@ public final class PreparedAbilities {
         return;
       }
     }
-    save(player, preparation(player).assign(slot, id));
+    var prepared = preparation(player);
+    if (AmuletStep.ID.equals(prepared.slots().get(slot)) && !AmuletStep.available(player))
+      prepared = prepared.assign(slot, "");
+    save(player, prepared.assign(slot, id));
     reconcileCasting(player);
     sync(player, true);
   }
@@ -93,6 +115,17 @@ public final class PreparedAbilities {
     String id = prepared.slots().get(prepared.selected());
     if (id.isEmpty()) {
       SpellKnowledge.message(player, "empty");
+      return;
+    }
+    var innate = InnateAbility.byId(id);
+    if (AmuletStep.ID.equals(id)) {
+      AmuletStep.cast(player);
+      sync(player, false);
+      return;
+    }
+    if (innate != null) {
+      RacialAbilities.use(player, innate);
+      sync(player, false);
       return;
     }
     AbstractSpell spell = SpellKnowledge.spell(id);
@@ -156,7 +189,9 @@ public final class PreparedAbilities {
     if (focus == null || !SpellKnowledge.hasFocus(player)) return;
     var container = ISpellContainer.create(Preparation.SLOT_COUNT, true, true).mutableCopy();
     for (int index = 0; index < prepared.slots().size(); index++) {
-      AbstractSpell spell = SpellKnowledge.spell(prepared.slots().get(index));
+      String id = prepared.slots().get(index);
+      if (id.isEmpty() || InnateAbility.byId(id) != null || AmuletStep.ID.equals(id)) continue;
+      AbstractSpell spell = SpellKnowledge.spell(id);
       if (spell != SpellRegistry.none()
           && SpellKnowledge.knowledgeReason(player, spell, skills).isEmpty())
         container.addSpellAtIndex(spell, SpellKnowledge.rank(player, spell, skills), index, true);
@@ -180,8 +215,30 @@ public final class PreparedAbilities {
     long practice = MagicPractice.credit(player);
     Set<String> skills = SpellKnowledge.unlocked(player);
     Preparation prepared = preparation(player);
+    RacialAbilities.reconcile(player, prepared);
     if (project) projectFocus(player, prepared, skills);
     var entries = new ArrayList<AbilityNetwork.Entry>();
+    boolean amulet = AmuletStep.available(player);
+    if (amulet) {
+      int cooldown = AmuletStep.cooldown(player);
+      entries.add(
+          new AbilityNetwork.Entry(
+              AmuletStep.ID,
+              AmuletStep.GROUP,
+              0,
+              0,
+              0,
+              cooldown == 0,
+              cooldown == 0 ? "" : "cooldown",
+              cooldown,
+              0));
+    }
+    var race = RaceIdentity.race(player);
+    for (var innate : InnateAbility.values()) {
+      if (innate.race == race)
+        entries.add(
+            new AbilityNetwork.Entry(innate.id, InnateAbility.GROUP, 0, 0, 0, true, "", 0, 0));
+    }
     for (AbstractSpell spell : SpellKnowledge.spells()) {
       int rank = SpellKnowledge.rank(player, spell, skills);
       String reason = SpellKnowledge.knowledgeReason(player, spell, skills);
@@ -215,8 +272,11 @@ public final class PreparedAbilities {
         player,
         new AbilityNetwork.Snapshot(
             entries,
-            prepared.slots(),
+            amulet
+                ? prepared.slots()
+                : prepared.slots().stream().map(id -> AmuletStep.ID.equals(id) ? "" : id).toList(),
             prepared.selected(),
+            RacialAbilities.nightVision(player),
             java.util.List.copyOf(skills),
             MagicPracticeProgress.level(practice),
             practice,
@@ -316,16 +376,24 @@ public final class PreparedAbilities {
     if (event.getEntity() instanceof ServerPlayer player) captureCooldowns(player);
   }
 
+  private static void amuletChanged(CurioChangeEvent event) {
+    var amulet = ItemRegistry.TELEPORTATION_AMULET.get();
+    if (event.getEntity() instanceof ServerPlayer player
+        && (event.getFrom().is(amulet) || event.getTo().is(amulet))) sync(player, false);
+  }
+
   private static void tooltip(ItemTooltipEvent event) {
-    String key;
-    if (event.getItemStack().getItem() instanceof Scroll) key = "scroll_hint";
-    else if (event.getItemStack().getItem() instanceof SpellBook) key = "book_hint";
+    List<String> lines;
+    if (event.getItemStack().getItem() instanceof Scroll) lines = List.of("scroll_hint");
+    else if (event.getItemStack().getItem() instanceof SpellBook) lines = List.of("book_hint");
+    else if (event.getItemStack().is(ItemRegistry.TELEPORTATION_AMULET.get()))
+      lines = List.of("amulet_equip", "amulet_hint");
     else return;
-    event
-        .getToolTip()
-        .add(
-            net.minecraft.network.chat.Component.translatable(
-                    "aeroscapes_reimagine.abilities." + key)
-                .withStyle(net.minecraft.ChatFormatting.GRAY));
+    for (String key : lines)
+      event
+          .getToolTip()
+          .add(
+              Component.translatable("aeroscapes_reimagine.abilities." + key)
+                  .withStyle(ChatFormatting.GRAY));
   }
 }

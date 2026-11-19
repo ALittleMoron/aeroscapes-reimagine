@@ -1,0 +1,10 @@
+{
+  "name": "aeroscapes_reimagine.race.elf.name",
+  "description": "aeroscapes_reimagine.race.elf.description",
+  "icon": "minecraft:bow",
+  "powers": [
+    "aeroscapes_reimagine:elf_health",
+    "aeroscapes_reimagine:elf_stamina",
+    "aeroscapes_reimagine:elf_speed"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "legendarysurvivaloverhaul:cold_resistance",
+  "amount": 1,
+  "operation": "add_value",
+  "hidden": true
+}

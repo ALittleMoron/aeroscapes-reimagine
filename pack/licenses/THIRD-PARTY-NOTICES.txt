@@ -622,3 +622,12 @@ independently authored.
 
 Selected household and navigation additions
 See Household-and-navigation-NOTICE.txt for exact official files and scoped terms.
+
+Playable races in 0.6.3
+NeoOrigins 2.2.38 by CyberDay1, with Origins and Apoli attribution to apace100
+and contributors. See NeoOrigins-LICENSE.txt. The unchanged upstream JAR also
+contains the Newsreader font and its SIL Open Font License.
+https://modrinth.com/mod/neo-origins/version/XGLQQPkP
+Pehkui Rebuilt 3.9.2+1.21.1 by wuhenqiubai, based on Pehkui by Virtuoel.
+See Pehkui-Rebuilt-LICENSE.txt. The original JAR is distributed unchanged.
+https://modrinth.com/mod/pehkui-rebuilt/version/pQdozoO0

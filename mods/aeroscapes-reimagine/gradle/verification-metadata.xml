@@ -1354,6 +1354,22 @@
             <sha256 value="70f413ef81faa5ba8148862d30eb010bb8c653be2d60294da413bb2628d5ffda" origin="Verified Modrinth Maven descriptor"/>
          </artifact>
       </component>
+      <component group="maven.modrinth" name="neo-origins" version="XGLQQPkP">
+         <artifact name="neo-origins-XGLQQPkP.jar">
+            <sha256 value="5ce0ec464730b86aa07bf9fcc9f96efb9cb111776bb9e3da48d2dd1e3b657489" origin="Verified against pinned pack artifact"/>
+         </artifact>
+         <artifact name="neo-origins-XGLQQPkP.pom">
+            <sha256 value="f1884653c600b66827bd0c0865e5d92ae02075b48d9831eaa838356f7b025eac" origin="Verified Modrinth Maven descriptor"/>
+         </artifact>
+      </component>
+      <component group="maven.modrinth" name="pehkui-rebuilt" version="pQdozoO0">
+         <artifact name="pehkui-rebuilt-pQdozoO0.jar">
+            <sha256 value="e7d86ac8d46c875d09c3075eaf0180054c3a3becef5c24d343512ac3c18e5539" origin="Verified against pinned pack artifact"/>
+         </artifact>
+         <artifact name="pehkui-rebuilt-pQdozoO0.pom">
+            <sha256 value="f6d0dae19e3806d388c4ac9ea5bfba7a81e492f5b2be9385f858883d64d62b3c" origin="Verified Modrinth Maven descriptor"/>
+         </artifact>
+      </component>
       <component group="maven.modrinth" name="project-mmo" version="9lu4zNd1">
          <artifact name="project-mmo-9lu4zNd1.jar">
             <sha256 value="4b48c970c1c5fe57df675c024d576cc198253493cca4a0ed83c56a68753f6b28" origin="Verified against pinned pack artifact"/>

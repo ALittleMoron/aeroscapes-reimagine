@@ -1,0 +1,10 @@
+{
+  "name": "aeroscapes_reimagine.race.goblin.name",
+  "description": "aeroscapes_reimagine.race.goblin.description",
+  "icon": "minecraft:rabbit_hide",
+  "powers": [
+    "aeroscapes_reimagine:goblin_health",
+    "aeroscapes_reimagine:goblin_stamina",
+    "aeroscapes_reimagine:goblin_sneaking"
+  ]
+}

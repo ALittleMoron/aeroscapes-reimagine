@@ -1668,6 +1668,11 @@
   },
   "authored_resources": [
     {
+      "output": "data/minecraft/tags/banner_pattern/no_item_required.json",
+      "sha256": "985d9d1dd5047703cc460ec8185e0628290bbf2e8776df8d74338de9729dfc0a",
+      "reason": "Adds four original heraldic motifs to the vanilla loom's freely selectable patterns."
+    },
+    {
       "output": "data/minecraft/tags/block/coal_ores.json",
       "sha256": "80cda90e5c382d78036da54f3f35cb6cb5c4e1edb84c1dc2673a3e59b2e27b96",
       "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."

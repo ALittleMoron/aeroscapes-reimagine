@@ -4,6 +4,18 @@ description: Version history.
 status: available
 ---
 
+## 0.6.3
+
+- Choose a human, dwarf, goblin or elf before play, with three appearances per race on a stationary preview of your own skin. The portrait button in the inventory reopens your confirmed character sheet.
+- Singleplayer pauses during character creation. In multiplayer, the character is protected from damage until the choice is confirmed.
+- Races have distinct dimensions, health and stamina. Dwarves resist cold and knockback, goblins fit through one-block hatches when crouched, and elves move and learn archery and magic faster.
+- Prepare dwarf night vision or a temporary following light for elves in the same eight slots as spells.
+- Mark low and full-height passages with Chalk. Four freely available loom motifs can decorate banners and shields.
+- A worn Amulet of Teleportation grants a preparable 16-block step with a 20-second cooldown. Corrected which necklace drops when its spell power requirement is unmet.
+- Accessories with special effects have item descriptions and EMI information pages. Right-click equips an accessory from your hand. For items with a use of their own, sneak and right-click in the air to equip them.
+- The character stays visible next to climbing ropes and while climbing them. Enlarging the minimap no longer shares the spyglass zoom key.
+- Fixed a world crash when a dropped sapling plants itself. Manual placement still grants building practice.
+
 ## 0.6.2
 
 - Mastery paths now have one to three upgrades per stretch. Selecting a talent highlights the route and shows its remaining point and practice requirements.

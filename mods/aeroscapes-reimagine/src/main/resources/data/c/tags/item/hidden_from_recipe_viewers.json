@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "#aeroscapes_reimagine:origin_orbs",
     "crittersandcompanions:grappling_hook",
     "waystones:twinbound_feather",
     "waystones:epitaph",

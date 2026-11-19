@@ -11589,5 +11589,84 @@
       }
     ],
     "dependency_note": "Exact Fabric file on both sides uses the existing Connector 2.0.0-beta.17, Connector Extras 1.12.1 and Forgified Fabric API 0.116.15+2.3.4, now installed on the server too. Descriptor requires fabricloader >=0.15.11, fabric-api and Minecraft ~1.21."
+  },
+  {
+    "slug": "neo-origins",
+    "name": "NeoOrigins",
+    "project_id": "RUtQ9kfe",
+    "version_id": "XGLQQPkP",
+    "version": "2.2.38",
+    "filename": "neoorigins-2.2.38+1.21.1.jar",
+    "sha512": "1a904b85b433200efbd8b08a73e38738d97b55ed001bb3211701998ea59f6944dc4b4347f29f5da9c73864da1f152e78db3b616b169691a9bdbb4263856581a3",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/CyberDay1/NeoOrigins",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "fRiHVvU7",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "nvQzSEkH",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "status": "included",
+    "origin": "0.6.3 playable races",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "dc9a4bb978ddca3c62c33c08bb57ed1cdf2cefcb",
+    "file_size": 12519860
+  },
+  {
+    "slug": "pehkui-rebuilt",
+    "name": "Pehkui Rebuilt",
+    "project_id": "cxwMAgWQ",
+    "version_id": "pQdozoO0",
+    "version": "3.9.2+1.21.1",
+    "filename": "pehkui-rebuilt-neoforge-3.9.2+1.21.1.jar",
+    "sha512": "2637d01b99d78b60bf493c21d8bb92e66071c572b5080e0e44e1d46bbfc7d78426872367581768f60d894629a18d83b3c71461f627caf8bf440aca80279d12fb",
+    "release_type": "beta",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/wuhenqiubai/Pehkui-Rebuilt/blob/fabric/1.21.11/LICENSE"
+    },
+    "source_url": "https://github.com/wuhenqiubai/Pehkui-Rebuilt",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.6.3 playable races",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "918e74e6772c563973872e060d6938d10ec05669",
+    "file_size": 323553,
+    "exception": "Owner conditionally selected the exact 3.9.2+1.21.1 NeoForge beta for race body scaling. Physical and graphical compatibility are acceptance gates."
   }
 ]

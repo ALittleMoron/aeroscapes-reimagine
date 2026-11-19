@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:generic.knockback_resistance",
+  "amount": 0.15,
+  "operation": "add_value",
+  "hidden": true
+}

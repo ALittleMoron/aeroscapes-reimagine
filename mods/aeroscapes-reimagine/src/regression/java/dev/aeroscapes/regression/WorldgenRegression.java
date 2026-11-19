@@ -198,6 +198,49 @@ public final class WorldgenRegression {
       return;
     }
     String magicMigration = System.getProperty("aeroscapes.regression.magicMigration");
+    if (Boolean.getBoolean("aeroscapes.regression.races")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    var chalk =
+                        level
+                            .registryAccess()
+                            .registryOrThrow(
+                                ResourceKey.createRegistryKey(
+                                    ResourceLocation.parse("chalk:mark_symbol")));
+                    for (String name : List.of("low_passage", "upright_passage")) {
+                      require(
+                          chalk.containsKey(
+                              ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", name)),
+                          "Missing Chalk passage mark: " + name);
+                    }
+                    var loom =
+                        level
+                            .registryAccess()
+                            .registryOrThrow(Registries.BANNER_PATTERN)
+                            .getTag(net.minecraft.tags.BannerPatternTags.NO_ITEM_REQUIRED)
+                            .orElseThrow();
+                    for (String name :
+                        List.of("wind_rose", "stone_arch", "rope_knot", "star_leaf")) {
+                      var id = ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", name);
+                      require(
+                          loom.stream()
+                              .anyMatch(
+                                  pattern ->
+                                      pattern.is(id) && pattern.value().assetId().equals(id)),
+                          "Missing freely selectable loom motif: " + id);
+                    }
+                    RaceFoundationRegression.verify(level);
+                    RacialAbilitiesRegression.verify(level);
+                    AccessoryUseRegression.verify(level);
+                    LOGGER.info(
+                        "Four playable races, shared innate abilities, Chalk marks and heraldry passed");
+                  }));
+      return;
+    }
     if (magicMigration != null) {
       MagicMigrationRegression.start(level, magicMigration);
       return;
@@ -212,6 +255,10 @@ public final class WorldgenRegression {
     }
     if (Boolean.getBoolean("aeroscapes.regression.fireLoot")) {
       FireLootRegression.start(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.saplanting")) {
+      SaplantingRegression.verify(level);
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.progression")) {

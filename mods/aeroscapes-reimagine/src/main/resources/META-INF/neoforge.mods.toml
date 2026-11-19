@@ -131,6 +131,20 @@ ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.aeroscapes_reimagine]]
+modId = "neoorigins"
+type = "optional"
+versionRange = "[2.2.38]"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.aeroscapes_reimagine]]
+modId = "pehkui"
+type = "optional"
+versionRange = "[3.9.2+1.21.1]"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.aeroscapes_reimagine]]
 modId = "lithostitched"
 type = "required"
 versionRange = "[1.8.1]"

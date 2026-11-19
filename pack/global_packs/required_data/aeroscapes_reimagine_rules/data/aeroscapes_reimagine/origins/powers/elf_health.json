@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:generic.max_health",
+  "amount": -2,
+  "operation": "add_value",
+  "hidden": true
+}

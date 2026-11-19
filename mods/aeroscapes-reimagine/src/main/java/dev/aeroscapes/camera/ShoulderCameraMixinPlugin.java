@@ -9,13 +9,17 @@ import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
 public final class ShoulderCameraMixinPlugin implements IMixinConfigPlugin {
+  private static final String CAMERA = "net.minecraft.client.Camera";
+
   @Override
   public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
     var mods = FMLLoader.getLoadingModList();
     var shoulder = mods.getModFileById("shouldersurfing");
-    var sable = mods.getModFileById("sable");
-    if (shoulder == null || sable == null) return false;
+    if (shoulder == null) return false;
     requireVersion(shoulder.getMods(), "shouldersurfing", "1.21.1-4.22.12");
+    if (!CAMERA.equals(targetClassName)) return true;
+    var sable = mods.getModFileById("sable");
+    if (sable == null) return false;
     requireVersion(sable.getMods(), "sable", "2.0.6");
     return true;
   }
@@ -36,7 +40,7 @@ public final class ShoulderCameraMixinPlugin implements IMixinConfigPlugin {
   @Override
   public void postApply(
       String targetClassName, ClassNode targetClass, String mixinName, IMixinInfo info) {
-    ShoulderCameraTransformer.patch(targetClass);
+    if (CAMERA.equals(targetClassName)) ShoulderCameraTransformer.patch(targetClass);
   }
 
   @Override

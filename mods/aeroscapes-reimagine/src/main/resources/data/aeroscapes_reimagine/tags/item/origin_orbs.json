@@ -1,0 +1,10 @@
+{
+  "values": [
+    { "id": "neoorigins:orb_of_origin", "required": false },
+    { "id": "neoorigins:orb_of_class", "required": false },
+    { "id": "neoorigins:gold_orb", "required": false },
+    { "id": "neoorigins:pink_orb", "required": false },
+    { "id": "neoorigins:purple_orb", "required": false },
+    { "id": "neoorigins:teal_orb", "required": false }
+  ]
+}

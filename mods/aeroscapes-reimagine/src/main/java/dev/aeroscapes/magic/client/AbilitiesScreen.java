@@ -174,7 +174,9 @@ public final class AbilitiesScreen extends Screen {
             false);
       Component state =
           assignmentReason.isEmpty()
-              ? AbilityClient.text("rank_short", entry.level(), entry.cap())
+              ? entry.granted()
+                  ? AbilityClient.school(entry)
+                  : AbilityClient.text("rank_short", entry.level(), entry.cap())
               : AbilityClient.text(
                   assignmentReason.equals("unlearned") ? "unlearned_short" : "unavailable_short");
       var stateLines = font.split(state, listWidth() - 46);
@@ -192,7 +194,7 @@ public final class AbilitiesScreen extends Screen {
     if (entries.isEmpty()) {
       boolean noLearned =
           learnedOnly
-              && AbilityClient.snapshot().entries().stream().noneMatch(entry -> entry.level() > 0);
+              && AbilityClient.snapshot().entries().stream().noneMatch(AbilityNetwork.Entry::known);
       graphics.enableScissor(20, 71, listWidth() + 8, 63 + bodyHeight());
       graphics.drawWordWrap(
           font,
@@ -238,8 +240,7 @@ public final class AbilitiesScreen extends Screen {
     if (entry == null) {
       boolean noLearned =
           learnedOnly
-              && AbilityClient.snapshot().entries().stream()
-                  .noneMatch(candidate -> candidate.level() > 0);
+              && AbilityClient.snapshot().entries().stream().noneMatch(AbilityNetwork.Entry::known);
       paragraphs.add(
           AbilityClient.text(
               AbilityClient.snapshot().entries().isEmpty()
@@ -255,13 +256,18 @@ public final class AbilitiesScreen extends Screen {
                 .withColor(0xffef9b8c));
       paragraphs.add(AbilityClient.name(entry.id()));
       paragraphs.add(AbilityClient.school(entry));
-      paragraphs.add(AbilityClient.text("rank", entry.level(), entry.maxLevel(), entry.cap()));
+      if (entry.granted()) {
+        paragraphs.add(
+            AbilityClient.text(
+                net.minecraft.resources.ResourceLocation.parse(entry.id()).getPath() + "_hint"));
+      } else
+        paragraphs.add(AbilityClient.text("rank", entry.level(), entry.maxLevel(), entry.cap()));
       paragraphs.add(
           assignmentReason.isEmpty()
               ? AbilityClient.reason(entry)
               : AbilityClient.reason(assignmentReason));
       if (assignmentReason.isEmpty()) {
-        paragraphs.add(AbilityClient.text("assign_hint"));
+        paragraphs.add(AbilityClient.text(entry.granted() ? "innate_assign" : "assign_hint"));
         paragraphs.add(AbilityClient.text("move_hint"));
       }
       paragraphs.add(AbilityClient.text("controls"));

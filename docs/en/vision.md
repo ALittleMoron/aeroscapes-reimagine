@@ -4,7 +4,7 @@ description: A sandbox of floating islands, engineering, fantasy and places wort
 status: available
 ---
 
-Aeroscapes Reimagine is an independent Minecraft sandbox project combining floating islands, Create engineering, air travel, fantasy roleplaying and everyday life. Races, classes, dedicated magic, colonies and NPC quests are part of its planned development.
+Aeroscapes Reimagine is an independent Minecraft sandbox project combining floating islands, Create engineering, air travel, fantasy roleplaying and everyday life. Playable races and magic already shape expeditions. Classes, colonies and NPC quests are planned.
 
 The starting point is [Isabel’s Aeroscapes](https://modrinth.com/modpack/aeroscapes), whose island survival and Aeronautics setting give the world its shape. [Otherworld D&D](https://www.curseforge.com/minecraft/modpacks/otherworld-dnd) is the reference for the future character, magic and action combat experience. Reimagine develops its own combination of these ideas and does not represent an official release of either project.
 
@@ -22,7 +22,7 @@ Everyday conveniences should reduce repeated handling while preserving meaningfu
 
 [Engineering](../experience/engineering/) centers on Create and Aeronautics: visible machines, useful automation and vehicles designed by the player. Cooking and farming give those machines everyday work. A home, a factory and an expedition ship should be different expressions of the same world.
 
-The planned [character and combat](../experience/character-and-combat/) layer will add meaningful races, classes and flexible combinations of skills. [Magic](../experience/magic/) can have several distinct traditions, with discovery and experimentation alongside practical uses. [Settlements](../experience/settlements/) will bring builders, workers, neighbors and local tasks into the landscape. Colony, workshop and expedition activities can become connected through trade, transport and preparing supplies.
+[Character and combat](../experience/character-and-combat/) combines racial traits with skills that grow through practice. Classes will add another choice. [Magic](../experience/magic/) can have several distinct traditions, with discovery and experimentation alongside practical uses. [Settlements](../experience/settlements/) will bring builders, workers, neighbors and local tasks into the landscape. Colony, workshop and expedition activities can become connected through trade, transport and preparing supplies.
 
 Building and daily activities have value in their own right. A pleasant kitchen, a well-stocked garden or a carefully furnished cabin need not increase combat strength to justify the time spent on it. A teaching quest book may eventually help explain the possibilities; NPC quests will offer local activities without making everyone follow a single campaign.
 

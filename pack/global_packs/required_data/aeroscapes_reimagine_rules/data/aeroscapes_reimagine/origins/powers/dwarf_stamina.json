@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "paraglider:max_stamina",
+  "amount": 100,
+  "operation": "add_value",
+  "hidden": true
+}

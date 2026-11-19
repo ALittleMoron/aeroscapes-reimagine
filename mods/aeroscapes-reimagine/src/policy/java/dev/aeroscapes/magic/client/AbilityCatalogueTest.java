@@ -1,6 +1,7 @@
 package dev.aeroscapes.magic.client;
 
 import dev.aeroscapes.magic.AbilityNetwork;
+import dev.aeroscapes.magic.InnateAbility;
 import java.util.List;
 import java.util.Map;
 
@@ -62,9 +63,20 @@ public final class AbilityCatalogueTest {
     require(AbilityCatalogue.assignmentReason(discovery).equals("discovery"), "Discovery reason");
     require(AbilityCatalogue.assignmentReason(disabled).equals("disabled"), "Disabled reason");
     require(AbilityCatalogue.assignmentReason(null).equals("waiting"), "Stale selection reason");
+    for (var ability : InnateAbility.values()) {
+      var innate =
+          new AbilityNetwork.Entry(ability.id, InnateAbility.GROUP, 0, 0, 0, true, "", 0, 0);
+      require(
+          AbilityCatalogue.assignmentReason(innate).isEmpty(), "Innate actions need no mastery");
+      require(
+          AbilityCatalogue.matching(
+                  List.of(innate, unknown), true, InnateAbility.GROUP, ability.path, id -> id)
+              .equals(List.of(innate)),
+          "The player's rankless innate ability can be found in learned-only and racial filters");
+    }
     System.out.println(
-        "Ability catalogue: learned-only, complete catalogue, localized search, school and preparation"
-            + " restrictions passed");
+        "Ability catalogue: learned-only, complete catalogue, localized search, school and"
+            + " preparation restrictions passed");
   }
 
   private static AbilityNetwork.Entry entry(

@@ -13,7 +13,7 @@ public final class AbilityNetwork {
   private AbilityNetwork() {}
 
   public static void register(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("2");
+    var registrar = event.registrar("3");
     registrar.playToServer(
         Request.TYPE,
         Request.CODEC,
@@ -38,7 +38,9 @@ public final class AbilityNetwork {
         Cast.TYPE,
         Cast.CODEC,
         (message, context) -> {
-          if (context.player() instanceof ServerPlayer player) PreparedAbilities.cast(player);
+          if (context.player() instanceof ServerPlayer player
+              && !dev.aeroscapes.races.RaceIdentity.awaitingChoice(player))
+            PreparedAbilities.cast(player);
         });
     registrar.playToClient(
         Snapshot.TYPE,
@@ -55,12 +57,25 @@ public final class AbilityNetwork {
       boolean usable,
       String reason,
       int cooldownTicks,
-      int manaCost) {}
+      int manaCost) {
+    public boolean innate() {
+      return school.equals(InnateAbility.GROUP);
+    }
+
+    public boolean known() {
+      return granted() || level > 0;
+    }
+
+    public boolean granted() {
+      return innate() || school.equals(dev.aeroscapes.magic.travel.AmuletStep.GROUP);
+    }
+  }
 
   public record Snapshot(
       List<Entry> entries,
       List<String> slots,
       int selected,
+      boolean dwarfNightVision,
       List<String> talents,
       int practiceLevel,
       long practiceXp,
@@ -85,6 +100,7 @@ public final class AbilityNetwork {
                   });
               buffer.writeCollection(message.slots(), (output, slot) -> output.writeUtf(slot, 128));
               buffer.writeVarInt(message.selected());
+              buffer.writeBoolean(message.dwarfNightVision());
               buffer.writeCollection(
                   message.talents(), (output, talent) -> output.writeUtf(talent, 128));
               buffer.writeVarInt(message.practiceLevel());
@@ -107,6 +123,7 @@ public final class AbilityNetwork {
                                 input.readVarInt())),
                     buffer.readList(input -> input.readUtf(128)),
                     buffer.readVarInt(),
+                    buffer.readBoolean(),
                     buffer.readList(input -> input.readUtf(128)),
                     buffer.readVarInt(),
                     buffer.readVarLong(),

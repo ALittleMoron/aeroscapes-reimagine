@@ -14,6 +14,8 @@ Make a copper spell book (called the Flimsy Journal in game) from two copper ing
 
 Open **Prepared abilities** from the inventory or Curios. **Learned only** is on by default; turn it off to inspect the full catalogue. Unlearned and unavailable spells have a separate status, and an unsuccessful assignment explains the restriction. Search and the school filter work with either view. A known spell stays in the learned list while cooling down or when you lack mana or an equipped focus.
 
+Dwarves and elves also see their innate ability here. It can use any of the eight slots and works without a book or mana.
+
 Select a learned spell, then click a preparation slot to assign it. Right-click an occupied slot and click another to move its spell. **Clear selected slot** removes the assignment. You can change preparation during combat. Learned passive bonuses need no preparation slot. Hover over a slot for the assignment and casting controls.
 
 Tap the **middle mouse button** to cast the selected prepared spell. Hold it to open the wheel, point at a slot, then release to select it without casting. With the default bindings, **Ctrl + middle mouse button** picks a block in Survival. In Creative, middle-click picks the targeted block or entity. Aim at empty space for the magic gesture, or assign separate cast and wheel keys in Controls. Optional keys for selecting each of the eight slots are also available; all extra keys are unbound by default. Selecting a slot never casts it.
@@ -64,6 +66,10 @@ Characters updating the four-direction tree keep purchases, personal ranks and p
 
 ## Travel
 
+The **Amulet of Teleportation** goes in a necklace slot and requires total Ender Spell Power above 125%. At or below that threshold, the amulet falls to the ground. Three pieces of Shadowwalker armor raise the base 100% to 130%. While wearing the amulet, assign **Amulet Step** to one of the eight ability slots. Stand on solid ground, face the direction you want to travel and activate the step. It takes you up to 16 blocks and stops before walls or gaps. It costs no mana and requires no spellbook. Successful steps are 20 seconds apart, even if you remove and put the amulet back on.
+
+The step and qualifying teleport spells also grant three seconds of Evasion I while the amulet is worn. Ender pearls do not trigger this effect. The item tooltip and EMI explain the conditions.
+
 Teleport remains a short-distance spell with a maximum rank of 1 and a base cooldown of 20 seconds. Prepared Recall returns you to your respawn point with an equipped book focus; a Recall scroll offers one consumable use.
 
 Angel Wings temporarily enables elytra-style flight. Its base duration rises from 10 to 50 seconds and its base mana cost from 80 to 160 with rank. Duration is capped at 50 seconds after all bonuses, with at least 120 seconds between activations.
@@ -84,4 +90,4 @@ For prospecting, sneak and right-click a suitable block with an attunable divina
 
 ## Further development
 
-The shared preparation panel will also support planned racial abilities and martial techniques as those systems arrive. Saved preparation sets remain a later possibility. Programmable [Hex Casting](https://modrinth.com/mod/hex-casting) is planned before `1.0.0` if a suitable version passes verification.
+The shared preparation slots will also support martial techniques. Saved preparation sets remain a later possibility. Programmable [Hex Casting](https://modrinth.com/mod/hex-casting) is planned before `1.0.0` if a suitable version passes verification.

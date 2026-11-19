@@ -1,7 +1,10 @@
 package dev.aeroscapes.magic.client;
 
 import dev.aeroscapes.magic.AbilityNetwork;
+import dev.aeroscapes.magic.InnateAbility;
 import dev.aeroscapes.magic.MagicBonuses;
+import dev.aeroscapes.magic.RacialAbilities;
+import dev.aeroscapes.magic.travel.AmuletStep;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import java.util.List;
@@ -23,10 +26,10 @@ import net.neoforged.neoforge.network.PacketDistributor;
 /** A view of the server's personal spell knowledge and preparation. */
 @EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
 public final class AbilityClient {
-  public static final int SLOT_COUNT = 8;
+  public static final int SLOT_COUNT = dev.aeroscapes.magic.Preparation.SLOT_COUNT;
   private static final AbilityNetwork.Snapshot EMPTY =
       new AbilityNetwork.Snapshot(
-          List.of(), java.util.Collections.nCopies(SLOT_COUNT, ""), 0, List.of(), 0, 0, 0);
+          List.of(), java.util.Collections.nCopies(SLOT_COUNT, ""), 0, false, List.of(), 0, 0, 0);
   private static AbilityNetwork.Snapshot snapshot = EMPTY;
   private static long receivedAt;
   private static final AbilityHudSelection HUD_SELECTION = new AbilityHudSelection();
@@ -41,6 +44,7 @@ public final class AbilityClient {
             List.copyOf(update.entries()),
             List.copyOf(update.slots()),
             update.selected(),
+            update.dwarfNightVision(),
             List.copyOf(update.talents()),
             update.practiceLevel(),
             update.practiceXp(),
@@ -81,11 +85,16 @@ public final class AbilityClient {
   }
 
   public static Component name(String id) {
-    return spell(id).getDisplayName(Minecraft.getInstance().player);
+    if (AmuletStep.ID.equals(id)) return text("amulet_step");
+    var innate = InnateAbility.byId(id);
+    return innate == null
+        ? spell(id).getDisplayName(Minecraft.getInstance().player)
+        : text(innate.path);
   }
 
   public static Component school(AbilityNetwork.Entry entry) {
-    return spell(entry.id()).getSchoolType().getDisplayName();
+    if (AmuletStep.GROUP.equals(entry.school())) return text("equipment");
+    return entry.innate() ? text("innate") : spell(entry.id()).getSchoolType().getDisplayName();
   }
 
   public static Component text(String key, Object... arguments) {
@@ -93,6 +102,12 @@ public final class AbilityClient {
   }
 
   public static Component reason(AbilityNetwork.Entry entry) {
+    if (entry.id().equals(InnateAbility.NIGHT_VISION.id))
+      return text(snapshot.dwarfNightVision() ? "sight_on" : "sight_off");
+    if (entry.id().equals(InnateAbility.LIGHT.id) && Minecraft.getInstance().player != null) {
+      var light = Minecraft.getInstance().player.getEffect(RacialAbilities.ELF_LIGHT);
+      if (light != null) return text("light_remaining", (light.getDuration() + 19) / 20);
+    }
     return reason(entry.reason());
   }
 
@@ -191,6 +206,14 @@ public final class AbilityClient {
 
   public static void icon(GuiGraphics graphics, String id, int x, int y, int size) {
     if (id.isEmpty()) return;
-    graphics.blit(spell(id).getSpellIconResource(), x, y, 0, 0, size, size, size, size);
+    var innate = InnateAbility.byId(id);
+    var texture =
+        AmuletStep.ID.equals(id)
+            ? ResourceLocation.parse("aeroscapes_reimagine:textures/gui/abilities/amulet_step.png")
+            : innate == null
+                ? spell(id).getSpellIconResource()
+                : ResourceLocation.fromNamespaceAndPath(
+                    "aeroscapes_reimagine", "textures/mob_effect/" + innate.path + ".png");
+    graphics.blit(texture, x, y, 0, 0, size, size, size, size);
   }
 }

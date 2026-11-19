@@ -1,0 +1,7 @@
+{
+  "type": "neoorigins:attribute_modifier",
+  "attribute": "minecraft:player.sneaking_speed",
+  "amount": 0.12,
+  "operation": "add_value",
+  "hidden": true
+}

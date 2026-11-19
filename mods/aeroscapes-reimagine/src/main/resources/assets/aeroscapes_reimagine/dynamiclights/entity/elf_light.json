@@ -1,0 +1,9 @@
+{
+  "match": {
+    "type": "minecraft:player",
+    "effects": {
+      "aeroscapes_reimagine:elf_light": {}
+    }
+  },
+  "luminance": 12
+}

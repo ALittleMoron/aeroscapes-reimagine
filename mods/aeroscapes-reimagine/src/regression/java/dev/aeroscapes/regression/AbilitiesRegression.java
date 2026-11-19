@@ -154,7 +154,7 @@ public final class AbilitiesRegression {
         });
   }
 
-  private static void verifyDeathClone(ServerPlayer original, Consumer<ServerPlayer> verification) {
+  static void verifyDeathClone(ServerPlayer original, Consumer<ServerPlayer> verification) {
     // Use the native respawn copy operation while the original login state is still live.
     var replacement =
         new ServerPlayer(
@@ -498,7 +498,8 @@ public final class AbilitiesRegression {
           player.serverLevel() == level
               && scroll.getCount() == 1
               && magic(player).getMana() == mana,
-          "Successful cross-dimension Recall consumes exactly one scroll after native state resets");
+          "Successful cross-dimension Recall consumes exactly one scroll after native state"
+              + " resets");
       complete(player);
       require(scroll.getCount() == 1, "Native post-charge cannot consume the Recall scroll twice");
     }
@@ -517,7 +518,8 @@ public final class AbilitiesRegression {
       aimDown(player, position);
       require(
           SpellKnowledge.canStart(portal, player, scroll, 1, CastSource.SCROLL, false),
-          "Owned progression checks do not require Portal knowledge, mastery or focus for a scroll");
+          "Owned progression checks do not require Portal knowledge, mastery or focus for a"
+              + " scroll");
       float mana = magic(player).getMana();
       scroll.use(level, player, InteractionHand.MAIN_HAND);
       postTick(player);
@@ -529,7 +531,8 @@ public final class AbilitiesRegression {
               && magic(player).getMana() == mana
               && !magic(player).getPlayerRecasts().hasRecastForSpell(portal)
               && TravelMagic.cooldownTicks(player, portal) == 0,
-          "The native prohibition on recast spells from scrolls remains intact and consumes nothing");
+          "The native prohibition on recast spells from scrolls remains intact and consumes"
+              + " nothing");
     }
   }
 
@@ -641,7 +644,8 @@ public final class AbilitiesRegression {
           interrupted.getCount() == 1
               && pulses[0] == completedPulses + 1
               && magic(player).getMana() == mana,
-          "Interrupting an already effective channel consumes exactly one scroll and no extra pulse");
+          "Interrupting an already effective channel consumes exactly one scroll and no extra"
+              + " pulse");
     } finally {
       NeoForge.EVENT_BUS.unregister(listener);
     }

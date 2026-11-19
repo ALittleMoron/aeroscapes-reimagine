@@ -80,6 +80,8 @@ Both maps start with Xaero's native terrain display. In the Overworld, **Alt + H
 
 Spyglass Improvements adds adjustable zoom, quick access and spyglass overlays.
 
+By default, **Z** activates spyglass zoom. Xaero’s enlarged minimap has no default key. You can assign it a separate key in Controls.
+
 [Nature’s Compass](https://modrinth.com/mod/natures-compass) locates biomes, and [Explorer’s Compass](https://modrinth.com/mod/explorers-compass) locates structures. Both search for free within 5,000 blocks of the search origin. Extended search requires one available experience level to start, reaches 10,000 blocks and charges it only when a result beyond 5,000 blocks is found. Failed or cancelled searches are free. A search that reaches its sample limit is incomplete; a biome result can also miss small patches and does not guarantee a dry landing place.
 
 Corpse provides inventory recovery through a body after death. Recovery after a fall into the void and interactions with moving ships remain unresolved.

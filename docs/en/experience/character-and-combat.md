@@ -1,10 +1,10 @@
 ---
 title: Character and combat
-description: Practice skills, talent trees, equipment ranks, reforging and plans for races and classes.
+description: Racial traits, character appearance, skill practice, talent trees and equipment ranks.
 status: partial
 ---
 
-Skills grow as you use them and earn points for two talent budgets. Learned spells share eight personal preparation slots. Crafted and looted gear can roll quality bonuses, and the anvil can replace the entire rank while keeping ordinary enchantments. Races, classes, professions and the intended action-combat system are planned additions.
+Your race sets your size, stamina and innate traits. Practice earns skill levels and talent points. Learned spells and innate abilities share eight preparation slots. Equipment can gain a quality rank through crafting, loot or reforging.
 
 ## Skills and talents
 
@@ -35,9 +35,11 @@ Combat currently offers melee and protection, while Professions has a gathering 
 
 ## Prepared abilities
 
-Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells in eight shared slots, including during combat. Passive talents do not use these slots. Tap the middle mouse button to cast the selected spell, or hold it and release over a slot in the wheel to select that slot. Casting needs an equipped spell book focus and keeps the spell's costs and cooldown. The [magic guide](../magic/#your-first-spell) covers controls, books and scroll study. Personal ranks and preparation survive death, relogging and dimension changes.
+Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells, racial abilities and Amulet Step in eight shared slots, including during combat. Passive talents do not use these slots. Tap the middle mouse button to cast the selected spell, or hold it and release over a slot in the wheel to select that slot. Casting a learned spell requires an equipped spellbook focus and keeps the spell’s costs and cooldown. Racial abilities and Amulet Step work without a focus. The [magic guide](../magic/#your-first-spell) covers controls, books and scroll study. Personal ranks and preparation survive death, relogging and dimension changes.
 
 ## Equipment quality and reforging
+
+To equip an accessory, hold it and right-click in the air. If it already uses right-click, such as a spyglass, sneak and right-click in the air to put it on. With a single item in hand and no compatible empty slot, you can swap it for a removable equipped accessory. Item tooltips and EMI explain special accessory effects.
 
 Quality ranges from poor to legendary. Excellent gear can specialize in one strong bonus, such as a pickaxe’s mining speed. Epic gear combines two or three bonuses. A legendary roll combines bonuses of that strength with a special effect. For example, a pickaxe can dig a 3×3 face, and a hoe can till a 3×3 bed. Sneak to use these tools on a single block.
 
@@ -69,7 +71,37 @@ A pickaxe with **Extra Yield** can add one unit of an actual drop, including sto
 
 ## Races and classes
 
-Races should differ through appearance, abilities, size, health and interactions with the world. Humans, dwarves, goblins and elves are selected for the first roster before `1.0.0`; that roster may be refined as the pack develops. Advantages and disadvantages should be understandable before selection. Races that grant unrestricted flight from the start will be excluded or adapted so their movement abilities preserve the challenge of crossing islands. Other meaningful advantages and disadvantages remain welcome.
+If your character has no race yet, joining a world opens a preview using your own skin. Turn the model, choose one of four races and one of its three appearances, then confirm to start playing. If you leave the world first, the chooser reopens when you return.
+
+In singleplayer, the world pauses until you confirm. On a server or in a world opened to LAN, others can keep playing. While you choose, attacks and environmental hazards cannot hurt your character, and your status effect timers stay still.
+
+Your confirmed race and appearance persist through death, dimension changes and login. To read your traits again, use the button in the upper-right corner of the character portrait in your inventory or Curios screen.
+
+| Race   | Hearts | Stamina | In play                                                                                                                                                                   |
+| ------ | -----: | ------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Human  |     10 |   1,000 | Standard size, movement and learning. Keep your original skin or add tied hair or a short beard.                                                                          |
+| Dwarf  |     12 |   1,100 | Shorter and broader, with greater knockback resistance. Walks 5% slower and has one extra point of cold resistance. Choose a bare face, a forked beard or a banded beard. |
+| Goblin |      8 |     850 | Fits under a one-block ceiling when crouched. Sneaks faster and retains ordinary reach and one-block jumps. Choose wide, notched or drooping ears.                        |
+| Elf    |      9 |     900 | Tall and lean. Moves 6% faster and gains 20% more practice from archery and magic. Choose swept, upright or leaf-shaped ears.                                             |
+
+Dwarves can prepare **Dwarven night vision** and activate it again to switch it off. Elves can prepare **Elven light** for a minute of light that travels with them. The light helps you see and leaves the world's light levels intact, so use torches for spawn protection. Both abilities work without a spellbook. Appearance choices within a race share one set of stats and dimensions.
+
+### Two ways into a service bay
+
+Build a three-block-deep room behind this front wall. Each character in the diagram is one block. The numbered openings both lead to the same machine.
+
+```text
+#########
+#####2###
+##1##2###
+#########
+```
+
+Build the floor and wall where marked `#`. Leave opening **1** one block high and opening **2** two blocks high. Leave two blocks of headroom inside. Hold chalk and crouch-use to select a symbol. Draw **Low passage** beside 1 and **Full-height passage** beside 2. A crouching goblin can take the short hatch. The standing entrance accommodates all four races.
+
+For a crew emblem, put a banner and dye in a loom and choose a wind rose, stone arch, rope knot or star leaf. All four motifs are available to everyone. Craft the finished banner together with a plain shield to carry the same colors.
+
+### Planned classes and professions
 
 Classes and specializations should support mixed builds. A warrior who learns [magic](../magic/) is a valid character. Specialists can excel while other skills remain useful. Peaceful and combat activities improve related skills, as described under [skills and talents](#skills-and-talents).
 
@@ -81,7 +113,7 @@ Subclasses are planned later, before `1.0.0`. The first roster is defender and b
 
 Future classes and subclasses will share the combat pool with magic. Professions share their own pool. Each pool’s cap will grow with the cost of the largest compatible set of talents it can buy.
 
-The existing eight-slot preparation panel will also hold martial techniques and active racial abilities as they arrive, alongside combat and peaceful spells. Saved sets that players can edit, delete and switch between quickly remain under consideration.
+Martial techniques are planned for the same eight preparation slots. Saved sets that players can edit and switch between remain under consideration.
 
 Talent redistribution is planned before `1.0.0`. It will free up the points in the affected branches and preserve earned skill progress and other allocations. Ordinary redistribution will carry a penalty. A rare item found in exploration chests will allow changes to race, main class or starting profession.
 

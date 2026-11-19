@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewBox="0 0 32 16" shape-rendering="crispEdges">
+  <title>Dwarven night vision and elven light</title>
+  <desc>Original 16-pixel ability tiles. Export each named group with rsvg-convert --export-id NAME racial-abilities.svg --output NAME.png.</desc>
+  <g id="dwarf_night_vision">
+    <path fill="#101524" d="M0 0h16v16H0z"/>
+    <path fill="#252c48" d="M1 1h14v13H1z"/>
+    <path fill="#464761" d="M1 1h7v1H4v1H3v2H1zm9 0h5v4h-2V3h-3z"/>
+    <path fill="#15182d" d="M1 4h3V3h4v1h4v1h2v1h1v4h-2v2h-3v1H5v-1H3v-1H2V9H1z"/>
+    <path fill="#516481" d="M1 7h1V6h2V5h2V4h4v1h2v1h2v1h1v2h-2v1h-2v1H5v-1H3V9H1z"/>
+    <path fill="#a0d5db" d="M2 8h1V7h2V6h6v1h2v1h1v1h-3v1H6V9H3V8z"/>
+    <path fill="#2e728a" d="M6 5h4v1h1v3h-1v1H7V9H6z"/>
+    <path fill="#132b4a" d="M8 5h1v5H8z"/>
+    <path fill="#f8ebae" d="M7 5h2v2H7z"/>
+    <path fill="#8d7454" d="M3 12h2v1h2v1H5v-1H3zm6 1h2v-1h2v1h-2v1H9z"/>
+    <path fill="#caa96c" d="M7 12h2v1H7z"/>
+  </g>
+  <g id="elf_light" transform="translate(16)">
+    <path fill="#10232b" d="M0 0h16v16H0z"/>
+    <path fill="#1d3840" d="M2 1h11v1h2v9h-2v2H3v-2H1V3h1z"/>
+    <path fill="#37584d" d="M5 2h6v1h2v6h-2v2H5V9H3V4h2z"/>
+    <path fill="#678061" d="M6 3h4v1h2v4h-2v2H6V8H4V5h2z"/>
+    <path fill="#d7ba69" d="M7 1h1v2H7zm4 2h1v1h-1zM3 6h2v1H3zm8 0h3v1h-3zM7 9h1v2H7z"/>
+    <path fill="#ffdf87" d="M7 3h2v1h1v2h2v1h-2v1H9v2H8V8H6V7H5V6h1V4h1z"/>
+    <path fill="#ffffd9" d="M8 4h1v1h1v2H9v1H7V6H6V5h2z"/>
+    <path fill="#839859" d="M2 15h1v-1h2v-1h2v-1h2v-1h2v-1h1v2h-2v1H8v1H6v1H4v1H2z"/>
+    <path fill="#acc776" d="M4 13H3v-1H2v-2h2v1h1v2zm4-1v-2h1V9h1v2H9v1zm3 0h2v-1h2v2h-1v1h-3z"/>
+    <path fill="#f6d786" d="M12 1h1v1h-1zM2 3h1v1H2zm12 5h1v1h-1z"/>
+  </g>
+</svg>

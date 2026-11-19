@@ -1,0 +1,163 @@
+package dev.aeroscapes.races.client;
+
+import com.cyberday1.neoorigins.screen.OriginInfoScreen;
+import com.cyberday1.neoorigins.screen.PickerScreen;
+import dev.aeroscapes.inventory.InventoryNavigation;
+import javax.annotation.Nullable;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.ChatScreen;
+import net.minecraft.client.gui.screens.DeathScreen;
+import net.minecraft.client.gui.screens.DisconnectedScreen;
+import net.minecraft.client.gui.screens.GenericMessageScreen;
+import net.minecraft.client.gui.screens.LevelLoadingScreen;
+import net.minecraft.client.gui.screens.ProgressScreen;
+import net.minecraft.client.gui.screens.ReceivingLevelScreen;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
+import net.minecraft.commands.Commands;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
+import net.neoforged.neoforge.client.event.ClientTickEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterClientCommandsEvent;
+import net.neoforged.neoforge.client.event.ScreenEvent;
+
+@EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
+public final class RaceVisuals {
+  private static final String COMMAND = "aeroscapes_race";
+  private static boolean openWhenReady;
+  @Nullable private static RaceScreen firstChoice;
+
+  private RaceVisuals() {}
+
+  public static void requestChoice() {
+    if (firstChoice == null) firstChoice = new RaceScreen(null, 0, false);
+    else firstChoice.declined();
+  }
+
+  static MutableComponent text(String key, Object... args) {
+    return Component.translatable("aeroscapes_reimagine.race." + key, args);
+  }
+
+  private static boolean choiceKnown() {
+    var player = Minecraft.getInstance().player;
+    return player != null && (firstChoice != null || RaceClient.race(player.getUUID()) != null);
+  }
+
+  static void openFromInventory() {
+    var game = Minecraft.getInstance();
+    if (game.player == null || !choiceKnown() || !InventoryNavigation.openInventory()) return;
+    openWhenReady = false;
+    var id = game.player.getUUID();
+    var race = RaceClient.race(id);
+    game.setScreen(race == null ? firstChoice : new RaceScreen(race, RaceClient.style(id), true));
+  }
+
+  private static boolean changingWorld(@Nullable Screen screen) {
+    return screen instanceof DeathScreen
+        || screen instanceof DisconnectedScreen
+        || screen instanceof LevelLoadingScreen
+        || screen instanceof ReceivingLevelScreen
+        || screen instanceof ProgressScreen
+        || screen instanceof GenericMessageScreen;
+  }
+
+  private static boolean ready(Minecraft game) {
+    return game.player != null
+        && game.level != null
+        && game.getOverlay() == null
+        && game.player.isAlive()
+        && !game.player.isRemoved();
+  }
+
+  @SubscribeEvent
+  public static void opening(ScreenEvent.Opening event) {
+    if (!ModList.get().isLoaded("neoorigins") || !ModList.get().isLoaded("pehkui")) return;
+    var next = event.getNewScreen();
+    var game = Minecraft.getInstance();
+    if (firstChoice != null
+        && ready(game)
+        && !changingWorld(event.getCurrentScreen())
+        && RaceClient.race(game.player.getUUID()) == null
+        && !changingWorld(next)) {
+      if (next != firstChoice) {
+        if (event.getCurrentScreen() == firstChoice) event.setCanceled(true);
+        else event.setNewScreen(firstChoice);
+      }
+      return;
+    }
+    if (!(next instanceof OriginInfoScreen || next instanceof PickerScreen)) return;
+    if (event.getCurrentScreen() instanceof RaceScreen) {
+      event.setCanceled(true);
+      return;
+    }
+    if (!ready(game) || changingWorld(event.getCurrentScreen()) || !choiceKnown()) {
+      event.setCanceled(true);
+      openWhenReady = true;
+      return;
+    }
+    var id = game.player.getUUID();
+    openWhenReady = false;
+    event.setNewScreen(
+        new RaceScreen(
+            RaceClient.race(id),
+            RaceClient.style(id),
+            event.getCurrentScreen() instanceof InventoryScreen));
+  }
+
+  @SubscribeEvent
+  public static void registerCommand(RegisterClientCommandsEvent event) {
+    if (!ModList.get().isLoaded("neoorigins") || !ModList.get().isLoaded("pehkui")) return;
+    event
+        .getDispatcher()
+        .register(
+            Commands.literal(COMMAND)
+                .executes(
+                    context -> {
+                      var game = Minecraft.getInstance();
+                      if (!choiceKnown()) return 0;
+                      openWhenReady = true;
+                      if (game.screen instanceof ChatScreen) game.setScreen(null);
+                      return 1;
+                    }));
+  }
+
+  @SubscribeEvent
+  public static void tick(ClientTickEvent.Post event) {
+    var game = Minecraft.getInstance();
+    if (firstChoice == null && !openWhenReady || !ready(game) || changingWorld(game.screen)) return;
+    var id = game.player.getUUID();
+    var race = RaceClient.race(id);
+    if (firstChoice != null && race == null) {
+      openWhenReady = false;
+      if (game.player.containerMenu != game.player.inventoryMenu) game.player.closeContainer();
+      if (game.screen != firstChoice) game.setScreen(firstChoice);
+    } else if (race != null) {
+      firstChoice = null;
+      if (openWhenReady && game.screen == null) {
+        openWhenReady = false;
+        game.setScreen(new RaceScreen(race, RaceClient.style(id), false));
+      }
+    }
+  }
+
+  @SubscribeEvent
+  public static void logout(ClientPlayerNetworkEvent.LoggingOut event) {
+    openWhenReady = false;
+    firstChoice = null;
+  }
+
+  @SubscribeEvent
+  public static void addLayers(EntityRenderersEvent.AddLayers event) {
+    for (var skin : event.getSkins()) {
+      if (event.getSkin(skin) instanceof PlayerRenderer renderer)
+        renderer.addLayer(new RaceFeatures(renderer));
+    }
+  }
+}

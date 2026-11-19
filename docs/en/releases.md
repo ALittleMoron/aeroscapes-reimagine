@@ -50,7 +50,7 @@ The main development stages are:
 | `0.14.0`  | Growing settlements, resident life, relationships, supply and landing-post keepers.                                                       |
 | `1.0.0`   | The pack's core systems work together.                                                                                                    |
 
-Races, classes and professions will arrive before subclasses. Subclasses are also planned before `1.0.0` and may receive a separate stage. Magic should offer worthwhile activities in both combat and daily life.
+Four races are playable. Classes and professions are planned before subclasses. Subclasses are also planned before `1.0.0` and may receive a separate stage. Magic should offer worthwhile activities in both combat and daily life.
 
 The `0.9.0` equipment stage includes workshop manufacture with Overgeared and enchanting through an Immersive Enchanting library. A book opens its enchantment up to the book's level, while personal mastery limits what the player can apply. This stage also includes paid curse cleansing, additional cursed finds and a very small curse chance during manufacture. Applying enchantments will not add new curses.
 

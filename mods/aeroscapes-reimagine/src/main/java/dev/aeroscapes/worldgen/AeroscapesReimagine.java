@@ -46,6 +46,11 @@ public final class AeroscapesReimagine {
   private static final int VANILLA_SPAWN_RADIUS = 10;
 
   public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
+    dev.aeroscapes.magic.RacialAbilities.register(modBus);
+    if (ModList.get().isLoaded("neoorigins") && ModList.get().isLoaded("pehkui")) {
+      dev.aeroscapes.races.RaceIdentity.register();
+      dev.aeroscapes.races.RaceNetwork.register(modBus);
+    }
     dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);
     if (ModList.get().isLoaded("animalhusbandry"))
       dev.aeroscapes.husbandry.TroughAutomation.register(modBus);

@@ -1,6 +1,7 @@
 package dev.aeroscapes.regression;
 
 import com.mojang.authlib.GameProfile;
+import dev.aeroscapes.magic.AbilityNetwork;
 import dev.aeroscapes.testship.TestShipNetwork;
 import dev.ryanhcode.sable.network.packets.tcp.ClientboundFinalizeSubLevelPacket;
 import dev.ryanhcode.sable.network.packets.tcp.ClientboundStartTrackingSubLevelPacket;
@@ -111,6 +112,10 @@ final class TestShipPlayerSession implements AutoCloseable {
     return check;
   }
 
+  AbilityNetwork.Snapshot abilities() {
+    return java.util.Objects.requireNonNull(connection.abilities, "Missing ability snapshot");
+  }
+
   boolean receivedShipParts(TestShipNetwork.Check check) {
     return connection.completedParts.containsAll(check.members());
   }
@@ -172,6 +177,7 @@ final class TestShipPlayerSession implements AutoCloseable {
   }
 
   private static final class RecordingConnection extends Connection {
+    @Nullable private AbilityNetwork.Snapshot abilities;
     private final Map<
             String, net.puffish.skillsmod.server.network.packets.out.PointsUpdateOutPacket>
         talentPoints = new HashMap<>();
@@ -193,6 +199,8 @@ final class TestShipPlayerSession implements AutoCloseable {
     public void send(Packet<?> packet, @Nullable PacketSendListener listener, boolean flush) {
       if (packet instanceof ClientboundPlayerPositionPacket position) teleport = position;
       if (packet instanceof ClientboundKeepAlivePacket challenge) keepAlive = challenge.getId();
+      if (packet instanceof ClientboundCustomPayloadPacket message
+          && message.payload() instanceof AbilityNetwork.Snapshot snapshot) abilities = snapshot;
       if (packet instanceof ClientboundCustomPayloadPacket payload
           && payload.payload() instanceof TestShipNetwork.Check check) boardingCheck = check;
       if (packet instanceof ClientboundCustomPayloadPacket payload

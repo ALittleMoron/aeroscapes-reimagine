@@ -77,6 +77,9 @@ public final class MagicMigrationRegression {
                 "prepare",
                 "verify",
                 "rollback",
+                "race-prepare",
+                "race-verify",
+                "race-rollback",
                 "layout-prepare",
                 "layout-verify",
                 "layout-rollback")
@@ -110,7 +113,7 @@ public final class MagicMigrationRegression {
                 .resolve("magic-migration-player.dat")
             : Path.of(configured).toAbsolutePath().normalize();
     CompoundTag saved = null;
-    if (mode.equals("prepare") || mode.equals("layout-prepare")) {
+    if (mode.equals("prepare") || mode.endsWith("-prepare")) {
       require(!Files.exists(path), "Prepare requires a fresh fixture player snapshot: " + path);
     } else {
       require(Files.isRegularFile(path), "The previous process saved its fixture player: " + path);
@@ -132,6 +135,26 @@ public final class MagicMigrationRegression {
           case "prepare" -> prepare(player);
           case "verify" -> verifyUpgrade(player, alreadyMigrated);
           case "rollback" -> verifyLegacy(player);
+          case "race-prepare" -> {
+            MagicPractice.award(player, 700);
+            SkillsMod.getInstance().unlockSkill(player, COMBAT, "magic_mastery_1");
+            SkillsMod.getInstance().unlockSkill(player, COMBAT, "magic_destruction_mastery_2");
+            SkillsMod.getInstance().unlockSkill(player, COMBAT, "magic_destruction_mastery_3");
+            prepareFirebolt(player);
+            verifyRaceCarryover(player);
+          }
+          case "race-verify" -> {
+            verifyRaceCarryover(player);
+            require(
+                dev.aeroscapes.races.RaceIdentity.race(player) == null,
+                "Upgrading a 0.6.2 character must leave the race choice open");
+            require(
+                dev.aeroscapes.races.RaceIdentity.choose(
+                    player, dev.aeroscapes.races.Race.GOBLIN, 1),
+                "A returning player can choose a race and appearance once");
+            verifyRaceCarryover(player);
+          }
+          case "race-rollback" -> verifyRaceCarryover(player);
           case "layout-prepare" -> {
             prepareLayout(player);
             verifyLayout(player, true);
@@ -186,6 +209,17 @@ public final class MagicMigrationRegression {
     Utils.setPlayerSpellbookStack(player, new ItemStack(ItemRegistry.WIMPY_SPELL_BOOK.get()));
     PreparedAbilities.edit(player, 3, "irons_spellbooks:firebolt");
     PreparedAbilities.select(player, 3);
+  }
+
+  private static void verifyRaceCarryover(ServerPlayer player) {
+    require(MagicPractice.credit(player) == 700, "Race selection changed existing practice");
+    require(
+        SkillsMod.getInstance()
+            .getUnlockedSkills(player, COMBAT)
+            .orElseThrow()
+            .contains("magic_mastery_1"),
+        "Race selection changed the existing mastery");
+    verifyRanksAndSlots(player);
   }
 
   private static void prepareLayout(ServerPlayer player) {

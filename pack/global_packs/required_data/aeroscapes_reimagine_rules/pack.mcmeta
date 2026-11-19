@@ -2,5 +2,17 @@
   "pack": {
     "pack_format": 48,
     "description": "Aeroscapes Reimagine: agreed gameplay rules"
+  },
+  "filter": {
+    "block": [
+      {
+        "namespace": "neoorigins",
+        "path": "(origins|recipe|dimension|dimension_type|worldgen)/.*"
+      },
+      {
+        "namespace": "origins",
+        "path": "powers/water_vision\\.json"
+      }
+    ]
   }
 }

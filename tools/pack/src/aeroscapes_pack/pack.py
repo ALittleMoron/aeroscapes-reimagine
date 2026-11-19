@@ -60,6 +60,8 @@ RELEASE_EXCEPTIONS = frozenset(
         ("gedNE4y2", "HJZB6bmA", "beta"),
         # Owner-selected talent tree; the NeoForge file excludes Minecraft 1.21.1.
         ("hqQqvaa4", "ppOVyisF", "beta"),
+        # Owner selected this Pehkui Rebuilt file for physical race dimensions.
+        ("cxwMAgWQ", "pQdozoO0", "beta"),
     }
 )
 # Fabric mods loaded through Connector, with the side they are installed on.

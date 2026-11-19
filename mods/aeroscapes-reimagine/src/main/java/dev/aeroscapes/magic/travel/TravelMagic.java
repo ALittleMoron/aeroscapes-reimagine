@@ -70,7 +70,15 @@ public final class TravelMagic {
     if (spell == SpellRegistry.ANGEL_WINGS_SPELL.get()) key = WINGS_READY;
     else if (spell == SpellRegistry.PORTAL_SPELL.get()) key = PORTAL_READY;
     else return 0;
+    return remaining(player, key);
+  }
+
+  static int remaining(ServerPlayer player, String key) {
     return TravelMagicPolicy.remainingTicks(time(player.serverLevel()), state(player).getLong(key));
+  }
+
+  static void startCooldown(ServerPlayer player, String key, int ticks) {
+    write(player, key, time(player.serverLevel()) + ticks);
   }
 
   public static void portalPlaced(ServerPlayer player, PortalData data, int pendingDurationTicks) {

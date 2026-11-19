@@ -6,6 +6,24 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Race providers in 0.6.3
+
+The pack pins the official NeoForge files on both sides. [NeoOrigins 2.2.38](https://modrinth.com/mod/neo-origins/version/XGLQQPkP)
+stores the selected origin and applies the pack's permanent attribute powers.
+The rules datapack filters the provider's preset origins, classes, recipes and
+personal-space dimension. The origin layer has no native picker entries. The
+owned confirmation calls the provider API after validating the appearance.
+[Pehkui Rebuilt 3.9.2+1.21.1](https://modrinth.com/mod/pehkui-rebuilt/version/pQdozoO0)
+owns body width and height, including their dependent hitbox, eye and model scales.
+The owner approved this exact beta conditionally for racial dimensions.
+The distributed JARs match their Modrinth checksums and the corresponding CurseForge files.
+Both providers use the MIT license. Their notices are in `pack/licenses/`.
+
+The owned mod supplies original pixel masks for four loom motifs and two Chalk
+passage signs. The banner and shield faces use separately drawn layouts for their
+native UV sizes. A local composition script rasterized the pixel designs. The
+race details are original meshes layered over the player's skin.
+
 ## Character progression in 0.6.1
 
 [Project MMO 2.10.47](https://modrinth.com/mod/project-mmo/version/9lu4zNd1) is the

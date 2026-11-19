@@ -177,6 +177,14 @@ file = "config/naturescompass-common.toml"
 hash = "4563c0d566a53d2901bcbc1efe9a2f75e186ddcedfcf704a5d871ccd5ccfdc1e"
 
 [[files]]
+file = "config/neoorigins/client.toml"
+hash = "423fb0cbc5303d7fdf2e8badd31f113db29044ba32f1a6c7e2638f224001418b"
+
+[[files]]
+file = "config/neoorigins/gameplay.toml"
+hash = "f7b9f2c9e54ff31bcdab92a7579b6b779afc3b1baf93b410eeea5abc44bcdeb9"
+
+[[files]]
 file = "config/nutritionalbalance-client.toml"
 hash = "a336e051a78abd55e308238b75ae9333f1c1b02f82cb0e326aface07ff79e068"
 
@@ -4189,6 +4197,66 @@ file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_re
 hash = "05d72a6b0d1c76b898009168dff70f3254208e6e3ae24d65eebb7d351e1d2c4b"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/dwarf.json"
+hash = "0a7d087a040759f7c2d363fcff047c5ee17247c5c35f40c5147596592b1e4134"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/elf.json"
+hash = "9d2294a085d586f2c4d317a8b1963b54f162ba72aa4c0365b0f38875fd9244c2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/goblin.json"
+hash = "d628e29b9316d40e5c346f791b31bd6a8ab386fb33f9790fbd97aa5ae855511f"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/human.json"
+hash = "2658a39f1645751697ab1c13ff1b99b7e69ef8e58aa9502ce8d856589e0d6278"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/dwarf_cold.json"
+hash = "d16b61fb809789488324faec57f240de3e6cd55ec8c3753c795c7fcfed96f13c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/dwarf_health.json"
+hash = "4377aebe1c4d1637f687b43e9a047a408362f7be6606f6f831a476cbd678a5a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/dwarf_speed.json"
+hash = "b632fa1720c1accbbba1305941a8df0d33d93342f283e8abea21a68e7a02e4e0"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/dwarf_stability.json"
+hash = "6fd07ed3384e762f4250b669eeae735ab7937fe618f7ecd9e06384f69ecd03c6"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/dwarf_stamina.json"
+hash = "b884d359f2c0955d0e709f09c4df5922f7ff3905940d219c4f6c95dc6102c4e2"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/elf_health.json"
+hash = "4131683963fcb18e58f03f7189555a03967f43f955f6649e828bccdbfabd3e33"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/elf_speed.json"
+hash = "3fec1a7d2d019bad4ba6cbcf494efcf7761f1ee431aaa893a33e7600664b230d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/elf_stamina.json"
+hash = "305c2224a07e897636b79d8bbfde8ddf9e045c55d3641e0ec99e0f478088b86c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/goblin_health.json"
+hash = "e98ac82695c776d4b1de3c5459c473628b70359eccff7ea3bbbe1895c1e03ab3"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/goblin_sneaking.json"
+hash = "8cfa95d613ea5749bcfd8b26c1251cb829511a05c52bce7f63f3b2a107ff7e1a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/origins/powers/goblin_stamina.json"
+hash = "336155b03fe581c8bc2161c8c9c0a21e3eb4d3f5dd46d5d52892736a6041fe34"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/category.json"
 hash = "0fb8f3b8f819c5d6d09c840645cc4cf076c7b912b471b1190040e015f6d59f96"
 
@@ -4303,6 +4371,10 @@ hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/neoforge/loot_modifiers/global_loot_modifiers.json"
 hash = "e134f281be3e7eb0493ce350b1c70349971d7d3cbd6177f902e6a62a7286c802"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/neoorigins/origins/origin_layers/origin.json"
+hash = "9151908f75de9e772c6c001797eee03cf76c8accf6303d72703ee1e133ef1613"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/anticheese.json"
@@ -4490,7 +4562,7 @@ hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/pack.mcmeta"
-hash = "64b5d464dd28304c8838d17aa4d4c7daec642d9df93c158f9ad0b589457adb09"
+hash = "619ec8b36190a7c91007f15d3062588ef66ba960124159546285dc1aaf434baa"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_structures/ATTRIBUTION.txt"
@@ -4710,6 +4782,14 @@ file = "licenses/Natures-Spirit-data-MIT.txt"
 hash = "ded9ce0d39c951ae390e0c9a6aaf6645e8a47015c2bea0c0d1e37e176f75a4d4"
 
 [[files]]
+file = "licenses/NeoOrigins-LICENSE.txt"
+hash = "5b0c0a9cb401c2993459cd204717027ca1299cd70474e948a2e4d2504187d735"
+
+[[files]]
+file = "licenses/Pehkui-Rebuilt-LICENSE.txt"
+hash = "6cb80638b2299ffc05a044990da6a5c4ce18ecc6bea6f0e547c0c0dbd656edda"
+
+[[files]]
 file = "licenses/Sky-Whales-BSD-3-Clause.txt"
 hash = "ef50a32771b4a24ed5b253efb52873eebfc1b63c455f3af366714498a006a78f"
 
@@ -4723,7 +4803,7 @@ hash = "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "74997d66ee56a909ac81e2513894b8f930351d62ca8293c0adf4c3a385d42479"
+hash = "efe953d66a29e077d9565fcca31e9a35c1368d009cd6e75e67bcd8a3a6bad826"
 
 [[files]]
 file = "licenses/Vintage-SSW-LGPL-2.1.txt"
@@ -4739,7 +4819,7 @@ hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "17d8543bc6b19c91e8bb9ad1cf9100a6cb9d4a925af18a63d6af4067450ffe31"
+hash = "4a915c4f3260cb3d5f19a7e8c77d4ff4fef475425bbdf5241fc957ba7c4916ce"
 
 [[files]]
 file = "licenses/fluidlogistics-1.3.2-corresponding-source.zip"
@@ -4789,7 +4869,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "6d0eb189ef00771d06791ec7953fbd1be1078a7b82e2eef1e31ce81a0857fed6"
+hash = "73e7b89a5224de7a908703abd5be37583918a0bf8c08c7d10ca1e2b2ba6999aa"
 
 [[files]]
 file = "mods/agricraft-rereloaded.pw.toml"
@@ -5597,6 +5677,11 @@ hash = "19a92c856c5de430f2ffe00a15f82731b0f928c629f41a1411cc504206ef92a5"
 metafile = true
 
 [[files]]
+file = "mods/neo-origins.pw.toml"
+hash = "00bcca1d776c3480cb855add9e574e6b5ee165ce49694fe25e0118bb7900fb1c"
+metafile = true
+
+[[files]]
 file = "mods/no-void-structures.pw.toml"
 hash = "efc6da33d6e38439a0558c9e592466d1f1b43b080aa2d613f7feeb5668cb48ea"
 metafile = true
@@ -5639,6 +5724,11 @@ metafile = true
 [[files]]
 file = "mods/particle-rain.pw.toml"
 hash = "c37528a79a47cf95437bd182e79aca78ff36206556d8a50356879243ddf7c81b"
+metafile = true
+
+[[files]]
+file = "mods/pehkui-rebuilt.pw.toml"
+hash = "685ff12d33653add8bb6197cdec64c0c8e962aa86e8510e26abaf4500590aa83"
 metafile = true
 
 [[files]]
@@ -6003,7 +6093,7 @@ metafile = true
 
 [[files]]
 file = "options.txt"
-hash = "49873c63b991d24f1b8e80c0cceec5bfb5ccb7bd4a49c37e132b987fb27dfe75"
+hash = "41916a4418e5f75718a53c37034a5414013049c88b645b8f175fa6f0fc3c25a3"
 
 [[files]]
 file = "polytone_options.json"

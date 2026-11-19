@@ -19186,5 +19186,21 @@
     "key": "command.puffish_skills.open.success.multiple",
     "expected": "Открыт экран навыкой для %s игроков.",
     "replacement": "Открыт экран талантов для %s игроков"
+  },
+  {
+    "key": "neoorigins.configuration.helmet_protection",
+    "expected": "Helmet protection",
+    "replacement": "Защита шлемом"
+  },
+  {
+    "key": "neoorigins.configuration.helmet_dura_damage_chance",
+    "expected": "Шанс поломки шлема",
+    "replacement": "Вероятность износа шлема"
+  },
+  {
+    "language": "en_us",
+    "key": "pehkui.configgui.scale_limits.view_bobbing.maximum",
+    "expected": "Maximum value for the scale type pehkuiview_bobbing:",
+    "replacement": "Maximum value for the scale type pehkui:view_bobbing:"
   }
 ]

@@ -1,0 +1,12 @@
+{
+  "name": "aeroscapes_reimagine.race.dwarf.name",
+  "description": "aeroscapes_reimagine.race.dwarf.description",
+  "icon": "minecraft:iron_pickaxe",
+  "powers": [
+    "aeroscapes_reimagine:dwarf_health",
+    "aeroscapes_reimagine:dwarf_stamina",
+    "aeroscapes_reimagine:dwarf_stability",
+    "aeroscapes_reimagine:dwarf_speed",
+    "aeroscapes_reimagine:dwarf_cold"
+  ]
+}

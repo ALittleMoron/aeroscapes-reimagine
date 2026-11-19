@@ -1,5 +1,6 @@
 package dev.aeroscapes.magic;
 
+import dev.aeroscapes.races.RaceTraits;
 import harmonised.pmmo.api.APIUtils;
 import harmonised.pmmo.storage.Experience;
 import java.util.HashSet;
@@ -94,7 +95,8 @@ public final class MagicPractice {
     CompoundTag state = data(player);
     long current = state.getLong("credit");
     long maximum = MagicPracticeProgress.xpForPoints(MagicTalents.pointCap());
-    state.putLong("credit", current + Math.clamp(amount, 0, maximum - current));
+    long earned = RaceTraits.practiceAward(player, "magic", amount);
+    state.putLong("credit", current + Math.clamp(earned, 0, maximum - current));
     project(player, state);
   }
 

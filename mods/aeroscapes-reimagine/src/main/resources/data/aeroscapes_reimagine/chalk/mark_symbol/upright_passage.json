@@ -1,0 +1,6 @@
+{
+  "group": "symbols",
+  "group_priority": 11,
+  "orientation_behavior": "fixed",
+  "texture": "aeroscapes_reimagine:block/mark/upright_passage"
+}

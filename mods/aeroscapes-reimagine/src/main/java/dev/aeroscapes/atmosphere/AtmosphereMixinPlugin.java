@@ -29,7 +29,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   static boolean shouldApplyForVersions(
       String mixinClassName, Function<String, String> versionLookup) {
     Map<String, String> versions;
-    if (mixinClassName.startsWith("dev.aeroscapes.mixin.magic.")) {
+    if (mixinClassName.startsWith("dev.aeroscapes.mixin.inventory.")) {
+      versions = Map.of("curios", "9.5.1+1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.magic.")) {
       versions =
           Map.of(
               "irons_spellbooks",
@@ -359,6 +361,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("sable", "2.0.6");
     } else if (mixinClassName.endsWith("PuzzleLoadingOverlayMixin")) {
       versions = Map.of("puzzle", "2.3.0", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("InitialRaceInputMixin")
+        || mixinClassName.endsWith("InitialRaceSimulationMixin")) {
+      versions = Map.of("neoorigins", "2.2.38", "pehkui", "3.9.2+1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("SkillsScreenAccessor")) {
       versions = Map.of("puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("ProjectMmoAdminDataMixin")

@@ -2633,6 +2633,38 @@
       "review": {},
       "verification": "Author-linked official CurseForge project/file and pinned packwiz Core API fingerprint detection agree; official CurseForge download independently rehashed to the identical primary SHA-512 and SHA-1.",
       "source_url": "https://www.curseforge.com/minecraft/mc-mods/create-fluidlogistic/files/9340866"
+    },
+    {
+      "slug": "neo-origins",
+      "primary_project_id": "RUtQ9kfe",
+      "primary_sha512": "1a904b85b433200efbd8b08a73e38738d97b55ed001bb3211701998ea59f6944dc4b4347f29f5da9c73864da1f152e78db3b616b169691a9bdbb4263856581a3",
+      "status": "hosted",
+      "project_id": 1495375,
+      "file_id": 9456067,
+      "filename": "neoorigins-2.2.38-1.21.1.jar",
+      "sha512": "1a904b85b433200efbd8b08a73e38738d97b55ed001bb3211701998ea59f6944dc4b4347f29f5da9c73864da1f152e78db3b616b169691a9bdbb4263856581a3",
+      "sha1": "dc9a4bb978ddca3c62c33c08bb57ed1cdf2cefcb",
+      "file_size": 12519860,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge file coordinates downloaded through CurseMaven and rehashed to the full primary SHA-512.",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/neoorigins/files/9456067"
+    },
+    {
+      "slug": "pehkui-rebuilt",
+      "primary_project_id": "cxwMAgWQ",
+      "primary_sha512": "2637d01b99d78b60bf493c21d8bb92e66071c572b5080e0e44e1d46bbfc7d78426872367581768f60d894629a18d83b3c71461f627caf8bf440aca80279d12fb",
+      "status": "hosted",
+      "project_id": 1639070,
+      "file_id": 9353337,
+      "filename": "pehkui-rebuilt-neoforge-3.9.2-1.21.1.jar",
+      "sha512": "2637d01b99d78b60bf493c21d8bb92e66071c572b5080e0e44e1d46bbfc7d78426872367581768f60d894629a18d83b3c71461f627caf8bf440aca80279d12fb",
+      "sha1": "918e74e6772c563973872e060d6938d10ec05669",
+      "file_size": 323553,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge file coordinates downloaded through CurseMaven and rehashed to the full primary SHA-512.",
+      "source_url": "https://www.curseforge.com/minecraft/mc-mods/pehkui-rebuilt/files/9353337"
     }
   ],
   "policy_url": "https://support.curseforge.com/support/solutions/articles/9000197908",

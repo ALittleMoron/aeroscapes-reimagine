@@ -1,0 +1,12 @@
+name = "Pehkui Rebuilt"
+filename = "pehkui-rebuilt-neoforge-3.9.2+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/cxwMAgWQ/versions/pQdozoO0/pehkui-rebuilt-neoforge-3.9.2%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "2637d01b99d78b60bf493c21d8bb92e66071c572b5080e0e44e1d46bbfc7d78426872367581768f60d894629a18d83b3c71461f627caf8bf440aca80279d12fb"
+
+[update.modrinth]
+mod-id = "cxwMAgWQ"
+version = "pQdozoO0"

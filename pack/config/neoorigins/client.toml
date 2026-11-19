@@ -1,0 +1,5 @@
+[ui]
+theme_override = "aeroscapes_reimagine:island_atlas"
+
+[hotkeys]
+pool_size = 1

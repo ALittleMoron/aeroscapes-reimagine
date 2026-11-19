@@ -1,0 +1,12 @@
+name = "NeoOrigins"
+filename = "neoorigins-2.2.38+1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/RUtQ9kfe/versions/XGLQQPkP/neoorigins-2.2.38%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "1a904b85b433200efbd8b08a73e38738d97b55ed001bb3211701998ea59f6944dc4b4347f29f5da9c73864da1f152e78db3b616b169691a9bdbb4263856581a3"
+
+[update.modrinth]
+mod-id = "RUtQ9kfe"
+version = "XGLQQPkP"

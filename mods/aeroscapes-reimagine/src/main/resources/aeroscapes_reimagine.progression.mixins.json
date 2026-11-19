@@ -13,7 +13,11 @@
   },
   "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
   "mixins": [
+    "InitialRaceInputMixin",
+    "InitialRaceSimulationMixin",
     "ProjectMmoAdminDataMixin",
+    "ProjectMmoPlacementMixin",
+    "ProjectMmoRacePracticeMixin",
     "MagicTalentGateMixin"
   ]
 }

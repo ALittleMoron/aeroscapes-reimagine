@@ -20,7 +20,7 @@ public final class AbilityCatalogue {
       Function<String, String> name) {
     String normalized = query.toLowerCase(Locale.ROOT).trim();
     return entries.stream()
-        .filter(entry -> !learnedOnly || entry.level() > 0)
+        .filter(entry -> !learnedOnly || entry.known())
         .filter(entry -> school.isEmpty() || entry.school().equals(school))
         .filter(
             entry ->
@@ -33,6 +33,7 @@ public final class AbilityCatalogue {
   public static String assignmentReason(AbilityNetwork.Entry entry) {
     if (entry == null) return "waiting";
     if (entry.reason().equals("disabled")) return "disabled";
+    if (entry.granted()) return "";
     if (entry.level() < 1) return "unlearned";
     if (entry.level() > entry.cap()) return "mastery";
     return entry.reason().equals("discovery") ? "discovery" : "";

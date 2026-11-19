@@ -25,6 +25,14 @@ key_key.irons_spellbooks.spellbook_cast:key.keyboard.unknown
 key_key.irons_spellbooks.spell_bar_modifier:key.keyboard.unknown
 key_key.curios.open.desc:key.keyboard.unknown
 key_key.puffish_skills.open:key.keyboard.unknown
+key_key.neoorigins.skill_1:key.keyboard.unknown
+key_key.neoorigins.skill_2:key.keyboard.unknown
+key_key.neoorigins.skill_3:key.keyboard.unknown
+key_key.neoorigins.skill_4:key.keyboard.unknown
+key_key.neoorigins.class_skill:key.keyboard.unknown
+key_key.neoorigins.view_info:key.keyboard.unknown
+key_gui.xaero_enlarge_map:key.keyboard.unknown
+key_key.neoorigins.toggle_night_vision:key.keyboard.unknown
 key_iris.keybind.reload:key.keyboard.unknown
 key_quark.keybind.variant_selector:key.keyboard.unknown
 key_key.socialInteractions:key.keyboard.unknown

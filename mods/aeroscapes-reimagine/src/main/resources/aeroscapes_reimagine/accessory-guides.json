@@ -1,0 +1,433 @@
+[
+  {
+    "items": [
+      "irons_spellbooks:mana_ring",
+      "irons_spellbooks:silver_ring",
+      "irons_spellbooks:cooldown_ring",
+      "irons_spellbooks:cast_time_ring"
+    ],
+    "slot": "ring"
+  },
+  {
+    "items": [
+      "irons_spellbooks:heavy_chain_necklace",
+      "irons_spellbooks:conjurers_talisman",
+      "irons_spellbooks:amethyst_resonance_charm"
+    ],
+    "slot": "necklace"
+  },
+  {
+    "items": [
+      "irons_spellbooks:greater_conjurers_talisman"
+    ],
+    "slot": "necklace",
+    "hints": [
+      "aeroscapes_reimagine.accessory.greater_conjurers_talisman"
+    ],
+    "superseded": "item.irons_spellbooks.greater_conjurers_talisman.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:concentration_amulet"
+    ],
+    "slot": "necklace",
+    "hints": [
+      "aeroscapes_reimagine.accessory.concentration_amulet"
+    ],
+    "superseded": "item.irons_spellbooks.concentration_amulet.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:fireward_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "item.irons_spellbooks.fireward_ring.desc"
+    ]
+  },
+  {
+    "items": [
+      "irons_spellbooks:emerald_stoneplate_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "item.irons_spellbooks.emerald_stoneplate_ring.desc"
+    ]
+  },
+  {
+    "items": [
+      "irons_spellbooks:invisibility_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.invisibility_ring"
+    ],
+    "superseded": "item.irons_spellbooks.invisibility_ring.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:visibility_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.visibility_ring"
+    ],
+    "superseded": "item.irons_spellbooks.visibility_ring.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:frostward_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.frostward_ring"
+    ],
+    "superseded": "item.irons_spellbooks.frostward_ring.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:poisonward_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.poisonward_ring"
+    ],
+    "superseded": "item.irons_spellbooks.poisonward_ring.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:wicked_bone_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.wicked_bone_ring"
+    ],
+    "superseded": "item.irons_spellbooks.wicked_bone_ring.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:betrayer_signet"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.betrayer_signet"
+    ],
+    "details": [
+      "aeroscapes_reimagine.accessory.betrayer_cooldown"
+    ],
+    "superseded": "item.irons_spellbooks.betrayer_signet.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:expulsion_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.expulsion_ring"
+    ],
+    "details": [
+      "aeroscapes_reimagine.accessory.expulsion_cooldown"
+    ],
+    "superseded": "item.irons_spellbooks.expulsion_ring.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:lurker_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.lurker_ring"
+    ],
+    "details": [
+      "aeroscapes_reimagine.accessory.lurker_cooldown"
+    ],
+    "superseded": "item.irons_spellbooks.lurker_ring.desc"
+  },
+  {
+    "items": [
+      "irons_spellbooks:affinity_ring"
+    ],
+    "slot": "ring",
+    "hints": [
+      "aeroscapes_reimagine.accessory.affinity"
+    ]
+  },
+  {
+    "items": [
+      "irons_spellbooks:teleportation_amulet"
+    ],
+    "slot": "necklace",
+    "details": [
+      "aeroscapes_reimagine.abilities.amulet_equip",
+      "aeroscapes_reimagine.abilities.amulet_step_hint",
+      "aeroscapes_reimagine.abilities.amulet_evasion",
+      "aeroscapes_reimagine.abilities.amulet_loot"
+    ]
+  },
+  {
+    "items": [
+      "irons_spellbooks:wimpy_spell_book",
+      "irons_spellbooks:legendary_spell_book",
+      "irons_spellbooks:netherite_spell_book",
+      "irons_spellbooks:diamond_spell_book",
+      "irons_spellbooks:gold_spell_book",
+      "irons_spellbooks:iron_spell_book",
+      "irons_spellbooks:copper_spell_book",
+      "irons_spellbooks:rotten_spell_book",
+      "irons_spellbooks:blaze_spell_book",
+      "irons_spellbooks:dragonskin_spell_book",
+      "irons_spellbooks:druidic_spell_book",
+      "irons_spellbooks:villager_spell_book",
+      "irons_spellbooks:evoker_spell_book",
+      "irons_spellbooks:ice_spell_book"
+    ],
+    "slot": "spellbook",
+    "details": [
+      "aeroscapes_reimagine.abilities.book_hint"
+    ]
+  },
+  {
+    "items": [
+      "irons_spellbooks:cursed_doll_spell_book"
+    ],
+    "slot": "spellbook",
+    "details": [
+      "aeroscapes_reimagine.abilities.book_hint",
+      "aeroscapes_reimagine.accessory.cursed_doll"
+    ]
+  },
+  {
+    "items": [
+      "irons_spellbooks:necronomicon_spell_book"
+    ],
+    "slot": "spellbook",
+    "details": [
+      "aeroscapes_reimagine.abilities.book_hint",
+      "aeroscapes_reimagine.accessory.necronomicon"
+    ]
+  },
+  {
+    "items": [
+      "create:goggles"
+    ],
+    "slot": "head",
+    "hints": [
+      "aeroscapes_reimagine.accessory.goggles"
+    ],
+    "native_shift_details": true
+  },
+  {
+    "items": [
+      "createbigcannons:gas_mask"
+    ],
+    "slot": "head",
+    "hints": [
+      "aeroscapes_reimagine.accessory.gas_mask"
+    ],
+    "native_shift_details": true
+  },
+  {
+    "items": [
+      "crittersandcompanions:pearl_necklace_1",
+      "crittersandcompanions:pearl_necklace_2",
+      "crittersandcompanions:pearl_necklace_3"
+    ],
+    "slot": "necklace",
+    "hints": [
+      "aeroscapes_reimagine.accessory.pearls"
+    ],
+    "details": [
+      "aeroscapes_reimagine.accessory.pearls_effect"
+    ]
+  },
+  {
+    "items": [
+      "immersive_weathering:flower_crown"
+    ],
+    "slot": "head",
+    "hints": [
+      "aeroscapes_reimagine.accessory.crown"
+    ]
+  },
+  {
+    "items": [
+      "legendarysurvivaloverhaul:sponge"
+    ],
+    "slot": "body",
+    "hints": [
+      "tooltip.legendarysurvivaloverhaul.sponge.description"
+    ]
+  },
+  {
+    "items": [
+      "legendarysurvivaloverhaul:nether_chalice"
+    ],
+    "slot": "necklace",
+    "hints": [
+      "tooltip.legendarysurvivaloverhaul.nether_chalice.description"
+    ]
+  },
+  {
+    "items": [
+      "legendarysurvivaloverhaul:water_purifier"
+    ],
+    "slot": "head",
+    "hints": [
+      "aeroscapes_reimagine.accessory.purifier"
+    ],
+    "superseded": "tooltip.legendarysurvivaloverhaul.water_purifier.description"
+  },
+  {
+    "items": [
+      "legendarysurvivaloverhaul:thermometer"
+    ],
+    "slot": "belt",
+    "hints": [
+      "tooltip.legendarysurvivaloverhaul.thermometer.description",
+      "tooltip.legendarysurvivaloverhaul.thermometer.bauble_description"
+    ]
+  },
+  {
+    "items": [
+      "legendarysurvivaloverhaul:heat_resistance_ring"
+    ],
+    "slot": "ring",
+    "details": [
+      "aeroscapes_reimagine.accessory.heat_resistance_ring"
+    ]
+  },
+  {
+    "items": [
+      "legendarysurvivaloverhaul:cold_resistance_ring"
+    ],
+    "slot": "ring",
+    "details": [
+      "aeroscapes_reimagine.accessory.cold_resistance_ring"
+    ]
+  },
+  {
+    "items": [
+      "legendarysurvivaloverhaul:thermal_resistance_ring"
+    ],
+    "slot": "ring",
+    "details": [
+      "aeroscapes_reimagine.accessory.thermal_resistance_ring"
+    ]
+  },
+  {
+    "items": [
+      "sophisticatedbackpacks:backpack",
+      "sophisticatedbackpacks:copper_backpack",
+      "sophisticatedbackpacks:iron_backpack",
+      "sophisticatedbackpacks:gold_backpack",
+      "sophisticatedbackpacks:diamond_backpack",
+      "sophisticatedbackpacks:netherite_backpack"
+    ],
+    "slot": "back",
+    "hints": [
+      "aeroscapes_reimagine.accessory.backpack"
+    ]
+  },
+  {
+    "items": [
+      "minecraft:spyglass"
+    ],
+    "slot": "belt",
+    "hints": [
+      "aeroscapes_reimagine.accessory.spyglass"
+    ]
+  },
+  {
+    "items": [
+      "supplementaries:key"
+    ],
+    "slot": "belt",
+    "hints": [
+      "aeroscapes_reimagine.accessory.key"
+    ]
+  },
+  {
+    "items": [
+      "supplementaries:quiver"
+    ],
+    "slot": "belt",
+    "hints": [
+      "aeroscapes_reimagine.accessory.quiver"
+    ]
+  },
+  {
+    "items": [
+      "toms_storage:adv_wireless_terminal"
+    ],
+    "slot": "belt",
+    "hints": [
+      "aeroscapes_reimagine.accessory.terminal"
+    ],
+    "details": [
+      "aeroscapes_reimagine.accessory.terminal_range"
+    ],
+    "native_shift_details": true
+  },
+  {
+    "items": [
+      "tide:climate_gauge"
+    ],
+    "slot": "informational",
+    "hints": [
+      "item.tide.climate_gauge.desc_0",
+      "item.tide.climate_gauge.desc_1",
+      "aeroscapes_reimagine.accessory.fishing_hud"
+    ]
+  },
+  {
+    "items": [
+      "tide:depth_meter"
+    ],
+    "slot": "informational",
+    "hints": [
+      "item.tide.depth_meter.desc",
+      "aeroscapes_reimagine.accessory.fishing_hud"
+    ]
+  },
+  {
+    "items": [
+      "tide:lunar_calendar"
+    ],
+    "slot": "informational",
+    "hints": [
+      "item.tide.lunar_calendar.desc",
+      "aeroscapes_reimagine.accessory.fishing_hud"
+    ]
+  },
+  {
+    "items": [
+      "tide:pocket_watch"
+    ],
+    "slot": "informational",
+    "hints": [
+      "item.tide.pocket_watch.desc",
+      "aeroscapes_reimagine.accessory.fishing_hud"
+    ]
+  },
+  {
+    "items": [
+      "tide:weather_radio"
+    ],
+    "slot": "informational",
+    "hints": [
+      "item.tide.weather_radio.desc",
+      "aeroscapes_reimagine.accessory.fishing_hud"
+    ]
+  },
+  {
+    "items": [
+      "tide:fish_finder"
+    ],
+    "slot": "informational",
+    "hints": [
+      "aeroscapes_reimagine.accessory.fish_finder",
+      "aeroscapes_reimagine.accessory.fishing_hud"
+    ],
+    "superseded": "item.tide.fish_finder.desc"
+  }
+]

@@ -38,6 +38,8 @@ repositories {
       includeModule("maven.modrinth", "playeranimator")
       includeModule("maven.modrinth", "irons-spells-n-spellbooks")
       includeModule("maven.modrinth", "project-mmo")
+      includeModule("maven.modrinth", "neo-origins")
+      includeModule("maven.modrinth", "pehkui-rebuilt")
       includeModule("maven.modrinth", "skills")
       includeModule("maven.modrinth", "curios")
       includeModule("maven.modrinth", "entity-model-features")
@@ -212,6 +214,8 @@ dependencies {
   compileOnly("curse.maven:agricraft-rereloaded-1616052:9559254") { isTransitive = false }
   compileOnly("maven.modrinth:sky-whales:bDTUgqZ5") { isTransitive = false }
   compileOnly("maven.modrinth:project-mmo:9lu4zNd1") { isTransitive = false }
+  compileOnly("maven.modrinth:neo-origins:XGLQQPkP") { isTransitive = false }
+  compileOnly("maven.modrinth:pehkui-rebuilt:pQdozoO0") { isTransitive = false }
   // Compile-only Mojang-mapped API. Runtime remains the pinned Fabric file via Connector.
   compileOnly("maven.modrinth:skills:8tfcI2wU") { isTransitive = false }
   compileOnly("maven.modrinth:joy-of-painting:73U02HbA") { isTransitive = false }

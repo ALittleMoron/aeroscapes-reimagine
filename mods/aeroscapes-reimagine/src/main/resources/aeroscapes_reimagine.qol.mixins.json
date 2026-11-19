@@ -5,6 +5,8 @@
   "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "inventory.AccessoryItemUseMixin",
+    "inventory.CuriosQuickEquipMixin",
     "CompassManagerAccess",
     "CompassRandomSpreadAccess",
     "CompassBiomeWorkerMixin",

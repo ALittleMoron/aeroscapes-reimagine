@@ -30,7 +30,7 @@ The **Aeroscapes Reimagine — Island Atlas** resource pack gives the main menu 
 
 [Shoulder Surfing](https://modrinth.com/mod/shoulder-surfing-reloaded) places the third-person camera slightly to the side, using the framing of Otherworld D&D. The ordinary perspective key (**F5** by default) still switches views. Movement follows the normal player direction, the camera inherits the player's field of view, and first person remains available. Shoulder switching can be assigned in **Options → Controls**.
 
-Races, abilities and expanded action combat remain planned in [character and combat](../../character-and-combat/).
+For racial appearance, prepared abilities and plans for action combat, see [character and combat](../../character-and-combat/).
 
 ## Creatures, foliage and machinery
 
