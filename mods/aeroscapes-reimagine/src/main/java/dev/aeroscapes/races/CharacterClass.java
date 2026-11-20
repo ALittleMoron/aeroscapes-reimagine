@@ -25,6 +25,7 @@ public enum CharacterClass {
         && mods.isLoaded("pehkui")
         && mods.isLoaded("pmmo")
         && mods.isLoaded("puffish_skills")
+        && mods.isLoaded("farmersdelight")
         && mods.isLoaded("irons_spellbooks")
         && mods.isLoaded("curios");
   }

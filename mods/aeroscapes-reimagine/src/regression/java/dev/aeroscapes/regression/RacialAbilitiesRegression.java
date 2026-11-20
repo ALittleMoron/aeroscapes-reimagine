@@ -9,6 +9,7 @@ import dev.aeroscapes.magic.RacialAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.OriginOrbs;
+import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
@@ -67,7 +68,14 @@ final class RacialAbilitiesRegression {
           PreparedAbilities.preparation(player).equals(previous),
           "No racial grant before selection");
       require(
-          RaceIdentity.choose(player, Race.DWARF, 0, CharacterClass.WARRIOR, "quick_block"),
+          RaceIdentity.choose(
+              player,
+              Race.DWARF,
+              0,
+              CharacterClass.WARRIOR,
+              "quick_block",
+              Profession.BLACKSMITH,
+              "material_repair"),
           "Choose dwarf");
       PreparedAbilities.sync(player, true);
       assertInnate(session, List.of(sight.id));
@@ -92,6 +100,7 @@ final class RacialAbilitiesRegression {
           PreparedAbilities.preparation(player).slots().get(3).equals(sight.id),
           "Forged other-race assignment rejected");
       Utils.setPlayerSpellbookStack(player, ItemStack.EMPTY);
+      player.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, ItemStack.EMPTY);
       magic.setMana(0);
       long practice = MagicPractice.credit(player);
       player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 140));
@@ -147,7 +156,14 @@ final class RacialAbilitiesRegression {
       var player = session.player;
       AbilitiesRegression.initialize(player);
       require(
-          RaceIdentity.choose(player, Race.ELF, 0, CharacterClass.WARRIOR, "quick_block"),
+          RaceIdentity.choose(
+              player,
+              Race.ELF,
+              0,
+              CharacterClass.WARRIOR,
+              "quick_block",
+              Profession.BLACKSMITH,
+              "material_repair"),
           "Choose elf");
       Utils.setPlayerSpellbookStack(player, ItemStack.EMPTY);
       MagicData.getPlayerMagicData(player).setMana(0);

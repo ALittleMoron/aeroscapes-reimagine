@@ -436,5 +436,22 @@
   "puffish_skills.aeroscapes_reimagine.combat.quick_recovery.description": "С ножом, кинжалом Wetland Whimsy или аметистовой рапирой в основной руке скорость атаки выше на 10%.",
   "puffish_skills.aeroscapes_reimagine.combat.opening_strike.title": "Первый удар",
   "puffish_skills.aeroscapes_reimagine.combat.opening_strike.description": "Полностью заряженный удар ножом, кинжалом Wetland Whimsy или аметистовой рапирой наносит на 15% больше урона противнику с полным здоровьем.",
-  "attribute.aeroscapes_reimagine.shield_raise_reduction": "Сокращение времени поднятия щита (такты)"
+  "attribute.aeroscapes_reimagine.shield_raise_reduction": "Сокращение времени поднятия щита (такты)",
+  "puffish_skills.aeroscapes_reimagine.profession.material_repair.title": "Добротная починка",
+  "puffish_skills.aeroscapes_reimagine.profession.material_repair.description": "При ремонте снаряжения на наковальне каждая единица материала восстанавливает на 25% больше прочности.",
+  "puffish_skills.aeroscapes_reimagine.profession.frugal_repair.title": "Экономная починка",
+  "puffish_skills.aeroscapes_reimagine.profession.frugal_repair.description": "Ремонт материалом на наковальне обходится на один уровень опыта дешевле. Минимальная цена составляет один уровень.",
+  "puffish_skills.aeroscapes_reimagine.profession.long_reach.title": "Длинный хват",
+  "puffish_skills.aeroscapes_reimagine.profession.long_reach.description": "Устанавливайте, ломайте и используйте блоки на один блок дальше. Дальность атаки обычная.",
+  "puffish_skills.aeroscapes_reimagine.profession.quick_dismantling.title": "Быстрый демонтаж",
+  "puffish_skills.aeroscapes_reimagine.profession.quick_dismantling.description": "Разбирайте доски, кладку, ступени, плиты, ограды, калитки, двери и люки подходящим инструментом на 15% быстрее.",
+  "puffish_skills.aeroscapes_reimagine.profession.extra_harvest.title": "Богатый урожай",
+  "puffish_skills.aeroscapes_reimagine.profession.extra_harvest.description": "При ручном сборе спелой культуры с вероятностью 10% вы получите дополнительную единицу основного урожая.",
+  "puffish_skills.aeroscapes_reimagine.profession.careful_tilling.title": "Бережная вспашка",
+  "puffish_skills.aeroscapes_reimagine.profession.careful_tilling.description": "При ручной вспашке мотыга с вероятностью 25% сохраняет прочность.",
+  "puffish_skills.aeroscapes_reimagine.profession.hearty_meal.title": "Сытное блюдо",
+  "puffish_skills.aeroscapes_reimagine.profession.hearty_meal.description": "Блюда, приготовленные вами вручную, дают съевшему их игроку одну дополнительную единицу насыщения в пределах обычного максимума.",
+  "puffish_skills.aeroscapes_reimagine.profession.quick_meal.title": "Быстрый перекус",
+  "puffish_skills.aeroscapes_reimagine.profession.quick_meal.description": "Любому игроку требуется на 25% меньше времени, чтобы съесть приготовленное вами блюдо.",
+  "attribute.aeroscapes_reimagine.dismantling_speed": "Скорость демонтажа"
 }

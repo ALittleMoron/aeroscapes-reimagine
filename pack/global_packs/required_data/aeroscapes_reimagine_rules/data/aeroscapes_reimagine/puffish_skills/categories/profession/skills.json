@@ -14,5 +14,53 @@
     "x": 48,
     "y": 24,
     "definition": "mining_fortune"
+  },
+  "material_repair": {
+    "x": -128,
+    "y": -96,
+    "definition": "material_repair",
+    "root": true
+  },
+  "frugal_repair": {
+    "x": -128,
+    "y": -48,
+    "definition": "frugal_repair",
+    "root": true
+  },
+  "long_reach": {
+    "x": -64,
+    "y": -96,
+    "definition": "long_reach",
+    "root": true
+  },
+  "quick_dismantling": {
+    "x": -64,
+    "y": -48,
+    "definition": "quick_dismantling",
+    "root": true
+  },
+  "extra_harvest": {
+    "x": 64,
+    "y": -96,
+    "definition": "extra_harvest",
+    "root": true
+  },
+  "careful_tilling": {
+    "x": 64,
+    "y": -48,
+    "definition": "careful_tilling",
+    "root": true
+  },
+  "hearty_meal": {
+    "x": 128,
+    "y": -96,
+    "definition": "hearty_meal",
+    "root": true
+  },
+  "quick_meal": {
+    "x": 128,
+    "y": -48,
+    "definition": "quick_meal",
+    "root": true
   }
 }

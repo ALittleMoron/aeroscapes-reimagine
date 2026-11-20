@@ -4,6 +4,7 @@ import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.ClassTraits;
+import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
@@ -46,7 +47,14 @@ final class MartialClassRegression {
           double armor = player.getAttributeValue(Attributes.ARMOR);
           double mana = player.getAttributeValue(AttributeRegistry.MAX_MANA);
           require(
-              RaceIdentity.choose(player, Race.HUMAN, 0, role, role.starters().getFirst()),
+              RaceIdentity.choose(
+                  player,
+                  Race.HUMAN,
+                  0,
+                  role,
+                  role.starters().getFirst(),
+                  Profession.BLACKSMITH,
+                  "material_repair"),
               "Initial class selection");
           close(
               player.getAttributeValue(Attributes.ARMOR),

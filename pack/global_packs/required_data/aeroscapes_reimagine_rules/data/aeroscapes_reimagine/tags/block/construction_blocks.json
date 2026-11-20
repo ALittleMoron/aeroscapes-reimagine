@@ -1,0 +1,25 @@
+{
+  "values": [
+    "#minecraft:planks",
+    "#minecraft:stairs",
+    "#minecraft:slabs",
+    "#minecraft:walls",
+    "#minecraft:fences",
+    "#minecraft:fence_gates",
+    "#minecraft:doors",
+    "#minecraft:trapdoors",
+    "#minecraft:stone_bricks",
+    "#c:cobblestones",
+    "minecraft:bricks",
+    "minecraft:mud_bricks",
+    "minecraft:nether_bricks",
+    "minecraft:red_nether_bricks",
+    "minecraft:deepslate_bricks",
+    "minecraft:deepslate_tiles",
+    "minecraft:polished_blackstone_bricks",
+    "minecraft:end_stone_bricks",
+    "minecraft:prismarine_bricks",
+    "minecraft:quartz_bricks",
+    "minecraft:tuff_bricks"
+  ]
+}

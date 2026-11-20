@@ -3,6 +3,7 @@ package dev.aeroscapes.mixin.reforge.tools;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import dev.aeroscapes.equipment.tools.ToolReforges;
+import dev.aeroscapes.races.ProfessionTools;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.HoeItem;
@@ -26,6 +27,7 @@ abstract class HoeTillingWearMixin {
       LivingEntity user,
       EquipmentSlot slot,
       Operation<Void> original) {
-    original.call(stack, ToolReforges.tillingWear(stack, user, amount), user, slot);
+    int wear = ToolReforges.tillingWear(stack, user, amount);
+    original.call(stack, ProfessionTools.tillingWear(user, wear), user, slot);
   }
 }

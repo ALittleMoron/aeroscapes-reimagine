@@ -100,8 +100,7 @@ final class ProgressionRegression {
     // Project MMO's admin commands change levels without posting a level-up event.
     APIUtils.setLevel("farming", player, 10);
     tick(player);
-    requirePoints(
-        player, 11, 2, "Profession practice above the catalogue maximum grants no excess points");
+    requirePoints(player, 11, 4, "Two more farming milestones fund further profession purchases");
 
     try {
       player
@@ -118,8 +117,8 @@ final class ProgressionRegression {
     }
     tick(player);
     requirePoints(
-        player, 11, 2, "Stored points reconcile even when earned levels have not changed");
-    requireClientPoints(session, 11, 2);
+        player, 11, 4, "Stored points reconcile even when earned levels have not changed");
+    requireClientPoints(session, 11, 4);
     verifyTalentInvestment(player, session);
 
     long smithing = APIUtils.getXp("smithing", player);
@@ -152,9 +151,9 @@ final class ProgressionRegression {
     requirePoints(
         player,
         62,
-        2,
+        ProgressionBridge.PROFESSION_POINT_CAP,
         "Mastering all six practices funds exactly the compatible profession purchases");
-    requireClientPoints(session, 62, 2);
+    requireClientPoints(session, 62, ProgressionBridge.PROFESSION_POINT_CAP);
   }
 
   private static void verifyAdminCommands(ServerPlayer player, TestShipPlayerSession session) {
@@ -245,7 +244,7 @@ final class ProgressionRegression {
         provider.getSkillState(player, combat, "magic_recovery_1").orElseThrow()
             == Skill.State.UNLOCKED,
         "Native save/import and death retain learned talents");
-    requirePoints(player, 11, 2, "Reload and death preserve the earned point sources");
+    requirePoints(player, 11, 4, "Reload and death preserve the earned point sources");
   }
 
   private static void tick(ServerPlayer player) {

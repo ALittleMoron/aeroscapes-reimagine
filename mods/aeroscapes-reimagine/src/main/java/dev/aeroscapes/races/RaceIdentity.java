@@ -16,6 +16,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.util.FakePlayer;
 import net.neoforged.neoforge.event.entity.EntityInvulnerabilityCheckEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import tictim.paraglider.api.stamina.Stamina;
 
 public final class RaceIdentity {
@@ -30,12 +31,16 @@ public final class RaceIdentity {
     NeoForge.EVENT_BUS.addListener(RaceIdentity::copyPlayer);
     NeoForge.EVENT_BUS.addListener(EventPriority.LOW, RaceIdentity::login);
     NeoForge.EVENT_BUS.addListener(EventPriority.LOW, RaceIdentity::respawn);
+    NeoForge.EVENT_BUS.addListener(RaceIdentity::deliverRemainingKit);
   }
 
   public static boolean awaitingChoice(ServerPlayer player) {
     return !(player instanceof FakePlayer)
         && CharacterClass.creationAvailable()
-        && (race(player) == null || characterClass(player) == null || grantPending(player));
+        && (race(player) == null
+            || characterClass(player) == null
+            || profession(player) == null
+            || grantPending(player));
   }
 
   private static void protectDuringSelection(EntityInvulnerabilityCheckEvent event) {
@@ -72,8 +77,22 @@ public final class RaceIdentity {
     return player.getPersistentData().getCompound(DATA).getString("starter");
   }
 
+  @Nullable
+  public static Profession profession(Player player) {
+    var identity = player.getPersistentData().getCompound(DATA);
+    var chosen = Profession.byId(identity.getString("profession"));
+    return chosen != null && chosen.starters().contains(identity.getString("profession_starter"))
+        ? chosen
+        : null;
+  }
+
+  public static String professionStarter(Player player) {
+    return player.getPersistentData().getCompound(DATA).getString("profession_starter");
+  }
+
   public static boolean grantPending(Player player) {
-    return player.getPersistentData().getCompound(DATA).getBoolean("grant_pending");
+    var identity = player.getPersistentData().getCompound(DATA);
+    return identity.getBoolean("grant_pending") || identity.getBoolean("profession_grant_pending");
   }
 
   public static boolean choose(
@@ -81,35 +100,60 @@ public final class RaceIdentity {
       Race race,
       int style,
       @Nullable CharacterClass chosenClass,
-      String starter) {
+      String starter,
+      @Nullable Profession chosenProfession,
+      String professionStarter) {
     if (!CharacterClass.creationAvailable()
         || race == null
         || !race.validStyle(style)
         || !player.isAlive()
         || chosenClass == null
-        || !chosenClass.starters().contains(starter)) return false;
+        || !chosenClass.starters().contains(starter)
+        || chosenProfession == null
+        || !chosenProfession.starters().contains(professionStarter)) return false;
     Race previous = race(player);
     if (previous != null && (previous != race || style(player) != style)) return false;
     CharacterClass existing = characterClass(player);
-    if (existing != null) {
-      return grantPending(player)
-          && existing == chosenClass
-          && starter(player).equals(starter)
-          && finishGrant(player);
-    }
-    if (!ClassProgression.available(player, chosenClass, starter)) return false;
+    if (existing != null && (existing != chosenClass || !starter(player).equals(starter)))
+      return false;
+    Profession previousProfession = profession(player);
+    if (previousProfession != null
+        && (previousProfession != chosenProfession
+            || !professionStarter(player).equals(professionStarter))) return false;
+    if (existing != null && previousProfession != null && !grantPending(player)) return false;
+    if (existing == null && !ClassProgression.available(player, chosenClass, starter)) return false;
+    if (previousProfession == null && !ProfessionProgression.available(player, professionStarter))
+      return false;
     if (previous == null && !chooseRace(player, race, style)) return false;
     var identity = data(player);
-    identity.putString("class", chosenClass.id());
-    identity.putString("starter", starter);
-    identity.putBoolean("grant_pending", true);
+    if (existing == null) {
+      identity.putString("class", chosenClass.id());
+      identity.putString("starter", starter);
+      identity.putBoolean("grant_pending", true);
+    }
+    if (previousProfession == null) {
+      identity.putString("profession", chosenProfession.id());
+      identity.putString("profession_starter", professionStarter);
+      identity.putBoolean("profession_grant_pending", true);
+    }
     return finishGrant(player);
   }
 
   private static boolean finishGrant(ServerPlayer player) {
-    if (!ClassProgression.afterChoice(player)) return false;
-    ClassTraits.refresh(player);
-    data(player).remove("grant_pending");
+    var identity = data(player);
+    if (identity.getBoolean("grant_pending")) {
+      if (!ClassProgression.afterChoice(player)) return false;
+      ClassTraits.refresh(player);
+      identity.remove("grant_pending");
+    }
+    if (identity.getBoolean("profession_grant_pending")) {
+      var profession = profession(player);
+      if (profession == null
+          || !ProfessionProgression.grant(player, profession, professionStarter(player)))
+        return false;
+      identity.remove("profession_grant_pending");
+      ProfessionProgression.deliverKit(player);
+    }
     return true;
   }
 
@@ -161,6 +205,22 @@ public final class RaceIdentity {
       if (race != null) RaceTraits.applyBody(serverPlayer, race);
       if (race != null && characterClass(player) != null && grantPending(player))
         finishGrant(serverPlayer);
+      else if (profession(player) != null)
+        ProfessionProgression.restoreStarter(serverPlayer, professionStarter(player));
+      deliverKitIfPresent(serverPlayer);
     }
+  }
+
+  private static void deliverRemainingKit(PlayerTickEvent.Post event) {
+    if (event.getEntity() instanceof ServerPlayer player && player.tickCount % 20 == 0)
+      deliverKitIfPresent(player);
+  }
+
+  private static void deliverKitIfPresent(ServerPlayer player) {
+    if (player
+        .getPersistentData()
+        .getCompound(DATA)
+        .contains(ProfessionProgression.KIT, Tag.TAG_LIST))
+      ProfessionProgression.deliverKit(player);
   }
 }

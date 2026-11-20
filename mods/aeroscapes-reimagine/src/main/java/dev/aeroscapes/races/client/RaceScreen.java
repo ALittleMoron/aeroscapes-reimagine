@@ -4,9 +4,16 @@ import static dev.aeroscapes.races.client.RaceVisuals.text;
 
 import com.mojang.realmsclient.RealmsMainScreen;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceNetwork;
+import java.text.NumberFormat;
 import java.util.EnumMap;
+import java.util.EnumSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.stream.IntStream;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -22,23 +29,34 @@ import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 
 final class RaceScreen extends Screen {
-  private enum Page {
+  enum Page {
     RACE,
     CLASS,
-    SUMMARY
+    PROFESSION,
+    SUMMARY;
+
+    static List<Page> remaining(RaceClient.Profile profile) {
+      var pages = EnumSet.allOf(Page.class);
+      if (profile.race() != null) pages.remove(RACE);
+      if (profile.hasClass()) pages.remove(CLASS);
+      if (profile.hasProfession()) pages.remove(PROFESSION);
+      return List.copyOf(pages);
+    }
   }
 
   private static final int GOLD = 0xffe9c084;
   private static final int TEXT = 0xffd6e0eb;
   private final RacePreview preview = new RacePreview();
-  private final boolean raceLocked;
+  private final List<Page> pages;
   private final boolean sheet;
   private final boolean grantPending;
   private final boolean fromInventory;
   private Race race;
   private CharacterClass characterClass;
+  private Profession profession;
   private final int[] styles = new int[Race.values().length];
   private final EnumMap<CharacterClass, String> starters = new EnumMap<>(CharacterClass.class);
+  private final EnumMap<Profession, String> professionStarters = new EnumMap<>(Profession.class);
   private Page page;
   private boolean expanded;
   private int waiting;
@@ -49,14 +67,16 @@ final class RaceScreen extends Screen {
   RaceScreen(RaceClient.Profile profile, boolean fromInventory) {
     super(text(profile.complete() ? "title" : "create"));
     this.fromInventory = fromInventory;
-    raceLocked = profile.race() != null;
+    pages = Page.remaining(profile);
+    page = pages.getFirst();
     sheet = profile.complete();
-    grantPending = profile.grantPending();
-    race = raceLocked ? profile.race() : Race.HUMAN;
+    grantPending = profile.grantPending() && page == Page.SUMMARY;
+    race = profile.race() != null ? profile.race() : Race.HUMAN;
     if (race.validStyle(profile.style())) styles[race.ordinal()] = profile.style();
-    characterClass = profile.hasSelection() ? profile.characterClass() : CharacterClass.WARRIOR;
-    if (profile.hasSelection()) starters.put(characterClass, profile.starter());
-    page = profile.hasSelection() ? Page.SUMMARY : raceLocked ? Page.CLASS : Page.RACE;
+    characterClass = profile.hasClass() ? profile.characterClass() : CharacterClass.WARRIOR;
+    if (profile.hasClass()) starters.put(characterClass, profile.starter());
+    profession = profile.hasProfession() ? profile.profession() : Profession.BLACKSMITH;
+    if (profile.hasProfession()) professionStarters.put(profession, profile.professionStarter());
   }
 
   private int style() {
@@ -67,37 +87,47 @@ final class RaceScreen extends Screen {
     return starters.getOrDefault(characterClass, characterClass.starters().getFirst());
   }
 
+  private String professionStarter() {
+    return professionStarters.getOrDefault(profession, profession.starters().getFirst());
+  }
+
   private Component heading() {
     if (sheet) return title;
     return switch (page) {
       case RACE -> text("race_page");
       case CLASS -> text("class_page");
+      case PROFESSION -> text("profession_page");
       case SUMMARY -> text("review");
     };
   }
 
   private Component details() {
     var doc = Component.empty();
+    var language = minecraft.getLanguageManager().getSelected();
+    var numbers = NumberFormat.getNumberInstance(Locale.forLanguageTag(language.replace('_', '-')));
     if (grantPending) doc.append(text("grant_pending")).append("\n\n");
     else if (retry) doc.append(text("retry")).append("\n\n");
-    if (page == Page.SUMMARY) {
-      doc.append(
-              text("sheet", text(race.id() + ".name"), CharacterDetails.className(characterClass)))
-          .append("\n")
-          .append(text("starter", CharacterDetails.talent(starter(), "title")))
-          .append("\n\n");
-    }
-    if (page == Page.RACE && raceLocked) doc.append(text("race_saved")).append("\n\n");
-    if (page != Page.CLASS) {
-      doc.append(CharacterDetails.race(race, style(), expanded)).append("\n\n");
-    }
-    if (page != Page.RACE) {
-      if (page == Page.CLASS)
-        doc.append(text("selected_race", text(race.id() + ".name"))).append("\n\n");
-      doc.append(CharacterDetails.classProfile(characterClass, starter(), expanded)).append("\n\n");
-    }
-    doc.append(
-        CharacterDetails.practice(race, page == Page.RACE ? null : characterClass, expanded));
+    doc.append(CharacterDetails.identity(race, characterClass, profession))
+        .append("\n")
+        .append(text("starter", CharacterDetails.talent(starter(), "title")))
+        .append("\n")
+        .append(
+            text(
+                "profession_starter",
+                CharacterDetails.professionTalent(professionStarter(), "title")))
+        .append("\n\n")
+        .append(
+            CharacterDetails.attributes(
+                race, characterClass, professionStarter(), expanded, numbers))
+        .append("\n\n")
+        .append(CharacterDetails.practice(race, characterClass, profession, expanded));
+    if (expanded || page == Page.PROFESSION || page == Page.SUMMARY)
+      doc.append("\n\n")
+          .append(CharacterDetails.professionProfile(profession, professionStarter(), expanded));
+    if (expanded || page == Page.CLASS || page == Page.SUMMARY)
+      doc.append("\n\n").append(CharacterDetails.classProfile(characterClass, starter(), expanded));
+    if (expanded || page == Page.RACE || page == Page.SUMMARY)
+      doc.append("\n\n").append(CharacterDetails.race(race, style(), expanded));
     if (page == Page.SUMMARY && !sheet && !grantPending)
       doc.append("\n\n").append(text("permanent"));
     return doc;
@@ -131,6 +161,7 @@ final class RaceScreen extends Screen {
         switch (page) {
           case RACE -> raceControls(right, rightWidth);
           case CLASS -> classControls(right, rightWidth);
+          case PROFESSION -> professionControls(right, rightWidth);
           case SUMMARY -> top + 32;
         };
     addRenderableWidget(
@@ -155,12 +186,13 @@ final class RaceScreen extends Screen {
       button(CommonComponents.GUI_DONE, x, footer, panelWidth - 20, 18, this::closeSheet);
       return;
     }
-    if (page != Page.RACE && !grantPending)
+    if (page != pages.getFirst())
       button(CommonComponents.GUI_BACK, x, footer, half, 18, this::onClose).active = waiting == 0;
     var forward =
         switch (page) {
           case RACE -> text("to_class");
-          case CLASS -> text("review");
+          case CLASS -> text("to_profession");
+          case PROFESSION -> text("review");
           case SUMMARY ->
               text(waiting > 0 ? "saving" : grantPending || retry ? "try_again" : "confirm");
         };
@@ -168,7 +200,6 @@ final class RaceScreen extends Screen {
   }
 
   private int raceControls(int right, int rightWidth) {
-    if (raceLocked) return top + 32;
     for (var choice : Race.values()) {
       tab(
           text(choice.id() + ".name"),
@@ -211,26 +242,63 @@ final class RaceScreen extends Screen {
             rebuildWidgets();
           });
     }
-    if (characterClass.starters().size() == 1) return top + 53;
-    int choices = characterClass.starters().size();
-    for (int i = 0; i < choices; i++) {
-      String id = characterClass.starters().get(i);
-      int start = rightWidth * i / choices;
-      int end = rightWidth * (i + 1) / choices;
-      var option =
-          button(
-              CharacterDetails.talent(id, "title"),
-              right + start,
-              top + 62,
-              end - start - 2,
-              18,
-              () -> {
-                starters.put(characterClass, id);
-                rebuildWidgets();
-              });
-      option.active = !starter().equals(id);
-      option.setTooltip(Tooltip.create(CharacterDetails.talent(id, "description")));
+    return starterControl(
+        right,
+        rightWidth,
+        characterClass.starters(),
+        starter(),
+        id -> CharacterDetails.talent(id, "title"),
+        id -> CharacterDetails.talent(id, "description"),
+        id -> starters.put(characterClass, id));
+  }
+
+  private int professionControls(int right, int rightWidth) {
+    for (var choice : Profession.values()) {
+      tab(
+          CharacterDetails.professionName(choice),
+          choice.ordinal(),
+          Profession.values().length,
+          choice == profession,
+          () -> {
+            profession = choice;
+            rebuildWidgets();
+          });
     }
+    return starterControl(
+        right,
+        rightWidth,
+        profession.starters(),
+        professionStarter(),
+        id -> CharacterDetails.professionTalent(id, "title"),
+        id -> CharacterDetails.professionTalent(id, "description"),
+        id -> professionStarters.put(profession, id));
+  }
+
+  private int starterControl(
+      int right,
+      int rightWidth,
+      List<String> choices,
+      String selected,
+      Function<String, Component> label,
+      Function<String, Component> description,
+      Consumer<String> select) {
+    if (choices.size() == 1) return top + 53;
+    addRenderableWidget(
+        CycleButton.<String>builder(label)
+            .withValues(choices)
+            .withInitialValue(selected)
+            .withTooltip(id -> Tooltip.create(description.apply(id)))
+            .displayOnlyValue()
+            .create(
+                right,
+                top + 62,
+                rightWidth,
+                18,
+                text("ability"),
+                (button, value) -> {
+                  select.accept(value);
+                  rebuildWidgets();
+                }));
     return top + 86;
   }
 
@@ -247,15 +315,11 @@ final class RaceScreen extends Screen {
 
   private void advance() {
     if (sheet || waiting > 0) return;
-    switch (page) {
-      case RACE -> page = Page.CLASS;
-      case CLASS -> page = Page.SUMMARY;
-      case SUMMARY -> {
-        waiting = 100;
-        retry = false;
-        RaceNetwork.choose(race, style(), characterClass, starter());
-      }
-    }
+    if (page == Page.SUMMARY) {
+      waiting = 100;
+      retry = false;
+      RaceNetwork.choose(race, style(), characterClass, starter(), profession, professionStarter());
+    } else page = pages.get(pages.indexOf(page) + 1);
     rebuildWidgets();
   }
 
@@ -279,8 +343,8 @@ final class RaceScreen extends Screen {
   public void onClose() {
     if (sheet) {
       closeSheet();
-    } else if (!grantPending && waiting == 0 && page != Page.RACE) {
-      page = page == Page.SUMMARY ? Page.CLASS : Page.RACE;
+    } else if (waiting == 0 && page != pages.getFirst()) {
+      page = pages.get(pages.indexOf(page) - 1);
       retry = false;
       rebuildWidgets();
     }
@@ -320,7 +384,7 @@ final class RaceScreen extends Screen {
     graphics.hLine(left + 7, left + 29, top + 4, 0xffb99a6c);
     graphics.hLine(left + panelWidth - 29, left + panelWidth - 7, bottom - 5, 0xffb99a6c);
     graphics.drawString(font, heading(), x, top + 12, GOLD, false);
-    boolean tabsVisible = page == Page.CLASS || page == Page.RACE && !raceLocked;
+    boolean tabsVisible = page != Page.SUMMARY;
     int previewY = top + (tabsVisible ? 51 : 30), previewBottom = bottom - 76;
     graphics.fillGradient(x, previewY, x + previewWidth, previewBottom, 0xff162333, 0xff263c52);
     graphics.renderOutline(x, previewY, previewWidth, previewBottom - previewY, 0xff3d536d);
@@ -339,8 +403,9 @@ final class RaceScreen extends Screen {
           Math.min(floor - previewY - 4, (previewWidth - 8) * 2));
       graphics.disableScissor();
     }
-    if (page == Page.RACE && !raceLocked
-        || page == Page.CLASS && characterClass.starters().size() > 1) {
+    if (page == Page.RACE
+        || page == Page.CLASS && characterClass.starters().size() > 1
+        || page == Page.PROFESSION && profession.starters().size() > 1) {
       graphics.drawString(
           font,
           text(page == Page.RACE ? "appearance" : "ability"),

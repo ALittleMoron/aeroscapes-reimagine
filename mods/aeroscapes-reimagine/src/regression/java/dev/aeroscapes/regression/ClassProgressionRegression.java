@@ -8,6 +8,7 @@ import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.ClassProgression;
+import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import harmonised.pmmo.api.APIUtils;
@@ -59,7 +60,14 @@ final class ClassProgressionRegression {
         // Simulate a provider refusing an otherwise valid starter until its point source recovers.
         skills.setPoints(player, COMBAT, withheld, -2, true);
         require(
-            !RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.MAGE, "first_mastery"),
+            !RaceIdentity.choose(
+                player,
+                Race.HUMAN,
+                0,
+                CharacterClass.MAGE,
+                "first_mastery",
+                Profession.BLACKSMITH,
+                "material_repair"),
             "Provider refusal keeps the grant pending");
         require(
             RaceIdentity.grantPending(player)
@@ -73,12 +81,26 @@ final class ClassProgressionRegression {
             "No talent or journal before the provider accepts");
         skills.setPoints(player, COMBAT, withheld, 0, true);
         require(
-            !RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.RANGER, "bow_stride"),
+            !RaceIdentity.choose(
+                player,
+                Race.HUMAN,
+                0,
+                CharacterClass.RANGER,
+                "bow_stride",
+                Profession.BLACKSMITH,
+                "material_repair"),
             "An alternate submission cannot replace the reserved class");
         if (retryOnLogin) NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
         else
           require(
-              RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.MAGE, "first_mastery"),
+              RaceIdentity.choose(
+                  player,
+                  Race.HUMAN,
+                  0,
+                  CharacterClass.MAGE,
+                  "first_mastery",
+                  Profession.BLACKSMITH,
+                  "material_repair"),
               "Matching submission retries the grant");
         require(
             !RaceIdentity.awaitingChoice(player)
@@ -87,7 +109,14 @@ final class ClassProgressionRegression {
                 && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1,
             "Recovered choice grants the paid root, focus and free ordinary point");
         require(
-            !RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.MAGE, "first_mastery"),
+            !RaceIdentity.choose(
+                player,
+                Race.HUMAN,
+                0,
+                CharacterClass.MAGE,
+                "first_mastery",
+                Profession.BLACKSMITH,
+                "material_repair"),
             "Confirmed packets cannot repeat a successful grant");
         NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
         require(
@@ -115,7 +144,8 @@ final class ClassProgressionRegression {
         boolean mage = characterClass == CharacterClass.MAGE;
         if (mage && race != Race.HUMAN) prepareExistingMage(player, race);
         require(
-            RaceIdentity.choose(player, race, 0, characterClass, starter),
+            RaceIdentity.choose(
+                player, race, 0, characterClass, starter, Profession.BLACKSMITH, "material_repair"),
             "Class selection for " + race + " " + characterClass);
         String node = mage ? ROOT : starter;
         var provider = SkillsMod.getInstance();

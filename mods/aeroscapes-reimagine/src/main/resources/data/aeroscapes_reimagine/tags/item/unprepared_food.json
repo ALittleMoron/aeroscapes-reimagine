@@ -1,0 +1,14 @@
+{
+  "values": [
+    "#c:crops",
+    "#c:foods/raw_meat",
+    "#c:foods/raw_fish",
+    "#c:foods/berry",
+    {"id": "#c:foods/dough", "required": false},
+    {"id": "#c:foods/pasta", "required": false},
+    "minecraft:melon_slice",
+    "minecraft:sweet_berries",
+    "minecraft:glow_berries",
+    "minecraft:apple"
+  ]
+}

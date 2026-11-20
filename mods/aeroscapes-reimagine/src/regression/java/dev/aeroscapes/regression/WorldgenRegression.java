@@ -198,6 +198,32 @@ public final class WorldgenRegression {
       return;
     }
     String magicMigration = System.getProperty("aeroscapes.regression.magicMigration");
+    if (Boolean.getBoolean("aeroscapes.regression.professions")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    var failures = new IllegalStateException("Profession regression failures");
+                    for (var check :
+                        List.<java.util.function.Consumer<ServerLevel>>of(
+                            ProfessionIdentityRegression::verify,
+                            ProfessionToolsRegression::verify,
+                            ProfessionEffectsRegression::verify,
+                            ProfessionFurnaceRegression::verify)) {
+                      try {
+                        check.accept(level);
+                      } catch (RuntimeException exception) {
+                        failures.addSuppressed(exception);
+                      }
+                    }
+                    if (failures.getSuppressed().length > 0) throw failures;
+                    LOGGER.info(
+                        "Profession choices, starter kits and personal work regression passed");
+                  }));
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.classes")) {
       event
           .getServer()

@@ -69,5 +69,22 @@
   "puffish_skills.aeroscapes_reimagine.combat.quick_recovery.description": "Attack 10% faster with a knife, a Wetland Whimsy dagger or an amethyst rapier in your main hand.",
   "puffish_skills.aeroscapes_reimagine.combat.opening_strike.title": "Opening Strike",
   "puffish_skills.aeroscapes_reimagine.combat.opening_strike.description": "A fully charged hit with a knife, a Wetland Whimsy dagger or an amethyst rapier deals 15% more damage to a target at full health.",
-  "attribute.aeroscapes_reimagine.shield_raise_reduction": "Shield raise time reduction (ticks)"
+  "attribute.aeroscapes_reimagine.shield_raise_reduction": "Shield raise time reduction (ticks)",
+  "puffish_skills.aeroscapes_reimagine.profession.material_repair.title": "Sound Mend",
+  "puffish_skills.aeroscapes_reimagine.profession.material_repair.description": "Restore 25% more durability per material when repairing equipment on an anvil.",
+  "puffish_skills.aeroscapes_reimagine.profession.frugal_repair.title": "Frugal Repair",
+  "puffish_skills.aeroscapes_reimagine.profession.frugal_repair.description": "Pay one fewer experience level for a material repair at the anvil, down to one level.",
+  "puffish_skills.aeroscapes_reimagine.profession.long_reach.title": "Long Reach",
+  "puffish_skills.aeroscapes_reimagine.profession.long_reach.description": "Reach one block farther when placing, breaking or using blocks. Attack reach stays the same.",
+  "puffish_skills.aeroscapes_reimagine.profession.quick_dismantling.title": "Quick Dismantling",
+  "puffish_skills.aeroscapes_reimagine.profession.quick_dismantling.description": "Break planks, masonry, stairs, slabs, walls, fences, gates, doors and trapdoors 15% faster with a suitable tool.",
+  "puffish_skills.aeroscapes_reimagine.profession.extra_harvest.title": "Extra Harvest",
+  "puffish_skills.aeroscapes_reimagine.profession.extra_harvest.description": "Personally harvesting a ripe crop has a 10% chance to yield one extra unit of its main produce.",
+  "puffish_skills.aeroscapes_reimagine.profession.careful_tilling.title": "Careful Tilling",
+  "puffish_skills.aeroscapes_reimagine.profession.careful_tilling.description": "When tilling soil by hand, your hoe has a 25% chance to avoid the durability cost.",
+  "puffish_skills.aeroscapes_reimagine.profession.hearty_meal.title": "Hearty Meal",
+  "puffish_skills.aeroscapes_reimagine.profession.hearty_meal.description": "Dishes you prepare by hand give whoever eats them one extra saturation point, up to the usual limit.",
+  "puffish_skills.aeroscapes_reimagine.profession.quick_meal.title": "Quick Bite",
+  "puffish_skills.aeroscapes_reimagine.profession.quick_meal.description": "Dishes you prepare by hand take 25% less time to eat, even for another player.",
+  "attribute.aeroscapes_reimagine.dismantling_speed": "Construction dismantling speed"
 }

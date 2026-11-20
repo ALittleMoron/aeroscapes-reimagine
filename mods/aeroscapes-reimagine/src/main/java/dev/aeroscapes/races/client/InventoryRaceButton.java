@@ -41,10 +41,7 @@ public final class InventoryRaceButton extends ImageButton {
     active = profile != null && profile.complete();
     if (active && !profile.equals(shownProfile)) {
       var label =
-          RaceVisuals.text(
-              "sheet",
-              RaceVisuals.text(profile.race().id() + ".name"),
-              RaceVisuals.text("class." + profile.characterClass().id() + ".name"));
+          CharacterDetails.identity(profile.race(), profile.characterClass(), profile.profession());
       setMessage(label);
       setTooltip(Tooltip.create(label.copy().append("\n").append(RaceVisuals.text("sheet_hint"))));
     }

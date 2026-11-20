@@ -35,6 +35,10 @@ MAGIC_GRAPH = (
     "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/"
     "aeroscapes_reimagine/puffish_skills/categories/combat/skills.json"
 )
+RACE_PROFILE = (
+    "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/"
+    "aeroscapes_reimagine/origins/elf.json"
+)
 
 
 @pytest.fixture
@@ -65,6 +69,7 @@ def source_project(tmp_path: Path) -> Project:
         ROD_TEXTURE: b"owned pixels",
         SHADER_PIN: b'filename = "example.zip"\n',
         MAGIC_GRAPH: b'{"magic_mastery_1":{}}',
+        RACE_PROFILE: b'{"powers":[]}',
         "pack/resourcepacks/unrelated-provider.zip": b"not an owned build input",
         "metadata/worldgen_adoption.json": json.dumps({"jar": "mods/owned.jar"}).encode(),
         "metadata/runtime_data_patches.json": b'{"patches":[]}',
@@ -158,6 +163,7 @@ def test_extracted_sources_preserve_pack_inputs_at_the_build_relative_paths(
         ROD_TEXTURE,
         SHADER_PIN,
         MAGIC_GRAPH,
+        RACE_PROFILE,
         "binary",
         "archive",
         "missing",

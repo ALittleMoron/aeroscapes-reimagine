@@ -50,9 +50,12 @@ public final class AeroscapesReimagine {
     if (ModList.get().isLoaded("neoorigins") && ModList.get().isLoaded("pehkui")) {
       dev.aeroscapes.races.RaceIdentity.register();
       dev.aeroscapes.races.ClassTraits.register(modBus);
-      if (dev.aeroscapes.races.CharacterClass.creationAvailable())
+      if (dev.aeroscapes.races.CharacterClass.creationAvailable()) {
         dev.aeroscapes.races.RaceNetwork.register(modBus);
+        dev.aeroscapes.races.ProfessionEffects.register();
+      }
     }
+    dev.aeroscapes.races.ProfessionTools.register(modBus);
     dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);
     if (ModList.get().isLoaded("animalhusbandry"))
       dev.aeroscapes.husbandry.TroughAutomation.register(modBus);

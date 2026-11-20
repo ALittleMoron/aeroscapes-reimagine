@@ -369,6 +369,21 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     } else if (mixinClassName.endsWith("ProjectMmoAdminDataMixin")
         || mixinClassName.endsWith("MagicTalentGateMixin")) {
       versions = Map.of("pmmo", "2.10.47", "puffish_skills", "0.19.2", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.Profession")) {
+      var pins =
+          new java.util.HashMap<>(Map.of("puffish_skills", "0.19.2", "neoforge", "21.1.244"));
+      if (mixinClassName.contains("Pot")
+          || mixinClassName.contains("CuttingBoard")
+          || mixinClassName.contains("Feast")
+          || mixinClassName.contains("Stove")
+          || mixinClassName.contains("Skillet")
+          || mixinClassName.contains("PickedCrop")) pins.put("farmersdelight", "1.2.11a");
+      if (mixinClassName.contains("EasyAnvil")) pins.put("easyanvils", "21.1.0");
+      if (mixinClassName.contains("AgriCrop")) pins.put("agricraft", "4.0.27");
+      if (mixinClassName.contains("EmiTransfer")) pins.put("emi", "1.1.24+1.21.1+neoforge");
+      if (mixinClassName.contains("JeiTransfer")) pins.put("jei", "19.39.0.372");
+      if (mixinClassName.contains("Transfer")) pins.put("farmersdelight", "1.2.11a");
+      versions = pins;
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.")) {
       versions = Map.of("pmmo", "2.10.47", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PrecipitationParticleMixin")) {

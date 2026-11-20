@@ -37,7 +37,7 @@ public final class ProgressionBridge {
   public static final List<String> PROFESSION_SKILLS =
       List.of("mining", "crafting", "smithing", "building", "farming", "cooking");
   public static final int LEVELS_PER_POINT = 5;
-  public static final int PROFESSION_POINT_CAP = 2;
+  public static final int PROFESSION_POINT_CAP = 10;
   public static final String COMBAT_CATEGORY = "aeroscapes_reimagine:combat";
   public static final String PROFESSION_CATEGORY = "aeroscapes_reimagine:profession";
   private static final ResourceLocation COMBAT = ResourceLocation.parse(COMBAT_CATEGORY);
@@ -89,7 +89,9 @@ public final class ProgressionBridge {
     Map<String, Long> levels = APIUtils.getAllLevels(player);
     return new Earned(
         combatPoints(player, levels, magicCredit),
-        Math.min(PROFESSION_POINT_CAP, points(levels, PROFESSION_SKILLS)));
+        Math.min(
+            PROFESSION_POINT_CAP,
+            points(levels, PROFESSION_SKILLS) + (RaceIdentity.profession(player) == null ? 0 : 1)));
   }
 
   private static int combatPoints(ServerPlayer player, Map<String, Long> levels, long magicCredit) {

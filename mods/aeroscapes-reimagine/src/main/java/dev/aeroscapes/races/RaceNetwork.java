@@ -27,7 +27,7 @@ public final class RaceNetwork {
   }
 
   private static void payloads(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("2");
+    var registrar = event.registrar("3");
     registrar.playToServer(
         Choose.TYPE,
         Choose.CODEC,
@@ -36,7 +36,13 @@ public final class RaceNetwork {
           Race race = Race.byId(msg.race());
           if (race != null
               && RaceIdentity.choose(
-                  player, race, msg.style(), CharacterClass.byId(msg.classId()), msg.starter())) {
+                  player,
+                  race,
+                  msg.style(),
+                  CharacterClass.byId(msg.classId()),
+                  msg.starter(),
+                  Profession.byId(msg.professionId()),
+                  msg.professionStarter())) {
             // A client in a live world can predict movement while the server holds it in place.
             player.connection.teleport(
                 player.getX(), player.getY(), player.getZ(), player.getYRot(), player.getXRot());
@@ -51,20 +57,33 @@ public final class RaceNetwork {
     registrar.playToClient(Snapshot.TYPE, Snapshot.CODEC, (msg, ctx) -> RaceClient.accept(msg));
   }
 
-  public static void choose(Race race, int style, CharacterClass chosenClass, String starter) {
-    if (race.validStyle(style) && chosenClass.starters().contains(starter))
-      PacketDistributor.sendToServer(new Choose(race.id(), style, chosenClass.id(), starter));
+  public static void choose(
+      Race race,
+      int style,
+      CharacterClass chosenClass,
+      String starter,
+      Profession profession,
+      String professionStarter) {
+    if (race.validStyle(style)
+        && chosenClass.starters().contains(starter)
+        && profession.starters().contains(professionStarter))
+      PacketDistributor.sendToServer(
+          new Choose(
+              race.id(), style, chosenClass.id(), starter, profession.id(), professionStarter));
   }
 
   private static Snapshot snapshot(ServerPlayer player) {
     Race race = RaceIdentity.race(player);
     CharacterClass chosenClass = RaceIdentity.characterClass(player);
+    Profession profession = RaceIdentity.profession(player);
     return new Snapshot(
         player.getUUID(),
         race == null ? "" : race.id(),
         RaceIdentity.style(player),
         chosenClass == null ? "" : chosenClass.id(),
         RaceIdentity.starter(player),
+        profession == null ? "" : profession.id(),
+        RaceIdentity.professionStarter(player),
         chosenClass != null && RaceIdentity.grantPending(player));
   }
 
@@ -89,7 +108,13 @@ public final class RaceNetwork {
       PacketDistributor.sendToPlayer(viewer, snapshot(subject));
   }
 
-  public record Choose(String race, int style, String classId, String starter)
+  public record Choose(
+      String race,
+      int style,
+      String classId,
+      String starter,
+      String professionId,
+      String professionStarter)
       implements CustomPacketPayload {
     public static final Type<Choose> TYPE =
         new Type<>(ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", "race_choose"));
@@ -100,8 +125,17 @@ public final class RaceNetwork {
               buf.writeVarInt(msg.style());
               buf.writeUtf(msg.classId(), 16);
               buf.writeUtf(msg.starter(), 32);
+              buf.writeUtf(msg.professionId(), 16);
+              buf.writeUtf(msg.professionStarter(), 32);
             },
-            buf -> new Choose(buf.readUtf(16), buf.readVarInt(), buf.readUtf(16), buf.readUtf(32)));
+            buf ->
+                new Choose(
+                    buf.readUtf(16),
+                    buf.readVarInt(),
+                    buf.readUtf(16),
+                    buf.readUtf(32),
+                    buf.readUtf(16),
+                    buf.readUtf(32)));
 
     @Override
     public Type<Choose> type() {
@@ -110,7 +144,14 @@ public final class RaceNetwork {
   }
 
   public record Snapshot(
-      UUID player, String race, int style, String classId, String starter, boolean grantPending)
+      UUID player,
+      String race,
+      int style,
+      String classId,
+      String starter,
+      String professionId,
+      String professionStarter,
+      boolean grantPending)
       implements CustomPacketPayload {
     public static final Type<Snapshot> TYPE =
         new Type<>(
@@ -123,6 +164,8 @@ public final class RaceNetwork {
               buf.writeVarInt(msg.style());
               buf.writeUtf(msg.classId(), 16);
               buf.writeUtf(msg.starter(), 32);
+              buf.writeUtf(msg.professionId(), 16);
+              buf.writeUtf(msg.professionStarter(), 32);
               buf.writeBoolean(msg.grantPending());
             },
             buf ->
@@ -130,6 +173,8 @@ public final class RaceNetwork {
                     buf.readUUID(),
                     buf.readUtf(16),
                     buf.readVarInt(),
+                    buf.readUtf(16),
+                    buf.readUtf(32),
                     buf.readUtf(16),
                     buf.readUtf(32),
                     buf.readBoolean()));

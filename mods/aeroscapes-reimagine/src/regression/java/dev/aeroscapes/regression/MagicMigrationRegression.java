@@ -6,6 +6,7 @@ import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.Profession;
 import harmonised.pmmo.api.APIUtils;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.util.Utils;
@@ -28,6 +29,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.players.PlayerList;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.storage.LevelResource;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
@@ -83,6 +85,10 @@ public final class MagicMigrationRegression {
                 "race-rollback",
                 "class-verify",
                 "class-reload",
+                "profession-prepare",
+                "profession-verify",
+                "profession-reload",
+                "profession-rollback",
                 "layout-prepare",
                 "layout-verify",
                 "layout-rollback")
@@ -157,13 +163,26 @@ public final class MagicMigrationRegression {
                     dev.aeroscapes.races.Race.GOBLIN,
                     1,
                     CharacterClass.WARRIOR,
-                    "quick_block"),
+                    "quick_block",
+                    Profession.BLACKSMITH,
+                    "material_repair"),
                 "A returning player can choose a race and appearance once");
             verifyRaceCarryover(player);
           }
           case "race-rollback" -> verifyRaceCarryover(player);
           case "class-verify", "class-reload" ->
               verifyClassCarryover(player, mode.equals("class-verify"));
+          case "profession-prepare" -> {
+            prepareProfessionBaseline(player);
+            verifyProfessionCarryover(player, false);
+          }
+          case "profession-verify" -> {
+            verifyProfessionCarryover(player, false);
+            ProfessionIdentityRegression.upgrade(player);
+            verifyProfessionCarryover(player, true);
+          }
+          case "profession-reload" -> verifyProfessionCarryover(player, true);
+          case "profession-rollback" -> verifyProfessionCarryover(player, false);
           case "layout-prepare" -> {
             prepareLayout(player);
             verifyLayout(player, true);
@@ -244,15 +263,33 @@ public final class MagicMigrationRegression {
           "A returning race-only character must choose their class");
       require(
           !dev.aeroscapes.races.RaceIdentity.choose(
-              player, goblin, 0, CharacterClass.MAGE, "first_mastery"),
+              player,
+              goblin,
+              0,
+              CharacterClass.MAGE,
+              "first_mastery",
+              Profession.BLACKSMITH,
+              "material_repair"),
           "Class selection changed a locked 0.6.3 appearance");
       require(
           !dev.aeroscapes.races.RaceIdentity.choose(
-              player, dev.aeroscapes.races.Race.ELF, 1, CharacterClass.MAGE, "first_mastery"),
+              player,
+              dev.aeroscapes.races.Race.ELF,
+              1,
+              CharacterClass.MAGE,
+              "first_mastery",
+              Profession.BLACKSMITH,
+              "material_repair"),
           "Class selection changed a locked 0.6.3 race");
       require(
           dev.aeroscapes.races.RaceIdentity.choose(
-              player, goblin, 1, CharacterClass.MAGE, "first_mastery"),
+              player,
+              goblin,
+              1,
+              CharacterClass.MAGE,
+              "first_mastery",
+              Profession.BLACKSMITH,
+              "material_repair"),
           "A returning character could not complete the missing class");
     }
     require(
@@ -262,7 +299,13 @@ public final class MagicMigrationRegression {
         "Class confirmation must survive login and end protection");
     require(
         !dev.aeroscapes.races.RaceIdentity.choose(
-            player, goblin, 1, CharacterClass.WARRIOR, "quick_block"),
+            player,
+            goblin,
+            1,
+            CharacterClass.WARRIOR,
+            "quick_block",
+            Profession.BLACKSMITH,
+            "material_repair"),
         "A completed character could reselect through the sheet");
     verifyRaceCarryover(player);
   }
@@ -284,9 +327,85 @@ public final class MagicMigrationRegression {
     prepareFirebolt(player);
   }
 
+  private static void prepareProfessionBaseline(ServerPlayer player) {
+    // This phase runs inside the 0.6.4 JVM with its original five-argument creation API.
+    try {
+      var choose =
+          dev.aeroscapes.races.RaceIdentity.class.getMethod(
+              "choose",
+              ServerPlayer.class,
+              dev.aeroscapes.races.Race.class,
+              int.class,
+              CharacterClass.class,
+              String.class);
+      require(
+          Boolean.TRUE.equals(
+              choose.invoke(
+                  null,
+                  player,
+                  dev.aeroscapes.races.Race.GOBLIN,
+                  1,
+                  CharacterClass.MAGE,
+                  "first_mastery")),
+          "Create the baseline 0.6.4 mage");
+    } catch (ReflectiveOperationException exception) {
+      throw new IllegalStateException("Baseline requires the 0.6.4 owned mod", exception);
+    }
+    APIUtils.setLevel("mining", player, 10);
+    ProgressionBridge.sync(player);
+    var skills = SkillsMod.getInstance();
+    skills.tryUnlockSkill(player, PROFESSION, "mining_efficiency", false);
+    skills.tryUnlockSkill(player, PROFESSION, "mining_speed", false);
+    MagicPractice.award(player, 700);
+    skills.unlockSkill(player, COMBAT, "magic_destruction_mastery_2");
+    skills.unlockSkill(player, COMBAT, "magic_destruction_mastery_3");
+    prepareFirebolt(player);
+  }
+
+  private static void verifyProfessionCarryover(ServerPlayer player, boolean updated) {
+    require(
+        dev.aeroscapes.races.RaceIdentity.race(player) == dev.aeroscapes.races.Race.GOBLIN
+            && dev.aeroscapes.races.RaceIdentity.style(player) == 1
+            && dev.aeroscapes.races.RaceIdentity.characterClass(player) == CharacterClass.MAGE
+            && dev.aeroscapes.races.RaceIdentity.starter(player).equals("first_mastery"),
+        "Original race, appearance, class and starter retained");
+    // A mage affinity also applied when the original character earned its 700 practice XP.
+    require(
+        MagicPractice.credit(player) == 840 && APIUtils.getLevel("mining", player) == 10,
+        "Preserve original magical and profession practice");
+    verifyRanksAndSlots(player);
+    var skills = SkillsMod.getInstance();
+    require(
+        Utils.getPlayerSpellbookStack(player).is(ItemRegistry.WIMPY_SPELL_BOOK.get())
+            && player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0
+            && skills
+                .getUnlockedSkills(player, COMBAT)
+                .orElseThrow()
+                .containsAll(
+                    List.of(
+                        "magic_mastery_1",
+                        "magic_destruction_mastery_2",
+                        "magic_destruction_mastery_3")),
+        "Preserve the existing focus and mastery without replaying the mage journal");
+    Set<String> expected =
+        updated
+            ? Set.of("mining_efficiency", "mining_speed", "material_repair")
+            : Set.of("mining_efficiency", "mining_speed");
+    require(
+        Set.copyOf(skills.getUnlockedSkills(player, PROFESSION).orElseThrow()).equals(expected)
+            && skills.getPointsLeft(player, PROFESSION).orElseThrow() == 0,
+        "Original paid purchases retained, funded starter consumes its own point");
+    require(
+        player.getInventory().countItem(Items.STONE_PICKAXE) == (updated ? 1 : 0)
+            && player.getInventory().countItem(Items.COAL) == (updated ? 4 : 0),
+        "Exactly one profession kit in the upgraded save, none in the original");
+    if (updated) ProfessionIdentityRegression.verifyUpgraded(player);
+  }
+
   private static void verifyLayout(ServerPlayer player, boolean previousBuild) {
     ProgressionBridge.sync(player);
-    verifyUnrelatedProgress(player, 25, previousBuild ? 5 : 2);
+    boolean expandedProfessions = SkillsMod.getInstance().hasSkill(PROFESSION, "material_repair");
+    verifyUnrelatedProgress(player, 25, previousBuild || expandedProfessions ? 5 : 2);
     verifyRanksAndSlots(player);
     var provider = SkillsMod.getInstance();
     require(MagicPractice.credit(player) == 8401, "Layout keeps previously initialized practice");

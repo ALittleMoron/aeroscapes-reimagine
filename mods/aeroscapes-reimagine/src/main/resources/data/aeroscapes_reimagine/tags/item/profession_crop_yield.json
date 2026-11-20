@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#c:crops",
+    "minecraft:nether_wart",
+    "minecraft:cocoa_beans",
+    "minecraft:glow_berries",
+    "minecraft:sweet_berries",
+    {"id": "farmersdelight:rice_panicle", "required": false}
+  ]
+}

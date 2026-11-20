@@ -4,7 +4,7 @@ This is the editable project for `aeroscapes-reimagine-0.1.0.jar`, licensed unde
 GPL-3.0-or-later. See `LICENSE` and `src/main/resources/META-INF/NOTICE.txt` for
 terms and origins. The source archive includes the project's Java sources,
 resources, regression fixtures, build configuration, Gradle wrapper and dependency
-verification metadata. It also includes the pack's combat talent graph and backup configuration,
+verification metadata. It also includes the pack's race definitions, talent graphs and backup configuration,
 the two owned resource packs, shader pack pins and defaults, and their notices,
 which the quality checks read.
 `SOURCE-MANIFEST.json` at the archive root identifies the

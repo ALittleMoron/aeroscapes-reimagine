@@ -13,7 +13,8 @@ import net.minecraft.client.gui.navigation.ScreenRectangle;
 public final class ProgressionViewTest {
   private ProgressionViewTest() {}
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws java.io.IOException {
+    dev.aeroscapes.races.client.CharacterPreviewTest.verify();
     checkMagicPaths();
     var buttons = IntStream.range(0, 4).mapToObj(InventoryButtonLayout::button).toList();
     var offhand = new ScreenRectangle(76, 61, 20, 20);

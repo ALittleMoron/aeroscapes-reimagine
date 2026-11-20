@@ -10,6 +10,7 @@ import com.mojang.logging.LogUtils;
 import dev.aeroscapes.camera.ClimbableCameraFade;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import dev.aeroscapes.races.RaceTraits;
@@ -114,13 +115,27 @@ final class RaceFoundationRegression {
           player.getEffect(MobEffects.LUCK).getDuration() == 100,
           "Survival time elapsed during creation");
       require(
-          !RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.MAGE, "quick_block"),
+          !RaceIdentity.choose(
+              player,
+              Race.HUMAN,
+              0,
+              CharacterClass.MAGE,
+              "quick_block",
+              Profession.BLACKSMITH,
+              "material_repair"),
           "A starter from another class was accepted");
       require(
           RaceIdentity.race(player) == null && RaceIdentity.awaitingChoice(player),
           "Invalid class submission partially committed the race or lifted protection");
       require(
-          RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.WARRIOR, "quick_block"),
+          RaceIdentity.choose(
+              player,
+              Race.HUMAN,
+              0,
+              CharacterClass.WARRIOR,
+              "quick_block",
+              Profession.BLACKSMITH,
+              "material_repair"),
           "Could not finish protected creation");
       player.doTick();
       int remaining = player.getEffect(MobEffects.LUCK).getDuration();
@@ -143,7 +158,10 @@ final class RaceFoundationRegression {
       ServerPlayer player = session.player;
       ProgressionRegression.listPlayer(level, player, true);
       try {
-        var inventory = player.getInventory().save(new ListTag());
+        var expectedInventory = new net.minecraft.world.entity.player.Inventory(player);
+        expectedInventory.load(player.getInventory().save(new ListTag()));
+        expectedInventory.add(new ItemStack(Items.STONE_PICKAXE));
+        expectedInventory.add(new ItemStack(Items.COAL, 4));
         PlayerLifecycleEvents.onPlayerLogin(new PlayerEvent.PlayerLoggedInEvent(player));
         if (race == Race.HUMAN) AccessoryGuidesRegression.verify(player);
         require(!CreatorAccess.canUse(player), "Survival fixture has native editor privileges");
@@ -157,7 +175,13 @@ final class RaceFoundationRegression {
         if (race == Race.HUMAN) verifyOrbs(player);
         require(
             !RaceIdentity.choose(
-                player, race, race.styleCount(), CharacterClass.WARRIOR, "quick_block"),
+                player,
+                race,
+                race.styleCount(),
+                CharacterClass.WARRIOR,
+                "quick_block",
+                Profession.BLACKSMITH,
+                "material_repair"),
             "Rejected out-of-range appearance");
         ((PlayerMovement) Movement.get(player)).update();
         var originalSlot = player.getInventory().selected;
@@ -168,20 +192,34 @@ final class RaceFoundationRegression {
         require(
             player.getInventory().selected == originalSlot, "World input before race confirmation");
         require(
-            RaceIdentity.choose(player, race, 2, CharacterClass.WARRIOR, "quick_block"),
+            RaceIdentity.choose(
+                player,
+                race,
+                2,
+                CharacterClass.WARRIOR,
+                "quick_block",
+                Profession.BLACKSMITH,
+                "material_repair"),
             "Could not choose " + race);
         player.connection.handleSetCarriedItem(selectSlot);
         require(player.getInventory().selected == newSlot, "World input blocked after choosing");
         player.connection.handleSetCarriedItem(
             new net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket(originalSlot));
         require(
-            !RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.WARRIOR, "quick_block"),
+            !RaceIdentity.choose(
+                player,
+                Race.HUMAN,
+                0,
+                CharacterClass.WARRIOR,
+                "quick_block",
+                Profession.BLACKSMITH,
+                "material_repair"),
             "Repeat confirmation changed race or appearance");
         if (race == Race.HUMAN) verifyOrbs(player);
         verifyGrantedPowers(player, race);
         require(
-            inventory.equals(player.getInventory().save(new ListTag())),
-            "Race login or selection changed starter inventory for " + race);
+            expectedInventory.save(new ListTag()).equals(player.getInventory().save(new ListTag())),
+            "The profession kit must be the only inventory change for " + race);
         verifyBody(player, start, race);
         verifyClimbingVisibility(player, start);
         verifyPractice(player, race);
@@ -205,7 +243,9 @@ final class RaceFoundationRegression {
         RaceIdentity.race(player) == race
             && RaceIdentity.style(player) == 2
             && RaceIdentity.characterClass(player) == CharacterClass.WARRIOR
-            && RaceIdentity.starter(player).equals("quick_block"),
+            && RaceIdentity.starter(player).equals("quick_block")
+            && RaceIdentity.profession(player) == Profession.BLACKSMITH
+            && RaceIdentity.professionStarter(player).equals("material_repair"),
         "Saved identity changed for " + race);
   }
 

@@ -1,6 +1,7 @@
 package dev.aeroscapes.races.client;
 
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceNetwork;
 import java.util.HashMap;
@@ -25,8 +26,13 @@ public final class RaceClient {
     if (race != null && !race.validStyle(snapshot.style())) return;
     var profile =
         new Profile(
-            race, snapshot.style(), characterClass, snapshot.starter(), snapshot.grantPending());
-    if (profile.grantPending() && !profile.hasSelection()) return;
+            race,
+            snapshot.style(),
+            characterClass,
+            snapshot.starter(),
+            Profession.byId(snapshot.professionId()),
+            snapshot.professionStarter(),
+            snapshot.grantPending());
     var previous = PROFILES.put(snapshot.player(), profile);
     var connection = Minecraft.getInstance().getConnection();
     if (!profile.complete()
@@ -62,13 +68,19 @@ public final class RaceClient {
       int style,
       @Nullable CharacterClass characterClass,
       String starter,
+      @Nullable Profession profession,
+      String professionStarter,
       boolean grantPending) {
-    boolean hasSelection() {
-      return race != null && characterClass != null && characterClass.starters().contains(starter);
+    boolean hasClass() {
+      return characterClass != null && characterClass.starters().contains(starter);
+    }
+
+    boolean hasProfession() {
+      return profession != null && profession.starters().contains(professionStarter);
     }
 
     boolean complete() {
-      return hasSelection() && !grantPending;
+      return race != null && hasClass() && hasProfession() && !grantPending;
     }
   }
 }

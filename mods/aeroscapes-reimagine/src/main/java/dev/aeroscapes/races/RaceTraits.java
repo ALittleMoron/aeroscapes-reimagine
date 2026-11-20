@@ -5,6 +5,9 @@ import net.minecraft.server.level.ServerPlayer;
 import virtuoel.pehkui.api.ScaleTypes;
 
 public final class RaceTraits {
+  private static final int PRACTICE_DIVISOR = 5;
+  public static final int PRACTICE_AFFINITY_PERCENT = 100 / PRACTICE_DIVISOR;
+
   private RaceTraits() {}
 
   public static float width(Race race) {
@@ -33,24 +36,32 @@ public final class RaceTraits {
   }
 
   public static int practiceBonusPercent(
-      @Nullable Race race, @Nullable CharacterClass characterClass, String skill) {
-    int racial = race == Race.ELF && ("archery".equals(skill) || "magic".equals(skill)) ? 20 : 0;
-    int vocational =
-        characterClass != null && characterClass.practiceSkill().equals(skill) ? 20 : 0;
-    return racial + vocational;
+      @Nullable Race race,
+      @Nullable CharacterClass characterClass,
+      @Nullable Profession profession,
+      String skill) {
+    int affinities = 0;
+    if (race == Race.ELF && ("archery".equals(skill) || "magic".equals(skill))) affinities++;
+    if (characterClass != null && characterClass.practiceSkill().equals(skill)) affinities++;
+    if (profession != null && profession.practiceSkill().equals(skill)) affinities++;
+    return affinities * PRACTICE_AFFINITY_PERCENT;
   }
 
   public static long practiceAward(ServerPlayer player, String skill, long amount) {
     if (amount <= 0) return amount;
     int fifths =
-        practiceBonusPercent(RaceIdentity.race(player), RaceIdentity.characterClass(player), skill)
-            / 20;
+        practiceBonusPercent(
+                RaceIdentity.race(player),
+                RaceIdentity.characterClass(player),
+                RaceIdentity.profession(player),
+                skill)
+            / PRACTICE_AFFINITY_PERCENT;
     if (fifths == 0) return amount;
     var data = RaceIdentity.data(player);
     String key = skill + "_fifths";
-    long remainder = amount % 5 * fifths + data.getInt(key);
-    long bonus = amount / 5 * fifths + remainder / 5;
-    data.putInt(key, (int) (remainder % 5));
+    long remainder = amount % PRACTICE_DIVISOR * fifths + data.getInt(key);
+    long bonus = amount / PRACTICE_DIVISOR * fifths + remainder / PRACTICE_DIVISOR;
+    data.putInt(key, (int) (remainder % PRACTICE_DIVISOR));
     return amount + Math.min(bonus, Long.MAX_VALUE - amount);
   }
 }

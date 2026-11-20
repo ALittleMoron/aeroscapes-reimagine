@@ -4,6 +4,11 @@ description: Version history.
 status: available
 ---
 
+## 0.6.5
+
+- Choose a profession and one of two peaceful starting talents alongside your race and class. Existing characters complete their missing choices and receive their profession kit once.
+- Eight learnable profession talents share ten points with gathering. Manually prepared meals can carry their cook's benefit to another player.
+
 ## 0.6.4
 
 - Choose a class after race and appearance in the same window. Review all choices, advantages, drawbacks and combined practice bonuses before confirming or reopen the sheet from the inventory portrait.

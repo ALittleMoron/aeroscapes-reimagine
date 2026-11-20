@@ -2,6 +2,7 @@ package dev.aeroscapes.regression;
 
 import com.mojang.logging.LogUtils;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import java.util.HashMap;
@@ -46,7 +47,14 @@ final class AccessoryUseRegression {
             null)) {
       var player = session.player;
       require(
-          RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.WARRIOR, "quick_block"),
+          RaceIdentity.choose(
+              player,
+              Race.HUMAN,
+              0,
+              CharacterClass.WARRIOR,
+              "quick_block",
+              Profession.BLACKSMITH,
+              "material_repair"),
           "Character ready for use");
       var inventory = CuriosApi.getCuriosInventory(player).orElseThrow();
       checkCatalogue(player, inventory);
