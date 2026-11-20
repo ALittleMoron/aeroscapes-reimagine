@@ -127,6 +127,7 @@ public final class SkyWhaleAnimationTest {
                       * 20);
       var resting = new Playback(variety, geometry, animation, controllers, queries);
       var cruising = new Playback(variety, geometry, animation, controllers, queries);
+      var escort = new Playback(variety, geometry, animation, controllers, queries);
       var turning = new Playback(variety, geometry, animation, controllers, queries);
       var opposite = new Playback(variety, geometry, animation, controllers, queries);
       var attacking = new Playback(variety, geometry, animation, controllers, queries);
@@ -134,6 +135,10 @@ public final class SkyWhaleAnimationTest {
           checkEyes(variety.id(), geometry, layouts.getAsJsonObject(variety.id()), cruising));
       double restTail = 0;
       double cruiseTail = 0;
+      double lastCruiseTail = 0;
+      double lastEscortTail = 0;
+      int cruiseStrokes = 0;
+      int escortStrokes = 0;
       double eyelid = 0;
       double jaw = 0;
       int quietTicks = 0;
@@ -142,16 +147,24 @@ public final class SkyWhaleAnimationTest {
       var clearance = clearance(geometry, layouts.getAsJsonObject(variety.id()));
       JsonArray restFrames = new JsonArray();
       JsonArray cruiseFrames = new JsonArray();
+      JsonArray escortFrames = new JsonArray();
       JsonArray turnFrames = new JsonArray();
       JsonArray attackFrames = new JsonArray();
       for (int tick = 0; tick <= duration + 10; tick++) {
         resting.tick(tick, 0, 0);
         cruising.tick(tick, 0.12, 0);
+        escort.tick(tick, 0.5, 0);
         turning.tick(tick, 0.12, tick >= 20 && tick < 100 ? 3 : 0);
         opposite.tick(tick, 0.12, tick >= 20 && tick < 100 ? -3 : 0);
         if (tick == 40) attacking.manager.tryTriggerAnimation("attack", "sonic_boom");
         attacking.tick(tick, 0.12, 0);
         double rotationStep = cruising.rotationStep();
+        double cruisingAngle = cruising.degrees("tail", 0);
+        double escortAngle = escort.degrees("tail", 0);
+        if (tick > 10 && lastCruiseTail < 4 && cruisingAngle >= 4) cruiseStrokes++;
+        if (tick > 10 && lastEscortTail < 4 && escortAngle >= 4) escortStrokes++;
+        lastCruiseTail = cruisingAngle;
+        lastEscortTail = escortAngle;
         restTail = Math.max(restTail, Math.abs(resting.degrees("tail", 0)));
         cruiseTail = Math.max(cruiseTail, Math.abs(cruising.degrees("tail", 0)));
         eyelid = Math.max(eyelid, cruising.bone("eyelid_left").getScaleY());
@@ -181,14 +194,22 @@ public final class SkyWhaleAnimationTest {
         if (arguments.length > 1 && tick % 2 == 0) {
           restFrames.add(resting.frame(tick));
           cruiseFrames.add(cruising.frame(tick));
+          escortFrames.add(escort.frame(tick));
           if (tick <= 160) turnFrames.add(turning.frame(tick));
           if (tick <= 160) attackFrames.add(attacking.frame(tick));
         }
         if (tick % 2 == 0) {
-          for (Playback playback : List.of(resting, cruising, turning, opposite, attacking))
+          for (Playback playback : List.of(resting, cruising, escort, turning, opposite, attacking))
             checkedVertices += checkPose(playback, clearance, variety.id() + " at tick " + tick);
         }
       }
+      require(
+          escortStrokes >= cruiseStrokes + 3 && escortStrokes >= 10,
+          variety
+              + " fast swimming gains vertical propulsion strokes: "
+              + cruiseStrokes
+              + " to "
+              + escortStrokes);
       require(restTail > 9, variety + " retains visible strokes while NoAI/stationary");
       require(cruiseTail > baselineTail * 3.5, variety + " has substantial cruising strokes");
       require(cruiseTail > restTail * 1.4, variety + " responds to real horizontal speed");
@@ -204,6 +225,8 @@ public final class SkyWhaleAnimationTest {
       measured.addProperty("variety", variety.id());
       measured.addProperty("stationary_tail_degrees", restTail);
       measured.addProperty("cruise_tail_degrees", cruiseTail);
+      measured.addProperty("cruise_strokes", cruiseStrokes);
+      measured.addProperty("escort_strokes", escortStrokes);
       measured.addProperty("longest_glide_seconds", longestGlide / 20.0);
       measured.addProperty("sonic_jaw_degrees", jaw);
       measured.addProperty("blink_scale_y", eyelid);
@@ -212,6 +235,7 @@ public final class SkyWhaleAnimationTest {
       if (arguments.length > 1) {
         evidence.add(scenario(variety, "stationary", restFrames));
         evidence.add(scenario(variety, "cruise", cruiseFrames));
+        evidence.add(scenario(variety, "escort", escortFrames));
         evidence.add(scenario(variety, "turn", turnFrames));
         evidence.add(scenario(variety, "sonic", attackFrames));
       }
@@ -314,7 +338,8 @@ public final class SkyWhaleAnimationTest {
                 .getCurrentAnimation()
                 .animation()
             == replacement.model.animations.getAnimation(IDLE),
-        "A replacement preview entity starts its selected animation family with a fresh native cache");
+        "A replacement preview entity starts its selected animation family with a fresh native"
+            + " cache");
   }
 
   private static JsonObject scenario(WhaleVariety variety, String name, JsonArray frames) {

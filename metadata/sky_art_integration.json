@@ -173,7 +173,7 @@
       "persistence": "String ID saved through native entity NBT and integer field synchronized through native SynchedEntityData; movement never rerolls a form.",
       "materials": "Recognizable installed block materials at16texels/world block; schema2 explicitly assigns every cube and optional face override a role or slot, with full-sprite sampling for plants. WhaleTextureComposer uses cube-local world phase and pinned GeckoLib4.9.3 face orientation; relative authored eye anchors use the integrated stencil without a donor patch.",
       "runtime": "WhaleBlockTextures prepares all13CPU images on reload workers and registers replacements on apply; render-time lookup performs no decode/composition. FML4.0.43 runtime and4.0.45 compile consumer both infer MOD routing from IModBusEvent; Dist.CLIENT isolates registration. Only exactSky0.1.9 enables this listener.",
-      "animation": "Three owned mineral/cloud/reef idle swimming families are selected through the existing typed model adapter. Native controllers and exact native attack clip remain; strokes, delayed flukes, bounded glides, independent fins/tips, head gestures, blink and entity-backed wrapped yaw banking are authored. Physical flight speed/AI remain native. Block materials such as lava/magma/prismarine still sample their first square frame.",
+      "animation": "Three owned mineral/cloud/reef idle swimming families are selected through the existing typed model adapter. Native controllers and exact native attack clip remain; strokes, delayed flukes, bounded glides, independent fins/tips, head gestures, blink and entity-backed wrapped yaw banking are authored. Cruising and pod travel use vertical tail strokes. A speed-responsive gait and bounded steering let an escort match the measured velocity of a Sable vessel. Block materials such as lava/magma/prismarine still sample their first square frame.",
       "distributed_assets": {
         "layout": {
           "path": "mods/aeroscapes-reimagine/src/main/resources/assets/aeroscapes_reimagine/whales/material_layout.json",
@@ -195,9 +195,9 @@
           "stone.geo.json": "49f725ff4303d5f56aa2b4b75418799592da403a4f118f189595b58e3d619ece"
         },
         "animation_sha256": {
-          "cloud.animation.json": "46ab1fecced942bbb718ce3e7f6eb787c1949deb527f0fa415ef9673e8cdcc39",
-          "mineral.animation.json": "72acdaf4aa082733c2ec983ec201bd2c3310fd44fedacf83cae1b6059088f024",
-          "reef.animation.json": "9abe0344eefd4fad1f18a504c67b7db0ef25a73e55fa6d807de9aec5754e7a59"
+          "cloud.animation.json": "335da77fd7d30cd840e8284c957320113a83c5d10e6752f3e4f9d73e687b106a",
+          "mineral.animation.json": "feeaa72bf9eca5c63b3cec4b00721ab1bf70033629484f503a7390245b9be255",
+          "reef.animation.json": "a18f40d742e53fb528cdd14dd68a28dd1d61f52810ea5dee1963f1c6619eb72a"
         }
       },
       "game_texture_distribution": "No Minecraft or Nature’s Spirit whale-atlas PNG derivatives are distributed. Surfaces are composed locally from the player’s installed resources; generated proof atlases remain private technical evidence.",

@@ -1,4 +1,7 @@
 {
+  "entity.aeroscapes_reimagine.sky_ray": "Sky Ray",
+  "entity.aeroscapes_reimagine.cloud_jelly": "Cloud Jelly",
+  "message.aeroscapes_reimagine.cloud_jelly.shelter": "An enclosed cabin protects you from jelly stings.",
   "aeroscapes_reimagine.configuration.title": "Aeroscapes Reimagine",
   "aeroscapes_reimagine.configuration.section.aeroscapes.reimagine.client.toml.title": "Client presentation",
   "aeroscapes_reimagine.configuration.itemModels3d": "3D held-item models",

@@ -14,6 +14,7 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 import net.minecraft.network.Connection;
 import net.minecraft.network.PacketSendListener;
+import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket;
@@ -22,6 +23,7 @@ import net.minecraft.network.protocol.common.ServerboundKeepAlivePacket;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.protocol.game.ClientboundBundlePacket;
 import net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket;
+import net.minecraft.network.protocol.game.ClientboundSystemChatPacket;
 import net.minecraft.network.protocol.game.ServerboundAcceptTeleportationPacket;
 import net.minecraft.network.protocol.game.ServerboundMovePlayerPacket;
 import net.minecraft.server.MinecraftServer;
@@ -117,6 +119,10 @@ final class TestShipPlayerSession implements AutoCloseable {
     return java.util.Objects.requireNonNull(connection.abilities, "Missing ability snapshot");
   }
 
+  int jellyShelterHints() {
+    return connection.jellyShelterHints;
+  }
+
   <T extends CustomPacketPayload> T takePayload(Class<T> type) {
     var payload = connection.lastPayload;
     connection.lastPayload = null;
@@ -185,6 +191,7 @@ final class TestShipPlayerSession implements AutoCloseable {
   }
 
   private static final class RecordingConnection extends Connection {
+    private int jellyShelterHints;
     @Nullable private CustomPacketPayload lastPayload;
     @Nullable private AbilityNetwork.Snapshot abilities;
     private final Map<
@@ -206,6 +213,11 @@ final class TestShipPlayerSession implements AutoCloseable {
 
     @Override
     public void send(Packet<?> packet, @Nullable PacketSendListener listener, boolean flush) {
+      if (packet instanceof ClientboundSystemChatPacket chat
+          && chat.overlay()
+          && chat.content().getContents() instanceof TranslatableContents text
+          && text.getKey().equals("message.aeroscapes_reimagine.cloud_jelly.shelter"))
+        jellyShelterHints++;
       if (packet instanceof ClientboundCustomPayloadPacket message) lastPayload = message.payload();
       if (packet instanceof ClientboundPlayerPositionPacket position) teleport = position;
       if (packet instanceof ClientboundKeepAlivePacket challenge) keepAlive = challenge.getId();

@@ -98,6 +98,15 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String skyFauna = System.getProperty("aeroscapes.regression.skyFauna");
+    if (skyFauna != null) {
+      if (skyFauna.equals("baseline") || skyFauna.equals("populated")) {
+        FaunaFlightBenchmark.start(level, skyFauna.equals("populated"));
+      } else {
+        FaunaRegression.start(level, skyFauna);
+      }
+      return;
+    }
     String whaleFall = System.getProperty("aeroscapes.regression.whaleFall");
     if (whaleFall != null) {
       try {

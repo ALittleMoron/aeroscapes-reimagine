@@ -305,7 +305,7 @@
           "rotation": {
             "0.000": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -313,7 +313,7 @@
             },
             "0.800": {
               "vector": [
-                "20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -321,7 +321,7 @@
             },
             "1.600": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -329,7 +329,7 @@
             },
             "2.400": {
               "vector": [
-                "-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -337,7 +337,7 @@
             },
             "3.200": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -345,7 +345,7 @@
             },
             "4.000": {
               "vector": [
-                "20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -353,7 +353,7 @@
             },
             "4.800": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -361,7 +361,7 @@
             },
             "5.600": {
               "vector": [
-                "-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -369,7 +369,7 @@
             },
             "6.400": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -377,7 +377,7 @@
             },
             "7.200": {
               "vector": [
-                "20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -385,7 +385,7 @@
             },
             "8.000": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -393,7 +393,7 @@
             },
             "8.800": {
               "vector": [
-                "-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -401,7 +401,7 @@
             },
             "9.600": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -409,7 +409,7 @@
             },
             "12.000": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -417,7 +417,7 @@
             },
             "12.800": {
               "vector": [
-                "20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -425,7 +425,7 @@
             },
             "13.600": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -433,7 +433,7 @@
             },
             "14.400": {
               "vector": [
-                "-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -441,7 +441,7 @@
             },
             "15.200": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -449,7 +449,7 @@
             },
             "16.000": {
               "vector": [
-                "20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -457,7 +457,7 @@
             },
             "16.800": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -465,7 +465,7 @@
             },
             "17.600": {
               "vector": [
-                "-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -473,7 +473,7 @@
             },
             "18.400": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -481,7 +481,7 @@
             },
             "19.200": {
               "vector": [
-                "20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -489,7 +489,7 @@
             },
             "20.000": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -497,7 +497,7 @@
             },
             "20.800": {
               "vector": [
-                "-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -505,7 +505,7 @@
             },
             "21.600": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -513,7 +513,7 @@
             },
             "22.400": {
               "vector": [
-                "20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -521,7 +521,7 @@
             },
             "23.200": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -529,7 +529,7 @@
             },
             "24.000": {
               "vector": [
-                "-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-20.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -537,7 +537,7 @@
             },
             "24.800": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -545,7 +545,7 @@
             },
             "28.000": {
               "vector": [
-                0,
+                "math.lerp(0, 18 * math.sin(query.anim_time * 154.285714 + 0), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -557,7 +557,7 @@
           "rotation": {
             "0.000": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -565,7 +565,7 @@
             },
             "0.448": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -573,7 +573,7 @@
             },
             "1.248": {
               "vector": [
-                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -581,7 +581,7 @@
             },
             "2.048": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -589,7 +589,7 @@
             },
             "2.848": {
               "vector": [
-                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -597,7 +597,7 @@
             },
             "3.648": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -605,7 +605,7 @@
             },
             "4.448": {
               "vector": [
-                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -613,7 +613,7 @@
             },
             "5.248": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -621,7 +621,7 @@
             },
             "6.048": {
               "vector": [
-                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -629,7 +629,7 @@
             },
             "6.848": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -637,7 +637,7 @@
             },
             "7.648": {
               "vector": [
-                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -645,7 +645,7 @@
             },
             "8.448": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -653,7 +653,7 @@
             },
             "9.248": {
               "vector": [
-                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -661,7 +661,7 @@
             },
             "10.048": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -669,7 +669,7 @@
             },
             "12.448": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -677,7 +677,7 @@
             },
             "13.248": {
               "vector": [
-                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -685,7 +685,7 @@
             },
             "14.048": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -693,7 +693,7 @@
             },
             "14.848": {
               "vector": [
-                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -701,7 +701,7 @@
             },
             "15.648": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -709,7 +709,7 @@
             },
             "16.448": {
               "vector": [
-                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -717,7 +717,7 @@
             },
             "17.248": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -725,7 +725,7 @@
             },
             "18.048": {
               "vector": [
-                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -733,7 +733,7 @@
             },
             "18.848": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -741,7 +741,7 @@
             },
             "19.648": {
               "vector": [
-                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -749,7 +749,7 @@
             },
             "20.448": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -757,7 +757,7 @@
             },
             "21.248": {
               "vector": [
-                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -765,7 +765,7 @@
             },
             "22.048": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -773,7 +773,7 @@
             },
             "22.848": {
               "vector": [
-                "8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -781,7 +781,7 @@
             },
             "23.648": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -789,7 +789,7 @@
             },
             "24.448": {
               "vector": [
-                "-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1))",
+                "math.lerp(-8.0000 * (0.6 + 0.4 * math.clamp(query.ground_speed * 8, 0, 1)), 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -797,7 +797,7 @@
             },
             "25.248": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],
@@ -805,7 +805,7 @@
             },
             "28.000": {
               "vector": [
-                0,
+                "math.lerp(0, 7.2 * math.sin(query.anim_time * 154.285714 + -48), math.clamp((query.ground_speed - 0.12) * 3, 0, 1))",
                 0,
                 0
               ],

@@ -4,6 +4,12 @@ description: Version history.
 status: available
 ---
 
+## 0.6.7
+
+- Sky rays propel themselves with broad fin strokes, glide through banked turns and defend themselves when attacked.
+- Cloud jellies drift in mixed-size colonies with four distinct forms, from a fringed dome to a tall lantern. They turn their bells into a stroke and glide on their sides with their tentacles trailing. Their bells and tentacles sting on contact, and enclosed ship cabins shelter their occupants.
+- Sky whales adjust their tail strokes as they accelerate to swim alongside a moving ship.
+
 ## 0.6.6
 
 - An Identity Seal from exploration chests changes your race, main class or profession. Preview the change and choose whether to refund your old class branch.

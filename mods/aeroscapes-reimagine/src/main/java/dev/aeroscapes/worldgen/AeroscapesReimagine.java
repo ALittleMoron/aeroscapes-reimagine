@@ -62,6 +62,7 @@ public final class AeroscapesReimagine {
       dev.aeroscapes.husbandry.TroughAutomation.register(modBus);
     dev.aeroscapes.engineering.OilFields.register(modBus);
     dev.aeroscapes.sky.SkyWhaleFalls.register(modBus);
+    dev.aeroscapes.sky.fauna.AeroFauna.register(modBus);
     container.registerConfig(ModConfig.Type.CLIENT, PresentationConfig.SPEC);
     if (ModList.get().isLoaded("crittersandcompanions"))
       dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);
