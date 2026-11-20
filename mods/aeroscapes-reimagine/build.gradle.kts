@@ -14,7 +14,11 @@ version = "0.1.0"
 java { toolchain.languageVersion = JavaLanguageVersion.of(25) }
 
 neoForge {
-  version = "21.1.244"
+  enable {
+    version = "21.1.244"
+    // The binary-patched Minecraft API produces different javac bridge methods in entity renderers.
+    isDisableRecompilation = false
+  }
   mods { create("aeroscapes_reimagine") { sourceSet(sourceSets.main.get()) } }
 }
 
