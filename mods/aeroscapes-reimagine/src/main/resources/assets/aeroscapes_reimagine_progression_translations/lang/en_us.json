@@ -56,5 +56,18 @@
   "aeroscapes_reimagine.progression.state.affordable": "Available to learn.",
   "aeroscapes_reimagine.progression.state.unlocked": "Learned",
   "aeroscapes_reimagine.progression.state.excluded": "An alternative talent was chosen.",
-  "aeroscapes_reimagine.progression.small_window": "Increase the window size or lower the GUI scale to view talents."
+  "aeroscapes_reimagine.progression.small_window": "Increase the window size or lower the GUI scale to view talents.",
+  "puffish_skills.aeroscapes_reimagine.combat.quick_block.title": "Quick Guard",
+  "puffish_skills.aeroscapes_reimagine.combat.quick_block.description": "Raise a shield 2 ticks sooner. A regular shield blocks after 0.15 seconds.",
+  "puffish_skills.aeroscapes_reimagine.combat.shield_march.title": "Shield March",
+  "puffish_skills.aeroscapes_reimagine.combat.shield_march.description": "Move 25% faster while raising or holding a shield.",
+  "puffish_skills.aeroscapes_reimagine.combat.bow_stride.title": "Archer’s Stride",
+  "puffish_skills.aeroscapes_reimagine.combat.bow_stride.description": "Move 25% faster while drawing or holding a bow.",
+  "puffish_skills.aeroscapes_reimagine.combat.steady_aim.title": "Steady Aim",
+  "puffish_skills.aeroscapes_reimagine.combat.steady_aim.description": "Stand still on the ground to halve bow shot spread.",
+  "puffish_skills.aeroscapes_reimagine.combat.quick_recovery.title": "Quick Recovery",
+  "puffish_skills.aeroscapes_reimagine.combat.quick_recovery.description": "Attack 10% faster with a knife, a Wetland Whimsy dagger or an amethyst rapier in your main hand.",
+  "puffish_skills.aeroscapes_reimagine.combat.opening_strike.title": "Opening Strike",
+  "puffish_skills.aeroscapes_reimagine.combat.opening_strike.description": "A fully charged hit with a knife, a Wetland Whimsy dagger or an amethyst rapier deals 15% more damage to a target at full health.",
+  "attribute.aeroscapes_reimagine.shield_raise_reduction": "Shield raise time reduction (ticks)"
 }

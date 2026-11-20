@@ -5,6 +5,7 @@ import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.races.CharacterClass;
 import harmonised.pmmo.api.APIUtils;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.util.Utils;
@@ -80,6 +81,8 @@ public final class MagicMigrationRegression {
                 "race-prepare",
                 "race-verify",
                 "race-rollback",
+                "class-verify",
+                "class-reload",
                 "layout-prepare",
                 "layout-verify",
                 "layout-rollback")
@@ -150,11 +153,17 @@ public final class MagicMigrationRegression {
                 "Upgrading a 0.6.2 character must leave the race choice open");
             require(
                 dev.aeroscapes.races.RaceIdentity.choose(
-                    player, dev.aeroscapes.races.Race.GOBLIN, 1),
+                    player,
+                    dev.aeroscapes.races.Race.GOBLIN,
+                    1,
+                    CharacterClass.WARRIOR,
+                    "quick_block"),
                 "A returning player can choose a race and appearance once");
             verifyRaceCarryover(player);
           }
           case "race-rollback" -> verifyRaceCarryover(player);
+          case "class-verify", "class-reload" ->
+              verifyClassCarryover(player, mode.equals("class-verify"));
           case "layout-prepare" -> {
             prepareLayout(player);
             verifyLayout(player, true);
@@ -220,6 +229,42 @@ public final class MagicMigrationRegression {
             .contains("magic_mastery_1"),
         "Race selection changed the existing mastery");
     verifyRanksAndSlots(player);
+  }
+
+  private static void verifyClassCarryover(ServerPlayer player, boolean firstLogin) {
+    var goblin = dev.aeroscapes.races.Race.GOBLIN;
+    require(
+        dev.aeroscapes.races.RaceIdentity.race(player) == goblin
+            && dev.aeroscapes.races.RaceIdentity.style(player) == 1,
+        "The confirmed 0.6.3 race and appearance must survive the update");
+    verifyRaceCarryover(player);
+    if (firstLogin) {
+      require(
+          dev.aeroscapes.races.RaceIdentity.awaitingChoice(player),
+          "A returning race-only character must choose their class");
+      require(
+          !dev.aeroscapes.races.RaceIdentity.choose(
+              player, goblin, 0, CharacterClass.MAGE, "first_mastery"),
+          "Class selection changed a locked 0.6.3 appearance");
+      require(
+          !dev.aeroscapes.races.RaceIdentity.choose(
+              player, dev.aeroscapes.races.Race.ELF, 1, CharacterClass.MAGE, "first_mastery"),
+          "Class selection changed a locked 0.6.3 race");
+      require(
+          dev.aeroscapes.races.RaceIdentity.choose(
+              player, goblin, 1, CharacterClass.MAGE, "first_mastery"),
+          "A returning character could not complete the missing class");
+    }
+    require(
+        !dev.aeroscapes.races.RaceIdentity.awaitingChoice(player)
+            && dev.aeroscapes.races.RaceIdentity.characterClass(player) == CharacterClass.MAGE
+            && dev.aeroscapes.races.RaceIdentity.starter(player).equals("first_mastery"),
+        "Class confirmation must survive login and end protection");
+    require(
+        !dev.aeroscapes.races.RaceIdentity.choose(
+            player, goblin, 1, CharacterClass.WARRIOR, "quick_block"),
+        "A completed character could reselect through the sheet");
+    verifyRaceCarryover(player);
   }
 
   private static void prepareLayout(ServerPlayer player) {

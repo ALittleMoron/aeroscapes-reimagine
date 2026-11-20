@@ -3,6 +3,7 @@ package dev.aeroscapes.races.client;
 import com.cyberday1.neoorigins.screen.OriginInfoScreen;
 import com.cyberday1.neoorigins.screen.PickerScreen;
 import dev.aeroscapes.inventory.InventoryNavigation;
+import dev.aeroscapes.races.CharacterClass;
 import javax.annotation.Nullable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.ChatScreen;
@@ -20,7 +21,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
@@ -36,8 +36,8 @@ public final class RaceVisuals {
 
   private RaceVisuals() {}
 
-  public static void requestChoice() {
-    if (firstChoice == null) firstChoice = new RaceScreen(null, 0, false);
+  static void requestChoice(RaceClient.Profile profile, boolean changed) {
+    if (firstChoice == null || changed) firstChoice = new RaceScreen(profile, false);
     else firstChoice.declined();
   }
 
@@ -47,16 +47,21 @@ public final class RaceVisuals {
 
   private static boolean choiceKnown() {
     var player = Minecraft.getInstance().player;
-    return player != null && (firstChoice != null || RaceClient.race(player.getUUID()) != null);
+    return player != null && RaceClient.profile(player.getUUID()) != null;
+  }
+
+  private static boolean pending(Minecraft game) {
+    var profile = game.player == null ? null : RaceClient.profile(game.player.getUUID());
+    return profile != null && !profile.complete();
   }
 
   static void openFromInventory() {
     var game = Minecraft.getInstance();
     if (game.player == null || !choiceKnown() || !InventoryNavigation.openInventory()) return;
     openWhenReady = false;
-    var id = game.player.getUUID();
-    var race = RaceClient.race(id);
-    game.setScreen(race == null ? firstChoice : new RaceScreen(race, RaceClient.style(id), true));
+    var profile = RaceClient.profile(game.player.getUUID());
+    if (profile != null)
+      game.setScreen(profile.complete() ? new RaceScreen(profile, true) : firstChoice);
   }
 
   private static boolean changingWorld(@Nullable Screen screen) {
@@ -78,13 +83,13 @@ public final class RaceVisuals {
 
   @SubscribeEvent
   public static void opening(ScreenEvent.Opening event) {
-    if (!ModList.get().isLoaded("neoorigins") || !ModList.get().isLoaded("pehkui")) return;
+    if (!CharacterClass.creationAvailable()) return;
     var next = event.getNewScreen();
     var game = Minecraft.getInstance();
     if (firstChoice != null
         && ready(game)
         && !changingWorld(event.getCurrentScreen())
-        && RaceClient.race(game.player.getUUID()) == null
+        && pending(game)
         && !changingWorld(next)) {
       if (next != firstChoice) {
         if (event.getCurrentScreen() == firstChoice) event.setCanceled(true);
@@ -102,18 +107,16 @@ public final class RaceVisuals {
       openWhenReady = true;
       return;
     }
-    var id = game.player.getUUID();
+    var profile = RaceClient.profile(game.player.getUUID());
     openWhenReady = false;
-    event.setNewScreen(
-        new RaceScreen(
-            RaceClient.race(id),
-            RaceClient.style(id),
-            event.getCurrentScreen() instanceof InventoryScreen));
+    if (profile != null)
+      event.setNewScreen(
+          new RaceScreen(profile, event.getCurrentScreen() instanceof InventoryScreen));
   }
 
   @SubscribeEvent
   public static void registerCommand(RegisterClientCommandsEvent event) {
-    if (!ModList.get().isLoaded("neoorigins") || !ModList.get().isLoaded("pehkui")) return;
+    if (!CharacterClass.creationAvailable()) return;
     event
         .getDispatcher()
         .register(
@@ -132,17 +135,16 @@ public final class RaceVisuals {
   public static void tick(ClientTickEvent.Post event) {
     var game = Minecraft.getInstance();
     if (firstChoice == null && !openWhenReady || !ready(game) || changingWorld(game.screen)) return;
-    var id = game.player.getUUID();
-    var race = RaceClient.race(id);
-    if (firstChoice != null && race == null) {
+    var profile = RaceClient.profile(game.player.getUUID());
+    if (firstChoice != null && profile != null && !profile.complete()) {
       openWhenReady = false;
       if (game.player.containerMenu != game.player.inventoryMenu) game.player.closeContainer();
       if (game.screen != firstChoice) game.setScreen(firstChoice);
-    } else if (race != null) {
+    } else if (profile != null && profile.complete()) {
       firstChoice = null;
       if (openWhenReady && game.screen == null) {
         openWhenReady = false;
-        game.setScreen(new RaceScreen(race, RaceClient.style(id), false));
+        game.setScreen(new RaceScreen(profile, false));
       }
     }
   }

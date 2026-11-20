@@ -1,6 +1,7 @@
 package dev.aeroscapes.races.client;
 
-import dev.aeroscapes.races.Race;
+import dev.aeroscapes.races.CharacterClass;
+import javax.annotation.Nullable;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.ImageButton;
@@ -24,7 +25,7 @@ public final class InventoryRaceButton extends ImageButton {
           ResourceLocation.parse("aeroscapes_race_visuals:race_card"),
           ResourceLocation.parse("aeroscapes_race_visuals:race_card_highlighted"));
   private final AbstractContainerScreen<?> screen;
-  private Race shownRace;
+  @Nullable private RaceClient.Profile shownProfile;
 
   private InventoryRaceButton(AbstractContainerScreen<?> screen) {
     super(10, 10, SPRITES, button -> RaceVisuals.openFromInventory(), RaceVisuals.text("title"));
@@ -36,20 +37,23 @@ public final class InventoryRaceButton extends ImageButton {
   private void update() {
     setPosition(screen.getGuiLeft() + 63, screen.getGuiTop() + 10);
     var player = Minecraft.getInstance().player;
-    var race = player == null ? null : RaceClient.race(player.getUUID());
-    active = race != null;
-    if (race != null && race != shownRace) {
-      var label = RaceVisuals.text("sheet", RaceVisuals.text(race.id() + ".name"));
+    var profile = player == null ? null : RaceClient.profile(player.getUUID());
+    active = profile != null && profile.complete();
+    if (active && !profile.equals(shownProfile)) {
+      var label =
+          RaceVisuals.text(
+              "sheet",
+              RaceVisuals.text(profile.race().id() + ".name"),
+              RaceVisuals.text("class." + profile.characterClass().id() + ".name"));
       setMessage(label);
       setTooltip(Tooltip.create(label.copy().append("\n").append(RaceVisuals.text("sheet_hint"))));
     }
-    shownRace = race;
+    shownProfile = profile;
   }
 
   @SubscribeEvent(priority = EventPriority.LOWEST)
   public static void initialize(ScreenEvent.Init.Post event) {
-    if (ModList.get().isLoaded("neoorigins")
-        && ModList.get().isLoaded("pehkui")
+    if (CharacterClass.creationAvailable()
         && (event.getScreen() instanceof InventoryScreen
             || ModList.get().isLoaded("curios") && event.getScreen() instanceof CuriosScreen)) {
       event.addListener(new InventoryRaceButton((AbstractContainerScreen<?>) event.getScreen()));

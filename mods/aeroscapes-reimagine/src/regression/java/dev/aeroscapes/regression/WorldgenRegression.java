@@ -198,6 +198,20 @@ public final class WorldgenRegression {
       return;
     }
     String magicMigration = System.getProperty("aeroscapes.regression.magicMigration");
+    if (Boolean.getBoolean("aeroscapes.regression.classes")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    ClassProgressionRegression.verify(level);
+                    MartialClassRegression.verify(level);
+                    LOGGER.info(
+                        "Class choice, starter talents, class traits and shared practice regression passed");
+                  }));
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.races")) {
       event
           .getServer()

@@ -4,7 +4,7 @@ description: A sandbox of floating islands, engineering, fantasy and places wort
 status: available
 ---
 
-Aeroscapes Reimagine is an independent Minecraft sandbox project combining floating islands, Create engineering, air travel, fantasy roleplaying and everyday life. Playable races and magic already shape expeditions. Classes, colonies and NPC quests are planned.
+Aeroscapes Reimagine is an independent Minecraft sandbox project combining floating islands, Create engineering, air travel, fantasy roleplaying and everyday life. Playable races, classes and magic already shape expeditions. Colonies and NPC quests are planned.
 
 The starting point is [Isabel’s Aeroscapes](https://modrinth.com/modpack/aeroscapes), whose island survival and Aeronautics setting give the world its shape. [Otherworld D&D](https://www.curseforge.com/minecraft/modpacks/otherworld-dnd) is the reference for the future character, magic and action combat experience. Reimagine develops its own combination of these ideas and does not represent an official release of either project.
 

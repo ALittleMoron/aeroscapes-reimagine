@@ -2,6 +2,7 @@ package dev.aeroscapes.regression;
 
 import com.mojang.logging.LogUtils;
 import dev.aeroscapes.magic.MagicPractice;
+import dev.aeroscapes.magic.MagicPracticeProgress;
 import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.Preparation;
 import dev.aeroscapes.magic.PreparedAbilities;
@@ -145,17 +146,18 @@ public final class MagicRebalanceRegression {
         login(player);
         APIUtils.setLevel("combat", player, 50);
         APIUtils.setLevel("archery", player, 50);
-        MagicPractice.award(player, 292999);
+        long finalHybridXp = MagicPracticeProgress.xpForPoints(MagicTalents.pointCap() - 20);
+        MagicPractice.award(player, finalHybridXp - 1);
         ProgressionBridge.sync(player);
         require(
-            earned(player) == 135
+            earned(player) == MagicTalents.pointCap() - 1
                 && ProgressionBridge.nextCombatPointXp(player, MagicPractice.credit(player))
-                    == 293000,
+                    == finalHybridXp,
             "The last shared point is one magic XP away with both weapon skills at 50");
         MagicPractice.award(player, 1);
         ProgressionBridge.sync(player);
         require(
-            earned(player) == 136
+            earned(player) == MagicTalents.pointCap()
                 && ProgressionBridge.nextCombatPointXp(player, MagicPractice.credit(player)) == 0,
             "The shared pool has no next reward once weapon and magic practice have filled it");
       } finally {
@@ -189,7 +191,9 @@ public final class MagicRebalanceRegression {
         MagicPractice.award(player, Long.MAX_VALUE);
         ProgressionBridge.sync(player);
         require(
-            MagicPractice.credit(player) == 353000 && earned(player) == 136,
+            MagicPractice.credit(player)
+                    == MagicPracticeProgress.xpForPoints(MagicTalents.pointCap())
+                && earned(player) == MagicTalents.pointCap(),
             "Magic alone funds the complete finite combat allocation without overflow");
         require(
             APIUtils.getLevel("combat", player) == 0 && APIUtils.getLevel("archery", player) == 0,
@@ -205,29 +209,38 @@ public final class MagicRebalanceRegression {
           ProgressionBridge.sync(player);
         }
         require(
-            MagicPractice.credit(player) == credit && earned(player) == 136,
+            MagicPractice.credit(player) == credit && earned(player) == MagicTalents.pointCap(),
             "Repeated sync and empty practice do not duplicate final rewards");
         buyCompleteMagic(player);
         var provider = SkillsMod.getInstance();
         require(
             provider.getSpentPoints(player, COMBAT).orElseThrow() == MagicTalents.totalCost()
-                && provider.getPointsLeft(player, COMBAT).orElseThrow() == 5,
-            "The complete magical tree leaves the five compatible physical investments in the common cap");
+                && provider.getPointsLeft(player, COMBAT).orElseThrow()
+                    == MagicTalents.pointCap() - MagicTalents.totalCost(),
+            "The complete magical tree leaves all compatible physical investments in the common"
+                + " cap");
         APIUtils.setLevel("combat", player, 50);
         APIUtils.setLevel("archery", player, 50);
         APIUtils.setLevel("mining", player, 10);
         ProgressionBridge.sync(player);
         require(
-            earned(player) == 136
+            earned(player) == MagicTalents.pointCap()
                 && provider.getPoints(player, PROFESSION, SOURCE).orElseThrow() == 2,
-            "Other combat sources share the cap while professions keep their previous earning rule");
+            "Other combat sources share the cap while professions keep their previous earning"
+                + " rule");
         for (String id :
             List.of(
                 "melee_strike",
                 "melee_onslaught",
                 "melee_veteran",
                 "guard_armor",
-                "guard_vitality")) {
+                "guard_vitality",
+                "quick_block",
+                "shield_march",
+                "bow_stride",
+                "steady_aim",
+                "quick_recovery",
+                "opening_strike")) {
           provider.tryUnlockSkill(player, COMBAT, id, false);
         }
         for (String id : List.of("mining_efficiency", "mining_fortune")) {
@@ -254,9 +267,10 @@ public final class MagicRebalanceRegression {
         SkillsMod.getInstance().importPlayerData(restored, talents);
         ProgressionBridge.sync(restored);
         require(
-            MagicPractice.credit(restored) == 353000
+            MagicPractice.credit(restored)
+                    == MagicPracticeProgress.xpForPoints(MagicTalents.pointCap())
                 && MagicPractice.level(restored) == 50
-                && earned(restored) == 136
+                && earned(restored) == MagicTalents.pointCap()
                 && unlocked(restored).containsAll(MagicTalents.nodes()),
             "Native player save/load preserves post-cap credit and every learned allocation");
       } finally {

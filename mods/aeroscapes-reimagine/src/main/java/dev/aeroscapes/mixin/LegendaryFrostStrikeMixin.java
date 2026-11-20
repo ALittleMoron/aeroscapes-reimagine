@@ -5,6 +5,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.aeroscapes.equipment.combat.MeleeReforges;
+import dev.aeroscapes.races.ClassTraits;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -39,6 +40,8 @@ abstract class LegendaryFrostStrikeMixin {
       return original.call(target, source, damage);
     }
     boolean charged = charge > 0.9F;
+    if (player instanceof ServerPlayer serverPlayer)
+      damage = ClassTraits.openingDamage(serverPlayer, living, weapon, charge, damage);
     var strike = MeleeReforges.prepare(player, living, weapon, damage, charged);
     float health = living.getHealth() + living.getAbsorptionAmount();
     boolean hit = original.call(target, source, strike.damage());

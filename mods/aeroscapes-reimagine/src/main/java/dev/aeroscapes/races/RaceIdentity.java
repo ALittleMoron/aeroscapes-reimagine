@@ -34,9 +34,8 @@ public final class RaceIdentity {
 
   public static boolean awaitingChoice(ServerPlayer player) {
     return !(player instanceof FakePlayer)
-        && ModList.get().isLoaded("neoorigins")
-        && ModList.get().isLoaded("pehkui")
-        && race(player) == null;
+        && CharacterClass.creationAvailable()
+        && (race(player) == null || characterClass(player) == null || grantPending(player));
   }
 
   private static void protectDuringSelection(EntityInvulnerabilityCheckEvent event) {
@@ -60,13 +59,61 @@ public final class RaceIdentity {
     return player.getPersistentData().getCompound(DATA).getInt("style");
   }
 
-  public static boolean choose(ServerPlayer player, Race race, int style) {
-    if (!ModList.get().isLoaded("neoorigins")
-        || !ModList.get().isLoaded("pehkui")
+  @Nullable
+  public static CharacterClass characterClass(Player player) {
+    var identity = player.getPersistentData().getCompound(DATA);
+    var chosen = CharacterClass.byId(identity.getString("class"));
+    return chosen != null && chosen.starters().contains(identity.getString("starter"))
+        ? chosen
+        : null;
+  }
+
+  public static String starter(Player player) {
+    return player.getPersistentData().getCompound(DATA).getString("starter");
+  }
+
+  public static boolean grantPending(Player player) {
+    return player.getPersistentData().getCompound(DATA).getBoolean("grant_pending");
+  }
+
+  public static boolean choose(
+      ServerPlayer player,
+      Race race,
+      int style,
+      @Nullable CharacterClass chosenClass,
+      String starter) {
+    if (!CharacterClass.creationAvailable()
         || race == null
         || !race.validStyle(style)
         || !player.isAlive()
-        || race(player) != null) return false;
+        || chosenClass == null
+        || !chosenClass.starters().contains(starter)) return false;
+    Race previous = race(player);
+    if (previous != null && (previous != race || style(player) != style)) return false;
+    CharacterClass existing = characterClass(player);
+    if (existing != null) {
+      return grantPending(player)
+          && existing == chosenClass
+          && starter(player).equals(starter)
+          && finishGrant(player);
+    }
+    if (!ClassProgression.available(player, chosenClass, starter)) return false;
+    if (previous == null && !chooseRace(player, race, style)) return false;
+    var identity = data(player);
+    identity.putString("class", chosenClass.id());
+    identity.putString("starter", starter);
+    identity.putBoolean("grant_pending", true);
+    return finishGrant(player);
+  }
+
+  private static boolean finishGrant(ServerPlayer player) {
+    if (!ClassProgression.afterChoice(player)) return false;
+    ClassTraits.refresh(player);
+    data(player).remove("grant_pending");
+    return true;
+  }
+
+  private static boolean chooseRace(ServerPlayer player, Race race, int style) {
     float previousHealth = player.getMaxHealth();
     var stamina = ModList.get().isLoaded("paraglider") ? Stamina.get(player) : null;
     double previousStamina = stamina == null ? 0 : stamina.maxStamina();
@@ -112,6 +159,8 @@ public final class RaceIdentity {
     if (player instanceof ServerPlayer serverPlayer) {
       var race = race(player);
       if (race != null) RaceTraits.applyBody(serverPlayer, race);
+      if (race != null && characterClass(player) != null && grantPending(player))
+        finishGrant(serverPlayer);
     }
   }
 }

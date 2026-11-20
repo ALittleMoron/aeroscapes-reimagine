@@ -28,7 +28,8 @@ public final class MagicPracticeProgressTest {
     require(MagicPracticeProgress.level(Long.MAX_VALUE) == 50, "Post-cap practice stays level 50");
     require(MagicPracticeProgress.remainder(72701) == 0, "Mastered readiness has no next level");
     require(
-        MagicPracticeProgress.level(353000) == 50,
+        MagicPracticeProgress.level(MagicPracticeProgress.xpForPoints(MagicTalents.pointCap()))
+            == 50,
         "Earning the complete combat allocation never needs a higher readiness level");
   }
 
@@ -60,7 +61,10 @@ public final class MagicPracticeProgressTest {
     require(
         MagicPracticeProgress.nextPointXp(MagicPracticeProgress.xpForPoints(cap), cap) == 0,
         "No reward beyond the final point");
-    require(MagicPracticeProgress.points(353000, 0) == 0, "An empty budget grants no points");
+    require(
+        MagicPracticeProgress.points(MagicPracticeProgress.xpForPoints(MagicTalents.pointCap()), 0)
+            == 0,
+        "An empty budget grants no points");
   }
 
   private static void nativeMigration() {
@@ -81,7 +85,9 @@ public final class MagicPracticeProgressTest {
         MagicPracticeProgress.level(MagicPracticeProgress.fromNative(50, 0, 1100)) == 50,
         "A previously mastered mage keeps readiness 50");
     require(
-        MagicPracticeProgress.nativeRemainder(353000, 1100) <= 1100,
+        MagicPracticeProgress.nativeRemainder(
+                MagicPracticeProgress.xpForPoints(MagicTalents.pointCap()), 1100)
+            <= 1100,
         "Post-cap talent training cannot overflow native readiness");
   }
 

@@ -691,5 +691,41 @@
     "x": -832,
     "y": -6,
     "definition": "magic_conjuration_binding_pact"
+  },
+  "quick_block": {
+    "x": -120,
+    "y": 124,
+    "definition": "quick_block",
+    "root": true
+  },
+  "shield_march": {
+    "x": -120,
+    "y": 172,
+    "definition": "shield_march",
+    "root": true
+  },
+  "bow_stride": {
+    "x": 0,
+    "y": 124,
+    "definition": "bow_stride",
+    "root": true
+  },
+  "steady_aim": {
+    "x": 0,
+    "y": 172,
+    "definition": "steady_aim",
+    "root": true
+  },
+  "quick_recovery": {
+    "x": 120,
+    "y": 124,
+    "definition": "quick_recovery",
+    "root": true
+  },
+  "opening_strike": {
+    "x": 120,
+    "y": 172,
+    "definition": "opening_strike",
+    "root": true
   }
 }

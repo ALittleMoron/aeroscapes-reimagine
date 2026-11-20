@@ -7,6 +7,7 @@ import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.RacialAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.OriginOrbs;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
@@ -65,7 +66,9 @@ final class RacialAbilitiesRegression {
       require(
           PreparedAbilities.preparation(player).equals(previous),
           "No racial grant before selection");
-      require(RaceIdentity.choose(player, Race.DWARF, 0), "Choose dwarf");
+      require(
+          RaceIdentity.choose(player, Race.DWARF, 0, CharacterClass.WARRIOR, "quick_block"),
+          "Choose dwarf");
       PreparedAbilities.sync(player, true);
       assertInnate(session, List.of(sight.id));
       require(
@@ -143,7 +146,9 @@ final class RacialAbilitiesRegression {
         TestShipPlayerSession.create(level, UUID.randomUUID(), "LightFixture", position, null)) {
       var player = session.player;
       AbilitiesRegression.initialize(player);
-      require(RaceIdentity.choose(player, Race.ELF, 0), "Choose elf");
+      require(
+          RaceIdentity.choose(player, Race.ELF, 0, CharacterClass.WARRIOR, "quick_block"),
+          "Choose elf");
       Utils.setPlayerSpellbookStack(player, ItemStack.EMPTY);
       MagicData.getPlayerMagicData(player).setMana(0);
       var ability = InnateAbility.LIGHT;

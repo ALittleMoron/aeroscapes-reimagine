@@ -7,6 +7,7 @@ import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.NeoForge;
@@ -19,21 +20,23 @@ public final class RaceNetwork {
 
   public static void register(IEventBus modBus) {
     modBus.addListener(RaceNetwork::payloads);
-    NeoForge.EVENT_BUS.addListener(RaceNetwork::login);
-    NeoForge.EVENT_BUS.addListener(RaceNetwork::respawn);
+    NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, RaceNetwork::login);
+    NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, RaceNetwork::respawn);
     NeoForge.EVENT_BUS.addListener(RaceNetwork::dimension);
     NeoForge.EVENT_BUS.addListener(RaceNetwork::startTracking);
   }
 
   private static void payloads(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("1");
+    var registrar = event.registrar("2");
     registrar.playToServer(
         Choose.TYPE,
         Choose.CODEC,
         (msg, ctx) -> {
           if (!(ctx.player() instanceof ServerPlayer player)) return;
           Race race = Race.byId(msg.race());
-          if (race != null && RaceIdentity.choose(player, race, msg.style())) {
+          if (race != null
+              && RaceIdentity.choose(
+                  player, race, msg.style(), CharacterClass.byId(msg.classId()), msg.starter())) {
             // A client in a live world can predict movement while the server holds it in place.
             player.connection.teleport(
                 player.getX(), player.getY(), player.getZ(), player.getYRot(), player.getXRot());
@@ -48,14 +51,21 @@ public final class RaceNetwork {
     registrar.playToClient(Snapshot.TYPE, Snapshot.CODEC, (msg, ctx) -> RaceClient.accept(msg));
   }
 
-  public static void choose(Race race, int style) {
-    if (race.validStyle(style)) PacketDistributor.sendToServer(new Choose(race.id(), style));
+  public static void choose(Race race, int style, CharacterClass chosenClass, String starter) {
+    if (race.validStyle(style) && chosenClass.starters().contains(starter))
+      PacketDistributor.sendToServer(new Choose(race.id(), style, chosenClass.id(), starter));
   }
 
   private static Snapshot snapshot(ServerPlayer player) {
     Race race = RaceIdentity.race(player);
+    CharacterClass chosenClass = RaceIdentity.characterClass(player);
     return new Snapshot(
-        player.getUUID(), race == null ? "" : race.id(), RaceIdentity.style(player));
+        player.getUUID(),
+        race == null ? "" : race.id(),
+        RaceIdentity.style(player),
+        chosenClass == null ? "" : chosenClass.id(),
+        RaceIdentity.starter(player),
+        chosenClass != null && RaceIdentity.grantPending(player));
   }
 
   private static void login(PlayerEvent.PlayerLoggedInEvent event) {
@@ -79,7 +89,8 @@ public final class RaceNetwork {
       PacketDistributor.sendToPlayer(viewer, snapshot(subject));
   }
 
-  public record Choose(String race, int style) implements CustomPacketPayload {
+  public record Choose(String race, int style, String classId, String starter)
+      implements CustomPacketPayload {
     public static final Type<Choose> TYPE =
         new Type<>(ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", "race_choose"));
     public static final StreamCodec<RegistryFriendlyByteBuf, Choose> CODEC =
@@ -87,8 +98,10 @@ public final class RaceNetwork {
             (buf, msg) -> {
               buf.writeUtf(msg.race(), 16);
               buf.writeVarInt(msg.style());
+              buf.writeUtf(msg.classId(), 16);
+              buf.writeUtf(msg.starter(), 32);
             },
-            buf -> new Choose(buf.readUtf(16), buf.readVarInt()));
+            buf -> new Choose(buf.readUtf(16), buf.readVarInt(), buf.readUtf(16), buf.readUtf(32)));
 
     @Override
     public Type<Choose> type() {
@@ -96,7 +109,9 @@ public final class RaceNetwork {
     }
   }
 
-  public record Snapshot(UUID player, String race, int style) implements CustomPacketPayload {
+  public record Snapshot(
+      UUID player, String race, int style, String classId, String starter, boolean grantPending)
+      implements CustomPacketPayload {
     public static final Type<Snapshot> TYPE =
         new Type<>(
             ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", "race_appearance"));
@@ -106,8 +121,18 @@ public final class RaceNetwork {
               buf.writeUUID(msg.player());
               buf.writeUtf(msg.race(), 16);
               buf.writeVarInt(msg.style());
+              buf.writeUtf(msg.classId(), 16);
+              buf.writeUtf(msg.starter(), 32);
+              buf.writeBoolean(msg.grantPending());
             },
-            buf -> new Snapshot(buf.readUUID(), buf.readUtf(16), buf.readVarInt()));
+            buf ->
+                new Snapshot(
+                    buf.readUUID(),
+                    buf.readUtf(16),
+                    buf.readVarInt(),
+                    buf.readUtf(16),
+                    buf.readUtf(32),
+                    buf.readBoolean()));
 
     @Override
     public Type<Snapshot> type() {

@@ -1,10 +1,10 @@
 ---
 title: Character and combat
-description: Racial traits, character appearance, skill practice, talent trees and equipment ranks.
+description: Choose a race, class and starting ability, then develop skills, talents and equipment.
 status: partial
 ---
 
-Your race sets your size, stamina and innate traits. Practice earns skill levels and talent points. Learned spells and innate abilities share eight preparation slots. Equipment can gain a quality rank through crafting, loot or reforging.
+Your race sets your size, stamina and innate traits. Your class supplies a combat specialty and a starting talent. Practice earns skill levels and talent points. Learned spells and innate abilities share eight preparation slots. Equipment can gain a quality rank through crafting, loot or reforging.
 
 ## Skills and talents
 
@@ -14,16 +14,16 @@ Hits with melee weapons train Melee and projectiles train Ranged. Magic practice
 
 Mining stone, cutting wood and digging train Gathering. Crafting trains Crafting, while crafting food trains Cooking instead. Taking finished items out of a furnace trains Cooking for food and Smithing for everything else, such as metal or glass; a furnace fed by hoppers trains nobody. Placing blocks trains Building, and growing crops, breeding animals and fishing train Farming. Ordinary mobs, mob farms where you land the blows and repeated cheap crafts always give some experience.
 
-Melee, Ranged and Magic fill one shared **combat budget**, capped at 136 points for the current catalogue. Melee and Ranged still give one point per five skill levels. Magic gives one starting point, then earns points from accumulated practice independently of its level milestones:
+Melee, Ranged and Magic fill one shared **combat budget**, capped at 142 points for the current catalogue. Melee and Ranged still give one point per five skill levels. Magic gives one starting point, then earns points from accumulated practice independently of its level milestones:
 
 | Credited magic XP | Interval between points | Total magic-earned points at the end of the stage |
 | ----------------- | ----------------------: | ------------------------------------------------: |
 | 0 to 500          |                  100 XP |                   6, including the starting point |
 | 500 to 5,000      |                  500 XP |                                                15 |
 | 5,000 to 20,000   |                1,500 XP |                                                25 |
-| Above 20,000      |                3,000 XP |                                 136 at 353,000 XP |
+| Above 20,000      |                3,000 XP |                                 141 at 368,000 XP |
 
-Magic practice continues earning points at the same rate after level 50. It can fund all 131 magic talents and five compatible physical talents. The six peaceful skills earn one point per five levels in a separate profession pool. Its current cap is two points. The first buys the gathering root, and the second buys either speed or fortune. Skill levels are retained after reaching the cap.
+Magic practice continues earning points at the same rate after level 50. With the one point paid by your class, you can fund 131 magic talents and 11 compatible physical talents. The six peaceful skills earn one point per five levels in a separate profession pool. Its current cap is two points. The first buys the gathering root, and the second buys either speed or fortune. Skill levels are retained after reaching the cap.
 
 Magic levels now follow their own practice curve; the other skills keep their previous curves. Mastery readiness and point rewards use the same credited magic XP. For example, Magic level 15 requires 4,301 XP, level 30 requires 21,101, level 45 requires 57,701 and level 50 requires 72,701. Reaching a mastery level opens its prerequisite, while buying the talent still costs a point.
 
@@ -31,7 +31,7 @@ Open the inventory and press **Talents**, below the nutrients button. Combat, Ma
 
 To check your levels, open the inventory and click the **Skills** button with gold bars, above the nutrients button between your character and the crafting grid: a panel attached to the left side of the inventory, where the recipe book also opens, lists combat and profession skills with their progress and a search field; scroll it with the mouse wheel or drag its scrollbar, and press the button again to hide it. The Skills, Nutrients and Talents buttons are also available with the accessory slots open. Skills and accessories replace each other; closing one leaves the other closed. **P** opens the Project MMO glossary for the player, the block or the creature you look at. The level list on the game screen is hidden by default so it does not cover the minimap; assign _Toggle Skill List_ in Controls to show it.
 
-Combat currently offers melee and protection, while Professions has a gathering branch. Magic is one tree with a common introductory repertoire and four functional directions covering all 111 spells. Its mastery gates depend on Magic practice, while ordinary bundles, individual spell unlocks and useful passive branches share 131 one-point nodes. The [magic guide](../magic/) explains learning, scroll ranks and special discoveries. Class, profession and ranged branches will arrive with classes and professions.
+Combat offers melee, archery and protection talents, while Professions has a gathering branch. Magic is one tree with a common introductory repertoire and four functional directions covering all 111 spells. Its mastery gates depend on Magic practice, while ordinary bundles, individual spell unlocks and useful passive branches share 131 one-point nodes. The [magic guide](../magic/) explains learning, scroll ranks and special discoveries.
 
 ## Prepared abilities
 
@@ -71,11 +71,11 @@ A pickaxe with **Extra Yield** can add one unit of an actual drop, including sto
 
 ## Races and classes
 
-If your character has no race yet, joining a world opens a preview using your own skin. Turn the model, choose one of four races and one of its three appearances, then confirm to start playing. If you leave the world first, the chooser reopens when you return.
+On first joining, turn the preview of your skin and choose a race and appearance. Continue to the class page and select its starting ability. The final page describes your choices, their advantages and drawbacks, and the combined practice bonuses. You can go back before confirming. A returning 0.6.3 character goes directly to class selection with their existing race and appearance. Leaving before confirmation reopens the outstanding choice on the next login.
 
 In singleplayer, the world pauses until you confirm. On a server or in a world opened to LAN, others can keep playing. While you choose, attacks and environmental hazards cannot hurt your character, and your status effect timers stay still.
 
-Your confirmed race and appearance persist through death, dimension changes and login. To read your traits again, use the button in the upper-right corner of the character portrait in your inventory or Curios screen.
+Your race, appearance, class and starting ability persist through death, dimension changes and login. Open the portrait button in the inventory or Curios to read the same character sheet again.
 
 | Race   | Hearts | Stamina | In play                                                                                                                                                                   |
 | ------ | -----: | ------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -101,13 +101,22 @@ Build the floor and wall where marked `#`. Leave opening **1** one block high an
 
 For a crew emblem, put a banner and dye in a loom and choose a wind rose, stone arch, rope knot or star leaf. All four motifs are available to everyone. Craft the finished banner together with a plain shield to carry the same colors.
 
-### Planned classes and professions
+### Starting classes
 
-Classes and specializations should support mixed builds. A warrior who learns [magic](../magic/) is a valid character. Specialists can excel while other skills remain useful. Peaceful and combat activities improve related skills, as described under [skills and talents](#skills-and-talents).
+| Class   | Permanent trait                               | Starting ability                                                                                                                                                                        |
+| ------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Warrior | +2 armor                                      | Raise a shield in 3 ticks instead of 5, or walk 25% faster while holding it up.                                                                                                         |
+| Ranger  | Fully drawn bow shots travel 10% faster       | Walk 25% faster while drawing a bow, or halve arrow spread while standing still on the ground.                                                                                          |
+| Mage    | +20 maximum mana                              | First magic mastery grants eight rank-1 spells and opens the four magic paths. The Flimsy Journal is your starting focus. Equip it and prepare the spells you want in your eight slots. |
+| Rogue   | +5% ground speed while holding a light weapon | Recover light-weapon attacks 10% faster, or deal 15% more damage with a fully charged opening hit against a target at full health.                                                      |
 
-The initial classes are warrior, ranger, mage and rogue; profession is a separate choice. The initial professions are blacksmith, builder, farmer and cook. A class gives lasting traits that shape how the character fights. Classes, subclasses and professions speed up learning in their respective disciplines. Effective use of equipment will depend on learned proficiency.
+Warriors and rogues learn melee 20% faster, rangers learn archery 20% faster, and mages learn magic 20% faster. Elven archery and magic bonuses add to the class bonus. An elf ranger earns 14 archery XP for an action worth 10 before bonuses. All other disciplines retain their usual rate.
 
-As players choose their race, class, profession and starting abilities, the character screen will show their combined starting attributes, traits and learning affinities. Players can expand the descriptions to see what each one changes in play. A starting subclass choice will become available when subclasses arrive.
+The class pays for the chosen starting talent, leaving your ordinary starting point available. Other characters can learn the same talent through the combat or magic tree. Light weapons include the five Farmer's Delight knives, the Wetland Whimsy dagger and the Iron's Spells 'n Spellbooks amethyst rapier.
+
+### Planned professions and subclasses
+
+Blacksmith, builder, farmer and cook will be separate starting professions. The same window will include future identity choices before the final review.
 
 Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, with the same prerequisites and point costs regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
 

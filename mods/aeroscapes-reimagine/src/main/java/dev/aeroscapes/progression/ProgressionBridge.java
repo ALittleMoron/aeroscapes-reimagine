@@ -4,6 +4,8 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicPracticeProgress;
 import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.races.ClassProgression;
+import dev.aeroscapes.races.RaceIdentity;
 import harmonised.pmmo.api.APIUtils;
 import harmonised.pmmo.api.enums.EventType;
 import harmonised.pmmo.api.enums.ObjectType;
@@ -12,12 +14,15 @@ import java.util.Map;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.puffish.skillsmod.SkillsMod;
 
 /**
  * Turns Project MMO practice levels into Pufferfish's Skills talent points.
@@ -35,6 +40,8 @@ public final class ProgressionBridge {
   public static final int PROFESSION_POINT_CAP = 2;
   public static final String COMBAT_CATEGORY = "aeroscapes_reimagine:combat";
   public static final String PROFESSION_CATEGORY = "aeroscapes_reimagine:profession";
+  private static final ResourceLocation COMBAT = ResourceLocation.parse(COMBAT_CATEGORY);
+  private static final ResourceLocation PROFESSION = ResourceLocation.parse(PROFESSION_CATEGORY);
   static final String POINT_SOURCE = "aeroscapes_reimagine:skill_levels";
   private static final long FOOD_CRAFT_XP = 10;
   private static final long SMELT_XP_PER_ITEM = 2;
@@ -60,9 +67,16 @@ public final class ProgressionBridge {
 
   /** Writes the earned points of both categories when they differ from the stored value. */
   public static void sync(ServerPlayer player) {
+    if (!categoriesAvailable()) return;
     Earned earned = earned(player);
     setPoints(player, COMBAT_CATEGORY, earned.combat());
     setPoints(player, PROFESSION_CATEGORY, earned.profession());
+  }
+
+  public static boolean categoriesAvailable() {
+    if (!ModList.get().isLoaded("pmmo") || !ModList.get().isLoaded("puffish_skills")) return false;
+    var skills = SkillsMod.getInstance();
+    return skills.hasCategory(COMBAT) && skills.hasCategory(PROFESSION);
   }
 
   /** Reconciles persisted points even after a reload or another writer replaced the source. */
@@ -74,19 +88,23 @@ public final class ProgressionBridge {
     long magicCredit = MagicPractice.credit(player);
     Map<String, Long> levels = APIUtils.getAllLevels(player);
     return new Earned(
-        combatPoints(levels, magicCredit),
+        combatPoints(player, levels, magicCredit),
         Math.min(PROFESSION_POINT_CAP, points(levels, PROFESSION_SKILLS)));
   }
 
-  private static int combatPoints(Map<String, Long> levels, long magicCredit) {
+  private static int combatPoints(ServerPlayer player, Map<String, Long> levels, long magicCredit) {
     int cap = MagicTalents.pointCap();
+    int classPoint = RaceIdentity.characterClass(player) == null ? 0 : 1;
     return Math.min(
-        cap, MagicPracticeProgress.points(magicCredit, cap) + points(levels, COMBAT_SKILLS));
+        cap,
+        classPoint
+            + MagicPracticeProgress.points(magicCredit, cap)
+            + points(levels, COMBAT_SKILLS));
   }
 
   public static long nextCombatPointXp(ServerPlayer player, long magicCredit) {
     int cap = MagicTalents.pointCap();
-    return combatPoints(APIUtils.getAllLevels(player), magicCredit) >= cap
+    return combatPoints(player, APIUtils.getAllLevels(player), magicCredit) >= cap
         ? 0
         : MagicPracticeProgress.nextPointXp(magicCredit, cap);
   }
@@ -112,7 +130,10 @@ public final class ProgressionBridge {
   }
 
   private static void syncOnLogin(PlayerEvent.PlayerLoggedInEvent event) {
-    if (event.getEntity() instanceof ServerPlayer player) sync(player);
+    if (event.getEntity() instanceof ServerPlayer player) {
+      sync(player);
+      if (!RaceIdentity.grantPending(player)) ClassProgression.restore(player);
+    }
   }
 
   private static void refreshAfterPractice(PlayerTickEvent.Post event) {

@@ -4,6 +4,11 @@ description: Version history.
 status: available
 ---
 
+## 0.6.4
+
+- Choose a class after race and appearance in the same window. Review all choices, advantages, drawbacks and combined practice bonuses before confirming or reopen the sheet from the inventory portrait.
+- Warriors, rangers and rogues choose a starting combat talent. Mages start with eight rank-1 spells and a casting focus. Six physical talents are open to all classes, bringing the shared combat budget to 142 points.
+
 ## 0.6.3
 
 - Choose a human, dwarf, goblin or elf before play, with three appearances per race on a stationary preview of your own skin. The portrait button in the inventory reopens your confirmed character sheet.

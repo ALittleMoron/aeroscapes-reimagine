@@ -8,9 +8,9 @@ status: partial
 
 ## Your first spell
 
-Open **Talents** from the inventory and choose the Magic page. Spend your starting combat talent point on **First Magic Mastery**. It teaches eight rank-1 spells without scrolls: Blood Needles, Magic Missile, Firebolt, Icicle, Ball Lightning, Shield, Heal and Oakskin. You gain attacks, personal healing and protection together; choose which to prepare rather than automatically filling every slot.
+Mages start with **First magic mastery** already learned. Other characters can open **Talents** from the inventory, select Magic and spend their starting combat point on it. It teaches eight rank-1 spells without scrolls: Blood Needles, Magic Missile, Firebolt, Icicle, Ball Lightning, Shield, Heal and Oakskin. You gain attacks, personal healing and protection together; choose which to prepare rather than automatically filling every slot.
 
-Make a copper spell book (called the Flimsy Journal in game) from two copper ingots, a piece of string and six paper. Equip it in the spell book accessory slot in Curios. The book is a required casting focus and keeps its equipment and reforging bonuses. All books use your same eight preparation slots, regardless of their former capacity.
+Mages receive the Flimsy Journal at character creation. To make another, use two copper ingots, one string and six paper. Equip it in the spell book accessory slot in Curios. The book is a required casting focus and keeps its equipment and reforging bonuses. All books use your same eight preparation slots, regardless of their former capacity.
 
 Open **Prepared abilities** from the inventory or Curios. **Learned only** is on by default; turn it off to inspect the full catalogue. Unlearned and unavailable spells have a separate status, and an unsuccessful assignment explains the restriction. Search and the school filter work with either view. A known spell stays in the learned list while cooling down or when you lack mana or an equipped focus.
 

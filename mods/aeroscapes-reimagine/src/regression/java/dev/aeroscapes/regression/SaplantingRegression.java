@@ -1,6 +1,7 @@
 package dev.aeroscapes.regression;
 
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import harmonised.pmmo.api.APIUtils;
@@ -40,7 +41,7 @@ final class SaplantingRegression {
       var player = session.player;
       ProgressionRegression.listPlayer(level, player, true);
       try {
-        if (!RaceIdentity.choose(player, Race.HUMAN, 0))
+        if (!RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.WARRIOR, "quick_block"))
           throw new IllegalStateException("Fixture player could not finish character creation");
         level.setBlockAndUpdate(bed, Blocks.DIRT.defaultBlockState());
         level.removeBlock(planted, false);

@@ -1,6 +1,7 @@
 package dev.aeroscapes.regression;
 
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import java.util.HashMap;
@@ -44,7 +45,9 @@ final class AccessoryUseRegression {
             Vec3.atBottomCenterOf(level.getSharedSpawnPos().atY(level.getMaxBuildHeight() - 3)),
             null)) {
       var player = session.player;
-      require(RaceIdentity.choose(player, Race.HUMAN, 0), "Character ready for use");
+      require(
+          RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.WARRIOR, "quick_block"),
+          "Character ready for use");
       var inventory = CuriosApi.getCuriosInventory(player).orElseThrow();
       checkCatalogue(player, inventory);
       var activeStates = new HashMap<String, List<Boolean>>();

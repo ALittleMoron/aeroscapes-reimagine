@@ -9,6 +9,7 @@ import com.cyberday1.neoorigins.service.CreatorAccess;
 import com.mojang.logging.LogUtils;
 import dev.aeroscapes.camera.ClimbableCameraFade;
 import dev.aeroscapes.magic.MagicPractice;
+import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import dev.aeroscapes.races.RaceTraits;
@@ -112,7 +113,15 @@ final class RaceFoundationRegression {
       require(
           player.getEffect(MobEffects.LUCK).getDuration() == 100,
           "Survival time elapsed during creation");
-      require(RaceIdentity.choose(player, Race.HUMAN, 0), "Could not finish protected creation");
+      require(
+          !RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.MAGE, "quick_block"),
+          "A starter from another class was accepted");
+      require(
+          RaceIdentity.race(player) == null && RaceIdentity.awaitingChoice(player),
+          "Invalid class submission partially committed the race or lifted protection");
+      require(
+          RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.WARRIOR, "quick_block"),
+          "Could not finish protected creation");
       player.doTick();
       int remaining = player.getEffect(MobEffects.LUCK).getDuration();
       require(remaining == 99, "Survival time after confirmation: " + remaining);
@@ -147,7 +156,8 @@ final class RaceFoundationRegression {
         require(NeoOriginsAPI.powers(player).isEmpty(), "Power granted before choosing a race");
         if (race == Race.HUMAN) verifyOrbs(player);
         require(
-            !RaceIdentity.choose(player, race, race.styleCount()),
+            !RaceIdentity.choose(
+                player, race, race.styleCount(), CharacterClass.WARRIOR, "quick_block"),
             "Rejected out-of-range appearance");
         ((PlayerMovement) Movement.get(player)).update();
         var originalSlot = player.getInventory().selected;
@@ -157,13 +167,15 @@ final class RaceFoundationRegression {
         player.connection.handleSetCarriedItem(selectSlot);
         require(
             player.getInventory().selected == originalSlot, "World input before race confirmation");
-        require(RaceIdentity.choose(player, race, 2), "Could not choose " + race);
+        require(
+            RaceIdentity.choose(player, race, 2, CharacterClass.WARRIOR, "quick_block"),
+            "Could not choose " + race);
         player.connection.handleSetCarriedItem(selectSlot);
         require(player.getInventory().selected == newSlot, "World input blocked after choosing");
         player.connection.handleSetCarriedItem(
             new net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket(originalSlot));
         require(
-            !RaceIdentity.choose(player, Race.HUMAN, 0),
+            !RaceIdentity.choose(player, Race.HUMAN, 0, CharacterClass.WARRIOR, "quick_block"),
             "Repeat confirmation changed race or appearance");
         if (race == Race.HUMAN) verifyOrbs(player);
         verifyGrantedPowers(player, race);
@@ -190,7 +202,10 @@ final class RaceFoundationRegression {
 
   private static void checkIdentity(ServerPlayer player, Race race) {
     require(
-        RaceIdentity.race(player) == race && RaceIdentity.style(player) == 2,
+        RaceIdentity.race(player) == race
+            && RaceIdentity.style(player) == 2
+            && RaceIdentity.characterClass(player) == CharacterClass.WARRIOR
+            && RaceIdentity.starter(player).equals("quick_block"),
         "Saved identity changed for " + race);
   }
 

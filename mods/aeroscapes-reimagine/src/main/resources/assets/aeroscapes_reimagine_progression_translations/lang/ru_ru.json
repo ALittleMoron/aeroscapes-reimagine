@@ -423,5 +423,18 @@
   "aeroscapes_reimagine.progression.state.affordable": "Можно изучить.",
   "aeroscapes_reimagine.progression.state.unlocked": "Изучено",
   "aeroscapes_reimagine.progression.state.excluded": "Выбран альтернативный талант.",
-  "aeroscapes_reimagine.progression.small_window": "Увеличьте окно или уменьшите масштаб интерфейса, чтобы открыть таланты."
+  "aeroscapes_reimagine.progression.small_window": "Увеличьте окно или уменьшите масштаб интерфейса, чтобы открыть таланты.",
+  "puffish_skills.aeroscapes_reimagine.combat.quick_block.title": "Быстрый блок",
+  "puffish_skills.aeroscapes_reimagine.combat.quick_block.description": "Щит начинает блокировать на 2 такта раньше. Обычный щит готов за 0,15 секунды.",
+  "puffish_skills.aeroscapes_reimagine.combat.shield_march.title": "Шаг под щитом",
+  "puffish_skills.aeroscapes_reimagine.combat.shield_march.description": "При поднятии и удержании щита вы движетесь на 25% быстрее.",
+  "puffish_skills.aeroscapes_reimagine.combat.bow_stride.title": "Шаг лучника",
+  "puffish_skills.aeroscapes_reimagine.combat.bow_stride.description": "При натягивании и удержании тетивы вы движетесь на 25% быстрее.",
+  "puffish_skills.aeroscapes_reimagine.combat.steady_aim.title": "Точный прицел",
+  "puffish_skills.aeroscapes_reimagine.combat.steady_aim.description": "Стойте неподвижно на земле, чтобы вдвое уменьшить разброс стрел из лука.",
+  "puffish_skills.aeroscapes_reimagine.combat.quick_recovery.title": "Быстрый замах",
+  "puffish_skills.aeroscapes_reimagine.combat.quick_recovery.description": "С ножом, кинжалом Wetland Whimsy или аметистовой рапирой в основной руке скорость атаки выше на 10%.",
+  "puffish_skills.aeroscapes_reimagine.combat.opening_strike.title": "Первый удар",
+  "puffish_skills.aeroscapes_reimagine.combat.opening_strike.description": "Полностью заряженный удар ножом, кинжалом Wetland Whimsy или аметистовой рапирой наносит на 15% больше урона противнику с полным здоровьем.",
+  "attribute.aeroscapes_reimagine.shield_raise_reduction": "Сокращение времени поднятия щита (такты)"
 }
