@@ -46,6 +46,7 @@
     "ProjectMmoAdminDataMixin",
     "ProjectMmoPlacementMixin",
     "ProjectMmoRacePracticeMixin",
-    "MagicTalentGateMixin"
+    "MagicTalentGateMixin",
+    "TalentCategoryAccess"
   ]
 }

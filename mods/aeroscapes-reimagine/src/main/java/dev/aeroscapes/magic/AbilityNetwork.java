@@ -63,7 +63,7 @@ public final class AbilityNetwork {
     }
 
     public boolean known() {
-      return granted() || level > 0;
+      return (granted() && !reason.equals("race")) || level > 0;
     }
 
     public boolean granted() {

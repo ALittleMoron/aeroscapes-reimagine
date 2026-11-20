@@ -4,6 +4,11 @@ description: Version history.
 status: available
 ---
 
+## 0.6.6
+
+- An Identity Seal from exploration chests changes your race, main class or profession. Preview the change and choose whether to refund your old class branch.
+- Craft Knotted Thread to redistribute learned talents. The tree shows affected talents and the 10% penalty before confirmation. New practice can restore lost points.
+
 ## 0.6.5
 
 - Choose a profession and one of two peaceful starting talents alongside your race and class. Existing characters complete their missing choices and receive their profession kit once.

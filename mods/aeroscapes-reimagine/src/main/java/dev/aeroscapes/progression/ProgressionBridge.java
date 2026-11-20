@@ -28,8 +28,8 @@ import net.puffish.skillsmod.SkillsMod;
  * Turns Project MMO practice levels into Pufferfish's Skills talent points.
  *
  * <p>Points are recomputed from the current levels and written as one named point source, so a
- * repeated or missed change can neither duplicate nor lose points. Later respec penalties belong in
- * a separate source. Project MMO's admin commands change levels without its level-up event, so a
+ * repeated or missed change can neither duplicate nor lose points. Respec penalties use a separate
+ * source. Project MMO's admin commands change levels without its level-up event, so a
  * once-per-second comparison catches every route instead of a perk.
  */
 public final class ProgressionBridge {
@@ -51,6 +51,7 @@ public final class ProgressionBridge {
 
   public static void register() {
     MagicPractice.register();
+    NeoForge.EVENT_BUS.addListener(RefundPenalty::clonePlayer);
     NeoForge.EVENT_BUS.addListener(ProgressionBridge::syncOnLogin);
     NeoForge.EVENT_BUS.addListener(ProgressionBridge::refreshAfterPractice);
     NeoForge.EVENT_BUS.addListener(ProgressionBridge::awardSmelting);
@@ -71,6 +72,8 @@ public final class ProgressionBridge {
     Earned earned = earned(player);
     setPoints(player, COMBAT_CATEGORY, earned.combat());
     setPoints(player, PROFESSION_CATEGORY, earned.profession());
+    RefundPenalty.sync(player, "combat");
+    RefundPenalty.sync(player, "profession");
   }
 
   public static boolean categoriesAvailable() {
@@ -106,9 +109,14 @@ public final class ProgressionBridge {
 
   public static long nextCombatPointXp(ServerPlayer player, long magicCredit) {
     int cap = MagicTalents.pointCap();
-    return combatPoints(player, APIUtils.getAllLevels(player), magicCredit) >= cap
-        ? 0
-        : MagicPracticeProgress.nextPointXp(magicCredit, cap);
+    long next =
+        combatPoints(player, APIUtils.getAllLevels(player), magicCredit) >= cap
+            ? 0
+            : MagicPracticeProgress.nextPointXp(magicCredit, cap);
+    int recovery = RefundPenalty.untilNext(player, "combat");
+    return recovery > 0 && (next == 0 || magicCredit + recovery < next)
+        ? magicCredit + recovery
+        : next;
   }
 
   public static int storedPoints(ServerPlayer player, String category)

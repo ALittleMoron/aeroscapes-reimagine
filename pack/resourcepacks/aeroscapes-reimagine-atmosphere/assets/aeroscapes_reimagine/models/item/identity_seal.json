@@ -1,0 +1,28 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "aeroscapes_reimagine:item/identity_seal"
+    }
+  },
+  "textures": {
+    "layer0": "aeroscapes_reimagine:item/identity_seal",
+    "particle": "#layer0"
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "aeroscapes_reimagine:item/character/identity_seal"
+    },
+    "firstperson_lefthand": {
+      "parent": "aeroscapes_reimagine:item/character/identity_seal"
+    },
+    "thirdperson_righthand": {
+      "parent": "aeroscapes_reimagine:item/character/identity_seal"
+    },
+    "thirdperson_lefthand": {
+      "parent": "aeroscapes_reimagine:item/character/identity_seal"
+    }
+  }
+}

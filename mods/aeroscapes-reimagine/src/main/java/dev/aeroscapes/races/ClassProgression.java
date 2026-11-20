@@ -26,8 +26,13 @@ public final class ClassProgression {
             .isPresent();
   }
 
-  private static String node(CharacterClass characterClass, String starter) {
+  static String node(CharacterClass characterClass, String starter) {
     return characterClass == CharacterClass.MAGE ? "magic_mastery_1" : starter;
+  }
+
+  static boolean learned(ServerPlayer player, String node) {
+    return SkillsMod.getInstance().getSkillState(player, COMBAT, node).orElse(Skill.State.LOCKED)
+        == Skill.State.UNLOCKED;
   }
 
   public static boolean afterChoice(ServerPlayer player) {

@@ -1,6 +1,7 @@
 {
   "aeroscapes_reimagine.abilities.reason.disabled": "This spell is unavailable in this pack.",
   "aeroscapes_reimagine.abilities.reason.state": "You cannot cast while dead or spectating.",
+  "aeroscapes_reimagine.abilities.reason.race": "Your current race cannot use this ability. Its slot stays assigned until you replace it.",
   "aeroscapes_reimagine.abilities.reason.unlearned": "Learn this spell's talent node first.",
   "aeroscapes_reimagine.abilities.reason.mastery": "Your mastery of this direction does not support this spell level yet.",
   "aeroscapes_reimagine.abilities.reason.discovery": "Discover this spell with an Eldritch Manuscript first.",

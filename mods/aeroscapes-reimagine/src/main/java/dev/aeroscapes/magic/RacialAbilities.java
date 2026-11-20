@@ -35,8 +35,12 @@ public final class RacialAbilities {
   }
 
   static void use(ServerPlayer player, InnateAbility ability) {
-    if (RaceIdentity.race(player) != ability.race || !player.isAlive() || player.isSpectator()) {
+    if (!player.isAlive() || player.isSpectator()) {
       SpellKnowledge.message(player, "state");
+      return;
+    }
+    if (RaceIdentity.race(player) != ability.race) {
+      SpellKnowledge.message(player, "race");
       return;
     }
     String feedback;
@@ -63,7 +67,8 @@ public final class RacialAbilities {
   }
 
   static void reconcile(ServerPlayer player, Preparation prepared) {
-    if (!prepared.slots().contains(InnateAbility.NIGHT_VISION.id)) {
+    if (RaceIdentity.race(player) != InnateAbility.NIGHT_VISION.race
+        || !prepared.slots().contains(InnateAbility.NIGHT_VISION.id)) {
       SpellKnowledge.data(player).remove(SIGHT);
     }
     if (player.hasEffect(ELF_LIGHT) && RaceIdentity.race(player) != InnateAbility.LIGHT.race)

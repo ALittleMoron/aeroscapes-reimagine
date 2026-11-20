@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/character/identity_seal.obj",
+  "textures": {
+    "particle": "aeroscapes_reimagine:item/identity_seal"
+  },
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -30,
+        20,
+        148
+      ],
+      "translation": [
+        1.2,
+        3,
+        0
+      ],
+      "scale": [
+        0.53,
+        0.53,
+        0.53
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -30,
+        -20,
+        -148
+      ],
+      "translation": [
+        1.2,
+        3,
+        0
+      ],
+      "scale": [
+        0.53,
+        0.53,
+        0.53
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        -30,
+        20,
+        148
+      ],
+      "translation": [
+        0,
+        1.05,
+        0
+      ],
+      "scale": [
+        0.53,
+        0.53,
+        0.53
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -30,
+        -20,
+        -148
+      ],
+      "translation": [
+        0,
+        1.05,
+        0
+      ],
+      "scale": [
+        0.53,
+        0.53,
+        0.53
+      ]
+    }
+  }
+}

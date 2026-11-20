@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {"item": "minecraft:string"},
+    {"item": "minecraft:string"},
+    {"item": "minecraft:diamond"},
+    {"item": "minecraft:ender_pearl"}
+  ],
+  "result": {"id": "aeroscapes_reimagine:knotted_thread", "count": 1}
+}

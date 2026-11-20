@@ -89,6 +89,10 @@ public final class MagicMigrationRegression {
                 "profession-verify",
                 "profession-reload",
                 "profession-rollback",
+                "change-prepare",
+                "change-verify",
+                "change-reload",
+                "change-rollback",
                 "layout-prepare",
                 "layout-verify",
                 "layout-rollback")
@@ -183,6 +187,31 @@ public final class MagicMigrationRegression {
           }
           case "profession-reload" -> verifyProfessionCarryover(player, true);
           case "profession-rollback" -> verifyProfessionCarryover(player, false);
+          case "change-prepare" -> {
+            require(
+                dev.aeroscapes.races.RaceIdentity.choose(
+                    player,
+                    dev.aeroscapes.races.Race.GOBLIN,
+                    1,
+                    CharacterClass.MAGE,
+                    "first_mastery",
+                    Profession.BLACKSMITH,
+                    "material_repair"),
+                "Create 0.6.5 character");
+            MagicPractice.award(player, 700);
+            var skills = SkillsMod.getInstance();
+            skills.unlockSkill(player, COMBAT, "magic_destruction_mastery_2");
+            skills.unlockSkill(player, COMBAT, "magic_destruction_mastery_3");
+            prepareFirebolt(player);
+            verifyChangeSave(player, false);
+          }
+          case "change-verify" -> {
+            verifyChangeSave(player, false);
+            ChangeSaveUpgrade.changeRace(player);
+            verifyChangeSave(player, true);
+          }
+          case "change-rollback", "change-reload" ->
+              verifyChangeSave(player, mode.equals("change-reload"));
           case "layout-prepare" -> {
             prepareLayout(player);
             verifyLayout(player, true);
@@ -237,6 +266,29 @@ public final class MagicMigrationRegression {
     Utils.setPlayerSpellbookStack(player, new ItemStack(ItemRegistry.WIMPY_SPELL_BOOK.get()));
     PreparedAbilities.edit(player, 3, "irons_spellbooks:firebolt");
     PreparedAbilities.select(player, 3);
+  }
+
+  private static void verifyChangeSave(ServerPlayer player, boolean changed) {
+    require(
+        dev.aeroscapes.races.RaceIdentity.race(player)
+                == (changed ? dev.aeroscapes.races.Race.ELF : dev.aeroscapes.races.Race.GOBLIN)
+            && dev.aeroscapes.races.RaceIdentity.style(player) == (changed ? 2 : 1)
+            && dev.aeroscapes.races.RaceIdentity.characterClass(player) == CharacterClass.MAGE
+            && dev.aeroscapes.races.RaceIdentity.profession(player) == Profession.BLACKSMITH,
+        "Keep confirmed identity through upgrade, restart and rollback");
+    require(
+        MagicPractice.credit(player) == 840
+            && player.getInventory().countItem(Items.COAL) == 4
+            && SkillsMod.getInstance()
+                .getUnlockedSkills(player, PROFESSION)
+                .orElseThrow()
+                .contains("material_repair")
+            && SkillsMod.getInstance()
+                .getUnlockedSkills(player, COMBAT)
+                .orElseThrow()
+                .contains("magic_destruction_mastery_3"),
+        "Keep class and profession investment, kit and practice");
+    verifyRanksAndSlots(player);
   }
 
   private static void verifyRaceCarryover(ServerPlayer player) {

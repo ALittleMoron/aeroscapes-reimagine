@@ -1,0 +1,19 @@
+newmtl bronze
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/character/bronze
+
+newmtl brass
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/character/brass
+
+newmtl linen
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/character/linen
+
+newmtl pearl
+Ka 0 0 0
+Kd 1 1 1
+map_Kd aeroscapes_reimagine:item/character/pearl

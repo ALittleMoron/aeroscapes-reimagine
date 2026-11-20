@@ -59,9 +59,9 @@ public final class PreparedAbilities {
       if (!id.isEmpty()) {
         var innate = InnateAbility.byId(id);
         boolean valid =
-            innate == null
-                ? AmuletStep.ID.equals(id) || SpellKnowledge.spell(id) != SpellRegistry.none()
-                : RaceIdentity.race(player) == innate.race;
+            innate != null
+                || AmuletStep.ID.equals(id)
+                || SpellKnowledge.spell(id) != SpellRegistry.none();
         if (!valid || slots.contains(id)) id = "";
       }
       slots.add(id);
@@ -235,9 +235,11 @@ public final class PreparedAbilities {
     }
     var race = RaceIdentity.race(player);
     for (var innate : InnateAbility.values()) {
-      if (innate.race == race)
+      boolean available = innate.race == race;
+      if (available || prepared.slots().contains(innate.id))
         entries.add(
-            new AbilityNetwork.Entry(innate.id, InnateAbility.GROUP, 0, 0, 0, true, "", 0, 0));
+            new AbilityNetwork.Entry(
+                innate.id, InnateAbility.GROUP, 0, 0, 0, available, available ? "" : "race", 0, 0));
     }
     for (AbstractSpell spell : SpellKnowledge.spells()) {
       int rank = SpellKnowledge.rank(player, spell, skills);

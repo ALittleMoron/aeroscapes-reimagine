@@ -127,6 +127,9 @@ public final class RaceIdentity {
     if (previous == null && !chooseRace(player, race, style)) return false;
     var identity = data(player);
     if (existing == null) {
+      identity.putBoolean(
+          CharacterChanges.STARTER_PERSONALLY_LEARNED,
+          ClassProgression.learned(player, ClassProgression.node(chosenClass, starter)));
       identity.putString("class", chosenClass.id());
       identity.putString("starter", starter);
       identity.putBoolean("grant_pending", true);
@@ -157,9 +160,12 @@ public final class RaceIdentity {
     return true;
   }
 
-  private static boolean chooseRace(ServerPlayer player, Race race, int style) {
+  static boolean chooseRace(ServerPlayer player, Race race, int style) {
+    boolean firstSelection = race(player) == null;
+    float health = player.getHealth();
     float previousHealth = player.getMaxHealth();
     var stamina = ModList.get().isLoaded("paraglider") ? Stamina.get(player) : null;
+    double storedStamina = stamina == null ? 0 : stamina.stamina();
     double previousStamina = stamina == null ? 0 : stamina.maxStamina();
     var result =
         NeoOriginsAPI.setOrigin(
@@ -167,14 +173,11 @@ public final class RaceIdentity {
     if (result != SetOriginResult.SUCCESS) return false;
     data(player).putInt("style", style);
     RaceTraits.applyBody(player, race);
-    player.setHealth(
-        Math.clamp(
-            player.getHealth() + player.getMaxHealth() - previousHealth, 1, player.getMaxHealth()));
+    float gain = firstSelection ? player.getMaxHealth() - previousHealth : 0;
+    player.setHealth(Math.clamp(health + gain, firstSelection ? 1 : 0, player.getMaxHealth()));
     if (stamina != null) {
-      stamina.setStamina(
-          Math.clamp(
-              stamina.stamina() + stamina.maxStamina() - previousStamina, 0, stamina.maxStamina()),
-          false);
+      double staminaGain = firstSelection ? stamina.maxStamina() - previousStamina : 0;
+      stamina.setStamina(Math.clamp(storedStamina + staminaGain, 0, stamina.maxStamina()), false);
     }
     return true;
   }

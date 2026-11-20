@@ -1,6 +1,7 @@
 {
   "aeroscapes_reimagine.abilities.reason.disabled": "Это заклинание недоступно в сборке.",
   "aeroscapes_reimagine.abilities.reason.state": "Нельзя применять заклинания после смерти или в режиме наблюдения.",
+  "aeroscapes_reimagine.abilities.reason.race": "Это способность другой расы. Она останется в ячейке, пока вы её не замените.",
   "aeroscapes_reimagine.abilities.reason.unlearned": "Сначала изучите узел этого заклинания в древе талантов.",
   "aeroscapes_reimagine.abilities.reason.mastery": "Вашего мастерства этого направления пока недостаточно для такого уровня заклинания.",
   "aeroscapes_reimagine.abilities.reason.discovery": "Сначала откройте это заклинание с помощью Мистического манускрипта.",

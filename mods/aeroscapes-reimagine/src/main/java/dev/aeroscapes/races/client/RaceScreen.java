@@ -3,6 +3,7 @@ package dev.aeroscapes.races.client;
 import static dev.aeroscapes.races.client.RaceVisuals.text;
 
 import com.mojang.realmsclient.RealmsMainScreen;
+import dev.aeroscapes.races.ChangeNetwork;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
@@ -28,7 +29,7 @@ import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 
-final class RaceScreen extends Screen {
+final class RaceScreen extends Screen implements ChangeView {
   enum Page {
     RACE,
     CLASS,
@@ -51,6 +52,10 @@ final class RaceScreen extends Screen {
   private final boolean sheet;
   private final boolean grantPending;
   private final boolean fromInventory;
+  private final long changeSession;
+  private final Screen changeMenu;
+  private final RaceClient.Profile original;
+  private boolean refundBranch;
   private Race race;
   private CharacterClass characterClass;
   private Profession profession;
@@ -65,11 +70,23 @@ final class RaceScreen extends Screen {
   private int left, top, panelWidth, panelHeight, previewWidth;
 
   RaceScreen(RaceClient.Profile profile, boolean fromInventory) {
+    this(profile, fromInventory, 0, null, null);
+  }
+
+  RaceScreen(RaceClient.Profile profile, long session, Page edit, Screen menu) {
+    this(profile, false, session, edit, menu);
+  }
+
+  private RaceScreen(
+      RaceClient.Profile profile, boolean fromInventory, long session, Page edit, Screen menu) {
     super(text(profile.complete() ? "title" : "create"));
+    this.original = profile;
+    this.changeSession = session;
+    this.changeMenu = menu;
     this.fromInventory = fromInventory;
-    pages = Page.remaining(profile);
+    pages = edit == null ? Page.remaining(profile) : List.of(edit);
     page = pages.getFirst();
-    sheet = profile.complete();
+    sheet = profile.complete() && edit == null;
     grantPending = profile.grantPending() && page == Page.SUMMARY;
     race = profile.race() != null ? profile.race() : Race.HUMAN;
     if (race.validStyle(profile.style())) styles[race.ordinal()] = profile.style();
@@ -81,6 +98,29 @@ final class RaceScreen extends Screen {
 
   private int style() {
     return styles[race.ordinal()];
+  }
+
+  @Override
+  public long changeSession() {
+    return changeSession;
+  }
+
+  Component changeDescription() {
+    return switch (page) {
+      case RACE ->
+          text("identity", text(race.id() + ".name"), text(race.id() + ".style." + style()));
+      case CLASS ->
+          CharacterDetails.className(characterClass)
+              .append(" · ")
+              .append(CharacterDetails.talent(starter(), "title"))
+              .append("\n")
+              .append(ChangeClient.text(refundBranch ? "refund_branch" : "keep_branch"));
+      case PROFESSION ->
+          CharacterDetails.professionName(profession)
+              .append(" · ")
+              .append(CharacterDetails.professionTalent(professionStarter(), "title"));
+      default -> throw new IllegalStateException("No change on the summary page");
+    };
   }
 
   private String starter() {
@@ -105,6 +145,7 @@ final class RaceScreen extends Screen {
     var doc = Component.empty();
     var language = minecraft.getLanguageManager().getSelected();
     var numbers = NumberFormat.getNumberInstance(Locale.forLanguageTag(language.replace('_', '-')));
+    if (changeSession != 0) doc.append(ChangeClient.text("keep_kit")).append("\n\n");
     if (grantPending) doc.append(text("grant_pending")).append("\n\n");
     else if (retry) doc.append(text("retry")).append("\n\n");
     doc.append(CharacterDetails.identity(race, characterClass, profession))
@@ -149,7 +190,7 @@ final class RaceScreen extends Screen {
     int right = x + previewWidth + 10;
     int rightWidth = left + panelWidth - 10 - right;
     int bottom = top + panelHeight;
-    if (!sheet) {
+    if (!sheet && changeSession == 0) {
       var exit =
           minecraft.isLocalServer()
               ? Component.translatable("menu.returnToMenu")
@@ -164,6 +205,19 @@ final class RaceScreen extends Screen {
           case PROFESSION -> professionControls(right, rightWidth);
           case SUMMARY -> top + 32;
         };
+    if (changeSession != 0 && page == Page.CLASS) {
+      button(
+          ChangeClient.text(refundBranch ? "refund_branch" : "keep_branch"),
+          right,
+          contentY,
+          rightWidth,
+          18,
+          () -> {
+            refundBranch = !refundBranch;
+            rebuildWidgets();
+          });
+      contentY += 22;
+    }
     addRenderableWidget(
         new FittingMultiLineTextWidget(
                 right, contentY, rightWidth - 9, bottom - 34 - contentY, details(), font)
@@ -182,6 +236,19 @@ final class RaceScreen extends Screen {
         });
     int footer = bottom - 26;
     int half = (panelWidth - 24) / 2;
+    if (changeSession != 0) {
+      button(CommonComponents.GUI_BACK, x, footer, half, 18, this::onClose);
+      var button =
+          button(ChangeClient.text("preview"), x + half + 4, footer, half, 18, this::previewChange);
+      button.active =
+          switch (page) {
+            case RACE -> race != original.race();
+            case CLASS -> characterClass != original.characterClass();
+            case PROFESSION -> profession != original.profession();
+            case SUMMARY -> false;
+          };
+      return;
+    }
     if (sheet) {
       button(CommonComponents.GUI_DONE, x, footer, panelWidth - 20, 18, this::closeSheet);
       return;
@@ -228,6 +295,35 @@ final class RaceScreen extends Screen {
                   rebuildWidgets();
                 }));
     return top + 86;
+  }
+
+  private void previewChange() {
+    var request =
+        switch (page) {
+          case RACE ->
+              new ChangeNetwork.Request(
+                  changeSession, "race", race.id(), style(), "", false, List.of());
+          case CLASS ->
+              new ChangeNetwork.Request(
+                  changeSession,
+                  "class",
+                  characterClass.id(),
+                  0,
+                  starter(),
+                  refundBranch,
+                  List.of());
+          case PROFESSION ->
+              new ChangeNetwork.Request(
+                  changeSession,
+                  "profession",
+                  profession.id(),
+                  0,
+                  professionStarter(),
+                  false,
+                  List.of());
+          case SUMMARY -> throw new IllegalStateException("No change on the summary page");
+        };
+    ChangeClient.preview(this, request, true, changeDescription());
   }
 
   private int classControls(int right, int rightWidth) {
@@ -332,6 +428,7 @@ final class RaceScreen extends Screen {
 
   @Override
   public void tick() {
+    if (changeSession != 0) return;
     if (minecraft == null || minecraft.player == null) return;
     var confirmed = RaceClient.profile(minecraft.player.getUUID());
     if (!sheet && confirmed != null && confirmed.complete()) closeSheet();
@@ -341,7 +438,9 @@ final class RaceScreen extends Screen {
 
   @Override
   public void onClose() {
-    if (sheet) {
+    if (changeSession != 0) {
+      minecraft.setScreen(changeMenu);
+    } else if (sheet) {
       closeSheet();
     } else if (waiting == 0 && page != pages.getFirst()) {
       page = pages.get(pages.indexOf(page) - 1);
@@ -418,6 +517,6 @@ final class RaceScreen extends Screen {
 
   @Override
   public boolean isPauseScreen() {
-    return !sheet;
+    return !sheet && changeSession == 0;
   }
 }

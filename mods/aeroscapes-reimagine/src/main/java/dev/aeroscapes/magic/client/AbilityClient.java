@@ -102,6 +102,7 @@ public final class AbilityClient {
   }
 
   public static Component reason(AbilityNetwork.Entry entry) {
+    if (entry.reason().equals("race")) return reason("race");
     if (entry.id().equals(InnateAbility.NIGHT_VISION.id))
       return text(snapshot.dwarfNightVision() ? "sight_on" : "sight_off");
     if (entry.id().equals(InnateAbility.LIGHT.id) && Minecraft.getInstance().player != null) {

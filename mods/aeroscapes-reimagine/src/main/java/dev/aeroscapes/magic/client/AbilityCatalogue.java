@@ -32,6 +32,7 @@ public final class AbilityCatalogue {
 
   public static String assignmentReason(AbilityNetwork.Entry entry) {
     if (entry == null) return "waiting";
+    if (entry.reason().equals("race")) return "race";
     if (entry.reason().equals("disabled")) return "disabled";
     if (entry.granted()) return "";
     if (entry.level() < 1) return "unlearned";

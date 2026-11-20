@@ -1,5 +1,6 @@
 package dev.aeroscapes.magic;
 
+import dev.aeroscapes.progression.RefundPenalty;
 import dev.aeroscapes.races.RaceTraits;
 import harmonised.pmmo.api.APIUtils;
 import harmonised.pmmo.storage.Experience;
@@ -96,6 +97,7 @@ public final class MagicPractice {
     long current = state.getLong("credit");
     long maximum = MagicPracticeProgress.xpForPoints(MagicTalents.pointCap());
     long earned = RaceTraits.practiceAward(player, "magic", amount);
+    RefundPenalty.practice(player, "magic", earned);
     state.putLong("credit", current + Math.clamp(earned, 0, maximum - current));
     project(player, state);
   }

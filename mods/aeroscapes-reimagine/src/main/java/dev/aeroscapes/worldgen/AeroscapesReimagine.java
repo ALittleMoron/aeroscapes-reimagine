@@ -56,6 +56,7 @@ public final class AeroscapesReimagine {
       }
     }
     dev.aeroscapes.races.ProfessionTools.register(modBus);
+    dev.aeroscapes.races.ChangeItems.register(modBus);
     dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);
     if (ModList.get().isLoaded("animalhusbandry"))
       dev.aeroscapes.husbandry.TroughAutomation.register(modBus);

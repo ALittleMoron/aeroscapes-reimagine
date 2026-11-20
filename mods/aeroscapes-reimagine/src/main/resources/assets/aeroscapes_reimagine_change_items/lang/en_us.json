@@ -1,0 +1,8 @@
+{
+  "item.aeroscapes_reimagine.identity_seal": "Identity Seal",
+  "item.aeroscapes_reimagine.identity_seal.use": "Use to change your race, class or profession.",
+  "item.aeroscapes_reimagine.identity_seal.info": "Look in mineshaft chest minecarts, desert pyramid chests and shipwreck treasure chests. Each has a 4% chance to contain a seal. Confirm one change to spend the seal. You keep your practice levels and pay no talent point penalty.",
+  "item.aeroscapes_reimagine.knotted_thread": "Knotted Thread",
+  "item.aeroscapes_reimagine.knotted_thread.use": "Use to refund talents at a cost of 10% of the points returned.",
+  "item.aeroscapes_reimagine.knotted_thread.info": "Craft the thread from two strings, a diamond and an ender pearl. Review the affected talents and point cost before confirming. Confirming spends one thread. Combat and profession points stay in their own pools."
+}

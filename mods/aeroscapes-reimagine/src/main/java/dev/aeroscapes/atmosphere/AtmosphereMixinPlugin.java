@@ -364,7 +364,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     } else if (mixinClassName.endsWith("InitialRaceInputMixin")
         || mixinClassName.endsWith("InitialRaceSimulationMixin")) {
       versions = Map.of("neoorigins", "2.2.38", "pehkui", "3.9.2+1.21.1", "neoforge", "21.1.244");
-    } else if (mixinClassName.endsWith("SkillsScreenAccessor")) {
+    } else if (mixinClassName.endsWith("SkillsScreenAccessor")
+        || mixinClassName.endsWith("TalentCategoryAccess")) {
       versions = Map.of("puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("ProjectMmoAdminDataMixin")
         || mixinClassName.endsWith("MagicTalentGateMixin")) {

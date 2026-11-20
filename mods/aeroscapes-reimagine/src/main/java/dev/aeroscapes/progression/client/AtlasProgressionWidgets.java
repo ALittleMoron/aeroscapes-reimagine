@@ -2,10 +2,10 @@ package dev.aeroscapes.progression.client;
 
 import net.minecraft.client.gui.GuiGraphics;
 
-final class AtlasProgressionWidgets {
+public final class AtlasProgressionWidgets {
   private AtlasProgressionWidgets() {}
 
-  static void panel(GuiGraphics graphics, int x, int y, int width, int height) {
+  public static void panel(GuiGraphics graphics, int x, int y, int width, int height) {
     graphics.fill(x, y, x + width, y + height, 0xff111b29);
     graphics.fill(x + 1, y + 1, x + width - 1, y + height - 1, 0xff3d536d);
     graphics.fill(x + 3, y + 3, x + width - 3, y + height - 3, 0xff1b2b3d);

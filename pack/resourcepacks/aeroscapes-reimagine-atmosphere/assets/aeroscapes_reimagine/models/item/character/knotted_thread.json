@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/character/knotted_thread.obj",
+  "textures": {
+    "particle": "aeroscapes_reimagine:item/knotted_thread"
+  },
+  "automatic_culling": false,
+  "emissive_ambient": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -34,
+        15
+      ],
+      "translation": [
+        1.2,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        34,
+        -15
+      ],
+      "translation": [
+        1.2,
+        2.5,
+        0
+      ],
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        15,
+        0
+      ],
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        -15,
+        0
+      ],
+      "translation": [
+        0,
+        2,
+        0
+      ],
+      "scale": [
+        0.63,
+        0.63,
+        0.63
+      ]
+    }
+  }
+}

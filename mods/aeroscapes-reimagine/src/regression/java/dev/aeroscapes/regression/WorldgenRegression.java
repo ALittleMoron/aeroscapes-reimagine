@@ -198,6 +198,22 @@ public final class WorldgenRegression {
       return;
     }
     String magicMigration = System.getProperty("aeroscapes.regression.magicMigration");
+    if (Boolean.getBoolean("aeroscapes.regression.characterChanges")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    CharacterChangesRegression.verify(level);
+                    TalentRefundRegression.verify(level);
+                    ChangeTransactionRegression.verify(level);
+                    ChangeSuppliesRegression.run(level);
+                    LOGGER.info(
+                        "Character changes, redistribution and acquisition regression passed");
+                  }));
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.professions")) {
       event
           .getServer()

@@ -20,6 +20,7 @@ public final class RaceNetwork {
 
   public static void register(IEventBus modBus) {
     modBus.addListener(RaceNetwork::payloads);
+    modBus.addListener(ChangeNetwork::register);
     NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, RaceNetwork::login);
     NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, RaceNetwork::respawn);
     NeoForge.EVENT_BUS.addListener(RaceNetwork::dimension);
@@ -72,7 +73,7 @@ public final class RaceNetwork {
               race.id(), style, chosenClass.id(), starter, profession.id(), professionStarter));
   }
 
-  private static Snapshot snapshot(ServerPlayer player) {
+  static Snapshot snapshot(ServerPlayer player) {
     Race race = RaceIdentity.race(player);
     CharacterClass chosenClass = RaceIdentity.characterClass(player);
     Profession profession = RaceIdentity.profession(player);

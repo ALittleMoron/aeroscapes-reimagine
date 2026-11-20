@@ -5,6 +5,9 @@ import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.mixin.progression.SkillsScreenAccessor;
+import dev.aeroscapes.races.ChangeNetwork;
+import dev.aeroscapes.races.client.ChangeClient;
+import dev.aeroscapes.races.client.ChangeView;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -37,12 +40,16 @@ import net.puffish.skillsmod.client.network.packets.out.SkillClickOutPacket;
 
 /** Atlas navigation over the provider's authoritative categories, states and purchase packets. */
 @EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
-public final class TalentScreen extends Screen {
+public final class TalentScreen extends Screen implements ChangeView {
   private static final int TEXT = 0xffd6e0eb;
   private static final int MUTED = 0xff92a9c3;
   private static final int GOLD = 0xffe9c084;
   private static final int ROUTE = 0xff75dfda;
   private final ClientSkillScreenData data;
+  private final long changeSession;
+  private final Set<String> combatRefund = new HashSet<>();
+  private final Set<String> professionRefund = new HashSet<>();
+  private Button review;
   private final TreeViewport camera = new TreeViewport();
   private final ScrollViewport detailsScroll = new ScrollViewport();
   private final List<Button> tabs = new ArrayList<>();
@@ -64,15 +71,31 @@ public final class TalentScreen extends Screen {
   private double detailsGrab;
 
   public TalentScreen(ClientSkillScreenData data) {
-    super(text("talents_button"));
+    this(data, 0);
+  }
+
+  private TalentScreen(ClientSkillScreenData data, long session) {
+    super(session == 0 ? text("talents_button") : ChangeClient.text("refund"));
     this.data = data;
+    this.changeSession = session;
+  }
+
+  @Override
+  public long changeSession() {
+    return changeSession;
+  }
+
+  private Set<String> refundSelection() {
+    return page == Page.PROFESSION ? professionRefund : combatRefund;
   }
 
   @SubscribeEvent
   public static void replaceProviderScreen(ScreenEvent.Opening event) {
     if (event.getNewScreen() instanceof SkillsScreen nativeScreen) {
       event.setNewScreen(
-          new TalentScreen(((SkillsScreenAccessor) nativeScreen).aeroscapes$screenData()));
+          new TalentScreen(
+              ((SkillsScreenAccessor) nativeScreen).aeroscapes$screenData(),
+              ChangeClient.pendingTree()));
     }
   }
 
@@ -123,9 +146,32 @@ public final class TalentScreen extends Screen {
             .build());
     learn =
         addRenderableWidget(
-            Button.builder(text("learn"), button -> purchase())
+            Button.builder(
+                    text("learn"),
+                    button -> {
+                      if (changeSession == 0) purchase();
+                      else if (selected != null && !refundSelection().remove(selected))
+                        refundSelection().add(selected);
+                    })
                 .bounds(inspectorX() + 8, height - 57, 140, 20)
                 .build());
+    if (changeSession != 0) {
+      review =
+          addRenderableWidget(
+              Button.builder(
+                      ChangeClient.text("preview"),
+                      button -> {
+                        var nodes = refundSelection().stream().sorted().toList();
+                        ChangeClient.preview(
+                            this,
+                            new ChangeNetwork.Request(
+                                changeSession, page.category, "", 0, "", false, nodes),
+                            false,
+                            ChangeClient.text("calculating"));
+                      })
+                  .bounds(inspectorX() + 8, height - 30, 140, 18)
+                  .build());
+    }
     fittedCategory = null;
     detailsScroll.reset();
   }
@@ -280,7 +326,10 @@ public final class TalentScreen extends Screen {
     }
     updatePath(category);
     if (category != null) {
-      var points = text("points", category.getPointsLeft());
+      var points =
+          category.getPointsLeft() < 0
+              ? ChangeClient.text("reserved")
+              : text("points", category.getPointsLeft());
       graphics.drawString(font, points, width - 45 - font.width(points), 19, GOLD, false);
       graphics.drawString(
           font,
@@ -308,7 +357,12 @@ public final class TalentScreen extends Screen {
     }
     graphics.disableScissor();
     drawDetails(graphics, category);
-    graphics.drawString(font, text("navigation"), 20, height - 24, MUTED, false);
+    if (changeSession == 0)
+      graphics.drawString(font, text("navigation"), 20, height - 24, MUTED, false);
+    else {
+      review.active = !refundSelection().isEmpty();
+      review.setMessage(ChangeClient.text("preview_count", refundSelection().size()));
+    }
   }
 
   @Override
@@ -388,9 +442,10 @@ public final class TalentScreen extends Screen {
     int radius = TreeViewport.NODE_RADIUS;
     Skill.State state = state(category, node);
     boolean onPath = path != null && path.unpaid().contains(node.id());
-    if (node.id().equals(selected) || searchMatches.contains(node.id()) || onPath) {
+    boolean marked = changeSession != 0 && refundSelection().contains(node.id());
+    if (node.id().equals(selected) || searchMatches.contains(node.id()) || onPath || marked) {
       int outer = TreeViewport.NODE_OUTER_RADIUS;
-      int color = onPath && !node.id().equals(selected) ? ROUTE : GOLD;
+      int color = marked ? 0xffed9d7a : onPath && !node.id().equals(selected) ? ROUTE : GOLD;
       graphics.fill(x - outer, y - outer, x + outer, y + outer, color);
       graphics.fill(x - outer + 1, y - outer + 1, x + outer - 1, y + outer - 1, 0xff111b29);
     }
@@ -509,6 +564,8 @@ public final class TalentScreen extends Screen {
 
   private void drawDetails(GuiGraphics graphics, ClientCategoryData category) {
     learn.active = false;
+    if (changeSession != 0)
+      learn.setMessage(ChangeClient.text(refundSelection().contains(selected) ? "unmark" : "mark"));
     if (category == null) {
       graphics.drawWordWrap(font, text("waiting"), inspectorX() + 9, 105, 138, TEXT);
       return;
@@ -544,7 +601,9 @@ public final class TalentScreen extends Screen {
                     graphics, text("excludes", otherDefinition.title()), x, y + 6, 0xffd49a83);
           }
         }
-        learn.active = state(category, node) == Skill.State.AFFORDABLE;
+        learn.active =
+            state(category, node)
+                == (changeSession == 0 ? Skill.State.AFFORDABLE : Skill.State.UNLOCKED);
       }
     }
     graphics.disableScissor();
@@ -660,7 +719,16 @@ public final class TalentScreen extends Screen {
 
   @Override
   public void onClose() {
-    InventoryNavigation.openInventory();
+    if (changeSession == 0) InventoryNavigation.openInventory();
+    else {
+      ChangeClient.cancel(changeSession);
+      minecraft.setScreen(null);
+    }
+  }
+
+  @Override
+  public boolean isPauseScreen() {
+    return changeSession == 0 && super.isPauseScreen();
   }
 
   @Override

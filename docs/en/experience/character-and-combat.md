@@ -127,6 +127,22 @@ Choose a profession independently of your race and class. It gives 20% more prac
 
 Your starter kit is issued once. If your inventory is full, make room to receive the remaining items. A machine working unattended earns no personal bonuses.
 
+### Changing your character
+
+An **Identity Seal** can appear in abandoned mineshaft chest minecarts, desert pyramid chests and shipwreck treasure chests. Each eligible container has a 4% chance to hold one. Use the seal in your hand, choose one change and review it before confirming. Cancelling keeps the seal.
+
+- **Race.** Choose a different race and preview its appearance on your skin. Stand somewhere with room for the new body.
+- **Class.** Pick the new class and starter. Keep your learned talents or refund the old class branch in full. For a mage this branch includes the magic tree. If keeping your investment leaves no free point for the new starter, the starter works immediately and uses the next combat point you earn.
+- **Profession.** Pick the new profession and starter. Talents belonging to the old profession return their points to the profession pool. Common gathering talents and other professions’ talents stay learned.
+
+You keep your practice XP, personal spell ranks, eight preparation slots and current cooldowns. Assigned abilities whose requirements you lose become unavailable. Starter kits and the mage journal are issued only at creation.
+
+### Redistributing talent points
+
+Craft **Knotted Thread** from two pieces of string, a diamond and an ender pearl in any arrangement. Use it, open the combat, magic or profession page and mark learned talents. Review the list before spending the thread. It includes any additional talents that would lose their prerequisites. Your current starting abilities stay learned.
+
+Combat and magic share one pool. Professions have their own. Returning 20 points to one pool frees 18 for spending. Smaller returns carry tenths between uses in the same pool, so ten separate one-point returns cost one point in total. Each 3,000 new practice XP in that pool restores one lost point, even after reaching the normal point cap.
+
 ### Planned subclasses
 
 Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, with the same prerequisites and point costs regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
@@ -134,8 +150,6 @@ Subclasses are planned later, before `1.0.0`. The first roster is defender and b
 Future subclasses share the combat budget with magic and classes.
 
 Martial techniques are planned for the same eight preparation slots. Saved sets that players can edit and switch between remain under consideration.
-
-Talent redistribution is planned before `1.0.0`. It will free up the points in the affected branches and preserve earned skill progress and other allocations. Ordinary redistribution will carry a penalty. A rare item found in exploration chests will allow changes to race, main class or starting profession.
 
 ## Combat and camera
 

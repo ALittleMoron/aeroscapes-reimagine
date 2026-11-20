@@ -2,6 +2,7 @@ package dev.aeroscapes.mixin.progression;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import dev.aeroscapes.progression.RefundPenalty;
 import dev.aeroscapes.races.RaceTraits;
 import harmonised.pmmo.api.events.XpEvent;
 import harmonised.pmmo.storage.PmmoSavedData;
@@ -21,6 +22,7 @@ abstract class ProjectMmoRacePracticeMixin {
     boolean cancelled = original.call(event);
     if (!cancelled && event.getEntity() instanceof ServerPlayer player) {
       event.amountAwarded = RaceTraits.practiceAward(player, event.skill, event.amountAwarded);
+      RefundPenalty.practice(player, event.skill, event.amountAwarded);
     }
     return cancelled;
   }

@@ -19,6 +19,7 @@ import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket;
 import net.minecraft.network.protocol.common.ClientboundKeepAlivePacket;
 import net.minecraft.network.protocol.common.ServerboundKeepAlivePacket;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.protocol.game.ClientboundBundlePacket;
 import net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket;
 import net.minecraft.network.protocol.game.ServerboundAcceptTeleportationPacket;
@@ -116,6 +117,13 @@ final class TestShipPlayerSession implements AutoCloseable {
     return java.util.Objects.requireNonNull(connection.abilities, "Missing ability snapshot");
   }
 
+  <T extends CustomPacketPayload> T takePayload(Class<T> type) {
+    var payload = connection.lastPayload;
+    connection.lastPayload = null;
+    require(type.isInstance(payload), "Missing outgoing " + type.getSimpleName());
+    return type.cast(payload);
+  }
+
   boolean receivedShipParts(TestShipNetwork.Check check) {
     return connection.completedParts.containsAll(check.members());
   }
@@ -177,6 +185,7 @@ final class TestShipPlayerSession implements AutoCloseable {
   }
 
   private static final class RecordingConnection extends Connection {
+    @Nullable private CustomPacketPayload lastPayload;
     @Nullable private AbilityNetwork.Snapshot abilities;
     private final Map<
             String, net.puffish.skillsmod.server.network.packets.out.PointsUpdateOutPacket>
@@ -197,6 +206,7 @@ final class TestShipPlayerSession implements AutoCloseable {
 
     @Override
     public void send(Packet<?> packet, @Nullable PacketSendListener listener, boolean flush) {
+      if (packet instanceof ClientboundCustomPayloadPacket message) lastPayload = message.payload();
       if (packet instanceof ClientboundPlayerPositionPacket position) teleport = position;
       if (packet instanceof ClientboundKeepAlivePacket challenge) keepAlive = challenge.getId();
       if (packet instanceof ClientboundCustomPayloadPacket message
