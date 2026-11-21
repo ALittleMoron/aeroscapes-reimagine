@@ -1375,7 +1375,9 @@
             <sha256 value="e7d86ac8d46c875d09c3075eaf0180054c3a3becef5c24d343512ac3c18e5539" origin="Verified against pinned pack artifact"/>
          </artifact>
          <artifact name="pehkui-rebuilt-pQdozoO0.pom">
-            <sha256 value="f6d0dae19e3806d388c4ac9ea5bfba7a81e492f5b2be9385f858883d64d62b3c" origin="Verified Modrinth Maven descriptor"/>
+            <sha256 value="f6d0dae19e3806d388c4ac9ea5bfba7a81e492f5b2be9385f858883d64d62b3c" origin="Verified Modrinth Maven descriptors before and after the description added NeoForge">
+               <also-trust value="0e12db86352008832f743e385e1114b86aee6d6634ada5c435a9d801280d15a9"/>
+            </sha256>
          </artifact>
       </component>
       <component group="maven.modrinth" name="project-mmo" version="9lu4zNd1">
