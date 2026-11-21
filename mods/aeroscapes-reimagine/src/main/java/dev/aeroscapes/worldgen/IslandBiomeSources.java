@@ -37,6 +37,8 @@ public final class IslandBiomeSources {
     context.aeroscapesReimagine$terrainMask(mask);
     context.aeroscapesReimagine$voidBiome(previous.aeroscapesReimagine$voidBiome());
     context.aeroscapesReimagine$deferTerrainMask(previous.aeroscapesReimagine$deferTerrainMask());
+    context.aeroscapesReimagine$skipSurfaceFootprints(
+        previous.aeroscapesReimagine$skipSurfaceFootprints());
     context.aeroscapesReimagine$generationSource(source.forGeneration());
     return sampler;
   }

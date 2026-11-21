@@ -5,6 +5,7 @@ import com.agricraft.agricraft.common.block.CropBlock;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.aeroscapes.progression.PracticeActions;
 import dev.aeroscapes.races.ProfessionEffects;
 import java.util.ArrayList;
 import java.util.function.Consumer;
@@ -28,11 +29,13 @@ abstract class ProfessionAgriCropMixin {
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private boolean aeroscapes$handHarvest(
       AgriCrop crop, Consumer<ItemStack> drop, LivingEntity actor, Operation<Boolean> original) {
-    if (!crop.isFullyGrown() || !ProfessionEffects.extraHarvest(actor))
-      return original.call(crop, drop, actor);
+    if (!crop.isFullyGrown()) return original.call(crop, drop, actor);
     var produced = new ArrayList<ItemStack>();
     boolean harvested = original.call(crop, (Consumer<ItemStack>) produced::add, actor);
-    if (harvested && !produced.isEmpty()) produced.getFirst().grow(1);
+    if (harvested && !produced.isEmpty()) {
+      PracticeActions.harvest(actor);
+      if (ProfessionEffects.extraHarvest(actor)) produced.getFirst().grow(1);
+    }
     produced.forEach(drop);
     return harvested;
   }

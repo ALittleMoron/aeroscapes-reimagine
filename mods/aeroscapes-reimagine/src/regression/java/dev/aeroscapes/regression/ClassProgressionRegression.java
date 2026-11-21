@@ -32,6 +32,8 @@ import net.puffish.skillsmod.SkillsMod;
 final class ClassProgressionRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final String ROOT = "magic_mastery_1";
 
   private ClassProgressionRegression() {}
@@ -58,7 +60,7 @@ final class ClassProgressionRegression {
         var skills = SkillsMod.getInstance();
         var withheld = ResourceLocation.parse("aeroscapes_reimagine:grant_fixture");
         // Simulate a provider refusing an otherwise valid starter until its point source recovers.
-        skills.setPoints(player, COMBAT, withheld, -2, true);
+        skills.setPoints(player, MAGIC, withheld, -2, true);
         require(
             !RaceIdentity.choose(
                 player,
@@ -79,7 +81,7 @@ final class ClassProgressionRegression {
                 && !SpellKnowledge.hasFocus(player)
                 && player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0,
             "No talent or journal before the provider accepts");
-        skills.setPoints(player, COMBAT, withheld, 0, true);
+        skills.setPoints(player, MAGIC, withheld, 0, true);
         require(
             !RaceIdentity.choose(
                 player,
@@ -106,8 +108,9 @@ final class ClassProgressionRegression {
             !RaceIdentity.awaitingChoice(player)
                 && SpellKnowledge.unlocked(player).contains(ROOT)
                 && SpellKnowledge.hasFocus(player)
-                && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1,
-            "Recovered choice grants the paid root, focus and free ordinary point");
+                && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
+                && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0,
+            "Recovered choice grants the paid magic root, focus and free repertoire point");
         require(
             !RaceIdentity.choose(
                 player,
@@ -121,7 +124,8 @@ final class ClassProgressionRegression {
         NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
         require(
             player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0
-                && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1,
+                && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
+                && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0,
             "Recovered class remains single-grant on subsequent login");
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
@@ -149,13 +153,19 @@ final class ClassProgressionRegression {
             "Class selection for " + race + " " + characterClass);
         String node = mage ? ROOT : starter;
         var provider = SkillsMod.getInstance();
-        require(SpellKnowledge.unlocked(player).contains(node), "Native starter node " + node);
         require(
-            provider.getPointsLeft(player, COMBAT).orElseThrow() == 1,
-            "Starting combat point remains free");
+            provider.getUnlockedSkills(player, mage ? MAGIC : COMBAT).orElseThrow().contains(node),
+            "Native starter node " + node);
+        require(
+            provider.getPointsLeft(player, COMBAT).orElseThrow() == 0
+                && provider.getPointsLeft(player, MAGIC).orElseThrow() == 1
+                && provider.getPointsTotal(player, COMBAT).orElseThrow() == (mage ? 0 : 1)
+                && provider.getPointsTotal(player, MAGIC).orElseThrow() == (mage ? 2 : 1),
+            "Class starter spends its own pool and the repertoire point remains free");
         ClassProgression.afterChoice(player);
         require(
-            provider.getPointsLeft(player, COMBAT).orElseThrow() == 1,
+            provider.getPointsLeft(player, COMBAT).orElseThrow() == 0
+                && provider.getPointsLeft(player, MAGIC).orElseThrow() == 1,
             "Retry does not duplicate credit");
         if (mage) verifyMage(player, race);
         verifyPractice(player, race, characterClass);
@@ -166,9 +176,9 @@ final class ClassProgressionRegression {
   }
 
   private static void prepareExistingMage(ServerPlayer player, Race race) {
-    SkillsMod.getInstance().tryUnlockSkill(player, COMBAT, ROOT, false);
+    SkillsMod.getInstance().tryUnlockSkill(player, MAGIC, ROOT, false);
     require(
-        SkillsMod.getInstance().getPointsLeft(player, COMBAT).orElseThrow() == 0,
+        SkillsMod.getInstance().getPointsLeft(player, MAGIC).orElseThrow() == 0,
         "Previously purchased root");
     Utils.setPlayerSpellbookStack(player, new ItemStack(ItemRegistry.WIMPY_SPELL_BOOK.get()));
     PreparedAbilities.edit(player, 5, SpellRegistry.FIREBOLT_SPELL.get().getSpellId());

@@ -47,6 +47,8 @@ public final class MagicMigrationRegression {
   private static final String PRACTICE = "aeroscapes_reimagine_magic_practice";
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse("aeroscapes_reimagine:combat");
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final ResourceLocation PROFESSION =
       ResourceLocation.parse("aeroscapes_reimagine:profession");
   private static final ResourceLocation SOURCE =
@@ -284,7 +286,7 @@ public final class MagicMigrationRegression {
                 .orElseThrow()
                 .contains("material_repair")
             && SkillsMod.getInstance()
-                .getUnlockedSkills(player, COMBAT)
+                .getUnlockedSkills(player, magicCategory())
                 .orElseThrow()
                 .contains("magic_destruction_mastery_3"),
         "Keep class and profession investment, kit and practice");
@@ -295,7 +297,7 @@ public final class MagicMigrationRegression {
     require(MagicPractice.credit(player) == 700, "Race selection changed existing practice");
     require(
         SkillsMod.getInstance()
-            .getUnlockedSkills(player, COMBAT)
+            .getUnlockedSkills(player, magicCategory())
             .orElseThrow()
             .contains("magic_mastery_1"),
         "Race selection changed the existing mastery");
@@ -431,7 +433,7 @@ public final class MagicMigrationRegression {
         Utils.getPlayerSpellbookStack(player).is(ItemRegistry.WIMPY_SPELL_BOOK.get())
             && player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0
             && skills
-                .getUnlockedSkills(player, COMBAT)
+                .getUnlockedSkills(player, magicCategory())
                 .orElseThrow()
                 .containsAll(
                     List.of(
@@ -467,15 +469,34 @@ public final class MagicMigrationRegression {
         SpellKnowledge.rank(player, firebolt, skills) == 3
             && SpellKnowledge.knowledgeReason(player, firebolt, skills).isEmpty(),
         "The prepared rank stays usable with the grandfathered mastery path");
-    require(
-        Set.copyOf(provider.getUnlockedSkills(player, COMBAT).orElseThrow())
-            .equals(Set.copyOf(LAYOUT_PURCHASES)),
-        "Exactly the previous purchases survive the new prerequisite paths");
-    require(
-        provider.getPoints(player, COMBAT, SOURCE).orElseThrow() == 19
-            && provider.getSpentPoints(player, COMBAT).orElseThrow() == LAYOUT_PURCHASES.size()
-            && provider.getPointsLeft(player, COMBAT).orElseThrow() == 19 - LAYOUT_PURCHASES.size(),
-        "Moving owned talents preserves earned, spent and available combat points");
+    if (provider.hasCategory(MAGIC)) {
+      Set<String> magicPurchases =
+          Set.copyOf(LAYOUT_PURCHASES.stream().filter(id -> id.startsWith("magic_")).toList());
+      require(
+          Set.copyOf(provider.getUnlockedSkills(player, MAGIC).orElseThrow()).equals(magicPurchases)
+              && Set.copyOf(provider.getUnlockedSkills(player, COMBAT).orElseThrow())
+                  .equals(Set.of("melee_strike")),
+          "The split retains exactly the previous purchases in their own pools");
+      require(
+          provider.getPoints(player, MAGIC, SOURCE).orElseThrow() == 17
+              && provider.getSpentPoints(player, MAGIC).orElseThrow() == magicPurchases.size()
+              && provider.getPointsLeft(player, MAGIC).orElseThrow() == 17 - magicPurchases.size()
+              && provider.getPoints(player, COMBAT, SOURCE).orElseThrow() == 2
+              && provider.getSpentPoints(player, COMBAT).orElseThrow() == 1
+              && provider.getPointsLeft(player, COMBAT).orElseThrow() == 1,
+          "Moving owned talents puts the same earned and spent points into their own pools");
+    } else {
+      require(
+          Set.copyOf(provider.getUnlockedSkills(player, COMBAT).orElseThrow())
+              .equals(Set.copyOf(LAYOUT_PURCHASES)),
+          "Exactly the previous purchases survive the new prerequisite paths");
+      require(
+          provider.getPoints(player, COMBAT, SOURCE).orElseThrow() == 19
+              && provider.getSpentPoints(player, COMBAT).orElseThrow() == LAYOUT_PURCHASES.size()
+              && provider.getPointsLeft(player, COMBAT).orElseThrow()
+                  == 19 - LAYOUT_PURCHASES.size(),
+          "Moving owned talents preserves earned, spent and available combat points");
+    }
   }
 
   private static void verifyLegacy(ServerPlayer player) {
@@ -508,9 +529,17 @@ public final class MagicMigrationRegression {
     require(
         practice.getBoolean("initialized") && practice.getLong("credit") == 8401,
         "The migration preserves readiness 20 as equivalent credit on the new curve");
-    require(
-        provider.getPoints(player, COMBAT, SOURCE).orElseThrow() == 19,
-        "The new source contains seventeen magic rewards and two physical points");
+    ResourceLocation magicCategory = magicCategory();
+    if (magicCategory.equals(MAGIC)) {
+      require(
+          provider.getPoints(player, MAGIC, SOURCE).orElseThrow() == 17
+              && provider.getPoints(player, COMBAT, SOURCE).orElseThrow() == 2,
+          "The split funds magic and combat from the original practice levels");
+    } else {
+      require(
+          provider.getPoints(player, COMBAT, SOURCE).orElseThrow() == 19,
+          "The shared source contains seventeen magic rewards and two physical points");
+    }
     require(
         provider.getPoints(player, COMBAT, BANK).orElseThrow() == 10,
         "Migration preserves the separate legitimate combat point source");
@@ -518,16 +547,20 @@ public final class MagicMigrationRegression {
       require(
           provider.getSpentPoints(player, COMBAT).orElseThrow() == 1,
           "Retired allocations refund through their removed spent cost");
-      provider.tryUnlockSkill(player, COMBAT, "magic_mastery_1", false);
+      provider.tryUnlockSkill(player, magicCategory, "magic_mastery_1", false);
     }
     require(
-        provider.getUnlockedSkills(player, COMBAT).orElseThrow().contains("magic_mastery_1"),
+        provider.getUnlockedSkills(player, magicCategory).orElseThrow().contains("magic_mastery_1"),
         "The new root is purchasable and survives the next process restart");
     ProgressionBridge.sync(player);
     require(
-        provider.getUnlockedSkills(player, COMBAT).orElseThrow().contains("magic_mastery_1")
+        provider.getUnlockedSkills(player, magicCategory).orElseThrow().contains("magic_mastery_1")
             && player.getPersistentData().getCompound(PRACTICE).getLong("credit") == 8401,
         "Migration and reward reconciliation do not run twice");
+  }
+
+  private static ResourceLocation magicCategory() {
+    return SkillsMod.getInstance().hasCategory(MAGIC) ? MAGIC : COMBAT;
   }
 
   private static void verifyUnrelatedProgress(

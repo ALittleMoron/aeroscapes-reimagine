@@ -298,7 +298,7 @@ public final class PreparedAbilities {
             java.util.List.copyOf(skills),
             MagicPracticeProgress.level(practice),
             practice,
-            ProgressionBridge.nextCombatPointXp(player, practice)));
+            ProgressionBridge.nextMagicPointXp(player, practice)));
   }
 
   private static void reconcileCasting(ServerPlayer player) {

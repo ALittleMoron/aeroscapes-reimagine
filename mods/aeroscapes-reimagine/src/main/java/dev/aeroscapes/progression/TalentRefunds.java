@@ -28,7 +28,7 @@ public final class TalentRefunds {
   public static Optional<Quote> preview(
       ServerPlayer player, String pool, Collection<String> selected) {
     if (selected.isEmpty()
-        || !(pool.equals("combat") || pool.equals("profession"))
+        || !Set.of("combat", "magic", "profession").contains(pool)
         || !ProgressionBridge.categoriesAvailable()
         || RaceIdentity.awaitingChoice(player)) return Optional.empty();
     var id = ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", pool);
@@ -44,12 +44,13 @@ public final class TalentRefunds {
     removed.removeAll(reachable(category.get(), retained));
     // An unrelated orphan in an older save is only refundable when explicitly selected.
     removed.addAll(selected);
+    boolean mage = RaceIdentity.characterClass(player) == CharacterClass.MAGE;
     String protectedNode =
-        pool.equals("profession")
-            ? RaceIdentity.professionStarter(player)
-            : (RaceIdentity.characterClass(player) == CharacterClass.MAGE
-                ? "magic_mastery_1"
-                : RaceIdentity.starter(player));
+        switch (pool) {
+          case "profession" -> RaceIdentity.professionStarter(player);
+          case "magic" -> mage ? "magic_mastery_1" : "";
+          default -> mage ? "" : RaceIdentity.starter(player);
+        };
     if (removed.contains(protectedNode)) return Optional.empty();
 
     int spent = 0;

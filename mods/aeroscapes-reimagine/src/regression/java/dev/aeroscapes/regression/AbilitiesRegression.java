@@ -8,6 +8,7 @@ import dev.aeroscapes.magic.Preparation;
 import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.magic.travel.TravelMagic;
+import dev.aeroscapes.progression.ProgressionBridge;
 import io.redspace.ironsspellbooks.IronsSpellbooks;
 import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
@@ -62,8 +63,8 @@ import net.puffish.skillsmod.api.Skill;
 
 /** Real server players exercise native skills, Curios, inscription and cast completion. */
 public final class AbilitiesRegression {
-  private static final ResourceLocation COMBAT =
-      ResourceLocation.parse("aeroscapes_reimagine:combat");
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final String ABILITIES = "aeroscapes_reimagine_abilities";
   private static final String PORTAL_EXPIRES = "aeroscapes_reimagine:portal_expires_at";
 
@@ -180,13 +181,12 @@ public final class AbilitiesRegression {
     Set<String> schools = new HashSet<>();
     for (AbstractSpell spell : spells) {
       String node = node(spell);
-      require(provider.hasSkill(COMBAT, node), "Registered spell lacks native talent: " + node);
+      require(provider.hasSkill(MAGIC, node), "Registered spell lacks native talent: " + node);
       require(
           expected.add(spell.getSpellId()), "Registered spell collision: " + spell.getSpellId());
       schools.add(spell.getSchoolType().getId().getPath());
     }
-    Set<String> actual = new HashSet<>(provider.getSkills(COMBAT).orElseThrow());
-    actual.removeIf(id -> !id.startsWith("magic_"));
+    Set<String> actual = new HashSet<>(provider.getSkills(MAGIC).orElseThrow());
     require(
         actual.equals(MagicTalents.nodes()), "Native talents cover the complete functional tree");
     require(schools.size() == 9, "The native registry has nine schools: " + schools);
@@ -204,16 +204,16 @@ public final class AbilitiesRegression {
     var provider = SkillsMod.getInstance();
     provider.addPoints(
         player,
-        COMBAT,
+        MAGIC,
         ResourceLocation.parse("aeroscapes_reimagine:abilities_fixture"),
         1000,
         false);
-    provider.tryUnlockSkill(player, COMBAT, "magic_destruction_mastery_2", false);
+    provider.tryUnlockSkill(player, MAGIC, "magic_destruction_mastery_2", false);
     require(
-        provider.getSkillState(player, COMBAT, "magic_destruction_mastery_2").orElseThrow()
+        provider.getSkillState(player, MAGIC, "magic_destruction_mastery_2").orElseThrow()
             != Skill.State.UNLOCKED,
         "A forged purchase cannot skip relevant practice and the introductory path");
-    provider.tryUnlockSkill(player, COMBAT, node(firebolt), false);
+    provider.tryUnlockSkill(player, MAGIC, node(firebolt), false);
     require(
         rank(player, firebolt) == 1,
         "The common introductory talent grants immediate rank-one Firebolt");
@@ -1231,9 +1231,9 @@ public final class AbilitiesRegression {
   }
 
   static void unlock(ServerPlayer player, String node) {
-    SkillsMod.getInstance().unlockSkill(player, COMBAT, node);
+    SkillsMod.getInstance().unlockSkill(player, MAGIC, node);
     require(
-        SkillsMod.getInstance().getSkillState(player, COMBAT, node).orElseThrow()
+        SkillsMod.getInstance().getSkillState(player, MAGIC, node).orElseThrow()
             == Skill.State.UNLOCKED,
         "Native talent unlock was applied: " + node);
   }

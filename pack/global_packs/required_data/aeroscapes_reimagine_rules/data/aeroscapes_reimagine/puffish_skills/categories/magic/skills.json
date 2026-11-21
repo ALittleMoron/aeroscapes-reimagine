@@ -1,0 +1,658 @@
+{
+  "magic_mastery_1": {
+    "x": 0,
+    "y": 0,
+    "definition": "magic_mastery_1",
+    "root": true
+  },
+  "magic_reserve_1": {
+    "x": -4,
+    "y": -466,
+    "definition": "magic_reserve_1"
+  },
+  "magic_reserve_2": {
+    "x": -17,
+    "y": 144,
+    "definition": "magic_reserve_2"
+  },
+  "magic_reserve_3": {
+    "x": 494,
+    "y": -54,
+    "definition": "magic_reserve_3"
+  },
+  "magic_recovery_1": {
+    "x": -64,
+    "y": 0,
+    "definition": "magic_recovery_1"
+  },
+  "magic_recovery_2": {
+    "x": -88,
+    "y": 625,
+    "definition": "magic_recovery_2"
+  },
+  "magic_recovery_3": {
+    "x": 46,
+    "y": -701,
+    "definition": "magic_recovery_3"
+  },
+  "magic_rhythm_1": {
+    "x": 0,
+    "y": 64,
+    "definition": "magic_rhythm_1"
+  },
+  "magic_rhythm_2": {
+    "x": -260,
+    "y": -14,
+    "definition": "magic_rhythm_2"
+  },
+  "magic_rhythm_3": {
+    "x": 814,
+    "y": 42,
+    "definition": "magic_rhythm_3"
+  },
+  "magic_fluency_1": {
+    "x": 139,
+    "y": -9,
+    "definition": "magic_fluency_1"
+  },
+  "magic_fluency_2": {
+    "x": -676,
+    "y": -2,
+    "definition": "magic_fluency_2"
+  },
+  "magic_fluency_3": {
+    "x": 42,
+    "y": -912,
+    "definition": "magic_fluency_3"
+  },
+  "magic_destruction_power": {
+    "x": 0,
+    "y": -64,
+    "definition": "magic_destruction_power"
+  },
+  "magic_destruction_mastery_2": {
+    "x": 24,
+    "y": -269,
+    "definition": "magic_destruction_mastery_2"
+  },
+  "magic_destruction_mana": {
+    "x": -13,
+    "y": -366,
+    "definition": "magic_destruction_mana"
+  },
+  "magic_destruction_mastery_3": {
+    "x": -39,
+    "y": -554,
+    "definition": "magic_destruction_mastery_3"
+  },
+  "magic_destruction_cooldown": {
+    "x": -37,
+    "y": -685,
+    "definition": "magic_destruction_cooldown"
+  },
+  "magic_destruction_mastery_4": {
+    "x": 39,
+    "y": -821,
+    "definition": "magic_destruction_mastery_4"
+  },
+  "magic_destruction_cast_speed": {
+    "x": -28,
+    "y": -1019,
+    "definition": "magic_destruction_cast_speed"
+  },
+  "magic_destruction_mastery_5": {
+    "x": -29,
+    "y": -1116,
+    "definition": "magic_destruction_mastery_5"
+  },
+  "magic_restoration_power": {
+    "x": 64,
+    "y": 0,
+    "definition": "magic_restoration_power"
+  },
+  "magic_restoration_mastery_2": {
+    "x": 208,
+    "y": 4,
+    "definition": "magic_restoration_mastery_2"
+  },
+  "magic_restoration_mana": {
+    "x": 337,
+    "y": 14,
+    "definition": "magic_restoration_mana"
+  },
+  "magic_restoration_mastery_3": {
+    "x": 426,
+    "y": -49,
+    "definition": "magic_restoration_mastery_3"
+  },
+  "magic_restoration_cooldown": {
+    "x": 660,
+    "y": -12,
+    "definition": "magic_restoration_cooldown"
+  },
+  "magic_restoration_mastery_4": {
+    "x": 734,
+    "y": -18,
+    "definition": "magic_restoration_mastery_4"
+  },
+  "magic_restoration_cast_speed": {
+    "x": 880,
+    "y": 39,
+    "definition": "magic_restoration_cast_speed"
+  },
+  "magic_restoration_mastery_5": {
+    "x": 949,
+    "y": 37,
+    "definition": "magic_restoration_mastery_5"
+  },
+  "magic_conjuration_power": {
+    "x": -506,
+    "y": -2,
+    "definition": "magic_conjuration_power"
+  },
+  "magic_conjuration_mastery_2": {
+    "x": -193,
+    "y": -8,
+    "definition": "magic_conjuration_mastery_2"
+  },
+  "magic_conjuration_mana": {
+    "x": -339,
+    "y": 1,
+    "definition": "magic_conjuration_mana"
+  },
+  "magic_conjuration_mastery_3": {
+    "x": -418,
+    "y": -55,
+    "definition": "magic_conjuration_mastery_3"
+  },
+  "magic_conjuration_cooldown": {
+    "x": -519,
+    "y": -80,
+    "definition": "magic_conjuration_cooldown"
+  },
+  "magic_conjuration_mastery_4": {
+    "x": -744,
+    "y": -14,
+    "definition": "magic_conjuration_mastery_4"
+  },
+  "magic_conjuration_cast_speed": {
+    "x": -850,
+    "y": 67,
+    "definition": "magic_conjuration_cast_speed"
+  },
+  "magic_conjuration_mastery_5": {
+    "x": -936,
+    "y": 45,
+    "definition": "magic_conjuration_mastery_5"
+  },
+  "magic_transformation_power": {
+    "x": 42,
+    "y": 352,
+    "definition": "magic_transformation_power"
+  },
+  "magic_transformation_mastery_2": {
+    "x": 18,
+    "y": 224,
+    "definition": "magic_transformation_mastery_2"
+  },
+  "magic_transformation_mana": {
+    "x": -23,
+    "y": 303,
+    "definition": "magic_transformation_mana"
+  },
+  "magic_transformation_mastery_3": {
+    "x": -31,
+    "y": 496,
+    "definition": "magic_transformation_mastery_3"
+  },
+  "magic_transformation_cooldown": {
+    "x": -26,
+    "y": 556,
+    "definition": "magic_transformation_cooldown"
+  },
+  "magic_transformation_mastery_4": {
+    "x": -88,
+    "y": 689,
+    "definition": "magic_transformation_mastery_4"
+  },
+  "magic_transformation_cast_speed": {
+    "x": -94,
+    "y": 760,
+    "definition": "magic_transformation_cast_speed"
+  },
+  "magic_transformation_mastery_5": {
+    "x": -40,
+    "y": 919,
+    "definition": "magic_transformation_mastery_5"
+  },
+  "magic_spell_magic_arrow": {
+    "x": -96,
+    "y": -109,
+    "definition": "magic_spell_magic_arrow"
+  },
+  "magic_spell_snowball": {
+    "x": 54,
+    "y": -127,
+    "definition": "magic_spell_snowball"
+  },
+  "magic_spell_poison_arrow": {
+    "x": -54,
+    "y": -127,
+    "definition": "magic_spell_poison_arrow"
+  },
+  "magic_spell_lob_creeper": {
+    "x": -152,
+    "y": -332,
+    "definition": "magic_spell_lob_creeper"
+  },
+  "magic_spell_fireball": {
+    "x": -179,
+    "y": -182,
+    "definition": "magic_spell_fireball"
+  },
+  "magic_spell_heat_surge": {
+    "x": -157,
+    "y": -282,
+    "definition": "magic_spell_heat_surge"
+  },
+  "magic_spell_scorch": {
+    "x": -168,
+    "y": -232,
+    "definition": "magic_spell_scorch"
+  },
+  "magic_spell_guiding_bolt": {
+    "x": 205,
+    "y": -306,
+    "definition": "magic_spell_guiding_bolt"
+  },
+  "magic_spell_frostwave": {
+    "x": 227,
+    "y": -206,
+    "definition": "magic_spell_frostwave"
+  },
+  "magic_spell_shockwave": {
+    "x": 216,
+    "y": -256,
+    "definition": "magic_spell_shockwave"
+  },
+  "magic_spell_poison_splash": {
+    "x": 200,
+    "y": -356,
+    "definition": "magic_spell_poison_splash"
+  },
+  "magic_spell_acupuncture": {
+    "x": 111,
+    "y": -518,
+    "definition": "magic_spell_acupuncture"
+  },
+  "magic_spell_echoing_strikes": {
+    "x": -196,
+    "y": -640,
+    "definition": "magic_spell_echoing_strikes"
+  },
+  "magic_spell_shadow_slash": {
+    "x": 123,
+    "y": -468,
+    "definition": "magic_spell_shadow_slash"
+  },
+  "magic_spell_arrow_volley": {
+    "x": 105,
+    "y": -568,
+    "definition": "magic_spell_arrow_volley"
+  },
+  "magic_spell_fang_swirl": {
+    "x": -183,
+    "y": -540,
+    "definition": "magic_spell_fang_swirl"
+  },
+  "magic_spell_magma_bomb": {
+    "x": -201,
+    "y": -440,
+    "definition": "magic_spell_magma_bomb"
+  },
+  "magic_spell_wall_of_fire": {
+    "x": -189,
+    "y": -490,
+    "definition": "magic_spell_wall_of_fire"
+  },
+  "magic_spell_ice_block": {
+    "x": -186,
+    "y": -590,
+    "definition": "magic_spell_ice_block"
+  },
+  "magic_spell_chain_lightning": {
+    "x": 118,
+    "y": -668,
+    "definition": "magic_spell_chain_lightning"
+  },
+  "magic_spell_lightning_bolt": {
+    "x": 108,
+    "y": -618,
+    "definition": "magic_spell_lightning_bolt"
+  },
+  "magic_spell_devour": {
+    "x": 210,
+    "y": -787,
+    "definition": "magic_spell_devour"
+  },
+  "magic_spell_ray_of_siphoning": {
+    "x": 213,
+    "y": -737,
+    "definition": "magic_spell_ray_of_siphoning"
+  },
+  "magic_spell_starfall": {
+    "x": 215,
+    "y": -837,
+    "definition": "magic_spell_starfall"
+  },
+  "magic_spell_chain_creeper": {
+    "x": -160,
+    "y": -905,
+    "definition": "magic_spell_chain_creeper"
+  },
+  "magic_spell_blaze_storm": {
+    "x": -132,
+    "y": -755,
+    "definition": "magic_spell_blaze_storm"
+  },
+  "magic_spell_flaming_barrage": {
+    "x": -137,
+    "y": -805,
+    "definition": "magic_spell_flaming_barrage"
+  },
+  "magic_spell_sunbeam": {
+    "x": 227,
+    "y": -887,
+    "definition": "magic_spell_sunbeam"
+  },
+  "magic_spell_blizzard": {
+    "x": -135,
+    "y": -705,
+    "definition": "magic_spell_blizzard"
+  },
+  "magic_spell_volt_strike": {
+    "x": 238,
+    "y": -937,
+    "definition": "magic_spell_volt_strike"
+  },
+  "magic_spell_earthquake": {
+    "x": -149,
+    "y": -855,
+    "definition": "magic_spell_earthquake"
+  },
+  "magic_spell_black_hole": {
+    "x": -208,
+    "y": -1098,
+    "definition": "magic_spell_black_hole"
+  },
+  "magic_spell_raise_hell": {
+    "x": -196,
+    "y": -1048,
+    "definition": "magic_spell_raise_hell"
+  },
+  "magic_spell_thunderstorm": {
+    "x": 159,
+    "y": -1184,
+    "definition": "magic_spell_thunderstorm"
+  },
+  "magic_spell_sculk_tentacles": {
+    "x": -217,
+    "y": -1148,
+    "definition": "magic_spell_sculk_tentacles"
+  },
+  "magic_spell_sonic_boom": {
+    "x": 138,
+    "y": -1084,
+    "definition": "magic_spell_sonic_boom"
+  },
+  "magic_spell_eldritch_blast": {
+    "x": 150,
+    "y": -1134,
+    "definition": "magic_spell_eldritch_blast"
+  },
+  "magic_spell_cleanse": {
+    "x": 220,
+    "y": 122,
+    "definition": "magic_spell_cleanse"
+  },
+  "magic_spell_evasion": {
+    "x": 196,
+    "y": -114,
+    "definition": "magic_spell_evasion"
+  },
+  "magic_spell_haste": {
+    "x": 440,
+    "y": 45,
+    "definition": "magic_spell_haste"
+  },
+  "magic_spell_charge": {
+    "x": 412,
+    "y": -143,
+    "definition": "magic_spell_charge"
+  },
+  "magic_spell_heartstop": {
+    "x": 740,
+    "y": -133,
+    "definition": "magic_spell_heartstop"
+  },
+  "magic_spell_ice_tomb": {
+    "x": 750,
+    "y": 95,
+    "definition": "magic_spell_ice_tomb"
+  },
+  "magic_spell_gluttony": {
+    "x": 696,
+    "y": -130,
+    "definition": "magic_spell_gluttony"
+  },
+  "magic_spell_greater_heal": {
+    "x": 967,
+    "y": 149,
+    "definition": "magic_spell_greater_heal"
+  },
+  "magic_spell_abyssal_shroud": {
+    "x": 931,
+    "y": -75,
+    "definition": "magic_spell_abyssal_shroud"
+  },
+  "magic_spell_spider_aspect": {
+    "x": -127,
+    "y": 54,
+    "definition": "magic_spell_spider_aspect"
+  },
+  "magic_spell_raise_dead": {
+    "x": -159,
+    "y": 112,
+    "definition": "magic_spell_raise_dead"
+  },
+  "magic_spell_summon_swords": {
+    "x": -203,
+    "y": 108,
+    "definition": "magic_spell_summon_swords"
+  },
+  "magic_spell_arcane_shackle": {
+    "x": -205,
+    "y": -126,
+    "definition": "magic_spell_arcane_shackle"
+  },
+  "magic_spell_summon_vex": {
+    "x": -382,
+    "y": 40,
+    "definition": "magic_spell_summon_vex"
+  },
+  "magic_spell_firefly_swarm": {
+    "x": -426,
+    "y": 39,
+    "definition": "magic_spell_firefly_swarm"
+  },
+  "magic_spell_scapegoat": {
+    "x": -432,
+    "y": -149,
+    "definition": "magic_spell_scapegoat"
+  },
+  "magic_spell_sacrifice": {
+    "x": -750,
+    "y": 101,
+    "definition": "magic_spell_sacrifice"
+  },
+  "magic_spell_gravity_fissure": {
+    "x": -738,
+    "y": -126,
+    "definition": "magic_spell_gravity_fissure"
+  },
+  "magic_spell_summon_polar_bear": {
+    "x": -706,
+    "y": 98,
+    "definition": "magic_spell_summon_polar_bear"
+  },
+  "magic_spell_frostbite": {
+    "x": -782,
+    "y": -129,
+    "definition": "magic_spell_frostbite"
+  },
+  "magic_spell_telekinesis": {
+    "x": -918,
+    "y": 157,
+    "definition": "magic_spell_telekinesis"
+  },
+  "magic_spell_summon_ender_chest": {
+    "x": 54,
+    "y": 127,
+    "definition": "magic_spell_summon_ender_chest"
+  },
+  "magic_spell_blood_step": {
+    "x": 127,
+    "y": 190,
+    "definition": "magic_spell_blood_step"
+  },
+  "magic_spell_spectral_hammer": {
+    "x": -89,
+    "y": 236,
+    "definition": "magic_spell_spectral_hammer"
+  },
+  "magic_spell_frost_step": {
+    "x": 123,
+    "y": 234,
+    "definition": "magic_spell_frost_step"
+  },
+  "magic_spell_invisibility": {
+    "x": 83,
+    "y": 504,
+    "definition": "magic_spell_invisibility"
+  },
+  "magic_spell_recall": {
+    "x": 84,
+    "y": 460,
+    "definition": "magic_spell_recall"
+  },
+  "magic_spell_touch_dig": {
+    "x": -145,
+    "y": 510,
+    "definition": "magic_spell_touch_dig"
+  },
+  "magic_spell_angel_wing": {
+    "x": 8,
+    "y": 673,
+    "definition": "magic_spell_angel_wing"
+  },
+  "magic_spell_ascension": {
+    "x": -184,
+    "y": 705,
+    "definition": "magic_spell_ascension"
+  },
+  "magic_spell_portal": {
+    "x": 77,
+    "y": 879,
+    "definition": "magic_spell_portal"
+  },
+  "magic_spell_planar_sight": {
+    "x": 82,
+    "y": 923,
+    "definition": "magic_spell_planar_sight"
+  },
+  "magic_spell_pocket_dimension": {
+    "x": -160,
+    "y": 937,
+    "definition": "magic_spell_pocket_dimension"
+  },
+  "magic_destruction_blast_geometry": {
+    "x": -235,
+    "y": -182,
+    "definition": "magic_destruction_blast_geometry"
+  },
+  "magic_destruction_winter_front": {
+    "x": -191,
+    "y": -705,
+    "definition": "magic_destruction_winter_front"
+  },
+  "magic_destruction_brittle_targets": {
+    "x": 283,
+    "y": -206,
+    "definition": "magic_destruction_brittle_targets"
+  },
+  "magic_destruction_venom_opening": {
+    "x": 256,
+    "y": -356,
+    "definition": "magic_destruction_venom_opening"
+  },
+  "magic_restoration_gentle_power": {
+    "x": 304,
+    "y": -53,
+    "definition": "magic_restoration_gentle_power"
+  },
+  "magic_restoration_careful_aid": {
+    "x": 583,
+    "y": 10,
+    "definition": "magic_restoration_careful_aid"
+  },
+  "magic_restoration_lasting_readiness": {
+    "x": 842,
+    "y": -56,
+    "definition": "magic_restoration_lasting_readiness"
+  },
+  "magic_restoration_swift_response": {
+    "x": 577,
+    "y": -72,
+    "definition": "magic_restoration_swift_response"
+  },
+  "magic_conjuration_commanding_presence": {
+    "x": -350,
+    "y": -77,
+    "definition": "magic_conjuration_commanding_presence"
+  },
+  "magic_conjuration_efficient_command": {
+    "x": -597,
+    "y": -44,
+    "definition": "magic_conjuration_efficient_command"
+  },
+  "magic_conjuration_renewed_command": {
+    "x": -859,
+    "y": -44,
+    "definition": "magic_conjuration_renewed_command"
+  },
+  "magic_transformation_light_passage": {
+    "x": -50,
+    "y": 412,
+    "definition": "magic_transformation_light_passage"
+  },
+  "magic_transformation_familiar_routes": {
+    "x": -90,
+    "y": 845,
+    "definition": "magic_transformation_familiar_routes"
+  },
+  "magic_transformation_quick_changes": {
+    "x": -19,
+    "y": 804,
+    "definition": "magic_transformation_quick_changes"
+  },
+  "magic_restoration_guardian_aid": {
+    "x": 801,
+    "y": -11,
+    "definition": "magic_restoration_guardian_aid"
+  },
+  "magic_conjuration_binding_pact": {
+    "x": -832,
+    "y": -6,
+    "definition": "magic_conjuration_binding_pact"
+  }
+}

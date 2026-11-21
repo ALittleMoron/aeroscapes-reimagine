@@ -1,6 +1,7 @@
 package dev.aeroscapes.mixin.progression;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.aeroscapes.progression.PracticeActions;
 import dev.aeroscapes.races.ProfessionEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
@@ -25,8 +26,8 @@ abstract class ProfessionPickedCropMixin {
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private int aeroscapes$ripePick(
       int amount, @Local(argsOnly = true) BlockState crop, @Local(argsOnly = true) Player player) {
-    return ProfessionEffects.mature(crop) && ProfessionEffects.extraHarvest(player)
-        ? amount + 1
-        : amount;
+    if (!ProfessionEffects.mature(crop)) return amount;
+    PracticeActions.harvest(player);
+    return ProfessionEffects.extraHarvest(player) ? amount + 1 : amount;
   }
 }

@@ -1,6 +1,8 @@
 package dev.aeroscapes.worldgen;
 
 import java.util.concurrent.atomic.AtomicReferenceArray;
+import javax.annotation.Nullable;
+import net.minecraft.core.BlockPos;
 
 /** A small terrain buffer on the generator's sampling lattice, without loading chunks. */
 public final class BiomeTerrainMask {
@@ -16,11 +18,13 @@ public final class BiomeTerrainMask {
   }
 
   private static final int[] OFFSETS = {0, -1, 1, -2, 2};
+  private static final int NO_SURFACE = Integer.MIN_VALUE;
   private final TerrainNode terrain;
   private final int minY;
   private final int maxY;
   private final int cellWidth;
   private final int cellHeight;
+  private final SmallIslandFootprints footprints;
   private final AtomicReferenceArray<Node> nodes = new AtomicReferenceArray<>(16384);
 
   public BiomeTerrainMask(TerrainNode terrain, int minY, int maxY, int cellWidth, int cellHeight) {
@@ -29,6 +33,7 @@ public final class BiomeTerrainMask {
     this.maxY = maxY;
     this.cellWidth = cellWidth;
     this.cellHeight = cellHeight;
+    this.footprints = new SmallIslandFootprints(this::occupied, cellWidth, cellHeight);
   }
 
   public boolean nearTerrain(int x, int y, int z) {
@@ -43,6 +48,42 @@ public final class BiomeTerrainMask {
       }
     }
     return false;
+  }
+
+  @Nullable
+  BlockPos smallIslandSurface(int x, int y, int z) {
+    int gridX = Math.floorDiv(x, cellWidth);
+    int gridY = Math.floorDiv(y, cellHeight);
+    int gridZ = Math.floorDiv(z, cellWidth);
+    int surface = surfaceNode(gridX, gridY, gridZ);
+    if (surface != NO_SURFACE) {
+      return occupied(gridX, surface + 1, gridZ) ? null : footprints.anchor(gridX, surface, gridZ);
+    }
+    // Terrain interpolation and biome zoom can both place the visible edge between occupied nodes.
+    for (int radius = 1; radius <= 2; radius++) {
+      BlockPos anchor = null;
+      for (int offsetX = -radius; offsetX <= radius; offsetX++) {
+        for (int offsetZ = -radius; offsetZ <= radius; offsetZ++) {
+          if (Math.max(Math.abs(offsetX), Math.abs(offsetZ)) != radius) continue;
+          int neighborX = gridX + offsetX;
+          int neighborZ = gridZ + offsetZ;
+          int neighborSurface = surfaceNode(neighborX, gridY, neighborZ);
+          if (neighborSurface == NO_SURFACE) continue;
+          if (occupied(neighborX, neighborSurface + 1, neighborZ)) return null;
+          BlockPos next = footprints.anchor(neighborX, neighborSurface, neighborZ);
+          if (next == null || (anchor != null && !anchor.equals(next))) return null;
+          anchor = next;
+        }
+      }
+      if (anchor != null) return anchor;
+    }
+    return null;
+  }
+
+  private int surfaceNode(int gridX, int gridY, int gridZ) {
+    int surface = gridY + 1;
+    while (surface >= gridY - 1 && !occupied(gridX, surface, gridZ)) surface--;
+    return surface >= gridY - 1 ? surface : NO_SURFACE;
   }
 
   private boolean occupied(int gridX, int gridY, int gridZ) {

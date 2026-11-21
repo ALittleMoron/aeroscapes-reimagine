@@ -18,6 +18,7 @@ import net.puffish.skillsmod.SkillsMod;
 /** Persistent magic credit projects truthful readiness/fraction into PMMO's global XP scale. */
 public final class MagicPractice {
   private static final String DATA = "aeroscapes_reimagine_magic_practice";
+  private static final int LEGACY_SHARED_POINT_CAP = 142;
 
   private MagicPractice() {}
 
@@ -74,7 +75,8 @@ public final class MagicPractice {
         Math.clamp(
             state.getLong("credit"),
             0,
-            MagicPracticeProgress.xpForPoints(MagicTalents.pointCap())));
+            MagicPracticeProgress.xpForPoints(
+                Math.max(LEGACY_SHARED_POINT_CAP, MagicTalents.pointCap()))));
     project(player, state);
   }
 
@@ -98,7 +100,7 @@ public final class MagicPractice {
     long maximum = MagicPracticeProgress.xpForPoints(MagicTalents.pointCap());
     long earned = RaceTraits.practiceAward(player, "magic", amount);
     RefundPenalty.practice(player, "magic", earned);
-    state.putLong("credit", current + Math.clamp(earned, 0, maximum - current));
+    state.putLong("credit", current + Math.clamp(earned, 0, Math.max(0, maximum - current)));
     project(player, state);
   }
 
@@ -127,7 +129,8 @@ public final class MagicPractice {
     CompoundTag ranks = SpellKnowledge.data(player).getCompound("ranks");
     for (Tag value : previous) {
       String id = value.getAsString();
-      if (!id.startsWith("magic_")) retained.add(StringTag.valueOf(id));
+      if (!id.startsWith("magic_") || MagicTalents.nodes().contains(id))
+        retained.add(StringTag.valueOf(id));
       else {
         removed.add(id);
         if (id.startsWith("magic_spell_")) {

@@ -1,0 +1,52 @@
+{
+  "title": {
+    "translate": "puffish_skills.aeroscapes_reimagine.magic.title"
+  },
+  "description": {
+    "translate": "puffish_skills.aeroscapes_reimagine.magic.description"
+  },
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:enchanted_book"
+    }
+  },
+  "background": {
+    "texture": "aeroscapes_reimagine:textures/gui/skills/combat.png",
+    "width": 16,
+    "height": 16,
+    "position": "tile"
+  },
+  "unlocked_by_default": true,
+  "starting_points": 0,
+  "exclusive_root": false,
+  "spent_points_limit": 131,
+  "colors": {
+    "connections": {
+      "locked": {
+        "fill": "#3d536d",
+        "stroke": "#111b29"
+      },
+      "available": {
+        "fill": "#92a9c3",
+        "stroke": "#111b29"
+      },
+      "affordable": {
+        "fill": "#e9c084",
+        "stroke": "#111b29"
+      },
+      "unlocked": {
+        "fill": "#e3ae61",
+        "stroke": "#111b29"
+      },
+      "excluded": {
+        "fill": "#8a4b3c",
+        "stroke": "#111b29"
+      }
+    },
+    "points": {
+      "fill": "#e9c084",
+      "stroke": "#111b29"
+    }
+  }
+}

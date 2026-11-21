@@ -13,6 +13,8 @@ import top.theillusivec4.curios.api.CuriosApi;
 public final class ClassProgression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
 
   private ClassProgression() {}
 
@@ -22,7 +24,7 @@ public final class ClassProgression {
         && characterClass.starters().contains(starter)
         && ProgressionBridge.categoriesAvailable()
         && SkillsMod.getInstance()
-            .getSkillState(player, COMBAT, node(characterClass, starter))
+            .getSkillState(player, category(characterClass), node(characterClass, starter))
             .isPresent();
   }
 
@@ -30,8 +32,14 @@ public final class ClassProgression {
     return characterClass == CharacterClass.MAGE ? "magic_mastery_1" : starter;
   }
 
-  static boolean learned(ServerPlayer player, String node) {
-    return SkillsMod.getInstance().getSkillState(player, COMBAT, node).orElse(Skill.State.LOCKED)
+  static ResourceLocation category(CharacterClass characterClass) {
+    return characterClass == CharacterClass.MAGE ? MAGIC : COMBAT;
+  }
+
+  static boolean learned(ServerPlayer player, CharacterClass characterClass, String node) {
+    return SkillsMod.getInstance()
+            .getSkillState(player, category(characterClass), node)
+            .orElse(Skill.State.LOCKED)
         == Skill.State.UNLOCKED;
   }
 
@@ -46,10 +54,11 @@ public final class ClassProgression {
     String starter = RaceIdentity.starter(player);
     if (characterClass == null || !available(player, characterClass, starter)) return false;
     String node = node(characterClass, starter);
+    var category = category(characterClass);
     var skills = SkillsMod.getInstance();
-    if (skills.getSkillState(player, COMBAT, node).orElse(null) != Skill.State.UNLOCKED) {
-      skills.tryUnlockSkill(player, COMBAT, node, false);
-      if (skills.getSkillState(player, COMBAT, node).orElse(null) != Skill.State.UNLOCKED)
+    if (skills.getSkillState(player, category, node).orElse(null) != Skill.State.UNLOCKED) {
+      skills.tryUnlockSkill(player, category, node, false);
+      if (skills.getSkillState(player, category, node).orElse(null) != Skill.State.UNLOCKED)
         return false;
     }
     if (characterClass == CharacterClass.MAGE

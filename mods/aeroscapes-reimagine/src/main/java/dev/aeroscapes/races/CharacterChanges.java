@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Nullable;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,8 +15,6 @@ import net.minecraft.world.phys.AABB;
 import net.puffish.skillsmod.SkillsMod;
 
 public final class CharacterChanges {
-  private static final ResourceLocation COMBAT =
-      ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
   private static final ResourceLocation PROFESSION =
       ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
   static final String STARTER_PERSONALLY_LEARNED = "class_starter_personally_learned";
@@ -95,7 +94,9 @@ public final class CharacterChanges {
         || selection.style() != 0
         || !ClassProgression.available(player, target, selection.starter())) return INVALID;
     var skills = SkillsMod.getInstance();
-    var unlocked = skills.getUnlockedSkills(player, COMBAT).orElse(List.of());
+    var oldCategory = ClassProgression.category(current);
+    var nextCategory = ClassProgression.category(target);
+    var unlocked = skills.getUnlockedSkills(player, oldCategory).orElse(List.of());
     var oldStarter = ClassProgression.node(current, RaceIdentity.starter(player));
     Collection<String> remove;
     if (selection.refundBranch()) {
@@ -111,8 +112,27 @@ public final class CharacterChanges {
                       .anyMatch(id -> !id.equals(oldStarter) && MagicTalents.nodes().contains(id)));
       remove = keep ? List.of() : List.of(oldStarter);
     }
-    return talentChange(
-        player, COMBAT, unlocked, remove, ClassProgression.node(target, selection.starter()));
+    String nextStarter = ClassProgression.node(target, selection.starter());
+    var removed = unlocked.stream().filter(remove::contains).sorted().toList();
+    int cost = ClassProgression.learned(player, target, nextStarter) ? 0 : 1;
+    int available = skills.getPointsLeft(player, nextCategory).orElse(0);
+    // Moving the class-funded point frees credit in the destination, up to its normal cap.
+    if (!oldCategory.equals(nextCategory)) {
+      int cap =
+          target == CharacterClass.MAGE
+              ? MagicTalents.pointCap()
+              : ProgressionBridge.COMBAT_POINT_CAP;
+      try {
+        if (ProgressionBridge.storedPoints(player, nextCategory.toString()) < cap) available++;
+      } catch (com.mojang.brigadier.exceptions.CommandSyntaxException exception) {
+        return INVALID;
+      }
+    } else {
+      available += removed.size();
+    }
+    int balance = available - cost;
+    if (balance < -1 && cost != 0) return NEED_POINT;
+    return new Assessment(new Preview(removed, removed.size(), cost, balance < 0 && cost != 0), "");
   }
 
   private static Assessment assessProfession(
@@ -141,8 +161,8 @@ public final class CharacterChanges {
     long balance = (long) available + removed.size() - cost;
     // The new class starter can use the next point when the old one must continue supporting
     // purchased talents. No points are minted. Native purchases wait until the balance recovers.
-    if (balance < (category.equals(COMBAT) ? -1 : 0)) return NEED_POINT;
-    return new Assessment(new Preview(removed, removed.size(), cost, balance < 0 && cost > 0), "");
+    if (balance < 0) return NEED_POINT;
+    return new Assessment(new Preview(removed, removed.size(), cost, false), "");
   }
 
   public static boolean change(ServerPlayer player, Selection selection, Preview expected) {
@@ -151,12 +171,13 @@ public final class CharacterChanges {
     if (selection.kind().equals("race"))
       return RaceIdentity.chooseRace(player, Race.byId(selection.target()), selection.style());
     boolean changeClass = selection.kind().equals("class");
-    var category = changeClass ? COMBAT : PROFESSION;
+    var target = changeClass ? CharacterClass.byId(selection.target()) : null;
+    var oldCategory =
+        changeClass ? ClassProgression.category(RaceIdentity.characterClass(player)) : PROFESSION;
+    var nextCategory = changeClass ? ClassProgression.category(target) : PROFESSION;
     String nextStarter =
-        changeClass
-            ? ClassProgression.node(CharacterClass.byId(selection.target()), selection.starter())
-            : selection.starter();
-    if (!applyTalents(player, category, nextStarter, checked)) return false;
+        changeClass ? ClassProgression.node(target, selection.starter()) : selection.starter();
+    if (!applyTalents(player, oldCategory, nextCategory, nextStarter, checked)) return false;
     var identity = RaceIdentity.data(player);
     if (changeClass) {
       identity.putString("class", selection.target());
@@ -164,6 +185,7 @@ public final class CharacterChanges {
       identity.putBoolean(STARTER_PERSONALLY_LEARNED, checked.spent() == 0);
       // Future login restores the selected node, but only creation gives a journal.
       identity.putBoolean("journal_given", true);
+      ProgressionBridge.sync(player);
       ClassTraits.refresh(player);
     } else {
       identity.putString("profession", selection.target());
@@ -173,27 +195,38 @@ public final class CharacterChanges {
   }
 
   private static boolean applyTalents(
-      ServerPlayer player, ResourceLocation category, String nextStarter, Preview checked) {
+      ServerPlayer player,
+      ResourceLocation oldCategory,
+      ResourceLocation nextCategory,
+      String nextStarter,
+      Preview checked) {
     var provider = SkillsMod.getInstance();
-    var before = Set.copyOf(provider.getUnlockedSkills(player, category).orElseThrow());
-    var expected = new HashSet<>(before);
-    expected.removeAll(checked.removed());
-    expected.add(nextStarter);
+    var expectedOld = new HashSet<>(provider.getUnlockedSkills(player, oldCategory).orElseThrow());
+    expectedOld.removeAll(checked.removed());
+    var expectedNext =
+        oldCategory.equals(nextCategory)
+            ? expectedOld
+            : new HashSet<>(provider.getUnlockedSkills(player, nextCategory).orElseThrow());
+    expectedNext.add(nextStarter);
+    var snapshot = new CompoundTag();
+    provider.exportPlayerData(player, snapshot);
     boolean complete = false;
     try {
-      for (String id : checked.removed()) provider.lockSkill(player, category, id);
+      for (String id : checked.removed()) provider.lockSkill(player, oldCategory, id);
       if (checked.spent() != 0)
-        provider.tryUnlockSkill(player, category, nextStarter, checked.advance());
+        provider.tryUnlockSkill(
+            player,
+            nextCategory,
+            nextStarter,
+            checked.advance() || !oldCategory.equals(nextCategory));
       complete =
-          expected.equals(Set.copyOf(provider.getUnlockedSkills(player, category).orElseThrow()));
+          expectedOld.equals(
+                  Set.copyOf(provider.getUnlockedSkills(player, oldCategory).orElseThrow()))
+              && expectedNext.equals(
+                  Set.copyOf(provider.getUnlockedSkills(player, nextCategory).orElseThrow()));
       return complete;
     } finally {
-      if (!complete) {
-        var after = Set.copyOf(provider.getUnlockedSkills(player, category).orElseThrow());
-        for (String id : after) if (!before.contains(id)) provider.lockSkill(player, category, id);
-        for (String id : before)
-          if (!after.contains(id)) provider.unlockSkill(player, category, id);
-      }
+      if (!complete) provider.importPlayerData(player, snapshot);
     }
   }
 }

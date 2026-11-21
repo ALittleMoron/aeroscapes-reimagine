@@ -2,6 +2,7 @@ package dev.aeroscapes.regression;
 
 import com.mojang.logging.LogUtils;
 import dev.aeroscapes.magic.InnateAbility;
+import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.RacialAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
@@ -36,6 +37,8 @@ import net.puffish.skillsmod.SkillsMod;
 final class CharacterChangesRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final ResourceLocation PROFESSION =
       ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
 
@@ -88,6 +91,7 @@ final class CharacterChangesRegression {
       ProgressionRegression.listPlayer(level, player, true);
       try {
         NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
+        APIUtils.setLevel("combat", player, 5);
         ProgressionBridge.sync(player);
         skills.tryUnlockSkill(player, COMBAT, "quick_block", false);
         require(
@@ -102,12 +106,13 @@ final class CharacterChangesRegression {
             "Choose a personally learned starter");
         skills.tryUnlockSkill(player, COMBAT, "shield_march", false);
         change(player, mage);
-        skills.tryUnlockSkill(player, COMBAT, "magic_recovery_1", false);
+        skills.tryUnlockSkill(player, COMBAT, "melee_strike", false);
         require(
             skills.getPointsLeft(player, COMBAT).orElseThrow() == -1
-                && !SpellKnowledge.unlocked(player).contains("magic_recovery_1")
+                && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
+                && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("melee_strike")
                 && !SpellKnowledge.hasFocus(player),
-            "Borrowed mastery grants its starter repertoire without a free descendant or journal");
+            "The transferred starter funds mastery while combat debt blocks melee purchases");
         skills.exportPlayerData(player, talents);
         NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedOutEvent(player));
         playerSave = player.saveWithoutId(new CompoundTag());
@@ -124,15 +129,32 @@ final class CharacterChangesRegression {
         NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
         require(
             skills.getPointsLeft(player, COMBAT).orElseThrow() == -1
-                && SpellKnowledge.unlocked(player)
-                    .equals(Set.of("quick_block", "shield_march", "magic_mastery_1"))
+                && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
+                && SpellKnowledge.unlocked(player).equals(Set.of("magic_mastery_1"))
+                && Set.copyOf(skills.getUnlockedSkills(player, COMBAT).orElseThrow())
+                    .equals(Set.of("quick_block", "shield_march"))
                 && !SpellKnowledge.hasFocus(player),
-            "Reload both identity and negative balance");
+            "Reload both identity and the independent balances");
+        var rogue = new CharacterChanges.Selection("class", "rogue", 0, "quick_recovery", false);
+        var advance = CharacterChanges.preview(player, rogue);
+        require(
+            advance != null && advance.advance() && advance.spent() == 1,
+            "An occupied combat pool can advance its next point for the new starter");
+        change(player, rogue);
+        skills.tryUnlockSkill(player, COMBAT, "melee_strike", false);
+        require(
+            skills.getPointsLeft(player, COMBAT).orElseThrow() == -1
+                && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("melee_strike")
+                && !SpellKnowledge.unlocked(player).contains("magic_mastery_1"),
+            "The advance preserves paid combat talents and releases the borrowed mastery");
         change(player, new CharacterChanges.Selection("class", "warrior", 0, "quick_block", false));
         require(
             skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-                && SpellKnowledge.unlocked(player).equals(Set.of("quick_block", "shield_march")),
-            "Returning the borrowed mastery cannot mint or retain a free point");
+                && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
+                && SpellKnowledge.unlocked(player).isEmpty()
+                && Set.copyOf(skills.getUnlockedSkills(player, COMBAT).orElseThrow())
+                    .equals(Set.of("quick_block", "shield_march")),
+            "Returning to the previously learned starter releases the combat advance");
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
       }
@@ -155,48 +177,61 @@ final class CharacterChangesRegression {
         .put("ranks", ranks.copy());
     magic.getPlayerCooldowns().addCooldown(spell, 400);
     Utils.setPlayerSpellbookStack(player, ItemStack.EMPTY);
-    skills.tryUnlockSkill(player, COMBAT, "magic_recovery_1", false);
+    skills.tryUnlockSkill(player, MAGIC, "magic_recovery_1", false);
     var warrior = new CharacterChanges.Selection("class", "warrior", 0, "quick_block", false);
     var known = SpellKnowledge.unlocked(player);
     var advance = CharacterChanges.preview(player, warrior);
-    require(advance != null && advance.advance(), "Starter uses the next point when none are free");
+    require(
+        advance != null && !advance.advance() && advance.spent() == 1,
+        "Moving the class starter funds the first combat node");
     change(player, warrior);
     skills.tryUnlockSkill(player, COMBAT, "melee_strike", false);
     require(
-        skills.getPointsLeft(player, COMBAT).orElseThrow() == -1
-            && !SpellKnowledge.unlocked(player).contains("melee_strike"),
-        "An advanced starter cannot unlock additional purchases");
+        skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == -1
+            && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("melee_strike"),
+        "Leaving Mage keeps paid magic nodes and moves the granted credit to combat");
     var rogue = new CharacterChanges.Selection("class", "rogue", 0, "quick_recovery", false);
     change(player, rogue);
     require(
-        skills.getPointsLeft(player, COMBAT).orElseThrow() == -1
-            && !SpellKnowledge.unlocked(player).contains("quick_block"),
-        "A second class cannot accumulate another advance");
+        skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == -1
+            && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("quick_block"),
+        "Switching between combat classes only replaces the granted combat node");
     var mage = new CharacterChanges.Selection("class", "mage", 0, "first_mastery", false);
     change(player, mage);
     require(
         SpellKnowledge.unlocked(player).equals(known)
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0,
-        "Returning to the original class releases the borrowed point");
+            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 0,
+        "Returning to Mage restores its class-funded point");
     change(player, warrior);
     NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
-    require(skills.getPointsLeft(player, COMBAT).orElseThrow() == -1, "The advance survives login");
+    require(skills.getPointsLeft(player, MAGIC).orElseThrow() == -1, "Magic debt survives login");
     APIUtils.setLevel("combat", player, 5);
     ProgressionBridge.sync(player);
     require(
         known.contains("magic_recovery_1")
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0,
-        "Next earned point settles the active starter");
+            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == -1,
+        "Combat practice cannot pay off retained magic");
+    MagicPractice.award(player, 100);
+    ProgressionBridge.sync(player);
+    require(
+        skills.getPointsLeft(player, MAGIC).orElseThrow() == 0
+            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1,
+        "New magic practice settles only its own debt");
     require(
         SpellKnowledge.unlocked(player).containsAll(known)
             && RaceIdentity.profession(player) == Profession.BLACKSMITH
             && RaceIdentity.style(player) == 1,
         "Default change preserves learned magic, profession and appearance");
-    change(player, mage);
     skills.tryUnlockSkill(player, COMBAT, "melee_strike", false);
+    change(player, mage);
     require(
-        skills.getPointsLeft(player, COMBAT).orElseThrow() == 0,
-        "Voluntary refund is available with no free points");
+        skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1,
+        "Purchased melee survives the change and available points stay with their own pool");
     var refund = new CharacterChanges.Selection("class", "warrior", 0, "quick_block", true);
     var quote = CharacterChanges.preview(player, refund);
     require(
@@ -210,8 +245,11 @@ final class CharacterChangesRegression {
             && !CharacterChanges.change(player, refund, quote),
         "One confirmed change");
     require(
-        SpellKnowledge.unlocked(player).equals(Set.of("quick_block", "melee_strike"))
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1
+        SpellKnowledge.unlocked(player).isEmpty()
+            && Set.copyOf(skills.getUnlockedSkills(player, COMBAT).orElseThrow())
+                .equals(Set.of("quick_block", "melee_strike"))
+            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 2
             && PreparedAbilities.preparation(player).equals(prepared)
             && player
                 .getPersistentData()
@@ -228,7 +266,8 @@ final class CharacterChangesRegression {
         !SpellKnowledge.hasFocus(player)
             && player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0
             && APIUtils.getLevel("combat", player) == 5
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1,
+            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 2,
         "Cycling classes and reconnecting do not reissue points, XP or starter book");
   }
 

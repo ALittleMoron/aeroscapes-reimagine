@@ -26,7 +26,7 @@ import net.puffish.skillsmod.SkillsMod;
 public final class SpellKnowledge {
   static final String DATA = "aeroscapes_reimagine_abilities";
   private static final ResourceLocation COMBAT =
-      ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final ThreadLocal<Boolean> SCROLL_LEVEL = new ThreadLocal<>();
 
   private SpellKnowledge() {}
@@ -158,6 +158,6 @@ public final class SpellKnowledge {
   public static Component requiredMasteryMessage(String mastery) {
     return Component.translatable(
         "aeroscapes_reimagine.magic_tree.mastery_required",
-        Component.translatable("puffish_skills.aeroscapes_reimagine.combat." + mastery + ".title"));
+        Component.translatable("puffish_skills.aeroscapes_reimagine.magic." + mastery + ".title"));
   }
 }

@@ -193,14 +193,14 @@ public final class MagicTalentsTest {
     Path category =
         Path.of(
             "../../pack/global_packs/required_data/aeroscapes_reimagine_rules/data/"
-                + "aeroscapes_reimagine/puffish_skills/categories/combat");
+                + "aeroscapes_reimagine/puffish_skills/categories/magic");
     JsonObject definitions = read(category.resolve("definitions.json"));
     JsonObject skills = read(category.resolve("skills.json"));
     JsonObject settings = read(category.resolve("category.json"));
     require(
         settings.get("spent_points_limit").getAsInt() == MagicTalents.pointCap(),
-        "All combat practices share the complete magic allocation ceiling");
-    require(!settings.get("exclusive_root").getAsBoolean(), "Compatible physical and magic roots");
+        "Magic practice has the complete magical allocation ceiling");
+    require(!settings.get("exclusive_root").getAsBoolean(), "Compatible magical branches");
     Set<String> dataNodes = new HashSet<>();
     Set<String> roots = new HashSet<>();
     for (var entry : skills.entrySet()) {

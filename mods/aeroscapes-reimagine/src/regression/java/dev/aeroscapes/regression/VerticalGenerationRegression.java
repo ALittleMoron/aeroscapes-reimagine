@@ -11,6 +11,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.BiomeTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -193,11 +195,14 @@ public final class VerticalGenerationRegression {
                   waterControl.below(3),
                   net.minecraft.util.RandomSource.create(1)),
               "Native surface-water animals cannot spawn at the local basin waterline");
-          String biome =
-              level.getBiome(waterControl).unwrapKey().orElseThrow().location().toString();
-          require(biome.contains("ocean"), "Physical basin has nonmarine biome " + biome);
+          var biome = level.getBiome(waterControl);
+          var marine =
+              TagKey.create(
+                  Registries.BIOME, ResourceLocation.parse("aeroscapes_reimagine:fauna/marine"));
+          require(biome.is(BiomeTags.IS_OCEAN) || biome.is(marine), "Physical basin has " + biome);
           basinFound = true;
-          LogUtils.getLogger().info("Vertical basin control {} biome={}", waterControl, biome);
+          LogUtils.getLogger()
+              .info("Vertical basin control {} biome={}", waterControl, biome.unwrapKey());
         }
         IslandLayout.LargeIsland island = terrain.layout().largeIsland(x, z);
         if (!mountainFound && island != null && island.anchor() + island.peakHeight() > 320) {

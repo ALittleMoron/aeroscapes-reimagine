@@ -1,50 +1,20 @@
 {
   "xp_awards": {
     "axe_breakable_override": {
-      "mining": 10
+      "mining": 2
     },
-    "hoe_breakable_override": {
-      "farming": 10
-    },
+    "hoe_breakable_override": {},
     "shovel_breakable_override": {
-      "mining": 10
+      "mining": 1
     },
-    "entity_xp": {
-      "SHIELD_BLOCK": {
-        "combat": 1
-      },
-      "BREED": {
-        "farming": 1
-      }
-    },
-    "rarities_multiplier": 10.0,
+    "entity_xp": {},
+    "rarities_multiplier": 2.0,
     "item_xp": {
-      "CRAFT": {
-        "crafting": 10
-      },
-      "BLOCK_PLACE": {
-        "building": 10
-      },
-      "SMELT": {},
-      "ENCHANT": {
-        "magic": 10
-      },
-      "FISH": {
-        "farming": 10
-      },
-      "ANVIL_REPAIR": {
-        "smithing": 10
-      }
+      "SMELT": {}
     },
     "block_xp": {
-      "BLOCK_PLACE": {
-        "building": 1
-      },
       "BLOCK_BREAK": {
         "mining": 1
-      },
-      "GROW": {
-        "farming": 1
       }
     }
   },
@@ -186,23 +156,23 @@
     "SMELT": false,
     "JUMP": false,
     "CONSUME": false,
-    "FISH": true,
+    "FISH": false,
     "SWIMMING": false,
     "BREAK_SPEED": false,
     "ACTIVATE_BLOCK": false,
-    "GROW": true,
+    "GROW": false,
     "SKILL_DOWN": false,
     "SPRINT_JUMP": false,
-    "CRAFT": true,
-    "BLOCK_PLACE": true,
+    "CRAFT": false,
+    "BLOCK_PLACE": false,
     "ENTITY": false,
     "BREATH_CHANGE": false,
     "GIVEN_AS_TRADE": false,
     "RECEIVED_AS_TRADE": false,
     "SPRINTING": false,
     "SWIM_SPRINTING": false,
-    "ANVIL_REPAIR": true,
-    "SHIELD_BLOCK": true,
+    "ANVIL_REPAIR": false,
+    "SHIELD_BLOCK": false,
     "ACTIVATE_ITEM": false,
     "SKILL_UP": false,
     "TOOL_BREAKING": false,
@@ -214,13 +184,13 @@
     "CROUCH": false,
     "SUBMERGED": false,
     "DIVING": false,
-    "ENCHANT": true,
+    "ENCHANT": false,
     "CROUCH_JUMP": false,
     "BLOCK_BREAK": true,
     "MITIGATE_DAMAGE": false,
     "HEALTH_DECREASE": false,
     "SURFACING": false,
-    "BREED": true,
+    "BREED": false,
     "RIDING": false
   },
   "type": "AUTOVALUES"

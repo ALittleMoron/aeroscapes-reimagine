@@ -38,8 +38,8 @@ import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.puffish.skillsmod.SkillsMod;
 
 public final class BindingPactRegression {
-  private static final ResourceLocation COMBAT =
-      ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
 
   private BindingPactRegression() {}
 
@@ -74,7 +74,7 @@ public final class BindingPactRegression {
             "magic_conjuration_mastery_2",
             "magic_conjuration_mastery_3",
             "magic_conjuration_mastery_4")) {
-      SkillsMod.getInstance().unlockSkill(player, COMBAT, node);
+      SkillsMod.getInstance().unlockSkill(player, MAGIC, node);
     }
     AbstractSpell root = SpellKnowledge.spell("irons_spellbooks:root");
     PreparedAbilities.edit(player, 0, root.getSpellId());
@@ -100,7 +100,7 @@ public final class BindingPactRegression {
       close(magic.getMana(), baseline, "No talent earns no refund");
       release(target);
 
-      SkillsMod.getInstance().unlockSkill(player, COMBAT, "magic_conjuration_binding_pact");
+      SkillsMod.getInstance().unlockSkill(player, MAGIC, "magic_conjuration_binding_pact");
       float before = magic.getMana();
       Consumer<ChangeManaEvent> partialPayment =
           event -> {

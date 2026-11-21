@@ -4,6 +4,14 @@ description: Version history.
 status: available
 ---
 
+## 0.7.1
+
+- Small floating islands use a shared surface biome across their connected terrain, including thin edges and islands stacked at different heights.
+- Combat, Magic and Professions now earn and spend talent points independently. Existing learned talents move to their own trees.
+- Potions no longer yield skill XP. Rewards for combat, personal crafting, repairs, enchanting, harvests, catches and breeding now reflect the action performed.
+- Typing the glossary key in inventory search leaves the search open. Use Ctrl with the glossary key to inspect a hovered item.
+- Reduced MakeUp distance fog and lightened deep shadows under islands.
+
 ## 0.7.0
 
 - The character and progression stage brings together races, starting classes and professions, practice-based skills, talents and the shared ability wheel.

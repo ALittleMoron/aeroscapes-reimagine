@@ -23,7 +23,7 @@ abstract class MagicTalentGateMixin {
       String skill,
       boolean force,
       CallbackInfo callback) {
-    if (force || !category.toString().equals(ProgressionBridge.COMBAT_CATEGORY)) return;
+    if (force || !category.toString().equals(ProgressionBridge.MAGIC_CATEGORY)) return;
     int requiredLevel = MagicTalents.requiredLevel(skill);
     if (requiredLevel > 0 && requiredLevel > MagicPractice.level(player)) {
       player.displayClientMessage(

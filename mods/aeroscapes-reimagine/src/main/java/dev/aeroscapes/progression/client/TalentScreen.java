@@ -49,6 +49,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   private final ClientSkillScreenData data;
   private final long changeSession;
   private final Set<String> combatRefund = new HashSet<>();
+  private final Set<String> magicRefund = new HashSet<>();
   private final Set<String> professionRefund = new HashSet<>();
   private Button review;
   private final TreeViewport camera = new TreeViewport();
@@ -87,7 +88,11 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private Set<String> refundSelection() {
-    return page == Page.PROFESSION ? professionRefund : combatRefund;
+    return switch (page) {
+      case COMBAT -> combatRefund;
+      case MAGIC -> magicRefund;
+      case PROFESSION -> professionRefund;
+    };
   }
 
   @SubscribeEvent
@@ -166,7 +171,7 @@ public final class TalentScreen extends Screen implements ChangeView {
                         ChangeClient.preview(
                             this,
                             new ChangeNetwork.Request(
-                                changeSession, page.category, "", 0, "", false, nodes),
+                                changeSession, page.id, "", 0, "", false, nodes),
                             false,
                             ChangeClient.text("calculating"));
                       })
@@ -178,8 +183,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private ClientCategoryData category() {
-    return data.getCategory(ResourceLocation.parse("aeroscapes_reimagine:" + page.category))
-        .orElse(null);
+    return data.getCategory(ResourceLocation.parse("aeroscapes_reimagine:" + page.id)).orElse(null);
   }
 
   private List<ClientSkillConfig> nodes() {
@@ -187,7 +191,6 @@ public final class TalentScreen extends Screen implements ChangeView {
     return category == null
         ? List.of()
         : category.getConfig().skills().values().stream()
-            .filter(node -> page.accepts(node.id()))
             .filter(node -> category.getConfig().getDefinitionById(node.definitionId()).isPresent())
             .sorted(Comparator.comparing(ClientSkillConfig::id))
             .toList();
@@ -228,7 +231,7 @@ public final class TalentScreen extends Screen implements ChangeView {
     int reachX = 0, reachY = 0;
     for (String id : config.skillNormalNeighbors().getOrDefault(root.id(), List.of())) {
       var entry = config.skills().get(id);
-      if (entry != null && page.accepts(id)) {
+      if (entry != null) {
         reachX = Math.max(reachX, Math.abs(entry.x() - root.x()));
         reachY = Math.max(reachY, Math.abs(entry.y() - root.y()));
       }
@@ -327,18 +330,10 @@ public final class TalentScreen extends Screen implements ChangeView {
     }
     updatePath(category);
     if (category != null) {
-      var points =
-          category.getPointsLeft() < 0
-              ? ChangeClient.text("reserved")
-              : text("points", category.getPointsLeft());
+      int balance = category.getPointsLeft();
+      var points = balance < 0 ? text("points_due", -balance) : text("points", balance);
       graphics.drawString(font, points, width - 45 - font.width(points), 19, GOLD, false);
-      graphics.drawString(
-          font,
-          text(page == Page.PROFESSION ? "profession_budget" : "combat_budget"),
-          inspectorX() + 5,
-          69,
-          MUTED,
-          false);
+      graphics.drawString(font, text(page.id + "_budget"), inspectorX() + 5, 69, MUTED, false);
     }
     AtlasProgressionWidgets.panel(graphics, 16, 94, canvasWidth(), canvasHeight());
     AtlasProgressionWidgets.panel(graphics, inspectorX(), 94, 156, height - 126);
@@ -398,7 +393,7 @@ public final class TalentScreen extends Screen implements ChangeView {
     for (var edge : connections) {
       var a = category.getConfig().skills().get(edge.skillAId());
       var b = category.getConfig().skills().get(edge.skillBId());
-      if (a == null || b == null || !page.accepts(a.id()) || !page.accepts(b.id())) continue;
+      if (a == null || b == null) continue;
       boolean unlocked =
           state(category, a) == Skill.State.UNLOCKED && state(category, b) == Skill.State.UNLOCKED;
       int color = exclusive ? 0xffbd806d : unlocked ? GOLD : 0xff627b96;
@@ -770,19 +765,13 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private enum Page {
-    COMBAT("combat", "combat"),
-    MAGIC("magic", "combat"),
-    PROFESSION("profession", "profession");
+    COMBAT("combat"),
+    MAGIC("magic"),
+    PROFESSION("profession");
     final String id;
-    final String category;
 
-    Page(String id, String category) {
+    Page(String id) {
       this.id = id;
-      this.category = category;
-    }
-
-    boolean accepts(String skill) {
-      return this == PROFESSION || skill.startsWith("magic_") == (this == MAGIC);
     }
   }
 }

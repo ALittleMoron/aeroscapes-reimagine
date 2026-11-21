@@ -35,6 +35,8 @@ import net.puffish.skillsmod.SkillsMod;
 public final class MagicRebalanceRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final ResourceLocation PROFESSION =
       ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
   private static final ResourceLocation SOURCE =
@@ -43,6 +45,7 @@ public final class MagicRebalanceRegression {
       ResourceLocation.parse("aeroscapes_reimagine:magic_fixture");
   private static final String ROOT = "magic_mastery_1";
   private static final String ABILITIES = "aeroscapes_reimagine_abilities";
+  private static final String PRACTICE = "aeroscapes_reimagine_magic_practice";
 
   private MagicRebalanceRegression() {}
 
@@ -55,9 +58,10 @@ public final class MagicRebalanceRegression {
             NeoForge.EVENT_BUS.unregister(this);
             level.getServer().getPlayerList().reloadResources();
             verifyGates(level);
-            verifyHybridBudget(level);
+            verifyIndependentBudgets(level);
             verifyPostCapPractice(level);
-            verifyMigration(level);
+            verifyLegacyRebalance(level);
+            verifySplitMigration(level);
             HusbandryLootRegression.verify(level);
             GuardianAidRegression.verify(level);
             BindingPactRegression.verify(level);
@@ -78,15 +82,15 @@ public final class MagicRebalanceRegression {
         login(player);
         var provider = SkillsMod.getInstance();
         require(
-            provider.getPointsLeft(player, COMBAT).orElseThrow() == 1, "An immediate root point");
-        provider.tryUnlockSkill(player, COMBAT, ROOT, false);
+            provider.getPointsLeft(player, MAGIC).orElseThrow() == 1, "An immediate root point");
+        provider.tryUnlockSkill(player, MAGIC, ROOT, false);
         require(
             SpellKnowledge.spells().stream()
                     .filter(spell -> MagicTalents.learned(spell.getSpellId(), unlocked(player)))
                     .count()
                 == 8,
             "One actual introductory purchase unlocks eight spells across native schools");
-        provider.setPoints(player, COMBAT, FIXTURE, MagicTalents.pointCap(), true);
+        provider.setPoints(player, MAGIC, FIXTURE, MagicTalents.pointCap(), true);
         int[] levels = {5, 15, 30, 45};
         for (String direction :
             List.of("destruction", "restoration", "conjuration", "transformation")) {
@@ -96,7 +100,7 @@ public final class MagicRebalanceRegression {
             Set<String> prerequisites = new HashSet<>(MagicTalents.nodes());
             prerequisites.remove(node);
             allocations(player, prerequisites);
-            provider.tryUnlockSkill(player, COMBAT, node, false);
+            provider.tryUnlockSkill(player, MAGIC, node, false);
             require(
                 !unlocked(player).contains(node) && MagicPractice.level(player) == 0,
                 "A forged server purchase with points and every predecessor cannot skip " + node);
@@ -105,30 +109,30 @@ public final class MagicRebalanceRegression {
         allocations(player, Set.of());
         MagicPractice.award(player, 501);
         String mastery = "magic_destruction_mastery_2";
-        provider.tryUnlockSkill(player, COMBAT, mastery, false);
+        provider.tryUnlockSkill(player, MAGIC, mastery, false);
         require(!unlocked(player).contains(mastery), "Relevant practice cannot replace the path");
-        provider.tryUnlockSkill(player, COMBAT, ROOT, false);
-        provider.tryUnlockSkill(player, COMBAT, mastery, false);
+        provider.tryUnlockSkill(player, MAGIC, ROOT, false);
+        provider.tryUnlockSkill(player, MAGIC, mastery, false);
         require(
             !unlocked(player).contains(mastery), "Mastery requires a useful intermediate talent");
-        provider.tryUnlockSkill(player, COMBAT, "magic_destruction_power", false);
-        provider.tryUnlockSkill(player, COMBAT, mastery, false);
+        provider.tryUnlockSkill(player, MAGIC, "magic_destruction_power", false);
+        provider.tryUnlockSkill(player, MAGIC, mastery, false);
         require(
             unlocked(player).contains(mastery), "Practice and the real native path permit mastery");
         MagicPractice.award(player, 3800);
-        provider.tryUnlockSkill(player, COMBAT, "magic_destruction_mana", false);
-        provider.tryUnlockSkill(player, COMBAT, "magic_destruction_mastery_3", false);
+        provider.tryUnlockSkill(player, MAGIC, "magic_destruction_mana", false);
+        provider.tryUnlockSkill(player, MAGIC, "magic_destruction_mastery_3", false);
         require(
             !unlocked(player).contains("magic_destruction_mastery_3"),
             "The second intermediate improvement cannot be skipped");
-        provider.tryUnlockSkill(player, COMBAT, "magic_reserve_1", false);
-        provider.tryUnlockSkill(player, COMBAT, "magic_destruction_mastery_3", false);
+        provider.tryUnlockSkill(player, MAGIC, "magic_reserve_1", false);
+        provider.tryUnlockSkill(player, MAGIC, "magic_destruction_mastery_3", false);
         require(
             unlocked(player).contains("magic_destruction_mastery_3"),
             "Two learned improvements open Destruction III");
         Set<String> earlierAllocation = Set.of(ROOT, "magic_reserve_1");
         allocations(player, earlierAllocation);
-        provider.tryUnlockSkill(player, COMBAT, "magic_destruction_mastery_3", false);
+        provider.tryUnlockSkill(player, MAGIC, "magic_destruction_mastery_3", false);
         require(
             MagicPractice.level(player) == 15 && unlocked(player).equals(earlierAllocation),
             "A retained Mana Reserve cannot skip Destruction II or lose its existing allocation");
@@ -138,28 +142,37 @@ public final class MagicRebalanceRegression {
     }
   }
 
-  private static void verifyHybridBudget(ServerLevel level) {
-    try (var session = session(level, "MagicHybrid")) {
+  private static void verifyIndependentBudgets(ServerLevel level) {
+    try (var session = session(level, "MagicPoolFixture")) {
       ServerPlayer player = session.player;
       ProgressionRegression.listPlayer(level, player, true);
       try {
         login(player);
         APIUtils.setLevel("combat", player, 50);
         APIUtils.setLevel("archery", player, 50);
-        long finalHybridXp = MagicPracticeProgress.xpForPoints(MagicTalents.pointCap() - 20);
-        MagicPractice.award(player, finalHybridXp - 1);
+        ProgressionBridge.sync(player);
+        var provider = SkillsMod.getInstance();
+        require(
+            provider.getPoints(player, COMBAT, SOURCE).orElseThrow()
+                    == ProgressionBridge.COMBAT_POINT_CAP
+                && earned(player) == 1,
+            "Both weapon skills at 50 fill combat without funding magic");
+        long finalMagicXp = MagicPracticeProgress.xpForPoints(MagicTalents.pointCap());
+        MagicPractice.award(player, finalMagicXp - 1);
         ProgressionBridge.sync(player);
         require(
             earned(player) == MagicTalents.pointCap() - 1
-                && ProgressionBridge.nextCombatPointXp(player, MagicPractice.credit(player))
-                    == finalHybridXp,
-            "The last shared point is one magic XP away with both weapon skills at 50");
+                && ProgressionBridge.nextMagicPointXp(player, MagicPractice.credit(player))
+                    == finalMagicXp,
+            "The last magic point still requires its full practice threshold");
         MagicPractice.award(player, 1);
         ProgressionBridge.sync(player);
         require(
             earned(player) == MagicTalents.pointCap()
-                && ProgressionBridge.nextCombatPointXp(player, MagicPractice.credit(player)) == 0,
-            "The shared pool has no next reward once weapon and magic practice have filled it");
+                && ProgressionBridge.nextMagicPointXp(player, MagicPractice.credit(player)) == 0
+                && provider.getPoints(player, COMBAT, SOURCE).orElseThrow()
+                    == ProgressionBridge.COMBAT_POINT_CAP,
+            "Finishing magic practice leaves the full combat budget intact");
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
       }
@@ -194,7 +207,7 @@ public final class MagicRebalanceRegression {
             MagicPractice.credit(player)
                     == MagicPracticeProgress.xpForPoints(MagicTalents.pointCap())
                 && earned(player) == MagicTalents.pointCap(),
-            "Magic alone funds the complete finite combat allocation without overflow");
+            "Magic practice funds the complete finite magic allocation without overflow");
         require(
             APIUtils.getLevel("combat", player) == 0 && APIUtils.getLevel("archery", player) == 0,
             "A complete mage never requires unrelated weapon practice");
@@ -214,20 +227,20 @@ public final class MagicRebalanceRegression {
         buyCompleteMagic(player);
         var provider = SkillsMod.getInstance();
         require(
-            provider.getSpentPoints(player, COMBAT).orElseThrow() == MagicTalents.totalCost()
-                && provider.getPointsLeft(player, COMBAT).orElseThrow()
-                    == MagicTalents.pointCap() - MagicTalents.totalCost(),
-            "The complete magical tree leaves all compatible physical investments in the common"
-                + " cap");
+            provider.getSpentPoints(player, MAGIC).orElseThrow() == MagicTalents.totalCost()
+                && provider.getPointsLeft(player, MAGIC).orElseThrow() == 0
+                && provider.getPointsTotal(player, COMBAT).orElseThrow() == 0,
+            "The entire magic tree is purchasable without earning a combat point");
         APIUtils.setLevel("combat", player, 50);
         APIUtils.setLevel("archery", player, 50);
         APIUtils.setLevel("mining", player, 10);
         ProgressionBridge.sync(player);
         require(
             earned(player) == MagicTalents.pointCap()
+                && provider.getPoints(player, COMBAT, SOURCE).orElseThrow()
+                    == ProgressionBridge.COMBAT_POINT_CAP
                 && provider.getPoints(player, PROFESSION, SOURCE).orElseThrow() == 2,
-            "Other combat sources share the cap while professions keep their previous earning"
-                + " rule");
+            "Weapon practice and mining fund their own budgets");
         for (String id :
             List.of(
                 "melee_strike",
@@ -247,9 +260,10 @@ public final class MagicRebalanceRegression {
           provider.tryUnlockSkill(player, PROFESSION, id, false);
         }
         require(
-            provider.getPointsLeft(player, COMBAT).orElseThrow() == 0
+            provider.getPointsLeft(player, MAGIC).orElseThrow() == 0
+                && provider.getPointsLeft(player, COMBAT).orElseThrow() == 0
                 && provider.getPointsLeft(player, PROFESSION).orElseThrow() == 0,
-            "A fully trained character can spend every earned point in both budgets");
+            "A fully trained character can spend every earned point in all three pools");
         verifyDeathClone(player, credit);
         provider.exportPlayerData(player, talents);
         NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedOutEvent(player));
@@ -279,7 +293,7 @@ public final class MagicRebalanceRegression {
     }
   }
 
-  private static void verifyMigration(ServerLevel level) {
+  private static void verifyLegacyRebalance(ServerLevel level) {
     try (var session = session(level, "MagicOldFixture")) {
       ServerPlayer player = session.player;
       ProgressionRegression.listPlayer(level, player, true);
@@ -322,8 +336,10 @@ public final class MagicRebalanceRegression {
         require(
             MagicPractice.level(player) == 20, "Changing the curve retains the old practice level");
         require(
-            unlocked(player).equals(Set.of("melee_strike")),
-            "Only retired magic allocations are removed");
+            unlocked(player).isEmpty()
+                && Set.copyOf(provider.getUnlockedSkills(player, COMBAT).orElseThrow())
+                    .equals(Set.of("melee_strike")),
+            "Retired magic is removed and the physical purchase stays in combat");
         require(
             player.getPersistentData().getCompound(ABILITIES).getCompound("ranks").equals(ranks)
                 && PreparedAbilities.preparation(player).equals(prepared),
@@ -338,9 +354,9 @@ public final class MagicRebalanceRegression {
             "Migration preserves profession allocations and every profession point source");
         require(
             provider.getSpentPoints(player, COMBAT).orElseThrow() == 1
-                && provider.getPointsLeft(player, COMBAT).orElseThrow() == earned(player) - 1,
-            "Retired allocations refund through spent cost without creating extra earned points");
-        provider.tryUnlockSkill(player, COMBAT, ROOT, false);
+                && provider.getPointsLeft(player, MAGIC).orElseThrow() == earned(player),
+            "Retired magic allocations leave the full practice-funded magic balance available");
+        provider.tryUnlockSkill(player, MAGIC, ROOT, false);
         long credit = MagicPractice.credit(player);
         MagicPractice.synchronize(player);
         require(
@@ -360,13 +376,74 @@ public final class MagicRebalanceRegression {
     }
   }
 
+  private static void verifySplitMigration(ServerLevel level) {
+    try (var session = session(level, "MagicSplit")) {
+      ServerPlayer player = session.player;
+      ProgressionRegression.listPlayer(level, player, true);
+      try {
+        int previousCap = 142;
+        long previousCapXp = MagicPracticeProgress.xpForPoints(previousCap);
+        APIUtils.setLevel("magic", player, 50);
+        APIUtils.setXp("magic", player, 1);
+        APIUtils.setLevel("combat", player, 10);
+        APIUtils.setLevel("mining", player, 10);
+        CompoundTag practice = new CompoundTag();
+        practice.putBoolean("initialized", true);
+        practice.putLong("credit", previousCapXp);
+        practice.putInt("native_level", 50);
+        practice.putLong("native_xp", 1);
+        player.getPersistentData().put(PRACTICE, practice);
+
+        var provider = SkillsMod.getInstance();
+        provider.setPoints(player, COMBAT, SOURCE, previousCap, true);
+        provider.setPoints(player, COMBAT, FIXTURE, 3, true);
+        provider.setPoints(player, PROFESSION, SOURCE, 2, true);
+        CompoundTag snapshot = new CompoundTag();
+        provider.exportPlayerData(player, snapshot);
+        CompoundTag categories = snapshot.getCompound("categories");
+        Set<String> learned =
+            Set.of(ROOT, "magic_destruction_power", "magic_destruction_mastery_2");
+        var mixed = new ArrayList<>(learned.stream().sorted().toList());
+        mixed.add("melee_strike");
+        categories
+            .getCompound(ProgressionBridge.COMBAT_CATEGORY)
+            .put("unlocked_skills", strings(mixed));
+        categories
+            .getCompound(ProgressionBridge.PROFESSION_CATEGORY)
+            .put("unlocked_skills", strings(List.of("mining_efficiency")));
+        provider.importPlayerData(player, snapshot);
+
+        login(player);
+        MagicPractice.award(player, 1);
+        ProgressionBridge.sync(player);
+        require(
+            MagicPractice.credit(player) == previousCapXp
+                && earned(player) == MagicTalents.pointCap()
+                && unlocked(player).equals(learned)
+                && provider.getSpentPoints(player, MAGIC).orElseThrow() == learned.size(),
+            "The split preserves existing 0.7.0 magic purchases and previously banked practice");
+        require(
+            Set.copyOf(provider.getUnlockedSkills(player, COMBAT).orElseThrow())
+                    .equals(Set.of("melee_strike"))
+                && provider.getPoints(player, COMBAT, SOURCE).orElseThrow() == 2
+                && provider.getPoints(player, COMBAT, FIXTURE).orElseThrow() == 3
+                && Set.copyOf(provider.getUnlockedSkills(player, PROFESSION).orElseThrow())
+                    .equals(Set.of("mining_efficiency"))
+                && provider.getPoints(player, PROFESSION, SOURCE).orElseThrow() == 2,
+            "Combat and profession retain their own purchases and independent point sources");
+      } finally {
+        ProgressionRegression.listPlayer(level, player, false);
+      }
+    }
+  }
+
   private static void buyCompleteMagic(ServerPlayer player) {
     var provider = SkillsMod.getInstance();
     var remaining = new HashSet<>(MagicTalents.nodes());
     for (int pass = 0; pass < MagicTalents.nodes().size() && !remaining.isEmpty(); pass++) {
       int previous = remaining.size();
       for (String node : new ArrayList<>(remaining)) {
-        provider.tryUnlockSkill(player, COMBAT, node, false);
+        provider.tryUnlockSkill(player, MAGIC, node, false);
         if (unlocked(player).contains(node)) remaining.remove(node);
       }
       require(
@@ -420,7 +497,7 @@ public final class MagicRebalanceRegression {
     provider.exportPlayerData(player, snapshot);
     snapshot
         .getCompound("categories")
-        .getCompound(ProgressionBridge.COMBAT_CATEGORY)
+        .getCompound(ProgressionBridge.MAGIC_CATEGORY)
         .put("unlocked_skills", strings(nodes.stream().sorted().toList()));
     provider.importPlayerData(player, snapshot);
   }
@@ -432,11 +509,11 @@ public final class MagicRebalanceRegression {
   }
 
   private static Set<String> unlocked(ServerPlayer player) {
-    return new HashSet<>(SkillsMod.getInstance().getUnlockedSkills(player, COMBAT).orElseThrow());
+    return new HashSet<>(SkillsMod.getInstance().getUnlockedSkills(player, MAGIC).orElseThrow());
   }
 
   private static int earned(ServerPlayer player) {
-    return SkillsMod.getInstance().getPoints(player, COMBAT, SOURCE).orElseThrow();
+    return SkillsMod.getInstance().getPoints(player, MAGIC, SOURCE).orElseThrow();
   }
 
   private static void require(boolean condition, String message) {

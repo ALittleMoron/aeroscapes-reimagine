@@ -6,7 +6,8 @@
   "client": [
     "SkillPanelScreenHandlerMixin",
     "SkillsScreenAccessor",
-    "InventoryLayoutAccess"
+    "InventoryLayoutAccess",
+    "ProjectMmoTooltipMixin"
   ],
   "injectors": {
     "defaultRequire": 1
@@ -17,6 +18,7 @@
     "ProfessionEasyAnvilMixin",
     "ProfessionCraftingMixin",
     "ProfessionFurnaceMixin",
+    "ProfessionFurnacePracticeMixin",
     "ProfessionFurnaceExtractionMixin",
     "ProfessionFurnaceMenuMixin",
     "ProfessionFurnaceRecipeBookMixin",
@@ -44,8 +46,11 @@
     "InitialRaceInputMixin",
     "InitialRaceSimulationMixin",
     "ProjectMmoAdminDataMixin",
+    "ProjectMmoDefaultPacksMixin",
+    "ProjectMmoHarvestMixin",
     "ProjectMmoPlacementMixin",
     "ProjectMmoRacePracticeMixin",
+    "TreeChopPracticeMixin",
     "MagicTalentGateMixin",
     "TalentCategoryAccess"
   ]

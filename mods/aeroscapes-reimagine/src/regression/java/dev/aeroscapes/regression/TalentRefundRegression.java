@@ -26,6 +26,8 @@ import net.puffish.skillsmod.api.Skill;
 final class TalentRefundRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final ResourceLocation PROFESSION =
       ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
 
@@ -72,25 +74,46 @@ final class TalentRefundRegression {
 
   private static void verifyRefund(ServerPlayer player) {
     var skills = SkillsMod.getInstance();
-    int cap = MagicTalents.pointCap();
-    MagicPractice.award(player, MagicPracticeProgress.xpForPoints(cap));
+    int magicCap = MagicTalents.pointCap();
+    MagicPractice.award(player, MagicPracticeProgress.xpForPoints(magicCap));
+    APIUtils.setLevel("combat", player, 25);
+    APIUtils.setLevel("archery", player, 25);
     APIUtils.setLevel("mining", player, 45);
     ProgressionBridge.sync(player);
-    require(skills.getPointsTotal(player, COMBAT).orElseThrow() == cap, "Full combat budget");
+    require(
+        skills.getPointsTotal(player, COMBAT).orElseThrow() == ProgressionBridge.COMBAT_POINT_CAP
+            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap
+            && skills.getPointsTotal(player, PROFESSION).orElseThrow()
+                == ProgressionBridge.PROFESSION_POINT_CAP,
+        "All three budgets can reach their own caps");
     purchase(
         player,
         COMBAT,
         List.of(
             "guard_armor",
             "guard_vitality",
-            "magic_mastery_1",
-            "magic_destruction_power",
-            "magic_destruction_mastery_2",
             "melee_strike",
             "melee_footing",
             "melee_veteran",
             "bow_stride",
-            "steady_aim"));
+            "steady_aim",
+            "shield_march",
+            "quick_recovery",
+            "opening_strike"));
+    purchase(
+        player,
+        MAGIC,
+        List.of(
+            "magic_mastery_1",
+            "magic_recovery_1",
+            "magic_rhythm_1",
+            "magic_reserve_2",
+            "magic_destruction_power",
+            "magic_destruction_mastery_2",
+            "magic_destruction_mana",
+            "magic_reserve_1",
+            "magic_destruction_mastery_3",
+            "magic_restoration_power"));
     purchase(player, PROFESSION, List.of("mining_efficiency", "mining_fortune"));
     require(
         TalentRefunds.preview(player, "combat", List.of("quick_block")).isEmpty()
@@ -117,27 +140,47 @@ final class TalentRefundRegression {
             && TalentRefunds.apply(player, mining, second),
         "Separate profession dependency and fractional carry");
 
-    var roots = List.of("magic_mastery_1", "melee_strike", "bow_stride", "steady_aim");
+    var roots =
+        List.of(
+            "melee_strike",
+            "bow_stride",
+            "steady_aim",
+            "shield_march",
+            "quick_recovery",
+            "opening_strike");
     var last = TalentRefunds.preview(player, "combat", roots).orElseThrow();
     require(
         last.spent() == 8
             && last.loss() == 1
             && last.remainder() == 0
             && TalentRefunds.apply(player, roots, last),
-        "Combined ten-point deduction");
+        "Combat refunds accumulate a ten-point deduction independently");
+    var mastery = List.of("magic_mastery_1");
+    var magic = TalentRefunds.preview(player, "magic", mastery).orElseThrow();
+    require(
+        magic.nodes().size() == 10
+            && magic.spent() == 10
+            && magic.loss() == 1
+            && magic.remainder() == 0
+            && TalentRefunds.apply(player, mastery, magic),
+        "Refunding magic mastery removes dependent magic talents and charges its own fee");
     ProgressionBridge.sync(player);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == cap - 1,
-        "Reconciliation preserves the penalty at the earned cap");
+        skills.getPointsTotal(player, COMBAT).orElseThrow()
+                == ProgressionBridge.COMBAT_POINT_CAP - 1
+            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap - 1,
+        "Reconciliation preserves each penalty at its earned cap");
   }
 
   private static void verifyRecoveryAfterLogin(ServerPlayer player) {
-    int cap = MagicTalents.pointCap();
+    int magicCap = MagicTalents.pointCap();
+    int combatCap = ProgressionBridge.COMBAT_POINT_CAP;
     var skills = SkillsMod.getInstance();
     ProgressionBridge.sync(player);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == cap - 1,
-        "Loading the saved player retains the deduction");
+        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1
+            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap - 1,
+        "Loading the saved player retains both deductions");
     purchase(player, PROFESSION, List.of("mining_efficiency"));
     require(
         TalentRefunds.preview(player, "profession", List.of("mining_efficiency"))
@@ -149,15 +192,26 @@ final class TalentRefundRegression {
     MagicPractice.award(player, 2999);
     ProgressionBridge.sync(player);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == cap - 1
-            && ProgressionBridge.nextCombatPointXp(player, MagicPractice.credit(player))
+        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1
+            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap - 1
+            && ProgressionBridge.nextMagicPointXp(player, MagicPractice.credit(player))
                 == MagicPractice.credit(player) + 1,
-        "Only new practice in this pool restores the point");
+        "Profession practice repays neither debt and 2999 magic XP does not cover its fee");
     MagicPractice.award(player, 1);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == cap
-            && ProgressionBridge.nextCombatPointXp(player, MagicPractice.credit(player)) == 0,
-        "Capped practice immediately restores the missing point without exceeding the catalogue");
+        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1
+            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap
+            && ProgressionBridge.nextMagicPointXp(player, MagicPractice.credit(player)) == 0,
+        "Capped magic practice restores only the magic point");
+    APIUtils.addXp("archery", player, 2999);
+    require(
+        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1,
+        "Combat debt survives until enough physical practice is credited");
+    APIUtils.addXp("archery", player, 1);
+    require(
+        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap
+            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap,
+        "Archery practice repays the combat debt without exceeding either budget");
   }
 
   private static void purchase(ServerPlayer player, ResourceLocation category, List<String> nodes) {

@@ -3,16 +3,7 @@
     "reuse_penalty": 0.0,
     "perks_plus_config": false,
     "player_actions": {},
-    "damage": {
-      "DEAL_DAMAGE": {
-        "#minecraft:is_projectile": {
-          "archery": 1
-        },
-        "minecraft:player_attack": {
-          "combat": 1
-        }
-      }
-    }
+    "damage": {}
   },
   "party": {
     "party_range": 50,

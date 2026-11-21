@@ -394,6 +394,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       if (mixinClassName.contains("JeiTransfer")) pins.put("jei", "19.39.0.372");
       if (mixinClassName.contains("Transfer")) pins.put("farmersdelight", "1.2.11a");
       versions = pins;
+    } else if (mixinClassName.endsWith("TreeChopPracticeMixin")) {
+      versions = Map.of("treechop", "0.19.3", "pmmo", "2.10.47", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.")) {
       versions = Map.of("pmmo", "2.10.47", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PrecipitationParticleMixin")) {

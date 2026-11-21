@@ -40,8 +40,8 @@ import net.puffish.skillsmod.SkillsMod;
 
 /** Exercises transformed native calculations and the native event bus without a client. */
 public final class MagicBonusesRegression {
-  private static final ResourceLocation COMBAT =
-      ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final Set<String> AREA_NODES =
       Set.of("magic_destruction_blast_geometry", "magic_destruction_winter_front");
 
@@ -93,7 +93,7 @@ public final class MagicBonusesRegression {
       if (!node.direction().isEmpty()
           && !node.effects().isEmpty()
           && !AREA_NODES.contains(node.id())) {
-        SkillsMod.getInstance().unlockSkill(player, COMBAT, node.id());
+        SkillsMod.getInstance().unlockSkill(player, MAGIC, node.id());
       }
     }
     close(firebolt.getSpellPower(1, player), firePower * 1.05f, "One Destruction power multiplier");
@@ -121,7 +121,7 @@ public final class MagicBonusesRegression {
     int fireballRadius =
         ((io.redspace.ironsspellbooks.spells.fire.FireballSpell) fireball).getRadius(1, player);
     float blizzardRadius = blizzardRadius(blizzard, player);
-    SkillsMod.getInstance().unlockSkill(player, COMBAT, "magic_destruction_blast_geometry");
+    SkillsMod.getInstance().unlockSkill(player, MAGIC, "magic_destruction_blast_geometry");
     require(
         ((io.redspace.ironsspellbooks.spells.fire.FireballSpell) fireball).getRadius(1, player)
             == fireballRadius + 1,
@@ -130,7 +130,7 @@ public final class MagicBonusesRegression {
         blizzardRadius(blizzard, player),
         blizzardRadius,
         "Fireball's area talent does not enlarge Blizzard");
-    SkillsMod.getInstance().unlockSkill(player, COMBAT, "magic_destruction_winter_front");
+    SkillsMod.getInstance().unlockSkill(player, MAGIC, "magic_destruction_winter_front");
     close(
         blizzardRadius(blizzard, player),
         blizzardRadius * 1.15f,

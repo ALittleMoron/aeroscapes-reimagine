@@ -1,10 +1,13 @@
 package dev.aeroscapes.worldgen;
 
+import com.mojang.datafixers.util.Pair;
+import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Phaser;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
+import net.minecraft.world.level.biome.Climate;
 
 /** Checks the spatial contract and cache independence without starting Minecraft. */
 public final class BiomeTerrainMaskTest {
@@ -51,7 +54,68 @@ public final class BiomeTerrainMaskTest {
             });
     checkOracle();
     checkConcurrentColumns();
+    checkIslandSurfaces();
+    checkClimateTies();
     System.out.println("BiomeTerrainMask: spatial, bounds, cache and concurrent checks passed");
+  }
+
+  private static void checkIslandSurfaces() {
+    var islands =
+        new BiomeTerrainMask(
+            (x, y, z) ->
+                x >= -20 && x <= 20 && z >= -12 && z <= 12 && y >= 16 && y <= 40
+                    || x >= -20 && x <= 20 && z >= -12 && z <= 12 && y >= 72 && y <= 88
+                    || x >= 32 && x <= 112 && z >= -12 && z <= 12 && y >= 16 && y <= 40,
+            -128,
+            384,
+            4,
+            8);
+    var lower = islands.smallIslandSurface(-20, 40, 0);
+    require(lower != null && lower.getY() == 40, "Resolve the exposed lower island");
+    require(
+        lower.equals(islands.smallIslandSurface(20, 44, 8)),
+        "Connected surface uses one climate anchor across chunk boundaries");
+    require(
+        lower.equals(islands.smallIslandSurface(24, 44, 8)),
+        "An interpolated edge inherits its adjacent island climate");
+    var upper = islands.smallIslandSurface(0, 88, 0);
+    require(upper != null && upper.getY() == 88, "Stacked islands have separate climate anchors");
+    require(islands.smallIslandSurface(0, 16, 0) == null, "Deep interior keeps its habitat");
+    require(islands.smallIslandSurface(40, 40, 0) == null, "Wide island keeps native climate");
+    require(islands.smallIslandSurface(100, 40, 0) == null, "Wide island across cache cells");
+
+    var adjacent =
+        new BiomeTerrainMask(
+            (x, y, z) -> (x == -4 || x == 4) && y == 64 && z == 0, -128, 384, 4, 8);
+    require(adjacent.smallIslandSurface(0, 64, 0) == null, "Distinct islands keep separate edges");
+    var diagonal = new BiomeTerrainMask((x, y, z) -> x == 4 && y == 64 && z == 4, -128, 384, 4, 8);
+    var corner = diagonal.smallIslandSurface(4, 64, 4);
+    require(
+        corner != null && corner.equals(diagonal.smallIslandSurface(0, 64, 0)),
+        "Land inside an interpolated diagonal edge inherits the nearby anchor");
+    require(
+        corner.equals(diagonal.smallIslandSurface(-4, 64, -4)),
+        "The two-node terrain halo covers biome zoom at the outside corner");
+  }
+
+  private static void checkClimateTies() {
+    var parameters =
+        new Climate.ParameterList<>(
+            List.of(
+                Pair.of(Climate.parameters(-1, 0, 0, 0, 0, 0, 0), "cold"),
+                Pair.of(Climate.parameters(1, 0, 0, 0, 0, 0, 0), "warm")));
+    var midpoint = Climate.target(0, 0, 0, 0, 0, 0);
+    parameters.findValue(Climate.target(-1, 0, 0, 0, 0, 0));
+    var coldHistory =
+        SmallIslandClimate.withoutHistory(
+            parameters, 0, 0, 0, () -> parameters.findValue(midpoint));
+    require("cold".equals(parameters.findValue(midpoint)), "Retain the neighboring cold search");
+    parameters.findValue(Climate.target(1, 0, 0, 0, 0, 0));
+    var warmHistory =
+        SmallIslandClimate.withoutHistory(
+            parameters, 0, 0, 0, () -> parameters.findValue(midpoint));
+    require("warm".equals(parameters.findValue(midpoint)), "Retain the neighboring warm search");
+    require(coldHistory.equals(warmHistory), "Island anchor ties resolve independent of history");
   }
 
   private static void checkOracle() {

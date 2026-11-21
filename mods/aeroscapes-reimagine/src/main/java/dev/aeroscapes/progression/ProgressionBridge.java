@@ -4,23 +4,18 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicPracticeProgress;
 import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.ClassProgression;
 import dev.aeroscapes.races.RaceIdentity;
 import harmonised.pmmo.api.APIUtils;
-import harmonised.pmmo.api.enums.EventType;
-import harmonised.pmmo.api.enums.ObjectType;
 import java.util.List;
 import java.util.Map;
 import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.core.component.DataComponents;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.item.ItemStack;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.puffish.skillsmod.SkillsMod;
 
@@ -37,14 +32,15 @@ public final class ProgressionBridge {
   public static final List<String> PROFESSION_SKILLS =
       List.of("mining", "crafting", "smithing", "building", "farming", "cooking");
   public static final int LEVELS_PER_POINT = 5;
+  public static final int COMBAT_POINT_CAP = 11;
   public static final int PROFESSION_POINT_CAP = 10;
   public static final String COMBAT_CATEGORY = "aeroscapes_reimagine:combat";
+  public static final String MAGIC_CATEGORY = "aeroscapes_reimagine:magic";
   public static final String PROFESSION_CATEGORY = "aeroscapes_reimagine:profession";
   private static final ResourceLocation COMBAT = ResourceLocation.parse(COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC = ResourceLocation.parse(MAGIC_CATEGORY);
   private static final ResourceLocation PROFESSION = ResourceLocation.parse(PROFESSION_CATEGORY);
   static final String POINT_SOURCE = "aeroscapes_reimagine:skill_levels";
-  private static final long FOOD_CRAFT_XP = 10;
-  private static final long SMELT_XP_PER_ITEM = 2;
   private static final int CHECK_INTERVAL_TICKS = 20;
 
   private ProgressionBridge() {}
@@ -54,8 +50,7 @@ public final class ProgressionBridge {
     NeoForge.EVENT_BUS.addListener(RefundPenalty::clonePlayer);
     NeoForge.EVENT_BUS.addListener(ProgressionBridge::syncOnLogin);
     NeoForge.EVENT_BUS.addListener(ProgressionBridge::refreshAfterPractice);
-    NeoForge.EVENT_BUS.addListener(ProgressionBridge::awardSmelting);
-    NeoForge.EVENT_BUS.addListener(ProgressionBridge::routeFoodCrafting);
+    PracticeActions.register();
   }
 
   public static int points(Map<String, Long> levels, List<String> skills) {
@@ -66,20 +61,25 @@ public final class ProgressionBridge {
     return total;
   }
 
-  /** Writes the earned points of both categories when they differ from the stored value. */
+  /** Reconciles each category with the practice that funds it. */
   public static void sync(ServerPlayer player) {
     if (!categoriesAvailable()) return;
     Earned earned = earned(player);
+    TalentPoolMigration.split(player);
     setPoints(player, COMBAT_CATEGORY, earned.combat());
+    setPoints(player, MAGIC_CATEGORY, earned.magic());
     setPoints(player, PROFESSION_CATEGORY, earned.profession());
     RefundPenalty.sync(player, "combat");
+    RefundPenalty.sync(player, "magic");
     RefundPenalty.sync(player, "profession");
   }
 
   public static boolean categoriesAvailable() {
     if (!ModList.get().isLoaded("pmmo") || !ModList.get().isLoaded("puffish_skills")) return false;
     var skills = SkillsMod.getInstance();
-    return skills.hasCategory(COMBAT) && skills.hasCategory(PROFESSION);
+    return skills.hasCategory(COMBAT)
+        && skills.hasCategory(MAGIC)
+        && skills.hasCategory(PROFESSION);
   }
 
   /** Reconciles persisted points even after a reload or another writer replaced the source. */
@@ -90,30 +90,29 @@ public final class ProgressionBridge {
   private static Earned earned(ServerPlayer player) {
     long magicCredit = MagicPractice.credit(player);
     Map<String, Long> levels = APIUtils.getAllLevels(player);
+    CharacterClass characterClass = RaceIdentity.characterClass(player);
+    int combatStarter = characterClass != null && characterClass != CharacterClass.MAGE ? 1 : 0;
     return new Earned(
-        combatPoints(player, levels, magicCredit),
+        Math.min(COMBAT_POINT_CAP, combatStarter + points(levels, COMBAT_SKILLS)),
+        magicPoints(player, magicCredit),
         Math.min(
             PROFESSION_POINT_CAP,
             points(levels, PROFESSION_SKILLS) + (RaceIdentity.profession(player) == null ? 0 : 1)));
   }
 
-  private static int combatPoints(ServerPlayer player, Map<String, Long> levels, long magicCredit) {
+  private static int magicPoints(ServerPlayer player, long magicCredit) {
     int cap = MagicTalents.pointCap();
-    int classPoint = RaceIdentity.characterClass(player) == null ? 0 : 1;
-    return Math.min(
-        cap,
-        classPoint
-            + MagicPracticeProgress.points(magicCredit, cap)
-            + points(levels, COMBAT_SKILLS));
+    int mageStarter = RaceIdentity.characterClass(player) == CharacterClass.MAGE ? 1 : 0;
+    return Math.min(cap, mageStarter + MagicPracticeProgress.points(magicCredit, cap));
   }
 
-  public static long nextCombatPointXp(ServerPlayer player, long magicCredit) {
+  public static long nextMagicPointXp(ServerPlayer player, long magicCredit) {
     int cap = MagicTalents.pointCap();
     long next =
-        combatPoints(player, APIUtils.getAllLevels(player), magicCredit) >= cap
+        magicPoints(player, magicCredit) >= cap
             ? 0
             : MagicPracticeProgress.nextPointXp(magicCredit, cap);
-    int recovery = RefundPenalty.untilNext(player, "combat");
+    int recovery = RefundPenalty.untilNext(player, "magic");
     return recovery > 0 && (next == 0 || magicCredit + recovery < next)
         ? magicCredit + recovery
         : next;
@@ -153,27 +152,5 @@ public final class ProgressionBridge {
     }
   }
 
-  /** Credits the player who takes the result, never the furnace owner or an automated hopper. */
-  private static void awardSmelting(PlayerEvent.ItemSmeltedEvent event) {
-    ItemStack result = event.getSmelting();
-    if (!(event.getEntity() instanceof ServerPlayer player) || result.isEmpty()) return;
-    String skill = result.has(DataComponents.FOOD) ? "cooking" : "smithing";
-    APIUtils.addXp(skill, player, SMELT_XP_PER_ITEM * result.getCount());
-  }
-
-  /** Crafting food trains cooking instead of general crafting. */
-  private static void routeFoodCrafting(ServerStartingEvent event) {
-    for (var item : BuiltInRegistries.ITEM) {
-      if (item.components().has(DataComponents.FOOD)) {
-        APIUtils.registerXpAward(
-            ObjectType.ITEM,
-            BuiltInRegistries.ITEM.getKey(item),
-            EventType.CRAFT,
-            Map.of("cooking", FOOD_CRAFT_XP),
-            true);
-      }
-    }
-  }
-
-  private record Earned(int combat, int profession) {}
+  private record Earned(int combat, int magic, int profession) {}
 }

@@ -42,6 +42,8 @@ public final class TalentBudgetTest {
     var caps =
         Map.of(
             "combat",
+            ProgressionBridge.COMBAT_POINT_CAP,
+            "magic",
             MagicTalents.pointCap(),
             "profession",
             ProgressionBridge.PROFESSION_POINT_CAP);
@@ -112,10 +114,10 @@ public final class TalentBudgetTest {
       int cost = definition.get("cost").getAsBigDecimal().intValueExact();
       require(cost >= 0, "Unsupported negative cost on " + name);
       require(
-          !id.equals("combat")
+          !id.equals("magic")
               || MagicTalents.requiredLevel(name) <= MagicPracticeProgress.MAX_LEVEL,
           "Practice requirement is unattainable: " + name);
-      var required = id.equals("combat") ? MagicTalents.priorMasteries(name) : List.<String>of();
+      var required = id.equals("magic") ? MagicTalents.priorMasteries(name) : List.<String>of();
       nodes.put(
           name,
           new Node(

@@ -177,7 +177,8 @@ public final class RaceIdentity {
     if (existing == null) {
       identity.putBoolean(
           CharacterChanges.STARTER_PERSONALLY_LEARNED,
-          ClassProgression.learned(player, ClassProgression.node(chosenClass, starter)));
+          ClassProgression.learned(
+              player, chosenClass, ClassProgression.node(chosenClass, starter)));
       identity.putString("class", chosenClass.id());
       identity.putString("starter", starter);
       identity.putBoolean("grant_pending", true);

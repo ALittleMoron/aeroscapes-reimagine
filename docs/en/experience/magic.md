@@ -8,7 +8,7 @@ status: partial
 
 ## Your first spell
 
-Mages start with **First magic mastery** already learned. Other characters can open **Talents** from the inventory, select Magic and spend their starting combat point on it. It teaches eight rank-1 spells without scrolls: Blood Needles, Magic Missile, Firebolt, Icicle, Ball Lightning, Shield, Heal and Oakskin. You gain attacks, personal healing and protection together; choose which to prepare rather than automatically filling every slot.
+Mages start with **First magic mastery** already learned. Other characters can open **Talents** from the inventory, select Magic and spend their starting magic point on it. It teaches eight rank-1 spells without scrolls: Blood Needles, Magic Missile, Firebolt, Icicle, Ball Lightning, Shield, Heal and Oakskin. You gain attacks, personal healing and protection together; choose which to prepare rather than automatically filling every slot.
 
 Mages receive the Flimsy Journal at character creation. To make another, use two copper ingots, one string and six paper. Equip it in the spell book accessory slot in Curios. The book is a required casting focus and keeps its equipment and reforging bonuses. All books use your same eight preparation slots, regardless of their former capacity.
 
@@ -44,7 +44,7 @@ After mastery IV, two directions offer talents that change how you use familiar 
 - **Guardian Aid.** Cast Fortify on a wounded ally, such as your tamed wolf. If the ward absorbs damage from a hostile creature, you have ten seconds to heal the same ally with Blessing of Life. Effective healing refunds a quarter of the mana spent on the heal, rounded down.
 - **Binding Pact.** Restrain a target with Root. The first time your summoned helper damages it while those roots still hold, you recover a fifth of the mana spent on Root.
 
-Both effects use prepared spells and require enough mana to pay for the cast up front. Magic has 131 one-point talents. Five more points from the shared combat pool can go into compatible physical talents. Magic practice can earn the entire pool. [Skills and talents](../character-and-combat/#skills-and-talents).
+Both effects use prepared spells and require enough mana to pay for the cast up front. Magic has 131 one-point talents. Magic practice can earn every point in this tree. [Skills and talents](../character-and-combat/#skills-and-talents).
 
 ## Scrolls and personal ranks
 

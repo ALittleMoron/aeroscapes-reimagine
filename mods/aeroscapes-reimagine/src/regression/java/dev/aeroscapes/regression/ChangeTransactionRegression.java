@@ -9,6 +9,7 @@ import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
+import harmonised.pmmo.api.APIUtils;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import java.util.List;
 import java.util.UUID;
@@ -24,6 +25,8 @@ import net.puffish.skillsmod.SkillsMod;
 final class ChangeTransactionRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation MAGIC =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
 
   private ChangeTransactionRegression() {}
 
@@ -113,11 +116,14 @@ final class ChangeTransactionRegression {
 
   private static void verifyThread(TestShipPlayerSession session) {
     var player = session.player;
-    MagicPractice.award(player, 501);
+    APIUtils.setLevel("combat", player, 10);
+    MagicPractice.award(player, 100);
     ProgressionBridge.sync(player);
     var skills = SkillsMod.getInstance();
     skills.tryUnlockSkill(player, COMBAT, "guard_armor", false);
     skills.tryUnlockSkill(player, COMBAT, "guard_vitality", false);
+    skills.tryUnlockSkill(player, MAGIC, "magic_mastery_1", false);
+    skills.tryUnlockSkill(player, MAGIC, "magic_recovery_1", false);
     var threads = new ItemStack(ChangeItems.KNOTTED_THREAD.get(), 2);
     player.setItemInHand(InteractionHand.MAIN_HAND, threads);
     long id = open(session, InteractionHand.MAIN_HAND, false);
@@ -138,8 +144,27 @@ final class ChangeTransactionRegression {
     require(
         threads.getCount() == 1
             && skills.getPointsLeft(player, COMBAT).orElseThrow() == before + 2
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 0
             && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("guard_vitality"),
         "Confirming the quoted refund twice consumes one thread and releases its points once");
+    id = open(session, InteractionHand.MAIN_HAND, false);
+    var magicRefund =
+        preview(
+            session,
+            new ChangeNetwork.Request(id, "magic", "", 0, "", false, List.of("magic_mastery_1")),
+            "refund");
+    require(
+        magicRefund.nodes().equals(List.of("magic_mastery_1", "magic_recovery_1"))
+            && magicRefund.freed() == 2
+            && magicRefund.cost() == 0
+            && magicRefund.remainder() == 2,
+        "Magic refund has its own dependents and fractional fee");
+    confirm(session, magicRefund, "done");
+    require(
+        threads.isEmpty()
+            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 2
+            && skills.getPointsLeft(player, COMBAT).orElseThrow() == before + 2,
+        "The second thread refunds only magic points");
   }
 
   private static long open(TestShipPlayerSession session, InteractionHand hand, boolean identity) {

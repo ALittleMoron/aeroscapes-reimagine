@@ -9,6 +9,8 @@ import dev.aeroscapes.mixin.EffectiveBiomeParametersAccess;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
+import javax.annotation.Nullable;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -238,15 +240,22 @@ public final class IslandBiomeSource extends BiomeSource {
     if (mask == null || voidBiome == null)
       throw new IllegalStateException("Island biome terrain was not initialized");
     context.aeroscapesReimagine$voidBiome(voidBiome);
+    boolean keepHabitat =
+        context.aeroscapesReimagine$deferTerrainMask()
+            || mask.nearTerrain(quartX * 4, quartY * 4, quartZ * 4);
     // Keep delegate calls even in void: its nearest-leaf cache can affect climate ties.
-    Holder<Biome> selected = habitatBiome(quartX, quartY, quartZ, sampler);
-    return context.aeroscapesReimagine$deferTerrainMask()
-            || mask.nearTerrain(quartX * 4, quartY * 4, quartZ * 4)
-        ? selected
-        : voidBiome;
+    boolean applyFootprint = keepHabitat && !context.aeroscapesReimagine$skipSurfaceFootprints();
+    Holder<Biome> selected =
+        habitatBiome(quartX, quartY, quartZ, sampler, applyFootprint ? mask : null);
+    return keepHabitat ? selected : voidBiome;
   }
 
-  private Holder<Biome> habitatBiome(int quartX, int quartY, int quartZ, Climate.Sampler sampler) {
+  private Holder<Biome> habitatBiome(
+      int quartX,
+      int quartY,
+      int quartZ,
+      Climate.Sampler sampler,
+      @Nullable BiomeTerrainMask mask) {
     int x = quartX * 4;
     int y = quartY * 4;
     int z = quartZ * 4;
@@ -281,17 +290,31 @@ public final class IslandBiomeSource extends BiomeSource {
       if (island.peak(x, z) < 48) return mountains.get(0);
       return mountains.get(temperature < -0.15 ? 1 : temperature > 0.35 ? 3 : 2);
     }
+    BlockPos legacy = legacyClimateAnchor(current.layout(), x, y, z);
+    Holder<Biome> climate =
+        legacy == null
+            ? delegate.getNoiseBiome(quartX, quartY, quartZ, sampler)
+            : delegate.getNoiseBiome(
+                legacy.getX() >> 2, legacy.getY() >> 2, legacy.getZ() >> 2, sampler);
+    BlockPos surface = mask == null ? null : mask.smallIslandSurface(x, y, z);
+    if (surface == null) return climate;
+    BlockPos seeded =
+        legacyClimateAnchor(current.layout(), surface.getX(), surface.getY(), surface.getZ());
+    return SmallIslandClimate.sample(delegate, seeded == null ? surface : seeded, sampler);
+  }
+
+  @Nullable
+  private static BlockPos legacyClimateAnchor(IslandLayout layout, int x, int y, int z) {
     for (int layer = 0; layer < 4; layer++) {
-      var small = current.layout().smallIsland(x, z, layer);
+      var small = layout.smallIsland(x, z, layer);
       if (small == null || !small.monobiome()) continue;
-      var shape = small.shape(current.layout().seed(), x, z);
+      var shape = small.shape(layout.seed(), x, z);
       if (shape.cap() > -0.2
           && y >= shape.bottom() - SMALL_HABITAT_MARGIN
           && y <= shape.top() + SMALL_HABITAT_MARGIN)
-        return delegate.getNoiseBiome(
-            Math.floorDiv(small.centerX(), 4), 64, Math.floorDiv(small.centerZ(), 4), sampler);
+        return new BlockPos(small.centerX(), 256, small.centerZ());
     }
-    return delegate.getNoiseBiome(quartX, quartY, quartZ, sampler);
+    return null;
   }
 
   /** Marine decoration must not erase a native island structure's ocean-climate eligibility. */

@@ -40,7 +40,8 @@ public final class RefundPenalty {
   public static void practice(ServerPlayer player, String skill, long earned) {
     if (earned <= 0 || !player.getPersistentData().contains(DATA, Tag.TAG_COMPOUND)) return;
     String pool;
-    if ("magic".equals(skill) || ProgressionBridge.COMBAT_SKILLS.contains(skill)) pool = "combat";
+    if ("magic".equals(skill)) pool = "magic";
+    else if (ProgressionBridge.COMBAT_SKILLS.contains(skill)) pool = "combat";
     else if (ProgressionBridge.PROFESSION_SKILLS.contains(skill)) pool = "profession";
     else return;
     CompoundTag state = player.getPersistentData().getCompound(DATA).getCompound(pool);

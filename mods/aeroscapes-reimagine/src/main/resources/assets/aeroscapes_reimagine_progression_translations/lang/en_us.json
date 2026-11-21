@@ -44,7 +44,7 @@
   "aeroscapes_reimagine.progression.fit": "Overview",
   "aeroscapes_reimagine.progression.learn": "Learn",
   "aeroscapes_reimagine.progression.points": "Points: %s",
-  "aeroscapes_reimagine.progression.combat_budget": "Shared combat points",
+  "aeroscapes_reimagine.progression.combat_budget": "Combat points",
   "aeroscapes_reimagine.progression.profession_budget": "Profession points",
   "aeroscapes_reimagine.progression.navigation": "Drag: move   Wheel: zoom   Search + Enter: find",
   "aeroscapes_reimagine.progression.waiting": "Waiting for talent data from the server.",
@@ -86,5 +86,9 @@
   "puffish_skills.aeroscapes_reimagine.profession.hearty_meal.description": "Dishes you prepare by hand give whoever eats them one extra saturation point, up to the usual limit.",
   "puffish_skills.aeroscapes_reimagine.profession.quick_meal.title": "Quick Bite",
   "puffish_skills.aeroscapes_reimagine.profession.quick_meal.description": "Dishes you prepare by hand take 25% less time to eat, even for another player.",
-  "attribute.aeroscapes_reimagine.dismantling_speed": "Construction dismantling speed"
+  "attribute.aeroscapes_reimagine.dismantling_speed": "Construction dismantling speed",
+  "puffish_skills.aeroscapes_reimagine.magic.title": "Magic talents",
+  "puffish_skills.aeroscapes_reimagine.magic.description": "Practice magic to earn points for this tree.",
+  "aeroscapes_reimagine.progression.magic_budget": "Magic points",
+  "aeroscapes_reimagine.progression.points_due": "Points to earn: %s"
 }

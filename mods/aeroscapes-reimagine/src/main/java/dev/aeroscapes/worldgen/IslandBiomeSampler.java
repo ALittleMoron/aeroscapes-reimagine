@@ -15,6 +15,10 @@ public interface IslandBiomeSampler {
 
   void aeroscapesReimagine$deferTerrainMask(boolean deferred);
 
+  boolean aeroscapesReimagine$skipSurfaceFootprints();
+
+  void aeroscapesReimagine$skipSurfaceFootprints(boolean skip);
+
   @Nullable
   Holder<Biome> aeroscapesReimagine$voidBiome();
 

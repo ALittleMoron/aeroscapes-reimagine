@@ -411,7 +411,7 @@
   "aeroscapes_reimagine.progression.fit": "Обзор",
   "aeroscapes_reimagine.progression.learn": "Изучить",
   "aeroscapes_reimagine.progression.points": "Очки: %s",
-  "aeroscapes_reimagine.progression.combat_budget": "Общие боевые очки",
+  "aeroscapes_reimagine.progression.combat_budget": "Боевые очки",
   "aeroscapes_reimagine.progression.profession_budget": "Очки профессий",
   "aeroscapes_reimagine.progression.navigation": "Перетаскивание: обзор   Колесо: масштаб   Поиск + Enter",
   "aeroscapes_reimagine.progression.waiting": "Ожидаем данные талантов от сервера.",
@@ -453,5 +453,9 @@
   "puffish_skills.aeroscapes_reimagine.profession.hearty_meal.description": "Блюда, приготовленные вами вручную, дают съевшему их игроку одну дополнительную единицу насыщения в пределах обычного максимума.",
   "puffish_skills.aeroscapes_reimagine.profession.quick_meal.title": "Быстрый перекус",
   "puffish_skills.aeroscapes_reimagine.profession.quick_meal.description": "Любому игроку требуется на 25% меньше времени, чтобы съесть приготовленное вами блюдо.",
-  "attribute.aeroscapes_reimagine.dismantling_speed": "Скорость демонтажа"
+  "attribute.aeroscapes_reimagine.dismantling_speed": "Скорость демонтажа",
+  "puffish_skills.aeroscapes_reimagine.magic.title": "Магические таланты",
+  "puffish_skills.aeroscapes_reimagine.magic.description": "Практика магии даёт очки для этого древа.",
+  "aeroscapes_reimagine.progression.magic_budget": "Очки магии",
+  "aeroscapes_reimagine.progression.points_due": "Нужно заработать очков: %s"
 }

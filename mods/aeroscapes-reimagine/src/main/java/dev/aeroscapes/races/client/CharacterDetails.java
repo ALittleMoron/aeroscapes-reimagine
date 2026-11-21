@@ -35,9 +35,8 @@ final class CharacterDetails {
   }
 
   static MutableComponent talent(String starter, String field) {
-    String node = starter.equals("first_mastery") ? "magic_mastery_1" : starter;
-    return Component.translatable(
-        "puffish_skills.aeroscapes_reimagine.combat." + node + "." + field);
+    String path = starter.equals("first_mastery") ? "magic.magic_mastery_1" : "combat." + starter;
+    return Component.translatable("puffish_skills.aeroscapes_reimagine." + path + "." + field);
   }
 
   static MutableComponent race(Race race, int style, boolean expanded) {

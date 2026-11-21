@@ -79,6 +79,33 @@ public final class IslandUpdateRegression {
     VolcanicFluidRegression.start(level, fixture.lavaCandidate());
   }
 
+  static void verifySmallIslandSurface(ServerLevel level) {
+    require(level.getServer().isDedicatedServer() && level.getSeed() == 1, "Use seed 1");
+    var fixture = new IslandUpdateRegression(level);
+    fixture.progress("small-island surface");
+    String expected = "natures_spirit:chaparral";
+    for (BlockPos point :
+        List.of(
+            new BlockPos(110, 106, 645),
+            new BlockPos(110, 106, 647),
+            new BlockPos(112, 103, 645),
+            new BlockPos(112, 106, 648),
+            new BlockPos(128, 112, 656),
+            new BlockPos(136, 106, 672),
+            new BlockPos(144, 111, 664),
+            new BlockPos(152, 116, 652))) {
+      var chunk = fixture.chunk(point);
+      require(!chunk.getBlockState(point).isAir(), "Small island has no surface at " + point);
+      require(
+          expected.equals(fixture.biome(point))
+              && expected.equals(
+                  id(chunk.getNoiseBiome(point.getX() >> 2, point.getY() >> 2, point.getZ() >> 2))),
+          "Small island surface biome mismatch at " + point);
+      require(expected.equals(id(level.getBiome(point.above()))), "Small island view at " + point);
+    }
+    LogUtils.getLogger().info("Small island surface regression passed: seed=1");
+  }
+
   private void caves() {
     CaveNetworkRegression.verify(level);
   }

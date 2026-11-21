@@ -14,6 +14,7 @@ import org.spongepowered.asm.mixin.Unique;
 public abstract class IslandBiomeSamplerMixin implements IslandBiomeSampler {
   @Unique @Nullable private volatile BiomeTerrainMask aeroscapesReimagine$terrainMask;
   @Unique private boolean aeroscapesReimagine$deferred;
+  @Unique private boolean aeroscapesReimagine$skipSurfaceFootprints;
   @Unique @Nullable private volatile Holder<Biome> aeroscapesReimagine$voidBiome;
   @Unique @Nullable private IslandBiomeSource aeroscapesReimagine$generationSource;
 
@@ -36,6 +37,16 @@ public abstract class IslandBiomeSamplerMixin implements IslandBiomeSampler {
   @Override
   public void aeroscapesReimagine$deferTerrainMask(boolean deferred) {
     aeroscapesReimagine$deferred = deferred;
+  }
+
+  @Override
+  public boolean aeroscapesReimagine$skipSurfaceFootprints() {
+    return aeroscapesReimagine$skipSurfaceFootprints;
+  }
+
+  @Override
+  public void aeroscapesReimagine$skipSurfaceFootprints(boolean skip) {
+    aeroscapesReimagine$skipSurfaceFootprints = skip;
   }
 
   @Override

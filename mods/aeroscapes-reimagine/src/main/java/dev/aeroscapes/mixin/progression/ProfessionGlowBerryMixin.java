@@ -1,6 +1,7 @@
 package dev.aeroscapes.mixin.progression;
 
 import com.llamalad7.mixinextras.sugar.Local;
+import dev.aeroscapes.progression.PracticeActions;
 import dev.aeroscapes.races.ProfessionEffects;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.block.CaveVines;
@@ -20,6 +21,7 @@ interface ProfessionGlowBerryMixin {
       index = 1)
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private static int aeroscapes$ripePick(int amount, @Local(argsOnly = true) Entity actor) {
+    PracticeActions.harvest(actor);
     return ProfessionEffects.extraHarvest(actor) ? amount + 1 : amount;
   }
 }

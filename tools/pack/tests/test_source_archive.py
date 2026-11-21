@@ -33,7 +33,7 @@ ROD_TEXTURE = (
 SHADER_PIN = "pack/shaderpacks/example.pw.toml"
 MAGIC_GRAPH = (
     "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/"
-    "aeroscapes_reimagine/puffish_skills/categories/combat/skills.json"
+    "aeroscapes_reimagine/puffish_skills/categories/magic/skills.json"
 )
 RACE_PROFILE = (
     "pack/global_packs/required_data/aeroscapes_reimagine_rules/data/"

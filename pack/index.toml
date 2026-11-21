@@ -4422,19 +4422,35 @@ hash = "336155b03fe581c8bc2161c8c9c0a21e3eb4d3f5dd46d5d52892736a6041fe34"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/category.json"
-hash = "ee2e500b7cd4fd45fefd5c774ff4b764d309ed428fba3fefe2fde93681ef8a14"
+hash = "89b77159be88c844002510b51c5fbc1aa5579770370b2e7c9ff65cdd06b175a3"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/connections.json"
-hash = "a010e24199f1d868d96b2b77f737d6a2ec2c43ea4538709633010b3488353d8e"
+hash = "32f80413326379e5a7d01659360c5f7e67256f4987a2f29e98d2e5f5740e1c28"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/definitions.json"
-hash = "38ddc0c0885109b3d56abb286cbfeb34b2260358dc85d2ab670a03c80121f005"
+hash = "579fb6406da02b31c9c3136a3c673e8fd77d459bde13d6304a40cef724037f27"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/skills.json"
-hash = "c66cfc8e424c538ba7428a7a5a71e5755a0dba2e61f34aea31398b3e03514be2"
+hash = "775a9f07a091e68a889485eb68d640759123d119fa6c31c378445ca0e53d400e"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/magic/category.json"
+hash = "e44c5bafb9284af0d81ead089902a1ad615278108903863d0e3f835c7fc59b1b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/magic/connections.json"
+hash = "316096a1f5ee793d438d14d609128cc27c41a934456a96967dd28377cde53086"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/magic/definitions.json"
+hash = "6dc158c83e1c4ac46dce9dcf4c95834f99f00b8eb81f4ca597b9e5e15a828e43"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/magic/skills.json"
+hash = "20dd027ebe3112f873e6fb35fbc9bab5ab253310989cdc353fe377476a96bd81"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/profession/category.json"
@@ -4454,7 +4470,7 @@ hash = "39edad3dfac195c236d3ee4e7029379114c771f429ae7a1276fdd2080de37283"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/config.json"
-hash = "460404db980fb45622bee575689d3fc1ea6b8323d7f68883135f2f0552db27b7"
+hash = "d6048dc58c365da0b5982df260591b5e9ad6edfa11c6b496122b90a518ca1e1a"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/recipe/steel_wool.json"
@@ -4550,7 +4566,7 @@ hash = "2435a48e3f1bf12d9b0b153bf3514765badaa799ea04c92c37424f85e1ad6d68"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/autovalues.json"
-hash = "5884d119ed9310aeccb14d402433076c784f4e412c5f374837bcb2a4761a40e0"
+hash = "d6ac991e4555fdec70ab02faea79124d9772ce578556f440e86675adeb371ead"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/perks.json"
@@ -4558,7 +4574,7 @@ hash = "0d7bd348e264b8f5b04dd5ad04d5775c56eb10211bff275c00aacc3e6aefb1cd"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/server.json"
-hash = "33aeed8f9f8bc2513570960ed3d4c436d8cd39635940ac4491a2866e1de37cd3"
+hash = "c7c28c4858b5d91131d8917fec8895f75c9479d92fda98c51e8f7ad81485f1f1"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/skills.json"
@@ -5003,7 +5019,7 @@ hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "a621fc915ee2074ab7b0345a00467296b71e7b10728962f605711747301d3273"
+hash = "bbeaf634cac7799b72417b51747372b36279e9148b54fa1ccb37f2b657daf35e"
 
 [[files]]
 file = "licenses/fluidlogistics-1.3.2-corresponding-source.zip"
@@ -5053,7 +5069,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "ab9cbe33e9c6315a76efe02885b5f107d47fcf6b3abe67b46f253a9f23d3ea14"
+hash = "854e3c1ac5c524fb8aac184cf52c767e437ee2dff06d089284f999b3a39e7090"
 
 [[files]]
 file = "mods/agricraft-rereloaded.pw.toml"
@@ -20256,7 +20272,7 @@ hash = "218d40872ca1f0711aae6d8b47fa7789f01ee6aed2ad8248e9317c30c3082023"
 
 [[files]]
 file = "shaderpacks/MakeUp-UltraFast-9.6.zip.txt"
-hash = "1dae9938c0d78ab74230ad943db0ed5014262b67d8b0c80e983c11440027b4bc"
+hash = "50e7785ef563bd007d0a70c3705c08491170556e167ad13c85cda9fcd65820ca"
 
 [[files]]
 file = "shaderpacks/complementary-reimagined.pw.toml"

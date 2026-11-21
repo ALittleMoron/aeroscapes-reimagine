@@ -108,6 +108,10 @@ public final class WorldgenRegression {
       StartingIslandRegression.verify(level, startingIsland);
       return;
     }
+    if (Boolean.getBoolean("aeroscapes.regression.smallIslandSurface")) {
+      IslandUpdateRegression.verifySmallIslandSurface(level);
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.hexLimits")) {
       event
           .getServer()
@@ -359,6 +363,11 @@ public final class WorldgenRegression {
     if (Boolean.getBoolean("aeroscapes.regression.progression")) {
       ProgressionRegression.verify(level);
       LOGGER.info("Progression bridge regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.practiceAwards")) {
+      PracticeAwardsRegression.verify(level);
+      LOGGER.info("Practice awards regression passed");
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.magic")) {
