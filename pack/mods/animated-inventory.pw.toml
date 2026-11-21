@@ -1,0 +1,12 @@
+name = "Animated Inventory"
+filename = "animatedinventory-1.0.7.jar"
+side = "client"
+
+[download]
+url = "https://edge.forgecdn.net/files/8916/978/animatedinventory-1.0.7.jar"
+hash-format = "sha512"
+hash = "e9f9b053f756df4b2d81474cf4867a668484ef5f9c47f19be66b865dc76789e2dd89ba4d1eb6d0708110bdf2b635892b011e8055b8c52cf4ba25a9d24f300e18"
+
+[update.curseforge]
+project-id = 1688531
+file-id = 8916978

@@ -123,11 +123,12 @@ public final class CharacterPreviewTest {
   }
 
   private static void checkReturningCharacters() {
-    var fresh = new RaceClient.Profile(null, 0, null, "", null, "", false);
+    var fresh = new RaceClient.Profile(null, 0, Race.DEFAULT_TINT, null, "", null, "", false);
     require(
         RaceScreen.Page.remaining(fresh).equals(List.of(RaceScreen.Page.values())),
         "New characters choose all parts");
-    var previousRace = new RaceClient.Profile(Race.GOBLIN, 2, null, "", null, "", false);
+    var previousRace =
+        new RaceClient.Profile(Race.GOBLIN, 2, Race.DEFAULT_TINT, null, "", null, "", false);
     require(
         RaceScreen.Page.remaining(previousRace)
             .equals(
@@ -137,7 +138,14 @@ public final class CharacterPreviewTest {
     for (boolean pending : List.of(false, true)) {
       var previousClass =
           new RaceClient.Profile(
-              Race.ELF, 1, CharacterClass.MAGE, "first_mastery", null, "", pending);
+              Race.ELF,
+              1,
+              Race.DEFAULT_TINT,
+              CharacterClass.MAGE,
+              "first_mastery",
+              null,
+              "",
+              pending);
       require(
           !previousClass.complete()
               && RaceScreen.Page.remaining(previousClass)
@@ -147,6 +155,7 @@ public final class CharacterPreviewTest {
           new RaceClient.Profile(
               Race.DWARF,
               2,
+              Race.DEFAULT_TINT,
               CharacterClass.ROGUE,
               "opening_strike",
               Profession.FARMER,

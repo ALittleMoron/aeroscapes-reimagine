@@ -28,7 +28,7 @@ public final class RaceNetwork {
   }
 
   private static void payloads(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("3");
+    var registrar = event.registrar("4");
     registrar.playToServer(
         Choose.TYPE,
         Choose.CODEC,
@@ -40,6 +40,7 @@ public final class RaceNetwork {
                   player,
                   race,
                   msg.style(),
+                  msg.tint(),
                   CharacterClass.byId(msg.classId()),
                   msg.starter(),
                   Profession.byId(msg.professionId()),
@@ -55,22 +56,43 @@ public final class RaceNetwork {
             PacketDistributor.sendToPlayer(player, snapshot(player));
           }
         });
+    registrar.playToServer(
+        Recolor.TYPE,
+        Recolor.CODEC,
+        (msg, ctx) -> {
+          if (!(ctx.player() instanceof ServerPlayer player)) return;
+          Race race = Race.byId(msg.race());
+          if (race != null && RaceIdentity.recolor(player, race, msg.style(), msg.tint()))
+            PacketDistributor.sendToPlayersTrackingEntityAndSelf(player, snapshot(player));
+        });
     registrar.playToClient(Snapshot.TYPE, Snapshot.CODEC, (msg, ctx) -> RaceClient.accept(msg));
   }
 
   public static void choose(
       Race race,
       int style,
+      int tint,
       CharacterClass chosenClass,
       String starter,
       Profession profession,
       String professionStarter) {
-    if (race.validStyle(style)
+    if (race.canTint(style, tint)
         && chosenClass.starters().contains(starter)
         && profession.starters().contains(professionStarter))
       PacketDistributor.sendToServer(
           new Choose(
-              race.id(), style, chosenClass.id(), starter, profession.id(), professionStarter));
+              race.id(),
+              style,
+              tint,
+              chosenClass.id(),
+              starter,
+              profession.id(),
+              professionStarter));
+  }
+
+  public static void recolor(Race race, int style, int tint) {
+    if (race.canTint(style, tint))
+      PacketDistributor.sendToServer(new Recolor(race.id(), style, tint));
   }
 
   static Snapshot snapshot(ServerPlayer player) {
@@ -81,6 +103,7 @@ public final class RaceNetwork {
         player.getUUID(),
         race == null ? "" : race.id(),
         RaceIdentity.style(player),
+        RaceIdentity.tint(player),
         chosenClass == null ? "" : chosenClass.id(),
         RaceIdentity.starter(player),
         profession == null ? "" : profession.id(),
@@ -112,6 +135,7 @@ public final class RaceNetwork {
   public record Choose(
       String race,
       int style,
+      int tint,
       String classId,
       String starter,
       String professionId,
@@ -124,6 +148,7 @@ public final class RaceNetwork {
             (buf, msg) -> {
               buf.writeUtf(msg.race(), 16);
               buf.writeVarInt(msg.style());
+              buf.writeInt(msg.tint());
               buf.writeUtf(msg.classId(), 16);
               buf.writeUtf(msg.starter(), 32);
               buf.writeUtf(msg.professionId(), 16);
@@ -133,6 +158,7 @@ public final class RaceNetwork {
                 new Choose(
                     buf.readUtf(16),
                     buf.readVarInt(),
+                    buf.readInt(),
                     buf.readUtf(16),
                     buf.readUtf(32),
                     buf.readUtf(16),
@@ -144,10 +170,29 @@ public final class RaceNetwork {
     }
   }
 
+  private record Recolor(String race, int style, int tint) implements CustomPacketPayload {
+    private static final Type<Recolor> TYPE =
+        new Type<>(ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", "race_recolor"));
+    private static final StreamCodec<RegistryFriendlyByteBuf, Recolor> CODEC =
+        StreamCodec.of(
+            (buf, msg) -> {
+              buf.writeUtf(msg.race(), 16);
+              buf.writeVarInt(msg.style());
+              buf.writeInt(msg.tint());
+            },
+            buf -> new Recolor(buf.readUtf(16), buf.readVarInt(), buf.readInt()));
+
+    @Override
+    public Type<Recolor> type() {
+      return TYPE;
+    }
+  }
+
   public record Snapshot(
       UUID player,
       String race,
       int style,
+      int tint,
       String classId,
       String starter,
       String professionId,
@@ -163,6 +208,7 @@ public final class RaceNetwork {
               buf.writeUUID(msg.player());
               buf.writeUtf(msg.race(), 16);
               buf.writeVarInt(msg.style());
+              buf.writeInt(msg.tint());
               buf.writeUtf(msg.classId(), 16);
               buf.writeUtf(msg.starter(), 32);
               buf.writeUtf(msg.professionId(), 16);
@@ -174,6 +220,7 @@ public final class RaceNetwork {
                     buf.readUUID(),
                     buf.readUtf(16),
                     buf.readVarInt(),
+                    buf.readInt(),
                     buf.readUtf(16),
                     buf.readUtf(32),
                     buf.readUtf(16),

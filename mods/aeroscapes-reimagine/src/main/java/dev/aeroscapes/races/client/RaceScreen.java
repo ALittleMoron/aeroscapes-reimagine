@@ -9,6 +9,7 @@ import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceNetwork;
 import java.text.NumberFormat;
+import java.util.Arrays;
 import java.util.EnumMap;
 import java.util.EnumSet;
 import java.util.List;
@@ -60,12 +61,14 @@ final class RaceScreen extends Screen implements ChangeView {
   private CharacterClass characterClass;
   private Profession profession;
   private final int[] styles = new int[Race.values().length];
+  private final int[] tints = new int[Race.values().length];
   private final EnumMap<CharacterClass, String> starters = new EnumMap<>(CharacterClass.class);
   private final EnumMap<Profession, String> professionStarters = new EnumMap<>(Profession.class);
   private Page page;
   private boolean expanded;
   private int waiting;
   private boolean retry;
+  private RaceTintPicker tintPicker;
   private float rotation = -18;
   private int left, top, panelWidth, panelHeight, previewWidth;
 
@@ -90,6 +93,8 @@ final class RaceScreen extends Screen implements ChangeView {
     grantPending = profile.grantPending() && page == Page.SUMMARY;
     race = profile.race() != null ? profile.race() : Race.HUMAN;
     if (race.validStyle(profile.style())) styles[race.ordinal()] = profile.style();
+    Arrays.fill(tints, Race.DEFAULT_TINT);
+    tints[race.ordinal()] = profile.tint();
     characterClass = profile.hasClass() ? profile.characterClass() : CharacterClass.WARRIOR;
     if (profile.hasClass()) starters.put(characterClass, profile.starter());
     profession = profile.hasProfession() ? profile.profession() : Profession.BLACKSMITH;
@@ -98,6 +103,16 @@ final class RaceScreen extends Screen implements ChangeView {
 
   private int style() {
     return styles[race.ordinal()];
+  }
+
+  private boolean hasTintControl() {
+    return changeSession == 0
+        && (page == Page.RACE || sheet)
+        && (race.hasEars() || race.hasBeard(style()));
+  }
+
+  private int tint() {
+    return race.canTint(style(), tints[race.ordinal()]) ? tints[race.ordinal()] : Race.DEFAULT_TINT;
   }
 
   @Override
@@ -132,6 +147,7 @@ final class RaceScreen extends Screen implements ChangeView {
   }
 
   private Component heading() {
+    if (tintPicker != null) return tintLabel();
     if (sheet) return title;
     return switch (page) {
       case RACE -> text("race_page");
@@ -176,7 +192,7 @@ final class RaceScreen extends Screen implements ChangeView {
 
   @Override
   public Component getNarrationMessage() {
-    return heading().copy().append("\n").append(details());
+    return tintPicker == null ? heading().copy().append("\n").append(details()) : heading();
   }
 
   @Override
@@ -198,6 +214,10 @@ final class RaceScreen extends Screen implements ChangeView {
       int exitWidth = font.width(exit) + 12;
       button(exit, left + panelWidth - 10 - exitWidth, top + 7, exitWidth, 17, this::leaveWorld);
     }
+    if (tintPicker != null) {
+      pickerControls(x, right, rightWidth, bottom);
+      return;
+    }
     int contentY =
         switch (page) {
           case RACE -> raceControls(right, rightWidth);
@@ -205,6 +225,10 @@ final class RaceScreen extends Screen implements ChangeView {
           case PROFESSION -> professionControls(right, rightWidth);
           case SUMMARY -> top + 32;
         };
+    if (hasTintControl()) {
+      button(tintLabel(), right, contentY, rightWidth, 18, this::openTintPicker);
+      contentY += 23;
+    }
     if (changeSession != 0 && page == Page.CLASS) {
       button(
           ChangeClient.text(refundBranch ? "refund_branch" : "keep_branch"),
@@ -295,6 +319,74 @@ final class RaceScreen extends Screen implements ChangeView {
                   rebuildWidgets();
                 }));
     return top + 86;
+  }
+
+  private Component tintLabel() {
+    return text(race.hasEars() ? "ear_tint" : "beard_tint");
+  }
+
+  private void openTintPicker() {
+    if (tintPicker != null) return;
+    tintPicker = new RaceTintPicker(tint(), race.hasEars() ? 0xc68b6d : 0x7c583f);
+    rebuildWidgets();
+  }
+
+  private void pickerControls(int leftX, int rightX, int rightWidth, int bottom) {
+    var picker = tintPicker;
+    int paletteTop = top + 33;
+    int paletteHeight = Math.clamp(bottom - paletteTop - 91, 12, 118);
+    int hueTop = paletteTop + paletteHeight + 9;
+    addRenderableWidget(picker.palette(rightX, paletteTop, rightWidth, paletteHeight));
+    addRenderableWidget(picker.hueStrip(rightX, hueTop, rightWidth, 13));
+    var resetLabel = text("reset_tint");
+    int resetWidth = font.width(resetLabel) + 12;
+    int resetY = hueTop + 20;
+    button(resetLabel, rightX + rightWidth - resetWidth, resetY, resetWidth, 18, picker::reset)
+        .setTooltip(Tooltip.create(text(race.hasEars() ? "ear_tint_hint" : "beard_tint_hint")));
+    var autoLabel = text(race.hasEars() ? "tint_from_skin" : "tint_original_brown");
+    var customLabel = text("tint_custom");
+    addRenderableOnly(
+        (graphics, mouseX, mouseY, partialTick) -> {
+          int color = picker.color();
+          if (color == Race.DEFAULT_TINT) {
+            graphics.drawString(font, autoLabel, rightX, resetY + 5, TEXT, false);
+          } else {
+            graphics.fill(rightX, resetY + 3, rightX + 12, resetY + 15, color | 0xff000000);
+            graphics.renderOutline(rightX, resetY + 3, 12, 12, TEXT);
+            graphics.drawString(font, customLabel, rightX + 16, resetY + 5, TEXT, false);
+          }
+        });
+    button(
+        text("rotate"),
+        leftX,
+        bottom - 72,
+        previewWidth,
+        18,
+        () -> rotation = (rotation + 45) % 360);
+    int footer = bottom - 26;
+    int half = (panelWidth - 24) / 2;
+    button(CommonComponents.GUI_CANCEL, leftX, footer, half, 18, this::closeTintPicker);
+    button(
+        sheet ? text("apply_tint") : CommonComponents.GUI_DONE,
+        leftX + half + 4,
+        footer,
+        half,
+        18,
+        this::acceptTint);
+  }
+
+  private void acceptTint() {
+    if (tintPicker == null) return;
+    int selected = tintPicker.color();
+    if (sheet && tint() != selected) RaceNetwork.recolor(race, style(), selected);
+    tints[race.ordinal()] = selected;
+    closeTintPicker();
+  }
+
+  private void closeTintPicker() {
+    if (tintPicker == null) return;
+    tintPicker = null;
+    rebuildWidgets();
   }
 
   private void previewChange() {
@@ -414,7 +506,8 @@ final class RaceScreen extends Screen implements ChangeView {
     if (page == Page.SUMMARY) {
       waiting = 100;
       retry = false;
-      RaceNetwork.choose(race, style(), characterClass, starter(), profession, professionStarter());
+      RaceNetwork.choose(
+          race, style(), tint(), characterClass, starter(), profession, professionStarter());
     } else page = pages.get(pages.indexOf(page) + 1);
     rebuildWidgets();
   }
@@ -438,7 +531,9 @@ final class RaceScreen extends Screen implements ChangeView {
 
   @Override
   public void onClose() {
-    if (changeSession != 0) {
+    if (tintPicker != null) {
+      closeTintPicker();
+    } else if (changeSession != 0) {
       minecraft.setScreen(changeMenu);
     } else if (sheet) {
       closeSheet();
@@ -483,12 +578,13 @@ final class RaceScreen extends Screen implements ChangeView {
     graphics.hLine(left + 7, left + 29, top + 4, 0xffb99a6c);
     graphics.hLine(left + panelWidth - 29, left + panelWidth - 7, bottom - 5, 0xffb99a6c);
     graphics.drawString(font, heading(), x, top + 12, GOLD, false);
-    boolean tabsVisible = page != Page.SUMMARY;
+    boolean pickingTint = tintPicker != null;
+    boolean tabsVisible = !pickingTint && page != Page.SUMMARY;
     int previewY = top + (tabsVisible ? 51 : 30), previewBottom = bottom - 76;
     graphics.fillGradient(x, previewY, x + previewWidth, previewBottom, 0xff162333, 0xff263c52);
     graphics.renderOutline(x, previewY, previewWidth, previewBottom - previewY, 0xff3d536d);
     int floor = previewBottom - 6;
-    graphics.hLine(x + 5, x + previewWidth - 6, floor, 0xff718399);
+    if (!pickingTint) graphics.hLine(x + 5, x + previewWidth - 6, floor, 0xff718399);
     if (minecraft != null && minecraft.player != null && floor > previewY + 4) {
       graphics.enableScissor(x + 1, previewY + 1, x + previewWidth - 1, previewBottom - 1);
       preview.draw(
@@ -496,15 +592,18 @@ final class RaceScreen extends Screen implements ChangeView {
           minecraft.player,
           race,
           style(),
+          pickingTint ? tintPicker.color() : tint(),
           rotation,
           x + previewWidth / 2,
-          floor,
-          Math.min(floor - previewY - 4, (previewWidth - 8) * 2));
+          pickingTint ? (previewY + previewBottom) / 2 : floor,
+          Math.min(floor - previewY - 4, (previewWidth - 8) * (pickingTint ? 1 : 2)),
+          pickingTint);
       graphics.disableScissor();
     }
-    if (page == Page.RACE
-        || page == Page.CLASS && characterClass.starters().size() > 1
-        || page == Page.PROFESSION && profession.starters().size() > 1) {
+    if (tabsVisible
+        && (page == Page.RACE
+            || page == Page.CLASS && characterClass.starters().size() > 1
+            || page == Page.PROFESSION && profession.starters().size() > 1)) {
       graphics.drawString(
           font,
           text(page == Page.RACE ? "appearance" : "ability"),

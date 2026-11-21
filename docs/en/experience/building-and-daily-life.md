@@ -44,6 +44,12 @@ handheld tools, rather than a set of tools alone.
 
 Honeycomb or tallow protects supported iron from further weathering; steel wool removes wax and scrapes rust from supported stages. Protection and cleaning preserve the block's orientation and other properties. The mod's settings are available through **Mods → Immersive Weathering → Config**.
 
+Use a water bottle on a wilted sapling to revive it with its original tree species and growth stage. Weeds start on vacant farmland, and falling sand or leaf litter settles in free spaces around plants and small decorations. Clearing a deposit reveals the grass underneath.
+
+Travertine masonry from Nature's Spirit and cobblestone-brick masonry from Quark can grow moss in damp places. Galosphere lichen can start the spread. Shears clear the moss and recover a clump. Travertine and chert bricks and tiles crack near heat and can be repaired with mortar. The conversion keeps the shape and orientation of slabs, stairs and walls and keeps water in waterlogged blocks.
+
+Snow coats Create's cut scoria bricks in cold weather. Use a shovel to clear the coat, or let it thaw. Flowing water can leave a removable red sand layer under pink sandstone. A lit Farmer's Delight stove or Wetland Whimsy lemonstone brazier leaves soot under solid surfaces overhead.
+
 Steel wool appears in the mod's creative tab and item search. Craft one from four
 iron nuggets, in any arrangement in the inventory crafting grid or at a crafting
 table. It is also one of the toolsmith's gifts to a player with Hero of the Village.

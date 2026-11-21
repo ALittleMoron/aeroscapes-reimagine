@@ -1060,9 +1060,9 @@
       "source": "data/minecraft/tags/block/mineable/pickaxe.json",
       "source_sha256": "7420a90bff16f51478fdf10852e03b6c11220b2dd16f142bd8e1c54965d987e8",
       "output": "data/minecraft/tags/block/mineable/pickaxe.json",
-      "sha256": "0f746820a5c9eec0b43fd3a2e23ac619fe53cb506c513e76d987412f908f48a3",
+      "sha256": "4ad2b939d6ab8f2abc2523b10d4d3685d587055e9e28e205085f0807ec6c6a9a",
       "mode": "adapted",
-      "reason": "Map removed Aero content to vanilla equivalents; extend the retained pickaxe mining tag with the ten owned blackstone ore variants while preserving existing entries."
+      "reason": "Map removed Aero content to vanilla equivalents. Keep the ten owned blackstone ores and the optional snow-coated scoria in the vanilla pickaxe mining tag."
     },
     {
       "source": "data/minecraft/tags/block/moss_replaceable.json",

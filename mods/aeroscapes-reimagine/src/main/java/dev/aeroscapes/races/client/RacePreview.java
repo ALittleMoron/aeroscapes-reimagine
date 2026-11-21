@@ -40,10 +40,12 @@ final class RacePreview {
       AbstractClientPlayer player,
       Race race,
       int style,
+      int tint,
       float yaw,
       int x,
-      int baseline,
-      int availableHeight) {
+      int y,
+      int availableHeight,
+      boolean closeUp) {
     var skin = player.getSkin();
     if (skin.model() != skinType) {
       skinType = skin.model();
@@ -56,7 +58,7 @@ final class RacePreview {
     model.getChild("right_pants").visible =
         player.isModelPartShown(PlayerModelPart.RIGHT_PANTS_LEG);
     model.getChild("left_pants").visible = player.isModelPartShown(PlayerModelPart.LEFT_PANTS_LEG);
-    float scale = availableHeight / 2.26f;
+    float scale = availableHeight / (closeUp ? 1.1f : 2.26f);
     float width = scale * RaceTraits.width(race);
     float height = scale * RaceTraits.height(race);
     var pose = graphics.pose();
@@ -64,10 +66,10 @@ final class RacePreview {
     pose.pushPose();
     Lighting.setupForEntityInInventory();
     try {
-      pose.translate(x, baseline, 80);
+      pose.translate(x, y, 80);
       pose.scale(width, height, -width);
       pose.mulPose(Axis.YP.rotationDegrees(yaw));
-      pose.translate(0, -1.5f, 0);
+      pose.translate(0, closeUp ? 0.25f : -1.5f, 0);
       var buffers = graphics.bufferSource();
       model.render(
           pose,
@@ -82,6 +84,7 @@ final class RacePreview {
           skin.texture(),
           race,
           style,
+          tint,
           features,
           false,
           false);

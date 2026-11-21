@@ -20,7 +20,7 @@ The **Aeroscapes Reimagine — Island Atlas** resource pack gives the main menu 
 
 [Not Enough Animations](https://modrinth.com/project/MPCX6s5C) adds and improves third-person animations. 3D Skin Layers renders the outer skin layer with depth. First person uses the normal hand view: rendering the whole animated body could obstruct the view during flight.
 
-[Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) adds more expressive player movement and poses through Entity Model Features and Entity Texture Features. It remains alongside Not Enough Animations for third-person presentation. Tool and weapon swings use these providers’ existing animations.
+[Fresh Animations: Player Extension](https://modrinth.com/resourcepack/fa-player-extension) adds more expressive player movement and poses through Entity Model Features and Entity Texture Features. It remains alongside Not Enough Animations for third-person presentation. Consecutive attacks with daggers and kitchen knives cycle through a forward jab, a slicing cut and an overhead stab with a reverse grip. Both views mirror the moves for a left-handed character.
 
 [Punchy](https://modrinth.com/mod/punchy-fpa) handles first-person hands, with different movements for mining, chopping, digging and using items. The initial profile disables authored camera motion, extra walking/sprinting/falling movements and decorative overlays/particles. Inspection starts unbound and can be assigned in **Options → Controls**; Punchy's settings are available through **F8**. Combat rules remain unchanged.
 

@@ -12,6 +12,8 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 public final class EcologyMixinPlugin implements IMixinConfigPlugin {
   @Override
   public boolean shouldApplyMixin(String target, String mixin) {
+    if (mixin.endsWith(".GrizzlyHuntMixin"))
+      return available("buzzier_bees", "7.0.1") && available("neoforge", "21.1.244");
     if (mixin.contains("Wetland") || mixin.endsWith("SpawnHeightPlacementMixin"))
       return available("wetland_whimsy", "2.1.0-1.21.1")
           && available("biolith", "3.0.14")

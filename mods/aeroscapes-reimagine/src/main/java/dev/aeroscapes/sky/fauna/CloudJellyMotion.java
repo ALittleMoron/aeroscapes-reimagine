@@ -94,6 +94,10 @@ public final class CloudJellyMotion {
     return shape;
   }
 
+  public double bellDepth() {
+    return level(lip);
+  }
+
   private double radial(double y) {
     double depth = Mth.clamp(y / lip, 0, 1.22);
     return 1 - contraction * (.035 + .22 * depth * depth);

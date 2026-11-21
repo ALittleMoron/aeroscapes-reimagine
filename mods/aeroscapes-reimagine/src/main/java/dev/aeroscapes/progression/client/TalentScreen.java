@@ -45,6 +45,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   private static final int MUTED = 0xff92a9c3;
   private static final int GOLD = 0xffe9c084;
   private static final int ROUTE = 0xff75dfda;
+  private static final int AFFORDABLE = 0xffc5fa77;
   private final ClientSkillScreenData data;
   private final long changeSession;
   private final Set<String> combatRefund = new HashSet<>();
@@ -455,6 +456,11 @@ public final class TalentScreen extends Screen implements ChangeView {
                 + state.name().toLowerCase(Locale.ROOT)
                 + ".png");
     graphics.blit(frame, x - radius, y - radius, radius * 2, radius * 2, 0, 0, 26, 26, 26, 26);
+    if (state == Skill.State.AFFORDABLE && changeSession == 0) {
+      graphics.renderOutline(x - radius, y - radius, radius * 2, radius * 2, AFFORDABLE);
+      graphics.renderOutline(
+          x - radius + 1, y - radius + 1, radius * 2 - 2, radius * 2 - 2, 0xff40652a);
+    }
     graphics.pose().pushPose();
     graphics.pose().translate(x - 8, y - 8, 0);
     if (definition.icon() instanceof ClientIconConfig.ItemIconConfig item)
@@ -477,6 +483,7 @@ public final class TalentScreen extends Screen implements ChangeView {
     if (state == Skill.State.UNLOCKED) {
       graphics.pose().pushPose();
       graphics.pose().translate(0, 0, 200);
+      graphics.fill(x + 2, y + 2, x + radius, y + radius, 0xff162331);
       graphics.drawString(font, "✓", x + 4, y + 3, GOLD, false);
       graphics.pose().popPose();
     }

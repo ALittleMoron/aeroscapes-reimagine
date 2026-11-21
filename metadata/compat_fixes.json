@@ -1,6 +1,64 @@
 [
   {
     "targets": {
+      "8aoMKplv": "83nCNSX4",
+      "gedNE4y2": "HJZB6bmA",
+      "R2OftAxM": "rOESN0jP",
+      "PsS0ZPEe": "rSs37OB4",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "The tag-matched candidate cycles through three native Punchy v2 clips at explicit playback speed. PlayerAnimator mirrors the corresponding third-person clips and rotates the held model around its hilt. The late EMF draw preserves the authored action pose through the player resource pack pass."
+  },
+  {
+    "targets": {
+      "F8BQNPWX": "9Yn8ig4c",
+      "b7vOFSIp": "Y12rtT96",
+      "txgXquyE": "JjW0y3WF",
+      "rex9wwpz": "OgmUYgeL",
+      "die1AF7i": "1ki6UyqV",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/tags/entity_type/turkey_prey.json",
+      "data/naturalist/tags/entity_type/alligator_hostiles.json",
+      "data/naturalist/tags/entity_type/bear_hostiles.json",
+      "data/naturalist/tags/entity_type/great_white_shark_hostiles.json",
+      "data/naturalist/tags/entity_type/lion_hostiles.json",
+      "data/naturalist/tags/entity_type/snake_hostiles.json",
+      "data/naturalist/tags/entity_type/tiger_hostiles.json"
+    ],
+    "reason": "Extend Naturalist's native prey tags with species from the installed fauna. Both bears use the turkey tag; the Buzzier Bees adapter adds a reachable target to the native grizzly melee goal."
+  },
+  {
+    "targets": {
+      "AtjxBimt": "n3NgrJOg",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/immersive_weathering/tags/block/weeds_replaceable.json"
+    ],
+    "reason": "Both native weed growth entries use this tag. Restrict their targets to air so weeds occupy vacant farmland and preserve planted crops."
+  },
+  {
+    "targets": {
+      "AtjxBimt": "n3NgrJOg",
+      "WBvnqHfV": "MGjl80vc",
+      "qnQsVE2z": "qcDWHGnS",
+      "Kn7xyQ1v": "Y3deS8Po",
+      "LNytGWDc": "UjX6dr61",
+      "R2OftAxM": "rOESN0jP",
+      "PsS0ZPEe": "rSs37OB4",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/aeroscapes_reimagine/block_growths/pink_sandstone_erosion.json",
+      "data/immersive_weathering/tags/block/moss_source.json"
+    ],
+    "reason": "Extend the pinned port's aging mappings and growth drivers for existing Nature's Spirit and Quark masonry, Galosphere lichen, sandstone erosion, snow on Create scoria and lit cooking blocks. Deposits preserve the provider block and existing decorations."
+  },
+  {
+    "targets": {
       "lZGsiJ1L": "3qkLQwpf",
       "owned:aeroscapes_reimagine": "0.1.0"
     },

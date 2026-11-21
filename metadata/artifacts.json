@@ -616,6 +616,40 @@
     "native_route_note": "Native descriptor requires Architectury>=13.0.8; retain installed13.0.11 rather than downgrade to the provider-listed exact older file. MC1.21.1/NF21.1.244 unchanged."
   },
   {
+    "slug": "animated-inventory",
+    "name": "Animated Inventory",
+    "project_id": "curseforge:1688531",
+    "version_id": "8916978",
+    "version": "1.0.7",
+    "filename": "animatedinventory-1.0.7.jar",
+    "sha512": "e9f9b053f756df4b2d81474cf4867a668484ef5f9c47f19be66b865dc76789e2dd89ba4d1eb6d0708110bdf2b635892b011e8055b8c52cf4ba25a9d24f300e18",
+    "sha1": "3b40d5dbfc5941bf2442e8fab68e064ab48195b3",
+    "file_size": 129810,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": ["neoforge"],
+    "game_versions": ["1.21.1"],
+    "license": {
+      "id": "LicenseRef-CC-BY-NC-SA-4.0-Minecraft-Modpack-Exception",
+      "name": "CC BY-NC-SA 4.0 with Additional Permission for Minecraft Modpacks and Servers",
+      "url": "https://github.com/CappleApple/animated-inventory/blob/main/LICENSE"
+    },
+    "source_url": "https://github.com/CappleApple/animated-inventory",
+    "source": {
+      "type": "curseforge",
+      "project_id": 1688531,
+      "file_id": 8916978,
+      "url": "https://edge.forgecdn.net/files/8916/978/animatedinventory-1.0.7.jar"
+    },
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected test for slot-to-slot item animation in 0.7.0.",
+    "distribution": "bundle",
+    "distribution_note": "Original CurseForge JAR in client-overrides/mods. The embedded LICENSE grants modpack distribution and preserves CappleApple's copyright and terms.",
+    "native_route_note": "The descriptor requires NeoForge >=21.1.244 and Minecraft [1.21.1,1.21.2). Sophisticated Core enables the optional screen adapters. Native slot movement and quick transfer are enabled, while overlapping presentation defaults are disabled."
+  },
+  {
     "slug": "appleskin",
     "name": "AppleSkin",
     "project_id": "EsAfCjCV",
@@ -9743,6 +9777,38 @@
     "file_size": 176633
   },
   {
+    "slug": "smooth-scroll",
+    "name": "Smooth Scrolling",
+    "project_id": "CllP7wW0",
+    "version_id": "1HA8AoCS",
+    "version": "2.2.1",
+    "filename": "smoothscroll-2.2.1-1.21.1.jar",
+    "sha512": "c9bf028f54047c5ad88b4c0fc583ad8924d6dbb58ff9d6a801c68d31a3b5fec92be3309e5022266e8efa178da2dfd2980a368cc42d947ee441136873bd433371",
+    "sha1": "83ce9cb551cfb03569a39a94cbed8686b2e6abc0",
+    "file_size": 76919,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "fabric",
+      "quilt"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/SmajloSlovakian/Minecraft-Smooth-Scrolling",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected inventory and scrolling changes for 0.7.0",
+    "dependency_note": "Exact Fabric client file through the existing Connector and Forgified Fabric API. The original artifact requires Fabric Loader >=0.14.21 and Java >=21."
+  },
+  {
     "slug": "smooth-skies",
     "name": "Smooth Skies",
     "project_id": "uvlgIwBD",
@@ -10655,6 +10721,37 @@
     ],
     "sha1": "6916fb787c0c3da859166b57a9aaac287d7ed144",
     "file_size": 2155309
+  },
+  {
+    "slug": "tiny-item-animations",
+    "name": "Tiny Item Animations",
+    "project_id": "wMkevcSR",
+    "version_id": "mSJPeo1D",
+    "version": "1.2.1",
+    "filename": "tia-neoforge-1.21-1.2.1.jar",
+    "sha512": "61fc6c865ab13bb81d3d6f99f89b6ecb777278d9b37054a3b18559f3be86412546f2a7c4a502742b3cf3d9ef6fccdd1995546b5ebaab781cf2d3f768a7a8719f",
+    "sha1": "60b6164e5329b7c13775fc9c921bf375f5ba5934",
+    "file_size": 18957,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1",
+      "1.21.2"
+    ],
+    "license": {
+      "id": "LicenseRef-LPUL",
+      "name": "",
+      "url": "https://github.com/Trivaxy/Tiny-Item-Animations/blob/multiloader-1.21/LICENSE"
+    },
+    "source_url": "https://github.com/Trivaxy/Tiny-Item-Animations",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected inventory and scrolling changes for 0.7.0"
   },
   {
     "slug": "tmrv",

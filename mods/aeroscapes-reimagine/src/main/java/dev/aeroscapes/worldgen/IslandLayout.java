@@ -2,6 +2,8 @@ package dev.aeroscapes.worldgen;
 
 /** Seeded, bounded island geometry shared by terrain and local-water placement. */
 public record IslandLayout(long seed) {
+  static final int LARGE_CELL_SIZE = 1536;
+
   private static double random(long value) {
     long mixed = value;
     mixed = (mixed ^ mixed >>> 30) * 0xbf58476d1ce4e5b9L;
@@ -127,12 +129,12 @@ public record IslandLayout(long seed) {
   }
 
   public LargeIsland largeIsland(int x, int z) {
-    long key = cell(x, z, 1536, 0x576da367de7L);
+    long key = cell(x, z, LARGE_CELL_SIZE, 0x576da367de7L);
     if (random(key) >= 0.153) return null;
     double anchor = -48 + Math.floor(random(key + 5) * 4) * 80;
     return new LargeIsland(
-        Math.floorDiv(x, 1536) * 1536.0 + 704 + random(key + 1) * 128,
-        Math.floorDiv(z, 1536) * 1536.0 + 704 + random(key + 2) * 128,
+        Math.floorDiv(x, LARGE_CELL_SIZE) * (double) LARGE_CELL_SIZE + 704 + random(key + 1) * 128,
+        Math.floorDiv(z, LARGE_CELL_SIZE) * (double) LARGE_CELL_SIZE + 704 + random(key + 2) * 128,
         320 + random(key + 3) * 192,
         320 + random(key + 4) * 192,
         anchor,

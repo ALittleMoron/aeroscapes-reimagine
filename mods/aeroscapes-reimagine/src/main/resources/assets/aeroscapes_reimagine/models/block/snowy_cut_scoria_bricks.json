@@ -1,0 +1,72 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "particle": "create:block/palettes/stone_types/brick/scoria_cut_brick",
+    "bricks": "create:block/palettes/stone_types/brick/scoria_cut_brick",
+    "snow": "minecraft:block/snow"
+  },
+  "elements": [
+    {
+      "from": [0, 0, 0],
+      "to": [16, 13, 16],
+      "faces": {
+        "down": { "texture": "#bricks", "cullface": "down" },
+        "north": { "texture": "#bricks", "cullface": "north" },
+        "east": { "texture": "#bricks", "cullface": "east" },
+        "south": { "texture": "#bricks", "cullface": "south" },
+        "west": { "texture": "#bricks", "cullface": "west" }
+      }
+    },
+    {
+      "from": [0, 13, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "up": { "texture": "#snow", "cullface": "up" },
+        "north": { "texture": "#snow", "cullface": "north" },
+        "east": { "texture": "#snow", "cullface": "east" },
+        "south": { "texture": "#snow", "cullface": "south" },
+        "west": { "texture": "#snow", "cullface": "west" }
+      }
+    },
+    {
+      "from": [2, 11, -0.025],
+      "to": [7, 13, 0],
+      "faces": { "north": { "texture": "#snow", "cullface": "north" } }
+    },
+    {
+      "from": [10, 12, -0.025],
+      "to": [14, 13, 0],
+      "faces": { "north": { "texture": "#snow", "cullface": "north" } }
+    },
+    {
+      "from": [16, 11, 3],
+      "to": [16.025, 13, 8],
+      "faces": { "east": { "texture": "#snow", "cullface": "east" } }
+    },
+    {
+      "from": [16, 12, 10],
+      "to": [16.025, 13, 15],
+      "faces": { "east": { "texture": "#snow", "cullface": "east" } }
+    },
+    {
+      "from": [4, 11, 16],
+      "to": [9, 13, 16.025],
+      "faces": { "south": { "texture": "#snow", "cullface": "south" } }
+    },
+    {
+      "from": [12, 12, 16],
+      "to": [16, 13, 16.025],
+      "faces": { "south": { "texture": "#snow", "cullface": "south" } }
+    },
+    {
+      "from": [-0.025, 11, 8],
+      "to": [0, 13, 13],
+      "faces": { "west": { "texture": "#snow", "cullface": "west" } }
+    },
+    {
+      "from": [-0.025, 12, 1],
+      "to": [0, 13, 5],
+      "faces": { "west": { "texture": "#snow", "cullface": "west" } }
+    }
+  ]
+}

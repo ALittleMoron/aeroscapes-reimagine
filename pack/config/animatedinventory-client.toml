@@ -1,0 +1,36 @@
+[movement]
+item_movement_enabled = true
+movement_style = "SMOOTH"
+
+[quick_move]
+quick_move_enabled = true
+
+[crafting]
+crafting_ingredient_animation = false
+
+[cursor]
+cursor_pickup_animation = false
+cursor_placement_animation = false
+
+[hotbar]
+animate_hotbar_selector = false
+
+[screens]
+screen_open_animation = "NONE"
+screen_close_animation = "NONE"
+
+[hover]
+slot_hover_animation = false
+
+[click]
+click_feedback_enabled = false
+
+[merge]
+merge_pulse_enabled = false
+
+[items]
+item_appear_animation = "NONE"
+item_disappear_animation = "NONE"
+
+[layout_reflow]
+animate_layout_reflow = false

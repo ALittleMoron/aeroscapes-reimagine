@@ -70,6 +70,7 @@ BRIDGED_FABRIC_MODS = {
     ("Effrh3ze", "9It7IoUE"): "client",
     ("yd14I2wN", "m4E3YdvX"): "client",
     ("kzwxhsjp", "rA95AHFG"): "client",
+    ("CllP7wW0", "1HA8AoCS"): "client",
     ("hqQqvaa4", "ppOVyisF"): "both",
 }
 COMPAT_DIRECTORY = "global_packs/required_data/aeroscapes_reimagine_compat"

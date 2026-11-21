@@ -24,6 +24,10 @@ final class RaceFeatures
     extends RenderLayer<AbstractClientPlayer, PlayerModel<AbstractClientPlayer>> {
   private static final ResourceLocation HAIR =
       ResourceLocation.parse("aeroscapes_race_visuals:textures/entity/hair.png");
+  private static final ResourceLocation TINTABLE_HAIR =
+      ResourceLocation.parse("aeroscapes_race_visuals:textures/entity/tintable_hair.png");
+  private static final ResourceLocation WHITE =
+      ResourceLocation.parse("aeroscapes_reimagine:textures/entity/white.png");
   private final ModelPart hair;
 
   RaceFeatures(PlayerRenderer renderer) {
@@ -43,9 +47,13 @@ final class RaceFeatures
       float age,
       float yaw,
       float pitch) {
-    var race = RaceClient.race(player.getUUID());
+    var profile = RaceClient.profile(player.getUUID());
     var head = getParentModel().head;
-    if (race == null || player.isInvisible() || !head.visible || head.skipDraw) return;
+    if (profile == null
+        || profile.race() == null
+        || player.isInvisible()
+        || !head.visible
+        || head.skipDraw) return;
     var helmet = player.getItemBySlot(EquipmentSlot.HEAD);
     boolean openHelmet =
         helmet.getItem() instanceof ArmorItem
@@ -58,8 +66,9 @@ final class RaceFeatures
         light,
         LivingEntityRenderer.getOverlayCoords(player, 0),
         player.getSkin().texture(),
-        race,
-        RaceClient.style(player.getUUID()),
+        profile.race(),
+        profile.style(),
+        profile.tint(),
         hair,
         !helmet.isEmpty(),
         openHelmet);
@@ -74,28 +83,42 @@ final class RaceFeatures
       ResourceLocation skin,
       Race race,
       int style,
+      int tint,
       ModelPart hair,
       boolean covered,
       boolean openHelmet) {
     if (!race.validStyle(style)) return;
-    if (race == Race.GOBLIN || race == Race.ELF) {
+    if (race.hasEars()) {
       if (!covered)
         RaceEars.render(
             pose,
-            buffers.getBuffer(RenderType.entityCutoutNoCull(skin)),
+            buffers.getBuffer(
+                RenderType.entityCutoutNoCull(tint == Race.DEFAULT_TINT ? skin : WHITE)),
             light,
             overlay,
             race,
-            style);
+            style,
+            tint);
       return;
     }
     if (style == 0 || covered && !openHelmet) return;
-    var material = buffers.getBuffer(RenderType.entityCutoutNoCull(HAIR));
-    if (!covered)
-      hair.getChild(race == Race.HUMAN && style == 1 ? "hair" : "beard")
-          .render(pose, material, light, overlay);
-    if (race == Race.DWARF)
-      hair.getChild(style == 1 ? "fork" : "braid").render(pose, material, light, overlay);
+    if (!race.hasBeard(style)) {
+      if (!covered)
+        hair.getChild("hair")
+            .render(pose, buffers.getBuffer(RenderType.entityCutoutNoCull(HAIR)), light, overlay);
+      return;
+    }
+    var material =
+        buffers.getBuffer(
+            RenderType.entityCutoutNoCull(tint == Race.DEFAULT_TINT ? HAIR : TINTABLE_HAIR));
+    int argb = tint == Race.DEFAULT_TINT ? 0xffffffff : 0xff000000 | tint;
+    if (!covered) hair.getChild("beard").render(pose, material, light, overlay, argb);
+    if (race == Race.DWARF) {
+      hair.getChild(style == 1 ? "fork" : "braid").render(pose, material, light, overlay, argb);
+      if (style == 2)
+        hair.getChild("braid_band")
+            .render(pose, buffers.getBuffer(RenderType.entityCutoutNoCull(HAIR)), light, overlay);
+    }
   }
 
   static ModelPart makeHair() {
@@ -120,7 +143,7 @@ final class RaceFeatures
     var braid = root.addOrReplaceChild("braid", CubeListBuilder.create(), PartPose.ZERO);
     lock(braid, "chin", -2.45f, 0.5f, -4.9f, 4.9f, 2.2f, 2.05f, 0.04f);
     lock(braid, "upper", -1.85f, 2.52f, -4.72f, 3.7f, 2.25f, 1.85f, 0.07f);
-    lock(braid, "band", -1.75f, 4.55f, -4.71f, 3.5f, 0.95f, 1.95f, 0, 32);
+    lock(root, "braid_band", -1.75f, 4.55f, -4.71f, 3.5f, 0.95f, 1.95f, 0, 32);
     lock(braid, "tassel", -1.35f, 5.48f, -4.5f, 2.7f, 1.8f, 1.55f, 0.12f);
     return LayerDefinition.create(mesh, 64, 16).bakeRoot();
   }

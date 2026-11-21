@@ -5,6 +5,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import dev.aeroscapes.races.Race;
 import java.util.ArrayList;
 import java.util.List;
+import net.minecraft.util.FastColor;
 import org.joml.Vector3f;
 
 final class RaceEars {
@@ -32,11 +33,13 @@ final class RaceEars {
 
   private record Face(
       Vector3f a, Vector3f b, Vector3f c, Vector3f d, Vector3f normal, int color, float u) {
-    void vertex(PoseStack.Pose pose, VertexConsumer buffer, Vector3f p, int light, int overlay) {
+    void vertex(
+        PoseStack.Pose pose, VertexConsumer buffer, Vector3f p, int light, int overlay, int tint) {
+      boolean automatic = tint == Race.DEFAULT_TINT;
       buffer
           .addVertex(pose, p.x, p.y, p.z)
-          .setColor(color)
-          .setUv(u, 13.5f / 64)
+          .setColor(automatic ? color : FastColor.ARGB32.multiply(color, 0xff000000 | tint))
+          .setUv(automatic ? u : 0.5f, automatic ? 13.5f / 64 : 0.5f)
           .setOverlay(overlay)
           .setLight(light)
           .setNormal(pose, normal.x, normal.y, normal.z);
@@ -44,13 +47,19 @@ final class RaceEars {
   }
 
   static void render(
-      PoseStack stack, VertexConsumer buffer, int light, int overlay, Race race, int style) {
+      PoseStack stack,
+      VertexConsumer buffer,
+      int light,
+      int overlay,
+      Race race,
+      int style,
+      int tint) {
     for (var face : (race == Race.ELF ? ELF : GOBLIN).get(style)) {
       var pose = stack.last();
-      face.vertex(pose, buffer, face.a, light, overlay);
-      face.vertex(pose, buffer, face.b, light, overlay);
-      face.vertex(pose, buffer, face.c, light, overlay);
-      face.vertex(pose, buffer, face.d, light, overlay);
+      face.vertex(pose, buffer, face.a, light, overlay, tint);
+      face.vertex(pose, buffer, face.b, light, overlay, tint);
+      face.vertex(pose, buffer, face.c, light, overlay, tint);
+      face.vertex(pose, buffer, face.d, light, overlay, tint);
     }
   }
 

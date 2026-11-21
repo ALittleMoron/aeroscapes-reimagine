@@ -15,6 +15,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.EmptyBlockGetter;
+import net.minecraft.world.level.GameRules;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.block.Block;
@@ -37,11 +38,18 @@ import org.slf4j.Logger;
 /** World-generation fixes for the pinned Aeroscapes Reimagine pack. */
 @Mod("aeroscapes_reimagine")
 public final class AeroscapesReimagine {
+  public static final GameRules.Key<GameRules.BooleanValue> LARGE_STARTING_ISLAND =
+      GameRules.register(
+          "aeroscapesLargeStartingIsland",
+          GameRules.Category.MISC,
+          GameRules.BooleanValue.create(false));
   private static final Logger LOGGER = LogUtils.getLogger();
   private static final int MINIMUM_SPAWN_Y = 50;
   private static final int SEARCH_RADIUS = 4096;
   private static final int SEARCH_STEP = 128;
   private static final int MAXIMUM_GENERATED_CANDIDATES = 12;
+  private static final int MAXIMUM_MOUNTAIN_PROBES = 48;
+  private static final int MAXIMUM_PROBES_PER_MOUNTAIN = 12;
   // Covers every possible column chosen by vanilla's default first-spawn fuzz.
   private static final int VANILLA_SPAWN_RADIUS = 10;
 
@@ -63,6 +71,9 @@ public final class AeroscapesReimagine {
     dev.aeroscapes.engineering.OilFields.register(modBus);
     dev.aeroscapes.sky.SkyWhaleFalls.register(modBus);
     dev.aeroscapes.sky.fauna.AeroFauna.register(modBus);
+    dev.aeroscapes.weathering.WiltedSaplingBlock.register(modBus);
+    if (ModList.get().isLoaded("create") && ModList.get().isLoaded("immersive_weathering"))
+      dev.aeroscapes.weathering.SnowyScoriaBlock.register(modBus);
     container.registerConfig(ModConfig.Type.CLIENT, PresentationConfig.SPEC);
     if (ModList.get().isLoaded("crittersandcompanions"))
       dev.aeroscapes.movement.RemovedCompanionHook.register(modBus);
@@ -128,6 +139,11 @@ public final class AeroscapesReimagine {
     BlockPos climateSpawn = level.getChunkSource().randomState().sampler().findSpawnPosition();
     BlockPos origin = new ChunkPos(climateSpawn).getMiddleBlockPosition(0);
     Map<Long, Integer> naturalHeights = new HashMap<>();
+    IslandTerrain terrain = IslandTerrain.from(level.getChunkSource().randomState());
+    if (terrain != null && level.getGameRules().getBoolean(LARGE_STARTING_ISLAND)) {
+      selectMountainSpawn(event, level, generator, origin, terrain.layout(), naturalHeights);
+      return;
+    }
     int generatedCandidates = 0;
     int gridRadius = SEARCH_RADIUS / SEARCH_STEP;
     for (int ring = 0; ring <= gridRadius; ring++) {
@@ -147,20 +163,9 @@ public final class AeroscapesReimagine {
             throw noSpawn(level, generatedCandidates);
           }
           generatedCandidates++;
-          BlockPos spawn = PlayerRespawnLogic.getOverworldRespawnPos(level, x, z);
-          if (spawn == null
-              || spawn.getY() < MINIMUM_SPAWN_Y
-              || !IslandFootprint.accepts(
-                  (offsetX, offsetZ) ->
-                      generatedHeight(level, spawn.getX() + offsetX, spawn.getZ() + offsetZ))
-              || !safeSpawnArea(level, spawn)) {
-            continue;
-          }
-          event.getSettings().setSpawn(spawn, 0.0f);
-          if (level.getServer().getWorldData().worldGenOptions().generateBonusChest()) {
-            placeBonusChest(level, generator, spawn);
-          }
-          event.setCanceled(true);
+          BlockPos spawn = validateSpawn(level, x, z);
+          if (spawn == null) continue;
+          setSpawn(event, level, generator, spawn);
           LOGGER.info(
               "Selected natural island spawn {} for seed {} after {} full candidate probes and {} raw columns",
               spawn,
@@ -172,6 +177,82 @@ public final class AeroscapesReimagine {
       }
     }
     throw noSpawn(level, generatedCandidates);
+  }
+
+  private static void selectMountainSpawn(
+      LevelEvent.CreateSpawnPosition event,
+      ServerLevel level,
+      NoiseBasedChunkGenerator generator,
+      BlockPos origin,
+      IslandLayout layout,
+      Map<Long, Integer> naturalHeights) {
+    var sampler = level.getChunkSource().randomState().sampler();
+    Map<Long, Integer> islandProbes = new HashMap<>();
+    int probed = 0;
+    int generated = 0;
+    for (var candidate : MountainIslandSpawn.candidates(layout, origin)) {
+      if (probed == MAXIMUM_MOUNTAIN_PROBES || generated == MAXIMUM_GENERATED_CANDIDATES) break;
+      long islandKey = candidate.island().key();
+      if (islandProbes.getOrDefault(islandKey, 0) >= MAXIMUM_PROBES_PER_MOUNTAIN) continue;
+      int x = candidate.x();
+      int z = candidate.z();
+      if (naturalHeight(level, generator, naturalHeights, x, z) == IslandFootprint.NO_LAND)
+        continue;
+      islandProbes.merge(islandKey, 1, Integer::sum);
+      probed++;
+      if (!candidate.accepts(
+              (sampleX, sampleZ) ->
+                  naturalHeight(level, generator, naturalHeights, sampleX, sampleZ),
+              generator.getBiomeSource(),
+              sampler)
+          || !naturalFootprint(level, generator, naturalHeights, x, z)) continue;
+      generated++;
+      BlockPos spawn = validateSpawn(level, x, z);
+      if (spawn == null) continue;
+      setSpawn(event, level, generator, spawn);
+      LOGGER.info(
+          "Selected large mountain island spawn {} for seed {} after {} full candidate probes and {} raw columns",
+          spawn,
+          level.getSeed(),
+          generated,
+          naturalHeights.size());
+      return;
+    }
+    throw new IllegalStateException(
+        "Aeroscapes could not find a safe starting island with a mountain, multiple biomes and nearby woodland"
+            + " within its bounded search for seed "
+            + level.getSeed()
+            + " (radius "
+            + MountainIslandSpawn.SEARCH_RADIUS
+            + ", "
+            + probed
+            + " terrain probes and "
+            + generated
+            + " full candidate probes). Turn off Large starting island or try another seed.");
+  }
+
+  private static BlockPos validateSpawn(ServerLevel level, int x, int z) {
+    BlockPos spawn = PlayerRespawnLogic.getOverworldRespawnPos(level, x, z);
+    return spawn != null
+            && spawn.getY() >= MINIMUM_SPAWN_Y
+            && IslandFootprint.accepts(
+                (offsetX, offsetZ) ->
+                    generatedHeight(level, spawn.getX() + offsetX, spawn.getZ() + offsetZ))
+            && safeSpawnArea(level, spawn)
+        ? spawn
+        : null;
+  }
+
+  private static void setSpawn(
+      LevelEvent.CreateSpawnPosition event,
+      ServerLevel level,
+      NoiseBasedChunkGenerator generator,
+      BlockPos spawn) {
+    event.getSettings().setSpawn(spawn, 0.0f);
+    if (level.getServer().getWorldData().worldGenOptions().generateBonusChest()) {
+      placeBonusChest(level, generator, spawn);
+    }
+    event.setCanceled(true);
   }
 
   private static boolean naturalFootprint(

@@ -1,10 +1,18 @@
 package dev.aeroscapes.atmosphere;
 
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.kosmx.playerAnim.api.TransformType;
+import dev.kosmx.playerAnim.api.firstPerson.FirstPersonMode;
+import dev.kosmx.playerAnim.api.layered.IAnimation;
+import dev.kosmx.playerAnim.api.layered.KeyframeAnimationPlayer;
+import dev.kosmx.playerAnim.api.layered.ModifierLayer;
+import dev.kosmx.playerAnim.api.layered.modifier.MirrorModifier;
 import dev.kosmx.playerAnim.core.data.KeyframeAnimation;
 import dev.kosmx.playerAnim.core.data.gson.AnimationJson;
+import dev.kosmx.playerAnim.core.util.Vec3f;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +29,7 @@ import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.zip.ZipFile;
 import net.minecraft.client.renderer.block.model.ItemTransform;
+import net.minecraft.world.entity.HumanoidArm;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.objectweb.asm.ClassReader;
@@ -37,6 +46,11 @@ import org.objectweb.asm.tree.LdcInsnNode;
 import org.objectweb.asm.tree.MethodInsnNode;
 import org.objectweb.asm.tree.MethodNode;
 import org.objectweb.asm.tree.VarInsnNode;
+import punchy.client.animation.PoseHandler;
+import punchy.client.animation.data.AnimationClip;
+import punchy.client.animation.io.PunchyAnimationLoader;
+import punchy.config.PunchyConfig;
+import punchy.config.PunchyTuningConfig.CustomAnimationEntry;
 import traben.entity_model_features.models.jem_objects.EMFJemData;
 import traben.entity_model_features.models.jem_objects.EMFPartData;
 
@@ -78,9 +92,11 @@ public final class AtmosphereContractTest {
         "Missing-key fallback is reload-idempotent");
   }
 
-  public static void main(String[] arguments) throws IOException {
+  public static void main(String[] arguments) throws IOException, ReflectiveOperationException {
     dieselVersionGates();
     swordCastPresentation();
+    shortBladeAttack();
+    thirdPersonBladeCombo();
     sandpaperRenderer();
     bridgedPlacementVersionGate();
     oreInformationSideGate();
@@ -278,6 +294,133 @@ public final class AtmosphereContractTest {
             "PlayerAnimator decodes a finite cast and recovery: " + clip);
       }
     }
+  }
+
+  private static void shortBladeAttack() throws IOException, ReflectiveOperationException {
+    var resolver =
+        method(
+            provider("punchy/client/state/CustomAnimationResolver"),
+            "findEntries",
+            "(Lnet/minecraft/world/item/ItemStack;Ljava/lang/String;Z)Ljava/util/List;");
+    require(
+        executable(resolver).stream()
+                .filter(
+                    instruction ->
+                        instruction instanceof MethodInsnNode call
+                            && call.owner.equals("punchy/client/render/ToolTuning")
+                            && call.name.equals("getCustomAnimation"))
+                .count()
+            == 1,
+        "Punchy attack adapter selects through a single native candidate list");
+    var firstPersonPath = Path.of(System.getProperty("aeroscapes.shortBlades.firstPerson"));
+    var animations =
+        JsonParser.parseString(Files.readString(firstPersonPath))
+            .getAsJsonObject()
+            .getAsJsonObject("animations");
+    var entryFactory =
+        Class.forName("dev.aeroscapes.mixin.atmosphere.PunchyShortBladeAttackMixin")
+            .getDeclaredMethod("aeroscapes$attackEntry");
+    entryFactory.setAccessible(true);
+    var entry = (CustomAnimationEntry) entryFactory.invoke(null);
+    var comboResolver =
+        Class.forName("punchy.client.state.CustomAnimationResolver")
+            .getDeclaredMethod("resolveComboNames", CustomAnimationEntry.class);
+    comboResolver.setAccessible(true);
+    require(
+        List.of("aeroscapes_blade_jab", "aeroscapes_blade_slash", "aeroscapes_blade_overhead")
+            .equals(comboResolver.invoke(null, entry)),
+        "Punchy resolves the three blade attacks in their playing order");
+    var decoder =
+        PunchyAnimationLoader.class.getDeclaredMethod("buildClip", String.class, JsonObject.class);
+    decoder.setAccessible(true);
+    float stockSpeed = new PunchyConfig.Data().animationSpeed;
+    for (String name : animations.keySet()) {
+      var clip = (AnimationClip) decoder.invoke(null, name, animations.getAsJsonObject(name));
+      require(
+          clip.getTracks()
+                  .keySet()
+                  .equals(Set.of("left_arm", "right_arm", "itemgrip_left", "itemgrip_right"))
+              && !clip.isLoop(),
+          "A finite attack moves the armed hand and its grip: " + name);
+      var sampler = new PoseHandler(false);
+      sampler.setActiveArm(HumanoidArm.RIGHT);
+      sampler.setBlendInDurationNext(.15F);
+      sampler.setBlendInRealTimeNext();
+      sampler.playVariationAtTimeWithArmEntrance(clip, 1, false, 0, 0, false, null);
+      for (int tick = 0; tick < 6; tick++) sampler.tick(.05F, stockSpeed);
+      require(
+          sampler.isPlaying() && Math.abs(sampler.getCurrentTime() - .30F) < .015F,
+          "Punchy keeps the complete strike at the actual default playback clock: " + name);
+      for (String track : List.of("arm", "grip")) {
+        boolean grip = track.equals("grip");
+        var right =
+            sampler.sampleClipPoseClamped(clip, grip ? "itemgrip_right" : "right_arm", .26F);
+        var left = sampler.sampleClipPoseClamped(clip, grip ? "itemgrip_left" : "left_arm", .26F);
+        require(
+            !right.isLegacy()
+                && !left.isLegacy()
+                && Math.abs(right.position().x + left.position().x) < .001
+                && Math.abs(right.position().y - left.position().y) < .001
+                && Math.abs(right.position().z - left.position().z) < .001
+                && Math.abs(right.rotationDegrees().x - left.rotationDegrees().x) < .001
+                && Math.abs(right.rotationDegrees().y + left.rotationDegrees().y) < .001
+                && Math.abs(right.rotationDegrees().z + left.rotationDegrees().z) < .001,
+            "Punchy's v2 hand and item remain mirrored: " + name);
+      }
+      for (int tick = 6; tick < 19; tick++) sampler.tick(.05F, stockSpeed);
+      require(!sampler.isPlaying(), "Punchy completes recovery: " + name);
+    }
+  }
+
+  private static void thirdPersonBladeCombo() throws IOException {
+    ShortBladeAttack.Move expected = ShortBladeAttack.Move.JAB;
+    for (int cue = 0; cue < 3; cue++) {
+      var move = ShortBladeAttack.Move.fromId(cue);
+      require(move == expected, "The synchronized cue selects the authored combo move");
+      expected = expected.next();
+      String resource =
+          "/assets/aeroscapes_reimagine/player_animations/" + move.clip.getPath() + ".json";
+      try (var stream = AtmosphereContractTest.class.getResourceAsStream(resource)) {
+        if (stream == null) throw new IOException("Missing blade animation " + move.clip);
+        List<KeyframeAnimation> clips =
+            AnimationJson.GSON.fromJson(
+                new InputStreamReader(stream, StandardCharsets.UTF_8),
+                new TypeToken<List<KeyframeAnimation>>() {}.getType());
+        var clip = clips.getFirst();
+        require(
+            clips.size() == 1 && !clip.isInfinite && clip.endTick > move.followThroughTick,
+            "A combo cue preserves the full strike before another move can interrupt recovery");
+        int strikeTick = move == ShortBladeAttack.Move.OVERHEAD ? 5 : 4;
+        var animation =
+            new KeyframeAnimationPlayer(clip, strikeTick).setFirstPersonMode(FirstPersonMode.NONE);
+        var mirror = new ModifierLayer<IAnimation>();
+        mirror.addModifierLast(new MirrorModifier(true));
+        mirror.setAnimation(animation);
+        require(
+            mirror.getFirstPersonMode(0) == FirstPersonMode.NONE, "The layer is third person only");
+        for (String piece : List.of("Arm", "Item")) {
+          var right =
+              animation.get3DTransform("right" + piece, TransformType.ROTATION, 0, Vec3f.ZERO);
+          var left = mirror.get3DTransform("left" + piece, TransformType.ROTATION, 0, Vec3f.ZERO);
+          require(
+              Math.abs(left.getX() - right.getX()) < .001F
+                  && Math.abs(left.getY() + right.getY()) < .001F
+                  && Math.abs(left.getZ() + right.getZ()) < .001F,
+              "The model and weapon mirror together for " + move);
+        }
+        for (int tick = 0; tick <= clip.endTick; tick++) {
+          var frame = new KeyframeAnimationPlayer(clip, tick);
+          float pitch =
+              frame.get3DTransform("rightItem", TransformType.ROTATION, .5F, Vec3f.ZERO).getX();
+          var offset = ShortBladeAttackPresentation.gripOffset(pitch);
+          var hilt = new Vector3f(0, -2, 1.5F);
+          var rotated =
+              new Vector3f(hilt).rotateX(pitch).add(offset.getX(), offset.getY(), offset.getZ());
+          require(rotated.distance(hilt) < .001F, "Grip rollover keeps its attachment for " + move);
+        }
+      }
+    }
+    require(expected == ShortBladeAttack.Move.JAB, "The combo returns to the first strike");
   }
 
   private static void sandpaperRenderer() throws IOException {

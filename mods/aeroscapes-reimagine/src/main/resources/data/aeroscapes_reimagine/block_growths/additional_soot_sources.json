@@ -1,0 +1,5 @@
+{
+  "builtin": "campfire_soot",
+  "tick_sources": ["block_tick"],
+  "owners": "#aeroscapes_reimagine:soot_sources"
+}

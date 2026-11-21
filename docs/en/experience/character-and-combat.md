@@ -8,6 +8,8 @@ Your race sets your size, stamina and innate traits. Your class supplies a comba
 
 ## Skills and talents
 
+Practice XP appears below Jade's information about the block or creature you are looking at. On the talent tree, a bright green frame marks a talent you can learn now. A checkmark on a dark badge marks a learned talent.
+
 [Project MMO](https://modrinth.com/mod/project-mmo) tracks nine skills that grow through your own work: Melee, Ranged and Magic for combat, and Gathering, Crafting, Smithing, Building, Farming and Cooking for peaceful activities. Each skill reaches level 50, and every level takes a little more practice than the previous one. Death keeps all levels. Skills never forbid using an item, block or tool.
 
 Hits with melee weapons train Melee and projectiles train Ranged. Magic practice credits each native casting pulse with half its actual mana cost after discounts, rounded down with a minimum of one XP. Scroll pulses use their original mana cost even though the scroll is consumed instead of mana; a free recast gives one XP. Continuous spells train while you channel them. Ordinary repeated or safe practice stays positive, without fatigue, daily limits or source caps.
@@ -82,6 +84,8 @@ On first joining, preview your race and appearance on your own skin, then choose
 In singleplayer, the world pauses until you confirm. On a server or in a world opened to LAN, others can keep playing. While you choose, attacks and environmental hazards cannot hurt your character, and your status effect timers stay still.
 
 Your race, appearance, class, profession and both starting abilities persist through death, dimension changes and login. Open the portrait button in the inventory or Curios to read the same character sheet again.
+
+Open **Ear color** or **Beard color** during creation or on the character sheet. Use the rainbow strip to pick a hue, then choose its saturation and brightness in the palette. The close-up updates as you drag. Select **Done** during creation or **Apply** on the sheet to keep the choice. **Default color** restores the skin color for ears or the original brown for beards.
 
 | Race   | Hearts | Stamina | In play                                                                                                                                                                   |
 | ------ | -----: | ------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

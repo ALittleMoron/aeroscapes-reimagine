@@ -1,6 +1,6 @@
 package dev.aeroscapes.mixin.atmosphere;
 
-import dev.aeroscapes.atmosphere.TinctureDrinkingPose;
+import dev.aeroscapes.atmosphere.ThirdPersonArmPose;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.player.AbstractClientPlayer;
 import org.spongepowered.asm.mixin.Mixin;
@@ -24,6 +24,6 @@ abstract class TinctureNativeDrinkingMixin {
       float delta,
       float swing,
       CallbackInfo info) {
-    TinctureDrinkingPose.usedNativePose(player, model);
+    ThirdPersonArmPose.usedNativePose(player, model, false);
   }
 }

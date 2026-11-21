@@ -1,0 +1,65 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:cobbled_travertine",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cobbled_travertine_slab",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cobbled_travertine_stairs",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cobbled_travertine_wall",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:travertine_brick_slab",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:travertine_brick_stairs",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:travertine_brick_wall",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:travertine_bricks",
+      "required": false
+    },
+    {
+      "id": "quark:cobblestone_bricks",
+      "required": false
+    },
+    {
+      "id": "quark:cobblestone_bricks_slab",
+      "required": false
+    },
+    {
+      "id": "quark:cobblestone_bricks_stairs",
+      "required": false
+    },
+    {
+      "id": "quark:cobblestone_bricks_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "quark:cobblestone_bricks_wall",
+      "required": false
+    },
+    {
+      "id": "quark:cobblestone_vertical_slab",
+      "required": false
+    },
+    {
+      "id": "quark:stone_brick_vertical_slab",
+      "required": false
+    }
+  ]
+}

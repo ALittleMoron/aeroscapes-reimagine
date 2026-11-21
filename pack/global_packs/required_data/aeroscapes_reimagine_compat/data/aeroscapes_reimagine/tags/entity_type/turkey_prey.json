@@ -1,0 +1,6 @@
+{
+  "values": [
+    { "id": "naturalist:turkey", "required": false },
+    { "id": "hybrid_birds:turkey", "required": false }
+  ]
+}

@@ -10,7 +10,9 @@ import java.util.EnumMap;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.LightLayer;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -87,6 +89,7 @@ public final class FaunaRenderers {
 
     private JellyRenderer(EntityRendererProvider.Context context) {
       super(context, new CloudJellyModel(context.bakeLayer(JELLY)), 0.33F);
+      addLayer(new CloudJellyGlow(this, entityRenderDispatcher));
     }
 
     @Override
@@ -109,6 +112,12 @@ public final class FaunaRenderers {
     @Override
     public ResourceLocation getTextureLocation(CloudJelly jelly) {
       return jellyTexture(jelly.form(), jelly.getBbWidth(), jelly.isPulsing());
+    }
+
+    @Override
+    protected int getBlockLightLevel(CloudJelly jelly, BlockPos pos) {
+      // LambDynamicLights adds a source's own luminance to EntityRenderer's return value.
+      return jelly.isOnFire() ? 15 : jelly.level().getBrightness(LightLayer.BLOCK, pos);
     }
   }
 }

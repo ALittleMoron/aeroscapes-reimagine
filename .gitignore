@@ -2,6 +2,8 @@ __pycache__/
 /.cache/
 /dist/
 /.runtime/
+/log/
+/logs/
 /tools/pack/.cache/
 /tools/pack/.venv/
 /tools/pack/dist/

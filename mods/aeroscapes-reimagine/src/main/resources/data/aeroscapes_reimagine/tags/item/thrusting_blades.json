@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    { "id": "wetland_whimsy:dagger", "required": false },
+    { "id": "#c:tools/knife", "required": false },
+    { "id": "#c:tools/knives", "required": false },
+    { "id": "#c:tools/dagger", "required": false },
+    { "id": "#c:tools/daggers", "required": false }
+  ]
+}

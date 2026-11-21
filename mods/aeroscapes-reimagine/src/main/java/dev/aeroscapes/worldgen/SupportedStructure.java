@@ -67,6 +67,7 @@ public final class SupportedStructure extends Structure {
     WET_RUIN,
     ENCLOSED,
     CORE_ENCLOSED,
+    RUINS_ENCLOSED,
     BURIED_COMPLEX,
     PORTAL_ENCLOSED;
 
@@ -116,6 +117,7 @@ public final class SupportedStructure extends Structure {
     return terrainCheck == TerrainCheck.CAVERN
         || terrainCheck == TerrainCheck.ENCLOSED
         || terrainCheck == TerrainCheck.CORE_ENCLOSED
+        || terrainCheck == TerrainCheck.RUINS_ENCLOSED
         || terrainCheck == TerrainCheck.BURIED_COMPLEX
         || terrainCheck == TerrainCheck.PORTAL_ENCLOSED;
   }
@@ -194,16 +196,15 @@ public final class SupportedStructure extends Structure {
       if (!wetRuin(context, pieces, columns)) return Optional.empty();
       return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
     }
+    if (terrainCheck == TerrainCheck.MARINE_SURFACE)
+      return supportedMarineSurface(context, pieces.pieces().getFirst(), columns)
+          ? Optional.of(new GenerationStub(stub.position(), Either.right(builder)))
+          : Optional.empty();
     int rootFloorY = pieces.pieces().getFirst().getBoundingBox().minY();
-    if (terrainCheck == TerrainCheck.MARINE_SURFACE
-        && supportedMarineSurface(context, pieces.pieces().getFirst(), columns))
-      return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
     boolean surface =
         terrainCheck == TerrainCheck.SURFACE
             || terrainCheck == TerrainCheck.SURFACE_ROOT_FOOTPRINT
-            || terrainCheck == TerrainCheck.SURFACE_FOOTPRINT
-            || terrainCheck == TerrainCheck.GROUNDED_SURFACE
-            || terrainCheck == TerrainCheck.MARINE_SURFACE;
+            || terrainCheck == TerrainCheck.SURFACE_FOOTPRINT;
     if (surface && !supportedSurfaceRoot(context, pieces.pieces().getFirst(), columns)) {
       return Optional.empty();
     }
@@ -216,9 +217,7 @@ public final class SupportedStructure extends Structure {
           root.getBoundingBox(), floor, (x, z) -> column(context, x, z, columns)))
         return Optional.empty();
     }
-    if ((terrainCheck == TerrainCheck.SURFACE_FOOTPRINT
-            || terrainCheck == TerrainCheck.GROUNDED_SURFACE
-            || terrainCheck == TerrainCheck.MARINE_SURFACE)
+    if (terrainCheck == TerrainCheck.SURFACE_FOOTPRINT
         && !supportedSurfaceFootprint(pieces, 0, 0, 0, new StructureTerrain(context)))
       return Optional.empty();
     for (StructurePiece piece : pieces.pieces()) {
@@ -263,6 +262,8 @@ public final class SupportedStructure extends Structure {
         NoiseColumn column = column(context, x, z, columns);
         if (!column.getBlock(basin.waterline()).getFluidState().is(FluidTags.WATER)
             || !column.getBlock(floor - 4).getFluidState().is(FluidTags.WATER)) return false;
+        for (int y = basin.waterline() + 1; y <= bounds.maxY(); y++)
+          if (!column.getBlock(y).isAir()) return false;
         if (z == bounds.maxZ()) break;
       }
       if (x == bounds.maxX()) break;
@@ -659,6 +660,8 @@ public final class SupportedStructure extends Structure {
             || !solidFloor(coreColumn.getBlock(floor - 4))) continue;
         if (!roof.isEmpty() && !buriedRoof(roof, dx, offset, dz, terrain)) continue;
         if (!assemblySupport(context, pieces, dx, offset, dz, terrain, true)) continue;
+        if (terrainCheck == TerrainCheck.RUINS_ENCLOSED
+            && !suitableRuinSlabs(pieces, dx, offset, dz, terrain)) continue;
         if (needsCavern()
             && !cavernRoof(
                 pieces, dx, offset, dz, terrain, IslandTerrain.from(context.randomState())))
@@ -674,6 +677,33 @@ public final class SupportedStructure extends Structure {
       }
     }
     return Optional.empty();
+  }
+
+  private static boolean suitableRuinSlabs(
+      PiecesContainer pieces, int dx, int dy, int dz, StructureTerrain terrain) {
+    StructurePiece root = pieces.pieces().getFirst();
+    for (StructurePiece piece : pieces.pieces()) {
+      BoundingBox bounds = piece.getBoundingBox();
+      // The forgotten ruins' rigid river and house templates include level stone slabs.
+      if (bounds.getXSpan() < 8 || bounds.getZSpan() < 8) continue;
+      int floor = bounds.minY() + dy;
+      int unsupported = 0;
+      int open = 0;
+      for (int ix = 0; ix < 3; ix++) {
+        for (int iz = 0; iz < 3; iz++) {
+          int x = bounds.minX() + (bounds.getXSpan() - 1) * ix / 2 + dx;
+          int z = bounds.minZ() + (bounds.getZSpan() - 1) * iz / 2 + dz;
+          if (!terrain.solid(x, floor - 1, z)
+              && !terrain.solid(x, floor - 2, z)
+              && ++unsupported > 1) return false;
+          if (!terrain.solid(x, floor + 1, z) && !terrain.solid(x, floor + 2, z)) open++;
+        }
+      }
+      // The templates omit open space, so their floor can be grounded while the paths
+      // and even the central landmark remain completely entombed in natural stone.
+      if (open < (piece == root ? 3 : 1)) return false;
+    }
+    return true;
   }
 
   private static boolean cavernRoof(

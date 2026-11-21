@@ -1,6 +1,8 @@
 {
   "entity.aeroscapes_reimagine.sky_ray": "Sky Ray",
   "entity.aeroscapes_reimagine.cloud_jelly": "Cloud Jelly",
+  "block.aeroscapes_reimagine.wilted_sapling": "Wilted Sapling",
+  "block.aeroscapes_reimagine.snowy_cut_scoria_bricks": "Snowy Cut Scoria Bricks",
   "message.aeroscapes_reimagine.cloud_jelly.shelter": "An enclosed cabin protects you from jelly stings.",
   "aeroscapes_reimagine.configuration.title": "Aeroscapes Reimagine",
   "aeroscapes_reimagine.configuration.section.aeroscapes.reimagine.client.toml.title": "Client presentation",
@@ -8,6 +10,8 @@
   "aeroscapes_reimagine.configuration.itemModels3d.tooltip": "Enabled by default. Turn off to use original item models instead of the pack's added 3D models. Saving reloads resources without restarting the game. Native block shapes and special item renderers are preserved.",
   "aeroscapes_reimagine.configuration.celestialSky.tooltip": "Show decorative planets, accent stars and the fixed northern guide star.",
   "pack.aeroscapes_reimagine.island_atlas": "Aeroscapes Reimagine — Island Atlas",
+  "gamerule.aeroscapesLargeStartingIsland": "Large starting island",
+  "gamerule.aeroscapesLargeStartingIsland.description": "When creating a world, look for a natural island with a mountain, several biomes and nearby woodland. Searches farther from the usual starting area.",
   "biome.aeroscapes_reimagine.volcanic_island": "Volcanic Island",
   "key.aeroscapes_reimagine.brush_sleeve": "Brush dust off sleeve",
   "key.categories.aeroscapes_reimagine": "Aeroscapes Reimagine",

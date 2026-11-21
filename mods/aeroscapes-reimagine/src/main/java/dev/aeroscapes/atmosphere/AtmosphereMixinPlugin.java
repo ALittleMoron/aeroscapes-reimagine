@@ -224,8 +224,13 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("irons_spellbooks", "1.21.1-3.16.3", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("SwordCastPresentationMixin")) {
       versions = Map.of("irons_spellbooks", "1.21.1-3.16.3", "playeranimator", "2.0.4+1.21.1");
-    } else if (mixinClassName.endsWith("TinctureDrinkingRenderMixin")
-        || mixinClassName.endsWith("TinctureNativeDrinkingMixin")) {
+    } else if (mixinClassName.endsWith("ThirdPersonArmRenderMixin")) {
+      versions =
+          Map.of(
+              "entity_model_features", "3.3.12",
+              "entity_texture_features", "7.2.6",
+              "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("TinctureNativeDrinkingMixin")) {
       versions =
           Map.of(
               "irons_spellbooks",
@@ -326,6 +331,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("betteradvancements", "0.4.3.21", "zeta", "1.1-40");
     } else if (mixinClassName.endsWith("QuiverEmfMixin")) {
       versions = Map.of("entity_model_features", "3.3.12");
+    } else if (mixinClassName.endsWith("PunchyShortBladeAttackMixin")) {
+      versions = Map.of("punchy", "3.0", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PunchyEmfMixin")) {
       versions =
           Map.of(

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:chert_bricks",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:chert_tiles",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:travertine_bricks",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:travertine_tiles",
+      "required": false
+    }
+  ]
+}

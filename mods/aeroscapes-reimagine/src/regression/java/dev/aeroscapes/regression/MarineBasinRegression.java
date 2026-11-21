@@ -36,13 +36,21 @@ public final class MarineBasinRegression {
     IslandTerrain terrain = IslandTerrain.from(level.getChunkSource().randomState());
     require(terrain != null, "Missing basin terrain for marine regression");
     if (terrain == null) throw new IllegalStateException("Missing terrain");
-    natural(level, terrain, "supplementaries:galleon");
-    natural(level, terrain, "minecraft:shipwreck");
-    natural(level, terrain, "minecraft:ocean_ruin_cold");
-    natural(level, terrain, "minecraft:ocean_ruin_warm");
+    natural(level, terrain, "supplementaries:galleon", true);
+    natural(level, terrain, "minecraft:shipwreck", false);
+    natural(level, terrain, "minecraft:ocean_ruin_cold", false);
+    natural(level, terrain, "minecraft:ocean_ruin_warm", false);
   }
 
-  private static void natural(ServerLevel level, IslandTerrain terrain, String id) {
+  static void verifyGalleon(ServerLevel level) {
+    IslandTerrain terrain = IslandTerrain.from(level.getChunkSource().randomState());
+    if (terrain == null)
+      throw new IllegalStateException("Missing basin terrain for marine regression");
+    natural(level, terrain, "supplementaries:galleon", false);
+  }
+
+  private static void natural(
+      ServerLevel level, IslandTerrain terrain, String id, boolean verifyWildlife) {
     var registry = level.registryAccess().registryOrThrow(Registries.STRUCTURE);
     Structure structure = registry.get(ResourceLocation.parse(id));
     require(structure != null, "Missing marine structure " + id);
@@ -94,7 +102,7 @@ public final class MarineBasinRegression {
             StructureStart start = level.getChunk(chunk.x, chunk.z).getStartForStructure(structure);
             if (start == null || !start.isValid()) continue;
             contents(level, start, id, basin);
-            if (id.equals("supplementaries:galleon")) wildlife(level, basin);
+            if (verifyWildlife) wildlife(level, basin);
             LogUtils.getLogger()
                 .info(
                     "Marine natural FULL {} chunk={} pieces={} checked={} localWaterline={}",

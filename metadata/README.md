@@ -6,6 +6,21 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Client scrolling and item animations in 0.7.0
+
+[Smooth Scrolling 2.2.1](https://modrinth.com/mod/smooth-scroll/version/1HA8AoCS)
+is the author-supported Fabric file for Minecraft 1.21.1 through Connector.
+It animates chat, creative tabs, lists and the hotbar.
+[Tiny Item Animations 1.2.1](https://modrinth.com/mod/tiny-item-animations/version/mSJPeo1D)
+uses the native NeoForge file and animates cursor pickup and insertion.
+The Modrinth export refers to the original Smooth Scrolling and Tiny Item Animations JARs.
+Tiny Item Animations' LPUL prohibits independent public hosting of that JAR.
+[Animated Inventory 1.0.7](https://www.curseforge.com/minecraft/mc-mods/animated-inventory/files/8916978)
+animates item transfers between slots, including Shift-click quick moves.
+The pack uses its movement settings and keeps cursor, hotbar and window
+animations with their existing providers. The original client JAR is bundled
+under the modpack distribution permission in its embedded license.
+
 ## Programmable magic in 0.6.8
 
 The pack installs the original [HexCast NEOFORGED 0.11.1-19](https://modrinth.com/mod/hexcast-neoforged/version/3qkLQwpf),

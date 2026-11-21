@@ -1,0 +1,4 @@
+{
+  "parent": "minecraft:block/dead_bush",
+  "render_type": "minecraft:cutout"
+}

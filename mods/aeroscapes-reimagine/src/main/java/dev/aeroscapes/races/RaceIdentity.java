@@ -23,6 +23,7 @@ public final class RaceIdentity {
   private static final String NAMESPACE = "aeroscapes_reimagine";
   private static final ResourceLocation LAYER = ResourceLocation.parse("neoorigins:origin");
   private static final String DATA = "aeroscapes_reimagine_racial_traits";
+  private static final String TINT = "appearance_tint";
 
   private RaceIdentity() {}
 
@@ -64,6 +65,31 @@ public final class RaceIdentity {
     return player.getPersistentData().getCompound(DATA).getInt("style");
   }
 
+  public static int tint(Player player) {
+    var identity = player.getPersistentData().getCompound(DATA);
+    if (!identity.contains(TINT, Tag.TAG_INT)) return Race.DEFAULT_TINT;
+    int color = identity.getInt(TINT);
+    var race = race(player);
+    return race != null && race.canTint(style(player), color) ? color : Race.DEFAULT_TINT;
+  }
+
+  static boolean recolor(ServerPlayer player, Race race, int style, int tint) {
+    if (!player.isAlive()
+        || player.isSpectator()
+        || awaitingChoice(player)
+        || race != race(player)
+        || style != style(player)
+        || !(race.hasEars() || race.hasBeard(style))
+        || !race.canTint(style, tint)) return false;
+    saveTint(data(player), tint);
+    return true;
+  }
+
+  private static void saveTint(CompoundTag identity, int tint) {
+    if (tint == Race.DEFAULT_TINT) identity.remove(TINT);
+    else identity.putInt(TINT, tint);
+  }
+
   @Nullable
   public static CharacterClass characterClass(Player player) {
     var identity = player.getPersistentData().getCompound(DATA);
@@ -103,16 +129,37 @@ public final class RaceIdentity {
       String starter,
       @Nullable Profession chosenProfession,
       String professionStarter) {
+    return choose(
+        player,
+        race,
+        style,
+        Race.DEFAULT_TINT,
+        chosenClass,
+        starter,
+        chosenProfession,
+        professionStarter);
+  }
+
+  static boolean choose(
+      ServerPlayer player,
+      Race race,
+      int style,
+      int tint,
+      @Nullable CharacterClass chosenClass,
+      String starter,
+      @Nullable Profession chosenProfession,
+      String professionStarter) {
     if (!CharacterClass.creationAvailable()
         || race == null
-        || !race.validStyle(style)
+        || !race.canTint(style, tint)
         || !player.isAlive()
         || chosenClass == null
         || !chosenClass.starters().contains(starter)
         || chosenProfession == null
         || !chosenProfession.starters().contains(professionStarter)) return false;
     Race previous = race(player);
-    if (previous != null && (previous != race || style(player) != style)) return false;
+    if (previous != null && (previous != race || style(player) != style || tint(player) != tint))
+      return false;
     CharacterClass existing = characterClass(player);
     if (existing != null && (existing != chosenClass || !starter(player).equals(starter)))
       return false;
@@ -126,6 +173,7 @@ public final class RaceIdentity {
       return false;
     if (previous == null && !chooseRace(player, race, style)) return false;
     var identity = data(player);
+    if (previous == null) saveTint(identity, tint);
     if (existing == null) {
       identity.putBoolean(
           CharacterChanges.STARTER_PERSONALLY_LEARNED,
@@ -171,7 +219,9 @@ public final class RaceIdentity {
         NeoOriginsAPI.setOrigin(
             player, LAYER, ResourceLocation.fromNamespaceAndPath(NAMESPACE, race.id()));
     if (result != SetOriginResult.SUCCESS) return false;
-    data(player).putInt("style", style);
+    var identity = data(player);
+    identity.putInt("style", style);
+    identity.remove(TINT);
     RaceTraits.applyBody(player, race);
     float gain = firstSelection ? player.getMaxHealth() - previousHealth : 0;
     player.setHealth(Math.clamp(health + gain, firstSelection ? 1 : 0, player.getMaxHealth()));

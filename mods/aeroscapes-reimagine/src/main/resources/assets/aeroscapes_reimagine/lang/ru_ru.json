@@ -1,4 +1,8 @@
 {
+  "gamerule.aeroscapesLargeStartingIsland": "Большой стартовый остров",
+  "gamerule.aeroscapesLargeStartingIsland.description": "При создании мира ищет естественный остров с горой, несколькими биомами и лесом поблизости. Поиск может увести дальше от обычной точки старта.",
+  "block.aeroscapes_reimagine.wilted_sapling": "Увядший саженец",
+  "block.aeroscapes_reimagine.snowy_cut_scoria_bricks": "Заснеженные резные пепловые кирпичи",
   "entity.aeroscapes_reimagine.sky_ray": "Небесный скат",
   "entity.aeroscapes_reimagine.cloud_jelly": "Облачная медуза",
   "message.aeroscapes_reimagine.cloud_jelly.shelter": "В закрытой каюте медузы вас не ужалят.",

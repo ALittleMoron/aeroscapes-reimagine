@@ -10,6 +10,7 @@
     "aeroscapes_reimagine:blackstone_diamond_ore",
     "aeroscapes_reimagine:blackstone_emerald_ore",
     "aeroscapes_reimagine:blackstone_zinc_ore",
-    "aeroscapes_reimagine:blackstone_palladium_ore"
+    "aeroscapes_reimagine:blackstone_palladium_ore",
+    { "id": "aeroscapes_reimagine:snowy_cut_scoria_bricks", "required": false }
   ]
 }

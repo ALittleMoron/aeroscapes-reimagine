@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "spawn:herring",
+      "required": false
+    },
+    {
+      "id": "spawn:bluefish",
+      "required": false
+    },
+    {
+      "id": "tide:mackerel",
+      "required": false
+    }
+  ]
+}

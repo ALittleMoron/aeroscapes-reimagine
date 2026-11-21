@@ -4,6 +4,23 @@ description: Version history.
 status: available
 ---
 
+## 0.7.0
+
+- The character and progression stage brings together races, starting classes and professions, practice-based skills, talents and the shared ability wheel.
+- Pick an ear or beard color from a palette with a live preview during character creation or from the character sheet. Resetting restores the color from your skin for ears or the original brown for beards.
+- Equipped rings, necklaces and supported belt accessories are visible when their Curios slot is set to show them.
+- Practice XP appears below Jade's target information. Item tooltips no longer show Project MMO's estimated XP awards.
+- Talents available to learn have a bright green frame, and learned talents have a checkmark on a dark badge.
+- Smooth Scrolling animates chat, lists, creative inventory and hotbar scrolling. Tiny Item Animations animates items as you pick them up or put them down with the cursor.
+- Animated Inventory shows items moving between slots, including stacks transferred with Shift-click.
+- Consecutive attacks with daggers and kitchen knives cycle through a forward jab, a slicing cut and an overhead reverse-grip stab in both camera views. The moves mirror for left-handed players.
+- Enable Large starting island on the World tab for a mountainous start with several biomes and nearby woodland. The option is off by default.
+- New galleons need clear water and room for the hull and sails. Forgotten ruins need support beneath their platforms.
+- Weeds spread into empty spaces on farmland. Water bottles revive wilted saplings with their original growth stage. Fall deposits leave plants and decorations in place, and clearing them reveals the grass underneath.
+- Immersive Weathering spreads moss to selected Nature's Spirit and Quark masonry, cracks travertine and chert, and covers Create's cut scoria bricks with snow. Galosphere lichen spreads moss, flowing water leaves red sand below pink sandstone, and lit stoves and lemonstone braziers leave soot.
+- Bears can hunt turkeys. Alligators, lions, tigers, snakes and great white sharks can hunt additional prey from the pack's fauna.
+- A soft, pulsing halo surrounds the bells of cloud jellies, and the jelly bodies retain shading from the scene.
+
 ## 0.6.8
 
 - Draw spells with Hex Casting staves using amethyst from geodes. Assign a programmed Cypher, Trinket or Artifact to the ability wheel and cast from its own charge.

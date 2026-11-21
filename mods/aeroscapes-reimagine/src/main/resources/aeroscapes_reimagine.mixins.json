@@ -55,6 +55,7 @@
     "RuntimeTemplateRepairsMixin",
     "DramaticDoorsChippedRecipesMixin"
   ],
+  "client": ["WorldCreationIslandMixin"],
   "injectors": {
     "defaultRequire": 1
   }

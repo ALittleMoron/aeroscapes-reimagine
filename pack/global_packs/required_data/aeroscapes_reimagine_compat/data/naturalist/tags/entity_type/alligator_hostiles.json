@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "hybrid_birds:duck",
+      "required": false
+    },
+    {
+      "id": "hybrid_birds:goose",
+      "required": false
+    }
+  ]
+}

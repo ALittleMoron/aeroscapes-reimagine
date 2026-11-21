@@ -7,6 +7,7 @@ import dev.aeroscapes.sky.client.WhaleBirds;
 import dev.aeroscapes.sky.fauna.CloudJellyAnatomy;
 import dev.aeroscapes.sky.fauna.CloudJellyContact;
 import dev.aeroscapes.sky.fauna.CloudJellyMotion;
+import dev.aeroscapes.sky.fauna.client.CloudJellyGlowTest;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -33,6 +34,7 @@ public final class SkyLifeContractTest {
     regionalChance();
     jellyContact();
     jellySwimming();
+    CloudJellyGlowTest.verify();
     birds();
     whaleFall();
     journal(root);

@@ -512,6 +512,15 @@ val atmosphereContractTest =
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.atmosphere.AtmosphereContractTest"
+    systemProperty(
+      "aeroscapes.shortBlades.firstPerson",
+      layout.projectDirectory
+        .file(
+          "../../pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets/minecraft/punchy/animations/aeroscapes_thrust.animation.json",
+        )
+        .asFile
+        .absolutePath,
+    )
     doFirst {
       systemProperty(
         "aeroscapes.atmosphere.apis",

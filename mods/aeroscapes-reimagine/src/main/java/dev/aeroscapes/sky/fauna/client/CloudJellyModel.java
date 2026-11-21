@@ -23,6 +23,7 @@ final class CloudJellyModel extends HierarchicalModel<CloudJelly> {
   private static final int TEXTURE_HEIGHT = 768;
   private final EnumMap<Form, Rig> forms = new EnumMap<>(Form.class);
   private Rig active;
+  private CloudJellyMotion swim;
 
   CloudJellyModel(ModelPart layerRoot) {
     super(RenderType::entityTranslucentCull);
@@ -96,6 +97,7 @@ final class CloudJellyModel extends HierarchicalModel<CloudJelly> {
 
   void pose(Form form, CloudJellyMotion swim) {
     active = forms.get(form);
+    this.swim = swim;
     var shape = swim.shape();
     var basis = swim.basis;
     // Convert world rotation to the living model's axes (world Y and Z are reversed).
@@ -118,6 +120,10 @@ final class CloudJellyModel extends HierarchicalModel<CloudJelly> {
         place(active.strands[i][j], swim.segment(i, j), b.width(), b.bottom() - b.top(), b.depth());
       }
     }
+  }
+
+  CloudJellyMotion swim() {
+    return swim;
   }
 
   private static void place(ModelPart p, AABB b, float w, float h, float d) {

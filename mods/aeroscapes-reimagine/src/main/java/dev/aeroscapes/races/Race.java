@@ -9,6 +9,8 @@ public enum Race {
   GOBLIN,
   ELF;
 
+  public static final int DEFAULT_TINT = -1;
+
   public String id() {
     return name().toLowerCase(Locale.ROOT);
   }
@@ -19,6 +21,20 @@ public enum Race {
 
   public boolean validStyle(int style) {
     return style >= 0 && style < styleCount();
+  }
+
+  public boolean hasEars() {
+    return this == GOBLIN || this == ELF;
+  }
+
+  public boolean hasBeard(int style) {
+    return validStyle(style) && (this == DWARF && style != 0 || this == HUMAN && style == 2);
+  }
+
+  public boolean canTint(int style, int tint) {
+    return validStyle(style)
+        && (tint == DEFAULT_TINT
+            || tint >= 0 && tint <= 0xffffff && (hasEars() || hasBeard(style)));
   }
 
   @Nullable

@@ -23,11 +23,12 @@ public final class RaceClient {
   public static void accept(RaceNetwork.Snapshot snapshot) {
     Race race = Race.byId(snapshot.race());
     var characterClass = CharacterClass.byId(snapshot.classId());
-    if (race != null && !race.validStyle(snapshot.style())) return;
+    if (race != null && !race.canTint(snapshot.style(), snapshot.tint())) return;
     var profile =
         new Profile(
             race,
             snapshot.style(),
+            snapshot.tint(),
             characterClass,
             snapshot.starter(),
             Profession.byId(snapshot.professionId()),
@@ -47,17 +48,6 @@ public final class RaceClient {
     return PROFILES.get(player);
   }
 
-  @Nullable
-  public static Race race(UUID player) {
-    var value = profile(player);
-    return value == null ? null : value.race();
-  }
-
-  public static int style(UUID player) {
-    var value = profile(player);
-    return value == null ? 0 : value.style();
-  }
-
   @SubscribeEvent
   public static void logout(ClientPlayerNetworkEvent.LoggingOut event) {
     PROFILES.clear();
@@ -66,6 +56,7 @@ public final class RaceClient {
   record Profile(
       @Nullable Race race,
       int style,
+      int tint,
       @Nullable CharacterClass characterClass,
       String starter,
       @Nullable Profession profession,

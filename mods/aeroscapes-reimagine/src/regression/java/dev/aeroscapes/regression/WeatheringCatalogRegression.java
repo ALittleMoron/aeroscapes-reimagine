@@ -13,6 +13,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 import net.mehvahdjukaar.moonlight.api.events.AfterLanguageLoadEvent;
 import net.mehvahdjukaar.moonlight.api.resources.assets.LangBuilder;
 import net.mehvahdjukaar.moonlight.api.set.BlockType;
@@ -100,22 +101,33 @@ public final class WeatheringCatalogRegression {
     var englishEvent = new AfterLanguageLoadEvent(english, List.of("en_us"));
     Map<String, String> russian = nativeLanguage("ru_ru");
     var russianEvent = new AfterLanguageLoadEvent(russian, List.of("en_us", "ru_ru"));
-    for (var event : List.of(englishEvent, russianEvent)) {
-      ModBlocks.LEAF_PILES.forEach(
-          (type, pile) -> generatedName(event, "block.immersive_weathering.leaf_pile", type, pile));
-      ModItems.BARK.forEach(
-          (type, bark) -> generatedName(event, "item.immersive_weathering.bark", type, bark));
-    }
+    Set<String> missingEnglish = new TreeSet<>();
+    Set<String> missingRussian = new TreeSet<>();
+    Set<String> untranslated = new TreeSet<>();
     for (var entry : BuiltInRegistries.ITEM.entrySet()) {
       ResourceLocation id = entry.getKey().location();
       if (!id.getNamespace().equals("immersive_weathering") || OPERATOR_ITEMS.contains(id))
         continue;
       String key = entry.getValue().getDescriptionId();
-      require(english.containsKey(key), "Missing actual English item name: " + key);
-      require(russian.containsKey(key), "Missing actual Russian item name: " + key);
-      require(
-          !englishEvent.getEntry(key).equals(russianEvent.getEntry(key)),
-          "Untranslated weathering item: " + key);
+      String englishName = englishEvent.getEntry(key);
+      String russianName = russianEvent.getEntry(key);
+      if (englishName == null) missingEnglish.add(key);
+      if (russianName == null) missingRussian.add(key);
+      if (englishName != null && englishName.equals(russianName)) untranslated.add(key);
+    }
+    require(
+        missingEnglish.isEmpty() && missingRussian.isEmpty() && untranslated.isEmpty(),
+        "Weathering catalogue names missing in English: "
+            + missingEnglish
+            + ", missing in Russian: "
+            + missingRussian
+            + ", identical in both languages: "
+            + untranslated);
+    for (var event : List.of(englishEvent, russianEvent)) {
+      ModBlocks.LEAF_PILES.forEach(
+          (type, pile) -> generatedName(event, "block.immersive_weathering.leaf_pile", type, pile));
+      ModItems.BARK.forEach(
+          (type, bark) -> generatedName(event, "item.immersive_weathering.bark", type, bark));
     }
   }
 

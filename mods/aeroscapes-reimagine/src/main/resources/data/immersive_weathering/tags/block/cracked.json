@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "natures_spirit:cracked_chert_bricks",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cracked_chert_tiles",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cracked_travertine_bricks",
+      "required": false
+    },
+    {
+      "id": "natures_spirit:cracked_travertine_tiles",
+      "required": false
+    }
+  ]
+}

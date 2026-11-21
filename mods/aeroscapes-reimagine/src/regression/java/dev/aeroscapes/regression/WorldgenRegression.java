@@ -3,18 +3,22 @@ package dev.aeroscapes.regression;
 import com.google.gson.JsonParser;
 import com.mojang.logging.LogUtils;
 import com.mojang.serialization.JsonOps;
+import dev.aeroscapes.atmosphere.ShortBladeAttack;
 import java.io.IOException;
 import java.io.Reader;
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.TickTask;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
@@ -92,12 +96,18 @@ public final class WorldgenRegression {
 
   public WorldgenRegression() {
     NeoForge.EVENT_BUS.addListener(WorldgenRegression::verify);
+    StartingIslandRegression.register();
     VanillaRegression.register();
   }
 
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String startingIsland = System.getProperty("aeroscapes.regression.startingIsland");
+    if (startingIsland != null) {
+      StartingIslandRegression.verify(level, startingIsland);
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.hexLimits")) {
       event
           .getServer()
@@ -354,6 +364,45 @@ public final class WorldgenRegression {
     if (Boolean.getBoolean("aeroscapes.regression.magic")) {
       MagicRegression.verify(level);
       if (System.getProperty("aeroscapes.regression.groupTwo") == null) return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.weatheringCare")) {
+      boolean reload = Boolean.getBoolean("aeroscapes.regression.weatheringCareReload");
+      WeatheringCareRegression.verify(level, reload);
+      LOGGER.info("Weathering care regression passed ({})", reload ? "reload" : "prepare");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.weatheringExpansion")) {
+      boolean reload = Boolean.getBoolean("aeroscapes.regression.weatheringExpansionReload");
+      MasonryWeatheringRegression.verify(level, reload);
+      if (!reload) {
+        WeatheringDataRegression.verify(level);
+        SootSourcesRegression.verify(level);
+        SnowyScoriaRegression.verify(level);
+      }
+      LOGGER.info("Weathering expansion regression passed ({})", reload ? "reload" : "prepare");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.shortBlades")) {
+      Map.of(
+              "wetland_whimsy:dagger", true,
+              "farmersdelight:flint_knife", true,
+              "farmersdelight:iron_knife", true,
+              "farmersdelight:golden_knife", true,
+              "farmersdelight:diamond_knife", true,
+              "farmersdelight:netherite_knife", true,
+              "minecraft:iron_sword", false,
+              "immersive_weathering:ice_sickle", false,
+              "farmersdelight:skillet", false)
+          .forEach(
+              (id, expected) -> {
+                var item =
+                    BuiltInRegistries.ITEM.getOptional(ResourceLocation.parse(id)).orElseThrow();
+                require(
+                    new ItemStack(item).is(ShortBladeAttack.BLADES) == expected,
+                    "Short blade attack membership for " + id);
+              });
+      LOGGER.info("Short blade attack registry regression passed");
+      return;
     }
     String miscellaneous = System.getProperty("aeroscapes.regression.miscellaneous");
     if (miscellaneous != null) {

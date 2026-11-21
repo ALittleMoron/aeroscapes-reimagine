@@ -1,0 +1,30 @@
+{
+  "owners": ["natures_spirit:pink_sandstone"],
+  "growth_chance": 0.005,
+  "area_condition": {
+    "type": "neighbor_based_generation",
+    "must_have": {
+      "predicate_type": "immersive_weathering:fluid_match",
+      "fluids": ["minecraft:flowing_water"]
+    }
+  },
+  "growth_for_face": [
+    {
+      "direction": "down",
+      "growth": [
+        {
+          "data": {
+            "block": {
+              "Name": "immersive_weathering:red_sand_layer_block"
+            }
+          },
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "replacing_target": {
+    "predicate_type": "immersive_weathering:block_set_match",
+    "blocks": ["minecraft:air", "minecraft:cave_air", "minecraft:void_air"]
+  }
+}
