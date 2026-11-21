@@ -213,6 +213,41 @@ checks native state colors, camera dispatch and blank/drawn canvas geometry.
 Palette scale is calibrated against the full native player and the installed
 Punchy consumer, including the native held-arm pose and player root scale.
 
+### Offline model previews
+
+From the pack repository, run `make model-preview SUBJECT=hexcasting:staff/oak`.
+Open `.runtime/model-preview/index.html` for the inventory sprite, fitted shape
+views, fixed first-person views in both hands and the standing player holding the
+item. The hand views keep the viewport fixed even when geometry leaves the frame.
+The PNG and the camera matrices for each item are in the same output directory.
+
+```sh
+make model-preview SUBJECT='hexcasting:*' PREVIEW_OUT=/tmp/hex-gallery
+make model-preview SUBJECT=creature:sky_ray,creature:cloud_jelly/fringe PREVIEW_TICK=12
+```
+
+Use a routed model leaf for a specific fill, inscription or material. A wildcard
+enumerates the namespace's exported held leaves. Supply a comma-separated list
+for one gallery. `PREVIEW_SIZE=640x400` sets the dimensions of each viewport.
+`PREVIEW_FOV=70` is the default vertical hand projection. `PREVIEW_ASSETS`
+can point to the assets directory extracted from a different build.
+`PREVIEW_REFINED=false` reproduces Punchy's normal display slot with the same
+mesh, including the former staff routing failure. `PREVIEW_KIND` selects the
+Punchy tool category (default `INGREDIENT`), and `PREVIEW_TINT` supplies a
+six-digit RGB sample for a stored iota. A tick selects the native animation
+frame or the creature's pose. Each fauna sheet includes three motion samples
+from one camera, ten ticks apart. Cloud jellies support `fringe`, `nettle`,
+`mane` and `lantern`. Append `/pulse`, `/large` or `/large_pulse` to a
+jelly form to preview the corresponding skin. The two example bell diameters
+are one and four blocks.
+
+The tool runs model baking, the standing player attachment and the pack's fauna
+rigs without opening Minecraft. Punchy uses recorded neutral arm frames. Set `PREVIEW_ARM=slim` to use the narrower player model in first and third person.
+The standing player uses plain surfaces to make the grip visible. The preview
+uses studio lighting and samples texture frames at integer ticks. Live movement,
+casting animations, custom skins, translucent shader effects and world lighting
+still need in-game observation.
+
 ### Whale artwork generation
 
 `./gradlew generateSkyWhaleArtwork` regenerates thirteen GeckoLib models and their

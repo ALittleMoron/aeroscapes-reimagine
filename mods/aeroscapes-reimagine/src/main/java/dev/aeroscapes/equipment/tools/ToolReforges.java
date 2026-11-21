@@ -74,6 +74,11 @@ public final class ToolReforges {
     if (!(user instanceof ServerPlayer player) || !isSurvivalPlayer(player)) return amount;
     int chance =
         switch (ReforgeProfiles.path(tool)) {
+          case "hex_hammer_poor" -> -10;
+          case "hex_hammer_fine" -> 10;
+          case "hex_hammer_exceptional" -> 20;
+          case "hex_hammer_epic" -> 25;
+          case "hex_hammer_legendary" -> 35;
           case "tool_poor_with_brittle_point" ->
               block.is(Blocks.DEEPSLATE) || block.is(Blocks.BASALT) || block.is(Blocks.BLACKSTONE)
                   ? -20

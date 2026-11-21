@@ -19202,5 +19202,48 @@
     "key": "pehkui.configgui.scale_limits.view_bobbing.maximum",
     "expected": "Maximum value for the scale type pehkuiview_bobbing:",
     "replacement": "Maximum value for the scale type pehkui:view_bobbing:"
+  },
+  {
+    "key": "itemGroup.hexcasting",
+    "expected": "Рунные заклинания",
+    "replacement": "HexCast NEOFORGED"
+  },
+  {
+    "key": "itemGroup.hexcasting.creative_tab",
+    "expected": "Рунные заклинания",
+    "replacement": "HexCast NEOFORGED"
+  },
+  {
+    "key": "text.autoconfig.hexcasting.title",
+    "expected": "Настройки Рунных заклинаний",
+    "replacement": "Настройки HexCast NEOFORGED"
+  },
+  {
+    "key": "hexcasting.category.casting",
+    "expected": "Рунные заклинания",
+    "replacement": "HexCast NEOFORGED"
+  },
+  {
+    "key": "hexcasting.entry.101",
+    "expected": "Рунные заклинания: начало",
+    "replacement": "Основы Hex Casting"
+  },
+  {
+    "language": "en_us",
+    "key": "itemGroup.hexcasting",
+    "expected": "Hexcasting",
+    "replacement": "HexCast NEOFORGED"
+  },
+  {
+    "language": "en_us",
+    "key": "itemGroup.hexcasting.creative_tab",
+    "expected": "Hexcasting",
+    "replacement": "HexCast NEOFORGED"
+  },
+  {
+    "language": "en_us",
+    "key": "text.autoconfig.hexcasting.title",
+    "expected": "Hexcasting Config",
+    "replacement": "HexCast NEOFORGED Settings"
   }
 ]

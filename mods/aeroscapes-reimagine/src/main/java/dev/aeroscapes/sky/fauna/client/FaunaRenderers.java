@@ -57,6 +57,12 @@ public final class FaunaRenderers {
     }
   }
 
+  static ResourceLocation jellyTexture(Form form, float width, boolean pulse) {
+    var skin = JellyRenderer.SKINS.get(form);
+    if (width >= 4) return pulse ? skin.largePulse() : skin.largeIdle();
+    return pulse ? skin.pulse() : skin.idle();
+  }
+
   private static final class JellyRenderer extends MobRenderer<CloudJelly, CloudJellyModel> {
     private static final EnumMap<Form, MedusaSkin> SKINS = new EnumMap<>(Form.class);
 
@@ -102,11 +108,7 @@ public final class FaunaRenderers {
 
     @Override
     public ResourceLocation getTextureLocation(CloudJelly jelly) {
-      var skin = SKINS.get(jelly.form());
-      if (jelly.getBbWidth() >= 4) {
-        return jelly.isPulsing() ? skin.largePulse() : skin.largeIdle();
-      }
-      return jelly.isPulsing() ? skin.pulse() : skin.idle();
+      return jellyTexture(jelly.form(), jelly.getBbWidth(), jelly.isPulsing());
     }
   }
 }

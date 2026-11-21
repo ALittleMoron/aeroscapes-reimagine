@@ -6,6 +6,27 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Programmable magic in 0.6.8
+
+The pack installs the original [HexCast NEOFORGED 0.11.1-19](https://modrinth.com/mod/hexcast-neoforged/version/3qkLQwpf),
+[PAUCAL 0.7.0](https://modrinth.com/mod/paucal/version/zgpdzVKd),
+[Patchouli 1.21.1-93](https://modrinth.com/mod/patchouli/version/BIogJv2D)
+and [Caelus 7.0.1](https://modrinth.com/mod/caelus/version/KsfI4QsR) on both sides.
+The port uses the pack's existing Kotlin for Forge and Architectury. Its NeoForge
+descriptor and bytecode determine the runtime dependencies. PAUCAL's alpha
+exception is limited to this file. The PAUCAL JAR contains a license template,
+so its MIT notice comes from the [corresponding source](https://github.com/FallingColors/PAUCAL/tree/ad619b14e50fc46e6d7030fcbbf38b4efb691516).
+The other upstream notices and the Patchouli license are in `pack/licenses/`.
+
+The port requests three Edified tree features under the Minecraft namespace.
+The compatibility datapack supplies those keys for spell-grown trees and updates
+the quenched allay block's Silk Touch predicate for 1.21.1. The owned mod
+integrates the native casting VM, equipped scrying lens and four quenched
+block display models. With the refined compatibility models active, the
+Punchy adapter selects the staff's first-person transform for each hand while
+keeping Punchy's arm animation. The standard third-person renderer uses the
+staff's third-person transform. Review those adapters when changing the port.
+
 ## Race providers in 0.6.3
 
 The pack pins the official NeoForge files on both sides. [NeoOrigins 2.2.38](https://modrinth.com/mod/neo-origins/version/XGLQQPkP)

@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.hex",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "mixins": ["BoundedSpellMixin"],
+  "client": ["CastingGridPaletteMixin", "QuenchedBlockModelsMixin"],
+  "injectors": { "defaultRequire": 1 }
+}

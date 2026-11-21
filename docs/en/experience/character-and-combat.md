@@ -4,7 +4,7 @@ description: Choose a race, class and starting ability, then develop skills, tal
 status: partial
 ---
 
-Your race sets your size, stamina and innate traits. Your class supplies a combat specialty and a starting talent. Practice earns skill levels and talent points. Learned spells and innate abilities share eight preparation slots. Equipment can gain a quality rank through crafting, loot or reforging.
+Your race sets your size, stamina and innate traits. Your class supplies a combat specialty and a starting talent. Practice earns skill levels and talent points. Eight preparation slots hold learned spells, innate abilities, Amulet Step and items carrying Hex programs. Equipment can gain a quality rank through crafting, loot or reforging.
 
 ## Skills and talents
 
@@ -35,7 +35,7 @@ Combat offers melee, archery and protection talents. Open Professions for the ei
 
 ## Prepared abilities
 
-Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells, racial abilities and Amulet Step in eight shared slots, including during combat. Passive talents do not use these slots. Tap the middle mouse button to cast the selected spell, or hold it and release over a slot in the wheel to select that slot. Casting a learned spell requires an equipped spellbook focus and keeps the spell’s costs and cooldown. Racial abilities and Amulet Step work without a focus. The [magic guide](../magic/#your-first-spell) covers controls, books and scroll study. Personal ranks and preparation survive death, relogging and dimension changes.
+Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells, racial abilities, Amulet Step and items carrying Hex programs in eight shared slots, including during combat. Passive talents do not use these slots. Hold the middle mouse button and release over a slot in the wheel to select it. Tap the button to use it. A learned spell requires an equipped spellbook focus and keeps its costs and cooldown. Racial abilities and Amulet Step work without a focus. For a Hex program, keep its assigned cypher, trinket or artifact on your hotbar or in your offhand. The [magic guide](../magic/) covers controls, books, scroll study and writing Hex programs. Personal ranks and preparation survive death, relogging and dimension changes.
 
 ## Equipment quality and reforging
 
@@ -48,6 +48,12 @@ Reforging can produce legendary gear. Some legendary gear also appears in select
 Open the anvil’s **Reforging** tab. Put undamaged gear in the middle, one base material on the left and one lapis lazuli on the right. An iron pickaxe takes an iron ingot, a Wandering Magician Hood takes leather and Artificer’s Cane takes a gold ingot. Each paid attempt commits the whole result immediately. The price and odds are fixed for that item. The new rank can be worse or repeat the previous one. Ordinary enchantments remain on the item.
 
 To compare possible results, open the item in EMI and select **Reforging**. The card shows the materials and the chance of each available rank. Select a rank and hover over a result for its bonuses and any conditions. For example, a good pickaxe can keep its mining-speed bonus and also save wear when mining stone.
+
+Hex Casting equipment uses charged amethyst or iron.
+
+- **Drawing staves** take charged amethyst. After a mishap, an ordinary staff narrows the error down to four steps. A fine one shows the exact step, and an exceptional one also shows the last pattern that succeeded.
+- **Cyphers, trinkets and artifacts** also take charged amethyst. Higher ranks show the remaining charge more precisely. Epic and legendary carriers also show the reason for their last mishap in the tooltip.
+- **Jeweler's Hammers** take an iron ingot. Fine quality and above can save durability. Epic and legendary hammers also collect drops from blocks that occupy less than a full cube, such as amethyst clusters. Any drops that do not fit in your inventory stay on the ground.
 
 The autoloader crossbow takes an iron ingot. Its charge bonuses affect automatic loading: click to start, sneak and click to cancel, and fire to start loading the next bolt if you still have ammunition. Reforging keeps an already loaded bolt. Reforged weapons with built-in spells keep their spells and levels.
 

@@ -118,6 +118,7 @@ public final class HeldEquipmentRendering {
 
   @SubscribeEvent
   public static void reload(ModelEvent.BakingCompleted event) {
+    ItemModelResources.modelsBaked(Minecraft.getInstance().getResourceManager());
     ALTIMETERS.clear();
   }
 

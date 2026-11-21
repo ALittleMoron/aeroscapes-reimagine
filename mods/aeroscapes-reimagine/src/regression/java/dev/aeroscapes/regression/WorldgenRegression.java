@@ -98,6 +98,14 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    if (Boolean.getBoolean("aeroscapes.regression.hexLimits")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(), () -> HexLimitsRegression.verify(level)));
+      return;
+    }
     String skyFauna = System.getProperty("aeroscapes.regression.skyFauna");
     if (skyFauna != null) {
       if (skyFauna.equals("baseline") || skyFauna.equals("populated")) {
@@ -316,6 +324,18 @@ public final class WorldgenRegression {
     }
     if (Boolean.getBoolean("aeroscapes.regression.abilities")) {
       AbilitiesRegression.start(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.hexPrograms")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    HexProgramsRegression.verify(level);
+                    HexQualityRegression.verify(level);
+                  }));
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.fireLoot")) {

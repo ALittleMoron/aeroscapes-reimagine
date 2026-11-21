@@ -14,6 +14,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.CommonHooks;
@@ -53,7 +54,11 @@ abstract class MiningDropCollectorMixin {
       drop.setDeltaMovement(Vec3.ZERO);
     }
     boolean added = original.call(level, entity);
-    if (added && drop.isAlive() && profile.equals("pick_legendary_collector")) {
+    boolean collect =
+        profile.equals("pick_legendary_collector")
+            || ((profile.equals("hex_hammer_epic") || profile.equals("hex_hammer_legendary"))
+                && !Block.isShapeFullBlock(state.getShape(level, pos)));
+    if (added && drop.isAlive() && collect) {
       drop.setNoPickUpDelay();
       try {
         drop.playerTouch(player);

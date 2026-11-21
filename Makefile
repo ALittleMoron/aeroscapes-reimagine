@@ -54,6 +54,20 @@ smoke-ship: companion-check
 docs-preview:
 	cd tools/docs && $(NPM) run preview
 
+.PHONY: model-preview
+SUBJECT ?= hexcasting:staff/oak
+PREVIEW_OUT ?= $(CURDIR)/.runtime/model-preview
+PREVIEW_SIZE ?= 400x250
+PREVIEW_FOV ?= 70
+PREVIEW_TICK ?= 0
+PREVIEW_TINT ?= d49bfa
+PREVIEW_KIND ?= INGREDIENT
+PREVIEW_REFINED ?= true
+PREVIEW_ARM ?= classic
+PREVIEW_ASSETS ?= $(CURDIR)/pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets
+model-preview:
+	cd $(MOD_PROJECT) && ./gradlew --console plain modelPreview "-PpreviewSubject=$(SUBJECT)" "-PpreviewOutput=$(abspath $(PREVIEW_OUT))" "-PpreviewSize=$(PREVIEW_SIZE)" "-PpreviewFov=$(PREVIEW_FOV)" "-PpreviewTick=$(PREVIEW_TICK)" "-PpreviewTint=$(PREVIEW_TINT)" "-PpreviewKind=$(PREVIEW_KIND)" "-PpreviewRefined=$(PREVIEW_REFINED)" "-PpreviewArm=$(PREVIEW_ARM)" "-PpreviewAssets=$(abspath $(PREVIEW_ASSETS))"
+
 companion:
 	cd $(MOD_PROJECT) && ./gradlew --no-daemon check jar
 	cp $(MOD_PROJECT)/build/libs/aeroscapes-reimagine-0.1.0.jar pack/mods/aeroscapes-reimagine-0.1.0.jar

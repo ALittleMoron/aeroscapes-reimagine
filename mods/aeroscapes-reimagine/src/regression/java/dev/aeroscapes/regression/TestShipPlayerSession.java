@@ -14,6 +14,7 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 import net.minecraft.network.Connection;
 import net.minecraft.network.PacketSendListener;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.PacketFlow;
@@ -123,6 +124,13 @@ final class TestShipPlayerSession implements AutoCloseable {
     return connection.jellyShelterHints;
   }
 
+  @Nullable
+  Component takeHexReport() {
+    Component report = connection.hexReport;
+    connection.hexReport = null;
+    return report;
+  }
+
   <T extends CustomPacketPayload> T takePayload(Class<T> type) {
     var payload = connection.lastPayload;
     connection.lastPayload = null;
@@ -191,6 +199,7 @@ final class TestShipPlayerSession implements AutoCloseable {
   }
 
   private static final class RecordingConnection extends Connection {
+    @Nullable private Component hexReport;
     private int jellyShelterHints;
     @Nullable private CustomPacketPayload lastPayload;
     @Nullable private AbilityNetwork.Snapshot abilities;
@@ -213,6 +222,10 @@ final class TestShipPlayerSession implements AutoCloseable {
 
     @Override
     public void send(Packet<?> packet, @Nullable PacketSendListener listener, boolean flush) {
+      if (packet instanceof ClientboundSystemChatPacket chat
+          && chat.content().getContents() instanceof TranslatableContents text
+          && text.getKey().startsWith("aeroscapes_reimagine.hex_quality."))
+        hexReport = chat.content();
       if (packet instanceof ClientboundSystemChatPacket chat
           && chat.overlay()
           && chat.content().getContents() instanceof TranslatableContents text

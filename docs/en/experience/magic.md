@@ -88,6 +88,18 @@ Use the solvent in a heated liquefaction cauldron to extract three units of iron
 
 For prospecting, sneak and right-click a suitable block with an attunable divination rod, then hold the use button to search for another block of that type nearby. A short press after a successful search shows the last result again without spending durability. Higher-tier rods accept more types of ore.
 
+## Casting your own patterns
+
+Hex Casting lets any character compose spells with a staff. Mine a mature amethyst cluster with a pickaxe without Silk Touch to collect dust and occasionally charged amethyst. Combine a book with the dust for the field guide. Three sticks, an oak plank and charged amethyst make an oak staff. Keep some dust for casting. [HexCast NEOFORGED](https://modrinth.com/mod/hexcast-neoforged/version/3qkLQwpf)
+
+For a first light, stand in an empty space and draw **Mind's Reflection**, **Compass' Purification II**, then **Conjure Light**. The first pattern selects the caster, the second finds the position of their feet and the third places a light there for one dust. The guide shows the strokes for each pattern. Hex uses its own media and pattern knowledge. Characters can begin at any point in the talent tree.
+
+A **Cypher**, **Trinket** or **Artifact** can hold a program. Use the guide's instructions to write it into the item, then open **Prepared Abilities** and assign that item to one of the eight shared slots. Keep it on your hotbar or in your offhand. Holding the middle mouse button selects a slot in the wheel. A short press uses the selected item. A hotbar item moves into your main hand for the cast. Renaming the items at an anvil helps distinguish programs of the same type.
+
+The wheel spends the item's native charge. A cypher breaks when spent, a trinket can recharge, and an artifact can also draw media from inventory. Moving or recharging the item keeps its assignment. If you put it in a chest, the slot shows it as missing until you recover it.
+
+Blink reaches 16 blocks and Greater Teleport reaches 64. Impulse vectors can have length up to 1.5, and levitation lasts up to four seconds. The same target can receive one Hex movement effect every 20 seconds, including Altiora. The two patterns that grant free flight and the pattern that changes body scale are disabled. Status effects accept up to level II where potency is adjustable, and explosions accept up to strength 4. Staff casting, stored programs and circles use the same limits.
+
 ## Further development
 
-The shared preparation slots will also support martial techniques. Saved preparation sets remain a later possibility. Programmable [Hex Casting](https://modrinth.com/mod/hex-casting) is planned before `1.0.0` if a suitable version passes verification.
+The shared preparation slots will also support martial techniques. Saved preparation sets remain a later possibility.

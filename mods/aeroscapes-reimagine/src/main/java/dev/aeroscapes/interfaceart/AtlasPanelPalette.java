@@ -31,6 +31,33 @@ public final class AtlasPanelPalette {
       ResourceLocation.parse("nutritionalbalance:textures/gui/nutrient_button_hover.png");
   private static final ResourceLocation SKILLS_PANEL =
       ResourceLocation.parse("pmmo:textures/gui/player_stats.png");
+  private static final ResourceLocation HEX_NOTEBOOK =
+      ResourceLocation.parse("hexcasting:textures/gui/patchi_book.png");
+  private static final Map<Integer, Integer> HEX_PATTERN_COLORS =
+      Map.ofEntries(
+          Map.entry(0xfff2fcfc, 0xffe0edf1),
+          Map.entry(0xffebeae9, 0xffcfdde3),
+          Map.entry(0xffaeaeae, 0xffad9885),
+          Map.entry(0xff878787, 0xff81694f),
+          Map.entry(0xffc2f2ff, 0xffbde0ef),
+          Map.entry(0xff8ed7f5, 0xff88bdd2),
+          Map.entry(0xff4e97d0, 0xff538cad),
+          Map.entry(0xff2061a8, 0xff3d6385),
+          Map.entry(0xff442b38, 0xff453223),
+          Map.entry(0xff4e3544, 0xff503c2c),
+          Map.entry(0xff362028, 0xff362517),
+          Map.entry(0xff5e4555, 0xff624934),
+          Map.entry(0xff251419, 0xff291b11));
+  // Keep the notebook paper light for Patchouli's dark type and retain the ink and diagrams.
+  private static final Map<Integer, Integer> HEX_NOTEBOOK_COLORS =
+      Map.of(
+          0xffedfafe, 0xffd9e6ec,
+          0xffd5fdff, 0xffdeebf2,
+          0xfff3a0cf, 0xff8d7659,
+          0xffe6cbfe, 0xff84c0e9,
+          0xffcc6a8d, 0xff624934,
+          0xff750f5b, 0xff362517,
+          0xfff38eb3, 0xff70563c);
   private static final Map<Integer, Integer> WORKBENCH_COLORS =
       Map.of(
           0xff335469, 0xff695342,
@@ -120,6 +147,12 @@ public final class AtlasPanelPalette {
     boolean workbench = texture.equals(CHIPPED_WORKBENCH);
     boolean transmog = texture.equals(TRANSMOG_TABLE);
     boolean skillsPanel = texture.equals(SKILLS_PANEL);
+    boolean hexNotebook = texture.equals(HEX_NOTEBOOK);
+    boolean hexPattern =
+        texture.getNamespace().equals("hexcasting")
+            && (texture.getPath().equals("textures/gui/scroll.png")
+                || texture.getPath().equals("textures/gui/scroll_ancient.png")
+                || texture.getPath().equals("textures/gui/slate.png"));
     boolean nutrientButton = texture.equals(NUTRIENT_BUTTON);
     boolean nutrientHover = texture.equals(NUTRIENT_BUTTON_HOVER);
     for (int y = 0; y < image.getHeight(); y++) {
@@ -142,6 +175,10 @@ public final class AtlasPanelPalette {
           changed = TRANSMOG_COLORS.getOrDefault(original, changed);
         } else if (skillsPanel) {
           changed = SKILLS_PANEL_COLORS.getOrDefault(original, changed);
+        } else if (hexNotebook) {
+          changed = HEX_NOTEBOOK_COLORS.getOrDefault(original, changed);
+        } else if (hexPattern) {
+          changed = HEX_PATTERN_COLORS.getOrDefault(original, changed);
         } else if (nutrientButton) {
           changed = NUTRIENT_BUTTON_COLORS.getOrDefault(original, changed);
         } else if (nutrientHover) {

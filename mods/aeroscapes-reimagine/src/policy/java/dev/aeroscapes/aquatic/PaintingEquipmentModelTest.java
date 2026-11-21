@@ -204,15 +204,19 @@ public final class PaintingEquipmentModelTest {
   private record PaintSpot(int color, int imageX, int imageY) {}
 
   @SuppressWarnings("deprecation")
-  private static JsonArray thirdPersonAttachments(JsonObject source)
+  static JsonArray thirdPersonAttachments(JsonObject source) throws ReflectiveOperationException {
+    return thirdPersonAttachments(source, false);
+  }
+
+  static JsonArray thirdPersonAttachments(JsonObject source, boolean slim)
       throws ReflectiveOperationException {
     JsonArray attachments = new JsonArray();
     BlockModel model = BlockModel.fromString("{\"display\":" + source.get("display") + "}");
     for (boolean left : new boolean[] {false, true}) {
       var root =
-          LayerDefinition.create(PlayerModel.createMesh(CubeDeformation.NONE, false), 64, 64)
+          LayerDefinition.create(PlayerModel.createMesh(CubeDeformation.NONE, slim), 64, 64)
               .bakeRoot();
-      PlayerModel<LivingEntity> playerModel = new PlayerModel<>(root, false);
+      PlayerModel<LivingEntity> playerModel = new PlayerModel<>(root, slim);
       playerModel.leftArmPose = left ? HumanoidModel.ArmPose.ITEM : HumanoidModel.ArmPose.EMPTY;
       playerModel.rightArmPose = left ? HumanoidModel.ArmPose.EMPTY : HumanoidModel.ArmPose.ITEM;
       var poseArm =

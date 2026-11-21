@@ -631,3 +631,17 @@ https://modrinth.com/mod/neo-origins/version/XGLQQPkP
 Pehkui Rebuilt 3.9.2+1.21.1 by wuhenqiubai, based on Pehkui by Virtuoel.
 See Pehkui-Rebuilt-LICENSE.txt. The original JAR is distributed unchanged.
 https://modrinth.com/mod/pehkui-rebuilt/version/pQdozoO0
+
+Programmable magic in 0.6.8
+HexCast NEOFORGED 0.11.1-19 by petrak@ and A1ex_Rom, with textures by
+Falkory, contributions by Wiresegal and Alwinfy, audio by Kra3tor and the
+logo by naj77. See HexCast-MIT.txt. This is the unofficial NeoForge port.
+https://modrinth.com/mod/hexcast-neoforged/version/3qkLQwpf
+PAUCAL 0.7.0 by petrak@, MIT. See PAUCAL-MIT.txt from the 0.7.0 upstream source.
+https://github.com/FallingColors/PAUCAL/blob/ad619b14e50fc46e6d7030fcbbf38b4efb691516/LICENSE.txt
+Patchouli 1.21.1-93 by Vazkii and contributors, CC BY-NC-SA 3.0 Unported.
+See Patchouli-LICENSE.txt. The pack references the original unmodified JAR.
+https://modrinth.com/mod/patchouli/version/BIogJv2D
+Caelus API 7.0.1+1.21.1 by C4, LGPL-3.0-or-later. See Caelus-NOTICE.txt
+and the license texts in the original replaceable JAR.
+https://modrinth.com/mod/caelus/version/KsfI4QsR

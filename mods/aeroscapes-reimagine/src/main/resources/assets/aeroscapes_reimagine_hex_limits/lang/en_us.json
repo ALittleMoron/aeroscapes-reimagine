@@ -1,0 +1,9 @@
+{
+  "hexcasting.mishap.aeroscapes_blast": "Use a blast strength of 4 or less.",
+  "hexcasting.mishap.aeroscapes_blink": "Blink can move its target up to 16 blocks.",
+  "hexcasting.mishap.aeroscapes_effect": "Choose a status effect of level II or lower.",
+  "hexcasting.mishap.aeroscapes_impulse": "Use an impulse vector with a length of 1.5 or less.",
+  "hexcasting.mishap.aeroscapes_lift": "Levitation can last up to 4 seconds.",
+  "hexcasting.mishap.aeroscapes_teleport": "Greater Teleport can move its target up to 64 blocks.",
+  "hexcasting.mishap.aeroscapes_travel_interval": "Wait 20 seconds between Hex movement effects on the same target."
+}

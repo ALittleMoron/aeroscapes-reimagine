@@ -146,7 +146,8 @@ public final class ConstructionPlacementTest {
     engineeringModels(assets, previews);
     if (arguments.length == 2) Files.writeString(Path.of(arguments[1]), previews.toString());
     System.out.println(
-        "Construction placement: scoped palm selection, native hand contact, selected Punchy contexts, forward tape and native net pouch direction passed");
+        "Construction placement: scoped palm selection, native hand contact, selected Punchy"
+            + " contexts, forward tape and native net pouch direction passed");
   }
 
   private static void engineeringModels(Path assets, JsonObject previews)
@@ -272,18 +273,21 @@ public final class ConstructionPlacementTest {
             else
               require(
                   held.last().pose().equals(classicItemPoses.get(key), .000001f),
-                  "Punchy's explicit item attachment cancels the vanilla slim offset; only the arm mesh shifts");
+                  "Punchy's explicit item attachment cancels the vanilla slim offset; only the arm"
+                      + " mesh shifts");
           }
           Matrix4f relative = new Matrix4f(skin.last().pose()).invert().mul(held.last().pose());
           if (item.equals("seashell_hoe"))
             require(
                 relative.transformDirection(new Vector3f(0, 0, 1)).normalize().y > .999f,
-                "The native shell hoe tip points forward through the complete HOE attachment in both hands");
+                "The native shell hoe tip points forward through the complete HOE attachment in"
+                    + " both hands");
           if (kind == ToolKind.AXE || kind == ToolKind.PICKAXE) {
             Vector3f working = new Vector3f(kind == ToolKind.AXE ? 1 : -1, 0, 0);
             require(
                 relative.transformDirection(working).normalize().y > .9f,
-                "The working axe/pick tip extends forward through the actual mirrored category consumer: "
+                "The working axe/pick tip extends forward through the actual mirrored category"
+                    + " consumer: "
                     + item);
           }
           if (lunchbox) {
@@ -401,7 +405,8 @@ public final class ConstructionPlacementTest {
               && cameraBelly.z < 0
               && cameraMouth.y > cameraBelly.y
               && cameraMouth.y / -cameraMouth.z > cameraBelly.y / -cameraBelly.z,
-          "The selected live-palm camera keeps the gathered mouth above the pouch belly in both hands");
+          "The selected live-palm camera keeps the gathered mouth above the pouch belly in both"
+              + " hands");
     }
   }
 
@@ -414,7 +419,7 @@ public final class ConstructionPlacementTest {
         && point.z <= cube.maxZ / 16;
   }
 
-  private static PoseStack neutralPunchy(Matrix4f skin, boolean left, ToolKind kind)
+  static PoseStack neutralPunchy(Matrix4f skin, boolean left, ToolKind kind)
       throws ReflectiveOperationException, IOException {
     PoseStack pose = new PoseStack();
     pose.mulPose(skin);
@@ -617,7 +622,7 @@ public final class ConstructionPlacementTest {
     }
   }
 
-  private static JsonArray matrix(Matrix4f matrix) {
+  static JsonArray matrix(Matrix4f matrix) {
     JsonArray rows = new JsonArray();
     for (int row = 0; row < 4; row++)
       rows.add(
@@ -644,13 +649,14 @@ public final class ConstructionPlacementTest {
       require(
           Math.abs(actualRange.getMin() - authoredRange.getMin()) < .00001
               && Math.abs(actualRange.getMax() - authoredRange.getMax()) < .00001,
-          "The normal NeoForge loader retains authored volume instead of regenerating the native flat sprite: "
+          "The normal NeoForge loader retains authored volume instead of regenerating the native"
+              + " flat sprite: "
               + item);
     }
     return actual;
   }
 
-  private static JsonArray vector(float... values) {
+  static JsonArray vector(float... values) {
     JsonArray vector = new JsonArray();
     for (float value : values) vector.add(value);
     return vector;
@@ -661,7 +667,7 @@ public final class ConstructionPlacementTest {
   }
 
   @SuppressWarnings("deprecation") // The native ItemTransform parser needs only display slots.
-  private static BlockModel handModel(JsonObject source) {
+  static BlockModel handModel(JsonObject source) {
     JsonObject model = new JsonObject();
     model.add("display", source.get("display"));
     return BlockModel.fromString(model.toString());

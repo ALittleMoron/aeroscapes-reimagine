@@ -116,6 +116,12 @@ config = "aeroscapes_reimagine.progression.mixins.json"
 [[mixins]]
 config = "aeroscapes_reimagine.magic.mixins.json"
 
+[[mixins]]
+config = "aeroscapes_reimagine.hex.mixins.json"
+
+[[mixins]]
+config = "aeroscapes_reimagine.hex_quality.mixins.json"
+
 [[dependencies.aeroscapes_reimagine]]
 modId = "neoforge"
 type = "required"

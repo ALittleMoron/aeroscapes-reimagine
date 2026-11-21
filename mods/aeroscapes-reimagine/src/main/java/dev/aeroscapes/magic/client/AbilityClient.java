@@ -1,6 +1,7 @@
 package dev.aeroscapes.magic.client;
 
 import dev.aeroscapes.magic.AbilityNetwork;
+import dev.aeroscapes.magic.HexPrograms;
 import dev.aeroscapes.magic.InnateAbility;
 import dev.aeroscapes.magic.MagicBonuses;
 import dev.aeroscapes.magic.RacialAbilities;
@@ -12,8 +13,10 @@ import java.util.Set;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Inventory;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
@@ -85,6 +88,22 @@ public final class AbilityClient {
   }
 
   public static Component name(String id) {
+    var item = HexPrograms.itemType(id);
+    if (item != null) {
+      var entry = entry(id);
+      var program = entry == null ? null : entry.program();
+      Component name =
+          program != null && !program.customName().isEmpty()
+              ? Component.literal(program.customName())
+              : BuiltInRegistries.ITEM.get(item).getDescription();
+      int slot = program == null ? -1 : program.inventorySlot();
+      if (slot < 0)
+        return text(
+            "hex_absent_name", id.substring(id.indexOf('/') + 1, id.indexOf('/') + 9), name);
+      if (slot == Inventory.SLOT_OFFHAND) return text("hex_offhand_name", name);
+      return text(
+          Inventory.isHotbarSlot(slot) ? "hex_hotbar_name" : "hex_inventory_name", slot + 1, name);
+    }
     if (AmuletStep.ID.equals(id)) return text("amulet_step");
     var innate = InnateAbility.byId(id);
     return innate == null
@@ -93,6 +112,7 @@ public final class AbilityClient {
   }
 
   public static Component school(AbilityNetwork.Entry entry) {
+    if (entry.program() != null) return text("hex_school");
     if (AmuletStep.GROUP.equals(entry.school())) return text("equipment");
     return entry.innate() ? text("innate") : spell(entry.id()).getSchoolType().getDisplayName();
   }
@@ -207,6 +227,23 @@ public final class AbilityClient {
 
   public static void icon(GuiGraphics graphics, String id, int x, int y, int size) {
     if (id.isEmpty()) return;
+    var type = HexPrograms.itemType(id);
+    if (type != null) {
+      var item = BuiltInRegistries.ITEM.get(type);
+      var entry = entry(id);
+      var program = entry == null ? null : entry.program();
+      var player = Minecraft.getInstance().player;
+      var stack =
+          player != null && program != null && program.inventorySlot() >= 0
+              ? player.getInventory().getItem(program.inventorySlot())
+              : net.minecraft.world.item.ItemStack.EMPTY;
+      graphics.pose().pushPose();
+      graphics.pose().translate(x, y, 0);
+      graphics.pose().scale(size / 16f, size / 16f, 1f);
+      graphics.renderItem(stack.is(item) ? stack : item.getDefaultInstance(), 0, 0);
+      graphics.pose().popPose();
+      return;
+    }
     var innate = InnateAbility.byId(id);
     var texture =
         AmuletStep.ID.equals(id)

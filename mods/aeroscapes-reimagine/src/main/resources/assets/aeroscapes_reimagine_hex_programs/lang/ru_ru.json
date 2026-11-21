@@ -1,0 +1,13 @@
+{
+  "aeroscapes_reimagine.abilities.hex_school": "Программа Hex Casting",
+  "aeroscapes_reimagine.abilities.hex_hotbar_name": "Панель %s · %s",
+  "aeroscapes_reimagine.abilities.hex_inventory_name": "Инвентарь %s · %s",
+  "aeroscapes_reimagine.abilities.hex_offhand_name": "Вторая рука · %s",
+  "aeroscapes_reimagine.abilities.hex_absent_name": "%2$s (%1$s)",
+  "aeroscapes_reimagine.abilities.hex_hint": "При запуске вы выбираете ячейку предмета на панели быстрого доступа или используете его из второй руки. Предмет расходует мысль и перезаряжается как обычно.",
+  "aeroscapes_reimagine.abilities.hex_assign": "Нажмите на ячейку подготовки, чтобы привязать к ней этот предмет. Если дать предмету имя на наковальне, его программу будет проще найти.",
+  "aeroscapes_reimagine.abilities.hex_item_hint": "Привяжите программу в меню подготовки способностей, чтобы запускать её с панели быстрого доступа или из второй руки.",
+  "aeroscapes_reimagine.abilities.reason.hex_busy": "Сначала закончите использовать предмет в руке.",
+  "aeroscapes_reimagine.abilities.reason.hex_stowed": "Для запуска переложите предмет с программой на панель быстрого доступа или во вторую руку.",
+  "aeroscapes_reimagine.abilities.reason.hex_missing": "У вас нет привязанного предмета с программой."
+}

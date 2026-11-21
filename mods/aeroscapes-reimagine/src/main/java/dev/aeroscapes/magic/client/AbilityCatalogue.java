@@ -34,6 +34,7 @@ public final class AbilityCatalogue {
     if (entry == null) return "waiting";
     if (entry.reason().equals("race")) return "race";
     if (entry.reason().equals("disabled")) return "disabled";
+    if (entry.reason().equals("hex_missing")) return "hex_missing";
     if (entry.granted()) return "";
     if (entry.level() < 1) return "unlearned";
     if (entry.level() > entry.cap()) return "mastery";

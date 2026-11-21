@@ -45,6 +45,7 @@ final class ToolModels {
     HeldItemModels.add(assets, output, generated.models());
     FieldEquipmentModels.addResources(assets, output);
     IronHeldModels.addResources(assets, output);
+    HexHeldModels.addResources(assets, output);
     TheurgyHeldModels.addResources(assets, output);
     EngineeringBucketModels.addResources(assets, output);
     SteamContainerModels.addResources(assets, output);

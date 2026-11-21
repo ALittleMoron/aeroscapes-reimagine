@@ -256,7 +256,9 @@ public final class AbilitiesScreen extends Screen {
                 .withColor(0xffef9b8c));
       paragraphs.add(AbilityClient.name(entry.id()));
       paragraphs.add(AbilityClient.school(entry));
-      if (entry.granted()) {
+      if (entry.program() != null) {
+        paragraphs.add(AbilityClient.text("hex_hint"));
+      } else if (entry.granted()) {
         paragraphs.add(
             AbilityClient.text(
                 net.minecraft.resources.ResourceLocation.parse(entry.id()).getPath() + "_hint"));
@@ -267,7 +269,11 @@ public final class AbilitiesScreen extends Screen {
               ? AbilityClient.reason(entry)
               : AbilityClient.reason(assignmentReason));
       if (assignmentReason.isEmpty()) {
-        paragraphs.add(AbilityClient.text(entry.granted() ? "innate_assign" : "assign_hint"));
+        paragraphs.add(
+            AbilityClient.text(
+                entry.program() != null
+                    ? "hex_assign"
+                    : entry.granted() ? "innate_assign" : "assign_hint"));
         paragraphs.add(AbilityClient.text("move_hint"));
       }
       paragraphs.add(AbilityClient.text("controls"));

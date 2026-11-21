@@ -62,6 +62,7 @@ RELEASE_EXCEPTIONS = frozenset(
         ("hqQqvaa4", "ppOVyisF", "beta"),
         # Owner selected this Pehkui Rebuilt file for physical race dimensions.
         ("cxwMAgWQ", "pQdozoO0", "beta"),
+        ("TZo2wHFe", "zgpdzVKd", "alpha"),
     }
 )
 # Fabric mods loaded through Connector, with the side they are installed on.

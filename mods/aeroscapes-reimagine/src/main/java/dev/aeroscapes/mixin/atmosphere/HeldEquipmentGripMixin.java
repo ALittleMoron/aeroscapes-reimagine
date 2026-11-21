@@ -72,7 +72,8 @@ public abstract class HeldEquipmentGripMixin {
       Operation<Void> original,
       @Local(argsOnly = true) LocalPlayer player,
       @Share("aeroscapesHandRoot") LocalRef<Matrix4f> root) {
-    boolean selected = HeldEquipmentGrip.usesPalm(BuiltInRegistries.ITEM.getKey(stack.getItem()));
+    var item = BuiltInRegistries.ITEM.getKey(stack.getItem());
+    boolean selected = HeldEquipmentGrip.usesPalm(item);
     var arm =
         selected
             ? PunchyArmRenderer.getCachedArmWorld(
@@ -80,12 +81,8 @@ public abstract class HeldEquipmentGripMixin {
             : null;
     PoseStack held =
         arm == null ? pose : HeldEquipmentGrip.palm(root.get(), arm, left, isSlim(player));
-    var heldContext =
-        arm == null
-            ? context
-            : left
-                ? ItemDisplayContext.FIRST_PERSON_LEFT_HAND
-                : ItemDisplayContext.FIRST_PERSON_RIGHT_HAND;
+    var heldContext = HeldEquipmentGrip.punchyDisplay(item, context, left, arm != null);
+    held = HeldEquipmentGrip.smallItemGrip(item, held);
     original.call(renderer, entity, stack, heldContext, left, held, buffers, light);
   }
 }

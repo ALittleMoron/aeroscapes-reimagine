@@ -1,6 +1,19 @@
 [
   {
     "targets": {
+      "lZGsiJ1L": "3qkLQwpf",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [
+      "data/hexcasting/loot_table/blocks/quenched_allay.json",
+      "data/minecraft/worldgen/configured_feature/amethyst_edified_tree.json",
+      "data/minecraft/worldgen/configured_feature/aventurine_edified_tree.json",
+      "data/minecraft/worldgen/configured_feature/citrine_edified_tree.json"
+    ],
+    "reason": "HexCast NEOFORGED 0.11.1-19 resolves its spell-grown Edified trees under minecraft and uses a legacy Silk Touch predicate for quenched allay. The owned adapters target this same file for the casting VM, carrier diagnostics, scrying lens attributes and quenched block models."
+  },
+  {
+    "targets": {
       "b7vOFSIp": "Y12rtT96"
     },
     "files": [

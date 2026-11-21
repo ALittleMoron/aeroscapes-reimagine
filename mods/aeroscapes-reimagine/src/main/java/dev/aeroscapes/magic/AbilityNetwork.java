@@ -7,13 +7,14 @@ import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
+import org.jetbrains.annotations.Nullable;
 
 /** Client requests contain slot identities; the server supplies all knowledge and casting data. */
 public final class AbilityNetwork {
   private AbilityNetwork() {}
 
   public static void register(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("3");
+    var registrar = event.registrar("4");
     registrar.playToServer(
         Request.TYPE,
         Request.CODEC,
@@ -48,6 +49,8 @@ public final class AbilityNetwork {
         (message, context) -> dev.aeroscapes.magic.client.AbilityClient.accept(message));
   }
 
+  public record Program(int inventorySlot, String customName) {}
+
   public record Entry(
       String id,
       String school,
@@ -57,17 +60,33 @@ public final class AbilityNetwork {
       boolean usable,
       String reason,
       int cooldownTicks,
-      int manaCost) {
+      int manaCost,
+      @Nullable Program program) {
+    public Entry(
+        String id,
+        String school,
+        int level,
+        int cap,
+        int maxLevel,
+        boolean usable,
+        String reason,
+        int cooldownTicks,
+        int manaCost) {
+      this(id, school, level, cap, maxLevel, usable, reason, cooldownTicks, manaCost, null);
+    }
+
     public boolean innate() {
       return school.equals(InnateAbility.GROUP);
     }
 
     public boolean known() {
-      return (granted() && !reason.equals("race")) || level > 0;
+      return (granted() && !reason.equals("race") && !reason.equals("hex_missing")) || level > 0;
     }
 
     public boolean granted() {
-      return innate() || school.equals(dev.aeroscapes.magic.travel.AmuletStep.GROUP);
+      return innate()
+          || school.equals(dev.aeroscapes.magic.travel.AmuletStep.GROUP)
+          || program != null;
     }
   }
 
@@ -97,6 +116,12 @@ public final class AbilityNetwork {
                     output.writeUtf(entry.reason(), 128);
                     output.writeVarInt(entry.cooldownTicks());
                     output.writeVarInt(entry.manaCost());
+                    output.writeNullable(
+                        entry.program(),
+                        (buf, program) -> {
+                          buf.writeVarInt(program.inventorySlot());
+                          buf.writeUtf(program.customName(), 128);
+                        });
                   });
               buffer.writeCollection(message.slots(), (output, slot) -> output.writeUtf(slot, 128));
               buffer.writeVarInt(message.selected());
@@ -120,7 +145,9 @@ public final class AbilityNetwork {
                                 input.readBoolean(),
                                 input.readUtf(128),
                                 input.readVarInt(),
-                                input.readVarInt())),
+                                input.readVarInt(),
+                                input.readNullable(
+                                    buf -> new Program(buf.readVarInt(), buf.readUtf(128))))),
                     buffer.readList(input -> input.readUtf(128)),
                     buffer.readVarInt(),
                     buffer.readBoolean(),

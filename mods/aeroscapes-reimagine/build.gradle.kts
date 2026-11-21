@@ -119,6 +119,7 @@ repositories {
       includeModule("maven.modrinth", "xaeros-minimap")
       includeModule("maven.modrinth", "xaeros-world-map")
       includeModule("maven.modrinth", "animalhusbandry")
+      includeModule("maven.modrinth", "hexcast-neoforged")
     }
   }
 }
@@ -214,6 +215,8 @@ val extractSableApi =
   }
 
 dependencies {
+  compileOnly("maven.modrinth:hexcast-neoforged:3qkLQwpf") { isTransitive = false }
+  equipmentAssets("maven.modrinth:hexcast-neoforged:3qkLQwpf") { isTransitive = false }
   compileOnly("maven.modrinth:animalhusbandry:Evazn2xm") { isTransitive = false }
   compileOnly("curse.maven:agricraft-rereloaded-1616052:9559254") { isTransitive = false }
   compileOnly("maven.modrinth:sky-whales:bDTUgqZ5") { isTransitive = false }
@@ -725,6 +728,47 @@ val vanillaEquipmentModelTest =
     args(layout.projectDirectory.dir("../..").asFile.absolutePath)
   }
 
+tasks.register<JavaExec>("modelPreview") {
+  group = "verification"
+  description = "Render held item states and posed fauna to an offline contact sheet"
+  val projectRoot = layout.projectDirectory.dir("../..")
+  dependsOn(tasks.named(policy.classesTaskName), tasks.named("createMinecraftArtifacts"))
+  classpath = vanillaEquipmentModelTest.get().classpath
+  mainClass = "dev.aeroscapes.aquatic.ModelPreview"
+  systemProperty("java.awt.headless", "true")
+  maxHeapSize = "1500m"
+  args(
+    providers
+      .gradleProperty("previewAssets")
+      .getOrElse(
+        projectRoot
+          .dir("pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets")
+          .asFile
+          .absolutePath,
+      ),
+    providers
+      .gradleProperty("previewOutput")
+      .getOrElse(projectRoot.dir(".runtime/model-preview").asFile.absolutePath),
+    providers.gradleProperty("previewSubject").getOrElse("hexcasting:staff/oak"),
+    providers.gradleProperty("previewSize").getOrElse("400x250"),
+    providers.gradleProperty("previewFov").getOrElse("70"),
+    providers.gradleProperty("previewTick").getOrElse("0"),
+    providers.gradleProperty("previewTint").getOrElse("d49bfa"),
+    providers.gradleProperty("previewKind").getOrElse("INGREDIENT"),
+    providers.gradleProperty("previewRefined").getOrElse("true"),
+    providers.gradleProperty("previewArm").getOrElse("classic"),
+  )
+}
+
+val previewRasterTest =
+  tasks.register<JavaExec>("previewRasterTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.aquatic.PreviewRasterTest"
+    systemProperty("java.awt.headless", "true")
+  }
+
 val rodModelContractTest =
   tasks.register<JavaExec>("rodModelContractTest") {
     group = "verification"
@@ -913,6 +957,15 @@ val ironHeldModelTest =
     providers.gradleProperty("ironHeldPreview").orNull?.let { args(it) }
   }
 
+val hexHeldModelTest =
+  tasks.register<JavaExec>("hexHeldModelTest") {
+    group = "verification"
+    dependsOn(equipmentModelsCheck)
+    classpath = vanillaEquipmentModelTest.get().classpath
+    mainClass = "dev.aeroscapes.aquatic.HexHeldModelTest"
+    args(layout.projectDirectory.dir("../..").asFile.absolutePath)
+  }
+
 val dieselEquipmentModelTest =
   tasks.register<JavaExec>("dieselEquipmentModelTest") {
     group = "verification"
@@ -1086,11 +1139,13 @@ tasks.check {
     utilityEquipmentModelTest,
     fieldEquipmentModelTest,
     ironHeldModelTest,
+    hexHeldModelTest,
     dieselEquipmentModelTest,
     weatheringTextureTest,
     orePresentationContractTest,
     heldEquipmentRenderingTest,
     rodModelContractTest,
+    previewRasterTest,
     paragliderExhaustionTest,
     seatedRiderAnimationTest,
     hookHangMathTest,

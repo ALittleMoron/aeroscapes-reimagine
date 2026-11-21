@@ -61,6 +61,7 @@ public final class PreparedAbilities {
         boolean valid =
             innate != null
                 || AmuletStep.ID.equals(id)
+                || HexPrograms.itemType(id) != null
                 || SpellKnowledge.spell(id) != SpellRegistry.none();
         if (!valid || slots.contains(id)) id = "";
       }
@@ -81,7 +82,13 @@ public final class PreparedAbilities {
   public static void edit(ServerPlayer player, int slot, String id) {
     if (slot < 0 || slot >= Preparation.SLOT_COUNT || id.length() > 128) return;
     var innate = InnateAbility.byId(id);
-    if (AmuletStep.ID.equals(id)) {
+    if (HexPrograms.itemType(id) != null) {
+      if (!HexPrograms.inventory(player).containsKey(id)) {
+        SpellKnowledge.message(player, "hex_missing");
+        sync(player, false);
+        return;
+      }
+    } else if (AmuletStep.ID.equals(id)) {
       if (!AmuletStep.available(player)) return;
     } else if (innate != null) {
       if (RaceIdentity.race(player) != innate.race) return;
@@ -118,6 +125,11 @@ public final class PreparedAbilities {
       return;
     }
     var innate = InnateAbility.byId(id);
+    if (HexPrograms.itemType(id) != null) {
+      HexPrograms.cast(player, id);
+      sync(player, false);
+      return;
+    }
     if (AmuletStep.ID.equals(id)) {
       AmuletStep.cast(player);
       sync(player, false);
@@ -190,7 +202,10 @@ public final class PreparedAbilities {
     var container = ISpellContainer.create(Preparation.SLOT_COUNT, true, true).mutableCopy();
     for (int index = 0; index < prepared.slots().size(); index++) {
       String id = prepared.slots().get(index);
-      if (id.isEmpty() || InnateAbility.byId(id) != null || AmuletStep.ID.equals(id)) continue;
+      if (id.isEmpty()
+          || InnateAbility.byId(id) != null
+          || AmuletStep.ID.equals(id)
+          || HexPrograms.itemType(id) != null) continue;
       AbstractSpell spell = SpellKnowledge.spell(id);
       if (spell != SpellRegistry.none()
           && SpellKnowledge.knowledgeReason(player, spell, skills).isEmpty())
@@ -218,6 +233,7 @@ public final class PreparedAbilities {
     RacialAbilities.reconcile(player, prepared);
     if (project) projectFocus(player, prepared, skills);
     var entries = new ArrayList<AbilityNetwork.Entry>();
+    HexPrograms.catalogue(player, prepared, entries);
     boolean amulet = AmuletStep.available(player);
     if (amulet) {
       int cooldown = AmuletStep.cooldown(player);
@@ -390,6 +406,8 @@ public final class PreparedAbilities {
     else if (event.getItemStack().getItem() instanceof SpellBook) lines = List.of("book_hint");
     else if (event.getItemStack().is(ItemRegistry.TELEPORTATION_AMULET.get()))
       lines = List.of("amulet_equip", "amulet_hint");
+    else if (HexPrograms.programData(event.getItemStack()) != null)
+      lines = List.of("hex_item_hint");
     else return;
     for (String key : lines)
       event

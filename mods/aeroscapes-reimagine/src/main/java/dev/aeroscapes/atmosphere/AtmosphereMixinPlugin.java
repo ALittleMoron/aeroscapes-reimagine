@@ -29,7 +29,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   static boolean shouldApplyForVersions(
       String mixinClassName, Function<String, String> versionLookup) {
     Map<String, String> versions;
-    if (mixinClassName.startsWith("dev.aeroscapes.mixin.inventory.")) {
+    if (mixinClassName.startsWith("dev.aeroscapes.mixin.hex")) {
+      versions = Map.of("hexcasting", "0.11.1-19+neoforge.1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.inventory.")) {
       versions = Map.of("curios", "9.5.1+1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.magic.")) {
       versions =

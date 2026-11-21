@@ -1,0 +1,10 @@
+{
+  "items": [
+    "hexcasting:cypher",
+    "hexcasting:trinket",
+    "hexcasting:artifact"
+  ],
+  "base": [
+    "hexcasting:charged_amethyst"
+  ]
+}

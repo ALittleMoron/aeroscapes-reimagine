@@ -1,0 +1,1 @@
+actionDenyList = ["hexcasting:flight/range", "hexcasting:flight/time", "hexcasting:interop/pehkui/set"]

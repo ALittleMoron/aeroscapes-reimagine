@@ -1,0 +1,13 @@
+{
+  "aeroscapes_reimagine.abilities.hex_school": "Hex Casting program",
+  "aeroscapes_reimagine.abilities.hex_hotbar_name": "Hotbar %s · %s",
+  "aeroscapes_reimagine.abilities.hex_inventory_name": "Inventory %s · %s",
+  "aeroscapes_reimagine.abilities.hex_offhand_name": "Offhand · %s",
+  "aeroscapes_reimagine.abilities.hex_absent_name": "%2$s (%1$s)",
+  "aeroscapes_reimagine.abilities.hex_hint": "Activating this program selects its hotbar slot or uses it in your offhand. The item draws media and applies its usual cooldown.",
+  "aeroscapes_reimagine.abilities.hex_assign": "Click a preparation slot to bind this item. An anvil name helps you recognise its program.",
+  "aeroscapes_reimagine.abilities.hex_item_hint": "Bind this program in Prepared abilities, then activate it from your hotbar or offhand.",
+  "aeroscapes_reimagine.abilities.reason.hex_busy": "Finish using the item in your hand first.",
+  "aeroscapes_reimagine.abilities.reason.hex_stowed": "Move this programmed item to your hotbar or offhand to cast.",
+  "aeroscapes_reimagine.abilities.reason.hex_missing": "The bound programmed item is missing."
+}

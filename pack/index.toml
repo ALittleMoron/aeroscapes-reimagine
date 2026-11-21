@@ -105,6 +105,10 @@ file = "config/global_packs.toml"
 hash = "8046b960f488fdb986184bd3622a0eedb05e020befa086184bf00dc2c344b44e"
 
 [[files]]
+file = "config/hexcasting-server.toml"
+hash = "dbc07ae057679e27268e3cfff55910f97e3d20143f1b688ff1eefdb5ba8831ad"
+
+[[files]]
 file = "config/horseman-client.toml"
 hash = "9ecc8f8ba6ccc5275d738d0cc94466a3fe6ba72df8ae70fe72fdb188c0f97aee"
 
@@ -749,6 +753,10 @@ file = "global_packs/required_data/aeroscapes_reimagine_compat/data/fowlplay/tag
 hash = "dd0baa3e655153c3d4fd103da2e3c3e56e54beb15b8f25f121ebf08c819913b8"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hexcasting/loot_table/blocks/quenched_allay.json"
+hash = "eb9f47c1421c66286e1d9cd95fea46525bfb21735c998e62bf654f11b96f9d6f"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/hybrid_aquatic/fishing/fish/freshwater/african_butterflyfish.json"
 hash = "bb14d0f917dc5dca9e4a2cf5208f805eca0211a872326b8c384e7fcfb8ad31ad"
 
@@ -795,6 +803,18 @@ hash = "07cb4d08e420d75260ca2a564fb2e0ee2922d290446a2db0ac7e4029143961f0"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/tags/block/mineable/pickaxe.json"
 hash = "7aef85d6dcd95508edec9f48a861729587262aeb706fed77efccab5ce44bf9cf"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/configured_feature/amethyst_edified_tree.json"
+hash = "2933f2342d9cc5ba70fa08579d850781975405a06a64e642808a836cfa6c9ca8"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/configured_feature/aventurine_edified_tree.json"
+hash = "b244b84a80fc1049c143efb7456053443262a5d53f4bbbdbe7ba903a3c2897a5"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/configured_feature/citrine_edified_tree.json"
+hash = "ca60d5faa3ed2a6e26512ed224837c83e9748990e3dec2c3e97c3efafcb6093d"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/data/minecraft/worldgen/placed_feature/amethyst_geode.json"
@@ -2083,6 +2103,78 @@ hash = "7ff9b29c81eaf57efe2da53a511ce849bacf1f92ab0aed6f91124362584db75c"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hand_net_poor_stiff.json"
 hash = "917e64ebd6b9bd8e105ca12b3702ac58a2e34d8529a7af8b1238a0eb2fa63b81"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_carrier_epic.json"
+hash = "5d506754ee13340d383af03e3d4be4405d193c7dca947771c15d5e5dfa5d98c1"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_carrier_exceptional.json"
+hash = "2f4800ea2e2426910d6037ad27bab31e7dcd0d50bba815f207e5892b25e9846b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_carrier_fine.json"
+hash = "6c43a97a5bb370831803d94d65beb1cf85dbba4f878c1ee778d59bce0be27bd7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_carrier_legendary.json"
+hash = "c2c8e26d275bee611c2e39c1a72ac4ac3a468e7538aea4438b6d5fec537a52dc"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_carrier_ordinary.json"
+hash = "df47a2b238bacd5d390e1fe7b9ae7add7b6aa9a2b1ab476021bcd3380b8bffe9"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_carrier_poor.json"
+hash = "a8a46b6addb6e35d6be47da57969c2c648a1ad7faad01cca9cf4143f7a31a5af"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_hammer_epic.json"
+hash = "e28007e09aa77cfbea16b72a4ac094f0778f3dd1fbd9d91a9666e009fa1feac4"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_hammer_exceptional.json"
+hash = "21d9c9f5437f5e30acea3876ec4231125d70d3a36023818148e10b16bcd06bcd"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_hammer_fine.json"
+hash = "f9b246a88afced9c4e16731aa06ca86d7666f8ce9166f44b7cad9099477ad373"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_hammer_legendary.json"
+hash = "0d263efb6b8006c866b3593b4df1158caa74e980388744cf355817f922680339"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_hammer_ordinary.json"
+hash = "2897d75d9cdd5b063a725cfba1ff10d5db6389bba37f1ef897c52e9aacd5a692"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_hammer_poor.json"
+hash = "dd3b33f8466e25ed64346d4ce640a9277844085b1cdac68b49d2f99a4cc9c454"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_staff_epic.json"
+hash = "0c91c6c17a8a5ae5a37bacc00bf2dbed6ecf092b7c9ba3df809bbcd17c383520"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_staff_exceptional.json"
+hash = "6e361b250c4ec7208c65b5e1da978dde4803d637023b0a4cb7e334ad83cc92eb"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_staff_fine.json"
+hash = "5da86cdb0b6697088664797d7eedf50bc592d1fde60662909e495c377ec3867d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_staff_legendary.json"
+hash = "c0cf8e02b610806ed4a86fd9bf0727cbca001b50c71b93a7f6b365619c373886"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_staff_ordinary.json"
+hash = "ca43c2bc1270bceecfdd2665a2e5be6796f41a9bab187aa0c78f86325045114c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hex_staff_poor.json"
+hash = "92a88026a6aa4aa755feda6c9e702ce4c50291f6a168bee4f9524ec477837d0c"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/hoe_epic.json"
@@ -3537,6 +3629,18 @@ file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscape
 hash = "d8b99f0871038847d103920e396aacd5233da3d2346fd4d077bdf4ac9da4e582"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/hex_carrier.json"
+hash = "9e9cd2dcfdf10f608cc387daf746a6c9b8b03bf743983be336964a09d896fa70"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/hex_hammer.json"
+hash = "a9d869b0c772de082b8044f2a6eb7da913eff268eae5e3e8e19869c079e5e896"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/hex_staff.json"
+hash = "6163c397756d566a7c0e9a4be8b9187e6f5fe1a2ce6ca9b67c91471931a77ba3"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/reforge_items/hybrid_aquatic_diving_armor.json"
 hash = "e2a6efeb7f38316f34625b0518794a85569ab4cb56ac12700a369ba43072c3e5"
 
@@ -4027,6 +4131,18 @@ hash = "307e26464e60b440727af61a434ed6dda5edcc06a774e10d9138101f460fe9ab"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/hand_net.json"
 hash = "591ebcef0fb4b102d0efebb605cb43c3c44cf2789a1984758931065079fb1edc"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/hex_carrier.json"
+hash = "7eec1049d95b8dc6e3297ba661bf07c885604a3b37ebf9d83fd0b6230bfdbd43"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/hex_hammer.json"
+hash = "811665f728b527417081deec9fe6b01be159f7d0026516ce55970ed90df6c252"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/hex_staff.json"
+hash = "ced83beafa136a54f19561d303efb326adee4eb3aaa90f3ded5d10a7091180da"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/tags/item/equipment_quality/hoe.json"
@@ -4734,6 +4850,10 @@ file = "licenses/Apache-2.0.txt"
 hash = "074e6e32c86a4c0ef8b3ed25b721ca23aca83df277cd88106ef7177c354615ff"
 
 [[files]]
+file = "licenses/Caelus-NOTICE.txt"
+hash = "f1da19f15fdd5f52dfe28328b8d804d3695f353247ac378bc5eee44a1ada3ea7"
+
+[[files]]
 file = "licenses/Chalk-MIT.txt"
 hash = "2bf648ec1673d3dc2e6ebd83a5a53e0621c22541ac4fcd3d3f49e110dafa004c"
 
@@ -4774,6 +4894,10 @@ file = "licenses/GPL-3.0.txt"
 hash = "fb981668c18a279e285fc4d83fba1e836cc84dd4daa73c9697d3cfd2d8aca6e0"
 
 [[files]]
+file = "licenses/HexCast-MIT.txt"
+hash = "d7f7877ec50807be1e9461160349b45adb349fce6bd1b869c239527112421391"
+
+[[files]]
 file = "licenses/Household-and-navigation-NOTICE.txt"
 hash = "e299c8f36c7f2b989dc923857d3606ad0e983f89068354d424a254477ae4e114"
 
@@ -4794,6 +4918,14 @@ file = "licenses/NeoOrigins-LICENSE.txt"
 hash = "5b0c0a9cb401c2993459cd204717027ca1299cd70474e948a2e4d2504187d735"
 
 [[files]]
+file = "licenses/PAUCAL-MIT.txt"
+hash = "d795d7ce6a7f68dd61342fae7e771c032a4a6d332c907f46f99387c9124069ee"
+
+[[files]]
+file = "licenses/Patchouli-LICENSE.txt"
+hash = "c6648565ca4a7b22b2cd06e739dfec031313d2f5ce5f31c5c994f6aec9f3fe5e"
+
+[[files]]
 file = "licenses/Pehkui-Rebuilt-LICENSE.txt"
 hash = "6cb80638b2299ffc05a044990da6a5c4ce18ecc6bea6f0e547c0c0dbd656edda"
 
@@ -4811,7 +4943,7 @@ hash = "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "efe953d66a29e077d9565fcca31e9a35c1368d009cd6e75e67bcd8a3a6bad826"
+hash = "b5ebf4303ef98382cc01949f4a724bf5258835242bf91f9e3e0e17d21dd2621f"
 
 [[files]]
 file = "licenses/Vintage-SSW-LGPL-2.1.txt"
@@ -4827,7 +4959,7 @@ hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "bf7c500587bf9d72055025b897448523f3462e009a72d2ee0eface264c559237"
+hash = "272832be026a41b988d8b919c6225dd1ba394b9d96ecc9cc7df27f55cca4cfa6"
 
 [[files]]
 file = "licenses/fluidlogistics-1.3.2-corresponding-source.zip"
@@ -4877,7 +5009,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "b284f7c3d331642e73ce90b94cf31e4675ce99d518f6eca3546c71ac9d34c63b"
+hash = "288f2fabe3fd5e4f4e2424a0b17eef5ae4e2e2d71290911ea0bf5bdbbe55dd85"
 
 [[files]]
 file = "mods/agricraft-rereloaded.pw.toml"
@@ -5002,6 +5134,11 @@ metafile = true
 [[files]]
 file = "mods/c2me-neoforge.pw.toml"
 hash = "1dab7340d281aa41922c90a54cb131f9d0c217dc4e721473525b8d42d13b62bd"
+metafile = true
+
+[[files]]
+file = "mods/caelus.pw.toml"
+hash = "7578f5c9388a3c38d32a5b9052dd967ebc9ef19ced9b108a73eb17ccc38a4aeb"
 metafile = true
 
 [[files]]
@@ -5465,6 +5602,11 @@ hash = "6b7d790456f9b923b34fe5b46e70c5820677f1df5f20ae50e7414d230c435cd8"
 metafile = true
 
 [[files]]
+file = "mods/hexcast-neoforged.pw.toml"
+hash = "4820958790d7a0b4176b979410d16aaa6b739bf3ff573a714e11c769877ba966"
+metafile = true
+
+[[files]]
 file = "mods/horseman.pw.toml"
 hash = "90c1abbe263f01ce96018987d932bc9fa573133d0a3694d0d74b63752dd8750a"
 metafile = true
@@ -5732,6 +5874,16 @@ metafile = true
 [[files]]
 file = "mods/particle-rain.pw.toml"
 hash = "c37528a79a47cf95437bd182e79aca78ff36206556d8a50356879243ddf7c81b"
+metafile = true
+
+[[files]]
+file = "mods/patchouli.pw.toml"
+hash = "bf69f4953eb16f1a28316df6e9b20beab4b326acef6b1593c0feef18de4912f9"
+metafile = true
+
+[[files]]
+file = "mods/paucal.pw.toml"
+hash = "0b436c09124eeb803bd6f8322f8541c4cbf0b0d6a1d61bb56cab476c88bf70cc"
 metafile = true
 
 [[files]]
@@ -6885,7 +7037,7 @@ hash = "83088bcd08b8029cbc353f400c203360350b86b181237fd7c7cde77ce2d67bbb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/atlas/panels.json"
-hash = "850ef9b252f590f8c451969077577bcc9aa87c3bb3c0d78ecb9caa6b0b25ee52"
+hash = "727a80fd20debd0b6ebf85407693465b52b77d2f4fcc0c3870a92c62828a2cc5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/atlas.png"
@@ -11318,6 +11470,2566 @@ hash = "849f23bc4576f00378850f8701859d41f1373653b88b5881b3ed7b1afdb3337d"
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hapi/models/item/equipment/creature_net_held.json"
 hash = "a3afaa0cb8b838aec06a9bee257c6a1ea314f28ae748c1cf35cd57dc6f0ca545"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/abacus.json"
+hash = "0877111bd7df9f648d16e35951025744b5c172ebde5df29c47731434f8d53972"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact.json"
+hash = "fb83dffff37ebc1f6d729c71f09b01d9be2737f05f525e227093070f0a1843b7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_0_filled.json"
+hash = "2d3b21c4218ee4a0a0d1d28afdbc99240c0cb419bdaa0be0eabee9c058e75d3a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_1.json"
+hash = "d30d8e48f162e76776a435561974b6bfae7f81546d8764108896831888aab44c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_1_filled.json"
+hash = "e8cb6d7fad4ecde3506acb0fa0412bcea09a19c4b97d1f3579fee51580a60a11"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_2.json"
+hash = "f3d5ef5d850b029a37898c89823de84b47d3597f322722d645f2ecfcd39a4484"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_2_filled.json"
+hash = "47312ac8db83e656f4f447e1718663716b8ecedf85284d3bd389cb58c9b11003"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_3.json"
+hash = "7638b24dd7b889222cad3b6491261ca5b195ec64c6cc14ea1e11960c93ed8ade"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_3_filled.json"
+hash = "1fc4ad21bb7153cf6282e8aca1b317129853fe24a5628c77a050d98d1b946a3d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_4.json"
+hash = "ae1c89fdb2b5af2b9ed3d95742a0913c7403e5f6d8d5e184bc2160edf052400f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_4_filled.json"
+hash = "fdd1631c79a1ae661e4aeaae9dc7176862e57c3790c79951c7d2f42f76bdb081"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_5.json"
+hash = "0b1969521ed7f36b5e0d528e6a6714901260549e4c8fe0db042f43b6e7bde5b4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_5_filled.json"
+hash = "6805353992551a9358de220ce91414358da4f31fa3d317ead4ed043310133d85"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_6.json"
+hash = "8f40c99110cf84be34d99cfded276d2edf20c4347a37b70e479c45312735eadb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_6_filled.json"
+hash = "e44268c5d29f8ee9e52045d45e1aefa123afef099983b461053353d2b2ffef12"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_7.json"
+hash = "5ad02401cc5a51584e81d34ad7632caddef1d9ab4b95f5b19eec5b02ada16640"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/artifact_7_filled.json"
+hash = "64adfe5160fe3312095b7f355ed79cc1f19b400ba48ed462e098a1d8bc441ef2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher.json"
+hash = "a7fd160a3c90ec588083530f6fe4fadd0fd0debd4e902bc57d6850b5925d7ee4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_0_filled.json"
+hash = "e5523df6f3e92a7c127dc6ef1fcedf41e97edd08f9d8777d729fd279eba38860"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_1.json"
+hash = "9a498d4a1853c0fd6dd66c2a019b05e2b2c3fc7dc840135e2eae015ecc1bf0e4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_1_filled.json"
+hash = "d0e46e2b0d81bbda50c2db822b9f0ca0dc9a4adc17810a49e962031f04457877"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_2.json"
+hash = "2dbda59b16c996c8f4350d3e03cbbd81892d1b293f31d375eabcbec92d066a4e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_2_filled.json"
+hash = "5950c81e4f5d7aaa25804d5191cf3b0e6d9def911b82ea70e97da451b2cad5be"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_3.json"
+hash = "b24af3fdfb2038ea41293e040bfbc4f8e5bf0c9b54c488c038074239a83ef3e2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_3_filled.json"
+hash = "3ed3d374ce2f5f5ad97c9f384be15ba7e945c6da46289398b48eae2065ff008f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_4.json"
+hash = "a71e95b47f531ac2ad1ea4742d1481a5fdc52b19eeac83f2ce9bffd0e2ff94cb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_4_filled.json"
+hash = "6e582a6dcd29b42e05af6323e5867d441673db3f2f1cb9bf8759dca2adb582e5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_5.json"
+hash = "39934f11e3cc61ac6a1d47c69651c0a37284bef8e0d9f074f8fd0fe266e70a0c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_5_filled.json"
+hash = "8857c1bc0ab13f70abf342bbd8f439a572b6ce289f6fb95b0c5f46b716961e4a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_6.json"
+hash = "4db210f7f323794902edf3b5a6adfb3dab808cad894c14728514969c5e95ceda"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_6_filled.json"
+hash = "5cb1be6cb2ee46c46a37373a34e345f719ae62dfed8c38e9b8f4c4fbd061b2cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_7.json"
+hash = "5226e2f4ca622c9de6cec5018f760c66c52a1c6dac30a92c3868e1bd433c4616"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/cypher_7_filled.json"
+hash = "2ac63b2198ec99b028db6caf3dba68e4f1d97c97cddc9c2a69b3ce829a995f2b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/default_colorizer.json"
+hash = "b589f366b7224d3d8af850c0c08ca8fd383aee7d25e1d5cbc7e4867296668fbf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_black.json"
+hash = "34679b80e03ff57444991da18614dfc6644e596f9fda86f90015d7a8e434474c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_blue.json"
+hash = "cbd4f49b25c99da80bf2deb5b79500abe9832f5db950ec9a9b003838d2b0a095"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_brown.json"
+hash = "574313948cad739710ae88dfd96b4c926f0f81df4e0985d423c88896b4a490cf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_cyan.json"
+hash = "138ffcf17eea71b43cc72156724241e8fff2ae5500f01fe359b02886876d1bfb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_gray.json"
+hash = "77bf769764a6f7cb82783270db41ba37f95d0aa76188a136bc9a84e57e4fd519"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_green.json"
+hash = "f414c82cc285cdeea77e16b70ca69cf63f3581441594a53e1783a7c2d5c05d39"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_light_blue.json"
+hash = "1f4e55a0569a2860e9eed3a2f44c729d264ad7d701e9cc4507744ee3cd70adf2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_light_gray.json"
+hash = "60348018272d6d90b75839f7f55141f7d87a333c3733a3a72a1fabbf95a2444b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_lime.json"
+hash = "c7bcc1f8eb115c80dc00c3d4e5399cf8d61332f99af4bdebc13e7f64c307484e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_magenta.json"
+hash = "a4c5704841537e87e63b9486ac6b1cb0372ff9707f097e0426e429193cd05a00"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_orange.json"
+hash = "916e4ed6bdcb3e7e0eff6431112a2279f58f7e585ef0ce7deed03635e0b0c79f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_pink.json"
+hash = "35785b6fdf4f5641a67b72428dac9a6a4c06f28b8ca6aababc749e1e38edbeb4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_purple.json"
+hash = "8851e365598bfd1d52dc377c56be15dc310497e0f9577e119dc4c21729be4dfe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_red.json"
+hash = "68da4d83c3afefa4bf546649c1ae3097f864c29b496b9e5cd61923a25bc38749"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_white.json"
+hash = "0d7d250844ebc260c0ed2fa31d79f8ca83ebdfeff48d38cac072dc586df887ac"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/dye_colorizer_yellow.json"
+hash = "3e65cbdcf268faf6450f838cfafe19fc682d3920652a7385a6fe972af40b552e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/abacus.json"
+hash = "4b9abc12be1e8fb55cbf23bb2b1c6545d59938953189414704c38aaf9faa59ab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact.json"
+hash = "02c2ba42fc5a65ce1f59c54ac0f03635720ac5a6e1191f995333eef15cdabd53"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_0_filled.json"
+hash = "25e77b6a7b7f9e03c3c61fff2ffe0ee9ac09364c4453ede4d2285183e26f3377"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_1.json"
+hash = "afeb752a3de3f4067abd2659fd654b09088828930d9459d3768337cc13fd3c5b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_1_filled.json"
+hash = "0952cebdc95e6e4db3fd73714ae480017fb7bc94232de9a48f0493cdf135462e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_2.json"
+hash = "7efcaa113628591026b82fd43ec15dd3a708a82c01ea565df82c45c44c8a69a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_2_filled.json"
+hash = "af7f8e9f3c3748231b6f91629dc0750b75633274e88f10f175ac7557951bf81c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_3.json"
+hash = "4473ce9d78c49e1a2e029fcaa624087189e6c723c3f3e6276f90a5d130ce60a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_3_filled.json"
+hash = "a19a8149b84dda3ecc77fefca0986b238580c05780ffae092cbd52770afa7161"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_4.json"
+hash = "a54bce44997e52bc00b2860552b0e131b90976a31e25bdb0811b651b11faecdb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_4_filled.json"
+hash = "7ddd80415d206d6f510590b24db6c2be39d02fe8d921936e16c0923dc13197b9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_5.json"
+hash = "f29f5257ab846108b16bb4306043f93fb84db5aece60c3072379687f91a927f3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_5_filled.json"
+hash = "8d0c08d2c3ce8b50a97018adc059c10317de53a617bf589b969d930cf288b05d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_6.json"
+hash = "b084be4e75353a843edda79cec032f78c09476c675454de90cde2e4e224e92a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_6_filled.json"
+hash = "7b7b4150f193376ff18887ed4af420e70198065eb397bbfe0923e9d605c27032"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_7.json"
+hash = "e37157d3ea94f0a2535d4c05ce970389e719d6c25cd263f4393d63cb8afcddaf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/artifact_7_filled.json"
+hash = "8891b18ec4b28293d50d197190f01eea58250105a7cf17bbde94620183824d1d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher.json"
+hash = "9a4aeb174a57a2fff783e3c7735969c71ef05753a07ce1eee435ee1a9a14f21d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_0_filled.json"
+hash = "63a9862ebe19dec491999ae23be754170b8dbf4cf94ca1b833aefb0f7f279ae9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_1.json"
+hash = "2951cdd44bc78acb3c4b2ecda1571a5b5e82bb50b1503a6fe081ef507f4a74d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_1_filled.json"
+hash = "8fb32eeafb7d62357f1f257fe6c651bd97a65cb6ad24381b4f063585bbdb79e0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_2.json"
+hash = "e72e4bd1a72aaad997998b20f17c06f0696cd918a5f95ac3b99be5353c93113f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_2_filled.json"
+hash = "7f99f7fa45f03611418eb55c903a7134e422e8ba0e95e6e036c04cf6b133c51f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_3.json"
+hash = "9c7adfe7d70cb5503fa595ee9ee8c7fa9eaad6b2fb79aa5ddd65ef7c613bb70a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_3_filled.json"
+hash = "0e89e897f80135e6cd4c976cf961ac6df47bb79997a211ea3abd577a490e59b8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_4.json"
+hash = "f20128e22fbe13107d534be82b9886f3dcec46c13651f3f062bbc908cd922ba0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_4_filled.json"
+hash = "4fcd43fbe7fe37b03e44fed1687dbfa394aacc484d5c9154eb91a56cfb7054da"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_5.json"
+hash = "4a3de2c27b829ce94ee6c5116a08f4f713c06acb544d8aa47d049a04e3b63c87"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_5_filled.json"
+hash = "8a7d4016b308584730a3d5bab96a62875f1b7895f0be8cbad8cac3c88d1c93d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_6.json"
+hash = "5e44501e5f15bfbcdd5c9f4faf8ed8ff82f6680c7d2080a9161197465cb5fbea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_6_filled.json"
+hash = "8efd31b7cdc4496e20fb9393403f8e64b49a5c5ef86e33b82fab0ac1b020ef9d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_7.json"
+hash = "edffccaa71991306d72d5fdca516339f27870f88651aaad73202b66536d39bdb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/cypher_7_filled.json"
+hash = "09bfc085a9f9baa326dfdc361c5701d127d2e920f5acb5e3370e65b7f75f828b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/default_colorizer.json"
+hash = "64d1b21c08c390e8d93cea29fa93e331915719c71d21bd4603fb82018bc98adb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_black.json"
+hash = "e5bea9ab67e09c25a516306e56e52819fd48298eba9cb0d2cdb8b015ecd8cd73"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_blue.json"
+hash = "c4c31e4d49cf1a1cbbe83b7d7703f84cd8458491c2f4ad5b5be961258c4a110e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_brown.json"
+hash = "d4f50fb7178c6ea44b9d7446771bd514738aeb9b78d8f0364aaf1ad2da3d71ef"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_cyan.json"
+hash = "2f693bb415a8ea3aa52871cb2f919eff22adde9eeca18f9bc5c04bfa5ef2c6f5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_gray.json"
+hash = "ae520a1f20f3e02910866d9c196ed58c4de9438a134efd90cf28b0025109de23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_green.json"
+hash = "4a367e1efb2328fa8838de41af6c577de212c6a572e8ae772c903c889b0ee08e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_light_blue.json"
+hash = "ca6343d53423f175922cdf08c0ad1e801ea63f9965081c443bbbc2bd51aabc91"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_light_gray.json"
+hash = "515500298c89a47011ea13a3a4e14e4b263e05e8cbf73d8b288aa72d28cb7d4e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_lime.json"
+hash = "3d95865f9af0b72efe7948c8b42179d1bfc5f23626eec9a99d119c277a334750"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_magenta.json"
+hash = "71dafe63b4bd0522a308b199b4268b8fb22b185f9fe091e1d8cf0bdd00cd9006"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_orange.json"
+hash = "5a7b3fb43dc4236ec544a20d57f139a624ead082552fd28fc21f363496fbc0d4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_pink.json"
+hash = "cd9d3c36f97e1f7bd2c6b32526eebc73f8173598b4f99d71ed0128d01d5624fb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_purple.json"
+hash = "bd00a85e24ff3437752bfe57b07333d802ef5a804647815c85b2548b939d196a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_red.json"
+hash = "b7a2c9dff475e5d9fb6a29da86e98ff9d103598eb3ce90b9f8b9fac5b2856168"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_white.json"
+hash = "2eb7390a209b52dad2b565dbe8e2613e72982bd8aa23d2210d3be1ae9bda80b3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/dye_colorizer_yellow.json"
+hash = "3d14c20748263db0eaac8db05015f3f17c920389df464c6e78837df2a592c473"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus.json"
+hash = "18589df43abf65378e85418782e024173afa5ea20d61f0c15eb5cf6f5f508b49"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_0_filled.json"
+hash = "6de0b615ce8a1ccdd70e51d66a4aa7e98a29ecfce67ca57cb7751d524d0b4a71"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_0_sealed.json"
+hash = "c3b7fb2d60e3c60105435736c748ccdd608c7c9a1c8bbb1a843c7170e9c6807e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_1.json"
+hash = "b434e296eb234ab9402c4422f54e8337bbb7c553732d8808fd4ab9ef05ca4852"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_1_filled.json"
+hash = "7603989d656891aabe4742516c8b0955bf5bc60ddb5443381747fad4ac67818f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_1_sealed.json"
+hash = "7dc136a12e61d2886188abd70efe14a163cc394bde0c75a20b489b2751749dc6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_2.json"
+hash = "67150b1c51aae408fa1f607ece54a9e525e4bb02721cef2b0090e5ddfc87f430"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_2_filled.json"
+hash = "57af9260a658ba7f9aaa44effca35453d8889dbc6267b0b016d8e6df0cb74ecc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_2_sealed.json"
+hash = "a62b849ed5e37d397eae5d6a39364e56da5b62f231114505d02394248dcd410f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_3.json"
+hash = "7746097993e484de28f6c77aa0904e4035ee730eb86eb5cd34b43c0c880e2737"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_3_filled.json"
+hash = "ab1682ef4a20fb9f1deef0bd4c016421de1109e69921e7552f384e1a94ee9a6c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_3_sealed.json"
+hash = "f13b7fffdb617b22a24a3c7d5a345e19cc878525b98f9dabdcc30457c2883b4c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_4.json"
+hash = "3b88f3a2cf6730938dac0590496238b39b51bef5142399fccff6308bef00b400"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_4_filled.json"
+hash = "970c118291ed47400ab6f0bdfcd2a79bb8edb3fc65afe3e578af921352f56cb5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_4_sealed.json"
+hash = "b1341b2d0251f523e17b51dee4071078dece700386f19d07907ae66b0100bc76"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_5.json"
+hash = "8f8153ed871b50504735b6f9518a1a654d033b0677b3dd7d5bfedbc735217cba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_5_filled.json"
+hash = "8f445fd6903a4c52b8f06d5e9a8ce8cee66e6a51bccd3be804b58dfd4410db87"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_5_sealed.json"
+hash = "661a0c44a867cf7ac941c962939a817b7d114f3431b716d4f1d5e4689389f667"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_6.json"
+hash = "d8e97e388cbd44576d6238d60005609f4bc87fb3d952297c1f9bead128a37c80"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_6_filled.json"
+hash = "08bc0f4c6a7c303db87bdcbab60d050d4be3208ce1244316a9a32bd73671dca3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_6_sealed.json"
+hash = "ad183a1600f0668e19ce1c2f1137916a165787d1f7e35c675f65abbbc3e183f2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_7.json"
+hash = "60df3a5321243905fc67febc7dfda63e230477a11741eaebfd7a9c306b6b22d9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_7_filled.json"
+hash = "cfcbf0fbff9cf141f64bfd4c4150f5ae01eaece71ae8249cb113147bec738d4e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/focus_7_sealed.json"
+hash = "ea7db090c57998374e65d29726bb476f18306ecd3f8812b17f0eda3b278706a2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/jeweler_hammer.json"
+hash = "a4a5f215dc6e21c2409d57e573142d43cee02fac849d6e7e754215bcd63bafb8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/lens.json"
+hash = "1fa965c292dfa05294492471343a1b224afa14f4b866543defe4b53ceb5d02e3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/lore_fragment.json"
+hash = "fa6ae765bb4eaa95f07221638165bc6f33ed4255ce2fdea8feba1bef949fedb2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/patchouli_book.json"
+hash = "04af643a626d324012b9f6a090bc740e07ac1a068b3ed763cd8a111693da845b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_large_0.json"
+hash = "57d7c94544c05ea8972dae8ff1a70b1b0a8dd632d31af8e84ca5e92e2120b961"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_large_1.json"
+hash = "77f5f7f9ccd52626f6a1a9b54041afaecbe8001236c31231fa39fe9679aa0b26"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_large_2.json"
+hash = "1ab6905035c745f8adf1c1afdefa34b5ac5fcdd1be35061a694323d600627dfb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_large_3.json"
+hash = "208bd58fa5ac8238ded7c258111f93c854323fba52da2af54c1926abf327115c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_large_4.json"
+hash = "82e4ee622e6205fb1ea194cc1b55709bef22b74d321b905fccabbb0579ae1762"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_larger_0.json"
+hash = "d56fb78dd929f74bcdbb722eae4051b112def3cdf652948f778e835783926b9a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_larger_1.json"
+hash = "234d58aeac074688f8db770c885a1ad8383366673ba08116f0557cb3426dd711"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_larger_2.json"
+hash = "d597701c72e27065dbc7efd43890240ddb58248256a07d19f7c36c7ee28abfd3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_larger_3.json"
+hash = "7674cbe5c52e90544f202f55bced3208e0c8f88dc048442e14db8295ecc025cb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_larger_4.json"
+hash = "8a4835cfc511655fc1e4c5a51f80470423aa7211024263cedec7ae1d3e52e420"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_largest_0.json"
+hash = "67ac822f339ee5b61ea1d92748b0936f9dca8b3c88da2e937b57c1eab30e6396"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_largest_1.json"
+hash = "4f5129539be6227ec2cd1686da4cfde30d1be0fffaea363048a65fe03f7b7429"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_largest_2.json"
+hash = "408334dda8116ff832aaa3b3e406acc1141ef8baff0add8fc8433dd36aecd27e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_largest_3.json"
+hash = "f437d2b52d15b82c52d5fdc5eaf27b0601f9d2195e0a42d9f9fefc3faf927ba2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_largest_4.json"
+hash = "7d8a84326010d9cf19ef8b829169e2787f0b0b30517f02c35787081fccab2da7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_medium_0.json"
+hash = "52f4a77ef395ebab03475bdad72825fa83ac9a1bc6f763cfdfa0ef018385967b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_medium_1.json"
+hash = "4b7a69591fc7fb249a5d44e62fc323a4ce7d97155bda6546daffd2a939e1c1b1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_medium_2.json"
+hash = "1319f7432a7ad980e88fa53d9aa39913db290444154e6c6bf471391d0dd60fdd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_medium_3.json"
+hash = "0d67087002fa2b6a101a46fcd24ec87740ff7410988cf5f67015454d85e75fb6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_medium_4.json"
+hash = "28a0860d95fbc8255c7cf437e678cc294049bdc1f17b4e3937c640cff30c4ce6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_small_0.json"
+hash = "8a53e43009a05b63d6dd11a1472b5c26b41b1846258568e365aeed48a333c5c1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_small_1.json"
+hash = "b4d02efc55e49e6cef9947acabae1224bc45824b2a961bba8adbf322e7163f44"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_small_2.json"
+hash = "d55ed8c6d67e266175ea8d13eba3e2c31840b7fffd8f01cf78103219cc964358"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_small_3.json"
+hash = "939b2dadc120cf5b1dcb0e7212e02fa84cd712cf8ec3b0c2584fd9e86313073b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/phial_small_4.json"
+hash = "5fea924e850b599cf490cab0783e9a137edf4e81f62fd8b0cbbfde42a23f41c4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_agender.json"
+hash = "059810acea36e2baa9110b3a5e30a563bcb892bf6fa27d1f63a17c6b26ea2eec"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_aroace.json"
+hash = "5339dee168bef9a4b59ac8e426dbc23c2f7ef7fed295d6c210e1ddc751f45979"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_aromantic.json"
+hash = "76b504f694c4edab92b9af80f5942c9a6ce19a99226b06a52f1100bb6735dc8c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_asexual.json"
+hash = "7e08aebb2d7f88f85872fa71313ad09d65e57dd20504b37c588e6560014cca95"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_bisexual.json"
+hash = "7b58839f664f99a3c0ec93230444641cde86668794704b687e9409502ded0b52"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_demiboy.json"
+hash = "fdee021d104c092edf26b36dfd500764eea4440a7dcceea3d1ee923cea2b6f81"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_demigirl.json"
+hash = "4c79caf3fe0d00596d182afd66159f966da3f007d50f1b84f6151dc39df6e723"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_gay.json"
+hash = "66aa35d0e7be892945c7c4be08021a0fcf11251cfbfdd2c5e116120d0e274b3e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_genderfluid.json"
+hash = "5fe0c82f1c44567b3cdd85420c6c4bccb07fbe57e94016054ccb93ed5302de15"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_genderqueer.json"
+hash = "4ba0daef41e9abb85d999a5fe7fd1c3cfc4651c4cdc782901868531e5f8a5fbb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_intersex.json"
+hash = "782b809e861530e7a1579b3e871873e5b29741315ffc8a8e684e55bd626684f3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_lesbian.json"
+hash = "f64d9a5dcf3bf86c1055e0f9477a9d240f2787139110e65d7f5dc5e378563409"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_nonbinary.json"
+hash = "365c6bc91d225c7691d64c7fe4a6f9c808ed3c8e6a56492b40697335647bfd56"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_pansexual.json"
+hash = "e1fed1bfe67fb914c1824161b780c5dc68587c4a9aee34a12393611f7c37b925"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_plural.json"
+hash = "6adf9df2c9b0cc92b1b7eb7535d52ab74de6342558eb199f4199da51df208d88"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/pride_colorizer_transgender.json"
+hash = "fec668344c5d89d647f800211237080c1d2f071a0f0924b53776574eed213aab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/scroll_ancient_large.json"
+hash = "5907fceb576d12ba09a2b0b600b9f248ea65f4079d545cff53a1d0f5792138a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/scroll_ancient_medium.json"
+hash = "e0a32140403e818ada3496dfb234145ef41d2bfd322cce407767c5e61d00ffe3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/scroll_ancient_small.json"
+hash = "79f170de93fb501ff711e21e161c7ef8d652dd992e1916e033d95703ffabef29"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/scroll_pristine_large.json"
+hash = "8de0e322b6fb9266f0df0ef1e946ae97811499142fd8f0c409d67a3ff374d6d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/scroll_pristine_medium.json"
+hash = "9b5360bb34fd5f74880818e59d57a323460500ab4dd6bb85d496775a2c90a5c5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/scroll_pristine_small.json"
+hash = "8f938f3b95961c473c2822b9d017ce4ef515fd661e48291988456898419fef4b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/slate_blank.json"
+hash = "1187a288a9fc9abe40f84bd0ff43ff41ea74c2e8aff392526258081856b39077"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/slate_written.json"
+hash = "6756b352ae5d569db11fd0f0c17e5e5d63544208472a8ed31dd807effa8ac6d8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook.json"
+hash = "39fb4cf0a488b7cb0425d2feb3db84601d2979b1689db3a10282748b8c9f0abb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_0_filled.json"
+hash = "24a239959d0b10aaf84021163f504df36b1139e9dd4a6c3d894c177b172c3bcf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_0_sealed.json"
+hash = "c4956ed3b628372a35bb499045faa4d548bfbb3fb344463d6908a1b7bff52e0c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_1.json"
+hash = "f05e4c7d816c3bbfd1ba13e3a545915db10a175ec4e6151964b835ce3b6156fc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_1_filled.json"
+hash = "b7932f02e44e3d2b9dbf77635a54d67acd62bca4b4a92fa073d91233e49be0f5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_1_sealed.json"
+hash = "e053f0eed4dc0f044d73945c96dad232c18e2c6effc874c6bc1346c8801b6a4d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_2.json"
+hash = "85ab86f2ef69578ed6126b586c630cac5ef71d5f9ad185a8043662560337f913"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_2_filled.json"
+hash = "bc47f1e07696f8380233813bc61eb93efc616e96f63b0bc501e422d621814dc9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_2_sealed.json"
+hash = "cbac1d91c28bf4fd46a76e63bf531bf2be1273caf6f70f5bb7f68e7af51a3af2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_3.json"
+hash = "42617af680f48163c00dc1b4aae8fc5040f1f713b7353b54e65497e791ed2e57"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_3_filled.json"
+hash = "0c1a6a931ac6c34f309a06b660265df312772610eaca497d049f3f24f6bb35f4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_3_sealed.json"
+hash = "7687e6afbdaf2569ff1f059b1d9a499429c8f610d67dbebd69f4b6301d1a1168"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_4.json"
+hash = "806e9e1295a11c64075fcafdb92da8296c4511056ed8f8ed5f10eb4e13931ab4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_4_filled.json"
+hash = "56c1a3d8a3aeab824469d0f1ead6ee4ea7a32f9cb7116639f12fa907c1cbabab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_4_sealed.json"
+hash = "1cfa738548e1b13b9d9d7b46e4d4a351df7ae8fc874fd4662953bf36fe6854e6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_5.json"
+hash = "20c1cd856ca1b1b26c2056ac2e4649926cb7f72d05434ae92303b45597a378d4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_5_filled.json"
+hash = "1c756cb67c4d513434aea7717bfa913ca3f914f9d206d8e5c0d6df379c81ab34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_5_sealed.json"
+hash = "5a3a541e1aac43c9e0d5a48e1397ff14e564f3d9c64612bd5a53d18bc53fa515"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_6.json"
+hash = "9f40fac55e687c4f0128c569f5930b15de0fb757ebf882a138a9cc36b47ca0ba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_6_filled.json"
+hash = "ccace59949f46a6c88b64e44935134efc419e3810ad5488bdd034cfd67b1ca10"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_6_sealed.json"
+hash = "f8c29cd99fdc8d71a64f24ee207b0802e04ebb2e916b6f900942cc2c225ae64e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_7.json"
+hash = "cd94de66cd620727fa2cabfab734e83c228201ac29f69d075192452ad23679da"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_7_filled.json"
+hash = "471a9111672f8462881af3ff46641c4db0e9a6fb49b530330f0116c867ffc635"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/spellbook_7_sealed.json"
+hash = "ec3821007e12a9e8cfc592feb44beafdb8ccf389014968a130b0e7ca2f255b7f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/acacia.json"
+hash = "dbeb81ffa2fabf60a1881b686217937aa033a8abecddddb1294b20224e2e5dad"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/bamboo.json"
+hash = "7b9eb4d4fa357f0414bbbd30405ba76ed62e00bc1511e13e76f427e8e0387318"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/birch.json"
+hash = "6cb9d8612c47e7a2710039ebe7fc0f301e963d5775119871d50e0adbec87eb82"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/cherry.json"
+hash = "010f9c0dc329be0befe596c47645712099610689d2c0ee48f9ebde823de6b209"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/crimson.json"
+hash = "90e989e223ea12106c9585bf204e0886ac6f899ef72b6d6b20bd9927708c2982"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/dark_oak.json"
+hash = "379b1502cc69e9584736af917fb0d54db87f0b2a868ec0030c274f6c94c7c6a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/edified.json"
+hash = "fc9ad77b723d70d80cca35d477b47dbacd9eaed1ff9ef8dbd3f27295f23d63cf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/jungle.json"
+hash = "19f311c8bf2d1fc443fbdaa0d24212b4892ad3e17d716e0f8a9466ef2aaae945"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/mangrove.json"
+hash = "95fb1ed5277357712eb9cd1b7e5e31506dbe0f68e1b812225b10d3968b7a2502"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/mindsplice.json"
+hash = "afee3e0c7b15b2dce4f2e4c2eb9e498f06f33c7ba305400f24588af0d51ab449"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/oak.json"
+hash = "454abebf22871326d3044b96a96d2f2b535e3fe57d73804a4c3129a8578fe250"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/quenched_0.json"
+hash = "a24a533d4c999459304bd85b56ec0c9b0a6dd80886bcee42ac1098ea7c6bc79e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/quenched_1.json"
+hash = "20fc760a4821f42864a34fc321cc0ebb2c0029e61ce307dcc596a2b3aa12dcc8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/quenched_2.json"
+hash = "47457bc60f4a8cdcef0636a6f33d7aa927b7e516afd52d7d2d9c6d1fa4f9d8fc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/quenched_3.json"
+hash = "a16e48620424fe647d5851368d192dba907ee91b23e4f37e3e3e85d08ca5c790"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/spruce.json"
+hash = "ebe73e73e2c61d04b4e29aef6e214b3c32692a87944d6beee120ec621391256c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/staff/warped.json"
+hash = "7acc0941d1c4ec96a6a727c840fa4f43cef75cf26d9be9319eba57af38313849"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/thought_knot.json"
+hash = "e15455ea6305e60e4a70da9e2369fec42f952ef6e53663636c3704a9b71f7787"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/thought_knot_written.json"
+hash = "c5fa6d3015013a7ff379545d19e33a8e54c19b81dc0241f3c0bd4a38702e2720"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket.json"
+hash = "28cf4508c20754dc405e1ebfb706393bb6adcdbe25fb72c1d1043ea8d8921de2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_0_filled.json"
+hash = "4bd736b3e6e6c618f59349f26fa2e6955b2f375e17f55c0b7bcca64d15ff7a24"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_1.json"
+hash = "2b70ac9539c45ce8aaf1d85c37dc4e3380713c607aacd37ea7e3d7e00449b141"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_1_filled.json"
+hash = "ad0c10296a706ca3e3881d98164c7e1dbbccf8fc18f5d1e28b8af1058e20afee"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_2.json"
+hash = "83e2cafc957be6dfc9f2518fa9d5a405fdedabad94b0fa6269686272f40e86d1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_2_filled.json"
+hash = "7f95e663a33819db922d7ee54a2c44aac2c60019cfbfd2efbc82ce89b4c3cb11"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_3.json"
+hash = "e6e3f9087a12d3ca1a489c914e241a8e93a559ce7946a2cfd36a8999429d23a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_3_filled.json"
+hash = "d0b13d3617d9b583a97427baaf7bc38da88e67cb1940733c2c11aef81c755d46"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_4.json"
+hash = "7bb33b7e93ffc6c82dfcd22826652596173ab86440cf10ba687b9153e622459c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_4_filled.json"
+hash = "d1fe6c0adb928ec93a9217db2dc82f020d35616f0d59db86d4199b9e8be386f5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_5.json"
+hash = "0f9a49cd378ab81a7b4f072b31ede32d19e5860356f719ac879c3963a078f4a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_5_filled.json"
+hash = "b6666c1a19ba6fd6c2bea2c1d99ffd7672f34127a643a36e0e47a1ba5e15287b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_6.json"
+hash = "3f144602daff44cea11ba63b67b0975db539afc62bc9ba9443e21111169725e7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_6_filled.json"
+hash = "6980e821fcf176e19328cc5f186d0e427a3cbd00ff02d464e9f79343f55eb087"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_7.json"
+hash = "68de5fc1d2e4ef91826671fae2149696c5d08454049cb14c642036f28787ebba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/trinket_7_filled.json"
+hash = "bf6ce0bb458ff7eb88bed92d0498c048b15ea9a5c3ac469209b773403ab13d3d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/held/uuid_colorizer.json"
+hash = "64d1b21c08c390e8d93cea29fa93e331915719c71d21bd4603fb82018bc98adb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/abacus.obj"
+hash = "398e61ceacb01d29d8084e0ea9d4b7a58cd23eb0573a39fb93dbcfc2001f59cd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact.obj"
+hash = "0abd46e6e5c99f51dc918b7a8f79df5e46f1b4ca10f7c3cb3bbb644502eaf61a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_0_filled.obj"
+hash = "0a1f8ae70bc515ff73e877024c35911785d61713dccb1e4b5fccfa130df112c5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_1.obj"
+hash = "326a96e0f34c3b54c20447c69f4ff8e239f3f62b8c8b3981bd11490cadf053fb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_1_filled.obj"
+hash = "0b924fb34d42cd474490db7144b587638658c602adf862f8dff8a3c990611734"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_2.obj"
+hash = "c7b6f050088c3fad4b26af3b6f3bebd3972ea760299198034d0ea6e05e391c2d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_2_filled.obj"
+hash = "7cda2f97a372cea490d6c23460d606b510db657c20f1124da3b3419e02ed812f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_3.obj"
+hash = "4381f41bf2c87b2acd3262d32f3e0830ccf0fe2a7bfc52218d0a1c0e1e533771"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_3_filled.obj"
+hash = "487a8a664cb784f3ee740563e404552b68b482b6c725b7d1deda0612ab2a2ef6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_4.obj"
+hash = "8e10361b5e3bed4e9303a5c7a3148f8c95670ace4860bb6da16cfd00c7c0f88e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_4_filled.obj"
+hash = "affb3f9304dd4664851c920b192827f359ceea0fd26a0625008556d6f44b2e9b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_5.obj"
+hash = "6f3577bab5c91777cffa5bfc106943b2c852dda21d487501e19aab0fa60e97f2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_5_filled.obj"
+hash = "b44fbe984e0397edb7974f64c8a6a7c8213b930d4dd271bd6e44d381980a3e8d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_6.obj"
+hash = "e58f8fe2e7d3f49a37bb76670613f54b55ed18a15ccad9a8b1bd3435ec29819b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_6_filled.obj"
+hash = "c029b0cfe10358ee07c7b01c17bad059828e26fc253ba31c27bce83a746c349b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_7.obj"
+hash = "7800a70bf4f97a8885905a8013995153dbc67b1d1d1130cd5a3ef68041076a68"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/artifact_7_filled.obj"
+hash = "99628c8dc91d8b243b2feea7c5ceb15bc81e86a49252d990fd39e8ab7779d086"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher.obj"
+hash = "cd062f3cab82c82be0feeda2957e88cf9213f750033388bd257288207b1ba185"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_0_filled.obj"
+hash = "0bcdb79aa3c1f09e899c6e30147c9126ea86c7c5ba33eb1a9dcdc0b975f50def"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_1.obj"
+hash = "fbe30328162e45cc5a648439736551f64d6bd5d70b94a7de55b020496d77e057"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_1_filled.obj"
+hash = "e0c711fe02b56d959b9c85a7923287c48699dae5b3dd37c480aa30d09d7ca69a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_2.obj"
+hash = "7e1ce966732d995dfb5b97fee780dd2a32120414fbce751dbb822cb1b785cdb3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_2_filled.obj"
+hash = "b2960baf5b96cf6cccdad8e6760bb1851d6b57c3c28060b88b9cbc1404fcc919"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_3.obj"
+hash = "5374c839c15a344d536673273fa4321bdfb273982dfb5147fd05a67e4d56d3f9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_3_filled.obj"
+hash = "4aa3d741c960863d09e7badb1c21875d70208783066f3c706b6929f9afaf68c6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_4.obj"
+hash = "661d033561585d9f53f59d8f88eb0323e6b13ebbdcf3097f2049a1381dc7dbf6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_4_filled.obj"
+hash = "3512686bc5ed7917d843c0381d99e259d41ade0506f1b545a2b1624bb1766b90"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_5.obj"
+hash = "033fd81e352faee1a5a665122088e56dc1d512939a634a33549e456741d0902a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_5_filled.obj"
+hash = "442bf351ea79c90867b84b922ad7c93e708d54c23ef84d5ab416352f6f35e97b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_6.obj"
+hash = "289cf7b9654c13541aaf3adeb6afaf5f6da9682ae618140c2a8e8ee36ab2497a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_6_filled.obj"
+hash = "29c6a3893d944e4fe53523bb33317f4ea099ad167344d7c29edb33c8f592c75c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_7.obj"
+hash = "7ba84c5dfd14fb951074e806ceac7631e89e229b991c3c3605ce6f88becb074b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/cypher_7_filled.obj"
+hash = "73e3d527457592660f19e92c278fd05548434797e0e11ab9431e93ac94939cd8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/equipment.mtl"
+hash = "b65e2b6a88324b56108e5d550ae34be3e199f7b690d9e220b59812a37dcfb8bf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus.obj"
+hash = "49e482433068d2510662d23896fb515249067ac0a2b705a1cb7773126fd79b8d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_0_filled.obj"
+hash = "9d3055116a0bdadfa1da14974f043eb9f540adecf09db39b80916af092fc74d7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_0_sealed.obj"
+hash = "8c2f75a6c1d8eb11e0b591983a25c0bfce8623542bc631d33b2272f1cf317f18"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_1.obj"
+hash = "1986dc76022209fc10c2caa9b7272ee038c52aecbfd6de07aa00f117ccddf1a7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_1_filled.obj"
+hash = "088fe49658ab62214b90abd22a7b7ae2d6a98d7a4310c18d3bfe5ff1f9cc5c70"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_1_sealed.obj"
+hash = "1a9d91b700ae1f6282168bd52870eee8349a2e95350ba8a9420ed4a48494442e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_2.obj"
+hash = "9b727d922805779fbb8a5f9dca1663c51a2f748d19cb3052e805efeffc074909"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_2_filled.obj"
+hash = "658abc4842a7cfd28405c240a68a8ee6dae2adfcb6ddd5e6ed64a406db5d855b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_2_sealed.obj"
+hash = "0e93bdc3a3241429407f4d9986cd45bfc00a218436f1d23f6e86ae3a2766d717"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_3.obj"
+hash = "9ab4de6ed94c2b07aba8e6ffa758acf334da20e54c5c099ece05a0433d76c417"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_3_filled.obj"
+hash = "94d651c6e264d3ae3d396cc40949658ace0726c0b2a365c76b04a019284729af"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_3_sealed.obj"
+hash = "7dc2c7198a7d9f93fd43e7ee7a7bd7763150739494fc250911ecb2b988217de5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_4.obj"
+hash = "8471d99c29949ed8ab104d623ed171d764fdde7f76db59d388e6423919d69f17"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_4_filled.obj"
+hash = "d8e6afc6a52f5a64b69fbbd7efb0747b97e9cec84a65227a67709100c5af7c0f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_4_sealed.obj"
+hash = "df59cf63e7f9f0b61bda562f88ccc14292fb4d022761d95d55ac2614f88fc890"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_5.obj"
+hash = "0f426a53f7e44352a7587207ff9c45724abc475de092984a6a9beef1e4e0d1d4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_5_filled.obj"
+hash = "9c750932dd6f4e0b5f1c615676aebe2f6679419bd655a01799b45c7075f113c8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_5_sealed.obj"
+hash = "1df6d7653f74253a68cda6729084003d2020a89d65c9f78f5b9cb8118367e7ac"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_6.obj"
+hash = "5e0dc62f065ffb6c728f7d46ef636a05834133be526209055d14f13512467068"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_6_filled.obj"
+hash = "20c32eda84543a7c3104ac06df9318d8788453e3903d33f08d81c917c7f3fbdf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_6_sealed.obj"
+hash = "56060567e15ac949e8e500b915ad2baeb0829492ca6451ae51dcfb27c92abd9c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_7.obj"
+hash = "5bf153b2a7efd3f1b5e71cc7fc92ccf95d3d09261fe4e8c5323c1f6f28bcad67"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_7_filled.obj"
+hash = "9ccc4d8009412e9fd47b2a4371eb7ed183d16c718f2f5d6df12890b8a5665227"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/focus_7_sealed.obj"
+hash = "5e512d56d4f9cf7ad5f2394803441211eb08c11458ac25a6633e07d14af280ee"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/jeweler_hammer.obj"
+hash = "5db812d9d90c3153ed62322624e9ac8fd1827a75077265714af189e82be1d19c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/lens.obj"
+hash = "bdb19ba393d41679e43ecd1c29eefd3a6bfb6d7b47035df56c7e4930f021a503"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/lore_fragment.obj"
+hash = "866767c61d06744718a31b2a0bbe9be03aa1bc3ff0d468c557d73ddbcb857598"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/patchouli_book.obj"
+hash = "3f26ef7baefe617d00ba7fbe9a2277b7581da694fc552b70db4e132c59a0263e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_0.obj"
+hash = "ef26fb45de90a003507a0adcf85ef3c93b42e89ee0a55cb6e5eacbb7596b175d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_0_glass.obj"
+hash = "3e5829545090539cbcecb7504f24414fe31e15ceab25a789833456f8442326a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_1.obj"
+hash = "905c9b9e22496723ec00db58bf9c7b2edddf3835eb2402da2bf24109cfa84f84"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_1_glass.obj"
+hash = "3e5829545090539cbcecb7504f24414fe31e15ceab25a789833456f8442326a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_2.obj"
+hash = "ee1d9c8f8e26e74ebf188b881828624a2fcf1f7590be1c033fbaaa269893c6d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_2_glass.obj"
+hash = "3e5829545090539cbcecb7504f24414fe31e15ceab25a789833456f8442326a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_3.obj"
+hash = "2b789a647010e30df3edc27a320e0a0e1d40cbf5df01b60037783f13aa448c79"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_3_glass.obj"
+hash = "3e5829545090539cbcecb7504f24414fe31e15ceab25a789833456f8442326a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_4.obj"
+hash = "ea9d062175b19183798e0a68c002746591aca5f232a6229a62d1d3e597d2b0a2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_large_4_glass.obj"
+hash = "3e5829545090539cbcecb7504f24414fe31e15ceab25a789833456f8442326a0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_0.obj"
+hash = "57477d50d253d8fd91efa2e46f13133d6c72062321acc5b8b16844a5fe51e23e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_0_glass.obj"
+hash = "75267f6b9660dadedb47a3a917e9d2b1c9028312a80738b0c26f2d6ce589b6ab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_1.obj"
+hash = "4f9f97de0ae45055e38d277c5cd140ea113e2db57c2e1f770f7fccbeef65acaa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_1_glass.obj"
+hash = "75267f6b9660dadedb47a3a917e9d2b1c9028312a80738b0c26f2d6ce589b6ab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_2.obj"
+hash = "cecc06b7d2f14b45c59f57ce87be704f01ecb7088c90738c5142abb52a4b3ec7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_2_glass.obj"
+hash = "75267f6b9660dadedb47a3a917e9d2b1c9028312a80738b0c26f2d6ce589b6ab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_3.obj"
+hash = "27583f5a6a0afdf487519682a77bafc1d1ee4557548b275683072869c61c46c7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_3_glass.obj"
+hash = "75267f6b9660dadedb47a3a917e9d2b1c9028312a80738b0c26f2d6ce589b6ab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_4.obj"
+hash = "bb6312927fcf2ee5b9dadce8ec9e05500e33a5160a94e49ea0f3b73aae72d17f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_larger_4_glass.obj"
+hash = "75267f6b9660dadedb47a3a917e9d2b1c9028312a80738b0c26f2d6ce589b6ab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_0.obj"
+hash = "06aa9719b68edef80daddd5c049d039132432517f55fb4baf2a798bcc6868639"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_0_glass.obj"
+hash = "60516f02750aab55928fb23f060d58f384dcb7b0f283e9016a5d5dda4d41c309"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_1.obj"
+hash = "1295d5a76dfc3afd8e2d32ad6f511ada54e959b60e61be3e3689e777f53eea16"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_1_glass.obj"
+hash = "60516f02750aab55928fb23f060d58f384dcb7b0f283e9016a5d5dda4d41c309"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_2.obj"
+hash = "d43a6e2f2439a45b9e9e477c2a75816d12e49604f4c2502de9aa7c62035e4f8f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_2_glass.obj"
+hash = "60516f02750aab55928fb23f060d58f384dcb7b0f283e9016a5d5dda4d41c309"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_3.obj"
+hash = "736f00ce3286babe368d38e047e924a9eefd9b3556c71add1ae8924d9600886f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_3_glass.obj"
+hash = "60516f02750aab55928fb23f060d58f384dcb7b0f283e9016a5d5dda4d41c309"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_4.obj"
+hash = "1eb4ae58ea4618ac013fd1af31d557648a4e9ac19afde95b90cd082f21dc431f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_largest_4_glass.obj"
+hash = "60516f02750aab55928fb23f060d58f384dcb7b0f283e9016a5d5dda4d41c309"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_0.obj"
+hash = "23cf2284d5e25157b9716f7b409fb7aebb93b8f97ce27d3c4fcad0259b6b01df"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_0_glass.obj"
+hash = "1ff5d7a359d47b0dce2a7a3852aaf4cc09083c7df1f784973956fe0b12d15eea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_1.obj"
+hash = "7ac4adf4f033b5125fd9fd4c1d7a38002d266cca17179f7dec8e664df0ca292c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_1_glass.obj"
+hash = "1ff5d7a359d47b0dce2a7a3852aaf4cc09083c7df1f784973956fe0b12d15eea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_2.obj"
+hash = "7fa0b88200ae1d7ba930264128a7675e09194e8dc532e4beb171657dd943365a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_2_glass.obj"
+hash = "1ff5d7a359d47b0dce2a7a3852aaf4cc09083c7df1f784973956fe0b12d15eea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_3.obj"
+hash = "c8990d8bb022cca416e25d36408dcbdea12f9f68c102e4f85426827b6d5a9688"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_3_glass.obj"
+hash = "1ff5d7a359d47b0dce2a7a3852aaf4cc09083c7df1f784973956fe0b12d15eea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_4.obj"
+hash = "0a4e23d41324d45c68f8c613284b93d7360e27308d41a710be204bc6f2d135d9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_medium_4_glass.obj"
+hash = "1ff5d7a359d47b0dce2a7a3852aaf4cc09083c7df1f784973956fe0b12d15eea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_0.obj"
+hash = "a4704d7346f49dba8feb6412c471509e059db2372d5101123ef56b11b1b19176"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_0_glass.obj"
+hash = "de4d267c16b3d55e77a2ac5e391f837a971b8e552dd73bd8bba1fa5e6540c143"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_1.obj"
+hash = "c96ebb447fbff458bcfc35d4f33106a86ad9da2fae4b698c96b3e26dd77840d9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_1_glass.obj"
+hash = "de4d267c16b3d55e77a2ac5e391f837a971b8e552dd73bd8bba1fa5e6540c143"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_2.obj"
+hash = "4424f4921b860bb62bff2ca77fb33a83fb2efd23b4116b871594740074881415"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_2_glass.obj"
+hash = "de4d267c16b3d55e77a2ac5e391f837a971b8e552dd73bd8bba1fa5e6540c143"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_3.obj"
+hash = "7771c2803e8ff399a6fbb82bb2e1389b535d08da42aca4284c912a9b41d39ece"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_3_glass.obj"
+hash = "de4d267c16b3d55e77a2ac5e391f837a971b8e552dd73bd8bba1fa5e6540c143"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_4.obj"
+hash = "b9a39db921bdab91caef0d093cc8ea2fd223f6f411fab489b4a1ffe7ea72b471"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/phial_small_4_glass.obj"
+hash = "de4d267c16b3d55e77a2ac5e391f837a971b8e552dd73bd8bba1fa5e6540c143"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/pigment.obj"
+hash = "06f21fe5c2699d11849c9a581fdc7b9962efa05c33513aa939a9bef297ed41b0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/scroll.obj"
+hash = "caab6e4f5323b0868adb9245ea35501e5909f60f49d8ce0dfb0e667e411c09d2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/scroll_medium.obj"
+hash = "2e47c4b79cf2555aec48db06304cff548d3eb2eefdd98dc52f4ef253991dc5e8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/scroll_small.obj"
+hash = "a766e824b3e7b11373da019118a9b21ddcdc8676b738d0f8ff11afa8b389917b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/slate_blank.obj"
+hash = "97962ae01800ec577e309ba0b4d474af2988952e5e6617d256bc3b0321d08899"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/slate_written.obj"
+hash = "97962ae01800ec577e309ba0b4d474af2988952e5e6617d256bc3b0321d08899"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook.obj"
+hash = "3f26ef7baefe617d00ba7fbe9a2277b7581da694fc552b70db4e132c59a0263e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_0_filled.obj"
+hash = "06f96903aa81fa3d05afdeb79043cebc1abc0aaad3ec928411b4c3c2de0bb9e7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_0_sealed.obj"
+hash = "04d9e537c033db68a6faea62d99a1860674e5ca78c1ab5542a324bf3d4e3cf3f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_1.obj"
+hash = "31a05243d835ddb82db1bdc33b5e4e1307d9c992d9ef1b9783cf202c5fcfdb0d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_1_filled.obj"
+hash = "aab900817be48c814f5e3d18e09acd6697a56392298692654e6c8598a03d8d46"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_1_sealed.obj"
+hash = "42fb420880acc056a54c090b98bea505f94782dfb36c2da99934807b1eef6619"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_2.obj"
+hash = "dcf203645b1526faa6ba4d37adee6a3f06427ac18aa80b9f080bfa03b52f4d6e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_2_filled.obj"
+hash = "2d28193530d99984de4edaa48e2513a81e42dcc73dbd4ed8e0f8c99e520dddcb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_2_sealed.obj"
+hash = "45068433785c63d07fb2377e68c04e259096741ee3af61e5cd470eca27d0f2a8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_3.obj"
+hash = "7a904d0dbf93c4440682a209f1ca12d4948df0fe3009a258ea21047733bbdbae"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_3_filled.obj"
+hash = "777990d3c94eaeb838504ca22263470091beca2deb4872a3393adfd741f2a850"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_3_sealed.obj"
+hash = "3e3e9a0277f7ba2db911e63cc3d8cb65247f80f81f6dc6c82cd6b2eda651c16e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_4.obj"
+hash = "b82b2edf996a35b9da50628ac0420851437ed84c6677dc3e48aa840bb2c49b91"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_4_filled.obj"
+hash = "06f96903aa81fa3d05afdeb79043cebc1abc0aaad3ec928411b4c3c2de0bb9e7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_4_sealed.obj"
+hash = "04d9e537c033db68a6faea62d99a1860674e5ca78c1ab5542a324bf3d4e3cf3f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_5.obj"
+hash = "87b09e233859545efc68b670c7b0d1d8a728598bd775335d325c414cb69ddae8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_5_filled.obj"
+hash = "bfeac5ea9208fde13ed76f1739bf2b82f65a49a9515fad784df58ff0785a588a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_5_sealed.obj"
+hash = "0905f14d8e2e5b495bcf3c185d51ec4ff158199ec79b5c496f25ec7fccf9b937"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_6.obj"
+hash = "87b09e233859545efc68b670c7b0d1d8a728598bd775335d325c414cb69ddae8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_6_filled.obj"
+hash = "bfeac5ea9208fde13ed76f1739bf2b82f65a49a9515fad784df58ff0785a588a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_6_sealed.obj"
+hash = "0905f14d8e2e5b495bcf3c185d51ec4ff158199ec79b5c496f25ec7fccf9b937"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_7.obj"
+hash = "eea4fbb2a6adb1c468f2d5dd5a2d71b25a5e74eb9bb9b222b7ffd0f780fba0df"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_7_filled.obj"
+hash = "f23a733e0b747b9abe647e20474de0c337479a32d20d93a2782c4f731e372050"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/spellbook_7_sealed.obj"
+hash = "fa8a3b370ae239b25229e96ddd0bffc47861879df30a4707d1d3e386bf3c838b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_acacia.obj"
+hash = "dc033e0d3f8dad80b32fcbea60b34f14791e130ab9146e91f45b63b414614487"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_bamboo.obj"
+hash = "682467d60d0b2588d2cd371f9e50e645aaec3d0026e442fb1565390d438c4752"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_birch.obj"
+hash = "9a3d42e0d7e75af839039fd47e3ad49d3db33698a928e9b950ca9a54b0b44818"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_cherry.obj"
+hash = "7b7be019c144f703ec29b0842e15fb54b5f0811969174dbbb849475f7144a8ed"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_crimson.obj"
+hash = "13baa9aaa260567fac818dd151a7e2301a7a9012bf753cbbdf633a82a11aff6a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_dark_oak.obj"
+hash = "c5464213ddab5a0eb8245f610b86facc8df98fed1c4d7fc5f3992fb537da1d12"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_edified.obj"
+hash = "234f349e8d71c8501622863d0f53cb6eef258567dcb572cdd09f707207769d14"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_jungle.obj"
+hash = "983ea9655467079eef29cbfcc94398897759ae0c7d53dc0852de4decf5f0ea52"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_mangrove.obj"
+hash = "4f3c9a58ee282f83b5e8e0b33a4cd8b788aabcf536866e5fcb91d59e30655ddd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_mindsplice.obj"
+hash = "65b96e9a926cc68eaf91728f039246014820a20e2f94d65de51a4dabda624d90"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_oak.obj"
+hash = "4dbd8c6ce688e1b4c4978947c176154d31435d874c61f8b8e888b2ded206a36f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_quenched_0.obj"
+hash = "11e1c807b562dbc9ff23c7cd3097864b04b431e993c1cd09cc8c7c4b74f6b508"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_quenched_1.obj"
+hash = "6606165c966d74867592e1dea6cec9c5a3586ff21a6e5c08f635ed5338204f5d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_quenched_2.obj"
+hash = "5f083024f2ba9733cb25265174d17146eff120cd6a0ef558226484245eb3fcf4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_quenched_3.obj"
+hash = "4ad842117f1facefc3da62a3dbabd68e8dee633cbe14fad9a3b7332bfb0bc3e8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_spruce.obj"
+hash = "df54f6d1ff66747fabadadb29a13acc7a563c068edf3b20550fc6c9f3a754905"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/staff_warped.obj"
+hash = "637cada711672a02a7e5acc78fcb5d9457cf4595cbb9d18d1438a94b003e21bf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/thought_knot.obj"
+hash = "5ce5c45efe6222a1c56af54022b6ce76fc75380837df342bfd14ffd23ee9ff7c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/thought_knot_written.obj"
+hash = "15472f0ced3f7057b9bec8e23d66b0507b6b09946a32b50e117e66c3a168c003"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket.obj"
+hash = "0becc7512be446394bd923d00bfbb1dc2a02ff6f2440d1db8d6e816d15d4cdbc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_0_filled.obj"
+hash = "9783e46502cf873c777397bd742687c7325171920c076f294c76dd17bb8ac470"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_1.obj"
+hash = "e4c6972fe5d21e29e2126c5d7ee82d4c96e2580acf621d6996ba360f5d0f8ba3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_1_filled.obj"
+hash = "d2fecde4d8cf5dc5acc975a1df67236cfbed83a1db24504e24b3186122c3e952"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_2.obj"
+hash = "a6e7f4012cfdb95489627acaf5bc52d10d2e6a8a98d51241a8a1bd260bbe6e85"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_2_filled.obj"
+hash = "f480aca682d689de832de34159e8e7075fc5a3a67d8ad5fcb9d8181526c05e2d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_3.obj"
+hash = "6e7fe69dda88d2ac31dc5fcb0af9798bb00c737bda7f892724249135b59cd656"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_3_filled.obj"
+hash = "ee2c14aaaa2b2db2e3b5c1525dedab19094dc149ae2ea16c56169830db889465"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_4.obj"
+hash = "cbde4c6e79b7deadac2e39b418b1b45fe51a198d4665747362feb3ca46d09a6a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_4_filled.obj"
+hash = "756d7b1fefc27572c8f864702b1f86db3280c9e34c8f7e97d6e67ec8bb7ed5c8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_5.obj"
+hash = "32b7f17798e1a45a9f7c9042564524956de57f1999222f47a9405e934d99143e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_5_filled.obj"
+hash = "e6be84815968e5036a83ba3e1cd6a026e762e64b25de99a7d46a0b492dfc67a8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_6.obj"
+hash = "e92ce9250bb66b2f0d31554e14c66af7b482a14f384efb507403adbb103c5d65"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_6_filled.obj"
+hash = "5d1614e5f2efcc8e5c81e328d2b64b339448a03d810e2b7cf736c8d39d74d59c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_7.obj"
+hash = "f628296a4064c2db951f1fa311d4e06a830cd791f943cd99635790147dc70e38"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/equipment/hex/trinket_7_filled.obj"
+hash = "da5850a81559fd9c116692ad4185e4a4d9efeb56c1d39d8dd9f23bc18edb6d7a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus.json"
+hash = "cb15e6a4f2165c819232f60d750528e5e46ae89c1f5ec5f56df268dddf973903"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_0_filled.json"
+hash = "7327a2f0c0e67c92e45713d5a73dfa1237aa3e1c824ba661bf7ae5aa490650a9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_0_sealed.json"
+hash = "e70680b0311399847228aed8b31cf4df4d57c50fdfbd3b494c13603df516ba48"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_1.json"
+hash = "a3e3227439094e8a886027e11f7faa5989dd33c6510f68b06ba2e0e7a9f2f38b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_1_filled.json"
+hash = "47b6d5b787fc19e3d6b85d11a29eefdd791966f5beeada81d86a189e2aa8689a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_1_sealed.json"
+hash = "8f2873b5967dc6c872270dc42e98d5ce43a2819bb7e03d98c34b096f56503960"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_2.json"
+hash = "d4d08c1f5afdfd33b53d45683f17130e9ce0af12ca3f6a4166cc6909b16ea030"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_2_filled.json"
+hash = "828b3b3d2df0f42e6c89bd33b5d908a19e843c6167fe306ebecafaea6010761b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_2_sealed.json"
+hash = "606a63b7ef02288fa0d09d1fe6980782b18ebabf2526628982d43a8312217ae4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_3.json"
+hash = "07d1837e26d9d95e1a04c55e2a8ff2c6da04626002d3e30f7444a3f2af369d0b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_3_filled.json"
+hash = "ffab33377aa82798ed16eb16dbec8c3fc26e31fffc414c0b9664ac98e9d4a80c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_3_sealed.json"
+hash = "2c2419e13b7b102d009fa96f7e35a2f3442041092347a09fa667e22e1a04bdcd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_4.json"
+hash = "29dbfb7c730edfa22ea84491ac330b85b4770bf06bd057be19c64fc5240fb0a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_4_filled.json"
+hash = "f7a44998e696bc78dfb4b6ffc9a33f115992e4c2cc840e56243c657a4c0caff1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_4_sealed.json"
+hash = "4789bf43cf2f75d35ffa656f6d3105895b130f39b0a7d03694602228f772e754"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_5.json"
+hash = "3600f30b84027ac238cd16fca7d6c6ae09d29304894de66f35c6ad547058b474"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_5_filled.json"
+hash = "137317b039afe3d6dbbeb71b7fef6846433fa6218ff39c45299fad6437ebfd04"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_5_sealed.json"
+hash = "45dbe7e2ea610c1fda2d8cf5bbd5ecf496367b9c77e26fb472d4e406ed02bebe"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_6.json"
+hash = "712f675aa49ccea65f12e4b1a1a6a0f34c9f822fc9a4c4c4e736f100b1298cde"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_6_filled.json"
+hash = "10b604105a03f67b25ba7752976e088fe64deb70e21d3635b8845a61fe79b560"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_6_sealed.json"
+hash = "9d1dc563d0040f99328a3d20bf96620642b7adc2a89f53b702004f86b2240261"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_7.json"
+hash = "30d933bfb082de12da007dd70f659bdc9730b7b5b9f0bdff2035438e8e3944f7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_7_filled.json"
+hash = "ec002b424fe9ac65d66eb6ebd10da5e1401106a2757357e43519479f8a8a3f43"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/focus_7_sealed.json"
+hash = "98523d1fd0b676341021c2683e91e2c246f62923e67dee7d286671e6bd8aa65d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/jeweler_hammer.json"
+hash = "ce371ea7e5c11fa4282e73858eca6768279483535a7ef3db6ad0b1d03e8b1d21"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/lens.json"
+hash = "d475ddfb480fa2613162a090031fedb3bfa135ac4e01b9d1dd2ef99a9ec52d03"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/lore_fragment.json"
+hash = "72fcc37f67f553e47a2d00c7e9fe327b473291bfbbef26e497298d2f7e879bbd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/patchouli_book.json"
+hash = "d94ea7a3f1fc25b782917e3934941b519aabda1760239161e11124091d9e9b4c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_large_0.json"
+hash = "6a1803332a9eb5054571eded9f99e44584add0d661b8a992220e047fd9cde44d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_large_1.json"
+hash = "a58b5d90f8597f2c83b21c7a1d181fea441f4e7a863bc3a4b1be23aaab4e004a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_large_2.json"
+hash = "e47ed609f5b9a3ca60edbac4f35277cc08bfac74217e014f2db23f358234347b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_large_3.json"
+hash = "3c0010c5ef9acd0b55e7d7f1ec84ec8aca0db595a4bbeeb02de9792cb2d82cb7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_large_4.json"
+hash = "b3aea83fbb4e4377c1ab340dbe5e18f5707e61fbaea256e38f1b7d427667f5e8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_larger_0.json"
+hash = "ae4bc61654f20b63bf5af597f6c755f676cd7945131278d95ac246b5c749cc13"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_larger_1.json"
+hash = "69ddc503da9099c8c1a816a96ea8b056819b172f5edddfee62a32fef857a579d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_larger_2.json"
+hash = "96ca8be8017670bf70270a3a353487a93fe49f1d7b9e43b011ec307b14a03b86"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_larger_3.json"
+hash = "78ccfb61b93b5d15c9214ac4eb3dbf7fcef517ed45c6c9eba6994aec59fadf7e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_larger_4.json"
+hash = "f624692ec3ef2affc297459d32040fdafbefec8de2477f9563d6276190df8fbd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_largest_0.json"
+hash = "55e4ba4bd8177e91bf2dc8f2687f2bb412a86f454830d58f1379464679733ba1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_largest_1.json"
+hash = "3054195e0a2a87498d76336e8c788b41d575b0cecd257ef299ca39686476bf86"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_largest_2.json"
+hash = "2fede1cf2f73fe0083619692a40f5edfde8ef51c9fc13a174766f00b060cab4c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_largest_3.json"
+hash = "d2740b57ab578c6e9456f96821d9fd4599aedb06a0b7d84cbe82b5caf9db720f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_largest_4.json"
+hash = "7241415d655fd30fb3ce36dd5f1b40f5aa39dbac5f94c273081b523d4c849248"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_medium_0.json"
+hash = "c405b7f54b48de0936ca6dae2860ab9d508fb3adaa82ac2151358df7a97857fd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_medium_1.json"
+hash = "cf2400abe70e3fee01d9e9ba240610b85e9e60b2352cfdd0f88194eed6172a7f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_medium_2.json"
+hash = "6bf9ebba5d3b20b798d0ca90991122ea3040655a7d0f2c6521e65bd3b09882b0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_medium_3.json"
+hash = "5f07ccbd88112f478d382f1e5c0e7b3fa2f4cd25c72dc996e3ea9aaea3407b37"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_medium_4.json"
+hash = "9aa96d03342d42f16b9caa106f3ae6203bafc6bb664758d19c1b2f879db096df"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_small_0.json"
+hash = "a1b97caaeab6da384d90a091514295378e9cd47ba55ea065f3233aa71f0017ed"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_small_1.json"
+hash = "7dd401a57cbbfe7b3ba7afdb90194f735b9c6a14ccef04d356fb9ed4aa481d48"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_small_2.json"
+hash = "4bafa5835a0db09cc6e3cf35c2e58844021b10f39dfdc7033b763c064c9bc88b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_small_3.json"
+hash = "34d9829e65629ee06225a27274f51be9275e4f17b7d6cdbe350fa1e70d00c4ea"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/phial_small_4.json"
+hash = "3737436396abff6f386e5e8d415747df37b3fb82b4384b17dd905fb191390ab7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_agender.json"
+hash = "874b1e9146086a73519f41f0fa97417b8a905602ecfec600eb8d5976248bf818"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_aroace.json"
+hash = "b57c371fab6870b9726d884419829819ba374c07b2434c2ceb84862afe9736ed"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_aromantic.json"
+hash = "6e909d82cd5621c67bf64d56ccfad4d4f1b783fc604668d45663c0d94b8cbe94"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_asexual.json"
+hash = "d9e3e4dd8a3b61ad6f37f96af82fef062005b35ddb1216ba339b8c24ce918e5a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_bisexual.json"
+hash = "1bb1d6f702d31d5fd4bcba8b901417c8e4ff96fc4e06aaf3a0c3e37f8709f3b2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_demiboy.json"
+hash = "ea15863e2f6bbc945aadf56af8b3648ee5046958907caba59af172d397cc7d31"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_demigirl.json"
+hash = "409111d2f715fcbd93c87d2789c50345611de7da861b9020618b2a92be9f1d97"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_gay.json"
+hash = "9f63fb817ee5b4eba924cb61590c09e950f58177bfa94b0d66da980953a5bf79"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_genderfluid.json"
+hash = "893e884be00d6e62ca4fed1ce809cf1cd95f1e93beaf3228725a4d6ffd9309e0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_genderqueer.json"
+hash = "1bf7562e823ef6feb94d16d26d7ed172418cd6f860680a2f888d7cd15dba2ca6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_intersex.json"
+hash = "ba920a4760bb70aa4d0ec89574e1395490f8c19662eae38e36132b3dfc1b91ba"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_lesbian.json"
+hash = "7e7b9f1f3154ca6015cc93f691d6c1ddde7b7362b729cd1160b64518d846c4c0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_nonbinary.json"
+hash = "7c1509d576817ce91d7a9803caded776408816f2bcdacb5a5c3d7ed4f15171c3"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_pansexual.json"
+hash = "892fe6075e00bdc61f6ad712f587cdce807e3f6b497ff08e3cd07b664c74dea8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_plural.json"
+hash = "4624c9c25b65436580226329155ed89b3ff2022ddaa87cd4f114c50b02c07903"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/pride_colorizer_transgender.json"
+hash = "6d7a74c3a533a5328117fb59b1d82b82f210c44dc5de90c25b1def26a777ab24"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/scroll_ancient_large.json"
+hash = "f0463b77aeeccad0b994c0f3e86099f32a300d4b9a3cce390c7f06e76373afa4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/scroll_ancient_medium.json"
+hash = "559e4330257ca46d673ecba4098c430e8c641458d3232cf507e6c2a3c92bd2e0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/scroll_ancient_small.json"
+hash = "8a4c4661d08f71cadb3ceba4acff8230ecc3665bd3174a996fb5f461acffaae2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/scroll_pristine_large.json"
+hash = "2add8ee0e6a463e0830d484e3163bf96fc6b974a694dafebc450b20ac7b072f9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/scroll_pristine_medium.json"
+hash = "736983a96e54c8d44ffa4d56c34b22a4e141efb74ffb825d4a244252e255b9d1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/scroll_pristine_small.json"
+hash = "c0b197a559a474e7b2f4219eaf69d77763816aafc81a48fa6489cc06f9f8d4e9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/slate_blank.json"
+hash = "78523fa4a9d71cd1e1e19787df12a573f7cc442ebe5f5855359ace1d0439e133"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/slate_written.json"
+hash = "7f9726aa61f969a9d4e52336cfd50f934f47caa5ec7fa53feb5a5c2d14212a0e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook.json"
+hash = "84f65b408d47a499926c40890f8be6490ae838dad604c5317e6b555fb3b0b209"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_0_filled.json"
+hash = "8cdd388d02138a66b384fa26b32f179dcf6888d5c3d501f5600c80a790b44626"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_0_sealed.json"
+hash = "e55029dd57811e5b0e4a3d77c89953a03f4922c74eda2d2f99e74c40e5c41906"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_1.json"
+hash = "818373d4beeb8d7542c272e647fe3abf81b25c303891e7d1fa56fa3fc7b8ef5b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_1_filled.json"
+hash = "271705164f355d95b7a4b5316ea97297927e8f321dec4e2fb9ad3f841ee69c52"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_1_sealed.json"
+hash = "b0825e40d5aa2269958177234986b6781c613e6f7d4f524ad2a55c667b54cecd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_2.json"
+hash = "a4362f18b48efbfba2a6cc65f3fab38e5e751f84b4aab890a1f3b13ef8f5c72a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_2_filled.json"
+hash = "171ac55dd76cd4d02cfbfcfd8723f157af566661c5c9fa1be5f0b8102b73d8b8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_2_sealed.json"
+hash = "06cc3da7d37f5c36d22309fdfc25a934f37bb8b743761b0bb1740be540e86a09"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_3.json"
+hash = "7c1f85488f25dc5657af6e2dc0c8a63dfa69a6669ec59d30fc16ae87d153a134"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_3_filled.json"
+hash = "060d5f4817eccfa3aec7f1de38b02cfbbea27bd9967a95363cc474fab9f35bb2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_3_sealed.json"
+hash = "093f5a985e15138e02e149151a78e20f10b254be48ef5ddfa59bd5f1670b467d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_4.json"
+hash = "b7420a34e0cf73d35f59e2a821e032e8f4c65ad1f9eb5460405358b15fe3d41e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_4_filled.json"
+hash = "e505de2e1305939a51ca8f9bbbffdfff2b024c11b46639aa8d6234cb963662fd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_4_sealed.json"
+hash = "90e8d59120a3475e8a2c647db9d531faf758e105db4602df501c52f990a3f3b6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_5.json"
+hash = "82540f6df95974b197f7ba2daad9ffbf425d2f843e8ec9aec608c181367f847d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_5_filled.json"
+hash = "5b6d3855e95ac4e412dfca185a0cb54f2e80bc07c7cded31719b2b8e0dd24d6a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_5_sealed.json"
+hash = "ee2f9cac0e6b397e20497650b2b2f5cfd4de4a62b96f5b4b21c4b162b648207c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_6.json"
+hash = "825f16546372afdeee319732d0f22508c6198593d00625bf10380d45cdf1cd02"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_6_filled.json"
+hash = "a8b97c1fcaa40ad9d30152b7c88c62ab73d3d5d1bc050c22e324981b71ca278d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_6_sealed.json"
+hash = "6198d7ad49ea20f09a7e448ca1c5e30e94714ab6c0b51824159dfdfd9857ee0f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_7.json"
+hash = "ae5894eae6a926c0c1ae918d74302842123ce952a0e1f56b351d38355d2e0068"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_7_filled.json"
+hash = "61ba1e444b703942f51019777f79bd95a530fa82f416a822061aecbee0019e16"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/spellbook_7_sealed.json"
+hash = "a206741f01d0f43da03e8400893131c54673f691b183333fad5dd63c2cd3208f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/acacia.json"
+hash = "415add6548ed0c8dd3b7e4d6fb5f1c64ab4f2ea54d1c06a4a9c0c760b1607c46"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/bamboo.json"
+hash = "c116fc6159ff302f5b1e8f17c5f3e8a82148cc90d2407c19c3848d20415e29b6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/birch.json"
+hash = "35701639792f052f0146b5f1d9da5114e073030906e520d6d61f325932809018"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/cherry.json"
+hash = "779639949e86e38bdcf46d66f5300bec9c62565ddff334a1e982c48c50ddbfa7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/crimson.json"
+hash = "f67720fb317c930642d988cd9de3e6a9bb589793f783d64146420291899ea4b1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/dark_oak.json"
+hash = "776f021403df6b00bd0e294dc604d244ab5edb078ad61294978b8dd12ca21f7c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/edified.json"
+hash = "9b9e72e69cbba0beac2c3bb4543f0c761346e4c6eed3e88a78f5c2f5e4a3dd34"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/jungle.json"
+hash = "ff393d53b0278ab6402071c6d9da2a30770ea3dad302f4a990741f66b3a503fb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/mangrove.json"
+hash = "82d02f81b74e0e78b52d0eb2e1372edeeb5e86537098de6d77c0f85fecaa8bdd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/mindsplice.json"
+hash = "d4572ade88054c415faee97f12a5bd2d4cfcede66a98b65cbea53a3a3442ebde"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/oak.json"
+hash = "e2fc55cfa316a43e25db21737969c02453646e4673ceb46a58a267353bf9004f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/quenched_0.json"
+hash = "dbf59a481c647037943b2518a8c11ec6fe8408336633211bb7eb56d17c74a57a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/quenched_1.json"
+hash = "20a6cb982586e3c4bcca57591607937b829f9dfc67cc6ff6a819ccb259083476"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/quenched_2.json"
+hash = "7dc778f5569877cdc7e667107474630f9825f51e0b46a7a016abc72c4798fa72"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/quenched_3.json"
+hash = "51b152ee50e0bcb49156c9adbb36eb84c76db1ec206a6a93907365b18903c7cf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/spruce.json"
+hash = "0227d98e923b3944ec0bb8256cce1a0e3c6e280a888e6b4e9e611f3c69370f1f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/staff/warped.json"
+hash = "9c5d91c1189373b654228e32683943f6d63f8d919646781ec37b662c68c545e4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/thought_knot.json"
+hash = "814389a03e23fefc37bdbde047b0eb0a98d0ae468d067252ee067bc679aa0332"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/thought_knot_written.json"
+hash = "0e37a34c5c4afe85d28202faa20abf21b6accce3d0480f34302ee65995101fdd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket.json"
+hash = "f25dcc0a86ce4fb25138fa4355fb27327eab54f6599107b81800636270911cd1"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_0_filled.json"
+hash = "44bc69a8c45db8f0e0ceb9dc2e1f49a993a51e16806f0d9fac707dbddf0490e7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_1.json"
+hash = "1d7fe29d22b8cc85a696ff17833569964b71325a3e7e88c63ec796f4aa558d4d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_1_filled.json"
+hash = "a0c6f3d0638509dbb3f751179cb1bf0930d20c90892c888cc87385e3e2785c1f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_2.json"
+hash = "d26e68e85865495b2ac9cd614d34ff4283c076fd3b3802ae5d43b8af2f14582f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_2_filled.json"
+hash = "64451e8176c70de1d658f9bf2a364ee9fea7604d4451a6ea184e35be8a56db50"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_3.json"
+hash = "31a4fcd8f0c92f7b5aefb058649b0edf25bdf8928bc890a209343e80b2abf669"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_3_filled.json"
+hash = "a40ffbcd8b6669eee48dcdcdaa5a476049cc91ecb6baebeea52779b167e8e589"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_4.json"
+hash = "2ec751d26abd5a67c9795af647690fbc5983cd8e73498f8c02af0e53f74bb781"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_4_filled.json"
+hash = "9b786dac8023561dbddabe937727816a9356b9dd758289956be450672893b70a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_5.json"
+hash = "15dfd7f31cde795d73887d9438ed576bdea8ae679dae98a677557f77e361203f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_5_filled.json"
+hash = "ab1dba26304744b955afca62c49544bd5c006e1b05d51d13cf12636c9b3fd90d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_6.json"
+hash = "f884af3371a38e4329ee4a7bc8cbbc5a8b92137eacf5b176785a583548647cc0"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_6_filled.json"
+hash = "5ac9be301fe8b8c7d8afc2a9c5e2a9c0ff256f82d9b22d125499ed5849115f14"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_7.json"
+hash = "2769ac14fce5b1c739c355b73a91b3660dbbd4465832076bc1a6d4aaaaac8d4b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/trinket_7_filled.json"
+hash = "5a7b8c3390b7a3b76f61d29d2d65145ae81a8832954e1c3279acadd0a78b8745"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/models/item/uuid_colorizer.json"
+hash = "ec4a5758bc4b9d424a979f0f301bc3d481839448382b5b315b6e3fb293bb3112"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/2db6d0.png"
+hash = "7d37a23c2cc1aa4bbe8a36cb58ab48c18c60ebab9efd832c1e3b05d17653a570"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/3c0a5e.png"
+hash = "a6dd73b0b9d7a94d902ee795fc323a785bb3381ad44abd55f80d1dd09763bf32"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/3f4759.png"
+hash = "325e274179fad7ad67b8aa338465fbd56ffd30ab6d59a3ecb3cf843ab25e195f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/54398a.png"
+hash = "df146e24af2cfb03805d6c1e0ee887ad362b2802fa50624f5e06a54205efd237"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/5e5e5e.png"
+hash = "ca555ef30d595c25b280b15f474634d998b97ffcce892d473611b2f03ecd4d73"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/6f4fab.png"
+hash = "cd659b2da1cf92b2e6bee797d8ea9628f6aa876769b94a6a5ffb3b07180cb60f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/7e4821.png"
+hash = "51b4ab0b930b087801a3eff5b514ab19965324d86c5dd1a3801d7554186ffb7b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/890920.png"
+hash = "d14f999b263a09ee006cd9f4149e323cc0d18c265f6d9e2f50f84ef06a5b9689"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/896727.png"
+hash = "0dba4684eabf421babae601ff5aee980ab539e5dc1f5631615b3ba85e0af716f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/8d6acc.png"
+hash = "ff831f2b8dc7f6025aabdaa87f925d0d93f8b44e91853e8d649b0b904e309229"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/967441.png"
+hash = "4c5b19ade2847a17a36fcfbf9d63173108194e4a03a2e98c59caced24ff9425f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/999999.png"
+hash = "6995599c6569c89ae376575b9d978380a06ca870347769784753d804e56afcab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/9c4529.png"
+hash = "d34152ddf3887b28e2f7a81b917db18d18550d1f8fc031f32caa234177342c5a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/a50b2c.png"
+hash = "a07c0c24343d6edaf7a886179cec1434ebc5e78bd3829f4b03fa31f20a915c69"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/a7c5d1.png"
+hash = "ce4a040d3d9e1e292766e86c4a14817fef555b85c1f915f57a20fb5ae02853ef"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/a8a8a8.png"
+hash = "54de528730bf3797449bd3a1625390d31b26a778bff4d6d3e8fa8dcab947b1cd"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/b38ef3.png"
+hash = "96a22980b83d5b652307714a22714069b7e78c33191808b6c65237e604b12aa8"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/b47140.png"
+hash = "3e7f48e1f2c9791fe8046987c08d2a693b105b79be9606e5fa012bd41ace25c5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/b7b7b7.png"
+hash = "9db5fac6bfc46cf4d5b0046e04e2e0b18c46e8c1fcf7098769a7cabdb3266399"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/b9a283.png"
+hash = "9412a0fe8502e7a5d1a0f049e4233bf78ae31a7c5a3a60d2a99527fe4f77b0d7"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/c15a36.png"
+hash = "b6c5cc6ed996ea46de77ee1105e1528488c256439446f2f5cfbde34d781c5516"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/c28ff2.png"
+hash = "84dd72150d9801000fedf1dbe6ffc35ac13b513e9e353a9ea3e9a090deedb712"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/d6d6d6.png"
+hash = "5bc823a28eb4d45bf8ca4062ab0baf0f95b08705732c34b99c3058c19d1f5456"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/d7f0f1.png"
+hash = "c921e65077a1ababa1492b6eea339aceae4aa5e849b1e831bd9f153e2396bb17"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/d8d8d8.png"
+hash = "dbf447d93239fc5c2a47145ab389d757f791ed269d32c6439c1ed34e51e3ee0d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/dc9613.png"
+hash = "eccc0f19df6a4e01ccdc368c2b5e485ca66ad4fb09bb92877e20867841134bab"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/deb1d2.png"
+hash = "0ba40961e9c1ffff007c56944e747452daf459c6443e314e7523c4d92e3a331c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/e77c56.png"
+hash = "1631be1e0ac78d9c1b1cce7e0db1e8940c77b34b3b2dd8f19f402c44ba209002"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/e9b115.png"
+hash = "d868b6d837c7beacfc0c834302ea239f021ca76bb9391f08853ea9ff5fd2cc8b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/ebaa4e.png"
+hash = "973c0fa10a078c6c4ba9162177a5be4bfd9a785379abfd679978ed4070d95a6a"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/f5f0ff.png"
+hash = "6c10153047bc7567be568758e69dfc269b65fb26cd495ad1c037dc8e05076709"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/f7f7f7.png"
+hash = "6ec967e2a7bb2d349ae5c6cb00f32d92540dd3f3f16a707d4f3a695ae67cfbaf"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/f9d49c.png"
+hash = "693d51ca754de0869b523caad5a9a71a4e6719be5e31956a0eed8ee0d5969f5d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/fad64a.png"
+hash = "9b5a7abc9760c3949161fd24b12743a340fa6c75d03ecd0ecaaf78ac1630e278"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/fdf55f.png"
+hash = "e8501e93e41966441dfa400b2a72f73c42a62677274943238346e39dbd8d7226"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/fecbe6.png"
+hash = "4fd6c4db289b95e97b15f050bdd8d2030339fad6b7ba33695f3597fc5e9c6dce"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/fefaed.png"
+hash = "80e8ad7acfd60f2e62c2efd169095a48a101aa5e5a28023df60f21522f166991"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/ffbc5e.png"
+hash = "3d850633cf25644514579fc10ff3d5987db44e0630cac0ce31ed139af765b976"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/fffdd5.png"
+hash = "96ba0d6b3c098dfc363f0637a9b80b5d6c27123c0f7f87c5a7352ae2d020c404"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/fffde0.png"
+hash = "1e1a26e9ba8cd59b6e40f9db95e73c903b045e5e65b619e6d8ef25c4aa5b6116"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/gem_8d6acc.png"
+hash = "cb555272c3d85b0b050cee6d203c737cfc3dd74d5139b967d3c878192bc8738f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/gem_flash_fecbe6.png"
+hash = "f738cbf90dcf6bdc6c0446cce01ac529c90093f25c83433836e9941d94a3ef23"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/gem_shadow_54398a.png"
+hash = "d02ba3cb739c19c1f191ed067e4950f4a826bde3391a81737a26e2d90f1b2e87"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/leaf_6c8031.png"
+hash = "53abb4586ad15f542818f2ac8c3e388681e7ec4aa5412d6c66842f125f46d040"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/ribbon_1b90c0.png"
+hash = "7d4568d35530a56f5577344a1d047eb80dee4b0f4db165e428dce9b04f07ed76"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/ribbon_382b44.png"
+hash = "5cd38c3adba5d93aec73d1f5d1d49453d76f2549e72c797d2fcd0993ba02126e"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/ribbon_7f418d.png"
+hash = "6a03b6ec6c32bf975ac11ebaf75a9e878569e500bb83b5569bbd3e713d526e7d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/ribbon_8d6acc.png"
+hash = "c756643f6c0be13ca9990b90afeca83dbfc871cb3a3ae0488134ad25e79de7a6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/ribbon_c65c35.png"
+hash = "4dfb138beb0798a4ae835f891eb231ef0d2144f14a7b7b1be8e6db291ccc55d4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/shard_1b90c0.png"
+hash = "94615f2da8397108946092c9df07a7d940e6d45c15691cfcca8ee76885ad4b9d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/shard_flash_6fe4d3.png"
+hash = "63ec6f5bcca4856e19dfd7dd1f3e930de6c00d856cf3a1efe5ba944ea634c37c"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/shard_shadow_9539b.png"
+hash = "e61d21a05ed1d2eee244308c95f72b2c1b7f9bcaf9a95344e45cd9275d6adc4b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/twig_398382.png"
+hash = "a5a7218ddf5a6c2d38c384fccf6513dd2f758a3ac3cf937d7be7c92c6df6ce5d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/twig_44354e.png"
+hash = "c2e508218195b0acb14277cf362e6fd1e98c36d119595fec2e7b9d0ca2874e04"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/twig_50692c.png"
+hash = "f18dcc76e06759a4d8f4a73b1647e8e5df7e7110feb0934176cc3c5ead56de57"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/twig_69367c.png"
+hash = "242f58e7ffc7c3cde3edf2863ee59748bb105d28f2b8416be981c0e2bbca9550"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/twig_758333.png"
+hash = "fddadcad2bd450d10ca31fb5ff49f498f44e13a1db49825879484d15d7515cfa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/twig_863e5a.png"
+hash = "9a4a9c034976fd3abacfd1faf7d5d4a3baa4d9cc3ea7393c89e588e938a599e4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/twig_967441.png"
+hash = "88f7f95160fda9cd1148eda4e8df0b247322d499c6169b135864a48d2b5f11cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/twig_d7c185.png"
+hash = "262ead6f072e84464a42040dd42fdabc3d5fc053d9be8e3302eca84df5f20956"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_398382.png"
+hash = "a5a7218ddf5a6c2d38c384fccf6513dd2f758a3ac3cf937d7be7c92c6df6ce5d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_3a2411.png"
+hash = "021d5a941f689c992df1f6166d31aed14cf1605a0e5845f0e57ee9191d1a0792"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_44354e.png"
+hash = "c2e508218195b0acb14277cf362e6fd1e98c36d119595fec2e7b9d0ca2874e04"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_642423.png"
+hash = "3e3a92a32a74465bbc92d7bec68132747df004fca68eb2fb5ae5f748d250d45d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_69367c.png"
+hash = "242f58e7ffc7c3cde3edf2863ee59748bb105d28f2b8416be981c0e2bbca9550"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_70522e.png"
+hash = "1619edd68b520492273f0977bf04450d0cad96a9fe62b1ddcbcd0b12c8c051d5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_758333.png"
+hash = "fddadcad2bd450d10ca31fb5ff49f498f44e13a1db49825879484d15d7515cfa"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_863e5a.png"
+hash = "9a4a9c034976fd3abacfd1faf7d5d4a3baa4d9cc3ea7393c89e588e938a599e4"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_967441.png"
+hash = "88f7f95160fda9cd1148eda4e8df0b247322d499c6169b135864a48d2b5f11cc"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_aa7954.png"
+hash = "c7bddbec5cfbfaa7affd359158edcbdcd53b6e2b9c7e5187d8700f7ef485a058"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_ad5d32.png"
+hash = "3267d9a40cc9903269c485bf1bf5db82c797540cc84a8c177f855df4ba6346bb"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_d7c185.png"
+hash = "262ead6f072e84464a42040dd42fdabc3d5fc053d9be8e3302eca84df5f20956"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wood_dd9d97.png"
+hash = "024820cb984e9a3c68302c08dfae764d77cbdcc09e8e8404a3272cace3828693"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wrap_1b90c0.png"
+hash = "94615f2da8397108946092c9df07a7d940e6d45c15691cfcca8ee76885ad4b9d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wrap_382b44.png"
+hash = "582ab73adf2895ad53be4ac377bc08bcfdb3c2cfe526c35fdc78189bd9354843"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wrap_7f418d.png"
+hash = "9d2c2702305ac1d370ea833a65933d6dd9315391338e27acd03c62db628b8510"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wrap_8d6acc.png"
+hash = "9ab84735277e067cefebf6cd71f763ffd2f3b1c4d381db496a72b5a8b246574b"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/staff/wrap_c65c35.png"
+hash = "6db082d3ff56fa44fbb6d4c11a20dc03f2e9c841608b3071ac9f003007912491"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/ancient_inside.png"
+hash = "93dbfcf95b50ad14233b859f79caaba63c2562df48cf173f3e0bd2b43d1d8e85"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/ancient_paper.png"
+hash = "2fcb7ca55fd2ae6c2a6d4b5626c3901d8dcbd70b34593a6c15a4b82a5ecb1dd9"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/ancient_paper_edge.png"
+hash = "f3505a534ff413293f547dfc8218aa7b4e044111a8162a36474824dc59be4de5"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/coating.png"
+hash = "dbe8f341a494b62a50692ce82230c2015a469afe0708807f76ec856ed51f513d"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/inside.png"
+hash = "ad1af72855a33d82fa51712725beff1bb7f30e3a104149cabc1ab517343bbde2"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/knot.png"
+hash = "b6403f74e3f3fe11e56364272927ef3f5e6a1c95a27a931aac17eca2028d1149"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/lens_edge.png"
+hash = "8d89702df9c020f0bb892ab495cc26c06a35b603151423e878fc8f494d4e1d55"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/paper.png"
+hash = "4f2fa45f38a82aa9b4b664c4939840786d56331f5b829ab17f2e836586d7c8e6"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/paper_edge.png"
+hash = "dcc5f0c40b51783b541b816ba2bce8da77630b15683b50fec1b156f13cf36b59"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/ribbon.png"
+hash = "5c1c4870eefa980cc4c2303b4e8b48a597f0fb013a267f3b1e0dddb56b59a64f"
+
+[[files]]
+file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/hexcasting/textures/item/equipment/hex/study/slate_written.png"
+hash = "245078600fe43c5f014a5b6308e1d1c521ccc0c87971a86774b1c5c653d52583"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/horseman/models/item/copper_horn.json"

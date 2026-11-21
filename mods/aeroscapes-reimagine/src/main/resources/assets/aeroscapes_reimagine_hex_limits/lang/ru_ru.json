@@ -1,0 +1,9 @@
+{
+  "hexcasting.mishap.aeroscapes_blast": "Задайте силу взрыва не больше 4.",
+  "hexcasting.mishap.aeroscapes_blink": "«Перенос» перемещает цель на расстояние до 16 блоков.",
+  "hexcasting.mishap.aeroscapes_effect": "Выберите эффект не выше II уровня.",
+  "hexcasting.mishap.aeroscapes_impulse": "Укажите вектор толчка длиной не больше 1,5.",
+  "hexcasting.mishap.aeroscapes_lift": "Левитация может длиться до 4 секунд.",
+  "hexcasting.mishap.aeroscapes_teleport": "«Великое Перемещение» перемещает цель на расстояние до 64 блоков.",
+  "hexcasting.mishap.aeroscapes_travel_interval": "Между узорами перемещения одной цели должно пройти 20 секунд."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:hex_staff_epic",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/hex_staff"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "light_purple"
+  },
+  "attributes": []
+}

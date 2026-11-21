@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.hexquality",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "mixins": [
+    "CarrierMishapMixin",
+    "CarrierTooltipMixin",
+    "StaffExecutionMixin",
+    "StaffResetMixin"
+  ],
+  "injectors": { "defaultRequire": 1 }
+}

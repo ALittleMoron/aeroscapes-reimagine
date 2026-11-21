@@ -4,6 +4,15 @@ description: Version history.
 status: available
 ---
 
+## 0.6.8
+
+- Draw spells with Hex Casting staves using amethyst from geodes. Assign a programmed Cypher, Trinket or Artifact to the ability wheel and cast from its own charge.
+- Reforged staves help locate a failed pattern. Reforged program carriers report charge and failures. Reforging a jeweler's hammer can save durability and collect drops.
+- Characters carry full-length Hex Casting staves near the middle of the curved shaft. Staff heads and bindings vary by material. The jeweler's hammer handle sits across the palm, and Hex books use the same grip as the Chipped Alchemy Book.
+- Staff tips stay in view in first person. Scrolls have a partly unrolled edge and the scrying lens has a broad glass bevel. Program carriers have distinct settings, and faceted media phials show their fill level and color.
+- The `make model-preview` command renders an offline gallery of held items, sky rays and all four cloud jelly forms.
+- Hex movement patterns share a recovery time per target. Blink, Greater Teleport, impulse, levitation, adjustable effect levels and explosions have limits.
+
 ## 0.6.7
 
 - Sky rays propel themselves with broad fin strokes, glide through banked turns and defend themselves when attacked.

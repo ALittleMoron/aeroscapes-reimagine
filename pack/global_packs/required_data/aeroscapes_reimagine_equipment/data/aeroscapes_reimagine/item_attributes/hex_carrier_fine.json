@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:hex_carrier_fine",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/hex_carrier"
+    }
+  ],
+  "weight": 1,
+  "style": {
+    "color": "green"
+  },
+  "attributes": []
+}

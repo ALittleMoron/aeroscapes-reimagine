@@ -1579,6 +1579,36 @@
     "reason": "Removed at the owner's request after their gameplay comparison found chunk generation worked better without OpenCL; CPU C2ME remains selected."
   },
   {
+    "slug": "caelus",
+    "name": "Caelus API",
+    "project_id": "40FYwb4z",
+    "version_id": "KsfI4QsR",
+    "version": "7.0.1+1.21.1",
+    "filename": "caelus-neoforge-7.0.1+1.21.1.jar",
+    "sha512": "3763f95304ade2bacb217828c74eeef7905a114f71d41537d56121af58c182c2685467a5afb7e03ddb3997ec3d7496bdfdf71a9946a9f33e3470393e7a13306d",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LGPL-3.0-or-later",
+      "name": "GNU Lesser General Public License v3.0 or later",
+      "url": null
+    },
+    "source_url": "https://github.com/TheIllusiveC4/Caelus",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.6.8 programmable magic",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "e4c2e1af4e3082d68f7df75f7c8ce30116d71515",
+    "file_size": 50235
+  },
+  {
     "slug": "carry-on",
     "name": "Carry On",
     "project_id": "joEfVgkn",
@@ -6016,6 +6046,35 @@
     "file_size": 223126
   },
   {
+    "slug": "hexcast-neoforged",
+    "name": "HexCast NEOFORGED",
+    "project_id": "lZGsiJ1L",
+    "version_id": "3qkLQwpf",
+    "version": "0.11.1-19",
+    "filename": "hexcast-neoforged-1.21.1-0.11.1-19+neoforge.1.21.1.jar",
+    "sha512": "1b57619c9298d4ee7f77db44d0d860bcc7e0f48939a9a57657b6ae7ed386fcc14e4412d5358145cd58e3a85bf0f30c46ccde954a86cea53c6293534e81d2a889",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/a1exrom/hex_cast_NEOFORGED",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.6.8 programmable magic",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "824413542e1a885f85ad8a04627c689e617f745b",
+    "file_size": 3467212
+  },
+  {
     "slug": "horseman",
     "name": "Horseman",
     "project_id": "qIv5FhAA",
@@ -8369,6 +8428,65 @@
     "project_id": "pYFUU6cq",
     "status": "deferred",
     "reason": "Avoid a second overlapping particle system; Subtle Effects is the selected layer."
+  },
+  {
+    "slug": "patchouli",
+    "name": "Patchouli",
+    "project_id": "nU0bVIaL",
+    "version_id": "BIogJv2D",
+    "version": "1.21.1-93-neoforge",
+    "filename": "Patchouli-1.21.1-93-NEOFORGE.jar",
+    "sha512": "0b5c172db9a6eeecb5ca44b359a83548c3a60be7ff313959acdfc1e5b8039736c18e57e947d435b52d06da31159d2d02ea36e5742668dbc826308a4c99e4039f",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "CC-BY-NC-SA-3.0",
+      "name": "Creative Commons Attribution Non Commercial Share Alike 3.0 Unported",
+      "url": null
+    },
+    "source_url": "https://github.com/VazkiiMods/Patchouli/",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.6.8 programmable magic",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "5413bb9b8fc35ebe46b06b48bf9afafbd8471140",
+    "file_size": 646777
+  },
+  {
+    "slug": "paucal",
+    "name": "PAUCAL",
+    "project_id": "TZo2wHFe",
+    "version_id": "zgpdzVKd",
+    "version": "0.7.0",
+    "filename": "paucal-0.7.0+neoforge-1.21.1.jar",
+    "sha512": "49364da2d43ddbab5533300a2da0163ff6328f2680111efb2128822a497abd94c9c770b8844b21aabc57b77b8b275ae50cc2f922462cf44322b58cf4916ae467",
+    "release_type": "alpha",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/gamma-delta/PAUCAL",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.6.8 programmable magic",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "1cd24d54fda9916d8c1671a72dfde1789184d89a",
+    "file_size": 257735,
+    "exception": "Owner selected this exact NeoForge 1.21.1 alpha as the dependency of HexCast NEOFORGED 0.11.1-19."
   },
   {
     "slug": "pf-neoforge",

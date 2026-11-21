@@ -55,6 +55,22 @@ public final class ItemModelResourcesTest {
         require(ItemModelResources.enabled() == use3d, "Apply mode with client resources");
         require(!PresentationConfig.CELESTIAL_SKY.get(), "Preserve the independent sky preference");
         customRenderers(use3d);
+        staffPerspective(use3d);
+      }
+      ItemModelResources.prepare(PackType.CLIENT_RESOURCES, List.of());
+      staffPerspective(true);
+      var layered = packs();
+      layered.add(
+          new MemoryPack(
+              "higher-priority",
+              Map.of("hexcasting:models/item/equipment/held/staff/oak.json", "custom oak")));
+      try (var withOverride = new MultiPackResourceManager(PackType.CLIENT_RESOURCES, layered)) {
+        ItemModelResources.modelsBaked(withOverride);
+        staffPerspective(true, false);
+      }
+      try (var withoutPack = new MultiPackResourceManager(PackType.CLIENT_RESOURCES, List.of())) {
+        ItemModelResources.modelsBaked(withoutPack);
+        staffPerspective(false);
       }
       PresentationConfig.ITEM_MODELS_3D.set(false);
       require(ItemModelResources.enabled(), "Unsaved edits cannot change loaded render seams");
@@ -77,6 +93,7 @@ public final class ItemModelResourcesTest {
     var selected = ItemModelResources.prepare(PackType.CLIENT_RESOURCES, packs);
     if (use3d) require(selected == packs, "3D retains the original resource stack");
     try (var manager = new MultiPackResourceManager(PackType.CLIENT_RESOURCES, selected)) {
+      ItemModelResources.modelsBaked(manager);
       require(
           manager
               .listPacks()
@@ -199,6 +216,34 @@ public final class ItemModelResourcesTest {
     require(additional.isEmpty() != use3d, "Never bake hidden additional models in 2D");
   }
 
+  private static void staffPerspective(boolean separate) {
+    staffPerspective(separate, separate);
+  }
+
+  private static void staffPerspective(boolean separate, boolean oak) {
+    for (boolean left : new boolean[] {false, true}) {
+      var third =
+          left
+              ? ItemDisplayContext.THIRD_PERSON_LEFT_HAND
+              : ItemDisplayContext.THIRD_PERSON_RIGHT_HAND;
+      var first =
+          left
+              ? ItemDisplayContext.FIRST_PERSON_LEFT_HAND
+              : ItemDisplayContext.FIRST_PERSON_RIGHT_HAND;
+      for (String item : List.of("staff/oak", "battery", "cypher", "trinket", "artifact", "focus"))
+        require(
+            HeldEquipmentGrip.punchyDisplay(
+                    ResourceLocation.fromNamespaceAndPath("hexcasting", item), third, left, false)
+                == ((item.equals("staff/oak") ? oak : separate) ? first : third),
+            item + " pose must follow the loaded models in either hand");
+      require(
+          HeldEquipmentGrip.punchyDisplay(
+                  ResourceLocation.parse("hexcasting:spellbook"), third, left, false)
+              == third,
+          "Keep Punchy's normal book attachment");
+    }
+  }
+
   private static List<PackResources> packs() {
     var nativeModels =
         Map.of(
@@ -213,10 +258,16 @@ public final class ItemModelResourcesTest {
             "minecraft:models/item/bow_pulling_2.json", "refined",
             "minecraft:items/trident.json", "definition");
     var owned =
-        Map.of(
-            "minecraft:models/item/diamond_sword.json", "sculpted",
-            "minecraft:models/item/bow_pulling_2.json", "sculpted",
-            "minecraft:punchy/compat/equipment.json", "grip");
+        new java.util.HashMap<>(
+            Map.of(
+                "minecraft:models/item/diamond_sword.json", "sculpted",
+                "minecraft:models/item/bow_pulling_2.json", "sculpted",
+                "minecraft:punchy/compat/equipment.json", "grip"));
+    for (String leaf :
+        List.of("staff/oak", "phial_small_0", "cypher", "trinket", "artifact", "focus")) {
+      owned.put("hexcasting:models/item/equipment/held/" + leaf + ".json", "geometry");
+      owned.put("hexcasting:models/item/" + leaf + ".json", "selector");
+    }
     var atmosphere =
         Map.of(
             "yo_hooks:models/item/iron_grappling_hook.json", "sculpted",
