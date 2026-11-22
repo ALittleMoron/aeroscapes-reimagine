@@ -1,4 +1,11 @@
 {
+  "structure.aeroscapes_reimagine.survey_camp": "Survey Camp",
+  "structure.aeroscapes_reimagine.surviving_garden": "Surviving Garden",
+  "structure.aeroscapes_reimagine.fox_den": "Fox Den",
+  "structure.aeroscapes_reimagine.landing_deck": "Landing Deck",
+  "aeroscapes_reimagine.emi.ribbits.maraca": "Buy from a merchant in a Ribbits village. Bring 6 to 8 amethyst shards and hold Use to play along with the music.",
+  "aeroscapes_reimagine.emi.ribbits.plants": "Look for these plants in a Ribbits village. Use bone meal on an established plant to spread it.",
+  "aeroscapes_reimagine.emi.ribbits.village": "Find these materials in Ribbits villages or buy them from the village merchant for amethyst shards.",
   "entity.aeroscapes_reimagine.sky_ray": "Sky Ray",
   "entity.aeroscapes_reimagine.cloud_jelly": "Cloud Jelly",
   "block.aeroscapes_reimagine.wilted_sapling": "Wilted Sapling",

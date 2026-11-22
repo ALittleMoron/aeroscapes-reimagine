@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "aeroscapes_reimagine:landing_deck",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 10,
+    "separation": 8,
+    "salt": 73170462,
+    "locate_offset": [8, 0, 8]
+  }
+}

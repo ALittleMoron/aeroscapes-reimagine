@@ -76,6 +76,7 @@ public final class AeroscapesReimagine {
     dev.aeroscapes.sky.fauna.AeroFauna.register(modBus);
     CrystalResonance.register(modBus);
     CliffHabitats.register(modBus);
+    IslandStopStructure.register(modBus);
     WildlifeReactions.register();
     dev.aeroscapes.weathering.WiltedSaplingBlock.register(modBus);
     if (ModList.get().isLoaded("create") && ModList.get().isLoaded("immersive_weathering"))
@@ -131,6 +132,7 @@ public final class AeroscapesReimagine {
     GroundedColumnPredicate.register(modBus);
     HangingEntityAnchorProcessor.register(modBus);
     NonVoidProjectionProcessor.register(modBus);
+    GroundedRibbitPaths.register(modBus);
     InteractiveStructureLocator.register();
     NeoForge.EVENT_BUS.addListener(AeroscapesReimagine::selectSpawn);
     NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, FeaturePreparation::prepare);

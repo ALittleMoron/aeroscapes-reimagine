@@ -2,6 +2,12 @@ Aeroscapes Reimagine 0.6.0 — third-party notices
 
 This independent pack is not endorsed by the original projects.
 
+Ribbits 4.1.6: the official download is referenced unchanged. Code is LGPLv3.
+The Ribbit character and assets are © 2025 Refresh Studios and Bonsai Studios,
+all rights reserved under the terms in the original JAR.
+https://modrinth.com/mod/ribbits/version/XrUKaWrw
+https://github.com/yungnickyoung/Ribbits/tree/b1cde776bc1eeb613cf3e21014d9397b213290e7
+
 Create: Steam Powered 3.2.1: TeamMoeg, tilera and contributors; GPL-3.0-or-later
 (project declaration), GPLv3 (JAR descriptor). The official JAR is unchanged.
 https://modrinth.com/mod/create-steam-powered/version/w3zLn2Kv

@@ -6,6 +6,17 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Island stops in 0.7.3
+
+[Ribbits 4.1.6](https://modrinth.com/mod/ribbits/version/XrUKaWrw) supplies
+musical swamp villages on both sides. The [CurseForge file](https://www.curseforge.com/minecraft/mc-mods/ribbits/files/7355196)
+matches the Modrinth binary. The original JAR uses the existing GeckoLib and
+YUNG's API pins. The pack checks the footprint of each native village assembly
+and limits pillar generation to columns with a local footing. The native
+maraca retains its 3D hand renderer and is acquired from a Ribbits merchant.
+The upstream code is LGPLv3. The character, art and audio have separate
+reserved rights and remain in the unchanged official download.
+
 ## Footprints in 0.7.2
 
 [Imprint 1.4.1](https://modrinth.com/mod/imprint/version/RR7pRzaO) adds
@@ -315,7 +326,7 @@ cleanup and material mass values are unchanged.
 
 [Traveler's Titles 5.1.3](https://modrinth.com/mod/travelers-titles/version/2y01mBUy)
 and [YUNG's API 5.1.9](https://modrinth.com/mod/yungs-api/version/2prKITKh) are
-unchanged LGPLv3 client installations. No server content consumes this API here.
+unchanged LGPLv3 files. The latter also installs on the server for Ribbits.
 The selected title binary reads the full biome ID blacklist before displaying
 text, recording a recent entry or playing sound. The config hides only
 `aeroscapes_reimagine:void`, disables the skylight-only restriction for lower

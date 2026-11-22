@@ -5007,7 +5007,7 @@ hash = "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "73dbe4a598ab7e784c887d375d30865740815e0091dfaa86f5b550a3f02d018d"
+hash = "8c02c5388331e3c29819b41626fdf73c60c4d7a99d96c1e6efe65b8ffae7529f"
 
 [[files]]
 file = "licenses/Vintage-SSW-LGPL-2.1.txt"
@@ -5023,7 +5023,7 @@ hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "3b3233bfb3de6b1e7623b88bb78199ab79122a017b11a15bad50911cee5fac7f"
+hash = "91176eabca7501df1bd3a579a0fe89b4a442e35848b2ff042152faaaf15e5a0b"
 
 [[files]]
 file = "licenses/fluidlogistics-1.3.2-corresponding-source.zip"
@@ -5073,7 +5073,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "fadfab5c1181f8ab4ce3ac409521b8f416017c3e1e5c68cf3b77db83405e8ec1"
+hash = "bd1486e004e9924e0b6aed7589a598a30355e9146c9e12c94a4880432800a2e0"
 
 [[files]]
 file = "mods/agricraft-rereloaded.pw.toml"
@@ -6051,6 +6051,11 @@ hash = "36c7e1d360de3bafd5c4b8c7cd2aa1bf9ccae8be5ed94379d95f69fd48aa5ca2"
 metafile = true
 
 [[files]]
+file = "mods/ribbits.pw.toml"
+hash = "20815329a2d39585db5a92d5ff5ddb6b72c2b4235a68a13389aaaa92963db606"
+metafile = true
+
+[[files]]
 file = "mods/rpl.pw.toml"
 hash = "abf6c18c88d6622d3e50fe693a38b35137444b249d1154cf2400ae3fdc6119fd"
 metafile = true
@@ -6327,7 +6332,7 @@ metafile = true
 
 [[files]]
 file = "mods/yungs-api.pw.toml"
-hash = "91d6c99629759bd09b526f5efc23a53fa3d6c48b359fe58bce57bf78611dce4d"
+hash = "b4e6cc714593ccf2a836ec5a46533b33e08b9f4397a4c933e549fdc2be0d13a2"
 metafile = true
 
 [[files]]

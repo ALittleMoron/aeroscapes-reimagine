@@ -164,6 +164,12 @@
       "version_id": "Agn1kmUY",
       "filename": "supplementaries-neoforge-1.21.1-3.6.8.jar",
       "sha512": "5636533508d2ea9192b304760a254999e258458f7cd4609793083137df4243aa6e990009866b4aa79129853c0829606115f14fbe69005d99d9139b3d3a555c28"
+    },
+    {
+      "project_id": "8YcE8y4T",
+      "version_id": "XrUKaWrw",
+      "filename": "Ribbits-1.21.1-NeoForge-4.1.6.jar",
+      "sha512": "5e78b0d63757d5904b96e0c4565d56832ca42b1cbba939b98101f848f618cfcda94d5aeadeacb0faff85bdd05fb071f2df551a42c3e7d0e3a2564adbec227931"
     }
   ],
   "resources": [
@@ -3825,6 +3831,24 @@
       "source": "data/supplementaries/loot_modifiers/ash_from_burning_mobs.json",
       "source_sha256": "cf77890d25902b0cc1f26269c405bfc05003ef63b25f5b66e380fef08c93e1be",
       "result_json_sha256": "fc44fcfdd76f839ff16041f6dd73ee57f2a290d38ce7a041da6c7c917e42a6f4"
+    },
+    {
+      "id": "ribbits:worldgen/structure/ribbit_village.json",
+      "provider": "8YcE8y4T",
+      "version": "XrUKaWrw",
+      "source": "data/ribbits/worldgen/structure/ribbit_village.json",
+      "source_sha256": "e1f35bf44030efd38909439dd05161723332d7f895835ba1c21b5161f51420cb",
+      "result_json_sha256": "0d2f55ef4d463404426a5ffcd380439770ee044c2c8a32344d0936848b032a39",
+      "reason": "Keep native Ribbits village assembly and trades while requiring a supported, compact footprint on floating wetlands."
+    },
+    {
+      "id": "ribbits:worldgen/processor_list/main.json",
+      "provider": "8YcE8y4T",
+      "version": "XrUKaWrw",
+      "source": "data/ribbits/worldgen/processor_list/main.json",
+      "source_sha256": "8ec3c9756e87489e0eed8ee6ebab2e70296fb8b07278e4a25c661da353b4eb0a",
+      "result_json_sha256": "14ca7e3a415a96b6e45a2ed9b5317271016577b27540550f76f3cbf89015b036",
+      "reason": "Check actual path block footing after native template projection."
     }
   ]
 }

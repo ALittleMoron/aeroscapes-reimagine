@@ -4,6 +4,11 @@ description: Version history.
 status: available
 ---
 
+## 0.7.3
+
+- New island terrain can hold widely spaced survey camps with basic supplies, gardens with connected stone walls on level ground, and mossy fox burrows. Lantern-marked landing decks sit apart on open island edges with clear approaches and connected railings. Each type is searchable with Explorer’s Compass or `/locate structure`.
+- Ribbits villages bring music and trading to suitable island swamps. Their buildings use a compact layout and short supports.
+
 ## 0.7.2
 
 - Gull colonies gather on exposed island ledges. Bats fly out from sheltered roosts at dusk.

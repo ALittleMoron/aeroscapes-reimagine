@@ -9204,6 +9204,48 @@
     "dependency_note": "Exact native 1.21 artifact bundles YABN1.0.3 and ByteCodecs1.1.2. Source audit uses 1.21.1 branch commit95968b13173937e9166b4224ff7528508bdb144c, not similarly named later-platform tag."
   },
   {
+    "slug": "ribbits",
+    "name": "Ribbits",
+    "project_id": "8YcE8y4T",
+    "version_id": "XrUKaWrw",
+    "version": "4.1.6",
+    "filename": "Ribbits-1.21.1-NeoForge-4.1.6.jar",
+    "sha512": "5e78b0d63757d5904b96e0c4565d56832ca42b1cbba939b98101f848f618cfcda94d5aeadeacb0faff85bdd05fb071f2df551a42c3e7d0e3a2564adbec227931",
+    "sha1": "22dfd6a52d31bcab58b93c2d4a637ae1b2a01895",
+    "file_size": 2215572,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only (source code); artwork and character rights reserved",
+      "url": "https://github.com/yungnickyoung/Ribbits/blob/b1cde776bc1eeb613cf3e21014d9397b213290e7/LICENSE"
+    },
+    "source_url": "https://github.com/yungnickyoung/Ribbits",
+    "dependencies": [
+      {
+        "project_id": "Ua7DFN59",
+        "version_id": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "8BmcQJ2H",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected musical swamp settlements for island expeditions",
+    "dependency_note": "Native NeoForge requires YUNG’s API 5.1.5 or newer and GeckoLib 4.7.5.1 or newer. Existing pins satisfy both dependencies; YUNG’s API now also installs server-side. The original provider JAR stays unchanged."
+  },
+  {
     "slug": "rpl",
     "name": "Ritchie's Projectile Library",
     "project_id": "B3pb093D",
@@ -11578,7 +11620,7 @@
     "sha1": "2c4b740c8ad27bbcb2a21b85b64f011b809aed91",
     "file_size": 413763,
     "release_type": "release",
-    "side": "client",
+    "side": "both",
     "kind": "mod",
     "loaders": [
       "neoforge"
@@ -11596,7 +11638,7 @@
     "dependencies": [],
     "status": "included",
     "origin": "Owner-selected detailed construction and biome arrival titles; unchanged official provider files",
-    "dependency_note": "Unchanged native API5.1.9 installed only in the client as the dependency of client-only Traveler Titles. No server feature consumes it in this pack; no additional dependency or bridge."
+    "dependency_note": "Unchanged native API 5.1.9 serves client-only Traveler’s Titles and both-side Ribbits. No cross-loader bridge."
   },
   {
     "slug": "zeta",

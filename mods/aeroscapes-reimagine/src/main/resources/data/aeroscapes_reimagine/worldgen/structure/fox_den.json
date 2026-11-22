@@ -1,0 +1,7 @@
+{
+  "type": "aeroscapes_reimagine:island_stop",
+  "biomes": "#minecraft:is_overworld",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "kind": "den"
+}

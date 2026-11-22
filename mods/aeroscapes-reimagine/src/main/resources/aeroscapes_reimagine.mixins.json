@@ -13,6 +13,8 @@
     "IslandCarvingContextMixin",
     "IslandCarverHeightMixin",
     "IslandCarverProtectionMixin",
+    "IslandLandingPreparationMixin",
+    "IslandStopDecorationMixin",
     "IslandCaveStartMixin",
     "IslandNatureSpiritCaveStartMixin",
     "IslandNatureSpiritCarverHeightMixin",

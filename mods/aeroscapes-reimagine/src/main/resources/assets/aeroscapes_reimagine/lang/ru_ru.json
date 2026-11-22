@@ -1,4 +1,11 @@
 {
+  "structure.aeroscapes_reimagine.survey_camp": "Стоянка наблюдателей",
+  "structure.aeroscapes_reimagine.surviving_garden": "Уцелевший сад",
+  "structure.aeroscapes_reimagine.fox_den": "Лисье логово",
+  "structure.aeroscapes_reimagine.landing_deck": "Посадочный настил",
+  "aeroscapes_reimagine.emi.ribbits.maraca": "Маракас продаёт торговец в деревне Ribbits. Возьмите 6–8 осколков аметиста. Чтобы подыграть музыкантам, удерживайте кнопку использования.",
+  "aeroscapes_reimagine.emi.ribbits.plants": "Ищите эти растения в деревне Ribbits. Внесите костную муку под уже растущий экземпляр, чтобы размножить растение.",
+  "aeroscapes_reimagine.emi.ribbits.village": "Эти материалы можно найти в деревнях Ribbits или купить у местного торговца за осколки аметиста.",
   "gamerule.aeroscapesLargeStartingIsland": "Большой стартовый остров",
   "gamerule.aeroscapesLargeStartingIsland.description": "При создании мира ищет естественный остров с горой, несколькими биомами и лесом поблизости. Поиск может увести дальше от обычной точки старта.",
   "block.aeroscapes_reimagine.wilted_sapling": "Увядший саженец",

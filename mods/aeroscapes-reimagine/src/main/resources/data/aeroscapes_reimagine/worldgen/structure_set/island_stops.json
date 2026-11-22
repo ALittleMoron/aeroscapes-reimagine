@@ -1,0 +1,27 @@
+{
+  "structures": [
+    {
+      "structure": "aeroscapes_reimagine:survey_camp",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:surviving_garden",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:fox_den",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 8,
+    "separation": 6,
+    "salt": 73170461,
+    "locate_offset": [
+      8,
+      0,
+      8
+    ]
+  }
+}

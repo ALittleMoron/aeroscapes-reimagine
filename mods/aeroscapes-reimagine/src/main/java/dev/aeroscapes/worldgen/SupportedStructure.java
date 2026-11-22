@@ -60,6 +60,7 @@ public final class SupportedStructure extends Structure {
     TEMPLATE_SEABED,
     GROUNDED_SURFACE,
     CAMP_SURFACE,
+    WETLAND_VILLAGE,
     MARINE_SURFACE,
     CAVERN,
     ANCHORED_COMPLEX,
@@ -83,6 +84,7 @@ public final class SupportedStructure extends Structure {
       TYPES.register("supported", () -> () -> CODEC);
   private static final int SAMPLE_STEP = 4;
   private static final int CAMP_RELIEF = 16;
+  public static final int WETLAND_STILT_DEPTH = 12;
   // The pinned surface definitions have start offsets <= 0, except coconut village's +1.
   private static final int SURFACE_START_ALLOWANCE = 1;
 
@@ -180,6 +182,12 @@ public final class SupportedStructure extends Structure {
       if (!supportedSurfaceRoot(context, pieces.pieces().getFirst(), columns)
           || !supportedSurfaceFootprint(pieces, 0, 0, 0, terrain)
           || !supportedCamps(context, pieces, terrain)) return Optional.empty();
+      return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
+    }
+    if (terrainCheck == TerrainCheck.WETLAND_VILLAGE) {
+      if (!supportedSurfaceRoot(context, pieces.pieces().getFirst(), columns)
+          || !wetlandVillageFootings(pieces, new StructureTerrain(context)))
+        return Optional.empty();
       return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
     }
     if (terrainCheck == TerrainCheck.GROUNDED_SURFACE)
@@ -366,6 +374,30 @@ public final class SupportedStructure extends Structure {
   }
 
   private record Foundation(BlockPos position, boolean supported) {}
+
+  private static boolean wetlandVillageFootings(PiecesContainer pieces, StructureTerrain terrain) {
+    for (StructurePiece piece : pieces.pieces()) {
+      if (!(piece instanceof PoolElementStructurePiece pool)
+          || pool.getElement() instanceof FeaturePoolElement) continue;
+      var box = piece.getBoundingBox();
+      boolean terrainMatching =
+          pool.getElement().getProjection() == StructureTemplatePool.Projection.TERRAIN_MATCHING;
+      int top = box.minY() + (terrainMatching ? 2 : -1);
+      for (int x = box.minX(); x <= box.maxX(); x++) {
+        for (int z = box.minZ(); z <= box.maxZ(); z++) {
+          boolean supported = false;
+          for (int y = top; y >= box.minY() - WETLAND_STILT_DEPTH; y--) {
+            if (terrain.foundationBed(x, y, z)) {
+              supported = true;
+              break;
+            }
+          }
+          if (!supported) return false;
+        }
+      }
+    }
+    return true;
+  }
 
   private static boolean supportedFoundations(
       PiecesContainer pieces, StructureTerrain terrain, int dx, int dy, int dz) {

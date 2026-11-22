@@ -1,0 +1,23 @@
+{
+  "values": [
+    {"id": "rocks:acacia_stick", "required": false},
+    {"id": "rocks:andesite_rock", "required": false},
+    {"id": "rocks:bamboo_stick", "required": false},
+    {"id": "rocks:birch_stick", "required": false},
+    {"id": "rocks:cherry_stick", "required": false},
+    {"id": "rocks:dark_oak_stick", "required": false},
+    {"id": "rocks:diorite_rock", "required": false},
+    {"id": "rocks:granite_rock", "required": false},
+    {"id": "rocks:gravel_rock", "required": false},
+    {"id": "rocks:jungle_stick", "required": false},
+    {"id": "rocks:mangrove_stick", "required": false},
+    {"id": "rocks:oak_stick", "required": false},
+    {"id": "rocks:pinecone", "required": false},
+    {"id": "rocks:red_sand_rock", "required": false},
+    {"id": "rocks:rock", "required": false},
+    {"id": "rocks:sand_rock", "required": false},
+    {"id": "rocks:seashell", "required": false},
+    {"id": "rocks:spruce_stick", "required": false},
+    {"id": "rocks:starfish", "required": false}
+  ]
+}

@@ -2535,6 +2535,21 @@
       "reason": "The corresponding CurseForge file 8777573 differs in META-INF/MANIFEST.MF from the exact Modrinth pin."
     },
     {
+      "slug": "ribbits",
+      "primary_project_id": "8YcE8y4T",
+      "primary_sha512": "5e78b0d63757d5904b96e0c4565d56832ca42b1cbba939b98101f848f618cfcda94d5aeadeacb0faff85bdd05fb071f2df551a42c3e7d0e3a2564adbec227931",
+      "status": "hosted",
+      "project_id": 622967,
+      "file_id": 7355196,
+      "filename": "Ribbits-1.21.1-NeoForge-4.1.6.jar",
+      "sha512": "5e78b0d63757d5904b96e0c4565d56832ca42b1cbba939b98101f848f618cfcda94d5aeadeacb0faff85bdd05fb071f2df551a42c3e7d0e3a2564adbec227931",
+      "sha1": "22dfd6a52d31bcab58b93c2d4a637ae1b2a01895",
+      "file_size": 2215572,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge download matches the pinned Modrinth SHA-512."
+    },
+    {
       "slug": "rpl",
       "primary_project_id": "B3pb093D",
       "primary_sha512": "6d64c84505a5a8fbb96d106603065465c5a2314ec09636900c5c1a31014c12fa68f1a41e758313cbf0d6f95d9a1f53bd67339020f7d8db0e184c23f66aee0330",

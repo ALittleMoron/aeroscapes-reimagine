@@ -103,6 +103,11 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String islandStops = System.getProperty("aeroscapes.regression.islandStops");
+    if (islandStops != null) {
+      IslandStopsRegression.verify(level, Path.of(islandStops));
+      return;
+    }
     String startingIsland = System.getProperty("aeroscapes.regression.startingIsland");
     if (startingIsland != null) {
       StartingIslandRegression.verify(level, startingIsland);

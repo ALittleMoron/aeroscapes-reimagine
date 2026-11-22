@@ -9646,5 +9646,57 @@
         }
       }
     ]
+  },
+  {
+    "id": "ribbits:worldgen/structure/ribbit_village.json",
+    "mod": "ribbits",
+    "source": "data/ribbits/worldgen/structure/ribbit_village.json",
+    "sha256": "e1f35bf44030efd38909439dd05161723332d7f895835ba1c21b5161f51420cb",
+    "edits": [
+      {
+        "op": "remove",
+        "path": [
+          "enhanced_terrain_adaptation"
+        ]
+      },
+      {
+        "op": "set",
+        "path": [
+          "size"
+        ],
+        "value": 4
+      },
+      {
+        "op": "set",
+        "path": [
+          "max_distance_from_center"
+        ],
+        "value": 48
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "wetland_village"
+      }
+    ]
+  },
+  {
+    "id": "ribbits:worldgen/processor_list/main.json",
+    "mod": "ribbits",
+    "source": "data/ribbits/worldgen/processor_list/main.json",
+    "sha256": "8ec3c9756e87489e0eed8ee6ebab2e70296fb8b07278e4a25c661da353b4eb0a",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "processors",
+          "17"
+        ],
+        "value": {
+          "processor_type": "aeroscapes_reimagine:grounded_ribbit_paths"
+        }
+      }
+    ]
   }
 ]
