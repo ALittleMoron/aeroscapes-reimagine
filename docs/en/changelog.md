@@ -4,6 +4,10 @@ description: Version history.
 status: available
 ---
 
+## 0.7.5
+
+- Some survey camps have a field sign that leads along a short walk to exposed ore on the same island.
+
 ## 0.7.4
 
 - Find abandoned airships and observation balloons with Create and Aeronautics fittings in newly explored skies. A working mooring line and a broken tether mark the ledge approach to one airship. The ladder and the ship approach lead to the same cargo.

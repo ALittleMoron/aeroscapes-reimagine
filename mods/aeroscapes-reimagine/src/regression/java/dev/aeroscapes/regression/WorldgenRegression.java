@@ -107,6 +107,11 @@ public final class WorldgenRegression {
       AirborneExpeditionRegression.verify(level);
       return;
     }
+    String surveyNotesReport = System.getProperty("aeroscapes.regression.surveyNotesReport");
+    if (surveyNotesReport != null) {
+      SurveyNotesRegression.verify(level, Path.of(surveyNotesReport));
+      return;
+    }
     String islandStops = System.getProperty("aeroscapes.regression.islandStops");
     if (islandStops != null) {
       IslandStopsRegression.verify(level, Path.of(islandStops));

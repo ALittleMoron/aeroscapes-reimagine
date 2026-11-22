@@ -20,6 +20,7 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.ChunkGenerator;
+import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.level.chunk.status.ChunkStatus;
 import net.minecraft.world.level.levelgen.DensityFunction.SinglePointContext;
 import net.minecraft.world.level.levelgen.Heightmap;
@@ -31,7 +32,9 @@ import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceSerializationContext;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePieceType;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.event.level.ChunkEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -90,6 +93,18 @@ public final class IslandStopStructure extends Structure {
   public static void register(IEventBus bus) {
     TYPES.register(bus);
     PIECES.register(bus);
+    NeoForge.EVENT_BUS.addListener(IslandStopStructure::addSurveyNote);
+  }
+
+  private static void addSurveyNote(ChunkEvent.Load event) {
+    if (!event.isNewChunk() || !(event.getChunk() instanceof LevelChunk chunk)) return;
+    for (var start : chunk.getAllStarts().values()) {
+      if (start.isValid()
+          && start.getPieces().getFirst() instanceof Piece piece
+          && piece.kind == Kind.SURVEY) {
+        SurveyNote.place(chunk, piece.site);
+      }
+    }
   }
 
   public static void prepareLanding(WorldGenRegion level, ChunkAccess chunk) {
