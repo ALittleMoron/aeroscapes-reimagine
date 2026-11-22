@@ -1,0 +1,19 @@
+{
+  "aeroscapes_reimagine.abilities.borrowed_invisibility": "Invisibility (Ring I)",
+  "aeroscapes_reimagine.abilities.borrowed_frostwave": "Frostwave (Ring I)",
+  "aeroscapes_reimagine.abilities.stored_breath": "Stored Breath",
+  "aeroscapes_reimagine.abilities.borrowed_invisibility_hint": "While worn, prepare rank 1 Invisibility. It costs mana and shares the learned spell’s cooldown. Removing the ring ends its invisibility.",
+  "aeroscapes_reimagine.abilities.borrowed_frostwave_hint": "While worn, prepare rank 1 Frostwave. It costs mana and shares the learned spell’s cooldown.",
+  "aeroscapes_reimagine.abilities.stored_breath_hint": "Prepare Stored Breath while wearing the necklace. Breathe air for two seconds to charge it. Release it underwater for yourself or aim at a nearby swimmer to share it.",
+  "aeroscapes_reimagine.abilities.expedition_assign": "Click a preparation slot to assign this ability.",
+  "aeroscapes_reimagine.abilities.expedition_discoveries": "Expedition discoveries",
+  "aeroscapes_reimagine.abilities.distraction_throw": "Distraction Throw",
+  "aeroscapes_reimagine.abilities.distraction_throw_hint": "Spend a snowball to distract an idle zombie. Aim at a block it can walk to.",
+  "aeroscapes_reimagine.abilities.exceptional_craft_hint": "Hand crafting can yield an exceptional copy. Higher Crafting skill improves your chance.",
+  "aeroscapes_reimagine.abilities.reason.equipment_required": "Wear the exceptional accessory to use this ability.",
+  "aeroscapes_reimagine.abilities.reason.breath_refill": "Breathe air for two seconds to charge your necklace.",
+  "aeroscapes_reimagine.abilities.reason.breath_unneeded": "The target doesn’t need a breath.",
+  "aeroscapes_reimagine.abilities.breath_given": "Shared a stored breath with %s.",
+  "aeroscapes_reimagine.abilities.breath_received": "%s shared a stored breath with you.",
+  "aeroscapes_reimagine.abilities.breath_used": "Released your stored breath."
+}

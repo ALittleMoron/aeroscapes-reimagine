@@ -2,16 +2,26 @@ package dev.aeroscapes.aquatic;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mojang.blaze3d.platform.NativeImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import javax.imageio.ImageIO;
 import net.minecraft.SharedConstants;
 import net.minecraft.client.renderer.LightTexture;
+import net.minecraft.client.renderer.block.model.ItemModelGenerator;
+import net.minecraft.client.renderer.texture.SpriteContents;
+import net.minecraft.client.resources.metadata.animation.FrameSize;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.Bootstrap;
+import net.minecraft.server.packs.resources.ResourceMetadata;
 import net.neoforged.fml.loading.LoadingModList;
 import punchy.client.renderer.layer.VanillaFirstPersonItemLayer.ToolKind;
 import punchy.config.PunchyTuningConfig;
@@ -24,9 +34,11 @@ public final class IronHeldModelTest {
     LoadingModList.of(List.of(), List.of(), List.of(), List.of(), Map.of());
     SharedConstants.tryDetectVersion();
     Bootstrap.bootStrap();
-    Path assets =
-        Path.of(arguments[0])
-            .resolve("pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets");
+    Path packResources = Path.of(arguments[0]).resolve("pack/resourcepacks");
+    Path assets = packResources.resolve("aeroscapes-reimagine-refined-compat/assets");
+    verifyExpeditionAccessories(packResources.resolve("aeroscapes-reimagine-atmosphere/assets"));
+    verifyStudyScrolls(
+        Path.of(arguments[0]).resolve("mods/aeroscapes-reimagine/src/main/resources/assets"));
     Path items = assets.resolve("irons_spellbooks/models/item");
     JsonObject previews = new JsonObject();
     var failures = new ArrayList<String>();
@@ -107,6 +119,77 @@ public final class IronHeldModelTest {
     if (arguments.length > 1) Files.writeString(Path.of(arguments[1]), previews.toString());
     require(failures.isEmpty(), String.join("\n", failures));
     System.out.println("Iron's Spells: " + states.size() + " native model states baked");
+  }
+
+  private static void verifyExpeditionAccessories(Path assets) throws IOException {
+    var textures = new PreviewTextures(assets, 0);
+    for (String item :
+        List.of(
+            "irons_spellbooks:invisibility_ring",
+            "irons_spellbooks:frostward_ring",
+            "crittersandcompanions:pearl_necklace_3")) {
+      String name =
+          HeldItemModels.nativeModel(item).getAsJsonObject("textures").get("layer0").getAsString();
+      var image = textures.load(name);
+      var encoded = new ByteArrayOutputStream();
+      ImageIO.write(image, "png", encoded);
+      try (var sprite =
+          new SpriteContents(
+              ResourceLocation.parse(name),
+              new FrameSize(image.getWidth(), image.getHeight()),
+              NativeImage.read(new ByteArrayInputStream(encoded.toByteArray())),
+              ResourceMetadata.EMPTY)) {
+        require(
+            new ItemModelGenerator().processFrames(0, "layer0", sprite).size() > 1,
+            item + " must produce visible edges in Minecraft's generated item mesh");
+      }
+    }
+  }
+
+  private static void verifyStudyScrolls(Path assets) throws IOException {
+    var namespace = assets.resolve("aeroscapes_reimagine");
+    var textures = new PreviewTextures(assets, 0);
+    for (String item : List.of("deep_breath_scroll", "distraction_throw_scroll")) {
+      var wrapper = read(namespace.resolve("models/item/" + item + ".json"));
+      String icon =
+          wrapper.getAsJsonObject("base").getAsJsonObject("textures").get("layer0").getAsString();
+      var image = textures.load(icon);
+      require(
+          Arrays.stream(
+                  image.getRGB(
+                      0, 0, image.getWidth(), image.getHeight(), null, 0, image.getWidth()))
+              .anyMatch(pixel -> pixel >>> 24 > 0),
+          item + " has a visible inventory sprite");
+      var perspectives = wrapper.getAsJsonObject("perspectives");
+      var hand =
+          ResourceLocation.parse(
+              perspectives
+                  .getAsJsonObject(IronHeldMesh.HANDS.getFirst())
+                  .get("parent")
+                  .getAsString());
+      for (String context : IronHeldMesh.HANDS)
+        require(
+            perspectives
+                .getAsJsonObject(context)
+                .get("parent")
+                .getAsString()
+                .equals(hand.toString()),
+            item + " has an ordered held mesh in " + context);
+      var child =
+          read(assets.resolve(hand.getNamespace()).resolve("models/" + hand.getPath() + ".json"));
+      var faces = VanillaEquipmentModelTest.bakeObj(child, assets);
+      require(!faces.isEmpty(), item + " bakes visible hand geometry");
+      VanillaEquipmentModelTest.noOverlaps(item, faces);
+      for (String texture :
+          faces.stream().map(VanillaEquipmentModelTest.Face::texture).distinct().toList()) {
+        var material = textures.load(texture);
+        for (int row = 0; row < material.getHeight(); row++)
+          for (int column = 0; column < material.getWidth(); column++)
+            require(
+                material.getRGB(column, row) >>> 24 == 255,
+                item + " has opaque paper and seal faces");
+      }
+    }
   }
 
   private static void checkGlow(String root, List<VanillaEquipmentModelTest.Face> faces) {

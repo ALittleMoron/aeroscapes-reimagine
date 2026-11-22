@@ -1,0 +1,19 @@
+{
+  "aeroscapes_reimagine.abilities.borrowed_invisibility": "Невидимость (кольцо I)",
+  "aeroscapes_reimagine.abilities.borrowed_frostwave": "Морозная волна (кольцо I)",
+  "aeroscapes_reimagine.abilities.stored_breath": "Запасной вдох",
+  "aeroscapes_reimagine.abilities.borrowed_invisibility_hint": "Наденьте кольцо, чтобы подготовить «Невидимость» I уровня. Она расходует ману и восстанавливается вместе с изученным заклинанием. Если снять кольцо, невидимость исчезнет.",
+  "aeroscapes_reimagine.abilities.borrowed_frostwave_hint": "Наденьте кольцо, чтобы подготовить «Морозную волну» I уровня. Она расходует ману и восстанавливается вместе с изученным заклинанием.",
+  "aeroscapes_reimagine.abilities.stored_breath_hint": "Наденьте ожерелье и подготовьте «Запасной вдох». Чтобы пополнить запас, подышите две секунды на воздухе. Используйте вдох под водой для себя или посмотрите на пловца рядом, чтобы поделиться.",
+  "aeroscapes_reimagine.abilities.expedition_assign": "Нажмите на ячейку подготовки, чтобы назначить способность.",
+  "aeroscapes_reimagine.abilities.expedition_discoveries": "Экспедиционные открытия",
+  "aeroscapes_reimagine.abilities.distraction_throw": "Отвлекающий бросок",
+  "aeroscapes_reimagine.abilities.distraction_throw_hint": "Потратьте снежок, чтобы отвлечь зомби, у которого нет цели. Цельтесь в блок, к которому он сможет подойти.",
+  "aeroscapes_reimagine.abilities.exceptional_craft_hint": "При ручном изготовлении может получиться особый экземпляр. Чем выше навык ремесла, тем больше шанс.",
+  "aeroscapes_reimagine.abilities.reason.equipment_required": "Для этой способности наденьте особый аксессуар.",
+  "aeroscapes_reimagine.abilities.reason.breath_refill": "Подышите воздухом две секунды, чтобы пополнить запас ожерелья.",
+  "aeroscapes_reimagine.abilities.reason.breath_unneeded": "Цели сейчас не нужен запасной вдох.",
+  "aeroscapes_reimagine.abilities.breath_given": "Запасной вдох передан игроку %s.",
+  "aeroscapes_reimagine.abilities.breath_received": "Игрок %s поделился с вами запасным вдохом.",
+  "aeroscapes_reimagine.abilities.breath_used": "Вы использовали запасной вдох."
+}

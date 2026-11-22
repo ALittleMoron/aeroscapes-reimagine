@@ -1,0 +1,12 @@
+{
+  "item.aeroscapes_reimagine.deep_breath_scroll": "Свиток изучения: глубокое дыхание",
+  "item.aeroscapes_reimagine.deep_breath_scroll.use": "Научитесь медленнее расходовать воздух под водой.",
+  "item.aeroscapes_reimagine.distraction_throw_scroll": "Свиток изучения: отвлекающий бросок",
+  "item.aeroscapes_reimagine.distraction_throw_scroll.use": "Подготовьте способность и бросьте снежок в блок рядом с зомби, у которого нет цели.",
+  "aeroscapes_reimagine.expedition.study_hint": "Изучается один раз. Лишние свитки можно обменять.",
+  "aeroscapes_reimagine.expedition.already_studied": "Вы уже изучили это открытие.",
+  "aeroscapes_reimagine.expedition.learned.deep_breath": "Изучено глубокое дыхание.",
+  "aeroscapes_reimagine.expedition.learned.distraction_throw": "Изучен отвлекающий бросок. Добавьте его в подготовленные способности.",
+  "aeroscapes_reimagine.expedition.no_snowball": "Нужен снежок.",
+  "aeroscapes_reimagine.expedition.cooldown": "Отвлекающий бросок ещё восстанавливается."
+}

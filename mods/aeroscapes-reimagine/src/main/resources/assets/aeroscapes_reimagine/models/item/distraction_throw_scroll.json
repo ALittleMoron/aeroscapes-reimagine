@@ -1,0 +1,23 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "base": {
+    "parent": "minecraft:item/generated",
+    "textures": {
+      "layer0": "aeroscapes_reimagine:item/distraction_throw_scroll"
+    }
+  },
+  "perspectives": {
+    "firstperson_righthand": {
+      "parent": "aeroscapes_reimagine:item/expedition/distraction_throw_scroll"
+    },
+    "firstperson_lefthand": {
+      "parent": "aeroscapes_reimagine:item/expedition/distraction_throw_scroll"
+    },
+    "thirdperson_righthand": {
+      "parent": "aeroscapes_reimagine:item/expedition/distraction_throw_scroll"
+    },
+    "thirdperson_lefthand": {
+      "parent": "aeroscapes_reimagine:item/expedition/distraction_throw_scroll"
+    }
+  }
+}

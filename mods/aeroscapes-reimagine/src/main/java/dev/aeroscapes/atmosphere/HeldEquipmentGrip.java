@@ -41,7 +41,7 @@ public final class HeldEquipmentGrip {
       boolean atPalm,
       boolean refined) {
     // Punchy normally requests the third-person model even from the player's own camera.
-    boolean separate = refined && separateHexDisplay(item);
+    boolean separate = studyScroll(item) || refined && separateHexDisplay(item);
     if (!separate && !atPalm) return original;
     return left
         ? ItemDisplayContext.FIRST_PERSON_LEFT_HAND
@@ -51,6 +51,12 @@ public final class HeldEquipmentGrip {
   static boolean separateHexDisplay(ResourceLocation item) {
     return item.getNamespace().equals("hexcasting")
         && (item.getPath().startsWith("staff/") || smallHexItem(item));
+  }
+
+  private static boolean studyScroll(ResourceLocation item) {
+    return item.getNamespace().equals("aeroscapes_reimagine")
+        && (item.getPath().equals("deep_breath_scroll")
+            || item.getPath().equals("distraction_throw_scroll"));
   }
 
   public static ResourceLocation hexStackId(ResourceLocation model) {
@@ -71,16 +77,17 @@ public final class HeldEquipmentGrip {
     };
   }
 
-  /** Align the vanilla first-person model origin with Punchy's grip on small Hex items. */
+  /** Align the authored first-person model with Punchy's grip. */
   public static PoseStack smallItemGrip(ResourceLocation item, PoseStack base) {
     return smallItemGrip(item, base, ItemModelResources.refinedModelsLoaded(item));
   }
 
   public static PoseStack smallItemGrip(ResourceLocation item, PoseStack base, boolean separate) {
-    if (!separate || !smallHexItem(item)) return base;
+    boolean scroll = studyScroll(item);
+    if (!scroll && (!separate || !smallHexItem(item))) return base;
     var result = new PoseStack();
     result.mulPose(base.last().pose());
-    result.translate(0, -2.5f / 16, 1f / 16);
+    result.translate(0, (scroll ? -2.1f : -2.5f) / 16, scroll ? 0 : 1f / 16);
     return result;
   }
 

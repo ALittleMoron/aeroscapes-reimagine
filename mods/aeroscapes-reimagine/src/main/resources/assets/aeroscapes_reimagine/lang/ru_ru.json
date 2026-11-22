@@ -1,4 +1,8 @@
 {
+  "structure.aeroscapes_reimagine.airborne_derelict": "Брошенный дирижабль",
+  "structure.aeroscapes_reimagine.tethered_airship": "Дирижабль с оборванным тросом",
+  "structure.aeroscapes_reimagine.observation_balloon": "Наблюдательный аэростат",
+  "entity.aeroscapes_reimagine.lost_cargo_balloon": "Потерянный грузовой шар",
   "structure.aeroscapes_reimagine.survey_camp": "Стоянка наблюдателей",
   "structure.aeroscapes_reimagine.surviving_garden": "Уцелевший сад",
   "structure.aeroscapes_reimagine.fox_den": "Лисье логово",

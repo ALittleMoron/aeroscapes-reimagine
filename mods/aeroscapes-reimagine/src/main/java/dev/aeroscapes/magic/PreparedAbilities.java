@@ -1,9 +1,13 @@
 package dev.aeroscapes.magic;
 
+import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
+import dev.aeroscapes.equipment.expedition.StoredBreath;
+import dev.aeroscapes.expedition.ExpeditionDiscoveries;
 import dev.aeroscapes.magic.travel.AmuletStep;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.races.RaceIdentity;
 import io.redspace.ironsspellbooks.api.events.SpellCooldownAddedEvent;
+import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
@@ -17,6 +21,7 @@ import io.redspace.ironsspellbooks.gui.inscription_table.InscriptionTableMenu;
 import io.redspace.ironsspellbooks.item.Scroll;
 import io.redspace.ironsspellbooks.item.SpellBook;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
+import io.redspace.ironsspellbooks.registries.MobEffectRegistry;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -37,6 +42,10 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import top.theillusivec4.curios.api.event.CurioChangeEvent;
 
 public final class PreparedAbilities {
+  public static final String DISCOVERY_GROUP = "aeroscapes_reimagine:expedition_discovery";
+  public static final String DISTRACTION = "aeroscapes_reimagine:distraction_throw";
+  private static final String BORROWED_INVISIBILITY = "borrowed_invisibility_active";
+
   private PreparedAbilities() {}
 
   public static void register() {
@@ -47,7 +56,8 @@ public final class PreparedAbilities {
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::dimension);
     NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, PreparedAbilities::cooldown);
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::tooltip);
-    NeoForge.EVENT_BUS.addListener(PreparedAbilities::amuletChanged);
+    NeoForge.EVENT_BUS.addListener(PreparedAbilities::curioChanged);
+    NeoForge.EVENT_BUS.addListener(PreparedAbilities::recordInvisibilitySource);
   }
 
   public static Preparation preparation(ServerPlayer player) {
@@ -61,6 +71,8 @@ public final class PreparedAbilities {
         boolean valid =
             innate != null
                 || AmuletStep.ID.equals(id)
+                || ExceptionalAccessory.byId(id) != null
+                || DISTRACTION.equals(id)
                 || HexPrograms.itemType(id) != null
                 || SpellKnowledge.spell(id) != SpellRegistry.none();
         if (!valid || slots.contains(id)) id = "";
@@ -90,6 +102,10 @@ public final class PreparedAbilities {
       }
     } else if (AmuletStep.ID.equals(id)) {
       if (!AmuletStep.available(player)) return;
+    } else if (ExceptionalAccessory.byId(id) != null) {
+      if (ExceptionalAccessory.byId(id).equipped(player).isEmpty()) return;
+    } else if (DISTRACTION.equals(id)) {
+      if (!ExpeditionDiscoveries.knowsDistraction(player)) return;
     } else if (innate != null) {
       if (RaceIdentity.race(player) != innate.race) return;
     } else if (!id.isEmpty()) {
@@ -104,7 +120,11 @@ public final class PreparedAbilities {
       }
     }
     var prepared = preparation(player);
-    if (AmuletStep.ID.equals(prepared.slots().get(slot)) && !AmuletStep.available(player))
+    String previous = prepared.slots().get(slot);
+    var previousAccessory = ExceptionalAccessory.byId(previous);
+    if (AmuletStep.ID.equals(previous) && !AmuletStep.available(player)
+        || previousAccessory != null && previousAccessory.equipped(player).isEmpty()
+        || DISTRACTION.equals(previous) && !ExpeditionDiscoveries.knowsDistraction(player))
       prepared = prepared.assign(slot, "");
     save(player, prepared.assign(slot, id));
     reconcileCasting(player);
@@ -132,6 +152,28 @@ public final class PreparedAbilities {
     }
     if (AmuletStep.ID.equals(id)) {
       AmuletStep.cast(player);
+      sync(player, false);
+      return;
+    }
+    var accessory = ExceptionalAccessory.byId(id);
+    if (accessory != null) {
+      if (accessory == ExceptionalAccessory.BREATH) {
+        StoredBreath.use(player);
+      } else {
+        var ring = accessory.equipped(player);
+        if (ring.isEmpty()) SpellKnowledge.message(player, "equipment_required");
+        else
+          accessory
+              .spell()
+              .attemptInitiateCast(
+                  ring, 1, player.level(), player, CastSource.SPELLBOOK, true, "ring");
+      }
+      sync(player, false);
+      return;
+    }
+    if (DISTRACTION.equals(id)) {
+      if (ExpeditionDiscoveries.knowsDistraction(player))
+        ExpeditionDiscoveries.throwDistraction(player);
       sync(player, false);
       return;
     }
@@ -205,6 +247,8 @@ public final class PreparedAbilities {
       if (id.isEmpty()
           || InnateAbility.byId(id) != null
           || AmuletStep.ID.equals(id)
+          || ExceptionalAccessory.byId(id) != null
+          || DISTRACTION.equals(id)
           || HexPrograms.itemType(id) != null) continue;
       AbstractSpell spell = SpellKnowledge.spell(id);
       if (spell != SpellRegistry.none()
@@ -234,6 +278,7 @@ public final class PreparedAbilities {
     if (project) projectFocus(player, prepared, skills);
     var entries = new ArrayList<AbilityNetwork.Entry>();
     HexPrograms.catalogue(player, prepared, entries);
+    addExpeditionAbilities(player, entries);
     boolean amulet = AmuletStep.available(player);
     if (amulet) {
       int cooldown = AmuletStep.cooldown(player);
@@ -290,9 +335,15 @@ public final class PreparedAbilities {
         player,
         new AbilityNetwork.Snapshot(
             entries,
-            amulet
-                ? prepared.slots()
-                : prepared.slots().stream().map(id -> AmuletStep.ID.equals(id) ? "" : id).toList(),
+            prepared.slots().stream()
+                .map(
+                    id ->
+                        (!amulet && AmuletStep.ID.equals(id))
+                                || (ExceptionalAccessory.byId(id) != null || DISTRACTION.equals(id))
+                                    && entries.stream().noneMatch(entry -> entry.id().equals(id))
+                            ? ""
+                            : id)
+                .toList(),
             prepared.selected(),
             RacialAbilities.nightVision(player),
             java.util.List.copyOf(skills),
@@ -301,18 +352,70 @@ public final class PreparedAbilities {
             ProgressionBridge.nextMagicPointXp(player, practice)));
   }
 
+  private static void addExpeditionAbilities(
+      ServerPlayer player, List<AbilityNetwork.Entry> entries) {
+    for (var accessory : ExceptionalAccessory.values()) {
+      if (accessory.equipped(player).isEmpty()) continue;
+      if (accessory == ExceptionalAccessory.BREATH) {
+        boolean charged = StoredBreath.charged(player);
+        entries.add(
+            new AbilityNetwork.Entry(
+                accessory.id,
+                AmuletStep.GROUP,
+                0,
+                0,
+                0,
+                charged,
+                charged ? "" : "breath_refill",
+                0,
+                0));
+      } else {
+        var spell = accessory.spell();
+        int cooldown = cooldownTicks(player, spell);
+        int mana =
+            MagicBonuses.manaCost(spell, 1, player, CastSource.SPELLBOOK, spell.getManaCost(1));
+        String reason = "";
+        if (!spell.isEnabled()) reason = "disabled";
+        else if (cooldown > 0) reason = "cooldown";
+        else if (MagicData.getPlayerMagicData(player).getMana() < mana) reason = "mana";
+        entries.add(
+            new AbilityNetwork.Entry(
+                accessory.id, AmuletStep.GROUP, 1, 1, 1, reason.isEmpty(), reason, cooldown, mana));
+      }
+    }
+    if (ExpeditionDiscoveries.knowsDistraction(player)) {
+      int cooldown = ExpeditionDiscoveries.distractionCooldownTicks(player);
+      entries.add(
+          new AbilityNetwork.Entry(
+              DISTRACTION,
+              DISCOVERY_GROUP,
+              0,
+              0,
+              0,
+              cooldown == 0,
+              cooldown == 0 ? "" : "cooldown",
+              cooldown,
+              0));
+    }
+  }
+
   private static void reconcileCasting(ServerPlayer player) {
     MagicData magic = MagicData.getPlayerMagicData(player);
     Preparation prepared = preparation(player);
     boolean focus = SpellKnowledge.hasFocus(player);
     Set<String> skills = SpellKnowledge.unlocked(player);
-    if (magic.isCasting()
-        && magic.getCastSource() != CastSource.SCROLL
-        && (!focus
-            || !prepared.slots().contains(magic.getCastingSpellId())
-            || !SpellKnowledge.knowledgeReason(
-                    player, SpellKnowledge.spell(magic.getCastingSpellId()), skills)
-                .isEmpty())) Utils.serverSideCancelCast(player);
+    if (magic.isCasting() && magic.getCastSource() != CastSource.SCROLL) {
+      var spell = SpellKnowledge.spell(magic.getCastingSpellId());
+      var accessory = ExceptionalAccessory.bySpell(spell);
+      ItemStack castingItem = magic.getPlayerCastingItem();
+      boolean allowed =
+          accessory != null && accessory.matches(castingItem)
+              ? prepared.slots().contains(accessory.id) && accessory.equipped(player) == castingItem
+              : focus
+                  && prepared.slots().contains(spell.getSpellId())
+                  && SpellKnowledge.knowledgeReason(player, spell, skills).isEmpty();
+      if (!allowed) Utils.serverSideCancelCast(player);
+    }
     for (var recast : magic.getPlayerRecasts().getAllRecasts()) {
       if (recast.getCastSource() != CastSource.SCROLL
           && (!focus
@@ -354,6 +457,8 @@ public final class PreparedAbilities {
 
   private static void tick(PlayerTickEvent.Post event) {
     if (!(event.getEntity() instanceof ServerPlayer player) || !player.isAlive()) return;
+    StoredBreath.tick(player);
+    reconcileInvisibility(player);
     reconcileCasting(player);
     if (player.tickCount % 20 == 0) {
       captureCooldowns(player);
@@ -394,10 +499,34 @@ public final class PreparedAbilities {
     if (event.getEntity() instanceof ServerPlayer player) captureCooldowns(player);
   }
 
-  private static void amuletChanged(CurioChangeEvent event) {
+  private static void curioChanged(CurioChangeEvent event) {
     var amulet = ItemRegistry.TELEPORTATION_AMULET.get();
-    if (event.getEntity() instanceof ServerPlayer player
-        && (event.getFrom().is(amulet) || event.getTo().is(amulet))) sync(player, false);
+    if (!(event.getEntity() instanceof ServerPlayer player)) return;
+    if (event.getFrom().is(amulet) || event.getTo().is(amulet)) sync(player, false);
+    for (var accessory : ExceptionalAccessory.values()) {
+      if (!accessory.matches(event.getFrom()) && !accessory.matches(event.getTo())) continue;
+      reconcileCasting(player);
+      reconcileInvisibility(player);
+      sync(player, false);
+      return;
+    }
+  }
+
+  private static void recordInvisibilitySource(SpellOnCastEvent event) {
+    if (!(event.getEntity() instanceof ServerPlayer player)
+        || !event.getSpellId().equals(ExceptionalAccessory.INVISIBILITY.spell().getSpellId()))
+      return;
+    var item = MagicData.getPlayerMagicData(player).getPlayerCastingItem();
+    SpellKnowledge.data(player)
+        .putBoolean(BORROWED_INVISIBILITY, ExceptionalAccessory.INVISIBILITY.matches(item));
+  }
+
+  private static void reconcileInvisibility(ServerPlayer player) {
+    var data = SpellKnowledge.data(player);
+    if (!data.getBoolean(BORROWED_INVISIBILITY)) return;
+    if (ExceptionalAccessory.INVISIBILITY.equipped(player).isEmpty())
+      player.removeEffect(MobEffectRegistry.TRUE_INVISIBILITY);
+    if (!player.hasEffect(MobEffectRegistry.TRUE_INVISIBILITY)) data.remove(BORROWED_INVISIBILITY);
   }
 
   private static void tooltip(ItemTooltipEvent event) {

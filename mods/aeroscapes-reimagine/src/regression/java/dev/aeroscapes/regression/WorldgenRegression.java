@@ -103,6 +103,10 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    if (Boolean.getBoolean("aeroscapes.regression.airborneExpedition")) {
+      AirborneExpeditionRegression.verify(level);
+      return;
+    }
     String islandStops = System.getProperty("aeroscapes.regression.islandStops");
     if (islandStops != null) {
       IslandStopsRegression.verify(level, Path.of(islandStops));
@@ -343,6 +347,18 @@ public final class WorldgenRegression {
     }
     if (Boolean.getBoolean("aeroscapes.regression.abilities")) {
       AbilitiesRegression.start(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.expeditionStudy")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    ExpeditionStudyRegression.verify(level);
+                    LOGGER.info("Expedition study regression passed");
+                  }));
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.hexPrograms")) {

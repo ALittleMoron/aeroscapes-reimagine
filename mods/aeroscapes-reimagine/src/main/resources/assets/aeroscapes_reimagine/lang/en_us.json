@@ -1,4 +1,8 @@
 {
+  "structure.aeroscapes_reimagine.airborne_derelict": "Abandoned Airship",
+  "structure.aeroscapes_reimagine.tethered_airship": "Airship with a Broken Tether",
+  "structure.aeroscapes_reimagine.observation_balloon": "Observation Balloon",
+  "entity.aeroscapes_reimagine.lost_cargo_balloon": "Lost Cargo Balloon",
   "structure.aeroscapes_reimagine.survey_camp": "Survey Camp",
   "structure.aeroscapes_reimagine.surviving_garden": "Surviving Garden",
   "structure.aeroscapes_reimagine.fox_den": "Fox Den",

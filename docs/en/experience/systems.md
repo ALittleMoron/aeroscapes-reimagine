@@ -30,6 +30,7 @@ flowchart TB
   world -->|"found equipment"| equip
   eng -->|"tools and gear"| equip
   magic -->|"staves, spell books, rings"| equip
+  equip -->|"worn rings and necklaces lend abilities"| magic
   magic -->|"prepared combat spells"| char
   char -->|"magic talents and spell learning"| magic
   magic -->|"temporary wings and local portals"| travel

@@ -1,5 +1,6 @@
 package dev.aeroscapes.magic;
 
+import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
 import dev.aeroscapes.progression.ProgressionBridge;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
@@ -109,10 +110,16 @@ public final class SpellKnowledge {
       CastSource source,
       boolean feedback) {
     Set<String> skills = unlocked(player);
+    var accessory = ExceptionalAccessory.bySpell(spell);
     String reason;
     if (!player.isAlive() || player.isSpectator()) reason = "state";
     else if (!spell.isEnabled()) reason = "disabled";
-    else if (source == CastSource.SCROLL) {
+    else if (source == CastSource.SPELLBOOK && accessory != null && accessory.matches(item)) {
+      if (accessory.equipped(player) != item) reason = "equipment_required";
+      else if (!PreparedAbilities.preparation(player).slots().contains(accessory.id))
+        reason = "unprepared";
+      else reason = level == 1 ? "" : "mastery";
+    } else if (source == CastSource.SCROLL) {
       SpellData scroll = ISpellContainer.getOrCreate(item).getSpellAtIndex(0);
       if (!(item.getItem() instanceof Scroll)
           || item.isEmpty()

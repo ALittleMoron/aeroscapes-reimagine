@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/expedition/deep_breath_scroll/body.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "aeroscapes_reimagine:item/deep_breath_scroll"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -18.0,
+        -19.0,
+        -17.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.05871649,
+        4.089343,
+        -0.29478022
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -18.0,
+        -19.0,
+        -17.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.05871649,
+        4.089343,
+        -0.29478022
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        28.0,
+        -28.0,
+        -29.0
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "translation": [
+        0.17052022,
+        1.2547872,
+        0.24384187
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        28.0,
+        -28.0,
+        -29.0
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "translation": [
+        0.17052022,
+        1.2547872,
+        0.24384187
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "item.aeroscapes_reimagine.deep_breath_scroll": "Study Scroll: Deep Breath",
+  "item.aeroscapes_reimagine.deep_breath_scroll.use": "Learn to use your air more slowly underwater.",
+  "item.aeroscapes_reimagine.distraction_throw_scroll": "Study Scroll: Distraction Throw",
+  "item.aeroscapes_reimagine.distraction_throw_scroll.use": "Prepare the ability and throw a snowball at a block near an idle zombie.",
+  "aeroscapes_reimagine.expedition.study_hint": "Use to study once. You can trade spare scrolls.",
+  "aeroscapes_reimagine.expedition.already_studied": "You already know this discovery.",
+  "aeroscapes_reimagine.expedition.learned.deep_breath": "Learned Deep Breath.",
+  "aeroscapes_reimagine.expedition.learned.distraction_throw": "Learned Distraction Throw. Assign it in Prepared Abilities.",
+  "aeroscapes_reimagine.expedition.no_snowball": "You need a snowball.",
+  "aeroscapes_reimagine.expedition.cooldown": "Distraction Throw is still recovering."
+}

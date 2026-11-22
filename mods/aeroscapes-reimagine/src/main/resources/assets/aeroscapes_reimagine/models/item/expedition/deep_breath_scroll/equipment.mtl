@@ -1,0 +1,29 @@
+newmtl paper
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/deep_breath_scroll/paper
+
+newmtl cut
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/deep_breath_scroll/cut
+
+newmtl recess
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/deep_breath_scroll/recess
+
+newmtl binding
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/deep_breath_scroll/binding
+
+newmtl seal
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/deep_breath_scroll/seal
+
+newmtl seal_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/deep_breath_scroll/binding

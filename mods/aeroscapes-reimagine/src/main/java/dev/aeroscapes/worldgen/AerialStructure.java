@@ -105,7 +105,7 @@ public final class AerialStructure extends Structure {
     return Optional.empty();
   }
 
-  private static boolean clear(GenerationContext context, BoundingBox bounds) {
+  static boolean clear(GenerationContext context, BoundingBox bounds) {
     if (context.heightAccessor().isOutsideBuildHeight(bounds.minY())
         || context.heightAccessor().isOutsideBuildHeight(bounds.maxY())) return false;
     if (!(context.chunkGenerator() instanceof NoiseBasedChunkGenerator generator)) return false;

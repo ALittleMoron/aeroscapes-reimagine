@@ -1,0 +1,81 @@
+{
+  "loader": "neoforge:obj",
+  "model": "aeroscapes_reimagine:models/item/expedition/distraction_throw_scroll/body.obj",
+  "automatic_culling": false,
+  "flip_v": false,
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "aeroscapes_reimagine:item/distraction_throw_scroll"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        -18.0,
+        -19.0,
+        -26.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.15482035,
+        4.0884376,
+        -0.25969192
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        -18.0,
+        -19.0,
+        -26.0
+      ],
+      "scale": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "translation": [
+        0.15482035,
+        4.0884376,
+        -0.25969192
+      ]
+    },
+    "thirdperson_righthand": {
+      "rotation": [
+        28.0,
+        -28.0,
+        -29.0
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "translation": [
+        0.17052022,
+        1.2547872,
+        0.24384187
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        28.0,
+        -28.0,
+        -29.0
+      ],
+      "scale": [
+        0.62,
+        0.62,
+        0.62
+      ],
+      "translation": [
+        0.17052022,
+        1.2547872,
+        0.24384187
+      ]
+    }
+  }
+}

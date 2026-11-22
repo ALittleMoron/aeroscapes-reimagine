@@ -86,6 +86,7 @@ public final class AbilityNetwork {
     public boolean granted() {
       return innate()
           || school.equals(dev.aeroscapes.magic.travel.AmuletStep.GROUP)
+          || school.equals(PreparedAbilities.DISCOVERY_GROUP)
           || program != null;
     }
   }

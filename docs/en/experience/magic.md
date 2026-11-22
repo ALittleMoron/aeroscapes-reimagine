@@ -22,6 +22,14 @@ Tap the **middle mouse button** to cast the selected prepared spell. Hold it to 
 
 The selected spell appears as an icon and name at the bottom left. An empty slot shows a short message for five seconds. Casting uses the spell's normal mana, reagent, cast-time and cooldown rules. Moving or clearing a slot and changing books do not reset its cooldown.
 
+## Abilities from equipment
+
+Rare versions of the Ring of Invisibility and Frostward Ring let you prepare **Invisibility I** and **Frostwave I** while wearing them, even without a book or talent. They cost mana and share cooldowns with their learned versions. Removing the ring takes its ability off the wheel and ends invisibility cast through the ring. Re-equipping restores the assignment if you have kept its slot.
+
+An exceptional **Pearl Necklace III** grants **Stored Breath**. Equip it and breathe air for two seconds to charge it. Underwater, activate the prepared ability to restore enough air for about four seconds at the usual breathing rate. Aim at a nearby swimmer who needs air to give them the breath instead. The charge travels with the necklace, and each wearer needs to breathe air after using it before they can release another.
+
+All three exceptional accessories can appear in expedition loot. An Invisibility Ring is a find. Hand crafting the Frostward Ring or Pearl Necklace III can produce an exceptional copy from the first attempt. The chance rises with your Crafting skill. Reforging the necklace keeps Stored Breath.
+
 ## One tree, four directions
 
 The common first mastery leads into four functional directions. The nine native schools still determine school bonuses, resistances and equipment; they are not nine separate mastery chains.

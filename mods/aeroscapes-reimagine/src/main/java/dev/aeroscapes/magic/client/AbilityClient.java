@@ -1,9 +1,11 @@
 package dev.aeroscapes.magic.client;
 
+import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
 import dev.aeroscapes.magic.AbilityNetwork;
 import dev.aeroscapes.magic.HexPrograms;
 import dev.aeroscapes.magic.InnateAbility;
 import dev.aeroscapes.magic.MagicBonuses;
+import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.RacialAbilities;
 import dev.aeroscapes.magic.travel.AmuletStep;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
@@ -105,6 +107,9 @@ public final class AbilityClient {
           Inventory.isHotbarSlot(slot) ? "hex_hotbar_name" : "hex_inventory_name", slot + 1, name);
     }
     if (AmuletStep.ID.equals(id)) return text("amulet_step");
+    if (PreparedAbilities.DISTRACTION.equals(id)) return text("distraction_throw");
+    var accessory = ExceptionalAccessory.byId(id);
+    if (accessory != null) return text(accessory.path);
     var innate = InnateAbility.byId(id);
     return innate == null
         ? spell(id).getDisplayName(Minecraft.getInstance().player)
@@ -114,6 +119,8 @@ public final class AbilityClient {
   public static Component school(AbilityNetwork.Entry entry) {
     if (entry.program() != null) return text("hex_school");
     if (AmuletStep.GROUP.equals(entry.school())) return text("equipment");
+    if (PreparedAbilities.DISCOVERY_GROUP.equals(entry.school()))
+      return text("expedition_discoveries");
     return entry.innate() ? text("innate") : spell(entry.id()).getSchoolType().getDisplayName();
   }
 
@@ -245,13 +252,24 @@ public final class AbilityClient {
       return;
     }
     var innate = InnateAbility.byId(id);
-    var texture =
-        AmuletStep.ID.equals(id)
-            ? ResourceLocation.parse("aeroscapes_reimagine:textures/gui/abilities/amulet_step.png")
-            : innate == null
-                ? spell(id).getSpellIconResource()
-                : ResourceLocation.fromNamespaceAndPath(
-                    "aeroscapes_reimagine", "textures/mob_effect/" + innate.path + ".png");
+    var accessory = ExceptionalAccessory.byId(id);
+    ResourceLocation texture;
+    if (AmuletStep.ID.equals(id)
+        || PreparedAbilities.DISTRACTION.equals(id)
+        || accessory == ExceptionalAccessory.BREATH) {
+      texture =
+          ResourceLocation.fromNamespaceAndPath(
+              "aeroscapes_reimagine",
+              "textures/gui/abilities/" + ResourceLocation.parse(id).getPath() + ".png");
+    } else if (accessory != null) {
+      texture = accessory.spell().getSpellIconResource();
+    } else if (innate != null) {
+      texture =
+          ResourceLocation.fromNamespaceAndPath(
+              "aeroscapes_reimagine", "textures/mob_effect/" + innate.path + ".png");
+    } else {
+      texture = spell(id).getSpellIconResource();
+    }
     graphics.blit(texture, x, y, 0, 0, size, size, size, size);
   }
 }

@@ -1,0 +1,23 @@
+{
+  "structures": [
+    {
+      "structure": "aeroscapes_reimagine:airborne_derelict",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:observation_balloon",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 24,
+    "separation": 15,
+    "salt": 73170481,
+    "locate_offset": [
+      8,
+      0,
+      8
+    ]
+  }
+}

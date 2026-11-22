@@ -1,7 +1,9 @@
 package dev.aeroscapes.magic.client;
 
+import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
 import dev.aeroscapes.inventory.InventoryNavigation;
 import dev.aeroscapes.magic.AbilityNetwork;
+import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.progression.client.ScrollViewport;
 import java.util.ArrayList;
 import java.util.List;
@@ -269,11 +271,7 @@ public final class AbilitiesScreen extends Screen {
               ? AbilityClient.reason(entry)
               : AbilityClient.reason(assignmentReason));
       if (assignmentReason.isEmpty()) {
-        paragraphs.add(
-            AbilityClient.text(
-                entry.program() != null
-                    ? "hex_assign"
-                    : entry.granted() ? "innate_assign" : "assign_hint"));
+        paragraphs.add(AbilityClient.text(assignmentHint(entry)));
         paragraphs.add(AbilityClient.text("move_hint"));
       }
       paragraphs.add(AbilityClient.text("controls"));
@@ -288,6 +286,13 @@ public final class AbilitiesScreen extends Screen {
     for (var paragraph : paragraphs)
       y = drawText(graphics, paragraph, x, y, textWidth, AbilityWidgets.TEXT) + 5;
     graphics.disableScissor();
+  }
+
+  private static String assignmentHint(AbilityNetwork.Entry entry) {
+    if (entry.program() != null) return "hex_assign";
+    if (ExceptionalAccessory.byId(entry.id()) != null
+        || PreparedAbilities.DISTRACTION.equals(entry.id())) return "expedition_assign";
+    return entry.granted() ? "innate_assign" : "assign_hint";
   }
 
   private int drawText(GuiGraphics graphics, Component text, int x, int y, int width, int color) {

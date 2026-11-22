@@ -4,6 +4,14 @@ description: Version history.
 status: available
 ---
 
+## 0.7.4
+
+- Find abandoned airships and observation balloons with Create and Aeronautics fittings in newly explored skies. A working mooring line and a broken tether mark the ledge approach to one airship. The ladder and the ship approach lead to the same cargo.
+- Survey campfires send up signal smoke. Lost cargo balloons drift down and can be collected by hand or shot down.
+- Rare study scrolls from challenging expeditions teach Deep Breath or Distraction Throw. Use a scroll once per character and trade any spare copies.
+- Both study scrolls have new icons and rolled-paper models in hand. The Ring of Invisibility has a visible icon and hand texture.
+- Exceptional rings lend Invisibility I or Frostwave I, and an exceptional Pearl Necklace III stores air to share. Hand crafting can produce the exceptional Frostward Ring or necklace, with better odds at higher Crafting levels.
+
 ## 0.7.3
 
 - New island terrain can hold widely spaced survey camps with basic supplies, gardens with connected stone walls on level ground, and mossy fox burrows. Lantern-marked landing decks sit apart on open island edges with clear approaches and connected railings. Each type is searchable with Explorer’s Compass or `/locate structure`.

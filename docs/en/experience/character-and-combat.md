@@ -6,6 +6,12 @@ status: partial
 
 Your race sets your size, stamina and innate traits. Your class supplies a combat specialty and a starting talent. Practice earns skill levels and talent points. Eight preparation slots hold learned spells, innate abilities, Amulet Step and items carrying Hex programs. Equipment can gain a quality rank through crafting, loot or reforging.
 
+## Expedition discoveries
+
+Rare study scrolls can turn up in vaults and shared boss loot. Use a scroll in hand to learn its discovery. Your character keeps the discovery after death and can trade any further copies.
+
+**Deep Breath** slows air loss underwater. For **Distraction Throw**, assign the ability in Prepared Abilities, then aim at a block near an idle zombie and activate the assigned slot. The throw spends a snowball. A zombie that can reach the impact may go to investigate and can still notice you.
+
 ## Skills and talents
 
 Practice XP appears below Jade's information about the block or creature you are looking at. On the talent tree, a bright green frame marks a talent you can learn now. A checkmark on a dark badge marks a learned talent.

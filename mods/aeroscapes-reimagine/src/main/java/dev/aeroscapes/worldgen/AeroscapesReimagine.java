@@ -68,6 +68,7 @@ public final class AeroscapesReimagine {
     }
     dev.aeroscapes.races.ProfessionTools.register(modBus);
     dev.aeroscapes.races.ChangeItems.register(modBus);
+    dev.aeroscapes.expedition.ExpeditionDiscoveries.register(modBus);
     dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);
     if (ModList.get().isLoaded("animalhusbandry"))
       dev.aeroscapes.husbandry.TroughAutomation.register(modBus);
@@ -77,6 +78,8 @@ public final class AeroscapesReimagine {
     CrystalResonance.register(modBus);
     CliffHabitats.register(modBus);
     IslandStopStructure.register(modBus);
+    AirborneExpeditionStructure.register(modBus);
+    dev.aeroscapes.sky.cargo.LostCargoBalloon.register(modBus);
     WildlifeReactions.register();
     dev.aeroscapes.weathering.WiltedSaplingBlock.register(modBus);
     if (ModList.get().isLoaded("create") && ModList.get().isLoaded("immersive_weathering"))

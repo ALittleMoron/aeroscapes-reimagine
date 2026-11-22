@@ -93,6 +93,8 @@ public final class EquipmentModels {
 
   private static Map<Path, byte[]> resources(Path repository) throws IOException {
     Map<Path, byte[]> output = new LinkedHashMap<>();
+    ExpeditionScrollModels.add(
+        repository.resolve("mods/aeroscapes-reimagine/src/main/resources/assets"), output);
     Path assets = repository.resolve("pack/resourcepacks/aeroscapes-reimagine-atmosphere/assets");
     CharacterItemModels.add(assets, output);
     output.put(assets.resolve("yo_hooks/textures/entity/hook_rope.png"), chainTexture());

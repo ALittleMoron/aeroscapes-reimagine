@@ -1,0 +1,19 @@
+{
+  "structures": [
+    {
+      "structure": "aeroscapes_reimagine:tethered_airship",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 15,
+    "separation": 10,
+    "salt": 73170493,
+    "locate_offset": [
+      8,
+      0,
+      8
+    ]
+  }
+}

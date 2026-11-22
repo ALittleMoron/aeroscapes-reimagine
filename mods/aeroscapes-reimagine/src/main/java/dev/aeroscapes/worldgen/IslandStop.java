@@ -16,6 +16,7 @@ import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.BushBlock;
+import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.FarmBlock;
@@ -188,6 +189,11 @@ record IslandStop(WorldGenLevel level, Site site) {
     put(-1, 1, 0, Blocks.BARREL);
     RandomizableContainer.setBlockEntityLootTable(level, random, pos(-1, 1, 0), SURVEY_SUPPLIES);
     put(1, 1, -1, Blocks.LANTERN);
+    put(1, 0, 2, Blocks.HAY_BLOCK);
+    level.setBlock(
+        pos(1, 1, 2),
+        Blocks.CAMPFIRE.defaultBlockState().setValue(CampfireBlock.SIGNAL_FIRE, true),
+        3);
   }
 
   private void garden() {

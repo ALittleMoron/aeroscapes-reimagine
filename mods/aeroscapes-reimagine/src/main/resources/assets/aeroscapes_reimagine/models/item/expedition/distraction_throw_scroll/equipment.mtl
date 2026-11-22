@@ -1,0 +1,29 @@
+newmtl paper
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/distraction_throw_scroll/paper
+
+newmtl cut
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/distraction_throw_scroll/cut
+
+newmtl recess
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/distraction_throw_scroll/recess
+
+newmtl binding
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/distraction_throw_scroll/binding
+
+newmtl seal
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/distraction_throw_scroll/seal
+
+newmtl seal_edge
+Ka 0 0 0
+Kd 1 1 1 1
+map_Kd aeroscapes_reimagine:item/expedition/distraction_throw_scroll/binding
