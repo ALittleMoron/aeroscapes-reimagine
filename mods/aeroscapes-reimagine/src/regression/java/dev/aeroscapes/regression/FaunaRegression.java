@@ -210,6 +210,7 @@ final class FaunaRegression {
   private void checkCabin() {
     Vec3 center = worldCenter();
     require(center.distanceToSqr(firstPose) > .01, "Sable fixture did not move");
+    SkyRayFlightRegression.verifyCalfNearHull(level, center);
     Cow victim = EntityType.COW.create(level);
     require(victim != null, "Missing living target");
     victim.moveTo(center.x, center.y - victim.getBbHeight() / 2, center.z);

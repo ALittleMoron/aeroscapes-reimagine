@@ -318,6 +318,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("easymagic", "21.1.4", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PickupNotifierLanguageMixin")) {
       versions = Map.of("pickupnotifier", "21.1.1");
+    } else if (mixinClassName.endsWith("ImprintSizeLanguageMixin")) {
+      versions = Map.of("imprint", "1.4.1", "cloth_config", "15.0.140");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.atmosphere.InvMove")) {
       versions = Map.of("invmove", "0.9.3", "cloth_config", "15.0.140");
     } else if (mixinClassName.endsWith("SophisticatedInventoryFocusAccess")) {

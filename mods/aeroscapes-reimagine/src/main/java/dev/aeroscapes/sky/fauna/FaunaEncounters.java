@@ -32,6 +32,7 @@ public final class FaunaEncounters {
       ResourceKey.create(Registries.BIOME, ResourceLocation.parse("aeroscapes_reimagine:void"));
   private static final int ENCOUNTER_INTERVAL = 600;
   private static final int PLACEMENT_ATTEMPTS = 3;
+  private static final int CALF_RARITY = 5;
 
   private FaunaEncounters() {}
 
@@ -82,17 +83,39 @@ public final class FaunaEncounters {
       if (!level.getEntitiesOfClass(species, new AABB(center, center).inflate(96)).isEmpty())
         continue;
       float heading = random.nextFloat() * 360;
-      int placed = colony ? colony(level, center, heading, random) : ray(level, center, heading);
+      int placed =
+          colony ? colony(level, center, heading, random) : ray(level, center, heading, random);
       if (placed > 0) return placed;
     }
     return 0;
   }
 
-  private static int ray(ServerLevel level, Vec3 center, float heading) {
+  private static int ray(ServerLevel level, Vec3 center, float heading, RandomSource random) {
     var ray = AeroFauna.SKY_RAY.get().create(level);
     if (ray == null) return 0;
     ray.moveTo(center.x, center.y, center.z, heading, 0);
-    return site(level, ray.clearanceBounds()) && add(level, ray) ? 1 : 0;
+    if (!site(level, ray.clearanceBounds()) || !add(level, ray)) return 0;
+    return random.nextInt(CALF_RARITY) == 0 && addCalf(level, ray, random) ? 2 : 1;
+  }
+
+  private static boolean addCalf(ServerLevel level, SkyRay adult, RandomSource random) {
+    var calf = AeroFauna.SKY_RAY.get().create(level);
+    if (calf == null) return false;
+    calf.followAsCalf(adult);
+    float heading = adult.getYRot();
+    Vec3 forward = Vec3.directionFromRotation(0, heading);
+    Vec3 side = new Vec3(forward.z, 0, -forward.x).scale(random.nextBoolean() ? 8 : -8);
+    Vec3 trail = adult.position().subtract(forward.scale(10)).add(0, -1, 0);
+    for (Vec3 position : new Vec3[] {trail.add(side), trail.subtract(side)}) {
+      calf.moveTo(position.x, position.y, position.z, heading, 0);
+      calf.setYBodyRot(heading);
+      calf.setYHeadRot(heading);
+      AABB bounds = calf.clearanceBounds();
+      if (!bounds.intersects(adult.clearanceBounds().inflate(1))
+          && site(level, bounds, adult)
+          && add(level, calf)) return true;
+    }
+    return false;
   }
 
   private static int colony(ServerLevel level, Vec3 center, float heading, RandomSource random) {
@@ -157,6 +180,10 @@ public final class FaunaEncounters {
   }
 
   private static boolean site(ServerLevel level, AABB bounds) {
+    return site(level, bounds, null);
+  }
+
+  private static boolean site(ServerLevel level, AABB bounds, @Nullable SkyRay parent) {
     var center = BlockPos.containing(bounds.getCenter());
     var chunk = level.getChunkSource().getChunkNow(center.getX() >> 4, center.getZ() >> 4);
     if (chunk == null
@@ -172,7 +199,7 @@ public final class FaunaEncounters {
         && level.getEntitiesOfClass(SkyWhale.class, bounds.inflate(24)).isEmpty()
         && level.getEntitiesOfClass(CloudJelly.class, bounds.inflate(42)).stream()
             .noneMatch(jelly -> jelly.clearanceBounds().inflate(2).intersects(bounds))
-        && level.getEntitiesOfClass(SkyRay.class, bounds.inflate(8)).isEmpty()
+        && level.getEntitiesOfClass(SkyRay.class, bounds.inflate(8), ray -> ray != parent).isEmpty()
         && level.players().stream()
             .filter(player -> player.isAlive() && !player.isSpectator())
             .noneMatch(

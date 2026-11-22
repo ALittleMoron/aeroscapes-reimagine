@@ -360,6 +360,37 @@ public final class WorldgenRegression {
       SaplantingRegression.verify(level);
       return;
     }
+    if (Boolean.getBoolean("aeroscapes.regression.crystalResonance")) {
+      CrystalResonanceRegression.verify(level);
+      LOGGER.info("Crystal resonance regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.whalePodCalls")) {
+      WhalePodCallsRegression.verify(level);
+      LOGGER.info("Whale pod calls regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.cliffHabitats")) {
+      CliffHabitatRegression.verify(level, "Cliff habitat regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.cliffLegacy")) {
+      CliffHabitatRegression.verifyLegacy(level);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.wildlifeReactions")) {
+      WildlifeReactionsRegression.verify(level);
+      LOGGER.info("Wildlife reactions regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.cliffsRelease")) {
+      CrystalResonanceRegression.verify(level);
+      WhalePodCallsRegression.verify(level);
+      WildlifeReactionsRegression.verify(level);
+      LOGGER.info("Cliff animal behavior and crystal resonance regression passed");
+      CliffHabitatRegression.verify(level, "Cliffs and wildlife release regression passed");
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.progression")) {
       ProgressionRegression.verify(level);
       LOGGER.info("Progression bridge regression passed");

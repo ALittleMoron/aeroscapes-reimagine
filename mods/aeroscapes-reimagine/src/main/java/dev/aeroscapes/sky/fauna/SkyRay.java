@@ -1,8 +1,11 @@
 package dev.aeroscapes.sky.fauna;
 
+import java.util.UUID;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
@@ -19,11 +22,14 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.entity.PartEntity;
+import org.jetbrains.annotations.Nullable;
 import org.joml.Vector3f;
 
 /** An unprovoked ray glides past. A directly attacked ray makes one short defensive pass. */
 public final class SkyRay extends FlyingMob {
   private static final EntityDataAccessor<Boolean> DEFENDING =
+      SynchedEntityData.defineId(SkyRay.class, EntityDataSerializers.BOOLEAN);
+  private static final EntityDataAccessor<Boolean> CALF =
       SynchedEntityData.defineId(SkyRay.class, EntityDataSerializers.BOOLEAN);
   // Phase in degrees, stroke strength and bank in radians. New trackers get the current stroke.
   private static final EntityDataAccessor<Vector3f> FLIGHT =
@@ -37,6 +43,7 @@ public final class SkyRay extends FlyingMob {
   private Vector3f currentFlight;
   private int flightUpdateTick;
   private final SkyRayWingPart[] wings;
+  private @Nullable UUID parentId;
 
   public SkyRay(EntityType<? extends SkyRay> type, Level level) {
     super(type, level);
@@ -104,6 +111,10 @@ public final class SkyRay extends FlyingMob {
   @Override
   public void onSyncedDataUpdated(EntityDataAccessor<?> key) {
     super.onSyncedDataUpdated(key);
+    if (CALF.equals(key)) {
+      refreshDimensions();
+      if (wings != null) SkyRayWingPart.position(this, wings);
+    }
     if (FLIGHT.equals(key)) {
       var next = entityData.get(FLIGHT);
       previousFlight = currentFlight == null ? next : currentFlight;
@@ -135,7 +146,67 @@ public final class SkyRay extends FlyingMob {
   protected void defineSynchedData(SynchedEntityData.Builder builder) {
     super.defineSynchedData(builder);
     builder.define(DEFENDING, false);
+    builder.define(CALF, false);
     builder.define(FLIGHT, new Vector3f());
+  }
+
+  public boolean isCalf() {
+    return entityData.get(CALF);
+  }
+
+  void followAsCalf(SkyRay parent) {
+    parentId = parent.getUUID();
+    entityData.set(CALF, true);
+  }
+
+  @Override
+  protected float sanitizeScale(float scale) {
+    return isCalf() ? scale * SkyRayWings.CALF_SCALE : scale;
+  }
+
+  @Override
+  public void addAdditionalSaveData(CompoundTag tag) {
+    super.addAdditionalSaveData(tag);
+    if (isCalf()) tag.putBoolean("RayCalf", true);
+    if (parentId != null) tag.putUUID("RayParent", parentId);
+  }
+
+  @Override
+  public void readAdditionalSaveData(CompoundTag tag) {
+    super.readAdditionalSaveData(tag);
+    entityData.set(CALF, tag.getBoolean("RayCalf"));
+    parentId = isCalf() && tag.hasUUID("RayParent") ? tag.getUUID("RayParent") : null;
+  }
+
+  private @Nullable SkyRay parent(ServerLevel level) {
+    return parentId != null
+            && level.getEntity(parentId) instanceof SkyRay ray
+            && !ray.isCalf()
+            && ray.isAlive()
+            && distanceToSqr(ray) < 96 * 96
+        ? ray
+        : null;
+  }
+
+  private Vec3 follow(SkyRay adult) {
+    Vec3 forward = Vec3.directionFromRotation(0, adult.getYRot());
+    Vec3 sideways = new Vec3(forward.z, 0, -forward.x);
+    double side = position().subtract(adult.position()).dot(sideways) < 0 ? -8 : 8;
+    Vec3 lane =
+        adult.position().subtract(forward.scale(10)).add(sideways.scale(side)).add(0, -1, 0);
+    Vec3 velocity = adult.getDeltaMovement().add(lane.subtract(position()).scale(0.045));
+    return velocity.lengthSqr() > 0.38 * 0.38 ? velocity.normalize().scale(0.38) : velocity;
+  }
+
+  private Vec3 calfTravel(ServerLevel level, @Nullable SkyRay adult, Vec3 movement) {
+    if (movement.lengthSqr() < 1.0e-8) return Vec3.ZERO;
+    AABB current = clearanceBounds();
+    AABB ahead = current.move(movement.scale(2));
+    if (adult != null
+        && adult.clearanceBounds().inflate(0.5).intersects(ahead)
+        && ahead.getCenter().distanceToSqr(adult.position())
+            <= current.getCenter().distanceToSqr(adult.position())) return Vec3.ZERO;
+    return FaunaEncounters.clear(level, current.minmax(ahead)) ? movement : Vec3.ZERO;
   }
 
   public boolean isDefending() {
@@ -201,6 +272,8 @@ public final class SkyRay extends FlyingMob {
 
   @Override
   protected void customServerAiStep() {
+    ServerLevel level = (ServerLevel) level();
+    SkyRay adult = isCalf() ? parent(level) : null;
     LivingEntity target = getTarget();
     Vec3 desired;
     coasting = false;
@@ -219,23 +292,28 @@ public final class SkyRay extends FlyingMob {
       }
     } else {
       if (isDefending()) finishDefense(getLookAngle());
-      if (tickCount <= 1) heading = getYRot();
-      if (tickCount >= retreatUntil && (tickCount + getId()) % 100 == 0) {
-        heading += random.nextFloat() * 52 - 26;
-      }
-      if (horizontalCollision && tickCount % 12 == 0) heading += 70;
-      boolean retreating = tickCount < retreatUntil;
-      coasting = !retreating && Math.floorMod(tickCount + getId() * 13, 220) >= 152;
-      float pitch = (float) Math.sin((tickCount + getId()) * 0.027) * 12;
-      if (coasting) pitch = 5 + pitch * 0.3F;
-      if (getY() < level().getMinBuildHeight() + 12 || onGround()) pitch = -22;
-      if (getY() > level().getMaxBuildHeight() - 12) pitch = 22;
-      float steering = Mth.approachDegrees(getYRot(), heading, retreating ? 35 : 9);
-      float phase = entityData.get(FLIGHT).x() * Mth.DEG_TO_RAD;
-      double speed = retreating ? 0.38 : coasting ? 0.15 : 0.22 - 0.022 * Mth.cos(2 * phase);
-      desired = Vec3.directionFromRotation(pitch, steering).scale(speed);
+      desired = adult != null && tickCount >= retreatUntil ? follow(adult) : patrol();
     }
-    setDeltaMovement(getDeltaMovement().lerp(desired, coasting ? 0.12 : 0.22));
+    Vec3 movement = getDeltaMovement().lerp(desired, coasting ? 0.12 : 0.22);
+    setDeltaMovement(isCalf() ? calfTravel(level, adult, movement) : movement);
+  }
+
+  private Vec3 patrol() {
+    if (tickCount <= 1) heading = getYRot();
+    if (tickCount >= retreatUntil && (tickCount + getId()) % 100 == 0) {
+      heading += random.nextFloat() * 52 - 26;
+    }
+    if (horizontalCollision && tickCount % 12 == 0) heading += 70;
+    boolean retreating = tickCount < retreatUntil;
+    coasting = !retreating && Math.floorMod(tickCount + getId() * 13, 220) >= 152;
+    float pitch = (float) Math.sin((tickCount + getId()) * 0.027) * 12;
+    if (coasting) pitch = 5 + pitch * 0.3F;
+    if (getY() < level().getMinBuildHeight() + 12 || onGround()) pitch = -22;
+    if (getY() > level().getMaxBuildHeight() - 12) pitch = 22;
+    float steering = Mth.approachDegrees(getYRot(), heading, retreating ? 35 : 9);
+    float phase = entityData.get(FLIGHT).x() * Mth.DEG_TO_RAD;
+    double speed = retreating ? 0.38 : coasting ? 0.15 : 0.22 - 0.022 * Mth.cos(2 * phase);
+    return Vec3.directionFromRotation(pitch, steering).scale(speed);
   }
 
   private void finishDefense(Vec3 toward) {

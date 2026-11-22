@@ -38,6 +38,7 @@
     "ecology.SpawnSeabedProjectionMixin",
     "ecology.SpawnWindsweptHeightMixin",
     "ecology.FowlSkyMixin",
+    "ecology.FowlCliffFlightAccess",
     "ecology.HybridBirdSkyMixin",
     "ecology.HybridAquaticBirdMixin"
   ],

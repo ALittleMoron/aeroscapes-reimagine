@@ -1,0 +1,12 @@
+name = "Imprint"
+filename = "imprint-1.4.1-neoforge+1.21.1.jar"
+side = "client"
+
+[download]
+url = "https://cdn.modrinth.com/data/vej1VqC3/versions/RR7pRzaO/imprint-1.4.1-neoforge%2B1.21.1.jar"
+hash-format = "sha512"
+hash = "6e550c9b94692572e79d37928076a892f9a31b09c95772f1cf3b6767f550d9febe0137cc7de88cba7c5133f6427102c8a6134f978298ef286eef10d7578a5dd6"
+
+[update.modrinth]
+mod-id = "vej1VqC3"
+version = "RR7pRzaO"

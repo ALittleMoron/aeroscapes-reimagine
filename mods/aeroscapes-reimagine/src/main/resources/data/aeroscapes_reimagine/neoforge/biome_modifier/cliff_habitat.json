@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#minecraft:is_overworld",
+  "features": [
+    "aeroscapes_reimagine:cliff_habitat",
+    "aeroscapes_reimagine:cliff_gull_colony",
+    "aeroscapes_reimagine:cliff_bat_roost"
+  ],
+  "step": "top_layer_modification"
+}

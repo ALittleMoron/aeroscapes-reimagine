@@ -3,6 +3,10 @@ package dev.aeroscapes.sky.fauna;
 import net.minecraft.util.Mth;
 
 public final class SkyRayWings {
+  public static final float CALF_SCALE = 0.56F;
+  public static final float CALF_WING_SPAN = 0.83F;
+  public static final float CALF_TAIL_LENGTH = 0.72F;
+
   private SkyRayWings() {}
 
   static float beatRate(double speed) {

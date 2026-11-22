@@ -1,0 +1,7 @@
+{
+  "values": [
+    "minecraft:amethyst_cluster",
+    { "id": "galosphere:allurite_cluster", "required": false },
+    { "id": "galosphere:lumiere_cluster", "required": false }
+  ]
+}

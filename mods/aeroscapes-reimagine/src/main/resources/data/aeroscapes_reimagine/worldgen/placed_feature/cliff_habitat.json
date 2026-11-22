@@ -1,0 +1,9 @@
+{
+  "feature": "aeroscapes_reimagine:cliff_habitat",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 3
+    }
+  ]
+}

@@ -88,18 +88,21 @@ public final class FaunaEncounterRegression {
       clock.setGameTime(300);
       opportunities(level);
       var rays = level.getEntitiesOfClass(SkyRay.class, neighborhood);
+      var adult = rays.stream().filter(ray -> !ray.isCalf()).findFirst().orElseThrow();
       var jellies = level.getEntitiesOfClass(CloudJelly.class, neighborhood);
       require(
-          rays.size() == 1 && rays.getFirst().getSpawnType() == MobSpawnType.NATURAL,
-          "A survival observer receives one natural ray after repeated opportunities");
+          rays.size() <= 2
+              && rays.stream().filter(ray -> !ray.isCalf()).count() == 1
+              && adult.getSpawnType() == MobSpawnType.NATURAL,
+          "Repeated opportunities yield one adult ray with at most one calf");
       verifyColony(jellies);
       require(
-          rays.getFirst().getZ() > observer.z
+          adult.getZ() > observer.z
               && jellies.stream().allMatch(jelly -> jelly.getZ() > observer.z),
           "The actual encounter is ahead of the observer");
       require(
           session.player.requestedViewDistance() == 2
-              && rays.getFirst().position().subtract(observer).horizontalDistance() <= 30,
+              && adult.position().subtract(observer).horizontalDistance() <= 30,
           "Minimum client view distance brings encounters into the visible sky");
       clear(level, neighborhood);
 
@@ -119,6 +122,7 @@ public final class FaunaEncounterRegression {
       verifySize(level, session.player, neighborhood, 14369, 3, 5);
       verifySize(level, session.player, neighborhood, 14403, 6, 9);
       verifySize(level, session.player, neighborhood, 15025, 12, 16);
+      SkyRayFlightRegression.verifyFamily(level, session.player, neighborhood);
       verifyChunkBoundary(level, BlockPos.containing(observer.add(0, 0, 48)));
       verifySidewaysWall(level, observer.add(0, 0, 48));
     } finally {

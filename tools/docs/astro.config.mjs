@@ -43,6 +43,7 @@ export default defineConfig({
             { slug: "vision" },
             { slug: "ai-manifesto" },
             { slug: "gallery" },
+            { slug: "suggestions" },
           ],
         },
         {

@@ -6469,6 +6469,42 @@
     "native_route_note": "NeoForge>=21.1.80; Minecraft[1.21.1,1.22). No external libraries. Replaces direct lightning strike audio by listener distance; Weather category, no independent config class. AmbientSounds supplies ambient storm beds and Sounds retains footsteps/actions."
   },
   {
+    "slug": "imprint",
+    "name": "Imprint",
+    "project_id": "vej1VqC3",
+    "version_id": "RR7pRzaO",
+    "version": "1.4.1",
+    "filename": "imprint-1.4.1-neoforge+1.21.1.jar",
+    "sha512": "6e550c9b94692572e79d37928076a892f9a31b09c95772f1cf3b6767f550d9febe0137cc7de88cba7c5133f6427102c8a6134f978298ef286eef10d7578a5dd6",
+    "sha1": "623c4b5c2f650125eb29275be7b64ded5e45615e",
+    "file_size": 196321,
+    "release_type": "release",
+    "side": "client",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": "https://github.com/tastytrash/Imprint/blob/master/LICENSE"
+    },
+    "source_url": "https://github.com/tastytrash/Imprint",
+    "dependencies": [
+      {
+        "project_id": "9s6osm5g",
+        "version_id": "izKINKFg",
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected fading footprints for island expeditions",
+    "dependency_note": "ImprintClient directly uses Cloth Config's AutoConfig and GsonConfigSerializer. The dependency is already pinned. Native source and distributed classes were inspected."
+  },
+  {
     "slug": "inventory-profiles-next",
     "name": "Inventory Profiles Next",
     "project_id": "O7RBXm3n",

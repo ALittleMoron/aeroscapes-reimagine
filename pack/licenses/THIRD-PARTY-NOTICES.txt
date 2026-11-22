@@ -367,6 +367,8 @@ https://modrinth.com/project/aaRl8GiW/version/EE1FHDyD
 Smart Tooltip Scroll 1.1.1+1.21.1: Stalemated; MIT.
 Smooth Scrolling 2.2.1: SmajloSlovakian; GNU GPL-3.0-only.
 Tiny Item Animations 1.2.1: Trivaxy; Limited Platform Upload License (LPUL). The pack links to the author's original Modrinth JAR.
+Imprint 1.4.1: tastytrash; MIT. The pack references the author's client JAR
+and supplies Russian configuration labels. https://github.com/tastytrash/Imprint
 Animated Inventory 1.0.7: copyright (c) 2026 CappleApple. The unchanged client JAR retains its embedded CC BY-NC-SA 4.0 license and additional modpack permission. Source: https://github.com/CappleApple/animated-inventory
 https://modrinth.com/project/ZdbrmhGV/version/5yxY9Gl4
 Theurgy 1.79.0 and Modonomicon 1.123.0: Kli Kli (klikli-dev) and contributors.

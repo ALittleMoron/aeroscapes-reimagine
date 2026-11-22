@@ -14,7 +14,7 @@ The **Aeroscapes Reimagine — Island Atlas** resource pack gives the main menu 
 
 ## Biome names
 
-[Traveler's Titles](https://modrinth.com/mod/travelers-titles) briefly shows a biome's localized name when you enter it. Titles also work on lower islands and inside buildings. Recently visited biomes are remembered to limit repeated announcements. The open-sky biome between islands is omitted; rivers and other ordinary biomes keep their names. This display does not change the world's biome selection.
+[Traveler's Titles](https://modrinth.com/mod/travelers-titles) briefly shows a biome's localized name when you enter it. Titles also work on lower islands and inside buildings. Recently visited biomes are remembered to limit repeated announcements. The open-sky biome between islands is omitted. This display does not change the world's biome selection.
 
 ## Character and camera
 
@@ -55,6 +55,8 @@ For racial appearance, prepared abilities and plans for action combat, see [char
 These resourcepacks and the small atmosphere integration pack are selected in new installations. Each can be disabled in **Options → Resource Packs**. Fresh Animations and its Player Extension need both EMF and ETF while enabled. Existing profiles keep their selected packs and settings.
 
 ## Sound and visual details
+
+Players and nearby creatures leave footprints on suitable solid surfaces. The prints fade after a few seconds. Adjust or turn off the effect in **Mods → Imprint → Config**. [Imprint](https://modrinth.com/mod/imprint)
 
 [AmbientSounds](https://modrinth.com/mod/ambientsounds) adds environmental sound, while [Sounds](https://modrinth.com/mod/sound) supplies material footsteps and expands everyday interaction sounds. [Drip Sounds](https://modrinth.com/mod/dripsounds) adds sounds for dripping particles. [Subtle Effects](https://modrinth.com/mod/subtle-effects) supplies waterfall mist, water splashes and ripples, fireflies, sparks and other small details.
 

@@ -1,0 +1,9 @@
+{
+  "feature": "aeroscapes_reimagine:cliff_bat_roost",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 10
+    }
+  ]
+}

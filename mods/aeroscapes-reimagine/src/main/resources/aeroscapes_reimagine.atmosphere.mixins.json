@@ -41,6 +41,7 @@
     "NativeConfigurationLanguageMixin",
     "InvMoveLanguageMixin",
     "InvMoveEnumLanguageMixin",
+    "ImprintSizeLanguageMixin",
     "SophisticatedInventoryFocusAccess",
     "TomsTerminalPopupAccess",
     "TomsPopupMenuAccess",

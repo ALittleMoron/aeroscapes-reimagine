@@ -130,10 +130,13 @@ final class SkyRayModel extends HierarchicalModel<SkyRay> {
 
   @Override
   public void setupAnim(SkyRay ray, float stride, float speed, float age, float yaw, float pitch) {
-    pose(ray.flightPose(age - ray.tickCount), ray.isDefending());
+    pose(ray.flightPose(age - ray.tickCount), ray.isDefending(), ray.isCalf());
   }
 
-  public void pose(SkyRayWings.Pose pose, boolean defending) {
+  public void pose(SkyRayWings.Pose pose, boolean defending, boolean calf) {
+    left.xScale = calf ? SkyRayWings.CALF_WING_SPAN : 1;
+    right.xScale = left.xScale;
+    tail.zScale = calf ? SkyRayWings.CALF_TAIL_LENGTH : 1;
     left.zRot = pose.shoulder();
     right.zRot = -left.zRot;
     leftTip.zRot = pose.middle();

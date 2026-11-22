@@ -40,6 +40,7 @@ final class SkyRayWingPart extends AerialHitPart {
     int index = 0;
     for (int sign = -1; sign <= 1; sign += 2) {
       var wing = new Matrix4f(body).translate(sign * 11, 0, 0).rotateZ(sign * pose.shoulder());
+      if (ray.isCalf()) wing.scale(SkyRayWings.CALF_WING_SPAN, 1, 1);
       var tip = new Matrix4f(wing).translate(sign * 25, 0, 0).rotateZ(sign * pose.middle());
       var edge = new Matrix4f(tip).translate(sign * 15, 0, 0).rotateZ(sign * pose.tip());
       for (int i = 0; i < SECTIONS.length; i++) {

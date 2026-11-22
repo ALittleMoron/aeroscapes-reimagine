@@ -803,6 +803,21 @@
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
     },
     {
+      "slug": "imprint",
+      "primary_project_id": "vej1VqC3",
+      "primary_sha512": "6e550c9b94692572e79d37928076a892f9a31b09c95772f1cf3b6767f550d9febe0137cc7de88cba7c5133f6427102c8a6134f978298ef286eef10d7578a5dd6",
+      "status": "hosted",
+      "project_id": 1662887,
+      "file_id": 8982543,
+      "filename": "imprint-1.4.1-neoforge+1.21.1.jar",
+      "sha512": "6e550c9b94692572e79d37928076a892f9a31b09c95772f1cf3b6767f550d9febe0137cc7de88cba7c5133f6427102c8a6134f978298ef286eef10d7578a5dd6",
+      "sha1": "623c4b5c2f650125eb29275be7b64ded5e45615e",
+      "file_size": 196321,
+      "parity": "exact",
+      "review": {},
+      "verification": "Official CurseForge download matches the pinned Modrinth SHA-512."
+    },
+    {
       "slug": "inventory-profiles-next",
       "primary_project_id": "O7RBXm3n",
       "primary_sha512": "521296cc7e4fa48e06eb0c00d430968c7b879946db5b02e632cc724672759ac152e11bd9d320bd09f7418edd6fe4ece521a1a2cac49d7f5687519c69a0bcbf12",

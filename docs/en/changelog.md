@@ -4,6 +4,16 @@ description: Version history.
 status: available
 ---
 
+## 0.7.2
+
+- Gull colonies gather on exposed island ledges. Bats fly out from sheltered roosts at dusk.
+- Clusters of hanging roots and long vines grow beneath island overhangs. A few carry a patch of dim light.
+- Nearby booms and lightning can startle gulls and deer. Wild deer can grow accustomed to a quiet observer.
+- Whale pods sometimes answer their leader's call one at a time.
+- A young sky ray can sometimes be seen swimming beside an adult.
+- Players and animals leave short-lived footprints on solid surfaces.
+- Nearby crystal clusters answer when you strike one in the same open pocket.
+
 ## 0.7.1
 
 - Small floating islands use a shared surface biome across their connected terrain, including thin edges and islands stacked at different heights.

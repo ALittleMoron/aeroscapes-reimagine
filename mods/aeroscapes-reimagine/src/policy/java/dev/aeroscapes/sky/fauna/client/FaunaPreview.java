@@ -27,14 +27,22 @@ public final class FaunaPreview {
   private FaunaPreview() {}
 
   public static List<Quad> capture(String subject, float tick) throws IOException {
+    if (subject.equals("sky_ray/pair")) {
+      var pair = new ArrayList<Quad>();
+      appendOffset(pair, capture("sky_ray", tick), -5);
+      appendOffset(pair, capture("sky_ray/calf", tick + 5), 5);
+      return pair;
+    }
     ModelPart root;
     String texture;
     float diameter = 1;
-    if (subject.equals("sky_ray")) {
+    if (subject.equals("sky_ray") || subject.equals("sky_ray/calf")) {
+      boolean calf = subject.endsWith("/calf");
       var ray = new SkyRayModel(SkyRayModel.layer().bakeRoot());
-      ray.pose(new SkyRayWings.Pose(tick * .16f, .85f, 0, 0), false);
+      ray.pose(new SkyRayWings.Pose(tick * .16f, .85f, 0, 0), false, calf);
       root = ray.root();
       texture = "textures/entity/sky_ray.png";
+      diameter = calf ? SkyRayWings.CALF_SCALE : 1;
     } else {
       String prefix = "cloud_jelly/";
       if (!subject.startsWith(prefix))
@@ -88,6 +96,19 @@ public final class FaunaPreview {
         }
         return faces;
       }
+    }
+  }
+
+  private static void appendOffset(List<Quad> output, List<Quad> model, float x) {
+    for (Quad face : model) {
+      var vertices =
+          face.vertices().stream()
+              .map(
+                  vertex ->
+                      new Vertex(
+                          new Vector3f(vertex.position()).add(x, 0, 0), vertex.u(), vertex.v()))
+              .toList();
+      output.add(new Quad(vertices, face.texture(), face.color()));
     }
   }
 }

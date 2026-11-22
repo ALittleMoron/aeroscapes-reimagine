@@ -1,0 +1,9 @@
+{
+  "feature": "aeroscapes_reimagine:cliff_gull_colony",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 2
+    }
+  ]
+}

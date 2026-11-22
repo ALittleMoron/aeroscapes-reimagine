@@ -1,7 +1,10 @@
 package dev.aeroscapes.worldgen;
 
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.atmosphere.CrystalResonance;
 import dev.aeroscapes.atmosphere.PresentationConfig;
+import dev.aeroscapes.ecology.cliff.CliffHabitats;
+import dev.aeroscapes.fauna.WildlifeReactions;
 import dev.aeroscapes.worldgen.c2me.C2meIslandCompiler;
 import dev.aeroscapes.worldgen.feature.IslandFeatures;
 import java.util.HashMap;
@@ -71,6 +74,9 @@ public final class AeroscapesReimagine {
     dev.aeroscapes.engineering.OilFields.register(modBus);
     dev.aeroscapes.sky.SkyWhaleFalls.register(modBus);
     dev.aeroscapes.sky.fauna.AeroFauna.register(modBus);
+    CrystalResonance.register(modBus);
+    CliffHabitats.register(modBus);
+    WildlifeReactions.register();
     dev.aeroscapes.weathering.WiltedSaplingBlock.register(modBus);
     if (ModList.get().isLoaded("create") && ModList.get().isLoaded("immersive_weathering"))
       dev.aeroscapes.weathering.SnowyScoriaBlock.register(modBus);

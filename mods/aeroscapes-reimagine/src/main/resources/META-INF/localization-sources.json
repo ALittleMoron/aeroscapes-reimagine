@@ -172,6 +172,13 @@
       "sha256": "893cdf2625954aea19331742a47371c3c8a0fec2102443f4e10a28a1620f2335"
     },
     {
+      "resource": "assets/aeroscapes_reimagine_imprint/lang/ru_ru.json",
+      "contribution_license": "GPL-3.0-or-later",
+      "provider_terms": "Authored Russian translations for Imprint 1.4.1. The original English interface is MIT. The singular footprintSize key has no corresponding field in this file. Cloth Config's button selector supplies the six scoped size labels without changing saved enum names.",
+      "entries": 51,
+      "sha256": "b1c53ffdf6456901de612d1f16ea70b43415116ad00b4ba09e5ae2d92f6af783"
+    },
+    {
       "resource": "assets/aeroscapes_reimagine_config_translations/lang/en_us.json",
       "contribution_license": "GPL-3.0-or-later",
       "provider_terms": "Original provider terms remain applicable to reused source text; see configuration_inputs and NOTICE.txt.",

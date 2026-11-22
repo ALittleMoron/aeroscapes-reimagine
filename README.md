@@ -20,4 +20,5 @@ ideas, researching Minecraft modding, and reviewing code and pack integration.
 - [Галерея](docs/ru/gallery.mdx) · [Gallery](docs/en/gallery.mdx)
 - [Манифест об ИИ и авторстве](docs/ru/ai-manifesto.md) · [A manifesto on AI and authorship](docs/en/ai-manifesto.md)
 - [История изменений](docs/ru/changelog.md) · [Changelog](docs/en/changelog.md)
+- [Как предложить идею](docs/ru/suggestions.md) · [How to suggest an idea](docs/en/suggestions.md)
 - [Development guide](CONTRIBUTING.md) · [Site tooling](tools/docs/README.md)

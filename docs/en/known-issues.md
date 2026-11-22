@@ -32,6 +32,8 @@ The pack supplies missing English and Russian names, descriptions and interface 
 
 ## Feedback
 
-The author makes the final design decisions and considers suggestions and bug reports in the [project tracker](https://github.com/ALittleMoron/aeroscapes-reimagine/issues).
+Report bugs in the project tracker. [Open GitHub Issues](https://github.com/ALittleMoron/aeroscapes-reimagine/issues)
 
 When reporting a problem, include the pack version, expected and actual behavior, and a short way to reproduce it. For world-generation issues, add the seed, coordinates and whether the chunks were newly generated. For visual problems, graphics settings and the shader name are useful.
+
+[How to suggest an idea](../suggestions/)

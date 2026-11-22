@@ -6,6 +6,15 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Footprints in 0.7.2
+
+[Imprint 1.4.1](https://modrinth.com/mod/imprint/version/RR7pRzaO) adds
+short-lived, client-side footsteps. Its matching [CurseForge file](https://www.curseforge.com/minecraft/mc-mods/imprint/files/8982543)
+has the same SHA-512 as the Modrinth download. The NeoForge entry point uses the
+existing Cloth Config for its settings screen and JSON config. The pack disables
+Imprint's dust and wetness effects to retain the existing providers for those
+effects.
+
 ## Client scrolling and item animations in 0.7.0
 
 [Smooth Scrolling 2.2.1](https://modrinth.com/mod/smooth-scroll/version/1HA8AoCS)

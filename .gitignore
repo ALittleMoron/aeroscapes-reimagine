@@ -1,5 +1,7 @@
 __pycache__/
 /.cache/
+/.pytest_cache/
+/.ruff_cache/
 /dist/
 /.runtime/
 /log/
