@@ -1,0 +1,39 @@
+---
+name: Bug report
+description: Report a crash or unexpected behavior in English.
+labels:
+  - bug
+body:
+  - type: input
+    id: pack-version
+    attributes:
+      label: Pack version
+      placeholder: 0.7.5
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Setup and diagnostics
+      description: >-
+        If relevant, include singleplayer or server, launcher, extra mods or
+        shaders, seed and coordinates, screenshots, latest.log or a crash
+        report. Remove personal data before uploading.

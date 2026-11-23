@@ -32,8 +32,10 @@ status: available
 
 ## Обратная связь
 
-Сообщения об ошибках принимаются в трекере проекта. [Открыть GitHub Issues](https://github.com/ALittleMoron/aeroscapes-reimagine/issues)
+Сообщайте об ошибках на английском через форму Bug report. [Открыть форму](https://github.com/ALittleMoron/aeroscapes-reimagine/issues/new/choose)
 
 В сообщении об ошибке укажите версию сборки, ожидаемое и фактическое поведение, а также краткий способ воспроизведения. Для проблем с миром добавьте ключ генерации, координаты и уточните, были ли чанки созданы заново. Для проблем с изображением полезны настройки графики и название шейдера.
+
+Вопросы об установке и игре задавайте в GitHub Discussions. [Задать вопрос](https://github.com/ALittleMoron/aeroscapes-reimagine/discussions/categories/q-a)
 
 [Как предложить идею](../suggestions/)

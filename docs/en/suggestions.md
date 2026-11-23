@@ -6,7 +6,7 @@ status: available
 
 ## Where to post
 
-Post ideas in GitHub Issues so suggestions can be found and discussed in one place. Search for similar ideas first. If there's already a discussion, add your details in a comment. For a new idea, open a separate issue with a short, descriptive title. [Open GitHub Issues](https://github.com/ALittleMoron/aeroscapes-reimagine/issues)
+Search GitHub Issues for similar ideas before posting. Add details to an existing issue if one covers your idea. For a new proposal, fill out the Enhancement form in English and give it a short, descriptive title. [Search issues](https://github.com/ALittleMoron/aeroscapes-reimagine/issues) · [Open the form](https://github.com/ALittleMoron/aeroscapes-reimagine/issues/new/choose)
 
 Describe the situation in which the idea would apply, what you'd change, and how it would help or interest players. If you suggest a mod or add-on, link to it and name the feature the pack is missing. If you noticed something while playing, include your pack version.
 
@@ -30,3 +30,5 @@ Create is the foundation for engineering, and Aeronautics is the foundation for 
 ## How suggestions are considered
 
 The author considers how the idea would benefit players and how it fits the world and the chosen systems. Compatibility with the pack and ongoing maintenance also matter when considering new mods. The author decides which ideas to include and when.
+
+Follow the status and target release of an issue on the public project board. [View the project board](https://github.com/users/ALittleMoron/projects/3)

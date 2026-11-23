@@ -1,0 +1,25 @@
+---
+name: Enhancement
+description: Suggest a change that would help players. Write in English.
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: use-case
+    attributes:
+      label: In what situation would this help?
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What should change for players?
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: >-
+        If you suggest a mod or add-on, link to it and name the feature you want
+        to use.

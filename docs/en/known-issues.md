@@ -32,8 +32,10 @@ The pack supplies missing English and Russian names, descriptions and interface 
 
 ## Feedback
 
-Report bugs in the project tracker. [Open GitHub Issues](https://github.com/ALittleMoron/aeroscapes-reimagine/issues)
+Report bugs in English using the Bug report form. [Open the form](https://github.com/ALittleMoron/aeroscapes-reimagine/issues/new/choose)
 
 When reporting a problem, include the pack version, expected and actual behavior, and a short way to reproduce it. For world-generation issues, add the seed, coordinates and whether the chunks were newly generated. For visual problems, graphics settings and the shader name are useful.
+
+For installation or gameplay questions, use GitHub Discussions. [Ask a question](https://github.com/ALittleMoron/aeroscapes-reimagine/discussions/categories/q-a)
 
 [How to suggest an idea](../suggestions/)
