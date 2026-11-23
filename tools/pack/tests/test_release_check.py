@@ -161,9 +161,9 @@ def test_ci_entry_point_checks_both_changelogs_before_success(
     for locale in ("en", "ru"):
         directory = tmp_path / "docs" / locale
         directory.mkdir(parents=True)
-        content = "## 0.1.1\n\n- Current changes\n"
+        content = "## 0.2.0\n\n### 0.1.1\n\n- Current changes\n"
         if locale == "ru":
-            content = "## 0.1.1\n\n" + notes + "\n"
+            content = "## 0.2.0\n\n### 0.1.1\n\n" + notes + "\n"
             if notes == "duplicate":
                 content += "## 0.1.1\n\n- Another section\n"
         (directory / "changelog.md").write_text(content)

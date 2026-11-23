@@ -186,12 +186,19 @@ number contradicts the accepted roadmap or current stage, explain the conflict
 and confirm the intended target before applying or publishing it. A literal
 version number alone does not establish milestone completion.
 
-Set the target in `pack/pack.toml` before exporting. Use one matching section in
-each changelog, headed only by the number, such as `## 0.1.1`, without a release
-status suffix. When the current changes are promoted to a stage milestone before
-integration, move them into that milestone's section; preserve integrated sections.
-Release descriptions use only the target section from the checked source
-snapshot. Keep checks and remaining owner acceptance in the handoff, outside release notes.
+Set the target in `pack/pack.toml` before exporting. In both changelogs, open a
+level-two heading such as `## 0.9.0` when work begins on that major or minor
+milestone. Put the patches that build toward it underneath as level-three
+headings, such as `### 0.8.1`. Order milestones and their patches newest first.
+Use the version number alone in each heading and keep one section per version.
+
+Add the milestone's own changes directly under its heading, before the patch
+headings. Its heading can group patches while the milestone is in progress. The
+heading alone does not select or publish a pack version. If work is promoted to
+the milestone before integration, move its entries into the milestone's own
+section and preserve the integrated patches. Publication requires a non-empty
+section for the target version itself and uses only that section from the
+checked source snapshot. Keep checks and remaining owner acceptance in the handoff.
 The owned mod and build tools retain their independent versions.
 
 A version increment does not guarantee saved-world compatibility. Describe any

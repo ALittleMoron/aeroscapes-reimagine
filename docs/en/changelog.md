@@ -7,6 +7,7 @@ status: available
 ## 0.8.0
 
 - Broad lowlands on large islands have gentler slopes and wider stretches of walkable ground between hills.
+- Some large plateaus have broader stretches of desert, marsh or snowy plains within their existing mix of biomes.
 - Moog's desert houses are spaced farther apart and can use nearby level ground. Formations Overworld igloos require a snowy setting around the shelter.
 - The branded loading screen uses a fixed dark blue background regardless of the player's loading screen color setting.
 - MakeUp Ultra Fast makes weak light from magma blocks easier to see on nearby surfaces.
@@ -21,11 +22,11 @@ status: available
 - The Undead Crypt requires support beneath its large rooms. Cave generation preserves the rock beneath those rooms and around the Pink Salt Shrine's boss arena.
 - Carts, woodpiles, wells and shelters add more stops to newly explored islands. Larger finds are farther apart, and sites require natural footing and a walkable approach.
 
-## 0.7.5
+### 0.7.5
 
 - Some survey camps have a field sign that leads along a short walk to exposed ore on the same island.
 
-## 0.7.4
+### 0.7.4
 
 - Find abandoned airships and observation balloons with Create and Aeronautics fittings in newly explored skies. A working mooring line and a broken tether mark the ledge approach to one airship. The ladder and the ship approach lead to the same cargo.
 - Survey campfires send up signal smoke. Lost cargo balloons drift down and can be collected by hand or shot down.
@@ -33,12 +34,12 @@ status: available
 - Both study scrolls have new icons and rolled-paper models in hand. The Ring of Invisibility has a visible icon and hand texture.
 - Exceptional rings lend Invisibility I or Frostwave I, and an exceptional Pearl Necklace III stores air to share. Hand crafting can produce the exceptional Frostward Ring or necklace, with better odds at higher Crafting levels.
 
-## 0.7.3
+### 0.7.3
 
 - New island terrain can hold widely spaced survey camps with basic supplies, gardens with connected stone walls on level ground, and mossy fox burrows. Lantern-marked landing decks sit apart on open island edges with clear approaches and connected railings. Each type is searchable with Explorer’s Compass or `/locate structure`.
 - Ribbits villages bring music and trading to suitable island swamps. Their buildings use a compact layout and short supports.
 
-## 0.7.2
+### 0.7.2
 
 - Gull colonies gather on exposed island ledges. Bats fly out from sheltered roosts at dusk.
 - Clusters of hanging roots and long vines grow beneath island overhangs. A few carry a patch of dim light.
@@ -48,7 +49,7 @@ status: available
 - Players and animals leave short-lived footprints on solid surfaces.
 - Nearby crystal clusters answer when you strike one in the same open pocket.
 
-## 0.7.1
+### 0.7.1
 
 - Small floating islands use a shared surface biome across their connected terrain, including thin edges and islands stacked at different heights.
 - Combat, Magic and Professions now earn and spend talent points independently. Existing learned talents move to their own trees.
@@ -73,7 +74,7 @@ status: available
 - Bears can hunt turkeys. Alligators, lions, tigers, snakes and great white sharks can hunt additional prey from the pack's fauna.
 - A soft, pulsing halo surrounds the bells of cloud jellies, and the jelly bodies retain shading from the scene.
 
-## 0.6.8
+### 0.6.8
 
 - Draw spells with Hex Casting staves using amethyst from geodes. Assign a programmed Cypher, Trinket or Artifact to the ability wheel and cast from its own charge.
 - Reforged staves help locate a failed pattern. Reforged program carriers report charge and failures. Reforging a jeweler's hammer can save durability and collect drops.
@@ -82,29 +83,29 @@ status: available
 - The `make model-preview` command renders an offline gallery of held items, sky rays and all four cloud jelly forms.
 - Hex movement patterns share a recovery time per target. Blink, Greater Teleport, impulse, levitation, adjustable effect levels and explosions have limits.
 
-## 0.6.7
+### 0.6.7
 
 - Sky rays propel themselves with broad fin strokes, glide through banked turns and defend themselves when attacked.
 - Cloud jellies drift in mixed-size colonies with four distinct forms, from a fringed dome to a tall lantern. They turn their bells into a stroke and glide on their sides with their tentacles trailing. Their bells and tentacles sting on contact, and enclosed ship cabins shelter their occupants.
 - Sky whales adjust their tail strokes as they accelerate to swim alongside a moving ship.
 - Local and CI builds now compile the mod against the same Minecraft classes so they produce identical JARs.
 
-## 0.6.6
+### 0.6.6
 
 - An Identity Seal from exploration chests changes your race, main class or profession. Preview the change and choose whether to refund your old class branch.
 - Craft Knotted Thread to redistribute learned talents. The tree shows affected talents and the 10% penalty before confirmation. New practice can restore lost points.
 
-## 0.6.5
+### 0.6.5
 
 - Choose a profession and one of two peaceful starting talents alongside your race and class. Existing characters complete their missing choices and receive their profession kit once.
 - Eight learnable profession talents share ten points with gathering. Manually prepared meals can carry their cook's benefit to another player.
 
-## 0.6.4
+### 0.6.4
 
 - Choose a class after race and appearance in the same window. Review all choices, advantages, drawbacks and combined practice bonuses before confirming or reopen the sheet from the inventory portrait.
 - Warriors, rangers and rogues choose a starting combat talent. Mages start with eight rank-1 spells and a casting focus. Six physical talents are open to all classes, bringing the shared combat budget to 142 points.
 
-## 0.6.3
+### 0.6.3
 
 - Choose a human, dwarf, goblin or elf before play, with three appearances per race on a stationary preview of your own skin. The portrait button in the inventory reopens your confirmed character sheet.
 - Singleplayer pauses during character creation. In multiplayer, the character is protected from damage until the choice is confirmed.
@@ -116,7 +117,7 @@ status: available
 - The character stays visible next to climbing ropes and while climbing them. Enlarging the minimap no longer shares the spyglass zoom key.
 - Fixed a world crash when a dropped sapling plants itself. Manual placement still grants building practice.
 
-## 0.6.2
+### 0.6.2
 
 - Mastery paths now have one to three upgrades per stretch. Selecting a talent highlights the route and shows its remaining point and practice requirements.
 - Guardian Aid refunds mana for healing a protected ally. Binding Pact refunds mana when your summon damages a target held by your roots.
@@ -143,7 +144,7 @@ status: available
 - Enabled temporary Portal pairs within one dimension and 128 blocks, lasting 20, 40 or 60 seconds by rank with a 60-second cap and at least 180 seconds between completed pairs; disabled the Portal spell's permanent frame links.
 - Included the shader settings and combat talent data required by quality checks in the owned mod's source archive so it can build outside the repository.
 
-## 0.6.1
+### 0.6.1
 
 - Added Project MMO practice skills: Melee, Ranged, Magic, Gathering, Crafting, Smithing, Building, Farming and Cooking grow through personal work up to level 50, without item restrictions or level loss on death.
 - Added Pufferfish's Skills combat and profession talent trees with first melee, protection, magic and gathering branches; every five skill levels give one talent point.
@@ -192,7 +193,7 @@ status: available
 - Awakened geysers give paragliders a short updraft.
 - Fixed the Celestia advancement tab background.
 
-## 0.5.4
+### 0.5.4
 
 - Added Steam Powered boilers, liquid steam storage and transfer, and three engine/flywheel tiers using brass, iron and foundry steel.
 - Fixed full boiler output from weak positive external heat; pinned steam output, engine consumption and fuel conversion settings.
@@ -203,7 +204,7 @@ status: available
 - Restricted Infinite Fluid Tanks to water and lava, preserving finite oil and fuel supplies.
 - Added brass-based Hand Pointer reforging using existing building-tool effects.
 
-## 0.5.3
+### 0.5.3
 
 - Added Create: Diesel Generators with crop fuels, oil refining and compact, modular and huge engines.
 - Added oil-bearing rock matching its host stone on island undersides and finite shared chunk reserves of 48–96 buckets, with scanner readings tied to the remaining oil. The rock can be mined without drops.
@@ -213,7 +214,7 @@ status: available
 - Added held 3D equipment models while preserving native states and lighter variants.
 - Fixed the entity filter sample transfer.
 
-## 0.5.2
+### 0.5.2
 
 - Added the mechanical workshop from Vintage Improvements — SSW Edition: bending, polishing, spring coiling, helve hammer, centrifuge, vibrating table and stationary processing laser.
 - Added Create: Metallurgy with melting, alloying, graphite molds and casting, including steel, tungsten and obdurium production.
@@ -225,7 +226,7 @@ status: available
 - Restored glass inputs for crafting the stationary laser and cutting clear and stained glass.
 - Fixed EMI recipe lookup for all six ladle styles, including filled and reforged ladles.
 
-## 0.5.1
+### 0.5.1
 
 - Add RSGauges Unofficial Fix for redstone gauges, switches, timers and sensors.
 - Pump lava into Create’s Blaze Burners with Create: Liquid Fuel.
@@ -246,13 +247,13 @@ status: available
 - Move the nutrition button clear of the inventory sorting controls.
 - Update the CI actions and the Java, Python, Go, and documentation toolchains.
 
-## 0.4.6
+### 0.4.6
 
 - Add Theurgy alchemy, including resource separation, recombination and transmutation. The Hermetica guides players through the apparatus and recipes.
 - Give The Hermetica, divination rods and the Mercurial Wand 3D models in hand. Divination crystals retain their search and distance feedback.
 - Add reforging for divination rods and the Mercurial Wand, with their materials and possible results in EMI.
 
-## 0.4.5
+### 0.4.5
 
 - Add reforge variants for hand tools, fishing rods, weapons and shields. Existing variants remain available.
 - Extend reforging to the autoloader crossbow and other weapons, armor, spellcasting gear, travel equipment, and field tools. Keep their built-in spells, ammunition and stored contents.
@@ -262,27 +263,27 @@ status: available
 - Necromancers killed by a player have a 1% chance to drop Misery.
 - Fix an intermittent startup crash when Distant Horizons initializes alongside Better Clouds.
 
-## 0.4.4
+### 0.4.4
 
 - Add held 3D models for canteens, pouches, buckets, tankards, bottles and 31 Iron’s Spells weapons, books and other items. Keep the original inventory icons and item states.
 - Give the built-in spells on Amethyst Rapier, Boreal Blade and Spellbreaker a clearer hand motion. Show a brief first-person Echoing Strikes effect and keep the third-person drinking motion for Netherward Tincture.
 - Wrap Twilight Gale’s shaft in a softly glowing purple vine, use Allurite colors on Spellbreaker’s blade and add a faint glow to the Hither Thither Wand’s gem. Hold the Bone and Decrepit Keys with their teeth and heads in view.
 
-## 0.4.3
+### 0.4.3
 
 - Add epic equipment with two or three bonuses. Legendary gear combines comparable bonuses with a special effect. Choose the quality before rolling its variant so adding variants preserves the grade’s odds.
 - Expand reforging to shields, tridents, maces, magical gear, fishing rods, knives, shears, slingshots, paragliders and underwater gear. Add new profiles for bows, crossbows, armor, work tools and grappling hooks.
 - Add abilities such as 3×3 mining and tilling, an extra natural-block drop, charged melee finishers and mana recovery from spell kills.
 - Show the gear, base material and lapis lazuli in the Reforging category in EMI.
 
-## 0.4.2
+### 0.4.2
 
 - Add four ordinary equipment ranks with distinct exceptional results for swords and tools. Find a legendary Frost Strike sword in selected chests or roll its rank at an anvil. [Hero’s Tiered](https://modrinth.com/mod/heros-tiered/version/GY1XViBt), [Hero’s Lib](https://modrinth.com/mod/heros-lib/version/QtGWytnQ).
 - Reforge undamaged gear on the anvil for one base material and one lapis lazuli. Each attempt replaces the full rank and keeps enchantments. Switching back restores the anvil’s stored repair inputs.
 - Add ranks to all five [grappling hooks](https://modrinth.com/mod/yori3os-grappling-hooks/version/lf4DqQBf). Their ranks affect ascent and descent speed.
 - Update [EMI](https://modrinth.com/mod/emi/version/5sIPA1To) to resolve the client startup conflict with [Hero’s Lib](https://modrinth.com/mod/heros-lib/version/QtGWytnQ).
 
-## 0.4.1
+### 0.4.1
 
 - Add [Iron’s Spells ’n Spellbooks](https://modrinth.com/mod/irons-spells-n-spellbooks/version/slKLosTb) with [Iron’s Lib](https://modrinth.com/mod/irons-lib/version/sQyzhxuH), [Curios](https://modrinth.com/mod/curios/version/yohfFbgD) and [Player Animator](https://modrinth.com/mod/playeranimator/version/HJZB6bmA). Find level-one Magic Missile and Healing Circle scrolls in village chests and inscribe them in a copper spell book.
 - Adapt magical structures in the Overworld to island terrain. Limit Teleport to level one with a 20-second book cooldown, require a spell book for Recall, and disable Portal and Angel Wings.
@@ -292,17 +293,17 @@ status: available
 
 - Complete the island exploration stage, with its selected nature, discoveries and expedition preparation content delivered in earlier updates.
 
-## 0.3.7
+### 0.3.7
 
 - Observe planets and draw and name constellations through a spyglass with [Spyglass Astronomy for NeoForge](https://www.curseforge.com/minecraft/mc-mods/spyglass-astronomy-neoforge/files/8338853).
 - Add the clovers, mooblooms, honey foods and honeycomb blocks of [Buzzier Bees](https://modrinth.com/mod/buzzier-bees/version/Y12rtT96), keeping ordinary cows in sunflower plains.
 - Add water trails and splashes from swimming, rowing and moving floating structures with [Wakes Reforged](https://modrinth.com/mod/wakes-reforged/version/Z3Ic8n5N).
 
-## 0.3.6
+### 0.3.6
 
 - Rework held equipment models for aquatic and building tools, workshop supplies, rope fittings, kitchen knives and cave equipment. Seat coral heads in their mounts, distinguish fan-shaped and spiral shells, and refine boomerangs, bombs and handheld instruments. Give excavation brushes a shared shape with tier-specific grips and ferrules. Add weighted hems to casting nets and bring the pouch into first-person view. Distinguish the crab claw’s empty and charged forms. Restore full paint-brush coloring, missing held-model textures and flat inventory icons. Preserve sandpaper's polishing effect. Refine the held models of navigation instruments and field equipment, including a hollow copper horn and a clearer projector lens. Hold the lunchbox upright from below in first person.
 
-## 0.3.5
+### 0.3.5
 
 - Fix ore-page text overlap and geode slot backgrounds; restore generated leaf-pile textures and steel wool in creative search.
 - Give the ice sickle a solid angular blade, rectangular shaft and blocklike socket matching the existing 3D tools; let mouse-wheel input reach the inventory at tooltip scroll limits.
@@ -313,7 +314,7 @@ status: available
 - Show biome arrival names through [Traveler's Titles](https://modrinth.com/mod/travelers-titles), including lower islands; hide the open-sky biome between islands.
 - Remove the airborne mining-speed penalty while attached to [Yori3o's Grappling Hooks](https://modrinth.com/mod/yori3os-grappling-hooks).
 
-## 0.3.4
+### 0.3.4
 
 - Replace the square sun and moon with a round golden Sun and a cool blue cratered Moon, retaining all eight lunar phases.
 - Block backup publication and rotation after world-save errors, including errors swallowed by native storage; wait for pending point-of-interest writes before taking a snapshot.
@@ -336,7 +337,7 @@ status: available
 - Match the modded compasses and copper horn to their existing shape families, preserving their native targeting and use states; raise the rope connector in both hands.
 - Disable the grappling hook from [Critters and Companions](https://modrinth.com/mod/critters-and-companions), retaining its animals and other equipment.
 
-## 0.3.3
+### 0.3.3
 
 - Fixed the rider animation on elephants from [Naturalist](https://modrinth.com/mod/naturalist).
 - Illager manors from [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) now check ground beneath their wings and no longer extend unsupported foundations far into the void.
@@ -350,7 +351,7 @@ status: available
 - Assign the previous bird and coastal foods to their nutrition groups, including crab boil servings.
 - Spread long structure searches in server checks across ticks.
 
-## 0.3.2
+### 0.3.2
 
 - Reduce the new-world creation pause by reusing native terrain checks during [Spawn](https://modrinth.com/mod/spawn-mod)'s dodo-island search, retaining its placement and support criteria.
 - Fix dodo-island site selection accepting unsuitable locations where the island could not generate.
@@ -361,7 +362,7 @@ status: available
 - Add [This Rocks!](https://modrinth.com/mod/this-rocks-forge)'s collectible ground and underwater details on island surfaces.
 - Add [Explorify](https://www.curseforge.com/minecraft/mc-mods/explorify)'s camps, buildings and ruins, with complete-assembly support and projected-path checks.
 
-## 0.3.1
+### 0.3.1
 
 - Replace the repeating square marine-biome pattern with seeded irregular habitats; existing generated chunks retain their stored biomes.
 - Give fishing rods distinct three-dimensional models matching their inventory sprites, with volumetric reels and no hanging tackle after casting; add volumetric grappling hooks and lunch box models.
@@ -389,7 +390,7 @@ status: available
 - Render held maps while their data arrives and raise both map-holding arms in [Punchy](https://modrinth.com/mod/punchy-fpa).
 - World generation changes apply to new chunks; existing islands retain their terrain, with possible seams along explored boundaries.
 
-## 0.2.6
+### 0.2.6
 
 - Add the Waystone Sigil to the waystone creative tab and Minecraft's creative search.
 - Show exact waystone XP prices and level-progress balances, replace the activation sigil artwork, and extend its 25% loot roll to selected modded exploration containers.
@@ -399,7 +400,7 @@ status: available
 - Add [Waystones](https://modrinth.com/mod/waystones) and [Waystones: Sable](https://modrinth.com/mod/waystones-sable): loot-only activation sigils, paid stone-to-stone travel and support for ship destinations; portable teleports are disabled.
 - Add English and Russian interface, configuration and help text for the new conveniences.
 
-## 0.2.5
+### 0.2.5
 
 - Disable the [Better Clouds](https://modrinth.com/mod/better-clouds) warning about Minecraft clouds being turned off by default.
 - Add [Crafting Tweaks](https://modrinth.com/mod/crafting-tweaks), including support for the crafting terminal from [Tom’s Simple Storage](https://modrinth.com/mod/toms-storage).
@@ -413,13 +414,13 @@ status: available
 - Add [Nature’s Compass](https://modrinth.com/mod/natures-compass) and [Explorer’s Compass](https://modrinth.com/mod/explorers-compass): free search to 5,000 blocks, with one experience level charged only for a successful farther result within 10,000 blocks.
 - Add hourly active-play world backups with [Simple Backups](https://modrinth.com/mod/simple-backups), quiet routine operation, five copies per world and a shared soft 2 GiB storage budget.
 
-## 0.2.4
+### 0.2.4
 
 - Add [Distant Horizons](https://modrinth.com/mod/distanthorizons) for distant islands, with a 64-chunk radius, Russian settings and support for both supplied shaderpacks. Spyglass zoom shows the distant view in more detail.
 - Optimize island terrain generation.
 - Fix startup when OpenCL acceleration is disabled in the generation configuration.
 
-## 0.2.3
+### 0.2.3
 
 - Added [Better Advancements](https://modrinth.com/mod/better-advancements), [Advancement Plaques](https://modrinth.com/mod/advancement-plaques) and [Pick Up Notifier](https://modrinth.com/mod/pick-up-notifier) for advancement browsing, notifications and pickup information.
 - Added [Boat Item View](https://modrinth.com/mod/boat-item-view), [Trade Cycling](https://modrinth.com/mod/trade-cycling), [Dismount Entity](https://modrinth.com/mod/dismount-entity) and [Clumps](https://modrinth.com/mod/clumps) for boating, trading, dismounting mobs and collecting experience.
@@ -428,7 +429,7 @@ status: available
 - Include [Clumps](https://modrinth.com/mod/clumps) in client installations so experience merging also works in singleplayer.
 - Use a liquid interaction sound for milk buckets instead of the cow voice assigned by [Sounds](https://modrinth.com/mod/sound).
 
-## 0.2.2
+### 0.2.2
 
 - Disable item model previews in the starting [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips) configuration to prevent overlap with [Quark](https://modrinth.com/mod/quark)'s attribute icons.
 - Fix a crash when opening settings sections for [Equipment Compare](https://modrinth.com/mod/equipment-compare) and [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips).
@@ -437,7 +438,7 @@ status: available
 - Add [Smart Tooltip Scroll](https://modrinth.com/mod/smart-tooltip-scroll), [Equipment Compare](https://modrinth.com/mod/equipment-compare) and [Legendary Tooltips](https://modrinth.com/mod/legendary-tooltips), with English/Russian settings and a native editor for the latter two.
 - Fill missing enchantment and effect descriptions in English and Russian while preserving the warning names of internal enchantments.
 
-## 0.2.1
+### 0.2.1
 
 - Fit the underground rooms of Creeping Crypt from [Dungeons and Taverns](https://modrinth.com/datapack/dungeons-and-taverns) inside suitable islands while preserving its surface entrance.
 - Align held lantern and soul lantern handles with [Punchy](https://modrinth.com/mod/punchy-fpa)'s first-person grip when using [Extended Illumina NEA](https://modrinth.com/resourcepack/extended-illumina-not-enough-animations).
@@ -460,11 +461,11 @@ status: available
 - Fill missing English and Russian biome names and selected item, entity, effect and interface translations.
 - Add dedicated-server coverage for Overworld, Nether and End biomes, natural feature and structure block writes, and native placement filters and weighted selection, plus teleport chunk-delivery diagnostics.
 
-## 0.1.7
+### 0.1.7
 
 - Add biome color variation, campfire smoke, decorative birds, eating animations and selected interaction and hit particles.
 
-## 0.1.6
+### 0.1.6
 
 - Add three small decorative planets, brighter accent stars and a fixed northern guide star, fading with daylight, weather and the horizon.
 - Enable **Hear yourself** in the initial [Sound Physics Remastered](https://modrinth.com/mod/sound-physics-remastered) profile.
@@ -474,11 +475,11 @@ status: available
 - Give the vanilla/MakeUp star field a wider size range and increase Complementary star density.
 - Pin official CurseForge files by project/file ID and verify their unchanged client override exports.
 
-## 0.1.5
+### 0.1.5
 
 - Add Fresh Animations: Quivers for skeletons, strays and bogged, retaining their current Fresh Animations models and movement through a client compatibility adapter.
 
-## 0.1.4
+### 0.1.4
 
 - Add standalone Punchy with restrained initial hand/camera settings and an adapter for the current EMF hand-render state; retain Fresh Animations, FA Player and Not Enough Animations.
 - Add Refined Tools with native Modefite and Puzzle, bundled MidnightLib and independent missing-parent model shims.
@@ -490,7 +491,7 @@ status: available
 - Replace the weather platform with a ready-made Aeronautics airship by Tommobean, created by one cheat command with a fueled engine, native levers and steering wheel; preserve editing, save/reload, return and removal.
 - Wait for the client to load the test airship before placing its pilot in the seat.
 
-## 0.1.3
+### 0.1.3
 
 - Add material-dependent rain sounds and craftable wind chimes with native Sable support.
 - Add an Otherworld-style shoulder camera and guard redundant zero-sway rotation on Sable ships.
@@ -504,7 +505,7 @@ status: available
 - Allow the exact owner-approved Sound Physics Remastered beta file while retaining checks against unapproved prereleases.
 - Guard Dramatic Doors conversions that reference door variants absent from Chipped.
 
-## 0.1.2
+### 0.1.2
 
 - Add Handcrafted furniture and Chipped building variants with Resourceful Lib and Athena.
 - Replace Cubic Leaves with Motschen’s Better Leaves.
@@ -513,7 +514,7 @@ status: available
 - Add Fusion Connected Glass with Fusion, Falling Leaves, Fresh Animations: Player Extension, and portable light through LambDynamicLights and Extended Illumina NEA.
 - Select the new resourcepacks in fresh client profiles and keep flowering azalea particles with Subtle Effects to avoid duplicate ambient falling leaves.
 
-## 0.1.1
+### 0.1.1
 
 - Add the author's manifesto on AI and authorship, discussing Modrinth's rules in English and Russian.
 - Group Character and combat, Magic and Settlements in the sidebar, each with an Overview page.

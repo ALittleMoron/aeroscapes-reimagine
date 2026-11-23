@@ -76,13 +76,22 @@ def changelog_section(source: str, version: str) -> str:
 
     version_key(version)
     base = version.split("-", 1)[0]
-    headings = list(re.finditer(r"(?m)^## ([^\n]+)\s*$", source))
-    matches = [index for index, heading in enumerate(headings) if heading[1].split()[0] == base]
+    headings = list(re.finditer(r"(?m)^(#{2,3})[ \t]+(\S+)[^\r\n]*", source))
+    matches = [index for index, heading in enumerate(headings) if heading[2] == base]
     if len(matches) != 1:
         raise PackError(f"Expected exactly one changelog section for {base}")
     index = matches[0]
-    end = headings[index + 1].start() if index + 1 < len(headings) else len(source)
-    contents = source[headings[index].end() : end].strip()
+    heading = headings[index]
+    end = next(
+        (
+            following.start()
+            for following in headings[index + 1 :]
+            if len(following[1]) <= len(heading[1])
+            or re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", following[2])
+        ),
+        len(source),
+    )
+    contents = source[heading.end() : end].strip()
     if not contents:
         raise PackError(f"Empty changelog section for {base}")
     return contents

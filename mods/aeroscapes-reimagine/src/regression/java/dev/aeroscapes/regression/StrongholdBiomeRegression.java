@@ -74,6 +74,7 @@ public final class StrongholdBiomeRegression {
     IslandBiomeSampler context = (IslandBiomeSampler) (Object) copy;
     context.aeroscapesReimagine$terrainMask(original.aeroscapesReimagine$terrainMask());
     context.aeroscapesReimagine$deferTerrainMask(true);
+    context.aeroscapesReimagine$skipSurfaceFootprints(true);
     return copy;
   }
 
@@ -192,7 +193,8 @@ public final class StrongholdBiomeRegression {
       report.addProperty(
           "scope",
           "Actual native ring futures versus a separate native structure state with only the ring"
-              + " search sampler deferred; same world seed, structure sets, source and native RNG."
+              + " search sampler deferred and surface footprints bypassed; same world seed,"
+              + " structure sets, source and native RNG."
               + " Prefit samples query the native stub with masked/unmasked samplers. Only the old"
               + " accepted site also tests the current supported wrapper with/without the native"
               + " biome predicate; its fit still uses actual masked world state. No chunks are"
@@ -375,7 +377,9 @@ public final class StrongholdBiomeRegression {
       var copy = (IslandBiomeSampler) (Object) deferred;
       return caller == level.getChunkSource().randomState().sampler()
           && !original.aeroscapesReimagine$deferTerrainMask()
+          && !original.aeroscapesReimagine$skipSurfaceFootprints()
           && copy.aeroscapesReimagine$deferTerrainMask()
+          && copy.aeroscapesReimagine$skipSurfaceFootprints()
           && original.aeroscapesReimagine$terrainMask() == copy.aeroscapesReimagine$terrainMask();
     }
 

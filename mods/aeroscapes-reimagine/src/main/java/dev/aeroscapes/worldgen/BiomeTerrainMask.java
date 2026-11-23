@@ -50,6 +50,17 @@ public final class BiomeTerrainMask {
     return false;
   }
 
+  boolean nearExposedShelf(int x, int y, int z) {
+    int gridX = Math.floorDiv(x, cellWidth);
+    int gridY = Math.floorDiv(y, cellHeight);
+    int gridZ = Math.floorDiv(z, cellWidth);
+    int top = surfaceNode(gridX, gridY, gridZ);
+    return top != NO_SURFACE
+        && occupied(gridX, top - 1, gridZ)
+        && !occupied(gridX, top + 1, gridZ)
+        && !occupied(gridX, top + 2, gridZ);
+  }
+
   @Nullable
   BlockPos smallIslandSurface(int x, int y, int z) {
     int gridX = Math.floorDiv(x, cellWidth);

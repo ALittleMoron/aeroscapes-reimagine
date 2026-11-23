@@ -61,6 +61,25 @@ def test_changelog_extracts_version_for_both_stable_and_prerelease() -> None:
         changelog_section(source, "0.3.0")
 
 
+def test_changelog_extracts_only_the_requested_release_in_a_stage() -> None:
+    from aeroscapes_pack.release import changelog_section
+
+    source = (
+        "## 0.3.0\n\n### 0.2.1\n\n- Work toward the next stage\n\n"
+        "## 0.2.0\n\n### Atmosphere\n\n- Stage changes\n\n"
+        "### 0.1.2\n\n- Second patch\n\n#### Animations\n\n- Patch detail\n\n"
+        "### 0.1.1\n\n- First patch\n\n## 0.1.0\n\n- Initial release\n"
+    )
+
+    second_patch = "- Second patch\n\n#### Animations\n\n- Patch detail"
+    assert changelog_section(source, "0.2.1") == "- Work toward the next stage"
+    assert changelog_section(source, "0.2.0") == "### Atmosphere\n\n- Stage changes"
+    assert changelog_section(source, "0.1.2") == second_patch
+    assert changelog_section(source, "0.1.1") == "- First patch"
+    with pytest.raises(PackError, match="Empty changelog section for 0.3.0"):
+        changelog_section(source, "0.3.0")
+
+
 def test_release_decision_rejects_reused_version_changes_and_downgrades() -> None:
     from aeroscapes_pack.release import release_decision
 
@@ -250,7 +269,7 @@ def test_release_notes_use_only_target_section_from_checked_snapshot(
         directory = tmp_path / "docs" / locale
         directory.mkdir(parents=True)
         (directory / "changelog.md").write_text(
-            f"## 0.2.0\n\n- Current {locale}\n\n## 0.1.1\n\n- Previous {locale}\n"
+            f"## 0.2.0\n\n- Current {locale}\n\n### 0.1.1\n\n- Previous {locale}\n"
         )
     github = GitHub("owner/repo", "test-token")
     monkeypatch.setattr(

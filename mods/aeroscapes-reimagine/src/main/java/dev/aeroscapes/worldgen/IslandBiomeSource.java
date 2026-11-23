@@ -19,6 +19,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeSource;
 import net.minecraft.world.level.biome.Climate;
 import net.minecraft.world.level.biome.MultiNoiseBiomeSource;
+import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.DensityFunction.SinglePointContext;
 import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
@@ -78,6 +79,7 @@ public final class IslandBiomeSource extends BiomeSource {
   private final SpawnHabitats spawnHabitats;
   private Holder<Biome> voidBiome;
   private Holder<Biome> volcanicBiome;
+  private LargeIslandClimate largeIslandClimate;
   private volatile Habitat habitat;
 
   private record Habitat(
@@ -87,9 +89,11 @@ public final class IslandBiomeSource extends BiomeSource {
       IslandLayout layout,
       IslandLayout.Basin basin,
       IslandLayout.LargeIsland island,
-      IslandLayout.Basin lavaIsland) {}
+      IslandLayout.Basin lavaIsland,
+      LargeIslandClimate.Profile shelfProfile) {}
 
-  private Habitat habitat(int x, int z, DensityFunction continents) {
+  private Habitat habitat(int x, int z, Climate.Sampler sampler) {
+    DensityFunction continents = sampler.continentalness();
     // Both layout cell widths (1024 and 1536) are multiples of 512.
     int cellX = Math.floorDiv(x, 512);
     int cellZ = Math.floorDiv(z, 512);
@@ -102,6 +106,7 @@ public final class IslandBiomeSource extends BiomeSource {
         cached != null && cached.continents() == continents
             ? cached.layout()
             : IslandTerrain.layout(continents);
+    IslandLayout.LargeIsland island = layout.largeIsland(x, z);
     Habitat computed =
         new Habitat(
             continents,
@@ -109,8 +114,11 @@ public final class IslandBiomeSource extends BiomeSource {
             cellZ,
             layout,
             IslandTerrain.basin(layout, continents, x, z),
-            layout.largeIsland(x, z),
-            layout.lavaIsland(x, z));
+            island,
+            layout.lavaIsland(x, z),
+            largeIslandClimate == null
+                ? null
+                : LargeIslandClimate.Profile.forIsland(island, sampler));
     habitat = computed;
     return computed;
   }
@@ -156,6 +164,9 @@ public final class IslandBiomeSource extends BiomeSource {
       if (stem.generator() instanceof NoiseBasedChunkGenerator generator) {
         IslandBiomeSource source = IslandBiomeSources.find(generator.getBiomeSource());
         if (source == null) continue;
+        if (entry.getKey().equals(LevelStem.OVERWORLD))
+          source.largeIslandClimate =
+              new LargeIslandClimate(server.registryAccess().registryOrThrow(Registries.BIOME));
         if (source.voidBiome == null)
           source.voidBiome =
               server
@@ -197,16 +208,19 @@ public final class IslandBiomeSource extends BiomeSource {
     ((IExtendedParameterList<Holder<Biome>>) copiedParameters).recreateUniqueness();
     ((MultiNoiseBiomeSourceAccess) copy).setParameters(Either.left(copiedParameters));
     BiolithBiomeCompatibility.bindGenerationCache(copy, copiedParameters);
-    return new IslandBiomeSource(
-        copy,
-        oceans,
-        deepOceans,
-        shores,
-        mountains,
-        Optional.ofNullable(voidBiome),
-        Optional.ofNullable(volcanicBiome),
-        aquaticBiomes,
-        spawnBiomes);
+    var generation =
+        new IslandBiomeSource(
+            copy,
+            oceans,
+            deepOceans,
+            shores,
+            mountains,
+            Optional.ofNullable(voidBiome),
+            Optional.ofNullable(volcanicBiome),
+            aquaticBiomes,
+            spawnBiomes);
+    generation.largeIslandClimate = largeIslandClimate;
+    return generation;
   }
 
   @Override
@@ -224,6 +238,8 @@ public final class IslandBiomeSource extends BiomeSource {
             mountains.stream(),
             aquaticBiomes.stream(),
             spawnBiomes.stream(),
+            Stream.ofNullable(largeIslandClimate)
+                .flatMap(palette -> palette.possibleBiomes().stream()),
             Stream.ofNullable(voidBiome),
             Stream.ofNullable(volcanicBiome))
         .flatMap(stream -> stream);
@@ -259,7 +275,7 @@ public final class IslandBiomeSource extends BiomeSource {
     int x = quartX * 4;
     int y = quartY * 4;
     int z = quartZ * 4;
-    Habitat current = habitat(x, z, sampler.continentalness());
+    Habitat current = habitat(x, z, sampler);
     var lava = current.lavaIsland();
     if (lava != null && volcanicBiome != null) {
       var shape = lava.shape(x, z);
@@ -281,8 +297,9 @@ public final class IslandBiomeSource extends BiomeSource {
           shores.get(temperature < -0.15 ? 0 : 1), basin, x, y, z, temperature);
     }
     IslandLayout.LargeIsland island = current.island();
+    double cap = 0;
     if (island != null) {
-      double cap = (1 - island.radius(x, z)) * 3;
+      cap = (1 - island.radius(x, z)) * 3;
       double peak = cap > 0 ? island.peak(x, z) : 0;
       if (peak > 20) {
         double surface = island.surface(x, z, cap, peak);
@@ -300,10 +317,23 @@ public final class IslandBiomeSource extends BiomeSource {
             : delegate.getNoiseBiome(
                 legacy.getX() >> 2, legacy.getY() >> 2, legacy.getZ() >> 2, sampler);
     BlockPos surface = mask == null ? null : mask.smallIslandSurface(x, y, z);
-    if (surface == null) return climate;
-    BlockPos seeded =
-        legacyClimateAnchor(current.layout(), surface.getX(), surface.getY(), surface.getZ());
-    return SmallIslandClimate.sample(delegate, seeded == null ? surface : seeded, sampler);
+    if (surface != null) {
+      BlockPos seeded =
+          legacyClimateAnchor(current.layout(), surface.getX(), surface.getY(), surface.getZ());
+      return SmallIslandClimate.sample(delegate, seeded == null ? surface : seeded, sampler);
+    }
+    if (mask == null
+        || legacy != null
+        || current.shelfProfile() == null
+        || largeIslandClimate == null
+        || island == null
+        || cap < 0.60) return climate;
+    Holder<Biome> adjusted = largeIslandClimate.select(climate, current.shelfProfile());
+    if (adjusted.equals(climate) || !LargeIslandClimate.insideZone(island, x, z)) return climate;
+    double shelfY = island.surface(x, z, cap, 0);
+    if (y < shelfY - 16 || y > shelfY + 12 || !mask.nearExposedShelf(x, y, z)) return climate;
+    if (basin != null && y <= basin.waterline() + 24 && basin.radius(x, z) < 1.22) return climate;
+    return adjusted;
   }
 
   @Nullable
@@ -322,7 +352,7 @@ public final class IslandBiomeSource extends BiomeSource {
 
   /** Marine decoration must not erase a native island structure's ocean-climate eligibility. */
   public Holder<Biome> basinOcean(int x, int z, Climate.Sampler sampler) {
-    var basin = habitat(x, z, sampler.continentalness()).basin();
+    var basin = habitat(x, z, sampler).basin();
     if (basin == null || !basin.water(x, basin.waterline(), z)) return null;
     return ocean(
         basin,

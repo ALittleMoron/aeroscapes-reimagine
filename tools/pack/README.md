@@ -78,11 +78,9 @@ number in the final merge/squash title as well as the PR title.
 All switches default to off. Follow the project's
 [pack versioning](../../CONTRIBUTING.md#pack-versioning): set the next intended
 version in `pack/pack.toml` and accumulate its changes in both changelogs until
-publication. Local exports and further changes retain that target. Changelog
-headings contain only the number, such as `## 0.1.1`. The next substantive change
-after publication starts the next patch; the owner's stage-release preparation
-instruction selects the next minor milestone. Use plain numbers throughout.
-Published versions cannot be overwritten.
+integration. Local exports retain that target. The same procedure defines the
+changelog hierarchy and when to select the next patch or milestone. Published
+versions cannot be overwritten.
 The workflow does not set secrets, repository variables, permissions or project
 settings for you.
 

@@ -73,7 +73,7 @@ Saved-world compatibility depends on the actual changes, not on which number inc
 ## From changes to a release
 
 1. Pack changes are collected into **one final PR or push to `main`**. It may contain several preparatory commits; intermediate commits within one push do not produce separate versions.
-2. `pack/pack.toml` defines the version. The English and Russian changelogs each contain one corresponding section, such as `## 0.1.1`, with that release's actual changes.
+2. `pack/pack.toml` defines the version. Each changelog has one heading per release. A milestone such as `0.8.0` has its own entry and groups the patches that led to it, such as `0.7.5`.
 3. The PR title and the first line of the final commit reaching `main` include the number, for example `feat: [0.1.1] animations and foliage`. A squash or merge commit must preserve the number in its final title too.
 4. CI checks the source and export. For a new version, it also validates the number in the integration title and both changelog sections. Only a successful main push supplies the checked archive for publication.
 5. Automation binds the `v0.1.1` tag to the final commit's exact SHA and publishes the checked `.mrpack` with a checksum. Change descriptions come from that version's section in the same source snapshot. Preparatory commits may appear as work history, but the release belongs to one checked state of the pack.

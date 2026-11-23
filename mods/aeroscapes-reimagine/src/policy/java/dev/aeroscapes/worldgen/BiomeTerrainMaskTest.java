@@ -55,8 +55,43 @@ public final class BiomeTerrainMaskTest {
     checkOracle();
     checkConcurrentColumns();
     checkIslandSurfaces();
+    checkBroadSurface();
+    checkLargeIslandClimate();
     checkClimateTies();
     System.out.println("BiomeTerrainMask: spatial, bounds, cache and concurrent checks passed");
+  }
+
+  private static void checkLargeIslandClimate() {
+    var high = new IslandLayout.LargeIsland(0, 0, 420, 440, 192, 0, 80, 73);
+    require(
+        LargeIslandClimate.Profile.fromClimate(192, 0.7, 0) == LargeIslandClimate.Profile.ARID,
+        "Warm, dry high shelves can host a desert");
+    require(
+        LargeIslandClimate.Profile.fromClimate(32, 0.7, 0) == LargeIslandClimate.Profile.GRASSLAND,
+        "Low rocky shelves do not receive a desert without a sand surface");
+    require(
+        LargeIslandClimate.Profile.fromClimate(112, 0.7, 0.5) == LargeIslandClimate.Profile.MARSH,
+        "Warm humid land can host a marsh");
+    require(
+        LargeIslandClimate.Profile.fromClimate(192, -0.45, 0.5) == LargeIslandClimate.Profile.SNOWY,
+        "Cold land cannot receive a warm marsh");
+    require(
+        LargeIslandClimate.insideZone(high, 0, 0),
+        "A shelf interior has room for a broad climate zone");
+    require(
+        !LargeIslandClimate.insideZone(high, 400, 0), "The wide shelf retains its outer climate");
+  }
+
+  private static void checkBroadSurface() {
+    var mask =
+        new BiomeTerrainMask(
+            (x, y, z) -> x <= 4 && y >= 104 && y <= 128 || x == 0 && y == 144, -128, 384, 4, 8);
+    require(mask.nearExposedShelf(-4, 132, 0), "Paint the top and standing height of a shelf");
+    require(mask.nearExposedShelf(-4, 124, 0), "Paint the upper material of a shelf");
+    require(!mask.nearExposedShelf(-4, 104, 0), "Keep interior biomes beneath the shelf");
+    require(!mask.nearExposedShelf(8, 128, 0), "Keep neighboring open sky outside the shelf");
+    require(!mask.nearExposedShelf(0, 128, 0), "Keep narrow gaps beneath a stacked layer");
+    require(!mask.nearExposedShelf(0, 144, 0), "A thin ledge cannot qualify as a shelf");
   }
 
   private static void checkIslandSurfaces() {
