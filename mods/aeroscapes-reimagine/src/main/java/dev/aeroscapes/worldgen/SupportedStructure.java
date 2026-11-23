@@ -11,6 +11,7 @@ import java.util.function.BiFunction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.StringRepresentable;
@@ -23,6 +24,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.levelgen.structure.PoolElementStructurePiece;
 import net.minecraft.world.level.levelgen.structure.Structure;
@@ -31,6 +33,7 @@ import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pieces.PiecesContainer;
 import net.minecraft.world.level.levelgen.structure.pieces.StructurePiecesBuilder;
 import net.minecraft.world.level.levelgen.structure.pools.FeaturePoolElement;
+import net.minecraft.world.level.levelgen.structure.pools.SinglePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
 import net.minecraft.world.level.levelgen.structure.structures.StrongholdPieces;
 import net.neoforged.bus.api.IEventBus;
@@ -57,6 +60,10 @@ public final class SupportedStructure extends Structure {
     SURFACE_FOOTPRINT,
     FOUNDATION_SURFACE,
     TEMPLATE_SURFACE,
+    DISCOVERY_SURFACE,
+    DISCOVERY_SHELTER,
+    DISCOVERY_SNOW_SHELTER,
+    DISCOVERY_DRY_SHELTER,
     TEMPLATE_SEABED,
     GROUNDED_SURFACE,
     CAMP_SURFACE,
@@ -67,9 +74,12 @@ public final class SupportedStructure extends Structure {
     ANCHORED_BURIED,
     WET_RUIN,
     ENCLOSED,
+    ENCLOSED_FLOOR,
     CORE_ENCLOSED,
     RUINS_ENCLOSED,
     BURIED_COMPLEX,
+    BURIED_ROOMS,
+    BURIED_ARENA,
     PORTAL_ENCLOSED;
 
     @Override
@@ -83,6 +93,10 @@ public final class SupportedStructure extends Structure {
   private static final DeferredHolder<StructureType<?>, StructureType<SupportedStructure>> TYPE =
       TYPES.register("supported", () -> () -> CODEC);
   private static final int SAMPLE_STEP = 4;
+  public static final int ARENA_SHELL_DEPTH = 3;
+  public static final int DISCOVERY_APPROACH_LENGTH = 3;
+  private static final ResourceLocation SALT_ARENA =
+      ResourceLocation.parse("galosphere:pink_salt_shrine/boss_arenas/boss_arena");
   private static final int CAMP_RELIEF = 16;
   public static final int WETLAND_STILT_DEPTH = 12;
   // The pinned surface definitions have start offsets <= 0, except coconut village's +1.
@@ -118,9 +132,12 @@ public final class SupportedStructure extends Structure {
   private boolean embedsUnderground() {
     return terrainCheck == TerrainCheck.CAVERN
         || terrainCheck == TerrainCheck.ENCLOSED
+        || terrainCheck == TerrainCheck.ENCLOSED_FLOOR
         || terrainCheck == TerrainCheck.CORE_ENCLOSED
         || terrainCheck == TerrainCheck.RUINS_ENCLOSED
         || terrainCheck == TerrainCheck.BURIED_COMPLEX
+        || terrainCheck == TerrainCheck.BURIED_ROOMS
+        || terrainCheck == TerrainCheck.BURIED_ARENA
         || terrainCheck == TerrainCheck.PORTAL_ENCLOSED;
   }
 
@@ -166,6 +183,15 @@ public final class SupportedStructure extends Structure {
           context, delegate, pieces, terrainCheck == TerrainCheck.TEMPLATE_SEABED))
         return Optional.empty();
       return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
+    }
+    if (protectsDiscoveryFootings()) {
+      if (!(context.chunkGenerator() instanceof NoiseBasedChunkGenerator)) return Optional.empty();
+      var support = new TemplateStructureSupport(context);
+      if (support.acceptsDiscovery(pieces, terrainCheck))
+        return Optional.of(new GenerationStub(stub.position(), Either.right(builder)));
+      if (terrainCheck == TerrainCheck.DISCOVERY_DRY_SHELTER)
+        return fitDryShelter(context, stub, builder, pieces, support);
+      return Optional.empty();
     }
     Map<Long, NoiseColumn> columns = new HashMap<>();
     if (terrainCheck == TerrainCheck.FOUNDATION_SURFACE) {
@@ -452,6 +478,52 @@ public final class SupportedStructure extends Structure {
     return true;
   }
 
+  private Optional<GenerationStub> fitDryShelter(
+      GenerationContext context,
+      GenerationStub stub,
+      StructurePiecesBuilder builder,
+      PiecesContainer pieces,
+      TemplateStructureSupport support) {
+    BlockPos anchor = stub.position();
+    BoundingBox bounds = builder.getBoundingBox();
+    for (int radius = 8; radius <= 24; radius += 8) {
+      for (int dx = -radius; dx <= radius; dx += 8) {
+        for (int dz = -radius; dz <= radius; dz += 8) {
+          if (Math.max(Math.abs(dx), Math.abs(dz)) != radius) continue;
+          int y =
+              context
+                  .chunkGenerator()
+                  .getBaseHeight(
+                      anchor.getX() + dx,
+                      anchor.getZ() + dz,
+                      Heightmap.Types.WORLD_SURFACE_WG,
+                      context.heightAccessor(),
+                      context.randomState());
+          int dy = y - anchor.getY();
+          if (Math.abs(dy) > 8
+              || context.heightAccessor().isOutsideBuildHeight(bounds.minY() + dy)
+              || context.heightAccessor().isOutsideBuildHeight(bounds.maxY() + dy)) continue;
+          BlockPos relocated = anchor.offset(dx, dy, dz);
+          if (!context
+              .validBiome()
+              .test(
+                  context
+                      .biomeSource()
+                      .getNoiseBiome(
+                          relocated.getX() >> 2,
+                          relocated.getY() >> 2,
+                          relocated.getZ() >> 2,
+                          context.randomState().sampler()))) continue;
+          for (StructurePiece piece : pieces.pieces()) movePiece(piece, dx, dy, dz);
+          if (support.acceptsDiscovery(pieces, terrainCheck))
+            return Optional.of(new GenerationStub(relocated, Either.right(builder)));
+          for (StructurePiece piece : pieces.pieces()) movePiece(piece, -dx, -dy, -dz);
+        }
+      }
+    }
+    return Optional.empty();
+  }
+
   private static Optional<GenerationStub> fitSurface(
       GenerationContext context,
       GenerationStub stub,
@@ -635,8 +707,40 @@ public final class SupportedStructure extends Structure {
     return needsCavern() ? bounds.inflatedBy(12) : super.adjustBoundingBox(bounds);
   }
 
+  private int referenceHalo() {
+    if (needsCavern()) return 12;
+    // Carvers in a neighboring chunk must see the start even outside the room itself.
+    return protectsArena() ? ARENA_SHELL_DEPTH : 0;
+  }
+
   public boolean needsCavern() {
     return terrainCheck == TerrainCheck.CAVERN;
+  }
+
+  public boolean protectsArena() {
+    return terrainCheck == TerrainCheck.BURIED_ARENA;
+  }
+
+  public boolean protectsRoomFloors() {
+    return terrainCheck == TerrainCheck.BURIED_ROOMS;
+  }
+
+  public boolean protectsDiscoveryFootings() {
+    return terrainCheck == TerrainCheck.DISCOVERY_SURFACE
+        || terrainCheck == TerrainCheck.DISCOVERY_SHELTER
+        || terrainCheck == TerrainCheck.DISCOVERY_SNOW_SHELTER
+        || terrainCheck == TerrainCheck.DISCOVERY_DRY_SHELTER;
+  }
+
+  public static boolean hasLargeRoomFloor(StructurePiece piece) {
+    BoundingBox bounds = piece.getBoundingBox();
+    return bounds.getXSpan() >= 8 && bounds.getZSpan() >= 8 && bounds.getYSpan() >= 5;
+  }
+
+  public static boolean isSaltArena(StructurePiece piece) {
+    return piece instanceof PoolElementStructurePiece pool
+        && pool.getElement() instanceof SinglePoolElement single
+        && single.template.left().filter(SALT_ARENA::equals).isPresent();
   }
 
   private Optional<GenerationStub> fitAssembly(
@@ -656,7 +760,21 @@ public final class SupportedStructure extends Structure {
     BoundingBox coreBounds = core.orElseThrow().getBoundingBox();
     BoundingBox bounds = builder.getBoundingBox();
     List<BlockPos> roof =
-        terrainCheck == TerrainCheck.BURIED_COMPLEX ? exteriorRoof(pieces) : List.of();
+        terrainCheck == TerrainCheck.BURIED_COMPLEX
+                || terrainCheck == TerrainCheck.BURIED_ROOMS
+                || protectsArena()
+            ? exteriorRoof(pieces)
+            : List.of();
+    List<BlockPos> floors =
+        terrainCheck == TerrainCheck.BURIED_ROOMS ? exteriorRoomFloors(pieces) : List.of();
+    List<BoundingBox> arenas =
+        protectsArena()
+            ? pieces.pieces().stream()
+                .filter(SupportedStructure::isSaltArena)
+                .map(StructurePiece::getBoundingBox)
+                .toList()
+            : List.of();
+    int halo = referenceHalo();
     int[][] offsets = {
       {0, 0},
       {16, 0},
@@ -676,11 +794,10 @@ public final class SupportedStructure extends Structure {
       int dx = horizontal[0];
       int dz = horizontal[1];
       // Native structure references look only eight chunks around their owning start.
-      if (bounds.minX() + dx - (needsCavern() ? 12 : 0) < context.chunkPos().getMinBlockX() - 128
-          || bounds.maxX() + dx + (needsCavern() ? 12 : 0) > context.chunkPos().getMaxBlockX() + 128
-          || bounds.minZ() + dz - (needsCavern() ? 12 : 0) < context.chunkPos().getMinBlockZ() - 128
-          || bounds.maxZ() + dz + (needsCavern() ? 12 : 0)
-              > context.chunkPos().getMaxBlockZ() + 128) continue;
+      if (bounds.minX() + dx - halo < context.chunkPos().getMinBlockX() - 128
+          || bounds.maxX() + dx + halo > context.chunkPos().getMaxBlockX() + 128
+          || bounds.minZ() + dz - halo < context.chunkPos().getMinBlockZ() - 128
+          || bounds.maxZ() + dz + halo > context.chunkPos().getMaxBlockZ() + 128) continue;
       BlockPos center = coreBounds.getCenter().offset(dx, 0, dz);
       NoiseColumn coreColumn = column(context, center.getX(), center.getZ(), columns);
       int lowest = context.heightAccessor().getMinBuildHeight() + 5 - bounds.minY();
@@ -692,6 +809,10 @@ public final class SupportedStructure extends Structure {
             || !solidFloor(coreColumn.getBlock(floor - 4))) continue;
         if (!roof.isEmpty() && !buriedRoof(roof, dx, offset, dz, terrain)) continue;
         if (!assemblySupport(context, pieces, dx, offset, dz, terrain, true)) continue;
+        if (!supportedRoomFloors(floors, dx, offset, dz, terrain)
+            || !seatedArenas(arenas, dx, offset, dz, terrain)) continue;
+        if (terrainCheck == TerrainCheck.ENCLOSED_FLOOR
+            && !continuousFloor(coreBounds, dx, offset, dz, terrain)) continue;
         if (terrainCheck == TerrainCheck.RUINS_ENCLOSED
             && !suitableRuinSlabs(pieces, dx, offset, dz, terrain)) continue;
         if (needsCavern()
@@ -709,6 +830,76 @@ public final class SupportedStructure extends Structure {
       }
     }
     return Optional.empty();
+  }
+
+  private static List<BlockPos> exteriorRoomFloors(PiecesContainer pieces) {
+    var floor = new java.util.LinkedHashSet<BlockPos>();
+    for (StructurePiece piece : pieces.pieces()) {
+      if (!hasLargeRoomFloor(piece)) continue;
+      BoundingBox bounds = piece.getBoundingBox();
+      for (int x = bounds.minX(); ; x = Math.min(x + SAMPLE_STEP, bounds.maxX())) {
+        for (int z = bounds.minZ(); ; z = Math.min(z + SAMPLE_STEP, bounds.maxZ())) {
+          var below = new BlockPos(x, bounds.minY() - 1, z);
+          if (pieces.pieces().stream().noneMatch(other -> other.getBoundingBox().isInside(below)))
+            floor.add(below);
+          if (z == bounds.maxZ()) break;
+        }
+        if (x == bounds.maxX()) break;
+      }
+    }
+    return List.copyOf(floor);
+  }
+
+  private static boolean supportedRoomFloors(
+      List<BlockPos> floors, int dx, int dy, int dz, StructureTerrain terrain) {
+    for (BlockPos point : floors) {
+      int x = point.getX() + dx;
+      int y = point.getY() + dy;
+      int z = point.getZ() + dz;
+      if (!terrain.solid(x, y, z) || !terrain.solid(x, y - 3, z)) return false;
+    }
+    return true;
+  }
+
+  private static boolean seatedArenas(
+      List<BoundingBox> arenas, int dx, int dy, int dz, StructureTerrain terrain) {
+    for (BoundingBox arena : arenas) {
+      int minX = arena.minX() + dx;
+      int maxX = arena.maxX() + dx;
+      int minY = arena.minY() + dy;
+      int maxY = arena.maxY() + dy;
+      int minZ = arena.minZ() + dz;
+      int maxZ = arena.maxZ() + dz;
+      for (int margin = 1; margin <= ARENA_SHELL_DEPTH; margin++) {
+        for (int x = minX; x <= maxX; x++) {
+          for (int z = minZ; z <= maxZ; z++) {
+            if (!terrain.solid(x, minY - margin, z) || !terrain.solid(x, maxY + margin, z))
+              return false;
+          }
+        }
+        for (int y = minY; y <= maxY; y++) {
+          for (int x = minX; x <= maxX; x++) {
+            if (!terrain.solid(x, y, minZ - margin) || !terrain.solid(x, y, maxZ + margin))
+              return false;
+          }
+          for (int z = minZ; z <= maxZ; z++) {
+            if (!terrain.solid(minX - margin, y, z) || !terrain.solid(maxX + margin, y, z))
+              return false;
+          }
+        }
+      }
+    }
+    return true;
+  }
+
+  private static boolean continuousFloor(
+      BoundingBox bounds, int dx, int dy, int dz, StructureTerrain terrain) {
+    int y = bounds.minY() + dy - 1;
+    for (int x = bounds.minX() + dx; x <= bounds.maxX() + dx; x++)
+      for (int z = bounds.minZ() + dz; z <= bounds.maxZ() + dz; z++) {
+        if (!terrain.solid(x, y, z)) return false;
+      }
+    return true;
   }
 
   private static boolean suitableRuinSlabs(

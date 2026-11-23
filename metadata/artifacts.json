@@ -628,8 +628,12 @@
     "release_type": "release",
     "side": "client",
     "kind": "mod",
-    "loaders": ["neoforge"],
-    "game_versions": ["1.21.1"],
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
     "license": {
       "id": "LicenseRef-CC-BY-NC-SA-4.0-Minecraft-Modpack-Exception",
       "name": "CC BY-NC-SA 4.0 with Additional Permission for Minecraft Modpacks and Servers",
@@ -11961,5 +11965,279 @@
     "sha1": "918e74e6772c563973872e060d6938d10ec05669",
     "file_size": 323553,
     "exception": "Owner conditionally selected the exact 3.9.2+1.21.1 NeoForge beta for race body scaling. Physical and graphical compatibility are acceptance gates."
+  },
+  {
+    "slug": "feur-extension-desert",
+    "name": "Feur Extension Desert",
+    "project_id": "qRG5vR8U",
+    "version_id": "oBjuO3Ki",
+    "version": "1.6.0",
+    "filename": "feur_extension_desert-1.21.1-neoforge.jar",
+    "sha512": "b1bf4c6763ee4c7be2c94190cdaebb07ec663e36618f1a4dbbdd9b37f534790d0f63fd915e6f64b928d972258560e2e952ebb620edb3afd368829f66245d0f41",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.8.0 surface discoveries",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "105dc3d36bf2f5847bfba124342b2d3f61aef06b",
+    "file_size": 524777
+  },
+  {
+    "slug": "feur-extension-jungle",
+    "name": "Feur Extension Jungle",
+    "project_id": "Uzp5QboY",
+    "version_id": "EWBUZ2tO",
+    "version": "1.1.2",
+    "filename": "feur_extension_jungle-1.21.1-neoforge.jar",
+    "sha512": "dc1ee57a54a74c2c5f4b731b8da9e61685a74489aae9ae77d79b29d125fd866739d779f98ed026e5a39035ddb1fe44f1923b3206e818b51a81e79929464ae98a",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": null,
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.8.0 surface discoveries",
+    "game_versions": [
+      "1.21.1"
+    ],
+    "sha1": "7e69d6ec5548ff88d8ddb2ed03c6497657da27f2",
+    "file_size": 354679
+  },
+  {
+    "slug": "formations",
+    "name": "Formations (Structure Library)",
+    "project_id": "tPe4xnPd",
+    "version_id": "ybUmDE8h",
+    "version": "1.0.4-neoforge-mc1.21",
+    "filename": "formations-1.0.4-neoforge-mc1.21.jar",
+    "sha512": "09fd3bcb9b7d63f18a89693e4bd84548fa15761a60214e3e2f010c680c06914e92794661d1887746c9b4dfa1907d21533738ecda8557abf5801774f4875fc77f",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/SuperMartijn642/Formations",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.8.0 surface discoveries",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "3845f96c9304f6956688f7a35205e9354bf411b0",
+    "file_size": 287525
+  },
+  {
+    "slug": "formations-overworld",
+    "name": "Formations Overworld",
+    "project_id": "KX1XC0Oo",
+    "version_id": "jRPqlunS",
+    "version": "1.0.5c-mc1.21+",
+    "filename": "formationsoverworld-1.0.5c-mc1.21+.jar",
+    "sha512": "1266db4bd02ea08ba73b0f8f525adddf4bfe3217eeca0f86715d72ee26db05ebb8d0c3c92c360132408015fed1391e7b20c459b3e6681372613367204390d3cf",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "source_url": "https://github.com/SuperMartijn642/FormationsOverworld",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "tPe4xnPd",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "0.8.0 surface discoveries",
+    "game_versions": [
+      "1.21",
+      "1.21.1",
+      "1.21.10",
+      "1.21.11",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2",
+      "26.3"
+    ],
+    "sha1": "717033f8239062de6eeac77d9664258fc6c657bc",
+    "file_size": 600780
+  },
+  {
+    "slug": "immersive-structures",
+    "name": "Immersive structures",
+    "project_id": "CVBAErky",
+    "version_id": "1fkB1mdT",
+    "version": "2.2.1c",
+    "filename": "[neoforge]imst-2.2.1c.jar",
+    "sha512": "b1affee3278a7e1c0dbd792e0b325513f2fa9f7253a12c41120b063d170223b861591f7e8af0b11e97525f1fa684a8697d1a2cede5984ba38f23fd382cff53db",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "CC-BY-NC-SA-4.0",
+      "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+      "url": null
+    },
+    "source_url": "https://github.com/ChoiceTheorem/Immersive-structures",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "lhGA9TYQ",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "0.8.0 surface discoveries",
+    "game_versions": [
+      "1.21",
+      "1.21.1",
+      "1.21.10",
+      "1.21.11",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9"
+    ],
+    "sha1": "9f281293eb19d0c7155147cd86d4f3d2c0807b37",
+    "file_size": 460128
+  },
+  {
+    "slug": "moogs-structure-lib",
+    "name": "Moog's Structure Lib (moogs_structures)",
+    "project_id": "1oUDhxuy",
+    "version_id": "wcg4mE4e",
+    "version": "3.4.2-neoforge-1.21.1",
+    "filename": "MoogsStructureLib-neoforge-1.21.1-3.4.2.jar",
+    "sha512": "378d5da579e65e8c37d81aee510302f99b3097f0c6a4245f3621478f741fac3b55a3715227d9408153a66c98624f8fcb5f93e98027212e0f0a82b768315d0651",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/FinnSetchell/MoogsStructureLib/",
+    "dependencies": [],
+    "status": "included",
+    "origin": "0.8.0 surface discoveries",
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "sha1": "c379b8d5dc1a4b1e8987da1052d6b4de81354d72",
+    "file_size": 1094979
+  },
+  {
+    "slug": "moogs-voyager-structures",
+    "name": "MVS - Moog's Voyager Structures",
+    "project_id": "OQAgZMH1",
+    "version_id": "PiFoSPXI",
+    "version": "5.1.3",
+    "filename": "MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+    "sha512": "80e9e4a6543e8fc7d24d7e1fb4d4245d1d30f9aaf02ae2ba1098956106bea411a4502ce1d4b8fa97b935c9421a0eebf42226a46c8172cbbf621cc8ca16a50457",
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/Moog-s-Mods/MoogsVoyagerStructures",
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "1oUDhxuy",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "0.8.0 surface discoveries",
+    "game_versions": [
+      "1.21",
+      "1.21.1",
+      "1.21.10",
+      "1.21.11",
+      "1.21.2",
+      "1.21.3",
+      "1.21.4",
+      "1.21.5",
+      "1.21.6",
+      "1.21.7",
+      "1.21.8",
+      "1.21.9",
+      "26.1",
+      "26.1.1",
+      "26.1.2",
+      "26.2",
+      "26.3"
+    ],
+    "sha1": "6759fa57891f731e54f865c13ffa0601a829b76a",
+    "file_size": 2234287
   }
 ]

@@ -85,6 +85,11 @@ public record IslandLayout(long seed) {
     return value * value * value * (value * (value * 6 - 15) + 10);
   }
 
+  static double smoothstep(double value) {
+    double bounded = Math.max(0, Math.min(1, value));
+    return bounded * bounded * (3 - 2 * bounded);
+  }
+
   private static double gradient(long seed, int x, int z, long salt, double dx, double dz) {
     int direction =
         (int) (random(seed ^ (long) x * 341873128712L ^ (long) z * 132897987541L ^ salt) * 8);
@@ -184,17 +189,30 @@ public record IslandLayout(long seed) {
       return peakHeight * region * region * (0.25 + 0.55 * ridge * ridge + 0.2 * ridge2);
     }
 
+    static double lowlandWeight(double cap, double peak) {
+      return smoothstep((cap - 0.06) / 0.44) * (1 - smoothstep((peak - 10) / 20));
+    }
+
     public double surface(int x, int z) {
+      return surface(x, z, (1 - radius(x, z)) * 3, peak(x, z));
+    }
+
+    double surface(int x, int z, double cap, double peak) {
+      double lowland = lowlandWeight(cap, peak);
       return Math.min(
           357,
           anchor
               + 27 * noise(key, x, z, 210, 71)
-              + 14 * noise(key, x, z, 77, 72)
-              + 5 * noise(key, x, z, 23, 73)
-              + peak(x, z));
+              + (14 - 11 * lowland) * noise(key, x, z, 77, 72)
+              + (5 - 4 * lowland) * noise(key, x, z, 23, 73)
+              + peak);
     }
 
     public VerticalShape shape(int x, int z) {
+      return shape(x, z, peak(x, z));
+    }
+
+    VerticalShape shape(int x, int z, double peak) {
       double horizontal = radius(x, z);
       if (horizontal > 1.12) return VerticalShape.EMPTY;
       double bottom =
@@ -204,7 +222,8 @@ public record IslandLayout(long seed) {
                   - depth * (0.45 + 0.55 * Math.sqrt(Math.max(0, 1 - horizontal)))
                   + 19 * noise(key, x, z, 97, 74)
                   + 8 * noise(key, x, z, 31, 75));
-      return new VerticalShape((1 - horizontal) * 3, surface(x, z), bottom, 16);
+      double cap = (1 - horizontal) * 3;
+      return new VerticalShape(cap, surface(x, z, cap, peak), bottom, 16);
     }
 
     public double density(int x, int y, int z) {

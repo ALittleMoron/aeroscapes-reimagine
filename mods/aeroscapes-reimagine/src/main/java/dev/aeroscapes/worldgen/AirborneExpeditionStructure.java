@@ -2,6 +2,7 @@ package dev.aeroscapes.worldgen;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
 import net.minecraft.core.BlockPos;
@@ -51,7 +52,22 @@ public final class AirborneExpeditionStructure extends Structure {
   enum Kind implements StringRepresentable {
     DERELICT,
     TETHERED,
-    OBSERVATION;
+    OBSERVATION,
+    CARGO_BARGE,
+    CLIFF_SKIFF,
+    SALVAGE_TUG,
+    SURVEY_CATAMARAN,
+    MAIL_CUTTER,
+    PASSENGER_FERRY,
+    WEATHER_SHIP,
+    GLASSHOUSE_CARRIER;
+
+    boolean isShipVariant() {
+      return switch (this) {
+        case DERELICT, TETHERED, OBSERVATION -> false;
+        default -> true;
+      };
+    }
 
     @Override
     public String getSerializedName() {
@@ -69,6 +85,15 @@ public final class AirborneExpeditionStructure extends Structure {
   static void register(IEventBus bus) {
     TYPES.register(bus);
     PIECES.register(bus);
+  }
+
+  public static List<BoundingBox> airframes(StructureManager structures, ChunkPos column) {
+    return structures
+        .startsForStructure(column, structure -> structure instanceof AirborneExpeditionStructure)
+        .stream()
+        .map(start -> (Piece) start.getPieces().getFirst())
+        .map(piece -> piece.site.airframeBounds())
+        .toList();
   }
 
   @Override

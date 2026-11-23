@@ -8,6 +8,7 @@
   "client": [
     "SoundCaptionMixin",
     "AuroraShaderOwnershipMixin",
+    "MakeUpBlockLightMixin",
     "ItemModelResourcesMixin",
     "CelestialSkyMixin",
     "SpyglassAstronomyMixin",

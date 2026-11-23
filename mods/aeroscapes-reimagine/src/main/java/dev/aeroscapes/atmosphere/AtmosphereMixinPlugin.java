@@ -249,6 +249,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("AuroraShaderOwnershipMixin")) {
       versions = Map.of("auroras", "1.6.2", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("MakeUpBlockLightMixin")) {
+      versions = Map.of("iris", "1.8.14-beta.1+mc1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("CelestialSkyMixin")) {
       versions = Map.of("neoforge", "21.1.244");
       if (versionLookup.apply("spyglass_astronomy") != null) return false;

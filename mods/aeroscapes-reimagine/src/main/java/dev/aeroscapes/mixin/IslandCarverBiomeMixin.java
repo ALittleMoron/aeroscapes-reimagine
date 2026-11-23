@@ -11,6 +11,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
+import net.minecraft.world.level.StructureManager;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.chunk.CarvingMask;
@@ -43,11 +44,13 @@ public abstract class IslandCarverBiomeMixin {
       Aquifer aquifer,
       ChunkPos source,
       CarvingMask mask,
-      Operation<Boolean> original) {
+      Operation<Boolean> original,
+      @Local(argsOnly = true) StructureManager structures) {
     IslandTerrain terrain = IslandTerrain.from(context.randomState());
+    var selection = (IslandCarvingContext) (Object) context;
+    if (terrain != null) selection.aeroscapes$prepareStructureProtection(structures, target);
     if (terrain == null || !aeroscapes$usesIslandHeight(carver))
       return original.call(carver, context, target, biomes, random, aquifer, source, mask);
-    var selection = (IslandCarvingContext) (Object) context;
     var previous = selection.aeroscapes$layer();
     boolean carved = false;
     try {

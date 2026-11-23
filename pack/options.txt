@@ -32,6 +32,9 @@ key_key.neoorigins.skill_4:key.keyboard.unknown
 key_key.neoorigins.class_skill:key.keyboard.unknown
 key_key.neoorigins.view_info:key.keyboard.unknown
 key_gui.xaero_enlarge_map:key.keyboard.unknown
+key_gui.xaero_new_waypoint:key.keyboard.unknown
+key_key.toms_storage.open_terminal:key.keyboard.unknown
+key_key.sophisticatedbackpacks.open_backpack:key.keyboard.b
 key_key.neoorigins.toggle_night_vision:key.keyboard.unknown
 key_iris.keybind.reload:key.keyboard.unknown
 key_quark.keybind.variant_selector:key.keyboard.unknown

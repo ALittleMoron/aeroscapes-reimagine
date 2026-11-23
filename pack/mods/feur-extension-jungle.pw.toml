@@ -1,0 +1,12 @@
+name = "Feur Extension Jungle"
+filename = "feur_extension_jungle-1.21.1-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/Uzp5QboY/versions/EWBUZ2tO/feur_extension_jungle-1.21.1-neoforge.jar"
+hash-format = "sha512"
+hash = "dc1ee57a54a74c2c5f4b731b8da9e61685a74489aae9ae77d79b29d125fd866739d779f98ed026e5a39035ddb1fe44f1923b3206e818b51a81e79929464ae98a"
+
+[update.modrinth]
+mod-id = "Uzp5QboY"
+version = "EWBUZ2tO"

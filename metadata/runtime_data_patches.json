@@ -170,6 +170,36 @@
       "version_id": "XrUKaWrw",
       "filename": "Ribbits-1.21.1-NeoForge-4.1.6.jar",
       "sha512": "5e78b0d63757d5904b96e0c4565d56832ca42b1cbba939b98101f848f618cfcda94d5aeadeacb0faff85bdd05fb071f2df551a42c3e7d0e3a2564adbec227931"
+    },
+    {
+      "project_id": "OQAgZMH1",
+      "version_id": "PiFoSPXI",
+      "filename": "MoogsVoyagerStructures-universal-1.21-5.1.3.jar",
+      "sha512": "80e9e4a6543e8fc7d24d7e1fb4d4245d1d30f9aaf02ae2ba1098956106bea411a4502ce1d4b8fa97b935c9421a0eebf42226a46c8172cbbf621cc8ca16a50457"
+    },
+    {
+      "project_id": "KX1XC0Oo",
+      "version_id": "jRPqlunS",
+      "filename": "formationsoverworld-1.0.5c-mc1.21+.jar",
+      "sha512": "1266db4bd02ea08ba73b0f8f525adddf4bfe3217eeca0f86715d72ee26db05ebb8d0c3c92c360132408015fed1391e7b20c459b3e6681372613367204390d3cf"
+    },
+    {
+      "project_id": "qRG5vR8U",
+      "version_id": "oBjuO3Ki",
+      "filename": "feur_extension_desert-1.21.1-neoforge.jar",
+      "sha512": "b1bf4c6763ee4c7be2c94190cdaebb07ec663e36618f1a4dbbdd9b37f534790d0f63fd915e6f64b928d972258560e2e952ebb620edb3afd368829f66245d0f41"
+    },
+    {
+      "project_id": "Uzp5QboY",
+      "version_id": "EWBUZ2tO",
+      "filename": "feur_extension_jungle-1.21.1-neoforge.jar",
+      "sha512": "dc1ee57a54a74c2c5f4b731b8da9e61685a74489aae9ae77d79b29d125fd866739d779f98ed026e5a39035ddb1fe44f1923b3206e818b51a81e79929464ae98a"
+    },
+    {
+      "project_id": "CVBAErky",
+      "version_id": "1fkB1mdT",
+      "filename": "[neoforge]imst-2.2.1c.jar",
+      "sha512": "b1affee3278a7e1c0dbd792e0b325513f2fa9f7253a12c41120b063d170223b861591f7e8af0b11e97525f1fa684a8697d1a2cede5984ba38f23fd382cff53db"
     }
   ],
   "resources": [
@@ -3849,6 +3879,302 @@
       "source_sha256": "8ec3c9756e87489e0eed8ee6ebab2e70296fb8b07278e4a25c661da353b4eb0a",
       "result_json_sha256": "14ca7e3a415a96b6e45a2ed9b5317271016577b27540550f76f3cbf89015b036",
       "reason": "Check actual path block footing after native template projection."
+    },
+    {
+      "id": "mvs:worldgen/structure/cart.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/cart.json",
+      "source_sha256": "f17dc58ca08657458a710cd49d49b54d86c0fb783c76c5ddd840702b8f9dc5e6",
+      "result_json_sha256": "e9af0ff767217cdf0ebf9d8000620ca4ac60d8d77d465b34c29e99a22037ecf3"
+    },
+    {
+      "id": "mvs:worldgen/structure/medium_bamboo_cart.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/medium_bamboo_cart.json",
+      "source_sha256": "a78cf37ac68915324a3cba12b9fa6f4793b5253b2497f7205e9666eba528e4eb",
+      "result_json_sha256": "5d1feaf495f5f32f568c500017a54bec3119781104b87089990455944f09f1ed"
+    },
+    {
+      "id": "mvs:worldgen/structure/pile.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/pile.json",
+      "source_sha256": "613d83f7ba4545944a2fc1bc9af2c506bebbc3b86714f4750a45228d834ee020",
+      "result_json_sha256": "3b1faa1c87ef2c5541f2deb2e2a25e0efc883152631a5f23315c3d5dd846d3ac"
+    },
+    {
+      "id": "mvs:worldgen/structure/haystack.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/haystack.json",
+      "source_sha256": "f07cf3f026120ca4cebb128affb99542a8da392d8a13033f6709cd7a7ac00c32",
+      "result_json_sha256": "17a98e5a24ff849d99c520d670da98d81dcaeb636d55dab9314eb3a9d2820679"
+    },
+    {
+      "id": "mvs:worldgen/structure/acacia_log_pile.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/acacia_log_pile.json",
+      "source_sha256": "688467301c840e345b3cd20bc04511a8e4ab634f5840b9f63897dfa8f90d715e",
+      "result_json_sha256": "ce887aaf65c462f4de9ad13eb75714bef23110595cfea0c11334ad89608e8a1d"
+    },
+    {
+      "id": "mvs:worldgen/structure/birch_log_pile.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/birch_log_pile.json",
+      "source_sha256": "79ec019643a08afd0b0a8708b8cda2a8757e47f026b1c57c4c1582067736972a",
+      "result_json_sha256": "78b9c50fcbd7555a7914bfcf8cf0249653ab9381ed6e3b837db612b929c9fe52"
+    },
+    {
+      "id": "mvs:worldgen/structure/dark_oak_log_pile.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/dark_oak_log_pile.json",
+      "source_sha256": "a3c0d7f21ceee4accd23118a35d43d64ffd5c0e458b1e7656bf2912d5f557887",
+      "result_json_sha256": "cc299cd9ca394275a3acac671adbf397f2d96cbed91796dc40e96b0589e7ef3e"
+    },
+    {
+      "id": "mvs:worldgen/structure/jungle_log_pile.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/jungle_log_pile.json",
+      "source_sha256": "45ecfc0dc9c1e4a18841897519df68e542617e5ee35ad7d408f672ce78d467bc",
+      "result_json_sha256": "6dc58e67d8080b818c519348e6bee6c3c90c2e3762e430ba8c17951a5c56dc06"
+    },
+    {
+      "id": "mvs:worldgen/structure/oak_log_pile.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/oak_log_pile.json",
+      "source_sha256": "6df891ae7bcf14cd09e042763388d389f2c8fc107ee176b1b72d8e2e143ad709",
+      "result_json_sha256": "314150e04f48bacca2502538c70ca75a709e64aecb12f63be6a697b432e6083c"
+    },
+    {
+      "id": "mvs:worldgen/structure/spruce_log_pile.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/spruce_log_pile.json",
+      "source_sha256": "fee926b4a3e4cddb2eb628e47e5ab1ead357299b46aa6c59f6a60ac8032de226",
+      "result_json_sha256": "c8a87f9c553e40da5e15037b328e80d8ccb1bde8a34610e0a6819434d3ba6de7"
+    },
+    {
+      "id": "mvs:worldgen/structure/fire_camp.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/fire_camp.json",
+      "source_sha256": "95feca1d987617a4d0350fb8779ad3b9ffc3e41815eab0f93d86803af8623548",
+      "result_json_sha256": "b14b38acb827099742881b3e4b721bdb94e9baaa42c00b4844f27a6d4d7d4c91"
+    },
+    {
+      "id": "mvs:worldgen/structure/shed.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/shed.json",
+      "source_sha256": "fa0a0f66ee8a13497c5b3fc262109d2756fe3d7a09b0f50ef59ae01ee0e82edd",
+      "result_json_sha256": "b3addc9076a4860edcf7a1a4a874e924392bcc826708a12414ae4cfabe0327fe"
+    },
+    {
+      "id": "mvs:worldgen/structure/small_well.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/small_well.json",
+      "source_sha256": "68a9743326e141ea9934943c96e4915593d002c71cc1c5bdf5ae3fc3ff0ff59a",
+      "result_json_sha256": "54dbc4de16ca14861075bef2f3b429fb3bcfc5cfaf72f687277424a71bb81fb9"
+    },
+    {
+      "id": "mvs:worldgen/structure/desert_pump.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/desert_pump.json",
+      "source_sha256": "2054c6ae8b1edf4673f53773ebc87fd6bbf8e86ab02915daf1e208c5e4d4f51e",
+      "result_json_sha256": "84b58054867dfe28e711cc3df83a73c0cb5ef26a8b718ff37589efca3a14ee0d"
+    },
+    {
+      "id": "mvs:worldgen/structure/snowy_dog_hut.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/snowy_dog_hut.json",
+      "source_sha256": "89364a590e7c708b11566229576db6085125423947d79a25f447581e7737a5a6",
+      "result_json_sha256": "57c85a4a1966a5692d183b00c389879352e8197513de2b7451db82a2a1558a62"
+    },
+    {
+      "id": "mvs:worldgen/structure/statue_ruins.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/statue_ruins.json",
+      "source_sha256": "826fde468476c4e7d3daafba465df54304b59295d5b59daadfad0a76030b57c2",
+      "result_json_sha256": "88fb4512ec09b394cf2cd6143c28ab70e4abdc819f0c2d7ec42d820bc367997d"
+    },
+    {
+      "id": "formationsoverworld:worldgen/structure/log_shelter.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/structure/log_shelter.json",
+      "source_sha256": "7d8fd5d7da3a5c35a97ce83ce71932b0e0f7050c988ca9cc69a4fcfdd94ddf49",
+      "result_json_sha256": "4a4fff2e7607f55e653b9df5b427d932b3b563dbc8a8a399af236a878b90299d"
+    },
+    {
+      "id": "formationsoverworld:worldgen/structure/fountain.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/structure/fountain.json",
+      "source_sha256": "082c521a22ce7c0768b88d9a5878a00dbe31d84c2d530c070e4850ef0302e535",
+      "result_json_sha256": "70730eb2681d85431dae7bf2df0bb4730ee53502291974c75c5cecc9e3da7494"
+    },
+    {
+      "id": "formationsoverworld:worldgen/structure/tower_remnant.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/structure/tower_remnant.json",
+      "source_sha256": "9fa8c2d71942b45879ea45aec223804ec8eb60f2427fc7a0ad56b90af1e05657",
+      "result_json_sha256": "5638ebc359da8df349654062c5829b7b60ab20a11383d96f29f6b051106c5267"
+    },
+    {
+      "id": "formationsoverworld:worldgen/structure/well.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/structure/well.json",
+      "source_sha256": "4c5f1a35324e718e1fbef1d8d8ac4fb88355e4468debe0b70d683f8d3f37fc4d",
+      "result_json_sha256": "a3768b3deea688eb6adfe52bd6fb37529881ac9abcd1ae5897830c3ab285c07b"
+    },
+    {
+      "id": "feur_extension_desert:worldgen/structure/rock.json",
+      "provider": "qRG5vR8U",
+      "version": "oBjuO3Ki",
+      "source": "data/feur_extension_desert/worldgen/structure/rock.json",
+      "source_sha256": "643ae0c3a593754134d14f6456895a83d59e53c0b36d99d3056e657727a1b74a",
+      "result_json_sha256": "e6cdbcfdda4b1c6180f9955ed31ca9d73dd0bba17ec85a60b5df3aaf14e2ffc0"
+    },
+    {
+      "id": "feur_extension_desert:worldgen/structure/redrock.json",
+      "provider": "qRG5vR8U",
+      "version": "oBjuO3Ki",
+      "source": "data/feur_extension_desert/worldgen/structure/redrock.json",
+      "source_sha256": "dfd8a88367f58d43a32ffa672860b4cc4bc57f713b2781ce5c8e581c2cbbd016",
+      "result_json_sha256": "7df30d7c7e41751bea56ebf3d6deab562c53aee1271d249d34b1ebb8b97f51c8"
+    },
+    {
+      "id": "feur_extension_jungle:worldgen/structure/lost_explorer.json",
+      "provider": "Uzp5QboY",
+      "version": "EWBUZ2tO",
+      "source": "data/feur_extension_jungle/worldgen/structure/lost_explorer.json",
+      "source_sha256": "4573eb6f47da3a2c671484a999827ce8daa791ea373dff9cadaee5003ba9d44d",
+      "result_json_sha256": "e8d2412ea0b5fb5f2d221828cb33dc97382da82da91b2fc7c433933d0124c19f"
+    },
+    {
+      "id": "formationsoverworld:worldgen/structure/wagon.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/structure/wagon.json",
+      "source_sha256": "6908e8e9b8153e44f4d15aea9bf94601d80a8691a45781bec3287787a11c8673",
+      "result_json_sha256": "1c3cf655c17d435b2c56448fe5ab1357b878c1fb36097792b7dfaf901da1f74b"
+    },
+    {
+      "id": "formationsoverworld:worldgen/structure/bamboo_hut.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/structure/bamboo_hut.json",
+      "source_sha256": "afb792fccc3fadb1dae900026011ce33bc7ddfb7c0a63cba79d69546aba578c6",
+      "result_json_sha256": "31391dc680f28dcfd1f58c52cfc24793828bd16a84a476bc4728a93e31cc5a98"
+    },
+    {
+      "id": "formationsoverworld:worldgen/structure/igloo.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/structure/igloo.json",
+      "source_sha256": "ee70fbd1eda30c4ada955598131ef6e5cfb17f6ea6bb67776bb092802b7d614e",
+      "result_json_sha256": "5bf859697c8740a0af203efed77be0c00f64d8b2b09af9d21d8b3d25d1f89c34"
+    },
+    {
+      "id": "formationsoverworld:worldgen/structure/tiny_house.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/structure/tiny_house.json",
+      "source_sha256": "776cd7ec2f65a4c9e7cc650bba710569b48cbf44ed777d110b36e1d60ede7077",
+      "result_json_sha256": "9b6a9d4ae46387aae9e7751c9bf43a136672a2e9c50e7c84b11f46f2456a3bb9"
+    },
+    {
+      "id": "mvs:worldgen/structure/small_ruin.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/small_ruin.json",
+      "source_sha256": "234510f73082905e42a0289a0001d1784594b33c0082255b850c1112e63e0666",
+      "result_json_sha256": "eeeefe2993e678d53d767d01590fd34e84e4db1dc91b3460a7c171b01b901616"
+    },
+    {
+      "id": "mvs:worldgen/structure/desert_house.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/desert_house.json",
+      "source_sha256": "0c87283c6b0662053a3499cac54809224109dca62fa21dc9dd84a0198e4e630f",
+      "result_json_sha256": "ec9e3158b37df5972c8d0a4f8cfcce293b0d8a1609f5b41714c9db744e7053ed"
+    },
+    {
+      "id": "feur_extension_desert:worldgen/structure/old_house.json",
+      "provider": "qRG5vR8U",
+      "version": "oBjuO3Ki",
+      "source": "data/feur_extension_desert/worldgen/structure/old_house.json",
+      "source_sha256": "fbfd0f76d1016fd4ca8a1ce3f210a68a91f9f303d9e82584509d3d5e7450d80f",
+      "result_json_sha256": "146c04043514bf829d6350b9d8da1fb4ad7ccb4b1be9d142576cd43217cf13f8"
+    },
+    {
+      "id": "feur_extension_jungle:worldgen/structure/old_house.json",
+      "provider": "Uzp5QboY",
+      "version": "EWBUZ2tO",
+      "source": "data/feur_extension_jungle/worldgen/structure/old_house.json",
+      "source_sha256": "a721ddb2c673301de7b3d2883bdbb129b8f6765808cd1dda2be955b61d0bbbf8",
+      "result_json_sha256": "125eb26a53a40deb9fb454fd93e5ee2a189ff75977c3e8a177eeb3ae72669212"
+    },
+    {
+      "id": "feur_extension_jungle:worldgen/structure/tree_stump.json",
+      "provider": "Uzp5QboY",
+      "version": "EWBUZ2tO",
+      "source": "data/feur_extension_jungle/worldgen/structure/tree_stump.json",
+      "source_sha256": "e8a786b68ed54aafa24274330b81be81f01644bfc7ffe1a3f9f0434d6b3b329b",
+      "result_json_sha256": "bb14f3608ecb01e0466a19017af8e165d3dc1a3b2179cc20c70cba2efbd09127"
+    },
+    {
+      "id": "imst:worldgen/structure/terralith/yurt.json",
+      "provider": "CVBAErky",
+      "version": "1fkB1mdT",
+      "source": "data/imst/worldgen/structure/terralith/yurt.json",
+      "source_sha256": "9c2979a0c949aa1e111cef25de9c39a163836b1e6abb08a135a9791ce0aa480f",
+      "result_json_sha256": "2570df494ac94a8bd3ca247e95547c51cb449a87a0636a4dd9a7b7755130ee0e"
+    },
+    {
+      "id": "mvs:worldgen/structure/windmill.json",
+      "provider": "OQAgZMH1",
+      "version": "PiFoSPXI",
+      "source": "data/mvs/worldgen/structure/windmill.json",
+      "source_sha256": "5df5930e63b93e0a110b5204d40e3f0f09b209300147306525da21085010bb56",
+      "result_json_sha256": "fad514ed69929d657a5532cce0840d68382e278cb5baae3a74d0b3ee173c0542"
+    },
+    {
+      "id": "imst:worldgen/structure/observatory.json",
+      "provider": "CVBAErky",
+      "version": "1fkB1mdT",
+      "source": "data/imst/worldgen/structure/observatory.json",
+      "source_sha256": "d796f10d0a43c58668c87dfc0f1ade9ef0e2aca0325f1154703fff43ccc2a317",
+      "result_json_sha256": "77ed7c02e31609305998b124fc6e1f049927bb33c51774c0485a7b43da0590b2"
+    },
+    {
+      "id": "feur_extension_jungle:worldgen/template_pool/lost_explorer.json",
+      "provider": "Uzp5QboY",
+      "version": "EWBUZ2tO",
+      "source": "data/feur_extension_jungle/worldgen/template_pool/lost_explorer.json",
+      "source_sha256": "42babed3f2e9a1723491a27a4b60e7a13433e278a75823982eec4d8b6c36f296",
+      "result_json_sha256": "851abcf82234f76b3b6c0e206348211b61a24398d9adc88394183727b43611f2"
+    },
+    {
+      "id": "formationsoverworld:worldgen/template_pool/tiny_houses.json",
+      "provider": "KX1XC0Oo",
+      "version": "jRPqlunS",
+      "source": "data/formationsoverworld/worldgen/template_pool/tiny_houses.json",
+      "source_sha256": "2e390ebc2d75da9826378a077b4a1ee817394df1971525c4493f96ba0224114b",
+      "result_json_sha256": "07d4e8ca5f8a976cd213e5ed472edcb87443c7154759dcc29d505d2aba8114fc"
     }
   ]
 }

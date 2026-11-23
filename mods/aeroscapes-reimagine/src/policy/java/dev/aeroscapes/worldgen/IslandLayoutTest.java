@@ -8,6 +8,7 @@ public final class IslandLayoutTest {
     verifyCaveHeights();
     verifyBasinSampling();
     verifyLavaIslands();
+    verifyLowlandSlopes();
     for (double cap : new double[] {-1, -0.5, -0.36, -0.01, 0}) {
       var edge = new IslandLayout.VerticalShape(cap, 80, 0, 12);
       require(edge.terrainDensity(40, 10) <= 0, "Detail crosses the bounded island outline");
@@ -100,6 +101,31 @@ public final class IslandLayoutTest {
 
   private static void require(boolean condition, String message) {
     if (!condition) throw new AssertionError(message);
+  }
+
+  private static void verifyLowlandSlopes() {
+    for (long seed : new long[] {73, 28761, -17}) {
+      var shelf = new IslandLayout.LargeIsland(0, 0, 440, 440, 112, 0, 80, seed);
+      double lowest = Double.POSITIVE_INFINITY;
+      double highest = Double.NEGATIVE_INFINITY;
+      int tested = 0;
+      int steep = 0;
+      for (int x = -112; x <= 112; x += 4) {
+        for (int z = -44; z <= 64; z += 4) {
+          var first = shelf.shape(x, z);
+          var second = shelf.shape(x + 16, z);
+          if (first.cap() < 0.5 || second.cap() < 0.5) continue;
+          if (Math.abs(first.top() - second.top()) > 3) steep++;
+          lowest = Math.min(lowest, first.top());
+          highest = Math.max(highest, first.top());
+          tested++;
+        }
+      }
+      require(tested > 1000 && steep * 6 < tested, "Lowland shelf grades became steep");
+      require(highest - lowest > 15, "Lowlands lost their broad hills");
+      var mountain = new IslandLayout.LargeIsland(0, 0, 440, 440, 112, 185, 80, seed);
+      require(mountain.surface(66, -44) > highest + 40, "Mountain relief collapsed into the shelf");
+    }
   }
 
   private static void verifyCaveHeights() {

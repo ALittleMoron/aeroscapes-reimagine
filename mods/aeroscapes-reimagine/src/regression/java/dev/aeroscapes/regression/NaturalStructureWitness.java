@@ -39,6 +39,10 @@ final class NaturalStructureWitness {
   private NaturalStructureWitness() {}
 
   static StructureStart find(ServerLevel level, ResourceLocation id) {
+    return find(level, id, new ChunkPos(0, 0));
+  }
+
+  static StructureStart find(ServerLevel level, ResourceLocation id, ChunkPos near) {
     var holder =
         level.registryAccess().registryOrThrow(Registries.STRUCTURE).getHolder(id).orElseThrow();
     if (id.toString().equals("spawn:dodo_island")) {
@@ -62,7 +66,9 @@ final class NaturalStructureWitness {
           for (var placement : placements) {
             ChunkPos origin =
                 placement.getPotentialStructureChunk(
-                    level.getSeed(), regionX * placement.spacing(), regionZ * placement.spacing());
+                    level.getSeed(),
+                    (regionX + Math.floorDiv(near.x, placement.spacing())) * placement.spacing(),
+                    (regionZ + Math.floorDiv(near.z, placement.spacing())) * placement.spacing());
             candidates++;
             if (!placement.isStructureChunk(
                 level.getChunkSource().getGeneratorState(), origin.x, origin.z)) continue;

@@ -6,6 +6,12 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Surface discoveries in 0.8.0
+
+Moog's Voyager Structures contributes carts, woodpiles and small roadside finds. Formations Overworld supplies covered wagons, shelters and masonry ruins. Feur Extension Desert and Feur Extension Jungle contribute regional scenes. Immersive Structures supplies larger, infrequent stops. The seven files, including Moog's Structure Lib and Formations, have exact matching CurseForge binaries. The original downloads and license declarations are recorded in the [notices](../pack/licenses/THIRD-PARTY-NOTICES.txt).
+
+The compatibility datapack filters the five content providers' structure sets. Small and medium scenes share a weighted placement set. The separate landmark set reserves space around its candidates. All other provider IDs are hidden from Explorer's Compass. The runtime patch inventory binds the terrain wrapper to exact upstream definitions. The wrapper checks the assembled footprint, including rotated child pieces, and a dry approach from the host surface. Carvers preserve the qualifying support. The Formations fountain uses its surface piece, and the Feur explorer's chest contains field supplies and a localized note.
+
 ## Island stops in 0.7.3
 
 [Ribbits 4.1.6](https://modrinth.com/mod/ribbits/version/XrUKaWrw) supplies

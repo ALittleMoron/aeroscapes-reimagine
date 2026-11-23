@@ -234,6 +234,13 @@ versions are recorded in metadata/compat_fixes.json in the pack source.
 https://modrinth.com/mod/better-clouds/version/UvRCtZxT
 https://github.com/Qendolin/better-clouds
 
+MakeUp Ultra Fast 9.6 block light:
+MakeUp by Javier Garduño is licensed under GNU LGPL v3.0. The original shader ZIP
+contains its source and license. The owned mod adds a weak-light adjustment in
+memory to the verified original terrain-lighting include as Iris loads it.
+https://github.com/javiergcim/MakeUpUltraFast
+https://modrinth.com/shader/makeup-ultra-fast-shaders
+
 Second QoL group: workstation, loot, navigation and recovery additions.
 Just Enough Items (JEI): mezz and contributors; MIT.
 https://modrinth.com/mod/jei/version/zHNxmOqp

@@ -1,6 +1,6 @@
 {
   "type": "aeroscapes_reimagine:supported",
-  "terrain_check": "enclosed",
+  "terrain_check": "enclosed_floor",
   "delegate": {
     "type": "minecraft:jigsaw",
     "biomes": "#terralith:has_structure/frosted_dungeon",

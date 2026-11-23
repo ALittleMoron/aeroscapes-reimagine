@@ -1,3 +1,6 @@
+# Use the branded Minecraft loading overlay with its own background and progress bar.
+earlyWindowControl = false
+
 # The owned Sable lighting adapter handles this exact ScalableLux incompatibility.
 [dependencyOverrides]
 sable = ["-scalablelux"]

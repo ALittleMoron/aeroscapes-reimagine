@@ -68,6 +68,10 @@
       {
         "namespace": "agricraft",
         "path": "agricraft/(plants|mutations)/.*"
+      },
+      {
+        "namespace": "(mvs|formationsoverworld|feur_extension_desert|feur_extension_jungle|imst)",
+        "path": "worldgen/structure_set/.*"
       }
     ]
   }

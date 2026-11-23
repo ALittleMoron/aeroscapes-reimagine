@@ -1,0 +1,12 @@
+name = "Feur Extension Desert"
+filename = "feur_extension_desert-1.21.1-neoforge.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/qRG5vR8U/versions/oBjuO3Ki/feur_extension_desert-1.21.1-neoforge.jar"
+hash-format = "sha512"
+hash = "b1bf4c6763ee4c7be2c94190cdaebb07ec663e36618f1a4dbbdd9b37f534790d0f63fd915e6f64b928d972258560e2e952ebb620edb3afd368829f66245d0f41"
+
+[update.modrinth]
+mod-id = "qRG5vR8U"
+version = "oBjuO3Ki"

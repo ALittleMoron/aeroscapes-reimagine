@@ -60,6 +60,7 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
       IslandLayout.VerticalShape small2,
       IslandLayout.VerticalShape small3,
       IslandLayout.VerticalShape large,
+      double largeLowland,
       IslandLayout.Basin basin,
       double radial,
       double floor,
@@ -101,10 +102,17 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
 
     public double islands(int y, double detail) {
       return Math.max(
-          large.terrainDensity(y, detail),
+          largeDensity(y, detail),
           Math.max(
               Math.max(small0.terrainDensity(y, detail), small1.terrainDensity(y, detail)),
               Math.max(small2.terrainDensity(y, detail), small3.terrainDensity(y, detail))));
+    }
+
+    public double largeDensity(int y, double detail) {
+      if (largeLowland == 0) return large.terrainDensity(y, detail);
+      // Dampen surface detail on broad shelves and preserve the 3D form deeper in the island.
+      double blend = largeLowland * IslandLayout.smoothstep((y - large.top() + 40) / 22);
+      return large.terrainDensity(y, detail * (1 - 0.86 * blend));
     }
   }
 
@@ -206,7 +214,8 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
     var small = new IslandLayout.VerticalShape[4];
     for (int layer = 0; layer < 4; layer++) small[layer] = islands.smallShape(x, z, layer);
     var island = islands.largeIsland(x, z);
-    var large = island == null ? IslandLayout.VerticalShape.EMPTY : island.shape(x, z);
+    double peak = island == null ? 0 : island.peak(x, z);
+    var large = island == null ? IslandLayout.VerticalShape.EMPTY : island.shape(x, z, peak);
     var basin = basin(islands, continents, x, z);
     double radial = basin == null ? 2 : basin.radius(x, z);
     double floor = basin == null ? 0 : basin.floor(x, z, radial);
@@ -226,6 +235,7 @@ public final class IslandTerrain implements DensityFunction.SimpleFunction {
             small[2],
             small[3],
             large,
+            IslandLayout.LargeIsland.lowlandWeight(large.cap(), peak),
             basin,
             radial,
             floor,

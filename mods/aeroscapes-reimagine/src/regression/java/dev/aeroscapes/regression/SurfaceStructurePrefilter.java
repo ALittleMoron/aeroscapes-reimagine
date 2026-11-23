@@ -98,6 +98,7 @@ public final class SurfaceStructurePrefilter {
         ServerLevel level,
         String id,
         List<Center> allCenters,
+        ResourceLocation selectedSet,
         boolean nativeRoots,
         boolean rootForensics,
         int forensicCandidates) {
@@ -153,13 +154,15 @@ public final class SurfaceStructurePrefilter {
               : null;
       var matches =
           level.getChunkSource().getGeneratorState().possibleStructureSets().stream()
+              .filter(holder -> selectedSet == null || holder.is(selectedSet))
               .filter(
                   holder ->
                       holder.value().structures().stream()
                           .anyMatch(member -> member.structure().value() == root))
               .toList();
       if (matches.size() != 1)
-        throw new IllegalStateException("Expected exactly one actual set for " + id);
+        throw new IllegalStateException(
+            "Expected one matching actual set for " + id + " (set sets_by_target explicitly)");
       Holder<StructureSet> set = matches.getFirst();
       members = List.copyOf(set.value().structures());
       setId = set.unwrapKey().orElseThrow().location().toString();
@@ -313,13 +316,25 @@ public final class SurfaceStructurePrefilter {
           throw new IllegalArgumentException("Expected distinct supported target IDs");
       }
       if (targets.isEmpty()) throw new IllegalArgumentException("No surface targets");
+      JsonObject selectedSets =
+          plan.has("sets_by_target") ? object(plan, "sets_by_target") : new JsonObject();
+      if (!targets.containsAll(selectedSets.keySet()))
+        throw new IllegalArgumentException("Set overrides must name a target");
       targets.stream()
           .sorted()
           .forEach(
               id ->
                   searches.add(
                       new Search(
-                          level, id, centers, nativeRoots, rootForensics, forensicCandidates)));
+                          level,
+                          id,
+                          centers,
+                          selectedSets.has(id)
+                              ? ResourceLocation.parse(text(selectedSets, id))
+                              : null,
+                          nativeRoots,
+                          rootForensics,
+                          forensicCandidates)));
       sampler = level.getChunkSource().randomState().sampler();
       var context = (IslandBiomeSampler) (Object) sampler;
       mask = context.aeroscapesReimagine$terrainMask();
@@ -488,7 +503,9 @@ public final class SurfaceStructurePrefilter {
         search.forensics.observe(
             origin, result.map(Structure.GenerationStub::position), predicates);
       if (result.isPresent()) {
-        row.add("actual_root_stub", position(result.orElseThrow().position()));
+        BlockPos anchor = result.orElseThrow().position();
+        row.add("actual_root_stub", position(anchor));
+        geometry(anchor, row);
         if (nativeWeightedPrefix) {
           var outcome =
               StructureWeightedPrefit.evaluate(
@@ -752,6 +769,9 @@ public final class SurfaceStructurePrefilter {
             "lithostitched:delegating",
             "lithostitched:jigsaw",
             "minecraft:jigsaw",
+            "moogs_structures:moogs_structures_generic_jigsaw_structure",
+            "formations:simple",
+            "formations:pieced",
             "aeroscapes_reimagine:supported",
             "aeroscapes_reimagine:root_supported",
             "minecraft:buried_treasure",

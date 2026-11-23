@@ -43,3 +43,23 @@ The exports are 1920 × 1200 and 640 × 400. `PackCover.astro` serves both with
 The title cover sits in the page content after the text hero to avoid Starlight's
 default square hero-image transformation. Original gallery photos retain their
 own captions and contain no added lettering.
+
+## Gold Arch launcher icon
+
+The owner selected Gold Arch (option 01) on 2026-11-23 for local launcher
+imports. It uses a square crop of the same sunlit arch screenshot as the
+cover and original block lettering composed with AI assistance. The image
+is an SVG composition rendered with librsvg and ImageMagick.
+
+[`gold-arch.svg`](gold-arch.svg) is the editable source. The pack icon at
+[`pack/icon.png`](../../../../../pack/icon.png) has SHA-256
+`9f18745b7cd6809fb8031e3dbe1bbf9e02818eecb673d20848514372435acdb7`.
+Packwiz exports it as `overrides/icon.png`. New local imports in Modrinth App
+can use it as their instance icon. The [Modrinth project profile](../../../../pack/publishing/modrinth/README.md)
+owns the website's separately licensed icon.
+
+Render the PNG from this directory, then refresh the pack index from the project root.
+
+```sh
+rsvg-convert gold-arch.svg | magick png:- -strip -define png:compression-level=9 ../../../../../pack/icon.png
+```

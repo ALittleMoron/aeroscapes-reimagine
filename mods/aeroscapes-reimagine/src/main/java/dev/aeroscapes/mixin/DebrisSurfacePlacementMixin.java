@@ -1,12 +1,15 @@
 package dev.aeroscapes.mixin;
 
 import dev.aeroscapes.aquatic.AquaticWater;
+import dev.aeroscapes.worldgen.AirborneExpeditionStructure;
 import dev.aeroscapes.worldgen.ExposedIslandSurfaces;
 import dev.aeroscapes.worldgen.IslandTerrain;
 import java.util.stream.Stream;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.server.level.WorldGenRegion;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.levelgen.DensityFunction.SinglePointContext;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.placement.HeightmapPlacement;
@@ -37,7 +40,8 @@ public abstract class DebrisSurfacePlacementMixin {
             .registryOrThrow(Registries.PLACED_FEATURE)
             .getKey(context.topFeature().orElseThrow());
     if (key == null || !key.getNamespace().equals("rocks")) return;
-    IslandTerrain terrain = IslandTerrain.from(level.getLevel().getChunkSource().randomState());
+    var server = level.getLevel();
+    IslandTerrain terrain = IslandTerrain.from(server.getChunkSource().randomState());
     if (terrain == null) return;
     int x = position.getX();
     int z = position.getZ();
@@ -61,7 +65,20 @@ public abstract class DebrisSurfacePlacementMixin {
                         (sampleX, sampleY, sampleZ) ->
                             terrain.biomeDensity(new SinglePointContext(sampleX, sampleY, sampleZ)))
                     > 0);
-    callback.setReturnValue(
-        Stream.concat(callback.getReturnValue(), lower.stream().map(position::atY)));
+    var surfaces = Stream.concat(callback.getReturnValue(), lower.stream().map(position::atY));
+    if (level instanceof WorldGenRegion region) {
+      var airframes =
+          AirborneExpeditionStructure.airframes(
+              server.structureManager().forWorldGenRegion(region), new ChunkPos(position));
+      if (!airframes.isEmpty()) {
+        surfaces =
+            surfaces.filter(
+                surface -> {
+                  var support = surface.below();
+                  return airframes.stream().noneMatch(bounds -> bounds.isInside(support));
+                });
+      }
+    }
+    callback.setReturnValue(surfaces);
   }
 }

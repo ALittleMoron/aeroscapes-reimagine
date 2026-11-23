@@ -194,6 +194,25 @@ Original JARs remain unchanged; local field repairs and island-placement wrapper
 run from original resources. Provider content retains its original authorship and terms; local transformations
 do not relicense the original resources.
 
+Moog's Voyager Structures 5.1.3: FinnDog and Phantax. The exact JAR and
+versioned source declare LGPLv3; the Modrinth project lists MIT.
+https://modrinth.com/mod/moogs-voyager-structures/version/PiFoSPXI
+https://github.com/Moog-s-Mods/MoogsVoyagerStructures/tree/5.1.3-1.21
+Moog's Structure Lib 3.4.2: FinnDog; LGPL-3.0-only.
+https://modrinth.com/mod/moogs-structure-lib/version/wcg4mE4e
+Formations Overworld 1.0.5c and Formations 1.0.4: SuperMartijn642; All Rights Reserved.
+The author permits modpack use.
+https://modrinth.com/mod/formations-overworld/version/jRPqlunS
+https://modrinth.com/mod/formations/version/ybUmDE8h
+Feur Extension Desert 1.6.0 and Feur Extension Jungle 1.1.2: Feur_; project
+terms are All Rights Reserved. The JAR descriptors list MIT and AFL-3.0 respectively.
+https://modrinth.com/mod/feur-extension-desert/version/oBjuO3Ki
+https://modrinth.com/mod/feur-extension-jungle/version/EWBUZ2tO
+Immersive Structures 2.2.1c: Craziness169; CC BY-NC-SA 4.0 as listed on Modrinth.
+The JAR descriptor contains a license placeholder.
+https://modrinth.com/datapack/immersive-structures/version/1fkB1mdT
+The pack downloads the original files and reads the selected templates at runtime.
+
 Terralith 2.5.8: Stardust Labs / Starmute; bundled Stardust Labs license.
 https://modrinth.com/mod/terralith/version/2.5.8
 Nature's Spirit 2.2.5: Team Hibiscus; original JAR descriptor All Rights Reserved.

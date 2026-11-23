@@ -4,6 +4,23 @@ description: Version history.
 status: available
 ---
 
+## 0.8.0
+
+- Broad lowlands on large islands have gentler slopes and wider stretches of walkable ground between hills.
+- Moog's desert houses are spaced farther apart and can use nearby level ground. Formations Overworld igloos require a snowy setting around the shelter.
+- The branded loading screen uses a fixed dark blue background regardless of the player's loading screen color setting.
+- MakeUp Ultra Fast makes weak light from magma blocks easier to see on nearby surfaces.
+- Cave generation preserves the roofs of thick island layers, reducing breaks in plains and along slopes.
+- Reworked airship cabins, corrected helm orientation and removed the redundant chain at the moored airship.
+- Fixed flickering on the flint and steel model in hand.
+- B opens the backpack. The new-waypoint and storage terminal shortcuts are unbound by default.
+- `.mrpack` exports include the Gold Arch launcher icon and a short pack description.
+- Landing decks can now have ten different stops on the island side, including a bivouac, repair bay, freight stage and water stop.
+- Eight new abandoned airships include a twin-envelope cargo barge, cliff skiff and salvage tug with a stern derrick, each with its own place to board.
+- Terralith's frosted dungeon now requires solid terrain beneath its base to avoid hanging over island cliffs.
+- The Undead Crypt requires support beneath its large rooms. Cave generation preserves the rock beneath those rooms and around the Pink Salt Shrine's boss arena.
+- Carts, woodpiles, wells and shelters add more stops to newly explored islands. Larger finds are farther apart, and sites require natural footing and a walkable approach.
+
 ## 0.7.5
 
 - Some survey camps have a field sign that leads along a short walk to exposed ore on the same island.

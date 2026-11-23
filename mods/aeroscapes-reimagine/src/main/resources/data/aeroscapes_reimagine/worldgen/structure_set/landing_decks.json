@@ -3,6 +3,46 @@
     {
       "structure": "aeroscapes_reimagine:landing_deck",
       "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_bivouac",
+      "weight": 4
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_repair_bay",
+      "weight": 3
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_freight_stage",
+      "weight": 3
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_pilot_shelter",
+      "weight": 3
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_water_stop",
+      "weight": 3
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_field_kitchen",
+      "weight": 3
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_rescue_cache",
+      "weight": 2
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_signal_point",
+      "weight": 3
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_cartography_shelter",
+      "weight": 3
+    },
+    {
+      "structure": "aeroscapes_reimagine:landing_abandoned_depot",
+      "weight": 2
     }
   ],
   "placement": {
@@ -10,6 +50,10 @@
     "spacing": 10,
     "separation": 8,
     "salt": 73170462,
-    "locate_offset": [8, 0, 8]
+    "locate_offset": [8, 0, 8],
+    "exclusion_zone": {
+      "other_set": "aeroscapes_reimagine:island_stops",
+      "chunk_count": 1
+    }
   }
 }

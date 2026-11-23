@@ -12,7 +12,6 @@ import net.minecraft.world.RandomizableContainer;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.LadderBlock;
 import net.minecraft.world.level.block.PipeBlock;
 import net.minecraft.world.level.block.RotatedPillarBlock;
@@ -25,8 +24,8 @@ import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.storage.loot.LootTable;
 
 record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
-  private static final ResourceKey<LootTable> CARGO = loot("chests/derelict_cargo");
-  private static final ResourceKey<LootTable> SURVEY = loot("chests/observation_balloon");
+  static final ResourceKey<LootTable> CARGO = loot("chests/derelict_cargo");
+  static final ResourceKey<LootTable> SURVEY = loot("chests/observation_balloon");
 
   private static final int BOW = -11;
   private static final int[] DECK_HALF_WIDTHS = {
@@ -50,6 +49,11 @@ record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
       if (kind == Kind.TETHERED) {
         return BoundingBox.fromCorners(ledge(-6, 0, -2), ship(6, 17, 14));
       }
+      return airframeBounds();
+    }
+
+    BoundingBox airframeBounds() {
+      if (kind.isShipVariant()) return AirborneShips.bounds(this);
       int width = kind == Kind.OBSERVATION ? 5 : 6;
       return BoundingBox.fromCorners(
           ship(-width, kind == Kind.OBSERVATION ? -2 : -4, kind == Kind.OBSERVATION ? -5 : BOW),
@@ -57,6 +61,7 @@ record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
     }
 
     BoundingBox flightSpace() {
+      if (kind.isShipVariant()) return pieceBounds().inflatedBy(3);
       if (kind == Kind.OBSERVATION)
         return BoundingBox.fromCorners(ship(-8, -4, -8), ship(8, 20, 8));
       return BoundingBox.fromCorners(ship(-10, -6, -12), ship(10, 20, 16));
@@ -72,6 +77,10 @@ record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
   }
 
   void build(RandomSource random) {
+    if (site.kind().isShipVariant()) {
+      new AirborneShips(this).build(random);
+      return;
+    }
     if (site.kind() == Kind.OBSERVATION) {
       observation(random);
       return;
@@ -362,10 +371,6 @@ record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
     }
     at(site.ledge(0, 2, -1), Blocks.STRIPPED_SPRUCE_WOOD.defaultBlockState());
     at(site.ledge(0, 3, -1), Blocks.LANTERN.defaultBlockState());
-    var remnant =
-        Blocks.CHAIN.defaultBlockState().setValue(ChainBlock.AXIS, site.forward().getAxis());
-    for (int z = 0; z <= 1; z++) at(site.ledge(0, 2, z), remnant);
-
     var rail = timber(site.forward().getAxis());
     put(1, 0, BOW, rail);
     for (int y = -2; y <= 1; y++) {
@@ -390,7 +395,7 @@ record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
         .setValue(PipeBlock.PROPERTY_BY_DIRECTION.get(site.forward().getOpposite()), backward);
   }
 
-  private static BlockState stair(Block block, Direction rising, Half half) {
+  static BlockState stair(Block block, Direction rising, Half half) {
     return block
         .defaultBlockState()
         .setValue(StairBlock.FACING, rising)
@@ -401,18 +406,18 @@ record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
     return Blocks.STRIPPED_SPRUCE_LOG.defaultBlockState().setValue(RotatedPillarBlock.AXIS, axis);
   }
 
-  private void barrel(int x, int y, int z, RandomSource random, ResourceKey<LootTable> table) {
+  void barrel(int x, int y, int z, RandomSource random, ResourceKey<LootTable> table) {
     var pos = site.ship(x, y, z);
     if (!chunk.isInside(pos)) return;
     at(pos, Blocks.BARREL.defaultBlockState());
     RandomizableContainer.setBlockEntityLootTable(level, random, pos, table);
   }
 
-  private void put(int x, int y, int z, Block block) {
+  void put(int x, int y, int z, Block block) {
     put(x, y, z, block.defaultBlockState());
   }
 
-  private void put(int x, int y, int z, BlockState state) {
+  void put(int x, int y, int z, BlockState state) {
     at(site.ship(x, y, z), state);
   }
 
@@ -420,7 +425,7 @@ record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
     if (chunk.isInside(pos)) level.setBlock(pos, state, 2);
   }
 
-  private static BlockState nativeState(String id, String... properties) {
+  static BlockState nativeState(String id, String... properties) {
     var block = BuiltInRegistries.BLOCK.getOptional(ResourceLocation.parse(id)).orElseThrow();
     BlockState state = block.defaultBlockState();
     for (int index = 0; index < properties.length; index += 2) {
@@ -436,7 +441,7 @@ record AirborneExpedition(WorldGenLevel level, BoundingBox chunk, Site site) {
     return state.setValue(property, property.getValue(value).orElseThrow());
   }
 
-  private static ResourceKey<LootTable> loot(String path) {
+  static ResourceKey<LootTable> loot(String path) {
     return ResourceKey.create(
         Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", path));
   }

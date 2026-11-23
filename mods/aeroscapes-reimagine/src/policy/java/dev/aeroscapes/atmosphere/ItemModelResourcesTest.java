@@ -91,7 +91,6 @@ public final class ItemModelResourcesTest {
   private static void resources(boolean use3d) throws IOException {
     var packs = packs();
     var selected = ItemModelResources.prepare(PackType.CLIENT_RESOURCES, packs);
-    if (use3d) require(selected == packs, "3D retains the original resource stack");
     try (var manager = new MultiPackResourceManager(PackType.CLIENT_RESOURCES, selected)) {
       ItemModelResources.modelsBaked(manager);
       require(
@@ -128,6 +127,13 @@ public final class ItemModelResourcesTest {
       require(
           manager.listResources("items", location -> true).size() == (use3d ? 1 : 0),
           "Modefite enumeration follows the same toggle");
+      var flint =
+          ResourceLocation.withDefaultNamespace(
+              "punchy/model_parts_items/geo/held_flint_steel.geo.json");
+      require(manager.getResource(flint).isPresent() == use3d, "Flint geometry follows 3D mode");
+      if (use3d) {
+        require(read(manager, flint).equals("custom flint"), "Keep unrecognized provider geometry");
+      }
       require(
           read(manager, ResourceLocation.parse("yo_hooks:models/item/iron_grappling_hook.json"))
               .equals(use3d ? "sculpted" : "native"),
@@ -256,7 +262,8 @@ public final class ItemModelResourcesTest {
         Map.of(
             "minecraft:models/item/diamond_sword.json", "refined",
             "minecraft:models/item/bow_pulling_2.json", "refined",
-            "minecraft:items/trident.json", "definition");
+            "minecraft:items/trident.json", "definition",
+            "minecraft:punchy/model_parts_items/geo/held_flint_steel.geo.json", "custom flint");
     var owned =
         new java.util.HashMap<>(
             Map.of(

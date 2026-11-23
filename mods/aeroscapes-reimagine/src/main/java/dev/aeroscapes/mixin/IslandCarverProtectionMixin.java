@@ -45,11 +45,12 @@ public abstract class IslandCarverProtectionMixin {
       int x = position.getX();
       int y = position.getY();
       int z = position.getZ();
+      var selection = (IslandCarvingContext) (Object) context;
       if (y <= configuration.lavaLevel.resolveY(context)
           || terrain.column(x, z).liner(y)
-          || !((IslandCarvingContext) (Object) context)
-              .aeroscapes$support(target)
-              .solid(x, y - 4, z)) return false;
+          || selection.aeroscapes$protectsStructureTerrain(position)) return false;
+      var support = selection.aeroscapes$support(target);
+      if (!support.solid(x, y - 4, z) || support.protectsRoof(x, y, z)) return false;
     }
     return original.call(
         carver,

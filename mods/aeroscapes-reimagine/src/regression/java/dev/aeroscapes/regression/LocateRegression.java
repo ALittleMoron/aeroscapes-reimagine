@@ -15,6 +15,7 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionException;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Consumer;
@@ -63,8 +64,18 @@ public final class LocateRegression {
   private static final Logger LOGGER = LogUtils.getLogger();
   private static final BlockPos ORIGIN = new BlockPos(419, 132, 1940);
   private static final String DIRECT_COMMAND = "locate structure minecraft:village_desert";
+  private static final String DESERT_HOUSE_COMMAND = "locate structure mvs:desert_house";
+  private static final int PRACTICAL_DISTANCE = 2_400;
+  private static final int PRACTICAL_CANDIDATES = 2_200;
 
   private LocateRegression() {}
+
+  static void practicalDesertHouse(ServerLevel level, boolean baseline) {
+    require(level.getServer().isDedicatedServer(), "Desert house locate needs a dedicated server");
+    var probe = new DesertHouseProbe(level, baseline);
+    NeoForge.EVENT_BUS.addListener(probe.ticker);
+    NeoForge.EVENT_BUS.addListener(probe.stopper);
+  }
 
   static void providerRouting(ServerLevel level) {
     try (ProbeSession session = session(level, 0)) {
@@ -666,6 +677,83 @@ public final class LocateRegression {
     @Override
     public void sendSystemMessage(Component message) {
       messages.add(message);
+    }
+  }
+
+  private static final class DesertHouseProbe {
+    private final ServerLevel level;
+    private final boolean baseline;
+    private final BlockPos origin;
+    private final ProbeSession session;
+    private final InteractiveStructureLocator locator = new InteractiveStructureLocator();
+    private final long started = System.nanoTime();
+    private final Consumer<ServerTickEvent.Post> ticker = this::tick;
+    private final Consumer<ServerStoppingEvent> stopper = this::stop;
+
+    private DesertHouseProbe(ServerLevel level, boolean baseline) {
+      this.level = level;
+      this.baseline = baseline;
+      origin = level.getSharedSpawnPos();
+      session = session(level, 4);
+      CommandSourceStack playerAtSpawn =
+          session
+              .player()
+              .createCommandSourceStack()
+              .withPermission(4)
+              .withPosition(origin.getCenter());
+      require(route(locator, playerAtSpawn, DESERT_HOUSE_COMMAND), "Player locate did not defer");
+      LOGGER.info("Desert house locate queued: seed={} spawn={}", level.getSeed(), origin);
+    }
+
+    private void tick(ServerTickEvent.Post event) {
+      if (event.getServer() != level.getServer()) return;
+      long candidates = locator.metrics(session.player()).orElseThrow().candidates();
+      long elapsedNanos = System.nanoTime() - started;
+      if (candidates >= PRACTICAL_CANDIDATES || elapsedNanos >= TimeUnit.SECONDS.toNanos(120)) {
+        finish("search_limit", candidates, -1);
+        return;
+      }
+      locator.tick(event);
+      if (locator.pending(level.getServer()) != 0) return;
+      for (Component message : session.player().messages) {
+        if (message.getContents() instanceof TranslatableContents result
+            && result.getKey().equals("commands.locate.structure.success")
+            && result.getArgs()[2] instanceof Integer distance) {
+          LOGGER.info("Desert house locate player response: {}", result.getArgs()[1]);
+          finish("found", candidates, distance);
+          return;
+        }
+      }
+      finish("no_result", candidates, -1);
+    }
+
+    private void finish(String outcome, long candidatesBeforeFinalTick, int distance) {
+      close();
+      require(locatorTickets(level).isEmpty(), "Desert house locate retained a native ticket");
+      LOGGER.info(
+          "Desert house locate measured: seed={} spawn={} outcome={} blocks={} wall_ms={} "
+              + "candidates_before_final_tick={}",
+          level.getSeed(),
+          origin,
+          outcome,
+          distance,
+          TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - started),
+          candidatesBeforeFinalTick);
+      require(
+          baseline || (distance >= 0 && distance <= PRACTICAL_DISTANCE),
+          "Desert house locate exceeded the normal spawn search budget");
+      LOGGER.info("Desert house locate fixture completed");
+    }
+
+    private void stop(ServerStoppingEvent event) {
+      if (event.getServer() == level.getServer()) close();
+    }
+
+    private void close() {
+      NeoForge.EVENT_BUS.unregister(ticker);
+      NeoForge.EVENT_BUS.unregister(stopper);
+      locator.stop(new ServerStoppingEvent(level.getServer()));
+      session.close();
     }
   }
 

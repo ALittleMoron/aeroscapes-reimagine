@@ -7,7 +7,6 @@
     "InterfaceResourceReloadMixin",
     "TitleArtworkMixin",
     "LoadingArtworkMixin",
-    "NeoForgeLoadingArtworkMixin",
     "WorldLoadingArtworkMixin",
     "InventoryArtworkMixin",
     "ContainerLabelArtworkMixin",

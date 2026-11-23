@@ -1946,7 +1946,7 @@
     "wrappers": [
       {
         "type": "aeroscapes_reimagine:supported",
-        "terrain_check": "buried_complex"
+        "terrain_check": "buried_arena"
       }
     ]
   },
@@ -3511,7 +3511,7 @@
     "wrappers": [
       {
         "type": "aeroscapes_reimagine:supported",
-        "terrain_check": "core_enclosed"
+        "terrain_check": "buried_rooms"
       }
     ]
   },
@@ -9695,6 +9695,952 @@
         ],
         "value": {
           "processor_type": "aeroscapes_reimagine:grounded_ribbit_paths"
+        }
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/cart.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/cart.json",
+    "sha256": "f17dc58ca08657458a710cd49d49b54d86c0fb783c76c5ddd840702b8f9dc5e6",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/medium_bamboo_cart.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/medium_bamboo_cart.json",
+    "sha256": "a78cf37ac68915324a3cba12b9fa6f4793b5253b2497f7205e9666eba528e4eb",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/pile.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/pile.json",
+    "sha256": "613d83f7ba4545944a2fc1bc9af2c506bebbc3b86714f4750a45228d834ee020",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/haystack.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/haystack.json",
+    "sha256": "f07cf3f026120ca4cebb128affb99542a8da392d8a13033f6709cd7a7ac00c32",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/acacia_log_pile.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/acacia_log_pile.json",
+    "sha256": "688467301c840e345b3cd20bc04511a8e4ab634f5840b9f63897dfa8f90d715e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/birch_log_pile.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/birch_log_pile.json",
+    "sha256": "79ec019643a08afd0b0a8708b8cda2a8757e47f026b1c57c4c1582067736972a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/dark_oak_log_pile.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/dark_oak_log_pile.json",
+    "sha256": "a3c0d7f21ceee4accd23118a35d43d64ffd5c0e458b1e7656bf2912d5f557887",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/jungle_log_pile.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/jungle_log_pile.json",
+    "sha256": "45ecfc0dc9c1e4a18841897519df68e542617e5ee35ad7d408f672ce78d467bc",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/oak_log_pile.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/oak_log_pile.json",
+    "sha256": "6df891ae7bcf14cd09e042763388d389f2c8fc107ee176b1b72d8e2e143ad709",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/spruce_log_pile.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/spruce_log_pile.json",
+    "sha256": "fee926b4a3e4cddb2eb628e47e5ab1ead357299b46aa6c59f6a60ac8032de226",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/fire_camp.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/fire_camp.json",
+    "sha256": "95feca1d987617a4d0350fb8779ad3b9ffc3e41815eab0f93d86803af8623548",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "terrain_height_radius_check"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "allowed_terrain_height_range"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/shed.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/shed.json",
+    "sha256": "fa0a0f66ee8a13497c5b3fc262109d2756fe3d7a09b0f50ef59ae01ee0e82edd",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "terrain_height_radius_check"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "allowed_terrain_height_range"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/small_well.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/small_well.json",
+    "sha256": "68a9743326e141ea9934943c96e4915593d002c71cc1c5bdf5ae3fc3ff0ff59a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/desert_pump.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/desert_pump.json",
+    "sha256": "2054c6ae8b1edf4673f53773ebc87fd6bbf8e86ab02915daf1e208c5e4d4f51e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/snowy_dog_hut.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/snowy_dog_hut.json",
+    "sha256": "89364a590e7c708b11566229576db6085125423947d79a25f447581e7737a5a6",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "terrain_height_radius_check"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "allowed_terrain_height_range"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/statue_ruins.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/statue_ruins.json",
+    "sha256": "826fde468476c4e7d3daafba465df54304b59295d5b59daadfad0a76030b57c2",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "terrain_height_radius_check"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "allowed_terrain_height_range"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/structure/log_shelter.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/structure/log_shelter.json",
+    "sha256": "7d8fd5d7da3a5c35a97ce83ce71932b0e0f7050c988ca9cc69a4fcfdd94ddf49",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/structure/fountain.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/structure/fountain.json",
+    "sha256": "082c521a22ce7c0768b88d9a5878a00dbe31d84c2d530c070e4850ef0302e535",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "set",
+        "path": [
+          "max_depth"
+        ],
+        "value": 0
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/structure/tower_remnant.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/structure/tower_remnant.json",
+    "sha256": "9fa8c2d71942b45879ea45aec223804ec8eb60f2427fc7a0ad56b90af1e05657",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/structure/well.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/structure/well.json",
+    "sha256": "4c5f1a35324e718e1fbef1d8d8ac4fb88355e4468debe0b70d683f8d3f37fc4d",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "feur_extension_desert:worldgen/structure/rock.json",
+    "mod": "feur_extension_desert",
+    "source": "data/feur_extension_desert/worldgen/structure/rock.json",
+    "sha256": "643ae0c3a593754134d14f6456895a83d59e53c0b36d99d3056e657727a1b74a",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "feur_extension_desert:worldgen/structure/redrock.json",
+    "mod": "feur_extension_desert",
+    "source": "data/feur_extension_desert/worldgen/structure/redrock.json",
+    "sha256": "dfd8a88367f58d43a32ffa672860b4cc4bc57f713b2781ce5c8e581c2cbbd016",
+    "edits": [],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "feur_extension_jungle:worldgen/structure/lost_explorer.json",
+    "mod": "feur_extension_jungle",
+    "source": "data/feur_extension_jungle/worldgen/structure/lost_explorer.json",
+    "sha256": "4573eb6f47da3a2c671484a999827ce8daa791ea373dff9cadaee5003ba9d44d",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#c:is_jungle"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/structure/wagon.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/structure/wagon.json",
+    "sha256": "6908e8e9b8153e44f4d15aea9bf94601d80a8691a45781bec3287787a11c8673",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/structure/bamboo_hut.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/structure/bamboo_hut.json",
+    "sha256": "afb792fccc3fadb1dae900026011ce33bc7ddfb7c0a63cba79d69546aba578c6",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#c:is_jungle"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_shelter"
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/structure/igloo.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/structure/igloo.json",
+    "sha256": "ee70fbd1eda30c4ada955598131ef6e5cfb17f6ea6bb67776bb092802b7d614e",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#aeroscapes_reimagine:has_structure/snow_shelter"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_snow_shelter"
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/structure/tiny_house.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/structure/tiny_house.json",
+    "sha256": "776cd7ec2f65a4c9e7cc650bba710569b48cbf44ed777d110b36e1d60ede7077",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/small_ruin.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/small_ruin.json",
+    "sha256": "234510f73082905e42a0289a0001d1784594b33c0082255b850c1112e63e0666",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "terrain_height_radius_check"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "allowed_terrain_height_range"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/desert_house.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/desert_house.json",
+    "sha256": "0c87283c6b0662053a3499cac54809224109dca62fa21dc9dd84a0198e4e630f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "remove",
+        "path": [
+          "terrain_height_radius_check"
+        ]
+      },
+      {
+        "op": "remove",
+        "path": [
+          "allowed_terrain_height_range"
+        ]
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_dry_shelter"
+      }
+    ]
+  },
+  {
+    "id": "feur_extension_desert:worldgen/structure/old_house.json",
+    "mod": "feur_extension_desert",
+    "source": "data/feur_extension_desert/worldgen/structure/old_house.json",
+    "sha256": "fbfd0f76d1016fd4ca8a1ce3f210a68a91f9f303d9e82584509d3d5e7450d80f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "feur_extension_jungle:worldgen/structure/old_house.json",
+    "mod": "feur_extension_jungle",
+    "source": "data/feur_extension_jungle/worldgen/structure/old_house.json",
+    "sha256": "a721ddb2c673301de7b3d2883bdbb129b8f6765808cd1dda2be955b61d0bbbf8",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#c:is_jungle"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "feur_extension_jungle:worldgen/structure/tree_stump.json",
+    "mod": "feur_extension_jungle",
+    "source": "data/feur_extension_jungle/worldgen/structure/tree_stump.json",
+    "sha256": "e8a786b68ed54aafa24274330b81be81f01644bfc7ffe1a3f9f0434d6b3b329b",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "set",
+        "path": [
+          "biomes"
+        ],
+        "value": "#c:is_jungle"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "imst:worldgen/structure/terralith/yurt.json",
+    "mod": "imst",
+    "source": "data/imst/worldgen/structure/terralith/yurt.json",
+    "sha256": "9c2979a0c949aa1e111cef25de9c39a163836b1e6abb08a135a9791ce0aa480f",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "mvs:worldgen/structure/windmill.json",
+    "mod": "mvs",
+    "source": "data/mvs/worldgen/structure/windmill.json",
+    "sha256": "5df5930e63b93e0a110b5204d40e3f0f09b209300147306525da21085010bb56",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "imst:worldgen/structure/observatory.json",
+    "mod": "imst",
+    "source": "data/imst/worldgen/structure/observatory.json",
+    "sha256": "d796f10d0a43c58668c87dfc0f1ade9ef0e2aca0325f1154703fff43ccc2a317",
+    "edits": [
+      {
+        "op": "set",
+        "path": [
+          "terrain_adaptation"
+        ],
+        "value": "none"
+      },
+      {
+        "op": "set",
+        "path": [
+          "project_start_to_heightmap"
+        ],
+        "value": "WORLD_SURFACE_WG"
+      },
+      {
+        "op": "set",
+        "path": [
+          "start_height"
+        ],
+        "value": {
+          "absolute": 0
+        }
+      }
+    ],
+    "wrappers": [
+      {
+        "type": "aeroscapes_reimagine:supported",
+        "terrain_check": "discovery_surface"
+      }
+    ]
+  },
+  {
+    "id": "feur_extension_jungle:worldgen/template_pool/lost_explorer.json",
+    "mod": "feur_extension_jungle",
+    "source": "data/feur_extension_jungle/worldgen/template_pool/lost_explorer.json",
+    "sha256": "42babed3f2e9a1723491a27a4b60e7a13433e278a75823982eec4d8b6c36f296",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "elements",
+          0,
+          "element",
+          "processors",
+          "processors",
+          1
+        ],
+        "value": {
+          "processor_type": "minecraft:rule",
+          "rules": [
+            {
+              "input_predicate": {
+                "predicate_type": "minecraft:blockstate_match",
+                "block_state": {
+                  "Name": "minecraft:chest",
+                  "Properties": {
+                    "facing": "north",
+                    "type": "single",
+                    "waterlogged": "false"
+                  }
+                }
+              },
+              "location_predicate": {
+                "predicate_type": "minecraft:always_true"
+              },
+              "output_state": {
+                "Name": "minecraft:chest",
+                "Properties": {
+                  "facing": "north",
+                  "type": "single",
+                  "waterlogged": "false"
+                }
+              },
+              "block_entity_modifier": {
+                "type": "minecraft:append_static",
+                "data": {
+                  "Items": [],
+                  "LootTable": "aeroscapes_reimagine:chests/surface_lost_explorer"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "formationsoverworld:worldgen/template_pool/tiny_houses.json",
+    "mod": "formationsoverworld",
+    "source": "data/formationsoverworld/worldgen/template_pool/tiny_houses.json",
+    "sha256": "2e390ebc2d75da9826378a077b4a1ee817394df1971525c4493f96ba0224114b",
+    "edits": [
+      {
+        "op": "insert",
+        "path": [
+          "elements",
+          1,
+          "element",
+          "processors",
+          4
+        ],
+        "value": {
+          "processor_type": "aeroscapes_reimagine:hanging_entity_anchor"
+        }
+      },
+      {
+        "op": "insert",
+        "path": [
+          "elements",
+          3,
+          "element",
+          "processors",
+          4
+        ],
+        "value": {
+          "processor_type": "aeroscapes_reimagine:hanging_entity_anchor"
         }
       }
     ]

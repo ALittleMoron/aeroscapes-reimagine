@@ -9,4 +9,10 @@ public interface IslandCarvingContext {
   net.minecraft.world.level.levelgen.NoiseBasedChunkGenerator aeroscapes$generator();
 
   CarvingSupport aeroscapes$support(net.minecraft.world.level.chunk.ChunkAccess target);
+
+  void aeroscapes$prepareStructureProtection(
+      net.minecraft.world.level.StructureManager structures,
+      net.minecraft.world.level.chunk.ChunkAccess target);
+
+  boolean aeroscapes$protectsStructureTerrain(net.minecraft.core.BlockPos point);
 }

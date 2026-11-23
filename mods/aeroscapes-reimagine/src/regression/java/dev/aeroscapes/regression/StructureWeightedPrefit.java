@@ -33,8 +33,16 @@ public final class StructureWeightedPrefit {
           "net.mehvahdjukaar.supplementaries.common.worldgen.RoadSignStructure",
               "supplementaries:road_sign");
   private static final Set<String> SURFACE_CHECKS =
-      Set.of("surface", "grounded_surface", "anchored_complex");
-  private static final Set<String> PROJECTIONS = Set.of("WORLD_SURFACE_WG", "OCEAN_FLOOR_WG");
+      Set.of(
+          "surface",
+          "grounded_surface",
+          "anchored_complex",
+          "discovery_surface",
+          "discovery_shelter",
+          "discovery_snow_shelter",
+          "discovery_dry_shelter");
+  private static final Set<String> PROJECTIONS =
+      Set.of("WORLD_SURFACE_WG", "WORLD_SURFACE", "OCEAN_FLOOR_WG");
 
   private StructureWeightedPrefit() {}
 
@@ -195,7 +203,9 @@ public final class StructureWeightedPrefit {
       }
       case "aeroscapes_reimagine:root_supported" ->
           validateChain(object(definition, "delegate"), types, depth + 1);
-      case "minecraft:jigsaw", "lithostitched:jigsaw" -> {
+      case "minecraft:jigsaw",
+          "lithostitched:jigsaw",
+          "moogs_structures:moogs_structures_generic_jigsaw_structure" -> {
         ResourceLocation.parse(text(definition, "start_pool"));
         JsonObject height = object(definition, "start_height");
         if (height.size() != 1
@@ -212,6 +222,12 @@ public final class StructureWeightedPrefit {
         if (definition.has("pool_aliases"))
           for (JsonElement alias : definition.getAsJsonArray("pool_aliases"))
             validateAlias(alias.getAsJsonObject());
+      }
+      case "formations:simple", "formations:pieced" -> {
+        if (!text(definition, "placement").equals("surface"))
+          throw new IllegalArgumentException("Unreviewed Formations placement");
+        ResourceLocation.parse(
+            text(definition, type.equals("formations:simple") ? "template" : "start_pool"));
       }
       case "supplementaries:road_sign" -> {
         if (depth != 0) throw new IllegalArgumentException("Unreviewed nested road sign root");

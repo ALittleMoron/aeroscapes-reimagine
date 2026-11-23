@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -31,6 +32,18 @@ public final class StageSnapshotRegression {
   private static final List<ChunkPos> SITES = sites();
 
   private static List<ChunkPos> sites() {
+    String configured = System.getProperty("aeroscapes.regression.stageSnapshotSites");
+    if (configured != null) {
+      List<ChunkPos> selected = new ArrayList<>();
+      for (String entry : configured.split(";")) {
+        String[] coordinates = entry.split(",", -1);
+        if (coordinates.length != 2)
+          throw new IllegalArgumentException("Expected chunk x,z in stageSnapshotSites: " + entry);
+        selected.add(
+            new ChunkPos(Integer.parseInt(coordinates[0]), Integer.parseInt(coordinates[1])));
+      }
+      return List.copyOf(selected);
+    }
     if (!Boolean.getBoolean("aeroscapes.regression.stageSnapshotAll"))
       return List.of(
           new ChunkPos(764, 766), new ChunkPos(765, 766),
@@ -47,8 +60,10 @@ public final class StageSnapshotRegression {
   private StageSnapshotRegression() {}
 
   static void verify(ServerLevel level) {
-    if (level.getSeed() != 1 || level.dimension() != Level.OVERWORLD)
-      throw new IllegalStateException("Stage snapshots require disposable seed-1 Overworld");
+    if (level.dimension() != Level.OVERWORLD
+        || level.getSeed() != 1
+            && System.getProperty("aeroscapes.regression.stageSnapshotSites") == null)
+      throw new IllegalStateException("Stage snapshots outside seed 1 require explicit sites");
     Path path = Path.of(System.getProperty("aeroscapes.regression.stageSnapshotFile")).normalize();
     if (!path.isAbsolute() || !path.toString().contains("/.runtime/"))
       throw new IllegalStateException("stageSnapshotFile must be absolute in ignored .runtime");
@@ -62,13 +77,12 @@ public final class StageSnapshotRegression {
     }
     try {
       // Every centre that can write into the targets must finish before the settled snapshot.
-      int minX = SITES.stream().mapToInt(site -> site.x).min().orElseThrow() - 1;
-      int maxX = SITES.stream().mapToInt(site -> site.x).max().orElseThrow() + 1;
-      int minZ = SITES.stream().mapToInt(site -> site.z).min().orElseThrow() - 1;
-      int maxZ = SITES.stream().mapToInt(site -> site.z).max().orElseThrow() + 1;
-      for (int z = minZ; z <= maxZ; z++)
-        for (int x = minX; x <= maxX; x++)
-          level.getChunkSource().getChunk(x, z, ChunkStatus.FEATURES, true);
+      var neighborhood = new LinkedHashSet<ChunkPos>();
+      for (ChunkPos site : SITES)
+        for (int z = site.z - 1; z <= site.z + 1; z++)
+          for (int x = site.x - 1; x <= site.x + 1; x++) neighborhood.add(new ChunkPos(x, z));
+      for (ChunkPos site : neighborhood)
+        level.getChunkSource().getChunk(site.x, site.z, ChunkStatus.FEATURES, true);
       writeCaptured(level, path, capture);
     } finally {
       active = null;
@@ -106,6 +120,8 @@ public final class StageSnapshotRegression {
     for (ChunkPos site : SITES)
       full.add(NoiseSnapshotRegression.snapshot(level, level.getChunk(site.x, site.z)));
     result.put("full", full);
+    if (Boolean.getBoolean("aeroscapes.regression.stageSnapshotTerrain"))
+      result.put("terrainFields", terrainFields(level));
     ListTag featureOrder = new ListTag();
     var registry = level.registryAccess().registryOrThrow(Registries.PLACED_FEATURE);
     for (var step :
@@ -140,6 +156,40 @@ public final class StageSnapshotRegression {
     }
     LogUtils.getLogger()
         .info("Stage snapshot regression captured: chunks={} path={}", SITES.size(), path);
+  }
+
+  private static ListTag terrainFields(ServerLevel level) {
+    var terrain = dev.aeroscapes.worldgen.IslandTerrain.from(level.getChunkSource().randomState());
+    if (terrain == null) throw new IllegalStateException("Expected owned island terrain");
+    var fields = new ListTag();
+    for (ChunkPos site : SITES) {
+      int x = site.getMiddleBlockX();
+      int z = site.getMiddleBlockZ();
+      var column = terrain.column(x, z);
+      var data = new CompoundTag();
+      data.putInt("x", x);
+      data.putInt("z", z);
+      data.putDouble("largeTop", column.large().top());
+      data.putDouble("largeBottom", column.large().bottom());
+      data.putDouble("largeCap", column.large().cap());
+      data.putDouble("basinTop", column.basinShape().top());
+      int original = level.getMinBuildHeight();
+      int large = original;
+      for (int y = level.getMaxBuildHeight() - 1; y > level.getMinBuildHeight(); y--) {
+        var position =
+            new net.minecraft.world.level.levelgen.DensityFunction.SinglePointContext(x, y, z);
+        if (original == level.getMinBuildHeight()
+            && y < 304
+            && y >= -64
+            && terrain.original().compute(position) > 0) original = y;
+        if (large == level.getMinBuildHeight()
+            && column.largeDensity(y, terrain.form().compute(position)) > 0) large = y;
+      }
+      data.putInt("originalSurface", original);
+      data.putInt("largeSurface", large);
+      fields.add(data);
+    }
+    return fields;
   }
 
   public static CompletableFuture<ChunkAccess> capture(

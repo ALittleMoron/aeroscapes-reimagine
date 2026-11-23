@@ -706,6 +706,15 @@
   },
   {
     "targets": {
+      "YL57xq9U": "KduFYu4t",
+      "izsIPI7a": "t4YRxQug",
+      "owned:aeroscapes_reimagine": "0.1.0"
+    },
+    "files": [],
+    "reason": "MakeUp Ultra Fast 9.6 renders magma as an emissive material while adjacent surfaces receive only the weak native block light. The Iris include adapter adds a small warm contribution for native levels 1 through 6 in the local vertex pass. It preserves dark cells, strong block light and Minecraft light values. The adjustment runs in memory for the pinned ZIP and the original light include SHA-256 1e3a5340d9abd96a384716f5673913fffcb4b49251a6ec9a4eb62f212d9924ff."
+  },
+  {
+    "targets": {
       "curseforge:289240": "7795089",
       "owned:aeroscapes_reimagine": "0.1.0"
     },

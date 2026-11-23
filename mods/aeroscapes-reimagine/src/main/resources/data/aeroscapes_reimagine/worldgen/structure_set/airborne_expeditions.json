@@ -2,10 +2,42 @@
   "structures": [
     {
       "structure": "aeroscapes_reimagine:airborne_derelict",
-      "weight": 1
+      "weight": 2
     },
     {
       "structure": "aeroscapes_reimagine:observation_balloon",
+      "weight": 5
+    },
+    {
+      "structure": "aeroscapes_reimagine:cargo_barge",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:cliff_skiff",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:salvage_tug",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:survey_catamaran",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:mail_cutter",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:passenger_ferry",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:weather_ship",
+      "weight": 1
+    },
+    {
+      "structure": "aeroscapes_reimagine:glasshouse_carrier",
       "weight": 1
     }
   ],

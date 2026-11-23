@@ -1162,6 +1162,32 @@ def test_saved_world_still_fails_if_errors_were_logged(project: Project, error: 
     assert report["errors"] == ([error] if error else [])
 
 
+def test_smoke_ignores_only_the_known_moonlight_startup_diagnostic(project: Project) -> None:
+    (project.pack / "global_packs/required_data").mkdir(parents=True)
+    diagnostic = (
+        "[03:20:18] [modloading-sync-worker/ERROR] [Moonlight/]: Fabric API detected! "
+        "This is not a Fabric mod, so please don't report related issues to MoonlightLib or its "
+        "dependent(s). This can usually happen when using Connector, or when using a mod that "
+        "does NOT have a native Neoforge implementation. This can easily lead to poor "
+        "compatibility and other bizarre issues. Proceed at your own risk. "
+    )
+    output = f"{diagnostic}\nAll dimensions are saved\n"
+    capture = CaptureResult(ready=True, exit_code=0, output=output)
+    assert write_result(project, project.root, capture)
+    report_path = project.root / "smoke-result.json"
+    assert json.loads(report_path.read_text(encoding="utf-8"))["errors"] == []
+
+    failures = [
+        "[03:20:19] [main/ERROR] [Moonlight/]: Failed to load server data",
+        diagnostic.replace("[Moonlight/]", "[AnotherMod/]"),
+        diagnostic.replace("/ERROR]", "/FATAL]"),
+        diagnostic + "Initialization failed.",
+    ]
+    capture = CaptureResult(ready=True, exit_code=0, output=output + "\n".join(failures))
+    assert not write_result(project, project.root, capture)
+    assert json.loads(report_path.read_text(encoding="utf-8"))["errors"] == failures
+
+
 def test_matching_export_is_accepted(export: ExportFixture) -> None:
     verify_mrpack(export.write(), export.source, (export.artifact,))
 

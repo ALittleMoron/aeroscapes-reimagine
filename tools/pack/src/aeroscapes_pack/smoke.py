@@ -20,6 +20,16 @@ from aeroscapes_pack.models import Manifest, PinnedFile, Project, Toolchain
 from aeroscapes_pack.runtime import java_binary, terminate_group
 
 READY_MESSAGE = re.compile(rb'Done \([0-9.]+s\)! For help, type "help"')
+MOONLIGHT_CONNECTOR_DIAGNOSTIC = re.compile(
+    r"\[\d{2}:\d{2}:\d{2}\] \[[^\[\]/]+/ERROR\] "
+    + re.escape(
+        "[Moonlight/]: Fabric API detected! This is not a Fabric mod, so please don't report "
+        "related issues to MoonlightLib or its dependent(s). This can usually happen when using "
+        "Connector, or when using a mod that does NOT have a native Neoforge implementation. "
+        "This can easily lead to poor compatibility and other bizarre issues. "
+        "Proceed at your own risk."
+    )
+)
 
 
 @dataclass(frozen=True, slots=True)
@@ -162,9 +172,12 @@ def expected_packs(project: Project) -> tuple[str, ...]:
 
 
 def write_result(project: Project, directory: Path, capture: CaptureResult) -> bool:
-    """Report readiness, saving and every logged error without exceptions."""
+    """Report readiness, saving and errors that fail the smoke check."""
     errors = [
-        line for line in capture.output.splitlines() if "/ERROR]" in line or "/FATAL]" in line
+        line
+        for line in capture.output.splitlines()
+        if ("/ERROR]" in line or "/FATAL]" in line)
+        and not MOONLIGHT_CONNECTOR_DIAGNOSTIC.fullmatch(line.rstrip())
     ]
     listed = "\n".join(
         line for line in capture.output.splitlines() if "data pack(s) enabled:" in line

@@ -11,4 +11,6 @@ Import a downloaded or supplied `.mrpack` as a new instance in Modrinth App.
 3. Open this instance's settings → **Java and memory**, enable **Custom Java installation**, click **Detect** and select the entry with version **25**. Wait for a successful Java check. Installing Java 25 in the app settings alone is insufficient: this Minecraft version needs the instance override.
 4. Start the instance and create a world using the normal world type. Menu locations may differ in other app versions.
 
+If the first launch stops and the log names Smooth Scrolling and `CreativeScreenHandlerMixin_CC#itemCount`, launch the same instance again. Connector saves the transformed mod during the first attempt and reuses it on the next launch. [Smooth Scrolling compatibility notes](https://modrinth.com/mod/smooth-scroll#neoforge-compatibility)
+
 For existing worlds and updates, read [Compatibility and support](../known-issues/) and keep a backup before changing versions.

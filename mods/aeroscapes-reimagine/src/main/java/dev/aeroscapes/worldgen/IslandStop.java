@@ -1,5 +1,6 @@
 package dev.aeroscapes.worldgen;
 
+import java.util.ArrayList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -20,6 +21,9 @@ import net.minecraft.world.level.block.CampfireBlock;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.FarmBlock;
+import net.minecraft.world.level.block.PointedDripstoneBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.levelgen.feature.featuresize.FeatureSize;
 import net.minecraft.world.level.levelgen.structure.BoundingBox;
 import net.minecraft.world.level.storage.loot.LootTable;
 
@@ -51,6 +55,45 @@ record IslandStop(WorldGenLevel level, Site site) {
       return kind == IslandStopStructure.Kind.LANDING
           ? BoundingBox.fromCorners(pos(-4, -FOUNDATION_DEPTH, -6), pos(4, 8, LANDING_APPROACH_END))
           : BoundingBox.fromCorners(pos(-2, -FOUNDATION_DEPTH, -2), pos(2, 3, 2));
+    }
+
+    boolean treeIntersectsLanding(BlockPos origin, int height, FeatureSize size) {
+      var airspace =
+          BoundingBox.fromCorners(
+              pos(-4, landingClearanceBottom(0), -5), pos(4, 8, LANDING_APPROACH_END));
+      var lowerApproach =
+          BoundingBox.fromCorners(
+              pos(-4, landingClearanceBottom(5), 5), pos(4, 0, LANDING_APPROACH_END));
+      return treeIntersects(airspace, origin, height, size)
+          || treeIntersects(lowerApproach, origin, height, size);
+    }
+
+    boolean containsLandingAir(BlockPos point) {
+      int dx = point.getX() - anchor.getX();
+      int dz = point.getZ() - anchor.getZ();
+      int y = point.getY() - anchor.getY();
+      int x = dx * forward.getStepZ() - dz * forward.getStepX();
+      int z = dx * forward.getStepX() + dz * forward.getStepZ();
+      return Math.abs(x) <= 4
+          && z >= -5
+          && z <= LANDING_APPROACH_END
+          && y >= landingClearanceBottom(z)
+          && y <= 8;
+    }
+
+    private static boolean treeIntersects(
+        BoundingBox volume, BlockPos origin, int height, FeatureSize size) {
+      int first = Math.max(0, volume.minY() - origin.getY());
+      int last = Math.min(height + 1, volume.maxY() - origin.getY());
+      for (int layer = first; layer <= last; layer++) {
+        int radius = treeRadius(size, height, layer);
+        if (volume.intersects(
+            origin.getX() - radius,
+            origin.getZ() - radius,
+            origin.getX() + radius,
+            origin.getZ() + radius)) return true;
+      }
+      return false;
     }
 
     boolean fits(NativeTerrainVolume raw, ChunkPos chunk, IslandStopStructure.Kind kind) {
@@ -91,7 +134,7 @@ record IslandStop(WorldGenLevel level, Site site) {
       for (int x = -4; x <= 4; x++) {
         for (int z = -5; z <= LANDING_APPROACH_END; z++) {
           if (post(x, z) && !supported(raw, x, z, 4)) return false;
-          if (!air(raw, x, z, z >= 5 ? -2 : 1, 8)) return false;
+          if (!air(raw, x, z, landingClearanceBottom(z), 8)) return false;
           var floor = pos(x, 0, z);
           if (z <= 4
               && !raw.block(floor.getX(), floor.getY(), floor.getZ()).getFluidState().isEmpty())
@@ -172,6 +215,15 @@ record IslandStop(WorldGenLevel level, Site site) {
 
   private static boolean post(int x, int z) {
     return Math.abs(x) == 4 && (z == -5 || z == -2);
+  }
+
+  private static int landingClearanceBottom(int z) {
+    return z >= 5 ? -2 : 1;
+  }
+
+  static int treeRadius(FeatureSize size, int height, int layer) {
+    // Some native giant trunk placers write a 2×2 trunk at the origin.
+    return Math.max(1, size.getSizeAtHeight(height, layer));
   }
 
   private void survey(RandomSource random) {
@@ -301,22 +353,68 @@ record IslandStop(WorldGenLevel level, Site site) {
   }
 
   void clearLandingApproach() {
+    var chunk = new ChunkPos(site.anchor());
+    var branches = new ArrayList<BlockPos>();
     for (int x = -4; x <= 4; x++) {
       for (int z = -5; z <= LANDING_APPROACH_END; z++) {
-        for (int y = 1; y <= 8; y++) clearDecoration(pos(x, y, z), true);
+        for (int y = landingClearanceBottom(z); y <= 8; y++) {
+          var point = pos(x, y, z);
+          if (canopyBranch(point, chunk)) branches.add(point);
+        }
+      }
+    }
+    for (var branch : branches) level.setBlock(branch, Blocks.AIR.defaultBlockState(), 3);
+    for (int x = -4; x <= 4; x++) {
+      for (int z = -5; z <= LANDING_APPROACH_END; z++) {
+        for (int y = landingClearanceBottom(z); y <= 8; y++) clearDecoration(pos(x, y, z), true);
       }
     }
   }
 
-  private void clearDecoration(BlockPos point, boolean landing) {
+  private boolean canopyBranch(BlockPos point, ChunkPos chunk) {
     var state = level.getBlockState(point);
-    boolean debris = landing ? state.is(LOOSE_DECK_DEBRIS) : state.is(Blocks.POINTED_DRIPSTONE);
+    if (!state.is(BlockTags.LOGS)
+        || !state.getFluidState().isEmpty()
+        || !state.hasProperty(RotatedPillarBlock.AXIS)
+        || !state.getValue(RotatedPillarBlock.AXIS).isHorizontal()) return false;
+    for (var direction : Direction.values()) {
+      var neighbor = point.relative(direction);
+      if (chunk.equals(new ChunkPos(neighbor))
+          && level.getBlockState(neighbor).is(BlockTags.LEAVES)) return true;
+    }
+    return false;
+  }
+
+  void clearDecoration(BlockPos point, boolean landing) {
+    var state = level.getBlockState(point);
+    boolean pointedDripstone = state.is(Blocks.POINTED_DRIPSTONE);
+    boolean debris =
+        pointedDripstone
+            || (landing
+                && (state.is(LOOSE_DECK_DEBRIS)
+                    || state.is(Blocks.MOSS_CARPET)
+                    || state.is(BlockTags.LEAVES)));
     if (!state.isAir()
         && state.getFluidState().isEmpty()
         && !state.is(BlockTags.LOGS)
-        && !state.is(BlockTags.LEAVES)
+        && (landing || !state.is(BlockTags.LEAVES))
         && (debris || state.getBlock() instanceof BushBlock || state.is(BlockTags.REPLACEABLE))) {
       level.setBlock(point, Blocks.AIR.defaultBlockState(), 3);
+      if (landing
+          && pointedDripstone
+          && state.getValue(PointedDripstoneBlock.TIP_DIRECTION) == Direction.UP) {
+        clearDripstoneAbove(point.above());
+      }
+    }
+  }
+
+  private void clearDripstoneAbove(BlockPos point) {
+    for (var next = point; next.getY() < level.getMaxBuildHeight(); next = next.above()) {
+      var state = level.getBlockState(next);
+      if (!state.is(Blocks.POINTED_DRIPSTONE)
+          || !state.getFluidState().isEmpty()
+          || state.getValue(PointedDripstoneBlock.TIP_DIRECTION) != Direction.UP) return;
+      level.setBlock(next, Blocks.AIR.defaultBlockState(), 3);
     }
   }
 

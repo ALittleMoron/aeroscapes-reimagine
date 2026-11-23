@@ -1,0 +1,7 @@
+{
+  "type": "aeroscapes_reimagine:airborne_expedition",
+  "biomes": "#aeroscapes_reimagine:has_structure/airborne_expedition",
+  "step": "surface_structures",
+  "spawn_overrides": {},
+  "kind": "cliff_skiff"
+}

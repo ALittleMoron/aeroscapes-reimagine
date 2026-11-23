@@ -281,14 +281,17 @@ public final class IslandBiomeSource extends BiomeSource {
           shores.get(temperature < -0.15 ? 0 : 1), basin, x, y, z, temperature);
     }
     IslandLayout.LargeIsland island = current.island();
-    if (island != null
-        && island.radius(x, z) < 1
-        && island.peak(x, z) > 20
-        && y >= island.surface(x, z) - 24
-        && y <= island.surface(x, z) + 16) {
-      double temperature = sampler.temperature().compute(new SinglePointContext(x, y, z));
-      if (island.peak(x, z) < 48) return mountains.get(0);
-      return mountains.get(temperature < -0.15 ? 1 : temperature > 0.35 ? 3 : 2);
+    if (island != null) {
+      double cap = (1 - island.radius(x, z)) * 3;
+      double peak = cap > 0 ? island.peak(x, z) : 0;
+      if (peak > 20) {
+        double surface = island.surface(x, z, cap, peak);
+        if (y >= surface - 24 && y <= surface + 16) {
+          double temperature = sampler.temperature().compute(new SinglePointContext(x, y, z));
+          if (peak < 48) return mountains.get(0);
+          return mountains.get(temperature < -0.15 ? 1 : temperature > 0.35 ? 3 : 2);
+        }
+      }
     }
     BlockPos legacy = legacyClimateAnchor(current.layout(), x, y, z);
     Holder<Biome> climate =

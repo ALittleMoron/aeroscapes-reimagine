@@ -1,0 +1,18 @@
+{
+  "structures": [
+    {
+      "structure": "mvs:desert_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 8,
+    "separation": 6,
+    "salt": 81302471,
+    "exclusion_zone": {
+      "other_set": "aeroscapes_reimagine:surface_discoveries",
+      "chunk_count": 2
+    }
+  }
+}

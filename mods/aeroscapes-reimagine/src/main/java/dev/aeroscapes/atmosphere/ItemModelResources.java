@@ -17,6 +17,7 @@ import net.minecraft.server.packs.resources.ResourceManager;
  * Select native resources before model/state loaders run, including Modefite's separate item graph.
  */
 public final class ItemModelResources {
+  private static final String REFINED_TOOLS = "file/Refined Tools 3.0.zip";
   private static final String REFINED_COMPAT = "file/aeroscapes-reimagine-refined-compat";
   private static volatile boolean enabled = true;
   private static volatile Set<ResourceLocation> separateHandModels = Set.of();
@@ -77,24 +78,40 @@ public final class ItemModelResources {
   }
 
   static List<PackResources> select(PackType type, List<PackResources> packs, boolean use3d) {
-    if (type != PackType.CLIENT_RESOURCES || use3d) return packs;
+    if (type != PackType.CLIENT_RESOURCES) return packs;
     return packs.stream()
         .map(
             pack ->
                 switch (pack.packId()) {
-                  case "file/Refined Tools 3.0.zip", REFINED_COMPAT ->
-                      (PackResources) new NativeResources(pack, false);
-                  case "file/aeroscapes-reimagine-atmosphere" -> new NativeResources(pack, true);
+                  case REFINED_TOOLS ->
+                      new ItemResources(pack, use3d ? Mode.REPAIR_REFINED : Mode.HIDE);
+                  case REFINED_COMPAT -> use3d ? pack : new ItemResources(pack, Mode.HIDE);
+                  case "file/aeroscapes-reimagine-atmosphere" ->
+                      use3d ? pack : new ItemResources(pack, Mode.HIDE_ATMOSPHERE_MODELS);
                   default -> pack;
                 })
         .toList();
   }
 
-  private record NativeResources(PackResources original, boolean atmosphere)
-      implements PackResources {
+  private enum Mode {
+    REPAIR_REFINED,
+    HIDE,
+    HIDE_ATMOSPHERE_MODELS
+  }
+
+  private record ItemResources(PackResources original, Mode mode) implements PackResources {
     private boolean hidden(PackType type, ResourceLocation location) {
       return type == PackType.CLIENT_RESOURCES
-          && (!atmosphere || location.getPath().startsWith("models/item/"));
+          && (mode == Mode.HIDE
+              || (mode == Mode.HIDE_ATMOSPHERE_MODELS
+                  && location.getPath().startsWith("models/item/")));
+    }
+
+    private IoSupplier<InputStream> adapt(
+        PackType type, ResourceLocation location, IoSupplier<InputStream> supplier) {
+      return type == PackType.CLIENT_RESOURCES && mode == Mode.REPAIR_REFINED
+          ? FlintAndSteelModelRepair.adapt(location, supplier)
+          : supplier;
     }
 
     @Override
@@ -104,7 +121,9 @@ public final class ItemModelResources {
 
     @Override
     public IoSupplier<InputStream> getResource(PackType type, ResourceLocation location) {
-      return hidden(type, location) ? null : original.getResource(type, location);
+      return hidden(type, location)
+          ? null
+          : adapt(type, location, original.getResource(type, location));
     }
 
     @Override
@@ -114,13 +133,13 @@ public final class ItemModelResources {
           namespace,
           path,
           (location, supplier) -> {
-            if (!hidden(type, location)) output.accept(location, supplier);
+            if (!hidden(type, location)) output.accept(location, adapt(type, location, supplier));
           });
     }
 
     @Override
     public Set<String> getNamespaces(PackType type) {
-      return type == PackType.CLIENT_RESOURCES && !atmosphere
+      return type == PackType.CLIENT_RESOURCES && mode == Mode.HIDE
           ? Set.of()
           : original.getNamespaces(type);
     }

@@ -295,7 +295,8 @@ public final class WorldgenRegression {
                     ClassProgressionRegression.verify(level);
                     MartialClassRegression.verify(level);
                     LOGGER.info(
-                        "Class choice, starter talents, class traits and shared practice regression passed");
+                        "Class choice, starter talents, class traits and shared practice regression"
+                            + " passed");
                   }));
       return;
     }
@@ -338,7 +339,8 @@ public final class WorldgenRegression {
                     RacialAbilitiesRegression.verify(level);
                     AccessoryUseRegression.verify(level);
                     LOGGER.info(
-                        "Four playable races, shared innate abilities, Chalk marks and heraldry passed");
+                        "Four playable races, shared innate abilities, Chalk marks and heraldry"
+                            + " passed");
                   }));
       return;
     }
@@ -703,6 +705,15 @@ public final class WorldgenRegression {
       StructureFootprintRegression.start(level, Path.of(structureFootprints));
       return;
     }
+    if (Boolean.getBoolean("aeroscapes.regression.islandDungeonFit")) {
+      IslandDungeonFitRegression.verify(level);
+      return;
+    }
+    String cliffDungeon = System.getProperty("aeroscapes.regression.cliffDungeon");
+    if (cliffDungeon != null) {
+      CliffDungeonRegression.verify(level, cliffDungeon);
+      return;
+    }
     String saveUpgradeReport = System.getProperty("aeroscapes.regression.saveUpgradeReport");
     if (saveUpgradeReport != null) {
       SaveUpgradeRegression.verify(level, Path.of(saveUpgradeReport));
@@ -783,6 +794,18 @@ public final class WorldgenRegression {
           featureLevel,
           Path.of(nonStructurePlan),
           Path.of(System.getProperty("aeroscapes.regression.nonStructureReport")));
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.iglooSnowCover")) {
+      IglooSnowCoverRegression.verify(level);
+      return;
+    }
+    String desertHouseLocate = System.getProperty("aeroscapes.regression.desertHouseLocate");
+    if (desertHouseLocate != null) {
+      require(
+          desertHouseLocate.equals("baseline") || desertHouseLocate.equals("candidate"),
+          "Expected baseline or candidate desert house locate fixture");
+      LocateRegression.practicalDesertHouse(level, desertHouseLocate.equals("baseline"));
       return;
     }
     String surfacePrefilterPlan = System.getProperty("aeroscapes.regression.surfacePrefilterPlan");
@@ -963,7 +986,8 @@ public final class WorldgenRegression {
     naturalStart(level, generator, new Site("terralith:underground/sunken_tower", -592, 69));
     raisedSurfaceRoot(level, generator);
     LOGGER.info(
-        "Worldgen regression passed: {} clipped starts, {} column floors, natural underground starts",
+        "Worldgen regression passed: {} clipped starts, {} column floors, natural underground"
+            + " starts",
         NEGATIVE_SITES.size(),
         COLUMN_SITES.size());
   }
