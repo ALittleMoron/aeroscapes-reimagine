@@ -1,0 +1,10 @@
+{
+  "items": [
+    "overgeared:steel_tongs"
+  ],
+  "base": [
+    "overgeared:steel_ingot",
+    "createmetallurgy:steel_ingot",
+    "createbigcannons:steel_ingot"
+  ]
+}

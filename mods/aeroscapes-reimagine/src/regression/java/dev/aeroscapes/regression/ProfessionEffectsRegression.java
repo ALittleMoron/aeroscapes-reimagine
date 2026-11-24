@@ -1,7 +1,7 @@
 package dev.aeroscapes.regression;
 
 import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
-import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.ProfessionEffects;
@@ -75,22 +75,22 @@ final class ProfessionEffectsRegression {
             "Choose a cook");
         double blockRange = player.blockInteractionRange();
         double entityRange = player.entityInteractionRange();
-        var category = ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
         var skills = SkillsMod.getInstance();
         var anvil = new ModAnvilMenu(1, player.getInventory());
         var damage = repair(anvil, Items.DIAMOND_PICKAXE, 1, 0);
         int netheriteDamage = repair(anvil, Items.NETHERITE_PICKAXE, 1, 0);
         int normalUnit = 1000 - damage;
         require(normalUnit > 0, "Untrained material repair restores durability");
-        skills.setPoints(
-            player,
-            category,
-            ResourceLocation.parse("aeroscapes_reimagine:trade_effects_fixture"),
-            5,
-            true);
         for (String id :
             List.of(
                 "long_reach", "material_repair", "frugal_repair", "extra_harvest", "quick_meal")) {
+          var category = ProfessionDiscipline.byLegacyNode(id).orElseThrow().category();
+          skills.setPoints(
+              player,
+              category,
+              ResourceLocation.parse("aeroscapes_reimagine:trade_effects_fixture"),
+              2,
+              true);
           skills.tryUnlockSkill(player, category, id, false);
           require(ProfessionProgression.learned(player, id), "Buy ordinary talent " + id);
         }

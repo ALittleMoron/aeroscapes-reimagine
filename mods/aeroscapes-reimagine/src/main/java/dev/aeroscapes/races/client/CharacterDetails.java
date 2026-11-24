@@ -2,6 +2,7 @@ package dev.aeroscapes.races.client;
 
 import static dev.aeroscapes.races.client.RaceVisuals.text;
 
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.ClassTraits;
 import dev.aeroscapes.races.Profession;
@@ -30,8 +31,9 @@ final class CharacterDetails {
   }
 
   static MutableComponent professionTalent(String starter, String field) {
+    String tree = ProfessionDiscipline.byLegacyNode(starter).orElseThrow().skill();
     return Component.translatable(
-        "puffish_skills.aeroscapes_reimagine.profession." + starter + "." + field);
+        "puffish_skills.aeroscapes_reimagine." + tree + "." + starter + "." + field);
   }
 
   static MutableComponent talent(String starter, String field) {

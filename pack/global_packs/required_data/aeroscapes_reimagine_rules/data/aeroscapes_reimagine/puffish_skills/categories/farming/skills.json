@@ -1,0 +1,14 @@
+{
+  "extra_harvest": {
+    "x": -26,
+    "y": 0,
+    "definition": "extra_harvest",
+    "root": true
+  },
+  "careful_tilling": {
+    "x": 26,
+    "y": 0,
+    "definition": "careful_tilling",
+    "root": true
+  }
+}

@@ -22,7 +22,7 @@ Hits with melee weapons train Melee. Arrows and thrown tridents train Ranged. Bl
 
 Mining stone, cutting wood and digging train Gathering. Crafting trains Crafting, while crafting food trains Cooking instead. Taking finished items out of a furnace trains Cooking for food and Smithing for everything else, such as metal or glass; a furnace fed by hoppers trains nobody. Placing construction blocks trains Building. Harvesting ripe crops, breeding animals and making a successful catch train Farming. Ordinary mobs, mob farms where you land the blows and repeated cheap crafts always give some experience.
 
-Combat, Magic and Professions have independent point balances. Melee and Ranged give one combat point per five skill levels, up to 11 points. Magic starts with one point and earns more from accumulated practice independently of its level milestones.
+Combat, Magic and each profession tree have independent point balances. Melee and Ranged give one combat point per five skill levels, up to 11 points. Magic starts with one point and earns more from accumulated practice independently of its level milestones.
 
 | Credited magic XP | Interval between points | Total magic-earned points at the end of the stage |
 | ----------------- | ----------------------: | ------------------------------------------------: |
@@ -31,19 +31,27 @@ Combat, Magic and Professions have independent point balances. Melee and Ranged 
 | 5,000 to 20,000   |                1,500 XP |                                                25 |
 | Above 20,000      |                3,000 XP |                                 131 at 338,000 XP |
 
-Magic practice continues earning points at the same rate after level 50. The magic pool covers all 131 magic talents. The class pays for the chosen starter from its matching pool, Magic for mages and Combat for the other classes. The separate profession pool has ten points. Your profession pays for its starting talent, and every five levels in a peaceful skill earn another point up to that cap. Ten points cover all eight professional talents, the gathering root and either mining speed or fortune. Skills continue to grow after the cap.
+Magic practice continues earning points at the same rate after level 50. The magic pool covers all 131 magic talents. The class pays for the chosen starter from its matching pool, Magic for mages and Combat for the other classes. Each profession tree has its own points. Cooking practice earns Cooking points, and Smithing practice earns Smithing points. Your starting profession funds its selected starter in the matching tree. Smithing earns its first practice point at level 1, then another every five levels up to its limit. Other profession trees earn one point per five levels until their own limits. Skills continue to grow after their point limits.
 
 Magic levels now follow their own practice curve; the other skills keep their previous curves. Mastery readiness and point rewards use the same credited magic XP. For example, Magic level 15 requires 4,301 XP, level 30 requires 21,101, level 45 requires 57,701 and level 50 requires 72,701. Reaching a mastery level opens its prerequisite, while buying the talent still costs a point.
 
-Open the inventory and press **Talents**, below the nutrients button. Each page displays the points available for its own talents. Select a node to read its effect and price, then press **Learn**. Drag the tree to move, use the wheel to zoom, or press **Center** to fit the whole page. Search highlights matching talents; Enter selects and centers the next match. Some talents exclude each other, such as Onslaught and Firm footing. Dashed links mark these alternatives, and the details name the other choice. Every character can open every branch. Closing Talents or Nutrients returns to the ordinary inventory.
+Open the inventory and press **Talents**, below the nutrients button. On the Professions page, choose a profession in the second row of tabs. The selected tab has a gold border. Each tree displays its available points. Select a node to read its effect and price, then press **Learn**. Drag the tree to move, use the wheel to zoom, or press **Center** to fit the whole page. Search highlights matching talents; Enter selects and centers the next match. Some talents exclude each other, such as Onslaught and Firm footing. Dashed links mark these alternatives, and the details name the other choice. Every character can open every branch. Closing Talents or Nutrients returns to the ordinary inventory.
 
 To check your levels, open the inventory and click the **Skills** button with gold bars, above the nutrients button between your character and the crafting grid: a panel attached to the left side of the inventory, where the recipe book also opens, lists combat and profession skills with their progress and a search field; scroll it with the mouse wheel or drag its scrollbar, and press the button again to hide it. The Skills, Nutrients and Talents buttons are also available with the accessory slots open. Skills and accessories replace each other; closing one leaves the other closed. **P** opens the Project MMO glossary in the world. In an inventory, hover over an item and press **Ctrl+P** to inspect it in the glossary. The level list on the game screen is hidden by default so it does not cover the minimap; assign _Toggle Skill List_ in Controls to show it.
 
-Combat offers melee, archery and protection talents. Open Professions for the eight job talents and the gathering branch. Magic is one tree with a common introductory repertoire and four functional directions covering all 111 spells. Its mastery gates depend on Magic practice, while ordinary bundles, individual spell unlocks and useful passive branches share 131 one-point nodes. The [magic guide](../magic/) explains learning, scroll ranks and special discoveries.
+Combat offers melee, archery and protection talents. Professions includes trees for Smithing, Mining, Building, Farming and Cooking. Magic is one tree with a common introductory repertoire and four functional directions covering all 111 spells. Its mastery gates depend on Magic practice, while ordinary bundles, individual spell unlocks and useful passive branches share 131 one-point nodes. The [magic guide](../magic/) explains learning, scroll ranks and special discoveries.
 
 ## Prepared abilities
 
 Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells, racial abilities, Amulet Step and items carrying Hex programs in eight shared slots, including during combat. Passive talents do not use these slots. Hold the middle mouse button and release over a slot in the wheel to select it. Tap the button to use it. A learned spell requires an equipped spellbook focus and keeps its costs and cooldown. Racial abilities and Amulet Step work without a focus. For a Hex program, keep its assigned cypher, trinket or artifact on your hotbar or in your offhand. The [magic guide](../magic/) covers controls, books, scroll study and writing Hex programs. Personal ranks and preparation survive death, relogging and dimension changes.
+
+## Making tools and equipment
+
+To make a stone tool, use flint on stone to get knapping rocks. Hold one rock in each hand and use it to start knapping. Shape the tool head, then assemble it with a stick. Making stone tools gives Smithing practice and requires no talent.
+
+The Smithing tree has separate manufacture branches for work tools and combat equipment, starting at iron. Expedition finds can be used as soon as you obtain them. Steel gear can be upgraded with a diamond upgrade template. Find a template and copy it. Learning either **Diamond Work Tools** or **Diamond Arms and Armor** opens **Diamond Template**, which lets you forge a template from materials.
+
+Personal Smithing practice and accurate hammer strikes improve the chances of better initial quality. Automated production grants no personal Smithing practice or workmanship bonus.
 
 ## Equipment quality and reforging
 
@@ -56,6 +64,8 @@ Reforging can produce legendary gear. Some legendary gear also appears in select
 Open the anvil’s **Reforging** tab. Put undamaged gear in the middle, one base material on the left and one lapis lazuli on the right. An iron pickaxe takes an iron ingot, a Wandering Magician Hood takes leather and Artificer’s Cane takes a gold ingot. Each paid attempt commits the whole result immediately. The price and odds are fixed for that item. The new rank can be worse or repeat the previous one. Ordinary enchantments remain on the item.
 
 To compare possible results, open the item in EMI and select **Reforging**. The card shows the materials and the chance of each available rank. Select a rank and hover over a result for its bonuses and any conditions. For example, a good pickaxe can keep its mining-speed bonus and also save wear when mining stone.
+
+Fine and better smithing hammers widen the exact-hit zone on the forging meter. Fine and better tongs can avoid spending durability while protecting you from burns from hot metal in your inventory.
 
 Hex Casting equipment uses charged amethyst or iron.
 
@@ -149,7 +159,7 @@ An **Identity Seal** can appear in abandoned mineshaft chest minecarts, desert p
 
 - **Race.** Choose a different race and preview its appearance on your skin. Stand somewhere with room for the new body.
 - **Class.** Pick the new class and starter. Keep your learned talents or refund the old class branch in full. For a mage this branch includes the magic tree. If keeping your investment leaves no free point for the new starter, the starter works immediately and uses the next point you earn for its tree.
-- **Profession.** Pick the new profession and starter. Talents belonging to the old profession return their points to the profession pool. Common gathering talents and other professions’ talents stay learned.
+- **Profession.** Pick the new profession and starter. The previous profession’s starter choices return their points to its own tree. Other learned talents stay active. The starting credit moves to the new profession’s tree.
 
 You keep your practice XP, personal spell ranks, eight preparation slots and current cooldowns. Assigned abilities whose requirements you lose become unavailable. Starter kits and the mage journal are issued only at creation.
 

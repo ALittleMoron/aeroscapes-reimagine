@@ -3,6 +3,7 @@ package dev.aeroscapes.regression;
 import com.cyberday1.neoorigins.api.NeoOriginsAPI;
 import com.cyberday1.neoorigins.api.origin.SetOriginResult;
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Profession;
@@ -26,8 +27,6 @@ import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.puffish.skillsmod.SkillsMod;
 
 final class ProfessionIdentityRegression {
-  private static final ResourceLocation CATEGORY =
-      ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
   private static final ResourceLocation WITHHELD =
       ResourceLocation.parse("aeroscapes_reimagine:profession_grant_fixture");
 
@@ -56,15 +55,17 @@ final class ProfessionIdentityRegression {
 
   private static void verifyChoice(ServerPlayer player, Profession profession, String starter) {
     login(player);
+    var category =
+        ProfessionDiscipline.bySkill(profession.practiceSkill()).orElseThrow().category();
     String wrongStarter = profession == Profession.FARMER ? "long_reach" : "extra_harvest";
     require(
         !choose(player, profession, wrongStarter) && RaceIdentity.race(player) == null,
         "Reject foreign profession starter before committing any field");
     boolean previouslyPurchased = starter.equals("frugal_repair");
     if (previouslyPurchased) {
-      APIUtils.setLevel("mining", player, 5);
+      APIUtils.setLevel("smithing", player, 1);
       ProgressionBridge.sync(player);
-      SkillsMod.getInstance().tryUnlockSkill(player, CATEGORY, starter, false);
+      SkillsMod.getInstance().tryUnlockSkill(player, category, starter, false);
       require(ProfessionProgression.learned(player, starter), "Native purchase before selection");
     }
     require(choose(player, profession, starter), "Select " + profession + "/" + starter);
@@ -72,8 +73,8 @@ final class ProfessionIdentityRegression {
         RaceIdentity.profession(player) == profession
             && RaceIdentity.professionStarter(player).equals(starter)
             && ProfessionProgression.learned(player, starter)
-            && SkillsMod.getInstance().getSpentPoints(player, CATEGORY).orElseThrow() == 1
-            && SkillsMod.getInstance().getPointsLeft(player, CATEGORY).orElseThrow()
+            && SkillsMod.getInstance().getSpentPoints(player, category).orElseThrow() == 1
+            && SkillsMod.getInstance().getPointsLeft(player, category).orElseThrow()
                 == (previouslyPurchased ? 1 : 0)
             && !RaceIdentity.awaitingChoice(player),
         "Confirmed native selection " + starter);
@@ -124,7 +125,7 @@ final class ProfessionIdentityRegression {
         slots.set(0, new ItemStack(Items.COAL, 62));
 
         var skills = SkillsMod.getInstance();
-        skills.setPoints(player, CATEGORY, WITHHELD, -2, true);
+        skills.setPoints(player, ProfessionDiscipline.SMITHING.category(), WITHHELD, -2, true);
         login(player);
         require(
             Utils.getPlayerSpellbookStack(player).is(ItemRegistry.COPPER_SPELL_BOOK.get())
@@ -137,7 +138,7 @@ final class ProfessionIdentityRegression {
                 && RaceIdentity.awaitingChoice(player)
                 && player.getInventory().countItem(Items.COAL) == 62,
             "Provider refusal protects the chooser and keeps the kit untouched");
-        skills.setPoints(player, CATEGORY, WITHHELD, 0, true);
+        skills.setPoints(player, ProfessionDiscipline.SMITHING.category(), WITHHELD, 0, true);
         require(
             !choose(player, Profession.BLACKSMITH, "frugal_repair")
                 && !choose(player, Profession.COOK, "hearty_meal"),
@@ -177,7 +178,8 @@ final class ProfessionIdentityRegression {
         slots.set(2, ItemStack.EMPTY);
         slots.set(3, ItemStack.EMPTY);
         // Recover a native talent save that predates the committed player inventory and identity.
-        SkillsMod.getInstance().lockSkill(player, CATEGORY, "material_repair");
+        SkillsMod.getInstance()
+            .lockSkill(player, ProfessionDiscipline.SMITHING.category(), "material_repair");
         require(!ProfessionProgression.learned(player, "material_repair"), "Provider lost starter");
         login(player);
         require(

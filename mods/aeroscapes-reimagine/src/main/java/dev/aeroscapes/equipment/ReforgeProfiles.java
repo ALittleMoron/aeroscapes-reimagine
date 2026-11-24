@@ -65,14 +65,22 @@ public final class ReforgeProfiles {
   }
 
   public static ResourceLocation roll(Item item, boolean paid) {
+    return roll(item, paid, 0);
+  }
+
+  public static ResourceLocation rollCrafted(Item item, int boost) {
+    return roll(item, false, boost);
+  }
+
+  private static ResourceLocation roll(Item item, boolean paid, int boost) {
     var choices = choices(item, paid);
     if (choices.isEmpty()) return null;
 
-    int total = choices.keySet().stream().mapToInt(quality -> quality.weight(paid)).sum();
+    int total = choices.keySet().stream().mapToInt(quality -> quality.weight(paid, boost)).sum();
     var random = ThreadLocalRandom.current();
     int ticket = random.nextInt(total);
     for (var entry : choices.entrySet()) {
-      ticket -= entry.getKey().weight(paid);
+      ticket -= entry.getKey().weight(paid, boost);
       if (ticket < 0) {
         var profiles = entry.getValue();
         return profiles.get(random.nextInt(profiles.size())).id();
@@ -103,6 +111,17 @@ public final class ReforgeProfiles {
 
     int weight(boolean paid) {
       return paid ? paidWeight : naturalWeight;
+    }
+
+    int weight(boolean paid, int boost) {
+      if (paid) return paidWeight;
+      return naturalWeight
+          + switch (this) {
+            case FINE -> boost;
+            case EXCEPTIONAL -> boost / 2;
+            case EPIC -> boost / 3;
+            default -> 0;
+          };
     }
 
     static Quality fromPath(String path) {

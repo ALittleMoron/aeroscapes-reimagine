@@ -1,0 +1,54 @@
+{
+  "extra_harvest": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.farming.extra_harvest.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.farming.extra_harvest.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/extra_harvest.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "careful_tilling": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.farming.careful_tilling.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.farming.careful_tilling.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/careful_tilling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  }
+}

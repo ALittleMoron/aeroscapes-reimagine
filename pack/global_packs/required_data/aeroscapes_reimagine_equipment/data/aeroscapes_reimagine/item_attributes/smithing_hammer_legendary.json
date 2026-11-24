@@ -1,0 +1,13 @@
+{
+  "id": "aeroscapes_reimagine:smithing_hammer_legendary",
+  "verifiers": [
+    {
+      "tag": "aeroscapes_reimagine:equipment_quality/smithing_hammer"
+    }
+  ],
+  "weight": 0,
+  "style": {
+    "color": "gold"
+  },
+  "attributes": []
+}

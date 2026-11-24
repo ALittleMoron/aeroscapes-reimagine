@@ -1,0 +1,14 @@
+{
+  "long_reach": {
+    "x": -26,
+    "y": 0,
+    "definition": "long_reach",
+    "root": true
+  },
+  "quick_dismantling": {
+    "x": 26,
+    "y": 0,
+    "definition": "quick_dismantling",
+    "root": true
+  }
+}

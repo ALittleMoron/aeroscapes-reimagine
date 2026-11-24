@@ -2160,5 +2160,26 @@
     "source_comparison": "Compared the pinned JARs' native English and Russian dictionaries, keybinding registration, side-panel and skill-type rendering and the Pufferfish screen and chat consumers.",
     "exclusions": "Inactive FTB Quests reward labels (FTB Quests is not installed) and the Project MMO keybinding category brand.",
     "terms": "Project MMO permits use in free modpacks linking its page; Pufferfish's Skills configuration and translations are MIT. Guarded expected text retains provider terms."
+  },
+  "overgeared_workshop": {
+    "targets": {
+      "overgeared": "1.21.1-1.7.1 / MR WTCXb5BM"
+    },
+    "resources": [
+      {
+        "resource": "assets/aeroscapes_overgeared/lang/en_us.json",
+        "entries": 135,
+        "sha256": "9f0789e1b0b28766b2829d664a60c987443794c7b0d0993b6d630c18c40ac4d9"
+      },
+      {
+        "resource": "assets/aeroscapes_overgeared/lang/ru_ru.json",
+        "entries": 135,
+        "sha256": "7b67a9f5b68f9c19edb2436bb02d53ba07eba9eefe87c93582c3c7330a43c166"
+      },
+      "assets/aeroscapes_reimagine/language_corrections.json"
+    ],
+    "scope": "Guarded provider-text corrections clarify knapping, restore Overgeared branding and supply missing Russian player-facing text. Scoped configuration hooks translate the visible labels, blacklist captions and counters, and the forging recipe book's anvil-tier warning.",
+    "source_comparison": "Checked native English and Russian dictionaries and the 1.7.1 bytecode for the configuration screen, row constructors, blacklist editor and forging recipe book. Each native numeric value, rule, config key and item or tag identifier stays provider-owned.",
+    "terms": "Overgeared declares MIT. Exact expected native strings retain the provider's terms. Added Russian and English display text is authored for the pack."
   }
 }

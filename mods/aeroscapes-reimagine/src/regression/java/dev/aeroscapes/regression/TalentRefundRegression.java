@@ -4,6 +4,7 @@ import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicPracticeProgress;
 import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.progression.TalentRefunds;
 import dev.aeroscapes.races.CharacterClass;
@@ -28,8 +29,7 @@ final class TalentRefundRegression {
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
   private static final ResourceLocation MAGIC =
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
-  private static final ResourceLocation PROFESSION =
-      ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
+  private static final ResourceLocation MINING = ProfessionDiscipline.MINING.category();
 
   private TalentRefundRegression() {}
 
@@ -83,8 +83,8 @@ final class TalentRefundRegression {
     require(
         skills.getPointsTotal(player, COMBAT).orElseThrow() == ProgressionBridge.COMBAT_POINT_CAP
             && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap
-            && skills.getPointsTotal(player, PROFESSION).orElseThrow()
-                == ProgressionBridge.PROFESSION_POINT_CAP,
+            && skills.getPointsTotal(player, MINING).orElseThrow()
+                == ProfessionDiscipline.MINING.cap(),
         "All three budgets can reach their own caps");
     purchase(
         player,
@@ -114,10 +114,10 @@ final class TalentRefundRegression {
             "magic_reserve_1",
             "magic_destruction_mastery_3",
             "magic_restoration_power"));
-    purchase(player, PROFESSION, List.of("mining_efficiency", "mining_fortune"));
+    purchase(player, MINING, List.of("mining_efficiency", "mining_fortune"));
     require(
         TalentRefunds.preview(player, "combat", List.of("quick_block")).isEmpty()
-            && TalentRefunds.preview(player, "profession", List.of("material_repair")).isEmpty(),
+            && TalentRefunds.preview(player, "smithing", List.of("material_repair")).isEmpty(),
         "Active starters cannot be sold");
     var guard = List.of("guard_armor");
     var first = TalentRefunds.preview(player, "combat", guard).orElseThrow();
@@ -132,7 +132,7 @@ final class TalentRefundRegression {
         "Apply once and reject a stale quote");
 
     var mining = List.of("mining_efficiency");
-    var second = TalentRefunds.preview(player, "profession", mining).orElseThrow();
+    var second = TalentRefunds.preview(player, "mining", mining).orElseThrow();
     require(
         second.nodes().equals(List.of("mining_efficiency", "mining_fortune"))
             && second.loss() == 0
@@ -181,9 +181,9 @@ final class TalentRefundRegression {
         skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1
             && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap - 1,
         "Loading the saved player retains both deductions");
-    purchase(player, PROFESSION, List.of("mining_efficiency"));
+    purchase(player, MINING, List.of("mining_efficiency"));
     require(
-        TalentRefunds.preview(player, "profession", List.of("mining_efficiency"))
+        TalentRefunds.preview(player, "mining", List.of("mining_efficiency"))
                 .orElseThrow()
                 .remainder()
             == 3,

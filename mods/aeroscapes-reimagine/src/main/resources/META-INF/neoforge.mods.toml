@@ -114,6 +114,9 @@ config = "aeroscapes_reimagine.sky.mixins.json"
 config = "aeroscapes_reimagine.progression.mixins.json"
 
 [[mixins]]
+config = "aeroscapes_reimagine.workshop.mixins.json"
+
+[[mixins]]
 config = "aeroscapes_reimagine.magic.mixins.json"
 
 [[mixins]]

@@ -1,115 +1,10 @@
 {
-  "mining_efficiency": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_efficiency.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_efficiency.description"
-    },
-    "icon": {
-      "type": "texture",
-      "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mining_efficiency.png"
-      }
-    },
-    "frame": {
-      "type": "texture",
-      "data": {
-        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
-        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
-        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
-        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
-        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
-      }
-    },
-    "rewards": [
-      {
-        "type": "puffish_skills:attribute",
-        "data": {
-          "attribute": "minecraft:player.mining_efficiency",
-          "value": 2,
-          "operation": "addition"
-        }
-      }
-    ],
-    "cost": 1
-  },
-  "mining_speed": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_speed.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_speed.description"
-    },
-    "icon": {
-      "type": "texture",
-      "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mining_speed.png"
-      }
-    },
-    "frame": {
-      "type": "texture",
-      "data": {
-        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
-        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
-        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
-        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
-        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
-      }
-    },
-    "rewards": [
-      {
-        "type": "puffish_skills:attribute",
-        "data": {
-          "attribute": "minecraft:player.block_break_speed",
-          "value": 0.05,
-          "operation": "multiply_base"
-        }
-      }
-    ],
-    "cost": 1
-  },
-  "mining_fortune": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_fortune.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.mining_fortune.description"
-    },
-    "icon": {
-      "type": "texture",
-      "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/mining_fortune.png"
-      }
-    },
-    "frame": {
-      "type": "texture",
-      "data": {
-        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
-        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
-        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
-        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
-        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
-      }
-    },
-    "rewards": [
-      {
-        "type": "puffish_skills:attribute",
-        "data": {
-          "attribute": "minecraft:generic.luck",
-          "value": 0.5,
-          "operation": "addition"
-        }
-      }
-    ],
-    "cost": 1
-  },
   "material_repair": {
     "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.material_repair.title"
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.material_repair.title"
     },
     "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.material_repair.description"
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.material_repair.description"
     },
     "icon": {
       "type": "texture",
@@ -132,10 +27,10 @@
   },
   "frugal_repair": {
     "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.frugal_repair.title"
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.frugal_repair.title"
     },
     "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.frugal_repair.description"
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.frugal_repair.description"
     },
     "icon": {
       "type": "texture",
@@ -156,89 +51,7 @@
     "rewards": [],
     "cost": 1
   },
-  "long_reach": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.long_reach.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.long_reach.description"
-    },
-    "icon": {
-      "type": "texture",
-      "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/long_reach.png"
-      }
-    },
-    "frame": {
-      "type": "texture",
-      "data": {
-        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
-        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
-        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
-        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
-        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
-      }
-    },
-    "rewards": [
-      {
-        "type": "puffish_skills:attribute",
-        "data": {
-          "attribute": "minecraft:player.block_interaction_range",
-          "value": 1,
-          "operation": "addition"
-        }
-      }
-    ],
-    "cost": 1
-  },
-  "quick_dismantling": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.quick_dismantling.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.quick_dismantling.description"
-    },
-    "icon": {
-      "type": "texture",
-      "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/quick_dismantling.png"
-      }
-    },
-    "frame": {
-      "type": "texture",
-      "data": {
-        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
-        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
-        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
-        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
-        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
-      }
-    },
-    "rewards": [
-      {
-        "type": "puffish_skills:attribute",
-        "data": {
-          "attribute": "aeroscapes_reimagine:dismantling_speed",
-          "value": 0.15,
-          "operation": "addition"
-        }
-      }
-    ],
-    "cost": 1
-  },
-  "extra_harvest": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.extra_harvest.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.extra_harvest.description"
-    },
-    "icon": {
-      "type": "texture",
-      "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/extra_harvest.png"
-      }
-    },
+  "manufacture_iron_tools": {
     "frame": {
       "type": "texture",
       "data": {
@@ -250,21 +63,21 @@
       }
     },
     "rewards": [],
-    "cost": 1
-  },
-  "careful_tilling": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.careful_tilling.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.careful_tilling.description"
-    },
+    "cost": 1,
     "icon": {
       "type": "texture",
       "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/careful_tilling.png"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_iron_tools.png"
       }
     },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_iron_tools.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_iron_tools.description"
+    }
+  },
+  "manufacture_iron_arms": {
     "frame": {
       "type": "texture",
       "data": {
@@ -276,21 +89,21 @@
       }
     },
     "rewards": [],
-    "cost": 1
-  },
-  "hearty_meal": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.hearty_meal.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.hearty_meal.description"
-    },
+    "cost": 1,
     "icon": {
       "type": "texture",
       "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/hearty_meal.png"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_iron_arms.png"
       }
     },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_iron_arms.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_iron_arms.description"
+    }
+  },
+  "manufacture_steel_tools": {
     "frame": {
       "type": "texture",
       "data": {
@@ -302,21 +115,21 @@
       }
     },
     "rewards": [],
-    "cost": 1
-  },
-  "quick_meal": {
-    "title": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.quick_meal.title"
-    },
-    "description": {
-      "translate": "puffish_skills.aeroscapes_reimagine.profession.quick_meal.description"
-    },
+    "cost": 1,
     "icon": {
       "type": "texture",
       "data": {
-        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/quick_meal.png"
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_steel_tools.png"
       }
     },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_steel_tools.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_steel_tools.description"
+    }
+  },
+  "manufacture_steel_arms": {
     "frame": {
       "type": "texture",
       "data": {
@@ -328,6 +141,148 @@
       }
     },
     "rewards": [],
-    "cost": 1
+    "cost": 1,
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_steel_arms.png"
+      }
+    },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_steel_arms.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_steel_arms.description"
+    }
+  },
+  "manufacture_diamond_tools": {
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1,
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_diamond_tools.png"
+      }
+    },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_diamond_tools.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_diamond_tools.description"
+    }
+  },
+  "manufacture_diamond_arms": {
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1,
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_diamond_arms.png"
+      }
+    },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_diamond_arms.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_diamond_arms.description"
+    }
+  },
+  "manufacture_netherite_tools": {
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1,
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_netherite_tools.png"
+      }
+    },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_netherite_tools.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_netherite_tools.description"
+    }
+  },
+  "manufacture_netherite_arms": {
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1,
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_netherite_arms.png"
+      }
+    },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_netherite_arms.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_netherite_arms.description"
+    }
+  },
+  "manufacture_diamond_template": {
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1,
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/manufacture_diamond_template.png"
+      }
+    },
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_diamond_template.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_diamond_template.description"
+    }
   }
 }

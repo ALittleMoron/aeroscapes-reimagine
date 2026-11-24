@@ -1,0 +1,16 @@
+{
+  "type": "overgeared:forging",
+  "category": "MISC",
+  "hammering": 4,
+  "has_quality": false,
+  "needs_minigame": false,
+  "requires_blueprint": false,
+  "pattern": ["ddd", "dsd", "d d"],
+  "key": {
+    "d": {"item": "minecraft:diamond"},
+    "s": {"tag": "c:ingots/steel"}
+  },
+  "result": {"id": "overgeared:diamond_upgrade_smithing_template", "count": 1},
+  "show_notification": false,
+  "tier": "iron"
+}

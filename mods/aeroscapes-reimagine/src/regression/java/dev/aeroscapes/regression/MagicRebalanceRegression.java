@@ -7,6 +7,7 @@ import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.Preparation;
 import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
 import harmonised.pmmo.api.APIUtils;
 import harmonised.pmmo.core.Core;
@@ -37,8 +38,7 @@ public final class MagicRebalanceRegression {
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
   private static final ResourceLocation MAGIC =
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
-  private static final ResourceLocation PROFESSION =
-      ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
+  private static final ResourceLocation MINING = ProfessionDiscipline.MINING.category();
   private static final ResourceLocation SOURCE =
       ResourceLocation.parse("aeroscapes_reimagine:skill_levels");
   private static final ResourceLocation FIXTURE =
@@ -239,7 +239,7 @@ public final class MagicRebalanceRegression {
             earned(player) == MagicTalents.pointCap()
                 && provider.getPoints(player, COMBAT, SOURCE).orElseThrow()
                     == ProgressionBridge.COMBAT_POINT_CAP
-                && provider.getPoints(player, PROFESSION, SOURCE).orElseThrow() == 2,
+                && provider.getPoints(player, MINING, SOURCE).orElseThrow() == 2,
             "Weapon practice and mining fund their own budgets");
         for (String id :
             List.of(
@@ -257,12 +257,12 @@ public final class MagicRebalanceRegression {
           provider.tryUnlockSkill(player, COMBAT, id, false);
         }
         for (String id : List.of("mining_efficiency", "mining_fortune")) {
-          provider.tryUnlockSkill(player, PROFESSION, id, false);
+          provider.tryUnlockSkill(player, MINING, id, false);
         }
         require(
             provider.getPointsLeft(player, MAGIC).orElseThrow() == 0
                 && provider.getPointsLeft(player, COMBAT).orElseThrow() == 0
-                && provider.getPointsLeft(player, PROFESSION).orElseThrow() == 0,
+                && provider.getPointsLeft(player, MINING).orElseThrow() == 0,
             "A fully trained character can spend every earned point in all three pools");
         verifyDeathClone(player, credit);
         provider.exportPlayerData(player, talents);
@@ -302,8 +302,8 @@ public final class MagicRebalanceRegression {
         APIUtils.setLevel("mining", player, 10);
         var provider = SkillsMod.getInstance();
         provider.setPoints(player, COMBAT, SOURCE, 6, true);
-        provider.setPoints(player, PROFESSION, SOURCE, 2, true);
-        provider.setPoints(player, PROFESSION, FIXTURE, 3, true);
+        provider.setPoints(player, MINING, SOURCE, 2, true);
+        provider.setPoints(player, MINING, FIXTURE, 3, true);
         CompoundTag legacy = new CompoundTag();
         provider.exportPlayerData(player, legacy);
         legacy
@@ -318,7 +318,9 @@ public final class MagicRebalanceRegression {
                         "magic_fire_depth_4",
                         "magic_spell_firebolt")));
         CompoundTag profession =
-            legacy.getCompound("categories").getCompound(ProgressionBridge.PROFESSION_CATEGORY);
+            legacy
+                .getCompound("categories")
+                .getCompound(ProfessionDiscipline.MINING.category().toString());
         profession.put("unlocked_skills", strings(List.of("mining_efficiency")));
         CompoundTag expectedProfession = profession.copy();
         provider.importPlayerData(player, legacy);
@@ -349,7 +351,7 @@ public final class MagicRebalanceRegression {
         require(
             migrated
                 .getCompound("categories")
-                .getCompound(ProgressionBridge.PROFESSION_CATEGORY)
+                .getCompound(ProfessionDiscipline.MINING.category().toString())
                 .equals(expectedProfession),
             "Migration preserves profession allocations and every profession point source");
         require(
@@ -397,7 +399,7 @@ public final class MagicRebalanceRegression {
         var provider = SkillsMod.getInstance();
         provider.setPoints(player, COMBAT, SOURCE, previousCap, true);
         provider.setPoints(player, COMBAT, FIXTURE, 3, true);
-        provider.setPoints(player, PROFESSION, SOURCE, 2, true);
+        provider.setPoints(player, MINING, SOURCE, 2, true);
         CompoundTag snapshot = new CompoundTag();
         provider.exportPlayerData(player, snapshot);
         CompoundTag categories = snapshot.getCompound("categories");
@@ -409,7 +411,7 @@ public final class MagicRebalanceRegression {
             .getCompound(ProgressionBridge.COMBAT_CATEGORY)
             .put("unlocked_skills", strings(mixed));
         categories
-            .getCompound(ProgressionBridge.PROFESSION_CATEGORY)
+            .getCompound(ProfessionDiscipline.MINING.category().toString())
             .put("unlocked_skills", strings(List.of("mining_efficiency")));
         provider.importPlayerData(player, snapshot);
 
@@ -427,9 +429,9 @@ public final class MagicRebalanceRegression {
                     .equals(Set.of("melee_strike"))
                 && provider.getPoints(player, COMBAT, SOURCE).orElseThrow() == 2
                 && provider.getPoints(player, COMBAT, FIXTURE).orElseThrow() == 3
-                && Set.copyOf(provider.getUnlockedSkills(player, PROFESSION).orElseThrow())
+                && Set.copyOf(provider.getUnlockedSkills(player, MINING).orElseThrow())
                     .equals(Set.of("mining_efficiency"))
-                && provider.getPoints(player, PROFESSION, SOURCE).orElseThrow() == 2,
+                && provider.getPoints(player, MINING, SOURCE).orElseThrow() == 2,
             "Combat and profession retain their own purchases and independent point sources");
       } finally {
         ProgressionRegression.listPlayer(level, player, false);

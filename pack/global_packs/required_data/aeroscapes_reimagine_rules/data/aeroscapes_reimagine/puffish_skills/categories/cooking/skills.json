@@ -1,0 +1,14 @@
+{
+  "hearty_meal": {
+    "x": -26,
+    "y": 0,
+    "definition": "hearty_meal",
+    "root": true
+  },
+  "quick_meal": {
+    "x": 26,
+    "y": 0,
+    "definition": "quick_meal",
+    "root": true
+  }
+}

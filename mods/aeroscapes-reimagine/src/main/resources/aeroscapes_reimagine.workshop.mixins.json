@@ -1,0 +1,34 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.workshop",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "injectors": { "defaultRequire": 1 },
+  "mixins": [
+    "WorkshopCraftingMixin",
+    "WorkshopBlockTagMixin",
+    "WorkshopCrafterMixin",
+    "WorkshopMechanicalCrafterMixin",
+    "WorkshopResultClickMixin",
+    "CraftingResultInputAccess",
+    "WorkshopCraftResultMixin",
+    "WorkshopTerminalResultMixin",
+    "WorkshopQuickMoveMixin",
+    "WorkshopUpgradeMixin",
+    "ForgingAnvilMixin",
+    "ForgePlayerAccess",
+    "ForgeStrikeMixin",
+    "tools.WorkshopTongsReforgeMixin"
+  ],
+  "client": [
+    "OvergearedConfigEntryLanguageMixin",
+    "OvergearedConfigScreenLanguageMixin",
+    "OvergearedBlacklistScreenLanguageMixin",
+    "OvergearedBlacklistEntryLanguageMixin",
+    "OvergearedBlacklistCountLanguageMixin",
+    "OvergearedRecipeBookLanguageMixin",
+    "tools.WorkshopHammerTagAccess",
+    "tools.WorkshopHammerReforgeMixin"
+  ]
+}

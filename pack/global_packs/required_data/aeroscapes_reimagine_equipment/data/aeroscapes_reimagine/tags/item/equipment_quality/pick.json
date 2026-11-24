@@ -7,6 +7,8 @@
     "minecraft:diamond_pickaxe",
     "minecraft:netherite_pickaxe",
     "hybrid_aquatic:coral_pickaxe",
-    "hybrid_aquatic:seashell_pickaxe"
+    "hybrid_aquatic:seashell_pickaxe",
+    "overgeared:copper_pickaxe",
+    "overgeared:steel_pickaxe"
   ]
 }

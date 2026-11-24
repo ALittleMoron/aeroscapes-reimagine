@@ -8,6 +8,18 @@
       {
         "namespace": "tieredneo",
         "path": "item_attributes/.*"
+      },
+      {
+        "namespace": "overgeared",
+        "path": "quality_attributes/.*"
+      },
+      {
+        "namespace": "overgeared",
+        "path": "loot_table/blocks/copper_smithing_anvil\\.json"
+      },
+      {
+        "namespace": "overgeared",
+        "path": "recipe/silver_ingot_from_cooling_2\\.json"
       }
     ]
   }

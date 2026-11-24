@@ -1,12 +1,11 @@
 package dev.aeroscapes.regression;
 
-import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.ProfessionEffects;
 import java.util.UUID;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.inventory.AbstractFurnaceMenu;
@@ -33,7 +32,7 @@ final class ProfessionFurnaceRegression {
       var cook = session.player;
       ProgressionRegression.listPlayer(level, cook, true);
       try {
-        var category = ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
+        var category = ProfessionDiscipline.COOKING.category();
         SkillsMod.getInstance().unlockSkill(cook, category, "hearty_meal");
         SkillsMod.getInstance().unlockSkill(cook, category, "quick_meal");
         cooked = verifyStation(level, pos, Blocks.FURNACE, cook, new ItemStack(Items.BEEF));

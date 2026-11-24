@@ -6,6 +6,7 @@ import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.RacialAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.races.CharacterChanges;
 import dev.aeroscapes.races.CharacterClass;
@@ -39,8 +40,6 @@ final class CharacterChangesRegression {
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
   private static final ResourceLocation MAGIC =
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
-  private static final ResourceLocation PROFESSION =
-      ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
 
   private CharacterChangesRegression() {}
 
@@ -278,10 +277,12 @@ final class CharacterChangesRegression {
         initial != null && initial.returned() == 1 && initial.spent() == 1,
         "Fund new profession ability");
     APIUtils.setLevel("mining", player, 10);
+    APIUtils.setLevel("smithing", player, 1);
     ProgressionBridge.sync(player);
     var skills = SkillsMod.getInstance();
-    skills.tryUnlockSkill(player, PROFESSION, "mining_efficiency", false);
-    skills.tryUnlockSkill(player, PROFESSION, "frugal_repair", false);
+    skills.tryUnlockSkill(
+        player, ProfessionDiscipline.MINING.category(), "mining_efficiency", false);
+    skills.tryUnlockSkill(player, ProfessionDiscipline.SMITHING.category(), "frugal_repair", false);
     require(
         !CharacterChanges.change(player, builder, initial)
             && RaceIdentity.profession(player) == Profession.BLACKSMITH,
@@ -299,7 +300,12 @@ final class CharacterChangesRegression {
             && ProfessionProgression.learned(player, "long_reach")
             && !ProfessionProgression.learned(player, "frugal_repair")
             && !ProfessionProgression.learned(player, "material_repair")
-            && skills.getPointsLeft(player, PROFESSION).orElseThrow() == 1
+            && skills.getPointsLeft(player, ProfessionDiscipline.SMITHING.category()).orElseThrow()
+                == 1
+            && skills.getPointsLeft(player, ProfessionDiscipline.MINING.category()).orElseThrow()
+                == 1
+            && skills.getPointsLeft(player, ProfessionDiscipline.BUILDING.category()).orElseThrow()
+                == 0
             && player.getInventory().countItem(Items.STONE_AXE) == 0
             && APIUtils.getLevel("mining", player) == 10
             && RaceIdentity.characterClass(player) == CharacterClass.MAGE

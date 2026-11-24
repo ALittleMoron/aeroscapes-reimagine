@@ -1,7 +1,7 @@
 package dev.aeroscapes.regression;
 
 import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
-import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
@@ -71,7 +71,7 @@ final class ProfessionToolsRegression {
         player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
         float handSpeed = player.getDigSpeed(planks, position);
         var skills = SkillsMod.getInstance();
-        var category = ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
+        var category = ProfessionDiscipline.BUILDING.category();
         skills.setPoints(
             player,
             category,

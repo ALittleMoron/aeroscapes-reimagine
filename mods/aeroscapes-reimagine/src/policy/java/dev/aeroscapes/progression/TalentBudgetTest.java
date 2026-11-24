@@ -15,6 +15,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.StringTag;
+import net.minecraft.nbt.Tag;
 
 /**
  * Computes maximum spend from the registered graphs, independently of the earned point ceilings.
@@ -29,24 +33,22 @@ public final class TalentBudgetTest {
 
   public static void verify() throws IOException {
     checkCompetingRoutes();
+    checkProfessionMigration();
     JsonObject config = read(DATA.resolve("config.json"));
     supported(config, Set.of("version", "categories"), "registration");
     require(config.get("version").getAsInt() == 3, "Unsupported provider config version");
-    var trainedProfessions = new HashMap<String, Long>();
-    for (String skill : ProgressionBridge.PROFESSION_SKILLS)
-      trainedProfessions.put(skill, Long.MAX_VALUE);
+    var caps = new HashMap<String, Integer>();
+    caps.put("combat", ProgressionBridge.COMBAT_POINT_CAP);
+    caps.put("magic", MagicTalents.pointCap());
+    for (var tree : ProfessionDiscipline.values()) {
+      require(tree.earned(50, false) == tree.cap(), "Practice alone funds " + tree.skill());
+      caps.put(tree.skill(), tree.cap());
+    }
     require(
-        ProgressionBridge.points(trainedProfessions, ProgressionBridge.PROFESSION_SKILLS)
-            >= ProgressionBridge.PROFESSION_POINT_CAP,
-        "The profession level rewards must be able to fund the whole pool");
-    var caps =
-        Map.of(
-            "combat",
-            ProgressionBridge.COMBAT_POINT_CAP,
-            "magic",
-            MagicTalents.pointCap(),
-            "profession",
-            ProgressionBridge.PROFESSION_POINT_CAP);
+        ProfessionDiscipline.SMITHING.earned(1, false) == 1
+            && ProfessionDiscipline.COOKING.earned(1, false) == 0
+            && ProfessionDiscipline.COOKING.earned(0, true) == 1,
+        "Early smithing and starter credit belong to individual trees");
     Set<String> registered = new HashSet<>();
     for (JsonElement value : config.getAsJsonArray("categories")) {
       String id = value.getAsString();
@@ -57,6 +59,34 @@ public final class TalentBudgetTest {
     }
     require(
         registered.equals(caps.keySet()), "Earned point sources must have registered categories");
+  }
+
+  private static void checkProfessionMigration() {
+    var categories = new CompoundTag();
+    var legacy = new CompoundTag();
+    var learned = new ListTag();
+    for (String node : List.of("mining_efficiency", "material_repair", "hearty_meal"))
+      learned.add(StringTag.valueOf(node));
+    legacy.put("unlocked_skills", learned);
+    var pooledPoints = new CompoundTag();
+    pooledPoints.putInt("aeroscapes_reimagine:skill_levels", 8);
+    legacy.put("points", pooledPoints);
+    categories.put("aeroscapes_reimagine:profession", legacy);
+
+    require(TalentPoolMigration.splitProfessionData(categories), "An existing allocation migrates");
+    List<String> learnedByTree = new ArrayList<>();
+    for (var discipline : ProfessionDiscipline.values()) {
+      var category = categories.getCompound(discipline.category().toString());
+      require(category.getCompound("points").isEmpty(), "Shared credit does not multiply");
+      for (Tag node : category.getList("unlocked_skills", Tag.TAG_STRING)) {
+        require(
+            ProfessionDiscipline.byLegacyNode(node.getAsString()).orElseThrow() == discipline,
+            "Moved talent remains in its original discipline");
+        learnedByTree.add(node.getAsString());
+      }
+    }
+    require(learnedByTree.size() == 3, "All purchases, including cross-funded purchases, survive");
+    require(!TalentPoolMigration.splitProfessionData(categories), "Migration is idempotent");
   }
 
   private static void verifyCategory(String id, int earnedCap) throws IOException {

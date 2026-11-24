@@ -1,6 +1,7 @@
 package dev.aeroscapes.races;
 
 import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
 import java.util.Collection;
 import java.util.HashSet;
@@ -15,8 +16,6 @@ import net.minecraft.world.phys.AABB;
 import net.puffish.skillsmod.SkillsMod;
 
 public final class CharacterChanges {
-  private static final ResourceLocation PROFESSION =
-      ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
   static final String STARTER_PERSONALLY_LEARNED = "class_starter_personally_learned";
 
   public record Selection(
@@ -144,25 +143,25 @@ public final class CharacterChanges {
         || selection.refundBranch()
         || !target.starters().contains(selection.starter())
         || !ProfessionProgression.available(player, selection.starter())) return INVALID;
-    var unlocked = SkillsMod.getInstance().getUnlockedSkills(player, PROFESSION).orElse(List.of());
-    return talentChange(player, PROFESSION, unlocked, current.starters(), selection.starter());
+    var provider = SkillsMod.getInstance();
+    var oldDiscipline = discipline(current);
+    var targetDiscipline = discipline(target);
+    var unlocked = provider.getUnlockedSkills(player, oldDiscipline.category()).orElse(List.of());
+    var removed = unlocked.stream().filter(current.starters()::contains).sorted().toList();
+    int cost = ProfessionProgression.learned(player, selection.starter()) ? 0 : 1;
+    int available = provider.getPointsLeft(player, targetDiscipline.category()).orElse(0);
+    try {
+      if (ProgressionBridge.storedPoints(player, targetDiscipline.category().toString())
+          < targetDiscipline.cap()) available++;
+    } catch (com.mojang.brigadier.exceptions.CommandSyntaxException exception) {
+      return INVALID;
+    }
+    if (available < cost && cost != 0) return NEED_POINT;
+    return new Assessment(new Preview(removed, removed.size(), cost, false), "");
   }
 
-  private static Assessment talentChange(
-      ServerPlayer player,
-      ResourceLocation category,
-      Collection<String> unlocked,
-      Collection<String> scope,
-      String nextStarter) {
-    var removed = unlocked.stream().filter(scope::contains).sorted().toList();
-    // All nodes in the owned combat and profession catalogues cost one point.
-    int cost = unlocked.contains(nextStarter) ? 0 : 1;
-    int available = SkillsMod.getInstance().getPointsLeft(player, category).orElse(0);
-    long balance = (long) available + removed.size() - cost;
-    // The new class starter can use the next point when the old one must continue supporting
-    // purchased talents. No points are minted. Native purchases wait until the balance recovers.
-    if (balance < 0) return NEED_POINT;
-    return new Assessment(new Preview(removed, removed.size(), cost, false), "");
+  private static ProfessionDiscipline discipline(Profession profession) {
+    return ProfessionDiscipline.bySkill(profession.practiceSkill()).orElseThrow();
   }
 
   public static boolean change(ServerPlayer player, Selection selection, Preview expected) {
@@ -173,8 +172,13 @@ public final class CharacterChanges {
     boolean changeClass = selection.kind().equals("class");
     var target = changeClass ? CharacterClass.byId(selection.target()) : null;
     var oldCategory =
-        changeClass ? ClassProgression.category(RaceIdentity.characterClass(player)) : PROFESSION;
-    var nextCategory = changeClass ? ClassProgression.category(target) : PROFESSION;
+        changeClass
+            ? ClassProgression.category(RaceIdentity.characterClass(player))
+            : discipline(RaceIdentity.profession(player)).category();
+    var nextCategory =
+        changeClass
+            ? ClassProgression.category(target)
+            : discipline(Profession.byId(selection.target())).category();
     String nextStarter =
         changeClass ? ClassProgression.node(target, selection.starter()) : selection.starter();
     if (!applyTalents(player, oldCategory, nextCategory, nextStarter, checked)) return false;
@@ -190,6 +194,7 @@ public final class CharacterChanges {
     } else {
       identity.putString("profession", selection.target());
       identity.putString("profession_starter", selection.starter());
+      ProgressionBridge.sync(player);
     }
     return true;
   }

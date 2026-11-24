@@ -31,6 +31,13 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
     Map<String, String> versions;
     if (mixinClassName.startsWith("dev.aeroscapes.mixin.hex")) {
       versions = Map.of("hexcasting", "0.11.1-19+neoforge.1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("WorkshopMechanicalCrafterMixin")) {
+      versions = Map.of("overgeared", "1.21.1-1.7.1", "create", "6.0.10", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("WorkshopTerminalResultMixin")) {
+      versions =
+          Map.of("overgeared", "1.21.1-1.7.1", "toms_storage", "2.4.2", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.workshop.")) {
+      versions = Map.of("overgeared", "1.21.1-1.7.1", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.inventory.")) {
       versions = Map.of("curios", "9.5.1+1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.magic.")) {
@@ -378,6 +385,7 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
         || mixinClassName.endsWith("InitialRaceSimulationMixin")) {
       versions = Map.of("neoorigins", "2.2.38", "pehkui", "3.9.2+1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("SkillsScreenAccessor")
+        || mixinClassName.endsWith("SkillsClientAccessor")
         || mixinClassName.endsWith("TalentCategoryAccess")) {
       versions = Map.of("puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("ProjectMmoAdminDataMixin")

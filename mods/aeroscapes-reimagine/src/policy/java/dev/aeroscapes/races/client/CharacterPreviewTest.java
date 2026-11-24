@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.NumberFormat;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -28,7 +29,14 @@ public final class CharacterPreviewTest {
 
   public static void verify() throws IOException {
     checkReturningCharacters();
-    var definitions = read(DATA.resolve("puffish_skills/categories/profession/definitions.json"));
+    var definitionsByProfession = new EnumMap<Profession, JsonObject>(Profession.class);
+    for (var job : Profession.values()) {
+      Path definitionFile =
+          DATA.resolve("puffish_skills/categories")
+              .resolve(job.practiceSkill())
+              .resolve("definitions.json");
+      definitionsByProfession.put(job, read(definitionFile));
+    }
     int identities = 0;
     for (Race race : Race.values()) {
       var powers = new HashMap<String, Double>();
@@ -41,6 +49,7 @@ public final class CharacterPreviewTest {
       for (var role : CharacterClass.values()) {
         for (var job : Profession.values()) {
           identities++;
+          var definitions = definitionsByProfession.get(job);
           for (var starter : job.starters()) {
             var stats = CharacterDetails.StartingAttributes.of(race, role, starter);
             require(

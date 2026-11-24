@@ -28,7 +28,9 @@ public final class TalentRefunds {
   public static Optional<Quote> preview(
       ServerPlayer player, String pool, Collection<String> selected) {
     if (selected.isEmpty()
-        || !Set.of("combat", "magic", "profession").contains(pool)
+        || (!pool.equals("combat")
+            && !pool.equals("magic")
+            && ProfessionDiscipline.bySkill(pool).isEmpty())
         || !ProgressionBridge.categoriesAvailable()
         || RaceIdentity.awaitingChoice(player)) return Optional.empty();
     var id = ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", pool);
@@ -47,9 +49,9 @@ public final class TalentRefunds {
     boolean mage = RaceIdentity.characterClass(player) == CharacterClass.MAGE;
     String protectedNode =
         switch (pool) {
-          case "profession" -> RaceIdentity.professionStarter(player);
           case "magic" -> mage ? "magic_mastery_1" : "";
-          default -> mage ? "" : RaceIdentity.starter(player);
+          case "combat" -> mage ? "" : RaceIdentity.starter(player);
+          default -> RaceIdentity.professionStarter(player);
         };
     if (removed.contains(protectedNode)) return Optional.empty();
 

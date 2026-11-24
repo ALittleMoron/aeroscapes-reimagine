@@ -1,5 +1,9 @@
 package dev.aeroscapes.progression;
 
+import dev.aeroscapes.races.RaceIdentity;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Map;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
@@ -42,7 +46,7 @@ public final class RefundPenalty {
     String pool;
     if ("magic".equals(skill)) pool = "magic";
     else if (ProgressionBridge.COMBAT_SKILLS.contains(skill)) pool = "combat";
-    else if (ProgressionBridge.PROFESSION_SKILLS.contains(skill)) pool = "profession";
+    else if (ProfessionDiscipline.bySkill(skill).isPresent()) pool = skill;
     else return;
     CompoundTag state = player.getPersistentData().getCompound(DATA).getCompound(pool);
     int due = state.getInt("practice_due");
@@ -57,6 +61,28 @@ public final class RefundPenalty {
   static void sync(ServerPlayer player, String pool) {
     int due = player.getPersistentData().getCompound(DATA).getCompound(pool).getInt("practice_due");
     setDeduction(player, pool, due);
+  }
+
+  static void splitProfessionDebt(ServerPlayer player, Map<String, Long> levels) {
+    var data = player.getPersistentData().getCompound(DATA);
+    if (!data.contains("profession", Tag.TAG_COMPOUND)) return;
+    var starter = RaceIdentity.profession(player);
+    // The old balance did not record which trade incurred the refund. Charge it to one tree.
+    String selected =
+        starter != null
+            ? starter.practiceSkill()
+            : Arrays.stream(ProfessionDiscipline.values())
+                .max(Comparator.comparingLong(tree -> levels.getOrDefault(tree.skill(), 0L)))
+                .orElseThrow()
+                .skill();
+    var previous = data.getCompound("profession");
+    var next = data.getCompound(selected);
+    int tenths = previous.getInt("tenths") + next.getInt("tenths");
+    int practice = previous.getInt("practice_due") + next.getInt("practice_due");
+    next.putInt("tenths", tenths % 10);
+    next.putInt("practice_due", practice + tenths / 10 * PRACTICE_PER_POINT);
+    data.put(selected, next);
+    data.remove("profession");
   }
 
   private static void setDeduction(ServerPlayer player, String pool, int due) {

@@ -19245,5 +19245,55 @@
     "key": "text.autoconfig.hexcasting.title",
     "expected": "Hexcasting Config",
     "replacement": "HexCast NEOFORGED Settings"
+  },
+  {
+    "key": "creativetab.overgeared_tab",
+    "expected": "Кузнечное дело",
+    "replacement": "Overgeared"
+  },
+  {
+    "key": "gui.overgeared.rock_knapping",
+    "expected": "Оббивка",
+    "replacement": "Обтёсывание камня"
+  },
+  {
+    "key": "item.overgeared.knappable_rock",
+    "expected": "Камень",
+    "replacement": "Камешек"
+  },
+  {
+    "key": "tooltip.overgeared.knappable",
+    "expected": "Держите по в каждой руке и нажмите ПКМ чтобы начать оббивку.",
+    "replacement": "Возьмите по камешку в каждую руку и нажмите ПКМ, чтобы начать обтёсывание."
+  },
+  {
+    "key": "jei.overgeared.category.flint_knapping",
+    "expected": "Как получить камень",
+    "replacement": "Получение камешков"
+  },
+  {
+    "key": "jei.overgeared.flint_knapping.description",
+    "expected": "Нажимайте ПКМ по блоку камня, держа кремень в руке, чтобы получить камень. Кремень может сломаться.",
+    "replacement": "Нажимайте ПКМ по камню с кремнём в руке. При удачном ударе выпадет камешек. Кремень может сломаться."
+  },
+  {
+    "key": "item.overgeared.diamond_upgrade_smithing_template",
+    "expected": "Smithing Template",
+    "replacement": "Кузнечный шаблон"
+  },
+  {
+    "key": "jei.overgeared.category.drafting_table",
+    "expected": "Drafting Table",
+    "replacement": "Чертёжный стол"
+  },
+  {
+    "key": "gui.overgeared.jei.category.nether_alloy_smelting",
+    "expected": "Nether Alloying",
+    "replacement": "Сплавы Нижнего мира"
+  },
+  {
+    "key": "tooltip.overgeared.cools_in",
+    "expected": "Cools in %ss",
+    "replacement": "Остынет через %s с"
   }
 ]

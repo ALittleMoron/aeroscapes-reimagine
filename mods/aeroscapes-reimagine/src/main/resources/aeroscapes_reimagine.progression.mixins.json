@@ -5,6 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "client": [
     "SkillPanelScreenHandlerMixin",
+    "SkillsClientAccessor",
     "SkillsScreenAccessor",
     "InventoryLayoutAccess",
     "ProjectMmoTooltipMixin"

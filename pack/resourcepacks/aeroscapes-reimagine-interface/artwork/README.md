@@ -48,3 +48,10 @@ The two 123 × 24 row sprites under `progression/` render into
 `assets/pmmo/textures/gui/sprites/` for Project MMO's inventory skills panel. Their
 outline, ring and fill follow the panel index recolor of `player_stats.png`, which
 turns the provider's dark grays into Atlas navy.
+
+Overgeared 1.7.1 uses the same digest-guarded panel recoloring. It retains the
+native slot placement, labels, fuel gauges, and stroke-timing colors. Render
+`overgeared-anvil-filter.svg` and crop the four 26 × 16 sprites into
+`assets/overgeared/textures/gui/sprites/recipe_book/`, in disabled,
+disabled-highlighted, enabled, enabled-highlighted order. The four sprites
+are original Atlas vector artwork.

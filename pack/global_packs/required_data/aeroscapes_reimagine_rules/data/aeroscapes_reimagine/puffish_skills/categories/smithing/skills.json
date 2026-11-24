@@ -1,0 +1,61 @@
+{
+  "material_repair": {
+    "x": -24,
+    "y": 118,
+    "definition": "material_repair",
+    "root": true
+  },
+  "frugal_repair": {
+    "x": 24,
+    "y": 118,
+    "definition": "frugal_repair",
+    "root": true
+  },
+  "manufacture_iron_tools": {
+    "x": -50,
+    "y": -94,
+    "definition": "manufacture_iron_tools",
+    "root": true
+  },
+  "manufacture_iron_arms": {
+    "x": 50,
+    "y": -94,
+    "definition": "manufacture_iron_arms",
+    "root": true
+  },
+  "manufacture_steel_tools": {
+    "x": -50,
+    "y": -42,
+    "definition": "manufacture_steel_tools"
+  },
+  "manufacture_steel_arms": {
+    "x": 50,
+    "y": -42,
+    "definition": "manufacture_steel_arms"
+  },
+  "manufacture_diamond_tools": {
+    "x": -50,
+    "y": 10,
+    "definition": "manufacture_diamond_tools"
+  },
+  "manufacture_diamond_arms": {
+    "x": 50,
+    "y": 10,
+    "definition": "manufacture_diamond_arms"
+  },
+  "manufacture_netherite_tools": {
+    "x": -50,
+    "y": 62,
+    "definition": "manufacture_netherite_tools"
+  },
+  "manufacture_netherite_arms": {
+    "x": 50,
+    "y": 62,
+    "definition": "manufacture_netherite_arms"
+  },
+  "manufacture_diamond_template": {
+    "x": 0,
+    "y": 36,
+    "definition": "manufacture_diamond_template"
+  }
+}

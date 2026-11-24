@@ -1,5 +1,6 @@
 package dev.aeroscapes.progression;
 
+import dev.aeroscapes.equipment.workshop.WorkshopManufacture;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.races.ProfessionEffects;
 import harmonised.pmmo.api.APIUtils;
@@ -15,6 +16,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.EventPriority;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.util.FakePlayer;
@@ -55,8 +57,12 @@ public final class PracticeActions {
     ItemStack result = event.getCrafting();
     if (!personal(event.getEntity()) || result.isEmpty()) return;
     var grid = event.getInventory();
+    // The forging anvil already credited the smith when it produced the output.
+    if ("net.stirdrem.overgeared.screen.AbstractSmithingAnvilMenu$1"
+        .equals(grid.getClass().getName())) return;
     int ingredients = 0;
     boolean homogeneous = true;
+    boolean hasEquipmentInput = false;
     ItemStack first = ItemStack.EMPTY;
     for (int slot = 0; slot < grid.getContainerSize(); slot++) {
       ItemStack input = grid.getItem(slot);
@@ -64,9 +70,16 @@ public final class PracticeActions {
       if (first.isEmpty()) first = input;
       ingredients++;
       homogeneous &= input.is(first.getItem());
+      hasEquipmentInput |= input.is(result.getItem());
     }
     // Packing and unpacking a stack of the same material is a reversible inventory operation.
     if (ingredients == 0 || homogeneous && storageConversion(first, result, ingredients)) return;
+    if (ModList.get().isLoaded("overgeared")
+        && WorkshopManufacture.finishedEquipment(result)
+        && !hasEquipmentInput) {
+      awardWorkshop(event.getEntity());
+      return;
+    }
     boolean food = result.has(DataComponents.FOOD) || ProfessionEffects.isFeast(result);
     award(event.getEntity(), food ? "cooking" : "crafting", Math.min(ingredients, 9));
   }
@@ -84,6 +97,10 @@ public final class PracticeActions {
   public static void takeSmelting(Entity actor, ItemStack result, int taken) {
     if (!result.isEmpty())
       award(actor, result.has(DataComponents.FOOD) ? "cooking" : "smithing", 2L * taken);
+  }
+
+  public static void awardWorkshop(Entity actor) {
+    award(actor, "smithing", 20);
   }
 
   private static void repair(AnvilRepairEvent event) {

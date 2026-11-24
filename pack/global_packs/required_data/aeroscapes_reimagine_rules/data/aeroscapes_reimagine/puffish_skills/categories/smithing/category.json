@@ -1,14 +1,14 @@
 {
   "title": {
-    "translate": "puffish_skills.aeroscapes_reimagine.profession.title"
+    "translate": "puffish_skills.aeroscapes_reimagine.smithing.title"
   },
   "description": {
-    "translate": "puffish_skills.aeroscapes_reimagine.profession.description"
+    "translate": "puffish_skills.aeroscapes_reimagine.smithing.description"
   },
   "icon": {
     "type": "item",
     "data": {
-      "item": "minecraft:iron_pickaxe"
+      "item": "minecraft:anvil"
     }
   },
   "background": {
@@ -20,7 +20,7 @@
   "unlocked_by_default": true,
   "starting_points": 0,
   "exclusive_root": false,
-  "spent_points_limit": 10,
+  "spent_points_limit": 11,
   "colors": {
     "connections": {
       "locked": {

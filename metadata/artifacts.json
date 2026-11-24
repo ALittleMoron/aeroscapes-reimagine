@@ -8232,6 +8232,35 @@
     "reason": "Owner declined this option in the bounded miscellaneous-content selection; historical technical evidence is not an installation queue."
   },
   {
+    "slug": "overgeared",
+    "name": "Overgeared",
+    "project_id": "SQL3X2Ky",
+    "version_id": "WTCXb5BM",
+    "version": "1.21.1-1.7.1",
+    "filename": "overgeared-neoforge-1.21.1-1.7.1.jar",
+    "sha512": "0bab48154cd4d8d8613ed9b4fbf2e9c3c8a1dcdde0ff84165d591212bfd783dce4f0547c45fcc5cedc5063dfb2cc3a8cd4e873b0a52e28b1bbaa4e266837580f",
+    "sha1": "da56d6719dc5f0833fef3b0a05f7fe00f2cfd74b",
+    "file_size": 1618344,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21.1"
+    ],
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "source_url": "https://github.com/phuccom000/Overgeared/tree/cae93a1ef6e29d988b0a3e81e1d2be606a20ee59",
+    "dependencies": [],
+    "status": "included",
+    "origin": "Owner-selected equipment milestone and verified official NeoForge file"
+  },
+  {
     "slug": "overweight-farming",
     "name": "Overweight Farming",
     "project_id": "bCxmmxKN",

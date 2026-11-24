@@ -1,0 +1,72 @@
+{
+  "long_reach": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.building.long_reach.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.building.long_reach.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/long_reach.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "minecraft:player.block_interaction_range",
+          "value": 1,
+          "operation": "addition"
+        }
+      }
+    ],
+    "cost": 1
+  },
+  "quick_dismantling": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.building.quick_dismantling.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.building.quick_dismantling.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/quick_dismantling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [
+      {
+        "type": "puffish_skills:attribute",
+        "data": {
+          "attribute": "aeroscapes_reimagine:dismantling_speed",
+          "value": 0.15,
+          "operation": "addition"
+        }
+      }
+    ],
+    "cost": 1
+  }
+}

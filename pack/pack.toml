@@ -1,13 +1,13 @@
 name = "Aeroscapes Reimagine"
 author = "Aeroscapes Reimagine contributors"
-version = "0.8.0"
+version = "0.8.1"
 description = "Fly an airship you built with Create Aeronautics, explore floating islands, and make a home in the sky."
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "1d5f23c7eaf6715ee76a4d8d0428008087138c731a361fb1fb4d2375fb7caf23"
+hash = "0967d391e6c3d4478d84821ed17ff965bf516e7c9890eb98f43568ca238a313f"
 
 [versions]
 minecraft = "1.21.1"

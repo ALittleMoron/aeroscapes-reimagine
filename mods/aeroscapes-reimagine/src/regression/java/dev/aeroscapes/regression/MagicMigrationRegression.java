@@ -51,6 +51,10 @@ public final class MagicMigrationRegression {
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final ResourceLocation PROFESSION =
       ResourceLocation.parse("aeroscapes_reimagine:profession");
+  private static final ResourceLocation MINING =
+      ResourceLocation.parse("aeroscapes_reimagine:mining");
+  private static final ResourceLocation SMITHING =
+      ResourceLocation.parse("aeroscapes_reimagine:smithing");
   private static final ResourceLocation SOURCE =
       ResourceLocation.parse("aeroscapes_reimagine:skill_levels");
   private static final ResourceLocation BANK =
@@ -282,7 +286,7 @@ public final class MagicMigrationRegression {
         MagicPractice.credit(player) == 840
             && player.getInventory().countItem(Items.COAL) == 4
             && SkillsMod.getInstance()
-                .getUnlockedSkills(player, PROFESSION)
+                .getUnlockedSkills(player, smithingCategory())
                 .orElseThrow()
                 .contains("material_repair")
             && SkillsMod.getInstance()
@@ -441,14 +445,22 @@ public final class MagicMigrationRegression {
                         "magic_destruction_mastery_2",
                         "magic_destruction_mastery_3")),
         "Preserve the existing focus and mastery without replaying the mage journal");
+    var mining = miningCategory();
     Set<String> expected =
-        updated
+        updated && mining.equals(PROFESSION)
             ? Set.of("mining_efficiency", "mining_speed", "material_repair")
             : Set.of("mining_efficiency", "mining_speed");
     require(
-        Set.copyOf(skills.getUnlockedSkills(player, PROFESSION).orElseThrow()).equals(expected)
-            && skills.getPointsLeft(player, PROFESSION).orElseThrow() == 0,
-        "Original paid purchases retained, funded starter consumes its own point");
+        Set.copyOf(skills.getUnlockedSkills(player, mining).orElseThrow()).equals(expected)
+            && skills.getPointsLeft(player, mining).orElseThrow() == 0,
+        "Original paid purchases retain their cost in the available mining balance");
+    if (updated && mining.equals(MINING)) {
+      require(
+          Set.copyOf(skills.getUnlockedSkills(player, SMITHING).orElseThrow())
+                  .equals(Set.of("material_repair"))
+              && skills.getPointsLeft(player, SMITHING).orElseThrow() == 0,
+          "The funded starter consumes its own Smithing point");
+    }
     require(
         player.getInventory().countItem(Items.STONE_PICKAXE) == (updated ? 1 : 0)
             && player.getInventory().countItem(Items.COAL) == (updated ? 4 : 0),
@@ -563,6 +575,14 @@ public final class MagicMigrationRegression {
     return SkillsMod.getInstance().hasCategory(MAGIC) ? MAGIC : COMBAT;
   }
 
+  private static ResourceLocation miningCategory() {
+    return SkillsMod.getInstance().hasCategory(MINING) ? MINING : PROFESSION;
+  }
+
+  private static ResourceLocation smithingCategory() {
+    return SkillsMod.getInstance().hasCategory(SMITHING) ? SMITHING : PROFESSION;
+  }
+
   private static void verifyUnrelatedProgress(
       ServerPlayer player, int miningLevel, int professionPoints) {
     require(
@@ -571,11 +591,14 @@ public final class MagicMigrationRegression {
             && APIUtils.getLevel("mining", player) == miningLevel,
         "Native saved practice levels survive upgrade and rollback");
     var provider = SkillsMod.getInstance();
+    var mining = miningCategory();
     require(
-        provider.getUnlockedSkills(player, PROFESSION).orElseThrow().contains("mining_efficiency")
-            && provider.getPoints(player, PROFESSION, SOURCE).orElseThrow() == professionPoints
-            && provider.getPoints(player, PROFESSION, BANK).orElseThrow() == 10,
-        "Native profession allocation and both profession point sources remain intact");
+        provider.getUnlockedSkills(player, mining).orElseThrow().contains("mining_efficiency")
+            && provider.getPoints(player, mining, SOURCE).orElseThrow()
+                == (mining.equals(MINING) ? 2 : professionPoints)
+            && provider.getPoints(player, mining, BANK).orElse(0)
+                == (mining.equals(MINING) ? 0 : 10),
+        "Mining purchases survive, and subdivided trees recompute credit from their own practice");
   }
 
   private static void verifyRanksAndSlots(ServerPlayer player) {

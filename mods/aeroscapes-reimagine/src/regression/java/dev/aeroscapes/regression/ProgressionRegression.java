@@ -4,6 +4,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicPracticeProgress;
 import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.progression.SpellPractice;
 import harmonised.pmmo.api.APIUtils;
@@ -11,6 +12,7 @@ import harmonised.pmmo.config.Config;
 import harmonised.pmmo.core.Core;
 import harmonised.pmmo.storage.PmmoSavedData;
 import java.lang.reflect.Field;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -198,13 +200,13 @@ final class ProgressionRegression {
         player,
         ProgressionBridge.COMBAT_POINT_CAP,
         magicCap,
-        ProgressionBridge.PROFESSION_POINT_CAP,
+        Arrays.stream(ProfessionDiscipline.values()).mapToInt(ProfessionDiscipline::cap).sum(),
         "Each cap funds the maximum compatible purchases in its own catalogue");
     requireClientPoints(
         session,
         ProgressionBridge.COMBAT_POINT_CAP,
         magicCap,
-        ProgressionBridge.PROFESSION_POINT_CAP);
+        Arrays.stream(ProfessionDiscipline.values()).mapToInt(ProfessionDiscipline::cap).sum());
   }
 
   private static void verifyAdminCommands(ServerPlayer player, TestShipPlayerSession session) {
@@ -325,16 +327,18 @@ final class ProgressionRegression {
       TestShipPlayerSession session, int combat, int magic, int profession) {
     var combatPacket = session.talentPoints(ProgressionBridge.COMBAT_CATEGORY);
     var magicPacket = session.talentPoints(ProgressionBridge.MAGIC_CATEGORY);
-    var professionPacket = session.talentPoints(ProgressionBridge.PROFESSION_CATEGORY);
+    int professionPoints = 0;
+    for (var tree : ProfessionDiscipline.values()) {
+      var packet = session.talentPoints(tree.category().toString());
+      if (packet != null) professionPoints += packet.earnedPoints();
+    }
     require(
         combatPacket != null && combatPacket.earnedPoints() == combat,
         "Native client packet carries combat points");
     require(
         magicPacket != null && magicPacket.earnedPoints() == magic,
         "Native client packet carries magic points");
-    require(
-        professionPacket != null && professionPacket.earnedPoints() == profession,
-        "Native client packet carries profession points");
+    require(professionPoints == profession, "Native client packet carries profession points");
   }
 
   @SuppressWarnings("unchecked")
@@ -363,12 +367,12 @@ final class ProgressionRegression {
       ServerPlayer player, int combat, int magic, int profession, String message) {
     int storedCombat;
     int storedMagic;
-    int storedProfession;
+    int storedProfession = 0;
     try {
       storedCombat = ProgressionBridge.storedPoints(player, ProgressionBridge.COMBAT_CATEGORY);
       storedMagic = ProgressionBridge.storedPoints(player, ProgressionBridge.MAGIC_CATEGORY);
-      storedProfession =
-          ProgressionBridge.storedPoints(player, ProgressionBridge.PROFESSION_CATEGORY);
+      for (var tree : ProfessionDiscipline.values())
+        storedProfession += ProgressionBridge.storedPoints(player, tree.category().toString());
     } catch (CommandSyntaxException exception) {
       throw new IllegalStateException("Talent categories are loaded", exception);
     }

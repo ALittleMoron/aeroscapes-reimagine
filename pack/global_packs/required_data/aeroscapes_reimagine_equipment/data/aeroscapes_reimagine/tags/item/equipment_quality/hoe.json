@@ -7,6 +7,8 @@
     "minecraft:diamond_hoe",
     "minecraft:netherite_hoe",
     "hybrid_aquatic:coral_hoe",
-    "hybrid_aquatic:seashell_hoe"
+    "hybrid_aquatic:seashell_hoe",
+    "overgeared:copper_hoe",
+    "overgeared:steel_hoe"
   ]
 }

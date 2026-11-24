@@ -110,7 +110,7 @@ public final class ChangeNetwork {
               session.ticket,
               "identity",
               switch (request.kind()) {
-                case "profession" -> "profession";
+                case "profession" -> RaceIdentity.profession(player).practiceSkill();
                 case "class" ->
                     ClassProgression.category(RaceIdentity.characterClass(player)).getPath();
                 default -> "";

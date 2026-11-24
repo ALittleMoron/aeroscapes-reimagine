@@ -4,6 +4,15 @@ description: Version history.
 status: available
 ---
 
+## 0.9.0
+
+### 0.8.1
+
+- Overgeared adds stone knapping, metal forging and upgrades from steel to diamond. Flint struck against stone supplies the rocks for stone tool heads.
+- Each profession tree has its own tab and talent points. Smithing talents unlock equipment manufacture. Either diamond equipment branch can lead to forging a diamond upgrade template.
+- Personal smithing practice and forging execution influence the initial quality of finished equipment. Paid reforging retains its existing prices and odds.
+- Reforging can widen a hammer’s exact-hit window or reduce wear on tongs while they protect you from hot metal.
+
 ## 0.8.0
 
 - Broad lowlands on large islands have gentler slopes and wider stretches of walkable ground between hills.

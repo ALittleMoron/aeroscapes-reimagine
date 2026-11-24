@@ -98,6 +98,14 @@ public final class AtlasPanelPalette {
           0xffffffff, 0xff84c0e9,
           0xffc99288, 0xff7e654b,
           0xff753e34, 0xff4e3929);
+  private static final Map<Integer, Integer> OVERGEARED_COLORS =
+      Map.of(
+          0xff000000, 0xff291b11,
+          0xff373737, 0xff453223,
+          0xff555555, 0xff584332,
+          0xff686868, 0xff78604a,
+          0xff8c8c8c, 0xffaa9480,
+          0xffffffff, 0xfff1e7d9);
   private static volatile Map<ResourceLocation, String> auditedTextures = Map.of();
 
   private AtlasPanelPalette() {}
@@ -155,6 +163,7 @@ public final class AtlasPanelPalette {
                 || texture.getPath().equals("textures/gui/slate.png"));
     boolean nutrientButton = texture.equals(NUTRIENT_BUTTON);
     boolean nutrientHover = texture.equals(NUTRIENT_BUTTON_HOVER);
+    boolean overgeared = texture.getNamespace().equals("overgeared");
     for (int y = 0; y < image.getHeight(); y++) {
       for (int x = 0; x < image.getWidth(); x++) {
         int original = image.getPixelRGBA(x, y);
@@ -183,6 +192,8 @@ public final class AtlasPanelPalette {
           changed = NUTRIENT_BUTTON_COLORS.getOrDefault(original, changed);
         } else if (nutrientHover) {
           changed = NUTRIENT_HOVER_COLORS.getOrDefault(original, changed);
+        } else if (overgeared) {
+          changed = OVERGEARED_COLORS.getOrDefault(original, changed);
         }
         if (changed != original) image.setPixelRGBA(x, y, changed);
       }

@@ -1,0 +1,16 @@
+{
+  "items": [
+    "overgeared:copper_sword",
+    "overgeared:copper_pickaxe",
+    "overgeared:copper_axe",
+    "overgeared:copper_shovel",
+    "overgeared:copper_hoe",
+    "overgeared:copper_helmet",
+    "overgeared:copper_chestplate",
+    "overgeared:copper_leggings",
+    "overgeared:copper_boots"
+  ],
+  "base": [
+    "minecraft:copper_ingot"
+  ]
+}

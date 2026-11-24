@@ -1,0 +1,38 @@
+{
+  "normal": {
+    "unidirectional": [
+      [
+        "manufacture_iron_tools",
+        "manufacture_steel_tools"
+      ],
+      [
+        "manufacture_iron_arms",
+        "manufacture_steel_arms"
+      ],
+      [
+        "manufacture_steel_tools",
+        "manufacture_diamond_tools"
+      ],
+      [
+        "manufacture_steel_arms",
+        "manufacture_diamond_arms"
+      ],
+      [
+        "manufacture_diamond_tools",
+        "manufacture_netherite_tools"
+      ],
+      [
+        "manufacture_diamond_arms",
+        "manufacture_netherite_arms"
+      ],
+      [
+        "manufacture_diamond_tools",
+        "manufacture_diamond_template"
+      ],
+      [
+        "manufacture_diamond_arms",
+        "manufacture_diamond_template"
+      ]
+    ]
+  }
+}

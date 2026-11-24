@@ -1,0 +1,23 @@
+["Durability & Grinding"]
+grindingToggle = false
+
+["Durability Bonuses"]
+masterDurabilityBonus = 1.0
+perfectDurabilityBonus = 1.0
+expertDurabilityBonus = 1.0
+wellDurabilityBonus = 1.0
+poorDurabilityBonus = 1.0
+
+["Mining Speed Bonuses"]
+masterMiningSpeedBonus = 1.0
+perfectMiningSpeedBonus = 1.0
+expertMiningSpeedBonus = 1.0
+wellMiningSpeedBonus = 1.0
+poorMiningSpeedBonus = 1.0
+
+["Item Break Chance"]
+enableQualityBreakSystem = false
+
+["Loot Quality"]
+enableLootQuality = false
+enableMobDropQuality = false

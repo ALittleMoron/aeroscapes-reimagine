@@ -1,0 +1,7 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {"parent": "minecraft:item/handheld", "textures": {"layer0": "overgeared:item/steel_pickaxe"}},
+  "textures": {"layer0": "overgeared:item/steel_pickaxe", "particle": "#layer0"},
+  "perspectives": {"firstperson_righthand": {"parent": "overgeared:item/equipment/held/steel_pickaxe"}, "firstperson_lefthand": {"parent": "overgeared:item/equipment/held/steel_pickaxe"}, "thirdperson_righthand": {"parent": "overgeared:item/equipment/held/steel_pickaxe"}, "thirdperson_lefthand": {"parent": "overgeared:item/equipment/held/steel_pickaxe"}}
+}

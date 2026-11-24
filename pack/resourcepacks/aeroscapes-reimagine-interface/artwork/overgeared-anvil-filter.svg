@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="104" height="16" viewBox="0 0 104 16" shape-rendering="crispEdges">
+  <defs>
+    <path id="frame" d="M2 0h22v1h2v14h-2v1H2v-1H0V1h2z"/>
+    <path id="anvil" d="M10 4h13l-2 3h-4v3h2v2h-7v-2h2V7h-2z" fill="#e0d0ba"/>
+    <path id="off" d="m3 5 5 5m0-5-5 5" stroke="#ef9c81" stroke-width="1.5"/>
+    <path id="on" d="m2.5 8 2 2 4-5" fill="none" stroke="#c3da9b" stroke-width="1.5"/>
+  </defs>
+  <g>
+    <use xlink:href="#frame" fill="#6b5543"/>
+    <rect x="1" y="2" width="24" height="12" fill="#2d3846"/>
+    <use xlink:href="#off"/><use xlink:href="#anvil"/>
+  </g>
+  <g transform="translate(26)">
+    <use xlink:href="#frame" fill="#dfa76c"/>
+    <rect x="1" y="2" width="24" height="12" fill="#394858"/>
+    <use xlink:href="#off"/><use xlink:href="#anvil"/>
+  </g>
+  <g transform="translate(52)">
+    <use xlink:href="#frame" fill="#8a926b"/>
+    <rect x="1" y="2" width="24" height="12" fill="#34483f"/>
+    <use xlink:href="#on"/><use xlink:href="#anvil"/>
+  </g>
+  <g transform="translate(78)">
+    <use xlink:href="#frame" fill="#dfa76c"/>
+    <rect x="1" y="2" width="24" height="12" fill="#40584c"/>
+    <use xlink:href="#on"/><use xlink:href="#anvil"/>
+  </g>
+</svg>

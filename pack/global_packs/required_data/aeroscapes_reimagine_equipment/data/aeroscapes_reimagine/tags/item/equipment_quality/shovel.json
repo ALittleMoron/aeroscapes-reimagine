@@ -7,6 +7,8 @@
     "minecraft:diamond_shovel",
     "minecraft:netherite_shovel",
     "hybrid_aquatic:coral_shovel",
-    "hybrid_aquatic:seashell_shovel"
+    "hybrid_aquatic:seashell_shovel",
+    "overgeared:copper_shovel",
+    "overgeared:steel_shovel"
   ]
 }

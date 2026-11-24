@@ -33,26 +33,26 @@ A minor version is a target: by that version, an agreed area of the pack should 
 
 The main development stages are:
 
-| Milestone | Direction                                                                                                                                 |
-| --------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `0.2.0`   | Graphics, sound, weather and animation.                                                                                                   |
-| `0.3.0`   | Everyday conveniences: inventory, recipes, controls and tree handling.                                                                    |
-| `0.4.0`   | Island exploration, local nature, discoveries and expedition preparation.                                                                 |
-| `0.5.0`   | The first magic set, equipment quality and random reforging.                                                                              |
-| `0.6.0`   | Engineering expansion: material processing, fuel, foundry work, machine controls and artillery.                                           |
-| `0.7.0`   | Characters: races, classes, professions and development through activities; sky rays and cloud-jelly colonies.                            |
-| `0.8.0`   | Island geography, resources and expedition routes, with local habitats, small discoveries and landing sites.                              |
-| `0.9.0`   | Expanded equipment, workshop crafting, library enchanting, curse cleansing, mastery, later character specializations and workshop traces. |
-| `0.10.0`  | Detailed construction, seasons, responsive plants, gardens and peaceful daily life.                                                       |
-| `0.11.0`  | New places, creatures and activities in the Nether.                                                                                       |
-| `0.12.0`  | Everyday NPC errands with tracking and rewards.                                                                                           |
-| `0.13.0`  | New places, encounters and discoveries in the End.                                                                                        |
-| `0.14.0`  | Growing settlements, resident life, relationships, supply and landing-post keepers.                                                       |
-| `1.0.0`   | The pack's core systems work together.                                                                                                    |
+| Milestone | Direction                                                                                                                   |
+| --------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `0.2.0`   | Graphics, sound, weather and animation.                                                                                     |
+| `0.3.0`   | Everyday conveniences: inventory, recipes, controls and tree handling.                                                      |
+| `0.4.0`   | Island exploration, local nature, discoveries and expedition preparation.                                                   |
+| `0.5.0`   | The first magic set, equipment quality and random reforging.                                                                |
+| `0.6.0`   | Engineering expansion: material processing, fuel, foundry work, machine controls and artillery.                             |
+| `0.7.0`   | Characters: races, classes, professions and development through activities; sky rays and cloud-jelly colonies.              |
+| `0.8.0`   | Island geography, resources and expedition routes, with local habitats, small discoveries and landing sites.                |
+| `0.9.0`   | Expanded equipment, workshop crafting, library enchanting, curse cleansing, mastery, combat techniques and workshop traces. |
+| `0.10.0`  | Detailed construction, seasons, responsive plants, gardens and peaceful daily life.                                         |
+| `0.11.0`  | New places, creatures and activities in the Nether.                                                                         |
+| `0.12.0`  | Everyday NPC errands with tracking and rewards.                                                                             |
+| `0.13.0`  | New places, encounters and discoveries in the End.                                                                          |
+| `0.14.0`  | Growing settlements, resident life, relationships, supply and landing-post keepers.                                         |
+| `1.0.0`   | The pack's core systems work together.                                                                                      |
 
-Character creation offers four races, four classes and four professions. Subclasses are planned before `1.0.0` and may receive a separate stage. Magic should offer worthwhile activities in both combat and daily life.
+Character creation offers four races, four classes and four professions. Subclasses have a separate planned release before `1.0.0`. Magic should offer worthwhile activities in both combat and daily life.
 
-The `0.9.0` equipment stage includes workshop manufacture with Overgeared and enchanting through an Immersive Enchanting library. A book opens its enchantment up to the book's level, while personal mastery limits what the player can apply. This stage also includes paid curse cleansing, additional cursed finds and a very small curse chance during manufacture. Applying enchantments will not add new curses.
+The `0.9.0` equipment stage includes Overgeared smithing and Immersive Enchanting. Crafting talents will unlock manufacture from iron tools onward. Higher-tier tools can also be found on expeditions. To apply an advanced enchantment, the player needs the corresponding book found through exploration and sufficient enchanting mastery. A book opens its enchantment up to its own level. This stage also includes paid curse cleansing, additional cursed finds and a very small curse chance during manufacture. Applying enchantments will not add new curses.
 
 The environment additions follow the same stages: island wildlife and discoveries accompany expeditions, while nesting, gardens, earthen path wear and meal presentation accompany peaceful life. Landing sites can appear before their keepers. Acoustic travel postcards remain a low-priority idea after `1.0.0`; their release number and first scope are still open. Conditional additions retain their technical and design requirements.
 

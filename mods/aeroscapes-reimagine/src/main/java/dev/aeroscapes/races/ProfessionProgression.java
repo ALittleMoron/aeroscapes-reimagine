@@ -1,10 +1,12 @@
 package dev.aeroscapes.races;
 
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.client.SmithingTalentClient;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.items.ItemHandlerHelper;
@@ -13,8 +15,6 @@ import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.api.Skill;
 
 public final class ProfessionProgression {
-  private static final ResourceLocation CATEGORY =
-      ResourceLocation.parse(ProgressionBridge.PROFESSION_CATEGORY);
   static final String KIT = "profession_kit_remaining";
   private static final String UNRESOLVED_KIT = "profession_kit_unresolved";
 
@@ -22,13 +22,34 @@ public final class ProfessionProgression {
 
   public static boolean learned(ServerPlayer player, String node) {
     return ModList.get().isLoaded("puffish_skills")
-        && SkillsMod.getInstance().getSkillState(player, CATEGORY, node).orElse(Skill.State.LOCKED)
-            == Skill.State.UNLOCKED;
+        && ProfessionDiscipline.byLegacyNode(node)
+            .filter(tree -> learned(player, tree, node))
+            .isPresent();
+  }
+
+  public static boolean hasSmithingTalent(Player player, String node) {
+    if (!ModList.get().isLoaded("puffish_skills")) return false;
+    if (player instanceof ServerPlayer serverPlayer)
+      return learned(serverPlayer, ProfessionDiscipline.SMITHING, node);
+    return player.level().isClientSide() && SmithingTalentClient.learned(node);
+  }
+
+  private static boolean learned(ServerPlayer player, ProfessionDiscipline tree, String node) {
+    return SkillsMod.getInstance()
+            .getSkillState(player, tree.category(), node)
+            .orElse(Skill.State.LOCKED)
+        == Skill.State.UNLOCKED;
   }
 
   static boolean available(ServerPlayer player, String node) {
     return ProgressionBridge.categoriesAvailable()
-        && SkillsMod.getInstance().getSkillState(player, CATEGORY, node).isPresent();
+        && ProfessionDiscipline.byLegacyNode(node)
+            .filter(
+                tree ->
+                    SkillsMod.getInstance()
+                        .getSkillState(player, tree.category(), node)
+                        .isPresent())
+            .isPresent();
   }
 
   static boolean grant(ServerPlayer player, Profession profession, String starter) {
@@ -44,7 +65,8 @@ public final class ProfessionProgression {
   static boolean restoreStarter(ServerPlayer player, String starter) {
     if (learned(player, starter)) return true;
     if (!available(player, starter)) return false;
-    SkillsMod.getInstance().tryUnlockSkill(player, CATEGORY, starter, false);
+    var category = ProfessionDiscipline.byLegacyNode(starter).orElseThrow().category();
+    SkillsMod.getInstance().tryUnlockSkill(player, category, starter, false);
     return learned(player, starter);
   }
 

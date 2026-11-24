@@ -1,0 +1,7 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {"parent": "minecraft:item/handheld", "textures": {"layer0": "overgeared:item/copper_shovel"}},
+  "textures": {"layer0": "overgeared:item/copper_shovel", "particle": "#layer0"},
+  "perspectives": {"firstperson_righthand": {"parent": "overgeared:item/equipment/held/copper_shovel"}, "firstperson_lefthand": {"parent": "overgeared:item/equipment/held/copper_shovel"}, "thirdperson_righthand": {"parent": "overgeared:item/equipment/held/copper_shovel"}, "thirdperson_lefthand": {"parent": "overgeared:item/equipment/held/copper_shovel"}}
+}

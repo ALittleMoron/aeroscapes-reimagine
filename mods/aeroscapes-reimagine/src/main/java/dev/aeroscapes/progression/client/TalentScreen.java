@@ -5,11 +5,14 @@ import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.mixin.progression.SkillsScreenAccessor;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.ChangeNetwork;
 import dev.aeroscapes.races.client.ChangeClient;
 import dev.aeroscapes.races.client.ChangeView;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -21,6 +24,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
+import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -48,17 +52,18 @@ public final class TalentScreen extends Screen implements ChangeView {
   private static final int AFFORDABLE = 0xffc5fa77;
   private final ClientSkillScreenData data;
   private final long changeSession;
-  private final Set<String> combatRefund = new HashSet<>();
-  private final Set<String> magicRefund = new HashSet<>();
-  private final Set<String> professionRefund = new HashSet<>();
+  private final Map<String, Set<String>> refunds = new HashMap<>();
   private Button review;
   private final TreeViewport camera = new TreeViewport();
   private final ScrollViewport detailsScroll = new ScrollViewport();
   private final List<Button> tabs = new ArrayList<>();
+  private final Map<Page, List<Button>> subtabs = new EnumMap<>(Page.class);
+  private final Map<Page, String> selectedSubtabs = new EnumMap<>(Page.class);
   private final Set<String> searchMatches = new HashSet<>();
   private Page page = Page.COMBAT;
   private String selected;
   private EditBox search;
+  private Button fitButton;
   private Button learn;
   private ClientCategoryData fittedCategory;
   private Map<String, MagicTalentPath.Node> magicGraph = Map.of();
@@ -88,11 +93,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private Set<String> refundSelection() {
-    return switch (page) {
-      case COMBAT -> combatRefund;
-      case MAGIC -> magicRefund;
-      case PROFESSION -> professionRefund;
-    };
+    return refunds.computeIfAbsent(categoryPath(), ignored -> new HashSet<>());
   }
 
   @SubscribeEvent
@@ -113,6 +114,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   protected void init() {
     AbilityClient.request();
     tabs.clear();
+    subtabs.clear();
     search = null;
     if (width < 320 || height < 220) {
       addRenderableWidget(
@@ -128,24 +130,26 @@ public final class TalentScreen extends Screen implements ChangeView {
                   text("page." + tab.id),
                   pressed -> {
                     page = tab;
-                    selected = null;
-                    detailsScroll.reset();
-                    fittedCategory = null;
-                    search.setValue("");
+                    selectTree();
                   })
               .bounds(16 + tab.ordinal() * (tabWidth + 4), 39, tabWidth, 20)
               .build();
       addRenderableWidget(button);
       tabs.add(button);
+      addSubtabs(tab);
     }
-    search = new EditBox(font, 20, 68, Math.max(34, canvasWidth() - 74), 16, text("search"));
+    search =
+        new EditBox(
+            font, 20, controlsTop() + 2, Math.max(34, canvasWidth() - 74), 16, text("search"));
     search.setHint(text("search"));
     search.setResponder(this::updateSearch);
     addRenderableWidget(search);
-    addRenderableWidget(
-        Button.builder(text("fit"), button -> fit())
-            .bounds(24 + search.getWidth(), 66, 62, 20)
-            .build());
+    fitButton =
+        addRenderableWidget(
+            Button.builder(text("fit"), button -> fit())
+                .bounds(24 + search.getWidth(), controlsTop(), 62, 20)
+                .build());
+    updateTabs();
     addRenderableWidget(
         Button.builder(Component.literal("×"), button -> onClose())
             .bounds(width - 33, 13, 17, 18)
@@ -171,7 +175,7 @@ public final class TalentScreen extends Screen implements ChangeView {
                         ChangeClient.preview(
                             this,
                             new ChangeNetwork.Request(
-                                changeSession, page.id, "", 0, "", false, nodes),
+                                changeSession, categoryPath(), "", 0, "", false, nodes),
                             false,
                             ChangeClient.text("calculating"));
                       })
@@ -182,8 +186,65 @@ public final class TalentScreen extends Screen implements ChangeView {
     detailsScroll.reset();
   }
 
+  private void addSubtabs(Page parent) {
+    var categories = parent.subcategories;
+    if (categories.isEmpty()) return;
+    int buttonWidth = (width - 32 - 4 * (categories.size() - 1)) / categories.size();
+    var buttons = new ArrayList<Button>();
+    for (String category : categories) {
+      var title =
+          Component.translatable("puffish_skills.aeroscapes_reimagine." + category + ".title");
+      var label =
+          font.width(title) <= buttonWidth - 8 ? title : text("page." + category + "_short");
+      int x = 16 + buttons.size() * (buttonWidth + 4);
+      buttons.add(
+          addRenderableWidget(
+              Button.builder(
+                      label,
+                      button -> {
+                        selectedSubtabs.put(parent, category);
+                        selectTree();
+                      })
+                  .bounds(x, 64, buttonWidth, 20)
+                  .tooltip(Tooltip.create(title))
+                  .build()));
+    }
+    subtabs.put(parent, buttons);
+  }
+
+  private void updateTabs() {
+    for (int index = 0; index < tabs.size(); index++)
+      tabs.get(index).active = index != page.ordinal();
+    subtabs.forEach(
+        (parent, buttons) -> {
+          for (int index = 0; index < buttons.size(); index++) {
+            var button = buttons.get(index);
+            button.visible = parent == page;
+            button.active =
+                button.visible && !parent.subcategories.get(index).equals(categoryPath());
+          }
+        });
+  }
+
+  private String categoryPath() {
+    return page.subcategories.isEmpty()
+        ? page.id
+        : selectedSubtabs.getOrDefault(page, page.subcategories.getFirst());
+  }
+
+  private void selectTree() {
+    selected = null;
+    detailsScroll.reset();
+    fittedCategory = null;
+    search.setValue("");
+    search.setY(controlsTop() + 2);
+    fitButton.setY(controlsTop());
+    updateTabs();
+  }
+
   private ClientCategoryData category() {
-    return data.getCategory(ResourceLocation.parse("aeroscapes_reimagine:" + page.id)).orElse(null);
+    return data.getCategory(ResourceLocation.parse("aeroscapes_reimagine:" + categoryPath()))
+        .orElse(null);
   }
 
   private List<ClientSkillConfig> nodes() {
@@ -201,7 +262,19 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private int canvasHeight() {
-    return Math.max(60, height - 132);
+    return Math.max(60, height - canvasTop() - 38);
+  }
+
+  private int controlsTop() {
+    return page.subcategories.isEmpty() ? 66 : 90;
+  }
+
+  private int canvasTop() {
+    return controlsTop() + 28;
+  }
+
+  private int detailsTop() {
+    return canvasTop() + 11;
   }
 
   private int inspectorX() {
@@ -209,7 +282,10 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private boolean inside(double x, double y) {
-    return x >= 16 && x < 16 + canvasWidth() && y >= 94 && y < 94 + canvasHeight();
+    return x >= 16
+        && x < 16 + canvasWidth()
+        && y >= canvasTop()
+        && y < canvasTop() + canvasHeight();
   }
 
   private void fit() {
@@ -314,8 +390,14 @@ public final class TalentScreen extends Screen implements ChangeView {
       graphics.drawWordWrap(font, text("small_window"), 20, 60, Math.max(30, width - 40), TEXT);
       return;
     }
-    for (int index = 0; index < tabs.size(); index++)
-      tabs.get(index).active = index != page.ordinal();
+    for (var button : subtabs.getOrDefault(page, List.of()))
+      if (!button.active)
+        graphics.renderOutline(
+            button.getX() - 1,
+            button.getY() - 1,
+            button.getWidth() + 2,
+            button.getHeight() + 2,
+            GOLD);
     var category = category();
     if (category != fittedCategory) {
       fittedCategory = category;
@@ -333,18 +415,21 @@ public final class TalentScreen extends Screen implements ChangeView {
       int balance = category.getPointsLeft();
       var points = balance < 0 ? text("points_due", -balance) : text("points", balance);
       graphics.drawString(font, points, width - 45 - font.width(points), 19, GOLD, false);
-      graphics.drawString(font, text(page.id + "_budget"), inspectorX() + 5, 69, MUTED, false);
+      if (page != Page.PROFESSION)
+        graphics.drawString(
+            font, text(page.id + "_budget"), inspectorX() + 5, controlsTop() + 3, MUTED, false);
     }
-    AtlasProgressionWidgets.panel(graphics, 16, 94, canvasWidth(), canvasHeight());
-    AtlasProgressionWidgets.panel(graphics, inspectorX(), 94, 156, height - 126);
-    graphics.enableScissor(20, 98, 12 + canvasWidth(), 90 + canvasHeight());
+    int top = canvasTop();
+    AtlasProgressionWidgets.panel(graphics, 16, top, canvasWidth(), canvasHeight());
+    AtlasProgressionWidgets.panel(graphics, inspectorX(), top, 156, height - top - 32);
+    graphics.enableScissor(20, top + 4, 12 + canvasWidth(), top - 4 + canvasHeight());
     if (category != null) {
       var hoveredNode = inside(mouseX, mouseY) ? nodeAt(mouseX, mouseY) : null;
       graphics.pose().pushPose();
       graphics
           .pose()
           .translate(
-              16 + canvasWidth() / 2.0 + camera.x(0), 94 + canvasHeight() / 2.0 + camera.y(0), 0);
+              16 + canvasWidth() / 2.0 + camera.x(0), top + canvasHeight() / 2.0 + camera.y(0), 0);
       graphics.pose().scale((float) camera.scale(), (float) camera.scale(), 1);
       drawConnections(graphics, category, category.getConfig().normalConnections(), false);
       drawConnections(graphics, category, category.getConfig().exclusiveConnections(), true);
@@ -566,15 +651,16 @@ public final class TalentScreen extends Screen implements ChangeView {
 
   private void drawDetails(GuiGraphics graphics, ClientCategoryData category) {
     learn.active = false;
+    int top = detailsTop();
     if (changeSession != 0)
       learn.setMessage(ChangeClient.text(refundSelection().contains(selected) ? "unmark" : "mark"));
     if (category == null) {
-      graphics.drawWordWrap(font, text("waiting"), inspectorX() + 9, 105, 138, TEXT);
+      graphics.drawWordWrap(font, text("waiting"), inspectorX() + 9, top, 138, TEXT);
       return;
     }
     var node = selected == null ? null : category.getConfig().skills().get(selected);
-    int x = inspectorX() + 9, y = 105 - (int) detailsScroll.offset();
-    graphics.enableScissor(x, 105, x + 138, height - 65);
+    int x = inspectorX() + 9, y = top - (int) detailsScroll.offset();
+    graphics.enableScissor(x, top, x + 138, height - 65);
     if (node == null) {
       if (page == Page.MAGIC) {
         y = magicProgress(graphics, x, y);
@@ -609,11 +695,11 @@ public final class TalentScreen extends Screen implements ChangeView {
       }
     }
     graphics.disableScissor();
-    detailsScroll.resize(y + (int) detailsScroll.offset() - 105, Math.max(1, height - 170));
+    detailsScroll.resize(y + (int) detailsScroll.offset() - top, Math.max(1, height - 65 - top));
     if (detailsScroll.maximum() > 0) {
-      int top = 105 + detailsScroll.thumbPosition();
-      graphics.fill(width - 26, 105, width - 23, height - 65, 0xff111b29);
-      graphics.fill(width - 26, top, width - 23, top + detailsScroll.thumbSize(), MUTED);
+      int thumbTop = top + detailsScroll.thumbPosition();
+      graphics.fill(width - 26, top, width - 23, height - 65, 0xff111b29);
+      graphics.fill(width - 26, thumbTop, width - 23, thumbTop + detailsScroll.thumbSize(), MUTED);
     }
   }
 
@@ -637,7 +723,7 @@ public final class TalentScreen extends Screen implements ChangeView {
 
   private ClientSkillConfig nodeAt(double x, double y) {
     double offsetX = x - 16 - canvasWidth() / 2.0;
-    double offsetY = y - 94 - canvasHeight() / 2.0;
+    double offsetY = y - canvasTop() - canvasHeight() / 2.0;
     return nodes().reversed().stream()
         .filter(node -> camera.hits(node.x(), node.y(), offsetX, offsetY))
         .findFirst()
@@ -650,16 +736,16 @@ public final class TalentScreen extends Screen implements ChangeView {
     if (button == 0
         && x >= width - 29
         && x < width - 20
-        && y >= 105
+        && y >= detailsTop()
         && y < height - 65
         && detailsScroll.maximum() > 0) {
       detailsDragging = true;
-      double relative = y - 105 - detailsScroll.thumbPosition();
+      double relative = y - detailsTop() - detailsScroll.thumbPosition();
       detailsGrab =
           relative >= 0 && relative < detailsScroll.thumbSize()
               ? relative
               : detailsScroll.thumbSize() / 2.0;
-      detailsScroll.drag(y - 105 - detailsGrab);
+      detailsScroll.drag(y - detailsTop() - detailsGrab);
       setFocused(null);
       return true;
     }
@@ -679,7 +765,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   public boolean mouseDragged(double x, double y, int button, double deltaX, double deltaY) {
     if (width < 320 || height < 220) return super.mouseDragged(x, y, button, deltaX, deltaY);
     if (detailsDragging && button == 0) {
-      detailsScroll.drag(y - 105 - detailsGrab);
+      detailsScroll.drag(y - detailsTop() - detailsGrab);
       return true;
     }
     if (!dragging || button != 0) return super.mouseDragged(x, y, button, deltaX, deltaY);
@@ -710,12 +796,12 @@ public final class TalentScreen extends Screen implements ChangeView {
   @Override
   public boolean mouseScrolled(double x, double y, double horizontal, double vertical) {
     if (width < 320 || height < 220) return super.mouseScrolled(x, y, horizontal, vertical);
-    if (x >= inspectorX() && x < width - 20 && y >= 105 && y < height - 65) {
+    if (x >= inspectorX() && x < width - 20 && y >= detailsTop() && y < height - 65) {
       detailsScroll.wheel(vertical);
       return true;
     }
     if (!inside(x, y)) return super.mouseScrolled(x, y, horizontal, vertical);
-    camera.zoom(vertical, x - 16 - canvasWidth() / 2.0, y - 94 - canvasHeight() / 2.0);
+    camera.zoom(vertical, x - 16 - canvasWidth() / 2.0, y - canvasTop() - canvasHeight() / 2.0);
     return true;
   }
 
@@ -767,11 +853,19 @@ public final class TalentScreen extends Screen implements ChangeView {
   private enum Page {
     COMBAT("combat"),
     MAGIC("magic"),
-    PROFESSION("profession");
+    PROFESSION(
+        "profession",
+        Arrays.stream(ProfessionDiscipline.values()).map(ProfessionDiscipline::skill).toList());
     final String id;
+    final List<String> subcategories;
 
     Page(String id) {
+      this(id, List.of());
+    }
+
+    Page(String id, List<String> subcategories) {
       this.id = id;
+      this.subcategories = subcategories;
     }
   }
 }
