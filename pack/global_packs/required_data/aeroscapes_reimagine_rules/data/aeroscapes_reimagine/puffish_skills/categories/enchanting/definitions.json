@@ -1,0 +1,158 @@
+{
+  "enchanting_mastery_1": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_mastery_1.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_mastery_1.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/enchanting_mastery_1.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "enchanting_mastery_2": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_mastery_2.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_mastery_2.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/enchanting_mastery_2.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "enchanting_mastery_3": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_mastery_3.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_mastery_3.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/enchanting_mastery_3.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 2
+  },
+  "enchanting_mastery_4": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_mastery_4.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_mastery_4.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/enchanting_mastery_4.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 2
+  },
+  "enchanting_efficiency_1": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_efficiency_1.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_efficiency_1.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/enchanting_efficiency_1.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "enchanting_efficiency_2": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_efficiency_2.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.enchanting.enchanting_efficiency_2.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/enchanting_efficiency_2.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  }
+}

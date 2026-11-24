@@ -65,14 +65,6 @@ file = "config/easyanvils-server.toml"
 hash = "ce96bd0887fe77b5ec1b9fd86dabd5992ae19a85dfeea37cbaad2f5d64d84cfe"
 
 [[files]]
-file = "config/easymagic-client.toml"
-hash = "d9eb1bf5341e2b5c24ff2aeb6496edb53d73f3c54908e2c509d2ade2c406b9ac"
-
-[[files]]
-file = "config/easymagic-server.toml"
-hash = "6f4df7f49ec97d2f4af3877d0ff2c9155cdb570bf91fcf5f3b9f37cdfac27e07"
-
-[[files]]
 file = "config/eg_particle_interactions_config.json"
 hash = "e12e4092b822f330fe1cc58364d1bb7e723e29576efd1f347339518ed8e51564"
 
@@ -127,6 +119,10 @@ hash = "d5adb191366db54e14a8b8488cbb6eff3033da116e3bfb7bedc34138839faee5"
 [[files]]
 file = "config/immediatelyfast.json"
 hash = "395c825d4473fc6fc7c983cd99b880bf911c005ede578dc3f5ae3b758ce5976e"
+
+[[files]]
+file = "config/immersiveenchanting-server.toml"
+hash = "93295c9219fe44182ddc55f9344f73c36cb147a78dc7485ad6e3bed8b9b50347"
 
 [[files]]
 file = "config/imprint.json"
@@ -234,7 +230,7 @@ hash = "a3fb30afa95651bb131202472613df69d00da302d370c231cfa7845f05f7b5d2"
 
 [[files]]
 file = "config/quark-common.toml"
-hash = "9d6859882365b751729fca3f4a72073bbaaf4ae4b3b6d1c5597ebca8e29d0c3b"
+hash = "5947f01153d796d2a0973aca86f7e90d83aefda9e3bd0d0728d602cf522fe75c"
 
 [[files]]
 file = "config/serilum/collective.json"
@@ -1174,7 +1170,7 @@ hash = "e1004013da9f23ca0b161d6d1eccbbd34f81e79e9b992f108f1562872b0fac03"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_compat/pack.mcmeta"
-hash = "f535c8b590335ec0fb5f065e23da6610b4865387de5d1de2fbe434f5c3ad72f1"
+hash = "d04802bfae510b8e732c8839fcb0107eb4e493c7153de0aa57e8eba9c247caa0"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_equipment/data/aeroscapes_reimagine/item_attributes/armor_chest_epic.json"
@@ -4445,6 +4441,10 @@ file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_re
 hash = "0d0566e0c6b8d67b8b9ed0ee688f8c838b9ed32322aa385e3087af72f020464a"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/loot_modifiers/library_books.json"
+hash = "a8b484b4233bd9efc20f8b0ab19a66904be0255a26963fd4c76eb25b23dd0844"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/loot_modifiers/starter_spell_scroll.json"
 hash = "e50d69abb57291e94b60ad1ddf90276c79720f923cb697521f3c2ea3b6aac77c"
 
@@ -4561,6 +4561,22 @@ file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_re
 hash = "3c3ec1d94c9589676fd0e9d73c5eaa1fd17165c3015c7159400f10b340f42951"
 
 [[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/enchanting/category.json"
+hash = "af9e1aea4ec37a803551477f747b3e668408fea6db67de699c9cd4db51bf0f7b"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/enchanting/connections.json"
+hash = "65143cff9934d5e0e0f7df3469792e4bf2c07c5768add355e212e6f7a2d032ef"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/enchanting/definitions.json"
+hash = "5bd298f70da60aa4067e1e1fac06b1024f93f4395df88bdcf29da0e7f5ae0d43"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/enchanting/skills.json"
+hash = "e01797f0d2773c1fa34e9aa37786674b38660cafa4eb5ea8d2f8e2abb9ef69d8"
+
+[[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/farming/category.json"
 hash = "b6de9e267781728e734debf01cf66742366287da71c821a3f855aadbeb4bd29f"
 
@@ -4626,7 +4642,7 @@ hash = "69cb3633ba2aee103f28dea365ea31b180cd5148a9356e13f9fd32aada7e1a19"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/config.json"
-hash = "8677ca7023ddce8782a914fe6e80006bb757af258a45758cc3527ad89799e4e5"
+hash = "5785560ab18d3bf63840e4cad008357d64a51c9b97f04bbd753aa5e2aea7475d"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/recipe/forge_diamond_upgrade_template.json"
@@ -4651,6 +4667,370 @@ hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/crittersandcompanions/recipe/grappling_hook.json"
 hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/alexsmobs/board_return.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/alexsmobs/lavawax.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/alexsmobs/serpentfriend.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/alexsmobs/straddle_jump.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/alleviating.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/ascension_curse.json"
+hash = "74e08281f9e3cb32768838e5ba6880835edcd9389ec77251a05a81dfbdb8879c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/fleeting_curse.json"
+hash = "74e08281f9e3cb32768838e5ba6880835edcd9389ec77251a05a81dfbdb8879c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/launch.json"
+hash = "dd407afd7bd1c0efaf56b15310eaee216958f004dad561851d9777661d6c5b23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/obedience.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/reeling.json"
+hash = "dd407afd7bd1c0efaf56b15310eaee216958f004dad561851d9777661d6c5b23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/reforming.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/shockwave.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/spread_of_ailments.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/allurement/vengeance.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/betterarcheology/penetrating_strike.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/betterarcheology/soaring_winds.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/betterarcheology/tunneling.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/create/capacity.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/create/potato_recovery.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/farmersdelight/backstabbing.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/galosphere/enfeeble.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/galosphere/rupture.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/galosphere/sifting.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/galosphere/sustain.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/immersiveenchanting/replicate.json"
+hash = "d7d000972b9727bf18bf6ab40979b4df4a323d1f2085e3da472c31043b784615"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/immersiveenchanting/transmute.json"
+hash = "a3a7430677b6f72e883c05945522d47af703c63ab47648fbef60c932f10e3a58"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/legendarysurvivaloverhaul/purity.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/legendarysurvivaloverhaul/refreshing.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/legendarysurvivaloverhaul/reservoir.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/aqua_affinity.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/bane_of_arthropods.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/binding_curse.json"
+hash = "74e08281f9e3cb32768838e5ba6880835edcd9389ec77251a05a81dfbdb8879c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/blast_protection.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/breach.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/channeling.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/density.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/depth_strider.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/efficiency.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/feather_falling.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/fire_aspect.json"
+hash = "dd407afd7bd1c0efaf56b15310eaee216958f004dad561851d9777661d6c5b23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/fire_protection.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/flame.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/fortune.json"
+hash = "7fe7be96f53f8c3300b7a3be3a8c0b5a9258fc789f87e5acb4d6f1e7e8d3c27d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/frost_walker.json"
+hash = "dd407afd7bd1c0efaf56b15310eaee216958f004dad561851d9777661d6c5b23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/impaling.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/infinity.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/knockback.json"
+hash = "dd407afd7bd1c0efaf56b15310eaee216958f004dad561851d9777661d6c5b23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/looting.json"
+hash = "7fe7be96f53f8c3300b7a3be3a8c0b5a9258fc789f87e5acb4d6f1e7e8d3c27d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/loyalty.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/luck_of_the_sea.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/lure.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/mending.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/multishot.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/piercing.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/power.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/projectile_protection.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/protection.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/punch.json"
+hash = "dd407afd7bd1c0efaf56b15310eaee216958f004dad561851d9777661d6c5b23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/quick_charge.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/respiration.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/riptide.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/sharpness.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/silk_touch.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/smite.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/soul_speed.json"
+hash = "7fe7be96f53f8c3300b7a3be3a8c0b5a9258fc789f87e5acb4d6f1e7e8d3c27d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/sweeping_edge.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/swift_sneak.json"
+hash = "7fe7be96f53f8c3300b7a3be3a8c0b5a9258fc789f87e5acb4d6f1e7e8d3c27d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/thorns.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/unbreaking.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/vanishing_curse.json"
+hash = "74e08281f9e3cb32768838e5ba6880835edcd9389ec77251a05a81dfbdb8879c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/minecraft/wind_burst.json"
+hash = "7fe7be96f53f8c3300b7a3be3a8c0b5a9258fc789f87e5acb4d6f1e7e8d3c27d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/antidote.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/boss_behaviour.json"
+hash = "74e08281f9e3cb32768838e5ba6880835edcd9389ec77251a05a81dfbdb8879c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/conductivity_curse.json"
+hash = "74e08281f9e3cb32768838e5ba6880835edcd9389ec77251a05a81dfbdb8879c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/ghasted.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/gravity.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/illagers_bane.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/multishot.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/outreach.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/photosynthesis.json"
+hash = "47f3237997dca033cc732f4a8535573d013deb3beb3b5e757e17936017ab82a7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/piercing.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/power.json"
+hash = "bbc2074e0ae02dbb1d3f40c2ce9d4ac7a7971772e286c30cb24b71520368898a"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/shulker_boss.json"
+hash = "74e08281f9e3cb32768838e5ba6880835edcd9389ec77251a05a81dfbdb8879c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/shulker_miniboss.json"
+hash = "74e08281f9e3cb32768838e5ba6880835edcd9389ec77251a05a81dfbdb8879c"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/traveler.json"
+hash = "72cd72ef762faac2791535c90baa3545e92610f43a3d06a5d1e26c5e108e80c7"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/wax_wings.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/nova_structures/wither_coated.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/supplementaries/stasis.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/yo_hooks/agility.json"
+hash = "dd407afd7bd1c0efaf56b15310eaee216958f004dad561851d9777661d6c5b23"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/yo_hooks/gentle_touch.json"
+hash = "1391ae72ff4c4d4f4590c9247fa53599b1c76559510ce1b88a3d3b94d6e74684"
+
+[[files]]
+file = "global_packs/required_data/aeroscapes_reimagine_rules/data/immersiveenchanting/enchantment_costs/yo_hooks/long_reach.json"
+hash = "f5a46204906ae0c92b002dc80c05f482afc64a434afd9a5296aaa4f1f14f003d"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/irons_spellbooks/irons_spellbooks_spell_config/angel_wing.json"
@@ -4714,7 +5094,7 @@ hash = "cb88c36b0ea93961cfc1cc2fb10f74f70954e93a708ed3fa8e73ed977d6f96be"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/neoforge/loot_modifiers/global_loot_modifiers.json"
-hash = "e134f281be3e7eb0493ce350b1c70349971d7d3cbd6177f902e6a62a7286c802"
+hash = "028468da22467083efe141029df049addf7a943a1c4a91051bfd293fe34e6869"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/neoorigins/origins/origin_layers/origin.json"
@@ -4738,7 +5118,7 @@ hash = "c7c28c4858b5d91131d8917fec8895f75c9479d92fda98c51e8f7ad81485f1f1"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/pmmo/config/skills.json"
-hash = "d7c927d0ae183ff671472b61e96e093b31bb5b2dbd6638d67c56aff3f1ecb411"
+hash = "1e54ca029abaae0948beb5835e27dcfef8aa24782ff4305247cb7d33ff09bea6"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/toms_storage/recipe/adv_wireless_terminal.json"
@@ -5167,7 +5547,7 @@ hash = "a5681bf9b05db14d86776930017c647ad9e6e56ff6bbcfdf21e5848288dfaf1b"
 
 [[files]]
 file = "licenses/THIRD-PARTY-NOTICES.txt"
-hash = "15319f150ca1eb4f5fe9bbb05d1df05377d078c826bda679c5bf45acebf03bd3"
+hash = "98081f892b36450cc786af4ceb0be7bcf6cf634841849651e02aab6a4e0db8a6"
 
 [[files]]
 file = "licenses/Vintage-SSW-LGPL-2.1.txt"
@@ -5183,7 +5563,7 @@ hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "9ca6f2801813191477c64761b8f9cc269e3a16039c49a80b40d808a2cebb4adc"
+hash = "7da04834c6f9cee05178f6f783a358be8716a2e73880782d627d210b81fbc8a2"
 
 [[files]]
 file = "licenses/fluidlogistics-1.3.2-corresponding-source.zip"
@@ -5233,11 +5613,16 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "72c5dac33edabc93c6dc7295d2350e428993dc22a7b182c314b63841d7656be0"
+hash = "eb3c74e4e9fcfca0d1fe0df9ba029ef4eee8c3fc023967e92ace0313282a318d"
 
 [[files]]
 file = "mods/agricraft-rereloaded.pw.toml"
 hash = "6b5cb5954251263a56608f2ba30757bf8a901fb95a857217a64987309ef7a24d"
+metafile = true
+
+[[files]]
+file = "mods/alfinolib.pw.toml"
+hash = "4a36223d5aca83087d4abe74f05c4414f0d4ef63c75764771be26b0e22e1d9d4"
 metafile = true
 
 [[files]]
@@ -5646,11 +6031,6 @@ hash = "f751bb6b937c4488e6db3b0bf575363246b42e8e59e7a12c1f364a0105a767dc"
 metafile = true
 
 [[files]]
-file = "mods/easy-magic.pw.toml"
-hash = "c4e08ccc567add18c41decc5f57efb879a1cddd3d6e8cfabdeeda260fee5bbf3"
-metafile = true
-
-[[files]]
 file = "mods/eating-animations.pw.toml"
 hash = "be50c78b4085f6c8feba0d2d53627a9d46e3291cea308fd120334d32ab260f7e"
 metafile = true
@@ -5883,6 +6263,11 @@ metafile = true
 [[files]]
 file = "mods/immediatelyfast.pw.toml"
 hash = "e0b6dcd277c36c1b24917f69d6c8bdc12029cc14451c279ff623d78ce38ef284"
+metafile = true
+
+[[files]]
+file = "mods/immersive-enchanting.pw.toml"
+hash = "3054615946294c4a883e8156af02902b1225ffb2b6f3c9626379a4ed68c49ad2"
 metafile = true
 
 [[files]]
@@ -6814,7 +7199,7 @@ hash = "cdea174265b490f6b7988f67257716a028927501e1663505af016a672a4fe885"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/README.md"
-hash = "a387f75c69c1c25c9196df5b1478a030bf42b55ab2603137433c8c81b39084c6"
+hash = "6f7cd5acf3d5ee39704d0bc0f5c52c676497fe9896176a0024945741a1bba767"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/artwork/atlas.svg"
@@ -7338,7 +7723,7 @@ hash = "83088bcd08b8029cbc353f400c203360350b86b181237fd7c7cde77ce2d67bbb"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/atlas/panels.json"
-hash = "4e029a96d6c68968ac69aeed5753b27287cc3bdf86b0bf4e2c286158cffd793d"
+hash = "9803a60a9cf85fb79789e8913c3cfa308c35857c3d4b1cefa162abf688b8a8ef"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-interface/assets/aeroscapes_reimagine/textures/gui/interface/atlas.png"
@@ -8090,7 +8475,7 @@ hash = "dbf0dba10aa7ae53030d6bd9de013fbcb34e1171842e9629418bb85e0a1dfed5"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/artwork/overgeared.md"
-hash = "92ec246e4a3d01f3368a5fb8f32c40b3c38fb741bb4be0772b5d3e0f3af8786e"
+hash = "82dd75c1c5f1a42f151e70dd2fb6f91669be1a196fb4d878196ee0782481d8c0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/aeroscapes_reimagine/models/item/aquatic_tools/coral_axe.obj"
@@ -17974,19 +18359,19 @@ hash = "76a699a9f6f17045b1899520e20957f98eb6ca22c8afb39f775de0f864bc1329"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/clay_tool_cast.json"
-hash = "dd05779a92c9289a3758b094a77a24038a841f942743d89b93a6fbc6959e6111"
+hash = "11f2c5f58857af83a3ab3af2c9e4293032b8ed5be4f9ebf6ee53582d57265ac6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/copper_axe.json"
-hash = "6642de2479d29207c90d1c9fcbcf5b09a0b7cc9f352d701358985721efc8a1d3"
+hash = "96b20180fb1d2bb7752ea7b122b685053705b0ba08c7b28706539daa7d9631b0"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/copper_hoe.json"
-hash = "bb2bc3b58d665c018cc38f0d551bd44ce2998a9ad1eff1d2ae0f52394f52d956"
+hash = "779e855afa03da12b832ad1bd073355e8bd010df3874bef3c56096c57327ab03"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/copper_pickaxe.json"
-hash = "517ef5a97def16bbc4edf390efc1cf6745d32846546f94f97fc02e229662b6fe"
+hash = "ed8c988dc7034b5335400c80b7623807790d635aead000292bb5fca73cdc932c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/copper_shovel.json"
@@ -17994,15 +18379,15 @@ hash = "ed1fed71f1d79e75bf4129e55a9c98b5f1cd802be332c4c1b08393e60ac57590"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/copper_smithing_hammer.json"
-hash = "dc8fc27254f80bc2ebfa3463d870ed5227c55d2152cf540ed3cd68d5e909c149"
+hash = "6ccbe55567aef9474c9544b08f49130683eb7c7e4e4f93a666cbd29a43bbbf36"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/copper_sword.json"
-hash = "91611611b1c726970147b5dc2559d9c1424d24f3dff16e2a159fbd674686f034"
+hash = "06ef0591a87c1a2cdf0786d39a5c2d21d79d9d1009a1a352a8b4a929365e2e88"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/iron_tongs.json"
-hash = "54ba80f02b25a342b128756acc3bf494fa6168cc4eb95a905d157968d6edad20"
+hash = "21d86280a5d1a6ba28cf07ccd7173ae2024236c29c0ecd3b901feaef0982d7f6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/knappable_rock.json"
@@ -18010,23 +18395,23 @@ hash = "040dab7c99f29cc805ead6c28462e58f756e3d40918e861e966b57514ca25441"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/nether_tool_cast.json"
-hash = "d4a1bd687901091915808a00ed0c5bd6c9bfffe827be0c9c6aa44af91ae07d08"
+hash = "e8498a613058cda8a4aba0240b517688c670222c77e5b8bc9b8a8d470a2fbfa3"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/smithing_hammer.json"
-hash = "deca39a146f4d932487d9b0b01f481b007a87428c1c9b9c6aae564cc72656926"
+hash = "41422fb27ccec52d74283d733eaea2ccd5fdb18b5b53d6c68854b76aa39c651c"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/steel_axe.json"
-hash = "ea051af8a5af45527ad3d425fa799508209150f057685c338869e861c222165a"
+hash = "2e0c9205da195bee1307e89ad8d951376f69f9813d39aaf015745b826ace88f9"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/steel_hoe.json"
-hash = "abb502e233c3d02fe3fd9671de0d915ce42a2075040d7d59737b9260b7aa237c"
+hash = "cbadae823f4a04eefb04c59421e173a29014c0e87b6cd82981e2e1c93f35d935"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/steel_pickaxe.json"
-hash = "f423d62a9046bbf7a8a2d7330b42692fbe538ff9d52f1eaf07a14c4a31fa9506"
+hash = "5dca36d2c3e69e06f62a9ef81444ec0b7205b7f7ee77763aa986f2389ff3c266"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/steel_shovel.json"
@@ -18034,19 +18419,19 @@ hash = "4103bf493e1948c422a91fef390a7425aff3f0aaf0273ed4e0410dfa82cc5df6"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/steel_sword.json"
-hash = "9e83c3a9e61b21c0006bcaeddedea77b5951e49673f0e7b6a64d68cd2790563a"
+hash = "1b193c23654995dc4c0d70e87b7313ae217432c9c7b2cf9ba1c41ba84a91eeb1"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/steel_tongs.json"
-hash = "2bd454faf2b0018e5e7b3e5161c7737bac0320f9d4e3fffae5476479c716e9ef"
+hash = "fe1aca84365761eee8eeaf88f77f911ae96fac209adbc9fcd7ad56e70aae8450"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/unfired_tool_cast.json"
-hash = "3df8933aceb732545e03117e28f6d9eefa3531b9f68437416a910f29f8a707be"
+hash = "68cf53b91eee984f7cfbcdef92500997460ba8b03394780c990f78fc04e92367"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/equipment/held/wooden_tongs.json"
-hash = "598abc1cd428acc0ce7b1a65b73a9e19051e94c3d162ef9fe87f7ccd4d5d6e25"
+hash = "4e8e375f1ec7c25624d186747c9020cdf7103925d4aa5fe05b67a61da7dc0e33"
 
 [[files]]
 file = "resourcepacks/aeroscapes-reimagine-refined-compat/assets/overgeared/models/item/iron_tongs.json"

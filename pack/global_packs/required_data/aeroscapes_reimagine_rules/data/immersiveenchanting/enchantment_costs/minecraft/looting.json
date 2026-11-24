@@ -1,0 +1,7 @@
+{
+  "levels": {
+    "1": [{"item_cost": {"item": "minecraft:gold_ingot", "count": 1}, "xp_levels": 7}],
+    "2": [{"item_cost": {"item": "minecraft:gold_ingot", "count": 1}, "xp_levels": 7}],
+    "3": [{"item_cost": {"item": "minecraft:diamond", "count": 1}, "xp_levels": 14}]
+  }
+}

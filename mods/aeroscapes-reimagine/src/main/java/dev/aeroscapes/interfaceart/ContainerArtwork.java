@@ -63,9 +63,7 @@ public final class ContainerArtwork {
           "com.tom.storagemod.screen.ItemFilterScreen", texture("dispenser"),
           "com.ninni.spawn.client.inventory.OctoductScreen", texture("dispenser"),
           "org.violetmoon.quark.content.management.client.screen.HeldShulkerBoxScreen",
-              texture("shulker_box"),
-          "fuzs.easymagic.client.gui.screens.inventory.ModEnchantmentScreen",
-              texture("enchanting_table"));
+              texture("shulker_box"));
 
   private static final List<ResourceLocation> CREATIVE_PANELS =
       List.of(

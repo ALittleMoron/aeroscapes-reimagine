@@ -49,6 +49,13 @@ public final class TalentBudgetTest {
             && ProfessionDiscipline.COOKING.earned(1, false) == 0
             && ProfessionDiscipline.COOKING.earned(0, true) == 1,
         "Early smithing and starter credit belong to individual trees");
+    var enchanting = ProfessionDiscipline.ENCHANTING;
+    require(
+        enchanting.earned(4, false) == 0
+            && enchanting.earned(5, false) == 1
+            && enchanting.earned(30, false) == 6
+            && enchanting.earned(40, false) == enchanting.cap(),
+        "Enchanting practice funds the first lesson, mastery path and full tree in order");
     Set<String> registered = new HashSet<>();
     for (JsonElement value : config.getAsJsonArray("categories")) {
       String id = value.getAsString();

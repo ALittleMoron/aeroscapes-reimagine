@@ -57,7 +57,9 @@
     "BasinDrownedBeachMixin",
     "IslandCavernMixin",
     "RuntimeTemplateRepairsMixin",
-    "DramaticDoorsChippedRecipesMixin"
+    "DramaticDoorsChippedRecipesMixin",
+    "EnchantingTableLockMixin",
+    "EnchantingTableMenuLockMixin"
   ],
   "client": ["WorldCreationIslandMixin"],
   "injectors": {

@@ -6,6 +6,16 @@ status: available
 
 ## 0.9.0
 
+### 0.8.2
+
+- Immersive Enchanting replaces random table offers. Chiseled bookshelves hold reusable knowledge, and ancient books from expeditions unlock enchantments through their recorded level.
+- Enchanting practice funds a separate mastery tree with an optional branch that reduces the experience cost. Equipment is enchanted one level at a time with materials and lapis.
+- Librarians sell ordinary enchantment books through level II. The table copies an Ancient Book for a writable book, lapis, and experience.
+- Existing Easy Magic tables become Immersive Enchanting tables and keep their contents.
+- Anvils no longer merge enchantment books. Advanced transfers require the corresponding Ancient Book and mastery. Quark tomes respect the normal maximum and existing enchantment levels are retained.
+- A Holy Rune in a grindstone removes curses from an item and preserves its positive enchantments and quality.
+- Overgeared held models have corrected tool orientation, longer swords, shaped pickaxe heads, and clearer tongs and casting molds.
+
 ### 0.8.1
 
 - Overgeared adds stone knapping, metal forging and upgrades from steel to diamond. Flint struck against stone supplies the rocks for stone tool heads.

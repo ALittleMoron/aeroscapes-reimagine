@@ -1,0 +1,8 @@
+{
+  "levels": {
+    "1": [{"item_cost": {"item": "minecraft:copper_ingot", "count": 1}, "xp_levels": 2}],
+    "2": [{"item_cost": {"item": "minecraft:amethyst_shard", "count": 1}, "xp_levels": 4}, {"item_cost": {"item": "minecraft:glowstone_dust", "count": 1}, "xp_levels": 4}],
+    "3": [{"item_cost": {"item": "minecraft:gold_ingot", "count": 1}, "xp_levels": 7}],
+    "4": [{"item_cost": {"item": "minecraft:ender_pearl", "count": 1}, "xp_levels": 10}]
+  }
+}

@@ -20,6 +20,8 @@ Replacing the external [Aero Islands](https://modrinth.com/mod/tGVwBATM) mod rem
 
 Keep an untouched world backup before updating. To roll back, restore both the previous pack and that backup.
 
+When a world from `0.8.1` loads in `0.8.2`, Easy Magic tables become Immersive Enchanting tables. The table keeps its contents, custom name, and lock where present. Previously enchanted equipment and books retain their levels.
+
 When a `0.8.0` character first loads in `0.8.1`, learned profession talents move to their own trees and available points are recalculated from practice in each profession. The recipe book drops old entries for the vanilla diamond equipment and iron-blasting recipes replaced by Overgeared. Existing equipment stays in the world.
 
 The added [Hybrid Aquatic](https://modrinth.com/mod/hybrid-aquatic) habitats apply to newly generated chunks. Previously explored areas retain their stored biomes and terrain, with possible visible boundaries. Added equipment and survival systems also save new item and player data; removing their mods from an updated save is not a supported rollback.

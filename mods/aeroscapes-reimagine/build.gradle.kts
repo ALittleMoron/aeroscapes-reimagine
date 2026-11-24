@@ -76,7 +76,8 @@ repositories {
       includeModule("maven.modrinth", "sophisticated-core")
       includeModule("maven.modrinth", "toms-storage")
       includeModule("maven.modrinth", "easy-anvils")
-      includeModule("maven.modrinth", "easy-magic")
+      includeModule("maven.modrinth", "immersive-enchanting")
+      includeModule("maven.modrinth", "alfinolib")
       includeModule("maven.modrinth", "horseman")
       includeModule("maven.modrinth", "simple-backups")
       includeModule("maven.modrinth", "natures-compass")
@@ -215,6 +216,8 @@ val extractSableApi =
   }
 
 dependencies {
+  compileOnly("maven.modrinth:immersive-enchanting:1axWAPS7") { isTransitive = false }
+  compileOnly("maven.modrinth:alfinolib:T3iUMjhn") { isTransitive = false }
   compileOnly("maven.modrinth:hexcast-neoforged:3qkLQwpf") { isTransitive = false }
   equipmentAssets("maven.modrinth:hexcast-neoforged:3qkLQwpf") { isTransitive = false }
   compileOnly("maven.modrinth:animalhusbandry:Evazn2xm") { isTransitive = false }
@@ -311,7 +314,6 @@ dependencies {
   atmosphereApi("maven.modrinth:sophisticated-core:gtPF4VTh")
   atmosphereApi("maven.modrinth:toms-storage:WQAMoIMC")
   atmosphereApi("maven.modrinth:easy-anvils:fSQSKhdF")
-  atmosphereApi("maven.modrinth:easy-magic:MxbfrOEv")
   atmosphereApi("maven.modrinth:horseman:jJ93aLVn")
   atmosphereApi("maven.modrinth:simple-backups:6JQL4qSR")
   atmosphereApi("maven.modrinth:natures-compass:nFniEtJV")

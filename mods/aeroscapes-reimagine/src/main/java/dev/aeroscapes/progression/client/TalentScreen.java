@@ -664,9 +664,11 @@ public final class TalentScreen extends Screen implements ChangeView {
     if (node == null) {
       if (page == Page.MAGIC) {
         y = magicProgress(graphics, x, y);
-        y = paragraph(graphics, text("magic.explanation"), x, y + 7, TEXT);
+        y = paragraph(graphics, text("magic.explanation"), x, y + 7, TEXT) + 7;
+      } else if (categoryPath().equals(ProfessionDiscipline.ENCHANTING.skill())) {
+        y = paragraph(graphics, category.getConfig().description(), x, y, TEXT) + 7;
       }
-      y = paragraph(graphics, text("select"), x, y + (page == Page.MAGIC ? 7 : 0), TEXT);
+      y = paragraph(graphics, text("select"), x, y, TEXT);
     } else {
       var definition = category.getConfig().getDefinitionById(node.definitionId()).orElse(null);
       if (definition != null) {

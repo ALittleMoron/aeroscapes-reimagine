@@ -5,15 +5,18 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
 import fuzs.easyanvils.world.inventory.ModAnvilMenu;
 import fuzs.easyanvils.world.level.block.entity.AnvilBlockEntity;
-import fuzs.easymagic.world.inventory.ModEnchantmentMenu;
-import fuzs.easymagic.world.level.block.entity.EnchantmentTableWithInventoryBlockEntity;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import me.alfie.immersiveenchanting.gui.EnchantingTableMenu;
+import me.alfie.immersiveenchanting.util.IEnchantingTableInventory;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.RegistryOps;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -22,11 +25,16 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.inventory.GrindstoneMenu;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.entity.EnchantingTableBlockEntity;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.fml.loading.FMLPaths;
 
@@ -54,6 +62,7 @@ public final class QolWorkstationRegression {
         HorseRecallRegression.verify(level, player);
         verifyAnvil(level, player, position);
         verifyEnchanting(level, player, position);
+        verifyCleansing(level, player, position);
         verifyMounts(level, player);
       } finally {
         player.stopRiding();
@@ -66,6 +75,50 @@ public final class QolWorkstationRegression {
         level.setBlockAndUpdate(position.below(), support);
       }
     }
+  }
+
+  private static void verifyCleansing(ServerLevel level, ServerPlayer player, BlockPos position) {
+    level.setBlockAndUpdate(position, Blocks.GRINDSTONE.defaultBlockState());
+    var menu =
+        new GrindstoneMenu(62, player.getInventory(), ContainerLevelAccess.create(level, position));
+    player.containerMenu = menu;
+    var enchantments = level.registryAccess().lookupOrThrow(Registries.ENCHANTMENT);
+    var sharpness = enchantments.getOrThrow(Enchantments.SHARPNESS);
+    var vanishing = enchantments.getOrThrow(Enchantments.VANISHING_CURSE);
+    ItemStack sword = new ItemStack(Items.DIAMOND_SWORD);
+    sword.enchant(sharpness, 3);
+    sword.enchant(vanishing, 1);
+    sword.setDamageValue(100);
+    sword.set(DataComponents.CUSTOM_NAME, Component.literal("Cleansing witness"));
+    sword.set(DataComponents.REPAIR_COST, 7);
+
+    menu.setCarried(sword.copy());
+    menu.clicked(0, 0, ClickType.PICKUP, player);
+    require(
+        EnchantmentHelper.getEnchantmentsForCrafting(menu.getSlot(2).getItem()).getLevel(vanishing)
+            == 1,
+        "Ordinary grindstone does not remove curses");
+
+    ItemStack rune =
+        new ItemStack(
+            BuiltInRegistries.ITEM.get(ResourceLocation.parse("irons_spellbooks:holy_rune")), 2);
+    require(!rune.isEmpty(), "Holy Rune is registered");
+    menu.setCarried(rune);
+    menu.clicked(1, 0, ClickType.PICKUP, player);
+    require(menu.getCarried().isEmpty(), "Grindstone accepts the reagent in the lower slot");
+    require(menu.getSlot(1).getItem().getCount() == 2, "Preview does not spend runes");
+
+    ItemStack expected = sword.copy();
+    EnchantmentHelper.updateEnchantments(expected, mutable -> mutable.set(vanishing, 0));
+    menu.clicked(2, 0, ClickType.PICKUP, player);
+    require(
+        ItemStack.matches(menu.getCarried(), expected),
+        "Cleanse removes only the curse, preserving all other item components");
+    require(menu.getSlot(0).getItem().isEmpty(), "Cleansing consumes the original item");
+    require(menu.getSlot(1).getItem().getCount() == 1, "Cleansing pays exactly one rune");
+    require(menu.getSlot(2).getItem().isEmpty(), "Cleansing cannot be repeated without input");
+    menu.setCarried(ItemStack.EMPTY);
+    menu.getSlot(1).set(ItemStack.EMPTY);
   }
 
   private static void verifyLootConfiguration(ServerLevel level) {
@@ -154,29 +207,34 @@ public final class QolWorkstationRegression {
   }
 
   private static void verifyEnchanting(ServerLevel level, ServerPlayer player, BlockPos position) {
-    level.setBlockAndUpdate(
-        position, ((BlockItem) Items.ENCHANTING_TABLE).getBlock().defaultBlockState());
-    require(
-        level.getBlockEntity(position) instanceof EnchantmentTableWithInventoryBlockEntity,
-        "Native enchanting inventory");
-    var inventory = (EnchantmentTableWithInventoryBlockEntity) level.getBlockEntity(position);
-    var menu =
-        new ModEnchantmentMenu(
-            61, player.getInventory(), inventory, ContainerLevelAccess.create(level, position));
-    player.containerMenu = menu;
-    inventory.setItem(0, new ItemStack(Items.DIAMOND_PICKAXE));
-    inventory.setItem(1, new ItemStack(Items.LAPIS_LAZULI, 3));
-    EasyMagicExperienceRegression.verify(player, menu, inventory);
-    var saved = inventory.saveWithoutMetadata(level.registryAccess());
-    var restored =
-        new EnchantmentTableWithInventoryBlockEntity(position, level.getBlockState(position));
+    var state = Blocks.ENCHANTING_TABLE.defaultBlockState();
+    level.setBlockAndUpdate(position, state);
+    var table = level.getBlockEntity(position);
+    require(table instanceof EnchantingTableBlockEntity, "Native enchanting table");
+    require(table instanceof IEnchantingTableInventory, "Immersive Enchanting inventory");
+    var provider = state.getMenuProvider(level, position);
+    require(provider != null, "Enchanting table exposes a menu provider");
+    var menu = provider.createMenu(61, player.getInventory(), player);
+    require(menu instanceof EnchantingTableMenu, "Enchanting table opens Immersive Enchanting");
+
+    List<ItemStack> inputs =
+        List.of(
+            new ItemStack(Items.DIAMOND_PICKAXE),
+            new ItemStack(Items.LAPIS_LAZULI, 3),
+            new ItemStack(Items.REDSTONE, 2));
+    inputs.getFirst().setDamageValue(91);
+    for (int slot = 0; slot < inputs.size(); slot++) menu.getSlot(slot).set(inputs.get(slot));
+    var saved = table.saveWithoutMetadata(level.registryAccess());
+    var restored = new EnchantingTableBlockEntity(position, state);
     restored.loadWithComponents(saved, level.registryAccess());
-    require(
-        restored.getItem(0).is(Items.DIAMOND_PICKAXE)
-            && restored.getItem(1).is(Items.LAPIS_LAZULI)
-            && restored.getItem(1).getCount() == 1,
-        "Enchanting inventory serialization preserves item and remaining lapis");
-    inventory.clearContent();
+    require(restored instanceof IEnchantingTableInventory, "Recreated enchanting inventory");
+    var inventory = (IEnchantingTableInventory) restored;
+    for (int slot = 0; slot < inputs.size(); slot++) {
+      require(
+          ItemStack.matches(inventory.immersive$getItem(slot), inputs.get(slot)),
+          "Enchanting table serialization preserves slot " + slot);
+      menu.getSlot(slot).set(ItemStack.EMPTY);
+    }
   }
 
   private static void verifyMounts(ServerLevel level, ServerPlayer player) {

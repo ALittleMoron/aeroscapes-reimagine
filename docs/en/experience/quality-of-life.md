@@ -72,9 +72,11 @@ Twinbound Feathers create player destinations, Epitaphs create one-use death-sit
 
 [Easy Anvils](https://modrinth.com/mod/easy-anvils) keeps inputs in the anvil and displays them on the block. Renaming on its own is free and does not damage the anvil. Repairs and combining enchantments retain ordinary material costs, experience costs and increasing prior-work penalties. Combined operations and special recipes retain their existing pricing. Operations above 40 levels remain available at their full price. Iron blocks can repair a worn anvil, and name tags can be edited while crouching without an anvil.
 
-[Easy Magic](https://modrinth.com/mod/easy-magic) keeps the item and lapis in the enchanting table after closing its menu. A manual reroll costs one lapis and five experience points. Ordinary bookshelf placement and the 15-power requirement remain; each offer reveals one enchantment. The extra chiseled-bookshelf overlay is disabled because the existing block-information display already shows its books.
+With [Immersive Enchanting](https://modrinth.com/mod/immersive-enchanting), put knowledge books in chiseled bookshelves two blocks from the table and at its height or up to three blocks higher. An ordinary enchanted book can teach basic enchantments through level II. Ancient books in major dungeon rewards record their own ceilings. A Sharpness V book gives the library all five levels of Sharpness, and each enchantment still requires personal mastery.
 
-If an anvil or enchanting table in an existing world no longer opens after adding these mods, break and replace it. Placing the ordinary block item creates the version with a persistent inventory.
+Put equipment in the table and select its next level. The menu shows the material, lapis and experience cost. Successful applications earn Enchanting practice for the profession tree. Its optional efficiency talents reduce the experience cost. To copy an Ancient Book, put one in the table and spend a writable book, one lapis and eight levels. The copy retains the enchantment and level.
+
+Anvils apply an ordinary enchanted book to equipment within your mastery. To add or raise an advanced enchantment using a donor book, equipment or a Quark tome, carry the corresponding Ancient Book at the resulting level or higher. Two books cannot be combined. A Holy Rune in the bottom slot of a grindstone removes curses from the item in the top slot while keeping its other enchantments and quality.
 
 ## Maps and recovery
 

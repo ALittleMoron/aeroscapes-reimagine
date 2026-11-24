@@ -1,5 +1,6 @@
 package dev.aeroscapes.equipment.workshop;
 
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.ProfessionProgression;
 import java.util.Set;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -22,7 +23,8 @@ public final class WorkshopManufacture {
     String talent = requiredTalent(BuiltInRegistries.ITEM.getKey(result.getItem()), forge);
     return talent == null
         || player != null
-            && (player.isCreative() || ProfessionProgression.hasSmithingTalent(player, talent));
+            && (player.isCreative()
+                || ProfessionProgression.hasTalent(player, ProfessionDiscipline.SMITHING, talent));
   }
 
   public static void explain(Player player) {

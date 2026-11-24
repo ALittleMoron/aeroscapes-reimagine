@@ -53,8 +53,9 @@ final class ProgressionRegression {
                     "smithing",
                     "building",
                     "farming",
-                    "cooking")),
-        "Only the nine pack disciplines are defined");
+                    "cooking",
+                    "enchanting")),
+        "Only the ten pack disciplines are defined");
     require(
         Config.server().requirements().enabled().values().stream().noneMatch(Boolean::booleanValue),
         "Practice levels never lock items, blocks or actions");

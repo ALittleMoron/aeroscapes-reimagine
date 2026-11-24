@@ -72,6 +72,10 @@
       {
         "namespace": "(mvs|formationsoverworld|feur_extension_desert|feur_extension_jungle|imst)",
         "path": "worldgen/structure_set/.*"
+      },
+      {
+        "namespace": "immersiveenchanting",
+        "path": "worldgen/structure_set/ancient_library_(desert|end|jungle)\\.json"
       }
     ]
   }

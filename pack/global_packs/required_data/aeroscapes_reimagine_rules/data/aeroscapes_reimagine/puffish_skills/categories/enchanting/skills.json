@@ -1,0 +1,33 @@
+{
+  "enchanting_mastery_1": {
+    "x": -24,
+    "y": 80,
+    "definition": "enchanting_mastery_1",
+    "root": true
+  },
+  "enchanting_mastery_2": {
+    "x": -24,
+    "y": 27,
+    "definition": "enchanting_mastery_2"
+  },
+  "enchanting_mastery_3": {
+    "x": -24,
+    "y": -27,
+    "definition": "enchanting_mastery_3"
+  },
+  "enchanting_mastery_4": {
+    "x": -24,
+    "y": -80,
+    "definition": "enchanting_mastery_4"
+  },
+  "enchanting_efficiency_1": {
+    "x": 40,
+    "y": 32,
+    "definition": "enchanting_efficiency_1"
+  },
+  "enchanting_efficiency_2": {
+    "x": 40,
+    "y": -21,
+    "definition": "enchanting_efficiency_2"
+  }
+}

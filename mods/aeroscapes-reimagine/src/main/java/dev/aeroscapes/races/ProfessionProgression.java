@@ -2,7 +2,7 @@ package dev.aeroscapes.races;
 
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
-import dev.aeroscapes.progression.client.SmithingTalentClient;
+import dev.aeroscapes.progression.client.ProfessionTalentClient;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.server.level.ServerPlayer;
@@ -27,11 +27,10 @@ public final class ProfessionProgression {
             .isPresent();
   }
 
-  public static boolean hasSmithingTalent(Player player, String node) {
+  public static boolean hasTalent(Player player, ProfessionDiscipline tree, String node) {
     if (!ModList.get().isLoaded("puffish_skills")) return false;
-    if (player instanceof ServerPlayer serverPlayer)
-      return learned(serverPlayer, ProfessionDiscipline.SMITHING, node);
-    return player.level().isClientSide() && SmithingTalentClient.learned(node);
+    if (player instanceof ServerPlayer serverPlayer) return learned(serverPlayer, tree, node);
+    return player.level().isClientSide() && ProfessionTalentClient.learned(tree, node);
   }
 
   private static boolean learned(ServerPlayer player, ProfessionDiscipline tree, String node) {

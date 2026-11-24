@@ -12,7 +12,7 @@ import java.util.List;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
 
-/** Behavioral geometry contracts for the owner's second equipment review batch. */
+/** Behavioral geometry contracts for reviewed held equipment. */
 public final class ReviewedEquipmentModelTest {
   private static final List<String> READABLE =
       List.of(
@@ -150,11 +150,37 @@ public final class ReviewedEquipmentModelTest {
           wrapper.getAsJsonObject("perspectives").size() == 4,
           "Only hands select the hook head sculpture");
     }
+    verifyOvergeared(assets);
     if (arguments.length == 2) Files.writeString(Path.of(arguments[1]), preview.toString());
     System.out.println(
         "Reviewed equipment: "
             + ids.size()
             + " baked states, seven readable displays, articulated bow, deep net and five flat hook component icons passed");
+  }
+
+  private static void verifyOvergeared(Path assets) throws IOException {
+    List<String> items = new ArrayList<>();
+    for (String metal : List.of("copper", "steel"))
+      for (String tool : List.of("axe", "hoe", "pickaxe", "shovel", "sword"))
+        items.add(metal + "_" + tool);
+    items.addAll(
+        List.of(
+            "smithing_hammer",
+            "copper_smithing_hammer",
+            "wooden_tongs",
+            "iron_tongs",
+            "steel_tongs",
+            "clay_tool_cast",
+            "unfired_tool_cast",
+            "nether_tool_cast",
+            "knappable_rock"));
+    for (String item : items) {
+      String id = "overgeared:" + item;
+      var faces = VanillaEquipmentModelTest.bakeCuboids(read(assets, id));
+      require(!faces.isEmpty(), "Visible baked geometry: " + id);
+      VanillaEquipmentModelTest.noOverlaps(id, faces);
+    }
+    System.out.println("Overgeared held equipment: " + items.size() + " native meshes baked");
   }
 
   private static JsonObject read(Path assets, String id) throws IOException {

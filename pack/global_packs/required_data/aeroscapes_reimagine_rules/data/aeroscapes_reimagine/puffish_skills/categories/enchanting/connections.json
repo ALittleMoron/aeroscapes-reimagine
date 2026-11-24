@@ -1,0 +1,26 @@
+{
+  "normal": {
+    "unidirectional": [
+      [
+        "enchanting_mastery_1",
+        "enchanting_mastery_2"
+      ],
+      [
+        "enchanting_mastery_2",
+        "enchanting_mastery_3"
+      ],
+      [
+        "enchanting_mastery_3",
+        "enchanting_mastery_4"
+      ],
+      [
+        "enchanting_mastery_1",
+        "enchanting_efficiency_1"
+      ],
+      [
+        "enchanting_efficiency_1",
+        "enchanting_efficiency_2"
+      ]
+    ]
+  }
+}

@@ -29,7 +29,10 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   static boolean shouldApplyForVersions(
       String mixinClassName, Function<String, String> versionLookup) {
     Map<String, String> versions;
-    if (mixinClassName.startsWith("dev.aeroscapes.mixin.hex")) {
+    if (mixinClassName.startsWith("dev.aeroscapes.mixin.enchanting.")) {
+      versions =
+          Map.of("immersiveenchanting", "6.0.1", "alfinolib", "1.2.0", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.hex")) {
       versions = Map.of("hexcasting", "0.11.1-19+neoforge.1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("WorkshopMechanicalCrafterMixin")) {
       versions = Map.of("overgeared", "1.21.1-1.7.1", "create", "6.0.10", "neoforge", "21.1.244");
@@ -323,8 +326,6 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
               "21.1.66",
               "neoforge",
               "21.1.244");
-    } else if (mixinClassName.endsWith("EasyMagicExperiencePointsMixin")) {
-      versions = Map.of("easymagic", "21.1.4", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PickupNotifierLanguageMixin")) {
       versions = Map.of("pickupnotifier", "21.1.1");
     } else if (mixinClassName.endsWith("ImprintSizeLanguageMixin")) {

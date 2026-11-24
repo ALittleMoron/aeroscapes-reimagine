@@ -1780,6 +1780,28 @@
     "replacement": "Информация о зачарованиях"
   },
   {
+    "language": "en_us",
+    "key": "emi_enchanting.tradeable",
+    "expected": "Villagers Trade: %s",
+    "replacement": "Vanilla trade tags: %s"
+  },
+  {
+    "key": "emi_enchanting.tradeable",
+    "expected": "Сделки с крестьянами: %s",
+    "replacement": "Обычные теги торговли: %s"
+  },
+  {
+    "language": "en_us",
+    "key": "emi_enchanting.random",
+    "expected": "Randomly Selectable: %s",
+    "replacement": "Vanilla table or random loot tags: %s"
+  },
+  {
+    "key": "emi_enchanting.random",
+    "expected": "Случайно выбираемое: %s",
+    "replacement": "Обычные теги стола или добычи: %s"
+  },
+  {
     "key": "effect.minecraft.blindness.description",
     "expected": "Ухудшает зрение и отключает способность к бегать и наносить критический урон.",
     "replacement": "Ухудшает зрение и не позволяет бегать и наносить критические удары."

@@ -1,0 +1,6 @@
+{
+  "enabled": false,
+  "levels": {
+    "1": [{"item_cost": {"item": "minecraft:air", "count": 1}}]
+  }
+}

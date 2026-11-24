@@ -5,15 +5,15 @@ import dev.aeroscapes.progression.ProfessionDiscipline;
 import net.puffish.skillsmod.api.Skill;
 import net.puffish.skillsmod.client.SkillsClientMod;
 
-public final class SmithingTalentClient {
-  private SmithingTalentClient() {}
+public final class ProfessionTalentClient {
+  private ProfessionTalentClient() {}
 
-  public static boolean learned(String node) {
+  public static boolean learned(ProfessionDiscipline tree, String node) {
     var skills = SkillsClientMod.getInstance();
     if (skills == null) return false;
     return ((SkillsClientAccessor) skills)
         .aeroscapes$screenData()
-        .getCategory(ProfessionDiscipline.SMITHING.category())
+        .getCategory(tree.category())
         .filter(
             category -> {
               var skill = category.getConfig().skills().get(node);

@@ -1,0 +1,12 @@
+name = "AlfinoLib"
+filename = "alfinolib-1.2.0-neoforge-1.21.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/I7x1hGed/versions/T3iUMjhn/alfinolib-1.2.0-neoforge-1.21.1.jar"
+hash-format = "sha512"
+hash = "3ef7500c35d7d8115bf555b0e5ef73ea077ce29a27b689f901022d2205c982dae24ea61eb0414e9013d208ab1937c782f92f8e3fb681f2aa3bebbf8a9958e75f"
+
+[update.modrinth]
+mod-id = "I7x1hGed"
+version = "T3iUMjhn"

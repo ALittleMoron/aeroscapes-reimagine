@@ -6,3 +6,10 @@
 
 [tweaks]
 "Horses Swim" = false
+
+[tools.ancient_tomes]
+"Max Limit Break Levels" = 0
+"Combine With Books" = false
+
+[experimental.game_nerfs]
+"Nerf Mending" = false

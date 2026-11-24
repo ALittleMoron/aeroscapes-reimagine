@@ -67,6 +67,13 @@ public final class AeroscapesReimagine {
       }
     }
     dev.aeroscapes.races.ProfessionTools.register(modBus);
+    dev.aeroscapes.enchanting.CurseCleansing.register();
+    if (ModList.get().isLoaded("immersiveenchanting")) {
+      dev.aeroscapes.enchanting.LegacyEnchantingTables.register(modBus);
+      dev.aeroscapes.enchanting.LibraryLoot.register(modBus);
+      dev.aeroscapes.enchanting.LibraryNetwork.register(modBus);
+      dev.aeroscapes.enchanting.LibraryTooltips.register();
+    }
     dev.aeroscapes.races.ChangeItems.register(modBus);
     dev.aeroscapes.expedition.ExpeditionDiscoveries.register(modBus);
     dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);

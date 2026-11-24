@@ -6,6 +6,10 @@ Exact files, hashes, sides and embedded/API license differences live in [`metada
 
 Keep original upstream JARs byte-identical, retain notices, and prefer independently authored field-level integration over distributing complete modified upstream resources. Bind each change to exact provider/platform versions, distinguish artifact descriptors from file-specific terms, and preserve the scope of those terms when changing a dependency or extending an integration. Runtime processing does not itself relicense source material. Re-evaluate new scope using the actual files and applicable terms; do not treat the current pack's arrangement as blanket permission for future versions or other projects.
 
+## Library enchanting in 0.9.0
+
+[Immersive Enchanting 6.0.1](https://modrinth.com/mod/immersive-enchanting/version/1axWAPS7) and [AlfinoLib 1.2.0](https://modrinth.com/mod/alfinolib/version/T3iUMjhn) are installed on both sides. The respective [Immersive Enchanting](https://www.curseforge.com/minecraft/mc-mods/immersive-enchanting/files/8598337) and [AlfinoLib](https://www.curseforge.com/minecraft/mc-mods/alfinolib/files/8596074) CurseForge files match the Modrinth binaries. Modrinth links an AlfinoLib file built for Minecraft 26.1.x. The pack pins the library's Minecraft 1.21.1 NeoForge build, which meets the dependency declared by Immersive Enchanting. Both files remain unchanged. The compatibility datapack disables natural placement of the three upstream libraries while retaining the structure and template IDs.
+
 ## Surface discoveries in 0.8.0
 
 Moog's Voyager Structures contributes carts, woodpiles and small roadside finds. Formations Overworld supplies covered wagons, shelters and masonry ruins. Feur Extension Desert and Feur Extension Jungle contribute regional scenes. Immersive Structures supplies larger, infrequent stops. The seven files, including Moog's Structure Lib and Formations, have exact matching CurseForge binaries. The original downloads and license declarations are recorded in the [notices](../pack/licenses/THIRD-PARTY-NOTICES.txt).
@@ -570,17 +574,15 @@ are owner-selected exceptions. The existing browser supplies the interface;
 the existing trade viewer retains trade pages while the new loot viewer supplies
 block, creature and chest rules. Unsupported custom functions remain visible.
 
-[Easy Anvils](https://modrinth.com/mod/easy-anvils/version/fSQSKhdF) and
-[Easy Magic](https://modrinth.com/mod/easy-magic/version/MxbfrOEv) retain MPL-2.0
+[Easy Anvils](https://modrinth.com/mod/easy-anvils/version/fSQSKhdF) retains MPL-2.0
 code and separate reserved asset terms. Display additions are independent.
 Enum aliases use declaring-class identity before generic fallback, preserving
-different meanings of FLAT. Exact FML 4.0.42 loads their SERVER defaults from
+different meanings of FLAT. Exact FML 4.0.42 loads SERVER defaults from
 global `config/`; existing world-local overrides take precedence. A narrow comparator
 adapter permits configured free standalone renames alongside the existing economy
-mod while preserving custom repair/tome results and combined costs. The enchanting
-point helper corrects float drift at integer boundaries, retaining fractional
-budgets below the next whole point, so rounding does not
-reject an otherwise affordable five-point reroll.
+mod while preserving custom repair/tome results and combined costs.
+[Easy Magic](https://modrinth.com/mod/easy-magic/version/MxbfrOEv) 21.1.4 is the
+historical source of the saved table and inventory format migrated in 0.9.0.
 [Horseman](https://modrinth.com/mod/horseman/version/jJ93aLVn) retains its mobility,
 hitching, recall and inventory mechanics. The owned mining guard restricts its
 native bonus to horse-type mounts. Native instrument aliases share the latest

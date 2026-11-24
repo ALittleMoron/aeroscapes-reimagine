@@ -11,7 +11,8 @@ public enum ProfessionDiscipline {
   MINING("mining", 2, "mining_efficiency", "mining_speed", "mining_fortune"),
   BUILDING("building", 2, "long_reach", "quick_dismantling"),
   FARMING("farming", 2, "extra_harvest", "careful_tilling"),
-  COOKING("cooking", 2, "hearty_meal", "quick_meal");
+  COOKING("cooking", 2, "hearty_meal", "quick_meal"),
+  ENCHANTING("enchanting", 8);
 
   private final ResourceLocation category;
   private final int cap;

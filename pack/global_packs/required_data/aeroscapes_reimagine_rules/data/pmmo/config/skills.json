@@ -40,6 +40,16 @@
       "displayGroupName": false,
       "showInList": true
     },
+    "enchanting": {
+      "maxLevel": 50,
+      "icon": "aeroscapes_reimagine:textures/gui/skills/talents/enchanting_mastery_1.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 11761399,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
     "farming": {
       "maxLevel": 50,
       "icon": "minecraft:textures/item/wheat.png",
@@ -109,7 +119,8 @@
         "crafting",
         "smithing",
         "building",
-        "cooking"
+        "cooking",
+        "enchanting"
       ],
       "color": 8097186
     }

@@ -1,0 +1,5 @@
+[enchantingtable]
+allowEnchantmentRemoval = false
+
+[enchantedbooks]
+disableEnchantedBookTrades = false

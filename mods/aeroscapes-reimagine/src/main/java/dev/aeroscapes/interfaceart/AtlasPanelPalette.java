@@ -106,6 +106,21 @@ public final class AtlasPanelPalette {
           0xff686868, 0xff78604a,
           0xff8c8c8c, 0xffaa9480,
           0xffffffff, 0xfff1e7d9);
+  private static final Map<Integer, Integer> ENCHANTING_COLORS =
+      Map.ofEntries(
+          Map.entry(0xff000000, 0xff291b11),
+          Map.entry(0xff141414, 0xff291b11),
+          Map.entry(0xff212121, 0xff453223),
+          Map.entry(0xff373737, 0xff362517),
+          Map.entry(0xff555555, 0xff6d533d),
+          Map.entry(0xff8b8b8b, 0xffaa9480),
+          Map.entry(0xff949494, 0xffb9a995),
+          Map.entry(0xffa0a0a0, 0xffb9a995),
+          Map.entry(0xffc6c6c6, 0xffd7c3b0),
+          Map.entry(0xffffffff, 0xfff1e7d9),
+          Map.entry(0xff49062d, 0xff362517),
+          Map.entry(0xffb92c7c, 0xff70563c),
+          Map.entry(0xffdb1387, 0xff9f7853));
   private static volatile Map<ResourceLocation, String> auditedTextures = Map.of();
 
   private AtlasPanelPalette() {}
@@ -164,6 +179,8 @@ public final class AtlasPanelPalette {
     boolean nutrientButton = texture.equals(NUTRIENT_BUTTON);
     boolean nutrientHover = texture.equals(NUTRIENT_BUTTON_HOVER);
     boolean overgeared = texture.getNamespace().equals("overgeared");
+    boolean enchanting = texture.getNamespace().equals("immersiveenchanting");
+    boolean enchantingCanvas = enchanting && texture.getPath().endsWith("background_tile.png");
     for (int y = 0; y < image.getHeight(); y++) {
       for (int x = 0; x < image.getWidth(); x++) {
         int original = image.getPixelRGBA(x, y);
@@ -194,6 +211,17 @@ public final class AtlasPanelPalette {
           changed = NUTRIENT_HOVER_COLORS.getOrDefault(original, changed);
         } else if (overgeared) {
           changed = OVERGEARED_COLORS.getOrDefault(original, changed);
+        } else if (enchantingCanvas) {
+          int luminance =
+              (54 * (original & 255) + 183 * (original >> 8 & 255) + 19 * (original >> 16 & 255))
+                  >> 8;
+          changed =
+              (original & 0xff000000)
+                  | ((36 + luminance / 3) << 16)
+                  | ((25 + luminance / 4) << 8)
+                  | (16 + luminance / 5);
+        } else if (enchanting) {
+          changed = ENCHANTING_COLORS.getOrDefault(original, changed);
         }
         if (changed != original) image.setPixelRGBA(x, y, changed);
       }

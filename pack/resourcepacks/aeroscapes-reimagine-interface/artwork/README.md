@@ -55,3 +55,7 @@ native slot placement, labels, fuel gauges, and stroke-timing colors. Render
 `assets/overgeared/textures/gui/sprites/recipe_book/`, in disabled,
 disabled-highlighted, enabled, enabled-highlighted order. The four sprites
 are original Atlas vector artwork.
+
+Immersive Enchanting 6.0.1 uses the same digest-guarded recoloring for the main
+panel, both canvas tiles and the book tab widgets. The original slot positions,
+tab geometry, enchantment icons and node graphics remain in the provider textures.

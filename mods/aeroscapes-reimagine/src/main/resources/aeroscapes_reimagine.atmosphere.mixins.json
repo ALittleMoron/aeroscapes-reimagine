@@ -82,7 +82,6 @@
     "HorseMountedMiningScopeMixin",
     "HorseRecallSnapshotMixin",
     "EasyAnvilsFreeRenameMixin",
-    "EasyMagicExperiencePointsMixin",
     "DuskCommandLanguageMixin",
     "DistantHorizonsChunkyStartupMixin"
   ]

@@ -434,6 +434,36 @@
     }
   },
   {
+    "slug": "alfinolib",
+    "name": "AlfinoLib",
+    "project_id": "I7x1hGed",
+    "version_id": "T3iUMjhn",
+    "version": "1.2.0",
+    "filename": "alfinolib-1.2.0-neoforge-1.21.1.jar",
+    "sha512": "3ef7500c35d7d8115bf555b0e5ef73ea077ce29a27b689f901022d2205c982dae24ea61eb0414e9013d208ab1937c782f92f8e3fb681f2aa3bebbf8a9958e75f",
+    "sha1": "534ec2d4319f7aed36809e60430b501f7451ac39",
+    "file_size": 273188,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": ["neoforge"],
+    "game_versions": ["1.21.1"],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "source_url": "https://github.com/alfiehanks/AlfinoLib",
+    "dependencies": [],
+    "origin": "Official Modrinth artifact required by Immersive Enchanting",
+    "status": "included",
+    "dependency_note": "The exact NeoForge descriptor requires Minecraft 1.21.1 and NeoForge 21.1.209 or newer on both sides.",
+    "artifact_audit": {
+      "source_revision": "9bd00395218cfe89d712d13e011371a87d5509e7",
+      "source_comparison": "Compared the version properties and client datapack assignment and event dispatch with the exact JAR."
+    }
+  },
+  {
     "slug": "allurement",
     "name": "Allurement",
     "project_id": "eIO12l2t",
@@ -4323,7 +4353,8 @@
         "dependency_type": "required"
       }
     ],
-    "status": "included",
+    "status": "excluded",
+    "reason": "The owner chose the Immersive Enchanting library and material workflow in place of Easy Magic. The exact old file remains the reference for saved table migration.",
     "origin": "Owner-selected second QoL group; unchanged official provider file",
     "artifact_license_note": "MPL-2.0 code, separate LICENSE-ASSETS.md retains All Rights Reserved for original assets. Provider archive unchanged; additions independently authored.",
     "artifact_audit": {
@@ -6353,6 +6384,43 @@
     "dependencies": [],
     "origin": "Official Modrinth artifact; optimization rollout audit 2026-10-26",
     "status": "included"
+  },
+  {
+    "slug": "immersive-enchanting",
+    "name": "Immersive Enchanting",
+    "project_id": "DfWQAvS4",
+    "version_id": "1axWAPS7",
+    "version": "6.0.1",
+    "filename": "beta-immersiveenchanting-6.0.1-neoforge-1.21.1.jar",
+    "sha512": "9c65fcb0544a20e122eeea25bd5d15c706315a236973e42021ab0a67d501dc963f77516014016a45acc77d765f0b6e60f40cd2abb757bcc082ec547b09b923f9",
+    "sha1": "d76ee256cb5d559446d78ded1692def6ae569ae1",
+    "file_size": 7266576,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": ["neoforge"],
+    "game_versions": ["1.21.1"],
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": "https://choosealicense.com/licenses/gpl-3.0/#"
+    },
+    "source_url": "https://github.com/alfiehanks/Immersive-Enchanting",
+    "dependencies": [
+      {
+        "version_id": "T3iUMjhn",
+        "project_id": "I7x1hGed",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "origin": "Owner-selected enchanting workflow; unchanged official Modrinth artifact",
+    "status": "included",
+    "dependency_note": "Modrinth links AlfinoLib 2rFnmATQ for Minecraft 26.1.x. The exact NeoForge descriptor requires Minecraft 1.21.1, NeoForge 21.1.209 or newer and AlfinoLib 1.2.0 or newer on both sides. The pinned compatible file is T3iUMjhn.",
+    "artifact_audit": {
+      "source_revision": "60dfb7f23c92a841e12a05089a4b8715265a353b",
+      "source_comparison": "Compared the exact NeoForge JAR with the author source for 6.0.1. The English language file differs; client text uses the distributed JAR as its reference. Modrinth classifies this file as release; its filename and the author's release announcement label it beta."
+    }
   },
   {
     "slug": "immersive-melodies",

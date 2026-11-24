@@ -247,10 +247,14 @@ https://modrinth.com/mod/jei/version/zHNxmOqp
 Advanced Loot Info and Advanced Core Info: yanny7 and contributors; MIT.
 https://modrinth.com/mod/advanced-loot-info/version/adxS0PUF
 https://modrinth.com/mod/advanced-core-info/version/xaWwatoU
-Easy Anvils and Easy Magic: Fuzs and contributors; MPL-2.0 code,
+Easy Anvils: Fuzs and contributors; MPL-2.0 code,
 original assets retain their separate LICENSE-ASSETS.md reservation.
 https://modrinth.com/mod/easy-anvils/version/fSQSKhdF
-https://modrinth.com/mod/easy-magic/version/MxbfrOEv
+Immersive Enchanting: Alfie and contributors; GPL-3.0-only. Russian translations
+are authored for this pack. Island Atlas adjusts selected original palette colors
+at runtime when the texture hash matches the official version.
+https://modrinth.com/mod/immersive-enchanting/version/1axWAPS7
+https://github.com/alfiehanks/Immersive-Enchanting/tree/60dfb7f23c92a841e12a05089a4b8715265a353b
 Horseman: Mortuusars and contributors; MIT.
 https://modrinth.com/mod/horseman/version/jJ93aLVn
 Simple Backups: MelanX and contributors; Apache-2.0.

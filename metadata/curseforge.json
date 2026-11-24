@@ -20,6 +20,36 @@
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
     },
     {
+      "slug": "alfinolib",
+      "primary_project_id": "I7x1hGed",
+      "primary_sha512": "3ef7500c35d7d8115bf555b0e5ef73ea077ce29a27b689f901022d2205c982dae24ea61eb0414e9013d208ab1937c782f92f8e3fb681f2aa3bebbf8a9958e75f",
+      "status": "hosted",
+      "project_id": 1554698,
+      "file_id": 8596074,
+      "filename": "alfinolib-1.2.0-neoforge-1.21.1.jar",
+      "sha512": "3ef7500c35d7d8115bf555b0e5ef73ea077ce29a27b689f901022d2205c982dae24ea61eb0414e9013d208ab1937c782f92f8e3fb681f2aa3bebbf8a9958e75f",
+      "sha1": "534ec2d4319f7aed36809e60430b501f7451ac39",
+      "file_size": 273188,
+      "parity": "exact",
+      "review": {},
+      "verification": "The official CurseForge CDN download matches the selected Modrinth SHA-512."
+    },
+    {
+      "slug": "immersive-enchanting",
+      "primary_project_id": "DfWQAvS4",
+      "primary_sha512": "9c65fcb0544a20e122eeea25bd5d15c706315a236973e42021ab0a67d501dc963f77516014016a45acc77d765f0b6e60f40cd2abb757bcc082ec547b09b923f9",
+      "status": "hosted",
+      "project_id": 1354719,
+      "file_id": 8598337,
+      "filename": "beta-immersiveenchanting-6.0.1-neoforge-1.21.1.jar",
+      "sha512": "9c65fcb0544a20e122eeea25bd5d15c706315a236973e42021ab0a67d501dc963f77516014016a45acc77d765f0b6e60f40cd2abb757bcc082ec547b09b923f9",
+      "sha1": "d76ee256cb5d559446d78ded1692def6ae569ae1",
+      "file_size": 7266576,
+      "parity": "exact",
+      "review": {},
+      "verification": "The official CurseForge CDN download matches the selected Modrinth SHA-512."
+    },
+    {
       "slug": "allurement",
       "primary_project_id": "eIO12l2t",
       "primary_sha512": "18fb094e60d8667caaff1eeb2c20364346cb97f42b3c8ea17982b1410ba25bb615dab642f3524d1c8b1603a246d5400d97d3bfb6931a85b9ba2873616bb14f65",

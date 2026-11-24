@@ -678,6 +678,23 @@ public final class WorldgenRegression {
       BackupRoundtripRegression.start(level, backupRoundtrip);
       return;
     }
+    if (Boolean.getBoolean("aeroscapes.regression.legacyEnchantingTables")) {
+      EnchantingTableMigrationRegression.verify(level);
+      LOGGER.info("Enchanting table migration regression passed");
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.libraryEnchanting")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    LibraryEnchantingRegression.verify(level);
+                    LOGGER.info("Library enchanting regression passed");
+                  }));
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.qolWorkstations")) {
       QolWorkstationReadiness.start(
           level,

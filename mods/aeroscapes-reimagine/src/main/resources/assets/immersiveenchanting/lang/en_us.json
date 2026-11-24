@@ -1,0 +1,18 @@
+{
+  "immersiveenchanting.configuration.title": "%s Settings",
+  "immersiveenchanting.configuration.section.immersiveenchanting.client.toml": "Client settings",
+  "immersiveenchanting.configuration.section.immersiveenchanting.client.toml.title": "%s Client Settings",
+  "immersiveenchanting.configuration.section.immersiveenchanting.server.toml": "Server settings",
+  "immersiveenchanting.configuration.section.immersiveenchanting.server.toml.title": "%s Server Settings",
+  "immersiveenchanting.config.disable_ancient_book_requirement.tooltip": "Allow enchanting without Ancient Books in the library. Materials and experience are still required.",
+  "immersiveenchanting.config.bookshelf_search_x.tooltip": "How far in blocks to search for nearby chiseled bookshelves on the X axis.",
+  "immersiveenchanting.config.bookshelf_search_y.tooltip": "How high in blocks above the table to search for chiseled bookshelves on the Y axis.",
+  "immersiveenchanting.config.bookshelf_search_z.tooltip": "How far in blocks to search for nearby chiseled bookshelves on the Z axis.",
+  "immersiveenchanting.config.show_added_by_tooltip.tooltip": "Show the name of the mod that added the enchantment in the Ancient Book tooltip.",
+  "immersiveenchanting.config.allow_enchantment_removal.tooltip": "Allow enchantments to be removed at the enchanting table.",
+  "immersiveenchanting.config.item_carousel_speed.tooltip": "Time in milliseconds between material options in an enchanting table tooltip.",
+  "immersiveenchanting.config.play_node_hover_sounds.tooltip": "Play a sound when the pointer moves over a node in the enchanting table.",
+  "immersiveenchanting.config.enchanted_book_loot_mode.tooltip": "Controls replacement or removal of enchanted books in native Immersive Enchanting loot. This pack supplies its own loot rules.",
+  "immersiveenchanting.config.obfuscate_locked_enchantments.tooltip": "Hide details of enchantments the player has yet to unlock in the enchanting table.",
+  "immersiveenchanting.config.disable_enchanted_book_trades.tooltip": "Removes the ordinary enchanted book offers. This pack restricts their enchantment types and levels."
+}
