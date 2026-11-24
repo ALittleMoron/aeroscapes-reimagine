@@ -1,0 +1,20 @@
+{
+  "description": {"translate": "enchantment.aeroscapes_reimagine.dull_edge"},
+  "supported_items": "#minecraft:enchantable/mining",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {"base": 25, "per_level_above_first": 0},
+  "max_cost": {"base": 50, "per_level_above_first": 0},
+  "anvil_cost": 8,
+  "slots": ["mainhand"],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "id": "aeroscapes_reimagine:dull_edge",
+        "attribute": "minecraft:player.block_break_speed",
+        "amount": -0.20,
+        "operation": "add_multiplied_total"
+      }
+    ]
+  }
+}

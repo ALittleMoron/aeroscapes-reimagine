@@ -1,4 +1,8 @@
 {
   "replace": false,
-  "entries": ["aeroscapes_reimagine:starter_spell_scroll", "aeroscapes_reimagine:library_books"]
+  "entries": [
+    "aeroscapes_reimagine:starter_spell_scroll",
+    "aeroscapes_reimagine:library_books",
+    "aeroscapes_reimagine:cursed_equipment"
+  ]
 }

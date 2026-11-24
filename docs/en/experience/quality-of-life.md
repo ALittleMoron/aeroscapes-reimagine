@@ -78,6 +78,10 @@ Put equipment in the table and select its next level. The menu shows the materia
 
 Anvils apply an ordinary enchanted book to equipment within your mastery. To add or raise an advanced enchantment using a donor book, equipment or a Quark tome, carry the corresponding Ancient Book at the resulting level or higher. Two books cannot be combined. A Holy Rune in the bottom slot of a grindstone removes curses from the item in the top slot while keeping its other enchantments and quality.
 
+Open the equipment's or Holy Rune's uses in EMI and select Grinding to see the cleansing recipe.
+
+Enchanted equipment from the Creeping Crypt, Lone Citadel and Toxic Lair vaults sometimes carries a curse. A curse can also appear on a weapon, tool or piece of armor finished by hand. Read the item tooltip to see what it affects. Reforging changes quality and leaves curses in place.
+
 ## Maps and recovery
 
 Xaero’s World Map, Minimap and personal waypoints help record the landscape and mark places to revisit. Creature radar is disabled. In survival without cheats, waypoint teleportation is unavailable; a marker helps navigation while the journey remains part of play.

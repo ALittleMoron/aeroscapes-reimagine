@@ -3,6 +3,7 @@ package dev.aeroscapes.equipment.workshop;
 import com.herobrot.tieredneo.api.ModifierUtils;
 import com.herobrot.tieredneo.api.TieredItemTags;
 import com.herobrot.tieredneo.api.TieredNeoAPI;
+import dev.aeroscapes.enchanting.EquipmentCurses;
 import dev.aeroscapes.equipment.ReforgeProfiles;
 import dev.aeroscapes.progression.PracticeActions;
 import harmonised.pmmo.api.APIUtils;
@@ -31,12 +32,13 @@ public final class WorkshopQuality {
   private static void finish(Player player, ItemStack result, boolean replaceProvisionalTier) {
     if (!WorkshopManufacture.finishedEquipment(result)) return;
     Object workmanship = clearNativeQuality(result);
-    if (!PracticeActions.personal(player) || player.level().isClientSide()) return;
+    if (!(player instanceof ServerPlayer serverPlayer) || !PracticeActions.personal(player)) return;
+    EquipmentCurses.rollManufactured(result, player.registryAccess(), player.getRandom());
     if (result.is(TieredItemTags.MODIFIER_RESTRICTED)) return;
     // Hero's Tiered assigns a provisional tier before the shift-click transfer.
     if (replaceProvisionalTier) clearProvisionalTier(result);
     if (result.has(TieredNeoAPI.tierComponentType())) return;
-    long level = APIUtils.getAllLevels((ServerPlayer) player).getOrDefault("smithing", 0L);
+    long level = APIUtils.getAllLevels(serverPlayer).getOrDefault("smithing", 0L);
     var id =
         ReforgeProfiles.rollCrafted(
             result.getItem(), Math.clamp(level, 0, 50) / 10 + score(workmanship));

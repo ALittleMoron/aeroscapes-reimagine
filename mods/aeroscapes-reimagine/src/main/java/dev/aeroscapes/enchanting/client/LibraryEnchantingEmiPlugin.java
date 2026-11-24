@@ -46,10 +46,12 @@ public final class LibraryEnchantingEmiPlugin implements EmiPlugin {
 
   @Override
   public void register(EmiRegistry registry) {
-    if (!ModList.get().isLoaded("immersiveenchanting")) return;
     var level = Minecraft.getInstance().level;
+    if (level == null) return;
+    CurseCleansingEmiRecipes.register(registry, level.registryAccess());
+    if (!ModList.get().isLoaded("immersiveenchanting")) return;
     CostRegistry costs = CostRegistry.client();
-    if (level == null || costs == null) return;
+    if (costs == null) return;
     var workstation = EmiStack.of(Items.ENCHANTING_TABLE);
     var category = new EmiRecipeCategory(id("library_enchanting"), workstation);
     registry.addCategory(category);

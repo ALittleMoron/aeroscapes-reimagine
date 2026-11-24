@@ -91,6 +91,7 @@ final class LibraryEnchantingRegression {
                 .getOrThrow(Enchantments.SHARPNESS);
         verifyApplication(player, menu, Objects.requireNonNull(shelf), sharpness);
         verifyCopy(player, menu, sharpness);
+        EquipmentCurseRegression.verify(level, player, tablePos);
       } finally {
         player.closeContainer();
         ProgressionRegression.listPlayer(level, player, false);

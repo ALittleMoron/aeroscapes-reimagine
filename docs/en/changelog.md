@@ -6,6 +6,13 @@ status: available
 
 ## 0.9.0
 
+### 0.8.3
+
+- Enchanted equipment from the Creeping Crypt, Lone Citadel and Toxic Lair vaults can carry a curse that slows attacks, mining or movement.
+- Finished equipment made by hand can rarely gain a curse. A Holy Rune cleanses it at a grindstone while preserving quality and beneficial enchantments.
+- EMI shows how to cleanse equipment in the grindstone category when browsing uses for the equipment or a Holy Rune.
+- The three new curses have disabled entries in Immersive Enchanting's cost catalog, so joining a world produces no missing-cost warning for them.
+
 ### 0.8.2
 
 - Immersive Enchanting replaces random table offers. Chiseled bookshelves hold reusable knowledge, and ancient books from expeditions unlock enchantments through their recorded level.

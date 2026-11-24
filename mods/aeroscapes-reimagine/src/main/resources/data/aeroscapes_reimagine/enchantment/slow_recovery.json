@@ -1,0 +1,20 @@
+{
+  "description": {"translate": "enchantment.aeroscapes_reimagine.slow_recovery"},
+  "supported_items": "#aeroscapes_reimagine:curse_melee_weapons",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {"base": 25, "per_level_above_first": 0},
+  "max_cost": {"base": 50, "per_level_above_first": 0},
+  "anvil_cost": 8,
+  "slots": ["mainhand"],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "id": "aeroscapes_reimagine:slow_recovery",
+        "attribute": "minecraft:generic.attack_speed",
+        "amount": -0.15,
+        "operation": "add_multiplied_total"
+      }
+    ]
+  }
+}

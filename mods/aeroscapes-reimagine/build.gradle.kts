@@ -612,6 +612,20 @@ val tradeRecipeContractTest =
     mainClass = "dev.aeroscapes.qualityoflife.TradeRecipeContractTest"
   }
 
+val curseCleansingEmiTest =
+  tasks.register<JavaExec>("curseCleansingEmiTest") {
+    group = "verification"
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath =
+      policy.runtimeClasspath +
+        files(
+          tasks
+            .named<net.neoforged.nfrtgradle.CreateMinecraftArtifacts>("createMinecraftArtifacts")
+            .flatMap { it.resourcesArtifact },
+        )
+    mainClass = "dev.aeroscapes.enchanting.client.CurseCleansingEmiTest"
+  }
+
 val ladleAssemblyOutputsTest =
   tasks.register<JavaExec>("ladleAssemblyOutputsTest") {
     group = "verification"
@@ -1190,6 +1204,7 @@ tasks.check {
     soundCaptionsTest,
     mapLayerSelectionTest,
     tradeRecipeContractTest,
+    curseCleansingEmiTest,
     ladleAssemblyOutputsTest,
     managedBackupArchiveTest,
     distantHorizonsBackupPolicyTest,

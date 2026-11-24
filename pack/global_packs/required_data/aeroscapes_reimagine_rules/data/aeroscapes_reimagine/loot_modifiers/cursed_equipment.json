@@ -1,0 +1,16 @@
+{
+  "type": "aeroscapes_reimagine:cursed_equipment",
+  "conditions": [
+    {
+      "condition": "minecraft:any_of",
+      "terms": [
+        {"condition": "neoforge:loot_table_id", "loot_table_id": "nova_structures:chests/creeping_crypt/vault_creeping"},
+        {"condition": "neoforge:loot_table_id", "loot_table_id": "nova_structures:chests/lone_citadel/c_vault"},
+        {"condition": "neoforge:loot_table_id", "loot_table_id": "nova_structures:chests/lone_citadel/c_vault_boss"},
+        {"condition": "neoforge:loot_table_id", "loot_table_id": "nova_structures:chests/toxic_lair/toxic_vault"},
+        {"condition": "neoforge:loot_table_id", "loot_table_id": "nova_structures:chests/toxic_lair/toxic_ominous_vault"}
+      ]
+    },
+    {"condition": "minecraft:random_chance", "chance": 0.35}
+  ]
+}

@@ -18,6 +18,8 @@
     "ProfessionAnvilMixin",
     "ProfessionEasyAnvilMixin",
     "GrindstoneCleansingSlotMixin",
+    "RandomLootEnchantmentMixin",
+    "LevelledLootEnchantmentMixin",
     "ProfessionCraftingMixin",
     "CraftingResultPlayerAccess",
     "ExpeditionAccessoryResultMixin",

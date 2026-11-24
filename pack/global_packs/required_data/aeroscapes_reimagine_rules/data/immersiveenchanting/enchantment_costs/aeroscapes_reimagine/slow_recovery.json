@@ -1,0 +1,6 @@
+{
+  "enabled": false,
+  "levels": {
+    "1": [{"item_cost": {"item": "minecraft:copper_ingot", "count": 1}, "xp_levels": 2}]
+  }
+}

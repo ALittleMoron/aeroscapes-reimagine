@@ -68,6 +68,7 @@ public final class AeroscapesReimagine {
     }
     dev.aeroscapes.races.ProfessionTools.register(modBus);
     dev.aeroscapes.enchanting.CurseCleansing.register();
+    dev.aeroscapes.enchanting.CursedEquipmentLoot.register(modBus);
     if (ModList.get().isLoaded("immersiveenchanting")) {
       dev.aeroscapes.enchanting.LegacyEnchantingTables.register(modBus);
       dev.aeroscapes.enchanting.LibraryLoot.register(modBus);

@@ -1,5 +1,6 @@
 package dev.aeroscapes.enchanting;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.EnchantmentTags;
@@ -10,7 +11,7 @@ import net.neoforged.neoforge.event.GrindstoneEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 
 public final class CurseCleansing {
-  private static final ResourceLocation HOLY_RUNE =
+  public static final ResourceLocation HOLY_RUNE =
       ResourceLocation.fromNamespaceAndPath("irons_spellbooks", "holy_rune");
 
   private CurseCleansing() {}
@@ -46,7 +47,7 @@ public final class CurseCleansing {
     event.setXp(0);
   }
 
-  private static boolean isCursed(ItemStack input) {
+  static boolean isCursed(ItemStack input) {
     return EnchantmentHelper.getEnchantmentsForCrafting(input).keySet().stream()
         .anyMatch(holder -> holder.is(EnchantmentTags.CURSE));
   }
@@ -56,5 +57,13 @@ public final class CurseCleansing {
       event
           .getToolTip()
           .add(Component.translatable("tooltip.aeroscapes_reimagine.curse_cleansing"));
+    if (EnchantmentHelper.getEnchantmentsForCrafting(event.getItemStack()).keySet().stream()
+        .anyMatch(effect -> effect.is(EquipmentCurses.SOURCED))) {
+      event
+          .getToolTip()
+          .add(
+              Component.translatable("tooltip.aeroscapes_reimagine.cursed_equipment")
+                  .withStyle(ChatFormatting.GRAY));
+    }
   }
 }
