@@ -374,6 +374,54 @@ def test_docs_deploy_guard_checks_commit_without_editing_checkout(
     assert output.read_text() == f"deploy={expected}\n"
 
 
+@pytest.mark.parametrize("visible", [True, False], ids=["delayed-visibility", "timeout"])
+def test_docs_deploy_guard_waits_for_the_current_pages_artifact(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, visible: bool
+) -> None:
+    from aeroscapes_pack import release_docs
+    from aeroscapes_pack.github_api import GitHub
+
+    output = tmp_path / "output"
+    for name, value in {
+        "CI": "true",
+        "GITHUB_REPOSITORY": "owner/repo",
+        "GITHUB_TOKEN": "test",
+        "GITHUB_RUN_ID": "123",
+        "DOCS_COMMIT": "abc",
+        "DOCS_ARTIFACT_NAME": "github-pages-2",
+        "DOCS_ARTIFACT_ID": "456",
+        "GITHUB_OUTPUT": str(output),
+    }.items():
+        monkeypatch.setenv(name, value)
+    calls: list[str] = []
+    delays: list[float] = []
+
+    def lookup(_github: GitHub, method: str, path: str) -> object:
+        assert method == "GET"
+        calls.append(path)
+        if path == "/git/ref/heads/main":
+            return {"object": {"sha": "abc"}}
+        assert path == "/actions/runs/123/artifacts?name=github-pages-2"
+        if len(calls) == 2:
+            return {"artifacts": [{"id": 111, "name": "github-pages-2", "expired": False}]}
+        if visible and len(calls) == 3:
+            return {"artifacts": [{"id": 456, "name": "github-pages-2", "expired": False}]}
+        return {"artifacts": []}
+
+    monkeypatch.setattr(GitHub, "json", lookup)
+    monkeypatch.setattr("time.sleep", delays.append)
+
+    assert release_docs.main(["--check-current"]) == (0 if visible else 1)
+    if visible:
+        assert calls[-1] == "/git/ref/heads/main"
+        assert len(delays) >= 2
+        assert output.read_text() == "deploy=true\n"
+    else:
+        assert "/git/ref/heads/main" not in calls
+        assert 0 < sum(delays) <= 60
+        assert not output.exists()
+
+
 def test_private_repository_downloads_are_not_announced_as_public(
     tmp_path: Path, monkeypatch: pytest.MonkeyPatch
 ) -> None:

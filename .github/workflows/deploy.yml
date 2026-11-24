@@ -7,24 +7,25 @@ name: Deploy documentation
         type: string
         required: true
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
       contents: read
-      pages: write
-      id-token: write
     env:
       DOCS_SITE: https://${{ github.repository_owner }}.github.io
       DOCS_BASE: /${{ github.event.repository.name }}/
       DOCS_COMMIT: ${{ inputs.commit }}
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      DOCS_ARTIFACT_NAME: github-pages-${{ github.run_attempt }}
+    outputs:
+      deploy: ${{ steps.status.outputs.deploy }}
+      artifact_id: ${{ steps.upload.outputs.artifact_id }}
+      artifact_name: ${{ env.DOCS_ARTIFACT_NAME }}
     steps:
       # checkout v7.0.1
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
@@ -51,15 +52,46 @@ jobs:
         if: ${{ steps.status.outputs.deploy == 'true' }}
         run: make docs-format docs-check
       # upload-pages-artifact v5.0.0
-      - uses: >-
+      - id: upload
+        uses: >-
           actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
         if: ${{ steps.status.outputs.deploy == 'true' }}
         with:
+          name: ${{ env.DOCS_ARTIFACT_NAME }}
           path: tools/docs/dist
-      - name: Check main immediately before deployment
+
+  deploy:
+    needs: build
+    if: ${{ needs.build.outputs.deploy == 'true' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      actions: read
+      contents: read
+      pages: write
+      id-token: write
+    env:
+      DOCS_COMMIT: ${{ inputs.commit }}
+      DOCS_ARTIFACT_NAME: ${{ needs.build.outputs.artifact_name }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      # checkout v7.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ inputs.commit }}
+          persist-credentials: false
+      # setup-uv v10.3.3
+      - uses: astral-sh/setup-uv@68559e99cc807c1eb7e9238fd43a15bba460eec2
+        with:
+          version: '0.13.7'
+          enable-cache: false
+      - name: Wait for Pages artifact and check main
         id: current
-        if: ${{ steps.status.outputs.deploy == 'true' }}
+        timeout-minutes: 2
         env:
+          DOCS_ARTIFACT_ID: ${{ needs.build.outputs.artifact_id }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: make release-docs-current
       - name: Publish documentation
@@ -67,3 +99,5 @@ jobs:
         if: ${{ steps.current.outputs.deploy == 'true' }}
         # deploy-pages v5.0.1
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346
+        with:
+          artifact_name: ${{ env.DOCS_ARTIFACT_NAME }}

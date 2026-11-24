@@ -65,6 +65,7 @@ jobs:
           && vars.PAGES_ENABLED == 'true' }}
     needs: reconcile
     permissions:
+      actions: read
       contents: read
       pages: write
       id-token: write
