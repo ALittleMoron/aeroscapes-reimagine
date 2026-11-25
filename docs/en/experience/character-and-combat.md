@@ -6,6 +6,12 @@ status: partial
 
 Your race sets your size, stamina and innate traits. Your class supplies a combat specialty and a starting talent. Practice earns skill levels and talent points. Eight preparation slots hold learned spells, innate abilities, Amulet Step and items carrying Hex programs. Equipment can gain a quality rank through crafting, loot or reforging.
 
+## Melee attacks
+
+With a sword, axe, knife or other supported melee weapon, aim and press attack. Damage is dealt after the wind-up. A sword alternates sweeping cuts and a thrust. Kitchen knives and daggers follow a short jab, a side slash and an overhead strike. An axe has a shorter reach and a narrower swing. Wait between attacks to start the sequence over. The attack range in the weapon's tooltip includes any range bonus from reforging.
+
+One-handed weapons can be paired to alternate hands. A shield still blocks when held up. To change attack controls, open Better Combat in the Mods menu or look for its category under Controls. Holding attack repeats swings by default. You can assign a key to feint and cancel a wind-up.
+
 ## Expedition discoveries
 
 Rare study scrolls can turn up in vaults and shared boss loot. Use a scroll in hand to learn its discovery. Your character keeps the discovery after death and can trade any further copies.

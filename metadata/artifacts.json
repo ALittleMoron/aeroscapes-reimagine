@@ -1100,6 +1100,52 @@
     "artifact_declared_license": "Descriptor MIT; official source LICENSE: code MIT, art/textures/models/sounds/structures All Rights Reserved, unchanged modpack inclusion permitted."
   },
   {
+    "slug": "better-combat",
+    "name": "Better Combat",
+    "project_id": "5sy6g3kz",
+    "version_id": "VhIOvcXP",
+    "version": "2.4.0+1.21.1-neoforge",
+    "filename": "bettercombat-neoforge-2.4.0+1.21.1.jar",
+    "sha512": "db24730a42ae7e2dd546ee031d2f5e0dd6f9896418417a529fa21a44121761ebb29c8b8299db8f20500f7497f7b60a7d793b66c93abf37a8ea0aa3edafd80eb6",
+    "sha1": "bacbc8c86671663e9998b141c5732250c1f4d4fb",
+    "file_size": 1045389,
+    "release_type": "release",
+    "side": "both",
+    "kind": "mod",
+    "loaders": [
+      "neoforge"
+    ],
+    "game_versions": [
+      "1.21",
+      "1.21.1"
+    ],
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://github.com/ZsoltMolnarrr/BetterCombat/blob/e4a6a4a2ae109045d7a1eae334728bd726c305ea/LICENSE"
+    },
+    "source_url": "https://github.com/ZsoltMolnarrr/BetterCombat",
+    "dependencies": [
+      {
+        "project_id": "gedNE4y2",
+        "version_id": null,
+        "dependency_type": "required"
+      },
+      {
+        "project_id": "9s6osm5g",
+        "version_id": null,
+        "dependency_type": "required"
+      }
+    ],
+    "status": "included",
+    "origin": "Owner-selected melee integration for 0.8.4",
+    "provider_environment": {
+      "client": "required",
+      "server": "required"
+    },
+    "embedded_license": "All Rights Reserved"
+  },
+  {
     "slug": "better-clouds",
     "name": "Better Clouds",
     "project_id": "5srFLIaK",

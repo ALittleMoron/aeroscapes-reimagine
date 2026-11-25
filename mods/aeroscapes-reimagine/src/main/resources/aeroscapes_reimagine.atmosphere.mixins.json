@@ -17,6 +17,10 @@
     "CatnipConfigValueMixin",
     "CatnipConfigTitleMixin",
     "CatnipConfigEnumMixin",
+    "BetterCombatConfigEnumMixin",
+    "BetterCombatShipAimMixin",
+    "BetterCombatCastingMixin",
+    "BetterCombatThirdPersonMixin",
     "PrecipitationParticleMixin",
     "RainHeightMixin",
     "RainWindMixin",
@@ -51,6 +55,8 @@
     "EasyAnvilsFormattingGuideMixin",
     "PunchyEmfMixin",
     "PunchyShortBladeAttackMixin",
+    "PunchyBetterCombatImpactMixin",
+    "PunchyBetterCombatBladeClipMixin",
     "PunchyMapMixin",
     "QuiverEmfMixin",
     "PuzzleLoadingOverlayMixin",
@@ -78,6 +84,7 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "BetterCombatReachMixin",
     "MiscTranslationFallbackMixin",
     "HorseMountedMiningScopeMixin",
     "HorseRecallSnapshotMixin",

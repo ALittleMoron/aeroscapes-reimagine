@@ -1,4 +1,9 @@
 {
+  "text.autoconfig.bettercombat.category.client": "Client",
+  "mod_menu.descriptionTranslation.bettercombat": "Adds timed melee attacks, weapon combos and distinct attack ranges.",
+  "aeroscapes_reimagine.config.bettercombat.first_person.YES": "Yes",
+  "aeroscapes_reimagine.config.bettercombat.first_person.NO": "No",
+  "aeroscapes_reimagine.config.bettercombat.first_person.AUTO": "Automatic",
   "emi.category.aeroscapes_reimagine.library_enchanting": "Library Enchanting",
   "aeroscapes_reimagine.enchanting.emi.library": "Library level %s or higher",
   "aeroscapes_reimagine.enchanting.emi.requirements": "Library %s+ · Mastery %s",

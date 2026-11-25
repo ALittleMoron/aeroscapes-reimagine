@@ -28,6 +28,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 import java.util.zip.ZipFile;
+import net.minecraft.client.model.PlayerModel;
+import net.minecraft.client.model.geom.builders.CubeDeformation;
+import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.block.model.ItemTransform;
 import net.minecraft.world.entity.HumanoidArm;
 import org.joml.Matrix4f;
@@ -93,6 +96,7 @@ public final class AtmosphereContractTest {
   }
 
   public static void main(String[] arguments) throws IOException, ReflectiveOperationException {
+    betterCombatThirdPerson();
     dieselVersionGates();
     swordCastPresentation();
     shortBladeAttack();
@@ -227,6 +231,62 @@ public final class AtmosphereContractTest {
     loadingOverlay();
     System.out.println(
         "Atmosphere: quiver composition, precipitation scope and native API contracts passed");
+  }
+
+  private static void betterCombatThirdPerson() {
+    for (String part : List.of("body", "leftLeg", "rightLeg")) {
+      require(
+          !BetterCombatThirdPerson.keepsViewAdjustment(part, false),
+          "Third-person aim keeps " + part + " grounded");
+      require(
+          BetterCombatThirdPerson.keepsViewAdjustment(part, true),
+          "Native first-person aim keeps " + part);
+    }
+    for (String part : List.of("leftArm", "rightArm", "torso")) {
+      require(
+          BetterCombatThirdPerson.keepsViewAdjustment(part, false),
+          "Third-person attack can move " + part);
+    }
+    for (boolean slim : new boolean[] {false, true}) {
+      var model =
+          new PlayerModel<>(
+              LayerDefinition.create(PlayerModel.createMesh(CubeDeformation.NONE, slim), 64, 64)
+                  .bakeRoot(),
+              slim);
+      model.rightArm.setRotation(-1.15F, 0.21F, 0.33F);
+      model.leftArm.setRotation(-0.45F, -0.36F, -0.09F);
+      model.body.setRotation(0.13F, 0.47F, 0.08F);
+      model.rightArm.setPos(-5, 2, -1);
+      model.leftArm.setPos(5, 2, 1);
+      var attack = ThirdPersonArmPose.captureUpperBody(model);
+      model.body.setRotation(0, 0, 0);
+      model.leftArm.setRotation(0, 0, 0);
+      model.rightArm.setRotation(0, 0, 0);
+      model.rightArm.setPos(-5, 2, 0);
+      model.leftArm.setPos(5, 2, 0);
+      model.head.xRot = -1.5F;
+      model.leftLeg.xRot = 0.25F;
+      model.rightLeg.xRot = -0.25F;
+      attack.forEach(ThirdPersonArmPose.Part::restore);
+      require(
+          model.rightArm.xRot == -1.15F
+              && model.rightArm.z == -1
+              && model.rightSleeve.xRot == -1.15F
+              && model.rightSleeve.z == -1,
+          "Active swing keeps right arm, grip origin and sleeve");
+      require(
+          model.leftArm.yRot == -0.36F
+              && model.leftArm.z == 1
+              && model.leftSleeve.yRot == -0.36F
+              && model.leftSleeve.z == 1,
+          "Active swing keeps left arm, grip origin and sleeve");
+      require(
+          model.body.yRot == 0.47F && model.jacket.yRot == 0.47F,
+          "Torso and jacket follow the same attack");
+      require(
+          model.head.xRot == -1.5F && model.leftLeg.xRot == 0.25F && model.rightLeg.xRot == -0.25F,
+          "Late attack pose preserves head aim and both legs");
+    }
   }
 
   private static void dieselVersionGates() {

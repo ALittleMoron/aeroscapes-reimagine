@@ -1,6 +1,6 @@
 {
   "enableMod": true,
-  "bettercombatCompat": false,
+  "bettercombatCompat": true,
   "enableCameraAnimations": false,
   "enableCustomWalk": false,
   "enableSprintArmSwing": false,

@@ -1,5 +1,15 @@
 [
   {
+    "key": "text.autoconfig.bettercombat.option.client.isAttackInsteadOfMineWhenEnemiesCloseEnabled.@Tooltip",
+    "expected": "Атаковать вместо добычи при нажатии ПКМ, когда враги находятся вблизи для удара.",
+    "replacement": "Если противник в пределах досягаемости, нажатие кнопки атаки наносит удар вместо добычи блока."
+  },
+  {
+    "key": "keybinds.bettercombat.feint",
+    "expected": "Отвлекающий удар",
+    "replacement": "Ложный замах"
+  },
+  {
     "key": "death.attack.allurement.shockwave",
     "expected": "%1$s был растоптан",
     "replacement": "%1$s растоптан: %2$s"

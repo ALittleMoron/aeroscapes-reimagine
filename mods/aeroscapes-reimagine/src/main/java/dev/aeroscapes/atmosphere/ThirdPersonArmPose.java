@@ -58,10 +58,11 @@ public final class ThirdPersonArmPose {
       AbstractClientPlayer player,
       HumanoidArm arm,
       float attackWeight,
+      boolean nativeCombatAttack,
       float partialTick,
       Runnable render) {
     var previous = ACTIVE.get();
-    var frame = new Frame(player, arm, attackWeight, partialTick);
+    var frame = new Frame(player, arm, attackWeight, nativeCombatAttack, partialTick);
     ACTIVE.set(frame);
     try {
       render.run();
@@ -90,6 +91,7 @@ public final class ThirdPersonArmPose {
     final AbstractClientPlayer player;
     final HumanoidArm side;
     final float attackWeight;
+    final boolean nativeCombatAttack;
     final float partialTick;
     PlayerModel<?> model;
     List<Part> nativePose = List.of();
@@ -97,19 +99,27 @@ public final class ThirdPersonArmPose {
     EMFEntityRenderState state;
     EMFBipedPose beforeBiped;
 
-    Frame(AbstractClientPlayer player, HumanoidArm side, float attackWeight, float partialTick) {
+    Frame(
+        AbstractClientPlayer player,
+        HumanoidArm side,
+        float attackWeight,
+        boolean nativeCombatAttack,
+        float partialTick) {
       this.player = player;
       this.side = side;
       this.attackWeight = attackWeight;
+      this.nativeCombatAttack = nativeCombatAttack;
       this.partialTick = partialTick;
     }
 
     boolean attacking() {
-      return attackWeight > 0;
+      return nativeCombatAttack || attackWeight > 0;
     }
 
     void capture() {
-      if (attacking()) {
+      if (nativeCombatAttack) {
+        nativePose = captureUpperBody(model);
+      } else if (attacking()) {
         // NEA smooths the model arms during setupAnim. Sample the action layer directly so
         // that its sharpest movement uses the same clock as the held item's grip rotation.
         var pose = ShortBladeAttackPresentation.samplePose(player, partialTick);
@@ -135,7 +145,9 @@ public final class ThirdPersonArmPose {
       beforePose = nativePose.stream().map(part -> part.captureCurrent()).toList();
       state = activeState;
       beforeBiped = state.getBipedPose();
-      if (attacking()) {
+      if (nativeCombatAttack) {
+        for (Part part : nativePose) part.restore();
+      } else if (attacking()) {
         // Keep the current torso height and translation from locomotion. Move the shoulders
         // with it while taking over the arm and torso angles from the action clip.
         for (Part part : nativePose) {
@@ -156,7 +168,20 @@ public final class ThirdPersonArmPose {
     }
   }
 
-  private record Part(ModelPart part, PartPose pose) {
+  static List<Part> captureUpperBody(PlayerModel<?> model) {
+    var body = model.body.storePose();
+    var right = model.rightArm.storePose();
+    var left = model.leftArm.storePose();
+    return List.of(
+        new Part(model.body, body),
+        new Part(model.jacket, body),
+        new Part(model.rightArm, right),
+        new Part(model.rightSleeve, right),
+        new Part(model.leftArm, left),
+        new Part(model.leftSleeve, left));
+  }
+
+  record Part(ModelPart part, PartPose pose) {
     Part captureCurrent() {
       return new Part(part, part.storePose());
     }

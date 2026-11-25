@@ -6,6 +6,13 @@ status: available
 
 ## 0.9.0
 
+### 0.8.4
+
+- Better Combat adds timed melee swings and weapon combos. Punchy shows attacks in first person, and Better Combat animates them in third person.
+- Kitchen knives and daggers use a jab, side slash and overhead strike. Melee attack volumes follow the view when a Sable ship rotates.
+- Reforging bonuses to melee reach add to the weapon's own reach.
+- Third-person attacks keep their arm and torso motion with Fresh Animations. Looking up or down keeps the player's feet under them.
+
 ### 0.8.3
 
 - Enchanted equipment from the Creeping Crypt, Lone Citadel and Toxic Lair vaults can carry a curse that slows attacks, mining or movement.

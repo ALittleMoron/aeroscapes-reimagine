@@ -23,6 +23,7 @@ import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.Mth;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.HumanoidArm;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
@@ -38,6 +39,42 @@ import org.jetbrains.annotations.Nullable;
 
 @EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
 public final class ShortBladeAttackPresentation {
+  private static @Nullable ShortBladeImpact shortBladeImpact;
+
+  private record ShortBladeImpact(
+      LocalPlayer player, InteractionHand hand, int tick, String clip) {}
+
+  public static void recordBetterCombatImpact(
+      Object player, Object attackHand, InteractionHand hand) {
+    if (!(player instanceof LocalPlayer local)
+        || !local.getItemInHand(hand).is(ShortBladeAttack.BLADES)) return;
+    try {
+      // Punchy's optional bridge receives the public Better Combat records as Objects.
+      var attack = attackHand.getClass().getMethod("attack").invoke(attackHand);
+      var animation = attack.getClass().getMethod("animation").invoke(attack);
+      if (!(animation instanceof String animationName)) return;
+      String clip =
+          switch (animationName) {
+            case "aeroscapes_reimagine:short_blade_jab" -> "aeroscapes_blade_jab";
+            case "aeroscapes_reimagine:short_blade_slash" -> "aeroscapes_blade_slash";
+            case "aeroscapes_reimagine:short_blade_overhead" -> "aeroscapes_blade_overhead";
+            default -> null;
+          };
+      if (clip != null) shortBladeImpact = new ShortBladeImpact(local, hand, local.tickCount, clip);
+    } catch (ReflectiveOperationException exception) {
+      throw new IllegalStateException(
+          "Better Combat 2.4.0 attack record no longer matches Punchy", exception);
+    }
+  }
+
+  public static @Nullable String takeBetterCombatClip(
+      @Nullable LocalPlayer player, InteractionHand hand) {
+    var impact = shortBladeImpact;
+    if (impact == null || impact.player() != player || impact.hand() != hand) return null;
+    shortBladeImpact = null;
+    return player.tickCount - impact.tick() <= 2 ? impact.clip() : null;
+  }
+
   private static final int CROSSFADE_TICKS = 2;
   private static final int RECOVERY_BLEND_TICKS = 3;
   private static final int MAX_PENDING_CUES = 2;
@@ -68,6 +105,11 @@ public final class ShortBladeAttackPresentation {
 
   @SubscribeEvent
   public static void afterPlayerTick(PlayerTickEvent.Post event) {
+    if (event.getEntity() instanceof LocalPlayer local
+        && shortBladeImpact != null
+        && (shortBladeImpact.player() != local || local.tickCount - shortBladeImpact.tick() > 2)) {
+      shortBladeImpact = null;
+    }
     if (!(event.getEntity() instanceof AbstractClientPlayer player)) return;
     Layer layer = layer(player);
     if (layer == null || (layer.lastMove == null && layer.pending.isEmpty())) return;
@@ -128,7 +170,7 @@ public final class ShortBladeAttackPresentation {
         layer.pose("leftArm", partialTick, new Vec3f(5, 2, 0)));
   }
 
-  private static boolean actionInUse(AbstractClientPlayer player, float partialTick) {
+  static boolean actionInUse(AbstractClientPlayer player, float partialTick) {
     if (ModList.get().isLoaded("yo_hooks") && HookHangingPose.hasPose(player, partialTick))
       return true;
     if (ModList.get().isLoaded("irons_spellbooks")) {

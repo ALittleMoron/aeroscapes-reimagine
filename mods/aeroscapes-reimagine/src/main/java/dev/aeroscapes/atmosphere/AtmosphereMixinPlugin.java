@@ -343,6 +343,33 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("betteradvancements", "0.4.3.21", "zeta", "1.1-40");
     } else if (mixinClassName.endsWith("QuiverEmfMixin")) {
       versions = Map.of("entity_model_features", "3.3.12");
+    } else if (mixinClassName.endsWith("BetterCombatThirdPersonMixin")) {
+      versions =
+          Map.of(
+              "bettercombat",
+              "2.4.0+1.21.1",
+              "playeranimator",
+              "2.0.4+1.21.1",
+              "neoforge",
+              "21.1.244");
+    } else if (mixinClassName.endsWith("BetterCombatReachMixin")) {
+      versions = Map.of("bettercombat", "2.4.0+1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("BetterCombatConfigEnumMixin")) {
+      versions = Map.of("bettercombat", "2.4.0+1.21.1", "cloth_config", "15.0.140");
+    } else if (mixinClassName.endsWith("BetterCombatShipAimMixin")) {
+      versions = Map.of("bettercombat", "2.4.0+1.21.1", "sable", "2.0.6", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("BetterCombatCastingMixin")) {
+      versions =
+          Map.of(
+              "bettercombat",
+              "2.4.0+1.21.1",
+              "irons_spellbooks",
+              "1.21.1-3.16.3",
+              "neoforge",
+              "21.1.244");
+    } else if (mixinClassName.endsWith("PunchyBetterCombatImpactMixin")
+        || mixinClassName.endsWith("PunchyBetterCombatBladeClipMixin")) {
+      versions = Map.of("bettercombat", "2.4.0+1.21.1", "punchy", "3.0", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PunchyShortBladeAttackMixin")) {
       versions = Map.of("punchy", "3.0", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PunchyEmfMixin")) {

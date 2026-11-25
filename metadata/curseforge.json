@@ -2266,6 +2266,21 @@
       "verification": "Native pinned packwiz fingerprint match and official Core API SHA-1 match the locally rehashed SHA-512-bound primary artifact; CF download was not separately repeated."
     },
     {
+      "slug": "better-combat",
+      "primary_project_id": "5sy6g3kz",
+      "primary_sha512": "db24730a42ae7e2dd546ee031d2f5e0dd6f9896418417a529fa21a44121761ebb29c8b8299db8f20500f7497f7b60a7d793b66c93abf37a8ea0aa3edafd80eb6",
+      "status": "hosted",
+      "project_id": 639842,
+      "file_id": 8430183,
+      "filename": "bettercombat-neoforge-2.4.0+1.21.1.jar",
+      "sha512": "db24730a42ae7e2dd546ee031d2f5e0dd6f9896418417a529fa21a44121761ebb29c8b8299db8f20500f7497f7b60a7d793b66c93abf37a8ea0aa3edafd80eb6",
+      "sha1": "bacbc8c86671663e9998b141c5732250c1f4d4fb",
+      "file_size": 1045389,
+      "parity": "exact",
+      "review": {},
+      "verification": "The official CurseForge CDN download matches the selected Modrinth SHA-512."
+    },
+    {
       "slug": "better-archeology",
       "primary_project_id": "zCh7omyG",
       "primary_sha512": "c539aac7eee3ec51d55e9c053d4ad29ee467c9ef6d1206a33a15b7ad5c7937f684453f856ed304b657e6baa8bcc63c6fd56090c46d2d6ff1dcefd0f854a943c2",

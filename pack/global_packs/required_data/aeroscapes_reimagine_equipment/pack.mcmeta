@@ -20,6 +20,14 @@
       {
         "namespace": "overgeared",
         "path": "recipe/silver_ingot_from_cooling_2\\.json"
+      },
+      {
+        "namespace": "supplementaries",
+        "path": "weapon_attributes/wrench\\.json"
+      },
+      {
+        "namespace": "minecraft",
+        "path": "weapon_attributes/mace\\.json"
       }
     ]
   }

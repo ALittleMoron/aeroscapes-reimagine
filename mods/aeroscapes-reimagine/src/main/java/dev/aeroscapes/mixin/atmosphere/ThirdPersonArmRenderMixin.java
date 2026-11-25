@@ -4,6 +4,7 @@ import com.llamalad7.mixinextras.injector.wrapmethod.WrapMethod;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.blaze3d.vertex.PoseStack;
+import dev.aeroscapes.atmosphere.BetterCombatThirdPerson;
 import dev.aeroscapes.atmosphere.ShortBladeAttackPresentation;
 import dev.aeroscapes.atmosphere.ThirdPersonArmPose;
 import net.minecraft.client.model.EntityModel;
@@ -67,13 +68,19 @@ abstract class ThirdPersonArmRenderMixin<T extends LivingEntity> {
       int light,
       Operation<Void> original) {
     if (entity instanceof AbstractClientPlayer player) {
-      float attackWeight = ShortBladeAttackPresentation.renderWeight(player, delta);
-      var arm = attackWeight > 0 ? player.getMainArm() : ThirdPersonArmPose.drinkingArm(player);
+      boolean nativeCombatAttack = BetterCombatThirdPerson.active(player, delta);
+      float attackWeight =
+          nativeCombatAttack ? 0 : ShortBladeAttackPresentation.renderWeight(player, delta);
+      var arm =
+          nativeCombatAttack || attackWeight > 0
+              ? player.getMainArm()
+              : ThirdPersonArmPose.drinkingArm(player);
       if (arm != null) {
         ThirdPersonArmPose.render(
             player,
             arm,
             attackWeight,
+            nativeCombatAttack,
             delta,
             () -> original.call(entity, yaw, delta, pose, buffers, light));
         return;

@@ -32,7 +32,7 @@ public final class ShortBladeAttack {
   private ShortBladeAttack() {}
 
   static boolean available() {
-    return ModList.get().isLoaded("playeranimator");
+    return ModList.get().isLoaded("playeranimator") && !ModList.get().isLoaded("bettercombat");
   }
 
   static boolean canAnimate(Player player) {
