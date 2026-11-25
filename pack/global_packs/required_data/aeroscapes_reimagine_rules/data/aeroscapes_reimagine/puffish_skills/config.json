@@ -8,6 +8,11 @@
     "building",
     "farming",
     "cooking",
-    "enchanting"
+    "enchanting",
+    "pickaxe_handling",
+    "axe_handling",
+    "shovel_handling",
+    "hoe_handling",
+    "shears_handling"
   ]
 }

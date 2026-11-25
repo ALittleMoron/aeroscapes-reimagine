@@ -12,7 +12,14 @@ public enum ProfessionDiscipline {
   BUILDING("building", 2, "long_reach", "quick_dismantling"),
   FARMING("farming", 2, "extra_harvest", "careful_tilling"),
   COOKING("cooking", 2, "hearty_meal", "quick_meal"),
-  ENCHANTING("enchanting", 8);
+  ENCHANTING("enchanting", 8),
+  PICKAXE_HANDLING("pickaxe_handling", 5),
+  AXE_HANDLING("axe_handling", 5),
+  SHOVEL_HANDLING("shovel_handling", 5),
+  HOE_HANDLING("hoe_handling", 5),
+  SHEARS_HANDLING("shears_handling", 1);
+
+  private static final int[] HANDLING_POINT_LEVELS = {1, 2, 4, 6, 10};
 
   private final ResourceLocation category;
   private final int cap;
@@ -36,7 +43,25 @@ public enum ProfessionDiscipline {
     return cap;
   }
 
+  public boolean toolHandling() {
+    return section() != this;
+  }
+
+  public ProfessionDiscipline section() {
+    return switch (this) {
+      case PICKAXE_HANDLING -> MINING;
+      case AXE_HANDLING, SHOVEL_HANDLING -> BUILDING;
+      case HOE_HANDLING, SHEARS_HANDLING -> FARMING;
+      default -> this;
+    };
+  }
+
   public int earned(long level, boolean starterCredit) {
+    if (toolHandling()) {
+      int points = 0;
+      while (points < cap && level >= HANDLING_POINT_LEVELS[points]) points++;
+      return points;
+    }
     int practice = Math.clamp(level, 0, 50) / ProgressionBridge.LEVELS_PER_POINT;
     if (this == SMITHING && level >= 1) practice++;
     return Math.min(cap, practice + (starterCredit ? 1 : 0));

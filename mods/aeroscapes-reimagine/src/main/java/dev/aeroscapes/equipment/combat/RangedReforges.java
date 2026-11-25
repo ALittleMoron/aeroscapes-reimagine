@@ -51,7 +51,11 @@ public final class RangedReforges {
     void aeroscapes$setSpeedMultiplier(float multiplier);
   }
 
-  public static float bowDrawTime(ItemStack stack) {
+  public static float bowDrawTime(ItemStack stack, LivingEntity user) {
+    return reforgeBowDrawTime(stack) * RangedProficiency.drawTime(stack, user);
+  }
+
+  private static float reforgeBowDrawTime(ItemStack stack) {
     return switch (ReforgeProfiles.path(stack)) {
       case "ranged_poor_with_bow_drag" -> 1.15F;
       case "ranged_ordinary_with_bow_tempo" -> 0.95F;
@@ -70,7 +74,7 @@ public final class RangedReforges {
   @SubscribeEvent
   public static void bowReleased(ArrowLooseEvent event) {
     if (event.getBow().getItem() instanceof BowItem && event.getCharge() > 0) {
-      float draw = bowDrawTime(event.getBow());
+      float draw = bowDrawTime(event.getBow(), event.getEntity());
       if (draw != 1.0F) {
         event.setCharge((int) (event.getCharge() / draw));
       }

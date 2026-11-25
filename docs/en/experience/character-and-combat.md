@@ -12,6 +12,10 @@ With a sword, axe, knife or other supported melee weapon, aim and press attack. 
 
 One-handed weapons can be paired to alternate hands. A shield still blocks when held up. To change attack controls, open Better Combat in the Mods menu or look for its category under Controls. Holding attack repeats swings by default. You can assign a key to feint and cancel a wind-up.
 
+## Ranged weapons
+
+The ordinary bow works at full speed from the start. For the crossbow, Starlight Bow and autoloader crossbow, reach Ranged level 2, 6 or 10 respectively, then spend one point on the named talent under **Talents → Combat → Ranged** to unlock full speed.
+
 ## Expedition discoveries
 
 Rare study scrolls can turn up in vaults and shared boss loot. Use a scroll in hand to learn its discovery. Your character keeps the discovery after death and can trade any further copies.
@@ -22,13 +26,17 @@ Rare study scrolls can turn up in vaults and shared boss loot. Use a scroll in h
 
 Practice XP appears below Jade's information about the block or creature you are looking at. On the talent tree, a bright green frame marks a talent you can learn now. A checkmark on a dark badge marks a learned talent.
 
-[Project MMO](https://modrinth.com/mod/project-mmo) tracks nine skills that grow through your own work: Melee, Ranged and Magic for combat, and Gathering, Crafting, Smithing, Building, Farming and Cooking for peaceful activities. Each skill reaches level 50, and every level takes a little more practice than the previous one. Death keeps all levels. Skills never forbid using an item, block or tool.
+[Project MMO](https://modrinth.com/mod/project-mmo) tracks skills that grow through your own work, from melee and spellcasting to gathering, crafting and handling tools. Each skill reaches level 50, and every level takes a little more practice than the previous one. Death keeps all levels.
 
 Hits with melee weapons train Melee. Arrows and thrown tridents train Ranged. Blocking an attack from a creature or player with a shield trains Melee. Magic practice credits each native casting pulse with half its actual mana cost after discounts, rounded down with a minimum of one XP. Scroll pulses use their original mana cost even though the scroll is consumed instead of mana; a free recast gives one XP. Continuous spells train while you channel them. Ordinary repeated or safe spell practice keeps giving experience. Enchanting at an enchanting table also trains Magic. Brewing or using potions gives no skill experience.
 
 Mining stone, cutting wood and digging train Gathering. Crafting trains Crafting, while crafting food trains Cooking instead. Taking finished items out of a furnace trains Cooking for food and Smithing for everything else, such as metal or glass; a furnace fed by hoppers trains nobody. Placing construction blocks trains Building. Harvesting ripe crops, breeding animals and making a successful catch train Farming. Ordinary mobs, mob farms where you land the blows and repeated cheap crafts always give some experience.
 
-Combat, Magic and each profession tree have independent point balances. Melee and Ranged give one combat point per five skill levels, up to 11 points. Magic starts with one point and earns more from accumulated practice independently of its level milestones.
+Open **Talents → Professions**. Mining contains pickaxes, Building contains axes and shovels, and Farming and Animal Husbandry contains hoes and shears. Each family earns its own points from use. Mine rock with a pickaxe, chop or strip wood with an axe, dig or make paths with a shovel, till soil or clear foliage with a hoe, and trim plants or shear animals with shears. Spend a point on the material tier shown in the item's tooltip to unlock full speed for that tier. Wooden and stone tools work at full speed from the start.
+
+Before training, a tool breaks suitable blocks more slowly. Some right-click actions, such as tilling or shearing, have a short pause before you can repeat them. A diamond pickaxe can still harvest obsidian. On stone, an iron pickaxe with its talent can work faster than a diamond pickaxe whose talent you have yet to learn. Applied enchantments, including Efficiency and Mending, keep their effects. The Smithing tree still determines which tools you can make.
+
+Combat, Magic and each profession tree have independent point balances. Melee and Ranged give one combat point per five skill levels, up to 14 points. Magic starts with one point and earns more from accumulated practice independently of its level milestones.
 
 | Credited magic XP | Interval between points | Total magic-earned points at the end of the stage |
 | ----------------- | ----------------------: | ------------------------------------------------: |
@@ -41,11 +49,11 @@ Magic practice continues earning points at the same rate after level 50. The mag
 
 Magic levels now follow their own practice curve; the other skills keep their previous curves. Mastery readiness and point rewards use the same credited magic XP. For example, Magic level 15 requires 4,301 XP, level 30 requires 21,101, level 45 requires 57,701 and level 50 requires 72,701. Reaching a mastery level opens its prerequisite, while buying the talent still costs a point.
 
-Open the inventory and press **Talents**, below the nutrients button. On the Professions page, choose a profession in the second row of tabs. The selected tab has a gold border. Each tree displays its available points. Select a node to read its effect and price, then press **Learn**. Drag the tree to move, use the wheel to zoom, or press **Center** to fit the whole page. Search highlights matching talents; Enter selects and centers the next match. Some talents exclude each other, such as Onslaught and Firm footing. Dashed links mark these alternatives, and the details name the other choice. Every character can open every branch. Closing Talents or Nutrients returns to the ordinary inventory.
+Open the inventory and press **Talents**, below the nutrients button. On the Professions page, choose a section in the second row of tabs. The profession’s general talents and tool branches share the same canvas. Select a node to see which practice balance pays for it. Each tree displays its available points. Select a node to read its effect and price, then press **Learn**. Drag the tree to move, use the wheel to zoom, or press **Center** to fit the whole page. Search highlights matching talents; Enter selects and centers the next match. Some talents exclude each other, such as Onslaught and Firm footing. Dashed links mark these alternatives, and the details name the other choice. Every character can open every branch. Closing Talents or Nutrients returns to the ordinary inventory.
 
 To check your levels, open the inventory and click the **Skills** button with gold bars, above the nutrients button between your character and the crafting grid: a panel attached to the left side of the inventory, where the recipe book also opens, lists combat and profession skills with their progress and a search field; scroll it with the mouse wheel or drag its scrollbar, and press the button again to hide it. The Skills, Nutrients and Talents buttons are also available with the accessory slots open. Skills and accessories replace each other; closing one leaves the other closed. **P** opens the Project MMO glossary in the world. In an inventory, hover over an item and press **Ctrl+P** to inspect it in the glossary. The level list on the game screen is hidden by default so it does not cover the minimap; assign _Toggle Skill List_ in Controls to show it.
 
-Combat offers melee, archery and protection talents. Professions includes trees for Smithing, Mining, Building, Farming and Cooking. Magic is one tree with a common introductory repertoire and four functional directions covering all 111 spells. Its mastery gates depend on Magic practice, while ordinary bundles, individual spell unlocks and useful passive branches share 131 one-point nodes. The [magic guide](../magic/) explains learning, scroll ranks and special discoveries.
+Combat has four sections: Melee, Defense, Ranged and Light Weapons. They share one balance of combat points. Magic is one tree with a common introductory repertoire and four functional directions covering all 111 spells. Its mastery gates depend on Magic practice, while ordinary bundles, individual spell unlocks and useful passive branches share 131 one-point nodes. The [magic guide](../magic/) explains learning, scroll ranks and special discoveries.
 
 ## Prepared abilities
 

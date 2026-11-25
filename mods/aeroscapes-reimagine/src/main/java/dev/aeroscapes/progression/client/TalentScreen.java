@@ -1,10 +1,12 @@
 package dev.aeroscapes.progression.client;
 
+import dev.aeroscapes.equipment.combat.RangedProficiency;
 import dev.aeroscapes.inventory.InventoryNavigation;
 import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.mixin.progression.SkillsScreenAccessor;
+import dev.aeroscapes.progression.CombatDirection;
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.ChangeNetwork;
 import dev.aeroscapes.races.client.ChangeClient;
@@ -27,6 +29,7 @@ import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -50,6 +53,9 @@ public final class TalentScreen extends Screen implements ChangeView {
   private static final int GOLD = 0xffe9c084;
   private static final int ROUTE = 0xff75dfda;
   private static final int AFFORDABLE = 0xffc5fa77;
+  private static final int BRANCH_LABEL_GAP = 40;
+  private static final List<ProfessionDiscipline> PROFESSION_SECTIONS =
+      Arrays.stream(ProfessionDiscipline.values()).filter(tree -> !tree.toolHandling()).toList();
   private final ClientSkillScreenData data;
   private final long changeSession;
   private final Map<String, Set<String>> refunds = new HashMap<>();
@@ -57,15 +63,20 @@ public final class TalentScreen extends Screen implements ChangeView {
   private final TreeViewport camera = new TreeViewport();
   private final ScrollViewport detailsScroll = new ScrollViewport();
   private final List<Button> tabs = new ArrayList<>();
-  private final Map<Page, List<Button>> subtabs = new EnumMap<>(Page.class);
-  private final Map<Page, String> selectedSubtabs = new EnumMap<>(Page.class);
-  private final Set<String> searchMatches = new HashSet<>();
+  private final Map<ProfessionDiscipline, Button> professionTabs =
+      new EnumMap<>(ProfessionDiscipline.class);
+  private final Map<CombatDirection, Button> combatTabs = new EnumMap<>(CombatDirection.class);
+  private final Set<TreeNode> searchMatches = new HashSet<>();
+  private List<ClientCategoryData> fittedCategories;
+  private List<TreeBranch> branches = List.of();
+  private List<TreeNode> visibleNodes = List.of();
   private Page page = Page.COMBAT;
-  private String selected;
+  private CombatDirection combat = CombatDirection.MELEE;
+  private ProfessionDiscipline profession = PROFESSION_SECTIONS.getFirst();
+  private TreeNode selected;
   private EditBox search;
   private Button fitButton;
   private Button learn;
-  private ClientCategoryData fittedCategory;
   private Map<String, MagicTalentPath.Node> magicGraph = Map.of();
   private String pathGoal;
   private Set<String> pathOwned = Set.of();
@@ -92,8 +103,21 @@ public final class TalentScreen extends Screen implements ChangeView {
     return changeSession;
   }
 
-  private Set<String> refundSelection() {
-    return refunds.computeIfAbsent(categoryPath(), ignored -> new HashSet<>());
+  private Set<String> refundSelection(ClientCategoryData category) {
+    return refunds.computeIfAbsent(category.getConfig().id().getPath(), ignored -> new HashSet<>());
+  }
+
+  private ClientCategoryData activeCategory() {
+    return selected == null ? category() : selected.category();
+  }
+
+  private ClientCategoryData reviewCategory() {
+    if (selected != null) return selected.category();
+    return branches.stream()
+        .map(TreeBranch::category)
+        .filter(category -> !refundSelection(category).isEmpty())
+        .findFirst()
+        .orElseGet(this::category);
   }
 
   @SubscribeEvent
@@ -114,7 +138,8 @@ public final class TalentScreen extends Screen implements ChangeView {
   protected void init() {
     AbilityClient.request();
     tabs.clear();
-    subtabs.clear();
+    professionTabs.clear();
+    combatTabs.clear();
     search = null;
     if (width < 320 || height < 220) {
       addRenderableWidget(
@@ -123,7 +148,7 @@ public final class TalentScreen extends Screen implements ChangeView {
               .build());
       return;
     }
-    int tabWidth = (width - 40) / Page.values().length;
+    int tabWidth = (width - 32 - 4 * (Page.values().length - 1)) / Page.values().length;
     for (Page tab : Page.values()) {
       var button =
           Button.builder(
@@ -136,8 +161,9 @@ public final class TalentScreen extends Screen implements ChangeView {
               .build();
       addRenderableWidget(button);
       tabs.add(button);
-      addSubtabs(tab);
     }
+    addProfessionTabs();
+    addCombatTabs();
     search =
         new EditBox(
             font, 20, controlsTop() + 2, Math.max(34, canvasWidth() - 74), 16, text("search"));
@@ -160,8 +186,11 @@ public final class TalentScreen extends Screen implements ChangeView {
                     text("learn"),
                     button -> {
                       if (changeSession == 0) purchase();
-                      else if (selected != null && !refundSelection().remove(selected))
-                        refundSelection().add(selected);
+                      else if (selected != null
+                          && state(selected.category(), selected.skill()) == Skill.State.UNLOCKED) {
+                        var marks = refundSelection(selected.category());
+                        if (!marks.remove(selected.id())) marks.add(selected.id());
+                      }
                     })
                 .bounds(inspectorX() + 8, height - 57, 140, 20)
                 .build());
@@ -171,90 +200,168 @@ public final class TalentScreen extends Screen implements ChangeView {
               Button.builder(
                       ChangeClient.text("preview"),
                       button -> {
-                        var nodes = refundSelection().stream().sorted().toList();
+                        var category = reviewCategory();
+                        if (category == null) return;
+                        var nodes = refundSelection(category).stream().sorted().toList();
+                        if (nodes.isEmpty()) return;
                         ChangeClient.preview(
                             this,
                             new ChangeNetwork.Request(
-                                changeSession, categoryPath(), "", 0, "", false, nodes),
+                                changeSession,
+                                category.getConfig().id().getPath(),
+                                "",
+                                0,
+                                "",
+                                false,
+                                nodes),
                             false,
                             ChangeClient.text("calculating"));
                       })
                   .bounds(inspectorX() + 8, height - 30, 140, 18)
                   .build());
     }
-    fittedCategory = null;
+    fittedCategories = null;
+    refreshTree();
     detailsScroll.reset();
   }
 
-  private void addSubtabs(Page parent) {
-    var categories = parent.subcategories;
-    if (categories.isEmpty()) return;
-    int buttonWidth = (width - 32 - 4 * (categories.size() - 1)) / categories.size();
-    var buttons = new ArrayList<Button>();
-    for (String category : categories) {
-      var title =
-          Component.translatable("puffish_skills.aeroscapes_reimagine." + category + ".title");
+  private void addProfessionTabs() {
+    int count = PROFESSION_SECTIONS.size();
+    int buttonWidth = (width - 32 - 4 * (count - 1)) / count;
+    for (var section : PROFESSION_SECTIONS) {
+      var title = professionTitle(section);
       var label =
-          font.width(title) <= buttonWidth - 8 ? title : text("page." + category + "_short");
-      int x = 16 + buttons.size() * (buttonWidth + 4);
-      buttons.add(
+          font.width(title) <= buttonWidth - 8 ? title : text("page." + section.skill() + "_short");
+      int x = 16 + professionTabs.size() * (buttonWidth + 4);
+      professionTabs.put(
+          section,
           addRenderableWidget(
               Button.builder(
                       label,
                       button -> {
-                        selectedSubtabs.put(parent, category);
+                        profession = section;
                         selectTree();
                       })
                   .bounds(x, 64, buttonWidth, 20)
                   .tooltip(Tooltip.create(title))
                   .build()));
     }
-    subtabs.put(parent, buttons);
+  }
+
+  private void addCombatTabs() {
+    var directions = CombatDirection.values();
+    int buttonWidth = (width - 32 - 4 * (directions.length - 1)) / directions.length;
+    for (var direction : directions) {
+      var title = text("combat_section." + direction.key());
+      var label =
+          font.width(title) <= buttonWidth - 8
+              ? title
+              : text("combat_section." + direction.key() + "_short");
+      combatTabs.put(
+          direction,
+          addRenderableWidget(
+              Button.builder(
+                      label,
+                      button -> {
+                        combat = direction;
+                        selectTree();
+                      })
+                  .bounds(16 + direction.ordinal() * (buttonWidth + 4), 64, buttonWidth, 20)
+                  .tooltip(Tooltip.create(title))
+                  .build()));
+    }
+  }
+
+  private static Component professionTitle(ProfessionDiscipline tree) {
+    return Component.translatable("puffish_skills.aeroscapes_reimagine." + tree.skill() + ".title");
   }
 
   private void updateTabs() {
     for (int index = 0; index < tabs.size(); index++)
       tabs.get(index).active = index != page.ordinal();
-    subtabs.forEach(
-        (parent, buttons) -> {
-          for (int index = 0; index < buttons.size(); index++) {
-            var button = buttons.get(index);
-            button.visible = parent == page;
-            button.active =
-                button.visible && !parent.subcategories.get(index).equals(categoryPath());
-          }
+    professionTabs.forEach(
+        (section, button) -> {
+          button.visible = page == Page.PROFESSION;
+          button.active = button.visible && section != profession;
         });
-  }
-
-  private String categoryPath() {
-    return page.subcategories.isEmpty()
-        ? page.id
-        : selectedSubtabs.getOrDefault(page, page.subcategories.getFirst());
+    combatTabs.forEach(
+        (direction, button) -> {
+          button.visible = page == Page.COMBAT;
+          button.active = button.visible && direction != combat;
+        });
   }
 
   private void selectTree() {
     selected = null;
     detailsScroll.reset();
-    fittedCategory = null;
+    fittedCategories = null;
     search.setValue("");
     search.setY(controlsTop() + 2);
     fitButton.setY(controlsTop());
+    refreshTree();
     updateTabs();
   }
 
   private ClientCategoryData category() {
-    return data.getCategory(ResourceLocation.parse("aeroscapes_reimagine:" + categoryPath()))
+    var path = page == Page.PROFESSION ? profession.skill() : page.id;
+    return data.getCategory(ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", path))
         .orElse(null);
   }
 
-  private List<ClientSkillConfig> nodes() {
-    var category = category();
-    return category == null
-        ? List.of()
-        : category.getConfig().skills().values().stream()
-            .filter(node -> category.getConfig().getDefinitionById(node.definitionId()).isPresent())
-            .sorted(Comparator.comparing(ClientSkillConfig::id))
-            .toList();
+  private void refreshTree() {
+    var primary = category();
+    var categories = new ArrayList<ClientCategoryData>();
+    if (primary != null) categories.add(primary);
+    if (page == Page.PROFESSION) {
+      for (var tree : ProfessionDiscipline.values()) {
+        if (tree != profession && tree.section() == profession)
+          data.getCategory(tree.category()).ifPresent(categories::add);
+      }
+    }
+    if (categories.equals(fittedCategories)) return;
+    fittedCategories = List.copyOf(categories);
+    var next = new ArrayList<TreeBranch>();
+    int branchTop = 0;
+    for (var category : categories) {
+      var nodes =
+          category.getConfig().skills().values().stream()
+              .filter(node -> visible(node.id()))
+              .filter(
+                  node -> category.getConfig().getDefinitionById(node.definitionId()).isPresent())
+              .sorted(Comparator.comparing(ClientSkillConfig::id))
+              .toList();
+      if (nodes.isEmpty()) continue;
+      int minY = nodes.stream().mapToInt(ClientSkillConfig::y).min().orElseThrow();
+      int maxY = nodes.stream().mapToInt(ClientSkillConfig::y).max().orElseThrow();
+      int offset = categories.size() > 1 ? branchTop + BRANCH_LABEL_GAP - minY : 0;
+      int minX = nodes.stream().mapToInt(ClientSkillConfig::x).min().orElseThrow();
+      int maxX = nodes.stream().mapToInt(ClientSkillConfig::x).max().orElseThrow();
+      next.add(
+          new TreeBranch(
+              category,
+              nodes.stream().map(node -> new TreeNode(category, node, offset)).toList(),
+              (minX + maxX) / 2,
+              branchTop));
+      branchTop = maxY + offset + BRANCH_LABEL_GAP;
+    }
+    branches = List.copyOf(next);
+    visibleNodes = branches.stream().flatMap(branch -> branch.nodes().stream()).toList();
+    if (selected != null) {
+      var previous = selected;
+      selected =
+          visibleNodes.stream().filter(node -> node.sameTalent(previous)).findFirst().orElse(null);
+    }
+    fit();
+    if (page == Page.MAGIC && primary != null) {
+      if (selected == null) showMagicRoot(primary);
+      else camera.focus(selected.x(), selected.y());
+    }
+    updateSearch(search.getValue());
+    loadMagicGraph(primary);
+  }
+
+  private boolean visible(String node) {
+    return page != Page.COMBAT || combat.nodes().contains(node);
   }
 
   private int canvasWidth() {
@@ -266,7 +373,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private int controlsTop() {
-    return page.subcategories.isEmpty() ? 66 : 90;
+    return page == Page.MAGIC ? 66 : 90;
   }
 
   private int canvasTop() {
@@ -289,19 +396,27 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private void fit() {
-    var nodes = nodes();
-    if (nodes.isEmpty()) return;
+    if (visibleNodes.isEmpty()) return;
+    int minY =
+        branches.size() > 1
+            ? branches.getFirst().labelY()
+            : visibleNodes.stream().mapToInt(TreeNode::y).min().orElseThrow();
     camera.fit(
-        nodes.stream().mapToInt(ClientSkillConfig::x).min().orElse(0),
-        nodes.stream().mapToInt(ClientSkillConfig::y).min().orElse(0),
-        nodes.stream().mapToInt(ClientSkillConfig::x).max().orElse(0),
-        nodes.stream().mapToInt(ClientSkillConfig::y).max().orElse(0),
+        visibleNodes.stream().mapToInt(TreeNode::x).min().orElseThrow(),
+        minY,
+        visibleNodes.stream().mapToInt(TreeNode::x).max().orElseThrow(),
+        visibleNodes.stream().mapToInt(TreeNode::y).max().orElseThrow(),
         canvasWidth(),
         canvasHeight());
   }
 
   private void showMagicRoot(ClientCategoryData category) {
-    var root = nodes().stream().filter(ClientSkillConfig::isRoot).findFirst().orElse(null);
+    var root =
+        visibleNodes.stream()
+            .map(TreeNode::skill)
+            .filter(ClientSkillConfig::isRoot)
+            .findFirst()
+            .orElse(null);
     if (root == null) return;
     var config = category.getConfig();
     int reachX = 0, reachY = 0;
@@ -318,11 +433,15 @@ public final class TalentScreen extends Screen implements ChangeView {
   private void updateSearch(String value) {
     searchMatches.clear();
     String query = value.strip().toLowerCase(Locale.ROOT);
-    var category = category();
-    if (query.isEmpty() || category == null) return;
-    for (var node : nodes()) {
-      var title = category.getConfig().getDefinitionById(node.definitionId()).orElseThrow().title();
-      if (title.getString().toLowerCase(Locale.ROOT).contains(query)) searchMatches.add(node.id());
+    if (query.isEmpty()) return;
+    for (var node : visibleNodes) {
+      var title =
+          node.category()
+              .getConfig()
+              .getDefinitionById(node.skill().definitionId())
+              .orElseThrow()
+              .title();
+      if (title.getString().toLowerCase(Locale.ROOT).contains(query)) searchMatches.add(node);
     }
     if (page == Page.MAGIC) {
       for (var spell : SpellKnowledge.spells()) {
@@ -333,7 +452,9 @@ public final class TalentScreen extends Screen implements ChangeView {
                 .getString()
                 .toLowerCase(Locale.ROOT)
                 .contains(query)) {
-          searchMatches.add(route.node());
+          visibleNodes.stream()
+              .filter(node -> node.id().equals(route.node()))
+              .forEach(searchMatches::add);
         }
       }
     }
@@ -348,7 +469,8 @@ public final class TalentScreen extends Screen implements ChangeView {
     }
     var graph = new HashMap<String, MagicTalentPath.Node>();
     var config = category.getConfig();
-    for (var node : nodes()) {
+    for (var entry : visibleNodes) {
+      var node = entry.skill();
       var definition = config.getDefinitionById(node.definitionId()).orElseThrow();
       graph.put(
           node.id(),
@@ -374,10 +496,10 @@ public final class TalentScreen extends Screen implements ChangeView {
         owned.add(id);
       }
     }
-    if (!Objects.equals(pathGoal, selected) || !pathOwned.equals(owned)) {
-      pathGoal = selected;
+    if (!Objects.equals(pathGoal, selected.id()) || !pathOwned.equals(owned)) {
+      pathGoal = selected.id();
       pathOwned = owned;
-      path = MagicTalentPath.find(magicGraph, owned, selected);
+      path = MagicTalentPath.find(magicGraph, owned, selected.id());
     }
   }
 
@@ -390,32 +512,16 @@ public final class TalentScreen extends Screen implements ChangeView {
       graphics.drawWordWrap(font, text("small_window"), 20, 60, Math.max(30, width - 40), TEXT);
       return;
     }
-    for (var button : subtabs.getOrDefault(page, List.of()))
-      if (!button.active)
-        graphics.renderOutline(
-            button.getX() - 1,
-            button.getY() - 1,
-            button.getWidth() + 2,
-            button.getHeight() + 2,
-            GOLD);
-    var category = category();
-    if (category != fittedCategory) {
-      fittedCategory = category;
-      fit();
-      if (page == Page.MAGIC && category != null) {
-        var node = selected == null ? null : category.getConfig().skills().get(selected);
-        if (node == null) showMagicRoot(category);
-        else camera.focus(node.x(), node.y());
-      }
-      updateSearch(search.getValue());
-      loadMagicGraph(category);
-    }
-    updatePath(category);
+    if (page == Page.PROFESSION) outlineTab(graphics, professionTabs.get(profession));
+    if (page == Page.COMBAT) outlineTab(graphics, combatTabs.get(combat));
+    refreshTree();
+    var category = activeCategory();
+    updatePath(page == Page.MAGIC ? category : null);
     if (category != null) {
       int balance = category.getPointsLeft();
       var points = balance < 0 ? text("points_due", -balance) : text("points", balance);
       graphics.drawString(font, points, width - 45 - font.width(points), 19, GOLD, false);
-      if (page != Page.PROFESSION)
+      if (page == Page.COMBAT || page == Page.MAGIC)
         graphics.drawString(
             font, text(page.id + "_budget"), inspectorX() + 5, controlsTop() + 3, MUTED, false);
     }
@@ -423,7 +529,7 @@ public final class TalentScreen extends Screen implements ChangeView {
     AtlasProgressionWidgets.panel(graphics, 16, top, canvasWidth(), canvasHeight());
     AtlasProgressionWidgets.panel(graphics, inspectorX(), top, 156, height - top - 32);
     graphics.enableScissor(20, top + 4, 12 + canvasWidth(), top - 4 + canvasHeight());
-    if (category != null) {
+    if (!visibleNodes.isEmpty()) {
       var hoveredNode = inside(mouseX, mouseY) ? nodeAt(mouseX, mouseY) : null;
       graphics.pose().pushPose();
       graphics
@@ -431,51 +537,88 @@ public final class TalentScreen extends Screen implements ChangeView {
           .translate(
               16 + canvasWidth() / 2.0 + camera.x(0), top + canvasHeight() / 2.0 + camera.y(0), 0);
       graphics.pose().scale((float) camera.scale(), (float) camera.scale(), 1);
-      drawConnections(graphics, category, category.getConfig().normalConnections(), false);
-      drawConnections(graphics, category, category.getConfig().exclusiveConnections(), true);
-      for (var node : nodes()) drawNode(graphics, category, node, node == hoveredNode);
+      for (var branch : branches) {
+        var config = branch.category().getConfig();
+        int offset = branch.nodes().getFirst().offsetY();
+        drawConnections(graphics, branch.category(), config.normalConnections(), false, offset);
+        drawConnections(graphics, branch.category(), config.exclusiveConnections(), true, offset);
+      }
+      for (var node : visibleNodes) drawNode(graphics, node, node == hoveredNode);
       graphics.pose().popPose();
+      if (branches.size() > 1) {
+        for (var branch : branches) {
+          var name =
+              branch.category().getConfig().id().getPath().equals(profession.skill())
+                  ? text("page.general")
+                  : text("page." + branch.category().getConfig().id().getPath() + "_short");
+          int x = 16 + canvasWidth() / 2 + (int) camera.x(branch.labelX());
+          int y =
+              (int)
+                  Math.round(
+                      top
+                          + canvasHeight() / 2.0
+                          + camera.y(branch.labelY())
+                          - font.lineHeight / 2.0);
+          graphics.drawCenteredString(font, name, x, y, MUTED);
+        }
+      }
     }
     graphics.disableScissor();
     drawDetails(graphics, category);
     if (changeSession == 0)
       graphics.drawString(font, text("navigation"), 20, height - 24, MUTED, false);
     else {
-      review.active = !refundSelection().isEmpty();
-      review.setMessage(ChangeClient.text("preview_count", refundSelection().size()));
+      var refundCategory = reviewCategory();
+      int marked = refundCategory == null ? 0 : refundSelection(refundCategory).size();
+      review.active = marked > 0;
+      review.setMessage(ChangeClient.text("preview_count", marked));
     }
+  }
+
+  private static void outlineTab(GuiGraphics graphics, Button button) {
+    graphics.renderOutline(
+        button.getX() - 1, button.getY() - 1, button.getWidth() + 2, button.getHeight() + 2, GOLD);
   }
 
   @Override
   public void render(GuiGraphics graphics, int mouseX, int mouseY, float partialTick) {
     super.render(graphics, mouseX, mouseY, partialTick);
     if (width < 320 || height < 220) return;
-    var category = category();
-    if (category != null && inside(mouseX, mouseY)) {
+    if (inside(mouseX, mouseY)) {
       var hovered = nodeAt(mouseX, mouseY);
       if (hovered != null)
-        category
+        hovered
+            .category()
             .getConfig()
-            .getDefinitionById(hovered.definitionId())
+            .getDefinitionById(hovered.skill().definitionId())
             .ifPresent(
                 definition -> {
                   var tooltip = new ArrayList<Component>();
                   tooltip.add(definition.title());
+                  if (branches.size() > 1)
+                    tooltip.add(categoryTitle(hovered.category()).withStyle(ChatFormatting.GOLD));
                   tooltip.add(definition.description().copy().withStyle(ChatFormatting.GRAY));
                   if (MagicTalents.nodes().contains(hovered.id()))
-                    tooltip.add(magicRequirement(hovered));
-                  tooltip.add(stateText(category, hovered));
+                    tooltip.add(magicRequirement(hovered.skill()));
+                  tooltip.add(stateText(hovered.category(), hovered.skill()));
                   graphics.renderComponentTooltip(font, tooltip, mouseX, mouseY);
                 });
     }
+  }
+
+  private static MutableComponent categoryTitle(ClientCategoryData category) {
+    return Component.translatable(
+        "puffish_skills.aeroscapes_reimagine." + category.getConfig().id().getPath() + ".title");
   }
 
   private void drawConnections(
       GuiGraphics graphics,
       ClientCategoryData category,
       java.util.Collection<ClientSkillConnectionConfig> connections,
-      boolean exclusive) {
+      boolean exclusive,
+      int offset) {
     for (var edge : connections) {
+      if (!visible(edge.skillAId()) || !visible(edge.skillBId())) continue;
       var a = category.getConfig().skills().get(edge.skillAId());
       var b = category.getConfig().skills().get(edge.skillBId());
       if (a == null || b == null) continue;
@@ -486,7 +629,15 @@ public final class TalentScreen extends Screen implements ChangeView {
           !exclusive
               && path != null
               && path.edges().contains(new MagicTalentPath.Edge(a.id(), b.id()));
-      line(graphics, a.x(), a.y(), b.x(), b.y(), onPath ? ROUTE : color, exclusive, onPath);
+      line(
+          graphics,
+          a.x(),
+          a.y() + offset,
+          b.x(),
+          b.y() + offset,
+          onPath ? ROUTE : color,
+          exclusive,
+          onPath);
     }
   }
 
@@ -515,18 +666,19 @@ public final class TalentScreen extends Screen implements ChangeView {
     graphics.pose().popPose();
   }
 
-  private void drawNode(
-      GuiGraphics graphics, ClientCategoryData category, ClientSkillConfig node, boolean hovered) {
+  private void drawNode(GuiGraphics graphics, TreeNode entry, boolean hovered) {
+    var category = entry.category();
+    var node = entry.skill();
     var definition = category.getConfig().getDefinitionById(node.definitionId()).orElse(null);
     if (definition == null) return;
-    int x = node.x(), y = node.y();
+    int x = entry.x(), y = entry.y();
     int radius = TreeViewport.NODE_RADIUS;
     Skill.State state = state(category, node);
     boolean onPath = path != null && path.unpaid().contains(node.id());
-    boolean marked = changeSession != 0 && refundSelection().contains(node.id());
-    if (node.id().equals(selected) || searchMatches.contains(node.id()) || onPath || marked) {
+    boolean marked = changeSession != 0 && refundSelection(category).contains(node.id());
+    if (entry.equals(selected) || searchMatches.contains(entry) || onPath || marked) {
       int outer = TreeViewport.NODE_OUTER_RADIUS;
-      int color = marked ? 0xffed9d7a : onPath && !node.id().equals(selected) ? ROUTE : GOLD;
+      int color = marked ? 0xffed9d7a : onPath && !entry.equals(selected) ? ROUTE : GOLD;
       graphics.fill(x - outer, y - outer, x + outer, y + outer, color);
       graphics.fill(x - outer + 1, y - outer + 1, x + outer - 1, y + outer - 1, 0xff111b29);
     }
@@ -573,6 +725,10 @@ public final class TalentScreen extends Screen implements ChangeView {
 
   private Skill.State state(ClientCategoryData category, ClientSkillConfig node) {
     Skill.State nativeState = category.getSkillState(node);
+    if (page == Page.COMBAT
+        && nativeState != Skill.State.UNLOCKED
+        && RangedProficiency.missingPracticeLevel(minecraft.player, node.id()) > 0)
+      return Skill.State.LOCKED;
     return nativeState != Skill.State.UNLOCKED
             && (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel()
                 || missingPriorMastery(category, node) != null)
@@ -592,6 +748,10 @@ public final class TalentScreen extends Screen implements ChangeView {
   private Component stateText(ClientCategoryData category, ClientSkillConfig node) {
     Skill.State nativeState = category.getSkillState(node);
     if (nativeState != Skill.State.UNLOCKED) {
+      if (page == Page.COMBAT) {
+        int required = RangedProficiency.missingPracticeLevel(minecraft.player, node.id());
+        if (required > 0) return RangedProficiency.practiceRequired(required);
+      }
       if (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel())
         return text("magic.level_locked");
       String missing = missingPriorMastery(category, node);
@@ -653,19 +813,31 @@ public final class TalentScreen extends Screen implements ChangeView {
     learn.active = false;
     int top = detailsTop();
     if (changeSession != 0)
-      learn.setMessage(ChangeClient.text(refundSelection().contains(selected) ? "unmark" : "mark"));
+      learn.setMessage(
+          ChangeClient.text(
+              selected != null && refundSelection(selected.category()).contains(selected.id())
+                  ? "unmark"
+                  : "mark"));
     if (category == null) {
       graphics.drawWordWrap(font, text("waiting"), inspectorX() + 9, top, 138, TEXT);
       return;
     }
-    var node = selected == null ? null : category.getConfig().skills().get(selected);
+    var node = selected == null ? null : selected.skill();
     int x = inspectorX() + 9, y = top - (int) detailsScroll.offset();
     graphics.enableScissor(x, top, x + 138, height - 65);
     if (node == null) {
       if (page == Page.MAGIC) {
         y = magicProgress(graphics, x, y);
         y = paragraph(graphics, text("magic.explanation"), x, y + 7, TEXT) + 7;
-      } else if (categoryPath().equals(ProfessionDiscipline.ENCHANTING.skill())) {
+      } else if (branches.size() > 1) {
+        for (var branch : branches) {
+          var pool = branch.category();
+          int balance = pool.getPointsLeft();
+          var points = balance < 0 ? text("points_due", -balance) : text("points", balance);
+          y = paragraph(graphics, categoryTitle(pool), x, y, GOLD);
+          y = paragraph(graphics, points, x, y, MUTED) + 5;
+        }
+      } else if (page == Page.PROFESSION && profession == ProfessionDiscipline.ENCHANTING) {
         y = paragraph(graphics, category.getConfig().description(), x, y, TEXT) + 7;
       }
       y = paragraph(graphics, text("select"), x, y, TEXT);
@@ -673,6 +845,7 @@ public final class TalentScreen extends Screen implements ChangeView {
       var definition = category.getConfig().getDefinitionById(node.definitionId()).orElse(null);
       if (definition != null) {
         y = paragraph(graphics, definition.title(), x, y, GOLD);
+        if (branches.size() > 1) y = paragraph(graphics, categoryTitle(category), x, y + 3, MUTED);
         if (page == Page.MAGIC) y = pathDetails(graphics, category, x, y + 4);
         y = paragraph(graphics, definition.description(), x, y + 4, TEXT);
         y = paragraph(graphics, text("cost", definition.cost()), x, y + 6, MUTED);
@@ -714,19 +887,18 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private void purchase() {
-    var category = category();
-    if (category == null || selected == null || !learn.active) return;
-    var node = category.getConfig().skills().get(selected);
-    if (node == null || state(category, node) != Skill.State.AFFORDABLE) return;
+    if (selected == null
+        || !learn.active
+        || state(selected.category(), selected.skill()) != Skill.State.AFFORDABLE) return;
     SkillsClientMod.getInstance()
         .getPacketSender()
-        .send(new SkillClickOutPacket(category.getConfig().id(), selected));
+        .send(new SkillClickOutPacket(selected.category().getConfig().id(), selected.id()));
   }
 
-  private ClientSkillConfig nodeAt(double x, double y) {
+  private TreeNode nodeAt(double x, double y) {
     double offsetX = x - 16 - canvasWidth() / 2.0;
     double offsetY = y - canvasTop() - canvasHeight() / 2.0;
-    return nodes().reversed().stream()
+    return visibleNodes.reversed().stream()
         .filter(node -> camera.hits(node.x(), node.y(), offsetX, offsetY))
         .findFirst()
         .orElse(null);
@@ -786,8 +958,7 @@ public final class TalentScreen extends Screen implements ChangeView {
     if (dragging && button == 0) {
       dragging = false;
       if (travel <= 3 && Math.abs(x - pressX) + Math.abs(y - pressY) <= 3) {
-        var node = nodeAt(x, y);
-        selected = node == null ? null : node.id();
+        selected = nodeAt(x, y);
         detailsScroll.reset();
       }
       return true;
@@ -830,44 +1001,51 @@ public final class TalentScreen extends Screen implements ChangeView {
       return true;
     }
     if (key == org.lwjgl.glfw.GLFW.GLFW_KEY_ENTER && search != null && search.isFocused()) {
-      var category = category();
-      if (category != null) {
-        var matches =
-            nodes().stream()
-                .filter(node -> search.getValue().isBlank() || searchMatches.contains(node.id()))
-                .toList();
-        if (!matches.isEmpty()) {
-          int current = -1;
-          for (int index = 0; index < matches.size(); index++) {
-            if (matches.get(index).id().equals(selected)) current = index;
-          }
-          var node = matches.get((current + 1) % matches.size());
-          selected = node.id();
-          camera.focus(node.x(), node.y());
-          detailsScroll.reset();
-        }
+      var matches =
+          visibleNodes.stream()
+              .filter(node -> search.getValue().isBlank() || searchMatches.contains(node))
+              .toList();
+      if (!matches.isEmpty()) {
+        int current = selected == null ? -1 : matches.indexOf(selected);
+        selected = matches.get((current + 1) % matches.size());
+        camera.focus(selected.x(), selected.y());
+        detailsScroll.reset();
       }
       return true;
     }
     return super.keyPressed(key, scan, modifiers);
   }
 
+  private record TreeBranch(
+      ClientCategoryData category, List<TreeNode> nodes, int labelX, int labelY) {}
+
+  private record TreeNode(ClientCategoryData category, ClientSkillConfig skill, int offsetY) {
+    String id() {
+      return skill.id();
+    }
+
+    int x() {
+      return skill.x();
+    }
+
+    int y() {
+      return skill.y() + offsetY;
+    }
+
+    boolean sameTalent(TreeNode other) {
+      return id().equals(other.id())
+          && category.getConfig().id().equals(other.category().getConfig().id());
+    }
+  }
+
   private enum Page {
     COMBAT("combat"),
     MAGIC("magic"),
-    PROFESSION(
-        "profession",
-        Arrays.stream(ProfessionDiscipline.values()).map(ProfessionDiscipline::skill).toList());
+    PROFESSION("profession");
     final String id;
-    final List<String> subcategories;
 
     Page(String id) {
-      this(id, List.of());
-    }
-
-    Page(String id, List<String> subcategories) {
       this.id = id;
-      this.subcategories = subcategories;
     }
   }
 }

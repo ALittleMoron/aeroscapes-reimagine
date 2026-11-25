@@ -1,11 +1,14 @@
 package dev.aeroscapes.races;
 
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.client.TalentClient;
 import io.redspace.ironsspellbooks.compat.Curios;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.fml.ModList;
 import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.api.Skill;
 import top.theillusivec4.curios.api.CuriosApi;
@@ -37,10 +40,18 @@ public final class ClassProgression {
   }
 
   static boolean learned(ServerPlayer player, CharacterClass characterClass, String node) {
-    return SkillsMod.getInstance()
-            .getSkillState(player, category(characterClass), node)
-            .orElse(Skill.State.LOCKED)
+    return learned(player, category(characterClass), node);
+  }
+
+  private static boolean learned(ServerPlayer player, ResourceLocation category, String node) {
+    return SkillsMod.getInstance().getSkillState(player, category, node).orElse(Skill.State.LOCKED)
         == Skill.State.UNLOCKED;
+  }
+
+  public static boolean hasCombatTalent(Player player, String node) {
+    if (!ModList.get().isLoaded("puffish_skills")) return false;
+    if (player instanceof ServerPlayer serverPlayer) return learned(serverPlayer, COMBAT, node);
+    return player.level().isClientSide() && TalentClient.learned(COMBAT, node);
   }
 
   public static boolean afterChoice(ServerPlayer player) {

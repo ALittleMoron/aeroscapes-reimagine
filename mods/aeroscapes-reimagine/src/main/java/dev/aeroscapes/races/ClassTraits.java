@@ -1,6 +1,7 @@
 package dev.aeroscapes.races;
 
-import dev.aeroscapes.progression.ProgressionBridge;
+import static dev.aeroscapes.races.ClassProgression.hasCombatTalent;
+
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
@@ -25,8 +26,6 @@ import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.puffish.skillsmod.SkillsMod;
-import net.puffish.skillsmod.api.Skill;
 
 public final class ClassTraits {
   public static final int WARRIOR_ARMOR = 2;
@@ -40,8 +39,6 @@ public final class ClassTraits {
           () ->
               new RangedAttribute("attribute.aeroscapes_reimagine.shield_raise_reduction", 0, 0, 2)
                   .setSyncable(true));
-  private static final ResourceLocation COMBAT =
-      ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
   private static final TagKey<Item> LIGHT_WEAPONS =
       TagKey.create(Registries.ITEM, ResourceLocation.parse("aeroscapes_reimagine:light_weapons"));
   private static final AttributeModifier ARMOR =
@@ -91,11 +88,15 @@ public final class ClassTraits {
         Attributes.MOVEMENT_SPEED,
         FOOTWORK,
         role == CharacterClass.ROGUE && light && player.onGround());
-    apply(player, Attributes.ATTACK_SPEED, RECOVERY, light && learned(player, "quick_recovery"));
+    apply(
+        player,
+        Attributes.ATTACK_SPEED,
+        RECOVERY,
+        light && hasCombatTalent(player, "quick_recovery"));
     ItemStack used = player.getUseItem();
     boolean stride =
-        used.canPerformAction(ItemAbilities.SHIELD_BLOCK) && learned(player, "shield_march")
-            || used.getItem() instanceof BowItem && learned(player, "bow_stride");
+        used.canPerformAction(ItemAbilities.SHIELD_BLOCK) && hasCombatTalent(player, "shield_march")
+            || used.getItem() instanceof BowItem && hasCombatTalent(player, "bow_stride");
     apply(player, Attributes.MOVEMENT_SPEED, STRIDE, stride && !player.isPassenger());
   }
 
@@ -108,12 +109,6 @@ public final class ClassTraits {
     if (instance == null || instance.hasModifier(modifier.id()) == active) return;
     if (active) instance.addTransientModifier(modifier);
     else instance.removeModifier(modifier.id());
-  }
-
-  private static boolean learned(ServerPlayer player, String id) {
-    return ModList.get().isLoaded("puffish_skills")
-        && SkillsMod.getInstance().getSkillState(player, COMBAT, id).orElse(Skill.State.LOCKED)
-            == Skill.State.UNLOCKED;
   }
 
   public static int shieldDelay(LivingEntity entity, int delay) {
@@ -133,7 +128,7 @@ public final class ClassTraits {
     return player.onGround()
             && !player.isPassenger()
             && player.getKnownMovement().horizontalDistanceSqr() < 1.0E-5
-            && learned(player, "steady_aim")
+            && hasCombatTalent(player, "steady_aim")
         ? spread * 0.5F
         : spread;
   }
@@ -143,7 +138,7 @@ public final class ClassTraits {
     return charge >= 1.0F
             && target.getHealth() >= target.getMaxHealth()
             && weapon.is(LIGHT_WEAPONS)
-            && learned(player, "opening_strike")
+            && hasCombatTalent(player, "opening_strike")
         ? damage * 1.15F
         : damage;
   }

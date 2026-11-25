@@ -1,19 +1,19 @@
 package dev.aeroscapes.progression.client;
 
 import dev.aeroscapes.mixin.progression.SkillsClientAccessor;
-import dev.aeroscapes.progression.ProfessionDiscipline;
+import net.minecraft.resources.ResourceLocation;
 import net.puffish.skillsmod.api.Skill;
 import net.puffish.skillsmod.client.SkillsClientMod;
 
-public final class ProfessionTalentClient {
-  private ProfessionTalentClient() {}
+public final class TalentClient {
+  private TalentClient() {}
 
-  public static boolean learned(ProfessionDiscipline tree, String node) {
+  public static boolean learned(ResourceLocation tree, String node) {
     var skills = SkillsClientMod.getInstance();
     if (skills == null) return false;
     return ((SkillsClientAccessor) skills)
         .aeroscapes$screenData()
-        .getCategory(tree.category())
+        .getCategory(tree)
         .filter(
             category -> {
               var skill = category.getConfig().skills().get(node);

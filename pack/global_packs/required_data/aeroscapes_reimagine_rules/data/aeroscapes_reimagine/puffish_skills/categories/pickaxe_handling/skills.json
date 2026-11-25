@@ -1,0 +1,28 @@
+{
+  "copper": {
+    "x": -120,
+    "y": 0,
+    "definition": "copper",
+    "root": true
+  },
+  "iron": {
+    "x": -60,
+    "y": 0,
+    "definition": "iron"
+  },
+  "steel": {
+    "x": 0,
+    "y": 0,
+    "definition": "steel"
+  },
+  "diamond": {
+    "x": 60,
+    "y": 0,
+    "definition": "diamond"
+  },
+  "netherite": {
+    "x": 120,
+    "y": 0,
+    "definition": "netherite"
+  }
+}

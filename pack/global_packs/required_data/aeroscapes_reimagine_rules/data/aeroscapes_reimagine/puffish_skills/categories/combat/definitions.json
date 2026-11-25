@@ -408,5 +408,83 @@
     },
     "rewards": [],
     "cost": 1
+  },
+  "crossbow_handling": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.crossbow_handling.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.crossbow_handling.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/crossbow_handling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "starlight_bow_handling": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.starlight_bow_handling.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.starlight_bow_handling.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/starlight_bow_handling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "autoloader_handling": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.autoloader_handling.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.combat.autoloader_handling.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/autoloader_handling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
   }
 }

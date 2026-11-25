@@ -107,10 +107,14 @@ public final class AeroscapesReimagine {
         modBus.addListener(dev.aeroscapes.magic.AbilityNetwork::register);
       }
     }
-    if (ModList.get().isLoaded("pmmo") && ModList.get().isLoaded("puffish_skills")) {
-      dev.aeroscapes.progression.ProgressionBridge.register();
-      if (ModList.get().isLoaded("irons_spellbooks"))
-        dev.aeroscapes.progression.SpellPractice.register();
+    if (ModList.get().isLoaded("pmmo")) {
+      dev.aeroscapes.equipment.combat.RangedProficiency.register();
+      if (ModList.get().isLoaded("puffish_skills")) {
+        dev.aeroscapes.equipment.tools.ToolProficiency.register();
+        dev.aeroscapes.progression.ProgressionBridge.register();
+        if (ModList.get().isLoaded("irons_spellbooks"))
+          dev.aeroscapes.progression.SpellPractice.register();
+      }
     }
     if (ModList.get().isLoaded("tieredneo")) {
       dev.aeroscapes.equipment.tools.ToolReforges.register(modBus);

@@ -59,7 +59,10 @@
     "ProjectMmoPlacementMixin",
     "ProjectMmoRacePracticeMixin",
     "TreeChopPracticeMixin",
-    "MagicTalentGateMixin",
+    "ToolHandlingDigSpeedMixin",
+    "ToolHandlingBlockUseMixin",
+    "ToolHandlingShearsMixin",
+    "TalentPracticeGateMixin",
     "TalentCategoryAccess"
   ]
 }

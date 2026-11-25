@@ -7,10 +7,13 @@ import dev.aeroscapes.races.ClassTraits;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
+import harmonised.pmmo.api.APIUtils;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
+import io.redspace.ironsspellbooks.item.weapons.AutoloaderCrossbow;
 import java.util.List;
 import java.util.UUID;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.protocol.game.ClientboundUpdateAttributesPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
@@ -22,8 +25,11 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.BowItem;
+import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.puffish.skillsmod.SkillsMod;
@@ -126,6 +132,7 @@ final class MartialClassRegression {
       close(player.getAttributeValue(Attributes.MOVEMENT_SPEED), walking, "Stop using " + item);
     }
     verifyBow(player);
+    verifyRangedProficiency(player);
     verifyKnife(player);
   }
 
@@ -188,6 +195,84 @@ final class MartialClassRegression {
           "Ranger launch speed at " + draw + " ticks");
       arrows.getFirst().discard();
     }
+  }
+
+  private static void verifyRangedProficiency(ServerPlayer player) {
+    var crossbow = Items.CROSSBOW.getDefaultInstance();
+    var autoloader = item("irons_spellbooks:autoloader_crossbow");
+    APIUtils.setLevel("combat", player, 20);
+    APIUtils.setLevel("archery", player, 0);
+    ProgressionBridge.sync(player);
+    require(!learnHandling(player, "crossbow_handling"), "Combat points do not replace practice");
+    int slowCrossbow = CrossbowItem.getChargeDuration(crossbow, player);
+    var quickCrossbow = crossbow.copy();
+    quickCrossbow.enchant(
+        player
+            .registryAccess()
+            .lookupOrThrow(Registries.ENCHANTMENT)
+            .getOrThrow(Enchantments.QUICK_CHARGE),
+        1);
+    int noviceQuickCharge = slowCrossbow - CrossbowItem.getChargeDuration(quickCrossbow, player);
+    int slowAutoloader = AutoloaderCrossbow.getChargeDuration(autoloader, player);
+    double slowArrow = starlightShot(player);
+    APIUtils.setLevel("archery", player, 2);
+    require(
+        slowCrossbow == CrossbowItem.getChargeDuration(crossbow, player),
+        "Reaching the ranged level does not restore loading without a talent");
+    require(learnHandling(player, "crossbow_handling"), "Buy crossbow handling");
+    require(
+        slowCrossbow > CrossbowItem.getChargeDuration(crossbow, player),
+        "The corresponding talent restores the ordinary crossbow's loading time");
+    require(
+        noviceQuickCharge > 0
+            && noviceQuickCharge
+                == CrossbowItem.getChargeDuration(crossbow, player)
+                    - CrossbowItem.getChargeDuration(quickCrossbow, player),
+        "Quick Charge retains its normal contribution before and after training");
+    require(
+        slowAutoloader == AutoloaderCrossbow.getChargeDuration(autoloader, player),
+        "The ordinary crossbow talent does not train the autoloader");
+    APIUtils.setLevel("archery", player, 6);
+    require(
+        Math.abs(starlightShot(player) - slowArrow) < 0.1,
+        "Practice prepares the Starlight talent");
+    require(learnHandling(player, "starlight_bow_handling"), "Buy Starlight Bow handling");
+    require(starlightShot(player) > slowArrow + 0.4, "Talent restores the Starlight Bow's draw");
+    require(!learnHandling(player, "autoloader_handling"), "Autoloader requires its own practice");
+    APIUtils.setLevel("archery", player, 10);
+    require(
+        slowAutoloader == AutoloaderCrossbow.getChargeDuration(autoloader, player),
+        "Reaching the ranged level does not restore autoloading without a talent");
+    require(learnHandling(player, "autoloader_handling"), "Buy autoloader handling");
+    require(
+        slowAutoloader > AutoloaderCrossbow.getChargeDuration(autoloader, player),
+        "Talent restores the autoloader's native loading time");
+  }
+
+  private static boolean learnHandling(ServerPlayer player, String node) {
+    var provider = SkillsMod.getInstance();
+    provider.tryUnlockSkill(player, COMBAT, node, false);
+    return provider.getSkillState(player, COMBAT, node).orElseThrow() == Skill.State.UNLOCKED;
+  }
+
+  private static double starlightShot(ServerPlayer player) {
+    var bow = item("tide:starlight_bow");
+    player.setItemInHand(InteractionHand.MAIN_HAND, bow);
+    player.setItemInHand(InteractionHand.OFF_HAND, new ItemStack(Items.ARROW));
+    ((BowItem) bow.getItem())
+        .releaseUsing(bow, player.level(), player, bow.getUseDuration(player) - 20);
+    var arrows =
+        player
+            .level()
+            .getEntitiesOfClass(
+                AbstractArrow.class,
+                player.getBoundingBox().inflate(4),
+                arrow -> arrow.getOwner() == player);
+    require(arrows.size() == 1, "One actual Starlight Bow shot");
+    var arrow = arrows.getFirst();
+    double speed = arrow.getDeltaMovement().length();
+    arrow.discard();
+    return speed;
   }
 
   private static void verifyKnife(ServerPlayer player) {

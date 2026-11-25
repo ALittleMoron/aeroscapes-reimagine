@@ -2,14 +2,18 @@ package dev.aeroscapes.mixin.progression;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import dev.aeroscapes.equipment.tools.ToolProficiency;
 import dev.aeroscapes.progression.PracticeActions;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import harmonised.pmmo.api.enums.EventType;
 import harmonised.pmmo.storage.DataAttachmentTypes;
 import java.util.Map;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.neoforged.fml.ModList;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -34,6 +38,9 @@ abstract class TreeChopPracticeMixin {
         || !PracticeActions.personal(player)
         || server.getChunkAt(pos).getData(DataAttachmentTypes.PLACED_MAP).containsKey(pos))
       return Map.of();
+    if (ModList.get().isLoaded("puffish_skills") && player.getMainHandItem().is(ItemTags.AXES))
+      return Map.of(
+          "mining", 1L, ProfessionDiscipline.AXE_HANDLING.skill(), ToolProficiency.PRACTICE_XP);
     return Map.of("mining", 1L);
   }
 }

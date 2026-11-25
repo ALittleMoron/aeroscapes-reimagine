@@ -43,14 +43,15 @@ The main development stages are:
 | `0.7.0`   | Characters: races, classes, professions and development through activities; sky rays and cloud-jelly colonies.              |
 | `0.8.0`   | Island geography, resources and expedition routes, with local habitats, small discoveries and landing sites.                |
 | `0.9.0`   | Expanded equipment, workshop crafting, library enchanting, curse cleansing, mastery, combat techniques and workshop traces. |
-| `0.10.0`  | Detailed construction, seasons, responsive plants, gardens and peaceful daily life.                                         |
-| `0.11.0`  | New places, creatures and activities in the Nether.                                                                         |
-| `0.12.0`  | Everyday NPC errands with tracking and rewards.                                                                             |
-| `0.13.0`  | New places, encounters and discoveries in the End.                                                                          |
-| `0.14.0`  | Growing settlements, resident life, relationships, supply and landing-post keepers.                                         |
+| `0.10.0`  | Subclasses and detailed combat and profession talent trees.                                                                 |
+| `0.11.0`  | Detailed construction, seasons, responsive plants, gardens and peaceful daily life.                                         |
+| `0.12.0`  | New places, creatures and activities in the Nether.                                                                         |
+| `0.13.0`  | Everyday NPC errands with tracking and rewards.                                                                             |
+| `0.14.0`  | New places, encounters and discoveries in the End.                                                                          |
+| `0.15.0`  | Growing settlements, resident life, relationships, supply and landing-post keepers.                                         |
 | `1.0.0`   | The pack's core systems work together.                                                                                      |
 
-Character creation offers four races, four classes and four professions. Subclasses have a separate planned release before `1.0.0`. Magic should offer worthwhile activities in both combat and daily life.
+Character creation offers four races, four classes and four professions. Magic should offer worthwhile activities in both combat and daily life.
 
 The `0.9.0` equipment stage includes Overgeared smithing and Immersive Enchanting. Crafting talents will unlock manufacture from iron tools onward. Higher-tier tools can also be found on expeditions. To apply an advanced enchantment, the player needs the corresponding book found through exploration and sufficient enchanting mastery. A book opens its enchantment up to its own level. This stage also includes paid curse cleansing, additional cursed finds and a very small curse chance during manufacture. Applying enchantments will not add new curses.
 

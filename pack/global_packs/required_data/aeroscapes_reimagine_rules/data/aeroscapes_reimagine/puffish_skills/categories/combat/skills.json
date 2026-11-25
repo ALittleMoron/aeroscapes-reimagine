@@ -71,5 +71,23 @@
     "y": 172,
     "definition": "opening_strike",
     "root": true
+  },
+  "crossbow_handling": {
+    "x": -52,
+    "y": 230,
+    "definition": "crossbow_handling",
+    "root": true
+  },
+  "starlight_bow_handling": {
+    "x": 0,
+    "y": 230,
+    "definition": "starlight_bow_handling",
+    "root": true
+  },
+  "autoloader_handling": {
+    "x": 52,
+    "y": 230,
+    "definition": "autoloader_handling",
+    "root": true
   }
 }

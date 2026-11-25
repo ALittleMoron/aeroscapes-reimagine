@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="144" viewBox="0 0 128 144" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="160" viewBox="0 0 128 160" shape-rendering="crispEdges">
   <title>Aeroscapes talent paintings</title>
   <desc>Each named group is an original 16 by 16 pixel tile. Export a group with rsvg-convert --export-id NAME talent-icons.svg --output NAME.png.</desc>
   <defs>
@@ -722,5 +722,61 @@
     <path d="M4 6h3v1h2v2h1v3H9v2H7v1H4v-1H2v-2H1V9h1V7h2z" fill="#8dc653" />
     <path d="M4 7h3v1h2v3H8v-1H3v1H2V8h2z" fill="#d8f37d" />
     <path d="M4 9h3v2H4zm6-5h2v1h-2zM2 3h1v1H2zm11 9h1v1h-1z" fill="#f1ffa5" />
+  </g>
+  <g id="pickaxe_handling" transform="translate(0 144)">
+    <rect width="16" height="16" fill="#111b28" />
+    <rect x="1" y="1" width="14" height="14" fill="#24384a" />
+    <path d="M7 6h2v3H8v2H7v2H6v1H4v-2h1v-2h1V8h1z" fill="#bb8157" />
+    <path d="M2 3h7v1h3v2h2v3h-2V7h-2V6H6V5H2z" fill="#91a9b7" />
+    <path d="M3 4h5v1H3zm8 2h2v1h-2z" fill="#e7f0e7" />
+  </g>
+  <g id="axe_handling" transform="translate(16 144)">
+    <rect width="16" height="16" fill="#111b28" />
+    <rect x="1" y="1" width="14" height="14" fill="#39412a" />
+    <path d="M6 5h2v4H7v3H6v2H4v-3h1V8h1z" fill="#bb8157" />
+    <path d="M6 2h6v1h2v5h-2v1H8V8H6z" fill="#91a9b7" />
+    <path d="M11 3h2v4h-2zm-3 2h3v2H8z" fill="#e7f0e7" />
+  </g>
+  <g id="shovel_handling" transform="translate(32 144)">
+    <rect width="16" height="16" fill="#111b28" />
+    <rect x="1" y="1" width="14" height="14" fill="#3e3249" />
+    <path d="M7 7h2v2h1v1h1v2h2v2h-2l-1-2H9v-1H8V9H7z" fill="#bb8157" />
+    <path d="M3 2h5v1h1v4H8v2H5V8H3z" fill="#91a9b7" />
+    <path d="M4 3h3v1H4zm0 2h2v2H4z" fill="#e7f0e7" />
+  </g>
+  <g id="hoe_handling" transform="translate(48 144)">
+    <rect width="16" height="16" fill="#111b28" />
+    <rect x="1" y="1" width="14" height="14" fill="#483827" />
+    <path d="M7 6h2v3H8v2H7v2H6v1H4v-2h1v-2h1V8h1z" fill="#bb8157" />
+    <path d="M3 3h8v1h2v2h-3v1H8V6H7v1H3V6H2V4h1z" fill="#91a9b7" />
+    <path d="M3 4h7v1H5v1H3z" fill="#e7f0e7" />
+  </g>
+  <g id="shears_handling" transform="translate(64 144)">
+    <rect width="16" height="16" fill="#111b28" />
+    <rect x="1" y="1" width="14" height="14" fill="#39314c" />
+    <path d="M3 10h2V9h3v3H7v2H3zm1 1v2h2v-2zm5-2h3v1h2v4h-4v-2H9zm2 2v2h2v-2z" fill="#bb8157" />
+    <path d="M2 2h2v2h2v2h2v2h1V6h2V4h1V2h2v3h-1v2h-2v3H7V8H5V6H3V4H2z" fill="#91a9b7" />
+    <path d="M3 3h1v2h2v1H5V5H3zm9 0h1v2h-2v1h-1V5h2z" fill="#e7f0e7" />
+  </g>
+  <g id="crossbow_handling" transform="translate(80 144)">
+    <rect width="16" height="16" fill="#111b28" />
+    <rect x="1" y="1" width="14" height="14" fill="#3a3030" />
+    <path d="M2 5h2v1h2V5h4v1h2V5h2v2h-2v1H9v5H7V8H4V7H2z" fill="#c48b58" />
+    <path d="M3 7h1v1h2v1h4V8h2V7h1v2h-2v1H5V9H3z" fill="#eed4a5" />
+    <path d="M8 2h1v1h1v1H9v3H8V4H7V3h1z" fill="#d7eaf2" />
+  </g>
+  <g id="starlight_bow_handling" transform="translate(96 144)">
+    <rect width="16" height="16" fill="url(#azure_glow)" />
+    <path d="M8 2h2v1h2v2h1v2h1v2h-1v2h-1v2h-2v1H8v-2h2v-2h1V6h-1V4H8z" fill="#77bff0" />
+    <path d="M8 3h1v1H8v1H7v1H6v4h1v1h1v1h1v1H8v-1H7v-1H6v-1H5V6h1V5h1V4h1z" fill="#e6d6ff" />
+    <path d="M3 5h1v2h2v1H4v2H3V8H1V7h2zm3 2h3V6h1v1h1v1h-1v1H9V8H6z" fill="#f5f1bd" />
+  </g>
+  <g id="autoloader_handling" transform="translate(112 144)">
+    <rect width="16" height="16" fill="#111b28" />
+    <rect x="1" y="1" width="14" height="14" fill="#303844" />
+    <path d="M2 4h2v1h2v1h4V5h2V4h2v3h-2v1h-2v5H6V8H4V7H2z" fill="#bd9b62" />
+    <path d="M5 6h6v4H5zm2 5h2v2H7z" fill="#8f9caf" />
+    <path d="M6 6h1v4H6zm2 0h1v4H8zm2 0h1v4h-1zM3 5h1v1H3zm10 0h1v1h-1z" fill="#ede0a4" />
+    <path d="M7 2h2v1h1v1H9v2H7V4H6V3h1z" fill="#b9e9ef" />
   </g>
 </svg>

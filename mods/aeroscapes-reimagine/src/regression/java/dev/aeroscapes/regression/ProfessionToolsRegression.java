@@ -87,6 +87,7 @@ final class ProfessionToolsRegression {
             Math.abs(player.getDigSpeed(planks, position) - plankSpeed * 1.15) < 0.001
                 && Math.abs(player.getDigSpeed(log, position) - logSpeed) < 0.001,
             "An ordinary cross-profession purchase improves dismantling but not logging");
+        ToolHandlingRegression.verify(level, player, position);
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
       }

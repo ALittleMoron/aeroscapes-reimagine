@@ -1,0 +1,22 @@
+{
+  "normal": {
+    "bidirectional": [
+      [
+        "copper",
+        "iron"
+      ],
+      [
+        "iron",
+        "steel"
+      ],
+      [
+        "steel",
+        "diamond"
+      ],
+      [
+        "diamond",
+        "netherite"
+      ]
+    ]
+  }
+}

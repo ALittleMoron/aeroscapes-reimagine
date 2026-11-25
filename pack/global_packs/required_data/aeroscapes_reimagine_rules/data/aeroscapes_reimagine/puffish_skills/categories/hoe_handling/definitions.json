@@ -1,0 +1,132 @@
+{
+  "copper": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.copper.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.copper.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/hoe_handling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "iron": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.iron.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.iron.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/hoe_handling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "steel": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.steel.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.steel.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/hoe_handling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "diamond": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.diamond.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.diamond.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/hoe_handling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  },
+  "netherite": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.netherite.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.hoe_handling.netherite.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/hoe_handling.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
+  }
+}

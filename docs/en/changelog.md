@@ -6,6 +6,12 @@ status: available
 
 ## 0.9.0
 
+### 0.8.5
+
+- Combat has separate views for melee, defense, ranged and light weapons. Profession trees show general and tool talents together.
+- Practice with pickaxes, axes, shovels, hoes and shears earns separate points. Spend them under Mining, Building or Farming and Animal Husbandry to unlock full speed. Diamond pickaxes can harvest obsidian before training, and applied enchantments still work.
+- The Combat tree has handling talents for the crossbow, Starlight Bow and autoloader crossbow. Each requires its own Ranged level and one point to unlock full speed. The ordinary bow works at full speed from the start.
+
 ### 0.8.4
 
 - Better Combat adds timed melee swings and weapon combos. Punchy shows attacks in first person, and Better Combat animates them in third person.

@@ -125,6 +125,15 @@ public final class TalentBudgetTest {
 
     JsonObject definitions = read(category.resolve("definitions.json"));
     JsonObject skills = read(category.resolve("skills.json"));
+    if (id.equals("combat")) {
+      var visible = new HashSet<String>();
+      for (var direction : CombatDirection.values()) {
+        for (String node : direction.nodes()) {
+          require(visible.add(node), "Combat talent appears in multiple sections: " + node);
+        }
+      }
+      require(visible.equals(skills.keySet()), "Every combat talent has a visible section");
+    }
     Map<String, Node> nodes = new HashMap<>();
     for (var skill : skills.entrySet()) {
       String name = skill.getKey();
@@ -181,6 +190,13 @@ public final class TalentBudgetTest {
           require(
               nodes.containsKey(from) && nodes.containsKey(to) && !from.equals(to),
               "Invalid talent edge: " + entry);
+          if (id.equals("combat")) {
+            require(
+                java.util.Arrays.stream(CombatDirection.values())
+                    .anyMatch(
+                        section -> section.nodes().contains(from) && section.nodes().contains(to)),
+                "Combat connection must be visible in its section: " + entry);
+          }
           if (exclusion) conflicts.add(new Edge(from, to));
           else {
             nodes.get(to).parents().add(from);

@@ -22,6 +22,7 @@ abstract class BowPullReforgeMixin {
   private static ClampedItemPropertyFunction aeroscapes$bowPull(
       ClampedItemPropertyFunction original) {
     return (stack, level, entity, seed) ->
-        original.unclampedCall(stack, level, entity, seed) / RangedReforges.bowDrawTime(stack);
+        original.unclampedCall(stack, level, entity, seed)
+            / RangedReforges.bowDrawTime(stack, entity);
   }
 }

@@ -417,7 +417,7 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
         || mixinClassName.endsWith("TalentCategoryAccess")) {
       versions = Map.of("puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("ProjectMmoAdminDataMixin")
-        || mixinClassName.endsWith("MagicTalentGateMixin")) {
+        || mixinClassName.endsWith("TalentPracticeGateMixin")) {
       versions = Map.of("pmmo", "2.10.47", "puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.Profession")) {
       var pins =
@@ -436,6 +436,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = pins;
     } else if (mixinClassName.endsWith("TreeChopPracticeMixin")) {
       versions = Map.of("treechop", "0.19.3", "pmmo", "2.10.47", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.ToolHandling")) {
+      versions = Map.of("pmmo", "2.10.47", "puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.")) {
       versions = Map.of("pmmo", "2.10.47", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PrecipitationParticleMixin")) {

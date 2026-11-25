@@ -1,5 +1,6 @@
 package dev.aeroscapes.mixin.progression;
 
+import dev.aeroscapes.equipment.combat.RangedProficiency;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.SpellKnowledge;
@@ -14,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(value = SkillsMod.class, remap = false)
-abstract class MagicTalentGateMixin {
+abstract class TalentPracticeGateMixin {
   @Inject(method = "tryUnlockSkill", at = @At("HEAD"), cancellable = true, require = 1)
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private void aeroscapes$readiness(
@@ -23,7 +24,16 @@ abstract class MagicTalentGateMixin {
       String skill,
       boolean force,
       CallbackInfo callback) {
-    if (force || !category.toString().equals(ProgressionBridge.MAGIC_CATEGORY)) return;
+    if (force) return;
+    if (category.toString().equals(ProgressionBridge.COMBAT_CATEGORY)) {
+      int required = RangedProficiency.missingPracticeLevel(player, skill);
+      if (required > 0) {
+        player.displayClientMessage(RangedProficiency.practiceRequired(required), true);
+        callback.cancel();
+      }
+      return;
+    }
+    if (!category.toString().equals(ProgressionBridge.MAGIC_CATEGORY)) return;
     int requiredLevel = MagicTalents.requiredLevel(skill);
     if (requiredLevel > 0 && requiredLevel > MagicPractice.level(player)) {
       player.displayClientMessage(

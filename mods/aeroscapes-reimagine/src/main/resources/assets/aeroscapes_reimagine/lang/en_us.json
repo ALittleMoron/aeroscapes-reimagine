@@ -1,4 +1,9 @@
 {
+  "tooltip.aeroscapes_reimagine.tool_handling": "Talent for full speed: %s",
+  "tooltip.aeroscapes_reimagine.tool_undertrained": "Slower handling until trained.",
+  "tooltip.aeroscapes_reimagine.tool_training_menu": "Talents → Professions → %s (%s nodes)",
+  "tooltip.aeroscapes_reimagine.ranged_training": "Talents → Combat → Ranged → %s",
+  "tooltip.aeroscapes_reimagine.ranged_undertrained": "Slower until trained. Requires Ranged level %s.",
   "text.autoconfig.bettercombat.category.client": "Client",
   "mod_menu.descriptionTranslation.bettercombat": "Adds timed melee attacks, weapon combos and distinct attack ranges.",
   "aeroscapes_reimagine.config.bettercombat.first_person.YES": "Yes",

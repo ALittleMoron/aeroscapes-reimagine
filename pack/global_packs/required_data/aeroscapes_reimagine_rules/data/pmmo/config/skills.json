@@ -99,6 +99,56 @@
       "noAfkPenalty": true,
       "displayGroupName": false,
       "showInList": true
+    },
+    "pickaxe_handling": {
+      "maxLevel": 50,
+      "icon": "aeroscapes_reimagine:textures/gui/skills/talents/pickaxe_handling.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 9611715,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "axe_handling": {
+      "maxLevel": 50,
+      "icon": "aeroscapes_reimagine:textures/gui/skills/talents/axe_handling.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 9611715,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "shovel_handling": {
+      "maxLevel": 50,
+      "icon": "aeroscapes_reimagine:textures/gui/skills/talents/shovel_handling.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 9611715,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "hoe_handling": {
+      "maxLevel": 50,
+      "icon": "aeroscapes_reimagine:textures/gui/skills/talents/hoe_handling.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 9611715,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
+    "shears_handling": {
+      "maxLevel": 50,
+      "icon": "aeroscapes_reimagine:textures/gui/skills/talents/shears_handling.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 9611715,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
     }
   },
   "types": {
@@ -120,7 +170,12 @@
         "smithing",
         "building",
         "cooking",
-        "enchanting"
+        "enchanting",
+        "pickaxe_handling",
+        "axe_handling",
+        "shovel_handling",
+        "hoe_handling",
+        "shears_handling"
       ],
       "color": 8097186
     }

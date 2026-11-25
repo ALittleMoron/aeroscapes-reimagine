@@ -36,6 +36,7 @@ flowchart TB
   magic -->|"temporary wings and local portals"| travel
   travel -->|"gliders and hooks"| equip
   equip -->|"better weapons and armor"| char
+  char -->|"handling talents unlock full tool speed"| equip
 
   food -.->|"stamina for sprinting, swimming, hooks, vines"| travel
   magic -.->|"help with machines"| eng
