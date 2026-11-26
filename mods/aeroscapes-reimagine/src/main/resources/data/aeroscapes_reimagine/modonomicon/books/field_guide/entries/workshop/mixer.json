@@ -1,0 +1,47 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.mixer.name",
+  "icon": {
+    "item": "create:mechanical_mixer"
+  },
+  "x": 20,
+  "y": 9,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.basin.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.basin.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.mixer.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.mixer.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "create:crafting/kinetics/basin",
+      "recipe_id_2": "create:crafting/kinetics/mechanical_mixer"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/saw",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/large_cogs"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/saw"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.mixer.summary"
+}

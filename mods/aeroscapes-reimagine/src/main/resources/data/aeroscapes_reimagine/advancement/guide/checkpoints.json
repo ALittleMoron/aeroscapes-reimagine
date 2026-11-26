@@ -1,0 +1,7 @@
+{
+  "criteria": {
+    "invisible_root": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

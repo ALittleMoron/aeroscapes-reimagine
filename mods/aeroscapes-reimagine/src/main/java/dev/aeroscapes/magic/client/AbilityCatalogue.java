@@ -32,6 +32,7 @@ public final class AbilityCatalogue {
 
   public static String assignmentReason(AbilityNetwork.Entry entry) {
     if (entry == null) return "waiting";
+    if (entry.technique()) return entry.known() ? "" : "technique_unlearned";
     if (entry.reason().equals("race")) return "race";
     if (entry.reason().equals("disabled")) return "disabled";
     if (entry.reason().equals("hex_missing")) return "hex_missing";

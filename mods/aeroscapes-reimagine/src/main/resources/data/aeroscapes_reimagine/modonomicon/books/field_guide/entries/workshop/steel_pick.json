@@ -1,0 +1,47 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.steel_pick.name",
+  "icon": {
+    "item": "overgeared:steel_pickaxe"
+  },
+  "x": 15,
+  "y": 14,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.forge_steel.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.forge_steel.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.quench_steel.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.quench_steel.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.steel_pick.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.steel_pick.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/steel_talent",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/steel_talent"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/steel_talent"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.steel_pick.summary"
+}

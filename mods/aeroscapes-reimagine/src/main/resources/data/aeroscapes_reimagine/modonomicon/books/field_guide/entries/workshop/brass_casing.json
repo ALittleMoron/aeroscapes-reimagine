@@ -1,0 +1,42 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.brass_casing.name",
+  "icon": {
+    "item": "create:brass_casing"
+  },
+  "x": 24,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.brass.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.brass.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.brass_casing.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.brass_casing.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/blaze",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/blaze"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/blaze"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.brass_casing.summary"
+}

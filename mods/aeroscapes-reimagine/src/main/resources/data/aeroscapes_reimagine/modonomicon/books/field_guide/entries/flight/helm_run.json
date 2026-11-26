@@ -1,0 +1,42 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.helm_run.name",
+  "icon": {
+    "item": "simulated:steering_wheel"
+  },
+  "x": 23,
+  "y": 10,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.swivel_run.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.swivel_run.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.helm_run.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.helm_run.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/propeller_run",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeronautics:in_thrust_we_trust"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "flight/propeller_run"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.helm_run.summary"
+}

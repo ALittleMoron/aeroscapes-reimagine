@@ -1,0 +1,44 @@
+{
+  "category": "island",
+  "name": "book.aeroscapes_reimagine.field_guide.island.knap.name",
+  "icon": {
+    "item": "overgeared:stone_pickaxe_head"
+  },
+  "x": 5,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.island.knap.name",
+      "text": "book.aeroscapes_reimagine.field_guide.island.knap.text"
+    },
+    {
+      "type": "modonomicon:image",
+      "images": [
+        "aeroscapes_reimagine:textures/gui/guide/knapping_pickaxe.png"
+      ],
+      "title": "book.aeroscapes_reimagine.field_guide.island.knap.name"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "island/rock",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/two_rocks"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "island/rock"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.island.knap.summary"
+}

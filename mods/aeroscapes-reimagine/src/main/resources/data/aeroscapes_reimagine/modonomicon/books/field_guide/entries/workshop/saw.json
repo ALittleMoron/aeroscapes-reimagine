@@ -1,0 +1,56 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.saw.name",
+  "icon": {
+    "item": "create:mechanical_saw"
+  },
+  "x": 16,
+  "y": 9,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.saw.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.saw.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.cogs.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.cogs.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.large_cogs.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.large_cogs.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "create:crafting/kinetics/mechanical_saw"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "create:crafting/kinetics/cogwheel",
+      "recipe_id_2": "create:crafting/kinetics/large_cogwheel"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/press",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/sheet"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/press"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.saw.summary"
+}

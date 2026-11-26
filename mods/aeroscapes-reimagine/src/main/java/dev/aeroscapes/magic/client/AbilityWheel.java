@@ -118,12 +118,8 @@ public final class AbilityWheel {
     graphics.drawCenteredString(game.font, name, centerX, centerY + 86, AbilityWidgets.GOLD);
     var entry = AbilityClient.entry(id);
     if (entry != null) {
-      int cooldown = AbilityClient.cooldown(entry);
-      Component state =
-          cooldown > 0
-              ? AbilityClient.text("cooldown", (cooldown + 19) / 20)
-              : AbilityClient.reason(entry);
-      graphics.drawCenteredString(game.font, state, centerX, centerY + 99, AbilityWidgets.TEXT);
+      graphics.drawCenteredString(
+          game.font, AbilityClient.status(entry), centerX, centerY + 99, AbilityWidgets.TEXT);
     }
   }
 }

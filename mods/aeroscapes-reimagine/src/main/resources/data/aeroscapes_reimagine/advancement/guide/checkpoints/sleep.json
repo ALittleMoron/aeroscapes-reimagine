@@ -1,0 +1,23 @@
+{
+  "parent": "aeroscapes_reimagine:guide/checkpoints",
+  "display": {
+    "icon": {
+      "id": "minecraft:white_bed"
+    },
+    "title": {
+      "translate": "book.aeroscapes_reimagine.field_guide.island.sleep.name"
+    },
+    "description": {
+      "translate": "book.aeroscapes_reimagine.field_guide.complete"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:slept_in_bed",
+      "conditions": {}
+    }
+  }
+}

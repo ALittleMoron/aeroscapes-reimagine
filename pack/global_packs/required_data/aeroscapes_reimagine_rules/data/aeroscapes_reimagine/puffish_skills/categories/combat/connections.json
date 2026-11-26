@@ -26,7 +26,48 @@
         "guard_toughness"
       ]
     ],
-    "unidirectional": []
+    "unidirectional": [
+      [
+        "sword_handling",
+        "advanced_sword_handling"
+      ],
+      [
+        "heavy_weapon_handling",
+        "heavy_strike"
+      ],
+      [
+        "quick_block",
+        "shield_brace"
+      ],
+      [
+        "shield_brace",
+        "counterattack"
+      ],
+      [
+        "steady_aim",
+        "slowing_shot"
+      ],
+      [
+        "slowing_shot",
+        "marking_shot"
+      ],
+      [
+        "bow_stride",
+        "quick_shot"
+      ],
+      [
+        "quick_recovery",
+        "disengage"
+      ],
+      [
+        "disengage",
+        "dash"
+      ],
+      [
+        "opening_strike",
+        "flank_strike"
+      ]
+    ]
   },
   "exclusive": {
     "bidirectional": [

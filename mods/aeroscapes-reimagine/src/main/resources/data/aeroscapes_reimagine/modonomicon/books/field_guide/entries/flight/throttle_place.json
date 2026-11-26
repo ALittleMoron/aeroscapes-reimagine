@@ -1,0 +1,70 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.throttle_place.name",
+  "icon": {
+    "item": "simulated:throttle_lever"
+  },
+  "x": 18,
+  "y": 5,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.envelope_place.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.envelope_place.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.burner_place.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.burner_place.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.throttle_place.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.throttle_place.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/assembler",
+      "line_enabled": true,
+      "draw_arrow": false
+    },
+    {
+      "entry": "flight/salvage_parts",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:or",
+    "children": [
+      {
+        "type": "modonomicon:and",
+        "children": [
+          {
+            "type": "modonomicon:advancement",
+            "advancement_id": "aeroscapes_reimagine:guide/checkpoints/assembler"
+          },
+          {
+            "type": "modonomicon:entry_unlocked",
+            "entry_id": "flight/assembler"
+          }
+        ]
+      },
+      {
+        "type": "modonomicon:and",
+        "children": [
+          {
+            "type": "modonomicon:advancement",
+            "advancement_id": "aeroscapes_reimagine:guide/checkpoints/salvage_parts"
+          },
+          {
+            "type": "modonomicon:entry_unlocked",
+            "entry_id": "flight/salvage_parts"
+          }
+        ]
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.throttle_place.summary"
+}

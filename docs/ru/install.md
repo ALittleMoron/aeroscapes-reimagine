@@ -11,6 +11,6 @@ status: partial
 3. Откройте настройки этого экземпляра → **Java and memory**, включите **Custom Java installation**, нажмите **Detect** и выберите строку с версией **25**. Дождитесь успешной проверки Java. Одной установки Java 25 в общих настройках недостаточно: для этой версии Minecraft требуется выбор в экземпляре.
 4. Запустите экземпляр и создайте мир с обычным типом генерации. В других версиях приложения расположение пунктов может отличаться.
 
-Если первый запуск прервался и в журнале указаны Smooth Scrolling и `CreativeScreenHandlerMixin_CC#itemCount`, запустите тот же экземпляр ещё раз. При первой попытке Connector сохраняет обработанный мод и использует его при следующем запуске. [Совместимость Smooth Scrolling](https://modrinth.com/mod/smooth-scroll#neoforge-compatibility)
+В 0.8.5 и более ранних сборках с Fabric-версией Smooth Scrolling первый запуск может прерваться на `CreativeScreenHandlerMixin_CC#itemCount`. Запустите тот же экземпляр ещё раз: Connector использует обработанный мод, который сохранил при первой попытке. [Совместимость Smooth Scrolling](https://modrinth.com/mod/smooth-scroll#neoforge-compatibility)
 
 Перед обновлением прочитайте раздел [«Совместимость и поддержка»](../known-issues/) и сохраните резервную копию мира.

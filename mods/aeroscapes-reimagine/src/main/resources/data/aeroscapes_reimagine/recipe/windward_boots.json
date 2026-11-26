@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "windward",
+  "pattern": [
+    "M M",
+    "SAS"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:leather_boots"
+    },
+    "M": {
+      "item": "minecraft:copper_ingot"
+    },
+    "S": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "id": "aeroscapes_reimagine:windward_boots",
+    "count": 1
+  }
+}

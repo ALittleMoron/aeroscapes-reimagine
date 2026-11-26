@@ -1,6 +1,7 @@
 package dev.aeroscapes.equipment.magic;
 
 import dev.aeroscapes.equipment.ReforgeProfiles;
+import dev.aeroscapes.equipment.armor.ArmorProficiency;
 import dev.aeroscapes.equipment.combat.ArmorSpecialties;
 import io.redspace.ironsspellbooks.api.events.SpellCooldownAddedEvent;
 import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
@@ -79,7 +80,7 @@ public final class MagicSpecialties {
       return duration;
     }
     var state = state(player);
-    var hood = player.getItemBySlot(EquipmentSlot.HEAD);
+    var hood = ArmorProficiency.activeItem(player, EquipmentSlot.HEAD);
     state.focusHood = hood;
     state.anchoredFocus =
         ReforgeProfiles.has(hood, HOOD)
@@ -87,7 +88,7 @@ public final class MagicSpecialties {
             && state.stillTicks >= 20
             && player.onGround();
     double hoodFactor =
-        switch (ReforgeProfiles.path(hood)) {
+        switch (ArmorSpecialties.profile(player, EquipmentSlot.HEAD)) {
           case "armor_head_poor_with_slow_cast" -> 1.10;
           case "armor_head_fine_with_quick_cast" -> 0.95;
           case "magic_armor_head_epic_mana_with_cast_focus" -> 0.92;
@@ -125,7 +126,7 @@ public final class MagicSpecialties {
         || event.getAmount() > 3.0F
         || event.getSource().is(DamageTypeTags.BYPASSES_INVULNERABILITY)) return false;
     var state = STATES.get(player);
-    var hood = player.getItemBySlot(EquipmentSlot.HEAD);
+    var hood = ArmorProficiency.activeItem(player, EquipmentSlot.HEAD);
     if (state == null || state.focusHood != hood || player.tickCount < state.interruptReadyAt) {
       return false;
     }
@@ -161,7 +162,7 @@ public final class MagicSpecialties {
       }
     }
     if (SUPPORT.contains(spell)) {
-      var leggings = player.getItemBySlot(EquipmentSlot.LEGS);
+      var leggings = ArmorProficiency.activeItem(player, EquipmentSlot.LEGS);
       if (ReforgeProfiles.has(leggings, LEGS) && now >= state.stepReadyAt) {
         state.stepLegs = leggings;
         state.stepUntil = now + 40;
@@ -339,7 +340,7 @@ public final class MagicSpecialties {
   }
 
   private static void trackHood(ServerPlayer player, State state) {
-    var hood = player.getItemBySlot(EquipmentSlot.HEAD);
+    var hood = ArmorProficiency.activeItem(player, EquipmentSlot.HEAD);
     if (state.stillHood == hood
         && ReforgeProfiles.has(hood, HOOD)
         && player.onGround()
@@ -354,14 +355,14 @@ public final class MagicSpecialties {
   }
 
   private static double movementBonus(ServerPlayer player, State state, MagicData magic) {
-    var legs = player.getItemBySlot(EquipmentSlot.LEGS);
+    var legs = ArmorProficiency.activeItem(player, EquipmentSlot.LEGS);
     if (player.tickCount < state.stepUntil
         && state.stepLegs == legs
         && ReforgeProfiles.has(legs, LEGS)) {
       return 0.12;
     }
     if (!activePaidCast(player, magic)) return 0.0;
-    return switch (ReforgeProfiles.path(legs)) {
+    return switch (ArmorSpecialties.profile(player, EquipmentSlot.LEGS)) {
       case "armor_legs_poor_with_casting_drag" -> -0.10;
       case "armor_legs_fine_with_casting_step" -> 0.05;
       case "magic_armor_legs_exceptional_mana_with_long_step" ->

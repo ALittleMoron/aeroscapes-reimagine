@@ -17,6 +17,10 @@
     "CompassNaturePriceMixin",
     "CompassExplorerPriceMixin",
     "LegendaryFrostStrikeMixin",
+    "technique.MartialArrowImpactMixin",
+    "technique.MartialArrowLaunchMixin",
+    "technique.MartialMeleeMixin",
+    "technique.MartialShieldMixin",
     "ReforgeAnvilReturnMixin",
     "reforge.ReforgeEquipmentSlotMixin",
     "reforge.ReforgeGradeMixin",
@@ -33,6 +37,7 @@
     "reforge.combat.CrabClawReforgeMixin",
     "reforge.combat.CreateDivingAirReforgeMixin",
     "reforge.combat.CrossbowChargeReforgeMixin",
+    "reforge.combat.MeleeRecoveryMixin",
     "reforge.combat.PickarangLaunchReforgeMixin",
     "reforge.combat.PickarangReturnReforgeMixin",
     "reforge.combat.PotatoCannonReforgeMixin",
@@ -82,6 +87,8 @@
     "reforge.tools.VanillaRodReforgeMixin"
   ],
   "client": [
+    "guide.FieldGuideBookmarksMixin",
+    "guide.FieldGuideScreenMixin",
     "engineering.LadleAssemblyEmiMixin",
     "CompassNatureScreenMixin",
     "CompassExplorerScreenMixin",

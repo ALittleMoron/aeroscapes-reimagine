@@ -1,12 +1,12 @@
 package dev.aeroscapes.progression.client;
 
-import dev.aeroscapes.equipment.combat.RangedProficiency;
 import dev.aeroscapes.inventory.InventoryNavigation;
 import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.mixin.progression.SkillsScreenAccessor;
 import dev.aeroscapes.progression.CombatDirection;
+import dev.aeroscapes.progression.CombatTalentRequirements;
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.ChangeNetwork;
 import dev.aeroscapes.races.client.ChangeClient;
@@ -53,7 +53,6 @@ public final class TalentScreen extends Screen implements ChangeView {
   private static final int GOLD = 0xffe9c084;
   private static final int ROUTE = 0xff75dfda;
   private static final int AFFORDABLE = 0xffc5fa77;
-  private static final int BRANCH_LABEL_GAP = 40;
   private static final List<ProfessionDiscipline> PROFESSION_SECTIONS =
       Arrays.stream(ProfessionDiscipline.values()).filter(tree -> !tree.toolHandling()).toList();
   private final ClientSkillScreenData data;
@@ -321,7 +320,7 @@ public final class TalentScreen extends Screen implements ChangeView {
     if (categories.equals(fittedCategories)) return;
     fittedCategories = List.copyOf(categories);
     var next = new ArrayList<TreeBranch>();
-    int branchTop = 0;
+    int branchLeft = 0;
     for (var category : categories) {
       var nodes =
           category.getConfig().skills().values().stream()
@@ -331,18 +330,20 @@ public final class TalentScreen extends Screen implements ChangeView {
               .sorted(Comparator.comparing(ClientSkillConfig::id))
               .toList();
       if (nodes.isEmpty()) continue;
-      int minY = nodes.stream().mapToInt(ClientSkillConfig::y).min().orElseThrow();
-      int maxY = nodes.stream().mapToInt(ClientSkillConfig::y).max().orElseThrow();
-      int offset = categories.size() > 1 ? branchTop + BRANCH_LABEL_GAP - minY : 0;
-      int minX = nodes.stream().mapToInt(ClientSkillConfig::x).min().orElseThrow();
-      int maxX = nodes.stream().mapToInt(ClientSkillConfig::x).max().orElseThrow();
+      var placement =
+          categories.size() > 1
+              ? TreeViewport.BranchPlacement.at(
+                  branchLeft,
+                  nodes.stream().mapToInt(ClientSkillConfig::x).min().orElseThrow(),
+                  nodes.stream().mapToInt(ClientSkillConfig::x).max().orElseThrow(),
+                  nodes.stream().mapToInt(ClientSkillConfig::y).min().orElseThrow())
+              : TreeViewport.BranchPlacement.UNCHANGED;
       next.add(
           new TreeBranch(
               category,
-              nodes.stream().map(node -> new TreeNode(category, node, offset)).toList(),
-              (minX + maxX) / 2,
-              branchTop));
-      branchTop = maxY + offset + BRANCH_LABEL_GAP;
+              nodes.stream().map(node -> new TreeNode(category, node, placement)).toList(),
+              placement));
+      branchLeft = placement.nextLeft();
     }
     branches = List.copyOf(next);
     visibleNodes = branches.stream().flatMap(branch -> branch.nodes().stream()).toList();
@@ -397,14 +398,19 @@ public final class TalentScreen extends Screen implements ChangeView {
 
   private void fit() {
     if (visibleNodes.isEmpty()) return;
-    int minY =
-        branches.size() > 1
-            ? branches.getFirst().labelY()
-            : visibleNodes.stream().mapToInt(TreeNode::y).min().orElseThrow();
+    int minX = visibleNodes.stream().mapToInt(TreeNode::x).min().orElseThrow();
+    int maxX = visibleNodes.stream().mapToInt(TreeNode::x).max().orElseThrow();
+    int minY = visibleNodes.stream().mapToInt(TreeNode::y).min().orElseThrow();
+    if (branches.size() > 1) {
+      int halfWidth = TreeViewport.BRANCH_LABEL_HALF_WIDTH;
+      minX = Math.min(minX, branches.getFirst().placement().labelX() - halfWidth);
+      maxX = Math.max(maxX, branches.getLast().placement().labelX() + halfWidth);
+      minY = TreeViewport.BRANCH_LABEL_Y;
+    }
     camera.fit(
-        visibleNodes.stream().mapToInt(TreeNode::x).min().orElseThrow(),
+        minX,
         minY,
-        visibleNodes.stream().mapToInt(TreeNode::x).max().orElseThrow(),
+        maxX,
         visibleNodes.stream().mapToInt(TreeNode::y).max().orElseThrow(),
         canvasWidth(),
         canvasHeight());
@@ -539,29 +545,25 @@ public final class TalentScreen extends Screen implements ChangeView {
       graphics.pose().scale((float) camera.scale(), (float) camera.scale(), 1);
       for (var branch : branches) {
         var config = branch.category().getConfig();
-        int offset = branch.nodes().getFirst().offsetY();
-        drawConnections(graphics, branch.category(), config.normalConnections(), false, offset);
-        drawConnections(graphics, branch.category(), config.exclusiveConnections(), true, offset);
+        drawConnections(graphics, branch, config.normalConnections(), false);
+        drawConnections(graphics, branch, config.exclusiveConnections(), true);
       }
       for (var node : visibleNodes) drawNode(graphics, node, node == hoveredNode);
-      graphics.pose().popPose();
       if (branches.size() > 1) {
         for (var branch : branches) {
           var name =
               branch.category().getConfig().id().getPath().equals(profession.skill())
                   ? text("page.general")
                   : text("page." + branch.category().getConfig().id().getPath() + "_short");
-          int x = 16 + canvasWidth() / 2 + (int) camera.x(branch.labelX());
-          int y =
-              (int)
-                  Math.round(
-                      top
-                          + canvasHeight() / 2.0
-                          + camera.y(branch.labelY())
-                          - font.lineHeight / 2.0);
-          graphics.drawCenteredString(font, name, x, y, MUTED);
+          graphics.drawCenteredString(
+              font,
+              name,
+              branch.placement().labelX(),
+              TreeViewport.BRANCH_LABEL_Y - font.lineHeight / 2,
+              MUTED);
         }
       }
+      graphics.pose().popPose();
     }
     graphics.disableScissor();
     drawDetails(graphics, category);
@@ -595,13 +597,16 @@ public final class TalentScreen extends Screen implements ChangeView {
                 definition -> {
                   var tooltip = new ArrayList<Component>();
                   tooltip.add(definition.title());
+                  tooltip.add(definition.description().copy().withStyle(ChatFormatting.GRAY));
                   if (branches.size() > 1)
                     tooltip.add(categoryTitle(hovered.category()).withStyle(ChatFormatting.GOLD));
-                  tooltip.add(definition.description().copy().withStyle(ChatFormatting.GRAY));
-                  if (MagicTalents.nodes().contains(hovered.id()))
-                    tooltip.add(magicRequirement(hovered.skill()));
                   tooltip.add(stateText(hovered.category(), hovered.skill()));
-                  graphics.renderComponentTooltip(font, tooltip, mouseX, mouseY);
+                  var lines =
+                      tooltip.stream()
+                          .flatMap(
+                              component -> font.split(component, Math.min(240, width / 2)).stream())
+                          .toList();
+                  graphics.renderTooltip(font, lines, mouseX, mouseY);
                 });
     }
   }
@@ -613,10 +618,11 @@ public final class TalentScreen extends Screen implements ChangeView {
 
   private void drawConnections(
       GuiGraphics graphics,
-      ClientCategoryData category,
+      TreeBranch branch,
       java.util.Collection<ClientSkillConnectionConfig> connections,
-      boolean exclusive,
-      int offset) {
+      boolean exclusive) {
+    var category = branch.category();
+    var placement = branch.placement();
     for (var edge : connections) {
       if (!visible(edge.skillAId()) || !visible(edge.skillBId())) continue;
       var a = category.getConfig().skills().get(edge.skillAId());
@@ -631,10 +637,10 @@ public final class TalentScreen extends Screen implements ChangeView {
               && path.edges().contains(new MagicTalentPath.Edge(a.id(), b.id()));
       line(
           graphics,
-          a.x(),
-          a.y() + offset,
-          b.x(),
-          b.y() + offset,
+          a.x() + placement.offsetX(),
+          a.y() + placement.offsetY(),
+          b.x() + placement.offsetX(),
+          b.y() + placement.offsetY(),
           onPath ? ROUTE : color,
           exclusive,
           onPath);
@@ -727,7 +733,7 @@ public final class TalentScreen extends Screen implements ChangeView {
     Skill.State nativeState = category.getSkillState(node);
     if (page == Page.COMBAT
         && nativeState != Skill.State.UNLOCKED
-        && RangedProficiency.missingPracticeLevel(minecraft.player, node.id()) > 0)
+        && CombatTalentRequirements.missing(minecraft.player, node.id()) != null)
       return Skill.State.LOCKED;
     return nativeState != Skill.State.UNLOCKED
             && (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel()
@@ -749,11 +755,11 @@ public final class TalentScreen extends Screen implements ChangeView {
     Skill.State nativeState = category.getSkillState(node);
     if (nativeState != Skill.State.UNLOCKED) {
       if (page == Page.COMBAT) {
-        int required = RangedProficiency.missingPracticeLevel(minecraft.player, node.id());
-        if (required > 0) return RangedProficiency.practiceRequired(required);
+        var required = CombatTalentRequirements.missing(minecraft.player, node.id());
+        if (required != null) return required;
       }
       if (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel())
-        return text("magic.level_locked");
+        return magicRequirement(node);
       String missing = missingPriorMastery(category, node);
       if (missing != null) return SpellKnowledge.requiredMasteryMessage(missing);
     }
@@ -845,12 +851,14 @@ public final class TalentScreen extends Screen implements ChangeView {
       var definition = category.getConfig().getDefinitionById(node.definitionId()).orElse(null);
       if (definition != null) {
         y = paragraph(graphics, definition.title(), x, y, GOLD);
-        if (branches.size() > 1) y = paragraph(graphics, categoryTitle(category), x, y + 3, MUTED);
-        if (page == Page.MAGIC) y = pathDetails(graphics, category, x, y + 4);
         y = paragraph(graphics, definition.description(), x, y + 4, TEXT);
+        if (branches.size() > 1) y = paragraph(graphics, categoryTitle(category), x, y + 3, MUTED);
         y = paragraph(graphics, text("cost", definition.cost()), x, y + 6, MUTED);
         y = paragraph(graphics, stateText(category, node), x, y + 3, MUTED);
-        if (page == Page.MAGIC) y = magicProgress(graphics, x, y + 8);
+        if (page == Page.MAGIC) {
+          y = pathDetails(graphics, category, x, y + 8);
+          y = magicProgress(graphics, x, y + 8);
+        }
         var exclusions =
             category.getConfig().skillExclusiveNeighbors().getOrDefault(node.id(), List.of());
         for (String id : exclusions) {
@@ -1017,19 +1025,22 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private record TreeBranch(
-      ClientCategoryData category, List<TreeNode> nodes, int labelX, int labelY) {}
+      ClientCategoryData category, List<TreeNode> nodes, TreeViewport.BranchPlacement placement) {}
 
-  private record TreeNode(ClientCategoryData category, ClientSkillConfig skill, int offsetY) {
+  private record TreeNode(
+      ClientCategoryData category,
+      ClientSkillConfig skill,
+      TreeViewport.BranchPlacement placement) {
     String id() {
       return skill.id();
     }
 
     int x() {
-      return skill.x();
+      return skill.x() + placement.offsetX();
     }
 
     int y() {
-      return skill.y() + offsetY;
+      return skill.y() + placement.offsetY();
     }
 
     boolean sameTalent(TreeNode other) {

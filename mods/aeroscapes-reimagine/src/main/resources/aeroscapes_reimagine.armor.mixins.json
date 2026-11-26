@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.aeroscapes.mixin.armor",
+  "compatibilityLevel": "JAVA_21",
+  "plugin": "dev.aeroscapes.atmosphere.AtmosphereMixinPlugin",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "AquaticArmorPlayerMixin",
+    "ArmorAttributesMixin",
+    "ArmorSpellSelectionMixin",
+    "ArmorTurtleMixin",
+    "BacktankTrainingMixin",
+    "DivingBootsTrainingMixin",
+    "DivingHelmetTrainingMixin",
+    "SterlingBootsTrainingMixin"
+  ]
+}

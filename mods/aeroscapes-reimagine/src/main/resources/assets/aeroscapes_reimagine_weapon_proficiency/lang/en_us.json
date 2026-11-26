@@ -1,0 +1,19 @@
+{
+  "puffish_skills.aeroscapes_reimagine.combat.sword_handling.title": "Sword Handling",
+  "puffish_skills.aeroscapes_reimagine.combat.sword_handling.description": "Restores normal swing timing with copper, iron and golden swords.",
+  "puffish_skills.aeroscapes_reimagine.combat.advanced_sword_handling.title": "Advanced Sword Handling",
+  "puffish_skills.aeroscapes_reimagine.combat.advanced_sword_handling.description": "Restores normal swing timing with steel, diamond, netherite and specialist swords.",
+  "puffish_skills.aeroscapes_reimagine.combat.combat_axe_handling.title": "Combat Axe Handling",
+  "puffish_skills.aeroscapes_reimagine.combat.combat_axe_handling.description": "Restores normal swing timing with advanced axes in melee.",
+  "puffish_skills.aeroscapes_reimagine.combat.heavy_weapon_handling.title": "Heavy Weapon Handling",
+  "puffish_skills.aeroscapes_reimagine.combat.heavy_weapon_handling.description": "Restores normal swing timing with maces, greatswords and other heavy melee weapons, including staves used to strike.",
+  "puffish_skills.aeroscapes_reimagine.combat.polearm_handling.title": "Polearm Handling",
+  "puffish_skills.aeroscapes_reimagine.combat.polearm_handling.description": "Restores normal swing timing with spears, scythes and tridents in melee.",
+  "puffish_skills.aeroscapes_reimagine.combat.light_weapon_handling.title": "Light Weapon Handling",
+  "puffish_skills.aeroscapes_reimagine.combat.light_weapon_handling.description": "Restores normal swing timing with metal knives, daggers, rapiers and the ice sickle.",
+  "puffish_skills.aeroscapes_reimagine.combat.shield_handling.title": "Shield Handling",
+  "puffish_skills.aeroscapes_reimagine.combat.shield_handling.description": "Restores the normal time it takes to raise a shield.",
+  "tooltip.aeroscapes_reimagine.weapon_proficiency.talent": "Combat training: %s",
+  "tooltip.aeroscapes_reimagine.weapon_proficiency.melee_delay": "Untrained: +%s%% melee recovery time",
+  "tooltip.aeroscapes_reimagine.weapon_proficiency.shield_delay": "Untrained: +%s ticks to raise the shield"
+}

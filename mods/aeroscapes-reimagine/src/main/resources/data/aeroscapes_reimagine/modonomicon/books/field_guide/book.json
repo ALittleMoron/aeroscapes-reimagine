@@ -1,0 +1,49 @@
+{
+  "name": "book.aeroscapes_reimagine.field_guide.name",
+  "tooltip": "book.aeroscapes_reimagine.field_guide.tooltip",
+  "model": "aeroscapes_reimagine:field_guide",
+  "display_mode": "node",
+  "font": "minecraft:default",
+  "book_overview_texture": "aeroscapes_reimagine:textures/gui/guide/overview.png",
+  "book_content_texture": "aeroscapes_reimagine:textures/gui/guide/pages.png",
+  "crafting_texture": "aeroscapes_reimagine:textures/gui/guide/crafting.png",
+  "frame_texture": "aeroscapes_reimagine:textures/gui/guide/frame.png",
+  "default_title_color": 1450801,
+  "default_text_color": 2439241,
+  "top_frame_overlay": {
+    "texture": "aeroscapes_reimagine:textures/gui/guide/frame.png",
+    "texture_width": 256,
+    "texture_height": 256,
+    "frame_width": 0,
+    "frame_height": 0,
+    "frame_x_offset": 0,
+    "frame_y_offset": 0
+  },
+  "bottom_frame_overlay": {
+    "texture": "aeroscapes_reimagine:textures/gui/guide/frame.png",
+    "texture_width": 256,
+    "texture_height": 256,
+    "frame_width": 0,
+    "frame_height": 0,
+    "frame_x_offset": 0,
+    "frame_y_offset": 0
+  },
+  "left_frame_overlay": {
+    "texture": "aeroscapes_reimagine:textures/gui/guide/frame.png",
+    "texture_width": 256,
+    "texture_height": 256,
+    "frame_width": 0,
+    "frame_height": 0,
+    "frame_x_offset": 0,
+    "frame_y_offset": 0
+  },
+  "right_frame_overlay": {
+    "texture": "aeroscapes_reimagine:textures/gui/guide/frame.png",
+    "texture_width": 256,
+    "texture_height": 256,
+    "frame_width": 0,
+    "frame_height": 0,
+    "frame_x_offset": 0,
+    "frame_y_offset": 0
+  }
+}

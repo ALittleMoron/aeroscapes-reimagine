@@ -1,0 +1,37 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.landing.name",
+  "icon": {
+    "item": "minecraft:oak_boat"
+  },
+  "x": 15,
+  "y": 15,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.landing.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.landing.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/first_flight",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/first_flight"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "flight/first_flight"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.landing.summary"
+}

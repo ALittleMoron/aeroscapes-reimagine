@@ -1,5 +1,7 @@
 package dev.aeroscapes.magic.client;
 
+import dev.aeroscapes.equipment.combat.MartialTechnique;
+import dev.aeroscapes.equipment.combat.MartialTechniques;
 import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
 import dev.aeroscapes.magic.AbilityNetwork;
 import dev.aeroscapes.magic.HexPrograms;
@@ -18,7 +20,10 @@ import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
@@ -90,6 +95,8 @@ public final class AbilityClient {
   }
 
   public static Component name(String id) {
+    var technique = MartialTechnique.byId(id);
+    if (technique != null) return technique.displayName();
     var item = HexPrograms.itemType(id);
     if (item != null) {
       var entry = entry(id);
@@ -117,6 +124,7 @@ public final class AbilityClient {
   }
 
   public static Component school(AbilityNetwork.Entry entry) {
+    if (entry.technique()) return text("technique_school");
     if (entry.program() != null) return text("hex_school");
     if (AmuletStep.GROUP.equals(entry.school())) return text("equipment");
     if (PreparedAbilities.DISCOVERY_GROUP.equals(entry.school()))
@@ -137,6 +145,27 @@ public final class AbilityClient {
       if (light != null) return text("light_remaining", (light.getDuration() + 19) / 20);
     }
     return reason(entry.reason());
+  }
+
+  public static Component status(AbilityNetwork.Entry entry) {
+    if (entry.technique()
+        && (entry.reason().equals(MartialTechniques.PRIMED)
+            || entry.reason().equals(MartialTechniques.MARKED))) return reason(entry);
+    int remaining = cooldown(entry);
+    return remaining > 0 ? text("cooldown", (remaining + 19) / 20) : reason(entry);
+  }
+
+  public static float martialBowDrawTime(ItemStack stack, LivingEntity entity) {
+    if (!stack.is(Items.BOW)
+        || entity == null
+        || entity != Minecraft.getInstance().player
+        || !entity.getProjectile(stack).is(Items.ARROW)) return 1.0F;
+    var quickShot = entry(MartialTechnique.QUICK_SHOT.id());
+    return quickShot != null
+            && quickShot.reason().equals(MartialTechniques.PRIMED)
+            && cooldown(quickShot) > 0
+        ? MartialTechnique.QUICK_DRAW_TIME
+        : 1.0F;
   }
 
   public static Component reason(String reason) {
@@ -252,6 +281,7 @@ public final class AbilityClient {
       return;
     }
     var innate = InnateAbility.byId(id);
+    var technique = MartialTechnique.byId(id);
     var accessory = ExceptionalAccessory.byId(id);
     ResourceLocation texture;
     if (AmuletStep.ID.equals(id)
@@ -261,6 +291,8 @@ public final class AbilityClient {
           ResourceLocation.fromNamespaceAndPath(
               "aeroscapes_reimagine",
               "textures/gui/abilities/" + ResourceLocation.parse(id).getPath() + ".png");
+    } else if (technique != null) {
+      texture = technique.icon();
     } else if (accessory != null) {
       texture = accessory.spell().getSpellIconResource();
     } else if (innate != null) {

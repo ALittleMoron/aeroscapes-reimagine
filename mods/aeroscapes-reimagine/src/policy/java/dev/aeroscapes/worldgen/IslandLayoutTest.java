@@ -9,6 +9,7 @@ public final class IslandLayoutTest {
     verifyBasinSampling();
     verifyLavaIslands();
     verifyLowlandSlopes();
+    verifySuperlargeIslands();
     for (double cap : new double[] {-1, -0.5, -0.36, -0.01, 0}) {
       var edge = new IslandLayout.VerticalShape(cap, 80, 0, 12);
       require(edge.terrainDensity(40, 10) <= 0, "Detail crosses the bounded island outline");
@@ -101,6 +102,45 @@ public final class IslandLayoutTest {
 
   private static void require(boolean condition, String message) {
     if (!condition) throw new AssertionError(message);
+  }
+
+  private static void verifySuperlargeIslands() {
+    int ordinary = 0;
+    int superlarge = 0;
+    var forms = java.util.EnumSet.noneOf(IslandLayout.LargeForm.class);
+    int cell = IslandLayout.LARGE_CELL_SIZE;
+    for (long seed : new long[] {1, 42, -17}) {
+      var layout = new IslandLayout(seed);
+      for (int x = -16 * cell; x < 16 * cell; x += cell) {
+        for (int z = -16 * cell; z < 16 * cell; z += cell) {
+          var island = layout.largeIsland(x, z);
+          if (island == null) continue;
+          require(
+              island.equals(layout.largeIsland(x + cell - 1, z + cell - 1)),
+              "Island selection changes within one cell");
+          if (!superlarge(island)) {
+            ordinary++;
+            continue;
+          }
+          superlarge++;
+          forms.add(island.form());
+          for (int dx = -cell; dx <= cell; dx += cell) {
+            for (int dz = -cell; dz <= cell; dz += cell) {
+              if (dx == 0 && dz == 0) continue;
+              require(
+                  !superlarge(layout.largeIsland(x + dx, z + dz)),
+                  "Superlarge islands occupy neighboring cells");
+            }
+          }
+        }
+      }
+    }
+    require(ordinary > 100 && superlarge > 100, "Expected both ordinary and superlarge islands");
+    require(forms.size() == IslandLayout.LargeForm.values().length, "Missing a superlarge form");
+  }
+
+  private static boolean superlarge(IslandLayout.LargeIsland island) {
+    return island != null && Math.max(island.radiusX(), island.radiusZ()) >= 400;
   }
 
   private static void verifyLowlandSlopes() {

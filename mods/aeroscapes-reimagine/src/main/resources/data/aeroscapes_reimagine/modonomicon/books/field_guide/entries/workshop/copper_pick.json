@@ -1,0 +1,42 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.copper_pick.name",
+  "icon": {
+    "item": "overgeared:copper_pickaxe"
+  },
+  "x": 15,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.quench_copper.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.quench_copper.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.copper_pick.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.copper_pick.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/forge_copper",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/forge_copper"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/forge_copper"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.copper_pick.summary"
+}

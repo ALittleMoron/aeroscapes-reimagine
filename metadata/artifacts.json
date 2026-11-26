@@ -10002,36 +10002,42 @@
     "file_size": 176633
   },
   {
-    "slug": "smooth-scroll",
-    "name": "Smooth Scrolling",
-    "project_id": "CllP7wW0",
-    "version_id": "1HA8AoCS",
-    "version": "2.2.1",
-    "filename": "smoothscroll-2.2.1-1.21.1.jar",
-    "sha512": "c9bf028f54047c5ad88b4c0fc583ad8924d6dbb58ff9d6a801c68d31a3b5fec92be3309e5022266e8efa178da2dfd2980a368cc42d947ee441136873bd433371",
-    "sha1": "83ce9cb551cfb03569a39a94cbed8686b2e6abc0",
-    "file_size": 76919,
+    "slug": "smooth-scrolling-reforged",
+    "name": "Smooth Scrolling Reforged",
+    "project_id": "curseforge:1364975",
+    "version_id": "7106845",
+    "version": "1.0.1",
+    "filename": "smoothscrolling-1.21.1-NeoForge-1.0.1.jar",
+    "sha512": "1fe603255696e4575ba369cb162b262a0650a048636a27cbec060dd7573d25398cfbdc8da64e537cedc6497db638f1b96cefb97ebd86677497715bcbd57937c3",
+    "sha1": "c57b50860de3cc5fbf7aa835dc8fe44bfef7b030",
+    "file_size": 40161,
     "release_type": "release",
     "side": "client",
     "kind": "mod",
     "loaders": [
-      "fabric",
-      "quilt"
+      "neoforge"
     ],
     "game_versions": [
-      "1.21",
       "1.21.1"
     ],
     "license": {
       "id": "GPL-3.0-only",
       "name": "GNU General Public License v3.0 only",
-      "url": null
+      "url": "https://www.curseforge.com/minecraft/mc-mods/smooth-scrolling-reforged/license"
     },
-    "source_url": "https://github.com/SmajloSlovakian/Minecraft-Smooth-Scrolling",
+    "source_url": "https://github.com/Leclowndu93150/Smooth-Scrolling/tree/b19c88f9da0e31014caa2b5e6cb01b6b6a79a390",
+    "source": {
+      "type": "curseforge",
+      "project_id": 1364975,
+      "file_id": 7106845,
+      "url": "https://edge.forgecdn.net/files/7106/845/smoothscrolling-1.21.1-NeoForge-1.0.1.jar"
+    },
     "dependencies": [],
     "status": "included",
-    "origin": "Owner-selected inventory and scrolling changes for 0.7.0",
-    "dependency_note": "Exact Fabric client file through the existing Connector and Forgified Fabric API. The original artifact requires Fabric Loader >=0.14.21 and Java >=21."
+    "origin": "Native replacement for the first-launch Smooth Scrolling failure in 0.8.5 (issue #38).",
+    "distribution": "bundle",
+    "distribution_note": "Unmodified CurseForge JAR in client-overrides/mods. The publisher declares GPLv3 and the descriptor says LGPL 3.0. The pack provides the corresponding source at the matching 1.0.1 commit, original attribution and the GPL-3.0 license text.",
+    "native_route_note": "The descriptor requires NeoForge [21,) and Minecraft [1.21.1,1.22). Client mixins cover chat, suggestions, lists, hotbar and creative inventory. The native plugin activates the optional Condensed Creative hook only if that mod is installed."
   },
   {
     "slug": "smooth-skies",

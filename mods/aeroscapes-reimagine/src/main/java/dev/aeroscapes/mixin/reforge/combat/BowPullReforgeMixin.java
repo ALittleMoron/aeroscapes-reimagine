@@ -1,6 +1,7 @@
 package dev.aeroscapes.mixin.reforge.combat;
 
 import dev.aeroscapes.equipment.combat.RangedReforges;
+import dev.aeroscapes.magic.client.AbilityClient;
 import net.minecraft.client.renderer.item.ClampedItemPropertyFunction;
 import net.minecraft.client.renderer.item.ItemProperties;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,6 +24,7 @@ abstract class BowPullReforgeMixin {
       ClampedItemPropertyFunction original) {
     return (stack, level, entity, seed) ->
         original.unclampedCall(stack, level, entity, seed)
-            / RangedReforges.bowDrawTime(stack, entity);
+            / (RangedReforges.bowDrawTime(stack, entity)
+                * AbilityClient.martialBowDrawTime(stack, entity));
   }
 }

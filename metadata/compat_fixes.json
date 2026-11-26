@@ -1,6 +1,15 @@
 [
   {
     "targets": {
+      "mb68eIfx": "3InSHTOp"
+    },
+    "files": [
+      "data/skyvillages/worldgen/structure_set/skyvillage.json"
+    ],
+    "reason": "Space Sky Villages farther apart than the native 70-chunk grid while preserving their structure identity, weight and placement salt."
+  },
+  {
+    "targets": {
       "8aoMKplv": "83nCNSX4",
       "gedNE4y2": "HJZB6bmA",
       "R2OftAxM": "rOESN0jP",

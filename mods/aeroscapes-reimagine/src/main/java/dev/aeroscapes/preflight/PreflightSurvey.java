@@ -1,5 +1,6 @@
 package dev.aeroscapes.preflight;
 
+import dev.aeroscapes.guide.FieldGuide;
 import dev.eriksonn.aeronautics.content.blocks.hot_air.balloon.ServerBalloon;
 import dev.eriksonn.aeronautics.content.blocks.hot_air.balloon.map.BalloonMap;
 import dev.ryanhcode.sable.Sable;
@@ -66,6 +67,7 @@ public final class PreflightSurvey {
       PacketDistributor.sendToPlayer(player, unavailable(player, sequence));
       return;
     }
+    FieldGuide.complete(player, "preflight");
     PacketDistributor.sendToPlayer(player, survey(body, sequence));
   }
 
@@ -73,7 +75,7 @@ public final class PreflightSurvey {
     return new Survey(body).snapshot(sequence);
   }
 
-  static @Nullable ServerSubLevel aboardBody(ServerPlayer player) {
+  public static @Nullable ServerSubLevel aboardBody(ServerPlayer player) {
     ServerLevel level = player.serverLevel();
     if (player.isSpectator()
         || !(Sable.HELPER.getTrackingOrVehicleSubLevel(player) instanceof ServerSubLevel body)

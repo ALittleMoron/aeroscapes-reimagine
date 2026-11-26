@@ -66,6 +66,7 @@ public final class TalentBudgetTest {
     }
     require(
         registered.equals(caps.keySet()), "Earned point sources must have registered categories");
+    TalentLayoutTest.verify(DATA.resolve("categories"));
   }
 
   private static void checkProfessionMigration() {

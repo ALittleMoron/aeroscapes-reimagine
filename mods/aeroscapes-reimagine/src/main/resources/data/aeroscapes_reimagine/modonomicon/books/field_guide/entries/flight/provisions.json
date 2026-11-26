@@ -1,0 +1,28 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.provisions.name",
+  "icon": {
+    "item": "minecraft:bread"
+  },
+  "x": 21,
+  "y": 15,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.provisions.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.provisions.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/landing",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:entry_unlocked",
+    "entry_id": "flight/landing"
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.provisions.summary"
+}

@@ -10,6 +10,10 @@ Render the SVG files with `rsvg-convert`. Keep the specified canvas sizes and tr
 padding. The inventory uses Minecraft 1.21.1's 176 × 166 logical panel in a 256 × 256 atlas.
 The three widget textures use 200 × 20 canvases with three-pixel nine-slice borders.
 
+Render `field_guide_icon.svg` into the companion mod's
+`assets/aeroscapes_reimagine/textures/item/field_guide_icon.png` at 16 × 16.
+The held book uses its own model and texture.
+
 Render `splash.svg` to a temporary PNG and convert its 960 × 240 horizontal canvas into the
 two-band layout expected by both loading overlays:
 

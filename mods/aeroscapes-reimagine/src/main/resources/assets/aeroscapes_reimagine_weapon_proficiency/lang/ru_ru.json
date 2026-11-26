@@ -1,0 +1,19 @@
+{
+  "puffish_skills.aeroscapes_reimagine.combat.sword_handling.title": "Владение мечом",
+  "puffish_skills.aeroscapes_reimagine.combat.sword_handling.description": "Возвращает обычный темп ударов медными, железными и золотыми мечами.",
+  "puffish_skills.aeroscapes_reimagine.combat.advanced_sword_handling.title": "Мастерство меча",
+  "puffish_skills.aeroscapes_reimagine.combat.advanced_sword_handling.description": "Возвращает обычный темп ударов стальными, алмазными, незеритовыми и особыми мечами.",
+  "puffish_skills.aeroscapes_reimagine.combat.combat_axe_handling.title": "Владение боевым топором",
+  "puffish_skills.aeroscapes_reimagine.combat.combat_axe_handling.description": "Возвращает обычный темп ударов продвинутыми топорами в ближнем бою.",
+  "puffish_skills.aeroscapes_reimagine.combat.heavy_weapon_handling.title": "Владение тяжёлым оружием",
+  "puffish_skills.aeroscapes_reimagine.combat.heavy_weapon_handling.description": "Возвращает обычный темп ударов булавами, двуручными мечами и другим тяжёлым оружием, в том числе посохами в ближнем бою.",
+  "puffish_skills.aeroscapes_reimagine.combat.polearm_handling.title": "Владение древковым оружием",
+  "puffish_skills.aeroscapes_reimagine.combat.polearm_handling.description": "Возвращает обычный темп ударов копьями, косами и трезубцами в ближнем бою.",
+  "puffish_skills.aeroscapes_reimagine.combat.light_weapon_handling.title": "Владение лёгким оружием",
+  "puffish_skills.aeroscapes_reimagine.combat.light_weapon_handling.description": "Возвращает обычный темп ударов металлическими ножами, кинжалами, рапирами и ледяным серпом.",
+  "puffish_skills.aeroscapes_reimagine.combat.shield_handling.title": "Владение щитом",
+  "puffish_skills.aeroscapes_reimagine.combat.shield_handling.description": "Возвращает обычную скорость поднятия щита.",
+  "tooltip.aeroscapes_reimagine.weapon_proficiency.talent": "Боевой талант: %s",
+  "tooltip.aeroscapes_reimagine.weapon_proficiency.melee_delay": "Без навыка: +%s%% ко времени восстановления между ударами",
+  "tooltip.aeroscapes_reimagine.weapon_proficiency.shield_delay": "Без навыка: +%s тика к поднятию щита"
+}

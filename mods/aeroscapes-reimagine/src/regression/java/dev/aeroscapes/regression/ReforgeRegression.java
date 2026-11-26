@@ -4,16 +4,25 @@ import com.herobrot.tieredneo.api.ModifierUtils;
 import com.herobrot.tieredneo.api.TieredNeoAPI;
 import com.herobrot.tieredneo.reforge.ReforgeMenu;
 import dev.aeroscapes.equipment.ReforgeProfiles;
+import dev.aeroscapes.equipment.armor.ArmorEffects;
+import dev.aeroscapes.equipment.armor.ArmorProficiency;
+import dev.aeroscapes.equipment.armor.SpecialistArmor;
 import dev.aeroscapes.equipment.combat.RangedReforges;
+import dev.aeroscapes.magic.PreparedAbilities;
+import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.progression.ProgressionBridge;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.magic.MagicHelper;
+import io.redspace.ironsspellbooks.api.magic.SpellSelectionManager;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
 import io.redspace.ironsspellbooks.api.spells.IPresetSpellContainer;
 import io.redspace.ironsspellbooks.api.spells.ISpellContainer;
+import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.capabilities.magic.MagicManager;
+import io.redspace.ironsspellbooks.compat.Curios;
 import io.redspace.ironsspellbooks.damage.SpellDamageSource;
 import io.redspace.ironsspellbooks.item.weapons.AutoloaderCrossbow;
 import io.redspace.ironsspellbooks.registries.EntityRegistry;
@@ -35,10 +44,13 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -52,6 +64,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -59,6 +72,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.storage.ServerLevelData;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
@@ -71,6 +85,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
+import net.puffish.skillsmod.SkillsMod;
 import sfiomn.legendarysurvivaloverhaul.api.thirst.HydrationEnum;
 import sfiomn.legendarysurvivaloverhaul.api.thirst.ThirstUtil;
 
@@ -185,6 +200,13 @@ final class ReforgeRegression {
             "minecraft:wolf_armor")) {
       verifyPool(registered(gear), 1);
     }
+    for (var set : SpecialistArmor.Set.values()) {
+      for (var piece : set.items()) {
+        verifyPool(piece, 1);
+        require(
+            !TieredNeoAPI.getReforgeBaseItems(piece).isEmpty(), "Specialist armor has a material");
+      }
+    }
     require(
         ReforgeProfiles.paidGrades(registered("irons_spellbooks:claymore")).isEmpty(),
         "Test claymore has no paid pool");
@@ -209,7 +231,7 @@ final class ReforgeRegression {
     try (var session =
         TestShipPlayerSession.create(
             level,
-            UUID.fromString("48c83873-855c-48f6-a450-a6ead17eef2d"),
+            UUID.randomUUID(),
             "ReforgeCheck",
             Vec3.atBottomCenterOf(level.getSharedSpawnPos()),
             null)) {
@@ -251,6 +273,8 @@ final class ReforgeRegression {
       verifyFieldStorage(player);
       verifyTheurgy(player);
       verifySharedDefense(player);
+      verifyArmorSpellSelection(player);
+      verifySpecialistArmor(player);
       verifyPaidCasting(player);
       verifyEngineering(player);
     }
@@ -609,6 +633,19 @@ final class ReforgeRegression {
     var spellHit = new DamageContainer(player.damageSources().magic(), 8.0F);
     NeoForge.EVENT_BUS.post(new LivingDamageEvent.Post(player, arrowHit));
     NeoForge.EVENT_BUS.post(new LivingDamageEvent.Post(player, spellHit));
+    require(
+        NeoForge.EVENT_BUS.post(new LivingDamageEvent.Pre(player, arrowHit)).getNewDamage() == 8.0F
+            && NeoForge.EVENT_BUS.post(new LivingDamageEvent.Pre(player, spellHit)).getNewDamage()
+                == 8.0F,
+        "Untrained pieces suppress their physical and magical reforge responses");
+
+    var skills = SkillsMod.getInstance();
+    var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+    skills.tryUnlockSkill(player, combat, "heavy_armor_handling", true);
+    skills.tryUnlockSkill(player, combat, "light_armor_handling", true);
+    NeoForge.EVENT_BUS.post(new PlayerTickEvent.Post(player));
+    NeoForge.EVENT_BUS.post(new LivingDamageEvent.Post(player, arrowHit));
+    NeoForge.EVENT_BUS.post(new LivingDamageEvent.Post(player, spellHit));
     var reduced = NeoForge.EVENT_BUS.post(new LivingDamageEvent.Pre(player, arrowHit));
     var blocked = NeoForge.EVENT_BUS.post(new LivingDamageEvent.Pre(player, spellHit));
     require(
@@ -616,6 +653,266 @@ final class ReforgeRegression {
         "Physical and magic defensive responses share one activation budget");
     player.setItemSlot(EquipmentSlot.HEAD, ItemStack.EMPTY);
     player.setItemSlot(EquipmentSlot.CHEST, ItemStack.EMPTY);
+  }
+
+  private static void verifyArmorSpellSelection(ServerPlayer player) {
+    var skills = SkillsMod.getInstance();
+    var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+    String training = "heavy_armor_handling";
+    var helmSpell = SpellRegistry.MAGIC_MISSILE_SPELL.get();
+    var offhandSpell = SpellRegistry.HEALING_CIRCLE_SPELL.get();
+    var helmet = new ItemStack(Items.IRON_HELMET);
+    var held = new ItemStack(Items.STICK);
+    var helmSpells = ISpellContainer.create(1, true, true).mutableCopy();
+    var heldSpells = ISpellContainer.create(1, true, false).mutableCopy();
+    require(helmSpells.addSpell(helmSpell, 1, false), "Helmet fixture holds a spell");
+    require(heldSpells.addSpell(offhandSpell, 1, false), "Offhand fixture holds a spell");
+    ISpellContainer.set(helmet, helmSpells.toImmutable());
+    ISpellContainer.set(held, heldSpells.toImmutable());
+    var previousOffhand = player.getOffhandItem();
+    player.setItemSlot(EquipmentSlot.HEAD, helmet);
+    player.setItemInHand(InteractionHand.OFF_HAND, held);
+    try {
+      skills.lockSkill(player, combat, training);
+      var untrained = new SpellSelectionManager(player);
+      require(
+          untrained.getSpellsForSlot(EquipmentSlot.HEAD.getName()).isEmpty()
+              && untrained.getSpellForSlot(SpellSelectionManager.OFFHAND, 0).getSpell()
+                  == offhandSpell,
+          "Untrained armor is absent from Iron's spell selection and the offhand still works");
+
+      skills.tryUnlockSkill(player, combat, training, true);
+      var trained = new SpellSelectionManager(player);
+      require(
+          trained.getSpellForSlot(EquipmentSlot.HEAD.getName(), 0).getSpell() == helmSpell
+              && trained.getSpellForSlot(SpellSelectionManager.OFFHAND, 0).getSpell()
+                  == offhandSpell,
+          "Training restores Iron's worn armor spell without changing the held spell");
+    } finally {
+      player.setItemSlot(EquipmentSlot.HEAD, ItemStack.EMPTY);
+      player.setItemInHand(InteractionHand.OFF_HAND, previousOffhand);
+    }
+  }
+
+  private static void verifySpecialistArmor(ServerPlayer player) {
+    var level = player.serverLevel();
+    var skills = SkillsMod.getInstance();
+    var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+    var protection =
+        level
+            .registryAccess()
+            .lookupOrThrow(Registries.ENCHANTMENT)
+            .getOrThrow(Enchantments.PROTECTION);
+    double armorBefore = player.getAttributeValue(Attributes.ARMOR);
+    var leather = new ItemStack(Items.LEATHER_CHESTPLATE);
+    player.setItemSlot(EquipmentSlot.CHEST, leather);
+    detectEquipmentUpdates(player);
+    double armorWithLeather = player.getAttributeValue(Attributes.ARMOR);
+    player.setItemSlot(EquipmentSlot.CHEST, ItemStack.EMPTY);
+    detectEquipmentUpdates(player);
+    require(
+        armorWithLeather - armorBefore == 3.0
+            && player.getAttributeValue(Attributes.ARMOR) == armorBefore,
+        "Wearing and removing ordinary leather updates armor in the fixture");
+    for (var set : SpecialistArmor.Set.values()) {
+      String talent =
+          set == SpecialistArmor.Set.WINDWARD ? "ranger_armor_training" : "rogue_armor_training";
+      for (var piece : set.items()) {
+        var stack = piece.getDefaultInstance();
+        var slot = player.getEquipmentSlotForItem(stack);
+        var menuSlot = player.inventoryMenu.getSlot(8 - slot.getIndex());
+        player.setItemInHand(InteractionHand.MAIN_HAND, stack);
+        require(
+            !stack.canEquip(slot, player)
+                && !menuSlot.mayPlace(stack)
+                && !stack
+                    .use(level, player, InteractionHand.MAIN_HAND)
+                    .getResult()
+                    .consumesAction(),
+            "Untrained specialist armor is denied by the equipment predicate, menu and item use");
+      }
+      skills.tryUnlockSkill(player, combat, talent, true);
+      for (var piece : set.items()) {
+        var stack = piece.getDefaultInstance();
+        var slot = player.getEquipmentSlotForItem(stack);
+        require(stack.canEquip(slot, player), "Combat talent permits equipping the matching set");
+        if (slot == EquipmentSlot.CHEST) stack.enchant(protection, 4);
+        player.setItemSlot(slot, stack);
+      }
+      player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+      detectEquipmentUpdates(player);
+      double trainedDefense = player.getAttributeValue(Attributes.ARMOR);
+      int setDefense = set == SpecialistArmor.Set.WINDWARD ? 14 : 13;
+      require(trainedDefense - armorBefore == setDefense, "Trained defense for " + set);
+      if (set == SpecialistArmor.Set.WINDWARD) verifyWindwardEffects(player);
+      else verifyDuskstrideEffects(player);
+
+      var chest = player.getItemBySlot(EquipmentSlot.CHEST);
+      float trainedProtection =
+          EnchantmentHelper.getDamageProtection(
+              level,
+              player,
+              player.damageSources().mobAttack(new Zombie(EntityType.ZOMBIE, level)));
+      skills.lockSkill(player, combat, talent);
+      detectEquipmentUpdates(player);
+      float undertrainedProtection =
+          EnchantmentHelper.getDamageProtection(
+              level,
+              player,
+              player.damageSources().mobAttack(new Zombie(EntityType.ZOMBIE, level)));
+      double defenseLoss = setDefense * 0.90;
+      double undertrainedDefense = player.getAttributeValue(Attributes.ARMOR);
+      require(
+          player.getItemBySlot(EquipmentSlot.CHEST) == chest
+              && ArmorProficiency.undertrained(player, chest)
+              && Math.abs(trainedDefense - undertrainedDefense - defenseLoss) < 0.001
+              && trainedProtection == 4.0F
+              && undertrainedProtection == trainedProtection,
+          "Refund preserves "
+              + set
+              + " and Protection while scaling base armor ("
+              + trainedDefense
+              + " to "
+              + undertrainedDefense
+              + ", Protection "
+              + trainedProtection
+              + " to "
+              + undertrainedProtection
+              + ")");
+      skills.tryUnlockSkill(player, combat, talent, true);
+      detectEquipmentUpdates(player);
+      require(
+          player.getItemBySlot(EquipmentSlot.CHEST) == chest
+              && player.getAttributeValue(Attributes.ARMOR) == trainedDefense,
+          "Relearning restores defense without replacing the equipped piece");
+      for (var slot : ArmorProficiency.SLOTS) player.setItemSlot(slot, ItemStack.EMPTY);
+    }
+  }
+
+  private static void verifyWindwardEffects(ServerPlayer player) {
+    var level = player.serverLevel();
+    var target = new Zombie(EntityType.ZOMBIE, level);
+    var arrow = new Arrow(EntityType.ARROW, level);
+    var incomingArrow = player.damageSources().arrow(arrow, target);
+    require(
+        Math.abs(armorDamage(player, incomingArrow) - 8.2F) < 0.001F,
+        "Windward jacket reduces projectile damage by 18 percent");
+
+    var outgoingArrow = player.damageSources().arrow(arrow, player);
+    target.setPos(player.getX() + 7.99, player.getY(), player.getZ());
+    require(
+        Math.abs(armorDamage(target, outgoingArrow) - 10.8F) < 0.001F,
+        "Windward hood provides its own 8 percent arrow bonus within eight blocks");
+    target.setPos(player.getX() + 8.0, player.getY(), player.getZ());
+    require(
+        Math.abs(armorDamage(target, outgoingArrow) - 12.096F) < 0.001F,
+        "Full Windward adds its 12 percent arrow multiplier at eight blocks");
+    var boots = player.getItemBySlot(EquipmentSlot.FEET);
+    player.setItemSlot(EquipmentSlot.FEET, ItemStack.EMPTY);
+    try {
+      require(
+          Math.abs(armorDamage(target, outgoingArrow) - 10.8F) < 0.001F,
+          "A mixed set preserves the hood's arrow bonus");
+    } finally {
+      player.setItemSlot(EquipmentSlot.FEET, boots);
+    }
+
+    player.setItemInHand(InteractionHand.MAIN_HAND, new ItemStack(Items.BOW));
+    try {
+      player.startUsingItem(InteractionHand.MAIN_HAND);
+      require(armorSpeed(player) == 0.44, "Windward adds 40 percent while drawing");
+    } finally {
+      player.stopUsingItem();
+      player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+      armorSpeed(player);
+    }
+  }
+
+  private static void verifyDuskstrideEffects(ServerPlayer player) {
+    var level = player.serverLevel();
+    var target = new Zombie(EntityType.ZOMBIE, level);
+    require(
+        Math.abs(armorDamage(player, player.damageSources().mobAttack(target)) - 8.8F) < 0.001F
+            && Math.abs(armorDamage(player, player.damageSources().fall()) - 6.5F) < 0.001F,
+        "Duskstride vest and boots reduce melee and fall damage");
+
+    var attack =
+        new LivingDamageEvent.Post(
+            target, new DamageContainer(player.damageSources().playerAttack(player), 10.0F));
+    var levelData = (ServerLevelData) level.getLevelData();
+    long now = level.getGameTime();
+    player.setItemInHand(
+        InteractionHand.MAIN_HAND, new ItemStack(registered("wetland_whimsy:dagger")));
+    player.setSprinting(true);
+    try {
+      player.resetAttackStrengthTicker();
+      ArmorEffects.meleeHit(attack);
+      require(armorSpeed(player) == 0.16, "Duskstride sprints faster before the opening hit");
+
+      fullyChargeAttack(player);
+      ArmorEffects.meleeHit(attack);
+      require(armorSpeed(player) == 0.34, "A charged light hit starts the Duskstride burst");
+      levelData.setGameTime(now + 59);
+      ArmorEffects.meleeHit(attack);
+      require(armorSpeed(player) == 0.34, "Duskstride burst lasts 60 ticks");
+      levelData.setGameTime(now + 60);
+      require(armorSpeed(player) == 0.16, "A second hit does not extend the Duskstride burst");
+      levelData.setGameTime(now + 119);
+      ArmorEffects.meleeHit(attack);
+      require(armorSpeed(player) == 0.16, "Duskstride cooldown lasts 120 ticks");
+      levelData.setGameTime(now + 120);
+      ArmorEffects.meleeHit(attack);
+      require(armorSpeed(player) == 0.34, "Duskstride can trigger again at tick 120");
+
+      var boots = player.getItemBySlot(EquipmentSlot.FEET);
+      player.setItemSlot(EquipmentSlot.FEET, ItemStack.EMPTY);
+      try {
+        require(armorSpeed(player) == 0.15, "Removing one piece ends the Duskstride burst");
+      } finally {
+        player.setItemSlot(EquipmentSlot.FEET, boots);
+      }
+      require(armorSpeed(player) == 0.16, "Reequipping does not restore the spent burst");
+    } finally {
+      player.resetAttackStrengthTicker();
+      player.setSprinting(false);
+      player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+      levelData.setGameTime(now + 240);
+      armorSpeed(player);
+      levelData.setGameTime(now);
+    }
+  }
+
+  private static float armorDamage(LivingEntity wearer, DamageSource source) {
+    var damage = new LivingDamageEvent.Pre(wearer, new DamageContainer(source, 10.0F));
+    ArmorEffects.armorDamage(damage);
+    return damage.getNewDamage();
+  }
+
+  private static double armorSpeed(ServerPlayer player) {
+    ArmorEffects.movement(new PlayerTickEvent.Post(player));
+    var speed = player.getAttribute(Attributes.MOVEMENT_SPEED);
+    return speed.getModifier(profile("armor_movement")).amount();
+  }
+
+  private static void fullyChargeAttack(ServerPlayer player) {
+    try {
+      var ticker = LivingEntity.class.getDeclaredField("attackStrengthTicker");
+      ticker.setAccessible(true);
+      ticker.setInt(player, 100);
+    } catch (ReflectiveOperationException error) {
+      throw new IllegalStateException("Could not prepare a charged attack in the fixture", error);
+    }
+  }
+
+  private static void detectEquipmentUpdates(ServerPlayer player) {
+    // This ServerStarted fixture has no game connection ticking its equipment.
+    try {
+      var method = LivingEntity.class.getDeclaredMethod("detectEquipmentUpdates");
+      method.setAccessible(true);
+      method.invoke(player);
+    } catch (ReflectiveOperationException failure) {
+      throw new IllegalStateException("Could not drive native equipment detection", failure);
+    }
   }
 
   private static void verifyPaidCasting(ServerPlayer player) {
@@ -633,17 +930,39 @@ final class ReforgeRegression {
             "staff_epic_combat_with_combat_economy");
     player.setItemInHand(InteractionHand.MAIN_HAND, staff);
     var book = ranked(registered("irons_spellbooks:iron_spell_book"), "spellbook_legendary_refund");
-    var spells = ISpellContainer.create(1, false, true).mutableCopy();
-    require(spells.addSpell(spell, 4, false), "Fixture book accepts the spell");
-    ISpellContainer.set(book, spells.toImmutable());
     var magic = MagicData.getPlayerMagicData(player);
-    magic.setMana(100.0F);
-    player.setItemInHand(InteractionHand.OFF_HAND, book);
+    magic.setServerPlayer(player);
+    magic.getSyncedData();
+    Utils.setPlayerSpellbookStack(player, book);
     require(
-        spell.attemptInitiateCast(book, 4, level, player, CastSource.SPELLBOOK, true, "offhand"),
+        Utils.getPlayerSpellbookStack(player) == book, "Fixture equips the ranked Curios focus");
+    AbilitiesRegression.unlockMastery(player, spell, 5);
+    int rank = 4;
+    var learned = SpellKnowledge.unlocked(player);
+    require(SpellKnowledge.cap(spell, learned) >= rank, "Fixture can use rank-four Magic Missile");
+    var abilityData = player.getPersistentData().getCompound("aeroscapes_reimagine_abilities");
+    var ranks = abilityData.getCompound("ranks");
+    ranks.putInt(spell.getSpellId(), rank);
+    abilityData.put("ranks", ranks);
+    player.getPersistentData().put("aeroscapes_reimagine_abilities", abilityData);
+    require(SpellKnowledge.rank(player, spell, learned) == rank, "Fixture has stored rank four");
+    PreparedAbilities.edit(player, 0, spell.getSpellId());
+    require(
+        PreparedAbilities.preparation(player).slots().getFirst().equals(spell.getSpellId()),
+        "Fixture prepares Magic Missile before casting");
+    magic.setMana(100.0F);
+    require(
+        SpellKnowledge.canStart(spell, player, book, rank, CastSource.SPELLBOOK, false),
+        "Loaded spellbook, prepared rank and mastery permit a native cast");
+    require(
+        spell.attemptInitiateCast(
+            book, rank, level, player, CastSource.SPELLBOOK, true, Curios.SPELLBOOK_SLOT),
         "Native spellbook combat cast starts");
     ((MagicManager) MagicHelper.MAGIC_MANAGER).tick(level);
-    double expected = 100.0F - Math.ceil(spell.getManaCost(4) * 0.92);
+    int nativeCost = spell.getManaCost(rank);
+    double discountedCost = Math.ceil(nativeCost * 0.92);
+    require(discountedCost < nativeCost, "Fixture spell costs enough to measure the discount");
+    double expected = 100.0F - discountedCost;
     require(
         magic.getMana() == expected && magic.getPlayerCooldowns().isOnCooldown(spell),
         "The staff discounts a paid spell and keeps its native cooldown: "

@@ -1733,6 +1733,26 @@
       "reason": "Adds the owned equipment curse tag to vanilla curse handling without copying its entries."
     },
     {
+      "output": "data/minecraft/tags/item/chest_armor.json",
+      "sha256": "ae41519786fed14ec5a896f54c270250f2615bba7806109891c754df86645e48",
+      "reason": "Adds the Windward Jack and Duskstride Vest to the native chest armor and enchanting families."
+    },
+    {
+      "output": "data/minecraft/tags/item/head_armor.json",
+      "sha256": "9093cfedcfbf6caae0f132995a74e292b25da8da2976f3f80610919a89ca9ea2",
+      "reason": "Adds the Windward Hood and Duskstride Mask to the native head armor and enchanting families."
+    },
+    {
+      "output": "data/minecraft/tags/item/leg_armor.json",
+      "sha256": "93f9658f606bb09ee4d7b94592dc79581a4cc97d4b7c72df43febf9e0ae27028",
+      "reason": "Adds the Windward Trousers and Duskstride Leggings to the native leg armor and enchanting families."
+    },
+    {
+      "output": "data/minecraft/tags/item/foot_armor.json",
+      "sha256": "863e9c831e27b20f1c7053e9d70569277f6fb2b2a01aa2beeb5298ab52698bc8",
+      "reason": "Adds the Windward and Duskstride Boots to the native foot armor and enchanting families."
+    },
+    {
       "output": "data/minecraft/tags/item/coal_ores.json",
       "sha256": "80cda90e5c382d78036da54f3f35cb6cb5c4e1edb84c1dc2673a3e59b2e27b96",
       "reason": "Authored additive mining/ore-family tag for owned blackstone variants; no provider tag contents are copied."

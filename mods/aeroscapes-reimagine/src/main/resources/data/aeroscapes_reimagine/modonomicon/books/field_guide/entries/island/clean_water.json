@@ -1,0 +1,17 @@
+{
+  "category": "island",
+  "name": "book.aeroscapes_reimagine.field_guide.island.clean_water.name",
+  "icon": {
+    "item": "legendarysurvivaloverhaul:purified_water_bottle"
+  },
+  "x": 3,
+  "y": 5,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.island.clean_water.name",
+      "text": "book.aeroscapes_reimagine.field_guide.island.clean_water.text"
+    }
+  ],
+  "description": "book.aeroscapes_reimagine.field_guide.island.clean_water.summary"
+}

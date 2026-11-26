@@ -1,0 +1,42 @@
+{
+  "category": "welcome",
+  "name": "book.aeroscapes_reimagine.field_guide.welcome.name",
+  "description": "book.aeroscapes_reimagine.field_guide.welcome.description",
+  "icon": {
+    "texture": "aeroscapes_reimagine:textures/item/field_guide_icon.png"
+  },
+  "x": 0,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.welcome.start.title",
+      "text": "book.aeroscapes_reimagine.field_guide.welcome.start.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.welcome.survival.title",
+      "text": "book.aeroscapes_reimagine.field_guide.welcome.survival.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.welcome.tools.title",
+      "text": "book.aeroscapes_reimagine.field_guide.welcome.tools.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.welcome.talents.title",
+      "text": "book.aeroscapes_reimagine.field_guide.welcome.talents.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.welcome.travel.title",
+      "text": "book.aeroscapes_reimagine.field_guide.welcome.travel.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.welcome.reading.title",
+      "text": "book.aeroscapes_reimagine.field_guide.welcome.reading.text"
+    }
+  ]
+}

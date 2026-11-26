@@ -1,0 +1,29 @@
+{
+  "parent": "aeroscapes_reimagine:guide/checkpoints",
+  "display": {
+    "icon": {
+      "id": "simulated:steering_wheel"
+    },
+    "title": {
+      "translate": "book.aeroscapes_reimagine.field_guide.flight.helm.name"
+    },
+    "description": {
+      "translate": "book.aeroscapes_reimagine.field_guide.complete"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "simulated:steering_wheel"
+          }
+        ]
+      }
+    }
+  }
+}

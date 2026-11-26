@@ -1,0 +1,17 @@
+{
+  "category": "island",
+  "name": "book.aeroscapes_reimagine.field_guide.island.rock.name",
+  "icon": {
+    "item": "overgeared:knappable_rock"
+  },
+  "x": 0,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.island.rock.name",
+      "text": "book.aeroscapes_reimagine.field_guide.island.rock.text"
+    }
+  ],
+  "description": "book.aeroscapes_reimagine.field_guide.island.rock.summary"
+}

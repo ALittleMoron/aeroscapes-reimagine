@@ -71,6 +71,7 @@ repositories {
       includeModule("maven.modrinth", "distanthorizons")
       includeModule("maven.modrinth", "better-clouds")
       includeModule("maven.modrinth", "invmove")
+      includeModule("maven.modrinth", "modonomicon")
       includeModule("maven.modrinth", "mafglib")
       includeModule("maven.modrinth", "cloth-config")
       includeModule("maven.modrinth", "sophisticated-core")
@@ -216,6 +217,7 @@ val extractSableApi =
   }
 
 dependencies {
+  compileOnly("maven.modrinth:modonomicon:OKyLanIn") { isTransitive = false }
   compileOnly("maven.modrinth:immersive-enchanting:1axWAPS7") { isTransitive = false }
   compileOnly("maven.modrinth:alfinolib:T3iUMjhn") { isTransitive = false }
   compileOnly("maven.modrinth:hexcast-neoforged:3qkLQwpf") { isTransitive = false }
@@ -409,6 +411,15 @@ val policyTest =
     dependsOn(tasks.named(policy.classesTaskName))
     classpath = policy.runtimeClasspath
     mainClass = "dev.aeroscapes.worldgen.IslandFootprintTest"
+  }
+
+val guideViewportTest =
+  tasks.register<JavaExec>("guideViewportTest") {
+    group = "verification"
+    description = "Checks the guide camera against compact and scrolling chapters."
+    dependsOn(tasks.named(policy.classesTaskName))
+    classpath = policy.runtimeClasspath
+    mainClass = "dev.aeroscapes.guide.client.GuideViewportTest"
   }
 
 val worldgenRegressionJar =
@@ -1111,7 +1122,15 @@ val magicTalentsTest =
   tasks.register<JavaExec>("magicTalentsTest") {
     group = "verification"
     dependsOn(tasks.named(policy.classesTaskName))
-    classpath = policy.runtimeClasspath
+    val spellbook =
+      atmosphereApi.incoming
+        .artifactView {
+          componentFilter {
+            it is ModuleComponentIdentifier && it.module == "irons-spells-n-spellbooks"
+          }
+        }
+        .files
+    classpath = policy.runtimeClasspath + spellbook
     mainClass = "dev.aeroscapes.magic.MagicTalentsTest"
   }
 
@@ -1138,6 +1157,7 @@ tasks.register<JavaExec>("generateEquipmentModels") {
 
 tasks.check {
   dependsOn(
+    guideViewportTest,
     preflightReadingsTest,
     tasks.spotlessCheck,
     effectDescriptionPagesTest,

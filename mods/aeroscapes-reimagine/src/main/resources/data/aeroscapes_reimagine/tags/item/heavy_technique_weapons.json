@@ -1,0 +1,13 @@
+{
+  "values": [
+    "#minecraft:axes",
+    "minecraft:mace",
+    { "id": "#aeroscapes_reimagine:equipment_quality/axe", "required": false },
+    { "id": "irons_spellbooks:boreal_blade", "required": false },
+    { "id": "irons_spellbooks:decrepit_scythe", "required": false },
+    { "id": "irons_spellbooks:hellrazor", "required": false },
+    { "id": "irons_spellbooks:keeper_flamberge", "required": false },
+    { "id": "irons_spellbooks:legionnaire_flamberge", "required": false },
+    { "id": "irons_spellbooks:spellbreaker", "required": false }
+  ]
+}

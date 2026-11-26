@@ -6,6 +6,18 @@ status: available
 
 ## 0.9.0
 
+- The Skyfarer’s Field Guide teaches pack-specific steps from stone knapping to a first flight. Its Island Atlas chapters show every step and its prerequisites. The book has a flat inventory icon and a 3D model in hand.
+- The field guide’s About the Pack tab opens directly to the introduction. On the map, hover over an icon for the step’s name and click to read how it leads to the next milestone.
+- The guide fits each route map to the chapter when it opens. Arrows show the direction through turns and branches. Workshop and airship articles include more crafting diagrams.
+- Nine learned martial techniques share the ability wheel. Dash and Disengage accelerate and brake along the ground. Dash opens a stronger light-weapon hit and Disengage cushions the next melee hit.
+- Combat talents restore full handling for advanced melee weapons and shields. Light and heavy armor each have their own proficiency.
+- The Windward ranger set and Duskstride rogue set have distinct inventory icons and stronger specialized movement, defense and full-set effects.
+- The largest islands are farther apart and vary between broad shelves, ridges and crescents. Sky Villages are farther apart in newly generated terrain.
+- Talent branches descend in Ranged, Defense and Light Weapons, with clear prerequisite links. Tool proficiency branches descend beside the general profession talents. Talent details explain effects before purchase conditions. Individual spell nodes describe what the spell does.
+- Completed hand forging leaves short-lived sparks. Heal, Cleanse and Touch Dig leave brief traces at the casting site.
+- Native NeoForge Smooth Scrolling Reforged replaces the Fabric scrolling mod that stopped first-launch Connector preloading.
+- Fixed a crash when Iron’s Spells loads its equipment spell list, including during EMI search indexing.
+
 ### 0.8.5
 
 - Combat has separate views for melee, defense, ranged and light weapons. Profession trees show general and tool talents together.

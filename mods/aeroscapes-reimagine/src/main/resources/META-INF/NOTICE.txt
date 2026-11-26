@@ -51,6 +51,12 @@ image inputs. Its AI-assisted Java composition script is CelestialAtlas.java in
 the corresponding source; regenerate with ./gradlew generateCelestialAtlas.
 The atlas and its renderer are distributed under this project's GPL-3.0-or-later.
 
+The Windward and Duskstride armor sheets, item sprites and four armor talent
+icons are original pixel artwork under this project's GPL-3.0-or-later. They
+use AI-assisted deterministic pixel composition. The editable sheets are in
+META-INF/artwork/specialist_armor.svg. The art uses the standard humanoid armor
+UV layout and incorporates no provider textures or generative image output.
+
 English/Russian language supplements combine text authored for this pack with
 separately licensed selected upstream translations described below. Each
 selected dictionary retains its stated license; the Java code and unrelated
@@ -178,6 +184,11 @@ loot definition is adapted from Create 6.0.10 non-asset data, MIT, copyright The
 Create Team / The Creators of Create. The complete file-specific license is
 in META-INF/licenses/Create-6.0.10-license.md. Other ore loot, processing recipes,
 material adaptation and composition code are authored for this pack.
+
+The Skyfarer's Field Guide cover, diagram and Island Atlas interface artwork are
+original pixel compositions written with AI assistance for Aeroscapes Reimagine.
+The interface atlases use Modonomicon's sprite coordinates and contain original
+shapes and colors. No Modonomicon texture pixels are redistributed.
 
 META-INF/localization-sources.json records selected translation inputs, licenses,
 filtering and resource identities. Source and notices accompany the binary.

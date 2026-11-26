@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "spawn:blue_footed_boots",
+      "required": false
+    },
+    {
+      "id": "tide:dragonfin_boots",
+      "required": false
+    }
+  ]
+}

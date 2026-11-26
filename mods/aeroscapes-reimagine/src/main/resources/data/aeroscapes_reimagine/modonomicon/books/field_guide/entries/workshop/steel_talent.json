@@ -1,0 +1,37 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.steel_talent.name",
+  "icon": {
+    "item": "overgeared:steel_pickaxe"
+  },
+  "x": 10,
+  "y": 14,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.steel_talent.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.steel_talent.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/refine_steel",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/refine_steel"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/refine_steel"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.steel_talent.summary"
+}

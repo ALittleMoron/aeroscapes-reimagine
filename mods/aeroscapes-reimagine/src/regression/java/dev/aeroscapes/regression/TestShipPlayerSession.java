@@ -109,6 +109,19 @@ final class TestShipPlayerSession implements AutoCloseable {
     listener.handleAcceptTeleportPacket(new ServerboundAcceptTeleportationPacket(teleport.getId()));
   }
 
+  Vec3 footworkTravel() {
+    require(connection.teleport == null, "Footwork must not teleport the player");
+    var footwork = java.util.Objects.requireNonNull(connection.footwork, "Missing footwork motion");
+    connection.footwork = null;
+    return footwork.travel();
+  }
+
+  void moveOnGround(Vec3 position) {
+    listener.handleMovePlayer(
+        new ServerboundMovePlayerPacket.Pos(position.x, position.y, position.z, true));
+    require(connection.teleport == null, "Server corrected footwork movement");
+  }
+
   @Nullable
   TestShipNetwork.Check takeBoardingCheck() {
     TestShipNetwork.Check check = connection.boardingCheck;
@@ -207,6 +220,7 @@ final class TestShipPlayerSession implements AutoCloseable {
             String, net.puffish.skillsmod.server.network.packets.out.PointsUpdateOutPacket>
         talentPoints = new HashMap<>();
     @Nullable private ClientboundPlayerPositionPacket teleport;
+    @Nullable private AbilityNetwork.Footwork footwork;
     @Nullable private Long keepAlive;
     @Nullable private TestShipNetwork.Check boardingCheck;
     private final Set<UUID> completedParts = new HashSet<>();
@@ -236,6 +250,8 @@ final class TestShipPlayerSession implements AutoCloseable {
       if (packet instanceof ClientboundKeepAlivePacket challenge) keepAlive = challenge.getId();
       if (packet instanceof ClientboundCustomPayloadPacket message
           && message.payload() instanceof AbilityNetwork.Snapshot snapshot) abilities = snapshot;
+      if (packet instanceof ClientboundCustomPayloadPacket message
+          && message.payload() instanceof AbilityNetwork.Footwork cue) footwork = cue;
       if (packet instanceof ClientboundCustomPayloadPacket payload
           && payload.payload() instanceof TestShipNetwork.Check check) boardingCheck = check;
       if (packet instanceof ClientboundCustomPayloadPacket payload

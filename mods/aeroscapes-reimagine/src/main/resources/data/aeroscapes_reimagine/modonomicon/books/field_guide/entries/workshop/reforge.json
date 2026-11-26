@@ -1,0 +1,42 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.reforge.name",
+  "icon": {
+    "item": "minecraft:lapis_lazuli"
+  },
+  "x": 19,
+  "y": 4,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.reforge_anvil.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.reforge_anvil.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.reforge.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.reforge.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/iron_ingots",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/iron_ingots"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/iron_ingots"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.reforge.summary"
+}

@@ -1,0 +1,80 @@
+{
+  "parent": "aeroscapes_reimagine:guide/checkpoints",
+  "display": {
+    "icon": {
+      "id": "create:super_glue"
+    },
+    "title": {
+      "translate": "book.aeroscapes_reimagine.field_guide.flight.salvage_parts.name"
+    },
+    "description": {
+      "translate": "book.aeroscapes_reimagine.field_guide.complete"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "#aeronautics:envelope"
+          },
+          {
+            "items": "aeronautics:adjustable_burner"
+          },
+          {
+            "items": "simulated:throttle_lever"
+          },
+          {
+            "items": [
+              "simulated:black_portable_engine",
+              "simulated:blue_portable_engine",
+              "simulated:brown_portable_engine",
+              "simulated:cyan_portable_engine",
+              "simulated:gray_portable_engine",
+              "simulated:green_portable_engine",
+              "simulated:light_blue_portable_engine",
+              "simulated:light_gray_portable_engine",
+              "simulated:lime_portable_engine",
+              "simulated:magenta_portable_engine",
+              "simulated:orange_portable_engine",
+              "simulated:pink_portable_engine",
+              "simulated:purple_portable_engine",
+              "simulated:red_portable_engine",
+              "simulated:white_portable_engine",
+              "simulated:yellow_portable_engine"
+            ]
+          },
+          {
+            "items": "aeronautics:propeller_bearing"
+          },
+          {
+            "items": "simulated:steering_wheel"
+          },
+          {
+            "items": "simulated:swivel_bearing"
+          },
+          {
+            "items": "create:super_glue"
+          },
+          {
+            "items": "simulated:physics_assembler"
+          },
+          {
+            "items": [
+              "simulated:white_symmetric_sail",
+              "create:white_sail",
+              "create:sail_frame"
+            ],
+            "count": {
+              "min": 2
+            }
+          }
+        ]
+      }
+    }
+  }
+}

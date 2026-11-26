@@ -1,11 +1,13 @@
 package dev.aeroscapes.magic;
 
+import dev.aeroscapes.equipment.combat.MartialTechnique;
 import java.util.List;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import org.jetbrains.annotations.Nullable;
 
@@ -47,6 +49,23 @@ public final class AbilityNetwork {
         Snapshot.TYPE,
         Snapshot.CODEC,
         (message, context) -> dev.aeroscapes.magic.client.AbilityClient.accept(message));
+    registrar.playToClient(
+        Footwork.TYPE,
+        Footwork.CODEC,
+        (message, context) -> dev.aeroscapes.magic.client.FootworkClient.start(message.travel()));
+  }
+
+  public record Footwork(Vec3 travel) implements CustomPacketPayload {
+    public static final Type<Footwork> TYPE = AbilityNetwork.type("footwork");
+    public static final StreamCodec<RegistryFriendlyByteBuf, Footwork> CODEC =
+        StreamCodec.of(
+            (buffer, message) -> buffer.writeVec3(message.travel()),
+            buffer -> new Footwork(buffer.readVec3()));
+
+    @Override
+    public Type<Footwork> type() {
+      return TYPE;
+    }
   }
 
   public record Program(int inventorySlot, String customName) {}
@@ -77,6 +96,10 @@ public final class AbilityNetwork {
 
     public boolean innate() {
       return school.equals(InnateAbility.GROUP);
+    }
+
+    public boolean technique() {
+      return school.equals(MartialTechnique.GROUP);
     }
 
     public boolean known() {

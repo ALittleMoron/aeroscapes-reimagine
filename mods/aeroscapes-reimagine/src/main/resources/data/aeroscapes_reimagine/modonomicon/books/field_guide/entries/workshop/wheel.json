@@ -1,0 +1,46 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.wheel.name",
+  "icon": {
+    "item": "create:water_wheel"
+  },
+  "x": 8,
+  "y": 9,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.alloy.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.alloy.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.wheel.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.wheel.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "create:crafting/kinetics/water_wheel"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/bucket",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/bucket"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/bucket"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.wheel.summary"
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "aeroscapes_reimagine:guide/checkpoints",
+  "display": {
+    "icon": {
+      "id": "overgeared:knappable_rock"
+    },
+    "title": {
+      "translate": "book.aeroscapes_reimagine.field_guide.island.hands.name"
+    },
+    "description": {
+      "translate": "book.aeroscapes_reimagine.field_guide.complete"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "items": "overgeared:knappable_rock"
+            },
+            "offhand": {
+              "items": "overgeared:knappable_rock"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.release_hull.name",
+  "icon": {
+    "item": "simulated:physics_assembler"
+  },
+  "x": 16,
+  "y": 10,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.release_hull.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.release_hull.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/helm_run",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "simulated:unpowered_steering"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "flight/helm_run"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.release_hull.summary"
+}

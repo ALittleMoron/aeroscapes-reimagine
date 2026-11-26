@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "duskstride",
+  "pattern": [
+    "M M",
+    "SAS"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:leather_boots"
+    },
+    "M": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "S": {
+      "item": "minecraft:gray_dye"
+    }
+  },
+  "result": {
+    "id": "aeroscapes_reimagine:duskstride_boots",
+    "count": 1
+  }
+}

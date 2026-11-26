@@ -1,0 +1,47 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.salvage_parts.name",
+  "icon": {
+    "item": "create:super_glue"
+  },
+  "x": 8,
+  "y": 5,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.salvage.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.salvage.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.salvage_parts.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.salvage_parts.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.salvage_parts.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.salvage_parts.text_2"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/wreck_search",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/wreck_found"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "flight/wreck_search"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.salvage_parts.summary"
+}

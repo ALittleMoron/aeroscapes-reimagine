@@ -4,6 +4,22 @@ package dev.aeroscapes.progression.client;
 public final class TreeViewport {
   public static final int NODE_RADIUS = 13;
   public static final int NODE_OUTER_RADIUS = 15;
+  public static final int BRANCH_LABEL_Y = 0;
+  public static final int BRANCH_LABEL_HALF_WIDTH = 33;
+  private static final int BRANCH_LABEL_GAP = 36;
+  private static final int BRANCH_GAP = 42;
+
+  public record BranchPlacement(int offsetX, int offsetY, int labelX, int nextLeft) {
+    public static final BranchPlacement UNCHANGED = new BranchPlacement(0, 0, 0, 0);
+
+    public static BranchPlacement at(int left, int minX, int maxX, int minY) {
+      int width = Math.max(2 * BRANCH_LABEL_HALF_WIDTH, maxX - minX);
+      int labelX = left + width / 2;
+      return new BranchPlacement(
+          labelX - (minX + maxX) / 2, BRANCH_LABEL_GAP - minY, labelX, left + width + BRANCH_GAP);
+    }
+  }
+
   private double centerX;
   private double centerY;
   private double scale = 1;

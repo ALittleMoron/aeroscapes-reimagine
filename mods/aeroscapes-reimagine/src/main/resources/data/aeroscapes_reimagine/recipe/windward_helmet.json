@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "windward",
+  "pattern": [
+    "SMS",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:leather_helmet"
+    },
+    "M": {
+      "item": "minecraft:copper_ingot"
+    },
+    "S": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "id": "aeroscapes_reimagine:windward_helmet",
+    "count": 1
+  }
+}

@@ -2,6 +2,7 @@ package dev.aeroscapes.magic;
 
 import com.mojang.blaze3d.platform.InputConstants;
 import com.yori3o.yo_hooks.common.util.interfaces.PlayerWithHookData;
+import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.magic.client.AbilityWheel;
 import dev.ryanhcode.sable.mixinhelpers.camera.new_camera_types.SableCameraTypes;
@@ -13,6 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.HitResult;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
@@ -30,16 +32,17 @@ import team.creative.littletiles.api.common.tool.ILittleTool;
 public final class SpellMouseControls {
   private SpellMouseControls() {}
 
-  public static boolean canUseAbilityInput() {
-    var game = Minecraft.getInstance();
-    return Input.canUse(game) && (game.mouseHandler.isMouseGrabbed() || AbilityWheel.active());
+  public static boolean canUseAbilityBinding(KeyMapping binding) {
+    return canUseAbilityBinding(binding, "");
   }
 
-  public static boolean canUseAbilityBinding(KeyMapping binding) {
+  public static boolean canUseAbilityBinding(KeyMapping binding, String ability) {
+    var game = Minecraft.getInstance();
     return Input.press == null
-        && canUseAbilityInput()
+        && Input.canUse(game, ability)
+        && (game.mouseHandler.isMouseGrabbed() || AbilityWheel.active())
         && !(binding.getKey().equals(Input.MIDDLE_BUTTON)
-            && (Screen.hasControlDown() || Input.creativePickOwnsButton(Minecraft.getInstance())));
+            && (Screen.hasControlDown() || Input.creativePickOwnsButton(game)));
   }
 
   @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
@@ -86,7 +89,7 @@ public final class SpellMouseControls {
         event.setCanceled(true);
         switch (GESTURE.release(Util.getMillis())) {
           case CAST -> {
-            if (!initial.isEmpty() && initial.equals(selectedSpell())) AbilityClient.cast();
+            if (!initial.isEmpty() && initial.equals(selectedAbility())) AbilityClient.cast();
           }
           case SELECT -> AbilityWheel.release();
           case NONE -> {}
@@ -97,11 +100,11 @@ public final class SpellMouseControls {
           || event.getAction() != GLFW.GLFW_PRESS
           || press != null
           || !game.mouseHandler.isMouseGrabbed()
-          || !canUseMiddle(game)
+          || !canUseMiddle(game, selectedAbility())
           || creativePickOwnsButton(game)
           || AbilityWheel.active()
           || anotherBindingOwnsButton(game)) return;
-      press = new Press(game.player, game.level, selectedSpell());
+      press = new Press(game.player, game.level, selectedAbility());
       GESTURE.press(Util.getMillis());
       event.setCanceled(true);
     }
@@ -121,14 +124,14 @@ public final class SpellMouseControls {
       }
     }
 
-    private static String selectedSpell() {
+    private static String selectedAbility() {
       return AbilityClient.slot(AbilityClient.snapshot().selected());
     }
 
     private static boolean canContinue(Minecraft game) {
       return game.player == press.player()
           && game.level == press.level()
-          && canUseMiddle(game)
+          && canUseMiddle(game, press.selected())
           && (GESTURE.ownsWheel()
               ? AbilityWheel.active()
                   && !game.options.hideGui
@@ -136,7 +139,7 @@ public final class SpellMouseControls {
               : game.mouseHandler.isMouseGrabbed() && !AbilityWheel.active());
     }
 
-    private static boolean canUse(Minecraft game) {
+    private static boolean canUse(Minecraft game, String ability) {
       LocalPlayer player = game.player;
       return player != null
           && game.level != null
@@ -147,12 +150,22 @@ public final class SpellMouseControls {
           && player.isAlive()
           && !player.isSpectator()
           && !player.isPassenger()
-          && !player.isUsingItem()
+          && (!player.isUsingItem() || worksWhileUsing(player, ability))
           && !toolOwnsInput(game, player);
     }
 
-    private static boolean canUseMiddle(Minecraft game) {
-      return canUse(game) && !Screen.hasControlDown();
+    private static boolean worksWhileUsing(LocalPlayer player, String ability) {
+      var technique = MartialTechnique.byId(ability);
+      if (technique == null) return false;
+      return switch (technique) {
+        case SHIELD_BRACE -> player.isBlocking();
+        case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> player.getUseItem().is(Items.BOW);
+        default -> false;
+      };
+    }
+
+    private static boolean canUseMiddle(Minecraft game, String ability) {
+      return canUse(game, ability) && !Screen.hasControlDown();
     }
 
     private static boolean creativePickOwnsButton(Minecraft game) {

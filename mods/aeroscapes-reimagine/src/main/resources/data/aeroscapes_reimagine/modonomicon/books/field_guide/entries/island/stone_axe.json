@@ -1,0 +1,41 @@
+{
+  "category": "island",
+  "name": "book.aeroscapes_reimagine.field_guide.island.stone_axe.name",
+  "icon": {
+    "item": "minecraft:stone_axe"
+  },
+  "x": 10,
+  "y": 5,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.island.stone_axe.name",
+      "text": "book.aeroscapes_reimagine.field_guide.island.stone_axe.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "quark:tweaks/crafting/utility/better_stone_tools/axe"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "island/stone_pick",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/stone_pick"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "island/stone_pick"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.island.stone_axe.summary"
+}

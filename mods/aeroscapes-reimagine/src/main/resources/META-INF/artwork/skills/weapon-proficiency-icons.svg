@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="16" viewBox="0 0 112 16" shape-rendering="crispEdges">
+  <title>Aeroscapes weapon proficiency talents</title>
+  <desc>Export each original 16 by 16 tile with rsvg-convert --export-id NAME weapon-proficiency-icons.svg --output NAME.png.</desc>
+  <defs>
+    <radialGradient id="iron" cx="50%" cy="44%" r="74%">
+      <stop offset="0%" stop-color="#526d85"/>
+      <stop offset="65%" stop-color="#2a4459"/>
+      <stop offset="100%" stop-color="#111221"/>
+    </radialGradient>
+    <radialGradient id="spark" cx="50%" cy="44%" r="74%">
+      <stop offset="0%" stop-color="#5264a3"/>
+      <stop offset="65%" stop-color="#323a71"/>
+      <stop offset="100%" stop-color="#15112b"/>
+    </radialGradient>
+    <radialGradient id="amber" cx="50%" cy="44%" r="74%">
+      <stop offset="0%" stop-color="#946344"/>
+      <stop offset="65%" stop-color="#624047"/>
+      <stop offset="100%" stop-color="#251325"/>
+    </radialGradient>
+    <radialGradient id="jade" cx="50%" cy="44%" r="74%">
+      <stop offset="0%" stop-color="#397667"/>
+      <stop offset="65%" stop-color="#234e53"/>
+      <stop offset="100%" stop-color="#111b31"/>
+    </radialGradient>
+  </defs>
+  <g id="sword_handling">
+    <rect width="16" height="16" fill="url(#iron)"/>
+    <path d="M12 1h3v3h-1v2h-1v1h-1v1h-1v1h-1v1h1v2H9v-1H8v1H7v1H6v1H5v1H2v-3h1v-1h1v-1h1V9H4V7h2v1h1V7h1V6h1V5h1V4h1V3h1z" fill="#182039"/>
+    <path d="M13 2h1v2h-1v2h-1v1h-1v1h-1v1H9v1H8V8h1V7h1V6h1V5h1V3h1z" fill="#9dc9df"/>
+    <path d="M13 2h1v1h-1v2h-1v1h-1v1h-1v1H9v1H8V8h1V7h1V6h1V5h1V3h1z" fill="#ecfbff"/>
+    <path d="M5 8h1v1h1v1h1v1h1v1H7v-1H6v1H5v1H4v1H3v-2h1v-1h1v-1h1V9H5z" fill="#d4a468"/>
+    <path d="M2 4h3v1H2zm1 1h2v1H3zm10 6h1v2h-1z" fill="#7bb8db"/>
+  </g>
+  <g id="advanced_sword_handling" transform="translate(16 0)">
+    <rect width="16" height="16" fill="url(#spark)"/>
+    <path d="M7 1h2v1h1v2h1v4h-1v1h2v1h1v2h-3v3H6v-3H3v-2h1V9h2V8H5V4h1V2h1z" fill="#201733"/>
+    <path d="M8 2h1v2h1v4H9v2H7V8H6V4h1V3h1z" fill="#90dcee"/>
+    <path d="M8 3h1v6H8v1H7V8H6V5h1V4h1z" fill="#dbfffc"/>
+    <path d="M9 5h1v3H9v2H8V8h1z" fill="#4f8bd0"/>
+    <path d="M4 10h2v1h4v-1h2v1h-2v1H9v2H7v-2H6v-1H4z" fill="#e4b172"/>
+    <path d="M2 4h1v1h1v1H3v1H2V6H1V5h1zm11 2h1v1h1v1h-1v1h-1V8h-1V7h1z" fill="#b9b2ff"/>
+  </g>
+  <g id="combat_axe_handling" transform="translate(32 0)">
+    <rect width="16" height="16" fill="url(#amber)"/>
+    <path d="M9 1h4v1h2v7h-2v1h-3v2H8v2H6v1H3v-3h1v-2h2V8h2V7H6V4h1V2h2z" fill="#321b2d"/>
+    <path d="M10 2h3v1h1v5h-1v1h-2V8H9V7H7V4h1V3h2z" fill="#e6a48e"/>
+    <path d="M12 2h1v1h1v5h-1v1h-1V7h1V4h-1zM10 3h2v1h-2z" fill="#ffe1ac"/>
+    <path d="M9 6h1v2H9v2H8v1H7v2H6v1H4v-2h1v-1h1V9h1V8h1z" fill="#a97369"/>
+    <path d="M9 7h1v1H9v2H8v1H7v2H6v1H5v-1h1v-2h1v-1h1V8h1z" fill="#dd9f75"/>
+    <path d="M2 3h2v1H2zm0 3h3v1H2zm9 6h3v1h-3z" fill="#f0a870"/>
+  </g>
+  <g id="heavy_weapon_handling" transform="translate(48 0)">
+    <rect width="16" height="16" fill="url(#amber)"/>
+    <path d="M10 1h2v1h2v1h1v5h-1v2h-2v1H9v1H8v1H7v1H6v1H3v-3h1v-1h1v-1h1V9h1V7H6V4h1V2h3z" fill="#321d2d"/>
+    <path d="M10 2h2v1h2v5h-1v1h-2v1H9V9H7V5h1V3h2z" fill="#ac8fa2"/>
+    <path d="M10 2h2v1h2v1h-2v1h-2v1H8v2H7V5h1V3h2z" fill="#f2c8a5"/>
+    <path d="M12 5h2v3h-1v1h-2v1H9V8h2V7h1z" fill="#6f647f"/>
+    <path d="M8 8h1v2H8v1H7v1H6v1H5v1H4v-2h1v-1h1v-1h1V9h1z" fill="#e1a06e"/>
+    <path d="M2 5h2v1H2zm0 3h3v1H2zm9 5h3v1h-3z" fill="#d17769"/>
+  </g>
+  <g id="polearm_handling" transform="translate(64 0)">
+    <rect width="16" height="16" fill="url(#jade)"/>
+    <path d="M13 1h2v4h-1v2h-2v2h-2v2H8v2H6v2H2v-3h2v-2h2V8h2V6h2V4h1V2h2z" fill="#172a39"/>
+    <path d="M13 2h1v3h-1v2h-2v1H9V7h1V5h1V3h2z" fill="#82cdb5"/>
+    <path d="M13 2h1v2h-1v1h-1v1h-1v1h-1V6h1V4h1V3h1z" fill="#d8ffe3"/>
+    <path d="M9 7h2v1h-1v1H9v1H8v1H7v1H6v1H5v1H3v-1h1v-1h1v-1h1v-1h1V9h1V8h1z" fill="#e3b578"/>
+    <path d="M3 4h3v1H3zm0 3h2v1H3zm9 4h2v1h-2z" fill="#58a895"/>
+  </g>
+  <g id="light_weapon_handling" transform="translate(80 0)">
+    <rect width="16" height="16" fill="url(#spark)"/>
+    <path d="M11 2h4v4h-1v2h-2v2H9v2H7v2H5v1H2v-3h1v-2h2V9H4V7h3v1h1V6h2V4h1z" fill="#251d3f"/>
+    <path d="M12 3h2v2h-1v2h-2v2H9v1H7V9h1V7h2V5h1V4h1z" fill="#bfaff0"/>
+    <path d="M12 3h2v1h-2v1h-1v2H9v2H8V8h1V7h1V5h1V4h1z" fill="#f4e9ff"/>
+    <path d="M5 8h2v1h1v1h1v1H7v1H6v1H5v1H3v-2h1v-1h1v-1h1V9H5z" fill="#edb699"/>
+    <path d="M1 4h5v1H1zm1 2h3v1H2zm9 6h4v1h-4z" fill="#9794ef"/>
+  </g>
+  <g id="shield_handling" transform="translate(96 0)">
+    <rect width="16" height="16" fill="url(#iron)"/>
+    <path d="M3 2h3V1h4v1h3v1h1v7h-1v2h-2v2H9v1H7v-1H5v-2H3v-2H2V3h1z" fill="#181f34"/>
+    <path d="M4 3h3V2h2v1h3v1h1v6h-1v1h-1v1h-1v1H9v1H7v-1H6v-1H5v-1H4v-1H3V4h1z" fill="#cfb482"/>
+    <path d="M5 4h2V3h2v1h2v1h1v4h-1v2h-1v1H9v1H7v-1H6v-1H5V9H4V5h1z" fill="#5794ab"/>
+    <path d="M7 6h2v1h1v2H9v1H7V9H6V7h1zM4 4h2v1H4zm6 0h2v1h-2z" fill="#d9f7ed"/>
+    <path d="M7 3h1v2H7zm1 8h1v2H8z" fill="#275271"/>
+  </g>
+</svg>

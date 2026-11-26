@@ -76,6 +76,7 @@ public final class AeroscapesReimagine {
       dev.aeroscapes.enchanting.LibraryTooltips.register();
     }
     dev.aeroscapes.races.ChangeItems.register(modBus);
+    dev.aeroscapes.equipment.armor.SpecialistArmor.register(modBus);
     dev.aeroscapes.expedition.ExpeditionDiscoveries.register(modBus);
     dev.aeroscapes.engineering.EngineeringMaterials.register(modBus);
     if (ModList.get().isLoaded("animalhusbandry"))
@@ -98,6 +99,7 @@ public final class AeroscapesReimagine {
     if (ModList.get().isLoaded("spawn")) dev.aeroscapes.ecology.EcologyNetwork.register(modBus);
     if (ModList.get().isLoaded("irons_spellbooks")) {
       dev.aeroscapes.magic.SpellCastRules.register();
+      dev.aeroscapes.magic.MagicTraces.register();
       if (ModList.get().isLoaded("puffish_skills")) {
         dev.aeroscapes.magic.PreparedAbilities.register();
         dev.aeroscapes.magic.MagicBonuses.register();
@@ -111,6 +113,7 @@ public final class AeroscapesReimagine {
       dev.aeroscapes.equipment.combat.RangedProficiency.register();
       if (ModList.get().isLoaded("puffish_skills")) {
         dev.aeroscapes.equipment.tools.ToolProficiency.register();
+        dev.aeroscapes.equipment.combat.WeaponProficiency.register();
         dev.aeroscapes.progression.ProgressionBridge.register();
         if (ModList.get().isLoaded("irons_spellbooks"))
           dev.aeroscapes.progression.SpellPractice.register();

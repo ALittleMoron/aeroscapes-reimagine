@@ -29,9 +29,10 @@ import net.puffish.skillsmod.SkillsMod;
  * once-per-second comparison catches every route instead of a perk.
  */
 public final class ProgressionBridge {
-  public static final List<String> COMBAT_SKILLS = List.of("combat", "archery");
+  public static final List<String> COMBAT_SKILLS =
+      List.of("combat", "archery", "light_armor", "heavy_armor");
   public static final int LEVELS_PER_POINT = 5;
-  public static final int COMBAT_POINT_CAP = 14;
+  public static final int COMBAT_POINT_CAP = 34;
   public static final String COMBAT_CATEGORY = "aeroscapes_reimagine:combat";
   public static final String MAGIC_CATEGORY = "aeroscapes_reimagine:magic";
   private static final ResourceLocation COMBAT = ResourceLocation.parse(COMBAT_CATEGORY);

@@ -1,0 +1,52 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.helm.name",
+  "icon": {
+    "item": "simulated:steering_wheel"
+  },
+  "x": 13,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.industrial_iron.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.industrial_iron.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.swivel.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.swivel.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.helm.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.helm.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "simulated:swivel_bearing",
+      "recipe_id_2": "simulated:steering_wheel"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/sails",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/sails"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "flight/sails"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.helm.summary"
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "aeroscapes_reimagine:guide/checkpoints",
+  "display": {
+    "icon": {
+      "id": "minecraft:chiseled_bookshelf"
+    },
+    "title": {
+      "translate": "book.aeroscapes_reimagine.field_guide.workshop.enchant_library.name"
+    },
+    "description": {
+      "translate": "book.aeroscapes_reimagine.field_guide.complete"
+    },
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": true
+  },
+  "criteria": {
+    "done": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "location": [
+          {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "minecraft:chiseled_bookshelf"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

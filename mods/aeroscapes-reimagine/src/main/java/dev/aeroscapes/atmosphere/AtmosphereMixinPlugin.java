@@ -29,7 +29,9 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
   static boolean shouldApplyForVersions(
       String mixinClassName, Function<String, String> versionLookup) {
     Map<String, String> versions;
-    if (mixinClassName.startsWith("dev.aeroscapes.mixin.enchanting.")) {
+    if (mixinClassName.startsWith("dev.aeroscapes.mixin.guide.")) {
+      versions = Map.of("modonomicon", "1.123.0", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.enchanting.")) {
       versions =
           Map.of("immersiveenchanting", "6.0.1", "alfinolib", "1.2.0", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.hex")) {
@@ -43,6 +45,18 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("overgeared", "1.21.1-1.7.1", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.inventory.")) {
       versions = Map.of("curios", "9.5.1+1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("AquaticArmorPlayerMixin")) {
+      versions = Map.of("hybrid_aquatic", "1.7.4", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("ArmorSpellSelectionMixin")) {
+      versions = Map.of("irons_spellbooks", "1.21.1-3.16.3", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("BacktankTrainingMixin")
+        || mixinClassName.endsWith("DivingBootsTrainingMixin")
+        || mixinClassName.endsWith("DivingHelmetTrainingMixin")) {
+      versions = Map.of("create", "6.0.10", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("SterlingBootsTrainingMixin")) {
+      versions = Map.of("galosphere", "1.5.3", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.armor.")) {
+      versions = Map.of("neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.magic.")) {
       versions =
           Map.of(
@@ -138,6 +152,14 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
         || mixinClassName.endsWith("ReforgeAnvilReturnMixin")
         || mixinClassName.endsWith("ReforgeCatalystHintMixin")) {
       versions = Map.of("tieredneo", "1.2.0+1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.technique.")) {
+      versions =
+          Map.of(
+              "irons_spellbooks", "1.21.1-3.16.3",
+              "puffish_skills", "0.19.2",
+              "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("MeleeRecoveryMixin")) {
+      versions = Map.of("pmmo", "2.10.47", "puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.reforge.")) {
       var pins =
           new java.util.HashMap<>(Map.of("tieredneo", "1.2.0+1.21.1", "neoforge", "21.1.244"));

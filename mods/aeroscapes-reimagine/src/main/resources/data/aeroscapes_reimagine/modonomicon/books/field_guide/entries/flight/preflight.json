@@ -1,0 +1,65 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.preflight.name",
+  "icon": {
+    "item": "minecraft:compass"
+  },
+  "x": 9,
+  "y": 10,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.fill.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.fill.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.preflight.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.preflight.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/release_hull",
+      "line_enabled": true,
+      "draw_arrow": false
+    },
+    {
+      "entry": "flight/refit",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:or",
+    "children": [
+      {
+        "type": "modonomicon:and",
+        "children": [
+          {
+            "type": "modonomicon:advancement",
+            "advancement_id": "aeroscapes_reimagine:guide/checkpoints/aboard"
+          },
+          {
+            "type": "modonomicon:entry_unlocked",
+            "entry_id": "flight/release_hull"
+          }
+        ]
+      },
+      {
+        "type": "modonomicon:and",
+        "children": [
+          {
+            "type": "modonomicon:advancement",
+            "advancement_id": "aeroscapes_reimagine:guide/checkpoints/restored_hull"
+          },
+          {
+            "type": "modonomicon:entry_unlocked",
+            "entry_id": "flight/refit"
+          }
+        ]
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.preflight.summary"
+}

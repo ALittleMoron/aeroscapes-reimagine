@@ -1,0 +1,17 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.wreck_search.name",
+  "icon": {
+    "item": "minecraft:spyglass"
+  },
+  "x": 0,
+  "y": 5,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.wreck_search.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.wreck_search.text"
+    }
+  ],
+  "description": "book.aeroscapes_reimagine.field_guide.flight.wreck_search.summary"
+}

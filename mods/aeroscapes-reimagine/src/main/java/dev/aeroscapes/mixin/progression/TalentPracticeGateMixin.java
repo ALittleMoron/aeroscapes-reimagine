@@ -1,9 +1,9 @@
 package dev.aeroscapes.mixin.progression;
 
-import dev.aeroscapes.equipment.combat.RangedProficiency;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.progression.CombatTalentRequirements;
 import dev.aeroscapes.progression.ProgressionBridge;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
@@ -26,9 +26,9 @@ abstract class TalentPracticeGateMixin {
       CallbackInfo callback) {
     if (force) return;
     if (category.toString().equals(ProgressionBridge.COMBAT_CATEGORY)) {
-      int required = RangedProficiency.missingPracticeLevel(player, skill);
-      if (required > 0) {
-        player.displayClientMessage(RangedProficiency.practiceRequired(required), true);
+      var required = CombatTalentRequirements.missing(player, skill);
+      if (required != null) {
+        player.displayClientMessage(required, true);
         callback.cancel();
       }
       return;

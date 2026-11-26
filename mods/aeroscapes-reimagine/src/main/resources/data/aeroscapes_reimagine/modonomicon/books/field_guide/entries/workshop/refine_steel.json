@@ -1,0 +1,52 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.refine_steel.name",
+  "icon": {
+    "item": "overgeared:heated_steel_ingot"
+  },
+  "x": 5,
+  "y": 14,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.rough_steel.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.rough_steel.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.heat_crude_steel.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.heat_crude_steel.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.iron_anvil.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.iron_anvil.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.refine_steel.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.refine_steel.text"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/alloy_furnace",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/alloy_furnace"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/alloy_furnace"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.refine_steel.summary"
+}

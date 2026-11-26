@@ -6,6 +6,7 @@ import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import dev.aeroscapes.equipment.combat.RangedReforges;
 import dev.aeroscapes.equipment.combat.ShieldReforges;
+import dev.aeroscapes.equipment.combat.WeaponProficiency;
 import dev.aeroscapes.races.ClassTraits;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
@@ -21,7 +22,9 @@ abstract class CombatKnockbackReforgeMixin {
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private int aeroscapes$raiseTicks(int normal) {
     LivingEntity user = (LivingEntity) (Object) this;
-    return ClassTraits.shieldDelay(user, ShieldReforges.raiseTicks(user.getUseItem(), normal));
+    int raised =
+        ClassTraits.shieldDelay(user, ShieldReforges.raiseTicks(user.getUseItem(), normal));
+    return WeaponProficiency.shieldRaiseTicks(user, raised);
   }
 
   @ModifyExpressionValue(

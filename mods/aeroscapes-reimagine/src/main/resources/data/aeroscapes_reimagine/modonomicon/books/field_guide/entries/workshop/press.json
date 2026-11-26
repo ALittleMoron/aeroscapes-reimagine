@@ -1,0 +1,46 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.press.name",
+  "icon": {
+    "item": "create:mechanical_press"
+  },
+  "x": 12,
+  "y": 9,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.press.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.press.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.sheet.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.sheet.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "create:crafting/kinetics/mechanical_press"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/wheel",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/wheel"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/wheel"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.press.summary"
+}

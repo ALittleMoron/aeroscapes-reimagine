@@ -1,0 +1,46 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.engine.name",
+  "icon": {
+    "item": "simulated:red_portable_engine"
+  },
+  "x": 0,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.engine_core.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.engine_core.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.engine.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.engine.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "simulated:red_portable_engine"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/brass_casing",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/brass_casing"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/brass_casing"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.engine.summary"
+}

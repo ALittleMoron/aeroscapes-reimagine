@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "windward",
+  "pattern": [
+    "SAS",
+    "M M"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:leather_leggings"
+    },
+    "M": {
+      "item": "minecraft:copper_ingot"
+    },
+    "S": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "id": "aeroscapes_reimagine:windward_leggings",
+    "count": 1
+  }
+}

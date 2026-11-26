@@ -1,5 +1,6 @@
 package dev.aeroscapes.magic.client;
 
+import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
 import dev.aeroscapes.inventory.InventoryNavigation;
 import dev.aeroscapes.magic.AbilityNetwork;
@@ -13,6 +14,7 @@ import net.minecraft.client.gui.components.Checkbox;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
 import org.lwjgl.glfw.GLFW;
 
@@ -176,11 +178,14 @@ public final class AbilitiesScreen extends Screen {
             false);
       Component state =
           assignmentReason.isEmpty()
-              ? entry.granted()
+              ? entry.granted() || entry.technique()
                   ? AbilityClient.school(entry)
                   : AbilityClient.text("rank_short", entry.level(), entry.cap())
               : AbilityClient.text(
-                  assignmentReason.equals("unlearned") ? "unlearned_short" : "unavailable_short");
+                  assignmentReason.equals("unlearned")
+                          || assignmentReason.equals("technique_unlearned")
+                      ? "unlearned_short"
+                      : "unavailable_short");
       var stateLines = font.split(state, listWidth() - 46);
       if (!stateLines.isEmpty())
         graphics.drawString(
@@ -258,17 +263,24 @@ public final class AbilitiesScreen extends Screen {
                 .withColor(0xffef9b8c));
       paragraphs.add(AbilityClient.name(entry.id()));
       paragraphs.add(AbilityClient.school(entry));
-      if (entry.program() != null) {
+      var technique = MartialTechnique.byId(entry.id());
+      if (technique != null) {
+        paragraphs.add(technique.description());
+        paragraphs.add(AbilityClient.text("technique_cooldown", technique.cooldownTicks() / 20));
+      } else if (entry.program() != null) {
         paragraphs.add(AbilityClient.text("hex_hint"));
       } else if (entry.granted()) {
         paragraphs.add(
             AbilityClient.text(
                 net.minecraft.resources.ResourceLocation.parse(entry.id()).getPath() + "_hint"));
-      } else
+      } else {
+        String guide = "spell." + entry.id().replace(':', '.') + ".guide";
+        if (I18n.exists(guide)) paragraphs.add(Component.translatable(guide));
         paragraphs.add(AbilityClient.text("rank", entry.level(), entry.maxLevel(), entry.cap()));
+      }
       paragraphs.add(
           assignmentReason.isEmpty()
-              ? AbilityClient.reason(entry)
+              ? entry.technique() ? AbilityClient.status(entry) : AbilityClient.reason(entry)
               : AbilityClient.reason(assignmentReason));
       if (assignmentReason.isEmpty()) {
         paragraphs.add(AbilityClient.text(assignmentHint(entry)));
@@ -289,6 +301,7 @@ public final class AbilitiesScreen extends Screen {
   }
 
   private static String assignmentHint(AbilityNetwork.Entry entry) {
+    if (entry.technique()) return "technique_assign";
     if (entry.program() != null) return "hex_assign";
     if (ExceptionalAccessory.byId(entry.id()) != null
         || PreparedAbilities.DISTRACTION.equals(entry.id())) return "expedition_assign";

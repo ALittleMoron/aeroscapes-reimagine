@@ -63,6 +63,9 @@ config = "aeroscapes_reimagine.backup.mixins.json"
 config = "aeroscapes_reimagine.qol.mixins.json"
 
 [[mixins]]
+config = "aeroscapes_reimagine.armor.mixins.json"
+
+[[mixins]]
 config = "aeroscapes_reimagine.trees.mixins.json"
 
 [[mixins]]

@@ -1,0 +1,11 @@
+{
+  "items": [
+    "aeroscapes_reimagine:duskstride_helmet",
+    "aeroscapes_reimagine:duskstride_chestplate",
+    "aeroscapes_reimagine:duskstride_leggings",
+    "aeroscapes_reimagine:duskstride_boots"
+  ],
+  "base": [
+    "minecraft:phantom_membrane"
+  ]
+}

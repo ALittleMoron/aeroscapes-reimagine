@@ -1,5 +1,6 @@
 package dev.aeroscapes.magic.client;
 
+import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.magic.AbilityNetwork;
 import dev.aeroscapes.magic.InnateAbility;
 import java.util.List;
@@ -74,6 +75,39 @@ public final class AbilityCatalogueTest {
               .equals(List.of(innate)),
           "The player's rankless innate ability can be found in learned-only and racial filters");
     }
+    var brace =
+        new AbilityNetwork.Entry(
+            MartialTechnique.SHIELD_BRACE.id(),
+            MartialTechnique.GROUP,
+            1,
+            1,
+            1,
+            false,
+            "technique_shield",
+            0,
+            0);
+    var dash =
+        new AbilityNetwork.Entry(
+            MartialTechnique.DASH.id(),
+            MartialTechnique.GROUP,
+            0,
+            1,
+            1,
+            false,
+            "technique_unlearned",
+            0,
+            0);
+    require(
+        AbilityCatalogue.matching(List.of(brace, dash), true, MartialTechnique.GROUP, "", id -> id)
+            .equals(List.of(brace)),
+        "Learned techniques remain visible without their active equipment, while locked techniques"
+            + " stay hidden");
+    require(
+        AbilityCatalogue.assignmentReason(brace).isEmpty(),
+        "A learned technique can be prepared without the equipment to activate it");
+    require(
+        AbilityCatalogue.assignmentReason(dash).equals("technique_unlearned"),
+        "A locked technique requires its Combat talent");
     System.out.println(
         "Ability catalogue: learned-only, complete catalogue, localized search, school and"
             + " preparation restrictions passed");

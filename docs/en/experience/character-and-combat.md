@@ -12,9 +12,19 @@ With a sword, axe, knife or other supported melee weapon, aim and press attack. 
 
 One-handed weapons can be paired to alternate hands. A shield still blocks when held up. To change attack controls, open Better Combat in the Mods menu or look for its category under Controls. Holding attack repeats swings by default. You can assign a key to feint and cancel a wind-up.
 
+Wooden and stone swords and axes work at full speed from the start, as does the flint knife. Advanced weapons take 30% longer to recover between swings until you learn the talent shown in the item tooltip. When you fight with two weapons, each swing uses the training for its own weapon. Without Shield Handling, a shield takes three extra ticks to begin blocking. Characters of any starting class can learn these talents under Melee, Light Weapons or Defense. Equipment keeps its applied enchantments while you train.
+
 ## Ranged weapons
 
 The ordinary bow works at full speed from the start. For the crossbow, Starlight Bow and autoloader crossbow, reach Ranged level 2, 6 or 10 respectively, then spend one point on the named talent under **Talents → Combat → Ranged** to unlock full speed.
+
+## Armor training
+
+Practice in light or heavy armor opens the corresponding Combat talent. Before training, a piece gives a tenth of its usual armor rating and its own bonuses are inactive. Applied enchantments retain their effects. Trained light armor helps you move faster, while trained heavy armor slightly slows movement. Leather and other starter clothing are available from the start.
+
+The **Windward** ranger set gives 14 armor points, reduces projectile damage and improves movement while drawing. The full set adds arrow damage from eight blocks away. The **Duskstride** rogue set gives 13 armor points, speeds up sneaking and sprinting, and cushions melee hits and falls. A charged light-weapon hit that deals damage gives the full set a three-second speed burst, with a six-second cooldown. A full iron set gives 15 armor points and trades movement for broader protection. Learn the appropriate talent in Ranged or Light Weapons to equip the specialist set. A refund leaves worn pieces in place with the undertraining penalty.
+
+The Blue-Footed Boots and Dragonfin Boots keep their native travel abilities independently of armor training.
 
 ## Expedition discoveries
 
@@ -58,6 +68,8 @@ Combat has four sections: Melee, Defense, Ranged and Light Weapons. They share o
 ## Prepared abilities
 
 Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells, racial abilities, Amulet Step and items carrying Hex programs in eight shared slots, including during combat. Passive talents do not use these slots. Hold the middle mouse button and release over a slot in the wheel to select it. Tap the button to use it. A learned spell requires an equipped spellbook focus and keeps its costs and cooldown. Racial abilities and Amulet Step work without a focus. For a Hex program, keep its assigned cypher, trinket or artifact on your hotbar or in your offhand. The [magic guide](../magic/) covers controls, books, scroll study and writing Hex programs. Personal ranks and preparation survive death, relogging and dimension changes.
+
+Learn martial techniques in Combat and assign them to the same wheel. Activate Shield Brace with a raised shield to hold your ground and reduce shield wear. Counterattack rewards striking the enemy you blocked, and Heavy Strike can interrupt a skeleton or pillager preparing a shot. Use Slowing Shot to create space, Marking Shot to set up a stronger second arrow, or Quick Shot to fire under pressure. Dash covers up to six blocks and opens a stronger light-weapon hit; Disengage covers up to five blocks backwards and softens the next melee hit for a moment. Both stop at obstacles and gaps and share a cooldown. Flank Strike rewards hitting from the side or rear.
 
 ## Making tools and equipment
 

@@ -1,0 +1,101 @@
+{
+  "values": [
+    "minecraft:chainmail_helmet",
+    "minecraft:chainmail_chestplate",
+    "minecraft:chainmail_leggings",
+    "minecraft:chainmail_boots",
+    "minecraft:turtle_helmet",
+    {
+      "id": "#irons_spellbooks:armors/helmets",
+      "required": false
+    },
+    {
+      "id": "#irons_spellbooks:armors/chestplates",
+      "required": false
+    },
+    {
+      "id": "#irons_spellbooks:armors/leggings",
+      "required": false
+    },
+    {
+      "id": "#irons_spellbooks:armors/boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:speed_boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:tarnished_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:gold_crown",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:infernal_sorcerer_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wandering_magician_helmet",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wandering_magician_chestplate",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wandering_magician_leggings",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:wandering_magician_boots",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:diving_helmet",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:diving_suit",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:diving_leggings",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:diving_boots",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:glowing_diving_helmet",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:glowing_diving_suit",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:glowing_diving_leggings",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:glowing_diving_boots",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:turtle_chestplate",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:nautilus_helmet",
+      "required": false
+    },
+    {
+      "id": "hybrid_aquatic:nautilus_pauldrons",
+      "required": false
+    }
+  ]
+}

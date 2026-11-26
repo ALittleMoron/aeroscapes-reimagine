@@ -1,0 +1,11 @@
+{
+  "items": [
+    "aeroscapes_reimagine:windward_helmet",
+    "aeroscapes_reimagine:windward_chestplate",
+    "aeroscapes_reimagine:windward_leggings",
+    "aeroscapes_reimagine:windward_boots"
+  ],
+  "base": [
+    "minecraft:copper_ingot"
+  ]
+}

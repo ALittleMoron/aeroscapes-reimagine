@@ -366,6 +366,7 @@ public final class MagicTalentsTest {
     for (String locale : List.of("en_us", "ru_ru")) {
       JsonObject language =
           resource("/assets/aeroscapes_reimagine_magic_tree_translations/lang/" + locale + ".json");
+      JsonObject nativeLanguage = resource("/assets/irons_spellbooks/lang/" + locale + ".json");
       for (String id : nodes) {
         String key =
             definitions
@@ -373,8 +374,9 @@ public final class MagicTalentsTest {
                 .getAsJsonObject("description")
                 .get("translate")
                 .getAsString();
+        var description = language.has(key) ? language.get(key) : nativeLanguage.get(key);
         require(
-            language.has(key) && !language.get(key).getAsString().isBlank(), "Localized talent");
+            description != null && !description.getAsString().isBlank(), "Localized talent " + key);
         String title =
             definitions.getAsJsonObject(id).getAsJsonObject("title").get("translate").getAsString();
         if (!title.startsWith("spell.irons_spellbooks.")) {

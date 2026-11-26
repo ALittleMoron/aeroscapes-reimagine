@@ -36,7 +36,7 @@ Shulker Box Tooltip previews shulker-box contents. Effect Timer Plus adds a coun
 
 [Inventory Profiles Next](https://modrinth.com/project/O7RBXm3n) provides sorting and automatic refill, while Mouse Tweaks expands mouse-based inventory handling. Refill arrow overlays on inventory and hotbar slots are hidden by default.
 
-Smooth Scrolling animates scrolling in the hotbar, chat, creative inventory and lists. Tiny Item Animations adds a short animation when you pick up or put down an item with the cursor.
+Smooth Scrolling Reforged animates scrolling in the hotbar, chat, creative inventory and lists. Tiny Item Animations adds a short animation when you pick up or put down an item with the cursor.
 
 Animated Inventory shows stacks moving between slots when you swap them or use Shift-click to transfer them between inventories.
 

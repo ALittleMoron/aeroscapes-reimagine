@@ -10,8 +10,8 @@
   "aeroscapes_reimagine.abilities.cooldown": "Ready in %s s",
   "aeroscapes_reimagine.abilities.wheel_hint": "Point at a slot, then release",
   "aeroscapes_reimagine.abilities.search": "Search abilities",
-  "aeroscapes_reimagine.abilities.school_filter": "Change school filter",
-  "aeroscapes_reimagine.abilities.all_schools": "All schools",
+  "aeroscapes_reimagine.abilities.school_filter": "Change ability group",
+  "aeroscapes_reimagine.abilities.all_schools": "All ability groups",
   "aeroscapes_reimagine.abilities.clear": "Clear selected slot",
   "aeroscapes_reimagine.abilities.choose": "Choose an ability to see how to prepare and use it. Scroll this panel for details.",
   "aeroscapes_reimagine.abilities.bindings_hint": "Existing Iron's Spells 'n Spellbooks cast, wheel and spell-bar scrolling bindings still work. Its first eight quick-cast keys use these slots and cast immediately; higher quick-cast slots are unused. Additional Aeroscapes cast, wheel and slot-selection keys start unbound. Assign them under Aeroscapes abilities in Controls.",
@@ -71,10 +71,10 @@
   "key.aeroscapes_reimagine.abilities.slot_7": "Select preparation slot 7",
   "key.aeroscapes_reimagine.abilities.slot_8": "Select preparation slot 8",
   "aeroscapes_reimagine.abilities.learned_only": "Learned only",
-  "aeroscapes_reimagine.abilities.learned_only_hint": "Show your learned spells and abilities granted by race or equipment. Turn off to inspect all spells.",
-  "aeroscapes_reimagine.abilities.none_learned": "No spells learned yet. Learn a spell in Talents, or turn off Learned only to inspect the catalogue.",
+  "aeroscapes_reimagine.abilities.learned_only_hint": "Show learned spells and techniques, plus abilities already available to your character. Turn off to inspect the full catalogue.",
+  "aeroscapes_reimagine.abilities.none_learned": "Learn a spell or a technique in Talents. Turn off Learned only to inspect the catalogue.",
   "aeroscapes_reimagine.abilities.unlearned_short": "Not learned",
   "aeroscapes_reimagine.abilities.unavailable_short": "Cannot prepare",
   "aeroscapes_reimagine.abilities.assignment_failed": "Cannot assign: %s",
-  "aeroscapes_reimagine.abilities.none_learned_short": "No learned spells"
+  "aeroscapes_reimagine.abilities.none_learned_short": "No learned abilities"
 }

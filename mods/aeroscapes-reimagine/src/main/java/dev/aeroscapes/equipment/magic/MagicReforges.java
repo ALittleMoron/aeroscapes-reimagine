@@ -1,6 +1,7 @@
 package dev.aeroscapes.equipment.magic;
 
 import dev.aeroscapes.equipment.ReforgeProfiles;
+import dev.aeroscapes.equipment.armor.ArmorProficiency;
 import dev.aeroscapes.equipment.combat.ArmorSpecialties;
 import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
 import io.redspace.ironsspellbooks.api.events.SpellPreCastEvent;
@@ -250,7 +251,7 @@ public final class MagicReforges {
         || !player.isAlive()
         || event.getNewDamage() <= 0.0F
         || !isSpellDamage(event.getSource())) return;
-    var chest = player.getItemBySlot(EquipmentSlot.CHEST);
+    var chest = ArmorProficiency.activeItem(player, EquipmentSlot.CHEST);
     if (!ReforgeProfiles.has(chest, RETURN_WARD)) return;
     var state = STATES.computeIfAbsent(player, ignored -> new State());
     int now = player.tickCount;
@@ -269,7 +270,7 @@ public final class MagicReforges {
   private static boolean wardArmorActive(ServerPlayer player, State state) {
     if (state.wardArmor.isEmpty()) return false;
     if (!state.wardSpellOnly) return wardArmor(player) == state.wardArmor;
-    var chest = player.getItemBySlot(EquipmentSlot.CHEST);
+    var chest = ArmorProficiency.activeItem(player, EquipmentSlot.CHEST);
     return chest == state.wardArmor && ReforgeProfiles.has(chest, RETURN_WARD);
   }
 
@@ -297,7 +298,7 @@ public final class MagicReforges {
 
   private static ItemStack wardArmor(ServerPlayer player) {
     for (var slot : ARMOR_SLOTS) {
-      var stack = player.getItemBySlot(slot);
+      var stack = ArmorProficiency.activeItem(player, slot);
       if (ReforgeProfiles.has(stack, "magic_armor_" + slot.getName() + "_legendary_ward"))
         return stack;
     }

@@ -40,14 +40,20 @@ existing Cloth Config for its settings screen and JSON config. The pack disables
 Imprint's dust and wetness effects to retain the existing providers for those
 effects.
 
-## Client scrolling and item animations in 0.7.0
+## Client scrolling and item animations
 
-[Smooth Scrolling 2.2.1](https://modrinth.com/mod/smooth-scroll/version/1HA8AoCS)
-is the author-supported Fabric file for Minecraft 1.21.1 through Connector.
-It animates chat, creative tabs, lists and the hotbar.
+[Smooth Scrolling Reforged 1.0.1](https://www.curseforge.com/minecraft/mc-mods/smooth-scrolling-reforged/files/7106845)
+is the original native NeoForge client JAR. It animates chat, creative tabs,
+lists and the hotbar. The client plugin only applies the optional Condensed
+Creative mixin when that mod is installed. The previous Fabric file's first
+transformation could stop clean imports at Connector's safeguard.
+The [matching 1.0.1 source commit](https://github.com/Leclowndu93150/Smooth-Scrolling/tree/b19c88f9da0e31014caa2b5e6cb01b6b6a79a390)
+is bundled with the attribution and GPL text. The publisher declares GPL v3
+and the JAR descriptor reports LGPL 3.0.
 [Tiny Item Animations 1.2.1](https://modrinth.com/mod/tiny-item-animations/version/mSJPeo1D)
 uses the native NeoForge file and animates cursor pickup and insertion.
-The Modrinth export refers to the original Smooth Scrolling and Tiny Item Animations JARs.
+The Modrinth export bundles the unchanged native scrolling JAR and links to
+the original Tiny Item Animations JAR.
 Tiny Item Animations' LPUL prohibits independent public hosting of that JAR.
 [Animated Inventory 1.0.7](https://www.curseforge.com/minecraft/mc-mods/animated-inventory/files/8916978)
 animates item transfers between slots, including Shift-click quick moves.

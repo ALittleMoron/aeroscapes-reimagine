@@ -1,0 +1,41 @@
+{
+  "category": "island",
+  "name": "book.aeroscapes_reimagine.field_guide.island.stone_pick.name",
+  "icon": {
+    "item": "minecraft:stone_pickaxe"
+  },
+  "x": 10,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.island.stone_pick.name",
+      "text": "book.aeroscapes_reimagine.field_guide.island.stone_pick.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "quark:tweaks/crafting/utility/better_stone_tools/pickaxe"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "island/knap",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/knap"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "island/knap"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.island.stone_pick.summary"
+}

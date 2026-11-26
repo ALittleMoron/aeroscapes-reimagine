@@ -1,0 +1,55 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.stone_anvil.name",
+  "icon": {
+    "item": "overgeared:stone_smithing_anvil"
+  },
+  "x": 5,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.hammer.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.hammer.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "overgeared:copper_smithing_hammer_2"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.stone_anvil.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.stone_anvil.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.tongs.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.tongs.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "overgeared:wooden_tongs"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/copper_ingots",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/copper_ingots"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/copper_ingots"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.stone_anvil.summary"
+}

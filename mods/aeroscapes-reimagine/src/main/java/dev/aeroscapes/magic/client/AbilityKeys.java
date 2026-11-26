@@ -107,8 +107,15 @@ public final class AbilityKeys {
             .map(binding -> binding.getKey().getName())
             .toList());
     for (var request : requests) {
+      String activatedAbility =
+          switch (request.action()) {
+            case QUICK_CAST -> AbilityClient.slot(request.slot());
+            case CAST -> AbilityClient.slot(AbilityClient.snapshot().selected());
+            default -> "";
+          };
       if (PRESSES.claim(request.binding().getKey().getName())
-          && SpellMouseControls.canUseAbilityBinding(request.binding())) dispatch(request);
+          && SpellMouseControls.canUseAbilityBinding(request.binding(), activatedAbility))
+        dispatch(request);
     }
   }
 

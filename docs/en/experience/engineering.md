@@ -18,6 +18,10 @@ Engineering centers on Create’s moving parts, mechanical power and item handli
 
 Aeronautics adds vehicles and physical contraptions using Sable. Ships are intended for scouting, carrying resources and supplying distant homes, with room for designs ranging from small scouts to cargo airships and flying homes.
 
+The **Skyfarer’s Field Guide** appears in your inventory when you first join a world. Hold it and right-click the air. **About the Pack** introduces survival, toolmaking, talents and travel between islands. In **Your starting island**, open **Strike stones loose** to learn how to get the stones for knapping. You can read any step and see its prerequisites. Completing an action advances the route. It goes from making a stone pickaxe through building a workshop to a first flight. Side branches cover drinking water, upgraded tools, reforging and enchantments.
+
+You can use gear you find or restore a stranded ship and join the flight checks from there. An iron pickaxe is enough for the minerals used along the main route. If you make your own flint and steel for a Nether portal, you need a steel ingot. The guide records progress without awarding items or experience. Craft a replacement from one paper and one stick in any two crafting slots.
+
 The included additions provide gyroscopic stabilization and rope connectors for docking. Aeronautics’ native mechanics remain the starting point. Shipbuilding carries consequences: a mistake may cost a vessel, and recovering a character’s inventory does not recover the ship.
 
 A home aboard ship is part of the intended experience. The range of storage, kitchen equipment and machinery usable while moving is still being established; not every stationary machine can be assumed to work on a vessel.

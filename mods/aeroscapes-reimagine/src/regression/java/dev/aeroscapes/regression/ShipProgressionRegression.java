@@ -2,6 +2,7 @@ package dev.aeroscapes.regression;
 
 import com.mojang.authlib.GameProfile;
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.equipment.workshop.WorkshopManufacture;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -39,6 +41,8 @@ public final class ShipProgressionRegression {
     if (!Boolean.getBoolean("aeroscapes.regression.shipProgression")) return;
     ServerLevel level = event.getServer().overworld();
     verifyLoot(level);
+    verifyFieldGuide(level);
+    verifyToolRecipes(level);
     smelt(level, "minecraft:raw_iron", "minecraft:iron_ingot");
     smelt(level, "minecraft:raw_copper", "minecraft:copper_ingot");
     smelt(level, "create:raw_zinc", "create:zinc_ingot");
@@ -72,9 +76,10 @@ public final class ShipProgressionRegression {
     craft(level, 1, "minecraft:oak_planks", 4, "minecraft:oak_log");
     craft(level, 1, "minecraft:stick", 4, "minecraft:oak_planks", "minecraft:oak_planks");
     craft(level, 1, "minecraft:iron_nugget", 9, "minecraft:iron_ingot");
-    craft(
+    processingData(
         level,
-        3,
+        "minecraft:bucket",
+        "overgeared:forging",
         "minecraft:bucket",
         1,
         "minecraft:iron_ingot",
@@ -83,26 +88,6 @@ public final class ShipProgressionRegression {
         "",
         "minecraft:iron_ingot",
         "");
-    for (String material : List.of("minecraft:cobblestone", "minecraft:iron_ingot")) {
-      String pickaxe =
-          material.equals("minecraft:cobblestone")
-              ? "minecraft:stone_pickaxe"
-              : "minecraft:iron_pickaxe";
-      craft(
-          level,
-          3,
-          pickaxe,
-          1,
-          material,
-          material,
-          material,
-          "",
-          "minecraft:stick",
-          "",
-          "",
-          "minecraft:stick",
-          "");
-    }
     craft(
         level,
         3,
@@ -315,6 +300,111 @@ public final class ShipProgressionRegression {
     return id.isEmpty() ? ItemStack.EMPTY : new ItemStack(item(id));
   }
 
+  private static void verifyFieldGuide(ServerLevel level) {
+    var input = CraftingInput.of(2, 1, List.of(stack("minecraft:paper"), stack("minecraft:stick")));
+    var server = level.getServer();
+    var guideId = ResourceLocation.parse("aeroscapes_reimagine:field_guide");
+    var recipe =
+        server
+            .getRecipeManager()
+            .getRecipeFor(RecipeType.CRAFTING, input, level)
+            .orElseThrow(() -> new IllegalStateException("Field guide has no replacement recipe"));
+    var stack = recipe.value().assemble(input, level.registryAccess());
+    var component =
+        BuiltInRegistries.DATA_COMPONENT_TYPE.get(ResourceLocation.parse("modonomicon:book_id"));
+    if (!recipe.id().equals(guideId)
+        || !stack.is(item("modonomicon:modonomicon"))
+        || stack.getCount() != 1
+        || component == null
+        || !guideId.equals(stack.get(component))
+        || recipe.value().getRemainingItems(input).stream().anyMatch(item -> !item.isEmpty()))
+      throw new IllegalStateException("Field guide recipe loses its book id or has a collision");
+    var starter = ResourceLocation.parse("aeroscapes_reimagine:guide/field_guide");
+    if (server.getAdvancements().get(starter) == null)
+      throw new IllegalStateException("Field guide no longer has its first-log recipe unlock");
+  }
+
+  private static void verifyToolRecipes(ServerLevel level) {
+    craft(
+        level,
+        3,
+        "minecraft:wooden_pickaxe",
+        1,
+        "minecraft:oak_planks",
+        "minecraft:oak_planks",
+        "minecraft:oak_planks",
+        "",
+        "minecraft:stick",
+        "",
+        "",
+        "minecraft:stick",
+        "");
+    processingData(
+        level,
+        "overgeared:stone_pickaxe_head",
+        "overgeared:rock_knapping",
+        "overgeared:stone_pickaxe_head",
+        1);
+    craft(
+        level, 2, "minecraft:stone_pickaxe", 1, "overgeared:stone_pickaxe_head", "minecraft:stick");
+    craft(
+        level,
+        3,
+        "overgeared:copper_smithing_hammer",
+        1,
+        "",
+        "minecraft:copper_ingot",
+        "",
+        "",
+        "minecraft:stick",
+        "minecraft:copper_ingot",
+        "minecraft:stick",
+        "",
+        "");
+    craft(
+        level,
+        3,
+        "overgeared:wooden_tongs",
+        1,
+        "",
+        "minecraft:stick",
+        "",
+        "minecraft:stick",
+        "minecraft:stick",
+        "minecraft:stick",
+        "",
+        "minecraft:stick",
+        "");
+    smelt(level, "minecraft:copper_ingot", "overgeared:heated_copper_ingot");
+    craft(
+        level,
+        3,
+        "minecraft:blast_furnace",
+        1,
+        "minecraft:iron_ingot",
+        "minecraft:iron_ingot",
+        "minecraft:iron_ingot",
+        "minecraft:iron_ingot",
+        "minecraft:furnace",
+        "minecraft:iron_ingot",
+        "minecraft:smooth_stone",
+        "minecraft:smooth_stone",
+        "minecraft:smooth_stone");
+    cooking(level, RecipeType.BLASTING, "minecraft:raw_iron", "overgeared:heated_iron_ingot");
+    cooking(level, RecipeType.BLASTING, "minecraft:iron_ingot", "overgeared:heated_iron_ingot");
+    for (String material : List.of("copper", "iron")) {
+      String head = "overgeared:" + material + "_pickaxe_head";
+      String heated = "overgeared:heated_" + material + "_ingot";
+      processingData(level, head, "overgeared:forging", head, 1, heated, heated, heated);
+      boolean starter = material.equals("copper");
+      String pickaxe = starter ? "overgeared:copper_pickaxe" : "minecraft:iron_pickaxe";
+      craft(level, 2, pickaxe, 1, head, "minecraft:stick");
+      if (WorkshopManufacture.allowed(null, stack(head), true) != starter
+          || WorkshopManufacture.allowed(null, stack(pickaxe), false) != starter)
+        throw new IllegalStateException("Unexpected manufacturing talent gate for " + pickaxe);
+    }
+  }
+
   private static void craft(
       ServerLevel level, int width, String output, int count, String... slots) {
     CraftingInput input =
@@ -337,16 +427,27 @@ public final class ShipProgressionRegression {
   }
 
   private static void smelt(ServerLevel level, String inputId, String outputId) {
+    cooking(level, RecipeType.SMELTING, inputId, outputId);
+  }
+
+  private static void cooking(
+      ServerLevel level,
+      RecipeType<? extends AbstractCookingRecipe> type,
+      String inputId,
+      String outputId) {
     SingleRecipeInput input = new SingleRecipeInput(stack(inputId));
     var recipe =
         level
             .getServer()
             .getRecipeManager()
-            .getRecipeFor(RecipeType.SMELTING, input, level)
-            .orElseThrow(() -> new IllegalStateException("No smelting recipe for " + inputId));
+            .getRecipeFor(type, input, level)
+            .orElseThrow(() -> new IllegalStateException("No " + type + " recipe for " + inputId));
     ItemStack output = recipe.value().assemble(input, level.registryAccess());
     if (!output.is(item(outputId)) || output.getCount() != 1)
-      throw new IllegalStateException("Unexpected smelting result for " + inputId + ": " + output);
+      throw new IllegalStateException("Unexpected " + type + " result for " + inputId);
+    if (recipe.value().getRemainingItems(input).stream()
+        .anyMatch(remaining -> !remaining.isEmpty()))
+      throw new IllegalStateException("Unexpected " + type + " remainder for " + inputId);
   }
 
   private static void processingData(
@@ -416,9 +517,26 @@ public final class ShipProgressionRegression {
             level,
             new GameProfile(UUID.fromString("a2b67f8b-ea5a-4cc9-91e3-4a24ebd4e9f1"), "AeroSmoke"),
             ClientInformation.createDefault());
+    BlockPos pos = level.getSharedSpawnPos();
+    for (String[] gate :
+        List.of(
+            new String[] {"minecraft:copper_ore", "minecraft:wooden_pickaxe"},
+            new String[] {"minecraft:iron_ore", "minecraft:stone_pickaxe"},
+            new String[] {"minecraft:deepslate_iron_ore", "minecraft:stone_pickaxe"},
+            new String[] {"create:zinc_ore", "overgeared:copper_pickaxe"},
+            new String[] {"minecraft:redstone_ore", "overgeared:copper_pickaxe"})) {
+      var state = BuiltInRegistries.BLOCK.get(ResourceLocation.parse(gate[0])).defaultBlockState();
+      player.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, stack(gate[1]));
+      if (state.canHarvestBlock(level, pos, player))
+        throw new IllegalStateException(gate[1] + " bypasses the harvest tier for " + gate[0]);
+    }
     for (String[] pair :
         List.of(
-            new String[] {"minecraft:iron_ore", "minecraft:raw_iron", "minecraft:stone_pickaxe"},
+            new String[] {"minecraft:stone", "minecraft:cobblestone", "minecraft:wooden_pickaxe"},
+            new String[] {"minecraft:iron_ore", "minecraft:raw_iron", "overgeared:copper_pickaxe"},
+            new String[] {
+              "minecraft:deepslate_iron_ore", "minecraft:raw_iron", "overgeared:copper_pickaxe"
+            },
             new String[] {
               "minecraft:copper_ore", "minecraft:raw_copper", "minecraft:stone_pickaxe"
             },
@@ -431,7 +549,6 @@ public final class ShipProgressionRegression {
       if (!BuiltInRegistries.BLOCK.containsKey(blockId))
         throw new IllegalStateException("Missing block " + pair[0]);
       BlockState state = BuiltInRegistries.BLOCK.get(blockId).defaultBlockState();
-      BlockPos pos = level.getSharedSpawnPos();
       ItemStack tool = stack(pair[2]);
       player.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, tool);
       if (!state.canHarvestBlock(level, pos, player))
@@ -540,9 +657,11 @@ public final class ShipProgressionRegression {
     for (var entry : first.entrySet()) {
       String resource = entry.getKey();
       String toolId =
-          resource.equals("zinc") || resource.equals("redstone")
-              ? "minecraft:iron_pickaxe"
-              : "minecraft:stone_pickaxe";
+          switch (resource) {
+            case "iron" -> "overgeared:copper_pickaxe";
+            case "zinc", "redstone" -> "minecraft:iron_pickaxe";
+            default -> "minecraft:stone_pickaxe";
+          };
       String expected =
           switch (resource) {
             case "andesite" -> "minecraft:andesite";

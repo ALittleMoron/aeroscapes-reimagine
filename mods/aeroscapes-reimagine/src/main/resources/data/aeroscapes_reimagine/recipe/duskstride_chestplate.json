@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "duskstride",
+  "pattern": [
+    "S S",
+    "MAM",
+    " S "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:leather_chestplate"
+    },
+    "M": {
+      "item": "minecraft:phantom_membrane"
+    },
+    "S": {
+      "item": "minecraft:gray_dye"
+    }
+  },
+  "result": {
+    "id": "aeroscapes_reimagine:duskstride_chestplate",
+    "count": 1
+  }
+}

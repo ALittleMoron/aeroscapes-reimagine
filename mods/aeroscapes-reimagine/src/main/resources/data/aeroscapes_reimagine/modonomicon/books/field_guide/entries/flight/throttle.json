@@ -1,0 +1,59 @@
+{
+  "category": "flight",
+  "name": "book.aeroscapes_reimagine.field_guide.flight.throttle.name",
+  "icon": {
+    "item": "simulated:throttle_lever"
+  },
+  "x": 4,
+  "y": 0,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.envelope.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.envelope.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.burner.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.burner.text"
+    },
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.flight.throttle.name",
+      "text": "book.aeroscapes_reimagine.field_guide.flight.throttle.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "simulated:throttle_lever"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "aeronautics:white_envelope"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "aeronautics:adjustable_burner"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "flight/engine",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/engine"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "flight/engine"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.flight.throttle.summary"
+}

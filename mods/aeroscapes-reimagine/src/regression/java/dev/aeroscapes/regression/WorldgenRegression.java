@@ -103,6 +103,11 @@ public final class WorldgenRegression {
   private static void verify(ServerStartedEvent event) {
     ServerLevel level = event.getServer().overworld();
     require(event.getServer().isDedicatedServer(), "Use only a disposable dedicated server");
+    String islandSurvey = System.getProperty("aeroscapes.regression.largeIslandSurvey");
+    if (islandSurvey != null) {
+      LargeIslandSurvey.write(level, Path.of(islandSurvey));
+      return;
+    }
     if (Boolean.getBoolean("aeroscapes.regression.airborneExpedition")) {
       AirborneExpeditionRegression.verify(level);
       return;
@@ -238,8 +243,17 @@ public final class WorldgenRegression {
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.reforging")) {
-      ReforgeRegression.verify(level);
-      LOGGER.info("Reforge pool regression passed");
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    // Simulate the datapack sync that normally applies Iron's settings at login.
+                    event.getServer().getPlayerList().reloadResources();
+                    ReforgeRegression.verify(level);
+                    LOGGER.info("Reforge pool regression passed");
+                  }));
       return;
     }
     String magicMigration = System.getProperty("aeroscapes.regression.magicMigration");

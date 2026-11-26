@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "windward",
+  "pattern": [
+    "S S",
+    "MAM",
+    " S "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:leather_chestplate"
+    },
+    "M": {
+      "item": "minecraft:copper_ingot"
+    },
+    "S": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "id": "aeroscapes_reimagine:windward_chestplate",
+    "count": 1
+  }
+}

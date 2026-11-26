@@ -1,6 +1,7 @@
 package dev.aeroscapes.equipment.combat;
 
 import dev.aeroscapes.equipment.ReforgeProfiles;
+import dev.aeroscapes.equipment.armor.ArmorProficiency;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -27,7 +28,7 @@ public final class ArmorReforges {
         || !player.isUnderWater()) {
       return;
     }
-    var helmet = player.getItemBySlot(EquipmentSlot.HEAD);
+    var helmet = ArmorProficiency.activeItem(player, EquipmentSlot.HEAD);
     if (!ReforgeProfiles.has(helmet, "armor_head_legendary_air")
         && !ReforgeProfiles.has(helmet, "diving_head_legendary_air")) {
       return;
@@ -82,7 +83,7 @@ public final class ArmorReforges {
       String rank,
       int cooldown) {
     if (damage >= threshold
-        && ReforgeProfiles.has(player.getItemBySlot(slot), rank)
+        && ReforgeProfiles.has(ArmorProficiency.activeItem(player, slot), rank)
         && !CombatReforgeState.active(player, rank)
         && ArmorSpecialties.spendDefense(player)) {
       event.setNewDamage(damage * multiplier);
@@ -96,8 +97,7 @@ public final class ArmorReforges {
         && player.isAlive()
         && event.getNewDamage() > 0.0F
         && event.getSource().getEntity() != null
-        && ReforgeProfiles.has(
-            player.getItemBySlot(EquipmentSlot.LEGS), "armor_legs_legendary_retreat")
+        && hasRetreat(player)
         && !CombatReforgeState.active(player, RETREAT + "_cooldown")) {
       CombatReforgeState.activate(player, RETREAT, 40);
       CombatReforgeState.activate(player, RETREAT + "_cooldown", 200);
@@ -114,11 +114,17 @@ public final class ArmorReforges {
   }
 
   private static void updateRetreat(ServerPlayer player) {
+    if (!hasRetreat(player)) CombatReforgeState.clear(player, RETREAT);
     CombatReforgeState.updateAttribute(
         player,
         RETREAT,
         Attributes.MOVEMENT_SPEED,
         0.15,
         AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
+  }
+
+  private static boolean hasRetreat(ServerPlayer player) {
+    return ReforgeProfiles.has(
+        ArmorProficiency.activeItem(player, EquipmentSlot.LEGS), "armor_legs_legendary_retreat");
   }
 }

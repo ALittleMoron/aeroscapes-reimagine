@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    { "type": "neoforge:mod_loaded", "modid": "modonomicon" }
+  ],
+  "criteria": {
+    "gather_a_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": { "items": [{ "items": "#minecraft:logs" }] }
+    }
+  },
+  "rewards": {
+    "recipes": ["aeroscapes_reimagine:field_guide"]
+  }
+}

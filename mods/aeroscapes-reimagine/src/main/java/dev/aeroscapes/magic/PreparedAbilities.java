@@ -1,5 +1,7 @@
 package dev.aeroscapes.magic;
 
+import dev.aeroscapes.equipment.combat.MartialTechnique;
+import dev.aeroscapes.equipment.combat.MartialTechniques;
 import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
 import dev.aeroscapes.equipment.expedition.StoredBreath;
 import dev.aeroscapes.expedition.ExpeditionDiscoveries;
@@ -49,6 +51,7 @@ public final class PreparedAbilities {
   private PreparedAbilities() {}
 
   public static void register() {
+    MartialTechniques.register();
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::tick);
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::login);
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::logout);
@@ -70,6 +73,7 @@ public final class PreparedAbilities {
         var innate = InnateAbility.byId(id);
         boolean valid =
             innate != null
+                || MartialTechnique.byId(id) != null
                 || AmuletStep.ID.equals(id)
                 || ExceptionalAccessory.byId(id) != null
                 || DISTRACTION.equals(id)
@@ -94,6 +98,7 @@ public final class PreparedAbilities {
   public static void edit(ServerPlayer player, int slot, String id) {
     if (slot < 0 || slot >= Preparation.SLOT_COUNT || id.length() > 128) return;
     var innate = InnateAbility.byId(id);
+    var technique = MartialTechnique.byId(id);
     if (HexPrograms.itemType(id) != null) {
       if (!HexPrograms.inventory(player).containsKey(id)) {
         SpellKnowledge.message(player, "hex_missing");
@@ -108,6 +113,12 @@ public final class PreparedAbilities {
       if (!ExpeditionDiscoveries.knowsDistraction(player)) return;
     } else if (innate != null) {
       if (RaceIdentity.race(player) != innate.race) return;
+    } else if (technique != null) {
+      if (!MartialTechniques.learned(player, technique)) {
+        SpellKnowledge.message(player, "technique_unlearned");
+        sync(player, false);
+        return;
+      }
     } else if (!id.isEmpty()) {
       AbstractSpell spell = SpellKnowledge.spell(id);
       if (spell == SpellRegistry.none()) return;
@@ -126,7 +137,9 @@ public final class PreparedAbilities {
         || previousAccessory != null && previousAccessory.equipped(player).isEmpty()
         || DISTRACTION.equals(previous) && !ExpeditionDiscoveries.knowsDistraction(player))
       prepared = prepared.assign(slot, "");
-    save(player, prepared.assign(slot, id));
+    var updated = prepared.assign(slot, id);
+    save(player, updated);
+    MartialTechniques.reconcile(player, updated.slots());
     reconcileCasting(player);
     sync(player, true);
   }
@@ -145,6 +158,12 @@ public final class PreparedAbilities {
       return;
     }
     var innate = InnateAbility.byId(id);
+    var technique = MartialTechnique.byId(id);
+    if (technique != null) {
+      MartialTechniques.activate(player, technique);
+      sync(player, false);
+      return;
+    }
     if (HexPrograms.itemType(id) != null) {
       HexPrograms.cast(player, id);
       sync(player, false);
@@ -246,6 +265,7 @@ public final class PreparedAbilities {
       String id = prepared.slots().get(index);
       if (id.isEmpty()
           || InnateAbility.byId(id) != null
+          || MartialTechnique.byId(id) != null
           || AmuletStep.ID.equals(id)
           || ExceptionalAccessory.byId(id) != null
           || DISTRACTION.equals(id)
@@ -279,6 +299,7 @@ public final class PreparedAbilities {
     var entries = new ArrayList<AbilityNetwork.Entry>();
     HexPrograms.catalogue(player, prepared, entries);
     addExpeditionAbilities(player, entries);
+    MartialTechniques.catalogue(player, entries);
     boolean amulet = AmuletStep.available(player);
     if (amulet) {
       int cooldown = AmuletStep.cooldown(player);
@@ -457,6 +478,7 @@ public final class PreparedAbilities {
 
   private static void tick(PlayerTickEvent.Post event) {
     if (!(event.getEntity() instanceof ServerPlayer player) || !player.isAlive()) return;
+    MartialTechniques.tick(player);
     StoredBreath.tick(player);
     reconcileInvisibility(player);
     reconcileCasting(player);
@@ -474,11 +496,15 @@ public final class PreparedAbilities {
   }
 
   private static void logout(PlayerEvent.PlayerLoggedOutEvent event) {
-    if (event.getEntity() instanceof ServerPlayer player) captureCooldowns(player);
+    if (event.getEntity() instanceof ServerPlayer player) {
+      MartialTechniques.reset(player);
+      captureCooldowns(player);
+    }
   }
 
   private static void clonePlayer(PlayerEvent.Clone event) {
     if (event.getEntity() instanceof ServerPlayer player) {
+      if (event.getOriginal() instanceof ServerPlayer previous) MartialTechniques.reset(previous);
       player
           .getPersistentData()
           .put(
@@ -490,6 +516,7 @@ public final class PreparedAbilities {
 
   private static void dimension(PlayerEvent.PlayerChangedDimensionEvent event) {
     if (event.getEntity() instanceof ServerPlayer player) {
+      MartialTechniques.reset(player);
       restoreCooldowns(player);
       sync(player, true);
     }

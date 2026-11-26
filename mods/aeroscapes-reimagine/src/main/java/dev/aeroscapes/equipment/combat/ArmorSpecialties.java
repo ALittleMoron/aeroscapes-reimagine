@@ -1,6 +1,7 @@
 package dev.aeroscapes.equipment.combat;
 
 import dev.aeroscapes.equipment.ReforgeProfiles;
+import dev.aeroscapes.equipment.armor.ArmorProficiency;
 import dev.aeroscapes.movement.HookReforgeSpeed;
 import java.util.Map;
 import java.util.WeakHashMap;
@@ -50,7 +51,7 @@ public final class ArmorSpecialties {
   }
 
   public static String profile(Player player, EquipmentSlot slot) {
-    return ReforgeProfiles.path(player.getItemBySlot(slot));
+    return ArmorProficiency.reforgeProfile(player, slot);
   }
 
   private static boolean atBottom(Player player) {
@@ -278,10 +279,10 @@ public final class ArmorSpecialties {
   @SubscribeEvent
   public static void tick(PlayerTickEvent.Post event) {
     if (!(event.getEntity() instanceof ServerPlayer player)) return;
-    var head = player.getItemBySlot(EquipmentSlot.HEAD);
-    var chest = player.getItemBySlot(EquipmentSlot.CHEST);
-    var legs = player.getItemBySlot(EquipmentSlot.LEGS);
-    var feet = player.getItemBySlot(EquipmentSlot.FEET);
+    var head = ArmorProficiency.activeItem(player, EquipmentSlot.HEAD);
+    var chest = ArmorProficiency.activeItem(player, EquipmentSlot.CHEST);
+    var legs = ArmorProficiency.activeItem(player, EquipmentSlot.LEGS);
+    var feet = ArmorProficiency.activeItem(player, EquipmentSlot.FEET);
     boolean dryBrace = ReforgeProfiles.has(legs, LEGS);
     boolean wetBrace = ReforgeProfiles.has(chest, DIVING_CHEST);
     boolean guard = ReforgeProfiles.has(chest, CHEST);

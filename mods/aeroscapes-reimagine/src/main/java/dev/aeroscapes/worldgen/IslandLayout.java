@@ -3,6 +3,8 @@ package dev.aeroscapes.worldgen;
 /** Seeded, bounded island geometry shared by terrain and local-water placement. */
 public record IslandLayout(long seed) {
   static final int LARGE_CELL_SIZE = 1536;
+  private static final long LARGE_SALT = 0x576da367de7L;
+  private static final double LARGE_CHANCE = 0.153;
 
   private static double random(long value) {
     long mixed = value;
@@ -134,23 +136,70 @@ public record IslandLayout(long seed) {
   }
 
   public LargeIsland largeIsland(int x, int z) {
-    long key = cell(x, z, LARGE_CELL_SIZE, 0x576da367de7L);
-    if (random(key) >= 0.153) return null;
+    long key = cell(x, z, LARGE_CELL_SIZE, LARGE_SALT);
+    if (random(key) >= LARGE_CHANCE) return null;
+    double radiusX = largeRadius(key + 3);
+    double radiusZ = largeRadius(key + 4);
+    boolean superlarge = superlargeCandidate(key);
+    LargeForm form = LargeForm.SHELF;
+    if (superlarge && isolatedLargeIsland(x, z, key)) {
+      double variation = random(key + 83);
+      form = variation < 0.34 ? LargeForm.RIDGE : variation < 0.67 ? LargeForm.CRESCENT : form;
+    } else if (superlarge) {
+      double scale = 364 / Math.max(radiusX, radiusZ);
+      radiusX *= scale;
+      radiusZ *= scale;
+    }
     double anchor = -48 + Math.floor(random(key + 5) * 4) * 80;
     return new LargeIsland(
         Math.floorDiv(x, LARGE_CELL_SIZE) * (double) LARGE_CELL_SIZE + 704 + random(key + 1) * 128,
         Math.floorDiv(z, LARGE_CELL_SIZE) * (double) LARGE_CELL_SIZE + 704 + random(key + 2) * 128,
-        320 + random(key + 3) * 192,
-        320 + random(key + 4) * 192,
+        radiusX,
+        radiusZ,
         anchor,
         random(key + 6) < 0.6 ? Math.min(160 + random(key + 7) * 80, 354 - anchor) : 0,
         Math.min(72 + random(key + 8) * 20, anchor + 112),
-        key);
+        key,
+        form);
+  }
+
+  private static double largeRadius(long key) {
+    return 320 + random(key) * 192;
+  }
+
+  private static boolean superlargeCandidate(long key) {
+    return Math.max(largeRadius(key + 3), largeRadius(key + 4)) >= 400;
+  }
+
+  private boolean isolatedLargeIsland(int x, int z, long key) {
+    double priority = random(key + 82);
+    int cellX = Math.floorDiv(x, LARGE_CELL_SIZE);
+    int cellZ = Math.floorDiv(z, LARGE_CELL_SIZE);
+    // Leave intervening cells open to ordinary islands while preventing giant neighbors.
+    for (int dx = -1; dx <= 1; dx++) {
+      for (int dz = -1; dz <= 1; dz++) {
+        long neighbor =
+            seed
+                ^ (cellX + (long) dx) * 341873128712L
+                ^ (cellZ + (long) dz) * 132897987541L
+                ^ LARGE_SALT;
+        if (random(neighbor) < LARGE_CHANCE
+            && random(neighbor + 82) > priority
+            && superlargeCandidate(neighbor)) return false;
+      }
+    }
+    return true;
   }
 
   public double large(int x, int y, int z) {
     LargeIsland island = largeIsland(x, z);
     return island == null ? -1 : island.density(x, y, z);
+  }
+
+  public enum LargeForm {
+    SHELF,
+    RIDGE,
+    CRESCENT
   }
 
   public record LargeIsland(
@@ -161,20 +210,47 @@ public record IslandLayout(long seed) {
       double anchor,
       double peakHeight,
       double depth,
-      long key) {
+      long key,
+      LargeForm form) {
+    public LargeIsland(
+        double centerX,
+        double centerZ,
+        double radiusX,
+        double radiusZ,
+        double anchor,
+        double peakHeight,
+        double depth,
+        long key) {
+      this(centerX, centerZ, radiusX, radiusZ, anchor, peakHeight, depth, key, LargeForm.SHELF);
+    }
+
     public double radius(int x, int z) {
       double dx = x - centerX + 48 * noise(key, x, z, 180, 31);
       double dz = z - centerZ + 48 * noise(key, x, z, 180, 32);
+      if (form != LargeForm.SHELF && (key & 1) != 0) {
+        double east = dx;
+        dx = dz;
+        dz = east;
+      }
       double closest = 8;
       for (int lobe = 0; lobe < 5; lobe++) {
-        double offsetX = (lobe - 2) * radiusX * 0.27;
-        double offsetZ = (random(key + 40 + lobe) - 0.5) * radiusZ * 0.9;
+        double along = (lobe - 2) / 2.0;
+        double offsetX = along * radiusX * 0.54;
+        double variation = random(key + 40 + lobe) - 0.5;
+        double offsetZ =
+            radiusZ
+                * switch (form) {
+                  case SHELF -> 0.9 * variation;
+                  case RIDGE -> 0.26 * along + 0.22 * variation;
+                  case CRESCENT -> 0.61 * along * along - 0.29 + 0.16 * variation;
+                };
+        double width = form == LargeForm.RIDGE ? 0.28 : 0.36;
         closest =
             Math.min(
                 closest,
                 Math.hypot(
                     (dx - offsetX) / (radiusX * 0.43),
-                    (dz - offsetZ) / (radiusZ * (0.36 + random(key + 50 + lobe) * 0.16))));
+                    (dz - offsetZ) / (radiusZ * (width + random(key + 50 + lobe) * 0.16))));
       }
       return closest + 0.12 * noise(key, x, z, 57, 33);
     }
