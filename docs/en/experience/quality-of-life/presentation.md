@@ -110,11 +110,11 @@ Vanillin uses Flywheel to render vanilla chests, shulker boxes and bells.
 
 New distant areas fill in gradually. Background generation uses CPU time and adds chunks to the world, increasing save and backup size. Previously explored terrain can reuse the saved distant view. For updates and rollback, follow the [saved-world guidance](../../../known-issues/).
 
-Spyglass zoom shows more detailed distant islands, sometimes after a short delay. Both supplied shaders use averaged colors rather than full block textures for distant terrain, so zooming does not give it the appearance of nearby blocks. Thin surfaces and distant water also remain approximate. During fast flight, gaps can appear while nearby chunks replace the distant view.
+Spyglass zoom draws finer distant terrain, sometimes after a short delay. Once the horizontal detail reaches one block, further zoom enlarges the same geometry. Both supplied shaders use averaged block colors for distant terrain. Thin surfaces and distant water remain approximate. During fast flight, gaps can appear while nearby chunks replace the distant view.
 
 Open the mod's menu from the video settings to adjust distance. Reducing distance lowers the rendering load; disabling distant generation stops the creation of new distant areas. Rendering has a separate switch: hiding the distant view does not stop background generation.
 
-For distant islands, use the **Chunks Only** generation plan and **Full - Save Chunks** mode: surface-only generation can misrepresent them. Leave cave culling off to keep lower layers visible. Increasing vertical quality may improve thin or overlapping islands at a higher memory cost. Avoid heightmap quality, which loses vertical layers.
+For distant islands, use the **Chunks Only** generation plan and **Full - Save Chunks** mode. Surface-only generation can misrepresent them. The pack uses **High** vertical quality and leaves cave culling off to preserve more of the lower layers, overhangs and overlapping islands. Lowering vertical quality saves memory at the cost of some of these details.
 
 ## Shaders
 

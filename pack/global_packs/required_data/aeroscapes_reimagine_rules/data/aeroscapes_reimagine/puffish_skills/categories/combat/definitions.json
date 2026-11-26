@@ -27,7 +27,7 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "minecraft:generic.attack_damage",
-          "value": 0.5,
+          "value": 1,
           "operation": "addition"
         }
       }
@@ -62,7 +62,7 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "minecraft:generic.attack_speed",
-          "value": 0.05,
+          "value": 0.12,
           "operation": "multiply_base"
         }
       }
@@ -97,7 +97,7 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "minecraft:generic.knockback_resistance",
-          "value": 0.1,
+          "value": 0.20,
           "operation": "addition"
         }
       }
@@ -132,7 +132,7 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "minecraft:generic.attack_damage",
-          "value": 0.5,
+          "value": 1,
           "operation": "addition"
         }
       }
@@ -167,7 +167,7 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "minecraft:generic.armor",
-          "value": 1,
+          "value": 2,
           "operation": "addition"
         }
       }
@@ -202,7 +202,7 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "minecraft:generic.max_health",
-          "value": 2,
+          "value": 4,
           "operation": "addition"
         }
       }
@@ -237,7 +237,7 @@
         "type": "puffish_skills:attribute",
         "data": {
           "attribute": "minecraft:generic.armor_toughness",
-          "value": 1,
+          "value": 2,
           "operation": "addition"
         }
       }

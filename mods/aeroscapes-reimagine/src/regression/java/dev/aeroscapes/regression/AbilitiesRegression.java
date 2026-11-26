@@ -1,6 +1,7 @@
 package dev.aeroscapes.regression;
 
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.magic.AbilityLoadout;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicPracticeProgress;
 import dev.aeroscapes.magic.MagicTalents;
@@ -95,7 +96,7 @@ public final class AbilitiesRegression {
     UUID identity = UUID.randomUUID();
     CompoundTag saved;
     CompoundTag talents = new CompoundTag();
-    Preparation expected;
+    AbilityLoadout expected;
     int cooldown;
     try (var session =
         TestShipPlayerSession.create(level, identity, "AbilitiesFixture", origin, null)) {
@@ -103,15 +104,27 @@ public final class AbilitiesRegression {
       initialize(player);
       verifyUnlockAndStudy(player);
       verifyAssignments(player);
+      var oldWheel = PreparedAbilities.preparation(player);
+      player
+          .getPersistentData()
+          .getCompound("aeroscapes_reimagine_abilities")
+          .remove("active_wheel");
+      require(
+          PreparedAbilities.loadout(player)
+              .equals(
+                  new AbilityLoadout(
+                      List.of(oldWheel, Preparation.empty(), Preparation.empty()), 0)),
+          "The 0.9.0 saved wheel and its selection become wheel one");
       verifyNativeCasting(player);
       verifyEldritch(player);
       verifyIndependentScrolls(level, origin);
       AbstractSpell firebolt = spell("firebolt");
       PreparedAbilities.edit(player, 0, firebolt.getSpellId());
-      PreparedAbilities.select(player, 0);
+      PreparedAbilities.edit(player, 2, 4, firebolt.getSpellId());
+      PreparedAbilities.select(player, 2, 4);
       magic(player).getPlayerCooldowns().addCooldown(firebolt, 600);
       postTick(player);
-      expected = PreparedAbilities.preparation(player);
+      expected = PreparedAbilities.loadout(player);
       cooldown = PreparedAbilities.cooldownTicks(player, firebolt);
       verifyDeathClone(player, expected, cooldown);
       SkillsMod.getInstance().exportPlayerData(player, talents);
@@ -124,8 +137,8 @@ public final class AbilitiesRegression {
       initialize(restored);
       SkillsMod.getInstance().importPlayerData(restored, talents);
       require(
-          PreparedAbilities.preparation(restored).equals(expected),
-          "Native player save/load retains all prepared slots and selection");
+          PreparedAbilities.loadout(restored).equals(expected),
+          "Native player save/load retains all wheels, their slots and selections");
       require(
           rank(restored, spell("firebolt")) == 3,
           "Personal studied rank survives native player save/load");
@@ -141,12 +154,13 @@ public final class AbilitiesRegression {
     LogUtils.getLogger().info("Prepared abilities regression passed");
   }
 
-  private static void verifyDeathClone(ServerPlayer original, Preparation expected, int cooldown) {
+  private static void verifyDeathClone(
+      ServerPlayer original, AbilityLoadout expected, int cooldown) {
     verifyDeathClone(
         original,
         replacement -> {
           require(
-              PreparedAbilities.preparation(replacement).equals(expected)
+              PreparedAbilities.loadout(replacement).equals(expected)
                   && rank(replacement, spell("firebolt")) == 3,
               "Death clone retains personal ranks and prepared slots");
           require(
@@ -317,6 +331,14 @@ public final class AbilitiesRegression {
         magic.getMana() < mana && PreparedAbilities.cooldownTicks(player, firebolt) > 0,
         "Native MagicManager completion spends mana and starts ordinary cooldown");
     int cooldown = PreparedAbilities.cooldownTicks(player, firebolt);
+    PreparedAbilities.edit(player, 1, 4, firebolt.getSpellId());
+    PreparedAbilities.select(player, 1, 4);
+    require(
+        PreparedAbilities.preparation(player).slots().get(4).equals(firebolt.getSpellId())
+            && PreparedAbilities.cooldownTicks(player, firebolt) == cooldown,
+        "Another wheel can select the same spell and sees its existing cooldown");
+    PreparedAbilities.select(player, 0, -1);
+    require(PreparedAbilities.preparation(player).selected() == 0, "Wheel remembers its slot");
     PreparedAbilities.edit(player, 7, firebolt.getSpellId());
     require(
         PreparedAbilities.cooldownTicks(player, firebolt) == cooldown,
@@ -332,6 +354,8 @@ public final class AbilitiesRegression {
     PreparedAbilities.cast(player);
     require(magic.isCasting(), "Native delayed cast starts before unpreparing");
     PreparedAbilities.edit(player, 0, "");
+    require(magic.isCasting(), "A prepared copy on another wheel keeps the native cast active");
+    PreparedAbilities.edit(player, 1, 4, "");
     require(!magic.isCasting(), "Unpreparing cancels an active native cast immediately");
     complete(player);
     require(magic.getMana() == mana, "Canceled unprepared cast never executes or spends mana");

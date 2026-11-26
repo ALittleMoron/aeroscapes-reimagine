@@ -105,9 +105,9 @@ public final class HexPrograms {
   }
 
   static void catalogue(
-      ServerPlayer player, Preparation prepared, List<AbilityNetwork.Entry> entries) {
+      ServerPlayer player, AbilityLoadout prepared, List<AbilityNetwork.Entry> entries) {
     var programs = inventory(player);
-    for (String id : prepared.slots()) {
+    for (String id : prepared.assignedIds()) {
       if (itemType(id) != null) programs.putIfAbsent(id, -1);
     }
     programs.forEach(

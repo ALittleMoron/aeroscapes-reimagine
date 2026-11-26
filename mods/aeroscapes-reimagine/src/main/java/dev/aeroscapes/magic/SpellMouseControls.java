@@ -45,6 +45,12 @@ public final class SpellMouseControls {
             && (Screen.hasControlDown() || Input.creativePickOwnsButton(game)));
   }
 
+  public static boolean ownsOpenWheel() {
+    return Input.press != null
+        && Input.GESTURE.ownsWheel()
+        && Input.canContinue(Minecraft.getInstance());
+  }
+
   @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)
   public static void mouseButton(InputEvent.MouseButton.Pre event) {
     if (!ModList.get().isLoaded("irons_spellbooks")) return;
@@ -125,7 +131,7 @@ public final class SpellMouseControls {
     }
 
     private static String selectedAbility() {
-      return AbilityClient.slot(AbilityClient.snapshot().selected());
+      return AbilityClient.slot(AbilityClient.selectedSlot());
     }
 
     private static boolean canContinue(Minecraft game) {

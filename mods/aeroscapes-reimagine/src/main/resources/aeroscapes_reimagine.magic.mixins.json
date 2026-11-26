@@ -26,6 +26,6 @@
     "travel.PortalEntityMixin",
     "travel.PortalManagerMixin"
   ],
-  "client": [ "NativeAbilityControlsMixin", "SpellTooltipCostsMixin", "DwarfNightVisionMixin" ],
+  "client": [ "NativeAbilityControlsMixin", "AbilityWheelKeyboardMixin", "SpellTooltipCostsMixin", "DwarfNightVisionMixin" ],
   "injectors": { "defaultRequire": 1 }
 }

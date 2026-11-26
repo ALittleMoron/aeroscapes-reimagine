@@ -4,6 +4,17 @@ description: Version history.
 status: available
 ---
 
+## 0.10.0
+
+### 0.9.1
+
+- Prepare abilities in three wheels with eight slots each. Hold the wheel key and press 1, 2 or 3 to switch. Existing slots appear in wheel 1. Copies of the same ability share its cooldown.
+- Dash and Disengage recover independently. Use the second technique as soon as the first movement ends.
+- Advanced weapons and shields are slower before training. Untrained heavy armor also slows movement more.
+- Melee, Ranged and both armor skills grant their first Combat point at level 3. Basic melee and defense talents give larger bonuses.
+- Full Windward adds more arrow damage at range. Full Duskstride gives a stronger speed burst after a charged light-weapon hit.
+- Distant Horizons keeps more vertical detail in distant islands and overhangs, including when viewed through a spyglass.
+
 ## 0.9.0
 
 - The Skyfarer’s Field Guide teaches pack-specific steps from stone knapping to a first flight. Its Island Atlas chapters show every step and its prerequisites. The book has a flat inventory icon and a 3D model in hand.

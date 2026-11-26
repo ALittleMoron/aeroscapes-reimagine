@@ -50,10 +50,11 @@ public final class ProgressionBridge {
     PracticeActions.register();
   }
 
-  public static int points(Map<String, Long> levels, List<String> skills) {
+  private static int combatPracticePoints(Map<String, Long> levels) {
     int total = 0;
-    for (String skill : skills) {
-      total += Math.clamp(levels.getOrDefault(skill, 0L), 0, 50) / LEVELS_PER_POINT;
+    for (String skill : COMBAT_SKILLS) {
+      int level = Math.clamp(levels.getOrDefault(skill, 0L), 0, 50);
+      total += (level + 2) / LEVELS_PER_POINT;
     }
     return total;
   }
@@ -69,7 +70,7 @@ public final class ProgressionBridge {
     setPoints(
         player,
         COMBAT_CATEGORY,
-        Math.min(COMBAT_POINT_CAP, combatStarter + points(levels, COMBAT_SKILLS)));
+        Math.min(COMBAT_POINT_CAP, combatStarter + combatPracticePoints(levels)));
     setPoints(player, MAGIC_CATEGORY, magicPoints(player, MagicPractice.credit(player)));
     RefundPenalty.sync(player, "combat");
     RefundPenalty.sync(player, "magic");

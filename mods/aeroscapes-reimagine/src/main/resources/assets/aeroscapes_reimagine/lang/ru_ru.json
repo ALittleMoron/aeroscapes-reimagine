@@ -3,7 +3,7 @@
   "tooltip.aeroscapes_reimagine.tool_undertrained": "Работает медленнее без нужного таланта.",
   "tooltip.aeroscapes_reimagine.tool_training_menu": "Таланты → Профессии → %s, ветка «%s»",
   "tooltip.aeroscapes_reimagine.ranged_training": "Таланты → Бой → Стрельба → %s",
-  "tooltip.aeroscapes_reimagine.ranged_undertrained": "До изучения работает медленнее. Требуется стрельба %s-го уровня.",
+  "tooltip.aeroscapes_reimagine.ranged_undertrained": "До обучения натяжение или перезарядка занимают на %s%% больше времени. Требуется стрельба %s-го уровня.",
   "text.autoconfig.bettercombat.category.client": "Клиент",
   "mod_menu.descriptionTranslation.bettercombat": "Добавляет атаки ближнего боя с замахом, серии ударов и разную досягаемость оружия.",
   "aeroscapes_reimagine.config.bettercombat.first_person.YES": "Да",

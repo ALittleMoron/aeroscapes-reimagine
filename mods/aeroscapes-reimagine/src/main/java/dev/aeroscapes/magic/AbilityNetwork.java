@@ -1,6 +1,7 @@
 package dev.aeroscapes.magic;
 
 import dev.aeroscapes.equipment.combat.MartialTechnique;
+import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
@@ -16,7 +17,7 @@ public final class AbilityNetwork {
   private AbilityNetwork() {}
 
   public static void register(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("4");
+    var registrar = event.registrar("5");
     registrar.playToServer(
         Request.TYPE,
         Request.CODEC,
@@ -28,14 +29,14 @@ public final class AbilityNetwork {
         Edit.CODEC,
         (message, context) -> {
           if (context.player() instanceof ServerPlayer player)
-            PreparedAbilities.edit(player, message.slot(), message.abilityId());
+            PreparedAbilities.edit(player, message.wheel(), message.slot(), message.abilityId());
         });
     registrar.playToServer(
         Select.TYPE,
         Select.CODEC,
         (message, context) -> {
           if (context.player() instanceof ServerPlayer player)
-            PreparedAbilities.select(player, message.slot());
+            PreparedAbilities.select(player, message.wheel(), message.slot(), message.sequence());
         });
     registrar.playToServer(
         Cast.TYPE,
@@ -116,8 +117,8 @@ public final class AbilityNetwork {
 
   public record Snapshot(
       List<Entry> entries,
-      List<String> slots,
-      int selected,
+      AbilityLoadout loadout,
+      int selectionAck,
       boolean dwarfNightVision,
       List<String> talents,
       int practiceLevel,
@@ -147,8 +148,8 @@ public final class AbilityNetwork {
                           buf.writeUtf(program.customName(), 128);
                         });
                   });
-              buffer.writeCollection(message.slots(), (output, slot) -> output.writeUtf(slot, 128));
-              buffer.writeVarInt(message.selected());
+              writeLoadout(buffer, message.loadout());
+              buffer.writeVarInt(message.selectionAck());
               buffer.writeBoolean(message.dwarfNightVision());
               buffer.writeCollection(
                   message.talents(), (output, talent) -> output.writeUtf(talent, 128));
@@ -172,7 +173,7 @@ public final class AbilityNetwork {
                                 input.readVarInt(),
                                 input.readNullable(
                                     buf -> new Program(buf.readVarInt(), buf.readUtf(128))))),
-                    buffer.readList(input -> input.readUtf(128)),
+                    readLoadout(buffer),
                     buffer.readVarInt(),
                     buffer.readBoolean(),
                     buffer.readList(input -> input.readUtf(128)),
@@ -180,10 +181,43 @@ public final class AbilityNetwork {
                     buffer.readVarLong(),
                     buffer.readVarLong()));
 
+    public Snapshot {
+      entries = List.copyOf(entries);
+      talents = List.copyOf(talents);
+    }
+
+    public List<String> slots() {
+      return loadout.active().slots();
+    }
+
+    public int selected() {
+      return loadout.active().selected();
+    }
+
     @Override
     public Type<Snapshot> type() {
       return TYPE;
     }
+  }
+
+  private static void writeLoadout(RegistryFriendlyByteBuf buffer, AbilityLoadout loadout) {
+    buffer.writeByte(loadout.activeWheel());
+    for (Preparation wheel : loadout.wheels()) {
+      buffer.writeByte(wheel.selected());
+      for (String id : wheel.slots()) buffer.writeUtf(id, 128);
+    }
+  }
+
+  private static AbilityLoadout readLoadout(RegistryFriendlyByteBuf buffer) {
+    int active = buffer.readUnsignedByte();
+    var wheels = new ArrayList<Preparation>(AbilityLoadout.WHEEL_COUNT);
+    for (int wheel = 0; wheel < AbilityLoadout.WHEEL_COUNT; wheel++) {
+      int selected = buffer.readUnsignedByte();
+      var slots = new ArrayList<String>(Preparation.SLOT_COUNT);
+      for (int slot = 0; slot < Preparation.SLOT_COUNT; slot++) slots.add(buffer.readUtf(128));
+      wheels.add(new Preparation(slots, selected));
+    }
+    return new AbilityLoadout(wheels, active);
   }
 
   public record Request() implements CustomPacketPayload {
@@ -197,15 +231,16 @@ public final class AbilityNetwork {
     }
   }
 
-  public record Edit(int slot, String abilityId) implements CustomPacketPayload {
+  public record Edit(int wheel, int slot, String abilityId) implements CustomPacketPayload {
     public static final Type<Edit> TYPE = AbilityNetwork.type("abilities_edit");
     public static final StreamCodec<RegistryFriendlyByteBuf, Edit> CODEC =
         StreamCodec.of(
             (buffer, message) -> {
-              buffer.writeVarInt(message.slot());
+              buffer.writeByte(message.wheel());
+              buffer.writeByte(message.slot());
               buffer.writeUtf(message.abilityId(), 128);
             },
-            buffer -> new Edit(buffer.readVarInt(), buffer.readUtf(128)));
+            buffer -> new Edit(buffer.readByte(), buffer.readByte(), buffer.readUtf(128)));
 
     @Override
     public Type<Edit> type() {
@@ -213,12 +248,16 @@ public final class AbilityNetwork {
     }
   }
 
-  public record Select(int slot) implements CustomPacketPayload {
+  public record Select(int wheel, int slot, int sequence) implements CustomPacketPayload {
     public static final Type<Select> TYPE = AbilityNetwork.type("abilities_select");
     public static final StreamCodec<RegistryFriendlyByteBuf, Select> CODEC =
         StreamCodec.of(
-            (buffer, message) -> buffer.writeVarInt(message.slot()),
-            buffer -> new Select(buffer.readVarInt()));
+            (buffer, message) -> {
+              buffer.writeByte(message.wheel());
+              buffer.writeByte(message.slot());
+              buffer.writeVarInt(message.sequence());
+            },
+            buffer -> new Select(buffer.readByte(), buffer.readByte(), buffer.readVarInt()));
 
     @Override
     public Type<Select> type() {

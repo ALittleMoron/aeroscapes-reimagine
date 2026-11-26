@@ -54,8 +54,15 @@ final class ProgressionRegression {
                     "building",
                     "farming",
                     "cooking",
-                    "enchanting")),
-        "Only the ten pack disciplines are defined");
+                    "enchanting",
+                    "light_armor",
+                    "heavy_armor",
+                    "pickaxe_handling",
+                    "axe_handling",
+                    "shovel_handling",
+                    "hoe_handling",
+                    "shears_handling")),
+        "Only the configured pack disciplines are defined");
     require(
         Config.server().requirements().enabled().values().stream().noneMatch(Boolean::booleanValue),
         "Practice levels never lock items, blocks or actions");
@@ -149,6 +156,14 @@ final class ProgressionRegression {
     requirePoints(player, 0, 1, 0, "The initial repertoire point can only fund magic");
     verifyAdminCommands(player, session);
 
+    APIUtils.setLevel("archery", player, 3);
+    ProgressionBridge.sync(player);
+    requirePoints(player, 1, 1, 0, "First Combat point at Ranged level 3");
+    APIUtils.setLevel("archery", player, 8);
+    ProgressionBridge.sync(player);
+    requirePoints(player, 2, 1, 0, "A technique and its prerequisite fit two Ranged milestones");
+    APIUtils.setLevel("archery", player, 0);
+
     APIUtils.setLevel("combat", player, 12);
     APIUtils.setLevel("magic", player, 5);
     APIUtils.setLevel("mining", player, 10);
@@ -159,11 +174,11 @@ final class ProgressionRegression {
     ProgressionBridge.sync(player);
     requirePoints(player, 2, 6, 2, "Repeated synchronization does not duplicate points");
 
-    APIUtils.setLevel("archery", player, 14);
-    for (int step = 0; step < 20 && APIUtils.getLevel("archery", player) < 15; step++) {
+    APIUtils.setLevel("archery", player, 12);
+    for (int step = 0; step < 20 && APIUtils.getLevel("archery", player) < 13; step++) {
       APIUtils.addXp("archery", player, 50);
     }
-    require(APIUtils.getLevel("archery", player) == 15, "Practice reaches the next level");
+    require(APIUtils.getLevel("archery", player) == 13, "Practice reaches the next level");
     tick(player);
     requirePoints(player, 5, 6, 2, "A level-up through practice updates only its own pool");
     // Project MMO's admin commands change levels without posting a level-up event.
@@ -211,16 +226,16 @@ final class ProgressionRegression {
   }
 
   private static void verifyAdminCommands(ServerPlayer player, TestShipPlayerSession session) {
-    command(player, "pmmo admin @s set combat level 9");
+    command(player, "pmmo admin @s set combat level 7");
     require(
-        APIUtils.getLevel("combat", player) == 9,
+        APIUtils.getLevel("combat", player) == 7,
         "The real admin command stores the level for a player without an XP map");
     var storage = (PmmoSavedData) Core.get(LogicalSide.SERVER).getData();
     var restored =
         new PmmoSavedData(
             storage.save(new CompoundTag(), player.registryAccess()), player.registryAccess());
     require(
-        restored.getLevel("combat", player.getUUID()) == 9,
+        restored.getLevel("combat", player.getUUID()) == 7,
         "The real native save/read codec preserves the commanded level");
     requirePoints(
         player, 1, 1, 0, "Admin commands update points before a paused inventory can stop ticks");
@@ -251,7 +266,9 @@ final class ProgressionRegression {
 
   private static int combatPoints(ServerPlayer player) {
     int physical =
-        (int) (APIUtils.getLevel("combat", player) / 5 + APIUtils.getLevel("archery", player) / 5);
+        (int)
+            ((APIUtils.getLevel("combat", player) + 2) / 5
+                + (APIUtils.getLevel("archery", player) + 2) / 5);
     return Math.min(ProgressionBridge.COMBAT_POINT_CAP, physical);
   }
 

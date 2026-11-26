@@ -74,7 +74,7 @@ public final class ArmorEffects {
         && wearing(shooter, EquipmentSlot.HEAD, Set.WINDWARD)) {
       factor *= 1.08F;
       if (shooter.distanceToSqr(event.getEntity()) >= 8 * 8 && wearingSet(shooter, Set.WINDWARD)) {
-        factor *= 1.12F;
+        factor *= 1.22F;
       }
     }
     if (factor != 1.0F) event.setNewDamage(event.getNewDamage() * factor);
@@ -148,7 +148,7 @@ public final class ArmorEffects {
     long now = player.level().getGameTime();
     if (now >= burst.readyAt()) DUSKSTRIDE_BURSTS.remove(player);
     if (now >= burst.activeUntil()) return 0;
-    if (wearingSet(player, Set.DUSKSTRIDE)) return 18;
+    if (wearingSet(player, Set.DUSKSTRIDE)) return 28;
 
     DUSKSTRIDE_BURSTS.put(player, new DuskstrideBurst(now, burst.readyAt()));
     return 0;

@@ -44,6 +44,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.SimpleContainer;
+import net.minecraft.world.damagesource.CombatRules;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -714,6 +715,28 @@ final class ReforgeRegression {
         armorWithLeather - armorBefore == 3.0
             && player.getAttributeValue(Attributes.ARMOR) == armorBefore,
         "Wearing and removing ordinary leather updates armor in the fixture");
+    var zombie = new Zombie(EntityType.ZOMBIE, level);
+    var melee = player.damageSources().mobAttack(zombie);
+    var projectile = player.damageSources().arrow(new Arrow(EntityType.ARROW, level), zombie);
+    var iron =
+        List.of(Items.IRON_HELMET, Items.IRON_CHESTPLATE, Items.IRON_LEGGINGS, Items.IRON_BOOTS);
+    for (int index = 0; index < iron.size(); index++) {
+      var slot = ArmorProficiency.SLOTS.get(index);
+      var stack = new ItemStack(iron.get(index));
+      if (slot == EquipmentSlot.CHEST) stack.enchant(protection, 4);
+      player.setItemSlot(slot, stack);
+    }
+    detectEquipmentUpdates(player);
+    require(
+        armorSpeed(player) == -0.04, "Trained heavy armor gives a four-percent movement penalty");
+    float ironMelee = protectedHit(player, melee);
+    float ironProjectile = protectedHit(player, projectile);
+    skills.lockSkill(player, combat, "heavy_armor_handling");
+    detectEquipmentUpdates(player);
+    require(
+        armorSpeed(player) == -0.24 && protectedHit(player, melee) > ironMelee,
+        "The same untrained iron slows retreat and loses protection");
+    skills.tryUnlockSkill(player, combat, "heavy_armor_handling", true);
     for (var set : SpecialistArmor.Set.values()) {
       String talent =
           set == SpecialistArmor.Set.WINDWARD ? "ranger_armor_training" : "rogue_armor_training";
@@ -744,6 +767,13 @@ final class ReforgeRegression {
       double trainedDefense = player.getAttributeValue(Attributes.ARMOR);
       int setDefense = set == SpecialistArmor.Set.WINDWARD ? 14 : 13;
       require(trainedDefense - armorBefore == setDefense, "Trained defense for " + set);
+      require(
+          set == SpecialistArmor.Set.WINDWARD
+              ? protectedHit(player, projectile) < ironProjectile
+                  && protectedHit(player, melee) > ironMelee
+              : protectedHit(player, melee) < ironMelee
+                  && protectedHit(player, projectile) > ironProjectile,
+          "Matched Protection IV comparison distinguishes each set's specialty: " + set);
       if (set == SpecialistArmor.Set.WINDWARD) verifyWindwardEffects(player);
       else verifyDuskstrideEffects(player);
 
@@ -805,8 +835,8 @@ final class ReforgeRegression {
         "Windward hood provides its own 8 percent arrow bonus within eight blocks");
     target.setPos(player.getX() + 8.0, player.getY(), player.getZ());
     require(
-        Math.abs(armorDamage(target, outgoingArrow) - 12.096F) < 0.001F,
-        "Full Windward adds its 12 percent arrow multiplier at eight blocks");
+        Math.abs(armorDamage(target, outgoingArrow) - 13.176F) < 0.001F,
+        "Full Windward adds its 22 percent arrow multiplier at eight blocks");
     var boots = player.getItemBySlot(EquipmentSlot.FEET);
     player.setItemSlot(EquipmentSlot.FEET, ItemStack.EMPTY);
     try {
@@ -851,10 +881,10 @@ final class ReforgeRegression {
 
       fullyChargeAttack(player);
       ArmorEffects.meleeHit(attack);
-      require(armorSpeed(player) == 0.34, "A charged light hit starts the Duskstride burst");
+      require(armorSpeed(player) == 0.44, "A charged light hit starts the Duskstride burst");
       levelData.setGameTime(now + 59);
       ArmorEffects.meleeHit(attack);
-      require(armorSpeed(player) == 0.34, "Duskstride burst lasts 60 ticks");
+      require(armorSpeed(player) == 0.44, "Duskstride burst lasts 60 ticks");
       levelData.setGameTime(now + 60);
       require(armorSpeed(player) == 0.16, "A second hit does not extend the Duskstride burst");
       levelData.setGameTime(now + 119);
@@ -862,7 +892,7 @@ final class ReforgeRegression {
       require(armorSpeed(player) == 0.16, "Duskstride cooldown lasts 120 ticks");
       levelData.setGameTime(now + 120);
       ArmorEffects.meleeHit(attack);
-      require(armorSpeed(player) == 0.34, "Duskstride can trigger again at tick 120");
+      require(armorSpeed(player) == 0.44, "Duskstride can trigger again at tick 120");
 
       var boots = player.getItemBySlot(EquipmentSlot.FEET);
       player.setItemSlot(EquipmentSlot.FEET, ItemStack.EMPTY);
@@ -886,6 +916,21 @@ final class ReforgeRegression {
     var damage = new LivingDamageEvent.Pre(wearer, new DamageContainer(source, 10.0F));
     ArmorEffects.armorDamage(damage);
     return damage.getNewDamage();
+  }
+
+  private static float protectedHit(ServerPlayer player, DamageSource source) {
+    float damage =
+        CombatRules.getDamageAfterAbsorb(
+            player,
+            10.0F,
+            source,
+            (float) player.getAttributeValue(Attributes.ARMOR),
+            (float) player.getAttributeValue(Attributes.ARMOR_TOUGHNESS));
+    float enchantment = EnchantmentHelper.getDamageProtection(player.serverLevel(), player, source);
+    damage = CombatRules.getDamageAfterMagicAbsorb(damage, enchantment);
+    var event = new LivingDamageEvent.Pre(player, new DamageContainer(source, damage));
+    ArmorEffects.armorDamage(event);
+    return event.getNewDamage();
   }
 
   private static double armorSpeed(ServerPlayer player) {

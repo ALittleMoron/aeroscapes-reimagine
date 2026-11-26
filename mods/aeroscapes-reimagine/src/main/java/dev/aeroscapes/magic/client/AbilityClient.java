@@ -3,6 +3,7 @@ package dev.aeroscapes.magic.client;
 import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.equipment.combat.MartialTechniques;
 import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
+import dev.aeroscapes.magic.AbilityLoadout;
 import dev.aeroscapes.magic.AbilityNetwork;
 import dev.aeroscapes.magic.HexPrograms;
 import dev.aeroscapes.magic.InnateAbility;
@@ -38,29 +39,32 @@ import net.neoforged.neoforge.network.PacketDistributor;
 public final class AbilityClient {
   public static final int SLOT_COUNT = dev.aeroscapes.magic.Preparation.SLOT_COUNT;
   private static final AbilityNetwork.Snapshot EMPTY =
-      new AbilityNetwork.Snapshot(
-          List.of(), java.util.Collections.nCopies(SLOT_COUNT, ""), 0, false, List.of(), 0, 0, 0);
+      new AbilityNetwork.Snapshot(List.of(), AbilityLoadout.empty(), 0, false, List.of(), 0, 0, 0);
   private static AbilityNetwork.Snapshot snapshot = EMPTY;
+  private static final PendingSelection[] PENDING =
+      new PendingSelection[AbilityLoadout.WHEEL_COUNT];
+  private static int selectionSequence;
+  private static int pendingWheel = -1;
   private static long receivedAt;
   private static final AbilityHudSelection HUD_SELECTION = new AbilityHudSelection();
+
+  private record PendingSelection(int sequence, int slot) {}
 
   private AbilityClient() {}
 
   public static void accept(AbilityNetwork.Snapshot update) {
     var game = Minecraft.getInstance();
     if (game.player == null || game.level == null) return;
-    snapshot =
-        new AbilityNetwork.Snapshot(
-            List.copyOf(update.entries()),
-            List.copyOf(update.slots()),
-            update.selected(),
-            update.dwarfNightVision(),
-            List.copyOf(update.talents()),
-            update.practiceLevel(),
-            update.practiceXp(),
-            update.nextTalentXp());
+    snapshot = update;
+    for (int wheel = 0; wheel < PENDING.length; wheel++) {
+      var selection = PENDING[wheel];
+      if (selection == null || selection.sequence() != update.selectionAck()) continue;
+      PENDING[wheel] = null;
+      if (wheel == pendingWheel) pendingWheel = -1;
+    }
     MagicBonuses.setClientSkills(Set.copyOf(snapshot.talents()));
-    HUD_SELECTION.accept(snapshot.selected(), slot(snapshot.selected()), Util.getMillis());
+    HUD_SELECTION.accept(
+        activeWheel() * SLOT_COUNT + selectedSlot(), slot(selectedSlot()), Util.getMillis());
     receivedAt = game.level.getGameTime();
   }
 
@@ -73,8 +77,25 @@ public final class AbilityClient {
   }
 
   public static String slot(int index) {
-    return index >= 0 && index < SLOT_COUNT && index < snapshot.slots().size()
-        ? snapshot.slots().get(index)
+    return slot(activeWheel(), index);
+  }
+
+  public static int activeWheel() {
+    return pendingWheel < 0 ? snapshot.loadout().activeWheel() : pendingWheel;
+  }
+
+  public static int selectedSlot() {
+    return selectedSlot(activeWheel());
+  }
+
+  static int selectedSlot(int wheel) {
+    var pending = PENDING[wheel];
+    return pending == null ? snapshot.loadout().wheels().get(wheel).selected() : pending.slot();
+  }
+
+  public static String slot(int wheel, int index) {
+    return index >= 0 && index < SLOT_COUNT
+        ? snapshot.loadout().wheels().get(wheel).slots().get(index)
         : "";
   }
 
@@ -86,7 +107,7 @@ public final class AbilityClient {
   }
 
   public static AbilityNetwork.Entry selected() {
-    return entry(slot(snapshot.selected()));
+    return entry(slot(selectedSlot()));
   }
 
   public static AbstractSpell spell(String id) {
@@ -186,21 +207,28 @@ public final class AbilityClient {
   }
 
   public static void select(int slot) {
-    if (slot >= 0 && slot < SLOT_COUNT)
-      PacketDistributor.sendToServer(new AbilityNetwork.Select(slot));
+    if (slot >= 0 && slot < SLOT_COUNT) select(activeWheel(), slot);
+  }
+
+  public static void select(int wheel, int slot) {
+    int selection = slot < 0 ? selectedSlot(wheel) : slot;
+    if (++selectionSequence == 0) selectionSequence = 1;
+    PENDING[wheel] = new PendingSelection(selectionSequence, selection);
+    pendingWheel = wheel;
+    PacketDistributor.sendToServer(new AbilityNetwork.Select(wheel, selection, selectionSequence));
   }
 
   public static void cast() {
     PacketDistributor.sendToServer(new AbilityNetwork.Cast());
   }
 
-  public static void edit(int slot, String id) {
-    PacketDistributor.sendToServer(new AbilityNetwork.Edit(slot, id));
+  public static void edit(int wheel, int slot, String id) {
+    PacketDistributor.sendToServer(new AbilityNetwork.Edit(wheel, slot, id));
   }
 
   @SubscribeEvent
   public static void login(ClientPlayerNetworkEvent.LoggingIn event) {
-    snapshot = EMPTY;
+    resetSelection();
     MagicBonuses.clearClientSkills();
     HUD_SELECTION.reset();
     request();
@@ -208,10 +236,17 @@ public final class AbilityClient {
 
   @SubscribeEvent
   public static void logout(ClientPlayerNetworkEvent.LoggingOut event) {
-    snapshot = EMPTY;
+    resetSelection();
     MagicBonuses.clearClientSkills();
     HUD_SELECTION.reset();
     AbilityWheel.cancel(false);
+  }
+
+  private static void resetSelection() {
+    snapshot = EMPTY;
+    java.util.Arrays.fill(PENDING, null);
+    pendingWheel = -1;
+    selectionSequence = 0;
   }
 
   @SubscribeEvent

@@ -2,7 +2,7 @@ _version = 5
 
 [client.advanced.graphics.quality]
 lodChunkRenderDistanceRadius = 64
-verticalQuality = "MEDIUM"
+verticalQuality = "HIGH"
 increaseQualityWhenZoomedIn = true
 
 [client.advanced.graphics.culling]

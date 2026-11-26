@@ -20,8 +20,8 @@ import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 
 public final class WeaponProficiency {
   private static final String SHIELD = "shield_handling";
-  private static final int MELEE_DELAY_PERCENT = 30;
-  private static final int SHIELD_RAISE_TICKS = 3;
+  private static final int MELEE_DELAY_PERCENT = 50;
+  private static final int SHIELD_RAISE_TICKS = 5;
 
   private WeaponProficiency() {}
 

@@ -16,7 +16,7 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 
 public final class RangedProficiency {
-  private static final float UNDERTRAINED_DRAW_TIME = 1.25F;
+  private static final int UNDERTRAINED_DRAW_PERCENT = 45;
   private static final Training CROSSBOW = new Training("crossbow_handling", 2);
   private static final Training STARLIGHT_BOW = new Training("starlight_bow_handling", 6);
   private static final Training AUTOLOADER = new Training("autoloader_handling", 10);
@@ -30,7 +30,9 @@ public final class RangedProficiency {
 
   public static float drawTime(ItemStack stack, LivingEntity user) {
     var training = training(stack);
-    return training != null && undertrained(user, training) ? UNDERTRAINED_DRAW_TIME : 1.0F;
+    return training != null && undertrained(user, training)
+        ? 1.0F + UNDERTRAINED_DRAW_PERCENT / 100.0F
+        : 1.0F;
   }
 
   @Nullable
@@ -82,7 +84,9 @@ public final class RangedProficiency {
           .getToolTip()
           .add(
               Component.translatable(
-                      "tooltip.aeroscapes_reimagine.ranged_undertrained", training.level())
+                      "tooltip.aeroscapes_reimagine.ranged_undertrained",
+                      UNDERTRAINED_DRAW_PERCENT,
+                      training.level())
                   .withStyle(ChatFormatting.GRAY));
     }
   }

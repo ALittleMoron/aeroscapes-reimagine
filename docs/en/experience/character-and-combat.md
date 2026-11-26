@@ -12,17 +12,17 @@ With a sword, axe, knife or other supported melee weapon, aim and press attack. 
 
 One-handed weapons can be paired to alternate hands. A shield still blocks when held up. To change attack controls, open Better Combat in the Mods menu or look for its category under Controls. Holding attack repeats swings by default. You can assign a key to feint and cancel a wind-up.
 
-Wooden and stone swords and axes work at full speed from the start, as does the flint knife. Advanced weapons take 30% longer to recover between swings until you learn the talent shown in the item tooltip. When you fight with two weapons, each swing uses the training for its own weapon. Without Shield Handling, a shield takes three extra ticks to begin blocking. Characters of any starting class can learn these talents under Melee, Light Weapons or Defense. Equipment keeps its applied enchantments while you train.
+Wooden and stone swords and axes work at full speed from the start, as does the flint knife. Advanced weapons take 50% longer to recover between swings until you learn the talent shown in the item tooltip. When you fight with two weapons, each swing uses the training for its own weapon. Without Shield Handling, a shield takes five extra ticks to begin blocking. Characters of any starting class can learn these talents under Melee, Light Weapons or Defense. Equipment keeps its applied enchantments while you train.
 
 ## Ranged weapons
 
-The ordinary bow works at full speed from the start. For the crossbow, Starlight Bow and autoloader crossbow, reach Ranged level 2, 6 or 10 respectively, then spend one point on the named talent under **Talents → Combat → Ranged** to unlock full speed.
+The ordinary bow works at full speed from the start. For the crossbow, Starlight Bow and autoloader crossbow, reach Ranged level 2, 6 or 10 respectively, then spend one point on the named talent under **Talents → Combat → Ranged** to unlock full speed. Before training, drawing or reloading takes 45% longer.
 
 ## Armor training
 
-Practice in light or heavy armor opens the corresponding Combat talent. Before training, a piece gives a tenth of its usual armor rating and its own bonuses are inactive. Applied enchantments retain their effects. Trained light armor helps you move faster, while trained heavy armor slightly slows movement. Leather and other starter clothing are available from the start.
+Practice in light or heavy armor opens the corresponding Combat talent. Before training, a piece gives a tenth of its usual armor rating and its own bonuses are inactive. Applied enchantments retain their effects. Trained light armor helps you move faster, while heavy armor slows movement by 1% per trained piece or 6% per untrained piece. Leather and other starter clothing are available from the start.
 
-The **Windward** ranger set gives 14 armor points, reduces projectile damage and improves movement while drawing. The full set adds arrow damage from eight blocks away. The **Duskstride** rogue set gives 13 armor points, speeds up sneaking and sprinting, and cushions melee hits and falls. A charged light-weapon hit that deals damage gives the full set a three-second speed burst, with a six-second cooldown. A full iron set gives 15 armor points and trades movement for broader protection. Learn the appropriate talent in Ranged or Light Weapons to equip the specialist set. A refund leaves worn pieces in place with the undertraining penalty.
+The **Windward** ranger set gives 14 armor points, reduces projectile damage and improves movement while drawing. The full set adds a further 22% arrow damage at eight blocks or farther. The **Duskstride** rogue set gives 13 armor points, speeds up sneaking and sprinting, and cushions melee hits and falls. A charged light-weapon hit that deals damage gives the full set a 28% speed burst for three seconds, with a six-second cooldown. A full iron set gives 15 armor points and trades movement for broader protection. Learn the appropriate talent in Ranged or Light Weapons to equip the specialist set. A refund leaves worn pieces in place with the undertraining penalty.
 
 The Blue-Footed Boots and Dragonfin Boots keep their native travel abilities independently of armor training.
 
@@ -46,7 +46,7 @@ Open **Talents → Professions**. Mining contains pickaxes, Building contains ax
 
 Before training, a tool breaks suitable blocks more slowly. Some right-click actions, such as tilling or shearing, have a short pause before you can repeat them. A diamond pickaxe can still harvest obsidian. On stone, an iron pickaxe with its talent can work faster than a diamond pickaxe whose talent you have yet to learn. Applied enchantments, including Efficiency and Mending, keep their effects. The Smithing tree still determines which tools you can make.
 
-Combat, Magic and each profession tree have independent point balances. Melee and Ranged give one combat point per five skill levels, up to 14 points. Magic starts with one point and earns more from accumulated practice independently of its level milestones.
+Combat, Magic and each profession tree have independent point balances. Melee, Ranged, Light Armor and Heavy Armor each grant their first Combat point at level 3 and another every five levels through level 47. The shared pool caps at 34 points, enough for the most expensive compatible set of talents. Two practice points cover a prerequisite and a first technique, such as Steady Aim and Slowing Shot. Magic starts with one point and earns more from accumulated practice independently of its level milestones.
 
 | Credited magic XP | Interval between points | Total magic-earned points at the end of the stage |
 | ----------------- | ----------------------: | ------------------------------------------------: |
@@ -67,9 +67,9 @@ Combat has four sections: Melee, Defense, Ranged and Light Weapons. They share o
 
 ## Prepared abilities
 
-Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells, racial abilities, Amulet Step and items carrying Hex programs in eight shared slots, including during combat. Passive talents do not use these slots. Hold the middle mouse button and release over a slot in the wheel to select it. Tap the button to use it. A learned spell requires an equipped spellbook focus and keeps its costs and cooldown. Racial abilities and Amulet Step work without a focus. For a Hex program, keep its assigned cypher, trinket or artifact on your hotbar or in your offhand. The [magic guide](../magic/) covers controls, books, scroll study and writing Hex programs. Personal ranks and preparation survive death, relogging and dimension changes.
+Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells, racial abilities, Amulet Step and items carrying Hex programs in three wheels with eight slots each, including during combat. Passive talents do not use these slots. Hold the middle mouse button, press 1, 2 or 3 to switch wheels, then release over a slot to select it. Tap the button to use it. A learned spell requires an equipped spellbook focus and keeps its costs and cooldown. Racial abilities and Amulet Step work without a focus. For a Hex program, keep its assigned cypher, trinket or artifact on your hotbar or in your offhand. The [magic guide](../magic/) covers controls, books, scroll study and writing Hex programs. Personal ranks and preparation survive death, relogging and dimension changes.
 
-Learn martial techniques in Combat and assign them to the same wheel. Activate Shield Brace with a raised shield to hold your ground and reduce shield wear. Counterattack rewards striking the enemy you blocked, and Heavy Strike can interrupt a skeleton or pillager preparing a shot. Use Slowing Shot to create space, Marking Shot to set up a stronger second arrow, or Quick Shot to fire under pressure. Dash covers up to six blocks and opens a stronger light-weapon hit; Disengage covers up to five blocks backwards and softens the next melee hit for a moment. Both stop at obstacles and gaps and share a cooldown. Flank Strike rewards hitting from the side or rear.
+Learn martial techniques in Combat and assign them to the same wheel. Activate Shield Brace with a raised shield to hold your ground and reduce shield wear. Counterattack rewards striking the enemy you blocked, and Heavy Strike can interrupt a skeleton or pillager preparing a shot. Use Slowing Shot to create space, Marking Shot to set up a stronger second arrow, or Quick Shot to fire under pressure. Dash covers up to six blocks and opens a stronger light-weapon hit; Disengage covers up to five blocks backwards and softens the next melee hit for a moment. Both stop at obstacles and gaps. Each has its own cooldown, so you can follow one with the other as soon as the first movement ends. Flank Strike rewards hitting from the side or rear.
 
 ## Making tools and equipment
 
@@ -155,12 +155,12 @@ For a crew emblem, put a banner and dye in a loom and choose a wind rose, stone 
 
 ### Starting classes
 
-| Class   | Permanent trait                               | Starting ability                                                                                                                                                                        |
-| ------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Warrior | +2 armor                                      | Raise a shield in 3 ticks instead of 5, or walk 25% faster while holding it up.                                                                                                         |
-| Ranger  | Fully drawn bow shots travel 10% faster       | Walk 25% faster while drawing a bow, or halve arrow spread while standing still on the ground.                                                                                          |
-| Mage    | +20 maximum mana                              | First magic mastery grants eight rank-1 spells and opens the four magic paths. The Flimsy Journal is your starting focus. Equip it and prepare the spells you want in your eight slots. |
-| Rogue   | +5% ground speed while holding a light weapon | Recover light-weapon attacks 10% faster, or deal 15% more damage with a fully charged opening hit against a target at full health.                                                      |
+| Class   | Permanent trait                               | Starting ability                                                                                                                                                                   |
+| ------- | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Warrior | +2 armor                                      | Raise a shield in 3 ticks instead of 5, or walk 25% faster while holding it up.                                                                                                    |
+| Ranger  | Fully drawn bow shots travel 10% faster       | Walk 25% faster while drawing a bow, or halve arrow spread while standing still on the ground.                                                                                     |
+| Mage    | +20 maximum mana                              | First magic mastery grants eight rank-1 spells and opens the four magic paths. The Flimsy Journal is your starting focus. Equip it and prepare the spells you want in your wheels. |
+| Rogue   | +5% ground speed while holding a light weapon | Recover light-weapon attacks 10% faster, or deal 15% more damage with a fully charged opening hit against a target at full health.                                                 |
 
 Warriors and rogues learn melee 20% faster, rangers learn archery 20% faster, and mages learn magic 20% faster. Elven archery and magic bonuses add to the class bonus. An elf ranger earns 14 archery XP for an action worth 10 before bonuses. Your profession separately accelerates its peaceful discipline.
 
@@ -187,7 +187,7 @@ An **Identity Seal** can appear in abandoned mineshaft chest minecarts, desert p
 - **Class.** Pick the new class and starter. Keep your learned talents or refund the old class branch in full. For a mage this branch includes the magic tree. If keeping your investment leaves no free point for the new starter, the starter works immediately and uses the next point you earn for its tree.
 - **Profession.** Pick the new profession and starter. The previous profession’s starter choices return their points to its own tree. Other learned talents stay active. The starting credit moves to the new profession’s tree.
 
-You keep your practice XP, personal spell ranks, eight preparation slots and current cooldowns. Assigned abilities whose requirements you lose become unavailable. Starter kits and the mage journal are issued only at creation.
+You keep your practice XP, personal spell ranks, preparation wheels and current cooldowns. Assigned abilities whose requirements you lose become unavailable. Starter kits and the mage journal are issued only at creation.
 
 ### Redistributing talent points
 
@@ -200,8 +200,6 @@ Returning a talent frees points in its own tree. Returning 20 points to one pool
 Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, with the same prerequisites and point costs regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
 
 Future subclass talents will use the point pool of their tree.
-
-Martial techniques are planned for the same eight preparation slots. Saved sets that players can edit and switch between remain under consideration.
 
 ## Combat and camera
 

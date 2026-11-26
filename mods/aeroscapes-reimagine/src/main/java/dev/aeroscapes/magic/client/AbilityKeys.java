@@ -1,6 +1,7 @@
 package dev.aeroscapes.magic.client;
 
 import com.mojang.blaze3d.platform.InputConstants;
+import dev.aeroscapes.magic.AbilityLoadout;
 import dev.aeroscapes.magic.SpellMouseControls;
 import io.redspace.ironsspellbooks.player.KeyMappings;
 import java.util.ArrayList;
@@ -30,6 +31,7 @@ public final class AbilityKeys {
   private static final List<KeyMapping> SLOTS = slots();
   private static final AbilityInputPresses PRESSES = new AbilityInputPresses();
   private static boolean processed;
+  private static int capturedWheelKeys;
   private static WheelOwner wheelOwner;
 
   private enum Action {
@@ -110,7 +112,7 @@ public final class AbilityKeys {
       String activatedAbility =
           switch (request.action()) {
             case QUICK_CAST -> AbilityClient.slot(request.slot());
-            case CAST -> AbilityClient.slot(AbilityClient.snapshot().selected());
+            case CAST -> AbilityClient.slot(AbilityClient.selectedSlot());
             default -> "";
           };
       if (PRESSES.claim(request.binding().getKey().getName())
@@ -147,7 +149,7 @@ public final class AbilityKeys {
         || !SpellMouseControls.canUseAbilityBinding(KeyMappings.SPELLBAR_SCROLL_MODIFIER_KEYMAP))
       return false;
     AbilityClient.select(
-        Math.floorMod(AbilityClient.snapshot().selected() - delta, AbilityClient.SLOT_COUNT));
+        Math.floorMod(AbilityClient.selectedSlot() - delta, AbilityClient.SLOT_COUNT));
     return true;
   }
 
@@ -208,6 +210,27 @@ public final class AbilityKeys {
         && !game.options.hideGui
         && game.player == wheelOwner.player()
         && game.level == wheelOwner.level();
+  }
+
+  /** Called before Minecraft and other bindings queue the same number-key press. */
+  public static boolean wheelKey(int key, int action) {
+    int wheel = key - GLFW.GLFW_KEY_1;
+    if (!AbilityLoadout.validWheel(wheel)) return false;
+    int mask = 1 << wheel;
+    if ((capturedWheelKeys & mask) != 0 && action != GLFW.GLFW_PRESS) {
+      if (action == GLFW.GLFW_RELEASE) capturedWheelKeys &= ~mask;
+      return true;
+    }
+    if (action != GLFW.GLFW_PRESS) return false;
+    capturedWheelKeys &= ~mask;
+    if (!SpellMouseControls.ownsOpenWheel() && !wheelContextValid()) return false;
+    if (wheelOwner != null
+        && wheelOwner.toggle()
+        && wheelOwner.binding().getKey().equals(InputConstants.Type.KEYSYM.getOrCreate(key)))
+      return false;
+    capturedWheelKeys |= mask;
+    AbilityWheel.showWheel(wheel);
+    return true;
   }
 
   private static void cancelWheel(boolean restoreMouse) {

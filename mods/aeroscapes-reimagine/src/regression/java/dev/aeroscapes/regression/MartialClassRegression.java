@@ -122,10 +122,12 @@ final class MartialClassRegression {
     var origin = player.blockPosition();
     var wallBase = origin.south(5);
     var wallTop = wallBase.above();
+    var clock = level.getServer().getWorldData().overworldData();
+    long gameTime = clock.getGameTime();
     require(level.isEmptyBlock(wallBase) && level.isEmptyBlock(wallTop), "Clear dash fixture");
     prepare(player, 0, MartialTechnique.DASH);
     prepare(player, 1, MartialTechnique.DISENGAGE);
-    for (int index = 0; index <= 5; index++)
+    for (int index = -2; index <= 5; index++)
       level.setBlockAndUpdate(origin.south(index).below(), Blocks.STONE.defaultBlockState());
     level.setBlockAndUpdate(wallBase, Blocks.STONE.defaultBlockState());
     level.setBlockAndUpdate(wallTop, Blocks.STONE.defaultBlockState());
@@ -143,14 +145,20 @@ final class MartialClassRegression {
           "Dash moves forward only as far as the wall allows");
       player.setOnGround(true);
       PreparedAbilities.select(player, 1);
-      var disengage =
-          session.abilities().entries().stream()
-              .filter(entry -> entry.id().equals(MartialTechnique.DISENGAGE.id()))
-              .findFirst()
-              .orElseThrow();
-      require(disengage.cooldownTicks() > 0, "Dash starts Disengage's cooldown");
+      require(cooldown(session, MartialTechnique.DASH) > 0, "Dash starts its own cooldown");
+      require(cooldown(session, MartialTechnique.DISENGAGE) == 0, "Dash leaves Disengage ready");
       PreparedAbilities.cast(player);
-      require(player.position().equals(stopped), "Disengage cannot move during Dash's cooldown");
+      require(
+          cooldown(session, MartialTechnique.DISENGAGE) == 0,
+          "Disengage cannot interrupt Dash's movement or spend its cooldown trying");
+      clock.setGameTime(gameTime + GroundFootwork.DURATION);
+      PreparedAbilities.cast(player);
+      followFootwork(session, stopped);
+      require(player.getZ() < stopped.z, "Disengage can retreat after Dash completes");
+      require(
+          cooldown(session, MartialTechnique.DASH) == 100 - GroundFootwork.DURATION
+              && cooldown(session, MartialTechnique.DISENGAGE) == 100,
+          "Successive techniques retain independent cooldown deadlines");
       require(MartialTechniques.dashAttack(player), "Dash prepares a light-weapon opening");
       var target = new Zombie(EntityType.ZOMBIE, level);
       target.setPos(player.position().add(0.85, 0, 0));
@@ -164,11 +172,20 @@ final class MartialClassRegression {
         target.discard();
       }
     } finally {
+      clock.setGameTime(gameTime);
       level.removeBlock(wallTop, false);
       level.removeBlock(wallBase, false);
-      for (int index = 0; index <= 5; index++)
+      for (int index = -2; index <= 5; index++)
         level.removeBlock(origin.south(index).below(), false);
     }
+  }
+
+  private static int cooldown(TestShipPlayerSession session, MartialTechnique technique) {
+    return session.abilities().entries().stream()
+        .filter(entry -> entry.id().equals(technique.id()))
+        .findFirst()
+        .orElseThrow()
+        .cooldownTicks();
   }
 
   private static void verifyDisengage(ServerLevel level, Vec3 requestedStart, int floorLength) {
@@ -331,7 +348,7 @@ final class MartialClassRegression {
           walking * 1.25,
           "Walking while using " + item);
       if (item == Items.SHIELD) {
-        verifyBlockStartsOn(player, 6);
+        verifyBlockStartsOn(player, 8);
         player.stopUsingItem();
         provider.tryUnlockSkill(player, COMBAT, "shield_handling", false);
         require(
@@ -347,6 +364,7 @@ final class MartialClassRegression {
     }
     verifyBow(player);
     verifyRangedProficiency(player);
+    verifyMeleeProficiency(player);
     verifyKnife(player);
   }
 
@@ -475,6 +493,27 @@ final class MartialClassRegression {
     var provider = SkillsMod.getInstance();
     provider.tryUnlockSkill(player, COMBAT, node, false);
     return provider.getSkillState(player, COMBAT, node).orElseThrow() == Skill.State.UNLOCKED;
+  }
+
+  private static void verifyMeleeProficiency(ServerPlayer player) {
+    APIUtils.setLevel("combat", player, 25);
+    ProgressionBridge.sync(player);
+    var sword = new ItemStack(Items.DIAMOND_SWORD);
+    sword.enchant(
+        player
+            .registryAccess()
+            .lookupOrThrow(Registries.ENCHANTMENT)
+            .getOrThrow(Enchantments.SHARPNESS),
+        2);
+    player.setItemInHand(InteractionHand.MAIN_HAND, sword);
+    float untrained = player.getCurrentItemAttackStrengthDelay();
+    require(learnHandling(player, "sword_handling"), "Buy sword handling");
+    require(learnHandling(player, "advanced_sword_handling"), "Buy advanced sword handling");
+    close(
+        untrained,
+        player.getCurrentItemAttackStrengthDelay() * 1.5,
+        "Same enchanted sword gains full recovery after training");
+    player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
   }
 
   private static double starlightShot(ServerPlayer player) {

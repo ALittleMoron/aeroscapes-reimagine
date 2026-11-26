@@ -55,14 +55,14 @@ public final class MartialTechniques {
 
   private record Brace(long end, ItemStack shield) {}
 
-  private record Footwork(MartialTechnique technique, long end) {}
-
   private record RecentBlock(UUID attacker, long end) {}
 
   private static final class Stance {
     private @Nullable MeleeWindow melee;
     private @Nullable Brace brace;
-    private @Nullable Footwork footwork;
+    private long motionEnd;
+    private long dashEnd;
+    private long disengageEnd;
     private @Nullable RecentBlock recentBlock;
     private @Nullable WeakReference<DamageSource> bracedBlock;
   }
@@ -92,10 +92,11 @@ public final class MartialTechniques {
   }
 
   private static int cooldown(ServerPlayer player, MartialTechnique technique) {
-    return Math.clamp(
-        cooldowns(player).getLong(technique.cooldownKey()) - now(player),
-        0,
-        technique.cooldownTicks());
+    CompoundTag cooldowns = cooldowns(player);
+    long deadline = cooldowns.getLong(technique.cooldownKey());
+    // A 0.9.0 save recorded one deadline without the identity of the technique used.
+    if (technique.footwork()) deadline = Math.max(deadline, cooldowns.getLong("footwork"));
+    return Math.clamp(deadline - now(player), 0, technique.cooldownTicks());
   }
 
   private static void startCooldown(ServerPlayer player, MartialTechnique technique) {
@@ -140,8 +141,10 @@ public final class MartialTechniques {
           SpellKnowledge.message(player, "technique_blocked");
           return;
         }
-        STANCES.computeIfAbsent(player, ignored -> new Stance()).footwork =
-            new Footwork(technique, end);
+        Stance stance = STANCES.computeIfAbsent(player, ignored -> new Stance());
+        stance.motionEnd = now(player) + GroundFootwork.DURATION;
+        if (technique == MartialTechnique.DASH) stance.dashEnd = end;
+        else stance.disengageEnd = end;
       }
       case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> MartialArchery.prime(player, technique, end);
       case SHIELD_BRACE -> {
@@ -178,8 +181,14 @@ public final class MartialTechniques {
       case HEAVY_STRIKE -> wields(player, HEAVY_WEAPONS) ? "" : "technique_heavy";
       case FLANK_STRIKE -> wields(player, LIGHT_WEAPONS) ? "" : "technique_light";
       case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> MartialArchery.equipmentReason(player);
-      case DASH, DISENGAGE -> GroundFootwork.available(player) ? "" : "technique_ground";
+      case DASH, DISENGAGE -> footworkReason(player);
     };
+  }
+
+  private static String footworkReason(ServerPlayer player) {
+    var stance = STANCES.get(player);
+    if (stance != null && stance.motionEnd > now(player)) return "technique_moving";
+    return GroundFootwork.available(player) ? "" : "technique_ground";
   }
 
   private static boolean wields(ServerPlayer player, TagKey<Item> weapons) {
@@ -292,9 +301,7 @@ public final class MartialTechniques {
   private static boolean footworkActive(ServerPlayer player, MartialTechnique technique) {
     Stance stance = STANCES.get(player);
     return stance != null
-        && stance.footwork != null
-        && stance.footwork.technique() == technique
-        && stance.footwork.end() > now(player)
+        && (technique == MartialTechnique.DASH ? stance.dashEnd : stance.disengageEnd) > now(player)
         && learned(player, technique);
   }
 
@@ -305,7 +312,7 @@ public final class MartialTechniques {
   }
 
   public static void dashLanded(ServerPlayer player) {
-    STANCES.get(player).footwork = null;
+    STANCES.get(player).dashEnd = 0;
     player.playNotifySound(SoundEvents.PLAYER_ATTACK_CRIT, player.getSoundSource(), 0.65F, 1.25F);
   }
 
@@ -318,7 +325,7 @@ public final class MartialTechniques {
         && attacker != player
         && source.getDirectEntity() == attacker
         && footworkActive(player, MartialTechnique.DISENGAGE)) {
-      STANCES.get(player).footwork = null;
+      STANCES.get(player).disengageEnd = 0;
       event.setNewDamage(event.getNewDamage() * 0.5F);
       player.playNotifySound(
           SoundEvents.PLAYER_ATTACK_NODAMAGE, player.getSoundSource(), 0.55F, 1.5F);
@@ -412,8 +419,8 @@ public final class MartialTechniques {
     if (stance != null) {
       if (stance.melee != null && !slots.contains(stance.melee.technique().id()))
         stance.melee = null;
-      if (stance.footwork != null && !slots.contains(stance.footwork.technique().id()))
-        stance.footwork = null;
+      if (!slots.contains(MartialTechnique.DASH.id())) stance.dashEnd = 0;
+      if (!slots.contains(MartialTechnique.DISENGAGE.id())) stance.disengageEnd = 0;
       if (stance.brace != null && !slots.contains(MartialTechnique.SHIELD_BRACE.id())) {
         stance.brace = null;
         braceMovement(player, false);

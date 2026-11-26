@@ -64,7 +64,23 @@ public final class PreparedAbilities {
   }
 
   public static Preparation preparation(ServerPlayer player) {
+    return loadout(player).active();
+  }
+
+  public static AbilityLoadout loadout(ServerPlayer player) {
     CompoundTag stored = SpellKnowledge.data(player);
+    var wheels = new ArrayList<Preparation>(AbilityLoadout.WHEEL_COUNT);
+    for (int wheel = 0; wheel < AbilityLoadout.WHEEL_COUNT; wheel++)
+      wheels.add(readWheel(wheel == 0 ? stored : stored.getCompound(wheelKey(wheel))));
+    int active = stored.getInt("active_wheel");
+    return new AbilityLoadout(wheels, AbilityLoadout.validWheel(active) ? active : 0);
+  }
+
+  private static String wheelKey(int wheel) {
+    return "wheel_" + (wheel + 1);
+  }
+
+  private static Preparation readWheel(CompoundTag stored) {
     ListTag values = stored.getList("slots", Tag.TAG_STRING);
     var slots = new ArrayList<String>();
     for (int index = 0; index < Preparation.SLOT_COUNT; index++) {
@@ -87,16 +103,25 @@ public final class PreparedAbilities {
     return new Preparation(slots, selected);
   }
 
-  private static void save(ServerPlayer player, Preparation preparation) {
-    CompoundTag stored = SpellKnowledge.data(player);
+  private static void save(ServerPlayer player, int wheel, Preparation preparation) {
+    CompoundTag data = SpellKnowledge.data(player);
+    CompoundTag stored = wheel == 0 ? data : data.getCompound(wheelKey(wheel));
     ListTag slots = new ListTag();
     for (String id : preparation.slots()) slots.add(StringTag.valueOf(id));
     stored.put("slots", slots);
     stored.putInt("selected", preparation.selected());
+    if (wheel != 0) data.put(wheelKey(wheel), stored);
   }
 
   public static void edit(ServerPlayer player, int slot, String id) {
-    if (slot < 0 || slot >= Preparation.SLOT_COUNT || id.length() > 128) return;
+    edit(player, loadout(player).activeWheel(), slot, id);
+  }
+
+  public static void edit(ServerPlayer player, int wheel, int slot, String id) {
+    if (!AbilityLoadout.validWheel(wheel)
+        || slot < 0
+        || slot >= Preparation.SLOT_COUNT
+        || id.length() > 128) return;
     var innate = InnateAbility.byId(id);
     var technique = MartialTechnique.byId(id);
     if (HexPrograms.itemType(id) != null) {
@@ -130,24 +155,32 @@ public final class PreparedAbilities {
         return;
       }
     }
-    var prepared = preparation(player);
+    var prepared = loadout(player).wheels().get(wheel);
     String previous = prepared.slots().get(slot);
     var previousAccessory = ExceptionalAccessory.byId(previous);
     if (AmuletStep.ID.equals(previous) && !AmuletStep.available(player)
         || previousAccessory != null && previousAccessory.equipped(player).isEmpty()
         || DISTRACTION.equals(previous) && !ExpeditionDiscoveries.knowsDistraction(player))
       prepared = prepared.assign(slot, "");
-    var updated = prepared.assign(slot, id);
-    save(player, updated);
-    MartialTechniques.reconcile(player, updated.slots());
+    save(player, wheel, prepared.assign(slot, id));
+    MartialTechniques.reconcile(player, loadout(player).assignedIds());
     reconcileCasting(player);
     sync(player, true);
   }
 
   public static void select(ServerPlayer player, int slot) {
-    if (slot < 0 || slot >= Preparation.SLOT_COUNT) return;
-    save(player, preparation(player).select(slot));
-    sync(player, true);
+    if (slot >= 0) select(player, loadout(player).activeWheel(), slot);
+  }
+
+  public static void select(ServerPlayer player, int wheel, int slot) {
+    select(player, wheel, slot, 0);
+  }
+
+  static void select(ServerPlayer player, int wheel, int slot, int sequence) {
+    if (!AbilityLoadout.validWheel(wheel) || slot < -1 || slot >= Preparation.SLOT_COUNT) return;
+    if (slot >= 0) save(player, wheel, loadout(player).wheels().get(wheel).select(slot));
+    SpellKnowledge.data(player).putInt("active_wheel", wheel);
+    sync(player, true, sequence);
   }
 
   public static void cast(ServerPlayer player) {
@@ -291,11 +324,15 @@ public final class PreparedAbilities {
   }
 
   public static void sync(ServerPlayer player, boolean project) {
+    sync(player, project, 0);
+  }
+
+  private static void sync(ServerPlayer player, boolean project, int selectionAck) {
     long practice = MagicPractice.credit(player);
     Set<String> skills = SpellKnowledge.unlocked(player);
-    Preparation prepared = preparation(player);
+    AbilityLoadout prepared = loadout(player);
     RacialAbilities.reconcile(player, prepared);
-    if (project) projectFocus(player, prepared, skills);
+    if (project) projectFocus(player, prepared.active(), skills);
     var entries = new ArrayList<AbilityNetwork.Entry>();
     HexPrograms.catalogue(player, prepared, entries);
     addExpeditionAbilities(player, entries);
@@ -318,7 +355,7 @@ public final class PreparedAbilities {
     var race = RaceIdentity.race(player);
     for (var innate : InnateAbility.values()) {
       boolean available = innate.race == race;
-      if (available || prepared.slots().contains(innate.id))
+      if (available || prepared.contains(innate.id))
         entries.add(
             new AbilityNetwork.Entry(
                 innate.id, InnateAbility.GROUP, 0, 0, 0, available, available ? "" : "race", 0, 0));
@@ -356,21 +393,30 @@ public final class PreparedAbilities {
         player,
         new AbilityNetwork.Snapshot(
             entries,
-            prepared.slots().stream()
-                .map(
-                    id ->
-                        (!amulet && AmuletStep.ID.equals(id))
-                                || (ExceptionalAccessory.byId(id) != null || DISTRACTION.equals(id))
-                                    && entries.stream().noneMatch(entry -> entry.id().equals(id))
-                            ? ""
-                            : id)
-                .toList(),
-            prepared.selected(),
+            visibleLoadout(prepared, amulet, entries),
+            selectionAck,
             RacialAbilities.nightVision(player),
             java.util.List.copyOf(skills),
             MagicPracticeProgress.level(practice),
             practice,
             ProgressionBridge.nextMagicPointXp(player, practice)));
+  }
+
+  private static AbilityLoadout visibleLoadout(
+      AbilityLoadout loadout, boolean amulet, List<AbilityNetwork.Entry> entries) {
+    var wheels = new ArrayList<Preparation>(AbilityLoadout.WHEEL_COUNT);
+    for (Preparation wheel : loadout.wheels()) {
+      var slots = new ArrayList<>(wheel.slots());
+      slots.replaceAll(
+          id ->
+              (!amulet && AmuletStep.ID.equals(id))
+                      || (ExceptionalAccessory.byId(id) != null || DISTRACTION.equals(id))
+                          && entries.stream().noneMatch(entry -> entry.id().equals(id))
+                  ? ""
+                  : id);
+      wheels.add(new Preparation(slots, wheel.selected()));
+    }
+    return new AbilityLoadout(wheels, loadout.activeWheel());
   }
 
   private static void addExpeditionAbilities(
@@ -422,7 +468,7 @@ public final class PreparedAbilities {
 
   private static void reconcileCasting(ServerPlayer player) {
     MagicData magic = MagicData.getPlayerMagicData(player);
-    Preparation prepared = preparation(player);
+    AbilityLoadout prepared = loadout(player);
     boolean focus = SpellKnowledge.hasFocus(player);
     Set<String> skills = SpellKnowledge.unlocked(player);
     if (magic.isCasting() && magic.getCastSource() != CastSource.SCROLL) {
@@ -431,16 +477,16 @@ public final class PreparedAbilities {
       ItemStack castingItem = magic.getPlayerCastingItem();
       boolean allowed =
           accessory != null && accessory.matches(castingItem)
-              ? prepared.slots().contains(accessory.id) && accessory.equipped(player) == castingItem
+              ? prepared.contains(accessory.id) && accessory.equipped(player) == castingItem
               : focus
-                  && prepared.slots().contains(spell.getSpellId())
+                  && prepared.contains(spell.getSpellId())
                   && SpellKnowledge.knowledgeReason(player, spell, skills).isEmpty();
       if (!allowed) Utils.serverSideCancelCast(player);
     }
     for (var recast : magic.getPlayerRecasts().getAllRecasts()) {
       if (recast.getCastSource() != CastSource.SCROLL
           && (!focus
-              || !prepared.slots().contains(recast.getSpellId())
+              || !prepared.contains(recast.getSpellId())
               || !SpellKnowledge.knowledgeReason(
                       player, SpellKnowledge.spell(recast.getSpellId()), skills)
                   .isEmpty()))

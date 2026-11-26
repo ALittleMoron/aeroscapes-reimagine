@@ -63,7 +63,7 @@
   "aeroscapes_reimagine.race.practice_values": "Melee %1$s%% · Archery %2$s%% · Magic %3$s%%",
   "aeroscapes_reimagine.race.practice_help": "100%% is the ordinary gain. Bonuses from race, class and profession add together. At 140%%, an action worth 10 practice XP earns 14.",
   "aeroscapes_reimagine.race.talent_access": "Your class pays for the starting talent. You can spend the usual starting combat point on another talent. All classes can learn these abilities through the same tree.",
-  "aeroscapes_reimagine.race.mage_start": "Know the eight rank-1 spells of First Magic Mastery. You receive a Flimsy Journal as a focus. Equip a spellbook in the book slot, then assign spells to your eight preparation slots. Casts use their usual mana and cooldowns.",
+  "aeroscapes_reimagine.race.mage_start": "Know the eight rank-1 spells of First Magic Mastery. You receive a Flimsy Journal as a focus. Equip a spellbook in the book slot, then assign spells to your preparation wheels. Casts use their usual mana and cooldowns.",
   "aeroscapes_reimagine.race.light_weapons": "Light weapons include the five Farmer’s Delight knives, the Wetland Whimsy dagger and the amethyst rapier from Iron’s Spells ’n Spellbooks.",
   "aeroscapes_reimagine.race.human.benefits": "Ordinary starting attributes: 10 hearts and 1,000 stamina. Humans have no innate ability or learning bonus.",
   "aeroscapes_reimagine.race.human.drawbacks": "None. Health, stamina and movement use the standard values.",

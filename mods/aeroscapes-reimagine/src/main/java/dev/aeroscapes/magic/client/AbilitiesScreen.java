@@ -3,6 +3,7 @@ package dev.aeroscapes.magic.client;
 import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
 import dev.aeroscapes.inventory.InventoryNavigation;
+import dev.aeroscapes.magic.AbilityLoadout;
 import dev.aeroscapes.magic.AbilityNetwork;
 import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.progression.client.ScrollViewport;
@@ -28,6 +29,7 @@ public final class AbilitiesScreen extends Screen {
   private String chosen = "";
   private boolean learnedOnly = true;
   private String assignmentFailure = "";
+  private int editingWheel = AbilityClient.snapshot().loadout().activeWheel();
   private int targetSlot;
   private boolean dragging;
   private double grabOffset;
@@ -85,13 +87,29 @@ public final class AbilitiesScreen extends Screen {
             Button.builder(
                     AbilityClient.text("clear"),
                     button -> {
-                      AbilityClient.edit(targetSlot, "");
+                      AbilityClient.edit(editingWheel, targetSlot, "");
                       chosen = "";
                       assignmentFailure = "";
                     })
                 .bounds(detailsLeft(), height - 130, detailsWidth(), 20)
                 .build());
+    for (int wheel = 0; wheel < AbilityLoadout.WHEEL_COUNT; wheel++) {
+      int index = wheel;
+      addRenderableWidget(
+          Button.builder(Component.literal(Integer.toString(wheel + 1)), button -> editWheel(index))
+              .bounds(20 + wheel * 26, height - 118, 23, 17)
+              .tooltip(Tooltip.create(AbilityClient.text("wheel_number", wheel + 1)))
+              .build());
+    }
     AbilityClient.request();
+  }
+
+  private void editWheel(int wheel) {
+    if (editingWheel == wheel) return;
+    editingWheel = wheel;
+    targetSlot = AbilityClient.snapshot().loadout().wheels().get(wheel).selected();
+    assignmentFailure = "";
+    detailsScroll.reset();
   }
 
   private int listWidth() {
@@ -226,7 +244,7 @@ public final class AbilitiesScreen extends Screen {
           dragging ? AbilityWidgets.GOLD : AbilityWidgets.MUTED);
     drawDetails(graphics);
     drawSlots(graphics, mouseX, mouseY);
-    clear.active = !AbilityClient.slot(targetSlot).isEmpty();
+    clear.active = !AbilityClient.slot(editingWheel, targetSlot).isEmpty();
   }
 
   private void drawDetails(GuiGraphics graphics) {
@@ -322,14 +340,15 @@ public final class AbilitiesScreen extends Screen {
 
   private void drawSlots(GuiGraphics graphics, int mouseX, int mouseY) {
     graphics.drawString(
-        font, AbilityClient.text("slots"), 20, height - 110, AbilityWidgets.GOLD, false);
+        font, AbilityClient.text("slots"), 104, height - 114, AbilityWidgets.GOLD, false);
+    graphics.renderOutline(19 + editingWheel * 26, height - 119, 25, 19, AbilityWidgets.GOLD);
     for (int slot = 0; slot < AbilityClient.SLOT_COUNT; slot++) {
       int x = 20 + (slot % 4) * (slotWidth() + 2);
       int y = height - 97 + (slot / 4) * 27;
       AbilityWidgets.panel(graphics, x, y, slotWidth(), 25);
       if (slot == targetSlot)
         graphics.renderOutline(x + 1, y + 1, slotWidth() - 2, 23, AbilityWidgets.GOLD);
-      String id = AbilityClient.slot(slot);
+      String id = AbilityClient.slot(editingWheel, slot);
       AbilityClient.icon(graphics, id, x + 4, y + 4, 16);
       graphics.drawString(
           font, Integer.toString(slot + 1), x + 23, y + 4, AbilityWidgets.GOLD, false);
@@ -380,9 +399,9 @@ public final class AbilitiesScreen extends Screen {
         var entry = AbilityClient.entry(chosen);
         if (button == 0 && !chosen.isEmpty()) {
           assignmentFailure = AbilityCatalogue.assignmentReason(entry);
-          if (assignmentFailure.isEmpty()) AbilityClient.edit(slot, chosen);
+          if (assignmentFailure.isEmpty()) AbilityClient.edit(editingWheel, slot, chosen);
         } else {
-          chosen = AbilityClient.slot(slot);
+          chosen = AbilityClient.slot(editingWheel, slot);
           assignmentFailure = "";
         }
         targetSlot = slot;

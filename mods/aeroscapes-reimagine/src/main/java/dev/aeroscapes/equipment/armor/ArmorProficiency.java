@@ -50,7 +50,7 @@ public final class ArmorProficiency {
     NONE(null, null, 0, 0),
     STARTER("light_armor", null, 1, 0),
     LIGHT("light_armor", "light_armor_handling", 1, 0),
-    HEAVY("heavy_armor", "heavy_armor_handling", -1, -4),
+    HEAVY("heavy_armor", "heavy_armor_handling", -1, -6),
     RANGER("light_armor", "ranger_armor_training", 1, 0),
     ROGUE("light_armor", "rogue_armor_training", 1, 0);
 
@@ -153,6 +153,13 @@ public final class ArmorProficiency {
     }
     if (undertrained) {
       tooltip.add(Component.translatable(TOOLTIP + "undertrained").withStyle(ChatFormatting.RED));
+    }
+    if (family == Family.HEAVY) {
+      tooltip.add(
+          Component.translatable(
+                  TOOLTIP + "heavy_movement",
+                  -(undertrained ? family.untrainedSpeed : family.trainedSpeed))
+              .withStyle(ChatFormatting.GRAY));
     }
   }
 }

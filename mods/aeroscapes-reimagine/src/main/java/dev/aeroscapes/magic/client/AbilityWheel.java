@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 /** Preparation selection never casts; only the server commits the selected slot. */
 public final class AbilityWheel {
   private static boolean active;
+  private static int wheel;
 
   private AbilityWheel() {}
 
@@ -17,6 +18,7 @@ public final class AbilityWheel {
   public static void open() {
     var game = Minecraft.getInstance();
     if (active || game.screen != null || game.options.hideGui) return;
+    wheel = AbilityClient.activeWheel();
     active = true;
     game.mouseHandler.releaseMouse();
   }
@@ -25,7 +27,11 @@ public final class AbilityWheel {
     if (!active) return;
     int slot = hovered();
     cancel(true);
-    if (slot >= 0) AbilityClient.select(slot);
+    if (slot >= 0 || wheel != AbilityClient.activeWheel()) AbilityClient.select(wheel, slot);
+  }
+
+  static void showWheel(int index) {
+    wheel = index;
   }
 
   public static void cancel(boolean restoreMouse) {
@@ -92,15 +98,22 @@ public final class AbilityWheel {
     }
     graphics.drawCenteredString(
         game.font,
-        Integer.toString((selected < 0 ? AbilityClient.snapshot().selected() : selected) + 1),
+        AbilityClient.text("wheel_number", wheel + 1),
         centerX,
-        centerY - 4,
+        centerY - 10,
+        AbilityWidgets.GOLD);
+    int remembered = AbilityClient.selectedSlot(wheel);
+    graphics.drawCenteredString(
+        game.font,
+        Integer.toString((selected < 0 ? remembered : selected) + 1),
+        centerX,
+        centerY + 2,
         AbilityWidgets.GOLD);
     for (int slot = 0; slot < AbilityClient.SLOT_COUNT; slot++) {
       double angle = slot * Math.PI / 4;
       int x = centerX + (int) Math.round(Math.sin(angle) * 53);
       int y = centerY - (int) Math.round(Math.cos(angle) * 53);
-      String id = AbilityClient.slot(slot);
+      String id = AbilityClient.slot(wheel, slot);
       AbilityClient.icon(graphics, id, x - 9, y - 9, 18);
       graphics.drawString(
           game.font,
@@ -110,7 +123,7 @@ public final class AbilityWheel {
           slot == selected ? AbilityWidgets.GOLD : AbilityWidgets.MUTED,
           false);
     }
-    String id = selected < 0 ? "" : AbilityClient.slot(selected);
+    String id = selected < 0 ? "" : AbilityClient.slot(wheel, selected);
     Component name =
         id.isEmpty()
             ? AbilityClient.text(selected < 0 ? "wheel_hint" : "empty")

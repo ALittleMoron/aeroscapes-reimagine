@@ -116,8 +116,7 @@ public final class SpellKnowledge {
     else if (!spell.isEnabled()) reason = "disabled";
     else if (source == CastSource.SPELLBOOK && accessory != null && accessory.matches(item)) {
       if (accessory.equipped(player) != item) reason = "equipment_required";
-      else if (!PreparedAbilities.preparation(player).slots().contains(accessory.id))
-        reason = "unprepared";
+      else if (!PreparedAbilities.loadout(player).contains(accessory.id)) reason = "unprepared";
       else reason = level == 1 ? "" : "mastery";
     } else if (source == CastSource.SCROLL) {
       SpellData scroll = ISpellContainer.getOrCreate(item).getSpellAtIndex(0);
@@ -129,8 +128,7 @@ public final class SpellKnowledge {
       else reason = "";
     } else {
       reason = knowledgeReason(player, spell, skills);
-      if (reason.isEmpty()
-          && !PreparedAbilities.preparation(player).slots().contains(spell.getSpellId()))
+      if (reason.isEmpty() && !PreparedAbilities.loadout(player).contains(spell.getSpellId()))
         reason = "unprepared";
       if (reason.isEmpty() && !hasFocus(player)) reason = "focus";
       if (reason.isEmpty()

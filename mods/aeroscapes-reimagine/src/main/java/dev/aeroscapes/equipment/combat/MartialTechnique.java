@@ -58,7 +58,11 @@ public enum MartialTechnique {
   }
 
   String cooldownKey() {
-    return this == DASH || this == DISENGAGE ? "footwork" : talent;
+    return talent;
+  }
+
+  boolean footwork() {
+    return this == DASH || this == DISENGAGE;
   }
 
   public ResourceLocation icon() {

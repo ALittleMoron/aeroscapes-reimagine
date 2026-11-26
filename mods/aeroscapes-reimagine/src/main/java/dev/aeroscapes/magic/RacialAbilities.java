@@ -66,9 +66,9 @@ public final class RacialAbilities {
     return SpellKnowledge.data(player).getBoolean(SIGHT);
   }
 
-  static void reconcile(ServerPlayer player, Preparation prepared) {
+  static void reconcile(ServerPlayer player, AbilityLoadout prepared) {
     if (RaceIdentity.race(player) != InnateAbility.NIGHT_VISION.race
-        || !prepared.slots().contains(InnateAbility.NIGHT_VISION.id)) {
+        || !prepared.contains(InnateAbility.NIGHT_VISION.id)) {
       SpellKnowledge.data(player).remove(SIGHT);
     }
     if (player.hasEffect(ELF_LIGHT) && RaceIdentity.race(player) != InnateAbility.LIGHT.race)

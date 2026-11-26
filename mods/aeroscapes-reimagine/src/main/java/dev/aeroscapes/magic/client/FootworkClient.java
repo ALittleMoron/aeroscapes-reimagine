@@ -13,6 +13,7 @@ import org.jetbrains.annotations.Nullable;
 @EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
 public final class FootworkClient {
   private static @Nullable Player subject;
+  private static @Nullable Vec3 queued;
   private static Vec3 travel = Vec3.ZERO;
   private static int tick;
   private static int hurtTime;
@@ -20,7 +21,17 @@ public final class FootworkClient {
   private FootworkClient() {}
 
   public static void start(Vec3 movement) {
-    subject = Minecraft.getInstance().player;
+    Player player = Minecraft.getInstance().player;
+    if (player != null && subject == player && tick < GroundFootwork.DURATION) {
+      queued = movement;
+      return;
+    }
+    subject = player;
+    begin(movement);
+  }
+
+  private static void begin(Vec3 movement) {
+    queued = null;
     travel = movement;
     tick = 0;
     hurtTime = subject == null ? 0 : subject.hurtTime;
@@ -30,17 +41,22 @@ public final class FootworkClient {
   public static void movement(MovementInputUpdateEvent event) {
     if (event.getEntity() != subject) {
       subject = null;
+      queued = null;
       return;
     }
     Player player = event.getEntity();
     if (!GroundFootwork.available(player) || player.hurtTime > hurtTime) {
       subject = null;
+      queued = null;
       return;
     }
     if (tick == GroundFootwork.DURATION) {
-      subject = null;
-      player.setDeltaMovement(0, player.getDeltaMovement().y, 0);
-      return;
+      if (queued == null) {
+        subject = null;
+        player.setDeltaMovement(0, player.getDeltaMovement().y, 0);
+        return;
+      }
+      begin(queued);
     }
     hurtTime = player.hurtTime;
 
