@@ -380,6 +380,7 @@ tasks.withType<JavaCompile>().configureEach {
 }
 
 tasks.withType<Jar>().configureEach {
+  includeEmptyDirs = false
   isPreserveFileTimestamps = false
   isReproducibleFileOrder = true
 }

@@ -17,6 +17,7 @@ status: available
 - Completed hand forging leaves short-lived sparks. Heal, Cleanse and Touch Dig leave brief traces at the casting site.
 - Native NeoForge Smooth Scrolling Reforged replaces the Fabric scrolling mod that stopped first-launch Connector preloading.
 - Fixed a crash when Iron’s Spells loads its equipment spell list, including during EMI search indexing.
+- Companion JAR builds omit empty source directories so local builds match clean checkouts.
 
 ### 0.8.5
 
