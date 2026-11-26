@@ -1,6 +1,7 @@
 package dev.aeroscapes.magic;
 
 import dev.aeroscapes.equipment.combat.MartialTechnique;
+import dev.aeroscapes.equipment.combat.SwingTempo;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.network.RegistryFriendlyByteBuf;
@@ -17,6 +18,7 @@ public final class AbilityNetwork {
   private AbilityNetwork() {}
 
   public static void register(RegisterPayloadHandlersEvent event) {
+    SwingTempo.register(event);
     var registrar = event.registrar("5");
     registrar.playToServer(
         Request.TYPE,

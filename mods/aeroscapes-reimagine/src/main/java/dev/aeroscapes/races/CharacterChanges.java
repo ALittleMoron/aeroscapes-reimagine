@@ -19,7 +19,16 @@ public final class CharacterChanges {
   static final String STARTER_PERSONALLY_LEARNED = "class_starter_personally_learned";
 
   public record Selection(
-      String kind, String target, int style, String starter, boolean refundBranch) {}
+      String kind,
+      String target,
+      int style,
+      String starter,
+      boolean refundBranch,
+      String subclassId) {
+    public Selection(String kind, String target, int style, String starter, boolean refundBranch) {
+      this(kind, target, style, starter, refundBranch, "");
+    }
+  }
 
   public record Preview(List<String> removed, int returned, int spent, boolean advance) {
     public Preview {
@@ -58,6 +67,7 @@ public final class CharacterChanges {
     return switch (selection.kind()) {
       case "race" -> assessRace(player, currentRace, selection);
       case "class" -> assessClass(player, currentClass, selection);
+      case "subclass" -> assessSubclass(player, currentClass, selection);
       case "profession" -> assessProfession(player, currentProfession, selection);
       default -> INVALID;
     };
@@ -92,6 +102,11 @@ public final class CharacterChanges {
         || target == current
         || selection.style() != 0
         || !ClassProgression.available(player, target, selection.starter())) return INVALID;
+    var nextSubclass = CharacterSubclass.byId(selection.subclassId());
+    if (!selection.subclassId().isEmpty()
+        && (nextSubclass == null
+            || nextSubclass.mainClass() != target
+            || !SubclassProgression.available(player, nextSubclass))) return INVALID;
     var skills = SkillsMod.getInstance();
     var oldCategory = ClassProgression.category(current);
     var nextCategory = ClassProgression.category(target);
@@ -111,8 +126,12 @@ public final class CharacterChanges {
                       .anyMatch(id -> !id.equals(oldStarter) && MagicTalents.nodes().contains(id)));
       remove = keep ? List.of() : List.of(oldStarter);
     }
+    var leaving = RaceIdentity.subclass(player);
+    Set<String> affected = new HashSet<>(remove);
+    if (leaving != null) affected.addAll(leaving.branch());
     String nextStarter = ClassProgression.node(target, selection.starter());
-    var removed = unlocked.stream().filter(remove::contains).sorted().toList();
+    var removed = unlocked.stream().filter(affected::contains).sorted().toList();
+    int returned = paidRefund(player, removed);
     int cost = ClassProgression.learned(player, target, nextStarter) ? 0 : 1;
     int available = skills.getPointsLeft(player, nextCategory).orElse(0);
     // Moving the class-funded point frees credit in the destination, up to its normal cap.
@@ -127,11 +146,41 @@ public final class CharacterChanges {
         return INVALID;
       }
     } else {
-      available += removed.size();
+      available += returned;
     }
     int balance = available - cost;
     if (balance < -1 && cost != 0) return NEED_POINT;
-    return new Assessment(new Preview(removed, removed.size(), cost, balance < 0 && cost != 0), "");
+    return new Assessment(new Preview(removed, returned, cost, balance < 0 && cost != 0), "");
+  }
+
+  private static Assessment assessSubclass(
+      ServerPlayer player, CharacterClass mainClass, Selection selection) {
+    var current = RaceIdentity.subclass(player);
+    var target = CharacterSubclass.byId(selection.target());
+    if (current == null
+        || target == null
+        || target == current
+        || target.mainClass() != mainClass
+        || selection.style() != 0
+        || !selection.starter().isEmpty()
+        || selection.refundBranch()
+        || !SubclassProgression.available(player, target)) return INVALID;
+    var learned =
+        SkillsMod.getInstance()
+            .getUnlockedSkills(player, ClassProgression.category(mainClass))
+            .orElse(List.of());
+    var removed = learned.stream().filter(current.branch()::contains).sorted().toList();
+    return new Assessment(new Preview(removed, paidRefund(player, removed), 0, false), "");
+  }
+
+  private static int paidRefund(ServerPlayer player, List<String> removed) {
+    var chosen = RaceIdentity.subclass(player);
+    return removed.size()
+        - (chosen != null
+                && SubclassProgression.funded(player)
+                && removed.contains(chosen.starter())
+            ? 1
+            : 0);
   }
 
   private static Assessment assessProfession(
@@ -169,6 +218,14 @@ public final class CharacterChanges {
     if (checked == null || !checked.equals(expected)) return false;
     if (selection.kind().equals("race"))
       return RaceIdentity.chooseRace(player, Race.byId(selection.target()), selection.style());
+    if (selection.kind().equals("subclass")) {
+      var category = ClassProgression.category(RaceIdentity.characterClass(player));
+      if (!applyTalents(
+          player, category, category, null, CharacterSubclass.byId(selection.target()), checked))
+        return false;
+      ProgressionBridge.sync(player);
+      return true;
+    }
     boolean changeClass = selection.kind().equals("class");
     var target = changeClass ? CharacterClass.byId(selection.target()) : null;
     var oldCategory =
@@ -181,9 +238,12 @@ public final class CharacterChanges {
             : discipline(Profession.byId(selection.target())).category();
     String nextStarter =
         changeClass ? ClassProgression.node(target, selection.starter()) : selection.starter();
-    if (!applyTalents(player, oldCategory, nextCategory, nextStarter, checked)) return false;
+    var nextSubclass = changeClass ? CharacterSubclass.byId(selection.subclassId()) : null;
+    if (!applyTalents(player, oldCategory, nextCategory, nextStarter, nextSubclass, checked))
+      return false;
     var identity = RaceIdentity.data(player);
     if (changeClass) {
+      if (nextSubclass == null) SubclassProgression.assign(player, null);
       identity.putString("class", selection.target());
       identity.putString("starter", selection.starter());
       identity.putBoolean(STARTER_PERSONALLY_LEARNED, checked.spent() == 0);
@@ -203,7 +263,8 @@ public final class CharacterChanges {
       ServerPlayer player,
       ResourceLocation oldCategory,
       ResourceLocation nextCategory,
-      String nextStarter,
+      @Nullable String nextStarter,
+      @Nullable CharacterSubclass nextSubclass,
       Preview checked) {
     var provider = SkillsMod.getInstance();
     var expectedOld = new HashSet<>(provider.getUnlockedSkills(player, oldCategory).orElseThrow());
@@ -212,13 +273,13 @@ public final class CharacterChanges {
         oldCategory.equals(nextCategory)
             ? expectedOld
             : new HashSet<>(provider.getUnlockedSkills(player, nextCategory).orElseThrow());
-    expectedNext.add(nextStarter);
+    if (nextStarter != null) expectedNext.add(nextStarter);
     var snapshot = new CompoundTag();
     provider.exportPlayerData(player, snapshot);
     boolean complete = false;
     try {
       for (String id : checked.removed()) provider.lockSkill(player, oldCategory, id);
-      if (checked.spent() != 0)
+      if (nextStarter != null && checked.spent() != 0)
         provider.tryUnlockSkill(
             player,
             nextCategory,
@@ -229,6 +290,10 @@ public final class CharacterChanges {
                   Set.copyOf(provider.getUnlockedSkills(player, oldCategory).orElseThrow()))
               && expectedNext.equals(
                   Set.copyOf(provider.getUnlockedSkills(player, nextCategory).orElseThrow()));
+      if (complete && nextSubclass != null) {
+        complete = false;
+        complete = SubclassProgression.assign(player, nextSubclass);
+      }
       return complete;
     } finally {
       if (!complete) provider.importPlayerData(player, snapshot);

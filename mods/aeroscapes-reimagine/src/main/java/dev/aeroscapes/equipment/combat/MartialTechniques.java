@@ -4,6 +4,7 @@ import dev.aeroscapes.magic.AbilityNetwork;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.races.ClassProgression;
 import java.lang.ref.WeakReference;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -17,16 +18,20 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.Pillager;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
@@ -41,6 +46,9 @@ public final class MartialTechniques {
   public static final String PRIMED = "technique_primed";
   public static final String MARKED = "technique_marked";
   private static final int RECENT_BLOCK_TICKS = 50;
+  private static final int SHOVE_TARGET_LIMIT = 4;
+  private static final double SHOVE_STRENGTH = 0.9;
+  private static final int PARRY_REPLY_TICKS = 24;
   private static final String COOLDOWNS = "aeroscapes_reimagine:technique_cooldowns";
   private static final TagKey<Item> HEAVY_WEAPONS = weapons("heavy_technique_weapons");
   private static final TagKey<Item> LIGHT_WEAPONS = weapons("light_weapons");
@@ -64,6 +72,9 @@ public final class MartialTechniques {
     private long dashEnd;
     private long disengageEnd;
     private @Nullable RecentBlock recentBlock;
+    private long offenseEnd;
+    private boolean offenseSwings;
+    private long parryEnd;
     private @Nullable WeakReference<DamageSource> bracedBlock;
   }
 
@@ -71,6 +82,7 @@ public final class MartialTechniques {
 
   public static void register() {
     MartialArchery.register();
+    BerserkerTechniques.register();
     NeoForge.EVENT_BUS.addListener(MartialTechniques::protectDisengage);
   }
 
@@ -154,6 +166,13 @@ public final class MartialTechniques {
         player.playNotifySound(SoundEvents.SHIELD_BLOCK, player.getSoundSource(), 0.55F, 0.78F);
       }
       case COUNTERATTACK, FLANK_STRIKE, HEAVY_STRIKE -> primeMelee(player, technique, end);
+      case SHIELD_SHOVE -> shove(player);
+      case OFFENSIVE_STANCE -> {
+        var stance = STANCES.computeIfAbsent(player, ignored -> new Stance());
+        stance.offenseEnd = end;
+        stance.offenseSwings = true;
+      }
+      case DUELIST_PARRY -> STANCES.computeIfAbsent(player, ignored -> new Stance()).parryEnd = end;
     }
     startCooldown(player, technique);
     if (technique.windowTicks() > 0) SpellKnowledge.message(player, PRIMED);
@@ -178,8 +197,9 @@ public final class MartialTechniques {
     return switch (technique) {
       case SHIELD_BRACE -> player.isBlocking() ? "" : "technique_shield";
       case COUNTERATTACK -> recentBlock(player) ? "" : "technique_block_first";
-      case HEAVY_STRIKE -> wields(player, HEAVY_WEAPONS) ? "" : "technique_heavy";
-      case FLANK_STRIKE -> wields(player, LIGHT_WEAPONS) ? "" : "technique_light";
+      case SHIELD_SHOVE -> shoveReason(player);
+      case HEAVY_STRIKE, OFFENSIVE_STANCE -> wields(player, HEAVY_WEAPONS) ? "" : "technique_heavy";
+      case FLANK_STRIKE, DUELIST_PARRY -> wields(player, LIGHT_WEAPONS) ? "" : "technique_light";
       case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> MartialArchery.equipmentReason(player);
       case DASH, DISENGAGE -> footworkReason(player);
     };
@@ -196,11 +216,36 @@ public final class MartialTechniques {
         || player.getOffhandItem().is(weapons) && WeaponProficiency.supportsOffhandAttack(player);
   }
 
+  public static boolean isHeavyWeapon(ItemStack weapon) {
+    return weapon.is(HEAVY_WEAPONS);
+  }
+
+  public static boolean isLightWeapon(ItemStack weapon) {
+    return weapon.is(LIGHT_WEAPONS);
+  }
+
+  public static boolean offensiveStance(ServerPlayer player) {
+    var stance = STANCES.get(player);
+    return stance != null && stance.offenseEnd > now(player);
+  }
+
+  static long offensiveSwingEnd(ServerPlayer player) {
+    var stance = STANCES.get(player);
+    return stance != null
+            && stance.offenseSwings
+            && learned(player, MartialTechnique.OFFENSIVE_STANCE)
+        ? stance.offenseEnd
+        : 0;
+  }
+
   private static String status(ServerPlayer player, MartialTechnique technique) {
     return switch (technique) {
       case DASH, DISENGAGE -> footworkActive(player, technique) ? PRIMED : "";
       case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> MartialArchery.status(player, technique);
       case SHIELD_BRACE -> braced(player) ? PRIMED : "";
+      case SHIELD_SHOVE -> "";
+      case OFFENSIVE_STANCE -> offensiveStance(player) ? PRIMED : "";
+      case DUELIST_PARRY -> parryActive(player) ? PRIMED : "";
       case COUNTERATTACK, FLANK_STRIKE, HEAVY_STRIKE -> {
         Stance stance = STANCES.get(player);
         yield stance != null
@@ -214,13 +259,80 @@ public final class MartialTechniques {
   }
 
   private static boolean recentBlock(ServerPlayer player) {
+    return blockedAttacker(player) != null;
+  }
+
+  private static @Nullable LivingEntity blockedAttacker(ServerPlayer player) {
     Stance stance = STANCES.get(player);
-    return stance != null
-        && stance.recentBlock != null
-        && stance.recentBlock.end() > now(player)
-        && player.serverLevel().getEntity(stance.recentBlock.attacker())
-            instanceof LivingEntity attacker
-        && attacker.isAlive();
+    if (stance == null || stance.recentBlock == null || stance.recentBlock.end() <= now(player))
+      return null;
+    return player.serverLevel().getEntity(stance.recentBlock.attacker())
+                instanceof LivingEntity attacker
+            && attacker.isAlive()
+        ? attacker
+        : null;
+  }
+
+  private static String shoveReason(ServerPlayer player) {
+    if (!player.getMainHandItem().canPerformAction(ItemAbilities.SHIELD_BLOCK)
+        && !player.getOffhandItem().canPerformAction(ItemAbilities.SHIELD_BLOCK))
+      return "technique_hold_shield";
+    var attacker = blockedAttacker(player);
+    return attacker != null && shoveTarget(player, attacker) ? "" : "technique_block_first";
+  }
+
+  private static boolean shoveTarget(ServerPlayer player, LivingEntity target) {
+    Vec3 offset = target.position().subtract(player.position());
+    return target != player
+        && target.isAlive()
+        && target.isAttackable()
+        && !target.isSpectator()
+        && !player.isAlliedTo(target)
+        && (!(target instanceof Player other) || player.canHarmPlayer(other))
+        && player.canInteractWithEntity(target, 0.0)
+        && player.hasLineOfSight(target)
+        && facing(player, offset, 0.0);
+  }
+
+  private static boolean facing(ServerPlayer player, Vec3 offset, double minimumDot) {
+    Vec3 horizontal = new Vec3(offset.x, 0.0, offset.z);
+    return horizontal.normalize().dot(Vec3.directionFromRotation(0.0F, player.getYRot()))
+        > minimumDot;
+  }
+
+  private static void shove(ServerPlayer player) {
+    var attacker = blockedAttacker(player);
+    if (attacker == null) return;
+    STANCES.get(player).recentBlock = null;
+    pushAway(player, attacker);
+    if (ClassProgression.hasCombatTalent(player, "wide_shield_shove")) {
+      double reach = player.entityInteractionRange();
+      player
+          .serverLevel()
+          .getEntitiesOfClass(
+              LivingEntity.class,
+              player.getBoundingBox().inflate(reach),
+              target ->
+                  target != attacker
+                      && (target instanceof Enemy
+                          || target instanceof Mob mob && mob.getTarget() == player)
+                      && shoveTarget(player, target))
+          .stream()
+          .sorted(Comparator.comparingDouble(player::distanceToSqr))
+          .limit(SHOVE_TARGET_LIMIT - 1L)
+          .forEach(target -> pushAway(player, target));
+    }
+    player.playNotifySound(SoundEvents.SHIELD_BLOCK, player.getSoundSource(), 0.8F, 0.85F);
+    SpellKnowledge.message(player, "technique_shove_landed");
+  }
+
+  private static void pushAway(ServerPlayer player, LivingEntity target) {
+    Vec3 before = target.getDeltaMovement();
+    target.knockback(SHOVE_STRENGTH, player.getX() - target.getX(), player.getZ() - target.getZ());
+    // Shove deals no damage, so the normal attack's player motion update never runs.
+    if (target instanceof ServerPlayer && !target.getDeltaMovement().equals(before)) {
+      target.hurtMarked = true;
+    }
   }
 
   private static boolean braced(ServerPlayer player) {
@@ -250,11 +362,15 @@ public final class MartialTechniques {
       STANCES.get(player).bracedBlock = new WeakReference<>(event.getDamageSource());
       event.setShieldDamage(event.shieldDamage() * 0.35F);
     }
-    if (learned(player, MartialTechnique.COUNTERATTACK)
+    boolean shove = learned(player, MartialTechnique.SHIELD_SHOVE);
+    if ((shove || learned(player, MartialTechnique.COUNTERATTACK))
         && event.getDamageSource().getEntity() instanceof LivingEntity attacker
         && attacker != player) {
       STANCES.computeIfAbsent(player, ignored -> new Stance()).recentBlock =
           new RecentBlock(attacker.getUUID(), now(player) + RECENT_BLOCK_TICKS);
+      if (shove
+          && cooldown(player, MartialTechnique.SHIELD_SHOVE) == 0
+          && shoveTarget(player, attacker)) SpellKnowledge.message(player, "technique_shove_ready");
     }
   }
 
@@ -323,13 +439,38 @@ public final class MartialTechniques {
         && !source.is(DamageTypeTags.BYPASSES_ARMOR)
         && source.getEntity() instanceof LivingEntity attacker
         && attacker != player
-        && source.getDirectEntity() == attacker
-        && footworkActive(player, MartialTechnique.DISENGAGE)) {
-      STANCES.get(player).disengageEnd = 0;
-      event.setNewDamage(event.getNewDamage() * 0.5F);
-      player.playNotifySound(
-          SoundEvents.PLAYER_ATTACK_NODAMAGE, player.getSoundSource(), 0.55F, 1.5F);
+        && source.getDirectEntity() == attacker) {
+      if (tryParry(player, attacker, source)) {
+        event.setNewDamage(event.getNewDamage() * 0.55F);
+      } else if (footworkActive(player, MartialTechnique.DISENGAGE)) {
+        STANCES.get(player).disengageEnd = 0;
+        event.setNewDamage(event.getNewDamage() * 0.5F);
+        player.playNotifySound(
+            SoundEvents.PLAYER_ATTACK_NODAMAGE, player.getSoundSource(), 0.55F, 1.5F);
+      }
     }
+  }
+
+  private static boolean parryActive(ServerPlayer player) {
+    var stance = STANCES.get(player);
+    return stance != null
+        && stance.parryEnd > now(player)
+        && learned(player, MartialTechnique.DUELIST_PARRY);
+  }
+
+  private static boolean tryParry(ServerPlayer player, LivingEntity attacker, DamageSource source) {
+    if (!parryActive(player)
+        || player.isBlocking()
+        || !wields(player, LIGHT_WEAPONS)
+        || !(source.is(DamageTypes.PLAYER_ATTACK)
+            || source.is(DamageTypes.MOB_ATTACK)
+            || source.is(DamageTypes.MOB_ATTACK_NO_AGGRO))
+        || !facing(player, attacker.position().subtract(player.position()), 0.25)) return false;
+    STANCES.get(player).parryEnd = 0;
+    SwingTempo.grantParry(player, attacker, now(player) + PARRY_REPLY_TICKS);
+    SpellKnowledge.message(player, "technique_parry_reply");
+    player.playNotifySound(SoundEvents.SHIELD_BLOCK, player.getSoundSource(), 0.6F, 1.4F);
+    return true;
   }
 
   private static boolean flanking(ServerPlayer player, LivingEntity target) {
@@ -417,6 +558,14 @@ public final class MartialTechniques {
   public static void reconcile(ServerPlayer player, List<String> slots) {
     Stance stance = STANCES.get(player);
     if (stance != null) {
+      if (!slots.contains(MartialTechnique.OFFENSIVE_STANCE.id())) {
+        stance.offenseSwings = false;
+        SwingTempo.clearHeavy(player);
+      }
+      if (!slots.contains(MartialTechnique.DUELIST_PARRY.id())) {
+        stance.parryEnd = 0;
+        SwingTempo.clearParry(player);
+      }
       if (stance.melee != null && !slots.contains(stance.melee.technique().id()))
         stance.melee = null;
       if (!slots.contains(MartialTechnique.DASH.id())) stance.dashEnd = 0;
@@ -432,5 +581,7 @@ public final class MartialTechniques {
   public static void reset(ServerPlayer player) {
     if (STANCES.remove(player) != null) braceMovement(player, false);
     MartialArchery.reset(player);
+    BerserkerTechniques.reset(player);
+    SwingTempo.reset(player);
   }
 }

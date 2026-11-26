@@ -4670,19 +4670,19 @@ hash = "d597a5ad44e500dd627492296a1ec6dc31736286882767c762401ef105412243"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/category.json"
-hash = "2997c9521cb4d89ea9025b9e29d2692210b10be2c50e3698db4317db5f3d372a"
+hash = "943f7fc1fa32c73d781530fd031fd66fe30e66ffdfb0f1e0d987b8c3bc8ee6ed"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/connections.json"
-hash = "67f638f37ec7af21da535d896b0f147ae61325eaf4cd9c533e7ba07fe7464168"
+hash = "032dd316edd21659f8d055eedb812da9b704c1b74403848220bcc7c5afff66e5"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/definitions.json"
-hash = "691841ade4089f0cab8d093f6836814355b3deacfc1d033b7027c1e78ab47233"
+hash = "dfb81a806f35dd3e58450c980fee5228c85c041a1f1a95a0d2cdf4fc8ec414d0"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/combat/skills.json"
-hash = "710ecc0fbdba3c97a9aa5eb632333862d8a0158f3436386ccaf32ac2e9b1a368"
+hash = "3303e4a38b548b0af7db1e1a80b6464e6a9b6b1b17327ae3aab6525bef274a97"
 
 [[files]]
 file = "global_packs/required_data/aeroscapes_reimagine_rules/data/aeroscapes_reimagine/puffish_skills/categories/cooking/category.json"
@@ -5779,7 +5779,7 @@ hash = "9e057af1fa175a5977d4496ff578a2063c78fe644c982f742829383250296a50"
 
 [[files]]
 file = "licenses/aeroscapes-reimagine-source.zip"
-hash = "92beb5fbde3fd29168ae4c7e025e1e4709c9fafc04f76577299502bda63b779c"
+hash = "4806443c2e4012937eee16051cc4e34c700bdf55f69167923e9bf0e3472782fd"
 
 [[files]]
 file = "licenses/fluidlogistics-1.3.2-corresponding-source.zip"
@@ -5833,7 +5833,7 @@ metafile = true
 
 [[files]]
 file = "mods/aeroscapes-reimagine-0.1.0.jar"
-hash = "55ed0cdb46853ceeb849a0d56a16f3224bbd797631a3d77d9f8d91fe9ea55b46"
+hash = "08c5099a0d48fd6368d54984bb47563577132bb67e63099da10467d9b07f90af"
 
 [[files]]
 file = "mods/agricraft-rereloaded.pw.toml"

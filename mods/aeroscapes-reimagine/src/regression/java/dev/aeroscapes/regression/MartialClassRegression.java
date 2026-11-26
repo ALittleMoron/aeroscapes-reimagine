@@ -1,6 +1,7 @@
 package dev.aeroscapes.regression;
 
 import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
+import dev.aeroscapes.equipment.combat.BerserkerTechniques;
 import dev.aeroscapes.equipment.combat.GroundFootwork;
 import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.equipment.combat.MartialTechniques;
@@ -24,6 +25,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -89,6 +91,10 @@ final class MartialClassRegression {
             verifyAbilities(player);
             verifySlowingShot(player);
           }
+          if (role == CharacterClass.WARRIOR) {
+            verifyShieldShove(session);
+            verifyLastStand(player);
+          }
         } finally {
           ProgressionRegression.listPlayer(level, player, false);
         }
@@ -113,6 +119,129 @@ final class MartialClassRegression {
         player.getAttributeValue(Attributes.MOVEMENT_SPEED),
         speed,
         "A held axe removes light-weapon footwork");
+  }
+
+  private static Zombie opponent(ServerPlayer player, double x, double z) {
+    var target = new Zombie(EntityType.ZOMBIE, player.serverLevel());
+    target.setPos(player.position().add(x, 0.0, z));
+    require(player.serverLevel().addFreshEntity(target), "Register combat fixture opponent");
+    return target;
+  }
+
+  private static void verifyShieldShove(TestShipPlayerSession session) {
+    ServerPlayer player = session.player;
+    var clock = player.serverLevel().getServer().getWorldData().overworldData();
+    long gameTime = clock.getGameTime();
+    player.setYRot(0.0F);
+    player.setNoGravity(true);
+    for (int tick = 0; tick < 60; tick++) player.tick();
+    player.setItemInHand(InteractionHand.OFF_HAND, Items.SHIELD.getDefaultInstance());
+    prepare(player, 0, MartialTechnique.SHIELD_SHOVE);
+    PreparedAbilities.select(player, 0);
+    PreparedAbilities.cast(player);
+    require(cooldown(session, MartialTechnique.SHIELD_SHOVE) == 0, "No block means no shove");
+
+    var first = opponent(player, 0.0, 1.5);
+    var second = opponent(player, 1.1, 1.5);
+    var behind = opponent(player, 0.0, -1.5);
+    try {
+      blockMelee(player, first);
+      PreparedAbilities.sync(player, true);
+      var shove =
+          session.abilities().entries().stream()
+              .filter(entry -> entry.id().equals(MartialTechnique.SHIELD_SHOVE.id()))
+              .findFirst()
+              .orElseThrow();
+      require(
+          shove.usable(),
+          "A blocked attacker in reach opens Shield Shove: "
+              + shove.reason()
+              + " at distance "
+              + player.distanceTo(first));
+      PreparedAbilities.cast(player);
+      require(first.getDeltaMovement().z > 0.4, "A real shield block opens a shove");
+      require(second.getDeltaMovement().equals(Vec3.ZERO), "The first shove affects one attacker");
+      require(cooldown(session, MartialTechnique.SHIELD_SHOVE) > 0, "Shove starts its cooldown");
+      first.setDeltaMovement(Vec3.ZERO);
+      setCombatTalent(player, "wide_shield_shove");
+      clock.setGameTime(gameTime + MartialTechnique.SHIELD_SHOVE.cooldownTicks());
+      PreparedAbilities.cast(player);
+      require(
+          first.getDeltaMovement().equals(Vec3.ZERO),
+          "The same block cannot be used for another shove");
+      blockMelee(player, first);
+      PreparedAbilities.cast(player);
+      require(
+          first.getDeltaMovement().z > 0.4 && second.getDeltaMovement().z > 0.4,
+          "Wider shove pushes the attacker and nearby enemies in front");
+      require(behind.getDeltaMovement().equals(Vec3.ZERO), "Wider shove leaves enemies behind");
+    } finally {
+      clock.setGameTime(gameTime);
+      first.discard();
+      second.discard();
+      behind.discard();
+      player.setNoGravity(false);
+      player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
+    }
+  }
+
+  private static void blockMelee(ServerPlayer player, Zombie attacker) {
+    player.invulnerableTime = 0;
+    player.setDeltaMovement(Vec3.ZERO);
+    player.startUsingItem(InteractionHand.OFF_HAND);
+    for (int tick = 0; tick < 12 && !player.isBlocking(); tick++) player.doTick();
+    require(player.isBlocking(), "Shield is raised before the incoming blow");
+    float health = player.getHealth();
+    int shieldDamage = player.getOffhandItem().getDamageValue();
+    player.hurt(player.damageSources().mobAttack(attacker), 4.0F);
+    player.stopUsingItem();
+    close(player.getHealth(), health, "The fixture blocks a real melee hit");
+    require(
+        player.getOffhandItem().getDamageValue() > shieldDamage, "A real block wears the shield");
+  }
+
+  private static void verifyLastStand(ServerPlayer player) {
+    setCombatTalent(player, "last_stand");
+    player.setItemInHand(InteractionHand.MAIN_HAND, Items.IRON_AXE.getDefaultInstance());
+    var attacker = opponent(player, 0.0, 1.5);
+    var target = opponent(player, 0.0, 2.4);
+    try {
+      float startingHealth = player.getMaxHealth() * 0.45F;
+      player.setHealth(startingHealth);
+      player.invulnerableTime = 0;
+      player.hurt(player.damageSources().fall(), 4.0F);
+      require(!BerserkerTechniques.lastStandReady(player), "Falls cannot prime Last Stand");
+      player.setHealth(startingHealth);
+      player.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 80, 1));
+      player.invulnerableTime = 0;
+      player.hurt(player.damageSources().mobAttack(attacker), 4.0F);
+      require(!BerserkerTechniques.lastStandReady(player), "Absorbed hits do not lower health");
+      player.removeEffect(MobEffects.ABSORPTION);
+      player.invulnerableTime = 0;
+      player.hurt(player.damageSources().mobAttack(attacker), 4.0F);
+      require(BerserkerTechniques.lastStandReady(player), "Enemy hit crosses the health threshold");
+      player.resetAttackStrengthTicker();
+      player.attack(target);
+      require(BerserkerTechniques.lastStandReady(player), "Early melee hit leaves the reply ready");
+      target.invulnerableTime = 0;
+      target.setHealth(target.getMaxHealth());
+      for (int tick = 0; tick < 60 && player.getAttackStrengthScale(0.5F) < 1.0F; tick++)
+        player.doTick();
+      require(player.getAttackStrengthScale(0.5F) == 1.0F, "Fixture charges a heavy attack");
+      player.attack(target);
+      require(!BerserkerTechniques.lastStandReady(player), "A charged hit consumes the bonus");
+    } finally {
+      attacker.discard();
+      target.discard();
+    }
+  }
+
+  private static void setCombatTalent(ServerPlayer player, String skill) {
+    SkillsMod.getInstance().tryUnlockSkill(player, COMBAT, skill, true);
+    require(
+        SkillsMod.getInstance().getSkillState(player, COMBAT, skill).orElseThrow()
+            == Skill.State.UNLOCKED,
+        "Fixture unlocks " + skill);
   }
 
   private static void verifyDash(TestShipPlayerSession session) {

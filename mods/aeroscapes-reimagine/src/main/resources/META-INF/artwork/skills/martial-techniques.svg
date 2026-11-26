@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="80" viewBox="0 0 48 80" shape-rendering="crispEdges">
   <title>Aeroscapes martial techniques</title>
   <desc>Original 16 by 16 pixel tiles. Export a named group with rsvg-convert --export-id NAME martial-techniques.svg --output NAME.png.</desc>
   <defs>
@@ -16,6 +16,11 @@
       <stop stop-color="#504a8b"/>
       <stop offset=".65" stop-color="#342c64"/>
       <stop offset="1" stop-color="#171a3b"/>
+    </radialGradient>
+    <radialGradient id="rage" cx="42%" cy="43%" r="80%">
+      <stop stop-color="#80333b"/>
+      <stop offset=".62" stop-color="#54243b"/>
+      <stop offset="1" stop-color="#27162d"/>
     </radialGradient>
   </defs>
   <g id="shield_brace">
@@ -94,5 +99,55 @@
     <path fill="#f8e6e1" d="M13 5h1v1h-1v1h-1v1h-1V7h1V6h1z"/>
     <path fill="#d99f8d" d="M9 10h1v1h1v1H9v1H8v-1h1z"/>
     <path fill="#d2bcf4" d="M13 11h2v1h-2zM12 12h1v2h-1zM10 3h2v1h-2z"/>
+  </g>
+  <g id="shield_shove" transform="translate(0 48)">
+    <rect width="16" height="16" fill="url(#guard)"/>
+    <path fill="#231a27" d="M3 2h5v1h2v1h1v6h-1v2H9v1H7v1H5v-1H4v-1H3v-2H2V4h1z"/>
+    <path fill="#b1734e" d="M3 4h1V3h4v1h2v6H9v2H7v1H5v-1H4v-2H3z"/>
+    <path fill="#79616a" d="M4 5h5v4H8v2H7v1H5v-2H4z"/>
+    <path fill="#f7ce87" d="M4 3h4v1h1v1H6v5H5V9H4V5H3V4h1z"/>
+    <path fill="#311c2a" d="M11 4h2v1h1v1h1v1h1v2h-1v1h-1v1h-1v1h-2v-2H7V6h4z"/>
+    <path fill="#e39959" d="M12 5h1v1h1v1h1v2h-1v1h-1v1h-1V9H8V7h4zM2 12h1v1H2zM1 5h1v4H1z"/>
+    <path fill="#fff0a6" d="M12 6h1v1h1v2h-1v1h-1V8H8V7h4z"/>
+  </g>
+  <g id="wide_shield_shove" transform="translate(16 48)">
+    <rect width="16" height="16" fill="url(#guard)"/>
+    <path fill="#ea8e55" d="M2 3h2v1h1v2H4V5H2zM12 3h2v2h-2v1h-1V4h1zM7 1h2v1h1v2H9V3H7v1H6V2h1zM1 5h1v1H1zM14 5h1v1h-1z"/>
+    <path fill="#ffe098" d="M2 3h1v1H2zM13 3h1v1h-1zM7 1h2v1H7zM3 4h1v1H3zM12 4h1v1h-1z"/>
+    <path fill="#201927" d="M5 5h6v1h2v5h-1v2h-2v1H9v1H7v-1H6v-1H4v-2H3V6h2z"/>
+    <path fill="#b77753" d="M5 6h6v1h1v4h-1v1h-1v1H9v1H7v-1H6v-1H5v-1H4V7h1z"/>
+    <path fill="#685367" d="M6 8h4v1h1v2h-1v1H9v1H7v-1H6v-1H5V9h1z"/>
+    <path fill="#fff0a6" d="M5 6h6v1H9v3H7V7H5zM7 11h2v1H7z"/>
+    <path fill="#ce7052" d="M1 7h1v3H1zM14 7h1v3h-1zM2 11h1v1H2zM13 11h1v1h-1z"/>
+  </g>
+  <g id="last_stand" transform="translate(32 48)">
+    <rect width="16" height="16" fill="url(#rage)"/>
+    <path fill="#291929" d="M2 3h4v1h2V3h3v1h2v5h-1v2h-2v1H9v1H8v1H6v-1H5v-1H4v-1H3v-1H2V8H1V4h1z"/>
+    <path fill="#b64957" d="M2 4h4v1h2V4h3v1h1v4h-1v2H9v1H8v1H6v-1H5v-1H4v-1H3V8H2z"/>
+    <path fill="#e77a72" d="M3 4h3v1H4v1H3v2H2V5h1zM9 4h2v1H9zM3 8h1v1H3z"/>
+    <path fill="#fcb394" d="M2 7h3V6h1v2h1V7h3v1H8v1H6V8H2z"/>
+    <path fill="#281a2b" d="M13 3h2v4h-1v2h-1v1h-1v1h-1v1h1v1h-2v1H9v1H7v-2h1v-2h2V9h1V7h1V5h1z"/>
+    <path fill="#98a4ba" d="M14 4h1v2h-1v2h-1v1h-1v1h-1v1h-1V9h1V8h1V6h1V5h1z"/>
+    <path fill="#fff2cb" d="M14 4h1v1h-1v1h-1v2h-1v1h-1V8h1V6h1V5h1zM14 10h1v1h-1z"/>
+    <path fill="#ed9a61" d="M9 11h1v1h1v1H9v1H8v-1h1z"/>
+  </g>
+  <g id="offensive_stance" transform="translate(0 64)">
+    <rect width="16" height="16" fill="url(#rage)"/>
+    <path fill="#a74853" d="M2 6h3v1H2zM1 8h5v1H1zM2 10h5v1H2zM10 1h3v1h-3zM13 3h2v1h-2zM12 12h2v1h-2z"/>
+    <path fill="#f17d59" d="M2 8h3v1H2zM2 10h2v1H2zM1 12h3v1H1zM12 2h3v1h-3zM13 11h2v1h-2zM11 13h2v1h-2z"/>
+    <path fill="#281924" d="M5 2h5v1h2v2h2v4h-2v1h-2V9H9v2H8v1H7v2H6v1H4v-3h1v-2h1V8h1V7H6V6H4V3h1z"/>
+    <path fill="#ae654b" d="M7 7h2v2H8v2H7v1H6v2H5v-2h1v-2h1z"/>
+    <path fill="#b4aeb8" d="M5 3h5v1h1v1h1v1h1v2h-1v1h-2V8H9V7H7V6H5z"/>
+    <path fill="#fff0cc" d="M5 3h5v1h1v1H9v1H7V5H5zM12 6h1v2h-1z"/>
+    <path fill="#ffd18b" d="M1 5h2v1H1zM14 5h1v1h-1zM3 12h1v1H3zM12 11h1v1h-1z"/>
+  </g>
+  <g id="duelist_parry" transform="translate(16 64)">
+    <rect width="16" height="16" fill="url(#footwork)"/>
+    <path fill="#2b2141" d="M2 2h2v1h1v1h1v1h1v1h2V5h1V4h1V3h1V2h3v3h-1v1h-1v1h-1v1h-1v1h1v1h1v1h2v2h-1v1h-3v-1h-1v-1H9v-1H7v1H6v1H5v1H2v-3h1v-1h1V9h1V8H4V7H3V6H2V5H1V2z"/>
+    <path fill="#a9a2cb" d="M2 3h2v1h1v1h1v1h1v1h1v1h1v1h1v1h1v1h-1v1H9v-1H8v-1H7V9H6V8H5V7H4V6H3V5H2z"/>
+    <path fill="#8fc2c7" d="M13 3h1v2h-1v1h-1v1h-1v1h-1v1H9v1H8v1H7v1H5v-2h1V9h1V8h1V7h1V6h1V5h1V4h2z"/>
+    <path fill="#fff0c2" d="M8 5h1v2h2v1H9v2H8V8H6V7h2zM13 3h1v1h-1zM2 3h1v1H2z"/>
+    <path fill="#d59e88" d="M4 10h1v1h2v1H5v1H3v-1h1zM11 10h1v1h1v1h1v1h-2v-1h-1z"/>
+    <path fill="#d3b3f2" d="M6 3h1v2H6zM11 8h2v1h-2zM4 8h1v1H4zM7 12h1v2H7z"/>
   </g>
 </svg>

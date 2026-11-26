@@ -66,6 +66,26 @@
       [
         "opening_strike",
         "flank_strike"
+      ],
+      [
+        "shield_handling",
+        "shield_shove"
+      ],
+      [
+        "shield_shove",
+        "wide_shield_shove"
+      ],
+      [
+        "melee_strike",
+        "last_stand"
+      ],
+      [
+        "last_stand",
+        "offensive_stance"
+      ],
+      [
+        "light_weapon_handling",
+        "duelist_parry"
       ]
     ]
   },

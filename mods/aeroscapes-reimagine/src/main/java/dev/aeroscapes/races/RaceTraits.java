@@ -8,7 +8,20 @@ public final class RaceTraits {
   private static final int PRACTICE_DIVISOR = 5;
   public static final int PRACTICE_AFFINITY_PERCENT = 100 / PRACTICE_DIVISOR;
 
+  private static final ThreadLocal<ServerPlayer> SUBCLASS_PRACTICE = new ThreadLocal<>();
+
   private RaceTraits() {}
+
+  public static void withSubclassPractice(ServerPlayer player, Runnable award) {
+    var prior = SUBCLASS_PRACTICE.get();
+    SUBCLASS_PRACTICE.set(player);
+    try {
+      award.run();
+    } finally {
+      if (prior == null) SUBCLASS_PRACTICE.remove();
+      else SUBCLASS_PRACTICE.set(prior);
+    }
+  }
 
   public static float width(Race race) {
     return switch (race) {
@@ -56,6 +69,10 @@ public final class RaceTraits {
                 RaceIdentity.profession(player),
                 skill)
             / PRACTICE_AFFINITY_PERCENT;
+    if (skill.equals("combat") && SUBCLASS_PRACTICE.get() == player) {
+      SUBCLASS_PRACTICE.remove();
+      fifths++;
+    }
     if (fifths == 0) return amount;
     var data = RaceIdentity.data(player);
     String key = skill + "_fifths";

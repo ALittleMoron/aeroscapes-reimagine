@@ -28,23 +28,28 @@ public final class RaceNetwork {
   }
 
   private static void payloads(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("4");
+    var registrar = event.registrar("5");
     registrar.playToServer(
         Choose.TYPE,
         Choose.CODEC,
         (msg, ctx) -> {
           if (!(ctx.player() instanceof ServerPlayer player)) return;
           Race race = Race.byId(msg.race());
+          var mainClass = CharacterClass.byId(msg.classId());
+          var subclass = CharacterSubclass.byId(msg.subclassId());
           if (race != null
+              && mainClass != null
+              && CharacterSubclass.validChoice(mainClass, msg.subclassId())
               && RaceIdentity.choose(
                   player,
                   race,
                   msg.style(),
                   msg.tint(),
-                  CharacterClass.byId(msg.classId()),
+                  mainClass,
                   msg.starter(),
                   Profession.byId(msg.professionId()),
-                  msg.professionStarter())) {
+                  msg.professionStarter(),
+                  subclass)) {
             // A client in a live world can predict movement while the server holds it in place.
             player.connection.teleport(
                 player.getX(), player.getY(), player.getZ(), player.getYRot(), player.getXRot());
@@ -52,6 +57,20 @@ public final class RaceNetwork {
             if (ModList.get().isLoaded("irons_spellbooks")
                 && ModList.get().isLoaded("puffish_skills"))
               dev.aeroscapes.magic.PreparedAbilities.sync(player, true);
+          } else {
+            PacketDistributor.sendToPlayer(player, snapshot(player));
+          }
+        });
+    registrar.playToServer(
+        ChooseSubclass.TYPE,
+        ChooseSubclass.CODEC,
+        (msg, ctx) -> {
+          if (!(ctx.player() instanceof ServerPlayer player)) return;
+          var chosen = CharacterSubclass.byId(msg.id());
+          if (msg.id().isEmpty()) RaceIdentity.deferSubclass(player);
+          if (chosen != null && RaceIdentity.chooseSubclass(player, chosen)) {
+            PacketDistributor.sendToPlayersTrackingEntityAndSelf(player, snapshot(player));
+            dev.aeroscapes.magic.PreparedAbilities.sync(player, true);
           } else {
             PacketDistributor.sendToPlayer(player, snapshot(player));
           }
@@ -75,7 +94,8 @@ public final class RaceNetwork {
       CharacterClass chosenClass,
       String starter,
       Profession profession,
-      String professionStarter) {
+      String professionStarter,
+      String subclassId) {
     if (race.canTint(style, tint)
         && chosenClass.starters().contains(starter)
         && profession.starters().contains(professionStarter))
@@ -87,7 +107,16 @@ public final class RaceNetwork {
               chosenClass.id(),
               starter,
               profession.id(),
-              professionStarter));
+              professionStarter,
+              subclassId));
+  }
+
+  public static void chooseSubclass(CharacterSubclass chosen) {
+    PacketDistributor.sendToServer(new ChooseSubclass(chosen.id()));
+  }
+
+  public static void deferSubclass() {
+    PacketDistributor.sendToServer(new ChooseSubclass(""));
   }
 
   public static void recolor(Race race, int style, int tint) {
@@ -99,6 +128,8 @@ public final class RaceNetwork {
     Race race = RaceIdentity.race(player);
     CharacterClass chosenClass = RaceIdentity.characterClass(player);
     Profession profession = RaceIdentity.profession(player);
+    var subclass = RaceIdentity.subclass(player);
+    if (subclass == null) subclass = RaceIdentity.pendingSubclass(player);
     return new Snapshot(
         player.getUUID(),
         race == null ? "" : race.id(),
@@ -108,6 +139,8 @@ public final class RaceNetwork {
         RaceIdentity.starter(player),
         profession == null ? "" : profession.id(),
         RaceIdentity.professionStarter(player),
+        subclass == null ? "" : subclass.id(),
+        RaceIdentity.subclassDeferred(player),
         chosenClass != null && RaceIdentity.grantPending(player));
   }
 
@@ -139,7 +172,8 @@ public final class RaceNetwork {
       String classId,
       String starter,
       String professionId,
-      String professionStarter)
+      String professionStarter,
+      String subclassId)
       implements CustomPacketPayload {
     public static final Type<Choose> TYPE =
         new Type<>(ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", "race_choose"));
@@ -153,6 +187,7 @@ public final class RaceNetwork {
               buf.writeUtf(msg.starter(), 32);
               buf.writeUtf(msg.professionId(), 16);
               buf.writeUtf(msg.professionStarter(), 32);
+              buf.writeUtf(msg.subclassId(), 16);
             },
             buf ->
                 new Choose(
@@ -162,10 +197,25 @@ public final class RaceNetwork {
                     buf.readUtf(16),
                     buf.readUtf(32),
                     buf.readUtf(16),
-                    buf.readUtf(32)));
+                    buf.readUtf(32),
+                    buf.readUtf(16)));
 
     @Override
     public Type<Choose> type() {
+      return TYPE;
+    }
+  }
+
+  private record ChooseSubclass(String id) implements CustomPacketPayload {
+    private static final Type<ChooseSubclass> TYPE =
+        new Type<>(
+            ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", "subclass_choose"));
+    private static final StreamCodec<RegistryFriendlyByteBuf, ChooseSubclass> CODEC =
+        StreamCodec.of(
+            (buf, msg) -> buf.writeUtf(msg.id(), 16), buf -> new ChooseSubclass(buf.readUtf(16)));
+
+    @Override
+    public Type<ChooseSubclass> type() {
       return TYPE;
     }
   }
@@ -197,6 +247,8 @@ public final class RaceNetwork {
       String starter,
       String professionId,
       String professionStarter,
+      String subclassId,
+      boolean subclassDeferred,
       boolean grantPending)
       implements CustomPacketPayload {
     public static final Type<Snapshot> TYPE =
@@ -213,6 +265,8 @@ public final class RaceNetwork {
               buf.writeUtf(msg.starter(), 32);
               buf.writeUtf(msg.professionId(), 16);
               buf.writeUtf(msg.professionStarter(), 32);
+              buf.writeUtf(msg.subclassId(), 16);
+              buf.writeBoolean(msg.subclassDeferred());
               buf.writeBoolean(msg.grantPending());
             },
             buf ->
@@ -225,6 +279,8 @@ public final class RaceNetwork {
                     buf.readUtf(32),
                     buf.readUtf(16),
                     buf.readUtf(32),
+                    buf.readUtf(16),
+                    buf.readBoolean(),
                     buf.readBoolean()));
 
     @Override

@@ -1,6 +1,7 @@
 package dev.aeroscapes.races.client;
 
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.CharacterSubclass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceNetwork;
@@ -33,6 +34,8 @@ public final class RaceClient {
             snapshot.starter(),
             Profession.byId(snapshot.professionId()),
             snapshot.professionStarter(),
+            CharacterSubclass.byId(snapshot.subclassId()),
+            snapshot.subclassDeferred(),
             snapshot.grantPending());
     var previous = PROFILES.put(snapshot.player(), profile);
     var connection = Minecraft.getInstance().getConnection();
@@ -61,7 +64,35 @@ public final class RaceClient {
       String starter,
       @Nullable Profession profession,
       String professionStarter,
+      @Nullable CharacterSubclass subclass,
+      boolean subclassDeferred,
       boolean grantPending) {
+    Profile(
+        Race race,
+        int style,
+        int tint,
+        CharacterClass characterClass,
+        String starter,
+        Profession profession,
+        String professionStarter,
+        boolean grantPending) {
+      this(
+          race,
+          style,
+          tint,
+          characterClass,
+          starter,
+          profession,
+          professionStarter,
+          null,
+          false,
+          grantPending);
+    }
+
+    boolean needsSubclass() {
+      return complete() && subclass == null && !CharacterSubclass.choices(characterClass).isEmpty();
+    }
+
     boolean hasClass() {
       return characterClass != null && characterClass.starters().contains(starter);
     }

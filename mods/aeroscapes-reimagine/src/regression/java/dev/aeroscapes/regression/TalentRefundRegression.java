@@ -76,8 +76,8 @@ final class TalentRefundRegression {
     var skills = SkillsMod.getInstance();
     int magicCap = MagicTalents.pointCap();
     MagicPractice.award(player, MagicPracticeProgress.xpForPoints(magicCap));
-    APIUtils.setLevel("combat", player, 25);
-    APIUtils.setLevel("archery", player, 25);
+    for (String skill : ProgressionBridge.COMBAT_SKILLS)
+      APIUtils.setLevel(skill, player, skill.equals("archery") ? 40 : 50);
     APIUtils.setLevel("mining", player, 45);
     ProgressionBridge.sync(player);
     require(

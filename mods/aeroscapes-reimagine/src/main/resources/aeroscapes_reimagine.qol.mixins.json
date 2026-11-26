@@ -21,6 +21,8 @@
     "technique.MartialArrowLaunchMixin",
     "technique.MartialMeleeMixin",
     "technique.MartialShieldMixin",
+    "technique.BetterCombatTempoServerMixin",
+    "technique.WetlandDaggerEffectsMixin",
     "ReforgeAnvilReturnMixin",
     "reforge.ReforgeEquipmentSlotMixin",
     "reforge.ReforgeGradeMixin",
@@ -87,6 +89,7 @@
     "reforge.tools.VanillaRodReforgeMixin"
   ],
   "client": [
+    "technique.BetterCombatTempoClientMixin",
     "guide.FieldGuideBookmarksMixin",
     "guide.FieldGuideScreenMixin",
     "engineering.LadleAssemblyEmiMixin",

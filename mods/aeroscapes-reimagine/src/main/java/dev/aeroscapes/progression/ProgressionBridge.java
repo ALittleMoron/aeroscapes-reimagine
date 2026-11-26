@@ -32,11 +32,13 @@ public final class ProgressionBridge {
   public static final List<String> COMBAT_SKILLS =
       List.of("combat", "archery", "light_armor", "heavy_armor");
   public static final int LEVELS_PER_POINT = 5;
-  public static final int COMBAT_POINT_CAP = 34;
+  public static final int COMBAT_POINT_CAP = 39;
   public static final String COMBAT_CATEGORY = "aeroscapes_reimagine:combat";
   public static final String MAGIC_CATEGORY = "aeroscapes_reimagine:magic";
   private static final ResourceLocation COMBAT = ResourceLocation.parse(COMBAT_CATEGORY);
   private static final ResourceLocation MAGIC = ResourceLocation.parse(MAGIC_CATEGORY);
+  private static final ResourceLocation SUBCLASS_CREDIT =
+      ResourceLocation.parse("aeroscapes_reimagine:subclass_starter");
   static final String POINT_SOURCE = "aeroscapes_reimagine:skill_levels";
   private static final int CHECK_INTERVAL_TICKS = 20;
 
@@ -67,10 +69,14 @@ public final class ProgressionBridge {
     int combatStarter = characterClass != null && characterClass != CharacterClass.MAGE ? 1 : 0;
     TalentPoolMigration.split(player);
     TalentPoolMigration.splitProfessions(player, levels);
+    int subclassCredit = RaceIdentity.subclassCredit(player);
+    var skills = SkillsMod.getInstance();
+    if (skills.getPoints(player, COMBAT, SUBCLASS_CREDIT).orElse(0) != subclassCredit)
+      skills.setPoints(player, COMBAT, SUBCLASS_CREDIT, subclassCredit, true);
     setPoints(
         player,
         COMBAT_CATEGORY,
-        Math.min(COMBAT_POINT_CAP, combatStarter + combatPracticePoints(levels)));
+        Math.min(COMBAT_POINT_CAP - subclassCredit, combatStarter + combatPracticePoints(levels)));
     setPoints(player, MAGIC_CATEGORY, magicPoints(player, MagicPractice.credit(player)));
     RefundPenalty.sync(player, "combat");
     RefundPenalty.sync(player, "magic");

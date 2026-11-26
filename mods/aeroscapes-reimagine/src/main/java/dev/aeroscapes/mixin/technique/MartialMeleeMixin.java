@@ -2,6 +2,7 @@ package dev.aeroscapes.mixin.technique;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import dev.aeroscapes.equipment.combat.BerserkerTechniques;
 import dev.aeroscapes.equipment.combat.MartialTechniques;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;
@@ -26,13 +27,22 @@ abstract class MartialMeleeMixin {
     if ((Object) this instanceof ServerPlayer player && target instanceof LivingEntity living) {
       var technique = MartialTechniques.meleeTechnique(player, living);
       boolean dash = MartialTechniques.dashAttack(player);
-      if (technique != null || dash) {
+      boolean charged = !player.isAutoSpinAttack() && player.getAttackStrengthScale(0.5F) >= 1.0F;
+      boolean lastStand = charged && BerserkerTechniques.lastStandReady(player);
+      boolean stance = charged && BerserkerTechniques.stanceAttack(player);
+      if (technique != null || dash || lastStand || stance) {
         float multiplier = technique == null ? 1.0F : MartialTechniques.meleeMultiplier(technique);
         if (dash) multiplier += 0.35F;
+        if (lastStand) multiplier += BerserkerTechniques.LAST_STAND_DAMAGE_BONUS;
+        float vitality = living.getHealth() + living.getAbsorptionAmount();
         boolean landed = original.call(target, source, damage * multiplier);
         if (landed) {
           if (technique != null) MartialTechniques.meleeLanded(player, living, technique, true);
           if (dash) MartialTechniques.dashLanded(player);
+          if (living.getHealth() + living.getAbsorptionAmount() < vitality) {
+            if (lastStand) BerserkerTechniques.consumeLastStand(player);
+            if (stance) BerserkerTechniques.stanceLanded(player);
+          }
         }
         return landed;
       }

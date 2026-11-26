@@ -4,6 +4,7 @@ import static dev.aeroscapes.races.client.RaceVisuals.text;
 
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.CharacterSubclass;
 import dev.aeroscapes.races.ClassTraits;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
@@ -18,6 +19,26 @@ final class CharacterDetails {
 
   static MutableComponent className(CharacterClass characterClass) {
     return text("class." + characterClass.id() + ".name");
+  }
+
+  static MutableComponent subclassName(CharacterSubclass subclass) {
+    return RaceVisuals.text("subclass." + subclass.id() + ".name");
+  }
+
+  static MutableComponent subclassProfile(CharacterSubclass subclass) {
+    return subclassName(subclass)
+        .append("\n")
+        .append(
+            RaceVisuals.text(
+                "subclass_starter",
+                Component.translatable(
+                    "aeroscapes_reimagine.technique." + subclass.starter() + ".name")))
+        .append("\n")
+        .append(
+            Component.translatable(
+                "aeroscapes_reimagine.technique." + subclass.starter() + ".description"))
+        .append("\n")
+        .append(RaceVisuals.text("subclass." + subclass.id() + ".practice"));
   }
 
   static MutableComponent professionName(Profession profession) {

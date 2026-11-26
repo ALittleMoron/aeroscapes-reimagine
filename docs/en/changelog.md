@@ -6,6 +6,16 @@ status: available
 
 ## 0.10.0
 
+### 0.9.2
+
+- Warriors can choose Defender or Berserker, with a starting talent and extra practice for shield blocks or heavy-weapon hits.
+- Block with a shield and shove the attacker away. Learn the wider shove to push nearby enemies in front.
+- Last Stand rewards one fully charged melee hit after surviving a blow that drops you below 35% health.
+- Offensive Stance lets landed heavy hits speed up your next heavy swing while you take more damage.
+- Time a light-weapon parry against a frontal melee hit to open one quicker manual reply against the attacker.
+- Fixed a dedicated-server error when the Wetland Whimsy dagger deals bonus damage in retaliation.
+- Fixed a client startup crash when Better Combat loads the new melee timing hooks.
+
 ### 0.9.1
 
 - Prepare abilities in three wheels with eight slots each. Hold the wheel key and press 1, 2 or 3 to switch. Existing slots appear in wheel 1. Copies of the same ability share its cooldown.

@@ -308,6 +308,7 @@ public final class WorldgenRegression {
                   () -> {
                     ClassProgressionRegression.verify(level);
                     MartialClassRegression.verify(level);
+                    SwingTempoRegression.verify(level);
                     LOGGER.info(
                         "Class choice, starter talents, class traits and shared practice regression"
                             + " passed");

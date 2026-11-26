@@ -124,23 +124,31 @@ public final class ChangeClient extends Screen implements ChangeView {
     int bottom = y + h - 28;
     int contentBottom = bottom - 5;
     if (quote == null && session.identity() && previous == null) {
-      int row = bottom - 68;
-      for (RaceScreen.Page page :
-          List.of(RaceScreen.Page.RACE, RaceScreen.Page.CLASS, RaceScreen.Page.PROFESSION)) {
+      var profile = RaceClient.profile(minecraft.player.getUUID());
+      var pages =
+          profile != null && profile.subclass() != null
+              ? List.of(
+                  RaceScreen.Page.RACE,
+                  RaceScreen.Page.CLASS,
+                  RaceScreen.Page.SUBCLASS,
+                  RaceScreen.Page.PROFESSION)
+              : List.of(RaceScreen.Page.RACE, RaceScreen.Page.CLASS, RaceScreen.Page.PROFESSION);
+      int row = bottom - pages.size() * 21 - 5;
+      for (RaceScreen.Page page : pages) {
         var name = page.name().toLowerCase(java.util.Locale.ROOT);
         addRenderableWidget(
             Button.builder(
                     RaceVisuals.text(name + "_page"),
                     button -> {
-                      var profile = RaceClient.profile(minecraft.player.getUUID());
-                      if (profile != null)
-                        minecraft.setScreen(new RaceScreen(profile, session.id(), page, this));
+                      var current = RaceClient.profile(minecraft.player.getUUID());
+                      if (current != null)
+                        minecraft.setScreen(new RaceScreen(current, session.id(), page, this));
                     })
                 .bounds(x + 10, row, w - 20, 19)
                 .build());
         row += 21;
       }
-      contentBottom -= 69;
+      contentBottom -= pages.size() * 21 + 6;
     }
     addRenderableWidget(
         new FittingMultiLineTextWidget(

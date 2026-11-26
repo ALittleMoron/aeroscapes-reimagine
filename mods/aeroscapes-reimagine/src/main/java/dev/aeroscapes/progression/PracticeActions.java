@@ -1,8 +1,13 @@
 package dev.aeroscapes.progression;
 
+import dev.aeroscapes.equipment.combat.MartialTechniques;
+import dev.aeroscapes.equipment.combat.WeaponProficiency;
 import dev.aeroscapes.equipment.workshop.WorkshopManufacture;
 import dev.aeroscapes.magic.MagicPractice;
+import dev.aeroscapes.races.CharacterSubclass;
 import dev.aeroscapes.races.ProfessionEffects;
+import dev.aeroscapes.races.RaceIdentity;
+import dev.aeroscapes.races.RaceTraits;
 import harmonised.pmmo.api.APIUtils;
 import harmonised.pmmo.util.Reference;
 import net.minecraft.core.component.DataComponents;
@@ -51,6 +56,20 @@ public final class PracticeActions {
 
   private static void award(Entity actor, String skill, long amount) {
     if (personal(actor) && amount > 0) APIUtils.addXp(skill, (ServerPlayer) actor, amount);
+  }
+
+  private static void awardCombat(Entity actor, long amount, boolean shieldBlock) {
+    if (!personal(actor) || amount <= 0) return;
+    var player = (ServerPlayer) actor;
+    var subclass = RaceIdentity.subclass(player);
+    boolean affinity =
+        shieldBlock
+            ? subclass == CharacterSubclass.DEFENDER
+            : subclass == CharacterSubclass.BERSERKER
+                && MartialTechniques.isHeavyWeapon(WeaponProficiency.attackWeapon(player));
+    if (affinity)
+      RaceTraits.withSubclassPractice(player, () -> APIUtils.addXp("combat", player, amount));
+    else APIUtils.addXp("combat", player, amount);
   }
 
   private static void craft(PlayerEvent.ItemCraftedEvent event) {
@@ -134,7 +153,7 @@ public final class PracticeActions {
     if (event.getBlocked()
         && event.getBlockedDamage() > 0
         && event.getDamageSource().getEntity() instanceof LivingEntity)
-      award(event.getEntity(), "combat", Math.min(4, (long) Math.ceil(event.getBlockedDamage())));
+      awardCombat(event.getEntity(), Math.min(4, (long) Math.ceil(event.getBlockedDamage())), true);
   }
 
   public static void harvest(Entity actor) {
@@ -154,7 +173,7 @@ public final class PracticeActions {
         || event.getNewDamage() <= 0
         || event.getEntity().getType().is(Reference.NO_XP_DAMAGE_DEALT)) return;
     long xp = Math.min(12, (long) Math.ceil(event.getNewDamage()));
-    if (source.is(DamageTypes.PLAYER_ATTACK)) award(source.getEntity(), "combat", xp);
+    if (source.is(DamageTypes.PLAYER_ATTACK)) awardCombat(source.getEntity(), xp, false);
     else if (source.getDirectEntity() instanceof AbstractArrow || source.is(Reference.FROM_GUN))
       award(source.getEntity(), "archery", xp);
   }

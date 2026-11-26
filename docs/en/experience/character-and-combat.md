@@ -46,7 +46,7 @@ Open **Talents → Professions**. Mining contains pickaxes, Building contains ax
 
 Before training, a tool breaks suitable blocks more slowly. Some right-click actions, such as tilling or shearing, have a short pause before you can repeat them. A diamond pickaxe can still harvest obsidian. On stone, an iron pickaxe with its talent can work faster than a diamond pickaxe whose talent you have yet to learn. Applied enchantments, including Efficiency and Mending, keep their effects. The Smithing tree still determines which tools you can make.
 
-Combat, Magic and each profession tree have independent point balances. Melee, Ranged, Light Armor and Heavy Armor each grant their first Combat point at level 3 and another every five levels through level 47. The shared pool caps at 34 points, enough for the most expensive compatible set of talents. Two practice points cover a prerequisite and a first technique, such as Steady Aim and Slowing Shot. Magic starts with one point and earns more from accumulated practice independently of its level milestones.
+Combat, Magic and each profession tree have independent point balances. Melee, Ranged, Light Armor and Heavy Armor each grant their first Combat point at level 3 and another every five levels through level 47. The shared pool caps at 39 points, enough for the most expensive compatible set of talents. Two practice points cover a prerequisite and a first technique, such as Steady Aim and Slowing Shot. Magic starts with one point and earns more from accumulated practice independently of its level milestones.
 
 | Credited magic XP | Interval between points | Total magic-earned points at the end of the stage |
 | ----------------- | ----------------------: | ------------------------------------------------: |
@@ -70,6 +70,12 @@ Combat has four sections: Melee, Defense, Ranged and Light Weapons. They share o
 Open **Prepared abilities** from the inventory or Curios to assign, clear and rearrange learned spells, racial abilities, Amulet Step and items carrying Hex programs in three wheels with eight slots each, including during combat. Passive talents do not use these slots. Hold the middle mouse button, press 1, 2 or 3 to switch wheels, then release over a slot to select it. Tap the button to use it. A learned spell requires an equipped spellbook focus and keeps its costs and cooldown. Racial abilities and Amulet Step work without a focus. For a Hex program, keep its assigned cypher, trinket or artifact on your hotbar or in your offhand. The [magic guide](../magic/) covers controls, books, scroll study and writing Hex programs. Personal ranks and preparation survive death, relogging and dimension changes.
 
 Learn martial techniques in Combat and assign them to the same wheel. Activate Shield Brace with a raised shield to hold your ground and reduce shield wear. Counterattack rewards striking the enemy you blocked, and Heavy Strike can interrupt a skeleton or pillager preparing a shot. Use Slowing Shot to create space, Marking Shot to set up a stronger second arrow, or Quick Shot to fire under pressure. Dash covers up to six blocks and opens a stronger light-weapon hit; Disengage covers up to five blocks backwards and softens the next melee hit for a moment. Both stop at obstacles and gaps. Each has its own cooldown, so you can follow one with the other as soon as the first movement ends. Flank Strike rewards hitting from the side or rear.
+
+After learning **Shield Handling** in Defense, prepare **Shield Shove**. Block a hit, keep the shield in hand and use the technique while the attacker is still in front and within reach. **Wide Shield Shove** also pushes up to three nearby enemies in front. Counterattack and Shield Shove spend the same opening, so choose damage or room to move.
+
+In Melee, **Last Stand** activates when a hit you survive drops you from above 35% health to below it. Land a fully charged melee hit within four seconds for a damage bonus. The passive recovers after 12 seconds. With a heavy weapon, prepare **Offensive Stance** to take 25% more damage for five seconds. Landing a fully charged heavy hit during the stance speeds up one next heavy swing. A miss spends that opening.
+
+In Light Weapons, prepare **Duelist Parry** and activate it just before a frontal melee hit with a light weapon equipped. A successful parry reduces that hit and briefly speeds up one manual reply. Aim at the attacker and press attack. Arrows and strikes from behind do not open a reply.
 
 ## Making tools and equipment
 
@@ -185,6 +191,7 @@ An **Identity Seal** can appear in abandoned mineshaft chest minecarts, desert p
 
 - **Race.** Choose a different race and preview its appearance on your skin. Stand somewhere with room for the new body.
 - **Class.** Pick the new class and starter. Keep your learned talents or refund the old class branch in full. For a mage this branch includes the magic tree. If keeping your investment leaves no free point for the new starter, the starter works immediately and uses the next point you earn for its tree.
+- **Subclass.** A Warrior can change between Defender and Berserker. A class change also replaces its subclass. The preview lists affected talents. Paid talents in the departing subclass branch return their points in full.
 - **Profession.** Pick the new profession and starter. The previous profession’s starter choices return their points to its own tree. Other learned talents stay active. The starting credit moves to the new profession’s tree.
 
 You keep your practice XP, personal spell ranks, preparation wheels and current cooldowns. Assigned abilities whose requirements you lose become unavailable. Starter kits and the mage journal are issued only at creation.
@@ -195,11 +202,11 @@ Craft **Knotted Thread** from two pieces of string, a diamond and an ender pearl
 
 Returning a talent frees points in its own tree. Returning 20 points to one pool frees 18 for spending. Smaller returns carry tenths between uses in the same pool, so ten separate one-point returns cost one point in total. Each 3,000 new practice XP in that pool restores one lost point, even after reaching the normal point cap.
 
-### Planned subclasses
+### Subclasses
 
-Subclasses are planned later, before `1.0.0`. The first roster is defender and berserker for warriors, marksman and beastmaster for rangers, elementalist and necromancer for mages, and duelist and poisoner for rogues. Every character can develop any specialization, including advanced talents, with the same prerequisites and point costs regardless of starting class. Their benefits should work together, with active techniques that feel expressive while remaining within reasonable limits.
+A Warrior chooses **Defender** or **Berserker** in the character window. Defender starts with **Shield Shove** and earns 20% extra Combat XP from successful shield blocks. Berserker starts with **Last Stand** and earns 20% extra Combat XP from damaging hits with heavy weapons. These bonuses add to the Warrior's normal Combat affinity. The starting talent uses a separate grant. If you already learned it, your existing purchase carries over.
 
-Future subclass talents will use the point pool of their tree.
+An existing Warrior can choose on the first login after updating or select **Later** and return through the portrait button in the inventory. Characters of any class can learn the same combat talents at the usual costs and prerequisites. The other class pairs will become selectable as their starting abilities are ready.
 
 ## Combat and camera
 

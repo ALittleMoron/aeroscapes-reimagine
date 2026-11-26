@@ -44,6 +44,13 @@ public final class WeaponProficiency {
         : normal;
   }
 
+  public static ItemStack attackWeapon(Player player) {
+    ItemStack mainHand = player.getMainHandItem();
+    return ModList.get().isLoaded("bettercombat")
+        ? BetterCombat.selectedWeapon(player, mainHand)
+        : mainHand;
+  }
+
   static boolean supportsOffhandAttack(Player player) {
     return ModList.get().isLoaded("bettercombat") && BetterCombat.isDualWielding(player);
   }

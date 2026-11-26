@@ -17,7 +17,10 @@ public enum MartialTechnique {
   QUICK_SHOT("quick_shot", 100, 100),
   DISENGAGE("disengage", 30, 100),
   DASH("dash", 50, 100),
-  FLANK_STRIKE("flank_strike", 60, 120);
+  FLANK_STRIKE("flank_strike", 60, 120),
+  SHIELD_SHOVE("shield_shove", 0, 100),
+  OFFENSIVE_STANCE("offensive_stance", 100, 440),
+  DUELIST_PARRY("duelist_parry", 8, 100);
 
   public static final String GROUP = "aeroscapes_reimagine:martial_techniques";
   public static final float QUICK_DRAW_TIME = 0.45F;

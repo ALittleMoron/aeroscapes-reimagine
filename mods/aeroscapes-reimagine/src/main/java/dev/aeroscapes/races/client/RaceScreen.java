@@ -5,6 +5,7 @@ import static dev.aeroscapes.races.client.RaceVisuals.text;
 import com.mojang.realmsclient.RealmsMainScreen;
 import dev.aeroscapes.races.ChangeNetwork;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.CharacterSubclass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceNetwork;
@@ -34,11 +35,16 @@ final class RaceScreen extends Screen implements ChangeView {
   enum Page {
     RACE,
     CLASS,
+    SUBCLASS,
     PROFESSION,
     SUMMARY;
 
     static List<Page> remaining(RaceClient.Profile profile) {
       var pages = EnumSet.allOf(Page.class);
+      if (profile.complete()
+          || !profile.hasClass()
+          || profile.subclass() != null
+          || CharacterSubclass.choices(profile.characterClass()).isEmpty()) pages.remove(SUBCLASS);
       if (profile.race() != null) pages.remove(RACE);
       if (profile.hasClass()) pages.remove(CLASS);
       if (profile.hasProfession()) pages.remove(PROFESSION);
@@ -51,6 +57,7 @@ final class RaceScreen extends Screen implements ChangeView {
   private final RacePreview preview = new RacePreview();
   private final List<Page> pages;
   private final boolean sheet;
+  private final boolean optionalSubclass;
   private final boolean grantPending;
   private final boolean fromInventory;
   private final long changeSession;
@@ -59,6 +66,7 @@ final class RaceScreen extends Screen implements ChangeView {
   private boolean refundBranch;
   private Race race;
   private CharacterClass characterClass;
+  private CharacterSubclass chosenSubclass;
   private Profession profession;
   private final int[] styles = new int[Race.values().length];
   private final int[] tints = new int[Race.values().length];
@@ -76,6 +84,10 @@ final class RaceScreen extends Screen implements ChangeView {
     this(profile, fromInventory, 0, null, null);
   }
 
+  static RaceScreen chooseSubclass(RaceClient.Profile profile, boolean fromInventory) {
+    return new RaceScreen(profile, fromInventory, 0, Page.SUBCLASS, null);
+  }
+
   RaceScreen(RaceClient.Profile profile, long session, Page edit, Screen menu) {
     this(profile, false, session, edit, menu);
   }
@@ -90,6 +102,8 @@ final class RaceScreen extends Screen implements ChangeView {
     pages = edit == null ? Page.remaining(profile) : List.of(edit);
     page = pages.getFirst();
     sheet = profile.complete() && edit == null;
+    optionalSubclass = edit == Page.SUBCLASS && session == 0;
+    chosenSubclass = profile.subclass();
     grantPending = profile.grantPending() && page == Page.SUMMARY;
     race = profile.race() != null ? profile.race() : Race.HUMAN;
     if (race.validStyle(profile.style())) styles[race.ordinal()] = profile.style();
@@ -128,8 +142,13 @@ final class RaceScreen extends Screen implements ChangeView {
           CharacterDetails.className(characterClass)
               .append(" · ")
               .append(CharacterDetails.talent(starter(), "title"))
+              .append(
+                  subclass() == null
+                      ? Component.empty()
+                      : Component.literal("\n").append(CharacterDetails.subclassName(subclass())))
               .append("\n")
               .append(ChangeClient.text(refundBranch ? "refund_branch" : "keep_branch"));
+      case SUBCLASS -> CharacterDetails.subclassProfile(subclass());
       case PROFESSION ->
           CharacterDetails.professionName(profession)
               .append(" · ")
@@ -142,6 +161,19 @@ final class RaceScreen extends Screen implements ChangeView {
     return starters.getOrDefault(characterClass, characterClass.starters().getFirst());
   }
 
+  private CharacterSubclass subclass() {
+    if (sheet) return original.subclass();
+    if (chosenSubclass != null && chosenSubclass.mainClass() == characterClass)
+      return chosenSubclass;
+    var choices = CharacterSubclass.choices(characterClass);
+    return choices.isEmpty() ? null : choices.getFirst();
+  }
+
+  private String subclassId() {
+    var selected = subclass();
+    return selected == null ? "" : selected.id();
+  }
+
   private String professionStarter() {
     return professionStarters.getOrDefault(profession, profession.starters().getFirst());
   }
@@ -152,6 +184,7 @@ final class RaceScreen extends Screen implements ChangeView {
     return switch (page) {
       case RACE -> text("race_page");
       case CLASS -> text("class_page");
+      case SUBCLASS -> text("subclass_page");
       case PROFESSION -> text("profession_page");
       case SUMMARY -> text("review");
     };
@@ -164,6 +197,7 @@ final class RaceScreen extends Screen implements ChangeView {
     if (changeSession != 0) doc.append(ChangeClient.text("keep_kit")).append("\n\n");
     if (grantPending) doc.append(text("grant_pending")).append("\n\n");
     else if (retry) doc.append(text("retry")).append("\n\n");
+    if (page == Page.SUBCLASS) return doc.append(CharacterDetails.subclassProfile(subclass()));
     doc.append(CharacterDetails.identity(race, characterClass, profession))
         .append("\n")
         .append(text("starter", CharacterDetails.talent(starter(), "title")))
@@ -178,6 +212,7 @@ final class RaceScreen extends Screen implements ChangeView {
                 race, characterClass, professionStarter(), expanded, numbers))
         .append("\n\n")
         .append(CharacterDetails.practice(race, characterClass, profession, expanded));
+    if (subclass() != null) doc.append("\n\n").append(CharacterDetails.subclassProfile(subclass()));
     if (expanded || page == Page.PROFESSION || page == Page.SUMMARY)
       doc.append("\n\n")
           .append(CharacterDetails.professionProfile(profession, professionStarter(), expanded));
@@ -206,7 +241,7 @@ final class RaceScreen extends Screen implements ChangeView {
     int right = x + previewWidth + 10;
     int rightWidth = left + panelWidth - 10 - right;
     int bottom = top + panelHeight;
-    if (!sheet && changeSession == 0) {
+    if (!sheet && !optionalSubclass && changeSession == 0) {
       var exit =
           minecraft.isLocalServer()
               ? Component.translatable("menu.returnToMenu")
@@ -222,6 +257,7 @@ final class RaceScreen extends Screen implements ChangeView {
         switch (page) {
           case RACE -> raceControls(right, rightWidth);
           case CLASS -> classControls(right, rightWidth);
+          case SUBCLASS -> subclassControl(right, rightWidth, top + 33);
           case PROFESSION -> professionControls(right, rightWidth);
           case SUMMARY -> top + 32;
         };
@@ -268,13 +304,37 @@ final class RaceScreen extends Screen implements ChangeView {
           switch (page) {
             case RACE -> race != original.race();
             case CLASS -> characterClass != original.characterClass();
+            case SUBCLASS -> subclass() != original.subclass();
             case PROFESSION -> profession != original.profession();
             case SUMMARY -> false;
           };
       return;
     }
+    if (optionalSubclass) {
+      button(text("subclass_later"), x, footer, half, 18, this::deferSubclass).active =
+          waiting == 0;
+      button(
+                  text(waiting > 0 ? "saving" : "confirm"),
+                  x + half + 4,
+                  footer,
+                  half,
+                  18,
+                  this::advance)
+              .active =
+          waiting == 0;
+      return;
+    }
     if (sheet) {
-      button(CommonComponents.GUI_DONE, x, footer, panelWidth - 20, 18, this::closeSheet);
+      if (original.needsSubclass()) {
+        button(CommonComponents.GUI_DONE, x, footer, half, 18, this::closeSheet);
+        button(
+            text("subclass_choose"),
+            x + half + 4,
+            footer,
+            half,
+            18,
+            () -> RaceVisuals.openSubclassChoice(original, fromInventory));
+      } else button(CommonComponents.GUI_DONE, x, footer, panelWidth - 20, 18, this::closeSheet);
       return;
     }
     if (page != pages.getFirst())
@@ -283,6 +343,7 @@ final class RaceScreen extends Screen implements ChangeView {
         switch (page) {
           case RACE -> text("to_class");
           case CLASS -> text("to_profession");
+          case SUBCLASS -> text("confirm");
           case PROFESSION -> text("review");
           case SUMMARY ->
               text(waiting > 0 ? "saving" : grantPending || retry ? "try_again" : "confirm");
@@ -403,7 +464,11 @@ final class RaceScreen extends Screen implements ChangeView {
                   0,
                   starter(),
                   refundBranch,
-                  List.of());
+                  List.of(),
+                  subclassId());
+          case SUBCLASS ->
+              new ChangeNetwork.Request(
+                  changeSession, "subclass", subclassId(), 0, "", false, List.of());
           case PROFESSION ->
               new ChangeNetwork.Request(
                   changeSession,
@@ -430,14 +495,35 @@ final class RaceScreen extends Screen implements ChangeView {
             rebuildWidgets();
           });
     }
-    return starterControl(
-        right,
-        rightWidth,
-        characterClass.starters(),
-        starter(),
-        id -> CharacterDetails.talent(id, "title"),
-        id -> CharacterDetails.talent(id, "description"),
-        id -> starters.put(characterClass, id));
+    int content =
+        starterControl(
+            right,
+            rightWidth,
+            characterClass.starters(),
+            starter(),
+            id -> CharacterDetails.talent(id, "title"),
+            id -> CharacterDetails.talent(id, "description"),
+            id -> starters.put(characterClass, id));
+    return subclass() == null ? content : subclassControl(right, rightWidth, content);
+  }
+
+  private int subclassControl(int right, int rightWidth, int top) {
+    addRenderableWidget(
+        CycleButton.<CharacterSubclass>builder(CharacterDetails::subclassName)
+            .withValues(CharacterSubclass.choices(characterClass))
+            .withInitialValue(subclass())
+            .withTooltip(choice -> Tooltip.create(CharacterDetails.subclassProfile(choice)))
+            .create(
+                right,
+                top,
+                rightWidth,
+                18,
+                text("subclass_label"),
+                (button, value) -> {
+                  chosenSubclass = value;
+                  rebuildWidgets();
+                }));
+    return top + 24;
   }
 
   private int professionControls(int right, int rightWidth) {
@@ -503,11 +589,22 @@ final class RaceScreen extends Screen implements ChangeView {
 
   private void advance() {
     if (sheet || waiting > 0) return;
-    if (page == Page.SUMMARY) {
+    if (optionalSubclass) {
+      waiting = 100;
+      retry = false;
+      RaceNetwork.chooseSubclass(subclass());
+    } else if (page == Page.SUMMARY) {
       waiting = 100;
       retry = false;
       RaceNetwork.choose(
-          race, style(), tint(), characterClass, starter(), profession, professionStarter());
+          race,
+          style(),
+          tint(),
+          characterClass,
+          starter(),
+          profession,
+          professionStarter(),
+          subclassId());
     } else page = pages.get(pages.indexOf(page) + 1);
     rebuildWidgets();
   }
@@ -524,7 +621,10 @@ final class RaceScreen extends Screen implements ChangeView {
     if (changeSession != 0) return;
     if (minecraft == null || minecraft.player == null) return;
     var confirmed = RaceClient.profile(minecraft.player.getUUID());
-    if (!sheet && confirmed != null && confirmed.complete()) closeSheet();
+    if (!sheet
+        && confirmed != null
+        && confirmed.complete()
+        && (!optionalSubclass || confirmed.subclass() != null)) closeSheet();
     else if (waiting == 1) declined();
     else if (waiting > 1) waiting--;
   }
@@ -537,6 +637,8 @@ final class RaceScreen extends Screen implements ChangeView {
       minecraft.setScreen(changeMenu);
     } else if (sheet) {
       closeSheet();
+    } else if (optionalSubclass && waiting == 0) {
+      deferSubclass();
     } else if (waiting == 0 && page != pages.getFirst()) {
       page = pages.get(pages.indexOf(page) - 1);
       retry = false;
@@ -559,6 +661,11 @@ final class RaceScreen extends Screen implements ChangeView {
     else minecraft.setScreen(new JoinMultiplayerScreen(titleScreen));
   }
 
+  private void deferSubclass() {
+    RaceNetwork.deferSubclass();
+    closeSheet();
+  }
+
   private void closeSheet() {
     if (minecraft == null) return;
     minecraft.setScreen(
@@ -579,7 +686,7 @@ final class RaceScreen extends Screen implements ChangeView {
     graphics.hLine(left + panelWidth - 29, left + panelWidth - 7, bottom - 5, 0xffb99a6c);
     graphics.drawString(font, heading(), x, top + 12, GOLD, false);
     boolean pickingTint = tintPicker != null;
-    boolean tabsVisible = !pickingTint && page != Page.SUMMARY;
+    boolean tabsVisible = !pickingTint && page != Page.SUMMARY && page != Page.SUBCLASS;
     int previewY = top + (tabsVisible ? 51 : 30), previewBottom = bottom - 76;
     graphics.fillGradient(x, previewY, x + previewWidth, previewBottom, 0xff162333, 0xff263c52);
     graphics.renderOutline(x, previewY, previewWidth, previewBottom - previewY, 0xff3d536d);
@@ -616,6 +723,6 @@ final class RaceScreen extends Screen implements ChangeView {
 
   @Override
   public boolean isPauseScreen() {
-    return !sheet && changeSession == 0;
+    return !sheet && !optionalSubclass && changeSession == 0;
   }
 }

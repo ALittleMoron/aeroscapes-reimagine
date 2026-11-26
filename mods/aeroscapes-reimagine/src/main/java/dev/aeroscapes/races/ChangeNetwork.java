@@ -64,7 +64,7 @@ public final class ChangeNetwork {
   }
 
   public static void register(RegisterPayloadHandlersEvent event) {
-    var registrar = event.registrar("1");
+    var registrar = event.registrar("2");
     registrar.playToClient(Open.TYPE, Open.CODEC, (msg, ctx) -> ChangeClient.open(msg));
     registrar.playToClient(Reply.TYPE, Reply.CODEC, (msg, ctx) -> ChangeClient.reply(msg));
     registrar.playToServer(
@@ -96,7 +96,14 @@ public final class ChangeNetwork {
               request.target(),
               request.style(),
               request.starter(),
-              request.branch());
+              request.branch(),
+              request.subclassId());
+      if (request.kind().equals("class")
+          && !CharacterSubclass.validChoice(
+              CharacterClass.byId(request.target()), request.subclassId())) {
+        respond(player, session.id, "invalid");
+        return;
+      }
       var quote = CharacterChanges.preview(player, choice);
       if (quote == null) {
         respond(player, session.id, CharacterChanges.problem(player, choice));
@@ -111,7 +118,7 @@ public final class ChangeNetwork {
               "identity",
               switch (request.kind()) {
                 case "profession" -> RaceIdentity.profession(player).practiceSkill();
-                case "class" ->
+                case "class", "subclass" ->
                     ClassProgression.category(RaceIdentity.characterClass(player)).getPath();
                 default -> "";
               },
@@ -203,8 +210,20 @@ public final class ChangeNetwork {
       int style,
       String starter,
       boolean branch,
-      List<String> nodes)
+      List<String> nodes,
+      String subclassId)
       implements CustomPacketPayload {
+    public Request(
+        long id,
+        String kind,
+        String target,
+        int style,
+        String starter,
+        boolean branch,
+        List<String> nodes) {
+      this(id, kind, target, style, starter, branch, nodes, "");
+    }
+
     static final Type<Request> TYPE = ChangeNetwork.type("change_preview");
     static final StreamCodec<RegistryFriendlyByteBuf, Request> CODEC =
         StreamCodec.of(
@@ -216,6 +235,7 @@ public final class ChangeNetwork {
               buf.writeUtf(msg.starter(), 64);
               buf.writeBoolean(msg.branch());
               NODES.encode(buf, msg.nodes());
+              buf.writeUtf(msg.subclassId(), 16);
             },
             buf ->
                 new Request(
@@ -225,7 +245,8 @@ public final class ChangeNetwork {
                     buf.readVarInt(),
                     buf.readUtf(64),
                     buf.readBoolean(),
-                    NODES.decode(buf)));
+                    NODES.decode(buf),
+                    buf.readUtf(16)));
 
     @Override
     public Type<Request> type() {

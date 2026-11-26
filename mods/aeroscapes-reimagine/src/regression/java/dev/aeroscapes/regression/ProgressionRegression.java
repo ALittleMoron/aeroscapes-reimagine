@@ -81,6 +81,47 @@ final class ProgressionRegression {
       }
     }
     verifyLegacyAllocation(level, position);
+    verifyCombatPath(
+        level,
+        position,
+        "heavy_armor",
+        List.of("shield_handling", "shield_shove", "wide_shield_shove"));
+    verifyCombatPath(
+        level, position, "combat", List.of("melee_strike", "last_stand", "offensive_stance"));
+    verifyCombatPath(level, position, "combat", List.of("light_weapon_handling", "duelist_parry"));
+  }
+
+  private static void verifyCombatPath(
+      ServerLevel level, Vec3 position, String practice, List<String> path) {
+    try (var session =
+        TestShipPlayerSession.create(level, UUID.randomUUID(), "CombatPath", position, null)) {
+      var player = session.player;
+      listPlayer(level, player, true);
+      try {
+        var provider = SkillsMod.getInstance();
+        var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+        for (int index = 0; index < path.size(); index++) {
+          int practiceLevel = 3 + index * 5;
+          APIUtils.setLevel(practice, player, practiceLevel);
+          ProgressionBridge.sync(player);
+          String node = path.get(index);
+          if (index + 1 < path.size()) {
+            String next = path.get(index + 1);
+            provider.tryUnlockSkill(player, combat, next, false);
+            require(
+                provider.getSpentPoints(player, combat).orElseThrow() == index,
+                next + " requires " + node);
+          }
+          provider.tryUnlockSkill(player, combat, node, false);
+          require(
+              provider.getSkillState(player, combat, node).orElseThrow() == Skill.State.UNLOCKED
+                  && provider.getPointsLeft(player, combat).orElseThrow() == 0,
+              practice + " level " + practiceLevel + " funds " + node + " without class credit");
+        }
+      } finally {
+        listPlayer(level, player, false);
+      }
+    }
   }
 
   private static void verifyLegacyAllocation(ServerLevel level, Vec3 position) {

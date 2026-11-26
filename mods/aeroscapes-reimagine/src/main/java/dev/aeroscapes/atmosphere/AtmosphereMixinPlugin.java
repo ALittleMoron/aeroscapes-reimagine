@@ -152,6 +152,11 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
         || mixinClassName.endsWith("ReforgeAnvilReturnMixin")
         || mixinClassName.endsWith("ReforgeCatalystHintMixin")) {
       versions = Map.of("tieredneo", "1.2.0+1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("BetterCombatTempoServerMixin")
+        || mixinClassName.endsWith("BetterCombatTempoClientMixin")) {
+      versions = Map.of("bettercombat", "2.4.0+1.21.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("WetlandDaggerEffectsMixin")) {
+      versions = Map.of("wetland_whimsy", "2.1.0-1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.technique.")) {
       versions =
           Map.of(

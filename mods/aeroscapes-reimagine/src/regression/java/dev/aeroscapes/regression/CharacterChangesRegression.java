@@ -8,8 +8,10 @@ import dev.aeroscapes.magic.RacialAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.TalentRefunds;
 import dev.aeroscapes.races.CharacterChanges;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.CharacterSubclass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.ProfessionProgression;
 import dev.aeroscapes.races.Race;
@@ -26,12 +28,16 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.damagesource.DamageContainer;
+import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.puffish.skillsmod.SkillsMod;
 
@@ -75,7 +81,120 @@ final class CharacterChangesRegression {
       }
     }
     verifyBorrowedMastery(level, Vec3.atBottomCenterOf(spot));
+    verifySubclasses(level, Vec3.atBottomCenterOf(spot));
     LogUtils.getLogger().info("Character change regression passed");
+  }
+
+  private static void verifySubclasses(ServerLevel level, Vec3 position) {
+    var uuid = UUID.randomUUID();
+    var skills = SkillsMod.getInstance();
+    CompoundTag savedPlayer;
+    var talents = new CompoundTag();
+    try (var session =
+        TestShipPlayerSession.create(level, uuid, "WarriorSubclass", position, null)) {
+      var player = session.player;
+      ProgressionRegression.listPlayer(level, player, true);
+      try {
+        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
+        require(
+            RaceIdentity.choose(
+                player,
+                Race.HUMAN,
+                0,
+                CharacterClass.WARRIOR,
+                "quick_block",
+                Profession.BLACKSMITH,
+                "material_repair"),
+            "Create a pre-subclass Warrior");
+        require(
+            !RaceIdentity.awaitingChoice(player) && RaceIdentity.subclass(player) == null,
+            "A Warrior from an earlier save can continue before choosing");
+        require(
+            skills.getPointsLeft(player, COMBAT).orElseThrow() == 0,
+            "New Warrior has already spent the main-class point");
+        require(
+            RaceIdentity.chooseSubclass(player, CharacterSubclass.DEFENDER)
+                && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
+                && skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("shield_shove")
+                && !RaceIdentity.chooseSubclass(player, CharacterSubclass.BERSERKER),
+            "A free Defender starter does not consume a point or permit a second free choice");
+        require(
+            TalentRefunds.preview(player, "combat", List.of("shield_shove")).isEmpty(),
+            "Ordinary redistribution cannot recover points from a free starter");
+        verifySubclassPractice(level, player, false);
+
+        APIUtils.setLevel("combat", player, 20);
+        ProgressionBridge.sync(player);
+        skills.unlockSkill(player, COMBAT, "wide_shield_shove");
+        skills.unlockSkill(player, COMBAT, "last_stand");
+        var changeSubclass = new CharacterChanges.Selection("subclass", "berserker", 0, "", false);
+        var quote = CharacterChanges.preview(player, changeSubclass);
+        int balance = skills.getPointsLeft(player, COMBAT).orElseThrow();
+        require(
+            quote != null
+                && quote.returned() == 1
+                && quote.removed().equals(List.of("shield_shove", "wide_shield_shove")),
+            "The Defender refund excludes the gifted starter");
+        require(
+            CharacterChanges.change(player, changeSubclass, quote)
+                && RaceIdentity.subclass(player) == CharacterSubclass.BERSERKER
+                && skills.getPointsLeft(player, COMBAT).orElseThrow() == balance + 1
+                && RaceIdentity.subclassCredit(player) == 0,
+            "Switching preserves the paid Berserker starter and returns only one point");
+        verifySubclassPractice(level, player, true);
+        skills.exportPlayerData(player, talents);
+        savedPlayer = player.saveWithoutId(new CompoundTag());
+        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedOutEvent(player));
+      } finally {
+        ProgressionRegression.listPlayer(level, player, false);
+      }
+    }
+    try (var session =
+        TestShipPlayerSession.create(level, uuid, "WarriorSubclass", position, savedPlayer)) {
+      var player = session.player;
+      ProgressionRegression.listPlayer(level, player, true);
+      try {
+        skills.importPlayerData(player, talents);
+        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
+        require(
+            RaceIdentity.subclass(player) == CharacterSubclass.BERSERKER
+                && RaceIdentity.subclassCredit(player) == 0,
+            "Reload selected subclass and its grant");
+        var rogue = new CharacterChanges.Selection("class", "rogue", 0, "quick_recovery", false);
+        change(player, rogue);
+        require(
+            RaceIdentity.subclass(player) == null
+                && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("last_stand")
+                && !RaceIdentity.chooseSubclass(player, CharacterSubclass.DEFENDER),
+            "Changing class removes the former subclass and rejects out-of-class choices");
+      } finally {
+        ProgressionRegression.listPlayer(level, player, false);
+      }
+    }
+    LogUtils.getLogger().info("Warrior subclass grants, practice and migration regression passed");
+  }
+
+  private static void verifySubclassPractice(
+      ServerLevel level, ServerPlayer player, boolean berserker) {
+    var target = EntityType.RAVAGER.create(level);
+    require(target != null, "Subclass practice target exists");
+    long before = APIUtils.getXp("combat", player);
+    for (int hit = 0; hit < 5; hit++) {
+      var block =
+          new LivingShieldBlockEvent(
+              player, new DamageContainer(level.damageSources().mobAttack(target), 4), true);
+      NeoForge.EVENT_BUS.post(block);
+    }
+    require(
+        APIUtils.getXp("combat", player) - before == (berserker ? 24 : 28),
+        "Shield blocks add the Defender bonus exactly once");
+    player.setItemInHand(InteractionHand.MAIN_HAND, Items.MACE.getDefaultInstance());
+    before = APIUtils.getXp("combat", player);
+    require(target.hurt(level.damageSources().playerAttack(player), 12.0F), "Heavy melee damage");
+    require(
+        APIUtils.getXp("combat", player) - before >= (berserker ? 16 : 14),
+        "Heavy hits train the Berserker without losing normal Warrior practice");
+    player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
   }
 
   private static void verifyBorrowedMastery(ServerLevel level, Vec3 position) {

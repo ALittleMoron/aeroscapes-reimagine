@@ -120,8 +120,8 @@
     "root": true
   },
   "shield_handling": {
-    "x": 106,
-    "y": 114,
+    "x": 133,
+    "y": -16,
     "definition": "shield_handling",
     "root": true
   },
@@ -199,5 +199,30 @@
     "x": 11,
     "y": -13,
     "definition": "flank_strike"
+  },
+  "shield_shove": {
+    "x": 151,
+    "y": 49,
+    "definition": "shield_shove"
+  },
+  "wide_shield_shove": {
+    "x": 106,
+    "y": 114,
+    "definition": "wide_shield_shove"
+  },
+  "last_stand": {
+    "x": -15,
+    "y": -41,
+    "definition": "last_stand"
+  },
+  "offensive_stance": {
+    "x": 24,
+    "y": 24,
+    "definition": "offensive_stance"
+  },
+  "duelist_parry": {
+    "x": 124,
+    "y": 30,
+    "definition": "duelist_parry"
   }
 }

@@ -134,8 +134,14 @@ public final class CharacterPreviewTest {
   private static void checkReturningCharacters() {
     var fresh = new RaceClient.Profile(null, 0, Race.DEFAULT_TINT, null, "", null, "", false);
     require(
-        RaceScreen.Page.remaining(fresh).equals(List.of(RaceScreen.Page.values())),
-        "New characters choose all parts");
+        RaceScreen.Page.remaining(fresh)
+            .equals(
+                List.of(
+                    RaceScreen.Page.RACE,
+                    RaceScreen.Page.CLASS,
+                    RaceScreen.Page.PROFESSION,
+                    RaceScreen.Page.SUMMARY)),
+        "New characters choose their subclass alongside their class");
     var previousRace =
         new RaceClient.Profile(Race.GOBLIN, 2, Race.DEFAULT_TINT, null, "", null, "", false);
     require(
@@ -144,6 +150,20 @@ public final class CharacterPreviewTest {
                 List.of(
                     RaceScreen.Page.CLASS, RaceScreen.Page.PROFESSION, RaceScreen.Page.SUMMARY)),
         "0.6.3 retains race and appearance");
+    var returningWarrior =
+        new RaceClient.Profile(
+            Race.HUMAN,
+            0,
+            Race.DEFAULT_TINT,
+            CharacterClass.WARRIOR,
+            "quick_block",
+            Profession.FARMER,
+            "careful_tilling",
+            false);
+    require(
+        returningWarrior.needsSubclass()
+            && RaceScreen.Page.remaining(returningWarrior).equals(List.of(RaceScreen.Page.SUMMARY)),
+        "An existing Warrior keeps the normal character sheet while the first choice is optional");
     for (boolean pending : List.of(false, true)) {
       var previousClass =
           new RaceClient.Profile(

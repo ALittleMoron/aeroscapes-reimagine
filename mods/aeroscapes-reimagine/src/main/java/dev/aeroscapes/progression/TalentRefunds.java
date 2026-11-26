@@ -40,10 +40,13 @@ public final class TalentRefunds {
     var learned = Set.copyOf(skills.getUnlockedSkills(player, id).orElse(List.of()));
     if (!learned.containsAll(selected)) return Optional.empty();
 
+    var subclass = pool.equals("combat") ? RaceIdentity.subclass(player) : null;
+    String subclassStarter = subclass == null ? "" : subclass.starter();
+    if (selected.contains(subclassStarter)) return Optional.empty();
     var retained = new HashSet<>(learned);
     retained.removeAll(selected);
-    var removed = reachable(category.get(), learned);
-    removed.removeAll(reachable(category.get(), retained));
+    var removed = reachable(category.get(), learned, subclassStarter);
+    removed.removeAll(reachable(category.get(), retained, subclassStarter));
     // An unrelated orphan in an older save is only refundable when explicitly selected.
     removed.addAll(selected);
     boolean mage = RaceIdentity.characterClass(player) == CharacterClass.MAGE;
@@ -72,7 +75,8 @@ public final class TalentRefunds {
         new Quote(pool, removed.stream().sorted().toList(), spent, tenths / 10, tenths % 10));
   }
 
-  private static Set<String> reachable(CategoryConfig category, Set<String> allowed) {
+  private static Set<String> reachable(
+      CategoryConfig category, Set<String> allowed, String subclassStarter) {
     Set<String> reached = new HashSet<>();
     boolean changed;
     do {
@@ -82,7 +86,7 @@ public final class TalentRefunds {
         if (!allowed.contains(id)
             || reached.contains(id)
             || MagicTalents.missingPriorMastery(id, reached::contains) != null) continue;
-        if (!skill.isRoot()) {
+        if (!skill.isRoot() && !id.equals(subclassStarter)) {
           int required =
               category
                   .definitions()

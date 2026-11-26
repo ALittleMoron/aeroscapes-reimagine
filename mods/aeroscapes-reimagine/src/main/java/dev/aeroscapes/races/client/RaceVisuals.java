@@ -32,6 +32,7 @@ import net.neoforged.neoforge.client.event.ScreenEvent;
 public final class RaceVisuals {
   private static final String COMMAND = "aeroscapes_race";
   private static boolean openWhenReady;
+  private static boolean offeredSubclass;
   @Nullable private static RaceScreen firstChoice;
 
   private RaceVisuals() {}
@@ -60,8 +61,13 @@ public final class RaceVisuals {
     if (game.player == null || !choiceKnown() || !InventoryNavigation.openInventory()) return;
     openWhenReady = false;
     var profile = RaceClient.profile(game.player.getUUID());
-    if (profile != null)
-      game.setScreen(profile.complete() ? new RaceScreen(profile, true) : firstChoice);
+    if (profile == null) return;
+    game.setScreen(profile.complete() ? new RaceScreen(profile, true) : firstChoice);
+  }
+
+  static void openSubclassChoice(RaceClient.Profile profile, boolean fromInventory) {
+    offeredSubclass = true;
+    Minecraft.getInstance().setScreen(RaceScreen.chooseSubclass(profile, fromInventory));
   }
 
   private static boolean changingWorld(@Nullable Screen screen) {
@@ -134,7 +140,7 @@ public final class RaceVisuals {
   @SubscribeEvent
   public static void tick(ClientTickEvent.Post event) {
     var game = Minecraft.getInstance();
-    if (firstChoice == null && !openWhenReady || !ready(game) || changingWorld(game.screen)) return;
+    if (!ready(game) || changingWorld(game.screen)) return;
     var profile = RaceClient.profile(game.player.getUUID());
     if (firstChoice != null && profile != null && !profile.complete()) {
       openWhenReady = false;
@@ -142,9 +148,14 @@ public final class RaceVisuals {
       if (game.screen != firstChoice) game.setScreen(firstChoice);
     } else if (profile != null && profile.complete()) {
       firstChoice = null;
-      if (openWhenReady && game.screen == null) {
+      if (game.screen == null && openWhenReady) {
         openWhenReady = false;
         game.setScreen(new RaceScreen(profile, false));
+      } else if (game.screen == null
+          && !offeredSubclass
+          && profile.needsSubclass()
+          && !profile.subclassDeferred()) {
+        openSubclassChoice(profile, false);
       }
     }
   }
@@ -152,6 +163,7 @@ public final class RaceVisuals {
   @SubscribeEvent
   public static void logout(ClientPlayerNetworkEvent.LoggingOut event) {
     openWhenReady = false;
+    offeredSubclass = false;
     firstChoice = null;
   }
 

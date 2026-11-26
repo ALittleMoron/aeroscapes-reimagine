@@ -14,7 +14,9 @@ public enum CombatDirection {
       "combat_axe_handling",
       "heavy_weapon_handling",
       "polearm_handling",
-      "heavy_strike"),
+      "heavy_strike",
+      "last_stand",
+      "offensive_stance"),
   DEFENSE(
       "defense",
       "guard_armor",
@@ -26,7 +28,9 @@ public enum CombatDirection {
       "light_armor_handling",
       "heavy_armor_handling",
       "shield_brace",
-      "counterattack"),
+      "counterattack",
+      "shield_shove",
+      "wide_shield_shove"),
   RANGED(
       "ranged",
       "bow_stride",
@@ -46,7 +50,8 @@ public enum CombatDirection {
       "rogue_armor_training",
       "disengage",
       "dash",
-      "flank_strike");
+      "flank_strike",
+      "duelist_parry");
 
   private final String key;
   private final Set<String> nodes;

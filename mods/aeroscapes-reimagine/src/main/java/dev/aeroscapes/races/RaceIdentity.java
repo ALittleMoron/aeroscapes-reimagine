@@ -3,6 +3,7 @@ package dev.aeroscapes.races;
 import com.cyberday1.neoorigins.api.NeoOriginsAPI;
 import com.cyberday1.neoorigins.api.origin.SetOriginResult;
 import com.cyberday1.neoorigins.attachment.OriginAttachments;
+import dev.aeroscapes.progression.ProgressionBridge;
 import javax.annotation.Nullable;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -24,6 +25,8 @@ public final class RaceIdentity {
   private static final ResourceLocation LAYER = ResourceLocation.parse("neoorigins:origin");
   private static final String DATA = "aeroscapes_reimagine_racial_traits";
   private static final String TINT = "appearance_tint";
+  private static final String PENDING_SUBCLASS = "subclass_grant_pending";
+  private static final String DEFERRED_SUBCLASS = "subclass_deferred_for";
 
   private RaceIdentity() {}
 
@@ -99,6 +102,59 @@ public final class RaceIdentity {
         : null;
   }
 
+  @Nullable
+  public static CharacterSubclass subclass(Player player) {
+    return SubclassProgression.read(
+        player.getPersistentData().getCompound(DATA), characterClass(player));
+  }
+
+  public static int subclassCredit(ServerPlayer player) {
+    var subclass = subclass(player);
+    return subclass != null
+            && SubclassProgression.funded(player)
+            && ClassProgression.hasCombatTalent(player, subclass.starter())
+        ? 1
+        : 0;
+  }
+
+  @Nullable
+  static CharacterSubclass pendingSubclass(Player player) {
+    return CharacterSubclass.byId(
+        player.getPersistentData().getCompound(DATA).getString(PENDING_SUBCLASS));
+  }
+
+  static boolean subclassDeferred(Player player) {
+    var mainClass = characterClass(player);
+    return mainClass != null
+        && mainClass
+            .id()
+            .equals(player.getPersistentData().getCompound(DATA).getString(DEFERRED_SUBCLASS));
+  }
+
+  static void deferSubclass(ServerPlayer player) {
+    var mainClass = characterClass(player);
+    if (mainClass != null
+        && !CharacterSubclass.choices(mainClass).isEmpty()
+        && canChooseSubclass(player)) data(player).putString(DEFERRED_SUBCLASS, mainClass.id());
+  }
+
+  private static boolean canChooseSubclass(ServerPlayer player) {
+    return CharacterClass.creationAvailable()
+        && player.isAlive()
+        && !player.isSpectator()
+        && !awaitingChoice(player)
+        && subclass(player) == null;
+  }
+
+  public static boolean chooseSubclass(ServerPlayer player, CharacterSubclass chosen) {
+    if (!canChooseSubclass(player)
+        || chosen.mainClass() != characterClass(player)
+        || !SubclassProgression.available(player, chosen)
+        || !SubclassProgression.assign(player, chosen)) return false;
+    ProgressionBridge.sync(player);
+    return true;
+  }
+
   public static String starter(Player player) {
     return player.getPersistentData().getCompound(DATA).getString("starter");
   }
@@ -118,7 +174,9 @@ public final class RaceIdentity {
 
   public static boolean grantPending(Player player) {
     var identity = player.getPersistentData().getCompound(DATA);
-    return identity.getBoolean("grant_pending") || identity.getBoolean("profession_grant_pending");
+    return identity.getBoolean("grant_pending")
+        || identity.getBoolean("profession_grant_pending")
+        || identity.contains(PENDING_SUBCLASS, Tag.TAG_STRING);
   }
 
   public static boolean choose(
@@ -137,7 +195,8 @@ public final class RaceIdentity {
         chosenClass,
         starter,
         chosenProfession,
-        professionStarter);
+        professionStarter,
+        null);
   }
 
   static boolean choose(
@@ -148,7 +207,8 @@ public final class RaceIdentity {
       @Nullable CharacterClass chosenClass,
       String starter,
       @Nullable Profession chosenProfession,
-      String professionStarter) {
+      String professionStarter,
+      @Nullable CharacterSubclass chosenSubclass) {
     if (!CharacterClass.creationAvailable()
         || race == null
         || !race.canTint(style, tint)
@@ -157,6 +217,11 @@ public final class RaceIdentity {
         || !chosenClass.starters().contains(starter)
         || chosenProfession == null
         || !chosenProfession.starters().contains(professionStarter)) return false;
+    var pending = pendingSubclass(player);
+    if (pending != null && pending != chosenSubclass) return false;
+    if (chosenSubclass != null
+        && (chosenSubclass.mainClass() != chosenClass
+            || !SubclassProgression.available(player, chosenSubclass))) return false;
     Race previous = race(player);
     if (previous != null && (previous != race || style(player) != style || tint(player) != tint))
       return false;
@@ -188,6 +253,8 @@ public final class RaceIdentity {
       identity.putString("profession_starter", professionStarter);
       identity.putBoolean("profession_grant_pending", true);
     }
+    if (chosenSubclass != null && subclass(player) == null)
+      identity.putString(PENDING_SUBCLASS, chosenSubclass.id());
     return finishGrant(player);
   }
 
@@ -206,6 +273,12 @@ public final class RaceIdentity {
       identity.remove("profession_grant_pending");
       ProfessionProgression.deliverKit(player);
     }
+    var pending = pendingSubclass(player);
+    if (pending != null) {
+      if (subclass(player) == null && !SubclassProgression.assign(player, pending)) return false;
+      ProgressionBridge.sync(player);
+    }
+    identity.remove(PENDING_SUBCLASS);
     return true;
   }
 

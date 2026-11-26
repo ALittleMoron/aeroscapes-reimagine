@@ -77,7 +77,7 @@ public final class ClassProgression {
       giveJournal(player);
       RaceIdentity.data(player).putBoolean("journal_given", true);
     }
-    return true;
+    return SubclassProgression.restore(player);
   }
 
   private static void giveJournal(ServerPlayer player) {
