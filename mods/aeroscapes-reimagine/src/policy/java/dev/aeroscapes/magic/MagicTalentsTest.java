@@ -17,6 +17,12 @@ import java.util.Set;
 
 public final class MagicTalentsTest {
   private static final String ROOT = "magic_mastery_1";
+  private static final Set<String> EARLY_GROUPS =
+      Set.of(
+          "magic_destruction_power",
+          "magic_restoration_power",
+          "magic_recovery_1",
+          "magic_rhythm_1");
   private static final List<String> DIRECTIONS =
       List.of("destruction", "restoration", "conjuration", "transformation");
   private static final String SPELL_IDS =
@@ -73,7 +79,8 @@ public final class MagicTalentsTest {
       require(spell != null, "Runtime spell route: " + id);
       require(MagicTalents.nodes().contains(spell.node()), "Known spell node: " + id);
       roleCounts.merge(spell.direction(), 1, Integer::sum);
-      if (spell.node().equals(ROOT)) {
+      require(!spell.node().equals(ROOT), "Access alone does not grant any spell");
+      if (EARLY_GROUPS.contains(spell.node())) {
         starters++;
         require(spell.tier() == 1, "Introductory spells begin at first mastery");
       } else if (spell.node().startsWith("magic_spell_")) {
@@ -89,7 +96,7 @@ public final class MagicTalentsTest {
       }
     }
     require(actual.equals(expected), "Every pinned spell has exactly one route");
-    require(starters == 8 && bundles == 33 && individual == 70, "Selected acquisition groups");
+    require(starters == 6 && bundles == 31 && individual == 74, "Selected acquisition groups");
     require(
         roleCounts.equals(
             Map.of("destruction", 63, "restoration", 17, "conjuration", 16, "transformation", 15)),
@@ -129,7 +136,19 @@ public final class MagicTalentsTest {
     require(
         MagicTalents.cap("irons_spellbooks:firebolt", 0, Set.of(ROOT)) == 0,
         "Disabled or invalid native rank range");
-    require(MagicTalents.learned("irons_spellbooks:heal", Set.of(ROOT)), "Starter repertoire");
+    require(!MagicTalents.learned("irons_spellbooks:heal", Set.of(ROOT)), "Access only");
+    require(
+        MagicTalents.learned("irons_spellbooks:heal", Set.of(ROOT, "magic_restoration_power")),
+        "Restoration first group teaches Heal");
+    require(
+        MagicTalents.learned(
+                "irons_spellbooks:magic_missile", Set.of(ROOT, "magic_destruction_power"))
+            && MagicTalents.learned(
+                "irons_spellbooks:magic_missile", Set.of(ROOT, "magic_spell_magic_missile")),
+        "Both Destruction study routes use rank-one access");
+    require(
+        MagicTalents.learned("irons_spellbooks:arcane_shackle", Set.of(ROOT, "magic_recovery_1")),
+        "First Summoning group teaches Arcane Shackle");
     require(
         !MagicTalents.learned("irons_spellbooks:greater_heal", Set.of(ROOT)),
         "Full healing remains a separate advanced route");
@@ -204,7 +223,6 @@ public final class MagicTalentsTest {
     Set<String> dataNodes = new HashSet<>();
     Set<String> roots = new HashSet<>();
     for (var entry : skills.entrySet()) {
-      if (!entry.getKey().startsWith("magic_")) continue;
       dataNodes.add(entry.getKey());
       var node = entry.getValue().getAsJsonObject();
       if (node.has("root") && node.get("root").getAsBoolean()) roots.add(entry.getKey());
@@ -228,7 +246,6 @@ public final class MagicTalentsTest {
         var connection = element.getAsJsonArray();
         String parent = connection.get(0).getAsString();
         String child = connection.get(1).getAsString();
-        if (!parent.startsWith("magic_") && !child.startsWith("magic_")) continue;
         require(dataNodes.contains(parent) && dataNodes.contains(child), "No dangling magic edges");
         children.computeIfAbsent(parent, unused -> new ArrayList<>()).add(child);
         parents.computeIfAbsent(child, unused -> new ArrayList<>()).add(parent);
@@ -237,9 +254,10 @@ public final class MagicTalentsTest {
     Set<String> reachable = new HashSet<>(reachable(ROOT, children));
     reachable.add(ROOT);
     require(reachable.equals(dataNodes), "Every magic talent is reachable");
-    require(
-        children.get(ROOT).size() == DIRECTIONS.size(),
-        "The first mastery opens one path per functional direction");
+    var accessChoices = new HashSet<>(EARLY_GROUPS);
+    accessChoices.add("caster_armor_handling");
+    accessChoices.add("magic_spell_magic_missile");
+    require(new HashSet<>(children.get(ROOT)).equals(accessChoices), "Visible Magic Access routes");
     for (String id : dataNodes) {
       require(!reachable(id, children).stream().anyMatch(id::equals), "Acyclic talent progression");
     }
@@ -366,22 +384,26 @@ public final class MagicTalentsTest {
     for (String locale : List.of("en_us", "ru_ru")) {
       JsonObject language =
           resource("/assets/aeroscapes_reimagine_magic_tree_translations/lang/" + locale + ".json");
+      var progression =
+          resource(
+              "/assets/aeroscapes_reimagine_progression_translations/lang/" + locale + ".json");
       JsonObject nativeLanguage = resource("/assets/irons_spellbooks/lang/" + locale + ".json");
       for (String id : nodes) {
+        var ownedLanguage = id.equals("caster_armor_handling") ? progression : language;
         String key =
             definitions
                 .getAsJsonObject(id)
                 .getAsJsonObject("description")
                 .get("translate")
                 .getAsString();
-        var description = language.has(key) ? language.get(key) : nativeLanguage.get(key);
+        var description = ownedLanguage.has(key) ? ownedLanguage.get(key) : nativeLanguage.get(key);
         require(
             description != null && !description.getAsString().isBlank(), "Localized talent " + key);
         String title =
             definitions.getAsJsonObject(id).getAsJsonObject("title").get("translate").getAsString();
         if (!title.startsWith("spell.irons_spellbooks.")) {
           require(
-              language.has(title) && !language.get(title).getAsString().isBlank(),
+              ownedLanguage.has(title) && !ownedLanguage.get(title).getAsString().isBlank(),
               "Localized mastery and passive names");
         }
       }

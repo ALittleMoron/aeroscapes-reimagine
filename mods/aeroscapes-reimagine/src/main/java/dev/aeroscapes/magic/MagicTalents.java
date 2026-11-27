@@ -17,6 +17,10 @@ import java.util.function.Predicate;
 /** The shared spell routes, permanent rank ceilings and functional talent effects. */
 public final class MagicTalents {
   private static final String ROOT = "magic_mastery_1";
+  private static final Map<String, String> FIRST_GROUPS =
+      Map.of(
+          "irons_spellbooks:magic_missile", "magic_destruction_power",
+          "irons_spellbooks:arcane_shackle", "magic_recovery_1");
   private static final Set<String> DIRECTIONS =
       Set.of("destruction", "restoration", "conjuration", "transformation");
   private static final Map<String, List<String>> PRIOR_MASTERIES = priorMasteries();
@@ -126,8 +130,9 @@ public final class MagicTalents {
 
   public static boolean learned(String id, Set<String> skills) {
     Spell definition = spell(id);
+    String firstGroup = FIRST_GROUPS.get(id);
     return definition != null
-        && skills.contains(definition.node())
+        && (skills.contains(definition.node()) || firstGroup != null && skills.contains(firstGroup))
         && mastery(skills, definition.direction()) >= definition.tier();
   }
 
@@ -156,7 +161,7 @@ public final class MagicTalents {
         JsonObject entry = object(element, "node");
         String id = string(entry, "id");
         String direction = string(entry, "direction");
-        if (!id.matches("magic_[a-z0-9_]+")
+        if ((!id.matches("magic_[a-z0-9_]+") && !id.equals("caster_armor_handling"))
             || (!direction.isEmpty() && !DIRECTIONS.contains(direction))) {
           throw new IOException("Invalid magic node identity: " + id);
         }

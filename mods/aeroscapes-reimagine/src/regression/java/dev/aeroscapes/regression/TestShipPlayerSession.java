@@ -12,7 +12,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import javax.annotation.Nullable;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.Holder;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.Connection;
+import net.minecraft.network.ConnectionProtocol;
 import net.minecraft.network.PacketSendListener;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.contents.TranslatableContents;
@@ -20,23 +25,31 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.PacketFlow;
 import net.minecraft.network.protocol.common.ClientboundCustomPayloadPacket;
 import net.minecraft.network.protocol.common.ClientboundKeepAlivePacket;
+import net.minecraft.network.protocol.common.ServerboundCustomPayloadPacket;
 import net.minecraft.network.protocol.common.ServerboundKeepAlivePacket;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
 import net.minecraft.network.protocol.game.ClientboundBundlePacket;
+import net.minecraft.network.protocol.game.ClientboundLevelParticlesPacket;
 import net.minecraft.network.protocol.game.ClientboundPlayerPositionPacket;
+import net.minecraft.network.protocol.game.ClientboundRemoveMobEffectPacket;
 import net.minecraft.network.protocol.game.ClientboundSystemChatPacket;
+import net.minecraft.network.protocol.game.ClientboundUpdateMobEffectPacket;
 import net.minecraft.network.protocol.game.ServerboundAcceptTeleportationPacket;
 import net.minecraft.network.protocol.game.ServerboundMovePlayerPacket;
+import net.minecraft.network.protocol.game.ServerboundPlayerActionPacket;
+import net.minecraft.network.protocol.game.ServerboundSetCarriedItemPacket;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ClientInformation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.network.CommonListenerCookie;
 import net.minecraft.server.network.ServerGamePacketListenerImpl;
+import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.network.connection.ConnectionType;
 import net.neoforged.neoforge.network.registration.ChannelAttributes;
+import net.neoforged.neoforge.network.registration.NetworkChannel;
 import net.neoforged.neoforge.network.registration.NetworkPayloadSetup;
 
 /** A registered server-side player with bounded packet capture; no client or socket. */
@@ -56,6 +69,21 @@ final class TestShipPlayerSession implements AutoCloseable {
     this.connection = connection;
     this.listener = listener;
     this.channel = channel;
+  }
+
+  int volleyLaunchPackets() {
+    return connection.volleyLaunchPackets;
+  }
+
+  int volleyTrailPackets() {
+    return connection.volleyTrailPackets;
+  }
+
+  @Nullable
+  ClientboundLevelParticlesPacket takeSmokeParticles() {
+    var packet = connection.smokeParticles;
+    connection.smokeParticles = null;
+    return packet;
   }
 
   static TestShipPlayerSession create(
@@ -116,6 +144,40 @@ final class TestShipPlayerSession implements AutoCloseable {
     return footwork.travel();
   }
 
+  boolean hasFootwork() {
+    return connection.footwork != null;
+  }
+
+  void receivePlayPayload(CustomPacketPayload payload, String version) {
+    var id = payload.type().id();
+    ChannelAttributes.setPayloadSetup(
+        connection,
+        new NetworkPayloadSetup(
+            Map.of(ConnectionProtocol.PLAY, Map.of(id, new NetworkChannel(id, version)))));
+    listener.handleCustomPayload(new ServerboundCustomPayloadPacket(payload));
+  }
+
+  void releaseUsingItem() {
+    receivePlayerAction(ServerboundPlayerActionPacket.Action.RELEASE_USE_ITEM);
+  }
+
+  void swapHands() {
+    receivePlayerAction(ServerboundPlayerActionPacket.Action.SWAP_ITEM_WITH_OFFHAND);
+  }
+
+  private void receivePlayerAction(ServerboundPlayerActionPacket.Action action) {
+    listener.handlePlayerAction(
+        new ServerboundPlayerActionPacket(action, BlockPos.ZERO, Direction.DOWN));
+  }
+
+  void selectHotbarSlot(int slot) {
+    listener.handleSetCarriedItem(new ServerboundSetCarriedItemPacket(slot));
+  }
+
+  void look(float yaw, float pitch) {
+    listener.handleMovePlayer(new ServerboundMovePlayerPacket.Rot(yaw, pitch, player.onGround()));
+  }
+
   void moveOnGround(Vec3 position) {
     listener.handleMovePlayer(
         new ServerboundMovePlayerPacket.Pos(position.x, position.y, position.z, true));
@@ -131,6 +193,27 @@ final class TestShipPlayerSession implements AutoCloseable {
 
   AbilityNetwork.Snapshot abilities() {
     return java.util.Objects.requireNonNull(connection.abilities, "Missing ability snapshot");
+  }
+
+  @Nullable
+  TranslatableContents takeStudyProgress() {
+    var progress = connection.studyProgress;
+    connection.studyProgress = null;
+    return progress;
+  }
+
+  @Nullable
+  AbilityNetwork.StudyCompleted takeStudyCompleted() {
+    var result = connection.studyCompleted;
+    connection.studyCompleted = null;
+    return result;
+  }
+
+  @Nullable
+  String takeAbilityReason() {
+    String reason = connection.abilityReason;
+    connection.abilityReason = null;
+    return reason;
   }
 
   int jellyShelterHints() {
@@ -149,6 +232,12 @@ final class TestShipPlayerSession implements AutoCloseable {
     connection.lastPayload = null;
     require(type.isInstance(payload), "Missing outgoing " + type.getSimpleName());
     return type.cast(payload);
+  }
+
+  Map<Holder<MobEffect>, Packet<?>> takeEffectChanges() {
+    var changes = Map.copyOf(connection.effectChanges);
+    connection.effectChanges.clear();
+    return changes;
   }
 
   boolean receivedShipParts(TestShipNetwork.Check check) {
@@ -212,10 +301,18 @@ final class TestShipPlayerSession implements AutoCloseable {
   }
 
   private static final class RecordingConnection extends Connection {
+    private static final String ABILITY_REASON = "aeroscapes_reimagine.abilities.reason.";
     @Nullable private Component hexReport;
+    @Nullable private String abilityReason;
     private int jellyShelterHints;
+    private int volleyLaunchPackets;
+    private int volleyTrailPackets;
+    @Nullable private ClientboundLevelParticlesPacket smokeParticles;
     @Nullable private CustomPacketPayload lastPayload;
+    private final Map<Holder<MobEffect>, Packet<?>> effectChanges = new HashMap<>();
     @Nullable private AbilityNetwork.Snapshot abilities;
+    @Nullable private TranslatableContents studyProgress;
+    @Nullable private AbilityNetwork.StudyCompleted studyCompleted;
     private final Map<
             String, net.puffish.skillsmod.server.network.packets.out.PointsUpdateOutPacket>
         talentPoints = new HashMap<>();
@@ -236,6 +333,13 @@ final class TestShipPlayerSession implements AutoCloseable {
 
     @Override
     public void send(Packet<?> packet, @Nullable PacketSendListener listener, boolean flush) {
+      if (packet instanceof ClientboundLevelParticlesPacket particles) {
+        if (particles.getParticle() == ParticleTypes.CRIT && particles.getCount() == 5)
+          volleyLaunchPackets++;
+        if (particles.getParticle() == ParticleTypes.CRIT && particles.getCount() == 3)
+          volleyTrailPackets++;
+        if (particles.getParticle() == ParticleTypes.LARGE_SMOKE) smokeParticles = particles;
+      }
       if (packet instanceof ClientboundSystemChatPacket chat
           && chat.content().getContents() instanceof TranslatableContents text
           && text.getKey().startsWith("aeroscapes_reimagine.hex_quality."))
@@ -245,11 +349,28 @@ final class TestShipPlayerSession implements AutoCloseable {
           && chat.content().getContents() instanceof TranslatableContents text
           && text.getKey().equals("message.aeroscapes_reimagine.cloud_jelly.shelter"))
         jellyShelterHints++;
+      if (packet instanceof ClientboundSystemChatPacket chat
+          && chat.overlay()
+          && chat.content().getContents() instanceof TranslatableContents text
+          && text.getKey().startsWith(ABILITY_REASON))
+        abilityReason = text.getKey().substring(ABILITY_REASON.length());
+      if (packet instanceof ClientboundSystemChatPacket chat
+          && chat.overlay()
+          && chat.content().getContents() instanceof TranslatableContents text
+          && text.getKey().equals("aeroscapes_reimagine.abilities.study.notice.progress"))
+        studyProgress = text;
       if (packet instanceof ClientboundCustomPayloadPacket message) lastPayload = message.payload();
+      if (packet instanceof ClientboundUpdateMobEffectPacket effect)
+        effectChanges.put(effect.getEffect(), effect);
+      if (packet instanceof ClientboundRemoveMobEffectPacket effect)
+        effectChanges.put(effect.effect(), effect);
       if (packet instanceof ClientboundPlayerPositionPacket position) teleport = position;
       if (packet instanceof ClientboundKeepAlivePacket challenge) keepAlive = challenge.getId();
       if (packet instanceof ClientboundCustomPayloadPacket message
           && message.payload() instanceof AbilityNetwork.Snapshot snapshot) abilities = snapshot;
+      if (packet instanceof ClientboundCustomPayloadPacket message
+          && message.payload() instanceof AbilityNetwork.StudyCompleted result)
+        studyCompleted = result;
       if (packet instanceof ClientboundCustomPayloadPacket message
           && message.payload() instanceof AbilityNetwork.Footwork cue) footwork = cue;
       if (packet instanceof ClientboundCustomPayloadPacket payload

@@ -10,7 +10,7 @@ final class ChangeSaveUpgrade {
   private ChangeSaveUpgrade() {}
 
   static void changeRace(ServerPlayer player) {
-    var choice = new CharacterChanges.Selection("race", "elf", 2, "", false);
+    var choice = new CharacterChanges.Selection("race", "elf", 2, "", "");
     var quote = CharacterChanges.preview(player, choice);
     if (quote == null || !CharacterChanges.change(player, choice, quote))
       throw new IllegalStateException("Cannot change the confirmed 0.6.5 character");

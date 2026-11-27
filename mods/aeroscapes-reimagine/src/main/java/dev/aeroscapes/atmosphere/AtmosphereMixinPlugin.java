@@ -43,6 +43,10 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
           Map.of("overgeared", "1.21.1-1.7.1", "toms_storage", "2.4.2", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.workshop.")) {
       versions = Map.of("overgeared", "1.21.1-1.7.1", "neoforge", "21.1.244");
+    } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.inventory.CarryOnRope")) {
+      versions =
+          Map.of(
+              "carryon", "2.2.6", "simulated", "1.3.2", "create", "6.0.10", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.inventory.")) {
       versions = Map.of("curios", "9.5.1+1.21.1", "neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("AquaticArmorPlayerMixin")) {
@@ -467,6 +471,8 @@ public final class AtmosphereMixinPlugin implements IMixinConfigPlugin {
       versions = Map.of("pmmo", "2.10.47", "puffish_skills", "0.19.2", "neoforge", "21.1.244");
     } else if (mixinClassName.startsWith("dev.aeroscapes.mixin.progression.")) {
       versions = Map.of("pmmo", "2.10.47", "neoforge", "21.1.244");
+    } else if (mixinClassName.endsWith("FirstPersonBodyMixin")) {
+      versions = Map.of("neoforge", "21.1.244");
     } else if (mixinClassName.endsWith("PrecipitationParticleMixin")) {
       versions = Map.of("particlerain", "4.0.2", "sable", "2.0.6");
     } else {

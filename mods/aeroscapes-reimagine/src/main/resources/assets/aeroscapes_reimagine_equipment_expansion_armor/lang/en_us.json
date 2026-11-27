@@ -1,4 +1,6 @@
 {
+  "tooltip.aeroscapes_reimagine.armor.caster": "Light caster armor · +1% movement speed per trained piece",
+  "tooltip.aeroscapes_reimagine.armor.caster_heavy": "Heavy caster armor",
   "aeroscapes_reimagine:armor_head_poor_with_exposure.label": "Poor · Exposed",
   "aeroscapes_reimagine.equipment.armor_head_poor_with_exposure.description": "Projectile damage taken +8%.",
   "aeroscapes_reimagine:armor_head_fine_with_visor.label": "Fine · Visor",

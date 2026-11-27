@@ -1,37 +1,45 @@
 package dev.aeroscapes.races.client;
 
+import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.progression.client.AtlasProgressionWidgets;
 import dev.aeroscapes.races.ChangeNetwork;
 import java.util.List;
-import java.util.Optional;
+import java.util.Locale;
+import java.util.function.Function;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.FittingMultiLineTextWidget;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.network.PacketDistributor;
-import net.puffish.skillsmod.client.SkillsClientMod;
+import org.jetbrains.annotations.Nullable;
 
 public final class ChangeClient extends Screen implements ChangeView {
+  private static int requestSequence;
   private final ChangeNetwork.Open session;
-  private final Screen previous;
-  private final ChangeNetwork.Reply quote;
-  private final Component description;
+  @Nullable private final Screen previous;
+  private final int sequence;
+  @Nullable private final ChangeNetwork.Reply quote;
+  private final Component choice;
   private boolean submitted;
 
   private ChangeClient(
       ChangeNetwork.Open session,
-      Screen previous,
-      ChangeNetwork.Reply quote,
-      Component description) {
+      @Nullable Screen previous,
+      int sequence,
+      @Nullable ChangeNetwork.Reply quote,
+      Component choice) {
     super(text(session.identity() ? "identity" : "refund"));
     this.session = session;
     this.previous = previous;
+    this.sequence = sequence;
     this.quote = quote;
-    this.description = description;
+    this.choice = choice;
   }
 
   public static MutableComponent text(String key, Object... arguments) {
@@ -43,76 +51,114 @@ public final class ChangeClient extends Screen implements ChangeView {
     if (game.player == null || game.level == null || !game.player.isAlive()) return;
     var profile = RaceClient.profile(game.player.getUUID());
     if (profile == null || !profile.complete()) return;
-    game.setScreen(
-        new ChangeClient(session, null, null, text(session.identity() ? "choose" : "loading")));
-    if (!session.identity()) SkillsClientMod.getInstance().openScreen(Optional.empty());
+    if (session.identity()) {
+      game.setScreen(new ChangeClient(session, null, 0, null, Component.empty()));
+    } else {
+      request(session, null, ChangeNetwork.Request.reset(session.id()), Component.empty());
+    }
   }
 
-  public static long pendingTree() {
-    var screen = Minecraft.getInstance().screen;
-    return screen instanceof ChangeClient menu
-            && !menu.session.identity()
-            && menu.quote == null
-            && menu.previous == null
-        ? menu.changeSession()
-        : 0;
+  public static void preview(Screen editor, ChangeNetwork.Request request, Component choice) {
+    if (!(editor instanceof ChangeView view) || view.changeSession() != request.id()) return;
+    request(new ChangeNetwork.Open(request.id(), true), editor, request, choice);
   }
 
-  public static void preview(
-      Screen editor, ChangeNetwork.Request request, boolean identity, Component choice) {
+  private static void request(
+      ChangeNetwork.Open session,
+      @Nullable Screen editor,
+      ChangeNetwork.Request request,
+      Component choice) {
+    if (++requestSequence == 0) requestSequence++;
     Minecraft.getInstance()
-        .setScreen(
-            new ChangeClient(new ChangeNetwork.Open(request.id(), identity), editor, null, choice));
-    PacketDistributor.sendToServer(request);
+        .setScreen(new ChangeClient(session, editor, requestSequence, null, choice));
+    PacketDistributor.sendToServer(request.numbered(requestSequence));
   }
 
   public static void reply(ChangeNetwork.Reply reply) {
     var game = Minecraft.getInstance();
-    if (!(game.screen instanceof ChangeView view) || view.changeSession() != reply.id()) return;
-    if (reply.status().equals("done") || reply.status().equals("expired")) {
+    if (!(game.screen instanceof ChangeClient screen) || screen.changeSession() != reply.id())
+      return;
+    boolean waiting =
+        screen.quote == null && screen.sequence != 0 && screen.sequence == reply.sequence();
+    boolean confirmed =
+        screen.submitted && screen.quote != null && screen.quote.ticket() == reply.ticket();
+    if (confirmed || waiting && reply.status().equals("expired")) {
       game.setScreen(null);
       if (game.player != null) game.player.displayClientMessage(text(reply.status()), false);
       return;
     }
-    if (!(game.screen instanceof ChangeClient waiting)
-        || waiting.previous == null
-        || waiting.quote != null) return;
-    var identity = waiting.session.identity();
-    MutableComponent body;
-    if (reply.ticket() == 0) {
-      body = text("error." + reply.status());
-    } else {
-      body = Component.empty();
-      if (identity) body.append(waiting.description).append("\n\n");
-      body.append(
-          identity
-              ? text("seal_cost", reply.freed(), reply.cost())
-              : text(
-                  "refund_cost",
-                  reply.freed(),
-                  reply.cost(),
-                  reply.freed() - reply.cost(),
-                  reply.remainder()));
-      if (identity && reply.remainder() != 0) body.append("\n").append(text("advance"));
-      if (!reply.nodes().isEmpty()) {
-        body.append("\n\n").append(text("affected"));
-        for (String node : reply.nodes())
-          body.append("\n")
-              .append(
-                  Component.translatable(
-                      "puffish_skills.aeroscapes_reimagine."
-                          + reply.pool()
-                          + "."
-                          + node
-                          + ".title"));
-      }
+    if (waiting) {
+      game.setScreen(
+          new ChangeClient(screen.session, screen.previous, screen.sequence, reply, screen.choice));
     }
-    game.setScreen(new ChangeClient(waiting.session, waiting.previous, reply, body));
   }
 
   @Override
   public long changeSession() {
     return session.id();
+  }
+
+  private Component description() {
+    if (sequence == 0) return text("choose");
+    if (quote == null) return text("calculating");
+    if (quote.ticket() == 0) return text("error." + quote.status());
+    var body = Component.empty();
+    if (session.identity()) body.append(choice).append("\n\n");
+    body.append(text(session.identity() ? "reset_seal" : "reset_thread"))
+        .append("\n\n")
+        .append(text("reset_preserved"))
+        .append("\n\n")
+        .append(text("reset_banks"))
+        .append("\n")
+        .append(text("reset_penalty"));
+    for (var bank : quote.pools()) {
+      body.append("\n")
+          .append(
+              text(
+                  "reset_bank",
+                  poolName(bank.pool()),
+                  signed(bank.before()),
+                  signed(bank.after()),
+                  bank.paid(),
+                  bank.loss(),
+                  bank.remainder()));
+    }
+    append(body, "reset_granted", quote.addedGrants(), ChangeClient::grantName);
+    append(body, "reset_retired", quote.retiredGrants(), ChangeClient::grantName);
+    append(body, "reset_spells_granted", quote.addedSpells(), AbilityClient::name);
+    append(body, "reset_spells_retired", quote.retiredSpells(), AbilityClient::name);
+    append(body, "reset_disabled", quote.disabled(), AbilityClient::name);
+    append(body, "reset_armor", quote.wornGear(), ChangeClient::gearName);
+    return body;
+  }
+
+  private static <T> void append(
+      MutableComponent body, String heading, List<T> values, Function<T, Component> label) {
+    if (values.isEmpty()) return;
+    body.append("\n\n").append(text(heading));
+    for (var value : values) body.append("\n").append(label.apply(value));
+  }
+
+  private static String signed(int points) {
+    return points > 0 ? "+" + points : Integer.toString(points);
+  }
+
+  private static Component poolName(String pool) {
+    return Component.translatable("puffish_skills.aeroscapes_reimagine." + pool + ".title");
+  }
+
+  private static Component grantName(ChangeNetwork.Grant grant) {
+    var talent =
+        Component.translatable(
+            "puffish_skills.aeroscapes_reimagine." + grant.pool() + "." + grant.id() + ".title");
+    return text("reset_grant", poolName(grant.pool()), talent);
+  }
+
+  private static Component gearName(String id) {
+    var item = ResourceLocation.tryParse(id);
+    return item != null && BuiltInRegistries.ITEM.containsKey(item)
+        ? BuiltInRegistries.ITEM.get(item).getDescription()
+        : Component.literal(id);
   }
 
   @Override
@@ -123,7 +169,7 @@ public final class ChangeClient extends Screen implements ChangeView {
         y = (height - h) / 2;
     int bottom = y + h - 28;
     int contentBottom = bottom - 5;
-    if (quote == null && session.identity() && previous == null) {
+    if (sequence == 0) {
       var profile = RaceClient.profile(minecraft.player.getUUID());
       var pages =
           profile != null && profile.subclass() != null
@@ -135,7 +181,7 @@ public final class ChangeClient extends Screen implements ChangeView {
               : List.of(RaceScreen.Page.RACE, RaceScreen.Page.CLASS, RaceScreen.Page.PROFESSION);
       int row = bottom - pages.size() * 21 - 5;
       for (RaceScreen.Page page : pages) {
-        var name = page.name().toLowerCase(java.util.Locale.ROOT);
+        var name = page.name().toLowerCase(Locale.ROOT);
         addRenderableWidget(
             Button.builder(
                     RaceVisuals.text(name + "_page"),
@@ -152,14 +198,14 @@ public final class ChangeClient extends Screen implements ChangeView {
     }
     addRenderableWidget(
         new FittingMultiLineTextWidget(
-                x + 12, y + 32, w - 30, Math.max(16, contentBottom - y - 32), description, font)
+                x + 12, y + 32, w - 30, Math.max(16, contentBottom - y - 32), description(), font)
             .setColor(0xffd6e0eb));
     int buttonsWidth = w - 20;
     boolean canConfirm = quote != null && quote.ticket() != 0;
     var back =
         addRenderableWidget(
             Button.builder(
-                    quote == null ? CommonComponents.GUI_CANCEL : CommonComponents.GUI_BACK,
+                    previous == null ? CommonComponents.GUI_CANCEL : CommonComponents.GUI_BACK,
                     b -> onClose())
                 .bounds(x + 10, bottom, canConfirm ? (buttonsWidth - 4) / 2 : buttonsWidth, 20)
                 .build());
@@ -184,10 +230,8 @@ public final class ChangeClient extends Screen implements ChangeView {
   @Override
   public void onClose() {
     if (submitted) return;
-    if (quote == null) {
-      cancel(session.id());
-      minecraft.setScreen(null);
-    } else minecraft.setScreen(previous);
+    PacketDistributor.sendToServer(new ChangeNetwork.Confirm(session.id(), 0, previous != null));
+    minecraft.setScreen(previous);
   }
 
   public static void cancel(long session) {

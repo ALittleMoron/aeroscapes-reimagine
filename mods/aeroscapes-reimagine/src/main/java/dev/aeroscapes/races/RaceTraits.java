@@ -1,25 +1,31 @@
 package dev.aeroscapes.races;
 
+import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.progression.ProgressionBridge;
+import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import javax.annotation.Nullable;
 import net.minecraft.server.level.ServerPlayer;
+import net.neoforged.fml.ModList;
 import virtuoel.pehkui.api.ScaleTypes;
 
 public final class RaceTraits {
   private static final int PRACTICE_DIVISOR = 5;
   public static final int PRACTICE_AFFINITY_PERCENT = 100 / PRACTICE_DIVISOR;
 
-  private static final ThreadLocal<ServerPlayer> SUBCLASS_PRACTICE = new ThreadLocal<>();
+  private static final ThreadLocal<ClassPractice> CLASS_PRACTICE = new ThreadLocal<>();
 
   private RaceTraits() {}
 
-  public static void withSubclassPractice(ServerPlayer player, Runnable award) {
-    var prior = SUBCLASS_PRACTICE.get();
-    SUBCLASS_PRACTICE.set(player);
+  public static void withClassPractice(
+      ServerPlayer player, String skill, boolean archery, boolean subclass, Runnable award) {
+    var prior = CLASS_PRACTICE.get();
+    CLASS_PRACTICE.set(new ClassPractice(player, skill, archery, subclass));
     try {
       award.run();
     } finally {
-      if (prior == null) SUBCLASS_PRACTICE.remove();
-      else SUBCLASS_PRACTICE.set(prior);
+      if (prior == null) CLASS_PRACTICE.remove();
+      else CLASS_PRACTICE.set(prior);
     }
   }
 
@@ -55,23 +61,31 @@ public final class RaceTraits {
       String skill) {
     int affinities = 0;
     if (race == Race.ELF && ("archery".equals(skill) || "magic".equals(skill))) affinities++;
-    if (characterClass != null && characterClass.practiceSkill().equals(skill)) affinities++;
+    if (matchesClass(characterClass, skill)) affinities++;
     if (profession != null && profession.practiceSkill().equals(skill)) affinities++;
     return affinities * PRACTICE_AFFINITY_PERCENT;
   }
 
+  private static boolean matchesClass(@Nullable CharacterClass characterClass, String skill) {
+    if (characterClass == null) return false;
+    if (characterClass == CharacterClass.RANGER) {
+      return "archery".equals(skill) || ProgressionBridge.RANGER_PRACTICE.equals(skill);
+    }
+    return characterClass.practiceSkill().equals(skill);
+  }
+
   public static long practiceAward(ServerPlayer player, String skill, long amount) {
     if (amount <= 0) return amount;
+    var race = RaceIdentity.race(player);
     int fifths =
         practiceBonusPercent(
-                RaceIdentity.race(player),
-                RaceIdentity.characterClass(player),
-                RaceIdentity.profession(player),
-                skill)
+                race, RaceIdentity.characterClass(player), RaceIdentity.profession(player), skill)
             / PRACTICE_AFFINITY_PERCENT;
-    if (skill.equals("combat") && SUBCLASS_PRACTICE.get() == player) {
-      SUBCLASS_PRACTICE.remove();
-      fifths++;
+    var context = CLASS_PRACTICE.get();
+    if (context != null && context.player() == player && context.skill().equals(skill)) {
+      CLASS_PRACTICE.remove();
+      if (context.archery() && race == Race.ELF) fifths++;
+      if (context.subclass()) fifths++;
     }
     if (fifths == 0) return amount;
     var data = RaceIdentity.data(player);
@@ -81,4 +95,28 @@ public final class RaceTraits {
     data.putInt(key, (int) (remainder % PRACTICE_DIVISOR));
     return amount + Math.min(bonus, Long.MAX_VALUE - amount);
   }
+
+  public static boolean qualifiesMagicPractice(ServerPlayer player, String spellId) {
+    var subclass = RaceIdentity.subclass(player);
+    if (subclass != CharacterSubclass.ELEMENTALIST && subclass != CharacterSubclass.NECROMANCER
+        || !ModList.get().isLoaded("irons_spellbooks")) return false;
+    var route = MagicTalents.spell(spellId);
+    if (route == null) return false;
+    var spell = SpellKnowledge.spell(spellId);
+    if (spell == SpellRegistry.none()) return false;
+    String school = spell.getSchoolType().getId().getPath();
+    return switch (subclass) {
+      case ELEMENTALIST ->
+          route.direction().equals("destruction")
+              && (school.equals("fire") || school.equals("ice") || school.equals("lightning"));
+      case NECROMANCER ->
+          school.equals("blood")
+              || route.id().startsWith("irons_spellbooks:summon_")
+              || route.id().equals("irons_spellbooks:raise_dead");
+      default -> false;
+    };
+  }
+
+  private record ClassPractice(
+      ServerPlayer player, String skill, boolean archery, boolean subclass) {}
 }

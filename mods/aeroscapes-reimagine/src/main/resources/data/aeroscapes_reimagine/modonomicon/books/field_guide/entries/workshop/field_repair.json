@@ -1,0 +1,41 @@
+{
+  "category": "workshop",
+  "name": "book.aeroscapes_reimagine.field_guide.workshop.field_repair.name",
+  "icon": {
+    "item": "aeroscapes_reimagine:field_repair_kit"
+  },
+  "x": -3,
+  "y": 9,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.workshop.field_repair.name",
+      "text": "book.aeroscapes_reimagine.field_guide.workshop.field_repair.text"
+    },
+    {
+      "type": "modonomicon:crafting_recipe",
+      "recipe_id_1": "aeroscapes_reimagine:field_repair_kit"
+    }
+  ],
+  "parents": [
+    {
+      "entry": "workshop/iron_pick",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ],
+  "condition": {
+    "type": "modonomicon:and",
+    "children": [
+      {
+        "type": "modonomicon:advancement",
+        "advancement_id": "aeroscapes_reimagine:guide/checkpoints/iron_pick"
+      },
+      {
+        "type": "modonomicon:entry_unlocked",
+        "entry_id": "workshop/iron_pick"
+      }
+    ]
+  },
+  "description": "book.aeroscapes_reimagine.field_guide.workshop.field_repair.summary"
+}

@@ -39,6 +39,13 @@ final class IronHeldModels {
           "archevoker_logbook_translated",
           "archevoker_logbook_untranslated",
           "eldritch_manuscript");
+  static final List<String> CLOSED_BOOKS =
+      List.of(
+          "chronicle",
+          "ruined_book",
+          "unchained_book",
+          "archevoker_logbook_translated",
+          "archevoker_logbook_untranslated");
   static final List<String> RITUALS =
       List.of(
           "energized_core",
@@ -124,7 +131,7 @@ final class IronHeldModels {
       for (String root : roots) {
         var arm = new JsonObject();
         arm.addProperty("scale", 1);
-        arm.addProperty("offY", -.18);
+        arm.addProperty("offY", CLOSED_BOOKS.contains(root) ? -.21 : -.18);
         var sides = new JsonObject();
         sides.add("left", arm);
         sides.add("right", arm.deepCopy());

@@ -8,6 +8,8 @@ Building blocks, furniture, decorative details and kitchen equipment help furnis
 
 ## Building and decoration
 
+Open **Talents → Professions → Building**. **Long Reach** adds one block to the distance at which you can place, use or break blocks. **Quick Dismantling** removes construction blocks 15% faster with the right tool. Learn **Careful Dismantling** after it to halve tool wear when you manually remove supported stairs and slabs with the right tool.
+
 [Quark](https://modrinth.com/project/qnQsVE2z) and [Supplementaries](https://modrinth.com/project/fFEIiSDQ) add building and decorative blocks alongside practical household objects. Nature’s Spirit connects some of the material variety with the biomes players explore.
 
 [Handcrafted](https://modrinth.com/mod/handcrafted) supplies a coordinated set of beds, nightstands, kitchen counters, cupboards and smaller household decorations. [Chipped](https://modrinth.com/mod/chipped) expands the surface patterns of familiar building materials. Its workbenches and handheld tools open a conversion menu for choosing a supported block variant; they serve a different purpose from furniture.
@@ -58,6 +60,8 @@ masonry. The flower crown is wearable, while icicles, azalea flowers and several
 moss items also have food uses.
 
 ## Food and household activities
+
+Learn **Animal Lure** in Farming and Animal Husbandry and assign it to a prepared slot. Use it near peaceful animals and walk to guide the group. It gathers eligible animals within 10 blocks when you activate it, and they follow for up to 60 seconds. Use the ability again to release them early. It needs no feed, and the two-minute cooldown keeps running after release. **Wider Lure** reaches 16 blocks. **Longer Lure** lasts up to 90 seconds.
 
 Farmer’s Delight and its additions expand ingredients and cooking. Create’s food additions connect those activities with mechanical production. A garden can supply a kitchen, and a production line can prepare stores for a journey. [Cooking and farming](food/) explains how these groups fit together.
 

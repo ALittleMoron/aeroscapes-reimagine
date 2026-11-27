@@ -202,6 +202,7 @@ public final class AbilitiesScreen extends Screen {
               : AbilityClient.text(
                   assignmentReason.equals("unlearned")
                           || assignmentReason.equals("technique_unlearned")
+                          || assignmentReason.equals(dev.aeroscapes.races.AnimalLure.UNLEARNED)
                       ? "unlearned_short"
                       : "unavailable_short");
       var stateLines = font.split(state, listWidth() - 46);
@@ -284,7 +285,8 @@ public final class AbilitiesScreen extends Screen {
       var technique = MartialTechnique.byId(entry.id());
       if (technique != null) {
         paragraphs.add(technique.description());
-        paragraphs.add(AbilityClient.text("technique_cooldown", technique.cooldownTicks() / 20));
+        if (technique.cooldownTicks() > 0)
+          paragraphs.add(AbilityClient.text("technique_cooldown", technique.cooldownTicks() / 20));
       } else if (entry.program() != null) {
         paragraphs.add(AbilityClient.text("hex_hint"));
       } else if (entry.granted()) {
@@ -296,10 +298,10 @@ public final class AbilitiesScreen extends Screen {
         if (I18n.exists(guide)) paragraphs.add(Component.translatable(guide));
         paragraphs.add(AbilityClient.text("rank", entry.level(), entry.maxLevel(), entry.cap()));
       }
-      paragraphs.add(
-          assignmentReason.isEmpty()
-              ? entry.technique() ? AbilityClient.status(entry) : AbilityClient.reason(entry)
-              : AbilityClient.reason(assignmentReason));
+      if (!assignmentReason.isEmpty()) paragraphs.add(AbilityClient.reason(assignmentReason));
+      else if (entry.technique() || entry.farming())
+        paragraphs.addAll(AbilityClient.statusLines(entry));
+      else paragraphs.add(AbilityClient.reason(entry));
       if (assignmentReason.isEmpty()) {
         paragraphs.add(AbilityClient.text(assignmentHint(entry)));
         paragraphs.add(AbilityClient.text("move_hint"));
@@ -320,6 +322,7 @@ public final class AbilitiesScreen extends Screen {
 
   private static String assignmentHint(AbilityNetwork.Entry entry) {
     if (entry.technique()) return "technique_assign";
+    if (entry.farming()) return "profession_assign";
     if (entry.program() != null) return "hex_assign";
     if (ExceptionalAccessory.byId(entry.id()) != null
         || PreparedAbilities.DISTRACTION.equals(entry.id())) return "expedition_assign";

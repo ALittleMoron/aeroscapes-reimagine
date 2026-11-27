@@ -58,6 +58,7 @@ public final class AeroscapesReimagine {
 
   public AeroscapesReimagine(IEventBus modBus, ModContainer container) {
     dev.aeroscapes.magic.RacialAbilities.register(modBus);
+    dev.aeroscapes.survival.NutritionDeficits.register(modBus);
     if (ModList.get().isLoaded("neoorigins") && ModList.get().isLoaded("pehkui")) {
       dev.aeroscapes.races.RaceIdentity.register();
       dev.aeroscapes.races.ClassTraits.register(modBus);
@@ -67,6 +68,7 @@ public final class AeroscapesReimagine {
       }
     }
     dev.aeroscapes.races.ProfessionTools.register(modBus);
+    dev.aeroscapes.races.FieldRepairKit.register(modBus);
     dev.aeroscapes.enchanting.CurseCleansing.register();
     dev.aeroscapes.enchanting.CursedEquipmentLoot.register(modBus);
     if (ModList.get().isLoaded("immersiveenchanting")) {
@@ -115,6 +117,7 @@ public final class AeroscapesReimagine {
         dev.aeroscapes.equipment.tools.ToolProficiency.register();
         dev.aeroscapes.equipment.combat.WeaponProficiency.register();
         dev.aeroscapes.progression.ProgressionBridge.register();
+        dev.aeroscapes.equipment.combat.BeastmasterCompanions.register();
         if (ModList.get().isLoaded("irons_spellbooks"))
           dev.aeroscapes.progression.SpellPractice.register();
       }
@@ -193,7 +196,8 @@ public final class AeroscapesReimagine {
           if (spawn == null) continue;
           setSpawn(event, level, generator, spawn);
           LOGGER.info(
-              "Selected natural island spawn {} for seed {} after {} full candidate probes and {} raw columns",
+              "Selected natural island spawn {} for seed {} after {} full candidate probes and {}"
+                  + " raw columns",
               spawn,
               level.getSeed(),
               generatedCandidates,
@@ -237,7 +241,8 @@ public final class AeroscapesReimagine {
       if (spawn == null) continue;
       setSpawn(event, level, generator, spawn);
       LOGGER.info(
-          "Selected large mountain island spawn {} for seed {} after {} full candidate probes and {} raw columns",
+          "Selected large mountain island spawn {} for seed {} after {} full candidate probes and"
+              + " {} raw columns",
           spawn,
           level.getSeed(),
           generated,
@@ -245,8 +250,8 @@ public final class AeroscapesReimagine {
       return;
     }
     throw new IllegalStateException(
-        "Aeroscapes could not find a safe starting island with a mountain, multiple biomes and nearby woodland"
-            + " within its bounded search for seed "
+        "Aeroscapes could not find a safe starting island with a mountain, multiple biomes and"
+            + " nearby woodland within its bounded search for seed "
             + level.getSeed()
             + " (radius "
             + MountainIslandSpawn.SEARCH_RADIUS
@@ -400,7 +405,7 @@ public final class AeroscapesReimagine {
             + level.getSeed()
             + " ("
             + generatedCandidates
-            + " full candidate probes). Create a new world with another seed"
-            + " or inspect this seed's generation; no artificial platform or unsafe fallback was used.");
+            + " full candidate probes). Create a new world with another seed or inspect this seed's"
+            + " generation; no artificial platform or unsafe fallback was used.");
   }
 }

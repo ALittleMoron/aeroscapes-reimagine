@@ -10,6 +10,7 @@ import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
+import harmonised.pmmo.api.APIUtils;
 import java.time.Duration;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -36,6 +37,8 @@ import net.puffish.skillsmod.SkillsMod;
 final class SwingTempoRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation RANGER =
+      ResourceLocation.parse(ProgressionBridge.RANGER_CATEGORY);
 
   private SwingTempoRegression() {}
 
@@ -51,14 +54,14 @@ final class SwingTempoRegression {
       var other = new Zombie(EntityType.ZOMBIE, level);
       try {
         PlayerLifecycleEvents.onPlayerLogin(new PlayerEvent.PlayerLoggedInEvent(player));
-        var rogue = CharacterClass.ROGUE;
+        var ranger = CharacterClass.RANGER;
         require(
             RaceIdentity.choose(
                 player,
                 Race.HUMAN,
                 0,
-                rogue,
-                rogue.starters().getFirst(),
+                ranger,
+                ranger.starters().getFirst(),
                 Profession.BLACKSMITH,
                 "material_repair"),
             "Choose an ordinary character for melee tempo");
@@ -100,17 +103,37 @@ final class SwingTempoRegression {
             && MartialTechniques.isLightWeapon(offhand.itemStack()),
         "Native dual wield selects the light off hand after a sword swing");
 
+    int target = attacker.getId();
+    long warriorXp = APIUtils.getXp(ProgressionBridge.WARRIOR_PRACTICE, player);
+    long rangerXp = APIUtils.getXp(ProgressionBridge.RANGER_PRACTICE, player);
+    require(swing(player, attacker, 0, 20, target, target) > 0, "The sword swing hits");
+    require(
+        APIUtils.getXp(ProgressionBridge.WARRIOR_PRACTICE, player) > warriorXp
+            && APIUtils.getXp(ProgressionBridge.RANGER_PRACTICE, player) == rangerXp,
+        "Better Combat's main-hand sword funds Warrior alone");
+    warriorXp = APIUtils.getXp(ProgressionBridge.WARRIOR_PRACTICE, player);
+    require(swing(player, attacker, 1, 20, target, target) > 0, "The knife swing hits");
+    require(
+        APIUtils.getXp(ProgressionBridge.WARRIOR_PRACTICE, player) == warriorXp
+            && APIUtils.getXp(ProgressionBridge.RANGER_PRACTICE, player) > rangerXp,
+        "Better Combat's light off hand funds Ranger alone");
+
     int replyTicks = 4;
     float ordinary = swing(player, attacker, 1, replyTicks, attacker.getId(), attacker.getId());
     float normalRecovery = player.getCurrentItemAttackStrengthDelay();
     var ready = defend(session, attacker, other);
     begin(session, ready);
     clock.setGameTime(clock.getGameTime() + 4);
+    rangerXp = APIUtils.getXp(ProgressionBridge.RANGER_PRACTICE, player);
     float spedUp =
         swing(player, attacker, 1, replyTicks, attacker.getId(), attacker.getId(), other.getId());
     require(
         spedUp > ordinary,
         "After a delayed request the parry reply gains charge in the selected hand");
+    require(
+        APIUtils.getXp(ProgressionBridge.WARRIOR_PRACTICE, player) == warriorXp
+            && APIUtils.getXp(ProgressionBridge.RANGER_PRACTICE, player) > rangerXp,
+        "A damaging off-hand parry reply also funds Ranger alone");
     require(
         other.getHealth() == other.getMaxHealth(),
         "An accelerated reply cannot sweep an extra target");
@@ -184,7 +207,7 @@ final class SwingTempoRegression {
       TestShipPlayerSession session, Zombie attacker, Zombie other) {
     ServerPlayer player = session.player;
     player.setYRot(0);
-    SkillsMod.getInstance().tryUnlockSkill(player, COMBAT, "duelist_parry", true);
+    SkillsMod.getInstance().tryUnlockSkill(player, RANGER, "duelist_parry", true);
     float health = player.getMaxHealth();
     player.setHealth(health);
     player.invulnerableTime = 0;

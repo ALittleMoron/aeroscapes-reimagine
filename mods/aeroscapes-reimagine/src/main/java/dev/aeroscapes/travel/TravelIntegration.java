@@ -2,6 +2,7 @@ package dev.aeroscapes.travel;
 
 import com.mojang.serialization.MapCodec;
 import com.sshakusora.waystonessable.compat.SableWaystoneCompat;
+import dev.aeroscapes.equipment.combat.BeastmasterCompanions;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -259,7 +260,9 @@ public final class TravelIntegration {
     if (payment == null || payment.context != context) return;
     boolean successful =
         event.getPrimaryResult().map(result -> result.isSuccessful()).orElse(false);
+    boolean paid = payment.charged > 0;
     payment.finish(successful);
+    if (successful && paid) BeastmasterCompanions.waystoneArrived(payment.player);
   }
 
   public static void failed(WaystoneTeleportContext context) {

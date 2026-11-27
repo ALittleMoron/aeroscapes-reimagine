@@ -15,12 +15,18 @@ public enum MartialTechnique {
   SLOWING_SHOT("slowing_shot", 100, 140),
   MARKING_SHOT("marking_shot", 100, 180),
   QUICK_SHOT("quick_shot", 100, 100),
+  TRIPLE_SHOT("triple_shot", 100, 220),
   DISENGAGE("disengage", 30, 100),
   DASH("dash", 50, 100),
   FLANK_STRIKE("flank_strike", 60, 120),
   SHIELD_SHOVE("shield_shove", 0, 100),
   OFFENSIVE_STANCE("offensive_stance", 100, 440),
-  DUELIST_PARRY("duelist_parry", 8, 100);
+  DUELIST_PARRY("duelist_parry", 8, 100),
+  BEASTMASTER_FOX("beastmaster_fox", 0, 0),
+  BEASTMASTER_WOLF("beastmaster_wolf", 0, 0),
+  BEASTMASTER_BEAR("beastmaster_bear", 0, 0),
+  BEASTMASTER_RECALL("beastmaster_recall", 0, 0),
+  BEASTMASTER_FOCUS_ATTACK("beastmaster_focus_attack", 0, 0);
 
   public static final String GROUP = "aeroscapes_reimagine:martial_techniques";
   public static final float QUICK_DRAW_TIME = 0.45F;
@@ -66,6 +72,18 @@ public enum MartialTechnique {
 
   boolean footwork() {
     return this == DASH || this == DISENGAGE;
+  }
+
+  boolean beastmaster() {
+    return switch (this) {
+      case BEASTMASTER_FOX,
+          BEASTMASTER_WOLF,
+          BEASTMASTER_BEAR,
+          BEASTMASTER_RECALL,
+          BEASTMASTER_FOCUS_ATTACK ->
+          true;
+      default -> false;
+    };
   }
 
   public ResourceLocation icon() {

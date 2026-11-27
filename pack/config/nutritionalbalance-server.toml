@@ -10,7 +10,7 @@ nutrient_decay_rate = 1.0
 nutrient_death_loss = 0.0
 
 [general.nutrition_affects]
-effect_bad_nutrients = ["sugars"]
+effect_bad_nutrients = []
 effect_good_nutrients = []
 
 [general.nutrition_affects.nourished_affects]
@@ -25,7 +25,7 @@ nourished_mining_speed = 0.0
 malnourished_max_health = 0.0
 malnourished_knockback_resistance = 0.0
 malnourished_movement_speed = 0.0
-malnourished_attack_damage = -4.0
+malnourished_attack_damage = -3.0
 malnourished_knockback = 0.0
 malnourished_mining_speed = 0.0
 

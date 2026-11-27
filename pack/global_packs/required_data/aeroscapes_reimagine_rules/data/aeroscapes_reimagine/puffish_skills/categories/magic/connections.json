@@ -559,12 +559,48 @@
         "magic_spell_spectral_hammer"
       ],
       [
-        "magic_rhythm_1",
-        "magic_spell_summon_ender_chest"
+        "magic_transformation_mastery_3",
+        "magic_spell_touch_dig"
+      ],
+      [
+        "magic_mastery_1",
+        "caster_armor_handling"
+      ],
+      [
+        "magic_mastery_1",
+        "magic_spell_magic_missile"
+      ],
+      [
+        "magic_destruction_power",
+        "magic_spell_blood_needles"
+      ],
+      [
+        "magic_destruction_mastery_2",
+        "magic_spell_ball_lightning"
+      ],
+      [
+        "magic_restoration_power",
+        "magic_spell_shield"
       ],
       [
         "magic_transformation_mastery_3",
-        "magic_spell_touch_dig"
+        "magic_spell_summon_ender_chest"
+      ],
+      [
+        "magic_spell_frostwave",
+        "magic_frostwave_extinguish"
+      ],
+      [
+        "magic_spell_blood_needles",
+        "magic_blood_needles_overheal"
+      ],
+      [
+        "magic_spell_arcane_shackle",
+        "magic_arcane_shackle_marker"
+      ],
+      [
+        "magic_restoration_power",
+        "magic_oakskin_ally"
       ]
     ]
   },

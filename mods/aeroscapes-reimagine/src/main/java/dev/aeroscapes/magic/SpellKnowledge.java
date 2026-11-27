@@ -15,7 +15,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.function.IntSupplier;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -26,26 +25,12 @@ import net.puffish.skillsmod.SkillsMod;
 
 public final class SpellKnowledge {
   static final String DATA = "aeroscapes_reimagine_abilities";
-  private static final ResourceLocation COMBAT =
+  private static final ResourceLocation MAGIC =
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
-  private static final ThreadLocal<Boolean> SCROLL_LEVEL = new ThreadLocal<>();
+  private static final String ACCESS = "magic_mastery_1";
+  private static final String STARTERS = "starter_spells";
 
   private SpellKnowledge() {}
-
-  public static boolean scrollLevel() {
-    return Boolean.TRUE.equals(SCROLL_LEVEL.get());
-  }
-
-  public static int scrollLevel(IntSupplier operation) {
-    Boolean previous = SCROLL_LEVEL.get();
-    SCROLL_LEVEL.set(true);
-    try {
-      return operation.getAsInt();
-    } finally {
-      if (previous == null) SCROLL_LEVEL.remove();
-      else SCROLL_LEVEL.set(previous);
-    }
-  }
 
   public static List<AbstractSpell> spells() {
     return SpellRegistry.REGISTRY.stream()
@@ -60,7 +45,7 @@ public final class SpellKnowledge {
 
   public static Set<String> unlocked(ServerPlayer player) {
     Collection<String> skills =
-        SkillsMod.getInstance().getUnlockedSkills(player, COMBAT).orElse(List.of());
+        SkillsMod.getInstance().getUnlockedSkills(player, MAGIC).orElse(List.of());
     return new HashSet<>(skills);
   }
 
@@ -74,8 +59,35 @@ public final class SpellKnowledge {
   }
 
   public static int rank(ServerPlayer player, AbstractSpell spell, Set<String> skills) {
-    if (!MagicTalents.learned(spell.getSpellId(), skills)) return 0;
-    return Math.max(1, data(player).getCompound("ranks").getInt(spell.getSpellId()));
+    return rank(player, spell, skills, starter(player, spell.getSpellId()));
+  }
+
+  private static int rank(
+      ServerPlayer player, AbstractSpell spell, Set<String> skills, boolean starter) {
+    String id = spell.getSpellId();
+    if (!starter && !SpellProgression.studied(player, id) && !MagicTalents.learned(id, skills))
+      return 0;
+    return Math.max(1, data(player).getCompound("ranks").getInt(id));
+  }
+
+  public static boolean hasAccess(ServerPlayer player) {
+    return hasAccess(unlocked(player));
+  }
+
+  public static boolean hasAccess(Set<String> skills) {
+    return skills.contains(ACCESS);
+  }
+
+  public static void setStarterSpells(ServerPlayer player, Collection<String> spellIds) {
+    var starterSpells = new CompoundTag();
+    for (String id : spellIds) {
+      if (MagicTalents.spell(id) != null) starterSpells.putBoolean(id, true);
+    }
+    data(player).put(STARTERS, starterSpells);
+  }
+
+  private static boolean starter(ServerPlayer player, String id) {
+    return data(player).getCompound(STARTERS).getBoolean(id);
   }
 
   static CompoundTag data(ServerPlayer player) {
@@ -94,10 +106,27 @@ public final class SpellKnowledge {
 
   public static String knowledgeReason(
       ServerPlayer player, AbstractSpell spell, Set<String> skills) {
+    return knowledgeReason(player, spell, skills, starter(player, spell.getSpellId()));
+  }
+
+  public static String knowledgeReason(
+      ServerPlayer player,
+      AbstractSpell spell,
+      Set<String> skills,
+      Collection<String> futureStarters) {
+    return knowledgeReason(player, spell, skills, futureStarters.contains(spell.getSpellId()));
+  }
+
+  private static String knowledgeReason(
+      ServerPlayer player, AbstractSpell spell, Set<String> skills, boolean starter) {
     if (!spell.isEnabled()) return "disabled";
-    int rank = rank(player, spell, skills);
+    int rank = rank(player, spell, skills, starter);
     if (rank == 0) return "unlearned";
+    if (!hasAccess(skills)) return "magic_access";
     if (rank > cap(spell, skills)) return "mastery";
+    var route = MagicTalents.spell(spell.getSpellId());
+    if (route != null && !starter && MagicTalents.mastery(skills, route.direction()) < route.tier())
+      return "mastery";
     if (spell.requiresLearning() && !spell.isLearned(player)) return "discovery";
     return "";
   }
@@ -114,6 +143,7 @@ public final class SpellKnowledge {
     String reason;
     if (!player.isAlive() || player.isSpectator()) reason = "state";
     else if (!spell.isEnabled()) reason = "disabled";
+    else if (source != CastSource.SCROLL && !hasAccess(skills)) reason = "magic_access";
     else if (source == CastSource.SPELLBOOK && accessory != null && accessory.matches(item)) {
       if (accessory.equipped(player) != item) reason = "equipment_required";
       else if (!PreparedAbilities.loadout(player).contains(accessory.id)) reason = "unprepared";
@@ -124,7 +154,7 @@ public final class SpellKnowledge {
           || item.isEmpty()
           || !held(player, item)
           || scroll.getSpell() != spell) reason = "scroll";
-      else if (scroll.getLevel() < 1 || level < 1) reason = "scroll";
+      else if (scroll.getLevel() < 1 || level != scroll.getLevel()) reason = "scroll";
       else reason = "";
     } else {
       reason = knowledgeReason(player, spell, skills);

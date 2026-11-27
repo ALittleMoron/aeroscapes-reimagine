@@ -1,7 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" shape-rendering="crispEdges">
-<rect width="16" height="16" fill="#3b3128"/>
-<path d="M0 3.5H16M0 7.5H16M0 11.5H16M0 15.5H16" stroke="#2f271f"/>
-<path d="M5.5 0V3M12.5 4V7M2.5 8V11M9.5 12V15" stroke="#2f271f"/>
-<rect x="8" y="1" width="2" height="1" fill="#4a3d31"/><rect x="1" y="5" width="2" height="1" fill="#4a3d31"/>
-<rect x="11" y="9" width="2" height="1" fill="#4a3d31"/><rect x="6" y="13" width="2" height="1" fill="#4a3d31"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="112" height="16" viewBox="0 0 112 16" shape-rendering="crispEdges">
+  <title>Aeroscapes profession artwork</title>
+  <desc>Original 16 by 16 tiles. Export a named tile with rsvg-convert --export-id NAME profession.svg --output NAME.png.</desc>
+  <g id="profession">
+    <rect width="16" height="16" fill="#3b3128"/>
+    <path d="M0 3.5H16M0 7.5H16M0 11.5H16M0 15.5H16" stroke="#2f271f"/>
+    <path d="M5.5 0V3M12.5 4V7M2.5 8V11M9.5 12V15" stroke="#2f271f"/>
+    <rect x="8" y="1" width="2" height="1" fill="#4a3d31"/><rect x="1" y="5" width="2" height="1" fill="#4a3d31"/>
+    <rect x="11" y="9" width="2" height="1" fill="#4a3d31"/><rect x="6" y="13" width="2" height="1" fill="#4a3d31"/>
+  </g>
+  <g id="careful_dismantling" transform="translate(16 0)">
+    <rect width="16" height="16" fill="#373443"/>
+    <path fill="#48414b" d="M1 8h5V5h4V3h5v11H1z"/>
+    <path fill="#a2968a" d="M2 9h5V6h4V4h3v9H2z"/>
+    <path fill="#70666a" d="M2 11h5V8h4V6h3v7H2z"/>
+    <path fill="#e8d5aa" d="M2 9h5v1H2zm5-3h4v1H7zm4-2h3v1h-3z"/>
+    <path fill="#75554a" d="M2 4h1V3h1v1h1v1h1v1H5v1H4V6H3V5H2z"/>
+    <path fill="#f5c57f" d="M4 1h1v2h2v1H5v2H4V4H2V3h2z"/>
+  </g>
+  <g id="field_repair" transform="translate(32 0)">
+    <rect width="16" height="16" fill="#3d3439"/>
+    <path fill="#2f2430" d="M1 10h3V8h2V5h1V3h7v1h1v3h-1v1H9v3H7v2H5v1H1z"/>
+    <path fill="#a78964" d="M2 10h3V8h2V4h7v3H8v4H6v2H2z"/>
+    <path fill="#c6bdd0" d="M8 4h6v2H8zm0 2h3v1H8z"/>
+    <path fill="#e2b77d" d="M2 10h3v1H4v1H2z"/>
+    <path fill="#b9dc9d" d="M10 10h2V8h1v2h2v1h-2v2h-1v-2h-2z"/>
+  </g>
+  <g id="animal_lure" transform="translate(48 0)">
+    <rect width="16" height="16" fill="#2d483c"/>
+    <path fill="#a6ca89" d="M1 3h3v1H2v2H1zm11 0h3v3h-1V4h-2zM1 10h1v2h2v1H1zm13 0h1v3h-3v-1h2z"/>
+    <path fill="#483e3a" d="M4 4h2v2H4zm3-2h2v3H7zm3 2h2v2h-2zm-4 3h4v1h1v4h-1v1H6v-1H5V8h1z"/>
+    <path fill="#f1cc84" d="M5 5h1v1H5zm3-2h1v2H8zm3 2h1v1h-1zM7 8h2v1h1v3H6V9h1z"/>
+    <path fill="#f7e4b1" d="M7 9h1v2H7z"/>
+  </g>
+  <g id="animal_lure_radius" transform="translate(64 0)">
+    <rect width="16" height="16" fill="#29413b"/>
+    <path fill="#6c9b7a" d="M3 2h10v1H3zM2 3h1v2H2zm11 0h1v2h-1zM1 5h1v6H1zm13 0h1v6h-1zM2 11h1v2H2zm11 0h1v2h-1zM3 13h10v1H3z"/>
+    <path fill="#bccd8a" d="M5 5h2v1H6v1H5zm4 0h2v2h-1V6H9zM5 9h1v1h1v1H5zm5 0h1v2H9v-1h1z"/>
+    <path fill="#ead59c" d="M7 7h2v2H7zM3 7h1v2H3zm9 0h1v2h-1zM7 3h2v1H7zm0 9h2v1H7z"/>
+  </g>
+  <g id="animal_lure_duration" transform="translate(80 0)">
+    <rect width="16" height="16" fill="#33473e"/>
+    <path fill="#39363c" d="M3 2h10v3l-2 2-1 1 3 3v3H3v-3l3-3-3-3z"/>
+    <path fill="#b1936a" d="M4 3h8v2L9 8l3 3v2H4v-2l3-3-3-3z"/>
+    <path fill="#314e40" d="M5 5h6L8 8l3 3H5l3-3z"/>
+    <path fill="#edd08b" d="M5 4h6v1H5zm2 2h2L8 7zm1 3 2 2H6z"/>
+    <path fill="#c8e5a2" d="M1 6h2v1H1zm12 2h2v1h-2zM1 9h2v1H1z"/>
+  </g>
+  <g id="field_repair_kit" transform="translate(96 0)">
+    <rect width="16" height="16" fill="#000000" fill-opacity="0"/>
+    <path fill="#352831" d="M5 2h6v3h2v2h1v6h-1v2H3v-2H2V7h1V5h2z"/>
+    <path fill="#96715a" d="M6 3h4v2h2v2h1v6H3V7h1V5h2z"/>
+    <path fill="#bc986d" d="M4 6h8v3h-1v1H5V9H4z"/>
+    <path fill="#6b4e49" d="M4 10h8v3H4zM7 3h2v1H7z"/>
+    <path fill="#d3c49b" d="M7 7h2v1h2v1H9v2H7V9H5V8h2z"/>
+    <path fill="#e5bc8c" d="M4 6h2v1H4zm6 0h2v1h-2z"/>
+  </g>
 </svg>

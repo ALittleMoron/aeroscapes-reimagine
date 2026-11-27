@@ -3,9 +3,13 @@ package dev.aeroscapes.regression;
 import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
 import dev.aeroscapes.equipment.combat.BerserkerTechniques;
 import dev.aeroscapes.equipment.combat.GroundFootwork;
+import dev.aeroscapes.equipment.combat.MartialArchery;
 import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.equipment.combat.MartialTechniques;
+import dev.aeroscapes.equipment.combat.SwingTempo;
+import dev.aeroscapes.magic.AbilityNetwork;
 import dev.aeroscapes.magic.PreparedAbilities;
+import dev.aeroscapes.progression.CombatDirection;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.ClassTraits;
@@ -15,9 +19,13 @@ import dev.aeroscapes.races.RaceIdentity;
 import harmonised.pmmo.api.APIUtils;
 import io.redspace.ironsspellbooks.api.registry.AttributeRegistry;
 import io.redspace.ironsspellbooks.item.weapons.AutoloaderCrossbow;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
+import java.util.function.Consumer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.protocol.game.ClientboundUpdateAttributesPacket;
@@ -30,7 +38,10 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
+import net.minecraft.world.entity.ai.goal.RangedBowAttackGoal;
 import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Arrow;
@@ -38,13 +49,19 @@ import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.common.damagesource.DamageContainer;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.ArrowLooseEvent;
+import net.neoforged.neoforge.event.entity.player.ArrowNockEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.event.tick.LevelTickEvent;
 import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.api.Skill;
 
@@ -52,11 +69,14 @@ final class MartialClassRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
 
+  private static final ResourceLocation RANGER =
+      ResourceLocation.parse(ProgressionBridge.RANGER_CATEGORY);
+
   private MartialClassRegression() {}
 
   static void verify(ServerLevel level) {
     var pos = Vec3.atBottomCenterOf(level.getSharedSpawnPos()).add(0, 32, 0);
-    for (CharacterClass role : CharacterClass.values()) {
+    for (CharacterClass role : CharacterClass.selectable()) {
       try (var session =
           TestShipPlayerSession.create(level, UUID.randomUUID(), "MartialFixture", pos, null)) {
         ServerPlayer player = session.player;
@@ -83,13 +103,15 @@ final class MartialClassRegression {
               player.getAttributeValue(AttributeRegistry.MAX_MANA),
               mana + (role == CharacterClass.MAGE ? 20 : 0),
               "Mage mana capacity");
-          if (role == CharacterClass.ROGUE) {
-            verifyFootwork(player);
-            verifyDash(session);
-          }
           if (role == CharacterClass.RANGER) {
             verifyAbilities(player);
-            verifySlowingShot(player);
+            player.setNoGravity(true);
+            verifyBowCancellations(session);
+            verifySlowingShot(session);
+            verifyMarkingShot(session);
+            verifyQuickShot(session);
+            verifyTripleShot(session);
+            verifyTripleShotAmmo(session);
           }
           if (role == CharacterClass.WARRIOR) {
             verifyShieldShove(session);
@@ -100,25 +122,11 @@ final class MartialClassRegression {
         }
       }
     }
+    verifyDash(level, pos);
     verifyDisengage(level, pos, 5);
     verifyDisengage(level, pos, 3);
-  }
-
-  private static void verifyFootwork(ServerPlayer player) {
-    player.setOnGround(true);
-    double speed = player.getAttributeValue(Attributes.MOVEMENT_SPEED);
-    player.setItemInHand(InteractionHand.MAIN_HAND, item("wetland_whimsy:dagger"));
-    ClassTraits.refresh(player);
-    close(
-        player.getAttributeValue(Attributes.MOVEMENT_SPEED),
-        speed * 1.05,
-        "Rogue carrying a dagger");
-    player.setItemInHand(InteractionHand.MAIN_HAND, Items.IRON_AXE.getDefaultInstance());
-    ClassTraits.refresh(player);
-    close(
-        player.getAttributeValue(Attributes.MOVEMENT_SPEED),
-        speed,
-        "A held axe removes light-weapon footwork");
+    verifySmokeArrow(level, pos);
+    verifyDuelistSidestep(level, pos);
   }
 
   private static Zombie opponent(ServerPlayer player, double x, double z) {
@@ -237,11 +245,22 @@ final class MartialClassRegression {
   }
 
   private static void setCombatTalent(ServerPlayer player, String skill) {
-    SkillsMod.getInstance().tryUnlockSkill(player, COMBAT, skill, true);
+    SkillsMod.getInstance()
+        .tryUnlockSkill(player, CombatDirection.categoryForNode(skill), skill, true);
     require(
-        SkillsMod.getInstance().getSkillState(player, COMBAT, skill).orElseThrow()
+        SkillsMod.getInstance()
+                .getSkillState(player, CombatDirection.categoryForNode(skill), skill)
+                .orElseThrow()
             == Skill.State.UNLOCKED,
         "Fixture unlocks " + skill);
+  }
+
+  private static void verifyDash(ServerLevel level, Vec3 position) {
+    try (var session =
+        TestShipPlayerSession.create(level, UUID.randomUUID(), "DashFixture", position, null)) {
+      chooseFootworkRanger(level, session.player);
+      verifyDash(session);
+    }
   }
 
   private static void verifyDash(TestShipPlayerSession session) {
@@ -310,11 +329,34 @@ final class MartialClassRegression {
   }
 
   private static int cooldown(TestShipPlayerSession session, MartialTechnique technique) {
+    return techniqueEntry(session, technique).cooldownTicks();
+  }
+
+  private static AbilityNetwork.Entry techniqueEntry(
+      TestShipPlayerSession session, MartialTechnique technique) {
     return session.abilities().entries().stream()
         .filter(entry -> entry.id().equals(technique.id()))
         .findFirst()
-        .orElseThrow()
-        .cooldownTicks();
+        .orElseThrow();
+  }
+
+  private static void chooseFootworkRanger(ServerLevel level, ServerPlayer player) {
+    ProgressionRegression.listPlayer(level, player, true);
+    try {
+      PlayerLifecycleEvents.onPlayerLogin(new PlayerEvent.PlayerLoggedInEvent(player));
+      require(
+          RaceIdentity.choose(
+              player,
+              Race.HUMAN,
+              0,
+              CharacterClass.RANGER,
+              CharacterClass.RANGER.starters().getFirst(),
+              Profession.BLACKSMITH,
+              "material_repair"),
+          "The footwork fixture completes character creation before sending movement");
+    } finally {
+      ProgressionRegression.listPlayer(level, player, false);
+    }
   }
 
   private static void verifyDisengage(ServerLevel level, Vec3 requestedStart, int floorLength) {
@@ -322,22 +364,7 @@ final class MartialClassRegression {
         TestShipPlayerSession.create(
             level, UUID.randomUUID(), "DisengageFixture", requestedStart, null)) {
       ServerPlayer player = session.player;
-      ProgressionRegression.listPlayer(level, player, true);
-      try {
-        PlayerLifecycleEvents.onPlayerLogin(new PlayerEvent.PlayerLoggedInEvent(player));
-        require(
-            RaceIdentity.choose(
-                player,
-                Race.HUMAN,
-                0,
-                CharacterClass.ROGUE,
-                CharacterClass.ROGUE.starters().getFirst(),
-                Profession.BLACKSMITH,
-                "material_repair"),
-            "The footwork fixture completes character creation before sending movement");
-      } finally {
-        ProgressionRegression.listPlayer(level, player, false);
-      }
+      chooseFootworkRanger(level, player);
       Vec3 start = player.position();
       BlockPos origin = player.blockPosition();
       for (int index = 0; index <= floorLength; index++)
@@ -399,7 +426,116 @@ final class MartialClassRegression {
     close(player.position().distanceTo(start.add(travel)), 0.0, "All strides reach the endpoint");
   }
 
-  private static void verifySlowingShot(ServerPlayer player) {
+  private static void castBow(TestShipPlayerSession session, MartialTechnique technique) {
+    session.receivePlayPayload(new AbilityNetwork.Cast(), "6");
+    require(
+        session.player.isUsingItem()
+            && techniqueEntry(session, technique).reason().equals(MartialArchery.DRAWING)
+            && cooldown(session, technique) == 0
+            && ownedArrows(session.player).isEmpty(),
+        "Cast starts the native bow draw without launching or spending cooldown");
+  }
+
+  private static void bowTicks(ServerPlayer player, int ticks) {
+    var clock = player.serverLevel().getServer().getWorldData().overworldData();
+    for (int tick = 0; tick < ticks; tick++) {
+      clock.setGameTime(clock.getGameTime() + 1);
+      player.doTick();
+    }
+  }
+
+  private static void verifyBowCancellations(TestShipPlayerSession session) {
+    var player = session.player;
+    var technique = MartialTechnique.SLOWING_SHOT;
+    var bow = new ItemStack(Items.BOW);
+    var another = bow.copy();
+    session.selectHotbarSlot(0);
+    player.setItemInHand(InteractionHand.MAIN_HAND, bow);
+    player.getInventory().setItem(1, another);
+    player.setItemInHand(InteractionHand.OFF_HAND, new ItemStack(Items.ARROW, 2));
+    prepare(player, 0, technique);
+    PreparedAbilities.select(player, 0);
+
+    castBow(session, technique);
+    bowTicks(player, 6);
+    session.releaseUsingItem();
+    require(
+        player.isUsingItem() && ownedArrows(player).isEmpty(),
+        "A native early release packet cannot interrupt or fire an ability draw");
+    session.selectHotbarSlot(1);
+    session.selectHotbarSlot(0);
+    session.releaseUsingItem();
+    bowTicks(player, BowItem.MAX_DRAW_DURATION);
+    require(
+        !player.isUsingItem()
+            && cooldown(session, technique) == 0
+            && player.getOffhandItem().getCount() == 2
+            && bow.getDamageValue() == 0
+            && another.getDamageValue() == 0
+            && ownedArrows(player).isEmpty(),
+        "Switching between identical bows cancels even when switched back on the same tick");
+    require(
+        session.abilities().loadout().active().slots().getFirst().equals(technique.id()),
+        "Switching bows leaves the ability prepared");
+
+    castBow(session, technique);
+    bowTicks(player, 6);
+    session.swapHands();
+    session.swapHands();
+    bowTicks(player, BowItem.MAX_DRAW_DURATION);
+    require(
+        !player.isUsingItem()
+            && player.getMainHandItem() == bow
+            && cooldown(session, technique) == 0
+            && player.getOffhandItem().getCount() == 2
+            && ownedArrows(player).isEmpty(),
+        "The native hand swap also cancels the prepared draw without paying for a shot");
+
+    player.gameMode.useItem(player, player.serverLevel(), bow, InteractionHand.MAIN_HAND);
+    bowTicks(player, 6);
+    session.releaseUsingItem();
+    var manualShot = ownedArrows(player);
+    require(
+        manualShot.size() == 1
+            && !manualShot.getFirst().isCritArrow()
+            && player.getOffhandItem().getCount() == 1,
+        "The same release packet still fires an ordinary, partially drawn bow");
+    manualShot.forEach(AbstractArrow::discard);
+
+    Consumer<ArrowNockEvent> refuseNock =
+        event -> {
+          if (event.getEntity() == player) event.setCanceled(true);
+        };
+    NeoForge.EVENT_BUS.addListener(ArrowNockEvent.class, refuseNock);
+    try {
+      session.receivePlayPayload(new AbilityNetwork.Cast(), "6");
+      require(!player.isUsingItem(), "Cast honors a native ArrowNockEvent refusal");
+    } finally {
+      NeoForge.EVENT_BUS.unregister(refuseNock);
+    }
+
+    Consumer<ArrowLooseEvent> refuseLoose =
+        event -> {
+          if (event.getEntity() == player) event.setCanceled(true);
+        };
+    NeoForge.EVENT_BUS.addListener(ArrowLooseEvent.class, refuseLoose);
+    try {
+      castBow(session, technique);
+      bowTicks(player, BowItem.MAX_DRAW_DURATION);
+      require(
+          !player.isUsingItem()
+              && cooldown(session, technique) == 0
+              && player.getOffhandItem().getCount() == 1
+              && bow.getDamageValue() == 1
+              && ownedArrows(player).isEmpty(),
+          "A native ArrowLooseEvent refusal clears the draw without ammo, wear or cooldown");
+    } finally {
+      NeoForge.EVENT_BUS.unregister(refuseLoose);
+    }
+  }
+
+  private static void verifySlowingShot(TestShipPlayerSession session) {
+    var player = session.player;
     var level = player.serverLevel();
     var bow = new ItemStack(Items.BOW);
     player.setItemInHand(InteractionHand.MAIN_HAND, bow);
@@ -407,25 +543,34 @@ final class MartialClassRegression {
     player.setYRot(0);
     player.setXRot(0);
     player.setDeltaMovement(Vec3.ZERO);
-    prepare(player, 0, MartialTechnique.SLOWING_SHOT);
+    var technique = MartialTechnique.SLOWING_SHOT;
+    prepare(player, 0, technique);
     PreparedAbilities.select(player, 0);
-    PreparedAbilities.cast(player);
+    castBow(session, technique);
 
     var target = new Zombie(EntityType.ZOMBIE, level);
     target.setPos(player.position().add(0, 0, 3.5));
     require(level.addFreshEntity(target), "Spawn a Slowing Shot target");
     try {
-      player.startUsingItem(InteractionHand.MAIN_HAND);
-      Items.BOW.releaseUsing(bow, level, player, bow.getUseDuration(player) - 12);
-      player.stopUsingItem();
-      require(player.getOffhandItem().getCount() == 1, "Slowing Shot spends one ordinary arrow");
+      bowTicks(player, BowItem.MAX_DRAW_DURATION - 1);
+      require(
+          player.isUsingItem() && player.getOffhandItem().getCount() == 2,
+          "Slowing Shot waits through the ordinary draw with ammo intact");
+      bowTicks(player, 1);
+      require(
+          !player.isUsingItem()
+              && player.getOffhandItem().getCount() == 1
+              && cooldown(session, technique) == technique.cooldownTicks(),
+          "Slowing Shot ends the draw and charges one arrow and cooldown at release");
       var arrows =
           level.getEntitiesOfClass(
               AbstractArrow.class,
               player.getBoundingBox().inflate(4),
               arrow -> arrow.getOwner() == player);
       try {
-        require(arrows.size() == 1, "Slowing Shot releases one native arrow");
+        require(
+            arrows.size() == 1 && arrows.getFirst().isCritArrow(),
+            "Slowing Shot releases one native full-draw arrow");
         var arrow = arrows.getFirst();
         for (int tick = 0; tick < 4 && !arrow.isRemoved(); tick++) arrow.tick();
         var slowness = target.getEffect(MobEffects.MOVEMENT_SLOWDOWN);
@@ -443,9 +588,560 @@ final class MartialClassRegression {
     }
   }
 
+  private static void verifyMarkingShot(TestShipPlayerSession session) {
+    var player = session.player;
+    var technique = MartialTechnique.MARKING_SHOT;
+    var bow = new ItemStack(Items.BOW);
+    player.setItemInHand(InteractionHand.MAIN_HAND, bow);
+    player.setItemInHand(InteractionHand.OFF_HAND, new ItemStack(Items.ARROW, 2));
+    prepare(player, 0, technique);
+    PreparedAbilities.select(player, 0);
+    castBow(session, technique);
+    var target = opponent(player, 0, 3.5);
+    target.getAttribute(Attributes.MAX_HEALTH).setBaseValue(100);
+    target.setHealth(100);
+    try {
+      bowTicks(player, BowItem.MAX_DRAW_DURATION);
+      var markedArrow = ownedArrows(player).getFirst();
+      for (int tick = 0; tick < 4 && !markedArrow.isRemoved(); tick++) markedArrow.tick();
+      markedArrow.discard();
+      require(
+          techniqueEntry(session, technique).reason().equals(MartialTechniques.MARKED),
+          "A Cast-launched Marking Shot marks its visible target");
+      target.invulnerableTime = 0;
+      var followUp = fullDraw(player, bow).getFirst();
+      close(
+          MartialArchery.impactDamage(followUp, target, 10),
+          17.0,
+          "An ordinary follow-up keeps the Marking Shot's damage bonus");
+      for (int tick = 0; tick < 4 && !followUp.isRemoved(); tick++) followUp.tick();
+      require(
+          !techniqueEntry(session, technique).reason().equals(MartialTechniques.MARKED),
+          "The native follow-up consumes the mark");
+    } finally {
+      target.discard();
+      ownedArrows(player).forEach(AbstractArrow::discard);
+    }
+  }
+
+  private static void verifyQuickShot(TestShipPlayerSession session) {
+    var player = session.player;
+    var technique = MartialTechnique.QUICK_SHOT;
+    var bow = new ItemStack(Items.BOW);
+    player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
+    player.setItemInHand(InteractionHand.OFF_HAND, bow);
+    player.getInventory().setItem(10, new ItemStack(Items.ARROW, 2));
+    prepare(player, 0, technique);
+    PreparedAbilities.select(player, 0);
+    castBow(session, technique);
+    require(
+        player.getUseItem() == bow && player.getUsedItemHand() == InteractionHand.OFF_HAND,
+        "Quick Shot starts the real offhand draw when the main hand has no bow");
+    bowTicks(player, 8);
+    require(
+        player.isUsingItem() && ownedArrows(player).isEmpty(),
+        "Quick Shot still holds the bow at eight ticks");
+    bowTicks(player, 1);
+    var arrows = ownedArrows(player);
+    require(
+        arrows.size() == 1
+            && arrows.getFirst().isCritArrow()
+            && player.getInventory().getItem(10).getCount() == 1
+            && cooldown(session, technique) == technique.cooldownTicks(),
+        "Quick Shot fires at full power after nine ticks and spends one arrow");
+    arrows.forEach(AbstractArrow::discard);
+  }
+
+  private static void verifyTripleShot(TestShipPlayerSession session) {
+    ServerPlayer player = session.player;
+    var level = player.serverLevel();
+    var clock = level.getServer().getWorldData().overworldData();
+    var bow = new ItemStack(Items.BOW);
+    player.setItemInHand(InteractionHand.MAIN_HAND, bow);
+    player.setItemInHand(InteractionHand.OFF_HAND, new ItemStack(Items.ARROW, 2));
+    player.getInventory().setItem(10, new ItemStack(Items.ARROW, 2));
+    session.look(90, 0);
+    player.setDeltaMovement(Vec3.ZERO);
+    var technique = MartialTechnique.TRIPLE_SHOT;
+    prepare(player, 0, technique);
+    PreparedAbilities.select(player, 0);
+    castBow(session, technique);
+
+    var target = new Zombie(EntityType.ZOMBIE, level);
+    target.getAttribute(Attributes.MAX_HEALTH).setBaseValue(100);
+    target.setHealth(100);
+    target.setPos(player.position().add(0, 0, 5.5));
+    require(level.addFreshEntity(target), "Spawn a Triple Shot target");
+    var bounds = player.getBoundingBox().inflate(8);
+    int previousCues = session.volleyLaunchPackets();
+    try {
+      bowTicks(player, 12);
+      session.releaseUsingItem();
+      require(
+          player.isUsingItem()
+              && player.getOffhandItem().getCount() == 2
+              && player.getInventory().getItem(10).getCount() == 2
+              && ownedArrows(player).isEmpty()
+              && session.volleyLaunchPackets() == previousCues,
+          "Early native release cannot fire or pay for the volley");
+
+      session.look(0, 0);
+      require(player.getYRot() == 0.0F, "The server received the new aim before release");
+      bowTicks(player, BowItem.MAX_DRAW_DURATION - 12);
+      long release = clock.getGameTime();
+      require(
+          player.getOffhandItem().isEmpty()
+              && player.getInventory().getItem(10).getCount() == 1
+              && cooldown(session, technique) == technique.cooldownTicks(),
+          "A full draw pays for three arrows across the off hand and inventory");
+      session.look(90, 0);
+      int previousTrails = session.volleyTrailPackets();
+      for (int elapsed = 0; elapsed <= 10; elapsed++) {
+        clock.setGameTime(release + elapsed);
+        MartialTechniques.tick(player);
+        var arrows =
+            level.getEntitiesOfClass(
+                AbstractArrow.class, bounds, arrow -> arrow.getOwner() == player);
+        if (elapsed % 5 != 0) {
+          require(
+              arrows.isEmpty() && session.volleyLaunchPackets() == previousCues,
+              "No arrow or launch cue is sent between releases");
+          continue;
+        }
+        require(
+            arrows.size() == 1 && session.volleyLaunchPackets() == ++previousCues,
+            "Every release spawns one arrow and delivers one visible cue to the archer");
+        var arrow = arrows.getFirst();
+        require(
+            arrow.getDeltaMovement().z > 2.5 && Math.abs(arrow.getDeltaMovement().x) < 0.15,
+            "Every arrow uses the release-time aim even after the player turns");
+        float health = target.getHealth();
+        arrow.tick();
+        NeoForge.EVENT_BUS.post(new EntityTickEvent.Post(arrow));
+        if (elapsed == 0) {
+          require(
+              arrow.isCritArrow() && session.volleyTrailPackets() == previousTrails,
+              "The native full draw already has its critical trail");
+        } else {
+          require(
+              session.volleyTrailPackets() == ++previousTrails,
+              "Each follow-up supplies its own short trail");
+        }
+        for (int tick = 1; tick < 4 && !arrow.isRemoved(); tick++) arrow.tick();
+        require(
+            target.getHealth() < health, "Each arrow damages the same target in quick succession");
+        arrow.discard();
+      }
+    } finally {
+      target.discard();
+      level
+          .getEntitiesOfClass(AbstractArrow.class, bounds, arrow -> arrow.getOwner() == player)
+          .forEach(AbstractArrow::discard);
+    }
+  }
+
+  private static void verifyTripleShotAmmo(TestShipPlayerSession session) {
+    var player = session.player;
+    var level = player.serverLevel();
+    var clock = level.getServer().getWorldData().overworldData();
+    long start = clock.getGameTime();
+    var technique = MartialTechnique.TRIPLE_SHOT;
+    var bow = Items.BOW.getDefaultInstance();
+    bow.enchant(
+        level
+            .registryAccess()
+            .lookupOrThrow(Registries.ENCHANTMENT)
+            .getOrThrow(Enchantments.INFINITY),
+        1);
+    player.setItemInHand(InteractionHand.MAIN_HAND, bow);
+    player.setYRot(0);
+    player.setXRot(0);
+    player.setDeltaMovement(Vec3.ZERO);
+    int launches = session.volleyLaunchPackets();
+    try {
+      clock.setGameTime(start + technique.cooldownTicks() + 1);
+      player.getInventory().setItem(10, ItemStack.EMPTY);
+      player.setItemInHand(InteractionHand.OFF_HAND, new ItemStack(Items.ARROW, 2));
+      session.receivePlayPayload(new AbilityNetwork.Cast(), "6");
+      require(
+          !player.isUsingItem() && cooldown(session, technique) == 0,
+          "Infinity cannot replace a missing third arrow");
+      var arrows = fullDraw(player, bow);
+      require(
+          arrows.size() == 1 && player.getOffhandItem().getCount() == 2,
+          "Without three physical arrows an Infinity bow performs one native shot");
+      arrows.forEach(AbstractArrow::discard);
+
+      player.getInventory().setItem(10, new ItemStack(Items.ARROW, 3));
+      for (var special : List.of(Items.TIPPED_ARROW.getDefaultInstance(), smokeAmmo())) {
+        player.setItemInHand(InteractionHand.OFF_HAND, special);
+        session.receivePlayPayload(new AbilityNetwork.Cast(), "6");
+        require(
+            !player.isUsingItem() && cooldown(session, technique) == 0,
+            "Selecting " + special + " blocks Triple Shot even with three ordinary arrows");
+      }
+      for (var special : List.of(Items.TIPPED_ARROW.getDefaultInstance(), smokeAmmo())) {
+        player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
+        castBow(session, technique);
+        bowTicks(player, 6);
+        player.setItemInHand(InteractionHand.OFF_HAND, special);
+        bowTicks(player, BowItem.MAX_DRAW_DURATION);
+        require(
+            !player.isUsingItem()
+                && ownedArrows(player).isEmpty()
+                && cooldown(session, technique) == 0
+                && player.getInventory().getItem(10).getCount() == 3,
+            "Switching to " + special + " cancels Triple Shot and keeps the ordinary arrows");
+        arrows = fullDraw(player, bow);
+        require(
+            arrows.size() == 1
+                && player.getInventory().getItem(10).getCount() == 3
+                && session.volleyLaunchPackets() == launches,
+            "Manual special ammunition still releases one native arrow");
+        arrows.forEach(AbstractArrow::discard);
+      }
+      player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
+      castBow(session, technique);
+      bowTicks(player, BowItem.MAX_DRAW_DURATION);
+      long release = clock.getGameTime();
+      arrows = ownedArrows(player);
+      require(
+          arrows.size() == 1
+              && session.volleyLaunchPackets() == launches + 1
+              && player.getInventory().getItem(10).isEmpty(),
+          "Automatic Triple Shot spends three physical arrows from an Infinity bow");
+      arrows.forEach(AbstractArrow::discard);
+      for (int tick = 1; tick <= 10; tick++) {
+        clock.setGameTime(release + tick);
+        MartialTechniques.tick(player);
+      }
+      require(
+          session.volleyLaunchPackets() == launches + 3,
+          "A paid Infinity volley still has exactly three release packets");
+    } finally {
+      ownedArrows(player).forEach(AbstractArrow::discard);
+      MartialTechniques.reset(player);
+      clock.setGameTime(start);
+    }
+  }
+
+  private static ItemStack smokeAmmo() {
+    var arrow = Items.ARROW.getDefaultInstance();
+    CustomData.update(
+        DataComponents.CUSTOM_DATA,
+        arrow,
+        data -> data.putBoolean("aeroscapes_reimagine:smoke_arrow", true));
+    return arrow;
+  }
+
+  private static List<AbstractArrow> fullDraw(ServerPlayer player, ItemStack bow) {
+    player.startUsingItem(InteractionHand.MAIN_HAND);
+    Items.BOW.releaseUsing(
+        bow, player.serverLevel(), player, bow.getUseDuration(player) - BowItem.MAX_DRAW_DURATION);
+    player.stopUsingItem();
+    return ownedArrows(player);
+  }
+
+  private static List<AbstractArrow> ownedArrows(ServerPlayer player) {
+    return player
+        .serverLevel()
+        .getEntitiesOfClass(
+            AbstractArrow.class,
+            player.getBoundingBox().inflate(12),
+            arrow -> arrow.getOwner() == player);
+  }
+
+  private static void verifySmokeArrow(ServerLevel level, Vec3 position) {
+    try (var archer =
+            TestShipPlayerSession.create(level, UUID.randomUUID(), "SmokeArcher", position, null);
+        var retreat =
+            TestShipPlayerSession.create(
+                level, UUID.randomUUID(), "SmokeRetreat", position.add(1.5, 0, 0), null)) {
+      verifySmokePursuit(archer, retreat);
+    }
+  }
+
+  private static void verifySmokePursuit(
+      TestShipPlayerSession archer, TestShipPlayerSession retreat) {
+    var player = archer.player;
+    var covered = retreat.player;
+    var level = player.serverLevel();
+    var clock = level.getServer().getWorldData().overworldData();
+    long start = clock.getGameTime();
+    Vec3 position = player.position();
+    Vec3 behindSmoke = covered.position();
+    var origin = player.blockPosition();
+    Map<BlockPos, BlockState> restored = new HashMap<>();
+    var skeleton = new Skeleton(EntityType.SKELETON, level);
+    var zombie = new Zombie(EntityType.ZOMBIE, level);
+    var bounds = player.getBoundingBox().inflate(14);
+    try {
+      clock.setGameTime(start + 20);
+      for (int x = -1; x <= 9; x++) {
+        for (int z = -1; z <= 9; z++) {
+          setStone(level, origin.offset(x, -1, z), restored);
+          for (int y = 0; y <= 2; y++) {
+            BlockPos block = origin.offset(x, y, z);
+            BlockState previous = level.getBlockState(block);
+            if (!previous.isAir()) {
+              restored.putIfAbsent(block, previous);
+              level.setBlockAndUpdate(block, Blocks.AIR.defaultBlockState());
+            }
+          }
+        }
+      }
+      // The block catches the smoke arrow beside, rather than on, the mobs' sight lines.
+      setStone(level, BlockPos.containing(player.getEyePosition().add(0, 0, 4)), restored);
+      skeleton.setPos(position.add(1.25, 0, 8));
+      skeleton.setItemInHand(InteractionHand.MAIN_HAND, Items.BOW.getDefaultInstance());
+      skeleton.setTarget(covered);
+      zombie.setPos(position.add(2, 0, 7));
+      zombie.setTarget(covered);
+      require(
+          level.addFreshEntity(skeleton) && level.addFreshEntity(zombie), "Spawn pursuing mobs");
+      // This fixture calls the goals directly before an entity tick sets ground contact.
+      skeleton.setOnGround(true);
+      zombie.setOnGround(true);
+      var ranged = new RangedBowAttackGoal<>(skeleton, 1.0, 20, 15.0F);
+      var melee = new MeleeAttackGoal(zombie, 1.0, true);
+      require(
+          skeleton.getSensing().hasLineOfSight(covered)
+              && zombie.getSensing().hasLineOfSight(covered),
+          "The retreating player is in clear sight before smoke forms");
+      require(ranged.canUse(), "The armed skeleton starts its native ranged goal");
+      require(melee.canUse(), "The grounded zombie can path to the retreating player");
+      ranged.start();
+      melee.start();
+      ranged.tick();
+      melee.tick();
+      var oldPath = zombie.getNavigation().getPath();
+      require(oldPath != null && !oldPath.isDone(), "The melee mob is already pursuing the player");
+      skeleton.performRangedAttack(covered, 1);
+      var inbound =
+          level.getEntitiesOfClass(
+              AbstractArrow.class, bounds, arrow -> arrow.getOwner() == skeleton);
+      require(inbound.size() == 1, "One hostile arrow is already in flight");
+      var hostileArrow = inbound.getFirst();
+      skeleton.startUsingItem(InteractionHand.MAIN_HAND);
+      double rangedAim = skeleton.getLookControl().getWantedX();
+      double meleeAim = zombie.getLookControl().getWantedX();
+
+      player.setItemInHand(InteractionHand.OFF_HAND, smokeAmmo());
+      var bow = Items.BOW.getDefaultInstance();
+      player.setItemInHand(InteractionHand.MAIN_HAND, bow);
+      var outbound = fullDraw(player, bow);
+      require(
+          outbound.size() == 1 && player.getOffhandItem().isEmpty(),
+          "Smoke spends one native arrow");
+      var smoke = outbound.getFirst();
+      for (int tick = 0; tick < 4 && !smoke.isRemoved(); tick++) smoke.tick();
+      var archerSmoke = archer.takeSmokeParticles();
+      var coveredSmoke = retreat.takeSmokeParticles();
+      require(
+          archerSmoke != null && coveredSmoke != null,
+          "Native block impact sends smoke to both the shooting and retreating players");
+      require(
+          archerSmoke.getCount() == coveredSmoke.getCount()
+              && archerSmoke.getX() == coveredSmoke.getX()
+              && archerSmoke.getY() == coveredSmoke.getY()
+              && archerSmoke.getZ() == coveredSmoke.getZ(),
+          "Both server sessions receive the same smoke location and intensity");
+
+      covered.setPos(behindSmoke.add(0.5, 0, 0));
+      require(
+          skeleton.hasLineOfSight(covered) && zombie.hasLineOfSight(covered),
+          "Solid blocks do not interrupt the covered player's route");
+      require(
+          !skeleton.getSensing().hasLineOfSight(covered)
+              && !zombie.getSensing().hasLineOfSight(covered),
+          "Smoke interrupts even cached visibility");
+      ranged.tick();
+      melee.tick();
+      require(!skeleton.isUsingItem(), "An already aiming skeleton lowers its bow");
+      close(skeleton.getLookControl().getWantedX(), rangedAim, "Skeleton keeps its last known aim");
+      close(zombie.getLookControl().getWantedX(), meleeAim, "Zombie keeps its last known aim");
+      require(zombie.getNavigation().getPath() == oldPath, "Melee keeps its last known path");
+      double smokePlane = archerSmoke.getZ();
+      for (int tick = 0;
+          tick < 7 && hostileArrow.getZ() > smokePlane && !hostileArrow.isRemoved();
+          tick++) hostileArrow.tick();
+      require(
+          hostileArrow.getZ() < smokePlane && !hostileArrow.isRemoved(),
+          "A hostile arrow already in flight crosses the smoke");
+
+      covered.setPos(behindSmoke.add(6, 0, 0));
+      require(
+          skeleton.getSensing().hasLineOfSight(covered)
+              && zombie.getSensing().hasLineOfSight(covered),
+          "A sight line outside the cloud stays open while smoke is active");
+      covered.setPos(behindSmoke.add(0.5, 0, 0));
+      clock.setGameTime(start + 121);
+      require(
+          skeleton.getSensing().hasLineOfSight(covered)
+              && zombie.getSensing().hasLineOfSight(covered),
+          "Sight returns when the smoke expires");
+      ranged.tick();
+      melee.tick();
+      close(skeleton.getLookControl().getWantedX(), covered.getX(), "Skeleton resumes tracking");
+      close(zombie.getLookControl().getWantedX(), covered.getX(), "Zombie resumes tracking");
+    } finally {
+      clock.setGameTime(start + 121);
+      NeoForge.EVENT_BUS.post(new LevelTickEvent.Post(() -> true, level));
+      clock.setGameTime(start);
+      level
+          .getEntitiesOfClass(
+              AbstractArrow.class,
+              bounds,
+              arrow -> arrow.getOwner() == player || arrow.getOwner() == skeleton)
+          .forEach(AbstractArrow::discard);
+      skeleton.discard();
+      zombie.discard();
+      restored.forEach((pos, previous) -> level.setBlockAndUpdate(pos, previous));
+    }
+  }
+
+  private static void setStone(
+      ServerLevel level, BlockPos pos, Map<BlockPos, BlockState> restored) {
+    restored.putIfAbsent(pos, level.getBlockState(pos));
+    level.setBlockAndUpdate(pos, Blocks.STONE.defaultBlockState());
+  }
+
+  private static void verifyDuelistSidestep(ServerLevel level, Vec3 position) {
+    var clock = level.getServer().getWorldData().overworldData();
+    long initial = clock.getGameTime();
+    try (var session =
+        TestShipPlayerSession.create(level, UUID.randomUUID(), "Duelist", position, null)) {
+      var player = session.player;
+      var origin = player.blockPosition();
+      Map<BlockPos, BlockState> restored = new HashMap<>();
+      var attacker = new Zombie(EntityType.ZOMBIE, level);
+      ProgressionRegression.listPlayer(level, player, true);
+      try {
+        PlayerLifecycleEvents.onPlayerLogin(new PlayerEvent.PlayerLoggedInEvent(player));
+        var ranger = CharacterClass.RANGER;
+        require(
+            RaceIdentity.choose(
+                player,
+                Race.HUMAN,
+                0,
+                ranger,
+                ranger.starters().getFirst(),
+                Profession.BLACKSMITH,
+                "material_repair"),
+            "Choose the ordinary Ranger for the Duelist regression");
+        for (int offset = -2; offset <= 2; offset++) {
+          setStone(level, origin.offset(offset, -1, 0), restored);
+        }
+        for (int tick = 0; tick < 60; tick++) player.tick();
+        attacker.setNoAi(true);
+        attacker.setPos(position.add(0, 0, 1.8));
+        require(level.addFreshEntity(attacker), "Spawn a real frontal Duelist opponent");
+        var knife = item("farmersdelight:iron_knife");
+        player.setItemInHand(InteractionHand.MAIN_HAND, knife);
+        var parry = MartialTechnique.DUELIST_PARRY;
+        prepare(player, 0, parry);
+        PreparedAbilities.select(player, 0);
+        setCombatTalent(player, "duelist_sidestep");
+
+        float ordinary = duelistDamage(player, attacker);
+        require(ordinary > 0, "A native frontal melee hit deals damage before parry");
+        byte[] directions = {0, 1, -1, 1};
+        for (int index = 0; index < directions.length; index++) {
+          byte direction = directions[index];
+          player.setPos(position);
+          player.setYRot(0);
+          player.setOnGround(true);
+          player.setDeltaMovement(Vec3.ZERO);
+          boolean obstructed = index == directions.length - 1;
+          if (obstructed) {
+            setStone(level, origin.east(), restored);
+            setStone(level, origin.east().above(), restored);
+          }
+          if (direction == -1) {
+            player.setItemInHand(InteractionHand.MAIN_HAND, Items.IRON_SWORD.getDefaultInstance());
+            player.setItemInHand(InteractionHand.OFF_HAND, knife);
+            player.doTick();
+          } else {
+            player.setItemInHand(InteractionHand.MAIN_HAND, knife);
+            player.setItemInHand(InteractionHand.OFF_HAND, ItemStack.EMPTY);
+            player.doTick();
+          }
+          session.moveOnGround(position);
+          require(GroundFootwork.available(player), "The parry fixture starts on solid ground");
+          require(GroundFootwork.learnedSidestep(player), "The Ranger sidestep talent is learned");
+          verifyParryStep(session, attacker, ordinary, direction, obstructed);
+          clock.setGameTime(clock.getGameTime() + parry.cooldownTicks() + 1);
+        }
+      } finally {
+        MartialTechniques.reset(player);
+        ProgressionRegression.listPlayer(level, player, false);
+        attacker.discard();
+        restored.forEach((pos, previous) -> level.setBlockAndUpdate(pos, previous));
+      }
+    } finally {
+      clock.setGameTime(initial);
+    }
+  }
+
+  private static void verifyParryStep(
+      TestShipPlayerSession session,
+      Zombie attacker,
+      float ordinary,
+      byte direction,
+      boolean obstructed) {
+    var player = session.player;
+    var clock = player.serverLevel().getServer().getWorldData().overworldData();
+    long now = clock.getGameTime();
+    Vec3 start = player.position();
+    var parry = MartialTechnique.DUELIST_PARRY;
+    session.receivePlayPayload(new GroundFootwork.LateralInput(direction), "1");
+    PreparedAbilities.cast(player);
+    require(
+        cooldown(session, parry) == parry.cooldownTicks(), "Parry keeps its activation cooldown");
+    float attackerHealth = attacker.getHealth();
+    close(
+        duelistDamage(player, attacker), ordinary * 0.55F, "The frontal parry softens the attack");
+    var reply = session.takePayload(SwingTempo.Window.class);
+    require(
+        reply.style() == SwingTempo.Style.PARRY && reply.target() == attacker.getId(),
+        "Parry and sidestep leave the faster manual reply targeted at the attacker");
+    MartialTechniques.tick(player);
+    require(
+        !session.hasFootwork() && player.position().equals(start),
+        "The hit cannot teleport or immediately step the player");
+    clock.setGameTime(now + 1);
+    session.moveOnGround(start);
+    MartialTechniques.tick(player);
+    if (direction == 0 || obstructed) {
+      require(
+          !session.hasFootwork() && player.position().equals(start),
+          "Neutral or blocked input keeps the parry in place");
+    } else {
+      followFootwork(session, start);
+      close(
+          player.getX() - start.x, direction * 1.5, "Sidestep follows the held lateral direction");
+      close(player.getZ(), start.z, "Sidestep does not move in the facing direction");
+      close(player.getYRot(), 0, "Sidestep preserves facing");
+    }
+    require(attacker.getHealth() == attackerHealth, "The reply never attacks automatically");
+    PreparedAbilities.cast(player);
+    require(
+        cooldown(session, parry) == parry.cooldownTicks() - 1,
+        "Sidestep never adds or refreshes the parry cooldown");
+  }
+
+  private static float duelistDamage(ServerPlayer player, Zombie attacker) {
+    float health = player.getMaxHealth();
+    player.setHealth(health);
+    player.invulnerableTime = 0;
+    require(player.hurt(player.damageSources().mobAttack(attacker), 4), "The melee hit lands");
+    return health - player.getHealth();
+  }
+
   private static void prepare(ServerPlayer player, int slot, MartialTechnique technique) {
+    String node = ResourceLocation.parse(technique.id()).getPath();
     SkillsMod.getInstance()
-        .tryUnlockSkill(player, COMBAT, ResourceLocation.parse(technique.id()).getPath(), true);
+        .tryUnlockSkill(player, CombatDirection.categoryForNode(node), node, true);
     PreparedAbilities.edit(player, slot, technique.id());
     require(
         PreparedAbilities.preparation(player).slots().get(slot).equals(technique.id()),
@@ -456,14 +1152,19 @@ final class MartialClassRegression {
     var provider = SkillsMod.getInstance();
     provider.setPoints(
         player, COMBAT, ResourceLocation.parse("aeroscapes_reimagine:martial_fixture"), 6, true);
+    provider.setPoints(
+        player, RANGER, ResourceLocation.parse("aeroscapes_reimagine:martial_fixture"), 6, true);
     require(
-        provider.getSkillState(player, COMBAT, "bow_stride").orElseThrow() == Skill.State.UNLOCKED,
+        provider.getSkillState(player, RANGER, "bow_stride").orElseThrow() == Skill.State.UNLOCKED,
         "Chosen passive");
     for (String skill :
         List.of("quick_block", "shield_march", "steady_aim", "quick_recovery", "opening_strike")) {
-      provider.tryUnlockSkill(player, COMBAT, skill, false);
+      provider.tryUnlockSkill(player, CombatDirection.categoryForNode(skill), skill, false);
       require(
-          provider.getSkillState(player, COMBAT, skill).orElseThrow() == Skill.State.UNLOCKED,
+          provider
+                  .getSkillState(player, CombatDirection.categoryForNode(skill), skill)
+                  .orElseThrow()
+              == Skill.State.UNLOCKED,
           "Ordinary cross-class purchase of " + skill);
     }
     verifyShieldSync(player);
@@ -569,10 +1270,12 @@ final class MartialClassRegression {
   private static void verifyRangedProficiency(ServerPlayer player) {
     var crossbow = Items.CROSSBOW.getDefaultInstance();
     var autoloader = item("irons_spellbooks:autoloader_crossbow");
-    APIUtils.setLevel("combat", player, 20);
+    APIUtils.setLevel("ranger", player, 20);
     APIUtils.setLevel("archery", player, 0);
     ProgressionBridge.sync(player);
-    require(!learnHandling(player, "crossbow_handling"), "Combat points do not replace practice");
+    require(
+        !learnHandling(player, "crossbow_handling"),
+        "Ranger points do not replace ranged practice");
     int slowCrossbow = CrossbowItem.getChargeDuration(crossbow, player);
     var quickCrossbow = crossbow.copy();
     quickCrossbow.enchant(
@@ -620,8 +1323,9 @@ final class MartialClassRegression {
 
   private static boolean learnHandling(ServerPlayer player, String node) {
     var provider = SkillsMod.getInstance();
-    provider.tryUnlockSkill(player, COMBAT, node, false);
-    return provider.getSkillState(player, COMBAT, node).orElseThrow() == Skill.State.UNLOCKED;
+    provider.tryUnlockSkill(player, CombatDirection.categoryForNode(node), node, false);
+    return provider.getSkillState(player, CombatDirection.categoryForNode(node), node).orElseThrow()
+        == Skill.State.UNLOCKED;
   }
 
   private static void verifyMeleeProficiency(ServerPlayer player) {

@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="16" shape-rendering="crispEdges">
+  <title>Beastmaster wolf talent icons</title>
+  <desc>Original 16 by 16 pixel tiles. Export the named groups with rsvg-convert --export-id.</desc>
+  <defs>
+    <radialGradient id="forest" cx="50%" cy="43%" r="70%">
+      <stop stop-color="#385749"/>
+      <stop offset="1" stop-color="#172722"/>
+    </radialGradient>
+    <rect id="tile" width="16" height="16" fill="url(#forest)"/>
+    <g id="wolf">
+      <rect x="4" y="2" width="1" height="1" fill="#142429"/>
+      <rect x="9" y="2" width="1" height="1" fill="#142429"/>
+      <rect x="4" y="3" width="1" height="1" fill="#142429"/>
+      <rect x="5" y="3" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="8" y="3" width="1" height="1" fill="#142429"/>
+      <rect x="9" y="3" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="10" y="3" width="1" height="1" fill="#142429"/>
+      <rect x="3" y="4" width="1" height="1" fill="#142429"/>
+      <rect x="4" y="4" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="5" y="4" width="1" height="1" fill="#60757a"/>
+      <rect x="6" y="4" width="1" height="1" fill="#142429"/>
+      <rect x="7" y="4" width="1" height="1" fill="#142429"/>
+      <rect x="8" y="4" width="1" height="1" fill="#60757a"/>
+      <rect x="9" y="4" width="1" height="1" fill="#60757a"/>
+      <rect x="10" y="4" width="1" height="1" fill="#142429"/>
+      <rect x="3" y="5" width="1" height="1" fill="#142429"/>
+      <rect x="4" y="5" width="1" height="1" fill="#60757a"/>
+      <rect x="5" y="5" width="1" height="1" fill="#889d9b"/>
+      <rect x="6" y="5" width="1" height="1" fill="#60757a"/>
+      <rect x="7" y="5" width="1" height="1" fill="#889d9b"/>
+      <rect x="8" y="5" width="1" height="1" fill="#60757a"/>
+      <rect x="9" y="5" width="1" height="1" fill="#60757a"/>
+      <rect x="10" y="5" width="1" height="1" fill="#142429"/>
+      <rect x="2" y="6" width="1" height="1" fill="#142429"/>
+      <rect x="3" y="6" width="1" height="1" fill="#60757a"/>
+      <rect x="4" y="6" width="1" height="1" fill="#889d9b"/>
+      <rect x="5" y="6" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="6" y="6" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="7" y="6" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="8" y="6" width="1" height="1" fill="#60757a"/>
+      <rect x="9" y="6" width="1" height="1" fill="#889d9b"/>
+      <rect x="10" y="6" width="1" height="1" fill="#60757a"/>
+      <rect x="11" y="6" width="1" height="1" fill="#142429"/>
+      <rect x="2" y="7" width="1" height="1" fill="#142429"/>
+      <rect x="3" y="7" width="1" height="1" fill="#60757a"/>
+      <rect x="4" y="7" width="1" height="1" fill="#889d9b"/>
+      <rect x="5" y="7" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="6" y="7" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="7" y="7" width="1" height="1" fill="#142429"/>
+      <rect x="8" y="7" width="1" height="1" fill="#ebc37d"/>
+      <rect x="9" y="7" width="1" height="1" fill="#60757a"/>
+      <rect x="10" y="7" width="1" height="1" fill="#60757a"/>
+      <rect x="11" y="7" width="1" height="1" fill="#142429"/>
+      <rect x="2" y="8" width="1" height="1" fill="#142429"/>
+      <rect x="3" y="8" width="1" height="1" fill="#60757a"/>
+      <rect x="4" y="8" width="1" height="1" fill="#889d9b"/>
+      <rect x="5" y="8" width="1" height="1" fill="#a8b7b4"/>
+      <rect x="6" y="8" width="1" height="1" fill="#60757a"/>
+      <rect x="7" y="8" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="8" y="8" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="9" y="8" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="10" y="8" width="1" height="1" fill="#60757a"/>
+      <rect x="11" y="8" width="1" height="1" fill="#60757a"/>
+      <rect x="12" y="8" width="1" height="1" fill="#10171b"/>
+      <rect x="13" y="8" width="1" height="1" fill="#142429"/>
+      <rect x="2" y="9" width="1" height="1" fill="#142429"/>
+      <rect x="3" y="9" width="1" height="1" fill="#60757a"/>
+      <rect x="4" y="9" width="1" height="1" fill="#60757a"/>
+      <rect x="5" y="9" width="1" height="1" fill="#60757a"/>
+      <rect x="6" y="9" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="7" y="9" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="8" y="9" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="9" y="9" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="10" y="9" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="11" y="9" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="12" y="9" width="1" height="1" fill="#10171b"/>
+      <rect x="13" y="9" width="1" height="1" fill="#142429"/>
+      <rect x="3" y="10" width="1" height="1" fill="#142429"/>
+      <rect x="4" y="10" width="1" height="1" fill="#60757a"/>
+      <rect x="5" y="10" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="6" y="10" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="7" y="10" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="8" y="10" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="9" y="10" width="1" height="1" fill="#60757a"/>
+      <rect x="10" y="10" width="1" height="1" fill="#60757a"/>
+      <rect x="11" y="10" width="1" height="1" fill="#142429"/>
+      <rect x="12" y="10" width="1" height="1" fill="#142429"/>
+      <rect x="3" y="11" width="1" height="1" fill="#142429"/>
+      <rect x="4" y="11" width="1" height="1" fill="#60757a"/>
+      <rect x="5" y="11" width="1" height="1" fill="#60757a"/>
+      <rect x="6" y="11" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="7" y="11" width="1" height="1" fill="#d5d7c5"/>
+      <rect x="8" y="11" width="1" height="1" fill="#142429"/>
+      <rect x="9" y="11" width="1" height="1" fill="#142429"/>
+      <rect x="10" y="11" width="1" height="1" fill="#142429"/>
+      <rect x="4" y="12" width="1" height="1" fill="#142429"/>
+      <rect x="5" y="12" width="1" height="1" fill="#60757a"/>
+      <rect x="6" y="12" width="1" height="1" fill="#60757a"/>
+      <rect x="7" y="12" width="1" height="1" fill="#142429"/>
+      <rect x="5" y="13" width="1" height="1" fill="#142429"/>
+      <rect x="6" y="13" width="1" height="1" fill="#142429"/>
+    </g>
+  </defs>
+  <g id="beastmaster_wolf" transform="translate(0 0)">
+    <use href="#tile"/>
+    <use href="#wolf"/>
+
+  </g>
+  <g id="beastmaster_wolf_count" transform="translate(16 0)">
+    <use href="#tile"/>
+    <use href="#wolf"/>
+      <rect x="10" y="12" width="1" height="1" fill="#172827"/>
+      <rect x="12" y="12" width="1" height="1" fill="#172827"/>
+      <rect x="9" y="13" width="1" height="1" fill="#172827"/>
+      <rect x="10" y="13" width="1" height="1" fill="#f0d38a"/>
+      <rect x="11" y="13" width="1" height="1" fill="#172827"/>
+      <rect x="12" y="13" width="1" height="1" fill="#f0d38a"/>
+      <rect x="13" y="13" width="1" height="1" fill="#172827"/>
+      <rect x="10" y="14" width="1" height="1" fill="#172827"/>
+      <rect x="12" y="14" width="1" height="1" fill="#172827"/>
+  </g>
+  <g id="beastmaster_wolf_damage" transform="translate(32 0)">
+    <use href="#tile"/>
+    <use href="#wolf"/>
+      <rect x="14" y="10" width="1" height="1" fill="#f0d38a"/>
+      <rect x="13" y="11" width="1" height="1" fill="#f0d38a"/>
+      <rect x="14" y="11" width="1" height="1" fill="#172827"/>
+      <rect x="12" y="12" width="1" height="1" fill="#f0d38a"/>
+      <rect x="13" y="12" width="1" height="1" fill="#172827"/>
+      <rect x="10" y="13" width="1" height="1" fill="#a9854c"/>
+      <rect x="11" y="13" width="1" height="1" fill="#f0d38a"/>
+      <rect x="12" y="13" width="1" height="1" fill="#172827"/>
+      <rect x="11" y="14" width="1" height="1" fill="#172827"/>
+  </g>
+  <g id="beastmaster_wolf_protection" transform="translate(48 0)">
+    <use href="#tile"/>
+    <use href="#wolf"/>
+      <rect x="10" y="10" width="1" height="1" fill="#172827"/>
+      <rect x="11" y="10" width="1" height="1" fill="#172827"/>
+      <rect x="12" y="10" width="1" height="1" fill="#172827"/>
+      <rect x="13" y="10" width="1" height="1" fill="#172827"/>
+      <rect x="14" y="10" width="1" height="1" fill="#172827"/>
+      <rect x="10" y="11" width="1" height="1" fill="#172827"/>
+      <rect x="11" y="11" width="1" height="1" fill="#a7baca"/>
+      <rect x="12" y="11" width="1" height="1" fill="#e0e5dc"/>
+      <rect x="13" y="11" width="1" height="1" fill="#a7baca"/>
+      <rect x="14" y="11" width="1" height="1" fill="#172827"/>
+      <rect x="10" y="12" width="1" height="1" fill="#172827"/>
+      <rect x="11" y="12" width="1" height="1" fill="#a7baca"/>
+      <rect x="12" y="12" width="1" height="1" fill="#e0e5dc"/>
+      <rect x="13" y="12" width="1" height="1" fill="#a7baca"/>
+      <rect x="14" y="12" width="1" height="1" fill="#172827"/>
+      <rect x="11" y="13" width="1" height="1" fill="#172827"/>
+      <rect x="12" y="13" width="1" height="1" fill="#5f7984"/>
+      <rect x="13" y="13" width="1" height="1" fill="#172827"/>
+      <rect x="12" y="14" width="1" height="1" fill="#172827"/>
+  </g>
+</svg>

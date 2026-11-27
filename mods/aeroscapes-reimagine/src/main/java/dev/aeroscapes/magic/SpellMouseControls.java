@@ -165,7 +165,8 @@ public final class SpellMouseControls {
       if (technique == null) return false;
       return switch (technique) {
         case SHIELD_BRACE -> player.isBlocking();
-        case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> player.getUseItem().is(Items.BOW);
+        case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT, TRIPLE_SHOT ->
+            player.getUseItem().is(Items.BOW);
         default -> false;
       };
     }

@@ -42,9 +42,9 @@ final class RaceScreen extends Screen implements ChangeView {
     static List<Page> remaining(RaceClient.Profile profile) {
       var pages = EnumSet.allOf(Page.class);
       if (profile.complete()
-          || !profile.hasClass()
+          || profile.grantPending()
           || profile.subclass() != null
-          || CharacterSubclass.choices(profile.characterClass()).isEmpty()) pages.remove(SUBCLASS);
+          || profile.subclassDeferred()) pages.remove(SUBCLASS);
       if (profile.race() != null) pages.remove(RACE);
       if (profile.hasClass()) pages.remove(CLASS);
       if (profile.hasProfession()) pages.remove(PROFESSION);
@@ -63,10 +63,10 @@ final class RaceScreen extends Screen implements ChangeView {
   private final long changeSession;
   private final Screen changeMenu;
   private final RaceClient.Profile original;
-  private boolean refundBranch;
   private Race race;
   private CharacterClass characterClass;
   private CharacterSubclass chosenSubclass;
+  private boolean subclassDeferred;
   private Profession profession;
   private final int[] styles = new int[Race.values().length];
   private final int[] tints = new int[Race.values().length];
@@ -104,6 +104,7 @@ final class RaceScreen extends Screen implements ChangeView {
     sheet = profile.complete() && edit == null;
     optionalSubclass = edit == Page.SUBCLASS && session == 0;
     chosenSubclass = profile.subclass();
+    subclassDeferred = edit == null && profile.subclassDeferred();
     grantPending = profile.grantPending() && page == Page.SUMMARY;
     race = profile.race() != null ? profile.race() : Race.HUMAN;
     if (race.validStyle(profile.style())) styles[race.ordinal()] = profile.style();
@@ -145,9 +146,7 @@ final class RaceScreen extends Screen implements ChangeView {
               .append(
                   subclass() == null
                       ? Component.empty()
-                      : Component.literal("\n").append(CharacterDetails.subclassName(subclass())))
-              .append("\n")
-              .append(ChangeClient.text(refundBranch ? "refund_branch" : "keep_branch"));
+                      : Component.literal("\n").append(CharacterDetails.subclassName(subclass())));
       case SUBCLASS -> CharacterDetails.subclassProfile(subclass());
       case PROFESSION ->
           CharacterDetails.professionName(profession)
@@ -163,6 +162,7 @@ final class RaceScreen extends Screen implements ChangeView {
 
   private CharacterSubclass subclass() {
     if (sheet) return original.subclass();
+    if (subclassDeferred) return null;
     if (chosenSubclass != null && chosenSubclass.mainClass() == characterClass)
       return chosenSubclass;
     var choices = CharacterSubclass.choices(characterClass);
@@ -197,7 +197,16 @@ final class RaceScreen extends Screen implements ChangeView {
     if (changeSession != 0) doc.append(ChangeClient.text("keep_kit")).append("\n\n");
     if (grantPending) doc.append(text("grant_pending")).append("\n\n");
     else if (retry) doc.append(text("retry")).append("\n\n");
-    if (page == Page.SUBCLASS) return doc.append(CharacterDetails.subclassProfile(subclass()));
+    if (comparingSubclasses()) {
+      if (page == Page.CLASS)
+        doc.append(CharacterDetails.className(characterClass))
+            .append("\n")
+            .append(CharacterDetails.talent(starter(), "title"))
+            .append("\n");
+      for (var choice : CharacterSubclass.choices(characterClass))
+        doc.append(CharacterDetails.subclassProfile(choice)).append("\n");
+      return doc;
+    }
     doc.append(CharacterDetails.identity(race, characterClass, profession))
         .append("\n")
         .append(text("starter", CharacterDetails.talent(starter(), "title")))
@@ -233,7 +242,8 @@ final class RaceScreen extends Screen implements ChangeView {
   @Override
   protected void init() {
     panelWidth = Math.min(520, width - 8);
-    panelHeight = Math.min(310, height - 8);
+    int preferredHeight = page == Page.SUBCLASS ? 184 : comparingSubclasses() ? 235 : 310;
+    panelHeight = Math.min(preferredHeight, height - 8);
     left = (width - panelWidth) / 2;
     top = (height - panelHeight) / 2;
     previewWidth = Math.min(134, panelWidth / 4);
@@ -256,8 +266,11 @@ final class RaceScreen extends Screen implements ChangeView {
     int contentY =
         switch (page) {
           case RACE -> raceControls(right, rightWidth);
-          case CLASS -> classControls(right, rightWidth);
-          case SUBCLASS -> subclassControl(right, rightWidth, top + 33);
+          case CLASS ->
+              comparingSubclasses()
+                  ? classControls(x, panelWidth - 20)
+                  : classControls(right, rightWidth);
+          case SUBCLASS -> top + 33;
           case PROFESSION -> professionControls(right, rightWidth);
           case SUMMARY -> top + 32;
         };
@@ -265,35 +278,26 @@ final class RaceScreen extends Screen implements ChangeView {
       button(tintLabel(), right, contentY, rightWidth, 18, this::openTintPicker);
       contentY += 23;
     }
-    if (changeSession != 0 && page == Page.CLASS) {
+    if (comparingSubclasses()) {
+      subclassCards(x, contentY, panelWidth - 20, bottom);
+    } else {
+      addRenderableWidget(
+          new FittingMultiLineTextWidget(
+                  right, contentY, rightWidth - 9, bottom - 34 - contentY, details(), font)
+              .setColor(TEXT));
       button(
-          ChangeClient.text(refundBranch ? "refund_branch" : "keep_branch"),
-          right,
-          contentY,
-          rightWidth,
+          text("rotate"), x, bottom - 72, previewWidth, 18, () -> rotation = (rotation + 45) % 360);
+      button(
+          text(expanded ? "brief" : "details"),
+          x,
+          bottom - 51,
+          previewWidth,
           18,
           () -> {
-            refundBranch = !refundBranch;
+            expanded = !expanded;
             rebuildWidgets();
           });
-      contentY += 22;
     }
-    addRenderableWidget(
-        new FittingMultiLineTextWidget(
-                right, contentY, rightWidth - 9, bottom - 34 - contentY, details(), font)
-            .setColor(TEXT));
-    button(
-        text("rotate"), x, bottom - 72, previewWidth, 18, () -> rotation = (rotation + 45) % 360);
-    button(
-        text(expanded ? "brief" : "details"),
-        x,
-        bottom - 51,
-        previewWidth,
-        18,
-        () -> {
-          expanded = !expanded;
-          rebuildWidgets();
-        });
     int footer = bottom - 26;
     int half = (panelWidth - 24) / 2;
     if (changeSession != 0) {
@@ -310,18 +314,19 @@ final class RaceScreen extends Screen implements ChangeView {
           };
       return;
     }
-    if (optionalSubclass) {
+    if (optionalSubclass || page == Page.SUBCLASS) {
       button(text("subclass_later"), x, footer, half, 18, this::deferSubclass).active =
           waiting == 0;
-      button(
-                  text(waiting > 0 ? "saving" : "confirm"),
-                  x + half + 4,
-                  footer,
-                  half,
-                  18,
-                  this::advance)
-              .active =
-          waiting == 0;
+      var confirm =
+          button(
+              text(waiting > 0 ? "saving" : retry ? "try_again" : "confirm"),
+              x + half + 4,
+              footer,
+              half,
+              18,
+              this::advance);
+      confirm.active = waiting == 0 && subclass() != null;
+      if (retry) confirm.setTooltip(Tooltip.create(text("retry")));
       return;
     }
     if (sheet) {
@@ -342,7 +347,7 @@ final class RaceScreen extends Screen implements ChangeView {
     var forward =
         switch (page) {
           case RACE -> text("to_class");
-          case CLASS -> text("to_profession");
+          case CLASS -> text(pages.contains(Page.SUBCLASS) ? "to_subclass" : "to_profession");
           case SUBCLASS -> text("confirm");
           case PROFESSION -> text("review");
           case SUMMARY ->
@@ -453,77 +458,84 @@ final class RaceScreen extends Screen implements ChangeView {
   private void previewChange() {
     var request =
         switch (page) {
-          case RACE ->
-              new ChangeNetwork.Request(
-                  changeSession, "race", race.id(), style(), "", false, List.of());
+          case RACE -> new ChangeNetwork.Request(changeSession, "race", race.id(), style(), "", "");
           case CLASS ->
               new ChangeNetwork.Request(
-                  changeSession,
-                  "class",
-                  characterClass.id(),
-                  0,
-                  starter(),
-                  refundBranch,
-                  List.of(),
-                  subclassId());
+                  changeSession, "class", characterClass.id(), 0, starter(), subclassId());
           case SUBCLASS ->
-              new ChangeNetwork.Request(
-                  changeSession, "subclass", subclassId(), 0, "", false, List.of());
+              new ChangeNetwork.Request(changeSession, "subclass", subclassId(), 0, "", "");
           case PROFESSION ->
               new ChangeNetwork.Request(
-                  changeSession,
-                  "profession",
-                  profession.id(),
-                  0,
-                  professionStarter(),
-                  false,
-                  List.of());
+                  changeSession, "profession", profession.id(), 0, professionStarter(), "");
           case SUMMARY -> throw new IllegalStateException("No change on the summary page");
         };
-    ChangeClient.preview(this, request, true, changeDescription());
+    ChangeClient.preview(this, request, changeDescription());
   }
 
   private int classControls(int right, int rightWidth) {
-    for (var choice : CharacterClass.values()) {
+    var classes = CharacterClass.selectable();
+    for (int index = 0; index < classes.size(); index++) {
+      var choice = classes.get(index);
       tab(
           CharacterDetails.className(choice),
-          choice.ordinal(),
-          CharacterClass.values().length,
+          index,
+          classes.size(),
           choice == characterClass,
           () -> {
             characterClass = choice;
+            subclassDeferred = false;
             rebuildWidgets();
           });
     }
-    int content =
-        starterControl(
-            right,
-            rightWidth,
-            characterClass.starters(),
-            starter(),
-            id -> CharacterDetails.talent(id, "title"),
-            id -> CharacterDetails.talent(id, "description"),
-            id -> starters.put(characterClass, id));
-    return subclass() == null ? content : subclassControl(right, rightWidth, content);
+    return starterControl(
+        right,
+        rightWidth,
+        characterClass.starters(),
+        starter(),
+        id -> CharacterDetails.talent(id, "title"),
+        id -> CharacterDetails.talent(id, "description"),
+        id -> starters.put(characterClass, id));
   }
 
-  private int subclassControl(int right, int rightWidth, int top) {
-    addRenderableWidget(
-        CycleButton.<CharacterSubclass>builder(CharacterDetails::subclassName)
-            .withValues(CharacterSubclass.choices(characterClass))
-            .withInitialValue(subclass())
-            .withTooltip(choice -> Tooltip.create(CharacterDetails.subclassProfile(choice)))
-            .create(
-                right,
-                top,
-                rightWidth,
-                18,
-                text("subclass_label"),
-                (button, value) -> {
-                  chosenSubclass = value;
-                  rebuildWidgets();
-                }));
-    return top + 24;
+  private boolean comparingSubclasses() {
+    return page == Page.SUBCLASS || page == Page.CLASS && changeSession != 0;
+  }
+
+  private void subclassCards(int x, int y, int width, int bottom) {
+    var choices = CharacterSubclass.choices(characterClass);
+    int columnWidth = (width - 6) / 2;
+    for (int index = 0; index < choices.size(); index++) {
+      var choice = choices.get(index);
+      int column = x + index * (columnWidth + 6);
+      boolean selected = choice == subclass();
+      var selector =
+          button(
+              CharacterDetails.subclassName(choice),
+              column,
+              y,
+              columnWidth,
+              18,
+              () -> {
+                chosenSubclass = choice;
+                subclassDeferred = false;
+                rebuildWidgets();
+              });
+      selector.active = !selected && waiting == 0;
+      selector.setTooltip(Tooltip.create(CharacterDetails.subclassProfile(choice)));
+      if (selected)
+        addRenderableOnly(
+            (graphics, mouseX, mouseY, partialTick) ->
+                graphics.renderOutline(column - 1, y - 1, columnWidth + 2, 20, GOLD));
+      addRenderableWidget(
+          new FittingMultiLineTextWidget(
+                  column + 3,
+                  y + 24,
+                  columnWidth - 6,
+                  Math.max(1, bottom - y - 56),
+                  CharacterDetails.subclassSummary(choice),
+                  font)
+              .setColor(TEXT));
+    }
   }
 
   private int professionControls(int right, int rightWidth) {
@@ -662,8 +674,14 @@ final class RaceScreen extends Screen implements ChangeView {
   }
 
   private void deferSubclass() {
-    RaceNetwork.deferSubclass();
-    closeSheet();
+    if (optionalSubclass) {
+      RaceNetwork.deferSubclass();
+      closeSheet();
+    } else {
+      subclassDeferred = true;
+      chosenSubclass = null;
+      advance();
+    }
   }
 
   private void closeSheet() {
@@ -685,6 +703,11 @@ final class RaceScreen extends Screen implements ChangeView {
     graphics.hLine(left + 7, left + 29, top + 4, 0xffb99a6c);
     graphics.hLine(left + panelWidth - 29, left + panelWidth - 7, bottom - 5, 0xffb99a6c);
     graphics.drawString(font, heading(), x, top + 12, GOLD, false);
+    if (comparingSubclasses()) {
+      if (page == Page.CLASS && characterClass.starters().size() > 1)
+        graphics.drawString(font, text("ability"), x, top + 51, GOLD, false);
+      return;
+    }
     boolean pickingTint = tintPicker != null;
     boolean tabsVisible = !pickingTint && page != Page.SUMMARY && page != Page.SUBCLASS;
     int previewY = top + (tabsVisible ? 51 : 30), previewBottom = bottom - 76;

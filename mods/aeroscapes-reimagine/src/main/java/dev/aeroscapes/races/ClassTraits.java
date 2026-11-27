@@ -30,7 +30,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class ClassTraits {
   public static final int WARRIOR_ARMOR = 2;
   public static final int MAGE_MANA = 20;
-  public static final double ROGUE_GROUND_SPEED_BONUS = 0.05;
   private static final DeferredRegister<Attribute> ATTRIBUTES =
       DeferredRegister.create(Registries.ATTRIBUTE, "aeroscapes_reimagine");
   private static final DeferredHolder<Attribute, Attribute> SHIELD_RAISE_REDUCTION =
@@ -45,11 +44,6 @@ public final class ClassTraits {
       modifier("warrior_armor", WARRIOR_ARMOR, AttributeModifier.Operation.ADD_VALUE);
   private static final AttributeModifier MANA =
       modifier("mage_mana", MAGE_MANA, AttributeModifier.Operation.ADD_VALUE);
-  private static final AttributeModifier FOOTWORK =
-      modifier(
-          "rogue_footwork",
-          ROGUE_GROUND_SPEED_BONUS,
-          AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
   private static final AttributeModifier RECOVERY =
       modifier("quick_recovery", 0.10, AttributeModifier.Operation.ADD_MULTIPLIED_TOTAL);
   private static final AttributeModifier STRIDE =
@@ -83,11 +77,6 @@ public final class ClassTraits {
     apply(player, Attributes.ARMOR, ARMOR, role == CharacterClass.WARRIOR);
     if (ModList.get().isLoaded("irons_spellbooks"))
       apply(player, AttributeRegistry.MAX_MANA, MANA, role == CharacterClass.MAGE);
-    apply(
-        player,
-        Attributes.MOVEMENT_SPEED,
-        FOOTWORK,
-        role == CharacterClass.ROGUE && light && player.onGround());
     apply(
         player,
         Attributes.ATTACK_SPEED,

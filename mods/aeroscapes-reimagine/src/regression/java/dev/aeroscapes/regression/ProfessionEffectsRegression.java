@@ -123,6 +123,7 @@ final class ProfessionEffectsRegression {
         anvil.getSlot(0).set(new ItemStack(Items.DIAMOND_PICKAXE));
         anvil.setItemName("Fixture");
         require(anvil.getCost() == 0, "Free renaming keeps its native price");
+        dismantlingWear(level, pos.east(2), player);
         harvest(level, pos, player);
         meal = craftMeal(level, pos, player);
         automaticCraft(level, pos.east(3));
@@ -157,6 +158,59 @@ final class ProfessionEffectsRegression {
       require(
           Math.abs(eat(level, guest, meal) - normal - 1) < 0.001,
           "A guest receives one actual extra saturation");
+    }
+  }
+
+  private static void dismantlingWear(ServerLevel level, BlockPos pos, ServerPlayer player) {
+    int blocks = 64;
+    var previousBlock = level.getBlockState(pos);
+    var previousTool = player.getMainHandItem();
+    var stairs = Blocks.OAK_STAIRS;
+    var logs = Blocks.OAK_LOG;
+    var axe = new ItemStack(Items.IRON_AXE);
+    var provider = SkillsMod.getInstance();
+    var building = ProfessionDiscipline.BUILDING.category();
+    var area = new AABB(pos).inflate(1);
+    try {
+      player.setItemInHand(InteractionHand.MAIN_HAND, axe);
+      mine(level, pos, player, stairs, 1);
+      require(axe.getDamageValue() == 1, "An untrained dismantle uses ordinary axe durability");
+      provider.tryUnlockSkill(player, building, "quick_dismantling", true);
+      provider.tryUnlockSkill(player, building, "careful_dismantling", true);
+      require(
+          ProfessionProgression.learned(player, "careful_dismantling"),
+          "Learn careful dismantling");
+      axe.setDamageValue(0);
+      mine(level, pos, player, stairs, blocks);
+      int dismantling = axe.getDamageValue();
+      int drops =
+          level.getEntitiesOfClass(ItemEntity.class, area).stream()
+              .map(ItemEntity::getItem)
+              .filter(stack -> stack.is(stairs.asItem()))
+              .mapToInt(ItemStack::getCount)
+              .sum();
+      require(
+          dismantling > 0 && dismantling < blocks && drops == blocks + 1,
+          "Careful dismantling saves durability while retaining every normal stair drop");
+      axe.setDamageValue(0);
+      mine(level, pos, player, logs, blocks);
+      require(axe.getDamageValue() == blocks, "Ordinary logging retains the same axe wear");
+    } finally {
+      player.setItemInHand(InteractionHand.MAIN_HAND, previousTool);
+      level.setBlockAndUpdate(pos, previousBlock);
+      level.getEntitiesOfClass(ItemEntity.class, area).stream()
+          .filter(drop -> drop.getItem().is(stairs.asItem()) || drop.getItem().is(logs.asItem()))
+          .forEach(ItemEntity::discard);
+    }
+  }
+
+  private static void mine(
+      ServerLevel level, BlockPos pos, ServerPlayer player, Block block, int count) {
+    for (int index = 0; index < count; index++) {
+      level.setBlockAndUpdate(pos, block.defaultBlockState());
+      require(
+          player.gameMode.destroyBlock(pos) && level.isEmptyBlock(pos),
+          "The ordinary survival break path removes the placed " + block);
     }
   }
 

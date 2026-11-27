@@ -1,5 +1,5 @@
 {
-  "pointCap": 131,
+  "pointCap": 140,
   "nodes": [
     {
       "id": "magic_mastery_1",
@@ -780,7 +780,7 @@
     },
     {
       "id": "magic_spell_summon_ender_chest",
-      "requiredLevel": 0,
+      "requiredLevel": 15,
       "cost": 1,
       "direction": "transformation",
       "effects": {}
@@ -1005,6 +1005,69 @@
       "effects": {
         "binding_refund": 0.2
       }
+    },
+    {
+      "id": "caster_armor_handling",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_magic_missile",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_blood_needles",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_ball_lightning",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_spell_shield",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
+    },
+    {
+      "id": "magic_frostwave_extinguish",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_blood_needles_overheal",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "destruction",
+      "effects": {}
+    },
+    {
+      "id": "magic_arcane_shackle_marker",
+      "requiredLevel": 5,
+      "cost": 1,
+      "direction": "conjuration",
+      "effects": {}
+    },
+    {
+      "id": "magic_oakskin_ally",
+      "requiredLevel": 0,
+      "cost": 1,
+      "direction": "restoration",
+      "effects": {}
     }
   ],
   "spells": [
@@ -1036,7 +1099,7 @@
       "id": "irons_spellbooks:arcane_shackle",
       "direction": "conjuration",
       "node": "magic_spell_arcane_shackle",
-      "tier": 2
+      "tier": 1
     },
     {
       "id": "irons_spellbooks:arrow_volley",
@@ -1053,8 +1116,8 @@
     {
       "id": "irons_spellbooks:ball_lightning",
       "direction": "destruction",
-      "node": "magic_mastery_1",
-      "tier": 1
+      "node": "magic_spell_ball_lightning",
+      "tier": 2
     },
     {
       "id": "irons_spellbooks:black_hole",
@@ -1089,7 +1152,7 @@
     {
       "id": "irons_spellbooks:blood_needles",
       "direction": "destruction",
-      "node": "magic_mastery_1",
+      "node": "magic_spell_blood_needles",
       "tier": 1
     },
     {
@@ -1239,7 +1302,7 @@
     {
       "id": "irons_spellbooks:firebolt",
       "direction": "destruction",
-      "node": "magic_mastery_1",
+      "node": "magic_destruction_power",
       "tier": 1
     },
     {
@@ -1317,8 +1380,8 @@
     {
       "id": "irons_spellbooks:gust",
       "direction": "conjuration",
-      "node": "magic_conjuration_mastery_2",
-      "tier": 2
+      "node": "magic_recovery_1",
+      "tier": 1
     },
     {
       "id": "irons_spellbooks:haste",
@@ -1329,7 +1392,7 @@
     {
       "id": "irons_spellbooks:heal",
       "direction": "restoration",
-      "node": "magic_mastery_1",
+      "node": "magic_restoration_power",
       "tier": 1
     },
     {
@@ -1371,7 +1434,7 @@
     {
       "id": "irons_spellbooks:icicle",
       "direction": "destruction",
-      "node": "magic_mastery_1",
+      "node": "magic_destruction_power",
       "tier": 1
     },
     {
@@ -1407,7 +1470,7 @@
     {
       "id": "irons_spellbooks:magic_missile",
       "direction": "destruction",
-      "node": "magic_mastery_1",
+      "node": "magic_spell_magic_missile",
       "tier": 1
     },
     {
@@ -1419,7 +1482,7 @@
     {
       "id": "irons_spellbooks:oakskin",
       "direction": "restoration",
-      "node": "magic_mastery_1",
+      "node": "magic_restoration_power",
       "tier": 1
     },
     {
@@ -1527,7 +1590,7 @@
     {
       "id": "irons_spellbooks:shield",
       "direction": "restoration",
-      "node": "magic_mastery_1",
+      "node": "magic_spell_shield",
       "tier": 1
     },
     {
@@ -1582,7 +1645,7 @@
       "id": "irons_spellbooks:summon_ender_chest",
       "direction": "transformation",
       "node": "magic_spell_summon_ender_chest",
-      "tier": 1
+      "tier": 3
     },
     {
       "id": "irons_spellbooks:summon_horse",
@@ -1623,8 +1686,8 @@
     {
       "id": "irons_spellbooks:teleport",
       "direction": "transformation",
-      "node": "magic_transformation_mastery_2",
-      "tier": 2
+      "node": "magic_rhythm_1",
+      "tier": 1
     },
     {
       "id": "irons_spellbooks:throw",

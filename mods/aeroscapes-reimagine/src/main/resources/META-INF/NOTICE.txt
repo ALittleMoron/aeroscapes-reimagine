@@ -327,6 +327,9 @@ https://www.curseforge.com/minecraft/mc-mods/paragliders
 https://modrinth.com/mod/yori3os-grappling-hooks
 https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul
 https://www.curseforge.com/minecraft/mc-mods/nutritional-balance
+The three dietary penalty icons are original GPL-3.0-or-later pixel artwork,
+created with AI-assisted deterministic ImageMagick composition. The interface
+resource pack supplies the attack icon for the provider's effect.
 Provider archives, textures and templates remain unchanged and are not merged
 into this JAR. Independently authored language supplements do not replace the
 providers' complete dictionaries. Paragliders structure-placement definitions

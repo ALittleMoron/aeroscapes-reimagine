@@ -1,88 +1,181 @@
 package dev.aeroscapes.races;
 
-import dev.aeroscapes.magic.MagicTalents;
+import dev.aeroscapes.equipment.armor.ArmorProficiency;
+import dev.aeroscapes.equipment.combat.BeastmasterCompanions;
+import dev.aeroscapes.equipment.combat.MartialTechnique;
+import dev.aeroscapes.equipment.combat.MartialTechniques;
+import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
+import dev.aeroscapes.magic.AbilityLoadout;
+import dev.aeroscapes.magic.InnateAbility;
+import dev.aeroscapes.magic.PreparedAbilities;
+import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.magic.travel.AmuletStep;
 import dev.aeroscapes.progression.ProfessionDiscipline;
-import dev.aeroscapes.progression.ProgressionBridge;
-import java.util.Collection;
+import dev.aeroscapes.progression.TalentRefunds;
+import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import javax.annotation.Nullable;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.Tag;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.phys.AABB;
-import net.puffish.skillsmod.SkillsMod;
 
 public final class CharacterChanges {
   static final String STARTER_PERSONALLY_LEARNED = "class_starter_personally_learned";
 
   public record Selection(
-      String kind,
-      String target,
-      int style,
-      String starter,
-      boolean refundBranch,
-      String subclassId) {
-    public Selection(String kind, String target, int style, String starter, boolean refundBranch) {
-      this(kind, target, style, starter, refundBranch, "");
+      String kind, String target, int style, String starter, String subclassId) {
+    public Selection(String kind, String target, int style, String starter) {
+      this(kind, target, style, starter, "");
     }
   }
 
-  public record Preview(List<String> removed, int returned, int spent, boolean advance) {
+  public record Preview(
+      TalentRefunds.Quote talents,
+      List<String> disabled,
+      List<String> wornGear,
+      List<String> addedSpells,
+      List<String> retiredSpells,
+      @Nullable Selection selection,
+      List<String> currentIdentity,
+      AbilityLoadout loadout,
+      List<String> equipment) {
     public Preview {
-      removed = List.copyOf(removed);
+      disabled = List.copyOf(disabled);
+      wornGear = List.copyOf(wornGear);
+      addedSpells = List.copyOf(addedSpells);
+      retiredSpells = List.copyOf(retiredSpells);
+      currentIdentity = List.copyOf(currentIdentity);
+      equipment = List.copyOf(equipment);
     }
   }
 
-  private record Assessment(@Nullable Preview preview, String problem) {}
+  private record Identity(
+      Race race,
+      int style,
+      int tint,
+      CharacterClass role,
+      String starter,
+      @Nullable CharacterSubclass subclass,
+      Profession profession,
+      String professionStarter) {
 
-  private static final Assessment INVALID = new Assessment(null, "invalid");
-  private static final Assessment NO_SPACE = new Assessment(null, "space");
-  private static final Assessment NEED_POINT = new Assessment(null, "point");
+    private List<String> fingerprint() {
+      return List.of(
+          race.id(),
+          Integer.toString(style),
+          Integer.toString(tint),
+          role.id(),
+          starter,
+          subclass == null ? "" : subclass.id(),
+          profession.id(),
+          professionStarter);
+    }
+
+    private Set<TalentRefunds.Node> grants() {
+      String category = ClassProgression.category(role).getPath();
+      var grants = new HashSet<TalentRefunds.Node>();
+      grants.add(new TalentRefunds.Node(category, ClassProgression.node(role, starter)));
+      String subclassTalent = SubclassProgression.talentNode(subclass);
+      if (subclassTalent != null) grants.add(new TalentRefunds.Node(category, subclassTalent));
+      grants.add(new TalentRefunds.Node(profession.practiceSkill(), professionStarter));
+      return Set.copyOf(grants);
+    }
+  }
+
+  private record Assessed(@Nullable Identity next, String problem) {}
+
+  private static final Assessed INVALID = new Assessed(null, "invalid");
+  private static final Assessed NO_SPACE = new Assessed(null, "space");
 
   private CharacterChanges() {}
 
   @Nullable
   public static Preview preview(ServerPlayer player, Selection selection) {
-    return assess(player, selection).preview();
+    var current = identity(player);
+    if (current == null) return null;
+    var next = assess(player, current, selection).next();
+    return next == null ? null : quote(player, current, next, selection);
   }
 
   public static String problem(ServerPlayer player, Selection selection) {
-    return assess(player, selection).problem();
+    var current = identity(player);
+    if (current == null) return INVALID.problem();
+    var assessment = assess(player, current, selection);
+    if (assessment.next() == null) return assessment.problem();
+    return quote(player, current, assessment.next(), selection) == null ? INVALID.problem() : "";
   }
 
-  private static Assessment assess(ServerPlayer player, Selection selection) {
-    var currentRace = RaceIdentity.race(player);
-    var currentClass = RaceIdentity.characterClass(player);
-    var currentProfession = RaceIdentity.profession(player);
+  @Nullable
+  public static Preview previewReset(ServerPlayer player) {
+    var current = identity(player);
+    if (current == null) return null;
+    var preview = quote(player, current, current, null);
+    return preview != null && preview.talents().hasPaidNodes() ? preview : null;
+  }
+
+  public static boolean change(ServerPlayer player, Selection selection, Preview expected) {
+    var current = identity(player);
+    if (current == null) return false;
+    var next = assess(player, current, selection).next();
+    return next != null && apply(player, current, next, selection, expected);
+  }
+
+  public static boolean reset(ServerPlayer player, Preview expected) {
+    var current = identity(player);
+    return current != null
+        && expected != null
+        && expected.talents().hasPaidNodes()
+        && apply(player, current, current, null, expected);
+  }
+
+  @Nullable
+  private static Identity identity(ServerPlayer player) {
     if (!CharacterClass.creationAvailable()
         || !player.isAlive()
         || player.isSpectator()
         || RaceIdentity.grantPending(player)
-        || currentRace == null
-        || currentClass == null
-        || currentProfession == null) return INVALID;
+        || RaceIdentity.awaitingChoice(player)) return null;
+    var race = RaceIdentity.race(player);
+    var role = RaceIdentity.characterClass(player);
+    var profession = RaceIdentity.profession(player);
+    if (race == null || role == null || profession == null) return null;
+    return new Identity(
+        race,
+        RaceIdentity.style(player),
+        RaceIdentity.tint(player),
+        role,
+        RaceIdentity.starter(player),
+        RaceIdentity.subclass(player),
+        profession,
+        RaceIdentity.professionStarter(player));
+  }
+
+  private static Assessed assess(ServerPlayer player, Identity current, Selection selection) {
+    if (selection.kind().equals("race")) return assessRace(player, current, selection);
+    if (selection.style() != 0) return INVALID;
     return switch (selection.kind()) {
-      case "race" -> assessRace(player, currentRace, selection);
-      case "class" -> assessClass(player, currentClass, selection);
-      case "subclass" -> assessSubclass(player, currentClass, selection);
-      case "profession" -> assessProfession(player, currentProfession, selection);
+      case "class" -> assessClass(player, current, selection);
+      case "subclass" -> assessSubclass(player, current, selection);
+      case "profession" -> assessProfession(player, current, selection);
       default -> INVALID;
     };
   }
 
-  private static Assessment assessRace(ServerPlayer player, Race current, Selection selection) {
+  private static Assessed assessRace(ServerPlayer player, Identity current, Selection selection) {
     var target = Race.byId(selection.target());
     if (target == null
-        || target == current
+        || target == current.race()
         || !target.validStyle(selection.style())
         || !selection.starter().isEmpty()
-        || selection.refundBranch()) return INVALID;
+        || !selection.subclassId().isEmpty()) return INVALID;
     var body = player.getBoundingBox();
-    double halfWidth = body.getXsize() * RaceTraits.width(target) / RaceTraits.width(current) / 2;
-    double height = body.getYsize() * RaceTraits.height(target) / RaceTraits.height(current);
+    double halfWidth =
+        body.getXsize() * RaceTraits.width(target) / RaceTraits.width(current.race()) / 2;
+    double height = body.getYsize() * RaceTraits.height(target) / RaceTraits.height(current.race());
     var nextBody =
         new AABB(
             player.getX() - halfWidth,
@@ -92,211 +185,194 @@ public final class CharacterChanges {
             body.minY + height,
             player.getZ() + halfWidth);
     if (!player.level().noCollision(player, nextBody.deflate(1.0e-7))) return NO_SPACE;
-    return new Assessment(new Preview(List.of(), 0, 0, false), "");
+    return new Assessed(
+        new Identity(
+            target,
+            selection.style(),
+            current.tint(),
+            current.role(),
+            current.starter(),
+            current.subclass(),
+            current.profession(),
+            current.professionStarter()),
+        "");
   }
 
-  private static Assessment assessClass(
-      ServerPlayer player, CharacterClass current, Selection selection) {
+  private static Assessed assessClass(ServerPlayer player, Identity current, Selection selection) {
     var target = CharacterClass.byId(selection.target());
     if (target == null
-        || target == current
-        || selection.style() != 0
-        || !ClassProgression.available(player, target, selection.starter())) return INVALID;
-    var nextSubclass = CharacterSubclass.byId(selection.subclassId());
-    if (!selection.subclassId().isEmpty()
-        && (nextSubclass == null
-            || nextSubclass.mainClass() != target
-            || !SubclassProgression.available(player, nextSubclass))) return INVALID;
-    var skills = SkillsMod.getInstance();
-    var oldCategory = ClassProgression.category(current);
-    var nextCategory = ClassProgression.category(target);
-    var unlocked = skills.getUnlockedSkills(player, oldCategory).orElse(List.of());
-    var oldStarter = ClassProgression.node(current, RaceIdentity.starter(player));
-    Collection<String> remove;
-    if (selection.refundBranch()) {
-      remove = current == CharacterClass.MAGE ? MagicTalents.nodes() : current.starters();
-    } else {
-      // 0.6.5 did not record whether a starter was learned before character creation.
-      var identity = RaceIdentity.data(player);
-      boolean keep =
-          !identity.contains(STARTER_PERSONALLY_LEARNED, Tag.TAG_BYTE)
-              || identity.getBoolean(STARTER_PERSONALLY_LEARNED)
-              || (current == CharacterClass.MAGE
-                  && unlocked.stream()
-                      .anyMatch(id -> !id.equals(oldStarter) && MagicTalents.nodes().contains(id)));
-      remove = keep ? List.of() : List.of(oldStarter);
-    }
-    var leaving = RaceIdentity.subclass(player);
-    Set<String> affected = new HashSet<>(remove);
-    if (leaving != null) affected.addAll(leaving.branch());
-    String nextStarter = ClassProgression.node(target, selection.starter());
-    var removed = unlocked.stream().filter(affected::contains).sorted().toList();
-    int returned = paidRefund(player, removed);
-    int cost = ClassProgression.learned(player, target, nextStarter) ? 0 : 1;
-    int available = skills.getPointsLeft(player, nextCategory).orElse(0);
-    // Moving the class-funded point frees credit in the destination, up to its normal cap.
-    if (!oldCategory.equals(nextCategory)) {
-      int cap =
-          target == CharacterClass.MAGE
-              ? MagicTalents.pointCap()
-              : ProgressionBridge.COMBAT_POINT_CAP;
-      try {
-        if (ProgressionBridge.storedPoints(player, nextCategory.toString()) < cap) available++;
-      } catch (com.mojang.brigadier.exceptions.CommandSyntaxException exception) {
-        return INVALID;
-      }
-    } else {
-      available += returned;
-    }
-    int balance = available - cost;
-    if (balance < -1 && cost != 0) return NEED_POINT;
-    return new Assessment(new Preview(removed, returned, cost, balance < 0 && cost != 0), "");
+        || target == current.role()
+        || !target.id().equals(selection.target())
+        || !ClassProgression.available(player, target, selection.starter())
+        || !CharacterSubclass.validChoice(target, selection.subclassId())) return INVALID;
+    var subclass = CharacterSubclass.byId(selection.subclassId());
+    if (subclass != null && !SubclassProgression.available(player, subclass)) return INVALID;
+    return new Assessed(
+        new Identity(
+            current.race(),
+            current.style(),
+            current.tint(),
+            target,
+            selection.starter(),
+            subclass,
+            current.profession(),
+            current.professionStarter()),
+        "");
   }
 
-  private static Assessment assessSubclass(
-      ServerPlayer player, CharacterClass mainClass, Selection selection) {
-    var current = RaceIdentity.subclass(player);
+  private static Assessed assessSubclass(
+      ServerPlayer player, Identity current, Selection selection) {
     var target = CharacterSubclass.byId(selection.target());
-    if (current == null
-        || target == null
-        || target == current
-        || target.mainClass() != mainClass
-        || selection.style() != 0
-        || !selection.starter().isEmpty()
-        || selection.refundBranch()
-        || !SubclassProgression.available(player, target)) return INVALID;
-    var learned =
-        SkillsMod.getInstance()
-            .getUnlockedSkills(player, ClassProgression.category(mainClass))
-            .orElse(List.of());
-    var removed = learned.stream().filter(current.branch()::contains).sorted().toList();
-    return new Assessment(new Preview(removed, paidRefund(player, removed), 0, false), "");
+    if (!selection.starter().isEmpty()
+        || !selection.subclassId().isEmpty()
+        || !CharacterSubclass.validChoice(current.role(), selection.target())
+        || target == current.subclass()
+        || target != null && !SubclassProgression.available(player, target)) return INVALID;
+    return new Assessed(
+        new Identity(
+            current.race(),
+            current.style(),
+            current.tint(),
+            current.role(),
+            current.starter(),
+            target,
+            current.profession(),
+            current.professionStarter()),
+        "");
   }
 
-  private static int paidRefund(ServerPlayer player, List<String> removed) {
-    var chosen = RaceIdentity.subclass(player);
-    return removed.size()
-        - (chosen != null
-                && SubclassProgression.funded(player)
-                && removed.contains(chosen.starter())
-            ? 1
-            : 0);
-  }
-
-  private static Assessment assessProfession(
-      ServerPlayer player, Profession current, Selection selection) {
+  private static Assessed assessProfession(
+      ServerPlayer player, Identity current, Selection selection) {
     var target = Profession.byId(selection.target());
     if (target == null
-        || target == current
-        || selection.style() != 0
-        || selection.refundBranch()
+        || target == current.profession()
+        || !selection.subclassId().isEmpty()
         || !target.starters().contains(selection.starter())
         || !ProfessionProgression.available(player, selection.starter())) return INVALID;
-    var provider = SkillsMod.getInstance();
-    var oldDiscipline = discipline(current);
-    var targetDiscipline = discipline(target);
-    var unlocked = provider.getUnlockedSkills(player, oldDiscipline.category()).orElse(List.of());
-    var removed = unlocked.stream().filter(current.starters()::contains).sorted().toList();
-    int cost = ProfessionProgression.learned(player, selection.starter()) ? 0 : 1;
-    int available = provider.getPointsLeft(player, targetDiscipline.category()).orElse(0);
-    try {
-      if (ProgressionBridge.storedPoints(player, targetDiscipline.category().toString())
-          < targetDiscipline.cap()) available++;
-    } catch (com.mojang.brigadier.exceptions.CommandSyntaxException exception) {
-      return INVALID;
-    }
-    if (available < cost && cost != 0) return NEED_POINT;
-    return new Assessment(new Preview(removed, removed.size(), cost, false), "");
+    return new Assessed(
+        new Identity(
+            current.race(),
+            current.style(),
+            current.tint(),
+            current.role(),
+            current.starter(),
+            current.subclass(),
+            target,
+            selection.starter()),
+        "");
   }
 
-  private static ProfessionDiscipline discipline(Profession profession) {
-    return ProfessionDiscipline.bySkill(profession.practiceSkill()).orElseThrow();
+  @Nullable
+  private static Preview quote(
+      ServerPlayer player, Identity current, Identity next, @Nullable Selection selection) {
+    var nextGrants = selection == null ? RaceIdentity.identityGrants(player) : next.grants();
+    var talents =
+        TalentRefunds.preview(
+                player,
+                RaceIdentity.identityGrants(player),
+                RaceIdentity.identityGrantOverlaps(player),
+                nextGrants)
+            .orElse(null);
+    if (talents == null) return null;
+    var currentSpells = ClassProgression.starterSpellIds(current.role(), current.subclass());
+    var nextSpells = ClassProgression.starterSpellIds(next.role(), next.subclass());
+    var loadout = PreparedAbilities.loadout(player);
+    return new Preview(
+        talents,
+        disabled(player, current, next, talents, Set.copyOf(nextSpells), loadout),
+        wornGear(player, talents),
+        nextSpells.stream().filter(id -> !currentSpells.contains(id)).sorted().toList(),
+        currentSpells.stream().filter(id -> !nextSpells.contains(id)).sorted().toList(),
+        selection,
+        current.fingerprint(),
+        loadout,
+        ArmorProficiency.SLOTS.stream()
+            .map(
+                slot -> player.getItemBySlot(slot).saveOptional(player.registryAccess()).toString())
+            .toList());
   }
 
-  public static boolean change(ServerPlayer player, Selection selection, Preview expected) {
-    var checked = preview(player, selection);
-    if (checked == null || !checked.equals(expected)) return false;
-    if (selection.kind().equals("race"))
-      return RaceIdentity.chooseRace(player, Race.byId(selection.target()), selection.style());
-    if (selection.kind().equals("subclass")) {
-      var category = ClassProgression.category(RaceIdentity.characterClass(player));
-      if (!applyTalents(
-          player, category, category, null, CharacterSubclass.byId(selection.target()), checked))
-        return false;
-      ProgressionBridge.sync(player);
-      return true;
-    }
-    boolean changeClass = selection.kind().equals("class");
-    var target = changeClass ? CharacterClass.byId(selection.target()) : null;
-    var oldCategory =
-        changeClass
-            ? ClassProgression.category(RaceIdentity.characterClass(player))
-            : discipline(RaceIdentity.profession(player)).category();
-    var nextCategory =
-        changeClass
-            ? ClassProgression.category(target)
-            : discipline(Profession.byId(selection.target())).category();
-    String nextStarter =
-        changeClass ? ClassProgression.node(target, selection.starter()) : selection.starter();
-    var nextSubclass = changeClass ? CharacterSubclass.byId(selection.subclassId()) : null;
-    if (!applyTalents(player, oldCategory, nextCategory, nextStarter, nextSubclass, checked))
-      return false;
-    var identity = RaceIdentity.data(player);
-    if (changeClass) {
-      if (nextSubclass == null) SubclassProgression.assign(player, null);
-      identity.putString("class", selection.target());
-      identity.putString("starter", selection.starter());
-      identity.putBoolean(STARTER_PERSONALLY_LEARNED, checked.spent() == 0);
-      // Future login restores the selected node, but only creation gives a journal.
-      identity.putBoolean("journal_given", true);
-      ProgressionBridge.sync(player);
-      ClassTraits.refresh(player);
-    } else {
-      identity.putString("profession", selection.target());
-      identity.putString("profession_starter", selection.starter());
-      ProgressionBridge.sync(player);
-    }
-    return true;
-  }
-
-  private static boolean applyTalents(
+  private static List<String> disabled(
       ServerPlayer player,
-      ResourceLocation oldCategory,
-      ResourceLocation nextCategory,
-      @Nullable String nextStarter,
-      @Nullable CharacterSubclass nextSubclass,
-      Preview checked) {
-    var provider = SkillsMod.getInstance();
-    var expectedOld = new HashSet<>(provider.getUnlockedSkills(player, oldCategory).orElseThrow());
-    expectedOld.removeAll(checked.removed());
-    var expectedNext =
-        oldCategory.equals(nextCategory)
-            ? expectedOld
-            : new HashSet<>(provider.getUnlockedSkills(player, nextCategory).orElseThrow());
-    if (nextStarter != null) expectedNext.add(nextStarter);
-    var snapshot = new CompoundTag();
-    provider.exportPlayerData(player, snapshot);
-    boolean complete = false;
-    try {
-      for (String id : checked.removed()) provider.lockSkill(player, oldCategory, id);
-      if (nextStarter != null && checked.spent() != 0)
-        provider.tryUnlockSkill(
-            player,
-            nextCategory,
-            nextStarter,
-            checked.advance() || !oldCategory.equals(nextCategory));
-      complete =
-          expectedOld.equals(
-                  Set.copyOf(provider.getUnlockedSkills(player, oldCategory).orElseThrow()))
-              && expectedNext.equals(
-                  Set.copyOf(provider.getUnlockedSkills(player, nextCategory).orElseThrow()));
-      if (complete && nextSubclass != null) {
-        complete = false;
-        complete = SubclassProgression.assign(player, nextSubclass);
-      }
-      return complete;
-    } finally {
-      if (!complete) provider.importPlayerData(player, snapshot);
+      Identity current,
+      Identity next,
+      TalentRefunds.Quote talents,
+      Set<String> nextStarterSpells,
+      AbilityLoadout loadout) {
+    var currentMagic = SpellKnowledge.unlocked(player);
+    var nextMagic = talents.afterNodes("magic");
+    var disabled = new ArrayList<String>();
+    for (String id : loadout.assignedIds()) {
+      var innate = InnateAbility.byId(id);
+      var technique = MartialTechnique.byId(id);
+      var accessory = ExceptionalAccessory.byId(id);
+      var spell = SpellKnowledge.spell(id);
+      if (innate != null && innate.race == current.race() && innate.race != next.race()
+          || technique != null
+              && MartialTechniques.learned(player, technique)
+              && !hasTalentAfter(talents, ResourceLocation.parse(id).getPath())
+          || id.equals(AnimalLure.ID)
+              && AnimalLure.learned(player)
+              && !talents.afterNodes(ProfessionDiscipline.FARMING.skill()).contains("animal_lure")
+          || ((accessory != null
+                      && accessory != ExceptionalAccessory.BREATH
+                      && !accessory.equipped(player).isEmpty())
+                  || id.equals(AmuletStep.ID) && AmuletStep.available(player))
+              && SpellKnowledge.hasAccess(currentMagic)
+              && !SpellKnowledge.hasAccess(nextMagic)
+          || spell != SpellRegistry.none()
+              && SpellKnowledge.knowledgeReason(player, spell, currentMagic).isEmpty()
+              && !SpellKnowledge.knowledgeReason(player, spell, nextMagic, nextStarterSpells)
+                  .isEmpty()) disabled.add(id);
     }
+    return disabled;
+  }
+
+  private static List<String> wornGear(ServerPlayer player, TalentRefunds.Quote talents) {
+    var affected = new ArrayList<String>();
+    for (var slot : ArmorProficiency.SLOTS) {
+      var stack = player.getItemBySlot(slot);
+      String talent = ArmorProficiency.requiredTalent(stack);
+      if (talent != null
+          && !ArmorProficiency.undertrained(player, stack)
+          && !hasTalentAfter(talents, talent))
+        affected.add(BuiltInRegistries.ITEM.getKey(stack.getItem()).toString());
+    }
+    return affected;
+  }
+
+  private static boolean hasTalentAfter(TalentRefunds.Quote talents, String node) {
+    var pool = ClassProgression.categoryForTalent(node);
+    return pool != null && talents.afterNodes(pool.getPath()).contains(node);
+  }
+
+  private static boolean apply(
+      ServerPlayer player,
+      Identity current,
+      Identity next,
+      @Nullable Selection selection,
+      Preview expected) {
+    if (expected == null || !expected.equals(quote(player, current, next, selection))) return false;
+    var currentGrants = RaceIdentity.identityGrants(player);
+    var nextGrants = selection == null ? currentGrants : next.grants();
+    if (!TalentRefunds.apply(
+        player,
+        currentGrants,
+        RaceIdentity.identityGrantOverlaps(player),
+        nextGrants,
+        expected.talents(),
+        () ->
+            RaceIdentity.finishReset(
+                player,
+                next.race(),
+                next.style(),
+                next.role(),
+                next.starter(),
+                next.subclass(),
+                next.profession(),
+                next.professionStarter()))) return false;
+    BeastmasterCompanions.reconcile(player);
+    PreparedAbilities.reconcileAfterTalentReset(player);
+    return true;
   }
 }

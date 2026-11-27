@@ -6,7 +6,11 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "NutritionCommandMixin",
-    "NutritionConfigRangeMixin"
+    "NutritionConfigRangeMixin",
+    "NutritionDeficitMixin",
+    "NutritionSaveMixin",
+    "NutritionSetCommandMixin",
+    "NutritionStatusMixin"
   ],
   "client": [
     "NutritionHelperMixin",

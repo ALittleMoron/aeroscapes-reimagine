@@ -57,5 +57,10 @@
     "x": 0,
     "y": 36,
     "definition": "manufacture_diamond_template"
+  },
+  "field_repair": {
+    "x": -24,
+    "y": 174,
+    "definition": "field_repair"
   }
 }

@@ -20,6 +20,16 @@
       "displayGroupName": false,
       "showInList": true
     },
+    "ranger": {
+      "maxLevel": 50,
+      "icon": "minecraft:textures/item/bow.png",
+      "iconSize": 16,
+      "useTotalLevels": false,
+      "color": 15319172,
+      "noAfkPenalty": true,
+      "displayGroupName": false,
+      "showInList": true
+    },
     "building": {
       "maxLevel": 50,
       "icon": "pmmo:textures/skills/building.png",
@@ -149,26 +159,6 @@
       "noAfkPenalty": true,
       "displayGroupName": false,
       "showInList": true
-    },
-    "light_armor": {
-      "maxLevel": 50,
-      "icon": "aeroscapes_reimagine:textures/gui/skills/talents/light_armor_handling.png",
-      "iconSize": 16,
-      "useTotalLevels": false,
-      "color": 10144075,
-      "noAfkPenalty": true,
-      "displayGroupName": false,
-      "showInList": true
-    },
-    "heavy_armor": {
-      "maxLevel": 50,
-      "icon": "aeroscapes_reimagine:textures/gui/skills/talents/heavy_armor_handling.png",
-      "iconSize": 16,
-      "useTotalLevels": false,
-      "color": 11447982,
-      "noAfkPenalty": true,
-      "displayGroupName": false,
-      "showInList": true
     }
   },
   "types": {
@@ -176,9 +166,8 @@
       "order": 0,
       "skills": [
         "combat",
+        "ranger",
         "archery",
-        "light_armor",
-        "heavy_armor",
         "magic"
       ],
       "color": 14921313

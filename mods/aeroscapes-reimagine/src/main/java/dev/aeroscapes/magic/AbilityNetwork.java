@@ -19,7 +19,7 @@ public final class AbilityNetwork {
 
   public static void register(RegisterPayloadHandlersEvent event) {
     SwingTempo.register(event);
-    var registrar = event.registrar("5");
+    var registrar = event.registrar("6");
     registrar.playToServer(
         Request.TYPE,
         Request.CODEC,
@@ -48,10 +48,21 @@ public final class AbilityNetwork {
               && !dev.aeroscapes.races.RaceIdentity.awaitingChoice(player))
             PreparedAbilities.cast(player);
         });
+    registrar.playToServer(
+        FirstStudy.TYPE,
+        FirstStudy.CODEC,
+        (message, context) -> {
+          if (context.player() instanceof ServerPlayer player)
+            PreparedAbilities.firstStudy(player, message.containerId(), message.spellId());
+        });
     registrar.playToClient(
         Snapshot.TYPE,
         Snapshot.CODEC,
         (message, context) -> dev.aeroscapes.magic.client.AbilityClient.accept(message));
+    registrar.playToClient(
+        StudyCompleted.TYPE,
+        StudyCompleted.CODEC,
+        (message, context) -> dev.aeroscapes.magic.client.AbilityClient.studyCompleted(message));
     registrar.playToClient(
         Footwork.TYPE,
         Footwork.CODEC,
@@ -105,15 +116,43 @@ public final class AbilityNetwork {
       return school.equals(MartialTechnique.GROUP);
     }
 
+    public boolean farming() {
+      return school.equals(dev.aeroscapes.races.AnimalLure.GROUP);
+    }
+
     public boolean known() {
-      return (granted() && !reason.equals("race") && !reason.equals("hex_missing")) || level > 0;
+      return (granted()
+              && !reason.equals("race")
+              && !reason.equals("hex_missing")
+              && !reason.equals(dev.aeroscapes.races.AnimalLure.UNLEARNED))
+          || level > 0;
     }
 
     public boolean granted() {
       return innate()
+          || farming()
           || school.equals(dev.aeroscapes.magic.travel.AmuletStep.GROUP)
           || school.equals(PreparedAbilities.DISCOVERY_GROUP)
           || program != null;
+    }
+  }
+
+  public record StudyEntry(
+      String spellId, int casts, int requiredCasts, int requiredMastery, String reason) {}
+
+  public record StudyCompleted(String spellId, int rank) implements CustomPacketPayload {
+    public static final Type<StudyCompleted> TYPE = AbilityNetwork.type("study_completed");
+    public static final StreamCodec<RegistryFriendlyByteBuf, StudyCompleted> CODEC =
+        StreamCodec.of(
+            (buffer, message) -> {
+              buffer.writeUtf(message.spellId(), 128);
+              buffer.writeVarInt(message.rank());
+            },
+            buffer -> new StudyCompleted(buffer.readUtf(128), buffer.readVarInt()));
+
+    @Override
+    public Type<StudyCompleted> type() {
+      return TYPE;
     }
   }
 
@@ -125,7 +164,8 @@ public final class AbilityNetwork {
       List<String> talents,
       int practiceLevel,
       long practiceXp,
-      long nextTalentXp)
+      long nextTalentXp,
+      List<StudyEntry> studyEntries)
       implements CustomPacketPayload {
     public static final Type<Snapshot> TYPE = AbilityNetwork.type("abilities");
     public static final StreamCodec<RegistryFriendlyByteBuf, Snapshot> CODEC =
@@ -158,6 +198,15 @@ public final class AbilityNetwork {
               buffer.writeVarInt(message.practiceLevel());
               buffer.writeVarLong(message.practiceXp());
               buffer.writeVarLong(message.nextTalentXp());
+              buffer.writeCollection(
+                  message.studyEntries(),
+                  (output, entry) -> {
+                    output.writeUtf(entry.spellId(), 128);
+                    output.writeVarInt(entry.casts());
+                    output.writeVarInt(entry.requiredCasts());
+                    output.writeVarInt(entry.requiredMastery());
+                    output.writeUtf(entry.reason(), 128);
+                  });
             },
             buffer ->
                 new Snapshot(
@@ -181,11 +230,41 @@ public final class AbilityNetwork {
                     buffer.readList(input -> input.readUtf(128)),
                     buffer.readVarInt(),
                     buffer.readVarLong(),
-                    buffer.readVarLong()));
+                    buffer.readVarLong(),
+                    buffer.readList(
+                        input ->
+                            new StudyEntry(
+                                input.readUtf(128),
+                                input.readVarInt(),
+                                input.readVarInt(),
+                                input.readVarInt(),
+                                input.readUtf(128)))));
+
+    public Snapshot(
+        List<Entry> entries,
+        AbilityLoadout loadout,
+        int selectionAck,
+        boolean dwarfNightVision,
+        List<String> talents,
+        int practiceLevel,
+        long practiceXp,
+        long nextTalentXp) {
+      this(
+          entries,
+          loadout,
+          selectionAck,
+          dwarfNightVision,
+          talents,
+          practiceLevel,
+          practiceXp,
+          nextTalentXp,
+          List.of());
+    }
 
     public Snapshot {
       entries = List.copyOf(entries);
       talents = List.copyOf(talents);
+      studyEntries = List.copyOf(studyEntries);
     }
 
     public List<String> slots() {
@@ -229,6 +308,22 @@ public final class AbilityNetwork {
 
     @Override
     public Type<Request> type() {
+      return TYPE;
+    }
+  }
+
+  public record FirstStudy(int containerId, String spellId) implements CustomPacketPayload {
+    public static final Type<FirstStudy> TYPE = AbilityNetwork.type("abilities_first_study");
+    public static final StreamCodec<RegistryFriendlyByteBuf, FirstStudy> CODEC =
+        StreamCodec.of(
+            (buffer, message) -> {
+              buffer.writeVarInt(message.containerId());
+              buffer.writeUtf(message.spellId(), 128);
+            },
+            buffer -> new FirstStudy(buffer.readVarInt(), buffer.readUtf(128)));
+
+    @Override
+    public Type<FirstStudy> type() {
       return TYPE;
     }
   }

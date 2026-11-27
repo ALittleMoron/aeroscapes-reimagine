@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="128" height="160" viewBox="0 0 128 160" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="192" viewBox="0 0 128 192" shape-rendering="crispEdges">
   <title>Aeroscapes talent paintings</title>
   <desc>Each named group is an original 16 by 16 pixel tile. Export a group with rsvg-convert --export-id NAME talent-icons.svg --output NAME.png.</desc>
   <defs>
@@ -778,5 +778,63 @@
     <path d="M5 6h6v4H5zm2 5h2v2H7z" fill="#8f9caf" />
     <path d="M6 6h1v4H6zm2 0h1v4H8zm2 0h1v4h-1zM3 5h1v1H3zm10 0h1v1h-1z" fill="#ede0a4" />
     <path d="M7 2h2v1h1v1H9v2H7V4H6V3h1z" fill="#b9e9ef" />
+  </g>
+  <g id="magic_access" transform="translate(0 160)">
+    <rect width="16" height="16" fill="#252951" />
+    <path d="M0 0h16v1H1v14H0zM15 1h1v15H1v-1h14z" fill="#76a3e2" />
+    <path d="M3 7h3V4h5v2h2v4h-2v2H7v-2H3zm5-1v3h3V6zM3 10h2v3H2v-2z" fill="#dffbff" fill-rule="evenodd" />
+  </g>
+  <g id="destruction_first_mastery" transform="translate(16 160)">
+    <rect width="16" height="16" fill="#4a2341" />
+    <path d="M0 0h16v1H1v14H0zM15 1h1v15H1v-1h14z" fill="#b54748" />
+    <path d="M9 2h3L9 7h3l-7 7v-3l2-3H4zm-5 2h2v2H4zm8 7h2v2h-2z" fill="#ffd489" fill-rule="evenodd" />
+  </g>
+  <g id="restoration_first_mastery" transform="translate(32 160)">
+    <rect width="16" height="16" fill="#214939" />
+    <path d="M0 0h16v1H1v14H0zM15 1h1v15H1v-1h14z" fill="#4a9665" />
+    <path d="M7 3h2v3h4v3H9v4H7V9H3V6h4zM4 11h2v2H4zm6 0h2v2h-2z" fill="#bff3a7" fill-rule="evenodd" />
+  </g>
+  <g id="summoning_first_mastery" transform="translate(48 160)">
+    <rect width="16" height="16" fill="#304164" />
+    <path d="M0 0h16v1H1v14H0zM15 1h1v15H1v-1h14z" fill="#6c87b5" />
+    <path d="M4 4h2V2h4v2h2v2h2v4h-2v2h-2v2H6v-2H4v-2H2V6h2zm1 2v4h6V6zm2 1h2v2H7z" fill="#d7d9fa" fill-rule="evenodd" />
+  </g>
+  <g id="space_first_mastery" transform="translate(64 160)">
+    <rect width="16" height="16" fill="#362957" />
+    <path d="M0 0h16v1H1v14H0zM15 1h1v15H1v-1h14z" fill="#8765bc" />
+    <path d="M3 3h2v10H3zm8 0h2v10h-2zM6 6h3V4l2 4-2 4v-2H6zm0-3h1v1H6zm3 9h1v1H9z" fill="#ecdafa" fill-rule="evenodd" />
+  </g>
+  <g id="frostwave_extinguish" transform="translate(80 160)">
+    <rect width="16" height="16" fill="url(#frost_glow)" />
+    <path fill="#224466" d="M1 9h2V7h2V5h2V3h4l3 2v4h-2V7h-2v2H8v2H6v2H2v-1H1z" />
+    <path fill="#4ca8db" d="M1 10h3V8h2V6h2V4h3l2 2v2h-1V6h-2v2H8v2H6v2H3v1H1z" />
+    <path fill="#bbf8f6" d="M2 10h3V8h2V6h2V5h3v1h-2v2H8v2H6v1H2zM11 9h1v1h-1zm2 1h1v1h-1zm-3 1h1v1h-1z" />
+    <path fill="#9e4f58" d="M12 12h1v-1h1v2h1v2h-4v-2h1z" />
+    <path fill="#f8b369" d="M12 14h1v-1h1v2h-2z" />
+  </g>
+  <g id="blood_needles_overheal" transform="translate(96 160)">
+    <rect width="16" height="16" fill="url(#blood_glow)" />
+    <path fill="#8b3e56" d="M5 1l4 6v3l-2 2H4l-2-2V7z" />
+    <path fill="#e47a8d" d="M5 2l3 5v2l-2 2H4l-1-2V7z" />
+    <path fill="#fac1ae" d="M4 6h1v3H4zM6 8h1v1H6z" />
+    <path fill="#554046" d="M9 7h4l2 2v4h-2v2h-3v-2H8V9z" />
+    <path fill="#d7c3a1" d="M10 8h3l1 1v3h-2v2h-1v-2H9V9z" />
+    <path fill="#694c5a" d="M10 10h1v1h-1zm2 0h1v1h-1z" />
+    <path fill="#e0e59c" d="M1 11h1v1h2v1H2v1H1zm5 3h1v1H6zm5-9h2v1h-2z" />
+  </g>
+  <g id="arcane_shackle_marker" transform="translate(112 160)">
+    <rect width="16" height="16" fill="url(#spirit_glow)" />
+    <path fill="#494765" d="M3 4h4v1h1v2h2V5h3v1h1v3h-1v1H9V9H7v1H3V9H2V5z" />
+    <path fill="#b6a3e5" d="M3 5h4v1H3zm0 1h1v3H3zm1 2h3v1H4zm2-2h1v1h2v1H6zm4 0h3v1h-3zm2 1h1v2h-1zm-3 1h1v1h2v1H9z" />
+    <path fill="#776dcc" d="M2 13h3v-1h2v-1h2v1h2v1h3v1h-3v1H5v-1H2z" />
+    <path fill="#dfdbff" d="M7 12h2v1h2v1H9v1H7v-1H5v-1h2zM2 11h1v1H2zm11 0h1v1h-1z" />
+  </g>
+  <g id="oakskin_ally" transform="translate(0 176)">
+    <rect width="16" height="16" fill="url(#life_glow)" />
+    <path fill="#4e3d3a" d="M9 2h3v1h2v2h1v4l-3 4-2 1-4-3V4h3z" />
+    <path fill="#b28757" d="M10 3h2v1h2v5l-3 4-4-3V5h3z" />
+    <path fill="#7f664f" d="M10 4h2v1h1v4l-2 3-3-2V6h2z" />
+    <path fill="#90ba65" d="M12 5v3l-2 2H9V8l2-1V6z" />
+    <path fill="#b8f2aa" d="M1 7h3V5l3 3-3 3V9H1zm1 5h2v1H2zm2 1h1v2H4zM10 7h1v2h-1z" />
   </g>
 </svg>

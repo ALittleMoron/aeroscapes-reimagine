@@ -424,7 +424,7 @@ final class IronHeldPaper {
   }
 
   private static JsonObject bookPose(float right, float left, float bottom) {
-    return paperPose(right, left, bottom, 8, .79, -23);
+    return HeldItemModels.closedBookDisplay(left, right, bottom, 8.45f, .79f);
   }
 
   private static JsonObject paperPose(

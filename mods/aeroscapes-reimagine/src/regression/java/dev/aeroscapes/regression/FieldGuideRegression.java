@@ -162,14 +162,17 @@ public final class FieldGuideRegression {
     require(!isUnlocked(player, "workshop/copper_ingots"), "Copper waits until the stone pickaxe");
     require(!isUnlocked(player, "flight/preflight"), "Flight checks wait for a usable hull");
     require(isUnlocked(player, "flight/wreck_search"), "Wreck hunting is an independent route");
+    require(
+        isUnlocked(player, "magic/first_study") && isUnlocked(player, "magic/study_ranks"),
+        "Both optional magic study guides are open from the start");
     var book = BookDataManager.get().getBook(GUIDE);
     var chapters = book.getCategoriesSorted();
     require(
         chapters.stream()
             .map(category -> category.getId().getPath())
             .toList()
-            .equals(List.of("welcome", "island", "workshop", "flight")),
-        "The welcome tab precedes all three progression chapters");
+            .equals(List.of("welcome", "island", "workshop", "flight", "magic")),
+        "The welcome tab precedes the existing chapters and the optional Magic chapter");
     var welcome = chapters.getFirst();
     var overview = entry("welcome/overview");
     require(

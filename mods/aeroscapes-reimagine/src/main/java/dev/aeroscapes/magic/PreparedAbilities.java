@@ -7,6 +7,7 @@ import dev.aeroscapes.equipment.expedition.StoredBreath;
 import dev.aeroscapes.expedition.ExpeditionDiscoveries;
 import dev.aeroscapes.magic.travel.AmuletStep;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.races.AnimalLure;
 import dev.aeroscapes.races.RaceIdentity;
 import io.redspace.ironsspellbooks.api.events.SpellCooldownAddedEvent;
 import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
@@ -52,6 +53,7 @@ public final class PreparedAbilities {
 
   public static void register() {
     MartialTechniques.register();
+    AnimalLure.register();
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::tick);
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::login);
     NeoForge.EVENT_BUS.addListener(PreparedAbilities::logout);
@@ -90,6 +92,7 @@ public final class PreparedAbilities {
         boolean valid =
             innate != null
                 || MartialTechnique.byId(id) != null
+                || AnimalLure.ID.equals(id)
                 || AmuletStep.ID.equals(id)
                 || ExceptionalAccessory.byId(id) != null
                 || DISTRACTION.equals(id)
@@ -136,6 +139,12 @@ public final class PreparedAbilities {
       if (ExceptionalAccessory.byId(id).equipped(player).isEmpty()) return;
     } else if (DISTRACTION.equals(id)) {
       if (!ExpeditionDiscoveries.knowsDistraction(player)) return;
+    } else if (AnimalLure.ID.equals(id)) {
+      if (!AnimalLure.learned(player)) {
+        SpellKnowledge.message(player, AnimalLure.UNLEARNED);
+        sync(player, false);
+        return;
+      }
     } else if (innate != null) {
       if (RaceIdentity.race(player) != innate.race) return;
     } else if (technique != null) {
@@ -203,7 +212,8 @@ public final class PreparedAbilities {
       return;
     }
     if (AmuletStep.ID.equals(id)) {
-      AmuletStep.cast(player);
+      if (SpellKnowledge.hasAccess(player)) AmuletStep.cast(player);
+      else SpellKnowledge.message(player, "magic_access");
       sync(player, false);
       return;
     }
@@ -226,6 +236,11 @@ public final class PreparedAbilities {
     if (DISTRACTION.equals(id)) {
       if (ExpeditionDiscoveries.knowsDistraction(player))
         ExpeditionDiscoveries.throwDistraction(player);
+      sync(player, false);
+      return;
+    }
+    if (AnimalLure.ID.equals(id)) {
+      AnimalLure.activate(player);
       sync(player, false);
       return;
     }
@@ -280,14 +295,23 @@ public final class PreparedAbilities {
     data.put("ranks", ranks);
     menu.getScrollSlot().remove(1);
     menu.broadcastChanges();
-    player.displayClientMessage(
-        net.minecraft.network.chat.Component.translatable(
-            "aeroscapes_reimagine.abilities.studied",
-            spell.getDisplayName(player),
-            scroll.getLevel()),
-        true);
+    SpellProgression.notifyStudied(player, spell, scroll.getLevel());
     sync(player, true);
     return true;
+  }
+
+  public static boolean firstStudy(ServerPlayer player, int containerId, String spellId) {
+    if (!(player.containerMenu instanceof InscriptionTableMenu menu)
+        || menu.containerId != containerId
+        || !(menu instanceof StudyTable table)
+        || !table.aeroscapes$canFirstStudy(player)) return false;
+    boolean completed = SpellProgression.firstStudy(player, menu, spellId);
+    sync(player, completed);
+    return completed;
+  }
+
+  public interface StudyTable {
+    boolean aeroscapes$canFirstStudy(ServerPlayer player);
   }
 
   private static void projectFocus(ServerPlayer player, Preparation prepared, Set<String> skills) {
@@ -299,6 +323,7 @@ public final class PreparedAbilities {
       if (id.isEmpty()
           || InnateAbility.byId(id) != null
           || MartialTechnique.byId(id) != null
+          || AnimalLure.ID.equals(id)
           || AmuletStep.ID.equals(id)
           || ExceptionalAccessory.byId(id) != null
           || DISTRACTION.equals(id)
@@ -335,22 +360,28 @@ public final class PreparedAbilities {
     if (project) projectFocus(player, prepared.active(), skills);
     var entries = new ArrayList<AbilityNetwork.Entry>();
     HexPrograms.catalogue(player, prepared, entries);
-    addExpeditionAbilities(player, entries);
+    boolean magicAccess = SpellKnowledge.hasAccess(skills);
+    addExpeditionAbilities(player, entries, magicAccess);
     MartialTechniques.catalogue(player, entries);
+    String lure = AnimalLure.reason(player);
+    entries.add(
+        new AbilityNetwork.Entry(
+            AnimalLure.ID,
+            AnimalLure.GROUP,
+            0,
+            0,
+            0,
+            lure.isEmpty() || lure.equals(AnimalLure.FOLLOWING),
+            lure,
+            AnimalLure.cooldownTicks(player),
+            0));
     boolean amulet = AmuletStep.available(player);
     if (amulet) {
       int cooldown = AmuletStep.cooldown(player);
+      String reason = !magicAccess ? "magic_access" : cooldown > 0 ? "cooldown" : "";
       entries.add(
           new AbilityNetwork.Entry(
-              AmuletStep.ID,
-              AmuletStep.GROUP,
-              0,
-              0,
-              0,
-              cooldown == 0,
-              cooldown == 0 ? "" : "cooldown",
-              cooldown,
-              0));
+              AmuletStep.ID, AmuletStep.GROUP, 0, 0, 0, reason.isEmpty(), reason, cooldown, 0));
     }
     var race = RaceIdentity.race(player);
     for (var innate : InnateAbility.values()) {
@@ -399,7 +430,17 @@ public final class PreparedAbilities {
             java.util.List.copyOf(skills),
             MagicPracticeProgress.level(practice),
             practice,
-            ProgressionBridge.nextMagicPointXp(player, practice)));
+            ProgressionBridge.nextMagicPointXp(player, practice),
+            SpellProgression.firstStudyEntries(player).stream()
+                .map(
+                    entry ->
+                        new AbilityNetwork.StudyEntry(
+                            entry.spellId(),
+                            entry.casts(),
+                            entry.requiredCasts(),
+                            entry.requiredMastery(),
+                            entry.reason()))
+                .toList()));
   }
 
   private static AbilityLoadout visibleLoadout(
@@ -420,7 +461,7 @@ public final class PreparedAbilities {
   }
 
   private static void addExpeditionAbilities(
-      ServerPlayer player, List<AbilityNetwork.Entry> entries) {
+      ServerPlayer player, List<AbilityNetwork.Entry> entries, boolean magicAccess) {
     for (var accessory : ExceptionalAccessory.values()) {
       if (accessory.equipped(player).isEmpty()) continue;
       if (accessory == ExceptionalAccessory.BREATH) {
@@ -443,6 +484,7 @@ public final class PreparedAbilities {
             MagicBonuses.manaCost(spell, 1, player, CastSource.SPELLBOOK, spell.getManaCost(1));
         String reason = "";
         if (!spell.isEnabled()) reason = "disabled";
+        else if (!magicAccess) reason = "magic_access";
         else if (cooldown > 0) reason = "cooldown";
         else if (MagicData.getPlayerMagicData(player).getMana() < mana) reason = "mana";
         entries.add(
@@ -466,6 +508,11 @@ public final class PreparedAbilities {
     }
   }
 
+  public static void reconcileAfterTalentReset(ServerPlayer player) {
+    reconcileCasting(player);
+    sync(player, true);
+  }
+
   private static void reconcileCasting(ServerPlayer player) {
     MagicData magic = MagicData.getPlayerMagicData(player);
     AbilityLoadout prepared = loadout(player);
@@ -477,7 +524,9 @@ public final class PreparedAbilities {
       ItemStack castingItem = magic.getPlayerCastingItem();
       boolean allowed =
           accessory != null && accessory.matches(castingItem)
-              ? prepared.contains(accessory.id) && accessory.equipped(player) == castingItem
+              ? SpellKnowledge.hasAccess(skills)
+                  && prepared.contains(accessory.id)
+                  && accessory.equipped(player) == castingItem
               : focus
                   && prepared.contains(spell.getSpellId())
                   && SpellKnowledge.knowledgeReason(player, spell, skills).isEmpty();

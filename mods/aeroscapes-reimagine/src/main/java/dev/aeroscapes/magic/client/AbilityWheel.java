@@ -131,8 +131,11 @@ public final class AbilityWheel {
     graphics.drawCenteredString(game.font, name, centerX, centerY + 86, AbilityWidgets.GOLD);
     var entry = AbilityClient.entry(id);
     if (entry != null) {
-      graphics.drawCenteredString(
-          game.font, AbilityClient.status(entry), centerX, centerY + 99, AbilityWidgets.TEXT);
+      int y = centerY + 99;
+      for (var line : AbilityClient.statusLines(entry)) {
+        graphics.drawCenteredString(game.font, line, centerX, y, AbilityWidgets.TEXT);
+        y += game.font.lineHeight + 1;
+      }
     }
   }
 }

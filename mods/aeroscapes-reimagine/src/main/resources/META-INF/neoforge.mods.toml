@@ -18,6 +18,9 @@ config = "aeroscapes_reimagine.enchanting.mixins.json"
 config = "aeroscapes_reimagine.preflight.mixins.json"
 
 [[mixins]]
+config = "aeroscapes_reimagine.startup.mixins.json"
+
+[[mixins]]
 config = "aeroscapes_reimagine.agriculture.mixins.json"
 
 [[mixins]]

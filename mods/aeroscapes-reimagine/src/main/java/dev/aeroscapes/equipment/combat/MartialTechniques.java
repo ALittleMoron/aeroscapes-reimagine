@@ -12,6 +12,7 @@ import java.util.WeakHashMap;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
@@ -30,6 +31,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.ItemAbilities;
 import net.neoforged.neoforge.common.NeoForge;
@@ -49,6 +51,8 @@ public final class MartialTechniques {
   private static final int SHOVE_TARGET_LIMIT = 4;
   private static final double SHOVE_STRENGTH = 0.9;
   private static final int PARRY_REPLY_TICKS = 24;
+  private static final int LATERAL_INPUT_TICKS = 10;
+  private static final double SIDESTEP_DISTANCE = 1.5;
   private static final String COOLDOWNS = "aeroscapes_reimagine:technique_cooldowns";
   private static final TagKey<Item> HEAVY_WEAPONS = weapons("heavy_technique_weapons");
   private static final TagKey<Item> LIGHT_WEAPONS = weapons("light_weapons");
@@ -65,6 +69,10 @@ public final class MartialTechniques {
 
   private record RecentBlock(UUID attacker, long end) {}
 
+  private record HeldSide(byte direction, ResourceKey<Level> dimension, long end) {}
+
+  private record Sidestep(Vec3 travel, ResourceKey<Level> dimension, long start, long end) {}
+
   private static final class Stance {
     private @Nullable MeleeWindow melee;
     private @Nullable Brace brace;
@@ -75,6 +83,8 @@ public final class MartialTechniques {
     private long offenseEnd;
     private boolean offenseSwings;
     private long parryEnd;
+    private @Nullable HeldSide heldSide;
+    private @Nullable Sidestep sidestep;
     private @Nullable WeakReference<DamageSource> bracedBlock;
   }
 
@@ -82,6 +92,7 @@ public final class MartialTechniques {
 
   public static void register() {
     MartialArchery.register();
+    SmokeArrows.register();
     BerserkerTechniques.register();
     NeoForge.EVENT_BUS.addListener(MartialTechniques::protectDisengage);
   }
@@ -96,6 +107,7 @@ public final class MartialTechniques {
   }
 
   public static boolean learned(ServerPlayer player, MartialTechnique technique) {
+    if (technique.beastmaster()) return BeastmasterCompanions.learned(player, technique.talent());
     return ClassProgression.hasCombatTalent(player, technique.talent());
   }
 
@@ -104,6 +116,8 @@ public final class MartialTechniques {
   }
 
   private static int cooldown(ServerPlayer player, MartialTechnique technique) {
+    if (technique.beastmaster())
+      return BeastmasterCompanions.cooldownTicks(player, technique.talent());
     CompoundTag cooldowns = cooldowns(player);
     long deadline = cooldowns.getLong(technique.cooldownKey());
     // A 0.9.0 save recorded one deadline without the identity of the technique used.
@@ -111,7 +125,7 @@ public final class MartialTechniques {
     return Math.clamp(deadline - now(player), 0, technique.cooldownTicks());
   }
 
-  private static void startCooldown(ServerPlayer player, MartialTechnique technique) {
+  static void startCooldown(ServerPlayer player, MartialTechnique technique) {
     CompoundTag cooldowns = cooldowns(player);
     cooldowns.putLong(technique.cooldownKey(), now(player) + technique.cooldownTicks());
     var persistent = player.getPersistentData().getCompound(Player.PERSISTED_NBT_TAG);
@@ -125,6 +139,7 @@ public final class MartialTechniques {
       int remaining = cooldown(player, technique);
       String reason = reason(player, technique, learned, remaining);
       String status = learned ? status(player, technique) : "";
+      if (technique.beastmaster() && !reason.isEmpty() && !reason.equals("cooldown")) status = "";
       entries.add(
           new AbilityNetwork.Entry(
               technique.id(),
@@ -140,6 +155,10 @@ public final class MartialTechniques {
   }
 
   public static void activate(ServerPlayer player, MartialTechnique technique) {
+    if (technique.beastmaster()) {
+      BeastmasterCompanions.activate(player, technique.talent());
+      return;
+    }
     String reason =
         reason(player, technique, learned(player, technique), cooldown(player, technique));
     if (!reason.isEmpty()) {
@@ -149,7 +168,8 @@ public final class MartialTechniques {
     long end = now(player) + technique.windowTicks();
     switch (technique) {
       case DASH, DISENGAGE -> {
-        if (!step(player, technique == MartialTechnique.DASH ? 6.0 : -5.0)) {
+        Vec3 forward = Vec3.directionFromRotation(0.0F, player.getYRot());
+        if (!step(player, forward.scale(technique == MartialTechnique.DASH ? 6.0 : -5.0))) {
           SpellKnowledge.message(player, "technique_blocked");
           return;
         }
@@ -158,7 +178,10 @@ public final class MartialTechniques {
         if (technique == MartialTechnique.DASH) stance.dashEnd = end;
         else stance.disengageEnd = end;
       }
-      case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> MartialArchery.prime(player, technique, end);
+      case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT, TRIPLE_SHOT -> {
+        MartialArchery.beginDraw(player, technique);
+        return;
+      }
       case SHIELD_BRACE -> {
         Stance stance = STANCES.computeIfAbsent(player, ignored -> new Stance());
         stance.brace = new Brace(end, player.getUseItem());
@@ -190,18 +213,27 @@ public final class MartialTechniques {
 
   private static String reason(
       ServerPlayer player, MartialTechnique technique, boolean learned, int remaining) {
-    if (!learned) return "technique_unlearned";
-    if (!player.isAlive() || player.isSpectator() || player.isSleeping())
-      return "technique_unavailable";
-    if (remaining > 0) return "cooldown";
+    if (!technique.beastmaster()) {
+      if (!learned) return "technique_unlearned";
+      if (!player.isAlive() || player.isSpectator() || player.isSleeping())
+        return "technique_unavailable";
+      if (remaining > 0) return "cooldown";
+    }
     return switch (technique) {
       case SHIELD_BRACE -> player.isBlocking() ? "" : "technique_shield";
       case COUNTERATTACK -> recentBlock(player) ? "" : "technique_block_first";
       case SHIELD_SHOVE -> shoveReason(player);
       case HEAVY_STRIKE, OFFENSIVE_STANCE -> wields(player, HEAVY_WEAPONS) ? "" : "technique_heavy";
       case FLANK_STRIKE, DUELIST_PARRY -> wields(player, LIGHT_WEAPONS) ? "" : "technique_light";
-      case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> MartialArchery.equipmentReason(player);
+      case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT, TRIPLE_SHOT ->
+          MartialArchery.reason(player, technique);
       case DASH, DISENGAGE -> footworkReason(player);
+      case BEASTMASTER_FOX,
+          BEASTMASTER_WOLF,
+          BEASTMASTER_BEAR,
+          BEASTMASTER_RECALL,
+          BEASTMASTER_FOCUS_ATTACK ->
+          BeastmasterCompanions.reason(player, technique.talent());
     };
   }
 
@@ -241,11 +273,18 @@ public final class MartialTechniques {
   private static String status(ServerPlayer player, MartialTechnique technique) {
     return switch (technique) {
       case DASH, DISENGAGE -> footworkActive(player, technique) ? PRIMED : "";
-      case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT -> MartialArchery.status(player, technique);
+      case SLOWING_SHOT, MARKING_SHOT, QUICK_SHOT, TRIPLE_SHOT ->
+          MartialArchery.status(player, technique);
       case SHIELD_BRACE -> braced(player) ? PRIMED : "";
       case SHIELD_SHOVE -> "";
       case OFFENSIVE_STANCE -> offensiveStance(player) ? PRIMED : "";
       case DUELIST_PARRY -> parryActive(player) ? PRIMED : "";
+      case BEASTMASTER_FOX,
+          BEASTMASTER_WOLF,
+          BEASTMASTER_BEAR,
+          BEASTMASTER_RECALL,
+          BEASTMASTER_FOCUS_ATTACK ->
+          BeastmasterCompanions.status(player, technique.talent());
       case COUNTERATTACK, FLANK_STRIKE, HEAVY_STRIKE -> {
         Stance stance = STANCES.get(player);
         yield stance != null
@@ -433,10 +472,11 @@ public final class MartialTechniques {
   }
 
   private static void protectDisengage(LivingDamageEvent.Pre event) {
+    if (!(event.getEntity() instanceof ServerPlayer player && event.getNewDamage() > 0.0F)) return;
+    var stance = STANCES.get(player);
+    if (stance != null) stance.sidestep = null;
     var source = event.getSource();
-    if (event.getEntity() instanceof ServerPlayer player
-        && event.getNewDamage() > 0.0F
-        && !source.is(DamageTypeTags.BYPASSES_ARMOR)
+    if (!source.is(DamageTypeTags.BYPASSES_ARMOR)
         && source.getEntity() instanceof LivingEntity attacker
         && attacker != player
         && source.getDirectEntity() == attacker) {
@@ -466,11 +506,58 @@ public final class MartialTechniques {
             || source.is(DamageTypes.MOB_ATTACK)
             || source.is(DamageTypes.MOB_ATTACK_NO_AGGRO))
         || !facing(player, attacker.position().subtract(player.position()), 0.25)) return false;
-    STANCES.get(player).parryEnd = 0;
-    SwingTempo.grantParry(player, attacker, now(player) + PARRY_REPLY_TICKS);
+    var stance = STANCES.get(player);
+    stance.parryEnd = 0;
+    long now = now(player);
+    SwingTempo.grantParry(player, attacker, now + PARRY_REPLY_TICKS);
+    prepareSidestep(player, stance, now);
     SpellKnowledge.message(player, "technique_parry_reply");
     player.playNotifySound(SoundEvents.SHIELD_BLOCK, player.getSoundSource(), 0.6F, 1.4F);
     return true;
+  }
+
+  static void updateLateralInput(ServerPlayer player, byte direction) {
+    if (direction < -1 || direction > 1) return;
+    if (direction == 0) {
+      var stance = STANCES.get(player);
+      if (stance != null) stance.heldSide = null;
+      return;
+    }
+    STANCES.computeIfAbsent(player, ignored -> new Stance()).heldSide =
+        new HeldSide(direction, player.level().dimension(), now(player) + LATERAL_INPUT_TICKS);
+  }
+
+  private static void prepareSidestep(ServerPlayer player, Stance stance, long now) {
+    var input = stance.heldSide;
+    if (input == null
+        || input.end() <= now
+        || !input.dimension().equals(player.level().dimension())
+        || !GroundFootwork.available(player)
+        || !GroundFootwork.learnedSidestep(player)) return;
+    Vec3 forward = Vec3.directionFromRotation(0.0F, player.getYRot());
+    double distance = input.direction() * SIDESTEP_DISTANCE;
+    Vec3 travel = new Vec3(forward.z * distance, 0.0, -forward.x * distance);
+    // The parried hit still sends its damage and knockback feedback after this event.
+    stance.sidestep = new Sidestep(travel, input.dimension(), now + 1, now + PARRY_REPLY_TICKS);
+  }
+
+  private static void advanceSidestep(ServerPlayer player, Stance stance) {
+    var pending = stance.sidestep;
+    if (pending == null) return;
+    long now = now(player);
+    if (pending.end() <= now
+        || !pending.dimension().equals(player.level().dimension())
+        || !GroundFootwork.canControlMotion(player)) {
+      stance.sidestep = null;
+      return;
+    }
+    if (now < pending.start() || !player.onGround()) return;
+    stance.sidestep = null;
+    if (stance.motionEnd <= now
+        && GroundFootwork.learnedSidestep(player)
+        && step(player, pending.travel())) {
+      stance.motionEnd = now + GroundFootwork.DURATION;
+    }
   }
 
   private static boolean flanking(ServerPlayer player, LivingEntity target) {
@@ -525,9 +612,8 @@ public final class MartialTechniques {
     return skeletonDraw;
   }
 
-  private static boolean step(ServerPlayer player, double distance) {
-    Vec3 direction = Vec3.directionFromRotation(0.0F, player.getYRot()).scale(distance);
-    Vec3 travel = GroundFootwork.supportedTravel(player, direction);
+  private static boolean step(ServerPlayer player, Vec3 movement) {
+    Vec3 travel = GroundFootwork.supportedTravel(player, movement);
     if (travel.lengthSqr() < 1.0E-10) return false;
     PacketDistributor.sendToPlayer(player, new AbilityNetwork.Footwork(travel));
     player
@@ -548,9 +634,12 @@ public final class MartialTechniques {
 
   public static void tick(ServerPlayer player) {
     Stance stance = STANCES.get(player);
-    if (stance != null && stance.brace != null && !braced(player)) {
-      stance.brace = null;
-      braceMovement(player, false);
+    if (stance != null) {
+      advanceSidestep(player, stance);
+      if (stance.brace != null && !braced(player)) {
+        stance.brace = null;
+        braceMovement(player, false);
+      }
     }
     MartialArchery.tick(player);
   }
@@ -564,6 +653,7 @@ public final class MartialTechniques {
       }
       if (!slots.contains(MartialTechnique.DUELIST_PARRY.id())) {
         stance.parryEnd = 0;
+        stance.sidestep = null;
         SwingTempo.clearParry(player);
       }
       if (stance.melee != null && !slots.contains(stance.melee.technique().id()))

@@ -1,4 +1,6 @@
 {
+  "tooltip.aeroscapes_reimagine.armor.caster": "Лёгкая броня мага · +1% к скорости передвижения за каждый освоенный предмет",
+  "tooltip.aeroscapes_reimagine.armor.caster_heavy": "Тяжёлая броня мага",
   "aeroscapes_reimagine:armor_head_poor_with_exposure.label": "Плохое · Открытость",
   "aeroscapes_reimagine.equipment.armor_head_poor_with_exposure.description": "Урон от снарядов +8%.",
   "aeroscapes_reimagine:armor_head_fine_with_visor.label": "Хорошее · Забрало",

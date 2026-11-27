@@ -2,6 +2,7 @@ package dev.aeroscapes.progression;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import dev.aeroscapes.progression.client.TalentClient.ClassTree;
 import dev.aeroscapes.progression.client.TreeViewport;
 import java.awt.geom.Line2D;
 import java.awt.geom.Rectangle2D;
@@ -12,7 +13,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 /** Checks the visible node and connection geometry in the talent screen's layout coordinates. */
 public final class TalentLayoutTest {
@@ -22,11 +22,10 @@ public final class TalentLayoutTest {
   private TalentLayoutTest() {}
 
   public static void verify(Path categories) throws IOException {
-    Branch combat = read(categories, "combat");
-    for (CombatDirection direction : CombatDirection.values()) {
-      verifyCanvas("combat/" + direction.key(), List.of(combat.only(direction.nodes())));
+    for (ClassTree tree : ClassTree.values()) {
+      String bank = tree.category().getPath();
+      verifyCanvas(tree.name(), List.of(read(categories, bank)));
     }
-    verifyCanvas("magic", List.of(read(categories, "magic")));
     for (ProfessionDiscipline section : ProfessionDiscipline.values()) {
       if (section.toolHandling()) continue;
       var branches = new ArrayList<Branch>();
@@ -145,16 +144,5 @@ public final class TalentLayoutTest {
     }
   }
 
-  private record Branch(String name, Map<String, Point> nodes, List<Link> links) {
-    Branch only(Set<String> visible) {
-      var selected = new HashMap<>(nodes);
-      selected.keySet().retainAll(visible);
-      return new Branch(
-          name,
-          selected,
-          links.stream()
-              .filter(link -> visible.contains(link.from()) && visible.contains(link.to()))
-              .toList());
-    }
-  }
+  private record Branch(String name, Map<String, Point> nodes, List<Link> links) {}
 }

@@ -1,0 +1,17 @@
+{
+  "category": "magic",
+  "name": "book.aeroscapes_reimagine.field_guide.magic.first_study.name",
+  "icon": {
+    "item": "irons_spellbooks:scroll"
+  },
+  "x": 3,
+  "y": 4,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.magic.first_study.name",
+      "text": "book.aeroscapes_reimagine.field_guide.magic.first_study.text"
+    }
+  ],
+  "description": "book.aeroscapes_reimagine.field_guide.magic.first_study.summary"
+}

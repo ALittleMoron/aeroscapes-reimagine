@@ -3,10 +3,13 @@ package dev.aeroscapes.races.client;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.CharacterSubclass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceTraits;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.NumberFormat;
@@ -46,7 +49,7 @@ public final class CharacterPreviewTest {
         if (power.has("attribute"))
           powers.put(power.get("attribute").getAsString(), power.get("amount").getAsDouble());
       }
-      for (var role : CharacterClass.values()) {
+      for (var role : CharacterClass.selectable()) {
         for (var job : Profession.values()) {
           identities++;
           var definitions = definitionsByProfession.get(job);
@@ -82,7 +85,7 @@ public final class CharacterPreviewTest {
         }
       }
     }
-    require(identities == 64, "Expected all 64 starting identities");
+    require(identities == 48, "Expected all 48 sets of starting attributes");
     for (var locale : List.of(Locale.US, Locale.forLanguageTag("ru-RU"))) checkTranslations(locale);
   }
 
@@ -91,6 +94,7 @@ public final class CharacterPreviewTest {
     for (String namespace :
         List.of(
             "aeroscapes_race_visuals",
+            "aeroscapes_reimagine_techniques",
             "aeroscapes_reimagine_progression_translations",
             "aeroscapes_reimagine_magic_tree_translations")) {
       keys.addAll(
@@ -98,10 +102,25 @@ public final class CharacterPreviewTest {
                   namespace + "/lang/" + locale.toString().toLowerCase(Locale.ROOT) + ".json"))
               .keySet());
     }
+    String nativePath =
+        "assets/irons_spellbooks/lang/" + locale.toString().toLowerCase(Locale.ROOT) + ".json";
+    try (var nativeLanguage =
+        CharacterPreviewTest.class.getClassLoader().getResourceAsStream(nativePath)) {
+      require(nativeLanguage != null, "Missing pinned Iron's spell names for " + locale);
+      keys.addAll(
+          JsonParser.parseReader(new InputStreamReader(nativeLanguage, StandardCharsets.UTF_8))
+              .getAsJsonObject()
+              .keySet());
+    }
+    for (var role : CharacterClass.selectable())
+      for (var subclass : CharacterSubclass.choices(role)) {
+        translated(CharacterDetails.subclassProfile(subclass), keys);
+        translated(CharacterDetails.subclassSummary(subclass), keys);
+      }
     for (Race race : Race.values()) {
       for (int style = 0; style < race.styleCount(); style++)
         translated(CharacterDetails.race(race, style, true), keys);
-      for (CharacterClass role : CharacterClass.values()) {
+      for (CharacterClass role : CharacterClass.selectable()) {
         for (String ability : role.starters())
           translated(CharacterDetails.classProfile(role, ability, true), keys);
         for (Profession job : Profession.values()) {
@@ -132,6 +151,23 @@ public final class CharacterPreviewTest {
   }
 
   private static void checkReturningCharacters() {
+    require(
+        CharacterClass.selectable()
+                .equals(List.of(CharacterClass.WARRIOR, CharacterClass.RANGER, CharacterClass.MAGE))
+            && CharacterClass.RANGER
+                .starters()
+                .equals(List.of("bow_stride", "steady_aim", "quick_recovery", "opening_strike")),
+        "Creation offers three classes and all four Ranger passives");
+    for (var role : CharacterClass.selectable())
+      require(
+          CharacterSubclass.choices(role).size() == 2
+              && CharacterSubclass.validChoice(role, "")
+              && CharacterSubclass.choices(role).stream()
+                  .allMatch(
+                      value ->
+                          value.mainClass() == role
+                              && CharacterSubclass.validChoice(role, value.id())),
+          "Each class has two compatible subclass choices and allows Later");
     var fresh = new RaceClient.Profile(null, 0, Race.DEFAULT_TINT, null, "", null, "", false);
     require(
         RaceScreen.Page.remaining(fresh)
@@ -139,31 +175,40 @@ public final class CharacterPreviewTest {
                 List.of(
                     RaceScreen.Page.RACE,
                     RaceScreen.Page.CLASS,
+                    RaceScreen.Page.SUBCLASS,
                     RaceScreen.Page.PROFESSION,
                     RaceScreen.Page.SUMMARY)),
-        "New characters choose their subclass alongside their class");
+        "New characters compare their subclasses after choosing a class");
     var previousRace =
         new RaceClient.Profile(Race.GOBLIN, 2, Race.DEFAULT_TINT, null, "", null, "", false);
     require(
         RaceScreen.Page.remaining(previousRace)
             .equals(
                 List.of(
-                    RaceScreen.Page.CLASS, RaceScreen.Page.PROFESSION, RaceScreen.Page.SUMMARY)),
-        "0.6.3 retains race and appearance");
-    var returningWarrior =
-        new RaceClient.Profile(
-            Race.HUMAN,
-            0,
-            Race.DEFAULT_TINT,
-            CharacterClass.WARRIOR,
-            "quick_block",
-            Profession.FARMER,
-            "careful_tilling",
-            false);
-    require(
-        returningWarrior.needsSubclass()
-            && RaceScreen.Page.remaining(returningWarrior).equals(List.of(RaceScreen.Page.SUMMARY)),
-        "An existing Warrior keeps the normal character sheet while the first choice is optional");
+                    RaceScreen.Page.CLASS,
+                    RaceScreen.Page.SUBCLASS,
+                    RaceScreen.Page.PROFESSION,
+                    RaceScreen.Page.SUMMARY)),
+        "A partial character retains race and appearance");
+    for (var role : CharacterClass.selectable()) {
+      var returning =
+          new RaceClient.Profile(
+              Race.HUMAN,
+              0,
+              Race.DEFAULT_TINT,
+              role,
+              role.starters().getFirst(),
+              Profession.FARMER,
+              "careful_tilling",
+              null,
+              true,
+              false);
+      require(
+          returning.needsSubclass()
+              && returning.subclassDeferred()
+              && RaceScreen.Page.remaining(returning).equals(List.of(RaceScreen.Page.SUMMARY)),
+          "A deferred subclass can still be chosen from the character sheet");
+    }
     for (boolean pending : List.of(false, true)) {
       var previousClass =
           new RaceClient.Profile(
@@ -178,14 +223,20 @@ public final class CharacterPreviewTest {
       require(
           !previousClass.complete()
               && RaceScreen.Page.remaining(previousClass)
-                  .equals(List.of(RaceScreen.Page.PROFESSION, RaceScreen.Page.SUMMARY)),
-          "0.6.4 retains the class and its ability, including pending grants");
+                  .equals(
+                      pending
+                          ? List.of(RaceScreen.Page.PROFESSION, RaceScreen.Page.SUMMARY)
+                          : List.of(
+                              RaceScreen.Page.SUBCLASS,
+                              RaceScreen.Page.PROFESSION,
+                              RaceScreen.Page.SUMMARY)),
+          "A partial character retains the class and its starter, including pending grants");
       var chosen =
           new RaceClient.Profile(
               Race.DWARF,
               2,
               Race.DEFAULT_TINT,
-              CharacterClass.ROGUE,
+              CharacterClass.RANGER,
               "opening_strike",
               Profession.FARMER,
               "careful_tilling",

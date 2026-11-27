@@ -10,12 +10,14 @@ import dev.aeroscapes.races.RaceIdentity;
 import dev.aeroscapes.races.RaceTraits;
 import harmonised.pmmo.api.APIUtils;
 import harmonised.pmmo.util.Reference;
+import io.redspace.ironsspellbooks.damage.SpellDamageSource;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
@@ -58,18 +60,10 @@ public final class PracticeActions {
     if (personal(actor) && amount > 0) APIUtils.addXp(skill, (ServerPlayer) actor, amount);
   }
 
-  private static void awardCombat(Entity actor, long amount, boolean shieldBlock) {
-    if (!personal(actor) || amount <= 0) return;
-    var player = (ServerPlayer) actor;
-    var subclass = RaceIdentity.subclass(player);
-    boolean affinity =
-        shieldBlock
-            ? subclass == CharacterSubclass.DEFENDER
-            : subclass == CharacterSubclass.BERSERKER
-                && MartialTechniques.isHeavyWeapon(WeaponProficiency.attackWeapon(player));
-    if (affinity)
-      RaceTraits.withSubclassPractice(player, () -> APIUtils.addXp("combat", player, amount));
-    else APIUtils.addXp("combat", player, amount);
+  private static void awardClass(
+      ServerPlayer player, String skill, long amount, boolean archery, boolean subclass) {
+    RaceTraits.withClassPractice(
+        player, skill, archery, subclass, () -> APIUtils.addXp(skill, player, amount));
   }
 
   private static void craft(PlayerEvent.ItemCraftedEvent event) {
@@ -152,8 +146,16 @@ public final class PracticeActions {
   private static void shield(LivingShieldBlockEvent event) {
     if (event.getBlocked()
         && event.getBlockedDamage() > 0
-        && event.getDamageSource().getEntity() instanceof LivingEntity)
-      awardCombat(event.getEntity(), Math.min(4, (long) Math.ceil(event.getBlockedDamage())), true);
+        && event.getDamageSource().getEntity() instanceof LivingEntity
+        && personal(event.getEntity())
+        && event.getEntity() instanceof ServerPlayer player) {
+      awardClass(
+          player,
+          ProgressionBridge.WARRIOR_PRACTICE,
+          Math.min(4, (long) Math.ceil(event.getBlockedDamage())),
+          false,
+          RaceIdentity.subclass(player) == CharacterSubclass.DEFENDER);
+    }
   }
 
   public static void harvest(Entity actor) {
@@ -169,12 +171,54 @@ public final class PracticeActions {
 
   private static void damage(LivingDamageEvent.Post event) {
     var source = event.getSource();
-    if (!personal(source.getEntity())
-        || event.getNewDamage() <= 0
-        || event.getEntity().getType().is(Reference.NO_XP_DAMAGE_DEALT)) return;
-    long xp = Math.min(12, (long) Math.ceil(event.getNewDamage()));
-    if (source.is(DamageTypes.PLAYER_ATTACK)) awardCombat(source.getEntity(), xp, false);
-    else if (source.getDirectEntity() instanceof AbstractArrow || source.is(Reference.FROM_GUN))
-      award(source.getEntity(), "archery", xp);
+    long xp = damagePractice(event);
+    if (xp == 0 || source instanceof SpellDamageSource || source.is(Tags.DamageTypes.IS_MAGIC))
+      return;
+    Entity direct = source.getDirectEntity();
+    if (source.is(DamageTypes.PLAYER_ATTACK)
+        && direct instanceof ServerPlayer player
+        && personal(player)) {
+      // Better Combat has already swapped the active attack stack into this slot.
+      ItemStack weapon = player.getWeaponItem();
+      if (WeaponProficiency.isLightWeapon(weapon)) {
+        awardClass(player, ProgressionBridge.RANGER_PRACTICE, xp, false, false);
+      } else {
+        awardClass(
+            player,
+            ProgressionBridge.WARRIOR_PRACTICE,
+            xp,
+            false,
+            RaceIdentity.subclass(player) == CharacterSubclass.BERSERKER
+                && MartialTechniques.isHeavyWeapon(weapon));
+      }
+    } else if (direct instanceof AbstractArrow || source.is(Reference.FROM_GUN)) {
+      Entity owner =
+          direct instanceof Projectile projectile && projectile.getOwner() != null
+              ? projectile.getOwner()
+              : source.getEntity();
+      if (owner instanceof ServerPlayer player && personal(player)) {
+        awardClass(
+            player,
+            ProgressionBridge.RANGER_PRACTICE,
+            xp,
+            true,
+            RaceIdentity.subclass(player) == CharacterSubclass.MARKSMAN);
+        award(player, "archery", xp);
+      }
+    }
+  }
+
+  public static void awardRangerSummonHit(
+      ServerPlayer owner, LivingDamageEvent.Post event, boolean affinity) {
+    long xp = damagePractice(event);
+    if (xp > 0 && personal(owner)) {
+      awardClass(owner, ProgressionBridge.RANGER_PRACTICE, xp, false, affinity);
+    }
+  }
+
+  private static long damagePractice(LivingDamageEvent.Post event) {
+    if (event.getNewDamage() <= 0 || event.getEntity().getType().is(Reference.NO_XP_DAMAGE_DEALT))
+      return 0;
+    return Math.min(12, (long) Math.ceil(event.getNewDamage()));
   }
 }

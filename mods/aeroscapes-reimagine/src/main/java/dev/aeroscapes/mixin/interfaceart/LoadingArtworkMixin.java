@@ -4,17 +4,31 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.aeroscapes.interfaceart.InterfaceArt;
+import net.minecraft.Util;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.LoadingOverlay;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ReloadInstance;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @SuppressWarnings("PMD.UnusedPrivateMethod")
 @Mixin(LoadingOverlay.class)
 public abstract class LoadingArtworkMixin {
+  @Shadow @Final private Minecraft minecraft;
+  @Shadow @Final private ReloadInstance reload;
+  @Shadow @Final private boolean fadeIn;
+  @Shadow private long fadeInStart;
+
   @ModifyArg(
       method = "render",
       at =
@@ -68,5 +82,25 @@ public abstract class LoadingArtworkMixin {
       index = 4)
   private int aeroscapes$progressColor(int original) {
     return InterfaceArt.loadingColor(original, InterfaceArt.LOADING_ACCENT);
+  }
+
+  @Inject(method = "drawProgressBar", at = @At("TAIL"))
+  private void aeroscapes$showReloadTime(
+      GuiGraphics graphics,
+      int left,
+      int top,
+      int right,
+      int bottom,
+      float alpha,
+      CallbackInfo callback) {
+    // Minecraft sets fadeIn for a manual reload and keeps it off for startup and recovery.
+    if (!fadeIn || reload.isDone()) return;
+    long seconds = (Util.getMillis() - fadeInStart) / 1000L;
+    graphics.drawCenteredString(
+        minecraft.font,
+        Component.translatable("aeroscapes_reimagine.loading.manual_reload", seconds),
+        (left + right) / 2,
+        bottom + 8,
+        0xfff4f8ff);
   }
 }

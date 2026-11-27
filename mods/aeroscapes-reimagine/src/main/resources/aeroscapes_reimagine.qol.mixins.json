@@ -7,6 +7,8 @@
   "mixins": [
     "inventory.AccessoryItemUseMixin",
     "inventory.CuriosQuickEquipMixin",
+    "inventory.CarryOnRopePickupMixin",
+    "inventory.CarryOnRopeDataMixin",
     "CompassManagerAccess",
     "CompassRandomSpreadAccess",
     "CompassBiomeWorkerMixin",
@@ -17,8 +19,15 @@
     "CompassNaturePriceMixin",
     "CompassExplorerPriceMixin",
     "LegendaryFrostStrikeMixin",
+    "progression.BuildingDurabilityMixin",
+    "technique.AbilityBowReleaseMixin",
     "technique.MartialArrowImpactMixin",
+    "technique.LivingDamageRecoveryAccess",
     "technique.MartialArrowLaunchMixin",
+    "technique.TripleShotBowMixin",
+    "technique.SmokeSensingMixin",
+    "technique.SmokeMeleePursuitMixin",
+    "technique.SmokeBowPursuitMixin",
     "technique.MartialMeleeMixin",
     "technique.MartialShieldMixin",
     "technique.BetterCombatTempoServerMixin",
@@ -89,6 +98,7 @@
     "reforge.tools.VanillaRodReforgeMixin"
   ],
   "client": [
+    "technique.AbilityBowInputMixin",
     "technique.BetterCombatTempoClientMixin",
     "guide.FieldGuideBookmarksMixin",
     "guide.FieldGuideScreenMixin",

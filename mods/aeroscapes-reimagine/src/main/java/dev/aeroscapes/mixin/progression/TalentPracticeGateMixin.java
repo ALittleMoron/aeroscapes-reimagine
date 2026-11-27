@@ -25,7 +25,9 @@ abstract class TalentPracticeGateMixin {
       boolean force,
       CallbackInfo callback) {
     if (force) return;
-    if (category.toString().equals(ProgressionBridge.COMBAT_CATEGORY)) {
+    String pool = category.toString();
+    if (pool.equals(ProgressionBridge.COMBAT_CATEGORY)
+        || pool.equals(ProgressionBridge.RANGER_CATEGORY)) {
       var required = CombatTalentRequirements.missing(player, skill);
       if (required != null) {
         player.displayClientMessage(required, true);
@@ -33,7 +35,7 @@ abstract class TalentPracticeGateMixin {
       }
       return;
     }
-    if (!category.toString().equals(ProgressionBridge.MAGIC_CATEGORY)) return;
+    if (!pool.equals(ProgressionBridge.MAGIC_CATEGORY)) return;
     int requiredLevel = MagicTalents.requiredLevel(skill);
     if (requiredLevel > 0 && requiredLevel > MagicPractice.level(player)) {
       player.displayClientMessage(

@@ -24,9 +24,26 @@ abstract class MartialArrowImpactMixin {
       Entity target, DamageSource source, float damage, Operation<Boolean> original) {
     if (target instanceof LivingEntity living && damage > 0.0F) {
       AbstractArrow arrow = (AbstractArrow) (Object) this;
-      boolean landed =
-          original.call(target, source, MartialArchery.impactDamage(arrow, living, damage));
-      if (landed) MartialArchery.landed(arrow, living);
+      float vitality = living.getHealth() + living.getAbsorptionAmount();
+      int oldRecovery = living.invulnerableTime;
+      boolean bypass = oldRecovery > 10 && MartialArchery.landedInVolley(arrow, living);
+      var recovery = (LivingDamageRecoveryAccess) living;
+      float previousDamage = bypass ? recovery.aeroscapes$lastHurt() : 0.0F;
+      boolean landed;
+      if (bypass) living.invulnerableTime = 10;
+      try {
+        landed = original.call(target, source, MartialArchery.impactDamage(arrow, living, damage));
+      } finally {
+        // Follow-up arrows must not extend or spend the target's protection against other attacks.
+        if (bypass) {
+          recovery.aeroscapes$lastHurt(previousDamage);
+          living.invulnerableTime = oldRecovery;
+        }
+      }
+      if (landed) {
+        MartialArchery.landed(
+            arrow, living, living.getHealth() + living.getAbsorptionAmount() < vitality);
+      }
       return landed;
     }
     return original.call(target, source, damage);

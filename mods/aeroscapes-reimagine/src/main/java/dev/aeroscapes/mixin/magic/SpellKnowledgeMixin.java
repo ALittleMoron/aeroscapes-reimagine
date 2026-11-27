@@ -3,6 +3,7 @@ package dev.aeroscapes.mixin.magic;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.magic.SpellProgression;
 import dev.aeroscapes.magic.travel.TravelMagic;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
@@ -26,7 +27,7 @@ abstract class SpellKnowledgeMixin {
   @SuppressWarnings("PMD.UnusedPrivateMethod")
   private void aeroscapes$boundedEquipmentBonus(
       int baseLevel, LivingEntity caster, CallbackInfoReturnable<Integer> callback) {
-    if (!SpellKnowledge.scrollLevel() && caster instanceof ServerPlayer player) {
+    if (caster instanceof ServerPlayer player) {
       int cap = SpellKnowledge.cap((AbstractSpell) (Object) this, SpellKnowledge.unlocked(player));
       if (baseLevel > 0 && baseLevel <= cap)
         callback.setReturnValue(Math.min(callback.getReturnValue(), cap));
@@ -77,6 +78,7 @@ abstract class SpellKnowledgeMixin {
       CastSource source,
       boolean cooldown,
       CallbackInfo callback) {
+    SpellProgression.beginCast(player);
     AbstractSpell spell = (AbstractSpell) (Object) this;
     MagicData magic = MagicData.getPlayerMagicData(player);
     if (!SpellKnowledge.executionAllowed(spell, player, level, source)

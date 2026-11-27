@@ -4,6 +4,7 @@ import dev.aeroscapes.magic.PreparedAbilities;
 import io.redspace.ironsspellbooks.gui.inscription_table.InscriptionTableMenu;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.item.ItemStack;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -14,8 +15,16 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = InscriptionTableMenu.class, remap = false)
-abstract class InscriptionStudyMixin {
+abstract class InscriptionStudyMixin implements PreparedAbilities.StudyTable {
   @Shadow @Final private Player player;
+  @Shadow @Final protected ContainerLevelAccess access;
+
+  @Override
+  public boolean aeroscapes$canFirstStudy(ServerPlayer actor) {
+    return actor == player
+        && access.evaluate((level, pos) -> level == actor.level(), false)
+        && ((InscriptionTableMenu) (Object) this).stillValid(actor);
+  }
 
   @Inject(method = "clickMenuButton", at = @At("HEAD"), cancellable = true, require = 1)
   @SuppressWarnings("PMD.UnusedPrivateMethod")

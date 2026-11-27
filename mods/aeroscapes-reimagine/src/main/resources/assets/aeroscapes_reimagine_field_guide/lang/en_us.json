@@ -311,5 +311,16 @@
   "book.aeroscapes_reimagine.field_guide.ui.ahead": "Later on the route",
   "book.aeroscapes_reimagine.field_guide.ui.alternatives": "Either route works: %s",
   "book.aeroscapes_reimagine.field_guide.ui.prerequisites": "Before this: %s",
-  "book.aeroscapes_reimagine.field_guide.ui.or": " or "
+  "book.aeroscapes_reimagine.field_guide.ui.or": " or ",
+  "book.aeroscapes_reimagine.field_guide.magic.name": "Magic",
+  "book.aeroscapes_reimagine.field_guide.magic.progress": "Study progress",
+  "book.aeroscapes_reimagine.field_guide.magic.first_study.name": "Your first spell",
+  "book.aeroscapes_reimagine.field_guide.magic.first_study.text": "Cast three Magic Missile scrolls. Put a spellbook in an inscription table, open Repeats and learn rank 1.\n\nOr earn Mage points and buy a direction mastery in Talents. Learn Magic Access to cast from a prepared slot.",
+  "book.aeroscapes_reimagine.field_guide.magic.first_study.summary": "Cast found scrolls or buy a direction mastery. The right page tracks study progress and shows requirements for spells you have found.",
+  "book.aeroscapes_reimagine.field_guide.magic.study_ranks.name": "Raise a spell’s rank",
+  "book.aeroscapes_reimagine.field_guide.magic.study_ranks.text": "At the inscription table, place the spellbook above a stronger scroll for a spell you know. Press Study scroll. It spends one scroll if your mastery allows that rank. If it exceeds the limit, the scroll stays.",
+  "book.aeroscapes_reimagine.field_guide.magic.study_ranks.summary": "Use a stronger physical scroll to raise a known spell within your current mastery limit.",
+  "book.aeroscapes_reimagine.field_guide.workshop.field_repair.name": "Field repair",
+  "book.aeroscapes_reimagine.field_guide.workshop.field_repair.text": "Learn Field Repair after Sound Mend in Smithing. Hold a kit and a damaged item in opposite hands. Carry a matching anvil material. Stand still and hold Use for two seconds. A successful repair spends the kit and one material.",
+  "book.aeroscapes_reimagine.field_guide.workshop.field_repair.summary": "Restore part of a favorite item’s durability away from the anvil."
 }

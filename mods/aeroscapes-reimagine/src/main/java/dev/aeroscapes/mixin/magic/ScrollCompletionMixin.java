@@ -2,6 +2,8 @@ package dev.aeroscapes.mixin.magic;
 
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+import com.llamalad7.mixinextras.sugar.Local;
+import dev.aeroscapes.magic.SpellProgression;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.spells.AbstractSpell;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
@@ -31,14 +33,19 @@ abstract class ScrollCompletionMixin {
       LivingEntity caster,
       CastSource source,
       MagicData magic,
-      Operation<Void> original) {
+      Operation<Void> original,
+      @Local(argsOnly = true) boolean terminal) {
     ItemStack item = magic.getPlayerCastingItem();
     original.call(spell, world, rank, caster, source, magic);
+    if (source != CastSource.SCROLL || !(caster instanceof ServerPlayer player)) return;
+    if (terminal) SpellProgression.completedScrollCast(player, spell, item);
     // Dimension-changing effects clear the source before MagicManager's ordinary scroll charge.
-    if (source == CastSource.SCROLL
-        && magic.getCastSource() != CastSource.SCROLL
-        && caster instanceof ServerPlayer player
+    if (magic.getCastSource() != CastSource.SCROLL
         && !player.isCreative()
-        && item.getItem() instanceof Scroll) item.shrink(1);
+        && item.getItem() instanceof Scroll) {
+      int count = item.getCount();
+      item.shrink(1);
+      SpellProgression.scrollConsumed(player, item, count);
+    }
   }
 }

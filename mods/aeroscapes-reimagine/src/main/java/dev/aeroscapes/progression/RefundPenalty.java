@@ -3,7 +3,9 @@ package dev.aeroscapes.progression;
 import dev.aeroscapes.races.RaceIdentity;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 import java.util.Map;
+import javax.annotation.Nullable;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
@@ -14,7 +16,7 @@ import net.puffish.skillsmod.SkillsMod;
 /** Keeps the practice-earned source intact and applies a separate, recoverable deduction. */
 public final class RefundPenalty {
   private static final String DATA = "aeroscapes_reimagine_talent_refunds";
-  private static final ResourceLocation SOURCE =
+  static final ResourceLocation SOURCE =
       ResourceLocation.parse("aeroscapes_reimagine:redistribution");
   private static final int PRACTICE_PER_POINT = 3000;
 
@@ -30,22 +32,47 @@ public final class RefundPenalty {
     return remaining > 0 ? 1 + (remaining - 1) % PRACTICE_PER_POINT : 0;
   }
 
-  static void charge(ServerPlayer player, TalentRefunds.Quote quote) {
+  static int due(ServerPlayer player, String pool) {
+    return player.getPersistentData().getCompound(DATA).getCompound(pool).getInt("practice_due");
+  }
+
+  static int addLoss(int due, int loss) {
+    return Math.clamp((long) due + (long) loss * PRACTICE_PER_POINT, 0, Integer.MAX_VALUE);
+  }
+
+  static int pointsDue(int due) {
+    return Math.ceilDiv(due, PRACTICE_PER_POINT);
+  }
+
+  @Nullable
+  static CompoundTag snapshot(ServerPlayer player) {
+    var data = player.getPersistentData();
+    return data.contains(DATA, Tag.TAG_COMPOUND) ? data.getCompound(DATA).copy() : null;
+  }
+
+  static void restore(ServerPlayer player, @Nullable CompoundTag snapshot) {
+    if (snapshot == null) player.getPersistentData().remove(DATA);
+    else player.getPersistentData().put(DATA, snapshot);
+  }
+
+  static void apply(ServerPlayer player, List<TalentRefunds.PoolQuote> quotes) {
     var data = player.getPersistentData().getCompound(DATA).copy();
-    var pool = data.getCompound(quote.pool());
-    pool.putInt("tenths", quote.remainder());
-    int due = pool.getInt("practice_due") + quote.loss() * PRACTICE_PER_POINT;
-    setDeduction(player, quote.pool(), due);
-    pool.putInt("practice_due", due);
-    data.put(quote.pool(), pool);
-    player.getPersistentData().put(DATA, data);
+    for (var quote : quotes) {
+      if (quote.paid() == 0) continue;
+      var pool = data.getCompound(quote.pool());
+      pool.putInt("tenths", quote.remainder());
+      pool.putInt("practice_due", quote.nextDue());
+      data.put(quote.pool(), pool);
+    }
+    if (!data.isEmpty()) player.getPersistentData().put(DATA, data);
   }
 
   public static void practice(ServerPlayer player, String skill, long earned) {
     if (earned <= 0 || !player.getPersistentData().contains(DATA, Tag.TAG_COMPOUND)) return;
     String pool;
     if ("magic".equals(skill)) pool = "magic";
-    else if (ProgressionBridge.COMBAT_SKILLS.contains(skill)) pool = "combat";
+    else if (ProgressionBridge.WARRIOR_PRACTICE.equals(skill)
+        || ProgressionBridge.RANGER_PRACTICE.equals(skill)) pool = skill;
     else if (ProfessionDiscipline.bySkill(skill).isPresent()) pool = skill;
     else return;
     CompoundTag state = player.getPersistentData().getCompound(DATA).getCompound(pool);
@@ -53,8 +80,7 @@ public final class RefundPenalty {
     if (due > 0) {
       int remaining = (int) Math.max(0L, due - earned);
       state.putInt("practice_due", remaining);
-      if (Math.ceilDiv(remaining, PRACTICE_PER_POINT) < Math.ceilDiv(due, PRACTICE_PER_POINT))
-        setDeduction(player, pool, remaining);
+      if (pointsDue(remaining) < pointsDue(due)) setDeduction(player, pool, remaining);
     }
   }
 
@@ -87,7 +113,7 @@ public final class RefundPenalty {
 
   private static void setDeduction(ServerPlayer player, String pool, int due) {
     var category = ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", pool);
-    int points = -Math.ceilDiv(due, PRACTICE_PER_POINT);
+    int points = -pointsDue(due);
     var provider = SkillsMod.getInstance();
     if (provider.getPoints(player, category, SOURCE).orElse(0) != points)
       provider.setPoints(player, category, SOURCE, points, true);

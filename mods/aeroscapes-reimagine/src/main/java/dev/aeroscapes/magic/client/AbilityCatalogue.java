@@ -1,6 +1,7 @@
 package dev.aeroscapes.magic.client;
 
 import dev.aeroscapes.magic.AbilityNetwork;
+import dev.aeroscapes.races.AnimalLure;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
@@ -33,6 +34,7 @@ public final class AbilityCatalogue {
   public static String assignmentReason(AbilityNetwork.Entry entry) {
     if (entry == null) return "waiting";
     if (entry.technique()) return entry.known() ? "" : "technique_unlearned";
+    if (entry.farming()) return entry.known() ? "" : AnimalLure.UNLEARNED;
     if (entry.reason().equals("race")) return "race";
     if (entry.reason().equals("disabled")) return "disabled";
     if (entry.reason().equals("hex_missing")) return "hex_missing";

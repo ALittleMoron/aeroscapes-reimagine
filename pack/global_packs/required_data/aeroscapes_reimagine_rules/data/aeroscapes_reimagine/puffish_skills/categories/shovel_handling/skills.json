@@ -8,7 +8,8 @@
   "iron": {
     "x": -7,
     "y": -55,
-    "definition": "iron"
+    "definition": "iron",
+    "root": true
   },
   "steel": {
     "x": 13,

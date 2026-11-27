@@ -592,8 +592,7 @@ public final class WaystonesRegression {
 
   private record MenuChoice(Waystone source, Waystone target, int points) {}
 
-  private static WaystoneTeleportContext context(
-      ServerPlayer player, Waystone source, Waystone target) {
+  static WaystoneTeleportContext context(ServerPlayer player, Waystone source, Waystone target) {
     return WaystonesAPI.createUncheckedDefaultTeleportContext(
             player, target, context -> context.setFromWaystone(source))
         .left()

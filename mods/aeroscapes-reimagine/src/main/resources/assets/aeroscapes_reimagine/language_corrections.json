@@ -5663,9 +5663,21 @@
   },
   {
     "language": "en_us",
+    "key": "effect.nutritionalbalance.malnourished_effect",
+    "expected": "Malnourished",
+    "replacement": "Dietary Weakness"
+  },
+  {
+    "language": "ru_ru",
+    "key": "effect.nutritionalbalance.malnourished_effect",
+    "expected": "Истощенный",
+    "replacement": "Слабость от недоедания"
+  },
+  {
+    "language": "en_us",
     "key": "nutritionalbalance.nutrientstatus.details.MALNOURISHED",
     "expected": "You're feeling a little slow and weak.",
-    "replacement": "A required food group is low: attack damage reduced by 1."
+    "replacement": "At least one food group is deficient."
   },
   {
     "language": "en_us",
@@ -5683,7 +5695,7 @@
     "language": "ru_ru",
     "key": "nutritionalbalance.nutrientstatus.details.MALNOURISHED",
     "expected": "Вы чувствуйте себя медленным и слабым.",
-    "replacement": "Не хватает одной из основных групп: урон снижен на 1."
+    "replacement": "Хотя бы одна группа питания в дефиците."
   },
   {
     "language": "ru_ru",

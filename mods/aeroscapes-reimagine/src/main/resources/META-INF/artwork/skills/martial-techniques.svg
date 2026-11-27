@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="80" viewBox="0 0 48 80" shape-rendering="crispEdges">
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="176" viewBox="0 0 48 176" shape-rendering="crispEdges">
   <title>Aeroscapes martial techniques</title>
   <desc>Original 16 by 16 pixel tiles. Export a named group with rsvg-convert --export-id NAME martial-techniques.svg --output NAME.png.</desc>
   <defs>
@@ -21,6 +21,11 @@
       <stop stop-color="#80333b"/>
       <stop offset=".62" stop-color="#54243b"/>
       <stop offset="1" stop-color="#27162d"/>
+    </radialGradient>
+    <radialGradient id="companion" cx="47%" cy="42%" r="80%">
+      <stop stop-color="#3f5e43"/>
+      <stop offset=".68" stop-color="#233a32"/>
+      <stop offset="1" stop-color="#17242a"/>
     </radialGradient>
   </defs>
   <g id="shield_brace">
@@ -149,5 +154,137 @@
     <path fill="#fff0c2" d="M8 5h1v2h2v1H9v2H8V8H6V7h2zM13 3h1v1h-1zM2 3h1v1H2z"/>
     <path fill="#d59e88" d="M4 10h1v1h2v1H5v1H3v-1h1zM11 10h1v1h1v1h1v1h-2v-1h-1z"/>
     <path fill="#d3b3f2" d="M6 3h1v2H6zM11 8h2v1h-2zM4 8h1v1H4zM7 12h1v2H7z"/>
+  </g>
+  <g id="triple_shot" transform="translate(32 64)">
+    <rect width="16" height="16" fill="url(#bow)"/>
+    <path fill="#143036" d="M7 2h4v1h2v3h-2v1h3v1h1v3h-2v2h-3v1H3v-3h2v-2H2V6h2V4h3z"/>
+    <path fill="#85c7a1" d="M8 3h2v1h2v1h-2v1H4V5h4zM10 10h2v1h1v1h-2v1H4v-1h6z"/>
+    <path fill="#f5e2a8" d="M12 6h1v1h1v1h1v1h-1v1h-1v1h-1V9H3V8h9z"/>
+    <path fill="#4ca18c" d="M2 4h2v1H2zM1 8h1v1H1zM2 12h1v1H2z"/>
+  </g>
+  <g id="duelist_sidestep" transform="translate(0 80)">
+    <rect width="16" height="16" fill="url(#footwork)"/>
+    <path fill="#9383b9" d="M2 3h3v1H2zM1 5h3v1H1zM3 7h2v1H3zM11 2h2v1h-2zM13 4h2v1h-2z"/>
+    <path fill="#242138" d="M9 2h4v1h1v4h-1v2h-1v1h2v1h1v2h-1v1H6v-1H5v-3h2V8h1V5h1z"/>
+    <path fill="#a8877d" d="M9 4h1V3h3v4h-1v2h-1v2h3v2H6v-2h2V9h1V7h1V5H9z"/>
+    <path fill="#f5d4a0" d="M10 3h3v1h-1v1h-1v3h-1v2H9v1H8V9h1V7h1zM8 12h6v1H8z"/>
+    <path fill="#af98e4" d="M3 8h2v2H4v1h2v1H4v1h1v2H3v-1H2v-1H1v-2h1v-1h1z"/>
+    <path fill="#ffe2f9" d="M3 9h1v1H3v1H2v2H1v-2h1v-1h1zM2 13h1v1H2zM3 14h1v1H3zM6 5h1v1H6zM7 3h1v1H7z"/>
+  </g>
+  <g id="beastmaster_fox" transform="translate(0 96)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#3c272d" d="M2 2h2l3 4h2l3-4h2v7l-3 4-3 2-3-2-3-4z"/>
+    <path fill="#d66c42" d="M3 3h1l3 4h2l3-4h1v6l-3 3H6L3 9z"/>
+    <path fill="#ffac65" d="M3 4l3 4-3-1zm10 0v3l-3 1zM6 8h4l-1 2H7z"/>
+    <path fill="#f7e6c9" d="M4 9l3 1h2l3-1-2 4-2 1-2-1z"/>
+    <path fill="#2a2027" d="M5 8h2v1H5zm4 0h2v1H9zm-2 4h2v1H7z"/>
+  </g>
+  <g id="beastmaster_wolf" transform="translate(16 96)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#252630" d="M3 2h2l2 3h3l2-3h2v6l-2 3v3H6l-2-2-2-1V7z"/>
+    <path fill="#9299a3" d="M4 3h1l2 3h4l2-3v5l-2 3v2H6l-3-3V7z"/>
+    <path fill="#c9d2ce" d="M6 7h5v2l-3 1 1 2H6l-2-2V9z"/>
+    <path fill="#667381" d="M5 4l1 2H4zm7 0v3h-1zM13 8l-2 3v2H9l1-3z"/>
+    <path fill="#373339" d="M7 7h2v1H7zm-3 3h2v1H4z"/>
+    <path fill="#e9c684" d="M8 7h1v1H8z"/>
+  </g>
+  <g id="beastmaster_bear" transform="translate(32 96)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#342727" d="M3 2h3v2h4V2h3l1 2v7l-3 3H5l-3-3V4z"/>
+    <path fill="#9a6347" d="M4 3h2v2h4V3h2l1 2v6l-2 2H5l-2-2V5z"/>
+    <path fill="#c88c60" d="M5 6h6v2l1 3-2 2H6l-2-2 1-3z"/>
+    <path fill="#e9ad79" d="M6 9h4l1 2-1 1H6l-1-1z"/>
+    <path fill="#413031" d="M4 4h1v2H4zm7 0h1v2h-1zM5 7h2v1H5zm4 0h2v1H9zm-2 3h2v1H7z"/>
+  </g>
+  <g id="beastmaster_fox_damage" transform="translate(0 112)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#57313b" d="M2 4h8l4 3-1 4-4 3H4l-2-2 3-1-2-2 1-1z"/>
+    <path fill="#d96b42" d="M3 5h7l3 2-2 2H6L4 8zM4 12l5-1 3-1-1 2-3 1H5z"/>
+    <path fill="#fff1cb" d="M6 8h2v3L7 10H6zm4 0h2v2l-2 1z"/>
+    <path fill="#ffb26c" d="M2 2h2v1H2zm4 1h2v1H6zm7 10h1v1h-1z"/>
+  </g>
+  <g id="beastmaster_wolf_damage" transform="translate(16 112)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#383742" d="M2 3h12v3l-2 2v3l-3 3H6l-2-3V8L2 6z"/>
+    <path fill="#a5acb5" d="M3 4h10v2l-2 2-2 1-2-1-2 1-2-3z"/>
+    <path fill="#f1f0d6" d="M4 6h3v5l-1 2-1-2V8H4zm5 0h3v2h-1v3l-1 2-1-2z"/>
+    <path fill="#e7bb77" d="M1 7h2v1H1zm12 1h2v1h-2zm0 4h1v1h-1z"/>
+  </g>
+  <g id="beastmaster_bear_damage" transform="translate(32 112)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#553737" d="M5 2h3v4l-2 4-3 3H1V9l2-4zm4 0h3v4l-2 5-3 4H5v-4l2-5zm4 1h2v5l-2 5-2 2H9v-3l2-5z"/>
+    <path fill="#c5895f" d="M5 3h2v3l-2 4-3 2V9zm4 0h2v3l-2 5-3 3v-3zm4 1h1v4l-2 4-2 2v-2z"/>
+    <path fill="#f5d6a1" d="M5 3h1v3L4 9V7zm4 0h1v3L7 11V9zm4 1h1v3l-3 5v-2z"/>
+  </g>
+  <g id="beastmaster_fox_protection" transform="translate(0 128)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#3a2833" d="M2 3l6-2 6 2v5l-2 4-4 3-4-3-2-4z"/>
+    <path fill="#da965a" d="M3 4l5-2 5 2v4l-2 4-3 2-3-2-2-4z"/>
+    <path fill="#7f4541" d="M4 5l4-2 4 2v3l-1 3-3 2-3-2-1-3z"/>
+    <path fill="#f9b774" d="M5 5l3 3 3-3v4l-3 3-3-3z"/>
+    <path fill="#f4ede0" d="M6 9h4l-2 2z"/>
+  </g>
+  <g id="beastmaster_wolf_protection" transform="translate(16 128)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#30323c" d="M2 3h12v5l-2 4-4 3-4-3-2-4z"/>
+    <path fill="#abb8be" d="M3 4h10v4l-2 4-3 2-3-2-2-4z"/>
+    <path fill="#596b80" d="M4 5h8v3l-2 4-2 1-2-1-2-4z"/>
+    <path fill="#c5d1c8" d="M6 6h1v1h2V6h1v4l-2 2-2-2z"/>
+    <path fill="#313d4c" d="M7 9h2v1H7z"/>
+  </g>
+  <g id="beastmaster_bear_protection" transform="translate(32 128)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#3c2c2a" d="M4 2h8l3 3-1 5-2 3-4 2-4-2-2-3-1-5z"/>
+    <path fill="#c09264" d="M4 3h8l2 2-1 5-2 3-3 1-3-1-2-3-1-5z"/>
+    <path fill="#784945" d="M5 4h6l2 2-1 4-2 2-2 1-2-1-2-2-1-4z"/>
+    <path fill="#e3af7c" d="M5 6h2v2H5zm4 0h2v2H9zM6 9h4v2H6z"/>
+    <path fill="#4a3035" d="M7 9h2v1H7z"/>
+  </g>
+  <g id="beastmaster_fox_count" transform="translate(0 144)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#854b48" d="M1 3l3 2 3-2v5L4 11 1 8zm8 0 3 2 3-2v5l-3 3-3-3z"/>
+    <path fill="#c86a4d" d="M2 4l2 2 2-2v4l-2 2-2-2zm8 0 2 2 2-2v4l-2 2-2-2z"/>
+    <path fill="#d7b39c" d="M3 8h2l-1 1zm8 0h2l-1 1z"/>
+    <path fill="#3c2933" d="M4 7l4 2 4-2v5l-4 3-4-3z"/>
+    <path fill="#f1975c" d="M5 8l3 2 3-2v4l-3 2-3-2z"/>
+    <path fill="#ffe2c6" d="M6 12h4l-2 1z"/>
+  </g>
+  <g id="beastmaster_wolf_count" transform="translate(16 144)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#3c3e52" d="M8 3h2l1 2h2l1-2h1v6l-2 3H9L8 9z"/>
+    <path fill="#7b8593" d="M9 4l2 2h2l1-2v5l-2 2h-2L9 9z"/>
+    <path fill="#313642" d="M1 4h2l2 3h2l1-3h2v7l-3 3H3l-2-2z"/>
+    <path fill="#aab4b3" d="M2 5l2 3h3l2-3v6l-2 2H3l-1-1z"/>
+    <path fill="#dee0ca" d="M3 9h4v3H3zM11 8h2v2h-2z"/>
+    <path fill="#495768" d="M4 10h2v1H4zm8-2h1v1h-1z"/>
+  </g>
+  <g id="beastmaster_persistence" transform="translate(32 144)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#27302f" d="M2 5l2-2h3l2 2 2-2h2l2 2v6l-2 2h-3l-2-2-2 2H3l-2-2V7z"/>
+    <path fill="#95b079" d="M2 7l2-3h3l2 2 2-2h2l1 2v4l-2 2h-2l-2-2-2 2H3l-1-2z"/>
+    <path fill="#2e5547" d="M4 6h2l2 2-2 2H4L3 9V7zm7 0h2v3l-1 1h-2L9 8z"/>
+    <path fill="#e7d19a" d="M4 4h3v1H4zm6 1h3v1h-3zM6 10l5-5h1l-5 5z"/>
+  </g>
+  <g id="beastmaster_recall" transform="translate(0 160)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#25323c" d="M6 2h3v3h4l2 2v5l-3 3H6v-3h4l2-2V8H9v3H6L1 6z"/>
+    <path fill="#7cb7ab" d="M6 3h2v3h5l1 1v5l-2 2H7v-2h4l2-2V8l-1-1H8v3H6L2 6z"/>
+    <path fill="#c8e8ba" d="M6 3h1v3h4v1H7v2H6L3 6z"/>
+    <path fill="#ad8758" d="M1 12h2v2H1zm2 1h1v2H3z"/>
+  </g>
+  <g id="beastmaster_focus_attack" transform="translate(16 160)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#472f37" d="M6 1h4v2h3v3h2v4h-2v3h-3v2H6v-2H3v-3H1V6h2V3h3z"/>
+    <path fill="#d18471" d="M7 2h2v2h3v3h2v2h-2v3H9v2H7v-2H4V9H2V7h2V4h3z"/>
+    <path fill="#362e39" d="M6 5h4v1h1v4h-1v1H6v-1H5V6h1z"/>
+    <path fill="#f2c185" d="M6 6h1v2H6zm3 0h1v2H9zM7 8h2v2H7z"/>
+  </g>
+  <g id="beastmaster_cooldown" transform="translate(32 160)">
+    <rect width="16" height="16" fill="url(#companion)"/>
+    <path fill="#393035" d="M3 2h10v3l-2 2-1 1 1 1 2 2v3H3v-3l2-2 1-1-1-1-2-2z"/>
+    <path fill="#b99668" d="M4 3h8v2l-3 3 3 3v2H4v-2l3-3-3-3z"/>
+    <path fill="#3a554a" d="M5 5h6L8 8l3 3H5l3-3z"/>
+    <path fill="#f1ca7b" d="M6 5h4L8 7zm2 4 2 2H6z"/>
+    <path fill="#a1bb7f" d="M1 6h3v1H1zm11 2h3v1h-3zM1 9h2v1H1z"/>
   </g>
 </svg>

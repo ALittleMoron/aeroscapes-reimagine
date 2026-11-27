@@ -643,7 +643,8 @@ final class ReforgeRegression {
     var skills = SkillsMod.getInstance();
     var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
     skills.tryUnlockSkill(player, combat, "heavy_armor_handling", true);
-    skills.tryUnlockSkill(player, combat, "light_armor_handling", true);
+    var magic = ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
+    skills.tryUnlockSkill(player, magic, "caster_armor_handling", true);
     NeoForge.EVENT_BUS.post(new PlayerTickEvent.Post(player));
     NeoForge.EVENT_BUS.post(new LivingDamageEvent.Post(player, arrowHit));
     NeoForge.EVENT_BUS.post(new LivingDamageEvent.Post(player, spellHit));
@@ -699,6 +700,7 @@ final class ReforgeRegression {
     var level = player.serverLevel();
     var skills = SkillsMod.getInstance();
     var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+    var ranger = ResourceLocation.parse(ProgressionBridge.RANGER_CATEGORY);
     var protection =
         level
             .registryAccess()
@@ -737,13 +739,17 @@ final class ReforgeRegression {
         armorSpeed(player) == -0.24 && protectedHit(player, melee) > ironMelee,
         "The same untrained iron slows retreat and loses protection");
     skills.tryUnlockSkill(player, combat, "heavy_armor_handling", true);
+    for (var slot : ArmorProficiency.SLOTS) player.setItemSlot(slot, ItemStack.EMPTY);
+    var inventory = player.inventoryMenu;
+    var source = inventory.getSlot(9);
+    var previous = source.getItem();
     for (var set : SpecialistArmor.Set.values()) {
       String talent =
           set == SpecialistArmor.Set.WINDWARD ? "ranger_armor_training" : "rogue_armor_training";
       for (var piece : set.items()) {
         var stack = piece.getDefaultInstance();
         var slot = player.getEquipmentSlotForItem(stack);
-        var menuSlot = player.inventoryMenu.getSlot(8 - slot.getIndex());
+        var menuSlot = inventory.getSlot(8 - slot.getIndex());
         player.setItemInHand(InteractionHand.MAIN_HAND, stack);
         require(
             !stack.canEquip(slot, player)
@@ -753,14 +759,22 @@ final class ReforgeRegression {
                     .getResult()
                     .consumesAction(),
             "Untrained specialist armor is denied by the equipment predicate, menu and item use");
+        source.set(piece.getDefaultInstance());
+        inventory.quickMoveStack(player, 9);
+        require(menuSlot.getItem().isEmpty(), "Shift-click cannot equip an untrained " + piece);
       }
-      skills.tryUnlockSkill(player, combat, talent, true);
+      skills.tryUnlockSkill(player, ranger, talent, true);
       for (var piece : set.items()) {
         var stack = piece.getDefaultInstance();
         var slot = player.getEquipmentSlotForItem(stack);
-        require(stack.canEquip(slot, player), "Combat talent permits equipping the matching set");
+        require(stack.canEquip(slot, player), "Ranger talent permits equipping the matching set");
         if (slot == EquipmentSlot.CHEST) stack.enchant(protection, 4);
-        player.setItemSlot(slot, stack);
+        source.set(stack);
+        require(
+            !inventory.quickMoveStack(player, 9).isEmpty()
+                && source.getItem().isEmpty()
+                && player.getItemBySlot(slot).is(piece),
+            "Shift-click equips a trained " + piece);
       }
       player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
       detectEquipmentUpdates(player);
@@ -783,7 +797,7 @@ final class ReforgeRegression {
               level,
               player,
               player.damageSources().mobAttack(new Zombie(EntityType.ZOMBIE, level)));
-      skills.lockSkill(player, combat, talent);
+      skills.lockSkill(player, ranger, talent);
       detectEquipmentUpdates(player);
       float undertrainedProtection =
           EnchantmentHelper.getDamageProtection(
@@ -809,7 +823,7 @@ final class ReforgeRegression {
               + " to "
               + undertrainedProtection
               + ")");
-      skills.tryUnlockSkill(player, combat, talent, true);
+      skills.tryUnlockSkill(player, ranger, talent, true);
       detectEquipmentUpdates(player);
       require(
           player.getItemBySlot(EquipmentSlot.CHEST) == chest
@@ -817,6 +831,7 @@ final class ReforgeRegression {
           "Relearning restores defense without replacing the equipped piece");
       for (var slot : ArmorProficiency.SLOTS) player.setItemSlot(slot, ItemStack.EMPTY);
     }
+    source.set(previous);
   }
 
   private static void verifyWindwardEffects(ServerPlayer player) {
@@ -982,6 +997,7 @@ final class ReforgeRegression {
     require(
         Utils.getPlayerSpellbookStack(player) == book, "Fixture equips the ranked Curios focus");
     AbilitiesRegression.unlockMastery(player, spell, 5);
+    AbilitiesRegression.unlock(player, "magic_spell_magic_missile");
     int rank = 4;
     var learned = SpellKnowledge.unlocked(player);
     require(SpellKnowledge.cap(spell, learned) >= rank, "Fixture can use rank-four Magic Missile");

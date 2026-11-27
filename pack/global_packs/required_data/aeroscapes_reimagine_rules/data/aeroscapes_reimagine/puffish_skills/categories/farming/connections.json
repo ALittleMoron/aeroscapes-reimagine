@@ -1,1 +1,14 @@
-{}
+{
+  "normal": {
+    "unidirectional": [
+      [
+        "animal_lure",
+        "animal_lure_radius"
+      ],
+      [
+        "animal_lure",
+        "animal_lure_duration"
+      ]
+    ]
+  }
+}

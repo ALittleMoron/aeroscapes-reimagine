@@ -1,228 +1,127 @@
 {
   "melee_strike": {
-    "x": -96,
+    "x": -196,
     "y": -64,
     "definition": "melee_strike",
     "root": true
   },
   "melee_onslaught": {
-    "x": -140,
+    "x": -240,
     "y": 0,
     "definition": "melee_onslaught"
   },
   "melee_footing": {
-    "x": -52,
+    "x": -152,
     "y": 0,
     "definition": "melee_footing"
   },
   "melee_veteran": {
-    "x": -96,
+    "x": -196,
     "y": 64,
     "definition": "melee_veteran"
   },
   "guard_armor": {
-    "x": -46,
+    "x": 104,
     "y": -136,
     "definition": "guard_armor",
     "root": true
   },
   "guard_vitality": {
-    "x": -104,
+    "x": 46,
     "y": -64,
     "definition": "guard_vitality"
   },
   "guard_toughness": {
-    "x": -17,
+    "x": 133,
     "y": -40,
     "definition": "guard_toughness"
   },
   "quick_block": {
-    "x": 60,
+    "x": 210,
     "y": -110,
     "definition": "quick_block",
     "root": true
   },
   "shield_march": {
-    "x": 115,
+    "x": 265,
     "y": -67,
     "definition": "shield_march",
     "root": true
   },
-  "bow_stride": {
-    "x": -64,
-    "y": -132,
-    "definition": "bow_stride",
-    "root": true
-  },
-  "steady_aim": {
-    "x": 24,
-    "y": -116,
-    "definition": "steady_aim",
-    "root": true
-  },
-  "quick_recovery": {
-    "x": -49,
-    "y": -130,
-    "definition": "quick_recovery",
-    "root": true
-  },
-  "opening_strike": {
-    "x": 34,
-    "y": -96,
-    "definition": "opening_strike",
-    "root": true
-  },
-  "crossbow_handling": {
-    "x": -103,
-    "y": 18,
-    "definition": "crossbow_handling",
-    "root": true
-  },
-  "starlight_bow_handling": {
-    "x": 92,
-    "y": -28,
-    "definition": "starlight_bow_handling",
-    "root": true
-  },
-  "autoloader_handling": {
-    "x": -63,
-    "y": 94,
-    "definition": "autoloader_handling",
-    "root": true
-  },
   "sword_handling": {
-    "x": -204,
+    "x": -304,
     "y": 132,
     "definition": "sword_handling",
     "root": true
   },
   "advanced_sword_handling": {
-    "x": -204,
+    "x": -304,
     "y": 188,
     "definition": "advanced_sword_handling"
   },
   "combat_axe_handling": {
-    "x": -96,
+    "x": -196,
     "y": 132,
     "definition": "combat_axe_handling",
     "root": true
   },
   "heavy_weapon_handling": {
-    "x": -96,
+    "x": -196,
     "y": 188,
     "definition": "heavy_weapon_handling",
     "root": true
   },
   "polearm_handling": {
-    "x": 10,
+    "x": -90,
     "y": 132,
     "definition": "polearm_handling",
     "root": true
   },
   "shield_handling": {
-    "x": 133,
+    "x": 283,
     "y": -16,
     "definition": "shield_handling",
     "root": true
   },
-  "light_weapon_handling": {
-    "x": 78,
-    "y": -25,
-    "definition": "light_weapon_handling",
-    "root": true
-  },
-  "light_armor_handling": {
-    "x": -107,
-    "y": 31,
-    "definition": "light_armor_handling",
-    "root": true
-  },
   "heavy_armor_handling": {
-    "x": -54,
+    "x": 96,
     "y": 102,
     "definition": "heavy_armor_handling",
     "root": true
   },
-  "ranger_armor_training": {
-    "x": 96,
-    "y": 108,
-    "definition": "ranger_armor_training",
-    "root": true
-  },
-  "rogue_armor_training": {
-    "x": 48,
-    "y": 80,
-    "definition": "rogue_armor_training",
-    "root": true
-  },
   "heavy_strike": {
-    "x": -96,
+    "x": -196,
     "y": 244,
     "definition": "heavy_strike"
   },
   "shield_brace": {
-    "x": 39,
+    "x": 189,
     "y": -36,
     "definition": "shield_brace"
   },
   "counterattack": {
-    "x": 76,
+    "x": 226,
     "y": 49,
     "definition": "counterattack"
   },
-  "slowing_shot": {
-    "x": 4,
-    "y": -42,
-    "definition": "slowing_shot"
-  },
-  "marking_shot": {
-    "x": 39,
-    "y": 44,
-    "definition": "marking_shot"
-  },
-  "quick_shot": {
-    "x": -88,
-    "y": -62,
-    "definition": "quick_shot"
-  },
-  "disengage": {
-    "x": -81,
-    "y": -62,
-    "definition": "disengage"
-  },
-  "dash": {
-    "x": -55,
-    "y": 25,
-    "definition": "dash"
-  },
-  "flank_strike": {
-    "x": 11,
-    "y": -13,
-    "definition": "flank_strike"
-  },
   "shield_shove": {
-    "x": 151,
+    "x": 301,
     "y": 49,
     "definition": "shield_shove"
   },
   "wide_shield_shove": {
-    "x": 106,
+    "x": 256,
     "y": 114,
     "definition": "wide_shield_shove"
   },
   "last_stand": {
-    "x": -15,
+    "x": -115,
     "y": -41,
     "definition": "last_stand"
   },
   "offensive_stance": {
-    "x": 24,
+    "x": -76,
     "y": 24,
     "definition": "offensive_stance"
-  },
-  "duelist_parry": {
-    "x": 124,
-    "y": 30,
-    "definition": "duelist_parry"
   }
 }

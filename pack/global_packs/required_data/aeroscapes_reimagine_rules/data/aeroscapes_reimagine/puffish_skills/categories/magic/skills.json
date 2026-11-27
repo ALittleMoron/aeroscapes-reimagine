@@ -515,11 +515,6 @@
     "y": 157,
     "definition": "magic_spell_telekinesis"
   },
-  "magic_spell_summon_ender_chest": {
-    "x": 54,
-    "y": 127,
-    "definition": "magic_spell_summon_ender_chest"
-  },
   "magic_spell_blood_step": {
     "x": 127,
     "y": 190,
@@ -654,5 +649,55 @@
     "x": -832,
     "y": -6,
     "definition": "magic_conjuration_binding_pact"
+  },
+  "caster_armor_handling": {
+    "x": 34,
+    "y": 34,
+    "definition": "caster_armor_handling"
+  },
+  "magic_spell_magic_missile": {
+    "x": -34,
+    "y": 34,
+    "definition": "magic_spell_magic_missile"
+  },
+  "magic_spell_blood_needles": {
+    "x": 48,
+    "y": -64,
+    "definition": "magic_spell_blood_needles"
+  },
+  "magic_spell_ball_lightning": {
+    "x": 55,
+    "y": -232,
+    "definition": "magic_spell_ball_lightning"
+  },
+  "magic_spell_shield": {
+    "x": 106,
+    "y": 24,
+    "definition": "magic_spell_shield"
+  },
+  "magic_spell_summon_ender_chest": {
+    "x": 11,
+    "y": 520,
+    "definition": "magic_spell_summon_ender_chest"
+  },
+  "magic_frostwave_extinguish": {
+    "x": 227,
+    "y": -162,
+    "definition": "magic_frostwave_extinguish"
+  },
+  "magic_blood_needles_overheal": {
+    "x": 92,
+    "y": -64,
+    "definition": "magic_blood_needles_overheal"
+  },
+  "magic_arcane_shackle_marker": {
+    "x": -249,
+    "y": -126,
+    "definition": "magic_arcane_shackle_marker"
+  },
+  "magic_oakskin_ally": {
+    "x": 72,
+    "y": 60,
+    "definition": "magic_oakskin_ally"
   }
 }

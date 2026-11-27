@@ -1,5 +1,6 @@
 package dev.aeroscapes.equipment.armor;
 
+import dev.aeroscapes.races.ClassProgression;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -95,8 +96,7 @@ public final class SpecialistArmor {
     }
 
     public Component trainingName() {
-      return Component.translatable(
-          "puffish_skills.aeroscapes_reimagine.combat." + talent + ".title");
+      return ClassProgression.talentTitle(talent);
     }
 
     public MutableComponent setEffect() {

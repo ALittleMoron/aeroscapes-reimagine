@@ -5,6 +5,7 @@ import static dev.aeroscapes.races.client.RaceVisuals.text;
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.CharacterSubclass;
+import dev.aeroscapes.races.ClassProgression;
 import dev.aeroscapes.races.ClassTraits;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
@@ -26,19 +27,29 @@ final class CharacterDetails {
   }
 
   static MutableComponent subclassProfile(CharacterSubclass subclass) {
-    return subclassName(subclass)
+    var details = subclassName(subclass).append("\n").append(subclassSummary(subclass));
+    if (!subclass.isSpellStarter())
+      details
+          .append("\n")
+          .append(
+              Component.translatable(
+                  "aeroscapes_reimagine.technique." + subclass.starter() + ".description"));
+    return details;
+  }
+
+  static MutableComponent subclassSummary(CharacterSubclass subclass) {
+    boolean spell = subclass.isSpellStarter();
+    var starter =
+        Component.translatable(
+            spell
+                ? "spell." + subclass.starter().replace(':', '.')
+                : "aeroscapes_reimagine.technique." + subclass.starter() + ".name");
+    String key = "subclass." + subclass.id() + ".";
+    return text(spell ? "subclass_spell" : "subclass_starter", starter)
         .append("\n")
-        .append(
-            RaceVisuals.text(
-                "subclass_starter",
-                Component.translatable(
-                    "aeroscapes_reimagine.technique." + subclass.starter() + ".name")))
+        .append(text(key + "conditions"))
         .append("\n")
-        .append(
-            Component.translatable(
-                "aeroscapes_reimagine.technique." + subclass.starter() + ".description"))
-        .append("\n")
-        .append(RaceVisuals.text("subclass." + subclass.id() + ".practice"));
+        .append(text(key + "practice"));
   }
 
   static MutableComponent professionName(Profession profession) {
@@ -58,8 +69,13 @@ final class CharacterDetails {
   }
 
   static MutableComponent talent(String starter, String field) {
-    String path = starter.equals("first_mastery") ? "magic.magic_mastery_1" : "combat." + starter;
-    return Component.translatable("puffish_skills.aeroscapes_reimagine." + path + "." + field);
+    if (CharacterClass.MAGE.starters().contains(starter))
+      return Component.translatable(
+          "puffish_skills.aeroscapes_reimagine.magic.magic_mastery_1." + field);
+    return (field.equals("title")
+            ? ClassProgression.talentTitle(starter)
+            : ClassProgression.talentDescription(starter))
+        .copy();
   }
 
   static MutableComponent race(Race race, int style, boolean expanded) {
@@ -110,14 +126,6 @@ final class CharacterDetails {
                     stats.armor(),
                     stats.walkPercent(),
                     numbers.format(stats.blockReach())));
-    if (characterClass == CharacterClass.ROGUE)
-      paragraph
-          .append("\n")
-          .append(
-              text(
-                  "rogue_speed",
-                  numbers.format(
-                      stats.walkPercent() * (1 + ClassTraits.ROGUE_GROUND_SPEED_BONUS))));
     if (expanded) paragraph.append("\n").append(text("stat_sources"));
     return paragraph;
   }
@@ -132,11 +140,11 @@ final class CharacterDetails {
         details,
         text("starter", talent(starter, "title")),
         ChatFormatting.AQUA,
-        starter.equals("first_mastery") ? text("mage_start") : talent(starter, "description"));
+        characterClass == CharacterClass.MAGE
+            ? text("mage_start")
+            : talent(starter, "description"));
     if (expanded) {
-      if (characterClass == CharacterClass.MAGE)
-        details.append("\n").append(talent(starter, "description"));
-      if (characterClass == CharacterClass.ROGUE)
+      if (characterClass == CharacterClass.RANGER)
         details.append("\n").append(text("light_weapons"));
       details.append("\n").append(text("talent_access"));
     }

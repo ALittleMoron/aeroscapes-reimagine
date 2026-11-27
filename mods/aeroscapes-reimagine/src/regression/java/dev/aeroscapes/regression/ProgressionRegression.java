@@ -1,6 +1,7 @@
 package dev.aeroscapes.regression;
 
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import dev.aeroscapes.equipment.armor.ArmorProficiency;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicPracticeProgress;
 import dev.aeroscapes.magic.MagicTalents;
@@ -17,22 +18,37 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.StringTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.players.PlayerList;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.monster.Zombie;
+import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.fml.LogicalSide;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.damagesource.DamageContainer;
+import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.api.Skill;
 
 /** Each practice group funds its own finite talent budget. */
 final class ProgressionRegression {
+  private static final ResourceLocation WARRIOR =
+      ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation RANGER =
+      ResourceLocation.parse(ProgressionBridge.RANGER_CATEGORY);
+  private static final ResourceLocation MAGE =
+      ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
+
   private ProgressionRegression() {}
 
   static void verify(ServerLevel level) {
@@ -46,6 +62,7 @@ final class ProgressionRegression {
             .equals(
                 Set.of(
                     "combat",
+                    "ranger",
                     "archery",
                     "magic",
                     "mining",
@@ -55,8 +72,6 @@ final class ProgressionRegression {
                     "farming",
                     "cooking",
                     "enchanting",
-                    "light_armor",
-                    "heavy_armor",
                     "pickaxe_handling",
                     "axe_handling",
                     "shovel_handling",
@@ -80,43 +95,40 @@ final class ProgressionRegression {
         listPlayer(level, player, false);
       }
     }
-    verifyLegacyAllocation(level, position);
+    verifyActionRouting(level, position);
     verifyCombatPath(
-        level,
-        position,
-        "heavy_armor",
-        List.of("shield_handling", "shield_shove", "wide_shield_shove"));
+        level, position, WARRIOR, List.of("shield_handling", "shield_shove", "wide_shield_shove"));
     verifyCombatPath(
-        level, position, "combat", List.of("melee_strike", "last_stand", "offensive_stance"));
-    verifyCombatPath(level, position, "combat", List.of("light_weapon_handling", "duelist_parry"));
+        level, position, WARRIOR, List.of("melee_strike", "last_stand", "offensive_stance"));
+    verifyCombatPath(level, position, RANGER, List.of("light_weapon_handling", "duelist_parry"));
+    verifyCombatPath(level, position, RANGER, List.of("steady_aim", "triple_shot"));
   }
 
   private static void verifyCombatPath(
-      ServerLevel level, Vec3 position, String practice, List<String> path) {
+      ServerLevel level, Vec3 position, ResourceLocation category, List<String> path) {
     try (var session =
         TestShipPlayerSession.create(level, UUID.randomUUID(), "CombatPath", position, null)) {
       var player = session.player;
       listPlayer(level, player, true);
       try {
         var provider = SkillsMod.getInstance();
-        var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
         for (int index = 0; index < path.size(); index++) {
           int practiceLevel = 3 + index * 5;
-          APIUtils.setLevel(practice, player, practiceLevel);
+          APIUtils.setLevel(category.getPath(), player, practiceLevel);
           ProgressionBridge.sync(player);
           String node = path.get(index);
           if (index + 1 < path.size()) {
             String next = path.get(index + 1);
-            provider.tryUnlockSkill(player, combat, next, false);
+            provider.tryUnlockSkill(player, category, next, false);
             require(
-                provider.getSpentPoints(player, combat).orElseThrow() == index,
+                provider.getSpentPoints(player, category).orElseThrow() == index,
                 next + " requires " + node);
           }
-          provider.tryUnlockSkill(player, combat, node, false);
+          provider.tryUnlockSkill(player, category, node, false);
           require(
-              provider.getSkillState(player, combat, node).orElseThrow() == Skill.State.UNLOCKED
-                  && provider.getPointsLeft(player, combat).orElseThrow() == 0,
-              practice + " level " + practiceLevel + " funds " + node + " without class credit");
+              provider.getSkillState(player, category, node).orElseThrow() == Skill.State.UNLOCKED
+                  && provider.getPointsLeft(player, category).orElseThrow() == 0,
+              category + " level " + practiceLevel + " funds " + node + " without class credit");
         }
       } finally {
         listPlayer(level, player, false);
@@ -124,72 +136,110 @@ final class ProgressionRegression {
     }
   }
 
-  private static void verifyLegacyAllocation(ServerLevel level, Vec3 position) {
+  private static void verifyActionRouting(ServerLevel level, Vec3 position) {
     try (var session =
         TestShipPlayerSession.create(
-            level, UUID.randomUUID(), "LegacyTalentPool", position, null)) {
+            level, UUID.randomUUID(), "ClassPracticeActions", position, null)) {
       var player = session.player;
       listPlayer(level, player, true);
       try {
-        var provider = SkillsMod.getInstance();
-        var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
-        var magic = ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
-        var originalCombat = Set.of("quick_block", "shield_march");
-        var originalMagic = Set.of("magic_mastery_1", "magic_recovery_1");
-        // The preceding release already stored magic practice, with both allocations in combat.
-        MagicPractice.credit(player);
-        APIUtils.setLevel("combat", player, 5);
-        var legacy = new CompoundTag();
-        provider.exportPlayerData(player, legacy);
-        var categories = legacy.getCompound("categories");
-        var combined = categories.getCompound(ProgressionBridge.COMBAT_CATEGORY);
-        var unlocked = new ListTag();
-        originalCombat.forEach(node -> unlocked.add(StringTag.valueOf(node)));
-        originalMagic.forEach(node -> unlocked.add(StringTag.valueOf(node)));
-        combined.putBoolean("unlocked", true);
-        combined.put("unlocked_skills", unlocked);
-        var sources = new CompoundTag();
-        sources.putInt("aeroscapes_reimagine:skill_levels", 4);
-        combined.put("points", sources);
-        categories.put(ProgressionBridge.COMBAT_CATEGORY, combined);
-        legacy.put("categories", categories);
-        provider.importPlayerData(player, legacy);
-
-        ProgressionBridge.sync(player);
-        require(
-            Set.copyOf(provider.getUnlockedSkills(player, combat).orElseThrow())
-                    .equals(originalCombat)
-                && Set.copyOf(provider.getUnlockedSkills(player, magic).orElseThrow())
-                    .equals(originalMagic)
-                && provider.getPointsLeft(player, combat).orElseThrow() == -1
-                && provider.getPointsLeft(player, magic).orElseThrow() == -1,
-            "The saved allocation splits without losing nodes or retaining the combined credit");
-        provider.tryUnlockSkill(player, combat, "melee_strike", false);
-        provider.tryUnlockSkill(player, magic, "magic_rhythm_1", false);
-        require(
-            provider.getSpentPoints(player, combat).orElseThrow() == 2
-                && provider.getSpentPoints(player, magic).orElseThrow() == 2,
-            "Overdrawn pools preserve existing nodes and block further purchases");
-        MagicPractice.award(player, 200);
-        ProgressionBridge.sync(player);
-        provider.tryUnlockSkill(player, magic, "magic_rhythm_1", false);
-        require(
-            provider.getSkillState(player, magic, "magic_rhythm_1").orElseThrow()
-                    == Skill.State.UNLOCKED
-                && provider.getPointsLeft(player, combat).orElseThrow() == -1,
-            "Magic practice only makes further magic purchases affordable");
-        APIUtils.setLevel("combat", player, 15);
-        ProgressionBridge.sync(player);
-        provider.tryUnlockSkill(player, combat, "melee_strike", false);
-        require(
-            provider.getSkillState(player, combat, "melee_strike").orElseThrow()
-                    == Skill.State.UNLOCKED
-                && provider.getPointsLeft(player, magic).orElseThrow() == 0,
-            "Combat practice only makes further combat purchases affordable");
+        verifyHit(player, Items.IRON_SWORD.getDefaultInstance(), WARRIOR);
+        var knife =
+            BuiltInRegistries.ITEM
+                .get(ResourceLocation.parse("farmersdelight:iron_knife"))
+                .getDefaultInstance();
+        verifyHit(player, knife, RANGER);
+        long warrior = APIUtils.getXp("combat", player);
+        long ranger = APIUtils.getXp("ranger", player);
+        long archery = APIUtils.getXp("archery", player);
+        var arrow = new Arrow(EntityType.ARROW, level);
+        arrow.setOwner(player);
+        try {
+          verifyDamage(player, player.damageSources().arrow(arrow, player));
+          require(
+              APIUtils.getXp("combat", player) == warrior
+                  && APIUtils.getXp("ranger", player) > ranger
+                  && APIUtils.getXp("archery", player) > archery,
+              "An owned arrow funds Ranger and its native ranged proficiency only");
+        } finally {
+          arrow.discard();
+        }
+        verifyShieldPractice(player);
+        verifyArmorTraining(player);
       } finally {
         listPlayer(level, player, false);
       }
     }
+  }
+
+  private static void verifyHit(ServerPlayer player, ItemStack weapon, ResourceLocation bank) {
+    player.setItemInHand(InteractionHand.MAIN_HAND, weapon);
+    long warrior = APIUtils.getXp("combat", player);
+    long ranger = APIUtils.getXp("ranger", player);
+    long archery = APIUtils.getXp("archery", player);
+    verifyDamage(player, player.damageSources().playerAttack(player));
+    require(
+        (APIUtils.getXp("combat", player) > warrior) == bank.equals(WARRIOR)
+            && (APIUtils.getXp("ranger", player) > ranger) == bank.equals(RANGER)
+            && APIUtils.getXp("archery", player) == archery,
+        "Direct damage with " + weapon + " funds only " + bank);
+  }
+
+  private static void verifyDamage(ServerPlayer player, DamageSource source) {
+    var level = player.serverLevel();
+    var target = new Zombie(EntityType.ZOMBIE, level);
+    target.moveTo(player.getX() + 2, player.getY(), player.getZ());
+    target.setNoAi(true);
+    require(level.addFreshEntity(target), "Spawn a practice target");
+    try {
+      require(target.hurt(source, 4), "Apply qualifying damage to the practice target");
+    } finally {
+      target.discard();
+    }
+  }
+
+  private static void verifyShieldPractice(ServerPlayer player) {
+    var enemy = new Zombie(EntityType.ZOMBIE, player.serverLevel());
+    var source = player.damageSources().mobAttack(enemy);
+    long warrior = APIUtils.getXp("combat", player);
+    long ranger = APIUtils.getXp("ranger", player);
+    NeoForge.EVENT_BUS.post(
+        new LivingShieldBlockEvent(player, new DamageContainer(source, 4), true));
+    require(
+        APIUtils.getXp("combat", player) == warrior + 4
+            && APIUtils.getXp("ranger", player) == ranger,
+        "A successful shield block gives exactly one Warrior award");
+  }
+
+  private static void verifyArmorTraining(ServerPlayer player) {
+    var provider = SkillsMod.getInstance();
+    var leather = Items.LEATHER_CHESTPLATE.getDefaultInstance();
+    var chainmail = Items.CHAINMAIL_CHESTPLATE.getDefaultInstance();
+    var heavy = Items.IRON_CHESTPLATE.getDefaultInstance();
+    var heavyCaster =
+        BuiltInRegistries.ITEM
+            .get(ResourceLocation.parse("irons_spellbooks:paladin_chestplate"))
+            .getDefaultInstance();
+    require(
+        !ArmorProficiency.undertrained(player, leather)
+            && ArmorProficiency.undertrained(player, chainmail)
+            && ArmorProficiency.undertrained(player, heavy)
+            && ArmorProficiency.undertrained(player, heavyCaster),
+        "Starter armor needs no talent and other armor starts undertrained");
+    APIUtils.setLevel("ranger", player, 3);
+    ProgressionBridge.sync(player);
+    provider.tryUnlockSkill(player, RANGER, "light_armor_handling", false);
+    require(
+        !ArmorProficiency.undertrained(player, chainmail)
+            && ArmorProficiency.undertrained(player, heavyCaster),
+        "One Ranger point fully trains chainmail and leaves caster training independent");
+    APIUtils.setLevel("combat", player, 3);
+    ProgressionBridge.sync(player);
+    provider.tryUnlockSkill(player, WARRIOR, "heavy_armor_handling", false);
+    require(
+        !ArmorProficiency.undertrained(player, heavy)
+            && ArmorProficiency.undertrained(player, heavyCaster),
+        "One Warrior point trains heavy equipment and leaves heavy caster gear undertrained");
   }
 
   private static void verifyListed(ServerPlayer player, TestShipPlayerSession session) {
@@ -197,35 +247,40 @@ final class ProgressionRegression {
     requirePoints(player, 0, 1, 0, "The initial repertoire point can only fund magic");
     verifyAdminCommands(player, session);
 
-    APIUtils.setLevel("archery", player, 3);
-    ProgressionBridge.sync(player);
-    requirePoints(player, 1, 1, 0, "First Combat point at Ranged level 3");
     APIUtils.setLevel("archery", player, 8);
     ProgressionBridge.sync(player);
-    requirePoints(player, 2, 1, 0, "A technique and its prerequisite fit two Ranged milestones");
-    APIUtils.setLevel("archery", player, 0);
+    requirePoints(player, 0, 1, 0, "Legacy ranged practice does not fund a second bank");
+    requireRangerPoints(player, 0);
+    APIUtils.setLevel("ranger", player, 3);
+    ProgressionBridge.sync(player);
+    requireRangerPoints(player, 1);
+    APIUtils.setLevel("ranger", player, 8);
+    ProgressionBridge.sync(player);
+    requireRangerPoints(player, 2);
 
     APIUtils.setLevel("combat", player, 12);
     APIUtils.setLevel("magic", player, 5);
     APIUtils.setLevel("mining", player, 10);
     APIUtils.setLevel("cooking", player, 4);
     ProgressionBridge.sync(player);
-    requirePoints(player, 2, 6, 2, "Practice rewards are independent");
-    requireClientPoints(session, 2, 6, 2);
+    requirePoints(
+        player, 2, 6, 3, "Combat, Magic, Mining and Cooking milestones remain independent");
+    requireClientPoints(session, 2, 6, 3);
     ProgressionBridge.sync(player);
-    requirePoints(player, 2, 6, 2, "Repeated synchronization does not duplicate points");
+    requirePoints(player, 2, 6, 3, "Repeated synchronization does not duplicate points");
 
-    APIUtils.setLevel("archery", player, 12);
-    for (int step = 0; step < 20 && APIUtils.getLevel("archery", player) < 13; step++) {
-      APIUtils.addXp("archery", player, 50);
+    APIUtils.setLevel("ranger", player, 12);
+    for (int step = 0; step < 20 && APIUtils.getLevel("ranger", player) < 13; step++) {
+      APIUtils.addXp("ranger", player, 50);
     }
-    require(APIUtils.getLevel("archery", player) == 13, "Practice reaches the next level");
+    require(APIUtils.getLevel("ranger", player) == 13, "Practice reaches the next level");
     tick(player);
-    requirePoints(player, 5, 6, 2, "A level-up through practice updates only its own pool");
+    requireRangerPoints(player, 3);
+    requirePoints(player, 2, 6, 3, "Ranger practice leaves the other pools unchanged");
     // Project MMO's admin commands change levels without posting a level-up event.
     APIUtils.setLevel("farming", player, 10);
     tick(player);
-    requirePoints(player, 5, 6, 4, "Two more farming milestones fund further profession purchases");
+    requirePoints(player, 2, 6, 5, "Two more farming milestones fund further profession purchases");
 
     try {
       player
@@ -242,9 +297,10 @@ final class ProgressionRegression {
     }
     tick(player);
     requirePoints(
-        player, 5, 6, 4, "Stored points reconcile even when earned levels have not changed");
-    requireClientPoints(session, 5, 6, 4);
+        player, 2, 6, 5, "Stored points reconcile even when earned levels have not changed");
+    requireClientPoints(session, 2, 6, 5);
     verifyTalentInvestment(player, session);
+    requireRangerPoints(player, 3);
 
     require(
         SpellPractice.experience(15) == 7 && SpellPractice.experience(0) == 1,
@@ -253,6 +309,11 @@ final class ProgressionRegression {
     int magicCap = MagicTalents.pointCap();
     MagicPractice.award(player, MagicPracticeProgress.xpForPoints(magicCap));
     tick(player);
+    requireRangerPoints(player, ProgressionBridge.RANGER_POINT_CAP);
+    var rangerPacket = session.talentPoints(ProgressionBridge.RANGER_CATEGORY);
+    require(
+        rangerPacket != null && rangerPacket.earnedPoints() == ProgressionBridge.RANGER_POINT_CAP,
+        "Native client packet carries Ranger points");
     requirePoints(
         player,
         ProgressionBridge.COMBAT_POINT_CAP,
@@ -306,11 +367,8 @@ final class ProgressionRegression {
   }
 
   private static int combatPoints(ServerPlayer player) {
-    int physical =
-        (int)
-            ((APIUtils.getLevel("combat", player) + 2) / 5
-                + (APIUtils.getLevel("archery", player) + 2) / 5);
-    return Math.min(ProgressionBridge.COMBAT_POINT_CAP, physical);
+    return ProgressionBridge.classPracticePoints(
+        APIUtils.getLevel("combat", player), ProgressionBridge.COMBAT_POINT_CAP);
   }
 
   private static void command(ServerPlayer player, String text) {
@@ -331,50 +389,76 @@ final class ProgressionRegression {
 
   private static void verifyTalentInvestment(ServerPlayer player, TestShipPlayerSession session) {
     var provider = SkillsMod.getInstance();
-    var combat = ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
-    var magic = ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
-    provider.tryUnlockSkill(player, combat, "magic_mastery_1", false);
-    provider.tryUnlockSkill(player, magic, "melee_strike", false);
+
+    provider.tryUnlockSkill(player, WARRIOR, "magic_mastery_1", false);
+    provider.tryUnlockSkill(player, WARRIOR, "steady_aim", false);
+    provider.tryUnlockSkill(player, RANGER, "melee_strike", false);
+    provider.tryUnlockSkill(player, MAGE, "melee_strike", false);
     require(
-        provider.getSpentPoints(player, combat).orElseThrow() == 0
-            && provider.getSpentPoints(player, magic).orElseThrow() == 0,
+        provider.getSpentPoints(player, WARRIOR).orElseThrow() == 0
+            && provider.getSpentPoints(player, MAGE).orElseThrow() == 0
+            && provider.getSpentPoints(player, RANGER).orElseThrow() == 0,
         "Each pool rejects purchases from the other catalogue");
-    provider.tryUnlockSkill(player, combat, "melee_strike", false);
+    provider.tryUnlockSkill(player, WARRIOR, "melee_strike", false);
     var combatUpdate = session.talentPoints(ProgressionBridge.COMBAT_CATEGORY);
     require(
         combatUpdate != null
-            && combatUpdate.earnedPoints() == 5
+            && combatUpdate.earnedPoints() == 2
             && combatUpdate.spentPoints() == 1
-            && provider.getSpentPoints(player, magic).orElseThrow() == 0,
+            && provider.getSpentPoints(player, MAGE).orElseThrow() == 0,
         "Melee purchases spend combat points in the client and leave magic intact");
-    provider.tryUnlockSkill(player, magic, "magic_mastery_1", false);
+    provider.tryUnlockSkill(player, MAGE, "magic_mastery_1", false);
     var magicUpdate = session.talentPoints(ProgressionBridge.MAGIC_CATEGORY);
     require(
         magicUpdate != null
             && magicUpdate.earnedPoints() == 6
             && magicUpdate.spentPoints() == 1
-            && provider.getSpentPoints(player, combat).orElseThrow() == 1,
+            && provider.getSpentPoints(player, WARRIOR).orElseThrow() == 1,
         "Magic purchases spend magic points in the client and leave combat intact");
-    provider.tryUnlockSkill(player, magic, "magic_recovery_1", false);
-    provider.tryUnlockSkill(player, magic, "magic_rhythm_1", false);
+    provider.tryUnlockSkill(player, MAGE, "magic_recovery_1", false);
+    provider.tryUnlockSkill(player, MAGE, "magic_rhythm_1", false);
     require(
-        provider.getSkillState(player, magic, "magic_recovery_1").orElseThrow()
+        provider.getSkillState(player, MAGE, "magic_recovery_1").orElseThrow()
                 == Skill.State.UNLOCKED
-            && provider.getSkillState(player, magic, "magic_rhythm_1").orElseThrow()
+            && provider.getSkillState(player, MAGE, "magic_rhythm_1").orElseThrow()
                 == Skill.State.UNLOCKED,
         "Resource recovery and casting rhythm are compatible separate investments");
+    provider.tryUnlockSkill(player, MAGE, "caster_armor_handling", false);
+    require(
+        provider.getSkillState(player, MAGE, "caster_armor_handling").orElseThrow()
+            == Skill.State.UNLOCKED,
+        "Magic practice alone funds caster armor training");
+    provider.tryUnlockSkill(player, RANGER, "steady_aim", false);
+    provider.tryUnlockSkill(player, RANGER, "triple_shot", false);
+    APIUtils.setLevel("ranger", player, 0);
+    ProgressionBridge.sync(player);
+    require(
+        provider.getPointsLeft(player, RANGER).orElseThrow() == -2,
+        "Existing practice-funded Ranger purchases expose their signed deficit");
+    provider.tryUnlockSkill(player, RANGER, "light_armor_handling", false);
+    require(
+        provider.getSpentPoints(player, RANGER).orElseThrow() == 2,
+        "Overdrawn Ranger points block further purchases");
+    APIUtils.setLevel("ranger", player, 13);
+    ProgressionBridge.sync(player);
+    require(
+        provider.getPointsLeft(player, RANGER).orElseThrow() == 1,
+        "Matching practice recovers the Ranger balance");
     CompoundTag saved = new CompoundTag();
     provider.exportPlayerData(player, saved);
     provider.importPlayerData(player, saved);
     provider.onPlayerDeath(player);
     tick(player);
     require(
-        provider.getSkillState(player, magic, "magic_recovery_1").orElseThrow()
+        provider.getSkillState(player, MAGE, "magic_recovery_1").orElseThrow()
                 == Skill.State.UNLOCKED
-            && provider.getSkillState(player, combat, "melee_strike").orElseThrow()
+            && provider.getSkillState(player, WARRIOR, "melee_strike").orElseThrow()
                 == Skill.State.UNLOCKED,
         "Native save/import and death retain learned talents");
-    requirePoints(player, 5, 6, 4, "Reload and death preserve the earned point sources");
+    require(
+        provider.getSkillState(player, RANGER, "triple_shot").orElseThrow() == Skill.State.UNLOCKED,
+        "Native save/import and death retain learned Ranger talents");
+    requirePoints(player, 2, 6, 5, "Reload and death preserve the earned point sources");
   }
 
   private static void tick(ServerPlayer player) {
@@ -419,6 +503,15 @@ final class ProgressionRegression {
       }
     } catch (ReflectiveOperationException exception) {
       throw new IllegalStateException("Cannot list the fixture player", exception);
+    }
+  }
+
+  private static void requireRangerPoints(ServerPlayer player, int expected) {
+    try {
+      int points = ProgressionBridge.storedPoints(player, ProgressionBridge.RANGER_CATEGORY);
+      require(points == expected, "Expected " + expected + " Ranger points, received " + points);
+    } catch (CommandSyntaxException exception) {
+      throw new IllegalStateException("The Ranger talent category is loaded", exception);
     }
   }
 

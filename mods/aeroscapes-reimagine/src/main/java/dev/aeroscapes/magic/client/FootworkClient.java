@@ -8,15 +8,19 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.MovementInputUpdateEvent;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.jetbrains.annotations.Nullable;
 
 @EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
 public final class FootworkClient {
+  private static final int INPUT_REFRESH_TICKS = 4;
   private static @Nullable Player subject;
   private static @Nullable Vec3 queued;
   private static Vec3 travel = Vec3.ZERO;
   private static int tick;
   private static int hurtTime;
+  private static byte lastLateralInput;
+  private static int lastInputTick;
 
   private FootworkClient() {}
 
@@ -37,8 +41,26 @@ public final class FootworkClient {
     hurtTime = subject == null ? 0 : subject.hurtTime;
   }
 
+  private static void reportLateralInput(MovementInputUpdateEvent event) {
+    var player = event.getEntity();
+    var input = event.getInput();
+    byte direction =
+        input.left == input.right || !GroundFootwork.learnedSidestep(player)
+            ? 0
+            : (byte) (input.left ? 1 : -1);
+    int currentTick = player.tickCount;
+    if (direction == lastLateralInput
+        && (direction == 0
+            || currentTick >= lastInputTick && currentTick - lastInputTick < INPUT_REFRESH_TICKS))
+      return;
+    PacketDistributor.sendToServer(new GroundFootwork.LateralInput(direction));
+    lastLateralInput = direction;
+    lastInputTick = currentTick;
+  }
+
   @SubscribeEvent
   public static void movement(MovementInputUpdateEvent event) {
+    reportLateralInput(event);
     if (event.getEntity() != subject) {
       subject = null;
       queued = null;

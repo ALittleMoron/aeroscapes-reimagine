@@ -114,6 +114,7 @@
   "block.aeroscapes_reimagine.snowy_cut_scoria_bricks": "Snowy Cut Scoria Bricks",
   "message.aeroscapes_reimagine.cloud_jelly.shelter": "An enclosed cabin protects you from jelly stings.",
   "aeroscapes_reimagine.configuration.title": "Aeroscapes Reimagine",
+  "aeroscapes_reimagine.loading.manual_reload": "Reloading resource packs (%s s)",
   "aeroscapes_reimagine.configuration.section.aeroscapes.reimagine.client.toml.title": "Client presentation",
   "aeroscapes_reimagine.configuration.itemModels3d": "3D held-item models",
   "aeroscapes_reimagine.configuration.itemModels3d.tooltip": "Enabled by default. Turn off to use original item models instead of the pack's added 3D models. Saving reloads resources without restarting the game. Native block shapes and special item renderers are preserved.",

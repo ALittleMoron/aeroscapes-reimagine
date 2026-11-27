@@ -40,9 +40,10 @@ public final class HexHeldModelTest {
             .resolve("pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets");
     Path items = assets.resolve("hexcasting/models/item");
     Path held = items.resolve("equipment/held");
-    var reference =
-        handPoses(read(assets.resolve("chipped/models/item/equipment/held/alchemy_book.json")));
-    var bookStates = new HashSet<String>(List.of("patchouli_book", "lore_fragment"));
+    var originalBook = new JsonObject();
+    originalBook.add("display", HexStudyTools.bookDisplay());
+    var reference = handPoses(originalBook);
+    var bookStates = new HashSet<String>(List.of("lore_fragment"));
     for (var override :
         HeldItemModels.nativeModel("hexcasting:spellbook").getAsJsonArray("overrides"))
       bookStates.add(
@@ -112,7 +113,9 @@ public final class HexHeldModelTest {
     }
     require(bookStates.isEmpty(), "missing held books " + bookStates);
     System.out.println(
-        "Hex Casting: " + verified + " native state leaves baked. Book hand poses match Chipped.");
+        "Hex Casting: "
+            + verified
+            + " native state leaves baked. Interactive book poses retained.");
   }
 
   private static void pigmentFrame(List<VanillaEquipmentModelTest.Face> faces) {

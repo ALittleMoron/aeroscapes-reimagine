@@ -3,7 +3,11 @@ package dev.aeroscapes.races;
 import com.cyberday1.neoorigins.api.NeoOriginsAPI;
 import com.cyberday1.neoorigins.api.origin.SetOriginResult;
 import com.cyberday1.neoorigins.attachment.OriginAttachments;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.TalentRefunds;
+import java.util.HashSet;
+import java.util.Set;
 import javax.annotation.Nullable;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
@@ -25,6 +29,7 @@ public final class RaceIdentity {
   private static final ResourceLocation LAYER = ResourceLocation.parse("neoorigins:origin");
   private static final String DATA = "aeroscapes_reimagine_racial_traits";
   private static final String TINT = "appearance_tint";
+  private static final String PROFESSION_STARTER_PAID = "profession_starter_personally_learned";
   private static final String PENDING_SUBCLASS = "subclass_grant_pending";
   private static final String DEFERRED_SUBCLASS = "subclass_deferred_for";
 
@@ -108,13 +113,79 @@ public final class RaceIdentity {
         player.getPersistentData().getCompound(DATA), characterClass(player));
   }
 
-  public static int subclassCredit(ServerPlayer player) {
-    var subclass = subclass(player);
-    return subclass != null
-            && SubclassProgression.funded(player)
-            && ClassProgression.hasCombatTalent(player, subclass.starter())
-        ? 1
-        : 0;
+  public static Set<TalentRefunds.Node> identityGrants(ServerPlayer player) {
+    var grants = new HashSet<TalentRefunds.Node>();
+    var mainClass = characterClass(player);
+    if (mainClass != null) {
+      String pool = ClassProgression.category(mainClass).getPath();
+      grants.add(new TalentRefunds.Node(pool, ClassProgression.node(mainClass, starter(player))));
+      var signature = SubclassProgression.talentNode(subclass(player));
+      if (signature != null) grants.add(new TalentRefunds.Node(pool, signature));
+    }
+    if (profession(player) != null) {
+      String starter = professionStarter(player);
+      ProfessionDiscipline.byLegacyNode(starter)
+          .ifPresent(tree -> grants.add(new TalentRefunds.Node(tree.skill(), starter)));
+    }
+    return Set.copyOf(grants);
+  }
+
+  public static Set<TalentRefunds.Node> identityGrantOverlaps(ServerPlayer player) {
+    var identity = data(player);
+    var paid = new HashSet<TalentRefunds.Node>();
+    var mainClass = characterClass(player);
+    if (mainClass != null) {
+      String pool = ClassProgression.category(mainClass).getPath();
+      if (identity.getBoolean(CharacterChanges.STARTER_PERSONALLY_LEARNED))
+        paid.add(new TalentRefunds.Node(pool, ClassProgression.node(mainClass, starter(player))));
+      var signature = SubclassProgression.talentNode(subclass(player));
+      if (signature != null && !SubclassProgression.funded(player))
+        paid.add(new TalentRefunds.Node(pool, signature));
+    }
+    if (identity.getBoolean(PROFESSION_STARTER_PAID)) {
+      String starter = professionStarter(player);
+      ProfessionDiscipline.byLegacyNode(starter)
+          .ifPresent(tree -> paid.add(new TalentRefunds.Node(tree.skill(), starter)));
+    }
+    return Set.copyOf(paid);
+  }
+
+  static boolean finishReset(
+      ServerPlayer player,
+      Race race,
+      int style,
+      CharacterClass chosenClass,
+      String starter,
+      @Nullable CharacterSubclass subclass,
+      Profession profession,
+      String professionStarter) {
+    if (!ClassProgression.available(player, chosenClass, starter)
+        || !ProfessionProgression.available(player, professionStarter)
+        || subclass != null && !SubclassProgression.available(player, subclass)) return false;
+
+    var snapshot = data(player).copy();
+    var identity = data(player);
+    var previousClass = characterClass(player);
+    identity.putString("class", chosenClass.id());
+    identity.putString("starter", starter);
+    identity.putString("profession", profession.id());
+    identity.putString("profession_starter", professionStarter);
+    identity.remove(CharacterChanges.STARTER_PERSONALLY_LEARNED);
+    identity.remove(PROFESSION_STARTER_PAID);
+    if (subclass == null && previousClass != chosenClass)
+      identity.putString(DEFERRED_SUBCLASS, chosenClass.id());
+    if (!SubclassProgression.assign(player, subclass)
+        || !ClassProgression.restore(player)
+        || !ProfessionProgression.restoreStarter(player, professionStarter)
+        || (race(player) != race || style(player) != style) && !chooseRace(player, race, style)) {
+      player.getPersistentData().put(DATA, snapshot);
+      ClassProgression.restoreSpells(player);
+      return false;
+    }
+    SubclassProgression.markGranted(player);
+    ProgressionBridge.sync(player);
+    ClassTraits.refresh(player);
+    return true;
   }
 
   @Nullable
@@ -249,12 +320,16 @@ public final class RaceIdentity {
       identity.putBoolean("grant_pending", true);
     }
     if (previousProfession == null) {
+      identity.putBoolean(
+          PROFESSION_STARTER_PAID, ProfessionProgression.learned(player, professionStarter));
       identity.putString("profession", chosenProfession.id());
       identity.putString("profession_starter", professionStarter);
       identity.putBoolean("profession_grant_pending", true);
     }
     if (chosenSubclass != null && subclass(player) == null)
       identity.putString(PENDING_SUBCLASS, chosenSubclass.id());
+    else if (subclass(player) == null && existing == null)
+      identity.putString(DEFERRED_SUBCLASS, chosenClass.id());
     return finishGrant(player);
   }
 

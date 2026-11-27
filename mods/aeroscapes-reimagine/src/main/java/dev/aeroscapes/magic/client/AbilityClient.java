@@ -1,5 +1,6 @@
 package dev.aeroscapes.magic.client;
 
+import dev.aeroscapes.equipment.combat.MartialArchery;
 import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.equipment.combat.MartialTechniques;
 import dev.aeroscapes.equipment.expedition.ExceptionalAccessory;
@@ -18,6 +19,7 @@ import java.util.Set;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.toasts.SystemToast;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -47,6 +49,7 @@ public final class AbilityClient {
   private static int pendingWheel = -1;
   private static long receivedAt;
   private static final AbilityHudSelection HUD_SELECTION = new AbilityHudSelection();
+  private static final SystemToast.SystemToastId STUDY_TOAST = new SystemToast.SystemToastId();
 
   private record PendingSelection(int sequence, int slot) {}
 
@@ -70,6 +73,43 @@ public final class AbilityClient {
 
   public static AbilityNetwork.Snapshot snapshot() {
     return snapshot;
+  }
+
+  public static void studyCompleted(AbilityNetwork.StudyCompleted result) {
+    var game = Minecraft.getInstance();
+    if (game.player == null) return;
+    game.getToasts()
+        .addToast(
+            SystemToast.multiline(
+                game,
+                STUDY_TOAST,
+                text("study.notice.complete"),
+                text("study.notice.rank", name(result.spellId()), result.rank())));
+  }
+
+  public static List<AbilityNetwork.StudyEntry> studyEntries() {
+    return snapshot.studyEntries();
+  }
+
+  public static boolean studyKnown(AbilityNetwork.StudyEntry study) {
+    return study.reason().equals("study_complete");
+  }
+
+  public static Component studyProgress(AbilityNetwork.StudyEntry study) {
+    if (studyKnown(study)) return text("study.repeat.known");
+    return text(
+        study.reason().isEmpty() ? "study.repeat.ready" : "study.repeat.casts",
+        study.casts(),
+        study.requiredCasts());
+  }
+
+  public static Component studyMastery(AbilityNetwork.StudyEntry study) {
+    var route = dev.aeroscapes.magic.MagicTalents.spell(study.spellId());
+    if (route == null) return reason("study_mastery");
+    return text(
+        "study.repeat.mastery",
+        Component.translatable("study.aeroscapes_reimagine.direction." + route.direction()),
+        study.requiredMastery());
   }
 
   public static boolean hasSnapshot() {
@@ -118,6 +158,7 @@ public final class AbilityClient {
   public static Component name(String id) {
     var technique = MartialTechnique.byId(id);
     if (technique != null) return technique.displayName();
+    if (dev.aeroscapes.races.AnimalLure.ID.equals(id)) return text("animal_lure");
     var item = HexPrograms.itemType(id);
     if (item != null) {
       var entry = entry(id);
@@ -146,6 +187,7 @@ public final class AbilityClient {
 
   public static Component school(AbilityNetwork.Entry entry) {
     if (entry.technique()) return text("technique_school");
+    if (entry.farming()) return text("farming_school");
     if (entry.program() != null) return text("hex_school");
     if (AmuletStep.GROUP.equals(entry.school())) return text("equipment");
     if (PreparedAbilities.DISCOVERY_GROUP.equals(entry.school()))
@@ -168,12 +210,24 @@ public final class AbilityClient {
     return reason(entry.reason());
   }
 
-  public static Component status(AbilityNetwork.Entry entry) {
+  public static List<Component> statusLines(AbilityNetwork.Entry entry) {
     if (entry.technique()
         && (entry.reason().equals(MartialTechniques.PRIMED)
-            || entry.reason().equals(MartialTechniques.MARKED))) return reason(entry);
+            || entry.reason().equals(MartialTechniques.MARKED))) return List.of(reason(entry));
     int remaining = cooldown(entry);
-    return remaining > 0 ? text("cooldown", (remaining + 19) / 20) : reason(entry);
+    if (remaining <= 0) return List.of(reason(entry));
+    Component timer = text("cooldown", (remaining + 19) / 20);
+    return switch (entry.reason()) {
+      case "beastmaster_temporary",
+          "beastmaster_persistent",
+          "beastmaster_pending",
+          "beastmaster_mode",
+          "beastmaster_inactive",
+          "beastmaster_species_unavailable",
+          "animal_lure_active" ->
+          List.of(reason(entry), timer);
+      default -> List.of(timer);
+    };
   }
 
   public static float martialBowDrawTime(ItemStack stack, LivingEntity entity) {
@@ -182,11 +236,16 @@ public final class AbilityClient {
         || entity != Minecraft.getInstance().player
         || !entity.getProjectile(stack).is(Items.ARROW)) return 1.0F;
     var quickShot = entry(MartialTechnique.QUICK_SHOT.id());
-    return quickShot != null
-            && quickShot.reason().equals(MartialTechniques.PRIMED)
-            && cooldown(quickShot) > 0
+    return quickShot != null && quickShot.reason().equals(MartialArchery.DRAWING)
         ? MartialTechnique.QUICK_DRAW_TIME
         : 1.0F;
+  }
+
+  public static boolean ownsBowRelease(LivingEntity entity) {
+    if (!entity.getUseItem().is(Items.BOW)) return false;
+    var prepared = snapshot.loadout().active();
+    var selected = entry(prepared.slots().get(prepared.selected()));
+    return selected != null && selected.reason().equals(MartialArchery.DRAWING);
   }
 
   public static Component reason(String reason) {
@@ -328,6 +387,10 @@ public final class AbilityClient {
               "textures/gui/abilities/" + ResourceLocation.parse(id).getPath() + ".png");
     } else if (technique != null) {
       texture = technique.icon();
+    } else if (dev.aeroscapes.races.AnimalLure.ID.equals(id)) {
+      texture =
+          ResourceLocation.fromNamespaceAndPath(
+              "aeroscapes_reimagine", "textures/technique/animal_lure.png");
     } else if (accessory != null) {
       texture = accessory.spell().getSpellIconResource();
     } else if (innate != null) {

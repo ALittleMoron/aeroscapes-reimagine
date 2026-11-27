@@ -4,26 +4,22 @@ import dev.aeroscapes.progression.RefundPenalty;
 import dev.aeroscapes.races.RaceTraits;
 import harmonised.pmmo.api.APIUtils;
 import harmonised.pmmo.storage.Experience;
-import java.util.HashSet;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.StringTag;
 import net.minecraft.nbt.Tag;
-import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.puffish.skillsmod.SkillsMod;
+import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 /** Persistent magic credit projects truthful readiness/fraction into PMMO's global XP scale. */
 public final class MagicPractice {
   private static final String DATA = "aeroscapes_reimagine_magic_practice";
-  private static final int LEGACY_SHARED_POINT_CAP = 142;
 
   private MagicPractice() {}
 
   public static void register() {
     NeoForge.EVENT_BUS.addListener(MagicPractice::clonePlayer);
+    NeoForge.EVENT_BUS.addListener(MagicPractice::observeStudy);
   }
 
   private static CompoundTag data(ServerPlayer player) {
@@ -49,7 +45,6 @@ public final class MagicPractice {
           "credit",
           MagicPracticeProgress.fromNative(
               nativeLevel, nativeXp, Experience.XpLevel.getXpForNextLevel(nativeLevel)));
-      migrateTalents(player);
     } else if (state.getBoolean("admin_edit")) {
       state.remove("admin_edit");
       state.putLong(
@@ -75,8 +70,7 @@ public final class MagicPractice {
         Math.clamp(
             state.getLong("credit"),
             0,
-            MagicPracticeProgress.xpForPoints(
-                Math.max(LEGACY_SHARED_POINT_CAP, MagicTalents.pointCap()))));
+            MagicPracticeProgress.xpForPoints(MagicTalents.pointCap())));
     project(player, state);
   }
 
@@ -118,33 +112,10 @@ public final class MagicPractice {
     state.putLong("native_xp", desiredRemainder);
   }
 
-  private static void migrateTalents(ServerPlayer player) {
-    CompoundTag exported = new CompoundTag();
-    SkillsMod.getInstance().exportPlayerData(player, exported);
-    CompoundTag combat =
-        exported.getCompound("categories").getCompound("aeroscapes_reimagine:combat");
-    ListTag previous = combat.getList("unlocked_skills", Tag.TAG_STRING);
-    ListTag retained = new ListTag();
-    var removed = new HashSet<String>();
-    CompoundTag ranks = SpellKnowledge.data(player).getCompound("ranks");
-    for (Tag value : previous) {
-      String id = value.getAsString();
-      if (!id.startsWith("magic_") || MagicTalents.nodes().contains(id))
-        retained.add(StringTag.valueOf(id));
-      else {
-        removed.add(id);
-        if (id.startsWith("magic_spell_")) {
-          String spell = "irons_spellbooks:" + id.substring("magic_spell_".length());
-          ranks.putInt(spell, Math.max(1, ranks.getInt(spell)));
-        }
-      }
-    }
-    SpellKnowledge.data(player).put("ranks", ranks);
-    if (!removed.isEmpty()) {
-      combat.put("unlocked_skills", retained);
-      SkillsMod.getInstance().importPlayerData(player, exported);
-      player.displayClientMessage(
-          Component.translatable("aeroscapes_reimagine.magic_tree.migrated"), false);
+  private static void observeStudy(PlayerTickEvent.Post event) {
+    if (event.getEntity() instanceof ServerPlayer player && player.tickCount % 20 == 0) {
+      SpellProgression.observeInventory(player);
+      SpellProgression.restoreStudyGrants(player);
     }
   }
 

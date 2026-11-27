@@ -10,5 +10,21 @@
     "y": 0,
     "definition": "careful_tilling",
     "root": true
+  },
+  "animal_lure": {
+    "x": 0,
+    "y": 60,
+    "definition": "animal_lure",
+    "root": true
+  },
+  "animal_lure_radius": {
+    "x": -46,
+    "y": 122,
+    "definition": "animal_lure_radius"
+  },
+  "animal_lure_duration": {
+    "x": 46,
+    "y": 122,
+    "definition": "animal_lure_duration"
   }
 }

@@ -32,6 +32,10 @@
       [
         "manufacture_diamond_arms",
         "manufacture_diamond_template"
+      ],
+      [
+        "material_repair",
+        "field_repair"
       ]
     ]
   }

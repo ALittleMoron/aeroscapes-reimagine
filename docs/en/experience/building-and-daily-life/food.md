@@ -40,9 +40,9 @@ A kitchen can remain a small place for manual cooking or become part of an autom
 
 ## Nutrition and drinking water
 
-[Nutritional Balance](https://www.curseforge.com/minecraft/mc-mods/nutritional-balance) tracks carbohydrates, proteins, fruits, vegetables and sugars. The first four groups are needed for a varied diet; sugar is optional. Open the nutrition display from the inventory to see each group's level and point at a row for its explanation. Food tooltips show what a meal supplies, and mixed dishes can replenish several groups.
+[Nutritional Balance](https://www.curseforge.com/minecraft/mc-mods/nutritional-balance) tracks carbohydrates, proteins, fruits, vegetables and sugars. Each active nutrition penalty has its own status icon. Open the nutrition display from the inventory to see the five levels and the amount of each penalty. Hover over the status area for the thresholds or over a group for its target range. Food tooltips show what a meal supplies, and mixed dishes can replenish several groups.
 
-If a required group falls below 10, attack damage decreases by 4 until it recovers. This is an attribute penalty, rather than the vanilla Weakness effect. Nutrition does not change maximum health or movement speed, and a balanced diet does not grant additional combat bonuses. Ordinary hunger and natural health regeneration remain active.
+Each group below 10 counts as a deficit. With one or more deficits, attack damage drops by 3. With three or more, movement is also 20% slower. With all five, breaking blocks is also 30% slower. Bring a group back to 10 to clear its deficit. The game refreshes the penalties about every 10 seconds. Ordinary hunger and natural health regeneration remain active.
 
 [Legendary Survival Overhaul](https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul) adds thirst and water quality. Untreated water can be drunk, but may cause a temporary thirst effect. Purify water in a furnace and carry it in bottles or canteens; use the recipe viewer for the exact ingredients and containers. Drinking water and nutrient groups are separate supplies.
 

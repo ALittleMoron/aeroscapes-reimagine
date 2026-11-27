@@ -209,7 +209,11 @@ final class HexHeldModels {
         || root.equals("lens")
         || root.startsWith("scroll")
         || root.contains("colorizer")) return HexStudyTools.instrumentDisplay(root);
-    if (root.equals("spellbook") || root.equals("patchouli_book") || root.equals("lore_fragment"))
+    if (root.equals("patchouli_book")) {
+      // Other manuals share Patchouli's item ID, so the stock arm needs a lower cover contact.
+      return HeldItemModels.closedBookDisplay(4.55f, 10.45f, 1.55f, 8.5f, .55f);
+    }
+    if (root.equals("spellbook") || root.equals("lore_fragment"))
       return HexStudyTools.bookDisplay();
     return IronHeldMesh.display(HexHeldMesh.point(0, 3.42, 0), .9, -13, 18, -7);
   }

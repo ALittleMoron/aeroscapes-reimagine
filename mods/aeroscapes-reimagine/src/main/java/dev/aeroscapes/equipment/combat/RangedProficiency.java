@@ -71,9 +71,7 @@ public final class RangedProficiency {
     var training = training(event.getItemStack());
     if (training == null) return;
     boolean undertrained = undertrained(event.getEntity(), training);
-    var talent =
-        Component.translatable(
-            "puffish_skills.aeroscapes_reimagine.combat." + training.node() + ".title");
+    var talent = ClassProgression.talentTitle(training.node());
     event
         .getToolTip()
         .add(

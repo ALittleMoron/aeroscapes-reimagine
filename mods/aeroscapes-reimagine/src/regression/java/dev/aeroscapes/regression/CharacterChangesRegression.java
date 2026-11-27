@@ -1,11 +1,13 @@
 package dev.aeroscapes.regression;
 
 import com.mojang.logging.LogUtils;
+import dev.aeroscapes.equipment.armor.ArmorProficiency;
+import dev.aeroscapes.equipment.combat.BeastmasterCompanions;
+import dev.aeroscapes.equipment.combat.MartialTechnique;
 import dev.aeroscapes.magic.InnateAbility;
-import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.PreparedAbilities;
-import dev.aeroscapes.magic.RacialAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
+import dev.aeroscapes.magic.SpellProgression;
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.progression.TalentRefunds;
@@ -13,39 +15,36 @@ import dev.aeroscapes.races.CharacterChanges;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.CharacterSubclass;
 import dev.aeroscapes.races.Profession;
-import dev.aeroscapes.races.ProfessionProgression;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
-import harmonised.pmmo.api.APIUtils;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
-import io.redspace.ironsspellbooks.api.util.Utils;
-import io.redspace.ironsspellbooks.registries.ItemRegistry;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Set;
 import java.util.UUID;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.EntityType;
-import net.minecraft.world.entity.Pose;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.common.damagesource.DamageContainer;
-import net.neoforged.neoforge.event.entity.living.LivingShieldBlockEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.puffish.skillsmod.SkillsMod;
 
 final class CharacterChangesRegression {
-  private static final ResourceLocation COMBAT =
+  private static final ResourceLocation WARRIOR =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
-  private static final ResourceLocation MAGIC =
+  private static final ResourceLocation RANGER =
+      ResourceLocation.parse(ProgressionBridge.RANGER_CATEGORY);
+  private static final ResourceLocation MAGE =
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
+  private static final String MISSILE = "irons_spellbooks:magic_missile";
+  private static final String MISSILE_NODE = "magic_spell_magic_missile";
 
   private CharacterChangesRegression() {}
 
@@ -57,446 +56,277 @@ final class CharacterChangesRegression {
       var player = session.player;
       ProgressionRegression.listPlayer(level, player, true);
       try {
+        var magic = MagicData.getPlayerMagicData(player);
+        magic.setServerPlayer(player);
+        magic.getSyncedData();
         NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
         require(
             RaceIdentity.choose(
-                player,
-                Race.GOBLIN,
-                1,
-                CharacterClass.MAGE,
-                "first_mastery",
-                Profession.BLACKSMITH,
-                "material_repair"),
-            "Create character");
-        // Copied 0.6.5 identities have no marker distinguishing a previously purchased starter.
-        player
-            .getPersistentData()
-            .getCompound("aeroscapes_reimagine_racial_traits")
-            .remove("class_starter_personally_learned");
-        verifyClasses(player);
-        verifyProfessions(player);
-        verifyRaces(player);
-      } finally {
-        ProgressionRegression.listPlayer(level, player, false);
-      }
-    }
-    verifyBorrowedMastery(level, Vec3.atBottomCenterOf(spot));
-    verifySubclasses(level, Vec3.atBottomCenterOf(spot));
-    LogUtils.getLogger().info("Character change regression passed");
-  }
-
-  private static void verifySubclasses(ServerLevel level, Vec3 position) {
-    var uuid = UUID.randomUUID();
-    var skills = SkillsMod.getInstance();
-    CompoundTag savedPlayer;
-    var talents = new CompoundTag();
-    try (var session =
-        TestShipPlayerSession.create(level, uuid, "WarriorSubclass", position, null)) {
-      var player = session.player;
-      ProgressionRegression.listPlayer(level, player, true);
-      try {
-        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
-        require(
-            RaceIdentity.choose(
-                player,
-                Race.HUMAN,
-                0,
-                CharacterClass.WARRIOR,
-                "quick_block",
-                Profession.BLACKSMITH,
-                "material_repair"),
-            "Create a pre-subclass Warrior");
-        require(
-            !RaceIdentity.awaitingChoice(player) && RaceIdentity.subclass(player) == null,
-            "A Warrior from an earlier save can continue before choosing");
-        require(
-            skills.getPointsLeft(player, COMBAT).orElseThrow() == 0,
-            "New Warrior has already spent the main-class point");
-        require(
-            RaceIdentity.chooseSubclass(player, CharacterSubclass.DEFENDER)
-                && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-                && skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("shield_shove")
-                && !RaceIdentity.chooseSubclass(player, CharacterSubclass.BERSERKER),
-            "A free Defender starter does not consume a point or permit a second free choice");
-        require(
-            TalentRefunds.preview(player, "combat", List.of("shield_shove")).isEmpty(),
-            "Ordinary redistribution cannot recover points from a free starter");
-        verifySubclassPractice(level, player, false);
-
-        APIUtils.setLevel("combat", player, 20);
-        ProgressionBridge.sync(player);
-        skills.unlockSkill(player, COMBAT, "wide_shield_shove");
-        skills.unlockSkill(player, COMBAT, "last_stand");
-        var changeSubclass = new CharacterChanges.Selection("subclass", "berserker", 0, "", false);
-        var quote = CharacterChanges.preview(player, changeSubclass);
-        int balance = skills.getPointsLeft(player, COMBAT).orElseThrow();
-        require(
-            quote != null
-                && quote.returned() == 1
-                && quote.removed().equals(List.of("shield_shove", "wide_shield_shove")),
-            "The Defender refund excludes the gifted starter");
-        require(
-            CharacterChanges.change(player, changeSubclass, quote)
-                && RaceIdentity.subclass(player) == CharacterSubclass.BERSERKER
-                && skills.getPointsLeft(player, COMBAT).orElseThrow() == balance + 1
-                && RaceIdentity.subclassCredit(player) == 0,
-            "Switching preserves the paid Berserker starter and returns only one point");
-        verifySubclassPractice(level, player, true);
-        skills.exportPlayerData(player, talents);
-        savedPlayer = player.saveWithoutId(new CompoundTag());
+                    player,
+                    Race.ELF,
+                    0,
+                    CharacterClass.WARRIOR,
+                    "quick_block",
+                    Profession.BLACKSMITH,
+                    "material_repair")
+                && RaceIdentity.chooseSubclass(player, CharacterSubclass.DEFENDER),
+            "Fixture has a free Defender starter and Elf trait");
+        verifySubclass(player);
+        verifyRace(player);
+        verifyClassesAndKnowledge(player);
+        verifyProfessionAndPendingGroup(level, player);
         NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedOutEvent(player));
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
       }
     }
-    try (var session =
-        TestShipPlayerSession.create(level, uuid, "WarriorSubclass", position, savedPlayer)) {
-      var player = session.player;
-      ProgressionRegression.listPlayer(level, player, true);
-      try {
-        skills.importPlayerData(player, talents);
-        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
-        require(
-            RaceIdentity.subclass(player) == CharacterSubclass.BERSERKER
-                && RaceIdentity.subclassCredit(player) == 0,
-            "Reload selected subclass and its grant");
-        var rogue = new CharacterChanges.Selection("class", "rogue", 0, "quick_recovery", false);
-        change(player, rogue);
-        require(
-            RaceIdentity.subclass(player) == null
-                && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("last_stand")
-                && !RaceIdentity.chooseSubclass(player, CharacterSubclass.DEFENDER),
-            "Changing class removes the former subclass and rejects out-of-class choices");
-      } finally {
-        ProgressionRegression.listPlayer(level, player, false);
-      }
-    }
-    LogUtils.getLogger().info("Warrior subclass grants, practice and migration regression passed");
+    LogUtils.getLogger()
+        .info("Identity seal reset, equipment, prepared slots and study regression passed");
   }
 
-  private static void verifySubclassPractice(
-      ServerLevel level, ServerPlayer player, boolean berserker) {
-    var target = EntityType.RAVAGER.create(level);
-    require(target != null, "Subclass practice target exists");
-    long before = APIUtils.getXp("combat", player);
-    for (int hit = 0; hit < 5; hit++) {
-      var block =
-          new LivingShieldBlockEvent(
-              player, new DamageContainer(level.damageSources().mobAttack(target), 4), true);
-      NeoForge.EVENT_BUS.post(block);
-    }
+  private static void verifySubclass(ServerPlayer player) {
+    var provider = SkillsMod.getInstance();
+    provider.unlockSkill(player, WARRIOR, "wide_shield_shove");
+    provider.unlockSkill(player, WARRIOR, "heavy_armor_handling");
+    provider.unlockSkill(player, ProfessionDiscipline.MINING.category(), "mining_efficiency");
+    player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(Items.IRON_HELMET));
     require(
-        APIUtils.getXp("combat", player) - before == (berserker ? 24 : 28),
-        "Shield blocks add the Defender bonus exactly once");
-    player.setItemInHand(InteractionHand.MAIN_HAND, Items.MACE.getDefaultInstance());
-    before = APIUtils.getXp("combat", player);
-    require(target.hurt(level.damageSources().playerAttack(player), 12.0F), "Heavy melee damage");
-    require(
-        APIUtils.getXp("combat", player) - before >= (berserker ? 16 : 14),
-        "Heavy hits train the Berserker without losing normal Warrior practice");
-    player.setItemInHand(InteractionHand.MAIN_HAND, ItemStack.EMPTY);
-  }
-
-  private static void verifyBorrowedMastery(ServerLevel level, Vec3 position) {
-    var uuid = UUID.randomUUID();
-    var skills = SkillsMod.getInstance();
-    CompoundTag playerSave;
-    var talents = new CompoundTag();
-    var mage = new CharacterChanges.Selection("class", "mage", 0, "first_mastery", false);
-    try (var session =
-        TestShipPlayerSession.create(level, uuid, "BorrowedMastery", position, null)) {
-      var player = session.player;
-      ProgressionRegression.listPlayer(level, player, true);
-      try {
-        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
-        APIUtils.setLevel("combat", player, 5);
-        ProgressionBridge.sync(player);
-        skills.tryUnlockSkill(player, COMBAT, "quick_block", false);
-        require(
-            RaceIdentity.choose(
-                player,
-                Race.HUMAN,
-                0,
-                CharacterClass.WARRIOR,
-                "quick_block",
-                Profession.BLACKSMITH,
-                "material_repair"),
-            "Choose a personally learned starter");
-        skills.tryUnlockSkill(player, COMBAT, "shield_march", false);
-        change(player, mage);
-        skills.tryUnlockSkill(player, COMBAT, "melee_strike", false);
-        require(
-            skills.getPointsLeft(player, COMBAT).orElseThrow() == -1
-                && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
-                && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("melee_strike")
-                && !SpellKnowledge.hasFocus(player),
-            "The transferred starter funds mastery while combat debt blocks melee purchases");
-        skills.exportPlayerData(player, talents);
-        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedOutEvent(player));
-        playerSave = player.saveWithoutId(new CompoundTag());
-      } finally {
-        ProgressionRegression.listPlayer(level, player, false);
-      }
-    }
-    try (var session =
-        TestShipPlayerSession.create(level, uuid, "BorrowedMastery", position, playerSave)) {
-      var player = session.player;
-      ProgressionRegression.listPlayer(level, player, true);
-      try {
-        skills.importPlayerData(player, talents);
-        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
-        require(
-            skills.getPointsLeft(player, COMBAT).orElseThrow() == -1
-                && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
-                && SpellKnowledge.unlocked(player).equals(Set.of("magic_mastery_1"))
-                && Set.copyOf(skills.getUnlockedSkills(player, COMBAT).orElseThrow())
-                    .equals(Set.of("quick_block", "shield_march"))
-                && !SpellKnowledge.hasFocus(player),
-            "Reload both identity and the independent balances");
-        var rogue = new CharacterChanges.Selection("class", "rogue", 0, "quick_recovery", false);
-        var advance = CharacterChanges.preview(player, rogue);
-        require(
-            advance != null && advance.advance() && advance.spent() == 1,
-            "An occupied combat pool can advance its next point for the new starter");
-        change(player, rogue);
-        skills.tryUnlockSkill(player, COMBAT, "melee_strike", false);
-        require(
-            skills.getPointsLeft(player, COMBAT).orElseThrow() == -1
-                && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("melee_strike")
-                && !SpellKnowledge.unlocked(player).contains("magic_mastery_1"),
-            "The advance preserves paid combat talents and releases the borrowed mastery");
-        change(player, new CharacterChanges.Selection("class", "warrior", 0, "quick_block", false));
-        require(
-            skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-                && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
-                && SpellKnowledge.unlocked(player).isEmpty()
-                && Set.copyOf(skills.getUnlockedSkills(player, COMBAT).orElseThrow())
-                    .equals(Set.of("quick_block", "shield_march")),
-            "Returning to the previously learned starter releases the combat advance");
-      } finally {
-        ProgressionRegression.listPlayer(level, player, false);
-      }
-    }
-  }
-
-  private static void verifyClasses(ServerPlayer player) {
-    var skills = SkillsMod.getInstance();
-    var spell = SpellRegistry.FIREBOLT_SPELL.get();
-    var magic = MagicData.getPlayerMagicData(player);
-    magic.setServerPlayer(player);
-    PreparedAbilities.edit(player, 4, spell.getSpellId());
-    PreparedAbilities.select(player, 4);
-    var prepared = PreparedAbilities.preparation(player);
-    var ranks = new CompoundTag();
-    ranks.putInt(spell.getSpellId(), 3);
-    player
-        .getPersistentData()
-        .getCompound("aeroscapes_reimagine_abilities")
-        .put("ranks", ranks.copy());
-    magic.getPlayerCooldowns().addCooldown(spell, 400);
-    Utils.setPlayerSpellbookStack(player, ItemStack.EMPTY);
-    skills.tryUnlockSkill(player, MAGIC, "magic_recovery_1", false);
-    var warrior = new CharacterChanges.Selection("class", "warrior", 0, "quick_block", false);
-    var known = SpellKnowledge.unlocked(player);
-    var advance = CharacterChanges.preview(player, warrior);
-    require(
-        advance != null && !advance.advance() && advance.spent() == 1,
-        "Moving the class starter funds the first combat node");
-    change(player, warrior);
-    skills.tryUnlockSkill(player, COMBAT, "melee_strike", false);
-    require(
-        skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == -1
-            && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("melee_strike"),
-        "Leaving Mage keeps paid magic nodes and moves the granted credit to combat");
-    var rogue = new CharacterChanges.Selection("class", "rogue", 0, "quick_recovery", false);
-    change(player, rogue);
-    require(
-        skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == -1
-            && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("quick_block"),
-        "Switching between combat classes only replaces the granted combat node");
-    var mage = new CharacterChanges.Selection("class", "mage", 0, "first_mastery", false);
-    change(player, mage);
-    require(
-        SpellKnowledge.unlocked(player).equals(known)
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 0,
-        "Returning to Mage restores its class-funded point");
-    change(player, warrior);
-    NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
-    require(skills.getPointsLeft(player, MAGIC).orElseThrow() == -1, "Magic debt survives login");
-    APIUtils.setLevel("combat", player, 5);
-    ProgressionBridge.sync(player);
-    require(
-        known.contains("magic_recovery_1")
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == -1,
-        "Combat practice cannot pay off retained magic");
-    MagicPractice.award(player, 100);
-    ProgressionBridge.sync(player);
-    require(
-        skills.getPointsLeft(player, MAGIC).orElseThrow() == 0
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 1,
-        "New magic practice settles only its own debt");
-    require(
-        SpellKnowledge.unlocked(player).containsAll(known)
-            && RaceIdentity.profession(player) == Profession.BLACKSMITH
-            && RaceIdentity.style(player) == 1,
-        "Default change preserves learned magic, profession and appearance");
-    skills.tryUnlockSkill(player, COMBAT, "melee_strike", false);
-    change(player, mage);
-    require(
-        skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1,
-        "Purchased melee survives the change and available points stay with their own pool");
-    var refund = new CharacterChanges.Selection("class", "warrior", 0, "quick_block", true);
-    var quote = CharacterChanges.preview(player, refund);
-    require(
-        quote != null
-            && quote.returned() == 2
-            && quote.spent() == 1
-            && quote.removed().containsAll(List.of("magic_mastery_1", "magic_recovery_1")),
-        "Full old mage branch preview");
-    require(
-        CharacterChanges.change(player, refund, quote)
-            && !CharacterChanges.change(player, refund, quote),
-        "One confirmed change");
-    require(
-        SpellKnowledge.unlocked(player).isEmpty()
-            && Set.copyOf(skills.getUnlockedSkills(player, COMBAT).orElseThrow())
-                .equals(Set.of("quick_block", "melee_strike"))
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 2
-            && PreparedAbilities.preparation(player).equals(prepared)
-            && player
-                .getPersistentData()
-                .getCompound("aeroscapes_reimagine_abilities")
-                .getCompound("ranks")
-                .equals(ranks)
-            && PreparedAbilities.cooldownTicks(player, spell) == 400
-            && !SpellKnowledge.knowledgeReason(player, spell, SpellKnowledge.unlocked(player))
-                .isEmpty(),
-        "Refund without XP, prepared slot, rank, cooldown or point duplication");
-    change(player, mage);
-    NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
-    require(
-        !SpellKnowledge.hasFocus(player)
-            && player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0
-            && APIUtils.getLevel("combat", player) == 5
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 2,
-        "Cycling classes and reconnecting do not reissue points, XP or starter book");
-  }
-
-  private static void verifyProfessions(ServerPlayer player) {
-    var builder = new CharacterChanges.Selection("profession", "builder", 0, "long_reach", false);
-    var initial = CharacterChanges.preview(player, builder);
-    require(
-        initial != null && initial.returned() == 1 && initial.spent() == 1,
-        "Fund new profession ability");
-    APIUtils.setLevel("mining", player, 10);
-    APIUtils.setLevel("smithing", player, 1);
-    ProgressionBridge.sync(player);
-    var skills = SkillsMod.getInstance();
-    skills.tryUnlockSkill(
-        player, ProfessionDiscipline.MINING.category(), "mining_efficiency", false);
-    skills.tryUnlockSkill(player, ProfessionDiscipline.SMITHING.category(), "frugal_repair", false);
-    require(
-        !CharacterChanges.change(player, builder, initial)
-            && RaceIdentity.profession(player) == Profession.BLACKSMITH,
-        "Changing the old allocation invalidates its preview before mutation");
-    var quote = CharacterChanges.preview(player, builder);
-    require(
-        quote != null
-            && quote.removed().equals(List.of("frugal_repair", "material_repair"))
-            && quote.returned() == 2,
-        "Both old profession nodes, excluding the common mining tree");
-    change(player, builder);
-    NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
-    require(
-        ProfessionProgression.learned(player, "mining_efficiency")
-            && ProfessionProgression.learned(player, "long_reach")
-            && !ProfessionProgression.learned(player, "frugal_repair")
-            && !ProfessionProgression.learned(player, "material_repair")
-            && skills.getPointsLeft(player, ProfessionDiscipline.SMITHING.category()).orElseThrow()
-                == 1
-            && skills.getPointsLeft(player, ProfessionDiscipline.MINING.category()).orElseThrow()
-                == 1
-            && skills.getPointsLeft(player, ProfessionDiscipline.BUILDING.category()).orElseThrow()
-                == 0
-            && player.getInventory().countItem(Items.STONE_AXE) == 0
-            && APIUtils.getLevel("mining", player) == 10
-            && RaceIdentity.characterClass(player) == CharacterClass.MAGE
-            && RaceIdentity.style(player) == 1,
-        "Preserve mining, old appearance, class and kit delivery boundary");
-  }
-
-  private static void verifyRaces(ServerPlayer player) {
-    var elf = new CharacterChanges.Selection("race", "elf", 2, "", false);
-    player.setHealth(4);
-    player.setPose(Pose.CROUCHING);
-    player.refreshDimensions();
-    var quote = CharacterChanges.preview(player, elf);
-    require(quote != null, "Clear space for a larger race");
-    var roof = player.blockPosition().above();
-    var level = player.serverLevel();
-    var prior = level.getBlockState(roof);
-    level.setBlockAndUpdate(roof, Blocks.STONE.defaultBlockState());
-    try {
-      require(
-          CharacterChanges.problem(player, elf).equals("space")
-              && !CharacterChanges.change(player, elf, quote)
-              && RaceIdentity.race(player) == Race.GOBLIN
-              && RaceIdentity.style(player) == 1,
-          "Recheck clearance on confirmation while in a low goblin passage");
-    } finally {
-      level.setBlockAndUpdate(roof, prior);
-    }
-    change(player, elf);
-    require(
-        RaceIdentity.race(player) == Race.ELF
-            && RaceIdentity.style(player) == 2
-            && RaceIdentity.characterClass(player) == CharacterClass.MAGE
-            && RaceIdentity.profession(player) == Profession.BUILDER
-            && player.getHealth() <= 4
-            && RaceIdentity.starter(player).equals("first_mastery"),
-        "Only race and visible style changed");
-    require(
-        CharacterChanges.preview(
-                player, new CharacterChanges.Selection("race", "elf", 0, "", false))
-            == null,
-        "A fixed appearance cannot be changed without an actual race change");
-    PreparedAbilities.edit(player, 6, InnateAbility.LIGHT.id);
-    PreparedAbilities.select(player, 6);
-    PreparedAbilities.cast(player);
-    require(
-        player.hasEffect(RacialAbilities.ELF_LIGHT),
-        "Elf can use the newly prepared racial ability");
-    change(player, new CharacterChanges.Selection("race", "human", 0, "", false));
-    PreparedAbilities.sync(player, true);
-    PreparedAbilities.select(player, 4);
-    PreparedAbilities.select(player, 6);
-    PreparedAbilities.cast(player);
-    require(
-        !player.hasEffect(RacialAbilities.ELF_LIGHT)
-            && PreparedAbilities.preparation(player).slots().get(6).equals(InnateAbility.LIGHT.id),
-        "Former racial ability keeps its slot but has no effect");
-    change(player, elf);
-    PreparedAbilities.cast(player);
-    require(
-        player.hasEffect(RacialAbilities.ELF_LIGHT),
-        "Restored race can use the retained assigned ability");
-  }
-
-  private static void change(ServerPlayer player, CharacterChanges.Selection selection) {
+        !ArmorProficiency.undertrained(player, player.getItemBySlot(EquipmentSlot.HEAD)),
+        "Fixture wears armor that is trained before the reset");
+    PreparedAbilities.edit(player, 4, MartialTechnique.SHIELD_SHOVE.id());
+    PreparedAbilities.edit(player, 3, InnateAbility.LIGHT.id);
+    var loadout = PreparedAbilities.loadout(player);
+    var selection = new CharacterChanges.Selection("subclass", "berserker", 0, "");
     var preview = CharacterChanges.preview(player, selection);
     require(
-        preview != null && CharacterChanges.change(player, selection, preview),
-        "Confirmed " + selection);
+        preview != null
+            && preview.disabled().contains(MartialTechnique.SHIELD_SHOVE.id())
+            && preview.wornGear().contains("minecraft:iron_helmet")
+            && preview
+                .talents()
+                .retiredGrants()
+                .contains(new TalentRefunds.Node("combat", "shield_shove"))
+            && preview
+                .talents()
+                .addedGrants()
+                .contains(new TalentRefunds.Node("combat", "last_stand")),
+        "Subclass reset forecasts the prepared attack, worn armor and changed grants");
+    require(
+        CharacterChanges.change(player, selection, preview)
+            && RaceIdentity.subclass(player) == CharacterSubclass.BERSERKER
+            && learned(player, WARRIOR).equals(Set.of("quick_block", "last_stand"))
+            && learned(player, ProfessionDiscipline.MINING.category()).isEmpty()
+            && PreparedAbilities.loadout(player).equals(loadout)
+            && player.getItemBySlot(EquipmentSlot.HEAD).is(Items.IRON_HELMET)
+            && ArmorProficiency.undertrained(player, player.getItemBySlot(EquipmentSlot.HEAD)),
+        "A subclass-only change still resets every bank and retains gear and slot assignments");
   }
 
-  private static void require(boolean condition, String message) {
-    if (!condition) throw new IllegalStateException(message);
+  private static void verifyRace(ServerPlayer player) {
+    var selection = new CharacterChanges.Selection("race", "dwarf", 0, "");
+    var head = player.blockPosition().above();
+    var level = player.serverLevel();
+    var previous = level.getBlockState(head);
+    try {
+      level.setBlockAndUpdate(head, Blocks.STONE.defaultBlockState());
+      require(
+          CharacterChanges.preview(player, selection) == null
+              && CharacterChanges.problem(player, selection).equals("space"),
+          "The proposed race must fit the current world geometry");
+    } finally {
+      level.setBlockAndUpdate(head, previous);
+    }
+    player.setHealth(7);
+    var preview = CharacterChanges.preview(player, selection);
+    require(
+        preview != null
+            && preview.disabled().contains(InnateAbility.LIGHT.id)
+            && preview.talents().retiredGrants().isEmpty(),
+        "A race change previews the lost innate preparable action and keeps talent grants");
+    require(
+        CharacterChanges.change(player, selection, preview)
+            && RaceIdentity.race(player) == Race.DWARF
+            && PreparedAbilities.loadout(player).contains(InnateAbility.LIGHT.id)
+            && player.getHealth() == 7
+            && !CharacterChanges.change(player, selection, preview),
+        "Changing race retires its innate action without clearing the slot or reusing the seal"
+            + " quote");
+  }
+
+  private static void verifyClassesAndKnowledge(ServerPlayer player) {
+    var mage = new CharacterChanges.Selection("class", "mage", 0, "first_mastery", "elementalist");
+    var joinedMage = CharacterChanges.preview(player, mage);
+    require(
+        joinedMage != null
+            && Set.copyOf(joinedMage.addedSpells())
+                .equals(Set.of(MISSILE, "irons_spellbooks:heal", "irons_spellbooks:icicle"))
+            && CharacterChanges.change(player, mage, joinedMage),
+        "Changing to Elementalist previews the starter spells and applies the same grant set");
+    require(
+        RaceIdentity.characterClass(player) == CharacterClass.MAGE
+            && RaceIdentity.subclass(player) == CharacterSubclass.ELEMENTALIST
+            && SpellKnowledge.hasAccess(player)
+            && !SpellKnowledge.hasFocus(player),
+        "Mage access and school identity are restored without another creation journal");
+
+    restoreCompletedStudy(player);
+    var provider = SkillsMod.getInstance();
+    provider.unlockSkill(player, MAGE, "magic_destruction_power");
+    provider.unlockSkill(player, MAGE, "magic_destruction_mastery_2");
+    var spell = SpellKnowledge.spell(MISSILE);
+    var mageNodes = SpellKnowledge.unlocked(player);
+    String mageReason = SpellKnowledge.knowledgeReason(player, spell, mageNodes);
+    require(
+        mageReason.isEmpty(),
+        "Before leaving Mage, rank two must be castable. Reason "
+            + mageReason
+            + ", rank "
+            + SpellKnowledge.rank(player, spell, mageNodes)
+            + ", cap "
+            + SpellKnowledge.cap(spell, mageNodes)
+            + ", talents "
+            + mageNodes);
+    PreparedAbilities.edit(player, 5, MISSILE);
+    require(
+        PreparedAbilities.loadout(player).contains(MISSILE), "Prepare the mastered Magic Missile");
+    var cooldowns = MagicData.getPlayerMagicData(player).getPlayerCooldowns();
+    cooldowns.addCooldown(spell, 400);
+    int time = PreparedAbilities.cooldownTicks(player, spell);
+    var ranger = new CharacterChanges.Selection("class", "ranger", 0, "bow_stride", "beastmaster");
+    var leftMage = CharacterChanges.preview(player, ranger);
+    require(
+        leftMage != null,
+        "Changing Mage to Beastmaster must produce a quote. Header reason "
+            + CharacterChanges.problem(player, ranger));
+    require(
+        leftMage.disabled().contains(MISSILE),
+        "Quote the loss of prepared rank-two Magic Missile. Disabled " + leftMage.disabled());
+    require(
+        leftMage.retiredSpells().contains("irons_spellbooks:icicle"),
+        "Retire the Elementalist starter. Retired spells " + leftMage.retiredSpells());
+    require(
+        leftMage
+            .talents()
+            .addedGrants()
+            .contains(new TalentRefunds.Node("ranger", "beastmaster_fox")),
+        "Quote the free Beastmaster fox. Added grants " + leftMage.talents().addedGrants());
+    boolean changed = CharacterChanges.change(player, ranger, leftMage);
+    require(
+        changed,
+        "Confirm the exact fresh Beastmaster quote. Still current "
+            + leftMage.equals(CharacterChanges.preview(player, ranger))
+            + ", learned Magic "
+            + SpellKnowledge.unlocked(player)
+            + ", learned Ranger "
+            + learned(player, RANGER));
+    var known = SpellKnowledge.unlocked(player);
+    require(
+        learned(player, RANGER).equals(Set.of("bow_stride", "beastmaster_fox"))
+            && !SpellKnowledge.hasAccess(known)
+            && known.equals(Set.of(MISSILE_NODE))
+            && SpellProgression.studied(player, MISSILE)
+            && SpellKnowledge.rank(player, spell, known) == 2
+            && SpellKnowledge.knowledgeReason(player, spell, known).equals("magic_access")
+            && PreparedAbilities.loadout(player).contains(MISSILE)
+            && time > 0
+            && PreparedAbilities.cooldownTicks(player, spell) == time,
+        "Completed study, rank, preparation and cooldown survive loss of access");
+
+    provider.unlockSkill(player, MAGE, "magic_mastery_1");
+    require(
+        SpellKnowledge.knowledgeReason(player, spell, SpellKnowledge.unlocked(player))
+            .equals("mastery"),
+        "The previous personal rank still requires its mastery");
+    provider.unlockSkill(player, MAGE, "magic_destruction_power");
+    provider.unlockSkill(player, MAGE, "magic_destruction_mastery_2");
+    require(
+        SpellKnowledge.knowledgeReason(player, spell, SpellKnowledge.unlocked(player)).isEmpty(),
+        "Restoring the mastery enables the same rank without paying for study again");
+  }
+
+  private static void verifyProfessionAndPendingGroup(ServerLevel level, ServerPlayer player) {
+    var before = player.position();
+    var platform = new HashMap<BlockPos, BlockState>();
+    for (var position :
+        BlockPos.betweenClosed(
+            player.blockPosition().offset(-3, -1, -3), player.blockPosition().offset(3, -1, 3))) {
+      platform.put(position.immutable(), level.getBlockState(position));
+      level.setBlockAndUpdate(position, Blocks.STONE.defaultBlockState());
+    }
+    var provider = SkillsMod.getInstance();
+    String fox = "beastmaster_fox";
+    int cooldown;
+    try {
+      provider.unlockSkill(player, RANGER, "beastmaster_persistence");
+      require(
+          BeastmasterCompanions.activate(player, fox)
+              && BeastmasterCompanions.groupCount(player) == 1,
+          "Only the free Beastmaster fox is summoned with paid persistence");
+      player.setPos(before.add(0, 7, 0));
+      BeastmasterCompanions.waystoneArrived(player);
+      require(
+          BeastmasterCompanions.pending(player),
+          "Unsafe destination leaves a real saved group pending");
+      cooldown = BeastmasterCompanions.cooldownTicks(player, fox);
+      verifyProfession(player);
+    } finally {
+      player.setPos(before);
+      platform.forEach(level::setBlockAndUpdate);
+    }
+    require(
+        !BeastmasterCompanions.pending(player)
+            && BeastmasterCompanions.groupCount(player) == 0
+            && BeastmasterCompanions.cooldownTicks(player, fox) == cooldown
+            && cooldown > 0,
+        "The reset dismisses the pending group when it removes paid persistence, retaining"
+            + " cooldown");
+  }
+
+  private static void verifyProfession(ServerPlayer player) {
+    var profession = new CharacterChanges.Selection("profession", "farmer", 0, "extra_harvest");
+    var preview = CharacterChanges.preview(player, profession);
+    require(
+        preview != null
+            && preview
+                .talents()
+                .addedGrants()
+                .contains(new TalentRefunds.Node("farming", "extra_harvest"))
+            && preview
+                .talents()
+                .retiredGrants()
+                .contains(new TalentRefunds.Node("smithing", "material_repair"))
+            && CharacterChanges.change(player, profession, preview),
+        "Changing profession swaps its free grant and also resets paid Magic mastery");
+    require(
+        RaceIdentity.profession(player) == Profession.FARMER
+            && learned(player, ProfessionDiscipline.SMITHING.category()).isEmpty()
+            && learned(player, ProfessionDiscipline.FARMING.category())
+                .equals(Set.of("extra_harvest"))
+            && learned(player, MAGE).equals(Set.of(MISSILE_NODE))
+            && learned(player, RANGER).contains("beastmaster_fox")
+            && !player.getInventory().contains(new ItemStack(Items.WHEAT_SEEDS)),
+        "Only current profession, class and study grants remain and no creation kit is issued");
+  }
+
+  private static void restoreCompletedStudy(ServerPlayer player) {
+    var data = player.getPersistentData().getCompound("aeroscapes_reimagine_abilities");
+    var studied = new CompoundTag();
+    studied.putBoolean(MISSILE, true);
+    data.put("studied_spells", studied);
+    var grants = new CompoundTag();
+    grants.putBoolean(MISSILE_NODE, true);
+    data.put("study_grants", grants);
+    var ranks = new CompoundTag();
+    ranks.putInt(MISSILE, 2);
+    data.put("ranks", ranks);
+    SpellProgression.restoreStudyGrants(player);
+  }
+
+  private static Set<String> learned(ServerPlayer player, ResourceLocation category) {
+    return Set.copyOf(SkillsMod.getInstance().getUnlockedSkills(player, category).orElseThrow());
+  }
+
+  private static void require(boolean condition, String description) {
+    if (!condition) throw new IllegalStateException(description);
   }
 }

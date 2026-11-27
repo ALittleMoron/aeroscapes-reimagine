@@ -1,4 +1,12 @@
 {
+  "dev.aeroscapes.magic.client.SpellStudyScreen": {
+    "buttonHints": {
+      "MOVE_TO_CONTAINER": {
+        "horizontalOffset": 48,
+        "bottom": 66
+      }
+    }
+  },
   "top.theillusivec4.curios.client.gui.CuriosScreen": {
     "playerSideOnly": true,
     "ignoreCraftingGrid": true

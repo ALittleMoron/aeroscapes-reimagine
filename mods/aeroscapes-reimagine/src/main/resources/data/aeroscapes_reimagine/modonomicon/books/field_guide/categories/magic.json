@@ -1,0 +1,11 @@
+{
+  "name": "book.aeroscapes_reimagine.field_guide.magic.name",
+  "icon": {
+    "item": "irons_spellbooks:scroll"
+  },
+  "sort_number": 3,
+  "background": "aeroscapes_reimagine:textures/gui/interface/atlas.png",
+  "background_width": 1440,
+  "background_height": 900,
+  "entry_textures": "aeroscapes_reimagine:textures/gui/guide/nodes.png"
+}

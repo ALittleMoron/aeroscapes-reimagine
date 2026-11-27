@@ -108,6 +108,8 @@ public final class AtmosphereContractTest {
     constructionShapeVersionGate();
     quiverComposition();
     ropeLauncherFirstPersonBoundary();
+    FirstPersonBodyTest.verify();
+    firstPersonNameRenderContract();
     fastRodRenderers();
     lanternGrip();
     rainImpactBiome();
@@ -1488,6 +1490,38 @@ public final class AtmosphereContractTest {
             local(adapterCode.get(adapterCode.indexOf(call) - 1), Opcodes.ALOAD, sampleParameter),
             "guard biome and altitude use the captured weather sample, including partial surfaces");
     }
+  }
+
+  private static void firstPersonNameRenderContract() throws IOException {
+    var renderer = classpathClass("net/minecraft/client/renderer/entity/LivingEntityRenderer");
+    var mixin = classpathClass("dev/aeroscapes/mixin/atmosphere/FirstPersonBodyMixin");
+    var handler =
+        mixin.methods.stream()
+            .filter(method -> method.name.equals("aeroscapes$skipCameraName"))
+            .findFirst()
+            .orElseThrow();
+    for (var render : renderer.methods) {
+      if (!render.name.equals("render")) continue;
+      for (var instruction : render.instructions) {
+        if (!(instruction instanceof MethodInsnNode call)
+            || !call.owner.equals(renderer.superName)
+            || !call.name.equals("render")) continue;
+        var expected = new ArrayList<Type>();
+        // MixinExtras uses the class making an invokespecial call as the receiver.
+        String receiver = call.getOpcode() == Opcodes.INVOKESPECIAL ? renderer.name : call.owner;
+        expected.add(Type.getObjectType(receiver));
+        expected.addAll(List.of(Type.getArgumentTypes(call.desc)));
+        expected.add(
+            Type.getObjectType("com/llamalad7/mixinextras/injector/wrapoperation/Operation"));
+        require(
+            handler.desc.equals(
+                Type.getMethodDescriptor(
+                    Type.getReturnType(call.desc), expected.toArray(Type[]::new))),
+            "First-person name hook must accept the native super-call receiver");
+        return;
+      }
+    }
+    throw new IllegalStateException("Missing native name render call");
   }
 
   private static ClassNode classpathClass(String name) throws IOException {

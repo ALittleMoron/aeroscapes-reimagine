@@ -8,11 +8,13 @@
   "mining_speed": {
     "x": -48,
     "y": 24,
-    "definition": "mining_speed"
+    "definition": "mining_speed",
+    "root": true
   },
   "mining_fortune": {
     "x": 48,
     "y": 24,
-    "definition": "mining_fortune"
+    "definition": "mining_fortune",
+    "root": true
   }
 }

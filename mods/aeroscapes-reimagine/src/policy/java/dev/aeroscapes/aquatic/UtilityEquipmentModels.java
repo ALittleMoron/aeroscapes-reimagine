@@ -54,37 +54,37 @@ final class UtilityEquipmentModels {
       display =
           com.google.gson.JsonParser.parseString(
                   """
-          {
-            "firstperson_righthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
-            "firstperson_lefthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
-            "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]},
-            "thirdperson_lefthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]}
-          }
-          """)
+                  {
+                    "firstperson_righthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
+                    "firstperson_lefthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
+                    "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]},
+                    "thirdperson_lefthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]}
+                  }
+                  """)
               .getAsJsonObject();
     if (id.equals("hybrid_aquatic:coral_hoe"))
       display =
           com.google.gson.JsonParser.parseString(
                   """
-          {
-            "firstperson_righthand": {"rotation": [15, -180, 5], "translation": [1.25, 1.75, 0], "scale": [0.6, 0.6, 0.6]},
-            "firstperson_lefthand": {"rotation": [15, -180, 5], "translation": [1.25, 1.75, 0], "scale": [0.6, 0.6, 0.6]},
-            "thirdperson_righthand": {"rotation": [0, -180, 0], "translation": [0, 1.25, 1.5], "scale": [1, 1, 1]},
-            "thirdperson_lefthand": {"rotation": [0, -180, 0], "translation": [0, 1.25, 1.5], "scale": [1, 1, 1]}
-          }
-          """)
+                  {
+                    "firstperson_righthand": {"rotation": [15, -180, 5], "translation": [1.25, 1.75, 0], "scale": [0.6, 0.6, 0.6]},
+                    "firstperson_lefthand": {"rotation": [15, -180, 5], "translation": [1.25, 1.75, 0], "scale": [0.6, 0.6, 0.6]},
+                    "thirdperson_righthand": {"rotation": [0, -180, 0], "translation": [0, 1.25, 1.5], "scale": [1, 1, 1]},
+                    "thirdperson_lefthand": {"rotation": [0, -180, 0], "translation": [0, 1.25, 1.5], "scale": [1, 1, 1]}
+                  }
+                  """)
               .getAsJsonObject();
     if (id.equals("chipped:watering_can"))
       display =
           com.google.gson.JsonParser.parseString(
                   """
-          {
-            "firstperson_righthand": {"rotation": [0, 110, 10], "translation": [1, -1.6, 0], "scale": [0.55, 0.55, 0.55]},
-            "firstperson_lefthand": {"rotation": [0, 250, -10], "translation": [1, -1.6, 0], "scale": [0.55, 0.55, 0.55]},
-            "thirdperson_righthand": {"rotation": [0, -90, 0], "translation": [0, -1.8, 0], "scale": [0.6, 0.6, 0.6]},
-            "thirdperson_lefthand": {"rotation": [0, 90, 0], "translation": [0, -1.8, 0], "scale": [0.6, 0.6, 0.6]}
-          }
-          """)
+                  {
+                    "firstperson_righthand": {"rotation": [0, 110, 10], "translation": [1, -1.6, 0], "scale": [0.55, 0.55, 0.55]},
+                    "firstperson_lefthand": {"rotation": [0, 250, -10], "translation": [1, -1.6, 0], "scale": [0.55, 0.55, 0.55]},
+                    "thirdperson_righthand": {"rotation": [0, -90, 0], "translation": [0, -1.8, 0], "scale": [0.6, 0.6, 0.6]},
+                    "thirdperson_lefthand": {"rotation": [0, 90, 0], "translation": [0, -1.8, 0], "scale": [0.6, 0.6, 0.6]}
+                  }
+                  """)
               .getAsJsonObject();
     if (id.equals("chipped:watering_can"))
       HeldItemModels.resizeHeld(display, .9f, 1f, new org.joml.Vector3f(8, 11, 8));
@@ -92,26 +92,26 @@ final class UtilityEquipmentModels {
       display =
           com.google.gson.JsonParser.parseString(
                   """
-          {
-            "firstperson_righthand": {"rotation": [0, -70, 10], "translation": [1.3, -0.7, 0], "scale": [0.55, 0.55, 0.55]},
-            "firstperson_lefthand": {"rotation": [0, 70, -10], "translation": [1.3, -0.7, 0], "scale": [0.55, 0.55, 0.55]},
-            "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, -0.85, 0], "scale": [0.65, 0.65, 0.65]},
-            "thirdperson_lefthand": {"rotation": [0, -90, 0], "translation": [0, -0.85, 0], "scale": [0.65, 0.65, 0.65]}
-          }
-          """)
+                  {
+                    "firstperson_righthand": {"rotation": [0, -70, 10], "translation": [1.3, -0.7, 0], "scale": [0.55, 0.55, 0.55]},
+                    "firstperson_lefthand": {"rotation": [0, 70, -10], "translation": [1.3, -0.7, 0], "scale": [0.55, 0.55, 0.55]},
+                    "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, -0.85, 0], "scale": [0.65, 0.65, 0.65]},
+                    "thirdperson_lefthand": {"rotation": [0, -90, 0], "translation": [0, -0.85, 0], "scale": [0.65, 0.65, 0.65]}
+                  }
+                  """)
               .getAsJsonObject();
     if (id.equals("immersive_weathering:ice_sickle")) {
       // The blade lies in XY, matching the pinned Refined pickaxe's functional axes.
       display =
           com.google.gson.JsonParser.parseString(
                   """
-          {
-            "firstperson_righthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
-            "firstperson_lefthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
-            "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]},
-            "thirdperson_lefthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]}
-          }
-          """)
+                  {
+                    "firstperson_righthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
+                    "firstperson_lefthand": {"rotation": [15, 90, 5], "translation": [1.25, 2.5, 0.5], "scale": [0.6, 0.6, 0.6]},
+                    "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]},
+                    "thirdperson_lefthand": {"rotation": [0, 90, 0], "translation": [0, 1.25, 1.5], "scale": [0.95, 0.95, 0.95]}
+                  }
+                  """)
               .getAsJsonObject();
     }
     if (style == EquipmentStyle.WRENCH || style == EquipmentStyle.GLUE) {
@@ -194,8 +194,12 @@ final class UtilityEquipmentModels {
         if (id.startsWith("naturescompass:")) leaves(mesh);
       } else if (id.contains("ender_linker")) eye(mesh);
       else if (id.equals("chipped:watering_can")) wateringCan(mesh);
-      else if (id.equals("chipped:alchemy_book")) alchemyBook(mesh);
-      else if (id.equals("chipped:chisel")) chisel(mesh);
+      else if (id.equals("chipped:alchemy_book")) {
+        alchemyBook(mesh);
+        entry
+            .getValue()
+            .add("display", HeldItemModels.closedBookDisplay(4.55f, 10.45f, 3.85f, 8.5f, .55f));
+      } else if (id.equals("chipped:chisel")) chisel(mesh);
       else if (id.equals("chipped:multimeter")) multimeter(mesh);
       else if (id.equals("chipped:needles")) knittingNeedles(mesh);
       else if (id.equals("chipped:saw")) handSaw(mesh);

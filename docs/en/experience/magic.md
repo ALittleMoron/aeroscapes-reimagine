@@ -8,9 +8,9 @@ status: partial
 
 ## Your first spell
 
-Mages start with **First magic mastery** already learned. Other characters can open **Talents** from the inventory, select Magic and spend their starting magic point on it. It teaches eight rank-1 spells without scrolls: Blood Needles, Magic Missile, Firebolt, Icicle, Ball Lightning, Shield, Heal and Oakskin. You gain attacks, personal healing and protection together; choose which to prepare rather than automatically filling every slot.
+Open **Talents → Classes → Mage**. **Magic Access** lets you use a spellbook for prepared casting and activate repeatable spells from magical equipment. It opens the four directions, whose first masteries teach different groups of spells. You can also study a spell after successfully casting its scroll several times.
 
-Mages receive the Flimsy Journal at character creation. To make another, use two copper ingots, one string and six paper. Equip it in the spell book accessory slot in Curios. The book is a required casting focus and keeps its equipment and reforging bonuses. All books use the same personal wheels, each with eight preparation slots.
+Mages start with **Magic Missile** and **Heal** at rank 1. Elementalists also start with **Icicle**, while Necromancers start with **Blood Needles**. Mages receive the Flimsy Journal at character creation. To make a copy, use two copper ingots, one string and six paper. Equip it in the spellbook accessory slot in Curios. The book is a casting focus and keeps its equipment and reforging bonuses. All books use the same personal wheels, each with eight preparation slots.
 
 Open **Prepared abilities** from the inventory or Curios. **Learned only** is on by default; turn it off to inspect the full catalogue. Unlearned and unavailable spells have a separate status, and an unsuccessful assignment explains the restriction. Search and the school filter work with either view. A known spell stays in the learned list while cooling down or when you lack mana or an equipped focus.
 
@@ -24,7 +24,7 @@ The selected spell appears as an icon and name at the bottom left. An empty slot
 
 ## Abilities from equipment
 
-Rare versions of the Ring of Invisibility and Frostward Ring let you prepare **Invisibility I** and **Frostwave I** while wearing them, even without a book or talent. They cost mana and share cooldowns with their learned versions. Removing the ring takes its ability off the wheel and ends invisibility cast through the ring. Re-equipping restores the assignment if you have kept its slot.
+Rare versions of the Ring of Invisibility and Frostward Ring let you prepare **Invisibility I** and **Frostwave I** while wearing them. Learn Magic Access to cast these equipment spells. The ring supplies the focus. They cost mana and share cooldowns with their learned versions. Removing the ring takes its ability off the wheel and ends invisibility cast through the ring. Re-equipping restores the assignment if you have kept its slot.
 
 An exceptional **Pearl Necklace III** grants **Stored Breath**. Equip it and breathe air for two seconds to charge it. Underwater, activate the prepared ability to restore enough air for about four seconds at the usual breathing rate. Aim at a nearby swimmer who needs air to give them the breath instead. The charge travels with the necklace, and each wearer needs to breathe air after using it before they can release another.
 
@@ -32,9 +32,9 @@ All three exceptional accessories can appear in expedition loot. An Invisibility
 
 ## One tree, four directions
 
-The common first mastery leads into four functional directions. The nine native schools still determine school bonuses, resistances and equipment; they are not nine separate mastery chains.
+Magic Access leads to four functional directions. Native schools still determine school bonuses, resistances and equipment.
 
-Opening Magic centres the first mastery and the entrances to its four directions. **Overview** shows the whole tree. Search for a spell by its name and press Enter to jump to the talent that teaches it, including spells bundled into mastery. Select an unlearned talent to highlight the lowest-cost route from your current purchases. Its details show the cost of the remaining nodes including the goal, the shortfall in points and the required practice level.
+Opening Mage centres Magic Access and the entrances to its four directions. **Overview** shows the whole tree. Search for a spell by name and press Enter to jump to the talent that teaches it, including spells bundled into mastery. Select an unlearned talent to highlight the lowest-cost route from your current purchases. Its details show the remaining cost including the goal, the shortfall in points and the required practice level.
 
 | Direction                  | What you develop                                                                                                            |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +43,7 @@ Opening Magic centres the first mastery and the entrances to its four directions
 | Summoning and Control      | Helpers, restraint and weakening, with power and resource improvements for this direction's spells.                         |
 | Space and Transformation   | Travel, stealth, perception, digging and household changes, with more efficient and responsive casting.                     |
 
-Masteries II, III, IV and V require Magic practice levels 5, 15, 30 and 45. Each stretch between masteries has one to three upgrades. From Destruction II to III you reduce the mana cost of attacks, then increase your mana capacity. From Restoration III to IV, first increase your mana capacity, then choose cheaper or faster casting, and finally shorten your cooldowns. The eight starting spells, 33 bundled spells and 70 individual unlocks cover all 111 spells.
+Destruction I teaches **Magic Missile**, **Firebolt** and **Icicle**. Restoration and Protection I teaches **Heal** and **Oakskin**. Summoning and Control I teaches **Gust** and **Arcane Shackle**. Space and Transformation I teaches **Teleport**, with **Summon Ender Chest** farther along that path. Masteries II, III, IV and V require Magic practice levels 5, 15, 30 and 45.
 
 Mana capacity, recovery, cooldown and casting-speed improvements sit inside the four directions. Summoning and Control starts with faster mana recovery for your whole repertoire. Individual spell talents sit beside their mastery. **Blast Geometry** follows Fireball and adds one block to its blast radius. **Winter Front** follows Blizzard and increases its radius by 15%. Casting-speed bonuses shorten ordinary preparation and extend continuous channels. Direct-hit bonuses against Chilled or poisoned targets apply outside persistent fields.
 
@@ -52,25 +52,46 @@ After mastery IV, two directions offer talents that change how you use familiar 
 - **Guardian Aid.** Cast Fortify on a wounded ally, such as your tamed wolf. If the ward absorbs damage from a hostile creature, you have ten seconds to heal the same ally with Blessing of Life. Effective healing refunds a quarter of the mana spent on the heal, rounded down.
 - **Binding Pact.** Restrain a target with Root. The first time your summoned helper damages it while those roots still hold, you recover a fifth of the mana spent on Root.
 
-Both effects use prepared spells and require enough mana to pay for the cast up front. Magic has 131 one-point talents. Magic practice can earn every point in this tree. [Skills and talents](../character-and-combat/#skills-and-talents).
+Both effects use prepared spells and require enough mana to pay for the cast up front.
+
+### Spell specializations
+
+Four talents add effects to familiar spells:
+
+- **Quenching Frostwave.** Frostwave extinguishes you and visible allies in its normal area, and puts out exposed ordinary fire blocks.
+- **Blood Needles Shared Healing.** After Blood Needles restores your missing health, its remaining healing goes to one wounded skeleton or zombie within eight blocks that you summoned with Raise Dead.
+- **Waiting Shackle.** Fire Arcane Shackle at an empty patch of solid ground to leave a chain marker for up to eight seconds. It tethers the first eligible hostile creature that comes within three blocks with a clear path. Each caster can keep one marker at a time.
+- **Oakskin for an Ally.** Aim at one friendly player you can see within eight blocks. The spell protects them, or protects you if there is no eligible target.
+
+Frostwave and Oakskin recognize players on your team. On a server with PvP disabled, two unteamed players also qualify. All four talents use the normal spell cost and cooldown.
+
+Elementalists gain 20% extra practice for offensive fire, ice and lightning spells. Necromancers gain 20% extra practice for blood and summoning spells. This includes successful physical scroll casts. Either specialty earns points for the same Mage tree.
+
+Magic practice can earn all 140 points in the Mage tree. [Skills and talents](../character-and-combat/#skills-and-talents).
 
 ## Scrolls and personal ranks
 
-Newly learned spells start at rank 1. Masteries I to V allow personal ranks up to 1, one quarter, one half, three quarters and the full native maximum, rounding fractions up. For a spell with maximum rank 10, the limits are 1, 3, 5, 8 and 10. Mastery raises the limit; it does not automatically raise a saved spell rank.
+### First study after casting scrolls
 
-To improve a learned spell, craft an inscription table from a book, three wooden slabs and two wooden fences. Put a spell book in the upper input and a higher-rank scroll in the lower input, then press **Study scroll**. A successful improvement consumes exactly one scroll and raises your personal spell rank to the scroll's rank within its direction's mastery limit. The book remains a focus. A scroll of the same or a lower rank does nothing and is kept.
+Cast three **Magic Missile** scrolls successfully. Put a spellbook in the top slot of an inscription table, open **Repeats**, select Magic Missile and press **Learn rank 1**. Your three casts cover the cost. Any rank of scroll counts toward the first rank. A cancelled cast gives no progress.
+
+Each cast that counts toward study shows your progress above the hotbar. When you study a spell or raise its rank, a notification shows the spell and its new rank.
+
+When you obtain another spell’s scroll, **Repeats** shows its successful-cast count and the required mastery. Advanced spells require more casts. Known spells are marked **Learned**. The Magic chapter of the Skyfarer’s Field Guide explains both study routes and shows your progress. Magic Missile can be learned before you buy Magic Access. You need Magic Access and an equipped spellbook to cast it from a prepared slot.
+
+### Improving a known spell
+
+Newly learned spells start at rank 1. Masteries I to V allow personal ranks up to 1, one quarter, one half, three quarters and the full native maximum, rounding fractions up. For a spell with maximum rank 10, the limits are 1, 3, 5, 8 and 10. Mastery raises the limit for future study.
+
+To improve a learned spell, craft an inscription table from a book, three wooden slabs and two wooden fences. Put a spellbook in the upper input and a higher-rank scroll in the lower input, then press **Study scroll**. A successful improvement consumes exactly one scroll and raises your personal spell rank to the scroll's rank within its direction's mastery limit. The book remains a focus. A scroll of the same or a lower rank does nothing and is kept.
 
 Permanent study rejects a scroll above the mastery limit intact. It does not learn a weaker version or store a future rank. The seven Eldritch spells also require their **Eldritch Manuscript** discovery for permanent use; their talent unlocks do not replace that discovery.
 
-A scroll used in hand is a separate, consumable route. It needs no personal spell knowledge, talent, mastery, rank limit, discovery, focus or preparation slot, and casts without mana. Even an undiscovered Eldritch scroll can be consumed this way. It never teaches the spell or improves your saved rank. Native targeting and source rules still apply. Spells that require multiple activations, such as Portal, cannot be cast from a scroll. Scrolls cannot bypass travel limits such as the Angel Wings activation interval.
+A scroll used in hand is a separate, consumable route. It needs no personal spell knowledge, talent, mastery, rank limit, discovery, focus or preparation slot, and casts without mana. Even an undiscovered Eldritch scroll can be consumed this way. A successful use counts toward first study. It leaves the saved rank unchanged until you study at the table. Native targeting and source rules still apply. Spells that require multiple activations, such as Portal, cannot be cast from a scroll. Scrolls cannot bypass travel limits such as the Angel Wings activation interval.
 
 Pocket Dimension's personal room retains its exit frame, which returns its owner to the entry location. Leaving requires no mana, equipped focus or prepared spell.
 
-Your learned ranks and preparation survive death, relogging and dimension changes. Changing books never teaches spells. Spells written into books under the earlier system are not converted into personal knowledge or refunded as talent points: learn their nodes and prepare them through the new menu.
-
-When updating from the former school tree, its magic talent allocations are refunded once. Physical and profession allocations stay in place. Saved personal spell ranks and preparation slots are retained, but permanent casting requires relearning the corresponding unlocks in the new tree.
-
-Characters updating the four-direction tree keep purchases, personal ranks and prepared slots. New links apply to future purchases. Unspent earned points reflect saved practice and the current limit for each pool.
+Your learned ranks, completed repeat study and preparation survive death, relogging and dimension changes. Changing books keeps your personal knowledge. If you lose the mastery required for a saved rank, prepared casting is unavailable until you regain that mastery.
 
 ## Travel
 

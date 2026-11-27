@@ -20,7 +20,7 @@
   "unlocked_by_default": true,
   "starting_points": 0,
   "exclusive_root": false,
-  "spent_points_limit": 39,
+  "spent_points_limit": 21,
   "colors": {
     "connections": {
       "locked": {

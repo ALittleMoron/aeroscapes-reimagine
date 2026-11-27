@@ -25,6 +25,17 @@ public final class TreeViewport {
   private double scale = 1;
   private double minimumScale = 0.25;
 
+  record Position(double centerX, double centerY, double scale) {}
+
+  Position position() {
+    return new Position(centerX, centerY, scale);
+  }
+
+  void restore(Position position) {
+    center(position.centerX(), position.centerY());
+    scale = Math.clamp(position.scale(), minimumScale, 2.0);
+  }
+
   public void fit(double minX, double minY, double maxX, double maxY, int width, int height) {
     center((minX + maxX) / 2, (minY + maxY) / 2);
     double fitted = fittedScale(maxX - minX, maxY - minY, width, height);

@@ -1,6 +1,7 @@
 package dev.aeroscapes.progression;
 
 import dev.aeroscapes.magic.MagicPractice;
+import dev.aeroscapes.races.RaceTraits;
 import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import io.redspace.ironsspellbooks.api.spells.CastSource;
@@ -36,7 +37,13 @@ public final class SpellPractice {
           event.getCastSource() == CastSource.SCROLL
               ? event.getOriginalManaCost()
               : event.getManaCost();
-      MagicPractice.award(player, recast ? 1 : experience(cost));
+      boolean subclass = !recast && RaceTraits.qualifiesMagicPractice(player, event.getSpellId());
+      RaceTraits.withClassPractice(
+          player,
+          "magic",
+          false,
+          subclass,
+          () -> MagicPractice.award(player, recast ? 1 : experience(cost)));
     }
   }
 }

@@ -51,6 +51,11 @@ public final class WeaponProficiency {
         : mainHand;
   }
 
+  public static boolean isLightWeapon(ItemStack stack) {
+    return MartialTechniques.isLightWeapon(stack)
+        || "light_weapon_handling".equals(meleeTraining(stack));
+  }
+
   static boolean supportsOffhandAttack(Player player) {
     return ModList.get().isLoaded("bettercombat") && BetterCombat.isDualWielding(player);
   }
@@ -136,8 +141,7 @@ public final class WeaponProficiency {
             && trainingApplies(player)
             && !ClassProgression.hasCombatTalent(player, node);
     String prefix = "tooltip.aeroscapes_reimagine.weapon_proficiency.";
-    var talent =
-        Component.translatable("puffish_skills.aeroscapes_reimagine.combat." + node + ".title");
+    var talent = ClassProgression.talentTitle(node);
     event
         .getToolTip()
         .add(

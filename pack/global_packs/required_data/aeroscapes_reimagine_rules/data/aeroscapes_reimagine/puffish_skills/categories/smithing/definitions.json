@@ -284,5 +284,31 @@
     "description": {
       "translate": "puffish_skills.aeroscapes_reimagine.smithing.manufacture_diamond_template.description"
     }
+  },
+  "field_repair": {
+    "title": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.field_repair.title"
+    },
+    "description": {
+      "translate": "puffish_skills.aeroscapes_reimagine.smithing.field_repair.description"
+    },
+    "icon": {
+      "type": "texture",
+      "data": {
+        "texture": "aeroscapes_reimagine:textures/gui/skills/talents/field_repair.png"
+      }
+    },
+    "frame": {
+      "type": "texture",
+      "data": {
+        "locked": "aeroscapes_reimagine:textures/gui/skills/frame_locked.png",
+        "available": "aeroscapes_reimagine:textures/gui/skills/frame_available.png",
+        "affordable": "aeroscapes_reimagine:textures/gui/skills/frame_affordable.png",
+        "unlocked": "aeroscapes_reimagine:textures/gui/skills/frame_unlocked.png",
+        "excluded": "aeroscapes_reimagine:textures/gui/skills/frame_excluded.png"
+      }
+    },
+    "rewards": [],
+    "cost": 1
   }
 }

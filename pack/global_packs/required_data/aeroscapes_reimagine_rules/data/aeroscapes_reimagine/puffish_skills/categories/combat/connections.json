@@ -44,30 +44,6 @@
         "counterattack"
       ],
       [
-        "steady_aim",
-        "slowing_shot"
-      ],
-      [
-        "slowing_shot",
-        "marking_shot"
-      ],
-      [
-        "bow_stride",
-        "quick_shot"
-      ],
-      [
-        "quick_recovery",
-        "disengage"
-      ],
-      [
-        "disengage",
-        "dash"
-      ],
-      [
-        "opening_strike",
-        "flank_strike"
-      ],
-      [
         "shield_handling",
         "shield_shove"
       ],
@@ -82,10 +58,6 @@
       [
         "last_stand",
         "offensive_stance"
-      ],
-      [
-        "light_weapon_handling",
-        "duelist_parry"
       ]
     ]
   },

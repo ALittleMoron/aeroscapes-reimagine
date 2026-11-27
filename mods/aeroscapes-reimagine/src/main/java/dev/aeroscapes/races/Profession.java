@@ -38,7 +38,7 @@ public enum Profession {
     return switch (this) {
       case BLACKSMITH -> List.of(new ItemStack(Items.STONE_PICKAXE), new ItemStack(Items.COAL, 4));
       case BUILDER -> List.of(new ItemStack(Items.STONE_AXE), new ItemStack(Items.COBBLESTONE, 16));
-      case FARMER -> List.of(new ItemStack(Items.WOODEN_HOE), new ItemStack(Items.WHEAT_SEEDS, 6));
+      case FARMER -> List.of(new ItemStack(Items.STONE_HOE), new ItemStack(Items.WHEAT_SEEDS, 6));
       case COOK ->
           List.of(
               new ItemStack(Items.BOWL, 2),

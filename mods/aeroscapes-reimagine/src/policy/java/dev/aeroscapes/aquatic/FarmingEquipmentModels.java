@@ -499,12 +499,13 @@ public final class FarmingEquipmentModels {
   }
 
   private static JsonObject display(String item) {
+    if (item.equals("journal") || item.equals("farm_ledger"))
+      return HeldItemModels.closedBookDisplay(6.06f, 9.74f, 5.56f, 8.25f, .65f);
     JsonObject display = new JsonObject();
-    boolean broad = List.of("journal", "farm_ledger", "greenhouse_monitor").contains(item);
+    boolean broad = item.equals("greenhouse_monitor");
     float scale = broad ? .65f : item.equals("brush") ? .7f : .68f;
     Vector3f grip =
         switch (item) {
-          case "journal", "farm_ledger" -> new Vector3f(10.4f, 5.8f, 8);
           case "greenhouse_monitor" -> new Vector3f(10.25f, 4.7f, 8);
           case "seed_bag", "seed_bag_empty", "seed_bag_full" -> new Vector3f(8, 2.6f, 8);
           case "brush" -> new Vector3f(8, 8.6f, 8);

@@ -18,6 +18,25 @@ import org.joml.Vector3f;
 final class HeldItemModels {
   private HeldItemModels() {}
 
+  /** Tide's closed-journal pose, with contacts fitted to the model's own cover. */
+  static JsonObject closedBookDisplay(float lowX, float highX, float y, float z, float scale) {
+    var display = new JsonObject();
+    for (String perspective : List.of("firstperson", "thirdperson")) {
+      for (String hand : List.of("righthand", "lefthand")) {
+        String slot = perspective + "_" + hand;
+        var transform = new JsonObject();
+        transform.add("rotation", IronHeldMesh.vector(-18, -19, -5));
+        transform.add("scale", IronHeldMesh.vector(scale, scale, scale));
+        var oneHand = new JsonObject();
+        oneHand.add(slot, transform);
+        float x = hand.equals("righthand") ? highX : lowX;
+        anchorHeld(oneHand, new Vector3f(x, y, z), new Vector3f(0, -1.2f, 1.2f));
+        display.add(slot, transform);
+      }
+    }
+    return display;
+  }
+
   static void anchorHeld(JsonObject display, Vector3f grip) {
     anchorHeld(display, grip, new Vector3f());
   }

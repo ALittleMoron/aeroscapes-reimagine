@@ -2,7 +2,10 @@ package dev.aeroscapes.regression;
 
 import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
 import dev.aeroscapes.magic.MagicPractice;
+import dev.aeroscapes.magic.PreparedAbilities;
+import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.races.AnimalLure;
 import dev.aeroscapes.races.ChangeItems;
 import dev.aeroscapes.races.ChangeNetwork;
 import dev.aeroscapes.races.CharacterClass;
@@ -11,11 +14,14 @@ import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
 import harmonised.pmmo.api.APIUtils;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
-import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
@@ -25,6 +31,8 @@ import net.puffish.skillsmod.SkillsMod;
 final class ChangeTransactionRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation RANGER =
+      ResourceLocation.parse(ProgressionBridge.RANGER_CATEGORY);
   private static final ResourceLocation MAGIC =
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
 
@@ -82,6 +90,32 @@ final class ChangeTransactionRegression {
         "Switching hands invalidates confirmation against the original hand");
 
     id = open(session, InteractionHand.OFF_HAND, true);
+    var replaced = racePreview(session, id, "elf", 1);
+    var identical = seals.copy();
+    player.setItemInHand(InteractionHand.OFF_HAND, identical);
+    confirm(session, replaced, "expired");
+    require(
+        identical.getCount() == 2
+            && seals.getCount() == 2
+            && RaceIdentity.race(player) == Race.HUMAN,
+        "An identical replacement stack cannot spend a preview from another stack");
+    player.setItemInHand(InteractionHand.OFF_HAND, seals);
+
+    id = open(session, InteractionHand.OFF_HAND, true);
+    var amountChanged = racePreview(session, id, "elf", 1);
+    seals.setCount(3);
+    confirm(session, amountChanged, "expired");
+    require(
+        seals.getCount() == 3 && RaceIdentity.race(player) == Race.HUMAN,
+        "Changing the original stack quantity invalidates the preview");
+    seals.setCount(2);
+
+    id = open(session, InteractionHand.OFF_HAND, true);
+    var abandoned = racePreview(session, id, "elf", 1);
+    ChangeNetwork.confirm(player, new ChangeNetwork.Confirm(id, 0, true));
+    confirm(session, abandoned, "expired");
+    require(seals.getCount() == 2, "Returning to the editor invalidates only the prior preview");
+
     var stale = racePreview(session, id, "dwarf", 0);
     var elf = racePreview(session, id, "elf", 1);
     confirm(session, stale, "expired");
@@ -101,8 +135,13 @@ final class ChangeTransactionRegression {
     var ranger =
         preview(
             session,
-            new ChangeNetwork.Request(id, "class", "ranger", 0, "steady_aim", false, List.of()),
+            new ChangeNetwork.Request(id, "class", "ranger", 0, "steady_aim", ""),
             "identity");
+    require(
+        ranger.pools().size() == 14
+            && ranger.addedGrants().contains(new ChangeNetwork.Grant("ranger", "steady_aim"))
+            && ranger.retiredGrants().contains(new ChangeNetwork.Grant("combat", "quick_block")),
+        "The Seal quotes every bank plus the restored and retiring starter choices");
     confirm(session, ranger, "done");
     require(
         seals.isEmpty()
@@ -116,55 +155,107 @@ final class ChangeTransactionRegression {
 
   private static void verifyThread(TestShipPlayerSession session) {
     var player = session.player;
-    APIUtils.setLevel("combat", player, 10);
+    APIUtils.setLevel("combat", player, 13);
+    APIUtils.setLevel("farming", player, 10);
+    APIUtils.setLevel("pickaxe_handling", player, 4);
     MagicPractice.award(player, 100);
     ProgressionBridge.sync(player);
     var skills = SkillsMod.getInstance();
+    var farming = ProfessionDiscipline.FARMING.category();
+    var pickaxe = ProfessionDiscipline.PICKAXE_HANDLING.category();
+    Map<ResourceLocation, Set<String>> purchases =
+        Map.of(
+            COMBAT, Set.of("guard_armor", "guard_vitality", "heavy_armor_handling"),
+            MAGIC, Set.of("magic_mastery_1", "magic_recovery_1"),
+            farming, Set.of("animal_lure"),
+            pickaxe, Set.of("copper"));
     skills.tryUnlockSkill(player, COMBAT, "guard_armor", false);
     skills.tryUnlockSkill(player, COMBAT, "guard_vitality", false);
+    skills.tryUnlockSkill(player, COMBAT, "heavy_armor_handling", false);
     skills.tryUnlockSkill(player, MAGIC, "magic_mastery_1", false);
     skills.tryUnlockSkill(player, MAGIC, "magic_recovery_1", false);
+    skills.tryUnlockSkill(player, farming, "animal_lure", false);
+    skills.tryUnlockSkill(player, pickaxe, "copper", false);
+    purchases.forEach(
+        (pool, nodes) ->
+            require(
+                skills.getUnlockedSkills(player, pool).orElseThrow().containsAll(nodes),
+                "Set up paid talents in " + pool));
+    APIUtils.setLevel("combat", player, 10);
+    ProgressionBridge.sync(player);
+    var armor = new ItemStack(Items.IRON_CHESTPLATE);
+    player.setItemSlot(EquipmentSlot.CHEST, armor);
+    PreparedAbilities.edit(player, 0, 0, AnimalLure.ID);
+    require(
+        PreparedAbilities.loadout(player).contains(AnimalLure.ID),
+        "Prepare the purchased Farming ability");
+
     var threads = new ItemStack(ChangeItems.KNOTTED_THREAD.get(), 2);
     player.setItemInHand(InteractionHand.MAIN_HAND, threads);
     long id = open(session, InteractionHand.MAIN_HAND, false);
-    var refund =
-        preview(
-            session,
-            new ChangeNetwork.Request(id, "combat", "", 0, "", false, List.of("guard_armor")),
-            "refund");
+    var requestScope = new ChangeNetwork.Request(id, "combat", "", 0, "", "").numbered(12);
+    ChangeNetwork.preview(player, requestScope);
+    var rejected = session.takePayload(ChangeNetwork.Reply.class);
     require(
-        refund.nodes().equals(List.of("guard_armor", "guard_vitality"))
-            && refund.freed() == 2
-            && refund.cost() == 0
-            && refund.remainder() == 2,
-        "Thread preview includes the dependent talent and the exact fractional fee");
-    int before = skills.getPointsLeft(player, COMBAT).orElseThrow();
+        rejected.sequence() == requestScope.sequence()
+            && rejected.ticket() == 0
+            && rejected.status().equals("invalid"),
+        "The Thread refuses a scoped pool request");
+
+    var quoted = preview(session, ChangeNetwork.Request.reset(id).numbered(13), "refund");
+    require(
+        quoted.disabled().contains(AnimalLure.ID),
+        "Preview warns when a prepared Farming ability will become unavailable");
+    require(
+        quoted.wornGear().contains("minecraft:iron_chestplate"),
+        "Preview identifies worn armor affected by lost training");
+    PreparedAbilities.edit(player, 0, 0, "");
+    confirm(session, quoted, "expired");
+    require(
+        threads.getCount() == 2 && AnimalLure.learned(player),
+        "A changed preparation makes the quote stale without spending or refunding anything");
+    PreparedAbilities.edit(player, 0, 0, AnimalLure.ID);
+
+    id = open(session, InteractionHand.MAIN_HAND, false);
+    var refund = preview(session, ChangeNetwork.Request.reset(id).numbered(14), "refund");
+    var byPool =
+        refund.pools().stream().collect(Collectors.toMap(ChangeNetwork.Pool::pool, row -> row));
+    require(
+        byPool.size() == 14 && refund.addedGrants().isEmpty() && refund.retiredGrants().isEmpty(),
+        "The Thread quotes every independent bank and preserves starting grants");
+    require(
+        byPool.get("combat").before() == -1
+            && byPool.get("combat").paid() == 3
+            && byPool.get("combat").loss() == 0
+            && byPool.get("combat").remainder() == 3
+            && byPool.get("magic").paid() == 2
+            && byPool.get("farming").paid() == 1
+            && byPool.get("pickaxe_handling").paid() == 1,
+        "The full quote includes paid class, magic, profession and tool investments and the"
+            + " fractional fee");
+    var beforeXp = MagicPractice.credit(player);
     confirm(session, refund, "done");
     confirm(session, refund, "expired");
     require(
         threads.getCount() == 1
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == before + 2
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 0
-            && !skills.getUnlockedSkills(player, COMBAT).orElseThrow().contains("guard_vitality"),
-        "Confirming the quoted refund twice consumes one thread and releases its points once");
-    id = open(session, InteractionHand.MAIN_HAND, false);
-    var magicRefund =
-        preview(
-            session,
-            new ChangeNetwork.Request(id, "magic", "", 0, "", false, List.of("magic_mastery_1")),
-            "refund");
-    require(
-        magicRefund.nodes().equals(List.of("magic_mastery_1", "magic_recovery_1"))
-            && magicRefund.freed() == 2
-            && magicRefund.cost() == 0
-            && magicRefund.remainder() == 2,
-        "Magic refund has its own dependents and fractional fee");
-    confirm(session, magicRefund, "done");
-    require(
-        threads.isEmpty()
-            && skills.getPointsLeft(player, MAGIC).orElseThrow() == 2
-            && skills.getPointsLeft(player, COMBAT).orElseThrow() == before + 2,
-        "The second thread refunds only magic points");
+            && RaceIdentity.characterClass(player) == CharacterClass.RANGER
+            && RaceIdentity.race(player) == Race.ELF
+            && RaceIdentity.profession(player) == Profession.BLACKSMITH
+            && skills.getUnlockedSkills(player, RANGER).orElseThrow().contains("steady_aim")
+            && MagicPractice.credit(player) == beforeXp
+            && player.getItemBySlot(EquipmentSlot.CHEST) == armor
+            && PreparedAbilities.loadout(player).contains(AnimalLure.ID)
+            && !AnimalLure.learned(player),
+        "The Thread spends once, preserves identity, starter, practice and saved preparation, and"
+            + " disables the refunded ability");
+    purchases.forEach(
+        (pool, nodes) ->
+            require(
+                java.util.Collections.disjoint(
+                        skills.getUnlockedSkills(player, pool).orElseThrow(), nodes)
+                    && skills.getPointsLeft(player, pool).orElseThrow()
+                        == byPool.get(pool.getPath()).after(),
+                "Actual post-reset state and balance agree with the quote for " + pool));
   }
 
   private static long open(TestShipPlayerSession session, InteractionHand hand, boolean identity) {
@@ -180,9 +271,7 @@ final class ChangeTransactionRegression {
   private static ChangeNetwork.Reply racePreview(
       TestShipPlayerSession session, long id, String target, int style) {
     return preview(
-        session,
-        new ChangeNetwork.Request(id, "race", target, style, "", false, List.of()),
-        "identity");
+        session, new ChangeNetwork.Request(id, "race", target, style, "", ""), "identity");
   }
 
   private static ChangeNetwork.Reply preview(
@@ -190,7 +279,10 @@ final class ChangeTransactionRegression {
     ChangeNetwork.preview(session.player, request);
     var result = session.takePayload(ChangeNetwork.Reply.class);
     require(
-        result.id() == request.id() && result.status().equals(status) && result.ticket() != 0,
+        result.id() == request.id()
+            && result.sequence() == request.sequence()
+            && result.status().equals(status)
+            && result.ticket() != 0,
         "Expected " + status + " preview, got " + result);
     return result;
   }

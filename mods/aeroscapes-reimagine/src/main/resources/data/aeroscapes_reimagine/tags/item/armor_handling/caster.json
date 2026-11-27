@@ -1,0 +1,24 @@
+{
+  "values": [
+    {
+      "id": "#irons_spellbooks:armors/helmets",
+      "required": false
+    },
+    {
+      "id": "#irons_spellbooks:armors/chestplates",
+      "required": false
+    },
+    {
+      "id": "#irons_spellbooks:armors/leggings",
+      "required": false
+    },
+    {
+      "id": "#irons_spellbooks:armors/boots",
+      "required": false
+    },
+    {
+      "id": "irons_spellbooks:gold_crown",
+      "required": false
+    }
+  ]
+}

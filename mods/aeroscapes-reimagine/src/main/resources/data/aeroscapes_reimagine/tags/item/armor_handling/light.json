@@ -6,54 +6,6 @@
     "minecraft:chainmail_boots",
     "minecraft:turtle_helmet",
     {
-      "id": "#irons_spellbooks:armors/helmets",
-      "required": false
-    },
-    {
-      "id": "#irons_spellbooks:armors/chestplates",
-      "required": false
-    },
-    {
-      "id": "#irons_spellbooks:armors/leggings",
-      "required": false
-    },
-    {
-      "id": "#irons_spellbooks:armors/boots",
-      "required": false
-    },
-    {
-      "id": "irons_spellbooks:speed_boots",
-      "required": false
-    },
-    {
-      "id": "irons_spellbooks:tarnished_helmet",
-      "required": false
-    },
-    {
-      "id": "irons_spellbooks:gold_crown",
-      "required": false
-    },
-    {
-      "id": "irons_spellbooks:infernal_sorcerer_chestplate",
-      "required": false
-    },
-    {
-      "id": "irons_spellbooks:wandering_magician_helmet",
-      "required": false
-    },
-    {
-      "id": "irons_spellbooks:wandering_magician_chestplate",
-      "required": false
-    },
-    {
-      "id": "irons_spellbooks:wandering_magician_leggings",
-      "required": false
-    },
-    {
-      "id": "irons_spellbooks:wandering_magician_boots",
-      "required": false
-    },
-    {
       "id": "hybrid_aquatic:diving_helmet",
       "required": false
     },

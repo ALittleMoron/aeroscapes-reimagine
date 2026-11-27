@@ -6,6 +6,32 @@ status: available
 
 ## 0.10.0
 
+- Choose Warrior, Ranger or Mage and compare their two subclasses. A selected subclass grants a starting ability or spell and extra practice for its characteristic actions.
+- Warrior, Ranger and Mage use separate talent pools. The balance overview shows every class, profession and tool pool, including zero balances and deficits. Equipment tooltips show the required training.
+- Learn Triple Shot to fire three arrows a quarter of a second apart. Learn Duelist Sidestep to move aside after a successful parry. Smoke arrows are available for testing.
+- Summon animal companions, give orders on the ability wheel and take a persistent group through a paid Waystone trip. A Beastmaster starts with one fox.
+- A Mage starts with Magic Missile and Heal. An Elementalist also starts with Icicle, and a Necromancer with Blood Needles. Magic Access opens four directions with different spell groups.
+- Study a spell at an inscription table after successful scroll casts, then use higher-rank scrolls to raise that spell's personal rank. Selected talents let Frostwave extinguish fire, Blood Needles heal a summoned undead ally, Arcane Shackle wait for a target and Oakskin protect an ally.
+- Use Knotted Thread to refund paid talents across all pools, or an Identity Seal to change one identity choice and refund paid talents. Both apply a 10% penalty and preserve practice and completed spell study.
+- Learn faster or more careful dismantling, use a field repair kit with matching material, or prepare Animal Lure to call nearby livestock. Tool-handling practice funds its own pools.
+- Fixed concurrent atlas registration when Aeronautics and Ponder load client resources.
+- The repeat-study list stays sharp. The talent window remembers the active section and subsection when reopened during the same session.
+- Successful scroll casts show first-study progress above the hotbar. Completing study or raising a spell's rank shows a notification.
+- The Move Matching Items button sits beside the other inventory controls at the inscription table.
+- Companion commands explain why they cannot run, including when the player is in Creative mode. The wolf talent icons show a recognizable wolf head.
+- Manual resource reloads show elapsed time while loading is still in progress.
+- Ordinary, tipped and spectral arrows are visible in flight and after landing.
+- The Farmer starts with a stone hoe.
+- Carrying a rope connector or winch breaks its connections. Once placed again, it can be connected to a new rope.
+- The Field Guide and nine other closed 3D books use the Fishing Journal grip.
+- A bow technique draws the equipped bow and releases a fully powered shot. Switching bows cancels the draw.
+- One, three and five deficient nutrient groups apply separate cumulative status effects: −3 attack damage, −20% movement speed and −30% mining speed. Sugar counts toward the thresholds.
+- All three dietary penalties show an infinite duration while active. Hover over an effect in the inventory to see its penalty.
+- Nutrient levels lost while using up saturation survive saving and reopening a world.
+- Changing nutrient levels with a command immediately updates the active dietary penalties and the nutrition display.
+- The visible first-person body uses the player model's animations while following the camera when walking, falling and flying.
+- Fixed a first-person rendering hook that could prevent the client from reaching the main menu.
+
 ### 0.9.2
 
 - Warriors can choose Defender or Berserker, with a starting talent and extra practice for shield blocks or heavy-weapon hits.

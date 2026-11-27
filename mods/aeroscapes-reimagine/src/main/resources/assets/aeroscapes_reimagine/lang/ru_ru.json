@@ -136,6 +136,7 @@
   "entity.aeroscapes_reimagine.cloud_jelly": "Облачная медуза",
   "message.aeroscapes_reimagine.cloud_jelly.shelter": "В закрытой каюте медузы вас не ужалят.",
   "aeroscapes_reimagine.configuration.title": "Aeroscapes Reimagine",
+  "aeroscapes_reimagine.loading.manual_reload": "Перезагрузка наборов ресурсов (%s с)",
   "aeroscapes_reimagine.configuration.section.aeroscapes.reimagine.client.toml.title": "Оформление клиента",
   "aeroscapes_reimagine.configuration.itemModels3d": "3D-модели предметов в руках",
   "aeroscapes_reimagine.configuration.itemModels3d.tooltip": "По умолчанию включены. Выключите, чтобы вернуть исходные модели вместо добавленных сборкой 3D-моделей. Сохранение перезагружает ресурсы без перезапуска игры. Исходная форма блоков и особое отображение предметов сохраняются.",

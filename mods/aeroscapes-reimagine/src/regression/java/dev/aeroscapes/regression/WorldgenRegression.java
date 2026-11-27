@@ -264,10 +264,22 @@ public final class WorldgenRegression {
               new TickTask(
                   event.getServer().getTickCount(),
                   () -> {
-                    CharacterChangesRegression.verify(level);
-                    TalentRefundRegression.verify(level);
-                    ChangeTransactionRegression.verify(level);
-                    ChangeSuppliesRegression.run(level);
+                    event.getServer().getPlayerList().reloadResources();
+                    var failures =
+                        new IllegalStateException("Character change regression failures");
+                    for (var check :
+                        List.<java.util.function.Consumer<ServerLevel>>of(
+                            CharacterChangesRegression::verify,
+                            TalentRefundRegression::verify,
+                            ChangeTransactionRegression::verify,
+                            ChangeSuppliesRegression::run)) {
+                      try {
+                        check.accept(level);
+                      } catch (RuntimeException exception) {
+                        failures.addSuppressed(exception);
+                      }
+                    }
+                    if (failures.getSuppressed().length > 0) throw failures;
                     LOGGER.info(
                         "Character changes, redistribution and acquisition regression passed");
                   }));
@@ -286,6 +298,8 @@ public final class WorldgenRegression {
                             ProfessionIdentityRegression::verify,
                             ProfessionToolsRegression::verify,
                             ProfessionEffectsRegression::verify,
+                            FieldRepairRegression::verify,
+                            AnimalLureRegression::verify,
                             ProfessionFurnaceRegression::verify)) {
                       try {
                         check.accept(level);
@@ -299,19 +313,50 @@ public final class WorldgenRegression {
                   }));
       return;
     }
-    if (Boolean.getBoolean("aeroscapes.regression.classes")) {
+    if (Boolean.getBoolean("aeroscapes.regression.carryOnRope")) {
       event
           .getServer()
           .tell(
               new TickTask(
                   event.getServer().getTickCount(),
                   () -> {
-                    ClassProgressionRegression.verify(level);
+                    CarryOnRopeRegression.verify(level);
+                    LOGGER.info("Carry On rope connector and winch regression passed");
+                  }));
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.beastmaster")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    BeastmasterRegression.verify(level);
+                    LOGGER.info(
+                        "Beastmaster companions and paid Waystone travel regression passed");
+                  }));
+      return;
+    }
+    boolean verifyClasses = Boolean.getBoolean("aeroscapes.regression.classes");
+    if (verifyClasses || Boolean.getBoolean("aeroscapes.regression.martial")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    if (verifyClasses) {
+                      event.getServer().getPlayerList().reloadResources();
+                      ClassProgressionRegression.verify(level);
+                    }
                     MartialClassRegression.verify(level);
                     SwingTempoRegression.verify(level);
                     LOGGER.info(
-                        "Class choice, starter talents, class traits and shared practice regression"
-                            + " passed");
+                        verifyClasses
+                            ? "Class choice, starter talents, class traits and shared practice"
+                                + " regression passed"
+                            : "Martial techniques dedicated regression passed");
                   }));
       return;
     }
@@ -361,6 +406,18 @@ public final class WorldgenRegression {
     }
     if (magicMigration != null) {
       MagicMigrationRegression.start(level, magicMigration);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.magicSpecializations")) {
+      event
+          .getServer()
+          .tell(
+              new TickTask(
+                  event.getServer().getTickCount(),
+                  () -> {
+                    MagicSpecializationsRegression.verify(level);
+                    LOGGER.info("Magic specializations and team behavior regression passed");
+                  }));
       return;
     }
     if (Boolean.getBoolean("aeroscapes.regression.magicRebalance")) {
@@ -608,6 +665,18 @@ public final class WorldgenRegression {
     }
     if (Boolean.getBoolean("aeroscapes.regression.aquatic")) {
       AquaticRegression.run(event.getServer());
+      return;
+    }
+    String nutritionPersistence = System.getProperty("aeroscapes.regression.nutritionPersistence");
+    if (nutritionPersistence != null) {
+      SurvivalRegression.verifyNutritionPersistence(level, nutritionPersistence);
+      if (nutritionPersistence.equals("reload")) SurvivalRegression.verifyNutritionCommands(level);
+      LOGGER.info("Nutrition persistence {} passed", nutritionPersistence);
+      return;
+    }
+    if (Boolean.getBoolean("aeroscapes.regression.nutrition")) {
+      SurvivalRegression.verifyNutrition(level);
+      LOGGER.info("Nutrition regression passed");
       return;
     }
     String survivalReport = System.getProperty("aeroscapes.regression.survival");

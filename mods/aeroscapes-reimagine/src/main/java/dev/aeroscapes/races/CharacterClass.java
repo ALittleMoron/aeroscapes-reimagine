@@ -7,9 +7,8 @@ import net.neoforged.fml.ModList;
 
 public enum CharacterClass {
   WARRIOR("combat", "quick_block", "shield_march"),
-  RANGER("archery", "bow_stride", "steady_aim"),
-  MAGE("magic", "first_mastery"),
-  ROGUE("combat", "quick_recovery", "opening_strike");
+  RANGER("archery", "bow_stride", "steady_aim", "quick_recovery", "opening_strike"),
+  MAGE("magic", "first_mastery");
 
   private final String practiceSkill;
   private final List<String> starters;
@@ -30,6 +29,10 @@ public enum CharacterClass {
         && mods.isLoaded("curios");
   }
 
+  public static List<CharacterClass> selectable() {
+    return List.of(WARRIOR, RANGER, MAGE);
+  }
+
   public String id() {
     return name().toLowerCase(Locale.ROOT);
   }
@@ -46,9 +49,8 @@ public enum CharacterClass {
   public static CharacterClass byId(String id) {
     return switch (id) {
       case "warrior" -> WARRIOR;
-      case "ranger" -> RANGER;
+      case "ranger", "rogue" -> RANGER;
       case "mage" -> MAGE;
-      case "rogue" -> ROGUE;
       default -> null;
     };
   }

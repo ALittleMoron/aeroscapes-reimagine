@@ -1,0 +1,22 @@
+{
+  "itemSpecific": {
+    "agricraft:journal": {
+      "armTransforms": {
+        "right": { "scale": 1, "offY": -0.21 },
+        "left": { "scale": 1, "offY": -0.21 }
+      }
+    },
+    "animalhusbandry:farm_ledger": {
+      "armTransforms": {
+        "right": { "scale": 1, "offY": -0.21 },
+        "left": { "scale": 1, "offY": -0.21 }
+      }
+    },
+    "chipped:alchemy_book": {
+      "armTransforms": {
+        "right": { "scale": 1, "offY": -0.21 },
+        "left": { "scale": 1, "offY": -0.21 }
+      }
+    }
+  }
+}

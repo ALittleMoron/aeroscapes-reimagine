@@ -5,6 +5,7 @@ import com.cyberday1.neoorigins.api.origin.SetOriginResult;
 import com.mojang.logging.LogUtils;
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.TalentRefunds;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.ProfessionProgression;
@@ -74,14 +75,22 @@ final class ProfessionIdentityRegression {
             && RaceIdentity.professionStarter(player).equals(starter)
             && ProfessionProgression.learned(player, starter)
             && SkillsMod.getInstance().getSpentPoints(player, category).orElseThrow() == 1
-            && SkillsMod.getInstance().getPointsLeft(player, category).orElseThrow()
-                == (previouslyPurchased ? 1 : 0)
+            && SkillsMod.getInstance().getPointsLeft(player, category).orElseThrow() == 0
+            && RaceIdentity.identityGrantOverlaps(player)
+                    .contains(new TalentRefunds.Node(category.getPath(), starter))
+                == previouslyPurchased
             && !RaceIdentity.awaitingChoice(player),
         "Confirmed native selection " + starter);
     for (var kitItem : profession.kit())
       require(
           player.getInventory().countItem(kitItem.getItem()) == kitItem.getCount(),
           "Received " + kitItem);
+    if (profession == Profession.FARMER) {
+      require(
+          player.getInventory().countItem(Items.STONE_HOE) == 1
+              && player.getInventory().countItem(Items.WOODEN_HOE) == 0,
+          "Farmer starts with one stone hoe");
+    }
     for (var branch : Profession.values()) {
       String skill = branch.practiceSkill();
       long before = APIUtils.getXp(skill, player);
@@ -174,7 +183,7 @@ final class ProfessionIdentityRegression {
             player.getInventory().countItem(Items.STONE_PICKAXE) == 1
                 && player.getInventory().countItem(Items.COAL) == 64,
             "One free slot after login delivers just the owed tool");
-        // Leave room for a separately owed login item as well as the remaining two coal.
+        // Leave room for the native login gifts before trying the pending kit again.
         slots.set(2, ItemStack.EMPTY);
         slots.set(3, ItemStack.EMPTY);
         // Recover a native talent save that predates the committed player inventory and identity.
@@ -183,13 +192,29 @@ final class ProfessionIdentityRegression {
         require(!ProfessionProgression.learned(player, "material_repair"), "Provider lost starter");
         login(player);
         require(
-            ProfessionProgression.learned(player, "material_repair")
-                && player.getInventory().countItem(Items.STONE_PICKAXE) == 1
-                && player.getInventory().countItem(Items.COAL) == 66
-                && player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0
-                && Utils.getPlayerSpellbookStack(player).is(ItemRegistry.COPPER_SPELL_BOOK.get()),
-            "A newly freed slot delivers the remainder without repeating profession or class"
-                + " gifts");
+            ProfessionProgression.learned(player, "material_repair"),
+            "Login restores the already granted native talent: profession "
+                + RaceIdentity.profession(player)
+                + ", starter "
+                + RaceIdentity.professionStarter(player)
+                + ", points "
+                + SkillsMod.getInstance()
+                    .getPointsLeft(player, ProfessionDiscipline.SMITHING.category())
+                    .orElseThrow());
+        slots.set(4, ItemStack.EMPTY);
+        player.tickCount = 40;
+        NeoForge.EVENT_BUS.post(new PlayerTickEvent.Post(player));
+        int tools = player.getInventory().countItem(Items.STONE_PICKAXE);
+        int coal = player.getInventory().countItem(Items.COAL);
+        int books = player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get());
+        require(
+            tools == 1 && coal == 66 && books == 0,
+            "Only the owed two coal are delivered after a slot opens: tools "
+                + tools
+                + ", coal "
+                + coal
+                + ", extra books "
+                + books);
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
       }

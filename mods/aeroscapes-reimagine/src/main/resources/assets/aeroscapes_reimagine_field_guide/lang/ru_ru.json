@@ -311,5 +311,16 @@
   "book.aeroscapes_reimagine.field_guide.ui.ahead": "Дальше по маршруту",
   "book.aeroscapes_reimagine.field_guide.ui.alternatives": "Подойдёт любой путь: %s",
   "book.aeroscapes_reimagine.field_guide.ui.prerequisites": "Перед этим: %s",
-  "book.aeroscapes_reimagine.field_guide.ui.or": " или "
+  "book.aeroscapes_reimagine.field_guide.ui.or": " или ",
+  "book.aeroscapes_reimagine.field_guide.magic.name": "Магия",
+  "book.aeroscapes_reimagine.field_guide.magic.progress": "Ход изучения",
+  "book.aeroscapes_reimagine.field_guide.magic.first_study.name": "Первое заклинание",
+  "book.aeroscapes_reimagine.field_guide.magic.first_study.text": "Примените три свитка «Магический снаряд». Положите книгу на стол начертания, откройте «Повторы» и изучите первый ранг.\n\nДругой путь — заработать очки мага и купить мастерство направления. Для применения подготовленного заклинания нужен «Доступ к магии».",
+  "book.aeroscapes_reimagine.field_guide.magic.first_study.summary": "Применяйте найденные свитки или изучите мастерство направления. Справа видно, что требуется для изучения найденных заклинаний.",
+  "book.aeroscapes_reimagine.field_guide.magic.study_ranks.name": "Повышение ранга",
+  "book.aeroscapes_reimagine.field_guide.magic.study_ranks.text": "На столе начертания положите книгу в верхнюю ячейку, а более сильный свиток известного заклинания в нижнюю. Нажмите «Изучить свиток». Если мастерство позволяет новый ранг, свиток расходуется. Если ранг выше предела, свиток останется.",
+  "book.aeroscapes_reimagine.field_guide.magic.study_ranks.summary": "Улучшите известное заклинание более сильным свитком в пределах своего мастерства.",
+  "book.aeroscapes_reimagine.field_guide.workshop.field_repair.name": "Полевой ремонт",
+  "book.aeroscapes_reimagine.field_guide.workshop.field_repair.text": "Изучите «Полевой ремонт» после «Добротной починки» в кузнечном деле. Возьмите ремкомплект и повреждённый предмет в разные руки. Держите в инвентаре подходящий материал. Стойте на месте и удерживайте кнопку применения две секунды. Успех расходует ремкомплект и один материал.",
+  "book.aeroscapes_reimagine.field_guide.workshop.field_repair.summary": "Восстановите часть прочности любимого снаряжения вдали от наковальни."
 }

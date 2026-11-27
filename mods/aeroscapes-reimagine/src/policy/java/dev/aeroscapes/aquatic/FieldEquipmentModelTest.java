@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.mojang.blaze3d.vertex.PoseStack;
 import dev.aeroscapes.aquatic.VanillaEquipmentModelTest.Face;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -14,7 +15,10 @@ import java.util.Map;
 import java.util.Set;
 import net.minecraft.SharedConstants;
 import net.minecraft.server.Bootstrap;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.neoforged.fml.loading.LoadingModList;
+import org.joml.Matrix4f;
+import org.joml.Vector3f;
 import punchy.client.renderer.layer.VanillaFirstPersonItemLayer.ToolKind;
 import punchy.config.PunchyTuningConfig;
 
@@ -33,9 +37,9 @@ public final class FieldEquipmentModelTest {
     LoadingModList.of(List.of(), List.of(), List.of(), List.of(), Map.of());
     SharedConstants.tryDetectVersion();
     Bootstrap.bootStrap();
+    Path repository = Path.of(arguments[0]);
     Path assets =
-        Path.of(arguments[0])
-            .resolve("pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets");
+        repository.resolve("pack/resourcepacks/aeroscapes-reimagine-refined-compat/assets");
     JsonObject previews = arguments.length == 2 ? new JsonObject() : null;
     Set<String> states = new LinkedHashSet<>();
     JsonObject profiles =
@@ -57,8 +61,108 @@ public final class FieldEquipmentModelTest {
           id + " lifts both native arms without resizing");
       verify(assets, id, states, previews, right.offY);
     }
+    verifyClosedBooks(repository, assets, profiles.getAsJsonObject("tide:fishing_journal"));
     if (arguments.length == 2) Files.writeString(Path.of(arguments[1]), previews.toString());
     System.out.println("Field equipment: " + states.size() + " native model states baked");
+  }
+
+  private static void verifyClosedBooks(Path repository, Path assets, JsonObject journalTuning)
+      throws IOException, ReflectiveOperationException {
+    var reference = read(assets, "tide/models/item/equipment/held/fishing_journal.json");
+    var arms =
+        read(assets, "minecraft/punchy/compat/aeroscapes_closed_books.json")
+            .getAsJsonObject("itemSpecific");
+    Set<String> books =
+        Set.of("agricraft:journal", "animalhusbandry:farm_ledger", "chipped:alchemy_book");
+    require(
+        arms.keySet().equals(books), "Grip tuning applies only to the three distinct book items");
+    for (String id : books) {
+      require(arms.get(id).equals(journalTuning), id + " uses the journal's two-hand arm offset");
+      verifyBook(assets, reference, id, -.21f);
+    }
+    var ironArms = read(assets, IronHeldModels.PUNCHY_PROFILE).getAsJsonObject("itemSpecific");
+    for (String book : IronHeldModels.CLOSED_BOOKS) {
+      String id = "irons_spellbooks:" + book;
+      require(
+          ironArms.get(id).equals(journalTuning), id + " uses the journal's two-hand arm offset");
+      verifyBook(assets, reference, id, -.21f);
+    }
+    // The shared Patchouli and Modonomicon item IDs select several book models.
+    verifyBook(assets, reference, "hexcasting:patchouli_book", 0);
+    Path owned = repository.resolve("mods/aeroscapes-reimagine/src/main/resources/assets");
+    verifyBook(owned, reference, "aeroscapes_reimagine:field_guide", 0);
+  }
+
+  private static void verifyBook(Path assets, JsonObject reference, String book, float armOffset)
+      throws IOException, ReflectiveOperationException {
+    var id = book.split(":", 2);
+    String root = id[0] + "/models/item/";
+    var wrapper = read(assets, root + id[1] + ".json").getAsJsonObject("perspectives");
+    for (String hand : HANDS) {
+      require(
+          wrapper
+              .getAsJsonObject(hand)
+              .get("parent")
+              .getAsString()
+              .equals(id[0] + ":item/equipment/held/" + id[1]),
+          book + " selects its closed model in " + hand);
+    }
+    var model = read(assets, root + "equipment/held/" + id[1] + ".json");
+    var faces =
+        model.has("elements")
+            ? VanillaEquipmentModelTest.bakeCuboids(model)
+            : model.has("children")
+                ? VanillaEquipmentModelTest.bakeComposite(model, assets)
+                : VanillaEquipmentModelTest.bakeObj(model, assets);
+    require(!faces.isEmpty(), book + " has baked covers");
+    var minimum = new Vector3f(Float.POSITIVE_INFINITY);
+    var maximum = new Vector3f(Float.NEGATIVE_INFINITY);
+    for (var face : faces)
+      for (var point : face.vertices()) {
+        minimum.min(point);
+        maximum.max(point);
+      }
+    for (var slot :
+        List.of(
+            ItemDisplayContext.FIRST_PERSON_LEFT_HAND,
+            ItemDisplayContext.FIRST_PERSON_RIGHT_HAND,
+            ItemDisplayContext.THIRD_PERSON_LEFT_HAND,
+            ItemDisplayContext.THIRD_PERSON_RIGHT_HAND)) {
+      boolean left =
+          slot == ItemDisplayContext.FIRST_PERSON_LEFT_HAND
+              || slot == ItemDisplayContext.THIRD_PERSON_LEFT_HAND;
+      var pose = handPose(model, slot, left);
+      var journalPose = handPose(reference, slot, left);
+      for (var axis : List.of(new Vector3f(0, 0, 1), new Vector3f(0, 1, 0))) {
+        require(
+            pose.transformDirection(axis, new Vector3f())
+                .normalize()
+                .equals(journalPose.transformDirection(axis, new Vector3f()).normalize(), .00001f),
+            book + " presents its cover and spine like the journal in " + slot);
+      }
+      var grip =
+          pose.invert()
+              .transformPosition(new Vector3f(0, -1.2f / 16, 1.2f / 16))
+              .add(.5f, .5f, .5f);
+      var relative = grip.sub(minimum).div(new Vector3f(maximum).sub(minimum));
+      require(
+          (left ? relative.x < .43f && relative.x > .06f : relative.x > .57f && relative.x < .94f)
+              && relative.y > .06f
+              && relative.y < .46f
+              && relative.z > 0
+              && relative.z < 1,
+          book + " grips the lower cover from the appropriate side in " + slot);
+    }
+    var attachments =
+        ConstructionPlacementTest.attachments(model, id[1], ToolKind.INGREDIENT, armOffset);
+    inNeutralFrame(book, faces, attachments);
+  }
+
+  @SuppressWarnings("deprecation") // Apply the mapped model transforms as ItemRenderer does.
+  private static Matrix4f handPose(JsonObject model, ItemDisplayContext slot, boolean left) {
+    var pose = new PoseStack();
+    ConstructionPlacementTest.handModel(model).getTransforms().getTransform(slot).apply(left, pose);
+    return pose.last().pose();
   }
 
   private static void verify(

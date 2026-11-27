@@ -1,0 +1,24 @@
+{
+  "category": "magic",
+  "name": "book.aeroscapes_reimagine.field_guide.magic.study_ranks.name",
+  "icon": {
+    "item": "irons_spellbooks:inscription_table"
+  },
+  "x": 9,
+  "y": 4,
+  "pages": [
+    {
+      "type": "modonomicon:text",
+      "title": "book.aeroscapes_reimagine.field_guide.magic.study_ranks.name",
+      "text": "book.aeroscapes_reimagine.field_guide.magic.study_ranks.text"
+    }
+  ],
+  "description": "book.aeroscapes_reimagine.field_guide.magic.study_ranks.summary",
+  "parents": [
+    {
+      "entry": "magic/first_study",
+      "line_enabled": true,
+      "draw_arrow": false
+    }
+  ]
+}

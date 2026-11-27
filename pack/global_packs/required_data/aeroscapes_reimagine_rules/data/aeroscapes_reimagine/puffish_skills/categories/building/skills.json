@@ -10,5 +10,10 @@
     "y": 0,
     "definition": "quick_dismantling",
     "root": true
+  },
+  "careful_dismantling": {
+    "x": 26,
+    "y": 54,
+    "definition": "careful_dismantling"
   }
 }

@@ -2,22 +2,25 @@ package dev.aeroscapes.regression;
 
 import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
 import dev.aeroscapes.magic.MagicPractice;
-import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.PreparedAbilities;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.progression.ProgressionBridge;
+import dev.aeroscapes.progression.SpellPractice;
 import dev.aeroscapes.races.CharacterClass;
+import dev.aeroscapes.races.CharacterSubclass;
 import dev.aeroscapes.races.ClassProgression;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
 import dev.aeroscapes.races.RaceIdentity;
+import dev.aeroscapes.races.RaceTraits;
 import harmonised.pmmo.api.APIUtils;
+import io.redspace.ironsspellbooks.api.events.SpellOnCastEvent;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
-import io.redspace.ironsspellbooks.api.registry.SpellRegistry;
 import io.redspace.ironsspellbooks.api.util.Utils;
 import io.redspace.ironsspellbooks.registries.ItemRegistry;
 import java.util.List;
 import java.util.UUID;
+import java.util.function.Consumer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -25,6 +28,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.bus.api.EventPriority;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.puffish.skillsmod.SkillsMod;
@@ -32,6 +36,8 @@ import net.puffish.skillsmod.SkillsMod;
 final class ClassProgressionRegression {
   private static final ResourceLocation COMBAT =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
+  private static final ResourceLocation RANGER =
+      ResourceLocation.parse(ProgressionBridge.RANGER_CATEGORY);
   private static final ResourceLocation MAGIC =
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final String ROOT = "magic_mastery_1";
@@ -41,8 +47,11 @@ final class ClassProgressionRegression {
   static void verify(ServerLevel level) {
     verifyPendingGrant(level, false);
     verifyPendingGrant(level, true);
+    require(CharacterClass.byId("rogue") == CharacterClass.RANGER, "Rogue falls back to Ranger");
+    require(
+        CharacterClass.RANGER.starters().size() == 4, "Ranger offers all four ordinary passives");
     for (Race race : Race.values()) {
-      for (CharacterClass characterClass : CharacterClass.values()) {
+      for (CharacterClass characterClass : CharacterClass.selectable()) {
         verifyCharacter(level, race, characterClass);
       }
     }
@@ -110,7 +119,7 @@ final class ClassProgressionRegression {
                 && SpellKnowledge.hasFocus(player)
                 && skills.getPointsLeft(player, MAGIC).orElseThrow() == 1
                 && skills.getPointsLeft(player, COMBAT).orElseThrow() == 0,
-            "Recovered choice grants the paid magic root, focus and free repertoire point");
+            "Recovered choice grants Magic Access, focus and keeps the initial purchase point");
         require(
             !RaceIdentity.choose(
                 player,
@@ -151,23 +160,38 @@ final class ClassProgressionRegression {
             RaceIdentity.choose(
                 player, race, 0, characterClass, starter, Profession.BLACKSMITH, "material_repair"),
             "Class selection for " + race + " " + characterClass);
+        var category = mage ? MAGIC : characterClass == CharacterClass.RANGER ? RANGER : COMBAT;
         String node = mage ? ROOT : starter;
         var provider = SkillsMod.getInstance();
         require(
-            provider.getUnlockedSkills(player, mage ? MAGIC : COMBAT).orElseThrow().contains(node),
+            provider.getUnlockedSkills(player, category).orElseThrow().contains(node),
             "Native starter node " + node);
         require(
             provider.getPointsLeft(player, COMBAT).orElseThrow() == 0
-                && provider.getPointsLeft(player, MAGIC).orElseThrow() == 1
-                && provider.getPointsTotal(player, COMBAT).orElseThrow() == (mage ? 0 : 1)
-                && provider.getPointsTotal(player, MAGIC).orElseThrow() == (mage ? 2 : 1),
-            "Class starter spends its own pool and the repertoire point remains free");
-        ClassProgression.afterChoice(player);
+                && provider.getPointsLeft(player, RANGER).orElseThrow() == 0
+                && provider.getPointsLeft(player, MAGIC).orElseThrow()
+                    == (mage && race != Race.HUMAN ? 0 : 1),
+            "Free class grant preserves earned or initial points, including paid overlap");
         require(
-            provider.getPointsLeft(player, COMBAT).orElseThrow() == 0
-                && provider.getPointsLeft(player, MAGIC).orElseThrow() == 1,
-            "Retry does not duplicate credit");
-        if (mage) verifyMage(player, race);
+            RaceIdentity.subclass(player) == null && !RaceIdentity.awaitingChoice(player),
+            "A deferred subclass does not block completed character creation");
+        var choices = CharacterSubclass.choices(characterClass);
+        require(choices.size() == 2, "Two subclass choices per class");
+        var subclass = choices.get(race.ordinal() % choices.size());
+        require(RaceIdentity.chooseSubclass(player, subclass), "Confirm the deferred subclass");
+        require(
+            !RaceIdentity.chooseSubclass(player, choices.get(1 - choices.indexOf(subclass))),
+            "A second signature requires an Identity Seal");
+        if (mage) verifyMage(player, race, subclass);
+        else
+          require(
+              provider
+                  .getUnlockedSkills(player, category)
+                  .orElseThrow()
+                  .contains(subclass.starter()),
+              "Native subclass signature grant " + subclass.starter());
+        ClassProgression.afterChoice(player);
+        require(RaceIdentity.subclass(player) == subclass, "Retry preserves the subclass grant");
         verifyPractice(player, race, characterClass);
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
@@ -181,21 +205,22 @@ final class ClassProgressionRegression {
         SkillsMod.getInstance().getPointsLeft(player, MAGIC).orElseThrow() == 0,
         "Previously purchased root");
     Utils.setPlayerSpellbookStack(player, new ItemStack(ItemRegistry.WIMPY_SPELL_BOOK.get()));
-    PreparedAbilities.edit(player, 5, SpellRegistry.FIREBOLT_SPELL.get().getSpellId());
     if (race == Race.GOBLIN) {
       var items = player.getInventory().items;
       for (int i = 0; i < items.size(); i++) items.set(i, new ItemStack(Items.COBBLESTONE, 64));
     }
   }
 
-  private static void verifyMage(ServerPlayer player, Race race) {
+  private static void verifyMage(ServerPlayer player, Race race, CharacterSubclass subclass) {
     var known = SpellKnowledge.unlocked(player);
+    var starters = ClassProgression.starterSpellIds(CharacterClass.MAGE, subclass);
     require(
         SpellKnowledge.spells().stream()
-                .filter(spell -> MagicTalents.learned(spell.getSpellId(), known))
-                .count()
-            == 8,
-        "Mage starts knowing exactly the eight spells of first mastery");
+            .filter(spell -> SpellKnowledge.rank(player, spell, known) > 0)
+            .map(spell -> spell.getSpellId())
+            .collect(java.util.stream.Collectors.toSet())
+            .equals(java.util.Set.copyOf(starters)),
+        "Mage starts with the two shared spells and this subclass's spell");
     var book = Utils.getPlayerSpellbookStack(player);
     require(
         book != null
@@ -205,12 +230,6 @@ final class ClassProgressionRegression {
                     : ItemRegistry.WIMPY_SPELL_BOOK.get()),
         "Equip journal or preserve existing focus");
     if (race != Race.HUMAN) {
-      require(
-          PreparedAbilities.preparation(player)
-              .slots()
-              .get(5)
-              .equals(SpellRegistry.FIREBOLT_SPELL.get().getSpellId()),
-          "Existing prepared slot retained");
       var dropped =
           player
               .serverLevel()
@@ -225,28 +244,61 @@ final class ClassProgressionRegression {
               : dropped.isEmpty() && inventoryBooks == 1,
           "Deliver one journal even with an occupied focus or full inventory");
       dropped.forEach(ItemEntity::discard);
-      return;
-    }
-    require(
-        player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0,
-        "No duplicate gift after retry");
+    } else
+      require(
+          player.getInventory().countItem(ItemRegistry.COPPER_SPELL_BOOK.get()) == 0,
+          "No duplicate gift after retry");
     require(MagicPractice.credit(player) == 0, "Starter spells available before practice");
-    var spell = SpellRegistry.FIREBOLT_SPELL.get();
+    var spell = SpellKnowledge.spell(subclass.starter());
     PreparedAbilities.edit(player, 0, spell.getSpellId());
     PreparedAbilities.select(player, 0);
     var magic = MagicData.getPlayerMagicData(player);
     magic.setMana(100);
-    PreparedAbilities.cast(player);
-    require(magic.isCasting(), "The starter spell can be cast with the granted book");
-    AbilitiesRegression.complete(player);
+    var casts = new java.util.ArrayList<Integer>();
+    Consumer<SpellOnCastEvent> probe =
+        event -> {
+          if (event.getEntity() == player && event.getSpellId().equals(spell.getSpellId()))
+            casts.add(event.getManaCost());
+        };
+    NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, probe);
+    try {
+      PreparedAbilities.cast(player);
+      require(magic.isCasting(), "The starter spell can be cast with the granted book");
+      AbilitiesRegression.complete(player);
+    } finally {
+      NeoForge.EVENT_BUS.unregister(probe);
+    }
     require(
-        magic.getMana() < 100 && PreparedAbilities.cooldownTicks(player, spell) > 0,
-        "Native starter casting pays mana and starts cooldown");
+        magic.getMana() < 100
+            && PreparedAbilities.cooldownTicks(player, spell) > 0
+            && casts.size() == 1,
+        "Native starter casting pays mana once and starts cooldown");
+    require(
+        RaceTraits.qualifiesMagicPractice(player, spell.getSpellId()),
+        "The starter spell belongs to the subclass practice: " + spell.getSpellId());
+    int paid = casts.getFirst();
+    long base = SpellPractice.experience(paid);
+    int fifths = race == Race.ELF ? 3 : 2;
+    long expected = base + base * fifths / 5;
+    long actual = MagicPractice.credit(player);
+    require(
+        actual == expected,
+        "Native "
+            + spell.getSpellId()
+            + " credits characteristic "
+            + race
+            + " class and subclass practice once (expected "
+            + expected
+            + ", observed "
+            + actual
+            + ", mana paid "
+            + paid
+            + ")");
   }
 
   private static void verifyPractice(
       ServerPlayer player, Race race, CharacterClass characterClass) {
-    for (String skill : List.of("combat", "archery", "magic", "mining")) {
+    for (String skill : List.of("combat", "ranger", "archery", "magic", "mining")) {
       boolean magic = skill.equals("magic");
       long before = magic ? MagicPractice.credit(player) : APIUtils.getXp(skill, player);
       for (int i = 0; i < 5; i++) {
@@ -255,7 +307,10 @@ final class ClassProgressionRegression {
       }
       int expected = 5;
       if (race == Race.ELF && (magic || skill.equals("archery"))) expected++;
-      if (skill.equals(characterClass.practiceSkill())) expected++;
+      boolean ranger = characterClass == CharacterClass.RANGER;
+      if (ranger
+          ? skill.equals("ranger") || skill.equals("archery")
+          : skill.equals(characterClass.practiceSkill())) expected++;
       long after = magic ? MagicPractice.credit(player) : APIUtils.getXp(skill, player);
       require(
           after - before == expected,

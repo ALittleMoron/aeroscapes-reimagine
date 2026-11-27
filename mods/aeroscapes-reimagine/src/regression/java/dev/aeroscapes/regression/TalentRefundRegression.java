@@ -1,12 +1,13 @@
 package dev.aeroscapes.regression;
 
-import com.cyberday1.neoorigins.event.PlayerLifecycleEvents;
+import com.mojang.logging.LogUtils;
 import dev.aeroscapes.magic.MagicPractice;
 import dev.aeroscapes.magic.MagicPracticeProgress;
 import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.progression.ProfessionDiscipline;
 import dev.aeroscapes.progression.ProgressionBridge;
 import dev.aeroscapes.progression.TalentRefunds;
+import dev.aeroscapes.races.CharacterChanges;
 import dev.aeroscapes.races.CharacterClass;
 import dev.aeroscapes.races.Profession;
 import dev.aeroscapes.races.Race;
@@ -14,213 +15,248 @@ import dev.aeroscapes.races.RaceIdentity;
 import harmonised.pmmo.api.APIUtils;
 import io.redspace.ironsspellbooks.api.magic.MagicData;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.api.Skill;
 
 final class TalentRefundRegression {
-  private static final ResourceLocation COMBAT =
+  private static final ResourceLocation WARRIOR =
       ResourceLocation.parse(ProgressionBridge.COMBAT_CATEGORY);
-  private static final ResourceLocation MAGIC =
+  private static final ResourceLocation RANGER =
+      ResourceLocation.parse(ProgressionBridge.RANGER_CATEGORY);
+  private static final ResourceLocation MAGE =
       ResourceLocation.parse(ProgressionBridge.MAGIC_CATEGORY);
   private static final ResourceLocation MINING = ProfessionDiscipline.MINING.category();
+  private static final ResourceLocation PICKAXE = ProfessionDiscipline.PICKAXE_HANDLING.category();
 
   private TalentRefundRegression() {}
 
   static void verify(ServerLevel level) {
     var position = Vec3.atBottomCenterOf(level.getSharedSpawnPos()).add(0, 32, 0);
     var uuid = UUID.randomUUID();
-    CompoundTag saved;
+    var providerSave = new CompoundTag();
+    CompoundTag savedPlayer;
     try (var session = TestShipPlayerSession.create(level, uuid, "TalentRefund", position, null)) {
       var player = session.player;
       ProgressionRegression.listPlayer(level, player, true);
       try {
-        PlayerLifecycleEvents.onPlayerLogin(new PlayerEvent.PlayerLoggedInEvent(player));
-        MagicData.getPlayerMagicData(player).setServerPlayer(player);
-        require(
-            RaceIdentity.choose(
-                player,
-                Race.HUMAN,
-                0,
-                CharacterClass.WARRIOR,
-                "quick_block",
-                Profession.BLACKSMITH,
-                "material_repair"),
-            "Character selection");
+        login(player);
         verifyRefund(player);
-        saved = player.saveWithoutId(new CompoundTag());
+        SkillsMod.getInstance().exportPlayerData(player, providerSave);
+        savedPlayer = player.saveWithoutId(new CompoundTag());
+        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedOutEvent(player));
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
       }
     }
-    try (var session = TestShipPlayerSession.create(level, uuid, "TalentRefund", position, saved)) {
+    try (var session =
+        TestShipPlayerSession.create(level, uuid, "TalentRefund", position, savedPlayer)) {
       var player = session.player;
       ProgressionRegression.listPlayer(level, player, true);
       try {
-        PlayerLifecycleEvents.onPlayerLogin(new PlayerEvent.PlayerLoggedInEvent(player));
-        MagicData.getPlayerMagicData(player).setServerPlayer(player);
+        SkillsMod.getInstance().importPlayerData(player, providerSave);
+        login(player);
         verifyRecoveryAfterLogin(player);
+        NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedOutEvent(player));
       } finally {
         ProgressionRegression.listPlayer(level, player, false);
       }
     }
+    LogUtils.getLogger()
+        .info("All-bank talent reset, overlap, carry and repayment regression passed");
+  }
+
+  private static void login(ServerPlayer player) {
+    var magic = MagicData.getPlayerMagicData(player);
+    magic.setServerPlayer(player);
+    magic.getSyncedData();
+    NeoForge.EVENT_BUS.post(new PlayerEvent.PlayerLoggedInEvent(player));
   }
 
   private static void verifyRefund(ServerPlayer player) {
-    var skills = SkillsMod.getInstance();
-    int magicCap = MagicTalents.pointCap();
-    MagicPractice.award(player, MagicPracticeProgress.xpForPoints(magicCap));
-    for (String skill : ProgressionBridge.COMBAT_SKILLS)
-      APIUtils.setLevel(skill, player, skill.equals("archery") ? 40 : 50);
+    var provider = SkillsMod.getInstance();
+    APIUtils.setLevel(ProgressionBridge.WARRIOR_PRACTICE, player, 80);
+    APIUtils.setLevel(ProgressionBridge.RANGER_PRACTICE, player, 80);
     APIUtils.setLevel("mining", player, 45);
+    APIUtils.setLevel("pickaxe_handling", player, 10);
+    MagicPractice.award(player, MagicPracticeProgress.xpForPoints(MagicTalents.pointCap()));
     ProgressionBridge.sync(player);
+    buy(player, WARRIOR, "quick_block");
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == ProgressionBridge.COMBAT_POINT_CAP
-            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap
-            && skills.getPointsTotal(player, MINING).orElseThrow()
-                == ProfessionDiscipline.MINING.cap(),
-        "All three budgets can reach their own caps");
-    purchase(
+        RaceIdentity.choose(
+            player,
+            Race.HUMAN,
+            0,
+            CharacterClass.WARRIOR,
+            "quick_block",
+            Profession.BLACKSMITH,
+            "material_repair"),
+        "A character chooses an already bought Warrior starter");
+    require(
+        RaceIdentity.identityGrantOverlaps(player)
+            .contains(new TalentRefunds.Node("combat", "quick_block")),
+        "An identity grant that overlaps a prior purchase retains its paid provenance");
+
+    unlock(
         player,
-        COMBAT,
+        WARRIOR,
         List.of(
-            "guard_armor",
-            "guard_vitality",
+            "shield_march",
             "melee_strike",
+            "melee_onslaught",
             "melee_footing",
-            "melee_veteran",
-            "bow_stride",
-            "steady_aim",
-            "shield_march",
-            "quick_recovery",
-            "opening_strike"));
-    purchase(
+            "guard_armor",
+            "guard_vitality"));
+    unlock(
         player,
-        MAGIC,
+        RANGER,
         List.of(
-            "magic_mastery_1",
-            "magic_recovery_1",
-            "magic_rhythm_1",
-            "magic_reserve_2",
-            "magic_destruction_power",
-            "magic_destruction_mastery_2",
-            "magic_destruction_mana",
-            "magic_reserve_1",
-            "magic_destruction_mastery_3",
-            "magic_restoration_power"));
-    purchase(player, MINING, List.of("mining_efficiency", "mining_fortune"));
-    require(
-        TalentRefunds.preview(player, "combat", List.of("quick_block")).isEmpty()
-            && TalentRefunds.preview(player, "smithing", List.of("material_repair")).isEmpty(),
-        "Active starters cannot be sold");
-    var guard = List.of("guard_armor");
-    var first = TalentRefunds.preview(player, "combat", guard).orElseThrow();
-    require(
-        first.nodes().equals(List.of("guard_armor", "guard_vitality"))
-            && first.spent() == 2
-            && first.loss() == 0
-            && first.remainder() == 2,
-        "Dependent guard refund");
-    require(
-        TalentRefunds.apply(player, guard, first) && !TalentRefunds.apply(player, guard, first),
-        "Apply once and reject a stale quote");
-
-    var mining = List.of("mining_efficiency");
-    var second = TalentRefunds.preview(player, "mining", mining).orElseThrow();
-    require(
-        second.nodes().equals(List.of("mining_efficiency", "mining_fortune"))
-            && second.loss() == 0
-            && second.remainder() == 2
-            && TalentRefunds.apply(player, mining, second),
-        "Separate profession dependency and fractional carry");
-
-    var roots =
-        List.of(
-            "melee_strike",
             "bow_stride",
             "steady_aim",
-            "shield_march",
             "quick_recovery",
-            "opening_strike");
-    var last = TalentRefunds.preview(player, "combat", roots).orElseThrow();
+            "opening_strike",
+            "crossbow_handling",
+            "starlight_bow_handling",
+            "autoloader_handling",
+            "light_weapon_handling",
+            "light_armor_handling",
+            "slowing_shot",
+            "marking_shot"));
+    buy(player, MAGE, "magic_mastery_1");
+    buy(player, MINING, "mining_efficiency");
+    buy(player, PICKAXE, "copper");
+
+    long physical = APIUtils.getXp(ProgressionBridge.WARRIOR_PRACTICE, player);
+    long magical = MagicPractice.credit(player);
+    var quote = CharacterChanges.previewReset(player);
+    require(quote != null && quote.talents().pools().size() == 14, "Forecast all fourteen banks");
+    var warrior = bank(quote, WARRIOR);
+    var ranger = bank(quote, RANGER);
     require(
-        last.spent() == 8
-            && last.loss() == 1
-            && last.remainder() == 0
-            && TalentRefunds.apply(player, roots, last),
-        "Combat refunds accumulate a ten-point deduction independently");
-    var mastery = List.of("magic_mastery_1");
-    var magic = TalentRefunds.preview(player, "magic", mastery).orElseThrow();
+        warrior.paid() == 7
+            && warrior.loss() == 0
+            && warrior.remainder() == 7
+            && warrior.paidNodes().contains("quick_block"),
+        "The overlapping Warrior starter is part of the seven paid costs");
     require(
-        magic.nodes().size() == 10
-            && magic.spent() == 10
-            && magic.loss() == 1
-            && magic.remainder() == 0
-            && TalentRefunds.apply(player, mastery, magic),
-        "Refunding magic mastery removes dependent magic talents and charges its own fee");
-    ProgressionBridge.sync(player);
+        ranger.paid() == 11 && ranger.loss() == 1 && ranger.remainder() == 1,
+        "Ranger's first whole deduction and fractional carry are independent");
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow()
-                == ProgressionBridge.COMBAT_POINT_CAP - 1
-            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap - 1,
-        "Reconciliation preserves each penalty at its earned cap");
+        bank(quote, MAGE).paid() == 1
+            && bank(quote, MINING).paid() == 1
+            && bank(quote, PICKAXE).paid() == 1
+            && bank(quote, ProfessionDiscipline.SMITHING.category()).paid() == 0,
+        "Magic, profession and tool purchases count; free profession starter does not");
+    require(
+        CharacterChanges.reset(player, quote)
+            && !CharacterChanges.reset(player, quote)
+            && CharacterChanges.previewReset(player) == null,
+        "Reset applies once, rejects the old quote, and offers no empty refund");
+    for (var row : quote.talents().pools()) {
+      var category = ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", row.pool());
+      require(
+          points(player, category) == row.after(),
+          "Quoted and native balances agree in " + row.pool());
+    }
+    require(
+        learned(player, WARRIOR).equals(Set.of("quick_block"))
+            && learned(player, ProfessionDiscipline.SMITHING.category())
+                .equals(Set.of("material_repair"))
+            && learned(player, RANGER).isEmpty()
+            && learned(player, MAGE).isEmpty()
+            && learned(player, MINING).isEmpty()
+            && learned(player, PICKAXE).isEmpty()
+            && RaceIdentity.identityGrantOverlaps(player).isEmpty(),
+        "Keep applicable grants and remove paid nodes from every bank");
+    require(
+        APIUtils.getXp(ProgressionBridge.WARRIOR_PRACTICE, player) == physical
+            && MagicPractice.credit(player) == magical
+            && provider.getSkillState(player, WARRIOR, "quick_block").orElseThrow()
+                == Skill.State.UNLOCKED,
+        "The reset keeps practice and converts the paid overlap into a free-only grant");
   }
 
   private static void verifyRecoveryAfterLogin(ServerPlayer player) {
-    int magicCap = MagicTalents.pointCap();
-    int combatCap = ProgressionBridge.COMBAT_POINT_CAP;
-    var skills = SkillsMod.getInstance();
     ProgressionBridge.sync(player);
+    unlock(
+        player,
+        WARRIOR,
+        List.of("shield_march", "melee_strike", "melee_onslaught", "melee_footing"));
+    buy(player, MINING, "mining_efficiency");
+    var quote = CharacterChanges.previewReset(player);
+    require(quote != null, "A second purchase requires a new quote");
+    var warrior = bank(quote, WARRIOR);
+    var ranger = bank(quote, RANGER);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1
-            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap - 1,
-        "Loading the saved player retains both deductions");
-    purchase(player, MINING, List.of("mining_efficiency"));
-    require(
-        TalentRefunds.preview(player, "mining", List.of("mining_efficiency"))
-                .orElseThrow()
-                .remainder()
-            == 3,
-        "Save retains the fractional profession fee");
+        warrior.paid() == 4
+            && warrior.loss() == 1
+            && warrior.remainder() == 1
+            && !warrior.paidNodes().contains("quick_block")
+            && ranger.paid() == 0
+            && ranger.previousDue() == 3000
+            && bank(quote, MINING).remainder() == 2,
+        "Reload preserved both debt and per-bank fractional carry");
+    require(CharacterChanges.reset(player, quote), "Apply the second reset");
+    int warriorAfter = points(player, WARRIOR);
+    int rangerAfter = points(player, RANGER);
     APIUtils.addXp("cooking", player, 3000);
-    MagicPractice.award(player, 2999);
+    APIUtils.addXp(ProgressionBridge.WARRIOR_PRACTICE, player, 2499);
     ProgressionBridge.sync(player);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1
-            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap - 1
-            && ProgressionBridge.nextMagicPointXp(player, MagicPractice.credit(player))
-                == MagicPractice.credit(player) + 1,
-        "Profession practice repays neither debt and 2999 magic XP does not cover its fee");
-    MagicPractice.award(player, 1);
+        points(player, WARRIOR) == warriorAfter && points(player, RANGER) == rangerAfter,
+        "Unrelated practice and 2,998 Warrior practice after affinity leave both deductions");
+    APIUtils.addXp(ProgressionBridge.WARRIOR_PRACTICE, player, 1);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1
-            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap
-            && ProgressionBridge.nextMagicPointXp(player, MagicPractice.credit(player)) == 0,
-        "Capped magic practice restores only the magic point");
-    APIUtils.addXp("archery", player, 2999);
+        points(player, WARRIOR) == warriorAfter + 1 && points(player, RANGER) == rangerAfter,
+        "Warrior practice cannot settle the Ranger deduction");
+    APIUtils.addXp(ProgressionBridge.RANGER_PRACTICE, player, 2999);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap - 1,
-        "Combat debt survives until enough physical practice is credited");
-    APIUtils.addXp("archery", player, 1);
+        points(player, RANGER) == rangerAfter,
+        "Ranger deduction also needs the full 3,000 practice");
+    APIUtils.addXp(ProgressionBridge.RANGER_PRACTICE, player, 1);
     require(
-        skills.getPointsTotal(player, COMBAT).orElseThrow() == combatCap
-            && skills.getPointsTotal(player, MAGIC).orElseThrow() == magicCap,
-        "Archery practice repays the combat debt without exceeding either budget");
+        points(player, RANGER) == rangerAfter + 1, "Fresh Ranger practice restores its own point");
   }
 
-  private static void purchase(ServerPlayer player, ResourceLocation category, List<String> nodes) {
+  private static TalentRefunds.PoolQuote bank(
+      CharacterChanges.Preview quote, ResourceLocation category) {
+    return quote.talents().pools().stream()
+        .filter(row -> row.pool().equals(category.getPath()))
+        .findFirst()
+        .orElseThrow();
+  }
+
+  private static Set<String> learned(ServerPlayer player, ResourceLocation category) {
+    return Set.copyOf(SkillsMod.getInstance().getUnlockedSkills(player, category).orElseThrow());
+  }
+
+  private static int points(ServerPlayer player, ResourceLocation category) {
+    return SkillsMod.getInstance().getPointsLeft(player, category).orElseThrow();
+  }
+
+  private static void buy(ServerPlayer player, ResourceLocation category, String node) {
+    var provider = SkillsMod.getInstance();
+    provider.tryUnlockSkill(player, category, node, false);
+    require(
+        provider.getSkillState(player, category, node).orElseThrow() == Skill.State.UNLOCKED,
+        "Buy " + node);
+  }
+
+  private static void unlock(ServerPlayer player, ResourceLocation category, List<String> nodes) {
     var provider = SkillsMod.getInstance();
     for (String node : nodes) {
-      provider.tryUnlockSkill(player, category, node, false);
+      provider.unlockSkill(player, category, node);
       require(
           provider.getSkillState(player, category, node).orElseThrow() == Skill.State.UNLOCKED,
-          "Purchase " + node);
+          "Seed purchased allocation " + node);
     }
   }
 

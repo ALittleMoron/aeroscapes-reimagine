@@ -1,0 +1,189 @@
+{
+  "bow_stride": {
+    "x": -214,
+    "y": -132,
+    "definition": "bow_stride",
+    "root": true
+  },
+  "steady_aim": {
+    "x": -126,
+    "y": -116,
+    "definition": "steady_aim",
+    "root": true
+  },
+  "quick_recovery": {
+    "x": 71,
+    "y": -130,
+    "definition": "quick_recovery",
+    "root": true
+  },
+  "opening_strike": {
+    "x": 154,
+    "y": -96,
+    "definition": "opening_strike",
+    "root": true
+  },
+  "crossbow_handling": {
+    "x": -253,
+    "y": 18,
+    "definition": "crossbow_handling",
+    "root": true
+  },
+  "starlight_bow_handling": {
+    "x": -58,
+    "y": -28,
+    "definition": "starlight_bow_handling",
+    "root": true
+  },
+  "autoloader_handling": {
+    "x": -213,
+    "y": 94,
+    "definition": "autoloader_handling",
+    "root": true
+  },
+  "light_weapon_handling": {
+    "x": 198,
+    "y": -25,
+    "definition": "light_weapon_handling",
+    "root": true
+  },
+  "light_armor_handling": {
+    "x": 0,
+    "y": -90,
+    "definition": "light_armor_handling",
+    "root": true
+  },
+  "ranger_armor_training": {
+    "x": -54,
+    "y": 108,
+    "definition": "ranger_armor_training",
+    "root": true
+  },
+  "rogue_armor_training": {
+    "x": 168,
+    "y": 80,
+    "definition": "rogue_armor_training",
+    "root": true
+  },
+  "slowing_shot": {
+    "x": -146,
+    "y": -42,
+    "definition": "slowing_shot"
+  },
+  "marking_shot": {
+    "x": -111,
+    "y": 44,
+    "definition": "marking_shot"
+  },
+  "quick_shot": {
+    "x": -238,
+    "y": -62,
+    "definition": "quick_shot"
+  },
+  "disengage": {
+    "x": 39,
+    "y": -62,
+    "definition": "disengage"
+  },
+  "dash": {
+    "x": 65,
+    "y": 25,
+    "definition": "dash"
+  },
+  "flank_strike": {
+    "x": 131,
+    "y": -13,
+    "definition": "flank_strike"
+  },
+  "duelist_parry": {
+    "x": 244,
+    "y": 30,
+    "definition": "duelist_parry"
+  },
+  "duelist_sidestep": {
+    "x": 244,
+    "y": 92,
+    "definition": "duelist_sidestep"
+  },
+  "triple_shot": {
+    "x": -195,
+    "y": -27,
+    "definition": "triple_shot"
+  },
+  "beastmaster_fox": {
+    "x": -160,
+    "y": 250,
+    "definition": "beastmaster_fox",
+    "root": true
+  },
+  "beastmaster_wolf": {
+    "x": 0,
+    "y": 250,
+    "definition": "beastmaster_wolf"
+  },
+  "beastmaster_bear": {
+    "x": 160,
+    "y": 250,
+    "definition": "beastmaster_bear"
+  },
+  "beastmaster_fox_count": {
+    "x": -208,
+    "y": 335,
+    "definition": "beastmaster_fox_count"
+  },
+  "beastmaster_fox_damage": {
+    "x": -160,
+    "y": 335,
+    "definition": "beastmaster_fox_damage"
+  },
+  "beastmaster_fox_protection": {
+    "x": -112,
+    "y": 335,
+    "definition": "beastmaster_fox_protection"
+  },
+  "beastmaster_wolf_count": {
+    "x": -48,
+    "y": 335,
+    "definition": "beastmaster_wolf_count"
+  },
+  "beastmaster_wolf_damage": {
+    "x": 0,
+    "y": 335,
+    "definition": "beastmaster_wolf_damage"
+  },
+  "beastmaster_wolf_protection": {
+    "x": 48,
+    "y": 335,
+    "definition": "beastmaster_wolf_protection"
+  },
+  "beastmaster_bear_damage": {
+    "x": 112,
+    "y": 335,
+    "definition": "beastmaster_bear_damage"
+  },
+  "beastmaster_bear_protection": {
+    "x": 208,
+    "y": 335,
+    "definition": "beastmaster_bear_protection"
+  },
+  "beastmaster_recall": {
+    "x": -208,
+    "y": 184,
+    "definition": "beastmaster_recall"
+  },
+  "beastmaster_focus_attack": {
+    "x": -208,
+    "y": 138,
+    "definition": "beastmaster_focus_attack"
+  },
+  "beastmaster_persistence": {
+    "x": -112,
+    "y": 184,
+    "definition": "beastmaster_persistence"
+  },
+  "beastmaster_cooldown": {
+    "x": 0,
+    "y": 184,
+    "definition": "beastmaster_cooldown"
+  }
+}

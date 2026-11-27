@@ -1,9 +1,13 @@
 package dev.aeroscapes.progression;
 
+import dev.aeroscapes.magic.RepeatStudyRenderOrderTest;
 import dev.aeroscapes.progression.client.InventoryButtonLayout;
 import dev.aeroscapes.progression.client.MagicTalentPath;
 import dev.aeroscapes.progression.client.ScrollViewport;
+import dev.aeroscapes.progression.client.TalentClient.ClassTree;
+import dev.aeroscapes.progression.client.TalentNavigationTest;
 import dev.aeroscapes.progression.client.TreeViewport;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -15,6 +19,9 @@ public final class ProgressionViewTest {
 
   public static void main(String[] args) throws java.io.IOException {
     dev.aeroscapes.races.client.CharacterPreviewTest.verify();
+    RepeatStudyRenderOrderTest.verify();
+    TalentNavigationTest.verify();
+    checkPointBanks();
     checkMagicPaths();
     var buttons = IntStream.range(0, 4).mapToObj(InventoryButtonLayout::button).toList();
     var offhand = new ScreenRectangle(76, 61, 20, 20);
@@ -118,6 +125,28 @@ public final class ProgressionViewTest {
     System.out.println(
         "Progression views: compact inventory rail, short overflow, final row, thumb, search and"
             + " camera passed");
+  }
+
+  private static void checkPointBanks() {
+    require(
+        Arrays.stream(ClassTree.values())
+            .map(tree -> tree.category().toString())
+            .toList()
+            .equals(
+                List.of(
+                    "aeroscapes_reimagine:combat",
+                    "aeroscapes_reimagine:ranger",
+                    "aeroscapes_reimagine:magic")),
+        "Warrior, Ranger and Mage each open their own provider balance");
+    var professions = Arrays.stream(ProfessionDiscipline.values()).toList();
+    require(
+        professions.stream().filter(tree -> !tree.toolHandling()).count() == 6
+            && professions.stream().filter(ProfessionDiscipline::toolHandling).count() == 5,
+        "The overview accounts for six professions and five independent tool banks");
+    require(
+        professions.stream().map(ProfessionDiscipline::category).distinct().count()
+            == professions.size(),
+        "Tool branches retain separate balances on the parent profession canvas");
   }
 
   private static void checkMagicPaths() {

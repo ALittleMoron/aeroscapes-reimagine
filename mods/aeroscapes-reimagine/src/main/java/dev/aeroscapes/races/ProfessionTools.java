@@ -9,7 +9,10 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.NeoForge;
@@ -46,13 +49,24 @@ public final class ProfessionTools {
   private static void dismantle(PlayerEvent.BreakSpeed event) {
     var player = event.getEntity();
     var state = event.getState();
-    if (!state.is(CONSTRUCTION) || !ToolReforges.isSurvivalPlayer(player)) return;
-    var tool = player.getMainHandItem();
-    if (tool.getDestroySpeed(state) > 1
-        && (!state.requiresCorrectToolForDrops() || tool.isCorrectToolForDrops(state))) {
+    if (dismantling(player, player.getMainHandItem(), state)) {
       float bonus = (float) player.getAttributeValue(DISMANTLING_SPEED);
       event.setNewSpeed(event.getNewSpeed() * (1 + bonus));
     }
+  }
+
+  public static boolean carefulDismantling(ServerPlayer player, ItemStack tool, BlockState block) {
+    return tool == player.getMainHandItem()
+        && tool.isDamageableItem()
+        && dismantling(player, tool, block)
+        && ProfessionEffects.learned(player, "careful_dismantling");
+  }
+
+  private static boolean dismantling(Player player, ItemStack tool, BlockState block) {
+    return block.is(CONSTRUCTION)
+        && ToolReforges.isSurvivalPlayer(player)
+        && tool.getDestroySpeed(block) > 1
+        && (!block.requiresCorrectToolForDrops() || tool.isCorrectToolForDrops(block));
   }
 
   public static int tillingWear(LivingEntity user, int amount) {

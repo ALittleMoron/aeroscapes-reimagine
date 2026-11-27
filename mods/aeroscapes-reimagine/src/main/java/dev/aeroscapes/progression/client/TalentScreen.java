@@ -5,12 +5,9 @@ import dev.aeroscapes.magic.MagicTalents;
 import dev.aeroscapes.magic.SpellKnowledge;
 import dev.aeroscapes.magic.client.AbilityClient;
 import dev.aeroscapes.mixin.progression.SkillsScreenAccessor;
-import dev.aeroscapes.progression.CombatDirection;
 import dev.aeroscapes.progression.CombatTalentRequirements;
 import dev.aeroscapes.progression.ProfessionDiscipline;
-import dev.aeroscapes.races.ChangeNetwork;
-import dev.aeroscapes.races.client.ChangeClient;
-import dev.aeroscapes.races.client.ChangeView;
+import dev.aeroscapes.progression.client.TalentClient.ClassTree;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -22,6 +19,7 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
+import java.util.function.Predicate;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
@@ -34,6 +32,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import net.neoforged.neoforge.client.event.ScreenEvent;
 import net.puffish.skillsmod.api.Skill;
 import net.puffish.skillsmod.client.SkillsClientMod;
@@ -47,34 +46,34 @@ import net.puffish.skillsmod.client.network.packets.out.SkillClickOutPacket;
 
 /** Atlas navigation over the provider's authoritative categories, states and purchase packets. */
 @EventBusSubscriber(modid = "aeroscapes_reimagine", value = Dist.CLIENT)
-public final class TalentScreen extends Screen implements ChangeView {
+public final class TalentScreen extends Screen {
   private static final int TEXT = 0xffd6e0eb;
   private static final int MUTED = 0xff92a9c3;
   private static final int GOLD = 0xffe9c084;
   private static final int ROUTE = 0xff75dfda;
   private static final int AFFORDABLE = 0xffc5fa77;
-  private static final List<ProfessionDiscipline> PROFESSION_SECTIONS =
+  static final List<ProfessionDiscipline> PROFESSION_SECTIONS =
       Arrays.stream(ProfessionDiscipline.values()).filter(tree -> !tree.toolHandling()).toList();
+  private static final Location DEFAULT_LOCATION =
+      new Location(Page.CLASSES, ClassTree.WARRIOR, PROFESSION_SECTIONS.getFirst());
   private final ClientSkillScreenData data;
-  private final long changeSession;
-  private final Map<String, Set<String>> refunds = new HashMap<>();
-  private Button review;
   private final TreeViewport camera = new TreeViewport();
   private final ScrollViewport detailsScroll = new ScrollViewport();
   private final List<Button> tabs = new ArrayList<>();
   private final Map<ProfessionDiscipline, Button> professionTabs =
       new EnumMap<>(ProfessionDiscipline.class);
-  private final Map<CombatDirection, Button> combatTabs = new EnumMap<>(CombatDirection.class);
+  private final Map<ClassTree, Button> classTabs = new EnumMap<>(ClassTree.class);
   private final Set<TreeNode> searchMatches = new HashSet<>();
   private List<ClientCategoryData> fittedCategories;
   private List<TreeBranch> branches = List.of();
   private List<TreeNode> visibleNodes = List.of();
-  private Page page = Page.COMBAT;
-  private CombatDirection combat = CombatDirection.MELEE;
-  private ProfessionDiscipline profession = PROFESSION_SECTIONS.getFirst();
+  private Page page;
+  private ClassTree classTree;
+  private ProfessionDiscipline profession;
+  private SavedView restoredView;
   private TreeNode selected;
   private EditBox search;
-  private Button fitButton;
+  private Button overview;
   private Button learn;
   private Map<String, MagicTalentPath.Node> magicGraph = Map.of();
   private String pathGoal;
@@ -88,48 +87,39 @@ public final class TalentScreen extends Screen implements ChangeView {
   private double detailsGrab;
 
   public TalentScreen(ClientSkillScreenData data) {
-    this(data, 0);
-  }
-
-  private TalentScreen(ClientSkillScreenData data, long session) {
-    super(session == 0 ? text("talents_button") : ChangeClient.text("refund"));
+    super(text("talents_button"));
     this.data = data;
-    this.changeSession = session;
+    var previous = TalentClient.lastView;
+    var location = previous == null ? DEFAULT_LOCATION : previous.location();
+    var available = location.available(id -> data.getCategory(id).isPresent());
+    page = available.page();
+    classTree = available.classTree();
+    profession = available.profession();
+    if (location.category().equals(available.category())) restoredView = previous;
   }
 
-  @Override
-  public long changeSession() {
-    return changeSession;
-  }
-
-  private Set<String> refundSelection(ClientCategoryData category) {
-    return refunds.computeIfAbsent(category.getConfig().id().getPath(), ignored -> new HashSet<>());
+  Location location() {
+    return new Location(page, classTree, profession);
   }
 
   private ClientCategoryData activeCategory() {
     return selected == null ? category() : selected.category();
   }
 
-  private ClientCategoryData reviewCategory() {
-    if (selected != null) return selected.category();
-    return branches.stream()
-        .map(TreeBranch::category)
-        .filter(category -> !refundSelection(category).isEmpty())
-        .findFirst()
-        .orElseGet(this::category);
-  }
-
   @SubscribeEvent
   public static void replaceProviderScreen(ScreenEvent.Opening event) {
     if (event.getNewScreen() instanceof SkillsScreen nativeScreen) {
       event.setNewScreen(
-          new TalentScreen(
-              ((SkillsScreenAccessor) nativeScreen).aeroscapes$screenData(),
-              ChangeClient.pendingTree()));
+          new TalentScreen(((SkillsScreenAccessor) nativeScreen).aeroscapes$screenData()));
     }
   }
 
-  private static Component text(String key, Object... arguments) {
+  @SubscribeEvent
+  public static void logout(ClientPlayerNetworkEvent.LoggingOut event) {
+    TalentClient.lastView = null;
+  }
+
+  static Component text(String key, Object... arguments) {
     return Component.translatable("aeroscapes_reimagine.progression." + key, arguments);
   }
 
@@ -138,8 +128,9 @@ public final class TalentScreen extends Screen implements ChangeView {
     AbilityClient.request();
     tabs.clear();
     professionTabs.clear();
-    combatTabs.clear();
-    search = null;
+    classTabs.clear();
+    dragging = false;
+    detailsDragging = false;
     if (width < 320 || height < 220) {
       addRenderableWidget(
           Button.builder(Component.literal("×"), button -> onClose())
@@ -162,66 +153,39 @@ public final class TalentScreen extends Screen implements ChangeView {
       tabs.add(button);
     }
     addProfessionTabs();
-    addCombatTabs();
+    addClassTabs();
+    String query = search == null ? "" : search.getValue();
     search =
         new EditBox(
             font, 20, controlsTop() + 2, Math.max(34, canvasWidth() - 74), 16, text("search"));
     search.setHint(text("search"));
     search.setResponder(this::updateSearch);
+    search.setValue(query);
     addRenderableWidget(search);
-    fitButton =
-        addRenderableWidget(
-            Button.builder(text("fit"), button -> fit())
-                .bounds(24 + search.getWidth(), controlsTop(), 62, 20)
-                .build());
+    addRenderableWidget(
+        Button.builder(text("fit"), button -> fit())
+            .bounds(24 + search.getWidth(), controlsTop(), 62, 20)
+            .build());
     updateTabs();
+    var overviewLabel = text("all_points");
+    overview =
+        addRenderableWidget(
+            Button.builder(
+                    overviewLabel,
+                    button -> minecraft.setScreen(new PointOverviewScreen(this, data)))
+                .bounds(
+                    32 + font.width(title), 13, Math.max(74, font.width(overviewLabel) + 16), 18)
+                .build());
     addRenderableWidget(
         Button.builder(Component.literal("×"), button -> onClose())
             .bounds(width - 33, 13, 17, 18)
             .build());
     learn =
         addRenderableWidget(
-            Button.builder(
-                    text("learn"),
-                    button -> {
-                      if (changeSession == 0) purchase();
-                      else if (selected != null
-                          && state(selected.category(), selected.skill()) == Skill.State.UNLOCKED) {
-                        var marks = refundSelection(selected.category());
-                        if (!marks.remove(selected.id())) marks.add(selected.id());
-                      }
-                    })
+            Button.builder(text("learn"), button -> purchase())
                 .bounds(inspectorX() + 8, height - 57, 140, 20)
                 .build());
-    if (changeSession != 0) {
-      review =
-          addRenderableWidget(
-              Button.builder(
-                      ChangeClient.text("preview"),
-                      button -> {
-                        var category = reviewCategory();
-                        if (category == null) return;
-                        var nodes = refundSelection(category).stream().sorted().toList();
-                        if (nodes.isEmpty()) return;
-                        ChangeClient.preview(
-                            this,
-                            new ChangeNetwork.Request(
-                                changeSession,
-                                category.getConfig().id().getPath(),
-                                "",
-                                0,
-                                "",
-                                false,
-                                nodes),
-                            false,
-                            ChangeClient.text("calculating"));
-                      })
-                  .bounds(inspectorX() + 8, height - 30, 140, 18)
-                  .build());
-    }
-    fittedCategories = null;
     refreshTree();
-    detailsScroll.reset();
   }
 
   private void addProfessionTabs() {
@@ -247,26 +211,20 @@ public final class TalentScreen extends Screen implements ChangeView {
     }
   }
 
-  private void addCombatTabs() {
-    var directions = CombatDirection.values();
-    int buttonWidth = (width - 32 - 4 * (directions.length - 1)) / directions.length;
-    for (var direction : directions) {
-      var title = text("combat_section." + direction.key());
-      var label =
-          font.width(title) <= buttonWidth - 8
-              ? title
-              : text("combat_section." + direction.key() + "_short");
-      combatTabs.put(
-          direction,
+  private void addClassTabs() {
+    var trees = ClassTree.values();
+    int buttonWidth = (width - 32 - 4 * (trees.length - 1)) / trees.length;
+    for (var tree : trees) {
+      classTabs.put(
+          tree,
           addRenderableWidget(
               Button.builder(
-                      label,
+                      tree.title(),
                       button -> {
-                        combat = direction;
+                        classTree = tree;
                         selectTree();
                       })
-                  .bounds(16 + direction.ordinal() * (buttonWidth + 4), 64, buttonWidth, 20)
-                  .tooltip(Tooltip.create(title))
+                  .bounds(16 + tree.ordinal() * (buttonWidth + 4), 64, buttonWidth, 20)
                   .build()));
     }
   }
@@ -283,27 +241,29 @@ public final class TalentScreen extends Screen implements ChangeView {
           button.visible = page == Page.PROFESSION;
           button.active = button.visible && section != profession;
         });
-    combatTabs.forEach(
-        (direction, button) -> {
-          button.visible = page == Page.COMBAT;
-          button.active = button.visible && direction != combat;
+    classTabs.forEach(
+        (tree, button) -> {
+          button.visible = page == Page.CLASSES;
+          button.active = button.visible && tree != classTree;
         });
+  }
+
+  private boolean showingMage() {
+    return page == Page.CLASSES && classTree == ClassTree.MAGE;
   }
 
   private void selectTree() {
     selected = null;
+    restoredView = null;
     detailsScroll.reset();
     fittedCategories = null;
     search.setValue("");
-    search.setY(controlsTop() + 2);
-    fitButton.setY(controlsTop());
     refreshTree();
     updateTabs();
   }
 
   private ClientCategoryData category() {
-    var path = page == Page.PROFESSION ? profession.skill() : page.id;
-    return data.getCategory(ResourceLocation.fromNamespaceAndPath("aeroscapes_reimagine", path))
+    return data.getCategory(page == Page.PROFESSION ? profession.category() : classTree.category())
         .orElse(null);
   }
 
@@ -318,13 +278,13 @@ public final class TalentScreen extends Screen implements ChangeView {
       }
     }
     if (categories.equals(fittedCategories)) return;
+    boolean fitCamera = fittedCategories == null || visibleNodes.isEmpty();
     fittedCategories = List.copyOf(categories);
     var next = new ArrayList<TreeBranch>();
     int branchLeft = 0;
     for (var category : categories) {
       var nodes =
           category.getConfig().skills().values().stream()
-              .filter(node -> visible(node.id()))
               .filter(
                   node -> category.getConfig().getDefinitionById(node.definitionId()).isPresent())
               .sorted(Comparator.comparing(ClientSkillConfig::id))
@@ -352,17 +312,20 @@ public final class TalentScreen extends Screen implements ChangeView {
       selected =
           visibleNodes.stream().filter(node -> node.sameTalent(previous)).findFirst().orElse(null);
     }
-    fit();
-    if (page == Page.MAGIC && primary != null) {
-      if (selected == null) showMagicRoot(primary);
-      else camera.focus(selected.x(), selected.y());
+    if (fitCamera) {
+      fit();
+      if (showingMage() && primary != null) showMagicRoot(primary);
+    }
+    if (restoredView != null && !visibleNodes.isEmpty()) {
+      if (restoredView.categories().equals(categoryIds(categories))
+          && restoredView.camera() != null) camera.restore(restoredView.camera());
+      var talent = restoredView.selected();
+      if (talent != null)
+        selected = visibleNodes.stream().filter(talent::matches).findFirst().orElse(null);
+      restoredView = null;
     }
     updateSearch(search.getValue());
     loadMagicGraph(primary);
-  }
-
-  private boolean visible(String node) {
-    return page != Page.COMBAT || combat.nodes().contains(node);
   }
 
   private int canvasWidth() {
@@ -374,7 +337,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private int controlsTop() {
-    return page == Page.MAGIC ? 66 : 90;
+    return 90;
   }
 
   private int canvasTop() {
@@ -449,7 +412,7 @@ public final class TalentScreen extends Screen implements ChangeView {
               .title();
       if (title.getString().toLowerCase(Locale.ROOT).contains(query)) searchMatches.add(node);
     }
-    if (page == Page.MAGIC) {
+    if (showingMage()) {
       for (var spell : SpellKnowledge.spells()) {
         var route = MagicTalents.spell(spell.getSpellId());
         if (route != null
@@ -469,7 +432,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   private void loadMagicGraph(ClientCategoryData category) {
     pathGoal = null;
     path = null;
-    if (page != Page.MAGIC || category == null) {
+    if (!showingMage() || category == null) {
       magicGraph = Map.of();
       return;
     }
@@ -519,18 +482,11 @@ public final class TalentScreen extends Screen implements ChangeView {
       return;
     }
     if (page == Page.PROFESSION) outlineTab(graphics, professionTabs.get(profession));
-    if (page == Page.COMBAT) outlineTab(graphics, combatTabs.get(combat));
+    if (page == Page.CLASSES) outlineTab(graphics, classTabs.get(classTree));
     refreshTree();
     var category = activeCategory();
-    updatePath(page == Page.MAGIC ? category : null);
-    if (category != null) {
-      int balance = category.getPointsLeft();
-      var points = balance < 0 ? text("points_due", -balance) : text("points", balance);
-      graphics.drawString(font, points, width - 45 - font.width(points), 19, GOLD, false);
-      if (page == Page.COMBAT || page == Page.MAGIC)
-        graphics.drawString(
-            font, text(page.id + "_budget"), inspectorX() + 5, controlsTop() + 3, MUTED, false);
-    }
+    updatePath(showingMage() ? category : null);
+    if (category != null) drawActiveBalance(graphics, category);
     int top = canvasTop();
     AtlasProgressionWidgets.panel(graphics, 16, top, canvasWidth(), canvasHeight());
     AtlasProgressionWidgets.panel(graphics, inspectorX(), top, 156, height - top - 32);
@@ -567,14 +523,25 @@ public final class TalentScreen extends Screen implements ChangeView {
     }
     graphics.disableScissor();
     drawDetails(graphics, category);
-    if (changeSession == 0)
-      graphics.drawString(font, text("navigation"), 20, height - 24, MUTED, false);
-    else {
-      var refundCategory = reviewCategory();
-      int marked = refundCategory == null ? 0 : refundSelection(refundCategory).size();
-      review.active = marked > 0;
-      review.setMessage(ChangeClient.text("preview_count", marked));
-    }
+    graphics.drawString(font, text("navigation"), 20, height - 24, MUTED, false);
+  }
+
+  private void drawActiveBalance(GuiGraphics graphics, ClientCategoryData category) {
+    int balance = TalentClient.pointBalance(category);
+    var label =
+        page == Page.CLASSES
+            ? classTree.balance(balance)
+            : text("bank_balance", categoryTitle(category), balance);
+    int right = width - 45;
+    int available = Math.max(1, right - overview.getX() - overview.getWidth() - 8);
+    int labelWidth = font.width(label);
+    int color = balance > 0 ? GOLD : PointOverviewScreen.balanceColor(balance);
+    float scale = Math.min(1f, (float) available / labelWidth);
+    graphics.pose().pushPose();
+    graphics.pose().translate(right, 22, 0);
+    graphics.pose().scale(scale, scale, 1);
+    graphics.drawString(font, label, -labelWidth, -3, color, false);
+    graphics.pose().popPose();
   }
 
   private static void outlineTab(GuiGraphics graphics, Button button) {
@@ -612,8 +579,7 @@ public final class TalentScreen extends Screen implements ChangeView {
   }
 
   private static MutableComponent categoryTitle(ClientCategoryData category) {
-    return Component.translatable(
-        "puffish_skills.aeroscapes_reimagine." + category.getConfig().id().getPath() + ".title");
+    return category.getConfig().title().copy();
   }
 
   private void drawConnections(
@@ -624,7 +590,6 @@ public final class TalentScreen extends Screen implements ChangeView {
     var category = branch.category();
     var placement = branch.placement();
     for (var edge : connections) {
-      if (!visible(edge.skillAId()) || !visible(edge.skillBId())) continue;
       var a = category.getConfig().skills().get(edge.skillAId());
       var b = category.getConfig().skills().get(edge.skillBId());
       if (a == null || b == null) continue;
@@ -681,10 +646,9 @@ public final class TalentScreen extends Screen implements ChangeView {
     int radius = TreeViewport.NODE_RADIUS;
     Skill.State state = state(category, node);
     boolean onPath = path != null && path.unpaid().contains(node.id());
-    boolean marked = changeSession != 0 && refundSelection(category).contains(node.id());
-    if (entry.equals(selected) || searchMatches.contains(entry) || onPath || marked) {
+    if (entry.equals(selected) || searchMatches.contains(entry) || onPath) {
       int outer = TreeViewport.NODE_OUTER_RADIUS;
-      int color = marked ? 0xffed9d7a : onPath && !entry.equals(selected) ? ROUTE : GOLD;
+      int color = onPath && !entry.equals(selected) ? ROUTE : GOLD;
       graphics.fill(x - outer, y - outer, x + outer, y + outer, color);
       graphics.fill(x - outer + 1, y - outer + 1, x + outer - 1, y + outer - 1, 0xff111b29);
     }
@@ -694,7 +658,7 @@ public final class TalentScreen extends Screen implements ChangeView {
                 + state.name().toLowerCase(Locale.ROOT)
                 + ".png");
     graphics.blit(frame, x - radius, y - radius, radius * 2, radius * 2, 0, 0, 26, 26, 26, 26);
-    if (state == Skill.State.AFFORDABLE && changeSession == 0) {
+    if (state == Skill.State.AFFORDABLE) {
       graphics.renderOutline(x - radius, y - radius, radius * 2, radius * 2, AFFORDABLE);
       graphics.renderOutline(
           x - radius + 1, y - radius + 1, radius * 2 - 2, radius * 2 - 2, 0xff40652a);
@@ -731,13 +695,7 @@ public final class TalentScreen extends Screen implements ChangeView {
 
   private Skill.State state(ClientCategoryData category, ClientSkillConfig node) {
     Skill.State nativeState = category.getSkillState(node);
-    if (page == Page.COMBAT
-        && nativeState != Skill.State.UNLOCKED
-        && CombatTalentRequirements.missing(minecraft.player, node.id()) != null)
-      return Skill.State.LOCKED;
-    return nativeState != Skill.State.UNLOCKED
-            && (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel()
-                || missingPriorMastery(category, node) != null)
+    return nativeState != Skill.State.UNLOCKED && missingRequirement(category, node) != null
         ? Skill.State.LOCKED
         : nativeState;
   }
@@ -754,16 +712,19 @@ public final class TalentScreen extends Screen implements ChangeView {
   private Component stateText(ClientCategoryData category, ClientSkillConfig node) {
     Skill.State nativeState = category.getSkillState(node);
     if (nativeState != Skill.State.UNLOCKED) {
-      if (page == Page.COMBAT) {
-        var required = CombatTalentRequirements.missing(minecraft.player, node.id());
-        if (required != null) return required;
-      }
-      if (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel())
-        return magicRequirement(node);
-      String missing = missingPriorMastery(category, node);
-      if (missing != null) return SpellKnowledge.requiredMasteryMessage(missing);
+      var required = missingRequirement(category, node);
+      if (required != null) return required;
     }
     return text("state." + nativeState.name().toLowerCase(Locale.ROOT));
+  }
+
+  private Component missingRequirement(ClientCategoryData category, ClientSkillConfig node) {
+    if (page != Page.CLASSES) return null;
+    if (!showingMage()) return CombatTalentRequirements.missing(minecraft.player, node.id());
+    if (MagicTalents.requiredLevel(node.id()) > AbilityClient.snapshot().practiceLevel())
+      return magicRequirement(node);
+    String missing = missingPriorMastery(category, node);
+    return missing == null ? null : SpellKnowledge.requiredMasteryMessage(missing);
   }
 
   private Component magicRequirement(ClientSkillConfig node) {
@@ -801,7 +762,7 @@ public final class TalentScreen extends Screen implements ChangeView {
             text(
                 "magic.path_points",
                 path.cost(),
-                Math.max(0, path.cost() - category.getPointsLeft())),
+                Math.max(0, path.cost() - TalentClient.pointBalance(category))),
             x,
             y,
             ROUTE);
@@ -818,12 +779,6 @@ public final class TalentScreen extends Screen implements ChangeView {
   private void drawDetails(GuiGraphics graphics, ClientCategoryData category) {
     learn.active = false;
     int top = detailsTop();
-    if (changeSession != 0)
-      learn.setMessage(
-          ChangeClient.text(
-              selected != null && refundSelection(selected.category()).contains(selected.id())
-                  ? "unmark"
-                  : "mark"));
     if (category == null) {
       graphics.drawWordWrap(font, text("waiting"), inspectorX() + 9, top, 138, TEXT);
       return;
@@ -832,13 +787,13 @@ public final class TalentScreen extends Screen implements ChangeView {
     int x = inspectorX() + 9, y = top - (int) detailsScroll.offset();
     graphics.enableScissor(x, top, x + 138, height - 65);
     if (node == null) {
-      if (page == Page.MAGIC) {
+      if (showingMage()) {
         y = magicProgress(graphics, x, y);
         y = paragraph(graphics, text("magic.explanation"), x, y + 7, TEXT) + 7;
       } else if (branches.size() > 1) {
         for (var branch : branches) {
           var pool = branch.category();
-          int balance = pool.getPointsLeft();
+          int balance = TalentClient.pointBalance(pool);
           var points = balance < 0 ? text("points_due", -balance) : text("points", balance);
           y = paragraph(graphics, categoryTitle(pool), x, y, GOLD);
           y = paragraph(graphics, points, x, y, MUTED) + 5;
@@ -855,7 +810,7 @@ public final class TalentScreen extends Screen implements ChangeView {
         if (branches.size() > 1) y = paragraph(graphics, categoryTitle(category), x, y + 3, MUTED);
         y = paragraph(graphics, text("cost", definition.cost()), x, y + 6, MUTED);
         y = paragraph(graphics, stateText(category, node), x, y + 3, MUTED);
-        if (page == Page.MAGIC) {
+        if (showingMage()) {
           y = pathDetails(graphics, category, x, y + 8);
           y = magicProgress(graphics, x, y + 8);
         }
@@ -872,9 +827,7 @@ public final class TalentScreen extends Screen implements ChangeView {
                     graphics, text("excludes", otherDefinition.title()), x, y + 6, 0xffd49a83);
           }
         }
-        learn.active =
-            state(category, node)
-                == (changeSession == 0 ? Skill.State.AFFORDABLE : Skill.State.UNLOCKED);
+        learn.active = state(category, node) == Skill.State.AFFORDABLE;
       }
     }
     graphics.disableScissor();
@@ -988,16 +941,31 @@ public final class TalentScreen extends Screen implements ChangeView {
 
   @Override
   public void onClose() {
-    if (changeSession == 0) InventoryNavigation.openInventory();
-    else {
-      ChangeClient.cancel(changeSession);
-      minecraft.setScreen(null);
-    }
+    InventoryNavigation.openInventory();
   }
 
   @Override
-  public boolean isPauseScreen() {
-    return changeSession == 0 && super.isPauseScreen();
+  public void removed() {
+    // Disconnect clears the view before Minecraft removes its old screen.
+    if (minecraft == null || minecraft.gameMode == null || minecraft.getConnection() == null)
+      return;
+    TalentClient.lastView = savedView();
+  }
+
+  SavedView savedView() {
+    if (restoredView != null) return restoredView;
+    var categories =
+        fittedCategories == null ? List.<ResourceLocation>of() : categoryIds(fittedCategories);
+    var position = visibleNodes.isEmpty() ? null : camera.position();
+    var talent =
+        selected == null
+            ? null
+            : new TalentKey(selected.category().getConfig().id(), selected.id());
+    return new SavedView(location(), categories, position, talent);
+  }
+
+  private static List<ResourceLocation> categoryIds(List<ClientCategoryData> categories) {
+    return categories.stream().map(category -> category.getConfig().id()).toList();
   }
 
   @Override
@@ -1049,9 +1017,58 @@ public final class TalentScreen extends Screen implements ChangeView {
     }
   }
 
-  private enum Page {
-    COMBAT("combat"),
-    MAGIC("magic"),
+  record Location(Page page, ClassTree classTree, ProfessionDiscipline profession) {
+    ResourceLocation category() {
+      return page == Page.PROFESSION ? profession.category() : classTree.category();
+    }
+
+    Location available(Predicate<ResourceLocation> exists) {
+      ClassTree availableClass = classTree;
+      if (!exists.test(classTree.category()))
+        availableClass =
+            Arrays.stream(ClassTree.values())
+                .filter(tree -> exists.test(tree.category()))
+                .findFirst()
+                .orElse(null);
+      ProfessionDiscipline availableProfession = profession;
+      if (!hasProfession(profession, exists))
+        availableProfession =
+            PROFESSION_SECTIONS.stream()
+                .filter(section -> hasProfession(section, exists))
+                .findFirst()
+                .orElse(null);
+      Page availablePage = page;
+      if (page == Page.CLASSES && availableClass == null && availableProfession != null)
+        availablePage = Page.PROFESSION;
+      if (page == Page.PROFESSION && availableProfession == null && availableClass != null)
+        availablePage = Page.CLASSES;
+      return new Location(
+          availablePage,
+          availableClass == null ? classTree : availableClass,
+          availableProfession == null ? profession : availableProfession);
+    }
+
+    private static boolean hasProfession(
+        ProfessionDiscipline section, Predicate<ResourceLocation> exists) {
+      return Arrays.stream(ProfessionDiscipline.values())
+          .anyMatch(tree -> tree.section() == section && exists.test(tree.category()));
+    }
+  }
+
+  record SavedView(
+      Location location,
+      List<ResourceLocation> categories,
+      TreeViewport.Position camera,
+      TalentKey selected) {}
+
+  record TalentKey(ResourceLocation category, String id) {
+    private boolean matches(TreeNode node) {
+      return id.equals(node.id()) && category.equals(node.category().getConfig().id());
+    }
+  }
+
+  enum Page {
+    CLASSES("classes"),
     PROFESSION("profession");
     final String id;
 

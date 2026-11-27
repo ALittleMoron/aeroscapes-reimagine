@@ -39,7 +39,20 @@ public final class TalentBudgetTest {
     require(config.get("version").getAsInt() == 3, "Unsupported provider config version");
     var caps = new HashMap<String, Integer>();
     caps.put("combat", ProgressionBridge.COMBAT_POINT_CAP);
+    caps.put("ranger", ProgressionBridge.RANGER_POINT_CAP);
     caps.put("magic", MagicTalents.pointCap());
+    for (String bank : List.of("combat", "ranger")) {
+      int cap = caps.get(bank);
+      require(
+          ProgressionBridge.classPracticePoints(2, cap) == 0
+              && ProgressionBridge.classPracticePoints(3, cap) == 1
+              && ProgressionBridge.classPracticePoints(8, cap) == 2
+              && ProgressionBridge.classPracticePoints(13, cap) == 3
+              && ProgressionBridge.classPracticePoints(30, cap) > 3
+              && ProgressionBridge.classPracticePoints(49, cap) < cap
+              && ProgressionBridge.classPracticePoints(50, cap) == cap,
+          "Practice alone reaches early, middle and mature purchases in " + bank);
+    }
     for (var tree : ProfessionDiscipline.values()) {
       require(tree.earned(50, false) == tree.cap(), "Practice alone funds " + tree.skill());
       caps.put(tree.skill(), tree.cap());
@@ -126,14 +139,13 @@ public final class TalentBudgetTest {
 
     JsonObject definitions = read(category.resolve("definitions.json"));
     JsonObject skills = read(category.resolve("skills.json"));
-    if (id.equals("combat")) {
-      var visible = new HashSet<String>();
-      for (var direction : CombatDirection.values()) {
-        for (String node : direction.nodes()) {
-          require(visible.add(node), "Combat talent appears in multiple sections: " + node);
-        }
+    if (id.equals("combat") || id.equals("ranger")) {
+      for (String node : skills.keySet()) {
+        var categoryId = CombatDirection.categoryForNode(node);
+        require(
+            categoryId != null && categoryId.getPath().equals(id),
+            "Combat talent has the wrong purchase category: " + node);
       }
-      require(visible.equals(skills.keySet()), "Every combat talent has a visible section");
     }
     Map<String, Node> nodes = new HashMap<>();
     for (var skill : skills.entrySet()) {
@@ -191,13 +203,6 @@ public final class TalentBudgetTest {
           require(
               nodes.containsKey(from) && nodes.containsKey(to) && !from.equals(to),
               "Invalid talent edge: " + entry);
-          if (id.equals("combat")) {
-            require(
-                java.util.Arrays.stream(CombatDirection.values())
-                    .anyMatch(
-                        section -> section.nodes().contains(from) && section.nodes().contains(to)),
-                "Combat connection must be visible in its section: " + entry);
-          }
           if (exclusion) conflicts.add(new Edge(from, to));
           else {
             nodes.get(to).parents().add(from);
